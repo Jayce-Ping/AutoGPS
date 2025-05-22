@@ -1,0 +1,97 @@
+{
+    "problem_id": "2785",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(K, H))",
+        "PointLiesOnLine(L, Line(G, J))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(H, L, G)), 110)",
+        "Equals(MeasureOf(Arc(G, H)), x)",
+        "Equals(MeasureOf(Arc(J, K)), 97)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "K",
+        "H",
+        "G",
+        "L",
+        "J",
+        "A"
+    ],
+    "line_instances": [
+        "KL",
+        "KH",
+        "LH",
+        "GL",
+        "GJ",
+        "LJ"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "K": [
+            93.97652582159625,
+            277.8732394366197
+        ],
+        "H": [
+            331.06572769953056,
+            278.34272300469485
+        ],
+        "G": [
+            162.05164319248829,
+            91.48826291079813
+        ],
+        "L": [
+            230.1267605633803,
+            278.34272300469485
+        ],
+        "J": [
+            253.6009389671362,
+            343.6009389671362
+        ],
+        "A": [
+            212.4389671361502,
+            215.43896713615024
+        ]
+    },
+    "problem_choices": [
+        "97",
+        "99",
+        "110",
+        "123"
+    ],
+    "choices_precise_value": [
+        97.0,
+        99.0,
+        110.0,
+        123.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 67.677413,
+    "solution_predicate": "Equals(123.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: GL, L on HK, AH, pi * (97 / 180) = Arc(KAJ), JL, G on \u2299(A, radius_0_0), Arc(KAJ), Arc(HAG), AK, KL, \u2220JGA, \u2220HAG, GJ, 3.14 = pi, pi * (110 / 180) = \u2220HLG, \u2220AJG, AJ, \u2220GLH, L on GJ, pi * (x / 180) = Arc(HAG), HL, \u2220GAK, \u2220KAH, \u2220HAG, HK, H on \u2299(A, radius_0_0), J on \u2299(A, radius_0_0), \u2220HKA, AG, \u2220AHK, Arc(GAH), K on \u2299(A, radius_0_0)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : G on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AG\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KAJ)\nConclusions: \u2220KAJ = Arc(KAJ)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(HAG)\nConclusions: \u2220HAG = Arc(HAG)\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220HAG\nConclusions: \u2220HAG = 2 * pi - \u2220GAH\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 4.36 = 2 * 3.14 - pi * (110 / 180)\n\nStep 7:\nTheorem: Definition of Quadrilateral\nPremises : KL, AJ, JL, AK\nConclusions: Quadrilateral(A, J, L, K)\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220GLH\nConclusions: \u2220GLH = 2 * pi - \u2220HLG\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220AJG, L on GJ\nConclusions: \u2220AJG = \u2220AJL\n\nStep 10:\nTheorem: Vertical Angle Theorem\nPremises : L on HK, L on GJ\nConclusions: \u2220GLH = \u2220JLK\n\nStep 11:\nTheorem: Same Angle\nPremises : L on GJ, \u2220JGA\nConclusions: \u2220JGA = \u2220LGA\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (x / 180) = Arc(HAG), 3.14 = pi\nConclusions: 3.14 * (x / 180) = Arc(HAG)\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220KAH, \u2220GAK, \u2220HAG\nConclusions: 2 * pi = \u2220GAK + \u2220HAG + \u2220KAH\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : AK, HK, AH\nConclusions: \u25b3AHK\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : H on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AH\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : J on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AJ\n\nStep 17:\nTheorem: Same Angle\nPremises : L on HK, \u2220HKA\nConclusions: \u2220HKA = \u2220LKA\n\nStep 18:\nTheorem: Definition of Quadrilateral\nPremises : AG, GL, HL, AH\nConclusions: Quadrilateral(A, G, L, H)\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : AG, AJ, GJ\nConclusions: \u25b3AGJ\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220AHK, L on HK\nConclusions: \u2220AHK = \u2220AHL\n\nStep 21:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GAH)\nConclusions: \u2220GAH = Arc(GAH)\n\nStep 22:\nTheorem: Point On Circle Def\nPremises : K on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AK\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (97 / 180) = Arc(KAJ), \u2220KAJ = Arc(KAJ)\nConclusions: pi * (97 / 180) = \u2220KAJ\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HAG = Arc(HAG), pi * (x / 180) = Arc(HAG)\nConclusions: pi * (x / 180) = \u2220HAG\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, J, L, K)\nPremises : Quadrilateral(A, J, L, K)\nConclusions: 2 * pi = \u2220AJL + \u2220JLK + \u2220KAJ + \u2220LKA\n\nStep 26:\nTheorem: Substitution\nPremises : pi * (110 / 180) = \u2220HLG, \u2220GLH = 2 * pi - \u2220HLG, 3.14 = pi, \u2220GLH = \u2220JLK\nConclusions: 2 * 3.14 - pi * (110 / 180) = \u2220JLK\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = Arc(HAG), pi * (x / 180) = Arc(HAG)\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 28:\nTheorem: Substitution\nPremises : 2 * pi = \u2220GAK + \u2220HAG + \u2220KAH, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220GAK + \u2220HAG + \u2220KAH\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AJ, radius_0_0 = AG\nConclusions: AG = AJ\n\nStep 30:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(H, L, G, A)\nPremises : Quadrilateral(A, G, L, H)\nConclusions: 2 * pi = \u2220AHL + \u2220GAH + \u2220HLG + \u2220LGA\n\nStep 31:\nTheorem: Substitution\nPremises : \u2220GAH = Arc(GAH), \u2220HAG = 2 * pi - \u2220GAH, 3.14 = pi\nConclusions: \u2220HAG = 2 * 3.14 - Arc(GAH)\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AH, radius_0_0 = AK\nConclusions: AH = AK\n\nStep 33:\nTheorem: Substitution\nPremises : pi * (97 / 180) = \u2220KAJ, 2 * pi = \u2220AJL + \u2220JLK + \u2220KAJ + \u2220LKA, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (97 / 180) + \u2220AJL + \u2220JLK + \u2220LKA\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (110 / 180) = \u2220JLK, 4.36 = 2 * 3.14 - pi * (110 / 180)\nConclusions: 4.36 = \u2220JLK\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220GAK + \u2220HAG + \u2220KAH, 2 * pi = \u2220GAK + \u2220HAG + \u2220KAH\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3AGJ, AG = AJ\nConclusions: \u2220AJG = \u2220JGA\n\nStep 37:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AHL + \u2220GAH + \u2220HLG + \u2220LGA, pi * (110 / 180) = \u2220HLG, \u2220GAH = Arc(GAH), 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (110 / 180) + \u2220AHL + \u2220LGA + Arc(GAH)\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HAG = 2 * 3.14 - Arc(GAH), pi * (x / 180) = \u2220HAG\nConclusions: pi * (x / 180) = 2 * 3.14 - Arc(GAH)\n\nStep 39:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3AHK, AH = AK\nConclusions: \u2220AHK = \u2220HKA\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AJG = \u2220JGA, \u2220AJG = \u2220AJL, \u2220JGA = \u2220LGA\nConclusions: \u2220AJL = \u2220LGA\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (110 / 180) + \u2220AHL + \u2220LGA + Arc(GAH), 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (110 / 180) + \u2220AHL + \u2220LGA + Arc(GAH)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = 2 * 3.14 - Arc(GAH), 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = 2 * 3.14 - Arc(GAH)\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HKA = \u2220LKA, \u2220AHK = \u2220HKA, \u2220AHK = \u2220AHL\nConclusions: \u2220AHL = \u2220LKA\n\nStep 44:\nTheorem: Substitution\nPremises : \u2220AJL = \u2220LGA, 2 * pi = 3.14 * (110 / 180) + \u2220AHL + \u2220LGA + Arc(GAH), 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (110 / 180) + \u2220AHL + \u2220AJL + Arc(GAH)\n\nStep 45:\nTheorem: Substitution\nPremises : 2 * 3.14 = 3.14 * (97 / 180) + \u2220AJL + \u2220JLK + \u2220LKA, 4.36 = \u2220JLK, \u2220AHL = \u2220LKA\nConclusions: 2 * 3.14 = 4.36 + 3.14 * (97 / 180) + \u2220AHL + \u2220AJL\n\nStep 46:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = 2 * 3.14 - Arc(GAH), 2 * 3.14 = 3.14 * (110 / 180) + \u2220AHL + \u2220AJL + Arc(GAH), 2 * 3.14 = 4.36 + 3.14 * (97 / 180) + \u2220AHL + \u2220AJL\nConclusions: 123 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(K, H)",
+        "Line(L, H)",
+        "Line(G, L)",
+        "Line(G, J)",
+        "Line(L, J)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(L, Line(K, H))",
+        "PointLiesOnLine(L, Line(G, J))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(H, L, G)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Arc(H, A, G)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(K, A, J)), Mul(pi, Div(97.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,134 @@
+{
+    "problem_id": "2407",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnLine(J, Line(I, C))",
+        "PointLiesOnLine(G, Line(H, J))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnLine(B, Line(F, A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(J, C, D)), x+10)",
+        "Equals(MeasureOf(Angle(E, F, B)), x)",
+        "Equals(MeasureOf(Angle(H, G, F)), x+4)",
+        "Equals(MeasureOf(Angle(A, B, C)), x-6)",
+        "Equals(MeasureOf(Angle(I, J, G)), 56)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+    ],
+    "line_instances": [
+        "IJ",
+        "IC",
+        "JC",
+        "HG",
+        "HJ",
+        "GJ",
+        "EF",
+        "EG",
+        "FG",
+        "FB",
+        "FA",
+        "BA",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            187.0816326530612,
+            363.265306122449
+        ],
+        "B": [
+            156.87755102040816,
+            284.89795918367344
+        ],
+        "C": [
+            306.67346938775506,
+            284.89795918367344
+        ],
+        "D": [
+            402.99999999999994,
+            284.89795918367344
+        ],
+        "E": [
+            24.224489795918366,
+            205.30612244897958
+        ],
+        "F": [
+            104.63265306122449,
+            156.734693877551
+        ],
+        "G": [
+            233.20408163265304,
+            75.91836734693877
+        ],
+        "H": [
+            149.93877551020407,
+            19.183673469387752
+        ],
+        "I": [
+            386.67346938775506,
+            76.3265306122449
+        ],
+        "J": [
+            355.65306122448976,
+            157.14285714285714
+        ]
+    },
+    "problem_choices": [
+        "56",
+        "68",
+        "74",
+        "84"
+    ],
+    "choices_precise_value": [
+        56.0,
+        68.0,
+        74.0,
+        84.0
+    ],
+    "problem_answer": 74.0,
+    "total_time": 46.177885,
+    "solution_predicate": "Equals(74.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220EFB, 3.14 = pi, pi * ((10 + x) / 180) = \u2220DCJ, \u2220EGJ, BC, BF, pi * ((x - 6) / 180) = \u2220ABC, pi * ((4 + x) / 180) = \u2220HGF, \u2220HJC, \u2220HGE, \u2220DCJ, \u2220GJC, C on BD, CJ, \u2220EFA, G on HJ, \u2220AFG, pi * (56 / 180) = \u2220IJG, FG, \u2220ABC, \u2220DBF, \u2220IJG, GJ, \u2220CBF, \u2220JCB, F on EG, B on AF\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220EFB, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220EFB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 + x) / 180) = \u2220DCJ\nConclusions: 3.14 * ((10 + x) / 180) = \u2220DCJ\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((x - 6) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * ((x - 6) / 180) = \u2220ABC\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((4 + x) / 180) = \u2220HGF, 3.14 = pi\nConclusions: 3.14 * ((4 + x) / 180) = \u2220HGF\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220EGJ, \u2220HGE\nConclusions: pi = \u2220EGJ + \u2220HGE\n\nStep 7:\nTheorem: Same Angle\nPremises : G on HJ, \u2220HJC\nConclusions: \u2220GJC = \u2220HJC\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220EFA, \u2220AFG\nConclusions: pi = \u2220AFG + \u2220EFA\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220DBF, C on BD\nConclusions: \u2220CBF = \u2220DBF\n\nStep 10:\nTheorem: Straight Angle\nPremises : \u2220GJC, \u2220IJG\nConclusions: pi = \u2220GJC + \u2220IJG\n\nStep 11:\nTheorem: Definition of Pentagon\nPremises : FG, CJ, BC, GJ, BF\nConclusions: Pentagon(B, C, J, G, F)\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220ABC, \u2220CBF\nConclusions: pi = \u2220ABC + \u2220CBF\n\nStep 13:\nTheorem: Straight Angle\nPremises : \u2220JCB, \u2220DCJ\nConclusions: pi = \u2220DCJ + \u2220JCB\n\nStep 14:\nTheorem: Same Angle\nPremises : F on EG, \u2220EGJ\nConclusions: \u2220EGJ = \u2220FGJ\n\nStep 15:\nTheorem: Same Angle\nPremises : F on EG, \u2220HGE\nConclusions: \u2220HGE = \u2220HGF\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220EFA, B on AF\nConclusions: \u2220EFA = \u2220EFB\n\nStep 17:\nTheorem: Same Angle\nPremises : B on AF, \u2220AFG\nConclusions: \u2220AFG = \u2220BFG\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220EFB, pi * (x / 180) = \u2220EFB\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + x) / 180) = \u2220HGF, 3.14 * ((4 + x) / 180) = \u2220HGF\nConclusions: 3.14 * ((4 + x) / 180) = pi * ((4 + x) / 180)\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220GJC = \u2220HJC, pi = \u2220GJC + \u2220IJG, pi * (56 / 180) = \u2220IJG, 3.14 = pi\nConclusions: 3.14 = 3.14 * (56 / 180) + \u2220HJC\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Pentagon(F, G, J, C, B)\nPremises : Pentagon(B, C, J, G, F)\nConclusions: 3 * pi = \u2220BFG + \u2220CBF + \u2220FGJ + \u2220GJC + \u2220JCB\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ABC + \u2220CBF, \u2220CBF = \u2220DBF\nConclusions: 3.14 = \u2220ABC + \u2220DBF\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220DCJ + \u2220JCB, 3.14 = pi\nConclusions: 3.14 = \u2220DCJ + \u2220JCB\n\nStep 24:\nTheorem: Substitution\nPremises : \u2220EGJ = \u2220FGJ, 3.14 = pi, pi = \u2220EGJ + \u2220HGE\nConclusions: 3.14 = \u2220FGJ + \u2220HGE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + x) / 180) = \u2220HGF, \u2220HGE = \u2220HGF\nConclusions: pi * ((4 + x) / 180) = \u2220HGE\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220EFB, \u2220EFA = \u2220EFB\nConclusions: pi * (x / 180) = \u2220EFA\n\nStep 27:\nTheorem: Substitution\nPremises : pi = \u2220AFG + \u2220EFA, 3.14 = pi, \u2220AFG = \u2220BFG\nConclusions: 3.14 = \u2220BFG + \u2220EFA\n\nStep 28:\nTheorem: Substitution\nPremises : \u2220GJC = \u2220HJC, 3 * pi = \u2220BFG + \u2220CBF + \u2220FGJ + \u2220GJC + \u2220JCB, 3.14 = pi, \u2220CBF = \u2220DBF\nConclusions: 3 * 3.14 = \u2220BFG + \u2220DBF + \u2220FGJ + \u2220HJC + \u2220JCB\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + x) / 180) = \u2220HGE, 3.14 * ((4 + x) / 180) = pi * ((4 + x) / 180)\nConclusions: 3.14 * ((4 + x) / 180) = \u2220HGE\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220EFA, 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = \u2220EFA\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DCJ + \u2220JCB, 3.14 = \u2220ABC + \u2220DBF, 3.14 * (x / 180) = \u2220EFA, 3.14 * ((x - 6) / 180) = \u2220ABC, 3.14 = \u2220BFG + \u2220EFA, 3 * 3.14 = \u2220BFG + \u2220DBF + \u2220FGJ + \u2220HJC + \u2220JCB, 3.14 * ((4 + x) / 180) = \u2220HGE, 3.14 = 3.14 * (56 / 180) + \u2220HJC, 3.14 = \u2220FGJ + \u2220HGE, 3.14 * ((10 + x) / 180) = \u2220DCJ\nConclusions: 74 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(I, J)",
+        "Line(I, C)",
+        "Line(J, C)",
+        "Line(H, G)",
+        "Line(H, J)",
+        "Line(G, J)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, B)",
+        "Line(F, A)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(J, Line(I, C))",
+        "PointLiesOnLine(G, Line(H, J))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnLine(B, Line(F, A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(D, C, J)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(H, G, F)), Mul(pi, Div(Add(x, 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Sub(x, 6.0), 180.0)))",
+        "Equals(MeasureOf(Angle(I, J, G)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,113 @@
+{
+    "problem_id": "6254",
+    "solved": true,
+    "problem_text": "Find the measure of \\widehat WTV.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(S, X, T)), 100)",
+        "Equals(MeasureOf(Angle(V, X, U)), 55)",
+        "Line(S, V)",
+        "Line(S, X)",
+        "Line(W, U)",
+        "Line(W, X)",
+        "Line(X, T)",
+        "Line(X, U)",
+        "Line(X, V)",
+        "PointLiesOnCircle(S, Circle(X))",
+        "PointLiesOnCircle(T, Circle(X))",
+        "PointLiesOnCircle(U, Circle(X))",
+        "PointLiesOnCircle(V, Circle(X))",
+        "PointLiesOnCircle(W, Circle(X))",
+        "PointLiesOnLine(X, Line(S, V))",
+        "PointLiesOnLine(X, Line(W, U))",
+        "Find(MeasureOf(Arc(W,T,V)))"
+    ],
+    "point_instances": [
+        "S",
+        "W",
+        "X",
+        "T",
+        "U",
+        "V"
+    ],
+    "line_instances": [
+        "SX",
+        "SV",
+        "XV",
+        "WX",
+        "WU",
+        "XU",
+        "XT"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "S": [
+            151.06666666666666,
+            56.14971751412429
+        ],
+        "W": [
+            60.03428571428571,
+            102.87570621468926
+        ],
+        "X": [
+            151.18352068864607,
+            166.28299009340745
+        ],
+        "T": [
+            259.9131428571429,
+            185.64745762711863
+        ],
+        "U": [
+            240.60799999999998,
+            229.93898305084744
+        ],
+        "V": [
+            150.6742857142857,
+            277.3268765133172
+        ]
+    },
+    "problem_choices": [
+        205.0,
+        235.0,
+        280.0,
+        335.0
+    ],
+    "choices_precise_value": [
+        205.0,
+        235.0,
+        280.0,
+        335.0
+    ],
+    "problem_answer": 235.0,
+    "total_time": 21.359935,
+    "solution_predicate": "Equals(4.1015237422, MeasureOf(Arc(V, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220VXU, Arc(VXW), \u2220SXW, Arc(WXV), X on UW, \u2220WXV, \u2220SXU, \u2220UXT, \u2220TXS, X on SV, pi * (55 / 180) = \u2220VXU, \u2220WXV, pi * (100 / 180) = \u2220TXS, \u2220TXW, 3.14 = pi\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(VXW)\nConclusions: \u2220VXW = Arc(VXW)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(WXV)\nConclusions: \u2220WXV = Arc(WXV)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220WXV\nConclusions: \u2220WXV = 2 * pi - \u2220VXW\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220TXS, \u2220UXT, \u2220SXU\nConclusions: 2 * pi = \u2220SXU + \u2220TXS + \u2220UXT\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : X on UW, X on SV\nConclusions: \u2220SXU = \u2220VXW, \u2220SXW = \u2220VXU\n\nStep 7:\nTheorem: Circumference Split\nPremises : \u2220UXT, \u2220TXS, \u2220SXW, \u2220VXU, \u2220WXV\nConclusions: 2 * pi = \u2220SXW + \u2220TXS + \u2220UXT + \u2220VXU + \u2220WXV\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220TXW\nConclusions: \u2220TXW = 2 * pi - \u2220WXT\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220VXW = Arc(VXW), 3.14 = pi, \u2220WXV = 2 * pi - \u2220VXW, \u2220WXV = Arc(WXV)\nConclusions: Arc(WXV) = 2 * 3.14 - Arc(VXW)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VXW = Arc(VXW), \u2220SXU = \u2220VXW\nConclusions: \u2220SXU = Arc(VXW)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (55 / 180) = \u2220VXU, \u2220SXW = \u2220VXU\nConclusions: pi * (55 / 180) = \u2220SXW\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220TXW = 2 * pi - \u2220WXT\nConclusions: \u2220TXW = 2 * 3.14 - \u2220WXT\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220SXU = Arc(VXW), 3.14 = pi, pi * (100 / 180) = \u2220TXS, 2 * pi = \u2220SXU + \u2220TXS + \u2220UXT\nConclusions: 2 * 3.14 = 3.14 * (100 / 180) + \u2220UXT + Arc(VXW)\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220SXW + \u2220TXS + \u2220UXT + \u2220VXU + \u2220WXV, \u2220WXV = Arc(WXV), pi * (55 / 180) = \u2220SXW, pi * (55 / 180) = \u2220VXU, pi * (100 / 180) = \u2220TXS\nConclusions: 2 * 3.14 = 3.14 * (55 / 180) + pi * (100 / 180) + pi * (55 / 180) + \u2220UXT + Arc(WXV)\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (100 / 180) + \u2220UXT + Arc(VXW), Arc(WXV) = 2 * 3.14 - Arc(VXW), \u2220TXW = 2 * pi - \u2220WXT, \u2220VXW = Arc(VXW), \u2220TXW = 2 * 3.14 - \u2220WXT, 2 * 3.14 = 3.14 * (55 / 180) + pi * (100 / 180) + pi * (55 / 180) + \u2220UXT + Arc(WXV)\nConclusions: 4.1 = \u2220VXW\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VXW = Arc(VXW), 4.1 = \u2220VXW\nConclusions: 4.1 = Arc(VXW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, X)",
+        "Line(S, V)",
+        "Line(X, V)",
+        "Line(W, X)",
+        "Line(W, U)",
+        "Line(X, U)",
+        "Line(X, T)",
+        "Circle(X, radius_X)",
+        "Line(S, V)",
+        "Line(S, X)",
+        "Line(W, U)",
+        "Line(W, X)",
+        "Line(X, T)",
+        "Line(X, U)",
+        "Line(X, V)",
+        "PointLiesOnCircle(S, Circle(X, radius_X))",
+        "PointLiesOnCircle(T, Circle(X, radius_X))",
+        "PointLiesOnCircle(U, Circle(X, radius_X))",
+        "PointLiesOnCircle(V, Circle(X, radius_X))",
+        "PointLiesOnCircle(W, Circle(X, radius_X))",
+        "PointLiesOnLine(X, Line(S, V))",
+        "PointLiesOnLine(X, Line(W, U))",
+        "Equals(MeasureOf(Angle(T, X, S)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Angle(V, X, U)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,97 @@
+{
+    "problem_id": "5720",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), 10)",
+        "Equals(LengthOf(Line(C, D)), 30)",
+        "Equals(MeasureOf(Angle(C, A, B)), 60)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(C, B))",
+        "PointLiesOnLine(B, Line(A, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "AE",
+        "BE",
+        "ED",
+        "CD",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            58.93333333333334,
+            143.3153153153153
+        ],
+        "B": [
+            111.57151515151517,
+            143.5839475839476
+        ],
+        "C": [
+            110.90181818181817,
+            53.927927927927925
+        ],
+        "D": [
+            417.6579710144927,
+            53.767332549941244
+        ],
+        "E": [
+            365.58757575757573,
+            143.3153153153153
+        ]
+    },
+    "problem_choices": [
+        60.0,
+        80.0,
+        100.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        60.0,
+        80.0,
+        100.0,
+        120.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 33.169675,
+    "solution_predicate": "Equals(80.0, PerimeterOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, D, C), 10 = AC, 30 = CD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, D, C)\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD, AC = BD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 30 = CD\nConclusions: 30 = AB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AC = BD, 10 = AC\nConclusions: 10 = BD\n\nStep 6:\nTheorem: Substitution\nPremises : 10 = BD, 30 = AB, 30 = CD, Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD, 10 = AC\nConclusions: 10 + 10 + 30 + 30 = Perimeter(Parallelogram(A, B, D, C))\n\nStep 7:\nTheorem: Evaluate\nPremises : 10 + 10 + 30 + 30 = Perimeter(Parallelogram(A, B, D, C))\nConclusions: 80 = Perimeter(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(C, B))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "Equals(LengthOf(Line(C, A)), 10.0)",
+        "Equals(LengthOf(Line(C, D)), 30.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

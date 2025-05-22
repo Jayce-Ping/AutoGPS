@@ -1,0 +1,67 @@
+{
+    "problem_id": "6318",
+    "solved": true,
+    "problem_text": "Find m \\angle A.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 41)",
+        "Equals(MeasureOf(Angle(C, A, B)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            54.51935081148564,
+            58.53523809523809
+        ],
+        "B": [
+            54.48394863563402,
+            217.52244897959184
+        ],
+        "C": [
+            237.90262172284642,
+            217.59301587301587
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        49.0,
+        90.0,
+        188.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        49.0,
+        90.0,
+        188.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 7.023891,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, AB \u22a5 BC, BC, 3.14 = pi, AB, pi * (41 / 180) = \u2220ACB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (41 / 180) = \u2220ACB, 3.14 = pi, pi / 2 = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (41 / 180) + \u2220BAC\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (41 / 180) + \u2220BAC\nConclusions: 0.86 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(41.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

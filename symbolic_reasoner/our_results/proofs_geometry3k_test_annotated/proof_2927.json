@@ -1,0 +1,100 @@
+{
+    "problem_id": "2927",
+    "solved": true,
+    "problem_text": "The area of trapezoid J K L M is 138 square feet. The area of trapezoid Q R S T is 5.52 square feet. If trapezoid J K L M \\sim trapezoid Q R S T, find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, J)), 5)",
+        "Equals(LengthOf(Line(Q, T)), x)",
+        "Equals(AreaOf(Trapezoid(J, K, L, M)), 138)",
+        "Equals(AreaOf(Trapezoid(Q, R, S, T)), 5.52)",
+        "Similar(Trapezoid(J, K, L, M), Trapezoid(T, Q, R, S))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "T",
+        "L",
+        "R",
+        "S",
+        "K",
+        "J",
+        "Q",
+        "M"
+    ],
+    "line_instances": [
+        "ML",
+        "LK",
+        "JK",
+        "MJ",
+        "RS",
+        "TS",
+        "QT",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            493.8717948717949,
+            73.51282051282053
+        ],
+        "L": [
+            277.63247863247864,
+            50.863247863247864
+        ],
+        "R": [
+            363.52991452991455,
+            169.66666666666669
+        ],
+        "S": [
+            536.1794871794872,
+            170.52136752136755
+        ],
+        "K": [
+            222.50427350427353,
+            170.0940170940171
+        ],
+        "J": [
+            105.41025641025642,
+            169.66666666666669
+        ],
+        "Q": [
+            405.83760683760687,
+            73.94017094017096
+        ],
+        "M": [
+            49.42735042735043,
+            51.2905982905983
+        ]
+    },
+    "problem_choices": [
+        "0.2",
+        "1",
+        "25",
+        "125"
+    ],
+    "choices_precise_value": [
+        0.2,
+        1.0,
+        25.0,
+        125.0
+    ],
+    "problem_answer": 1.0,
+    "total_time": 18.289728,
+    "solution_predicate": "Equals(1.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5.52 = Area(Trapezoid(Q, R, S, T)), x = QT, Trapezoid(J, K, L, M) ~ Trapezoid(T, Q, R, S), 138 = Area(Trapezoid(J, K, L, M)), 5 = JK\n\nStep 2:\nTheorem: Similar Definition\nPremises : Trapezoid(J, K, L, M) ~ Trapezoid(T, Q, R, S)\nConclusions: sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s = JK / QT, sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s ** 2 = Area(Trapezoid(J, K, L, M)) / Area(Trapezoid(Q, R, S, T))\n\nStep 3:\nTheorem: Substitution\nPremises : 138 = Area(Trapezoid(J, K, L, M)), sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s ** 2 = Area(Trapezoid(J, K, L, M)) / Area(Trapezoid(Q, R, S, T)), 5.52 = Area(Trapezoid(Q, R, S, T))\nConclusions: 138 / 5.52 = sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s ** 2\n\nStep 4:\nTheorem: Solve Univariate Equation\nPremises : 138 / 5.52 = sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s ** 2\nConclusions: 5 = sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 = sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s, sim_ratio_trapezoid_j_k_l_m_trapezoid_t_q_r_s = JK / QT\nConclusions: 5 = JK / QT\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 5 = JK / QT, 5 = JK\nConclusions: 1 = QT\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : x = QT, 1 = QT\nConclusions: 1 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(J, K)",
+        "Line(M, J)",
+        "Line(R, S)",
+        "Line(T, S)",
+        "Line(Q, T)",
+        "Line(Q, R)",
+        "Similar(Trapezoid(J, K, L, M), Trapezoid(T, Q, R, S))",
+        "Equals(LengthOf(Line(K, J)), 5.0)",
+        "Equals(LengthOf(Line(Q, T)), x)",
+        "Equals(AreaOf(Trapezoid(J, K, L, M)), 138.0)",
+        "Equals(AreaOf(Trapezoid(Q, R, S, T)), 5.52)"
+    ],
+    "correct": true
+}

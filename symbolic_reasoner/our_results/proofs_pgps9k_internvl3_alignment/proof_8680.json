@@ -1,0 +1,118 @@
+{
+    "problem_id": "8680",
+    "solved": true,
+    "problem_text": "If MNPQ \\sim XYZW, find the perimeter of XYZW.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, N)), 9)",
+        "Equals(LengthOf(Line(M, Q)), 8)",
+        "Equals(LengthOf(Line(N, P)), 10)",
+        "Equals(LengthOf(Line(Q, P)), 7)",
+        "Equals(LengthOf(Line(W, X)), 4)",
+        "Line(M, Q)",
+        "Line(N, M)",
+        "Line(N, P)",
+        "Line(Q, P)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Similar(Quadrilateral(M,N,P,Q),Quadrilateral(X,Y,Z,W))",
+        "Find(PerimeterOf(Quadrilateral(X,Y,Z,W)))"
+    ],
+    "point_instances": [
+        "Z",
+        "W",
+        "X",
+        "Y",
+        "M",
+        "Q",
+        "P",
+        "N"
+    ],
+    "line_instances": [
+        "ZW",
+        "ZY",
+        "YX",
+        "WX",
+        "MQ",
+        "MN",
+        "NP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            95.35866666666668,
+            154.4
+        ],
+        "W": [
+            242.40333333333334,
+            88.0
+        ],
+        "X": [
+            454.75666666666666,
+            62.0
+        ],
+        "Y": [
+            326.54333333333335,
+            226.0
+        ],
+        "M": [
+            605.808,
+            306.4
+        ],
+        "Q": [
+            902.8355555555556,
+            273.3333333333333
+        ],
+        "P": [
+            1111.8500000000001,
+            178.0
+        ],
+        "N": [
+            786.6422222222222,
+            78.66666666666667
+        ]
+    },
+    "problem_choices": [
+        17.0,
+        18.0,
+        20.0,
+        34.0
+    ],
+    "choices_precise_value": [
+        17.0,
+        18.0,
+        20.0,
+        34.0
+    ],
+    "problem_answer": 17.0,
+    "total_time": 17.23083,
+    "solution_predicate": "Equals(17.0, PerimeterOf(Quadrilateral(X, Y, Z, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = MQ, Quadrilateral(M, N, P, Q), 10 = NP, 9 = MN, 4 = WX, 7 = PQ, Quadrilateral(M, N, P, Q) ~ Quadrilateral(X, Y, Z, W)\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(M, N, P, Q)\nConclusions: Perimeter(Quadrilateral(M, N, P, Q)) = MN + MQ + NP + PQ\n\nStep 3:\nTheorem: Similar Definition\nPremises : Quadrilateral(M, N, P, Q) ~ Quadrilateral(X, Y, Z, W)\nConclusions: sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w = MQ / WX, sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w = Perimeter(Quadrilateral(M, N, P, Q)) / Perimeter(Quadrilateral(W, X, Y, Z))\n\nStep 4:\nTheorem: Substitution\nPremises : 10 = NP, 7 = PQ, 9 = MN, 8 = MQ, Perimeter(Quadrilateral(M, N, P, Q)) = MN + MQ + NP + PQ\nConclusions: 10 + 7 + 8 + 9 = Perimeter(Quadrilateral(M, N, P, Q))\n\nStep 5:\nTheorem: Substitution\nPremises : 4 = WX, sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w = MQ / WX, 8 = MQ\nConclusions: 8 / 4 = sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 4 = sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w, sim_ratio_quadrilateral_m_n_p_q_quadrilateral_x_y_z_w = Perimeter(Quadrilateral(M, N, P, Q)) / Perimeter(Quadrilateral(W, X, Y, Z))\nConclusions: 8 / 4 = Perimeter(Quadrilateral(M, N, P, Q)) / Perimeter(Quadrilateral(W, X, Y, Z))\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 8 / 4 = Perimeter(Quadrilateral(M, N, P, Q)) / Perimeter(Quadrilateral(W, X, Y, Z)), 10 + 7 + 8 + 9 = Perimeter(Quadrilateral(M, N, P, Q))\nConclusions: 17 = Perimeter(Quadrilateral(W, X, Y, Z))\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(W, X)",
+        "Line(M, Q)",
+        "Line(M, N)",
+        "Line(N, P)",
+        "Line(Q, P)",
+        "Line(M, Q)",
+        "Line(N, M)",
+        "Line(N, P)",
+        "Line(Q, P)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Similar(Quadrilateral(M, N, P, Q), Quadrilateral(X, Y, Z, W))",
+        "Equals(LengthOf(Line(M, N)), 9.0)",
+        "Equals(LengthOf(Line(M, Q)), 8.0)",
+        "Equals(LengthOf(Line(N, P)), 10.0)",
+        "Equals(LengthOf(Line(Q, P)), 7.0)",
+        "Equals(LengthOf(Line(W, X)), 4.0)"
+    ],
+    "correct": true
+}

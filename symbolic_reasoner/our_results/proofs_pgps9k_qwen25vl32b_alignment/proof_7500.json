@@ -1,0 +1,69 @@
+{
+    "problem_id": "7500",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 42)",
+        "Equals(LengthOf(Line(B, A)), 38)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(B, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            173.95626373626374,
+            234.2051282051282
+        ],
+        "B": [
+            173.585,
+            42.05555555555556
+        ],
+        "C": [
+            9.441038961038961,
+            41.45454545454545
+        ]
+    },
+    "problem_choices": [
+        11.313708498984761,
+        13.856406460551018,
+        17.88854381999832,
+        21.166010488516726
+    ],
+    "choices_precise_value": [
+        11.313708498984761,
+        13.856406460551018,
+        17.88854381999832,
+        21.166010488516726
+    ],
+    "problem_answer": 11.313708498984761,
+    "total_time": 11.794871,
+    "solution_predicate": "Equals(17.88854382, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 42 = AC, AB, BC, 38 = AB, AC, AB \u22a5 BC, x = BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: BC = SqrtOf(AC ** 2 - AB ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : x = BC, BC = SqrtOf(AC ** 2 - AB ** 2), 42 = AC, 38 = AB\nConclusions: SqrtOf(42 ** 2 - 38 ** 2) = x\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(42 ** 2 - 38 ** 2) = x\nConclusions: 17.89 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(B, A))",
+        "Equals(LengthOf(Line(A, C)), 42.0)",
+        "Equals(LengthOf(Line(B, A)), 38.0)",
+        "Equals(LengthOf(Line(C, B)), x)"
+    ],
+    "correct": false
+}

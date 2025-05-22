@@ -1,0 +1,124 @@
+{
+    "problem_id": "2899",
+    "solved": true,
+    "problem_text": "Find the measure of QR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(R, Y)))",
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(X, P)))",
+        "Equals(LengthOf(Line(R, Y)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(R, Y)), LengthOf(Line(X, P)))",
+        "Equals(LengthOf(Line(S, P)), 4)",
+        "Equals(LengthOf(Line(X, P)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(X, Y)), 4.2)",
+        "Equals(MeasureOf(Angle(R, Q, X)), 86)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, Y)",
+        "Line(X, P)",
+        "Line(X, Y)",
+        "Line(Y, S)",
+        "Parallel(Line(Q, R), Line(P, S))",
+        "PointLiesOnLine(X, Line(Q, P))",
+        "PointLiesOnLine(Y, Line(R, S))",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "X",
+        "Y",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "QR",
+        "XY",
+        "PS",
+        "QX",
+        "QP",
+        "XP",
+        "RY",
+        "RS",
+        "YS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            64.15942028985506,
+            40.52571428571429
+        ],
+        "R": [
+            359.55003450655624,
+            40.52571428571429
+        ],
+        "X": [
+            71.39544513457557,
+            135.0857142857143
+        ],
+        "Y": [
+            353.06441223832525,
+            134.7104761904762
+        ],
+        "P": [
+            78.41706924315619,
+            229.27047619047616
+        ],
+        "S": [
+            346.0427881297446,
+            229.64571428571426
+        ]
+    },
+    "problem_choices": [
+        3.8,
+        4.0,
+        4.1,
+        4.4
+    ],
+    "choices_precise_value": [
+        3.8,
+        4.0,
+        4.1,
+        4.4
+    ],
+    "problem_answer": 4.4,
+    "total_time": 30.975676,
+    "solution_predicate": "Equals(4.4, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS, QR, RY = SY, PS || QR, PS, X on PQ, 4.2 = XY, PQ, PX = QX, Y on RS, 4 = PS\n\nStep 2:\nTheorem: Definition of Trapezoid\nPremises : PQ, QR, PS, RS, PS || QR\nConclusions: Trapezoid(P, Q, R, S)\n\nStep 3:\nTheorem: Median of Trapezoid\nPremises : PX = QX, RY = SY, Trapezoid(P, Q, R, S)\nConclusions: IsMedianOf(XY, Trapezoid(P, Q, R, S))\n\nStep 4:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(XY, Trapezoid(P, Q, R, S)), Y on RS, X on PQ\nConclusions: XY = (PS + QR) / 2\n\nStep 5:\nTheorem: Substitution\nPremises : 4 = PS, XY = (PS + QR) / 2, 4.2 = XY\nConclusions: 4.2 = (4 + QR) / 2\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 4.2 = (4 + QR) / 2\nConclusions: 4.4 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(X, Y)",
+        "Line(P, S)",
+        "Line(Q, X)",
+        "Line(Q, P)",
+        "Line(X, P)",
+        "Line(R, Y)",
+        "Line(R, S)",
+        "Line(Y, S)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, Y)",
+        "Line(X, P)",
+        "Line(X, Y)",
+        "Line(Y, S)",
+        "Parallel(Line(Q, R), Line(P, S))",
+        "PointLiesOnLine(X, Line(Q, P))",
+        "PointLiesOnLine(Y, Line(R, S))",
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(R, Y)))",
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(Q, X)), LengthOf(Line(X, P)))",
+        "Equals(LengthOf(Line(R, Y)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(R, Y)), LengthOf(Line(X, P)))",
+        "Equals(LengthOf(Line(S, P)), 4.0)",
+        "Equals(LengthOf(Line(X, P)), LengthOf(Line(S, Y)))",
+        "Equals(LengthOf(Line(X, Y)), 4.2)",
+        "Equals(MeasureOf(Angle(X, Q, R)), Mul(pi, Div(86.0, 180.0)))"
+    ],
+    "correct": true
+}

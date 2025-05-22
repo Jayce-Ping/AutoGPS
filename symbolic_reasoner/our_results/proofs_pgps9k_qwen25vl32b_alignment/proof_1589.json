@@ -1,0 +1,75 @@
+{
+    "problem_id": "1589",
+    "solved": true,
+    "problem_text": "a = 8, b = 15, and c = 17, find \\tan B.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "Equals(a,8)",
+        "Equals(b,15)",
+        "Equals(c,17)",
+        "Find(TanOf(Angle(B)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            39.70668348045397,
+            34.17330210772833
+        ],
+        "C": [
+            40.276923076923076,
+            121.79248120300753
+        ],
+        "A": [
+            199.82846153846154,
+            121.78285714285713
+        ]
+    },
+    "problem_choices": [
+        1.23,
+        1.67,
+        1.88,
+        2.43
+    ],
+    "choices_precise_value": [
+        1.23,
+        1.67,
+        1.88,
+        2.43
+    ],
+    "problem_answer": 2.43,
+    "total_time": 6.640214,
+    "solution_predicate": "Equals(1.875, TanOf(MeasureOf(Angle(C, B, A))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC \u22a5 BC, 15 = b, 8 = a, b = AC, tan(\u2220CBA), a = BC\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : b = AC, 15 = b\nConclusions: 15 = AC\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBA), AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : a = BC, 8 = a\nConclusions: 8 = BC\n\nStep 5:\nTheorem: Substitution\nPremises : 8 = BC, 15 = AC, AC / BC = tan(\u2220CBA)\nConclusions: 15 / 8 = tan(\u2220CBA)\n\nStep 6:\nTheorem: Evaluate\nPremises : 15 / 8 = tan(\u2220CBA)\nConclusions: 1.88 = tan(\u2220CBA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(a, 8.0)",
+        "Equals(b, 15.0)",
+        "Equals(c, 17.0)"
+    ],
+    "correct": false
+}

@@ -1,0 +1,53 @@
+# Definitions for graphics primitives
+
+## Chord
+Line is Chord of Circle: IsChordOf(Line(A, B), Circle(O, r)) -> PointLiesOnCircle(A, Circle(O, r)) & PointLiesOnCircle(B, Circle(O, r))
+
+## Arc Measure
+Arc Measure equals Angle Measure: MeasureOf(Arc(A, O, B)) -> Equals(MeasureOf(Angle(A, O, B)), MeasureOf(Arc(A, O, B)))
+
+## Midpoint
+Point is middle point of line: IsMidpointOf(A, Line(B, C)) -> Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))
+
+
+## Square
+Square is Rectangle: Square(A, B, C, D) -> Rectangle(A, B, C, D)
+Square is Rhombus: Square(A, B, C, D) -> Rhombus(A, B, C, D)
+
+## Rectangle
+Rectangle is Parallelogram: Rectangle(A, B, C, D) -> Parallelogram(A, B, C, D)
+Rectangle has Neighbor Side Perpendicular: Rectangle(A, B, C, D) -> Perpendicular(Line(A, B), Line(B, C)) & Perpendicular(Line(B, C), Line(C, D)) & Perpendicular(Line(C, D), Line(D, A)) & Perpendicular(Line(A, B), Line(D, A))
+
+## Rhombus
+Rhombus is Parallelogram: Rhombus(A, B, C, D) -> Parallelogram(A, B, C, D)
+Rhombus has Neighbor Sides Equal: Rhombus(A, B, C, D) -> Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D))) & Equals(LengthOf(Line(B, C)), LengthOf(Line(C, D)))
+
+## Parallelogram
+Parallelogram Opposite Lines Parallel: Parallelogram(A, B, C, D) -> Parallel(Line(A, B), Line(D, C)) & Parallel(Line(A, D), Line(B, C))
+Parallelogram Opposite Lines Equal: Parallelogram(A, B, C, D) -> Equals(LengthOf(Line(A, B)), LengthOf(Line(C, D))) & Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))
+Parallelogram Opposite Angles Equal: Parallelogram(A, B, C, D) -> Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(C, D, A))) & Equals(MeasureOf(Angle(C, B, A)), MeasureOf(Angle(A, D, C))) & Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(D, A, B))) & Equals(MeasureOf(Angle(D, C, B)), MeasureOf(Angle(B, A, D)))
+Parallelogram is quadrilateral: Parallelogram(A, B, C, D) -> Quadrilateral(A, B, C, D)
+
+## Kite
+
+Kite has perpendicular diagonals: Kite(A, B, C, D) -> Perpendicular(Line(A, C), Line(B, D))
+
+# Defintion for relations
+
+## Point on circle
+Point On Circle Def: PointLiesOnCircle(A, Circle(O, r)) -> Equals(LengthOf(Line(A, O)), r)
+
+## Line is xx of circle
+Line is radius of circle: IsRadiusOf(Line(A, O), Circle(O, r)) -> PointLiesOnCircle(A, Circle(O, r))
+Line is diameter of circle: IsDiameterOf(Line(A, B), Circle(O, r)) -> PointLiesOnLine(O, Line(A, B)) & PointLiesOnCircle(A, Circle(O, r)) & PointLiesOnCircle(B, Circle(O, r))
+
+# Formula for measures
+
+## Area
+
+Rectangle Area Formula: AreaOf(Rectangle(A, B, C, D)) -> Equals(AreaOf(Rectangle(A, B, C, D)), Mul(LengthOf(Line(A, B)), LengthOf(Line(B, C))))
+
+Circle Area Formula: AreaOf(Circle(O, r)) -> Equals(AreaOf(Circle(O, r)), Mul(Pow(r, 2), pi))
+
+## Circumference
+Circle Circumference Formula: CircumferenceOf(Circle(O, r)) -> Equals(CircumferenceOf(Circle(O, r)), Mul(Mul(2, r), pi))

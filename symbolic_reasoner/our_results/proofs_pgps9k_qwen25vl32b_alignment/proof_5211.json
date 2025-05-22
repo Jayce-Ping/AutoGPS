@@ -1,0 +1,99 @@
+{
+    "problem_id": "5211",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4)",
+        "Equals(LengthOf(Line(A, E)), 5)",
+        "Equals(LengthOf(Line(C, B)), 4)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), 6)",
+        "Find(Sub(AreaOf(Rectangle(C, D, E, A)), AreaOf(Triangle(A, B, C))))",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(C, A), Line(C, D))",
+        "Perpendicular(Line(D, E), Line(C, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB",
+        "AE",
+        "ED",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            39.45789473684211,
+            232.59542857142853
+        ],
+        "B": [
+            133.61981424148607,
+            127.71159663865545
+        ],
+        "C": [
+            38.866253869969036,
+            22.5909243697479
+        ],
+        "D": [
+            215.00684210526313,
+            23.073714285714285
+        ],
+        "E": [
+            214.91228070175438,
+            232.715873015873
+        ]
+    },
+    "problem_choices": [
+        7.1,
+        14.1,
+        22.1,
+        30.0
+    ],
+    "choices_precise_value": [
+        7.1,
+        14.1,
+        22.1,
+        30.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 37.291763,
+    "solution_predicate": "Equals(22.0627460668, Sub(AreaOf(Rectangle(C, D, E, A)), AreaOf(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(A, C, D, E), Area(Rectangle(A, C, D, E)), 4 = AB, \u25b3ABC, 4 = BC, 6 = DE, 5 = AE\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, C, D, E)\nConclusions: Parallelogram(A, C, D, E)\n\nStep 3:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, C, D, E))\nConclusions: Area(Rectangle(A, C, D, E)) = AC * CD\n\nStep 4:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, C, D, E)\nConclusions: AC = DE, AE = CD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 6 = DE, AC = DE\nConclusions: 6 = AC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 5 = AE, AE = CD\nConclusions: 5 = CD\n\nStep 8:\nTheorem: Substitution\nPremises : Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 4 = AB, 6 = AC, 4 = BC\nConclusions: SqrtOf(((4 + 4 + 6) / 2) * ((4 + 4 + 6) / 2 - 4) * ((4 + 4 + 6) / 2 - 4) * ((4 + 4 + 6) / 2 - 6)) = Area(\u25b3ABC)\n\nStep 9:\nTheorem: Substitution\nPremises : 5 = CD, Area(Rectangle(A, C, D, E)) = AC * CD, 6 = AC\nConclusions: 5 * 6 = Area(Rectangle(A, C, D, E))\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : SqrtOf(((4 + 4 + 6) / 2) * ((4 + 4 + 6) / 2 - 4) * ((4 + 4 + 6) / 2 - 4) * ((4 + 4 + 6) / 2 - 6)) = Area(\u25b3ABC)\nConclusions: 7.94 = Area(\u25b3ABC)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 5 * 6 = Area(Rectangle(A, C, D, E))\nConclusions: 30 = Area(Rectangle(A, C, D, E))\n\nStep 12:\nTheorem: Evaluate\nPremises : 7.94 = Area(\u25b3ABC), 30 = Area(Rectangle(A, C, D, E))\nConclusions: 22.06 = Area(Rectangle(A, C, D, E)) - Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(C, A), Line(C, D))",
+        "Perpendicular(Line(D, E), Line(C, D))",
+        "Equals(LengthOf(Line(A, B)), 4.0)",
+        "Equals(LengthOf(Line(A, E)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), 4.0)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), 6.0)"
+    ],
+    "correct": false
+}

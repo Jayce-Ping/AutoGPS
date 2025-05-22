@@ -1,0 +1,80 @@
+{
+    "problem_id": "888",
+    "solved": true,
+    "problem_text": "ABCD is a square. Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 18)",
+        "Equals(MeasureOf(Angle(A, B, C)), 5x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Square(A,B,C,D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "DC",
+        "AB",
+        "BC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.60000000000001,
+            40.400000000000006
+        ],
+        "D": [
+            272.20833333333337,
+            40.400000000000006
+        ],
+        "B": [
+            55.13666666666667,
+            257.17485714285715
+        ],
+        "C": [
+            272.90333333333336,
+            257.17485714285715
+        ]
+    },
+    "problem_choices": [
+        3.6,
+        9.0,
+        18.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        3.6,
+        9.0,
+        18.0,
+        90.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 24.331245,
+    "solution_predicate": "Equals(18.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 * x) / 180) = \u2220CBA, 3.14 = pi, \u2220CBA, Square(A, B, C, D)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 3:\nTheorem: Square is Rectangle\nPremises : Square(A, B, C, D)\nConclusions: Rectangle(A, B, C, D)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AB \u22a5 BC\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((5 * x) / 180) = \u2220CBA, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: pi / 2 = 3.14 * ((5 * x) / 180)\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = 3.14 * ((5 * x) / 180)\nConclusions: 2 * 3.14 - (3 * pi) / 2 = 3.14 * ((5 * x) / 180)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = 3.14 * ((5 * x) / 180), 2 * 3.14 - (3 * pi) / 2 = 3.14 * ((5 * x) / 180)\nConclusions: 18 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Square(A, B, C, D)",
+        "Equals(LengthOf(Line(A, C)), 18.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Mul(5.0, x), 180.0)))"
+    ],
+    "correct": true
+}

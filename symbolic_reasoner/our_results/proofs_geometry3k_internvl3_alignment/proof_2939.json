@@ -1,0 +1,65 @@
+{
+    "problem_id": "2939",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(B, C)), 18)",
+        "Equals(MeasureOf(Angle(B, C, A)), 60)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.55656108597285,
+            138.48868778280544
+        ],
+        "B": [
+            246.15384615384616,
+            138.94117647058823
+        ],
+        "C": [
+            36.65158371040724,
+            18.57918552036199
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "9 \\sqrt 3",
+        "18",
+        "18 \\sqrt 3"
+    ],
+    "choices_precise_value": [
+        9.0,
+        15.588457268119894,
+        18.0,
+        31.17691453623979
+    ],
+    "problem_answer": 9.0,
+    "total_time": 13.618973,
+    "solution_predicate": "Equals(8.9999999999, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBA, BC, x = AC, pi * (60 / 180) = \u2220ACB, 18 = BC, AB, 3.14 = pi, AC, cos(\u2220ACB), AB \u22a5 AC, \u2220ACB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220BAC\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220ACB), AB \u22a5 AC\nConclusions: AC / BC = cos(\u2220ACB)\n\nStep 5:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 AC, \u25b3ABC, \u2220CBA\nConclusions: AC / BC = sin(\u2220CBA)\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 AC, \u25b3ABC, \u2220ACB\nConclusions: AC / BC = cos(\u2220ACB)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = cos(\u2220ACB), AC / BC = cos(\u2220ACB)\nConclusions: AC / BC = AC / BC\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi / 2 = \u2220BAC, pi * (60 / 180) = \u2220ACB\nConclusions: 3.14 = pi / 2 + pi * (60 / 180) + \u2220CBA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = AC / BC, AC / BC = sin(\u2220CBA)\nConclusions: AC / BC = sin(\u2220CBA)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = pi / 2 + pi * (60 / 180) + \u2220CBA\nConclusions: 0.52 = \u2220CBA\n\nStep 12:\nTheorem: Evaluate\nPremises : 0.52 = \u2220CBA\nConclusions: 0.5 = sin(\u2220CBA)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 0.5 = sin(\u2220CBA), AC / BC = sin(\u2220CBA)\nConclusions: 0.5 = AC / BC\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 18 = BC, 0.5 = AC / BC\nConclusions: 9 = AC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 9 = AC\nConclusions: 9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(B, C)), 18.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,118 @@
+{
+    "problem_id": "2915",
+    "solved": true,
+    "problem_text": "In \\odot O, E C and A B are diameters, and \\angle B O D \\cong \\angle D O E \\cong \\angle E O F \\cong \\angle F O A. Find m \\widehat A D.",
+    "logic_forms": [
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "Perpendicular(Line(A, O), Line(C, O))",
+        "Circle(O)",
+        "IsDiameterOf(Line(E,C),Circle(O))",
+        "IsDiameterOf(Line(A,B),Circle(O))",
+        "Equals(Angle(B,O,D),Angle(D,O,E))",
+        "Equals(Angle(D,O,E),Angle(E,O,F))",
+        "Equals(Angle(E,O,F),Angle(F,O,A))",
+        "Find(MeasureOf(Arc(A,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "O",
+        "C",
+        "D",
+        "E",
+        "F",
+        "A"
+    ],
+    "line_instances": [
+        "BO",
+        "BA",
+        "OA",
+        "EO",
+        "EC",
+        "OC",
+        "DO",
+        "FO"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "B": [
+            215.78272980501393,
+            73.53760445682451
+        ],
+        "O": [
+            158.40111420612814,
+            134.81894150417827
+        ],
+        "C": [
+            219.96100278551532,
+            192.4791086350975
+        ],
+        "D": [
+            156.17270194986074,
+            50.69637883008357
+        ],
+        "E": [
+            96.56267409470753,
+            76.32311977715878
+        ],
+        "F": [
+            74.0,
+            137.32590529247912
+        ],
+        "A": [
+            100.46239554317549,
+            195.5431754874652
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "135",
+        "180",
+        "360"
+    ],
+    "choices_precise_value": [
+        45.0,
+        135.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 135.0,
+    "total_time": 51.91321,
+    "solution_predicate": "Equals(2.3561944902, MeasureOf(Arc(D, O, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(AOD), \u2220DOF, \u2220FOC, \u2220EOA, \u2220DOA, \u2220BOD, \u2220DOE, AO \u22a5 EO, \u2220COD, \u2220AOD, 3.14 = pi, \u2220DOE = \u2220EOF, \u2220AOD, \u2220BOD = \u2220DOE, \u2220EOF = \u2220FOA, Arc(DOA)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AOD)\nConclusions: \u2220AOD = Arc(AOD)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220DOA, \u2220BOD\nConclusions: pi = \u2220BOD + \u2220DOA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AO \u22a5 EO\nConclusions: pi / 2 = \u2220EOA\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220FOC, \u2220DOF, \u2220COD\nConclusions: 2 * pi = \u2220COD + \u2220DOF + \u2220FOC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220AOD\nConclusions: \u2220AOD = 2 * pi - \u2220DOA\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220DOE, \u2220AOD, \u2220EOA\nConclusions: 2 * pi = \u2220AOD + \u2220DOE + \u2220EOA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DOE = \u2220EOF, \u2220EOF = \u2220FOA\nConclusions: \u2220DOE = \u2220FOA\n\nStep 9:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DOA)\nConclusions: \u2220DOA = Arc(DOA)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BOD + \u2220DOA, 3.14 = pi\nConclusions: 3.14 = \u2220BOD + \u2220DOA\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220COD + \u2220DOF + \u2220FOC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220COD + \u2220DOF + \u2220FOC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AOD = 2 * pi - \u2220DOA, \u2220AOD = Arc(AOD)\nConclusions: Arc(AOD) = 2 * pi - \u2220DOA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BOD = \u2220DOE, \u2220DOE = \u2220FOA\nConclusions: \u2220BOD = \u2220FOA\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AOD + \u2220DOE + \u2220EOA, \u2220AOD = Arc(AOD), pi / 2 = \u2220EOA, \u2220DOE = \u2220FOA\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220FOA + Arc(AOD)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220COD + \u2220DOF + \u2220FOC, 2 * pi = \u2220COD + \u2220DOF + \u2220FOC\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 / 2 + \u2220FOA + Arc(AOD)\nConclusions: 2 * pi = 3.14 / 2 + \u2220FOA + Arc(AOD)\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : Arc(AOD) = 2 * pi - \u2220DOA, 2 * pi = 3.14 / 2 + \u2220FOA + Arc(AOD), \u2220BOD = \u2220FOA, 3.14 = \u2220BOD + \u2220DOA\nConclusions: 2.36 = \u2220DOA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 2.36 = \u2220DOA, \u2220DOA = Arc(DOA)\nConclusions: 2.36 = Arc(DOA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, O)",
+        "Line(B, A)",
+        "Line(O, A)",
+        "Line(E, O)",
+        "Line(E, C)",
+        "Line(O, C)",
+        "Line(D, O)",
+        "Line(F, O)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "Perpendicular(Line(A, O), Line(C, O))",
+        "Circle(O, radius_0_0)",
+        "IsDiameterOf(Line(E, C), Circle(O, radius_0_0))",
+        "IsDiameterOf(Line(A, B), Circle(O, radius_0_0))",
+        "Equals(MeasureOf(Angle(B, O, D)), MeasureOf(Angle(D, O, E)))",
+        "Equals(MeasureOf(Angle(D, O, E)), MeasureOf(Angle(E, O, F)))",
+        "Equals(MeasureOf(Angle(E, O, F)), MeasureOf(Angle(F, O, A)))"
+    ],
+    "correct": true
+}

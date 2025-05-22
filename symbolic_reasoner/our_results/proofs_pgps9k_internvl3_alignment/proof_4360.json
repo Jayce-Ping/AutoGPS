@@ -1,0 +1,118 @@
+{
+    "problem_id": "4360",
+    "solved": true,
+    "problem_text": "For trapezoid LMNO, P and Q are midpoints of the legs. Determine m \\angle PQN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 21)",
+        "Equals(LengthOf(Line(O, N)), 17)",
+        "Equals(MeasureOf(Angle(M, L, P)), 36)",
+        "Equals(MeasureOf(Angle(O, N, Q)), 96)",
+        "Line(L, M)",
+        "Line(L, O)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(O, N)",
+        "Line(P, O)",
+        "Line(P, Q)",
+        "Line(Q, N)",
+        "PointLiesOnLine(P, Line(L, O))",
+        "PointLiesOnLine(Q, Line(M, N))",
+        "Trapezoid(L,M,N,O)",
+        "IsMidpointOf(Point(P),LegOf(Trapezoid(L,M,N,O)))",
+        "IsMidpointOf(Point(Q),LegOf(Trapezoid(L,M,N,O)))",
+        "Find(MeasureOf(Angle(P,Q,N)))"
+    ],
+    "point_instances": [
+        "L",
+        "M",
+        "P",
+        "Q",
+        "O",
+        "N"
+    ],
+    "line_instances": [
+        "PQ",
+        "LM",
+        "ON",
+        "LP",
+        "LO",
+        "PO",
+        "MQ",
+        "MN",
+        "QN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            37.12,
+            82.32377049180327
+        ],
+        "M": [
+            867.68,
+            83.87704918032787
+        ],
+        "P": [
+            97.44,
+            128.922131147541
+        ],
+        "Q": [
+            861.4933333333333,
+            127.3688524590164
+        ],
+        "O": [
+            159.30666666666667,
+            175.5204918032787
+        ],
+        "N": [
+            856.2346666666667,
+            175.20983606557377
+        ]
+    },
+    "problem_choices": [
+        36.0,
+        84.0,
+        96.0,
+        144.0
+    ],
+    "choices_precise_value": [
+        36.0,
+        84.0,
+        96.0,
+        144.0
+    ],
+    "problem_answer": 84.0,
+    "total_time": 39.939578,
+    "solution_predicate": "Equals(1.4660765717, MeasureOf(Angle(P, Q, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Q on MN, \u2220PQN, Trapezoid(L, M, N, O), pi * (96 / 180) = \u2220QNO, IsMidpointOf(Q, MN), 3.14 = pi, IsMidpointOf(P, LO), P on LO, \u2220MQP\n\nStep 2:\nTheorem: Quadrilateral to is components\nPremises : Trapezoid(L, M, N, O)\nConclusions: \u2220MNO\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(Q, MN)\nConclusions: MQ = NQ\n\nStep 4:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(P, LO)\nConclusions: LP = OP\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220PQN, \u2220MQP\nConclusions: pi = \u2220MQP + \u2220PQN\n\nStep 6:\nTheorem: Same Angle\nPremises : Q on MN, \u2220MNO\nConclusions: \u2220MNO = \u2220QNO\n\nStep 7:\nTheorem: Median of Trapezoid\nPremises : LP = OP, Trapezoid(L, M, N, O), MQ = NQ\nConclusions: IsMedianOf(PQ, Trapezoid(L, M, N, O))\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNO = \u2220QNO, pi * (96 / 180) = \u2220QNO\nConclusions: pi * (96 / 180) = \u2220MNO\n\nStep 9:\nTheorem: Median of a Trapezoid Properties\nPremises : Q on MN, IsMedianOf(PQ, Trapezoid(L, M, N, O)), P on LO\nConclusions: NO || QP\n\nStep 10:\nTheorem: Corresponding Angle Theorem\nPremises : NO || QP\nConclusions: \u2220MNO = \u2220MQP\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (96 / 180) = \u2220MNO, \u2220MNO = \u2220MQP\nConclusions: pi * (96 / 180) = \u2220MQP\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220MQP + \u2220PQN, pi * (96 / 180) = \u2220MQP, 3.14 = pi\nConclusions: 3.14 = 3.14 * (96 / 180) + \u2220PQN\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (96 / 180) + \u2220PQN\nConclusions: 1.47 = \u2220PQN\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, Q)",
+        "Line(L, M)",
+        "Line(O, N)",
+        "Line(L, P)",
+        "Line(L, O)",
+        "Line(P, O)",
+        "Line(M, Q)",
+        "Line(M, N)",
+        "Line(Q, N)",
+        "Line(L, M)",
+        "Line(L, O)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(O, N)",
+        "Line(P, O)",
+        "Line(P, Q)",
+        "Line(Q, N)",
+        "PointLiesOnLine(P, Line(L, O))",
+        "PointLiesOnLine(Q, Line(M, N))",
+        "Trapezoid(L, M, N, O)",
+        "IsMidpointOf(P, Line(L, O))",
+        "IsMidpointOf(Q, Line(M, N))",
+        "Equals(LengthOf(Line(M, L)), 21.0)",
+        "Equals(LengthOf(Line(O, N)), 17.0)",
+        "Equals(MeasureOf(Angle(P, L, M)), Mul(pi, Div(36.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, N, O)), Mul(pi, Div(96.0, 180.0)))"
+    ],
+    "correct": true
+}

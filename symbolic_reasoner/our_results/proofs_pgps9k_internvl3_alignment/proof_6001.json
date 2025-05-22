@@ -1,0 +1,68 @@
+{
+    "problem_id": "6001",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, F)), 1.3)",
+        "Equals(MeasureOf(Angle(H, G, F)), 99)",
+        "Find(AreaOf(Sector(G, F, H)))",
+        "Line(F, G)",
+        "Line(G, H)",
+        "PointLiesOnCircle(F, Circle(G))",
+        "PointLiesOnCircle(H, Circle(G))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "F"
+    ],
+    "line_instances": [
+        "GF",
+        "GH"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "G": [
+            96.66822429906543,
+            126.5
+        ],
+        "H": [
+            179.63321132729723,
+            140.91743842364534
+        ],
+        "F": [
+            97.21787709497205,
+            43.56857142857143
+        ]
+    },
+    "problem_choices": [
+        1.5,
+        2.2,
+        3.8,
+        5.3
+    ],
+    "choices_precise_value": [
+        1.5,
+        2.2,
+        3.8,
+        5.3
+    ],
+    "problem_answer": 2.2,
+    "total_time": 3.060924,
+    "solution_predicate": "Equals(1.4600551858, AreaOf(Sector(H, G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Sector(H, G, F), F on \u2299(G, radius_G), 1.3 = FG, pi * (99 / 180) = \u2220HGF\n\nStep 2:\nTheorem: Area formula of Sector(H, G, F)\nPremises : Sector(H, G, F)\nConclusions: Area(Sector(H, G, F)) = (radius_G ** 2 * \u2220HGF) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : F on \u2299(G, radius_G)\nConclusions: radius_G = FG\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.3 = FG, radius_G = FG\nConclusions: 1.3 = radius_G\n\nStep 5:\nTheorem: Substitution\nPremises : 1.3 = radius_G, Area(Sector(H, G, F)) = (radius_G ** 2 * \u2220HGF) / 2, pi * (99 / 180) = \u2220HGF\nConclusions: (pi * (99 / 180) * 1.3 ** 2) / 2 = Area(Sector(H, G, F))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (99 / 180) * 1.3 ** 2) / 2 = Area(Sector(H, G, F))\nConclusions: 1.46 = Area(Sector(H, G, F))\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(G, H)",
+        "Circle(G, radius_G)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "PointLiesOnCircle(F, Circle(G, radius_G))",
+        "PointLiesOnCircle(H, Circle(G, radius_G))",
+        "Equals(LengthOf(Line(G, F)), 1.3)",
+        "Equals(MeasureOf(Angle(H, G, F)), Mul(pi, Div(99.0, 180.0)))"
+    ],
+    "correct": false
+}

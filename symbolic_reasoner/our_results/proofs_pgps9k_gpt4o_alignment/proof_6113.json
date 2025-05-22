@@ -1,0 +1,71 @@
+{
+    "problem_id": "6113",
+    "solved": true,
+    "problem_text": "Use the Law of Sines to find the value of y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(MeasureOf(Angle(B, C, A)), 22)",
+        "Equals(MeasureOf(Angle(C, B, A)), 119)",
+        "Find(y)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            30.625555555555557,
+            33.223514211886304
+        ],
+        "B": [
+            107.48464285714286,
+            171.24792358803987
+        ],
+        "C": [
+            368.6055555555556,
+            170.8979328165375
+        ]
+    },
+    "problem_choices": [
+        2.142,
+        2.976,
+        3.598,
+        6.949
+    ],
+    "choices_precise_value": [
+        2.142,
+        2.976,
+        3.598,
+        6.949
+    ],
+    "problem_answer": 3.598,
+    "total_time": 10.979934,
+    "solution_predicate": "Equals(3.5976801457, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (22 / 180) = \u2220ACB, 3.14 = pi, AC, AB, y = BC, 5 = AC, BC, pi * (119 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 2.08 = pi * (119 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 2.08 = pi * (119 / 180), pi * (119 / 180) = \u2220CBA\nConclusions: 2.08 = \u2220CBA\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (22 / 180) = \u2220ACB, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (119 / 180) = \u2220CBA\nConclusions: 3.14 = 3.14 * (119 / 180) + 3.14 * (22 / 180) + \u2220BAC\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (119 / 180) + 3.14 * (22 / 180) + \u2220BAC\nConclusions: 0.68 = \u2220BAC\n\nStep 9:\nTheorem: Substitution\nPremises : 0.68 = \u2220BAC, 2.08 = \u2220CBA, AC / sin(\u2220CBA) = BC / sin(\u2220BAC), y = BC, 5 = AC\nConclusions: 5 / sin(2.08) = y / sin(0.68)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : y = BC, 5 / sin(2.08) = y / sin(0.68)\nConclusions: 3.6 = BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : y = BC, 3.6 = BC\nConclusions: 3.6 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(22.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(119.0, 180.0)))"
+    ],
+    "correct": true
+}

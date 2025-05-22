@@ -1,0 +1,92 @@
+{
+    "problem_id": "8303",
+    "solved": true,
+    "problem_text": "\\triangle DFG and \\triangle FGH are isosceles. Find the measure of \\angle FGH.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(D, G)))",
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(F, H)))",
+        "Equals(LengthOf(Line(F, H)), LengthOf(Line(D, G)))",
+        "Equals(MeasureOf(Angle(F, D, G)), 28)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(D, H)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "PointLiesOnLine(G, Line(D, H))",
+        "Isosceles(Triangle(D,F,G))",
+        "Isosceles(Triangle(F,G,H))",
+        "Find(MeasureOf(Angle(F,G,H)))"
+    ],
+    "point_instances": [
+        "D",
+        "G",
+        "H",
+        "F"
+    ],
+    "line_instances": [
+        "DF",
+        "FH",
+        "DG",
+        "DH",
+        "GH",
+        "GF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            28.334928229665067,
+            152.92330827067667
+        ],
+        "G": [
+            188.25059984004264,
+            153.1974193548387
+        ],
+        "H": [
+            253.11495116453793,
+            153.34441558441557
+        ],
+        "F": [
+            220.49457644628097,
+            49.79785714285714
+        ]
+    },
+    "problem_choices": [
+        56.0,
+        58.0,
+        64.0,
+        68.0
+    ],
+    "choices_precise_value": [
+        56.0,
+        58.0,
+        64.0,
+        68.0
+    ],
+    "problem_answer": 56.0,
+    "total_time": 29.794246,
+    "solution_predicate": "Equals(0.9773843812, MeasureOf(Angle(H, G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220HGF, DG = FG, \u25b3DFG, 3.14 = pi, pi * (28 / 180) = \u2220GDF, \u2220FGD\n\nStep 2:\nTheorem: Interior Angle Sum Theorem for Triangle(D, F, G)\nPremises : \u25b3DFG\nConclusions: pi = \u2220DFG + \u2220FGD + \u2220GDF\n\nStep 3:\nTheorem: Issoceles Triangle Property\nPremises : DG = FG, \u25b3DFG\nConclusions: \u2220DFG = \u2220GDF\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.49 = pi * (28 / 180)\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220FGD, \u2220HGF\nConclusions: pi = \u2220FGD + \u2220HGF\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (28 / 180) = \u2220GDF, pi = \u2220DFG + \u2220FGD + \u2220GDF, 3.14 = pi\nConclusions: 3.14 = pi * (28 / 180) + \u2220DFG + \u2220FGD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (28 / 180) = \u2220GDF, 0.49 = pi * (28 / 180)\nConclusions: 0.49 = \u2220GDF\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220FGD + \u2220HGF, 3.14 = pi\nConclusions: 3.14 = \u2220FGD + \u2220HGF\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFG = \u2220GDF, 0.49 = \u2220GDF\nConclusions: 0.49 = \u2220DFG\n\nStep 10:\nTheorem: Substitution\nPremises : 0.49 = \u2220DFG, 3.14 = pi * (28 / 180) + \u2220DFG + \u2220FGD, 3.14 = pi\nConclusions: 3.14 = 0.49 + 3.14 * (28 / 180) + \u2220FGD\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.49 + 3.14 * (28 / 180) + \u2220FGD, 3.14 = \u2220FGD + \u2220HGF\nConclusions: 0.98 = \u2220HGF\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(F, H)",
+        "Line(D, G)",
+        "Line(D, H)",
+        "Line(G, H)",
+        "Line(G, F)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(D, H)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "PointLiesOnLine(G, Line(D, H))",
+        "Isosceles(Triangle(D, F, G))",
+        "Isosceles(Triangle(F, G, H))",
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(D, G)))",
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(F, H)))",
+        "Equals(LengthOf(Line(F, H)), LengthOf(Line(D, G)))",
+        "Equals(MeasureOf(Angle(G, D, F)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

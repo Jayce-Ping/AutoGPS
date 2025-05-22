@@ -1,0 +1,106 @@
+{
+    "problem_id": "1498",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 36)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(E, C, D)))",
+        "Equals(MeasureOf(Angle(E, C, B)), x)",
+        "Equals(MeasureOf(Angle(E, C, D)), 36)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(E, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            161.97802197802199,
+            344.7371428571428
+        ],
+        "B": [
+            238.54945054945057,
+            344.98285714285714
+        ],
+        "C": [
+            199.90983606557376,
+            193.18852459016392
+        ],
+        "D": [
+            162.71428571428572,
+            42.262857142857136
+        ],
+        "E": [
+            238.27335164835168,
+            42.293571428571425
+        ]
+    },
+    "problem_choices": [
+        36.0,
+        72.0,
+        136.0,
+        144.0
+    ],
+    "choices_precise_value": [
+        36.0,
+        72.0,
+        136.0,
+        144.0
+    ],
+    "problem_answer": 144.0,
+    "total_time": 13.098591,
+    "solution_predicate": "Equals(144.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (36 / 180) = \u2220ACB, 3.14 = pi, pi * (36 / 180) = \u2220ECD, \u2220BCE, \u2220ECD, C on AE, \u2220ACB, \u2220DCA, \u2220ECB, \u2220BCE, pi * (x / 180) = \u2220BCE, C on BD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECB\nConclusions: \u2220ECB = 2 * pi - \u2220BCE\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220ECD, \u2220DCA, \u2220ACB, \u2220BCE\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BCE\nConclusions: 3.14 * (x / 180) = \u2220BCE\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220BCE = \u2220DCA\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220ECB = 2 * pi - \u2220BCE, 3.14 = pi\nConclusions: \u2220ECB = 2 * 3.14 - \u2220BCE\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (36 / 180) = \u2220ACB, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD, 3.14 = pi, pi * (36 / 180) = \u2220ECD\nConclusions: 2 * 3.14 = 3.14 * (36 / 180) + pi * (36 / 180) + \u2220BCE + \u2220DCA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = 2 * pi - \u2220ECB, 3.14 * (x / 180) = \u2220BCE\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220ECB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220BCE, pi * (x / 180) = \u2220BCE\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = \u2220DCA, pi * (x / 180) = \u2220BCE\nConclusions: pi * (x / 180) = \u2220DCA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220DCA, 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = \u2220DCA\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220DCA, 3.14 * (x / 180) = \u2220BCE, 2 * 3.14 = 3.14 * (36 / 180) + pi * (36 / 180) + \u2220BCE + \u2220DCA, \u2220ECB = 2 * 3.14 - \u2220BCE, 3.14 * (x / 180) = 2 * pi - \u2220ECB\nConclusions: 144 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Circle(C, radius_C)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(E, A))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(36.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(E, C, D)))",
+        "Equals(MeasureOf(Angle(B, C, E)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(36.0, 180.0)))"
+    ],
+    "correct": true
+}

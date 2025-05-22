@@ -1,0 +1,83 @@
+{
+    "problem_id": "2976",
+    "solved": true,
+    "problem_text": "Find the area of the regular polygon. Assume that the triangle is equilateral.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, B)), 4)",
+        "Equilateral(Triangle(A, B, C))",
+        "Find(AreaOf(Regular(Polygon(A, B, C))))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "DB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            49.58748778103617,
+            83.24987012987013
+        ],
+        "B": [
+            231.22580645161293,
+            82.52235294117648
+        ],
+        "C": [
+            139.65591397849462,
+            241.0463492063492
+        ],
+        "D": [
+            140.46666666666667,
+            134.66666666666666
+        ]
+    },
+    "problem_choices": [
+        20.785,
+        32.0,
+        50.265,
+        83.138
+    ],
+    "choices_precise_value": [
+        20.785,
+        32.0,
+        50.265,
+        83.138
+    ],
+    "problem_answer": 20.785,
+    "total_time": 33.328771,
+    "solution_predicate": "Equals(20.7846096907, AreaOf(Regular(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on \u2299(D, radius_D), 4 = BD, \u25b3ABC, A on \u2299(D, radius_D), 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 3:\nTheorem: Regular Triangle(A, B, C) Area formula by formula 2\nPremises : \u25b3ABC\nConclusions: Area(Regular(\u25b3ABC)) = (3 * sin(2 * (pi / 3)) * AD ** 2) / 2\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_D)\nConclusions: radius_D = AD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BD, radius_D = BD\nConclusions: 4 = radius_D\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = AD, 4 = radius_D\nConclusions: 4 = AD\n\nStep 7:\nTheorem: Substitution\nPremises : Area(Regular(\u25b3ABC)) = (3 * sin(2 * (pi / 3)) * AD ** 2) / 2, 4 = AD, 3.14 = pi\nConclusions: (3 * 4 ** 2 * sin(2 * (3.14 / 3))) / 2 = Area(Regular(\u25b3ABC))\n\nStep 8:\nTheorem: Evaluate\nPremises : (3 * 4 ** 2 * sin(2 * (3.14 / 3))) / 2 = Area(Regular(\u25b3ABC))\nConclusions: 20.78 = Area(Regular(\u25b3ABC))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Circle(D, radius_D)",
+        "Equilateral(Triangle(A, B, C))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "Equals(LengthOf(Line(D, B)), 4.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,79 @@
+{
+    "problem_id": "2503",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region. ",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Equals(MeasureOf(Angle(A, C, B)), 30)",
+        "Find(Sub(AreaOf(Circle(D)), AreaOf(Triangle(A, B, C))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            18.421633554083883,
+            101.32450331125827
+        ],
+        "B": [
+            62.350993377483434,
+            32.22958057395143
+        ],
+        "C": [
+            180.0110375275938,
+            101.32450331125827
+        ],
+        "D": [
+            98.11258278145695,
+            105.51876379690948
+        ]
+    },
+    "problem_choices": [
+        "35.2",
+        "43.2",
+        "53.5",
+        "56.9"
+    ],
+    "choices_precise_value": [
+        35.2,
+        43.2,
+        53.5,
+        56.9
+    ],
+    "problem_answer": 56.9,
+    "total_time": 68.735842,
+    "solution_predicate": "Equals(56.889181245, Sub(AreaOf(Circle(D, radius_0_0)), AreaOf(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on \u2299(D, radius_0_0), A on \u2299(D, radius_0_0), C on \u2299(D, radius_0_0), D on AC, Area(\u2299(D, radius_0_0)), BD, AB, \u25b3ABC, 5 = AB, AD, 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = BD\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 4:\nTheorem: Diameter Definition\nPremises : D on AC, C on \u2299(D, radius_0_0), A on \u2299(D, radius_0_0)\nConclusions: IsDiameterOf(AC, \u2299(D, radius_0_0))\n\nStep 5:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(D, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\n\nStep 6:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BD, radius_0_0 = AD\nConclusions: AD = BD\n\nStep 9:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AC, \u2299(D, radius_0_0))\nConclusions: radius_0_0 = AD, 2 * radius_0_0 = AC, A on \u2299(D, radius_0_0), C on \u2299(D, radius_0_0)\n\nStep 10:\nTheorem: Thales Theorem\nPremises : B on \u2299(D, radius_0_0), IsDiameterOf(AC, \u2299(D, radius_0_0))\nConclusions: AB \u22a5 BC\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\n\nStep 12:\nTheorem: Equilateral Triangle Property\nPremises : \u25b3ABD, AD = BD\nConclusions: AB = AD, AD = BD\n\nStep 13:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: BC = SqrtOf(AC ** 2 - AB ** 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0)), 3.14 * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AD, 5 = AB, AB = AD\nConclusions: 5 = radius_0_0\n\nStep 16:\nTheorem: Substitution\nPremises : BC = SqrtOf(AC ** 2 - AB ** 2), 2 * radius_0_0 = AC, 5 = AB\nConclusions: SqrtOf((2 * radius_0_0) ** 2 - 5 ** 2) = BC\n\nStep 17:\nTheorem: Evaluate\nPremises : 5 = radius_0_0\nConclusions: 10 = 2 * radius_0_0, 8.66 = SqrtOf((2 * radius_0_0) ** 2 - 5 ** 2)\n\nStep 18:\nTheorem: Evaluate\nPremises : 3.14 = pi, 5 = radius_0_0\nConclusions: 78.54 = pi * radius_0_0 ** 2\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 10 = 2 * radius_0_0, 2 * radius_0_0 = AC\nConclusions: 10 = AC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 8.66 = SqrtOf((2 * radius_0_0) ** 2 - 5 ** 2), SqrtOf((2 * radius_0_0) ** 2 - 5 ** 2) = BC\nConclusions: 8.66 = BC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 78.54 = pi * radius_0_0 ** 2, 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\nConclusions: 78.54 = 3.14 * radius_0_0 ** 2\n\nStep 22:\nTheorem: Evaluate\nPremises : 10 = AC, 5 = AB, 8.66 = BC\nConclusions: 21.65 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0)), 78.54 = 3.14 * radius_0_0 ** 2\nConclusions: 78.54 = Area(\u2299(D, radius_0_0))\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 21.65 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\nConclusions: 21.65 = Area(\u25b3ABC)\n\nStep 25:\nTheorem: Evaluate\nPremises : 78.54 = Area(\u2299(D, radius_0_0)), 21.65 = Area(\u25b3ABC)\nConclusions: 56.89 = Area(\u2299(D, radius_0_0)) - Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 5.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

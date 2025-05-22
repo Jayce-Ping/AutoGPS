@@ -1,0 +1,92 @@
+{
+    "problem_id": "2412",
+    "solved": true,
+    "problem_text": "J K L M is a rectangle. M L P R is a rhombus. \\angle J M K \\cong \\angle R M P, m \\angle J M K = 55, and m \\angle M R P = 70. Find m \\angle K M L.",
+    "logic_forms": [
+        "Rectangle(J, K, L, M)",
+        "Rhombus(M, L, P, R)",
+        "Equals(MeasureOf(Angle(J, M, K)), MeasureOf(Angle(R, M, P)))",
+        "Equals(MeasureOf(Angle(J, M, K)), 55)",
+        "Equals(MeasureOf(Angle(M, R, P)), 70)",
+        "Find(MeasureOf(Angle(K, M, L)))"
+    ],
+    "point_instances": [
+        "P",
+        "M",
+        "L",
+        "K",
+        "R",
+        "J"
+    ],
+    "line_instances": [
+        "RP",
+        "MP",
+        "MR",
+        "LP",
+        "ML",
+        "KL",
+        "MK",
+        "JM",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            141.15647921760393,
+            197.799511002445
+        ],
+        "M": [
+            69.02933985330074,
+            91.19804400977995
+        ],
+        "L": [
+            175.63080684596576,
+            90.95354523227384
+        ],
+        "K": [
+            175.63080684596576,
+            38.63080684596577
+        ],
+        "R": [
+            33.577017114914426,
+            198.53300733496334
+        ],
+        "J": [
+            68.2958435207824,
+            37.89731051344744
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "70",
+        "110",
+        "140"
+    ],
+    "choices_precise_value": [
+        35.0,
+        70.0,
+        110.0,
+        140.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 65.737539,
+    "solution_predicate": "Equals(0.6108652382, MeasureOf(Angle(L, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (55 / 180) = \u2220KMJ, \u2220LKJ, \u2220MKL, \u2220RML, 3.14 = pi, Rectangle(J, K, L, M), \u2220KMR, \u2220JKM, \u2220LMK, \u2220KMJ = \u2220RMP\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, L, M)\nConclusions: JK \u22a5 KL\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220JKM, \u2220LKJ, \u2220MKL\nConclusions: 2 * pi = \u2220JKM + \u2220LKJ + \u2220MKL\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220LMK, \u2220KMR, \u2220RML\nConclusions: 2 * pi = \u2220KMR + \u2220LMK + \u2220RML\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = \u2220RMP, pi * (55 / 180) = \u2220KMJ\nConclusions: pi * (55 / 180) = \u2220RMP\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML, JM || KL\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 KL\nConclusions: (3 * pi) / 2 = \u2220LKJ\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220KMR + \u2220LMK + \u2220RML\nConclusions: 2 * 3.14 = \u2220KMR + \u2220LMK + \u2220RML\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JKM = \u2220LMK\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KMJ = \u2220MKL\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220KMR + \u2220LMK + \u2220RML, 2 * 3.14 = \u2220KMR + \u2220LMK + \u2220RML\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = \u2220RMP, \u2220KMJ = \u2220MKL\nConclusions: \u2220MKL = \u2220RMP\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (55 / 180) = \u2220RMP, \u2220MKL = \u2220RMP\nConclusions: pi * (55 / 180) = \u2220MKL\n\nStep 15:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220LKJ, 3.14 = pi, pi * (55 / 180) = \u2220MKL, \u2220JKM = \u2220LMK, 2 * pi = \u2220JKM + \u2220LKJ + \u2220MKL\nConclusions: 2 * 3.14 = (3 * pi) / 2 + pi * (55 / 180) + \u2220LMK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = (3 * pi) / 2 + pi * (55 / 180) + \u2220LMK\nConclusions: 2 * pi = (3 * pi) / 2 + pi * (55 / 180) + \u2220LMK\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : \u2220JKM = \u2220LMK, 2 * pi = (3 * pi) / 2 + pi * (55 / 180) + \u2220LMK, 2 * 3.14 = (3 * pi) / 2 + pi * (55 / 180) + \u2220LMK\nConclusions: 0.61 = \u2220JKM\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 0.61 = \u2220JKM, \u2220JKM = \u2220LMK\nConclusions: 0.61 = \u2220LMK\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, P)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(L, P)",
+        "Line(M, L)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(J, M)",
+        "Line(J, K)",
+        "Rectangle(J, K, L, M)",
+        "Rhombus(M, L, P, R)",
+        "Equals(MeasureOf(Angle(K, M, J)), MeasureOf(Angle(R, M, P)))",
+        "Equals(MeasureOf(Angle(K, M, J)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, R, M)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

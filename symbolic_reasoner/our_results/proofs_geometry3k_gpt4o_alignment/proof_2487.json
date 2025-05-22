@@ -1,0 +1,145 @@
+{
+    "problem_id": "2487",
+    "solved": true,
+    "problem_text": "Circles G, J, and K all intersect at L. If G H = 10, find F H.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(A, J))",
+        "PointLiesOnLine(G, Line(A, L))",
+        "PointLiesOnLine(G, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, L))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(G, L))",
+        "PointLiesOnLine(J, Line(G, K))",
+        "PointLiesOnLine(L, Line(A, K))",
+        "PointLiesOnLine(L, Line(G, K))",
+        "PointLiesOnLine(L, Line(J, K))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(K, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_2_0))",
+        "IntersectAt(Circle(G),Circle(J),Circle(K),Point(L))",
+        "Equals(LengthOf(Line(G,H)),10)",
+        "Find(LengthOf(Line(F,H)))"
+    ],
+    "point_instances": [
+        "G",
+        "J",
+        "K",
+        "H",
+        "F",
+        "L",
+        "A"
+    ],
+    "line_instances": [
+        "AG",
+        "AJ",
+        "AL",
+        "AK",
+        "GJ",
+        "GL",
+        "GK",
+        "JL",
+        "JK",
+        "LK",
+        "HG",
+        "HF",
+        "GF"
+    ],
+    "circle_instances": [
+        "L",
+        "J",
+        "G"
+    ],
+    "point_positions": {
+        "G": [
+            133.20238095238096,
+            142.26190476190476
+        ],
+        "J": [
+            183.20238095238096,
+            163.98809523809524
+        ],
+        "K": [
+            234.39285714285717,
+            185.41666666666669
+        ],
+        "H": [
+            174.57142857142858,
+            41.66666666666667
+        ],
+        "F": [
+            88.85714285714286,
+            243.75
+        ],
+        "L": [
+            209.39285714285717,
+            175.0
+        ],
+        "A": [
+            31.41666666666667,
+            100.29761904761905
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "20",
+        "25"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        20.0,
+        25.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 18.383674,
+    "solution_predicate": "Equals(20.0, LengthOf(Line(F, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(G, radius_2_0), H on \u2299(G, radius_2_0), 10 = GH, K on \u2299(G, radius_2_0), F on \u2299(G, radius_2_0), G on AK, G on FH\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(G, radius_2_0)\nConclusions: radius_2_0 = AG\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : H on \u2299(G, radius_2_0)\nConclusions: radius_2_0 = GH\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : K on \u2299(G, radius_2_0)\nConclusions: radius_2_0 = GK\n\nStep 5:\nTheorem: Line Segment Split\nPremises : G on AK\nConclusions: AK = AG + GK\n\nStep 6:\nTheorem: Diameter Definition\nPremises : G on AK, K on \u2299(G, radius_2_0), A on \u2299(G, radius_2_0)\nConclusions: IsDiameterOf(AK, \u2299(G, radius_2_0))\n\nStep 7:\nTheorem: Diameter Definition\nPremises : G on FH, F on \u2299(G, radius_2_0), H on \u2299(G, radius_2_0)\nConclusions: IsDiameterOf(FH, \u2299(G, radius_2_0))\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_2_0 = GH, 10 = GH\nConclusions: 10 = radius_2_0\n\nStep 9:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AK, \u2299(G, radius_2_0))\nConclusions: radius_2_0 = AG, K on \u2299(G, radius_2_0), A on \u2299(G, radius_2_0), 2 * radius_2_0 = AK, radius_2_0 = GK\n\nStep 10:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(FH, \u2299(G, radius_2_0))\nConclusions: radius_2_0 = GH, 2 * radius_2_0 = FH, F on \u2299(G, radius_2_0), H on \u2299(G, radius_2_0)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 10 = radius_2_0, radius_2_0 = GK\nConclusions: 10 = GK\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 10 = radius_2_0, radius_2_0 = AG\nConclusions: 10 = AG\n\nStep 13:\nTheorem: Substitution\nPremises : AK = AG + GK, 10 = AG, 10 = GK, 2 * radius_2_0 = AK\nConclusions: 10 + 10 = 2 * radius_2_0\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_2_0 = FH, 10 + 10 = 2 * radius_2_0\nConclusions: 10 + 10 = FH\n\nStep 15:\nTheorem: Evaluate\nPremises : 10 + 10 = FH\nConclusions: 20 = FH\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, G)",
+        "Line(A, J)",
+        "Line(A, L)",
+        "Line(A, K)",
+        "Line(G, J)",
+        "Line(G, L)",
+        "Line(G, K)",
+        "Line(J, L)",
+        "Line(J, K)",
+        "Line(L, K)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(G, F)",
+        "Circle(K, radius_K)",
+        "Circle(J, radius_1_0)",
+        "Circle(G, radius_2_0)",
+        "Circle(L, radius_0_0)",
+        "PointLiesOnLine(G, Line(A, J))",
+        "PointLiesOnLine(G, Line(A, L))",
+        "PointLiesOnLine(G, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, L))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(G, L))",
+        "PointLiesOnLine(J, Line(G, K))",
+        "PointLiesOnLine(L, Line(A, K))",
+        "PointLiesOnLine(L, Line(G, K))",
+        "PointLiesOnLine(L, Line(J, K))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(K, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_2_0))",
+        "IntersectAt(Circle(G, radius_2_0), Circle(J, radius_1_0), Circle(K, radius_K), L)",
+        "Equals(LengthOf(Line(G, H)), 10.0)"
+    ],
+    "correct": true
+}

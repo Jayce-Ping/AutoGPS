@@ -1,0 +1,159 @@
+{
+    "problem_id": "889",
+    "solved": true,
+    "problem_text": "In \\triangle TUV, Y is the centroid. If UZ = 13.5, find UY.",
+    "logic_forms": [
+        "Line(T, V)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(U, T)",
+        "Line(U, V)",
+        "Line(U, W)",
+        "Line(U, X)",
+        "Line(U, Y)",
+        "Line(U, Z)",
+        "Line(W, V)",
+        "Line(X, T)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(Y, V)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Line(Z, V)",
+        "PointLiesOnLine(W, Line(U, V))",
+        "PointLiesOnLine(X, Line(U, T))",
+        "PointLiesOnLine(Y, Line(T, W))",
+        "PointLiesOnLine(Y, Line(U, Z))",
+        "PointLiesOnLine(Y, Line(X, V))",
+        "PointLiesOnLine(Z, Line(T, V))",
+        "Triangle(T,U,V)",
+        "IsCentroidOf(Point(Y),Triangle(T,U,V))",
+        "Equals(LengthOf(Line(U,Z)),13.5)",
+        "Find(LengthOf(Line(U,Y)))"
+    ],
+    "point_instances": [
+        "U",
+        "X",
+        "W",
+        "Y",
+        "T",
+        "Z",
+        "V"
+    ],
+    "line_instances": [
+        "TZ",
+        "TV",
+        "ZV",
+        "XY",
+        "XV",
+        "YV",
+        "UW",
+        "UV",
+        "WV",
+        "TY",
+        "TW",
+        "YW",
+        "UX",
+        "UT",
+        "XT",
+        "UY",
+        "UZ",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "U": [
+            163.21991701244815,
+            54.714285714285715
+        ],
+        "X": [
+            105.16182572614109,
+            132.40857142857143
+        ],
+        "W": [
+            317.67634854771785,
+            132.40857142857143
+        ],
+        "Y": [
+            227.85062240663902,
+            158.67142857142858
+        ],
+        "T": [
+            46.00829875518673,
+            210.72816326530614
+        ],
+        "Z": [
+            259.1487848251334,
+            210.10285714285715
+        ],
+        "V": [
+            470.16099585062244,
+            210.54057142857144
+        ]
+    },
+    "problem_choices": [
+        4.5,
+        6.75,
+        9.0,
+        40.5
+    ],
+    "choices_precise_value": [
+        4.5,
+        6.75,
+        9.0,
+        40.5
+    ],
+    "problem_answer": 9.0,
+    "total_time": 254.65572,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(U, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 13.5 = UZ, Y on UZ, IsCentroidOf(Y, \u25b3TUV)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : Y on UZ\nConclusions: UZ = UY + YZ\n\nStep 3:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(Y, \u25b3TUV)\nConclusions: UY = 2 * YZ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : UZ = UY + YZ, 13.5 = UZ\nConclusions: 13.5 = UY + YZ\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : UY = 2 * YZ, 13.5 = UY + YZ\nConclusions: 9 = UY\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, Z)",
+        "Line(T, V)",
+        "Line(Z, V)",
+        "Line(X, Y)",
+        "Line(X, V)",
+        "Line(Y, V)",
+        "Line(U, W)",
+        "Line(U, V)",
+        "Line(W, V)",
+        "Line(T, Y)",
+        "Line(T, W)",
+        "Line(Y, W)",
+        "Line(U, X)",
+        "Line(U, T)",
+        "Line(X, T)",
+        "Line(U, Y)",
+        "Line(U, Z)",
+        "Line(Y, Z)",
+        "Line(T, V)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(U, T)",
+        "Line(U, V)",
+        "Line(U, W)",
+        "Line(U, X)",
+        "Line(U, Y)",
+        "Line(U, Z)",
+        "Line(W, V)",
+        "Line(X, T)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(Y, V)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Line(Z, V)",
+        "PointLiesOnLine(W, Line(U, V))",
+        "PointLiesOnLine(X, Line(U, T))",
+        "PointLiesOnLine(Y, Line(T, W))",
+        "PointLiesOnLine(Y, Line(U, Z))",
+        "PointLiesOnLine(Y, Line(X, V))",
+        "PointLiesOnLine(Z, Line(T, V))",
+        "Triangle(T, U, V)",
+        "IsCentroidOf(Y, Triangle(T, U, V))",
+        "Equals(LengthOf(Line(U, Z)), 13.5)"
+    ],
+    "correct": true
+}

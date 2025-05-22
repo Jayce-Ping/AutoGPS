@@ -1,0 +1,92 @@
+{
+    "problem_id": "2870",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(E, D, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, A)), 109)",
+        "Equals(MeasureOf(Angle(A, D, C)), 33)",
+        "Equals(MeasureOf(Angle(D, A, C)), 24)",
+        "Equals(MeasureOf(Angle(C, E, D)), 95)",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DA",
+        "EC",
+        "EA",
+        "CA",
+        "ED",
+        "DC",
+        "DB",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            583.0182648401826,
+            214.675799086758
+        ],
+        "B": [
+            319.54794520547944,
+            20.15525114155251
+        ],
+        "C": [
+            243.7488584474886,
+            69.01369863013699
+        ],
+        "D": [
+            19.547945205479454,
+            214.675799086758
+        ],
+        "E": [
+            123.65753424657535,
+            17.41552511415526
+        ]
+    },
+    "problem_choices": [
+        "23",
+        "24",
+        "28",
+        "33"
+    ],
+    "choices_precise_value": [
+        23.0,
+        24.0,
+        28.0,
+        33.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 40.33362,
+    "solution_predicate": "Equals(0.4886921906, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (24 / 180) = \u2220CAD, CD, \u2220DCA, pi * (95 / 180) = \u2220DEC, \u2220ACB, C on AE, DE, \u2220BCE, \u2220ECD, \u2220BCA, AC, C on BD, CE, pi * (33 / 180) = \u2220ADC, \u2220DCE, AD, 3.14 = pi\n\nStep 2:\nTheorem: Circumference Split\nPremises : \u2220BCE, \u2220ECD, \u2220DCA, \u2220ACB\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220BCE = \u2220DCA, \u2220ACB = \u2220ECD, \u2220BCA = \u2220DCE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, DE, CE\nConclusions: \u25b3CDE\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCE\nConclusions: \u2220DCE = 2 * pi - \u2220ECD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCE = \u2220DCA, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD, \u2220ACB = \u2220ECD\nConclusions: 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCA = \u2220DCE, \u2220BCA = 2 * pi - \u2220ACB, \u2220ACB = \u2220ECD\nConclusions: \u2220DCE = 2 * 3.14 - \u2220ECD\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220CDE + \u2220DEC + \u2220ECD, pi * (95 / 180) = \u2220DEC, 3.14 = pi\nConclusions: 3.14 = 3.14 * (95 / 180) + \u2220CDE + \u2220ECD\n\nStep 13:\nTheorem: Substitution\nPremises : pi * (24 / 180) = \u2220CAD, pi = \u2220ADC + \u2220CAD + \u2220DCA, pi * (33 / 180) = \u2220ADC, 3.14 = pi\nConclusions: 3.14 = 3.14 * (24 / 180) + pi * (33 / 180) + \u2220DCA\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : \u2220DCE = 2 * pi - \u2220ECD, 3.14 = 3.14 * (95 / 180) + \u2220CDE + \u2220ECD, 3.14 = 3.14 * (24 / 180) + pi * (33 / 180) + \u2220DCA, 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD, \u2220DCE = 2 * 3.14 - \u2220ECD\nConclusions: 0.49 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(E, C)",
+        "Line(E, A)",
+        "Line(C, A)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "PointLiesOnLine(C, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(109.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(24.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(95.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,133 @@
+{
+    "problem_id": "8900",
+    "solved": true,
+    "problem_text": "Find PN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, P)), 3x+6)",
+        "Equals(LengthOf(Line(P, N)), 4x-2)",
+        "Equals(MeasureOf(Angle(L, M, P)), 25)",
+        "Equals(MeasureOf(Angle(N, M, P)), 25)",
+        "Equals(MeasureOf(Angle(N, M, P)), MeasureOf(Angle(L, M, P)))",
+        "Line(L, A)",
+        "Line(L, P)",
+        "Line(M, A)",
+        "Line(M, B)",
+        "Line(M, C)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, C)",
+        "Line(P, B)",
+        "Line(P, N)",
+        "Perpendicular(Line(M, A), Line(L, P))",
+        "Perpendicular(Line(M, C), Line(P, N))",
+        "PointLiesOnLine(L, Line(M, A))",
+        "PointLiesOnLine(N, Line(M, C))",
+        "PointLiesOnLine(P, Line(M, B))",
+        "Find(LengthOf(Line(P,N)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "A",
+        "P",
+        "B",
+        "N",
+        "C"
+    ],
+    "line_instances": [
+        "MP",
+        "MB",
+        "PB",
+        "MN",
+        "MC",
+        "NC",
+        "ML",
+        "MA",
+        "LA",
+        "LP",
+        "PN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            98.16535433070867,
+            183.168
+        ],
+        "L": [
+            345.4365704286964,
+            67.68
+        ],
+        "A": [
+            411.294201861131,
+            36.916363636363634
+        ],
+        "P": [
+            399.13385826771656,
+            183.60000000000002
+        ],
+        "B": [
+            447.3829634931998,
+            183.40363636363637
+        ],
+        "N": [
+            346.96206156048675,
+            299.84727272727275
+        ],
+        "C": [
+            412.8632784538297,
+            330.67636363636365
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        30.0,
+        50.0,
+        60.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        30.0,
+        50.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 102.474428,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(P, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220NMP = \u2220PML, 6 + 3 * x = LP, LM \u22a5 LP, 4 * x - 2 = NP, MN \u22a5 NP\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : LM \u22a5 LP\nConclusions: pi / 2 = \u2220MLP\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : MN \u22a5 NP\nConclusions: pi / 2 = \u2220PNM\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220PNM, pi / 2 = \u2220MLP\nConclusions: \u2220MLP = \u2220PNM\n\nStep 5:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220MLP = \u2220PNM, \u2220NMP = \u2220PML\nConclusions: \u25b3LMP \u2245 \u25b3NMP\n\nStep 6:\nTheorem: Congruent Definition\nPremises : \u25b3LMP \u2245 \u25b3NMP\nConclusions: LP = NP, \u2220NMP = \u2220PML\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : LP = NP, 4 * x - 2 = NP, 6 + 3 * x = LP\nConclusions: 6 + 3 * x = 4 * x - 2\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x - 2 = NP, 6 + 3 * x = 4 * x - 2\nConclusions: 6 + 3 * x = NP\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 6 + 3 * x = LP, 6 + 3 * x = 4 * x - 2\nConclusions: 30 = LP\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 6 + 3 * x = LP, 30 = LP\nConclusions: 30 = 6 + 3 * x\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 30 = 6 + 3 * x, 6 + 3 * x = NP\nConclusions: 30 = NP\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, B)",
+        "Line(P, B)",
+        "Line(M, N)",
+        "Line(M, C)",
+        "Line(N, C)",
+        "Line(M, L)",
+        "Line(M, A)",
+        "Line(L, A)",
+        "Line(L, P)",
+        "Line(P, N)",
+        "Line(L, A)",
+        "Line(L, P)",
+        "Line(M, A)",
+        "Line(M, B)",
+        "Line(M, C)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, C)",
+        "Line(P, B)",
+        "Line(P, N)",
+        "Perpendicular(Line(M, A), Line(L, P))",
+        "Perpendicular(Line(M, C), Line(P, N))",
+        "PointLiesOnLine(L, Line(M, A))",
+        "PointLiesOnLine(N, Line(M, C))",
+        "PointLiesOnLine(P, Line(M, B))",
+        "Equals(LengthOf(Line(L, P)), Add(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(P, N)), Sub(Mul(4.0, x), 2.0))",
+        "Equals(MeasureOf(Angle(P, M, L)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, M, P)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, M, P)), MeasureOf(Angle(P, M, L)))"
+    ],
+    "correct": true
+}

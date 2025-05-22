@@ -1,0 +1,98 @@
+{
+    "problem_id": "2623",
+    "solved": true,
+    "problem_text": "For trapezoid A B C D, S and T are midpoints of the legs. If A B = x + 4, C D = 3 x + 2, and S T = 9, find A B.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(A, C))",
+        "PointLiesOnLine(T, Line(B, D))",
+        "Trapezoid(A,B,C,D)",
+        "IsMidpointOf(Point(S),LegOf(Trapezoid(A,B,C,D)))",
+        "IsMidpointOf(Point(T),LegOf(Trapezoid(A,B,C,D)))",
+        "Equals(LengthOf(Line(A,B)),x+4)",
+        "Equals(LengthOf(Line(C,D)),3x+2)",
+        "Equals(LengthOf(Line(S,T)),9)",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "S",
+        "T",
+        "A",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AB",
+        "ST",
+        "CD",
+        "AS",
+        "AC",
+        "SC",
+        "BT",
+        "BD",
+        "TD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            407.71698113207543,
+            335.377358490566
+        ],
+        "S": [
+            131.30188679245282,
+            225.0
+        ],
+        "T": [
+            370.92452830188677,
+            225.0
+        ],
+        "A": [
+            169.50943396226413,
+            108.49056603773585
+        ],
+        "C": [
+            95.9245283018868,
+            334.4339622641509
+        ],
+        "B": [
+            331.3018867924528,
+            108.49056603773585
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "5",
+        "7",
+        "9"
+    ],
+    "choices_precise_value": [
+        3.0,
+        5.0,
+        7.0,
+        9.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 25.183908,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: S on AC, T on BD, 2 + 3 * x = CD, IsMidpointOf(T, BD), IsMidpointOf(S, AC), Trapezoid(A, B, D, C), 4 + x = AB, 9 = ST\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(T, BD)\nConclusions: BT = DT\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(S, AC)\nConclusions: AS = CS\n\nStep 4:\nTheorem: Median of Trapezoid\nPremises : BT = DT, Trapezoid(A, B, D, C), AS = CS\nConclusions: IsMedianOf(ST, Trapezoid(A, B, D, C))\n\nStep 5:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(ST, Trapezoid(A, B, D, C)), S on AC, T on BD\nConclusions: ST = (AB + CD) / 2\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : ST = (AB + CD) / 2, 9 = ST\nConclusions: 9 = (AB + CD) / 2\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 2 + 3 * x = CD, 4 + x = AB, 9 = (AB + CD) / 2\nConclusions: 7 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(S, T)",
+        "Line(C, D)",
+        "Line(A, S)",
+        "Line(A, C)",
+        "Line(S, C)",
+        "Line(B, T)",
+        "Line(B, D)",
+        "Line(T, D)",
+        "PointLiesOnLine(S, Line(A, C))",
+        "PointLiesOnLine(T, Line(B, D))",
+        "Trapezoid(A, B, D, C)",
+        "IsMidpointOf(S, Line(A, C))",
+        "IsMidpointOf(T, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), Add(x, 4.0))",
+        "Equals(LengthOf(Line(C, D)), Add(Mul(3.0, x), 2.0))",
+        "Equals(LengthOf(Line(S, T)), 9.0)"
+    ],
+    "correct": true
+}

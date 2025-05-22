@@ -1,0 +1,63 @@
+{
+    "problem_id": "2604",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, A)), 9)",
+        "Equals(LengthOf(Line(C, B)), x-3)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CA",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            96.78504672897196,
+            278.81619937694705
+        ],
+        "B": [
+            12.672897196261687,
+            133.6448598130841
+        ],
+        "C": [
+            181.5202492211838,
+            35.202492211838006
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "15",
+        "18",
+        "21"
+    ],
+    "choices_precise_value": [
+        12.0,
+        15.0,
+        18.0,
+        21.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 11.311951,
+    "solution_predicate": "Equals(15.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x - 3 = BC, 9 = AB, x = AC, BC, 3.14 = pi, AB \u22a5 BC, AC, AB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ABC\n\nStep 6:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC)\n\nStep 7:\nTheorem: Substitution\nPremises : x - 3 = BC, 9 = AB, x = AC, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC), 1.57 = \u2220ABC\nConclusions: (9 ** 2 + (x - 3) ** 2) - x ** 2 = 2 * 9 * cos(1.57) * (x - 3)\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : (9 ** 2 + (x - 3) ** 2) - x ** 2 = 2 * 9 * cos(1.57) * (x - 3)\nConclusions: 15 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, A)), 9.0)",
+        "Equals(LengthOf(Line(C, B)), Sub(x, 3.0))"
+    ],
+    "correct": true
+}

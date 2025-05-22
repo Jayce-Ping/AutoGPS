@@ -1,0 +1,67 @@
+{
+    "problem_id": "3584",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle P.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, Q)), 9.6)",
+        "Equals(LengthOf(Line(P, R)), 5.9)",
+        "Equals(LengthOf(Line(R, Q)), 10.5)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(R, Q)",
+        "Find(MeasureOf(Angle(P)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "R"
+    ],
+    "line_instances": [
+        "RQ",
+        "PQ",
+        "PR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            306.3316582914573,
+            44.758095238095244
+        ],
+        "P": [
+            57.527638190954775,
+            49.81142857142858
+        ],
+        "R": [
+            84.04307250538407,
+            201.4114285714286
+        ]
+    },
+    "problem_choices": [
+        33.762,
+        56.847,
+        64.725,
+        81.512
+    ],
+    "choices_precise_value": [
+        33.762,
+        56.847,
+        64.725,
+        81.512
+    ],
+    "problem_answer": 81.512,
+    "total_time": 6.327138,
+    "solution_predicate": "Equals(1.4226562164, MeasureOf(Angle(R, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 10.5 = QR, QR, 9.6 = PQ, 5.9 = PR, PQ, PR\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : PR, PQ, QR\nConclusions: \u25b3PQR\n\nStep 3:\nTheorem: Law of Cosines\nPremises : \u25b3PQR\nConclusions: (PQ ** 2 + PR ** 2) - QR ** 2 = 2 * PQ * PR * cos(\u2220RPQ)\n\nStep 4:\nTheorem: Substitution\nPremises : 5.9 = PR, (PQ ** 2 + PR ** 2) - QR ** 2 = 2 * PQ * PR * cos(\u2220RPQ), 9.6 = PQ, 10.5 = QR\nConclusions: (5.9 ** 2 + 9.6 ** 2) - 10.5 ** 2 = 2 * 5.9 * 9.6 * cos(\u2220RPQ)\n\nStep 5:\nTheorem: Solve Univariate Equation\nPremises : (5.9 ** 2 + 9.6 ** 2) - 10.5 ** 2 = 2 * 5.9 * 9.6 * cos(\u2220RPQ)\nConclusions: 1.42 = \u2220RPQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Q)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(R, Q)",
+        "Equals(LengthOf(Line(P, Q)), 9.6)",
+        "Equals(LengthOf(Line(P, R)), 5.9)",
+        "Equals(LengthOf(Line(R, Q)), 10.5)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,107 @@
+{
+    "problem_id": "6472",
+    "solved": true,
+    "problem_text": "Find m \\widehat RQ.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(N, A, P)), 51)",
+        "Equals(MeasureOf(Arc(N, P)), 74)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(N, A)",
+        "Line(N, Q)",
+        "Line(P, A)",
+        "Line(P, R)",
+        "PointLiesOnCircle(N, Circle(B))",
+        "PointLiesOnCircle(P, Circle(B))",
+        "PointLiesOnCircle(Q, Circle(B))",
+        "PointLiesOnCircle(R, Circle(B))",
+        "PointLiesOnLine(A, Line(N, Q))",
+        "PointLiesOnLine(A, Line(P, R))",
+        "Find(MeasureOf(Arc(R,Q)))"
+    ],
+    "point_instances": [
+        "R",
+        "Q",
+        "N",
+        "P",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "RA",
+        "RP",
+        "AP",
+        "NA",
+        "NQ",
+        "AQ"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "R": [
+            137.61214285714286,
+            338.5703125
+        ],
+        "Q": [
+            257.98285714285714,
+            353.625
+        ],
+        "N": [
+            200.51142857142858,
+            82.0
+        ],
+        "P": [
+            312.9,
+            123.0
+        ],
+        "A": [
+            229.88571428571427,
+            224.76785714285714
+        ],
+        "B": [
+            212.45238095238096,
+            219.54761904761904
+        ]
+    },
+    "problem_choices": [
+        14.0,
+        28.0,
+        37.0,
+        51.0
+    ],
+    "choices_precise_value": [
+        14.0,
+        28.0,
+        37.0,
+        51.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 63.576253,
+    "solution_predicate": "Equals(0.4886921906, MeasureOf(Arc(R, B, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (51 / 180) = \u2220PAN, \u2220PRB, Arc(RBQ), \u2220PBN, \u2220ARB, \u2220NQB, \u2220PAQ, N on \u2299(B, radius_B), BQ, AP, Arc(PBN), BP, \u2220PRB, \u2220RBN, AN, AQ, PR, AR, \u2220QAP, BR, \u2220NAR, BN, Q on \u2299(B, radius_B), NQ, A on PR, pi * (74 / 180) = Arc(PBN), R on \u2299(B, radius_B), \u2220PAN, \u2220BNQ, \u2220RBQ, \u2220BPR, \u2220NBR, \u2220RAQ, \u2220BRP, P on \u2299(B, radius_B), \u2220QBP, 3.14 = pi, A on NQ\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RBQ)\nConclusions: \u2220RBQ = Arc(RBQ)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ARB\nConclusions: \u2220ARB = 2 * pi - \u2220BRA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220PAQ\nConclusions: \u2220PAQ = 2 * pi - \u2220QAP\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : N on \u2299(B, radius_B)\nConclusions: radius_B = BN\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PBN)\nConclusions: \u2220PBN = Arc(PBN)\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220PRB\nConclusions: \u2220PRB = 2 * pi - \u2220BRP\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220RBN\nConclusions: \u2220RBN = 2 * pi - \u2220NBR\n\nStep 9:\nTheorem: Definition of Quadrilateral\nPremises : AP, BP, AQ, BQ\nConclusions: Quadrilateral(A, P, B, Q)\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : PR, BP, BR\nConclusions: \u25b3BPR\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : BN, AR, BR, AN\nConclusions: Quadrilateral(A, N, B, R)\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(B, radius_B)\nConclusions: radius_B = BQ\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : BN, BQ, NQ\nConclusions: \u25b3BNQ\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220PRB, A on PR\nConclusions: \u2220ARB = \u2220PRB\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : R on \u2299(B, radius_B)\nConclusions: radius_B = BR\n\nStep 16:\nTheorem: Same Angle\nPremises : A on PR, \u2220BPR\nConclusions: \u2220BPA = \u2220BPR\n\nStep 17:\nTheorem: Circumference Split\nPremises : \u2220RAQ, \u2220PAN, \u2220NAR, \u2220QAP\nConclusions: 2 * pi = \u2220NAR + \u2220PAN + \u2220QAP + \u2220RAQ\n\nStep 18:\nTheorem: Same Angle\nPremises : A on PR, \u2220BRP\nConclusions: \u2220BRA = \u2220BRP\n\nStep 19:\nTheorem: Point On Circle Def\nPremises : P on \u2299(B, radius_B)\nConclusions: radius_B = BP\n\nStep 20:\nTheorem: Circumference Split\nPremises : \u2220NBR, \u2220QBP, \u2220PBN, \u2220RBQ\nConclusions: 2 * pi = \u2220NBR + \u2220PBN + \u2220QBP + \u2220RBQ\n\nStep 21:\nTheorem: Same Angle\nPremises : A on NQ, \u2220NQB\nConclusions: \u2220AQB = \u2220NQB\n\nStep 22:\nTheorem: Same Angle\nPremises : \u2220BNQ, A on NQ\nConclusions: \u2220BNA = \u2220BNQ\n\nStep 23:\nTheorem: Vertical Angle Theorem\nPremises : A on PR, A on NQ\nConclusions: \u2220NAR = \u2220QAP, \u2220PAN = \u2220RAQ, \u2220PAQ = \u2220RAN\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * (74 / 180) = Arc(PBN), \u2220PBN = Arc(PBN)\nConclusions: pi * (74 / 180) = \u2220PBN\n\nStep 25:\nTheorem: Substitution\nPremises : \u2220RBN = 2 * pi - \u2220NBR, 3.14 = pi\nConclusions: \u2220RBN = 2 * 3.14 - \u2220NBR\n\nStep 26:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(Q, B, P, A)\nPremises : Quadrilateral(A, P, B, Q)\nConclusions: 2 * pi = \u2220AQB + \u2220BPA + \u2220PAQ + \u2220QBP\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(R, B, N, A)\nPremises : Quadrilateral(A, N, B, R)\nConclusions: 2 * pi = \u2220ARB + \u2220BNA + \u2220NAR + \u2220RBN\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BQ, radius_B = BN\nConclusions: BN = BQ\n\nStep 29:\nTheorem: Substitution\nPremises : \u2220ARB = \u2220PRB, 3.14 = pi, \u2220BRA = \u2220BRP, \u2220ARB = 2 * pi - \u2220BRA\nConclusions: \u2220PRB = 2 * 3.14 - \u2220BRP\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BP, radius_B = BR\nConclusions: BP = BR\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = \u2220PAN, \u2220PAN = \u2220RAQ\nConclusions: pi * (51 / 180) = \u2220RAQ\n\nStep 32:\nTheorem: Substitution\nPremises : \u2220PAQ = 2 * pi - \u2220QAP, 3.14 = pi, \u2220PAQ = \u2220RAN\nConclusions: \u2220RAN = 2 * 3.14 - \u2220QAP\n\nStep 33:\nTheorem: Substitution\nPremises : \u2220AQB = \u2220NQB, \u2220BPA = \u2220BPR, \u2220PAQ = \u2220RAN, 2 * pi = \u2220AQB + \u2220BPA + \u2220PAQ + \u2220QBP, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BPR + \u2220NQB + \u2220QBP + \u2220RAN\n\nStep 34:\nTheorem: Substitution\nPremises : \u2220BNA = \u2220BNQ, 2 * pi = \u2220ARB + \u2220BNA + \u2220NAR + \u2220RBN, \u2220ARB = \u2220PRB, 3.14 = pi, \u2220NAR = \u2220QAP\nConclusions: 2 * 3.14 = \u2220BNQ + \u2220PRB + \u2220QAP + \u2220RBN\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : BN = BQ, \u25b3BNQ\nConclusions: \u2220BNQ = \u2220NQB\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : BP = BR, \u25b3BPR\nConclusions: \u2220BPR = \u2220PRB\n\nStep 37:\nTheorem: Substitution\nPremises : pi * (51 / 180) = \u2220PAN, pi * (51 / 180) = \u2220RAQ, 2 * pi = \u2220NAR + \u2220PAN + \u2220QAP + \u2220RAQ, 3.14 = pi, \u2220NAR = \u2220QAP\nConclusions: 2 * 3.14 = 3.14 * (51 / 180) + pi * (51 / 180) + \u2220QAP + \u2220QAP\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : \u2220PRB = 2 * pi - \u2220BRP, 2 * 3.14 = 3.14 * (51 / 180) + pi * (51 / 180) + \u2220QAP + \u2220QAP, \u2220PRB = 2 * 3.14 - \u2220BRP\nConclusions: 2.25 = \u2220QAP\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : \u2220RAN = 2 * 3.14 - \u2220QAP, 2 * 3.14 = 3.14 * (51 / 180) + pi * (51 / 180) + \u2220QAP + \u2220QAP, 3.14 = pi, \u2220PAQ = \u2220RAN\nConclusions: 4.03 = \u2220PAQ\n\nStep 40:\nTheorem: Substitution\nPremises : 2 * 3.14 = \u2220BNQ + \u2220PRB + \u2220QAP + \u2220RBN, 2.25 = \u2220QAP, \u2220BNQ = \u2220NQB\nConclusions: 2 * 3.14 = 2.25 + \u2220NQB + \u2220PRB + \u2220RBN\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 4.03 = \u2220PAQ, \u2220PAQ = \u2220RAN\nConclusions: 4.03 = \u2220RAN\n\nStep 42:\nTheorem: Substitution\nPremises : 4.03 = \u2220RAN, 2 * 3.14 = \u2220BPR + \u2220NQB + \u2220QBP + \u2220RAN, \u2220BPR = \u2220PRB\nConclusions: 2 * 3.14 = 4.03 + \u2220NQB + \u2220PRB + \u2220QBP\n\nStep 43:\nTheorem: Solve Linear Equation System\nPremises : \u2220RBN = 2 * 3.14 - \u2220NBR, 2 * 3.14 = 2.25 + \u2220NQB + \u2220PRB + \u2220RBN, 2 * pi = \u2220NBR + \u2220PBN + \u2220QBP + \u2220RBQ, \u2220RBN = 2 * pi - \u2220NBR, pi * (74 / 180) = \u2220PBN, 2 * 3.14 = 4.03 + \u2220NQB + \u2220PRB + \u2220QBP\nConclusions: 0.49 = \u2220RBQ\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RBQ = Arc(RBQ), 0.49 = \u2220RBQ\nConclusions: 0.49 = Arc(RBQ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, A)",
+        "Line(R, P)",
+        "Line(A, P)",
+        "Line(N, A)",
+        "Line(N, Q)",
+        "Line(A, Q)",
+        "Circle(B, radius_B)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(N, A)",
+        "Line(N, Q)",
+        "Line(P, A)",
+        "Line(P, R)",
+        "PointLiesOnCircle(N, Circle(B, radius_B))",
+        "PointLiesOnCircle(P, Circle(B, radius_B))",
+        "PointLiesOnCircle(Q, Circle(B, radius_B))",
+        "PointLiesOnCircle(R, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(N, Q))",
+        "PointLiesOnLine(A, Line(P, R))",
+        "Equals(MeasureOf(Angle(P, A, N)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Arc(P, B, N)), Mul(pi, Div(74.0, 180.0)))"
+    ],
+    "correct": true
+}

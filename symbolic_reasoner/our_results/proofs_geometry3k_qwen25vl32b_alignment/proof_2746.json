@@ -1,0 +1,63 @@
+{
+    "problem_id": "2746",
+    "solved": true,
+    "problem_text": "Find A B.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, B)), 2x+5)",
+        "Equals(LengthOf(Line(B, C)), 3x-4)",
+        "Equals(LengthOf(Line(C, A)), 27)",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            235.77235772357724,
+            266.8943089430894
+        ],
+        "A": [
+            106.5040650406504,
+            77.46341463414635
+        ],
+        "C": [
+            450.0,
+            266.0813008130081
+        ]
+    },
+    "problem_choices": [
+        "23",
+        "24",
+        "25",
+        "27"
+    ],
+    "choices_precise_value": [
+        23.0,
+        24.0,
+        25.0,
+        27.0
+    ],
+    "problem_answer": 23.0,
+    "total_time": 7.925772,
+    "solution_predicate": "Equals(23.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB = BC, 3 * x - 4 = BC, 5 + 2 * x = AB\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : AB = BC, 3 * x - 4 = BC\nConclusions: 3 * x - 4 = AB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 4 = AB, 5 + 2 * x = AB\nConclusions: 5 + 2 * x = 3 * x - 4\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 5 + 2 * x = AB, 5 + 2 * x = 3 * x - 4\nConclusions: 23 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, x), 5.0))",
+        "Equals(LengthOf(Line(B, C)), Sub(Mul(3.0, x), 4.0))",
+        "Equals(LengthOf(Line(C, A)), 27.0)"
+    ],
+    "correct": true
+}

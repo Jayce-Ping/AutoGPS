@@ -1,0 +1,88 @@
+{
+    "problem_id": "925",
+    "solved": true,
+    "problem_text": "Find the area of the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(A, D)), 4)",
+        "Equals(MeasureOf(Angle(D, A, B)), 37)",
+        "Find(AreaOf(Triangle(A, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "AD",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            10.556104252400548,
+            173.5068783068783
+        ],
+        "B": [
+            216.12450142450143,
+            173.73802197802198
+        ],
+        "C": [
+            333.91185185185185,
+            174.09234285714282
+        ],
+        "D": [
+            216.10354938271604,
+            17.01142857142857
+        ]
+    },
+    "problem_choices": [
+        6.02,
+        7.54,
+        7.99,
+        9.42
+    ],
+    "choices_precise_value": [
+        6.02,
+        7.54,
+        7.99,
+        9.42
+    ],
+    "problem_answer": 9.42,
+    "total_time": 32.909858,
+    "solution_predicate": "Equals(6.018150231, AreaOf(Triangle(A, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = AC, sin(\u2220BAD), 3.14 = pi, \u25b3ACD, pi * (37 / 180) = \u2220BAD, AB \u22a5 BD, 4 = AD\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BAD), AB \u22a5 BD\nConclusions: BD / AD = sin(\u2220BAD)\n\nStep 3:\nTheorem: Area formula of Triangle(A, C, D)\nPremises : \u25b3ACD, AB \u22a5 BD\nConclusions: Area(\u25b3ACD) = (AC * BD) / 2\n\nStep 4:\nTheorem: Substitution\nPremises : BD / AD = sin(\u2220BAD), 4 = AD, pi * (37 / 180) = \u2220BAD\nConclusions: sin(pi * (37 / 180)) = BD / 4\n\nStep 5:\nTheorem: Substitution\nPremises : 5 = AC, Area(\u25b3ACD) = (AC * BD) / 2\nConclusions: Area(\u25b3ACD) = (5 * BD) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : sin(pi * (37 / 180)) = BD / 4, 3.14 = pi\nConclusions: sin(3.14 * (37 / 180)) = BD / 4\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3ACD) = (5 * BD) / 2, sin(3.14 * (37 / 180)) = BD / 4\nConclusions: 6.02 = Area(\u25b3ACD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(A, D)), 4.0)",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": false
+}

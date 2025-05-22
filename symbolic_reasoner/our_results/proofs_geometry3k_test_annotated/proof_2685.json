@@ -1,0 +1,93 @@
+{
+    "problem_id": "2685",
+    "solved": true,
+    "problem_text": "Find y so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(T, Line(R, P))",
+        "Equals(LengthOf(Line(T, S)), 2y+12)",
+        "Equals(LengthOf(Line(R, T)), x)",
+        "Equals(LengthOf(Line(Q, T)), 5y)",
+        "Equals(LengthOf(Line(T, P)), 5x-28)",
+        "Parallelogram(R, S, P, Q)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "T",
+        "P",
+        "R",
+        "Q",
+        "S"
+    ],
+    "line_instances": [
+        "QT",
+        "QS",
+        "TS",
+        "RT",
+        "RP",
+        "TP",
+        "QP",
+        "RQ",
+        "SP",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            156.3193717277487,
+            125.6544502617801
+        ],
+        "P": [
+            213.64921465968584,
+            198.42931937172773
+        ],
+        "R": [
+            99.5130890052356,
+            52.879581151832454
+        ],
+        "Q": [
+            43.23036649214659,
+            198.69109947643977
+        ],
+        "S": [
+            269.6701570680628,
+            52.09424083769633
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "16",
+        "20",
+        "24"
+    ],
+    "choices_precise_value": [
+        4.0,
+        16.0,
+        20.0,
+        24.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 63.879719,
+    "solution_predicate": "Equals(4.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 + 2 * y = ST, T on PR, 5 * y = QT, T on QS, Parallelogram(P, Q, R, S)\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : T on PR, T on QS, Parallelogram(P, Q, R, S)\nConclusions: QT = ST\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : QT = ST, 12 + 2 * y = ST, 5 * y = QT\nConclusions: 5 * y = 12 + 2 * y\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 5 * y = 12 + 2 * y\nConclusions: 4 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Line(R, T)",
+        "Line(R, P)",
+        "Line(T, P)",
+        "Line(Q, P)",
+        "Line(R, Q)",
+        "Line(S, P)",
+        "Line(R, S)",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(T, Line(R, P))",
+        "Parallelogram(R, S, P, Q)",
+        "Equals(LengthOf(Line(T, S)), Add(Mul(2.0, y), 12.0))",
+        "Equals(LengthOf(Line(R, T)), x)",
+        "Equals(LengthOf(Line(Q, T)), Mul(5.0, y))",
+        "Equals(LengthOf(Line(T, P)), Sub(Mul(5.0, x), 28.0))"
+    ],
+    "correct": true
+}

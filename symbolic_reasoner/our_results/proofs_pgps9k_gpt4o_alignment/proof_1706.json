@@ -1,0 +1,113 @@
+{
+    "problem_id": "1706",
+    "solved": true,
+    "problem_text": "Use \\odot D to find the length of \\widehat KL if JD = 7 centimeters.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(J, D, K)), 50)",
+        "Equals(MeasureOf(Angle(L, D, K)), 60)",
+        "Equals(MeasureOf(Angle(M, D, L)), 100)",
+        "Line(D, K)",
+        "Line(D, L)",
+        "Line(D, M)",
+        "Line(J, D)",
+        "Line(N, D)",
+        "Line(N, L)",
+        "PointLiesOnCircle(J, Circle(D))",
+        "PointLiesOnCircle(K, Circle(D))",
+        "PointLiesOnCircle(L, Circle(D))",
+        "PointLiesOnCircle(M, Circle(D))",
+        "PointLiesOnCircle(N, Circle(D))",
+        "PointLiesOnLine(D, Line(N, L))",
+        "Circle(D)",
+        "Equals(LengthOf(Line(J,D)),7)",
+        "Find(LengthOf(Arc(K,L)))"
+    ],
+    "point_instances": [
+        "N",
+        "M",
+        "D",
+        "J",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "MD",
+        "ND",
+        "NL",
+        "DL",
+        "JD",
+        "KD"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "N": [
+            78.63755656108596,
+            45.16346153846154
+        ],
+        "M": [
+            185.50574712643677,
+            54.02298850574713
+        ],
+        "D": [
+            126.23424926820002,
+            113.39784589236211
+        ],
+        "J": [
+            45.11165845648604,
+            135.13957307060755
+        ],
+        "L": [
+            174.01149425287358,
+            182.10180623973727
+        ],
+        "K": [
+            90.92446633825945,
+            189.32676518883414
+        ]
+    },
+    "problem_choices": [
+        6.109,
+        7.33,
+        9.774,
+        12.217
+    ],
+    "choices_precise_value": [
+        6.109,
+        7.33,
+        9.774,
+        12.217
+    ],
+    "problem_answer": 7.33,
+    "total_time": 14.290794,
+    "solution_predicate": "Equals(7.3303828584, LengthOf(Arc(K, D, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 7 = DJ, Arc(KDL), J on \u2299(D, radius_D), pi * (60 / 180) = \u2220KDL\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(KDL)\nConclusions: Arc(KDL) = radius_D * \u2220KDL\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : J on \u2299(D, radius_D)\nConclusions: radius_D = DJ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = DJ, 7 = DJ\nConclusions: 7 = radius_D\n\nStep 5:\nTheorem: Substitution\nPremises : Arc(KDL) = radius_D * \u2220KDL, 7 = radius_D, pi * (60 / 180) = \u2220KDL\nConclusions: 7 * pi * (60 / 180) = Arc(KDL)\n\nStep 6:\nTheorem: Evaluate\nPremises : 7 * pi * (60 / 180) = Arc(KDL)\nConclusions: 7.33 = Arc(KDL)\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, D)",
+        "Line(N, D)",
+        "Line(N, L)",
+        "Line(D, L)",
+        "Line(J, D)",
+        "Line(K, D)",
+        "Circle(D, radius_D)",
+        "Line(D, K)",
+        "Line(D, L)",
+        "Line(D, M)",
+        "Line(J, D)",
+        "Line(N, D)",
+        "Line(N, L)",
+        "PointLiesOnCircle(J, Circle(D, radius_D))",
+        "PointLiesOnCircle(K, Circle(D, radius_D))",
+        "PointLiesOnCircle(L, Circle(D, radius_D))",
+        "PointLiesOnCircle(M, Circle(D, radius_D))",
+        "PointLiesOnCircle(N, Circle(D, radius_D))",
+        "PointLiesOnLine(D, Line(N, L))",
+        "Circle(D, radius_D)",
+        "Equals(MeasureOf(Angle(J, D, K)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(K, D, L)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(L, D, M)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(LengthOf(Line(J, D)), 7.0)"
+    ],
+    "correct": true
+}

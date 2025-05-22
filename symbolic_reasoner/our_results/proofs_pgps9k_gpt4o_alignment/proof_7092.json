@@ -1,0 +1,69 @@
+{
+    "problem_id": "7092",
+    "solved": true,
+    "problem_text": "Find a.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 8)",
+        "Equals(LengthOf(Line(C, A)), 10)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(MeasureOf(Angle(C, A, B)), 60)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            57.354237288135586,
+            211.99942857142858
+        ],
+        "B": [
+            241.4915254237288,
+            212.1542857142857
+        ],
+        "A": [
+            191.71037763901276,
+            60.6387969924812
+        ]
+    },
+    "problem_choices": [
+        4.6,
+        5.9,
+        7.2,
+        9.2
+    ],
+    "choices_precise_value": [
+        4.6,
+        5.9,
+        7.2,
+        9.2
+    ],
+    "problem_answer": 7.2,
+    "total_time": 7.937441,
+    "solution_predicate": "Equals(9.1651513899, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, BC, AB, 8 = AB, AC, 10 = AC, pi * (60 / 180) = \u2220CAB, a = BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220CAB\nConclusions: 1.05 = \u2220CAB\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\n\nStep 6:\nTheorem: Substitution\nPremises : 8 = AB, 1.05 = \u2220CAB, 10 = AC, a = BC, (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\nConclusions: 10 * 2 * 8 * cos(1.05) = (10 ** 2 + 8 ** 2) - a ** 2\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 10 * 2 * 8 * cos(1.05) = (10 ** 2 + 8 ** 2) - a ** 2\nConclusions: 9.17 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(C, A)), 10.0)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": false
+}

@@ -1,0 +1,88 @@
+{
+    "problem_id": "173",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5x)",
+        "Equals(LengthOf(Line(C, D)), 3x+6)",
+        "Equals(MeasureOf(Arc(A, B)), 127)",
+        "Equals(MeasureOf(Arc(A, B)), MeasureOf(Arc(C, D)))",
+        "Equals(MeasureOf(Arc(C, D)), 127)",
+        "Line(A, B)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(B, Circle(E))",
+        "PointLiesOnCircle(C, Circle(E))",
+        "PointLiesOnCircle(D, Circle(E))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "CD"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            108.53510895883778,
+            224.02285714285713
+        ],
+        "B": [
+            352.2457627118644,
+            149.34857142857143
+        ],
+        "D": [
+            379.04406779661014,
+            311.4194285714285
+        ],
+        "C": [
+            124.66737288135594,
+            320.47714285714284
+        ],
+        "E": [
+            249.7676767676768,
+            249.4949494949495
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 41.72983,
+    "solution_predicate": "Equals(3.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on \u2299(E, radius_E), B on \u2299(E, radius_E), pi * (127 / 180) = Arc(CED), Arc(BEA), 6 + 3 * x = CD, Arc(CED), 5 * x = AB, C on \u2299(E, radius_E), pi * (127 / 180) = Arc(BEA), A on \u2299(E, radius_E)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : D on \u2299(E, radius_E)\nConclusions: radius_E = DE\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(E, radius_E)\nConclusions: radius_E = BE\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BEA)\nConclusions: \u2220BEA = Arc(BEA)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CED)\nConclusions: \u2220CED = Arc(CED)\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : C on \u2299(E, radius_E)\nConclusions: radius_E = CE\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(E, radius_E)\nConclusions: radius_E = AE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = BE, radius_E = DE\nConclusions: BE = DE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (127 / 180) = Arc(BEA), \u2220BEA = Arc(BEA)\nConclusions: pi * (127 / 180) = \u2220BEA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CED = Arc(CED), pi * (127 / 180) = Arc(CED)\nConclusions: pi * (127 / 180) = \u2220CED\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = CE, radius_E = AE\nConclusions: AE = CE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (127 / 180) = \u2220CED, pi * (127 / 180) = \u2220BEA\nConclusions: \u2220BEA = \u2220CED\n\nStep 13:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220BEA = \u2220CED, AE = CE, BE = DE\nConclusions: \u25b3ABE \u2245 \u25b3CDE\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3ABE \u2245 \u25b3CDE\nConclusions: \u2220BEA = \u2220CED, AB = CD, BE = DE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x = AB, AB = CD, 6 + 3 * x = CD\nConclusions: 5 * x = 6 + 3 * x\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 5 * x = 6 + 3 * x\nConclusions: 3 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Circle(E, radius_E)",
+        "Line(A, B)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(B, Circle(E, radius_E))",
+        "PointLiesOnCircle(C, Circle(E, radius_E))",
+        "PointLiesOnCircle(D, Circle(E, radius_E))",
+        "Equals(LengthOf(Line(A, B)), Mul(5.0, x))",
+        "Equals(LengthOf(Line(C, D)), Add(Mul(3.0, x), 6.0))",
+        "Equals(MeasureOf(Arc(B, E, A)), Mul(pi, Div(127.0, 180.0)))",
+        "Equals(MeasureOf(Arc(B, E, A)), MeasureOf(Arc(C, E, D)))",
+        "Equals(MeasureOf(Arc(C, E, D)), Mul(pi, Div(127.0, 180.0)))"
+    ],
+    "correct": true
+}

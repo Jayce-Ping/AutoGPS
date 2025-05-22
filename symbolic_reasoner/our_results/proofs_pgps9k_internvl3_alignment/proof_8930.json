@@ -1,0 +1,131 @@
+{
+    "problem_id": "8930",
+    "solved": true,
+    "problem_text": "Find m \\angle MNP.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, N)), 4)",
+        "Equals(MeasureOf(Angle(N, L, M)), 25)",
+        "Equals(MeasureOf(Angle(P, L, N)), 25)",
+        "Equals(MeasureOf(Angle(P, L, N)), MeasureOf(Angle(N, L, M)))",
+        "Line(L, A)",
+        "Line(L, B)",
+        "Line(L, C)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, P)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, B)",
+        "Line(N, P)",
+        "Line(P, C)",
+        "Perpendicular(Line(M, N), Line(L, A))",
+        "Perpendicular(Line(N, P), Line(L, C))",
+        "PointLiesOnLine(M, Line(L, A))",
+        "PointLiesOnLine(N, Line(L, B))",
+        "PointLiesOnLine(P, Line(L, C))",
+        "Find(MeasureOf(Angle(M,N,P)))"
+    ],
+    "point_instances": [
+        "A",
+        "M",
+        "L",
+        "N",
+        "B",
+        "C",
+        "P"
+    ],
+    "line_instances": [
+        "MN",
+        "NP",
+        "AM",
+        "AL",
+        "ML",
+        "LN",
+        "LB",
+        "NB",
+        "LP",
+        "LC",
+        "PC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            90.44380952380953,
+            398.3829787234042
+        ],
+        "M": [
+            113.27428571428571,
+            350.89361702127655
+        ],
+        "L": [
+            234.78071428571428,
+            92.67021276595744
+        ],
+        "N": [
+            234.45142857142858,
+            407.6170212765957
+        ],
+        "B": [
+            233.79285714285714,
+            464.99999999999994
+        ],
+        "C": [
+            376.9955555555556,
+            400.14184397163115
+        ],
+        "P": [
+            355.2992857142857,
+            351.2234042553191
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        50.0,
+        130.0,
+        140.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        50.0,
+        130.0,
+        140.0
+    ],
+    "problem_answer": 130.0,
+    "total_time": 64.207812,
+    "solution_predicate": "Equals(2.2689280276, MeasureOf(Angle(P, N, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (25 / 180) = \u2220MLN, M on AL, \u2220MNB, \u2220NLC, N on BL, \u2220ALP, \u2220MLN, LP, LM \u22a5 MN, MN, \u2220BLP, \u2220CLM, \u2220BNP, \u2220BLC, \u2220CLA, pi * (25 / 180) = \u2220NLP, 3.14 = pi, NP, LP \u22a5 NP, \u2220ALP, \u2220PNM, P on CL, LM\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ALP\nConclusions: \u2220ALP = 2 * pi - \u2220PLA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : LM \u22a5 MN\nConclusions: pi / 2 = \u2220NML\n\nStep 4:\nTheorem: Same Angle\nPremises : N on BL, \u2220BLP\nConclusions: \u2220BLP = \u2220NLP\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220MLN, \u2220CLM, \u2220NLC\nConclusions: 2 * pi = \u2220CLM + \u2220MLN + \u2220NLC\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220BLC, N on BL\nConclusions: \u2220BLC = \u2220NLC\n\nStep 7:\nTheorem: Same Angle\nPremises : M on AL, \u2220CLA\nConclusions: \u2220CLA = \u2220CLM\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : LP \u22a5 NP\nConclusions: pi / 2 = \u2220LPN\n\nStep 9:\nTheorem: Same Angle\nPremises : M on AL, \u2220ALP\nConclusions: \u2220ALP = \u2220MLP\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220BNP, \u2220PNM, \u2220MNB\nConclusions: 2 * pi = \u2220BNP + \u2220MNB + \u2220PNM\n\nStep 11:\nTheorem: Same Angle\nPremises : P on CL, \u2220CLA\nConclusions: \u2220CLA = \u2220PLA\n\nStep 12:\nTheorem: Same Angle\nPremises : P on CL, \u2220BLC\nConclusions: \u2220BLC = \u2220BLP\n\nStep 13:\nTheorem: Definition of Quadrilateral\nPremises : MN, LM, NP, LP\nConclusions: Quadrilateral(L, M, N, P)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ALP = 2 * pi - \u2220PLA, \u2220ALP = \u2220MLP\nConclusions: \u2220MLP = 2 * pi - \u2220PLA\n\nStep 15:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BNP + \u2220MNB + \u2220PNM, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BNP + \u2220MNB + \u2220PNM\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CLA = \u2220CLM, \u2220CLA = \u2220PLA\nConclusions: \u2220CLM = \u2220PLA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BLC = \u2220BLP, \u2220BLC = \u2220NLC\nConclusions: \u2220BLP = \u2220NLC\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, N, M, L)\nPremises : Quadrilateral(L, M, N, P)\nConclusions: 2 * pi = \u2220LPN + \u2220MLP + \u2220NML + \u2220PNM\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BNP + \u2220MNB + \u2220PNM, 2 * 3.14 = \u2220BNP + \u2220MNB + \u2220PNM\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * (25 / 180) = \u2220NLP, \u2220BLP = \u2220NLC, \u2220BLP = \u2220NLP\nConclusions: pi * (25 / 180) = \u2220NLC\n\nStep 21:\nTheorem: Substitution\nPremises : pi / 2 = \u2220LPN, 3.14 = pi, pi / 2 = \u2220NML, 2 * pi = \u2220LPN + \u2220MLP + \u2220NML + \u2220PNM\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + \u2220MLP + \u2220PNM\n\nStep 22:\nTheorem: Substitution\nPremises : pi * (25 / 180) = \u2220NLC, pi * (25 / 180) = \u2220MLN, 2 * pi = \u2220CLM + \u2220MLN + \u2220NLC, 3.14 = pi, \u2220CLM = \u2220PLA\nConclusions: 2 * 3.14 = 3.14 * (25 / 180) + pi * (25 / 180) + \u2220PLA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = pi / 2 + pi / 2 + \u2220MLP + \u2220PNM\nConclusions: 2 * pi = pi / 2 + pi / 2 + \u2220MLP + \u2220PNM\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (25 / 180) + pi * (25 / 180) + \u2220PLA\nConclusions: 2 * pi = 3.14 * (25 / 180) + pi * (25 / 180) + \u2220PLA\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = pi / 2 + pi / 2 + \u2220MLP + \u2220PNM, 2 * pi = 3.14 * (25 / 180) + pi * (25 / 180) + \u2220PLA, \u2220MLP = 2 * pi - \u2220PLA, 2 * 3.14 = 3.14 * (25 / 180) + pi * (25 / 180) + \u2220PLA\nConclusions: 2.27 = \u2220PNM\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(N, P)",
+        "Line(A, M)",
+        "Line(A, L)",
+        "Line(M, L)",
+        "Line(L, N)",
+        "Line(L, B)",
+        "Line(N, B)",
+        "Line(L, P)",
+        "Line(L, C)",
+        "Line(P, C)",
+        "Line(L, A)",
+        "Line(L, B)",
+        "Line(L, C)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, P)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, B)",
+        "Line(N, P)",
+        "Line(P, C)",
+        "Perpendicular(Line(M, N), Line(L, A))",
+        "Perpendicular(Line(N, P), Line(L, C))",
+        "PointLiesOnLine(M, Line(L, A))",
+        "PointLiesOnLine(N, Line(L, B))",
+        "PointLiesOnLine(P, Line(L, C))",
+        "Equals(LengthOf(Line(M, N)), 4.0)",
+        "Equals(MeasureOf(Angle(M, L, N)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, L, P)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, L, P)), MeasureOf(Angle(M, L, N)))"
+    ],
+    "correct": true
+}

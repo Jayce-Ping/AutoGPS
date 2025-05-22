@@ -1,0 +1,109 @@
+{
+    "problem_id": "5912",
+    "solved": true,
+    "problem_text": "m \\angle DBE = 50. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, C)), 5y-22)",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, E)), 3y)",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(E, D)))",
+        "Equals(MeasureOf(Angle(A, E, B)), 7x-2)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(A, B))",
+        "Perpendicular(Line(E, C), Line(B, D))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(MeasureOf(Angle(D,B,E)),50)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "CD",
+        "CE",
+        "DE",
+        "EA",
+        "AB",
+        "BE",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            264.85036496350364,
+            70.58701298701298
+        ],
+        "C": [
+            484.90328467153284,
+            99.26857142857143
+        ],
+        "A": [
+            134.75,
+            125.24408163265306
+        ],
+        "D": [
+            341.5280741156654,
+            189.4646153846154
+        ],
+        "E": [
+            196.53649635036496,
+            284.3137662337662
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        6.714,
+        9.571,
+        13.143
+    ],
+    "choices_precise_value": [
+        6.0,
+        6.714,
+        9.571,
+        13.143
+    ],
+    "problem_answer": 6.0,
+    "total_time": 89.050606,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD \u22a5 DE, 3.14 = pi, AB \u22a5 AE, BD, DE, pi * ((7 * x - 2) / 180) = \u2220BEA, \u2220EAB, BE, D on CE, pi * (50 / 180) = \u2220EBD, \u2220CEB, \u2220BAE, AB = BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 DE\nConclusions: pi / 2 = \u2220BDE\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AE\nConclusions: pi / 2 = \u2220EAB, (3 * pi) / 2 = \u2220BAE\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((7 * x - 2) / 180) = \u2220BEA, 3.14 = pi\nConclusions: 3.14 * ((7 * x - 2) / 180) = \u2220BEA\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220EAB\nConclusions: \u2220EAB = 2 * pi - \u2220BAE\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BD, BE, DE\nConclusions: \u25b3BDE\n\nStep 7:\nTheorem: Same Angle\nPremises : D on CE, \u2220CEB\nConclusions: \u2220CEB = \u2220DEB\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAE\nConclusions: \u2220BAE = 2 * pi - \u2220EAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EAB, pi / 2 = \u2220BDE\nConclusions: \u2220BDE = \u2220EAB\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220EAB, (3 * pi) / 2 = \u2220BAE, \u2220EAB = 2 * pi - \u2220BAE, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, E)\nPremises : \u25b3BDE\nConclusions: pi = \u2220BDE + \u2220DEB + \u2220EBD\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220EAB, (3 * pi) / 2 = \u2220BAE, \u2220BAE = 2 * pi - \u2220EAB, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 13:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : AB = BD, \u2220BDE = \u2220EAB\nConclusions: \u25b3ABE \u2245 \u25b3DBE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EAB, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220EAB\n\nStep 15:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220EBD, pi / 2 = \u2220BDE, pi = \u2220BDE + \u2220DEB + \u2220EBD, 3.14 = pi\nConclusions: 3.14 = pi / 2 + 3.14 * (50 / 180) + \u2220DEB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BAE, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220BAE\n\nStep 17:\nTheorem: Congruent Definition\nPremises : \u25b3ABE \u2245 \u25b3DBE\nConclusions: \u2220BEA = \u2220DEB, \u2220BDE = \u2220EAB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = 2 * pi - \u2220EAB, 2 * 3.14 - pi / 2 = \u2220BAE\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220EAB\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + 3.14 * (50 / 180) + \u2220DEB, \u2220CEB = \u2220DEB, 2 * 3.14 - pi / 2 = 2 * pi - \u2220EAB, 2 * 3.14 - (3 * pi) / 2 = \u2220EAB\nConclusions: 0.7 = \u2220CEB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 0.7 = \u2220CEB, \u2220CEB = \u2220DEB\nConclusions: 0.7 = \u2220DEB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220DEB, 0.7 = \u2220DEB, 3.14 * ((7 * x - 2) / 180) = \u2220BEA\nConclusions: 0.7 = 3.14 * ((7 * x - 2) / 180)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 0.7 = 3.14 * ((7 * x - 2) / 180)\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(E, A)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(A, B))",
+        "Perpendicular(Line(E, C), Line(B, D))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(B, C)), Sub(Mul(5.0, y), 22.0))",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, E)), Mul(3.0, y))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(E, D)))",
+        "Equals(MeasureOf(Angle(B, E, A)), Mul(pi, Div(Sub(Mul(7.0, x), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, D)), Mul(pi, Div(50.0, 180.0)))"
+    ],
+    "correct": true
+}

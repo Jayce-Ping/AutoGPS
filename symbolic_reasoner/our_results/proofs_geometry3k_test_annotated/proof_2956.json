@@ -1,0 +1,93 @@
+{
+    "problem_id": "2956",
+    "solved": true,
+    "problem_text": "Find A B.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Parallel(Line(D, C), Line(A, B))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, E)), 8)",
+        "Equals(LengthOf(Line(C, D)), 10)",
+        "Equals(LengthOf(Line(A, E)), 5)",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(Angle(E, C, D)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(A, E, B)))",
+        "Find(LengthOf(Line(A, B)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "E",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "AC",
+        "EC",
+        "DC",
+        "BE",
+        "BD",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            479.99999999999994,
+            304.5454545454545
+        ],
+        "D": [
+            479.99999999999994,
+            69.99999999999999
+        ],
+        "E": [
+            265.9090909090909,
+            183.63636363636363
+        ],
+        "A": [
+            95.9090909090909,
+            88.63636363636363
+        ],
+        "B": [
+            94.99999999999999,
+            274.5454545454545
+        ]
+    },
+    "problem_choices": [
+        "3.75",
+        "5",
+        "6.25",
+        "8.75"
+    ],
+    "choices_precise_value": [
+        3.75,
+        5.0,
+        6.25,
+        8.75
+    ],
+    "problem_answer": 6.25,
+    "total_time": 39.239848,
+    "solution_predicate": "Equals(6.25, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAE = \u2220DCE, E on BD, \u2220ABD, 5 = AE, 8 = CE, E on AC, \u2220CDB, AB || DC, 10 = CD\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220ABD, E on BD\nConclusions: \u2220ABD = \u2220ABE\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : E on AC, E on BD\nConclusions: \u2220BEA = \u2220DEC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CDB, E on BD\nConclusions: \u2220CDB = \u2220CDE\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ABD = \u2220CDB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = \u2220CDB, \u2220ABD = \u2220ABE\nConclusions: \u2220ABE = \u2220CDB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDB = \u2220CDE, \u2220ABE = \u2220CDB\nConclusions: \u2220ABE = \u2220CDE\n\nStep 8:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BAE = \u2220DCE, \u2220ABE = \u2220CDE, \u2220BEA = \u2220DEC\nConclusions: \u25b3ABE ~ \u25b3CDE\n\nStep 9:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3CDE\nConclusions: \u2220ABE = \u2220CDE, sim_ratio_triangle_a_b_e_triangle_c_d_e = AB / CD, \u2220BAE = \u2220DCE, sim_ratio_triangle_a_b_e_triangle_c_d_e = AE / CE\n\nStep 10:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_e_triangle_c_d_e = AE / CE, 5 = AE, 8 = CE\nConclusions: 5 / 8 = sim_ratio_triangle_a_b_e_triangle_c_d_e\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 5 / 8 = sim_ratio_triangle_a_b_e_triangle_c_d_e, sim_ratio_triangle_a_b_e_triangle_c_d_e = AB / CD\nConclusions: 5 / 8 = AB / CD\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 5 / 8 = AB / CD, 10 = CD\nConclusions: 6.25 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Parallel(Line(D, C), Line(A, B))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, E)), 8.0)",
+        "Equals(LengthOf(Line(C, D)), 10.0)",
+        "Equals(LengthOf(Line(A, E)), 5.0)",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(Angle(D, C, E)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(A, E, B)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "3593",
+    "solved": true,
+    "problem_text": "Find m \\angle Y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(V, W, Y)), x+8)",
+        "Equals(MeasureOf(Angle(W, V, U)), 3x-11)",
+        "Equals(MeasureOf(Angle(Y, Z, U)), 2x+7)",
+        "Equals(MeasureOf(Angle(Z, U, V)), x-8)",
+        "Equals(MeasureOf(Angle(Z, Y, W)), x)",
+        "Line(U, V)",
+        "Line(U, Z)",
+        "Line(V, W)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Find(MeasureOf(Angle(Y)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "W",
+        "V",
+        "U"
+    ],
+    "line_instances": [
+        "UV",
+        "UZ",
+        "ZY",
+        "YW",
+        "VW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            145.45454545454547,
+            398.95714285714286
+        ],
+        "Y": [
+            421.05263157894734,
+            501.3714285714285
+        ],
+        "W": [
+            421.05263157894734,
+            197.18571428571428
+        ],
+        "V": [
+            254.16267942583733,
+            92.5877551020408
+        ],
+        "U": [
+            94.0533151059467,
+            146.74285714285713
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        68.0,
+        70.0,
+        136.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        68.0,
+        70.0,
+        136.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 9.061809,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(W, Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: VW, WY, pi * ((7 + 2 * x) / 180) = \u2220YZU, pi * ((3 * x - 11) / 180) = \u2220UVW, UZ, pi * ((x - 8) / 180) = \u2220ZUV, 3.14 = pi, UV, pi * ((8 + x) / 180) = \u2220VWY, pi * (x / 180) = \u2220WYZ, YZ\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((3 * x - 11) / 180) = \u2220UVW, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 11) / 180) = \u2220UVW\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((7 + 2 * x) / 180) = \u2220YZU, 3.14 = pi\nConclusions: 3.14 * ((7 + 2 * x) / 180) = \u2220YZU\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((x - 8) / 180) = \u2220ZUV, 3.14 = pi\nConclusions: 3.14 * ((x - 8) / 180) = \u2220ZUV\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((8 + x) / 180) = \u2220VWY, 3.14 = pi\nConclusions: 3.14 * ((8 + x) / 180) = \u2220VWY\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220WYZ\nConclusions: 3.14 * (x / 180) = \u2220WYZ\n\nStep 7:\nTheorem: Definition of Pentagon\nPremises : VW, UV, WY, YZ, UZ\nConclusions: Pentagon(U, V, W, Y, Z)\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Pentagon(U, V, W, Y, Z)\nPremises : Pentagon(U, V, W, Y, Z)\nConclusions: 3 * pi = \u2220UVW + \u2220VWY + \u2220WYZ + \u2220YZU + \u2220ZUV\n\nStep 9:\nTheorem: Substitution\nPremises : 3 * pi = \u2220UVW + \u2220VWY + \u2220WYZ + \u2220YZU + \u2220ZUV, 3.14 = pi\nConclusions: 3 * 3.14 = \u2220UVW + \u2220VWY + \u2220WYZ + \u2220YZU + \u2220ZUV\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x - 11) / 180) = \u2220UVW, 3 * 3.14 = \u2220UVW + \u2220VWY + \u2220WYZ + \u2220YZU + \u2220ZUV, 3.14 * ((8 + x) / 180) = \u2220VWY, 3.14 * (x / 180) = \u2220WYZ, 3.14 * ((x - 8) / 180) = \u2220ZUV, 3.14 * ((7 + 2 * x) / 180) = \u2220YZU\nConclusions: 1.19 = \u2220WYZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(U, V)",
+        "Line(U, Z)",
+        "Line(Z, Y)",
+        "Line(Y, W)",
+        "Line(V, W)",
+        "Line(U, V)",
+        "Line(U, Z)",
+        "Line(V, W)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Equals(MeasureOf(Angle(V, W, Y)), Mul(pi, Div(Add(x, 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(U, V, W)), Mul(pi, Div(Sub(Mul(3.0, x), 11.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, U)), Mul(pi, Div(Add(Mul(2.0, x), 7.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Z, U, V)), Mul(pi, Div(Sub(x, 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(W, Y, Z)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

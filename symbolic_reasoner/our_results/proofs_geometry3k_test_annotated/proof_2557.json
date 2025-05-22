@@ -1,0 +1,79 @@
+{
+    "problem_id": "2557",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(C, E))",
+        "PointLiesOnCircle(C, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, C, D)), 5x-12)",
+        "Equals(MeasureOf(Angle(A, E, D)), 3x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "E",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "CE",
+        "AE",
+        "DE",
+        "DC"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "D": [
+            117.02202643171805,
+            134.36123348017622
+        ],
+        "C": [
+            117.46255506607929,
+            302.2026431718062
+        ],
+        "E": [
+            383.98237885462555,
+            134.36123348017622
+        ],
+        "A": [
+            249.62114537444933,
+            218.06167400881057
+        ]
+    },
+    "problem_choices": [
+        "10.25",
+        "12.75",
+        "18.75",
+        "25.5"
+    ],
+    "choices_precise_value": [
+        10.25,
+        12.75,
+        18.75,
+        25.5
+    ],
+    "problem_answer": 12.75,
+    "total_time": 32.905224,
+    "solution_predicate": "Equals(12.75, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on \u2299(A, radius_0_0), \u2220EDC, pi * ((3 * x) / 180) = \u2220DEA, AC, \u2220ADE, A on CE, pi * ((5 * x - 12) / 180) = \u2220ACD, 3.14 = pi, AE, D on \u2299(A, radius_0_0), AD, C on \u2299(A, radius_0_0), \u2220CDA, CD, DE\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AE\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((3 * x) / 180) = \u2220DEA, 3.14 = pi\nConclusions: 3.14 * ((3 * x) / 180) = \u2220DEA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((5 * x - 12) / 180) = \u2220ACD, 3.14 = pi\nConclusions: 3.14 * ((5 * x - 12) / 180) = \u2220ACD\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : D on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 6:\nTheorem: Diameter Definition\nPremises : A on CE, C on \u2299(A, radius_0_0), E on \u2299(A, radius_0_0)\nConclusions: IsDiameterOf(CE, \u2299(A, radius_0_0))\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : C on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AC\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220EDC, \u2220ADE, \u2220CDA\nConclusions: 2 * pi = \u2220ADE + \u2220CDA + \u2220EDC\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AD, DE, AE\nConclusions: \u25b3ADE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AE, radius_0_0 = AD\nConclusions: AD = AE\n\nStep 12:\nTheorem: Thales Theorem\nPremises : IsDiameterOf(CE, \u2299(A, radius_0_0)), D on \u2299(A, radius_0_0)\nConclusions: CD \u22a5 DE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AD, radius_0_0 = AC\nConclusions: AC = AD\n\nStep 14:\nTheorem: Issoceles Triangle Property\nPremises : AD = AE, \u25b3ADE\nConclusions: \u2220ADE = \u2220DEA\n\nStep 15:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220EDC\n\nStep 16:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACD, AC = AD\nConclusions: \u2220ACD = \u2220CDA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x) / 180) = \u2220DEA, \u2220ADE = \u2220DEA\nConclusions: 3.14 * ((3 * x) / 180) = \u2220ADE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220CDA, 3.14 * ((5 * x - 12) / 180) = \u2220ACD\nConclusions: 3.14 * ((5 * x - 12) / 180) = \u2220CDA\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 * ((3 * x) / 180) = \u2220ADE, 3.14 = pi, (3 * pi) / 2 = \u2220EDC, 3.14 * ((5 * x - 12) / 180) = \u2220CDA, 2 * pi = \u2220ADE + \u2220CDA + \u2220EDC\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * ((3 * x) / 180) + 3.14 * ((5 * x - 12) / 180)\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * ((3 * x) / 180) + 3.14 * ((5 * x - 12) / 180)\nConclusions: 12.75 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(A, Line(C, E))",
+        "PointLiesOnCircle(C, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, C, D)), Mul(pi, Div(Sub(Mul(5.0, x), 12.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, A)), Mul(pi, Div(Mul(3.0, x), 180.0)))"
+    ],
+    "correct": true
+}

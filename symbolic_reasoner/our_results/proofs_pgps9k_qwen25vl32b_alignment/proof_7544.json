@@ -1,0 +1,82 @@
+{
+    "problem_id": "7544",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, D)), 5x+62)",
+        "Equals(MeasureOf(Angle(C, A, B)), 37)",
+        "Equals(MeasureOf(Angle(C, B, A)), 3x+47)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "BD",
+        "CD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            43.05337078651685,
+            216.9475
+        ],
+        "B": [
+            314.0074906367041,
+            298.24666666666667
+        ],
+        "C": [
+            335.7739189649302,
+            111.00727272727272
+        ],
+        "D": [
+            344.8848938826466,
+            28.093333333333334
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        11.0,
+        37.0,
+        47.0
+    ],
+    "choices_precise_value": [
+        9.0,
+        11.0,
+        37.0,
+        47.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 8.238287,
+    "solution_predicate": "Equals(11.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((47 + 3 * x) / 180) = \u2220CBA, pi * ((62 + 5 * x) / 180) = \u2220DCA, \u2220DCA, \u2220DBA, \u2220ABD, \u2220DBA, AC, pi * (37 / 180) = \u2220BAC, BC, 3.14 = pi, AB, \u2220ABC, \u2220ACB, C on BD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBA\nConclusions: \u2220DBA = 2 * pi - \u2220ABD\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((62 + 5 * x) / 180) = \u2220DCA\nConclusions: 3.14 * ((62 + 5 * x) / 180) = \u2220DCA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((47 + 3 * x) / 180) = \u2220CBA, 3.14 = pi\nConclusions: 3.14 * ((47 + 3 * x) / 180) = \u2220CBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 7:\nTheorem: Straight Angle\nPremises : \u2220DCA, \u2220ACB\nConclusions: pi = \u2220ACB + \u2220DCA\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 9:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((47 + 3 * x) / 180) = \u2220CBA, pi * ((47 + 3 * x) / 180) = \u2220CBA\nConclusions: 3.14 * ((47 + 3 * x) / 180) = pi * ((47 + 3 * x) / 180)\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220DCA\nConclusions: 3.14 = \u2220ACB + \u2220DCA\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220ABD, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: \u2220ABD = 2 * 3.14 - \u2220CBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((47 + 3 * x) / 180) = \u2220CBA, \u2220CBA = \u2220DBA\nConclusions: pi * ((47 + 3 * x) / 180) = \u2220DBA\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (37 / 180) = \u2220BAC\nConclusions: 3.14 = pi * (37 / 180) + \u2220ACB + \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((47 + 3 * x) / 180) = \u2220DBA, 3.14 * ((47 + 3 * x) / 180) = pi * ((47 + 3 * x) / 180)\nConclusions: 3.14 * ((47 + 3 * x) / 180) = \u2220DBA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((47 + 3 * x) / 180) = \u2220DBA, \u2220DBA = 2 * pi - \u2220ABD\nConclusions: 3.14 * ((47 + 3 * x) / 180) = 2 * pi - \u2220ABD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((47 + 3 * x) / 180) = 2 * pi - \u2220ABD, 3.14 * ((47 + 3 * x) / 180) = \u2220CBA, 3.14 = \u2220ACB + \u2220DCA, 3.14 = pi * (37 / 180) + \u2220ACB + \u2220CBA, 3.14 * ((62 + 5 * x) / 180) = \u2220DCA, \u2220ABD = 2 * 3.14 - \u2220CBA\nConclusions: 11 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Add(Mul(5.0, x), 62.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(37.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Add(Mul(3.0, x), 47.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,94 @@
+{
+    "problem_id": "2486",
+    "solved": true,
+    "problem_text": "Circle O has a radius of 13 inches. Radius O B is perpendicular to chord C D which is 24 inches long. If m \\widehat C D = 134, find m \\widehat C B.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Perpendicular(Line(B, X), Line(D, X))",
+        "Equals(RadiusOf(Circle(O)), 13)",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "Equals(LengthOf(Line(C, D)), 24)",
+        "Find(MeasureOf(Arc(C, B)))"
+    ],
+    "point_instances": [
+        "X",
+        "B",
+        "O",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BX",
+        "BO",
+        "XO",
+        "CO",
+        "CX",
+        "CD",
+        "XD"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "X": [
+            177.0,
+            98.9556135770235
+        ],
+        "B": [
+            197.10443864229765,
+            60.052219321148826
+        ],
+        "O": [
+            156.89556135770235,
+            138.64229765013056
+        ],
+        "C": [
+            108.33159268929504,
+            65.0130548302872
+        ],
+        "D": [
+            244.1018276762402,
+            133.15926892950392
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "33",
+        "67",
+        "134"
+    ],
+    "choices_precise_value": [
+        24.0,
+        33.0,
+        67.0,
+        134.0
+    ],
+    "problem_answer": 67.0,
+    "total_time": 60.2012,
+    "solution_predicate": "Equals(1.1760052071, MeasureOf(Arc(B, O, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(BOC), 24 = CD, C on \u2299(O, radius_0_0), CX \u22a5 OX, CD, X on BO, D on \u2299(O, radius_0_0), \u2220DOB, X on CD, \u2220DOC, CO, \u2220COD, 13 = radius_0_0, \u2220BOC, DO, \u2299(O, radius_0_0)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BOC)\nConclusions: \u2220BOC = Arc(BOC)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = CO\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = DO\n\nStep 5:\nTheorem: Same Angle\nPremises : X on BO, \u2220DOB\nConclusions: \u2220DOB = \u2220DOX\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DOC\nConclusions: \u2220DOC = 2 * pi - \u2220COD\n\nStep 7:\nTheorem: Same Angle\nPremises : X on BO, \u2220BOC\nConclusions: \u2220BOC = \u2220XOC\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220BOC, \u2220COD, \u2220DOB\nConclusions: 2 * pi = \u2220BOC + \u2220COD + \u2220DOB\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : CD, DO, CO\nConclusions: \u25b3CDO\n\nStep 10:\nTheorem: Circle Vertical Theorem\nPremises : CX \u22a5 OX, \u2299(O, radius_0_0), X on CD\nConclusions: \u25b3COX \u2245 \u25b3DOX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_0_0, radius_0_0 = CO\nConclusions: 13 = CO\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = DO, 13 = radius_0_0\nConclusions: 13 = DO\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BOC = Arc(BOC), \u2220BOC = \u2220XOC\nConclusions: \u2220XOC = Arc(BOC)\n\nStep 14:\nTheorem: Law of Cosines\nPremises : \u25b3CDO\nConclusions: (CO ** 2 + DO ** 2) - CD ** 2 = 2 * CO * DO * cos(\u2220DOC)\n\nStep 15:\nTheorem: Congruent Definition\nPremises : \u25b3COX \u2245 \u25b3DOX\nConclusions: \u2220DOX = \u2220XOC\n\nStep 16:\nTheorem: Substitution\nPremises : (CO ** 2 + DO ** 2) - CD ** 2 = 2 * CO * DO * cos(\u2220DOC), 24 = CD, 13 = CO, 13 = DO\nConclusions: (13 ** 2 + 13 ** 2) - 24 ** 2 = 13 * 13 * 2 * cos(\u2220DOC)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DOX = \u2220XOC, \u2220XOC = Arc(BOC)\nConclusions: \u2220DOX = Arc(BOC)\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : (13 ** 2 + 13 ** 2) - 24 ** 2 = 13 * 13 * 2 * cos(\u2220DOC)\nConclusions: 2.35 = \u2220DOC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DOB = \u2220DOX, \u2220DOX = Arc(BOC), \u2220BOC = Arc(BOC)\nConclusions: \u2220BOC = \u2220DOB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DOC = 2 * pi - \u2220COD, 2.35 = \u2220DOC\nConclusions: 2.35 = 2 * pi - \u2220COD\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220BOC + \u2220COD + \u2220DOB, 2.35 = 2 * pi - \u2220COD, \u2220BOC = \u2220DOB\nConclusions: 1.18 = \u2220BOC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BOC = Arc(BOC), 1.18 = \u2220BOC\nConclusions: 1.18 = Arc(BOC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, X)",
+        "Line(B, O)",
+        "Line(X, O)",
+        "Line(C, O)",
+        "Line(C, X)",
+        "Line(C, D)",
+        "Line(X, D)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Perpendicular(Line(B, X), Line(D, X))",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "Equals(radius_0_0, 13.0)",
+        "Equals(LengthOf(Line(C, D)), 24.0)"
+    ],
+    "correct": true
+}

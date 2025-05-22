@@ -1,0 +1,136 @@
+{
+    "problem_id": "2493",
+    "solved": true,
+    "problem_text": "In \\odot M, F L = 24, H J = 48, and m \\widehat H P = 65. Find F G.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Equals(LengthOf(Line(F, L)), 24)",
+        "Equals(LengthOf(Line(H, J)), 48)",
+        "Equals(MeasureOf(Arc(H, P)), 65)",
+        "Find(LengthOf(Line(F, G)))"
+    ],
+    "point_instances": [
+        "G",
+        "N",
+        "H",
+        "K",
+        "P",
+        "M",
+        "F",
+        "J",
+        "L"
+    ],
+    "line_instances": [
+        "FL",
+        "FG",
+        "LG",
+        "KL",
+        "KM",
+        "LM",
+        "MN",
+        "MP",
+        "NP",
+        "HN",
+        "HJ",
+        "NJ"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "G": [
+            388.9009900990099,
+            141.07920792079207
+        ],
+        "N": [
+            239.89108910891088,
+            303.9504950495049
+        ],
+        "H": [
+            109.1980198019802,
+            256.9207920792079
+        ],
+        "K": [
+            238.40594059405942,
+            81.17821782178218
+        ],
+        "P": [
+            210.68316831683165,
+            384.64356435643566
+        ],
+        "M": [
+            265.63366336633663,
+            235.63366336633663
+        ],
+        "F": [
+            115.63366336633663,
+            186.12871287128712
+        ],
+        "J": [
+            370.08910891089107,
+            351.970297029703
+        ],
+        "L": [
+            251.77227722772278,
+            163.85148514851485
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "32",
+        "48",
+        "65"
+    ],
+    "choices_precise_value": [
+        24.0,
+        32.0,
+        48.0,
+        65.0
+    ],
+    "problem_answer": 48.0,
+    "total_time": 233.489465,
+    "solution_predicate": "Equals(48.0, LengthOf(Line(F, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: L on FG, \u2299(M, radius_0_0), FL \u22a5 LM, 24 = FL\n\nStep 2:\nTheorem: Line Segment Split\nPremises : L on FG\nConclusions: FG = FL + GL\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : FL \u22a5 LM, L on FG, \u2299(M, radius_0_0)\nConclusions: FL = GL\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : FL = GL, 24 = FL\nConclusions: 24 = GL\n\nStep 5:\nTheorem: Evaluate\nPremises : 24 = FL, 24 = GL\nConclusions: 48 = FL + GL\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : FG = FL + GL, 48 = FL + GL\nConclusions: 48 = FG\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, L)",
+        "Line(F, G)",
+        "Line(L, G)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Line(H, N)",
+        "Line(H, J)",
+        "Line(N, J)",
+        "Circle(M, radius_0_0)",
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Equals(LengthOf(Line(F, L)), 24.0)",
+        "Equals(LengthOf(Line(H, J)), 48.0)",
+        "Equals(MeasureOf(Arc(H, M, P)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

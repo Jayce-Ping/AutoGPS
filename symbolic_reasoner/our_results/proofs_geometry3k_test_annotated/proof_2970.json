@@ -1,0 +1,107 @@
+{
+    "problem_id": "2970",
+    "solved": true,
+    "problem_text": "Find m \\angle W Y Z.",
+    "logic_forms": [
+        "PointLiesOnLine(Z, Line(A, Y))",
+        "PointLiesOnLine(X, Line(C, Y))",
+        "PointLiesOnLine(W, Line(B, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "Perpendicular(Line(Y, Z), Line(W, Z))",
+        "Equals(LengthOf(Line(W, X)), 4)",
+        "Equals(LengthOf(Line(Z, W)), 4)",
+        "Equals(MeasureOf(Angle(X, Y, W)), 23)",
+        "Find(MeasureOf(Angle(W, Y, Z)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AZ",
+        "AY",
+        "ZY",
+        "CX",
+        "CY",
+        "XY",
+        "BW",
+        "BY",
+        "WY",
+        "WZ",
+        "XW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            160.46774193548387,
+            282.66129032258067
+        ],
+        "Y": [
+            412.48387096774195,
+            183.06451612903226
+        ],
+        "X": [
+            160.8709677419355,
+            81.45161290322581
+        ],
+        "W": [
+            121.75806451612902,
+            183.46774193548387
+        ],
+        "A": [
+            77.40322580645162,
+            316.1290322580645
+        ],
+        "B": [
+            62.88709677419355,
+            183.46774193548387
+        ],
+        "C": [
+            83.85483870967742,
+            51.612903225806456
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "16",
+        "23",
+        "32"
+    ],
+    "choices_precise_value": [
+        4.0,
+        16.0,
+        23.0,
+        32.0
+    ],
+    "problem_answer": 23.0,
+    "total_time": 54.876234,
+    "solution_predicate": "Equals(0.401425728, MeasureOf(Angle(W, Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BYA, 4 = WZ, 4 = WX, W on BY, Z on AY, \u2220BYZ, WZ \u22a5 YZ, WX \u22a5 XY, 3.14 = pi, pi * (23 / 180) = \u2220XYW\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 4 = WZ, 4 = WX\nConclusions: WX = WZ\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BYA, W on BY\nConclusions: \u2220BYA = \u2220WYA\n\nStep 4:\nTheorem: Same Angle\nPremises : Z on AY, \u2220BYA\nConclusions: \u2220BYA = \u2220BYZ\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BYZ, W on BY\nConclusions: \u2220BYZ = \u2220WYZ\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 YZ\nConclusions: pi / 2 = \u2220YZW\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 XY\nConclusions: pi / 2 = \u2220WXY\n\nStep 8:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.4 = pi * (23 / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BYA = \u2220BYZ, \u2220BYA = \u2220WYA\nConclusions: \u2220BYZ = \u2220WYA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220WXY, pi / 2 = \u2220YZW\nConclusions: \u2220WXY = \u2220YZW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (23 / 180) = \u2220XYW, 0.4 = pi * (23 / 180)\nConclusions: 0.4 = \u2220XYW\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BYZ = \u2220WYZ, \u2220BYZ = \u2220WYA\nConclusions: \u2220WYA = \u2220WYZ\n\nStep 13:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220WXY = \u2220YZW, WX = WZ\nConclusions: \u25b3WXY \u2245 \u25b3WZY\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3WZY\nConclusions: \u2220WXY = \u2220YZW, \u2220WYZ = \u2220XYW\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYZ = \u2220XYW, 0.4 = \u2220XYW, \u2220WYA = \u2220WYZ\nConclusions: 0.4 = \u2220WYA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 0.4 = \u2220WYA, \u2220WYA = \u2220WYZ\nConclusions: 0.4 = \u2220WYZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, Z)",
+        "Line(A, Y)",
+        "Line(Z, Y)",
+        "Line(C, X)",
+        "Line(C, Y)",
+        "Line(X, Y)",
+        "Line(B, W)",
+        "Line(B, Y)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "PointLiesOnLine(Z, Line(A, Y))",
+        "PointLiesOnLine(X, Line(C, Y))",
+        "PointLiesOnLine(W, Line(B, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "Perpendicular(Line(Y, Z), Line(W, Z))",
+        "Equals(LengthOf(Line(W, X)), 4.0)",
+        "Equals(LengthOf(Line(Z, W)), 4.0)",
+        "Equals(MeasureOf(Angle(X, Y, W)), Mul(pi, Div(23.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,116 @@
+{
+    "problem_id": "2631",
+    "solved": true,
+    "problem_text": "Find x so that a \\parallel b.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(C, F, G)), 8x+1)",
+        "Equals(MeasureOf(Angle(F, C, D)), 4x+11)",
+        "Parallel(Line(B, D), Line(E, G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AC",
+        "AF",
+        "AH",
+        "CF",
+        "CH",
+        "FH",
+        "EF",
+        "EG",
+        "FG",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            32.37704918032787,
+            128.54098360655738
+        ],
+        "B": [
+            64.75409836065575,
+            45.344262295081975
+        ],
+        "C": [
+            136.47540983606558,
+            128.13114754098362
+        ],
+        "D": [
+            223.7704918032787,
+            228.95081967213116
+        ],
+        "E": [
+            350.40983606557376,
+            42.06557377049181
+        ],
+        "F": [
+            423.3606557377049,
+            128.54098360655738
+        ],
+        "G": [
+            506.9672131147541,
+            228.95081967213116
+        ],
+        "H": [
+            503.6885245901639,
+            128.13114754098362
+        ]
+    },
+    "problem_choices": [
+        "2.5",
+        "14",
+        "15",
+        "16"
+    ],
+    "choices_precise_value": [
+        2.5,
+        14.0,
+        15.0,
+        16.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 40.677242,
+    "solution_predicate": "Equals(14.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on EG, \u2220GFH, pi * ((1 + 8 * x) / 180) = \u2220CFG, \u2220HFE, pi * ((11 + 4 * x) / 180) = \u2220DCF, F on CH, BD || EG, \u2220CFG, \u2220EFC, 3.14 = pi, \u2220HCB\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : F on CH, F on EG\nConclusions: \u2220EFC = \u2220GFH\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : BD || EG\nConclusions: \u2220CFG = \u2220FCB, \u2220DCF = \u2220EFC\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BD || EG\nConclusions: \u2220HCB = \u2220HFE\n\nStep 5:\nTheorem: Circumference Split\nPremises : \u2220EFC, \u2220GFH, \u2220CFG, \u2220HFE\nConclusions: 2 * pi = \u2220CFG + \u2220EFC + \u2220GFH + \u2220HFE\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((1 + 8 * x) / 180) = \u2220CFG, 3.14 = pi\nConclusions: 3.14 * ((1 + 8 * x) / 180) = \u2220CFG\n\nStep 7:\nTheorem: Same Angle\nPremises : F on CH, \u2220HCB\nConclusions: \u2220FCB = \u2220HCB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((1 + 8 * x) / 180) = \u2220CFG, \u2220CFG = \u2220FCB\nConclusions: pi * ((1 + 8 * x) / 180) = \u2220FCB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 + 4 * x) / 180) = \u2220DCF, \u2220DCF = \u2220EFC\nConclusions: pi * ((11 + 4 * x) / 180) = \u2220EFC\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220CFG + \u2220EFC + \u2220GFH + \u2220HFE\nConclusions: 2 * 3.14 = \u2220CFG + \u2220EFC + \u2220GFH + \u2220HFE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HCB = \u2220HFE, pi * ((1 + 8 * x) / 180) = \u2220FCB, \u2220FCB = \u2220HCB\nConclusions: pi * ((1 + 8 * x) / 180) = \u2220HFE\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((11 + 4 * x) / 180) = \u2220EFC\nConclusions: 3.14 * ((11 + 4 * x) / 180) = \u2220EFC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 + 4 * x) / 180) = \u2220EFC, \u2220EFC = \u2220GFH\nConclusions: pi * ((11 + 4 * x) / 180) = \u2220GFH\n\nStep 14:\nTheorem: Substitution\nPremises : pi * ((1 + 8 * x) / 180) = \u2220HFE, 3.14 = pi\nConclusions: 3.14 * ((1 + 8 * x) / 180) = \u2220HFE\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((11 + 4 * x) / 180) = \u2220GFH\nConclusions: 3.14 * ((11 + 4 * x) / 180) = \u2220GFH\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((1 + 8 * x) / 180) = \u2220HFE, 3.14 * ((1 + 8 * x) / 180) = \u2220CFG, 3.14 * ((11 + 4 * x) / 180) = \u2220EFC, 3.14 * ((11 + 4 * x) / 180) = \u2220GFH, 2 * 3.14 = \u2220CFG + \u2220EFC + \u2220GFH + \u2220HFE\nConclusions: 14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(F, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Parallel(Line(B, D), Line(E, G))",
+        "Equals(MeasureOf(Angle(C, F, G)), Mul(pi, Div(Add(Mul(8.0, x), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, F)), Mul(pi, Div(Add(Mul(4.0, x), 11.0), 180.0)))"
+    ],
+    "correct": true
+}

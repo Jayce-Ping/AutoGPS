@@ -1,0 +1,78 @@
+{
+    "problem_id": "2955",
+    "solved": true,
+    "problem_text": "\\angle 6 and \\angle 8 are complementary, m \\angle 8 = 47. Find the measure of \\angle 7.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, C, E)), MeasureOf(angle 7))",
+        "Equals(Add(MeasureOf(angle 6), MeasureOf(angle 8)), \\pi/2)",
+        "Equals(MeasureOf(angle 8), 47)",
+        "Find(MeasureOf(angle 7))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            33.622559652928416,
+            122.65943600867678
+        ],
+        "B": [
+            18.43817787418655,
+            27.21475054229935
+        ],
+        "C": [
+            147.93926247288502,
+            27.431670281995657
+        ],
+        "D": [
+            267.2451193058568,
+            27.86550976138828
+        ],
+        "E": [
+            257.70065075921906,
+            158.0173535791757
+        ]
+    },
+    "problem_choices": [
+        "43",
+        "47",
+        "86",
+        "90"
+    ],
+    "choices_precise_value": [
+        43.0,
+        47.0,
+        86.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 4.974897,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(A, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi / 2 = \u2220BCA + \u2220ECD, \u2220ACE, \u2220BCE, 3.14 = pi, \u2220ECB, pi * (47 / 180) = \u2220ECD, \u2220ECD, \u2220BCA, \u2220BCE\n\nStep 2:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCA + \u2220ECD, 3.14 = pi, pi * (47 / 180) = \u2220ECD\nConclusions: 3.14 / 2 = 3.14 * (47 / 180) + \u2220BCA\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220BCE, \u2220ECD\nConclusions: pi = \u2220BCE + \u2220ECD\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220BCA, \u2220ECB, \u2220ACE\nConclusions: 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (47 / 180) = \u2220ECD, pi = \u2220BCE + \u2220ECD\nConclusions: 3.14 = 3.14 * (47 / 180) + \u2220BCE\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\nConclusions: 2 * 3.14 = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCE = 2 * pi - \u2220ECB\nConclusions: \u2220BCE = 2 * 3.14 - \u2220ECB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (47 / 180) + \u2220BCE, 2 * 3.14 = \u2220ACE + \u2220BCA + \u2220ECB, 3.14 / 2 = 3.14 * (47 / 180) + \u2220BCA, \u2220BCE = 2 * 3.14 - \u2220ECB\nConclusions: 1.57 = \u2220ACE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(Add(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(E, C, D))), Div(pi, 2.0))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(47.0, 180.0)))"
+    ],
+    "correct": true
+}

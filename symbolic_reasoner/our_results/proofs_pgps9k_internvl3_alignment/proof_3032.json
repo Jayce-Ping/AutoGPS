@@ -1,0 +1,69 @@
+{
+    "problem_id": "3032",
+    "solved": true,
+    "problem_text": "Express the ratio of \\sin J.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, J)), 5)",
+        "Equals(LengthOf(Line(L, J)), 13)",
+        "Equals(LengthOf(Line(L, K)), 12)",
+        "Line(J, K)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Perpendicular(Line(L, K), Line(J, K))",
+        "Find(RatioOf(SinOf(Angle(J))))"
+    ],
+    "point_instances": [
+        "L",
+        "K",
+        "J"
+    ],
+    "line_instances": [
+        "LK",
+        "KJ",
+        "LJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            39.99485596707819,
+            168.18285714285713
+        ],
+        "K": [
+            260.52846195949644,
+            168.50128078817733
+        ],
+        "J": [
+            260.8121693121693,
+            46.285714285714285
+        ]
+    },
+    "problem_choices": [
+        0.385,
+        0.923,
+        1.083,
+        2.4
+    ],
+    "choices_precise_value": [
+        0.385,
+        0.923,
+        1.083,
+        2.4
+    ],
+    "problem_answer": 0.923,
+    "total_time": 10.402103,
+    "solution_predicate": "Equals(0.9230769231, SinOf(MeasureOf(Angle(L, J, K))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JL, 13 = JL, KL, cos(\u2220KLJ), \u2220LJK, 12 = KL, \u2220KLJ, JK \u22a5 KL, JK\n\nStep 2:\nTheorem: Evaluate\nPremises : 13 = JL, 12 = KL\nConclusions: 0.92 = KL / JL\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : JK \u22a5 KL, cos(\u2220KLJ)\nConclusions: KL / JL = cos(\u2220KLJ)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : KL, JK, JL\nConclusions: \u25b3JKL\n\nStep 5:\nTheorem: Substitution\nPremises : KL / JL = cos(\u2220KLJ), 13 = JL, 12 = KL\nConclusions: 12 / 13 = cos(\u2220KLJ)\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : JK \u22a5 KL, \u2220LJK, \u25b3JKL\nConclusions: KL / JL = sin(\u2220LJK)\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : JK \u22a5 KL, \u2220KLJ, \u25b3JKL\nConclusions: KL / JL = cos(\u2220KLJ)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 12 / 13 = cos(\u2220KLJ), KL / JL = cos(\u2220KLJ)\nConclusions: 12 / 13 = KL / JL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 12 / 13 = KL / JL, 0.92 = KL / JL\nConclusions: 0.92 = 12 / 13\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = 12 / 13, 12 / 13 = cos(\u2220KLJ)\nConclusions: 0.92 = cos(\u2220KLJ)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = cos(\u2220KLJ), KL / JL = cos(\u2220KLJ)\nConclusions: 0.92 = KL / JL\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = KL / JL, KL / JL = sin(\u2220LJK)\nConclusions: 0.92 = sin(\u2220LJK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, K)",
+        "Line(K, J)",
+        "Line(L, J)",
+        "Line(J, K)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Perpendicular(Line(L, K), Line(J, K))",
+        "Equals(LengthOf(Line(K, J)), 5.0)",
+        "Equals(LengthOf(Line(L, J)), 13.0)",
+        "Equals(LengthOf(Line(L, K)), 12.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,109 @@
+{
+    "problem_id": "6882",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Z, T, W)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(Z, T, Y)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(Z, W, T)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), 52)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 38)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, X)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Perpendicular(Line(W, X), Line(T, W))",
+        "Perpendicular(Line(Y, W), Line(T, Z))",
+        "Perpendicular(Line(Y, X), Line(T, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "W",
+        "Z",
+        "T"
+    ],
+    "line_instances": [
+        "YZ",
+        "YW",
+        "ZW",
+        "YX",
+        "XW",
+        "YT",
+        "TW",
+        "TZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            88.30530612244897,
+            376.58399999999995
+        ],
+        "X": [
+            496.5315192743764,
+            376.5028571428571
+        ],
+        "W": [
+            496.2612244897959,
+            57.20571428571428
+        ],
+        "Z": [
+            245.69795918367345,
+            253.16571428571427
+        ],
+        "T": [
+            87.84580498866214,
+            57.61142857142857
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        38.0,
+        52.0,
+        62.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        38.0,
+        52.0,
+        62.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 55.202479,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(Y, T, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: YZ, pi * (52 / 180) = \u2220ZYT, 3.14 = pi, TZ, TY, TZ \u22a5 YZ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : YZ, TZ, TY\nConclusions: \u25b3TYZ\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : TZ \u22a5 YZ\nConclusions: pi / 2 = \u2220TZY\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, T)\nPremises : \u25b3TYZ\nConclusions: pi = \u2220TZY + \u2220YTZ + \u2220ZYT\n\nStep 5:\nTheorem: Substitution\nPremises : pi / 2 = \u2220TZY, 3.14 = pi, pi = \u2220TZY + \u2220YTZ + \u2220ZYT, pi * (52 / 180) = \u2220ZYT\nConclusions: 3.14 = 3.14 / 2 + pi * (52 / 180) + \u2220YTZ\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + pi * (52 / 180) + \u2220YTZ, 3.14 = pi\nConclusions: 0.66 = \u2220YTZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, Z)",
+        "Line(Y, W)",
+        "Line(Z, W)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(Y, T)",
+        "Line(T, W)",
+        "Line(T, Z)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, X)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Perpendicular(Line(W, X), Line(T, W))",
+        "Perpendicular(Line(Y, W), Line(T, Z))",
+        "Perpendicular(Line(Y, X), Line(T, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

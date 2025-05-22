@@ -1,0 +1,103 @@
+{
+    "problem_id": "2978",
+    "solved": true,
+    "problem_text": "In \\odot P, m \\angle M P L = 65 and N P \\perp P L. Find m \\widehat N M.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnCircle(N, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "Perpendicular(Line(N, P), Line(J, P))",
+        "Circle(P)",
+        "Equals(MeasureOf(Angle(M,P,L)),65)",
+        "Perpendicular(Line(N,P),Line(P,L))",
+        "Find(MeasureOf(Arc(N,M)))"
+    ],
+    "point_instances": [
+        "P",
+        "J",
+        "N",
+        "K",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "PN",
+        "JP",
+        "JL",
+        "PL",
+        "KP",
+        "KM",
+        "PM"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            158.43026706231453,
+            135.31157270029672
+        ],
+        "J": [
+            73.56379821958456,
+            104.45103857566765
+        ],
+        "N": [
+            128.16320474777447,
+            221.36498516320475
+        ],
+        "K": [
+            150.41839762611275,
+            45.40059347181009
+        ],
+        "M": [
+            166.73887240356083,
+            225.8160237388724
+        ],
+        "L": [
+            243.8902077151335,
+            164.98516320474778
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "45",
+        "65",
+        "90"
+    ],
+    "choices_precise_value": [
+        25.0,
+        45.0,
+        65.0,
+        90.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 21.009903,
+    "solution_predicate": "Equals(0.436332313, MeasureOf(Arc(N, P, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: LP \u22a5 NP, \u2220JPN, \u2220MPL, P on JL, \u2220LPK, P on KM, pi * (65 / 180) = \u2220MPL, \u2220NPM, \u2220KPJ, Arc(NPM), 3.14 = pi, \u2220NPL, \u2220LPN, \u2220KPN, JP \u22a5 NP\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : LP \u22a5 NP\nConclusions: pi / 2 = \u2220NPL, (3 * pi) / 2 = \u2220LPN\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : P on KM, P on JL\nConclusions: \u2220KPJ = \u2220MPL\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220JPN, \u2220MPL, \u2220NPM, \u2220KPJ, \u2220LPK\nConclusions: 2 * pi = \u2220JPN + \u2220KPJ + \u2220LPK + \u2220MPL + \u2220NPM\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NPM)\nConclusions: \u2220NPM = Arc(NPM)\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220NPM, \u2220MPL, \u2220LPN\nConclusions: 2 * pi = \u2220LPN + \u2220MPL + \u2220NPM\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220NPL, \u2220KPN, \u2220LPK\nConclusions: 2 * pi = \u2220KPN + \u2220LPK + \u2220NPL\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220NPM, \u2220KPN\nConclusions: pi = \u2220KPN + \u2220NPM\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : JP \u22a5 NP\nConclusions: pi / 2 = \u2220JPN\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KPJ = \u2220MPL, pi * (65 / 180) = \u2220MPL\nConclusions: pi * (65 / 180) = \u2220KPJ\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220LPN + \u2220MPL + \u2220NPM, \u2220NPM = Arc(NPM), pi * (65 / 180) = \u2220MPL, (3 * pi) / 2 = \u2220LPN, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + pi * (65 / 180) + Arc(NPM)\n\nStep 12:\nTheorem: Substitution\nPremises : 2 * pi = \u2220KPN + \u2220LPK + \u2220NPL, pi / 2 = \u2220NPL, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220KPN + \u2220LPK\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220NPM = Arc(NPM), pi * (65 / 180) = \u2220MPL, pi / 2 = \u2220JPN, 2 * pi = \u2220JPN + \u2220KPJ + \u2220LPK + \u2220MPL + \u2220NPM, pi * (65 / 180) = \u2220KPJ, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (65 / 180) + 3.14 * (65 / 180) + \u2220LPK + Arc(NPM)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : \u2220NPM = Arc(NPM), 2 * 3.14 = 3.14 / 2 + \u2220KPN + \u2220LPK, pi = \u2220KPN + \u2220NPM, 2 * 3.14 = 3.14 / 2 + 3.14 * (65 / 180) + 3.14 * (65 / 180) + \u2220LPK + Arc(NPM), 2 * 3.14 = (3 * 3.14) / 2 + pi * (65 / 180) + Arc(NPM)\nConclusions: 0.44 = \u2220NPM\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 0.44 = \u2220NPM, \u2220NPM = Arc(NPM)\nConclusions: 0.44 = Arc(NPM)\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, N)",
+        "Line(J, P)",
+        "Line(J, L)",
+        "Line(P, L)",
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Circle(P, radius_0_0)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnCircle(N, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "Perpendicular(Line(N, P), Line(J, P))",
+        "Circle(P, radius_0_0)",
+        "Perpendicular(Line(N, P), Line(P, L))",
+        "Equals(MeasureOf(Angle(M, P, L)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

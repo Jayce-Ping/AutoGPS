@@ -1,0 +1,115 @@
+{
+    "problem_id": "8376",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Arc(B, E)), 68)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "ED"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            92.70234741784037,
+            33.81782857142857
+        ],
+        "B": [
+            208.43896713615024,
+            63.51428571428572
+        ],
+        "C": [
+            151.07810499359795,
+            102.90597402597403
+        ],
+        "D": [
+            42.5962441314554,
+            176.6974149659864
+        ],
+        "E": [
+            216.51847315778727,
+            179.12869565217392
+        ],
+        "F": [
+            129.69166783978585,
+            126.78315212555475
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        56.0,
+        68.0,
+        146.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        56.0,
+        68.0,
+        146.0
+    ],
+    "problem_answer": 34.0,
+    "total_time": 119.272338,
+    "solution_predicate": "Equals(0.5934119457, MeasureOf(Angle(E, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EFB, pi * (68 / 180) = Arc(EFB), \u2220EDB, 3.14 = pi, E on \u2299(F, radius_F), \u2220FDB, DE, DF, Arc(EFB), EF, BF, C on BD, B on \u2299(F, radius_F), BD, \u2220EDF, \u2220EDB, \u2220BDE, \u2220FDC, \u2220CDE, D on \u2299(F, radius_F), Arc(BFE)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EFB\nConclusions: \u2220EFB = 2 * pi - \u2220BFE\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(F, radius_F)\nConclusions: radius_F = EF\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EFB)\nConclusions: \u2220EFB = Arc(EFB)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : EF, DF, DE\nConclusions: \u25b3DEF\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220FDB, C on BD\nConclusions: \u2220FDB = \u2220FDC\n\nStep 7:\nTheorem: Same Angle\nPremises : C on BD, \u2220EDB\nConclusions: \u2220EDB = \u2220EDC\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : B on \u2299(F, radius_F)\nConclusions: radius_F = BF\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : BF, BD, DF\nConclusions: \u25b3BDF\n\nStep 10:\nTheorem: Definition of Quadrilateral\nPremises : EF, BF, BD, DE\nConclusions: Quadrilateral(B, D, E, F)\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDB\nConclusions: \u2220EDB = 2 * pi - \u2220BDE\n\nStep 12:\nTheorem: Same Angle\nPremises : C on BD, \u2220BDE\nConclusions: \u2220BDE = \u2220CDE\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220FDC, \u2220CDE, \u2220EDF\nConclusions: 2 * pi = \u2220CDE + \u2220EDF + \u2220FDC\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : D on \u2299(F, radius_F)\nConclusions: radius_F = DF\n\nStep 15:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BFE)\nConclusions: \u2220BFE = Arc(BFE)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFB = Arc(EFB), pi * (68 / 180) = Arc(EFB)\nConclusions: pi * (68 / 180) = \u2220EFB\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, E, D, B)\nPremises : Quadrilateral(B, D, E, F)\nConclusions: 2 * pi = \u2220BFE + \u2220DBF + \u2220EDB + \u2220FED\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDB = \u2220EDC, \u2220EDB = 2 * pi - \u2220BDE\nConclusions: \u2220EDC = 2 * pi - \u2220BDE\n\nStep 19:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CDE + \u2220EDF + \u2220FDC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CDE + \u2220EDF + \u2220FDC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = BF, radius_F = DF\nConclusions: BF = DF\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = DF, radius_F = EF\nConclusions: DF = EF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFB = 2 * pi - \u2220BFE, pi * (68 / 180) = \u2220EFB\nConclusions: pi * (68 / 180) = 2 * pi - \u2220BFE\n\nStep 23:\nTheorem: Substitution\nPremises : \u2220EDB = \u2220EDC, 2 * pi = \u2220BFE + \u2220DBF + \u2220EDB + \u2220FED, \u2220BFE = Arc(BFE), 3.14 = pi\nConclusions: 2 * 3.14 = \u2220DBF + \u2220EDC + \u2220FED + Arc(BFE)\n\nStep 24:\nTheorem: Substitution\nPremises : \u2220EDC = 2 * pi - \u2220BDE, \u2220BDE = \u2220CDE, 3.14 = pi\nConclusions: \u2220EDC = 2 * 3.14 - \u2220CDE\n\nStep 25:\nTheorem: Issoceles Triangle Property\nPremises : BF = DF, \u25b3BDF\nConclusions: \u2220DBF = \u2220FDB\n\nStep 26:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3DEF, DF = EF\nConclusions: \u2220EDF = \u2220FED\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : pi * (68 / 180) = 2 * pi - \u2220BFE, 3.14 = pi\nConclusions: 5.1 = \u2220BFE\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBF = \u2220FDB, \u2220FDB = \u2220FDC\nConclusions: \u2220DBF = \u2220FDC\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFE = Arc(BFE), 5.1 = \u2220BFE\nConclusions: 5.1 = Arc(BFE)\n\nStep 30:\nTheorem: Substitution\nPremises : \u2220DBF = \u2220FDC, 2 * 3.14 = \u2220DBF + \u2220EDC + \u2220FED + Arc(BFE), 5.1 = Arc(BFE)\nConclusions: 2 * 3.14 = 5.1 + \u2220EDC + \u2220FDC + \u2220FED\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 5.1 + \u2220EDC + \u2220FDC + \u2220FED, \u2220EDC = 2 * 3.14 - \u2220CDE, \u2220EDF = \u2220FED, 2 * 3.14 = \u2220CDE + \u2220EDF + \u2220FDC\nConclusions: 0.59 = \u2220EDC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Arc(E, F, B)), Mul(pi, Div(68.0, 180.0)))"
+    ],
+    "correct": true
+}

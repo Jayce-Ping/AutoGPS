@@ -1,0 +1,113 @@
+{
+    "problem_id": "6007",
+    "solved": true,
+    "problem_text": "Find BC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(D, E)), 5)",
+        "Equals(LengthOf(Line(E, C)), 12)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "E",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "BE",
+        "BD",
+        "ED",
+        "AE",
+        "AC",
+        "EC",
+        "CD",
+        "CB",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            101.05524861878453,
+            249.7926530612245
+        ],
+        "A": [
+            141.77348066298342,
+            83.01714285714286
+        ],
+        "E": [
+            206.5524861878453,
+            166.03428571428572
+        ],
+        "D": [
+            313.2064917127072,
+            82.69285714285715
+        ],
+        "C": [
+            365.0656844689994,
+            366.65904761904767
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        9.0,
+        12.0,
+        13.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        9.0,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 114.834137,
+    "solution_predicate": "Equals(13.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC = CD, 12 = CE, CE, CE \u22a5 DE, DE, CD, 5 = DE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, CE, DE\nConclusions: \u25b3CDE\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3CDE, CE \u22a5 DE\nConclusions: CD = SqrtOf(CE ** 2 + DE ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 12 = CE, CD = SqrtOf(CE ** 2 + DE ** 2), 5 = DE\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = CD, BC = CD\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = BC\n\nStep 6:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = BC\nConclusions: 13 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(D, E)), 5.0)",
+        "Equals(LengthOf(Line(E, C)), 12.0)"
+    ],
+    "correct": true
+}

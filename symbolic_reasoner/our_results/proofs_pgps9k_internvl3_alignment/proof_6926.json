@@ -1,0 +1,143 @@
+{
+    "problem_id": "6926",
+    "solved": true,
+    "problem_text": "m \\angle BDK = 3x+4, m \\angle JDR = 5x-10, find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, D, K)), MeasureOf(Angle(R, D, J)))",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, J)",
+        "Line(D, R)",
+        "Line(E, D)",
+        "Line(E, K)",
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(J, C)",
+        "Line(K, D)",
+        "Line(R, A)",
+        "Perpendicular(Line(F, D), Line(D, A))",
+        "PointLiesOnLine(B, Line(F, D))",
+        "PointLiesOnLine(J, Line(D, C))",
+        "PointLiesOnLine(K, Line(E, D))",
+        "PointLiesOnLine(R, Line(D, A))",
+        "Equals(MeasureOf(Angle(B,D,K)),3x+4)",
+        "Equals(MeasureOf(Angle(J,D,R)),5x-10)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "R",
+        "A",
+        "C",
+        "J",
+        "K",
+        "E",
+        "F",
+        "B"
+    ],
+    "line_instances": [
+        "FB",
+        "FD",
+        "BD",
+        "DR",
+        "DA",
+        "RA",
+        "DK",
+        "DE",
+        "KE",
+        "DJ",
+        "DC",
+        "JC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            61.55396825396825,
+            243.12857142857143
+        ],
+        "R": [
+            223.2888888888889,
+            243.12857142857143
+        ],
+        "A": [
+            276.4273504273504,
+            243.7318681318681
+        ],
+        "C": [
+            263.4111111111111,
+            169.92857142857144
+        ],
+        "J": [
+            212.28547008547008,
+            188.36263736263737
+        ],
+        "K": [
+            117.14615384615387,
+            89.82417582417582
+        ],
+        "E": [
+            134.9931623931624,
+            41.15824175824176
+        ],
+        "F": [
+            60.8063492063492,
+            28.383673469387755
+        ],
+        "B": [
+            61.05555555555556,
+            81.04285714285714
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        12.0,
+        23.25,
+        90.0
+    ],
+    "choices_precise_value": [
+        7.0,
+        12.0,
+        23.25,
+        90.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 155.536621,
+    "solution_predicate": "Equals(7.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on DE, \u2220KDF, pi * ((5 * x - 10) / 180) = \u2220RDJ, 3.14 = pi, \u2220KDB = \u2220RDJ, \u2220EDF, B on DF, pi * ((4 + 3 * x) / 180) = \u2220KDB\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 10) / 180) = \u2220RDJ, \u2220KDB = \u2220RDJ\nConclusions: pi * ((5 * x - 10) / 180) = \u2220KDB\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220EDF, K on DE\nConclusions: \u2220EDF = \u2220KDF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220KDF, B on DF\nConclusions: \u2220KDB = \u2220KDF\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 10) / 180) = \u2220KDB, pi * ((4 + 3 * x) / 180) = \u2220KDB\nConclusions: pi * ((4 + 3 * x) / 180) = pi * ((5 * x - 10) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KDB = \u2220KDF, pi * ((5 * x - 10) / 180) = \u2220KDB\nConclusions: pi * ((5 * x - 10) / 180) = \u2220KDF\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDF = \u2220KDF, pi * ((5 * x - 10) / 180) = \u2220KDF\nConclusions: pi * ((5 * x - 10) / 180) = \u2220EDF\n\nStep 8:\nTheorem: Substitution\nPremises : pi * ((5 * x - 10) / 180) = \u2220EDF, 3.14 = pi\nConclusions: 3.14 * ((5 * x - 10) / 180) = \u2220EDF\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 10) / 180) = \u2220EDF, 3.14 * ((5 * x - 10) / 180) = \u2220EDF\nConclusions: 3.14 * ((5 * x - 10) / 180) = pi * ((5 * x - 10) / 180)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * x - 10) / 180) = pi * ((5 * x - 10) / 180), pi * ((4 + 3 * x) / 180) = pi * ((5 * x - 10) / 180)\nConclusions: 3.14 * ((5 * x - 10) / 180) = pi * ((4 + 3 * x) / 180)\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 * ((5 * x - 10) / 180) = pi * ((4 + 3 * x) / 180), 3.14 = pi\nConclusions: 3.14 * ((4 + 3 * x) / 180) = 3.14 * ((5 * x - 10) / 180)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 + 3 * x) / 180) = 3.14 * ((5 * x - 10) / 180)\nConclusions: 7 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(B, D)",
+        "Line(D, R)",
+        "Line(D, A)",
+        "Line(R, A)",
+        "Line(D, K)",
+        "Line(D, E)",
+        "Line(K, E)",
+        "Line(D, J)",
+        "Line(D, C)",
+        "Line(J, C)",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, J)",
+        "Line(D, R)",
+        "Line(E, D)",
+        "Line(E, K)",
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(J, C)",
+        "Line(K, D)",
+        "Line(R, A)",
+        "Perpendicular(Line(F, D), Line(D, A))",
+        "PointLiesOnLine(B, Line(F, D))",
+        "PointLiesOnLine(J, Line(D, C))",
+        "PointLiesOnLine(K, Line(E, D))",
+        "PointLiesOnLine(R, Line(D, A))",
+        "Equals(MeasureOf(Angle(K, D, B)), MeasureOf(Angle(R, D, J)))",
+        "Equals(MeasureOf(Angle(K, D, B)), Mul(pi, Div(Add(Mul(3.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, D, J)), Mul(pi, Div(Sub(Mul(5.0, x), 10.0), 180.0)))"
+    ],
+    "correct": true
+}

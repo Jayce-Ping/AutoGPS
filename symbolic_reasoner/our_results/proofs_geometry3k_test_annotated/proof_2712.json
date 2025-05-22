@@ -1,0 +1,87 @@
+{
+    "problem_id": "2712",
+    "solved": true,
+    "problem_text": "If D B = 24, A E = 3, and E C = 18, find A D.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(D, B)), 24)",
+        "Equals(LengthOf(Line(A, E)), 3)",
+        "Equals(LengthOf(Line(E, C)), 18)",
+        "Find(LengthOf(Line(A, D)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "E",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "AE",
+        "AC",
+        "EC",
+        "AD",
+        "AB",
+        "DB",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            138.7391304347826,
+            108.1159420289855
+        ],
+        "C": [
+            200.76811594202897,
+            217.97101449275362
+        ],
+        "E": [
+            173.52173913043478,
+            107.82608695652173
+        ],
+        "B": [
+            92.07246376811594,
+            219.1304347826087
+        ],
+        "A": [
+            160.47826086956522,
+            56.23188405797101
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "6",
+        "8"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 28.531771,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on AB, 18 = CE, \u2220CBA, \u2220EDA, BC || DE, E on AC, \u2220CBA, \u2220CAB, 24 = BD, 3 = AE, \u2220EAB, 3.14 = pi\n\nStep 2:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 3:\nTheorem: Same Angle\nPremises : D on AB, \u2220CBA\nConclusions: \u2220CBA = \u2220CBD\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDA\nConclusions: \u2220EDA = 2 * pi - \u2220ADE\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : BC || DE\nConclusions: \u2220ACB = \u2220AED, \u2220ABC = \u2220ADE\n\nStep 6:\nTheorem: Line Segment Split\nPremises : E on AC\nConclusions: AC = AE + CE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 8:\nTheorem: Same Angle\nPremises : E on AC, \u2220CAB\nConclusions: \u2220CAB = \u2220EAB\n\nStep 9:\nTheorem: Same Angle\nPremises : D on AB, \u2220EAB\nConclusions: \u2220EAB = \u2220EAD\n\nStep 10:\nTheorem: Substitution\nPremises : 24 = BD, AB = AD + BD\nConclusions: AB = 24 + AD\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220EDA = 2 * pi - \u2220ADE, 3.14 = pi\nConclusions: \u2220EDA = 2 * 3.14 - \u2220ADE\n\nStep 12:\nTheorem: Substitution\nPremises : 3 = AE, 18 = CE, AC = AE + CE\nConclusions: 18 + 3 = AC\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, \u2220ABC = \u2220ADE, \u2220CBA = \u2220CBD, 3.14 = pi\nConclusions: \u2220CBD = 2 * 3.14 - \u2220ADE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220EAB, \u2220EAB = \u2220EAD\nConclusions: \u2220CAB = \u2220EAD\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 18 + 3 = AC\nConclusions: 21 = AC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDA = 2 * 3.14 - \u2220ADE, \u2220CBD = 2 * 3.14 - \u2220ADE\nConclusions: \u2220CBD = \u2220EDA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220EDA, \u2220CBA = \u2220CBD\nConclusions: \u2220CBA = \u2220EDA\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220EAD, \u2220ACB = \u2220AED, \u2220CBA = \u2220EDA\nConclusions: \u25b3ABC ~ \u25b3ADE\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ADE\nConclusions: \u2220ACB = \u2220AED, \u2220CAB = \u2220EAD, AB / AD = AC / AE, \u2220ABC = \u2220ADE\n\nStep 20:\nTheorem: Substitution\nPremises : 21 = AC, AB / AD = AC / AE, 3 = AE\nConclusions: 21 / 3 = AB / AD\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : AB = 24 + AD, 21 / 3 = AB / AD\nConclusions: 4 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(D, B)), 24.0)",
+        "Equals(LengthOf(Line(A, E)), 3.0)",
+        "Equals(LengthOf(Line(E, C)), 18.0)"
+    ],
+    "correct": true
+}

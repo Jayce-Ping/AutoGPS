@@ -1,0 +1,112 @@
+{
+    "problem_id": "8750",
+    "solved": true,
+    "problem_text": "If MD = 7, find RI.",
+    "logic_forms": [
+        "Line(A, M)",
+        "Line(D, M)",
+        "Line(M, I)",
+        "Line(R, I)",
+        "Line(R, M)",
+        "Line(U, S)",
+        "PointLiesOnCircle(A, Circle(M))",
+        "PointLiesOnCircle(D, Circle(M))",
+        "PointLiesOnCircle(I, Circle(M))",
+        "PointLiesOnCircle(R, Circle(M))",
+        "PointLiesOnCircle(S, Circle(M))",
+        "PointLiesOnCircle(U, Circle(M))",
+        "PointLiesOnLine(M, Line(R, I))",
+        "Equals(LengthOf(Line(M,D)),7)",
+        "Find(LengthOf(Line(R,I)))"
+    ],
+    "point_instances": [
+        "R",
+        "A",
+        "D",
+        "I",
+        "U",
+        "S",
+        "M"
+    ],
+    "line_instances": [
+        "RM",
+        "RI",
+        "MI",
+        "SU",
+        "MD",
+        "AM"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "R": [
+            42.45428571428572,
+            164.72727272727272
+        ],
+        "A": [
+            54.751111111111115,
+            81.21212121212122
+        ],
+        "D": [
+            125.1857142857143,
+            45.45454545454545
+        ],
+        "I": [
+            208.45278911564628,
+            102.16450216450217
+        ],
+        "U": [
+            213.294025974026,
+            122.64462809917354
+        ],
+        "S": [
+            146.66685714285714,
+            219.78181818181818
+        ],
+        "M": [
+            124.5,
+            133.5
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        14.0,
+        21.0,
+        28.0
+    ],
+    "choices_precise_value": [
+        7.0,
+        14.0,
+        21.0,
+        28.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 35.482235,
+    "solution_predicate": "Equals(14.0, LengthOf(Line(R, I)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: I on \u2299(M, radius_M), M on IR, D on \u2299(M, radius_M), 7 = DM, R on \u2299(M, radius_M)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : I on \u2299(M, radius_M)\nConclusions: radius_M = IM\n\nStep 3:\nTheorem: Line Segment Split\nPremises : M on IR\nConclusions: IR = IM + MR\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(M, radius_M)\nConclusions: radius_M = DM\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : R on \u2299(M, radius_M)\nConclusions: radius_M = MR\n\nStep 6:\nTheorem: Diameter Definition\nPremises : R on \u2299(M, radius_M), M on IR, I on \u2299(M, radius_M)\nConclusions: IsDiameterOf(IR, \u2299(M, radius_M))\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_M = DM, 7 = DM\nConclusions: 7 = radius_M\n\nStep 8:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(IR, \u2299(M, radius_M))\nConclusions: radius_M = MR, R on \u2299(M, radius_M), 2 * radius_M = IR, radius_M = IM, I on \u2299(M, radius_M)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 7 = radius_M, radius_M = IM\nConclusions: 7 = IM\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 7 = radius_M, radius_M = MR\nConclusions: 7 = MR\n\nStep 11:\nTheorem: Substitution\nPremises : IR = IM + MR, 2 * radius_M = IR, 7 = IM, 7 = MR\nConclusions: 7 + 7 = 2 * radius_M\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 7 + 7 = 2 * radius_M, 2 * radius_M = IR\nConclusions: 7 + 7 = IR\n\nStep 13:\nTheorem: Evaluate\nPremises : 7 + 7 = IR\nConclusions: 14 = IR\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, M)",
+        "Line(R, I)",
+        "Line(M, I)",
+        "Line(S, U)",
+        "Line(M, D)",
+        "Line(A, M)",
+        "Circle(M, radius_M)",
+        "Line(A, M)",
+        "Line(D, M)",
+        "Line(M, I)",
+        "Line(R, I)",
+        "Line(R, M)",
+        "Line(U, S)",
+        "PointLiesOnCircle(A, Circle(M, radius_M))",
+        "PointLiesOnCircle(D, Circle(M, radius_M))",
+        "PointLiesOnCircle(I, Circle(M, radius_M))",
+        "PointLiesOnCircle(R, Circle(M, radius_M))",
+        "PointLiesOnCircle(S, Circle(M, radius_M))",
+        "PointLiesOnCircle(U, Circle(M, radius_M))",
+        "PointLiesOnLine(M, Line(R, I))",
+        "Equals(LengthOf(Line(M, D)), 7.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,103 @@
+{
+    "problem_id": "2662",
+    "solved": true,
+    "problem_text": "H K and I G are diameters of \\odot L. Find m \\widehat I H J.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(H, K))",
+        "PointLiesOnLine(L, Line(I, G))",
+        "PointLiesOnCircle(G, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(I, Circle(L, radius_0_0))",
+        "Perpendicular(Line(I, L), Line(J, L))",
+        "Equals(MeasureOf(Angle(H, L, I)), 59)",
+        "IsDiameterOf(Line(H, K), Circle(L))",
+        "IsDiameterOf(Line(I, G), Circle(L))",
+        "Find(MeasureOf(Arc(I, H, J)))"
+    ],
+    "point_instances": [
+        "K",
+        "H",
+        "G",
+        "I",
+        "J",
+        "L"
+    ],
+    "line_instances": [
+        "HL",
+        "HK",
+        "LK",
+        "IL",
+        "IG",
+        "LG",
+        "LJ"
+    ],
+    "circle_instances": [
+        "L"
+    ],
+    "point_positions": {
+        "K": [
+            359.6875,
+            366.6666666666667
+        ],
+        "H": [
+            128.4375,
+            135.9375
+        ],
+        "G": [
+            244.58333333333337,
+            416.14583333333337
+        ],
+        "I": [
+            244.58333333333337,
+            88.54166666666667
+        ],
+        "J": [
+            409.1666666666667,
+            251.5625
+        ],
+        "L": [
+            245.10416666666669,
+            252.08333333333334
+        ]
+    },
+    "problem_choices": [
+        "59",
+        "135",
+        "270",
+        "301"
+    ],
+    "choices_precise_value": [
+        59.0,
+        135.0,
+        270.0,
+        301.0
+    ],
+    "problem_answer": 270.0,
+    "total_time": 13.1411,
+    "solution_predicate": "Equals(4.7123889804, MeasureOf(Arc(I, L, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IL \u22a5 JL, Arc(ILJ)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : IL \u22a5 JL\nConclusions: (3 * pi) / 2 = \u2220ILJ\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ILJ)\nConclusions: \u2220ILJ = Arc(ILJ)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ILJ, \u2220ILJ = Arc(ILJ)\nConclusions: (3 * pi) / 2 = Arc(ILJ)\n\nStep 5:\nTheorem: Evaluate\nPremises : (3 * pi) / 2 = Arc(ILJ)\nConclusions: 4.71 = Arc(ILJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, L)",
+        "Line(H, K)",
+        "Line(L, K)",
+        "Line(I, L)",
+        "Line(I, G)",
+        "Line(L, G)",
+        "Line(L, J)",
+        "Circle(L, radius_0_0)",
+        "PointLiesOnLine(L, Line(H, K))",
+        "PointLiesOnLine(L, Line(I, G))",
+        "PointLiesOnCircle(G, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(I, Circle(L, radius_0_0))",
+        "Perpendicular(Line(I, L), Line(J, L))",
+        "IsDiameterOf(Line(H, K), Circle(L, radius_0_0))",
+        "IsDiameterOf(Line(I, G), Circle(L, radius_0_0))",
+        "Equals(MeasureOf(Angle(I, L, H)), Mul(pi, Div(59.0, 180.0)))"
+    ],
+    "correct": true
+}

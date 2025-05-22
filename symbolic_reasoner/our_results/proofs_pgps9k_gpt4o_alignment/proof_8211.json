@@ -1,0 +1,109 @@
+{
+    "problem_id": "8211",
+    "solved": true,
+    "problem_text": "If m \\angle BNC = 20, find m \\widehat BC.",
+    "logic_forms": [
+        "Line(A, D)",
+        "Line(A, N)",
+        "Line(B, C)",
+        "Line(B, N)",
+        "Line(E, D)",
+        "Line(N, C)",
+        "Line(N, D)",
+        "PointLiesOnCircle(A, Circle(N))",
+        "PointLiesOnCircle(B, Circle(N))",
+        "PointLiesOnCircle(C, Circle(N))",
+        "PointLiesOnCircle(D, Circle(N))",
+        "PointLiesOnCircle(E, Circle(N))",
+        "PointLiesOnLine(N, Line(A, D))",
+        "Equals(MeasureOf(Angle(B,N,C)),20)",
+        "Find(MeasureOf(Arc(B,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "N",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "ED",
+        "DN",
+        "DA",
+        "NA",
+        "NB",
+        "NC",
+        "CB"
+    ],
+    "circle_instances": [
+        "N"
+    ],
+    "point_positions": {
+        "A": [
+            58.38461538461539,
+            72.93333333333334
+        ],
+        "E": [
+            56.03749516814843,
+            141.57333333333335
+        ],
+        "N": [
+            109.84615384615384,
+            109.11538461538461
+        ],
+        "D": [
+            161.32791866308287,
+            146.7125581395349
+        ],
+        "C": [
+            160.50543414748157,
+            71.44558139534884
+        ],
+        "B": [
+            127.94472361809045,
+            49.275200000000005
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        30.0,
+        40.0,
+        50.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        30.0,
+        40.0,
+        50.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 17.371881,
+    "solution_predicate": "Equals(0.3490658504, MeasureOf(Arc(C, N, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (20 / 180) = \u2220CNB, Arc(CNB)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CNB)\nConclusions: \u2220CNB = Arc(CNB)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (20 / 180) = \u2220CNB, \u2220CNB = Arc(CNB)\nConclusions: pi * (20 / 180) = Arc(CNB)\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (20 / 180) = Arc(CNB)\nConclusions: 0.35 = Arc(CNB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(D, N)",
+        "Line(D, A)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Line(N, C)",
+        "Line(C, B)",
+        "Circle(N, radius_N)",
+        "Line(A, D)",
+        "Line(A, N)",
+        "Line(B, C)",
+        "Line(B, N)",
+        "Line(E, D)",
+        "Line(N, C)",
+        "Line(N, D)",
+        "PointLiesOnCircle(A, Circle(N, radius_N))",
+        "PointLiesOnCircle(B, Circle(N, radius_N))",
+        "PointLiesOnCircle(C, Circle(N, radius_N))",
+        "PointLiesOnCircle(D, Circle(N, radius_N))",
+        "PointLiesOnCircle(E, Circle(N, radius_N))",
+        "PointLiesOnLine(N, Line(A, D))",
+        "Equals(MeasureOf(Angle(C, N, B)), Mul(pi, Div(20.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,63 @@
+{
+    "problem_id": "2427",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), 3\\sqrt{2})",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.163522012578596,
+            262.2641509433962
+        ],
+        "B": [
+            173.95597484276726,
+            57.23270440251572
+        ],
+        "C": [
+            37.792452830188665,
+            57.23270440251572
+        ]
+    },
+    "problem_choices": [
+        "\\sqrt { 7 }",
+        "3 \\sqrt { 2 }",
+        "3 \\sqrt { 3 }",
+        "3 \\sqrt { 6 }"
+    ],
+    "choices_precise_value": [
+        2.6457513110645907,
+        4.242640687119286,
+        5.196152422706632,
+        7.348469228349534
+    ],
+    "problem_answer": 2.6457513110645907,
+    "total_time": 12.087316,
+    "solution_predicate": "Equals(2.6457513111, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, AB, 5 = AB, AC \u22a5 BC, x = AC, AC, 4.24 = 3 * SqrtOf(2), 3 * SqrtOf(2) = BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * SqrtOf(2) = BC, 4.24 = 3 * SqrtOf(2)\nConclusions: 4.24 = BC\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : AC \u22a5 BC, \u25b3ABC\nConclusions: AC = SqrtOf(AB ** 2 - BC ** 2)\n\nStep 5:\nTheorem: Substitution\nPremises : 4.24 = BC, 5 = AB, x = AC, AC = SqrtOf(AB ** 2 - BC ** 2)\nConclusions: SqrtOf(5 ** 2 - 4.24 ** 2) = x\n\nStep 6:\nTheorem: Evaluate\nPremises : SqrtOf(5 ** 2 - 4.24 ** 2) = x\nConclusions: 2.65 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), Mul(3.0, SqrtOf(2.0)))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(A, B)), 5.0)"
+    ],
+    "correct": true
+}

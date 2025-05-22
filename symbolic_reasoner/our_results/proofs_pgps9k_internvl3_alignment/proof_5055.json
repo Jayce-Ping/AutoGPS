@@ -1,0 +1,113 @@
+{
+    "problem_id": "5055",
+    "solved": true,
+    "problem_text": "Quadrilateral ABCD is a rectangle. Find m \\angle DCA.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, E)), 9x+20)",
+        "Equals(MeasureOf(Angle(E, A, D)), 4x+5)",
+        "Equals(MeasureOf(Angle(E, B, C)), 4y+4)",
+        "Equals(MeasureOf(Angle(E, D, A)), y^{2}-1)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Rectangle(A,B,C,D)",
+        "Find(MeasureOf(Angle(D,C,A)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "CD",
+        "AD",
+        "BE",
+        "BD",
+        "ED",
+        "AE",
+        "AC",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            158.2,
+            70.08695652173914
+        ],
+        "B": [
+            157.82333333333332,
+            191.231884057971
+        ],
+        "E": [
+            297.56666666666666,
+            130.94202898550725
+        ],
+        "D": [
+            435.9916666666667,
+            70.65217391304347
+        ],
+        "C": [
+            435.9916666666667,
+            191.231884057971
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        34.158,
+        50.0,
+        65.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        34.158,
+        50.0,
+        65.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 87.979102,
+    "solution_predicate": "Equals(1.1344640138, MeasureOf(Angle(D, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CD, \u2220CAD, AC, 3.14 = pi, AD, pi * ((20 + 9 * x) / 180) = \u2220BAE, E on AC, \u2220BAC, Rectangle(A, B, C, D), pi * ((5 + 4 * x) / 180) = \u2220EAD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220CAD, E on AC\nConclusions: \u2220CAD = \u2220EAD\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220BAC, E on AC\nConclusions: \u2220BAC = \u2220BAE\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 6:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AD \u22a5 CD, BC \u22a5 CD\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 4 * x) / 180) = \u2220EAD, \u2220CAD = \u2220EAD\nConclusions: pi * ((5 + 4 * x) / 180) = \u2220CAD\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC, AB || DC\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BAD = \u2220DCB\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220DCB\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220ACB = \u2220CAD\n\nStep 14:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220ADC + \u2220BAD\n\nStep 15:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220BAC = \u2220DCA\n\nStep 16:\nTheorem: Substitution\nPremises : pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 = pi, pi / 2 = \u2220ADC\nConclusions: 3.14 = pi / 2 + \u2220CAD + \u2220DCA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ADC, pi / 2 = \u2220DCB, \u2220BAD = \u2220DCB\nConclusions: \u2220ADC = \u2220BAD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220CAD, pi * ((5 + 4 * x) / 180) = \u2220CAD\nConclusions: pi * ((5 + 4 * x) / 180) = \u2220ACB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADC + \u2220BAD\nConclusions: 3.14 = \u2220ADC + \u2220BAD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DCA, pi * ((20 + 9 * x) / 180) = \u2220BAE, \u2220BAC = \u2220BAE\nConclusions: pi * ((20 + 9 * x) / 180) = \u2220DCA\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 4 * x) / 180) = \u2220ACB\nConclusions: 3.14 * ((5 + 4 * x) / 180) = \u2220ACB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DCA, pi * ((20 + 9 * x) / 180) = \u2220DCA\nConclusions: pi * ((20 + 9 * x) / 180) = \u2220BAC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 4 * x) / 180) = \u2220ACB, 3.14 * ((5 + 4 * x) / 180) = \u2220ACB\nConclusions: 3.14 * ((5 + 4 * x) / 180) = pi * ((5 + 4 * x) / 180)\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((20 + 9 * x) / 180) = \u2220BAC\nConclusions: 3.14 * ((20 + 9 * x) / 180) = \u2220BAC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 4 * x) / 180) = pi * ((5 + 4 * x) / 180), pi * ((5 + 4 * x) / 180) = \u2220CAD\nConclusions: 3.14 * ((5 + 4 * x) / 180) = \u2220CAD\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((20 + 9 * x) / 180) = \u2220BAC, 3.14 * ((20 + 9 * x) / 180) = \u2220BAC\nConclusions: 3.14 * ((20 + 9 * x) / 180) = pi * ((20 + 9 * x) / 180)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((20 + 9 * x) / 180) = \u2220DCA, 3.14 * ((20 + 9 * x) / 180) = pi * ((20 + 9 * x) / 180)\nConclusions: 3.14 * ((20 + 9 * x) / 180) = \u2220DCA\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ADC + \u2220BAD, 3.14 * ((20 + 9 * x) / 180) = \u2220DCA, pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 * ((5 + 4 * x) / 180) = \u2220CAD, 3.14 = pi / 2 + \u2220CAD + \u2220DCA, \u2220ADC = \u2220BAD\nConclusions: 1.13 = \u2220DCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Rectangle(A, B, C, D)",
+        "Equals(MeasureOf(Angle(B, A, E)), Mul(pi, Div(Add(Mul(9.0, x), 20.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, A, D)), Mul(pi, Div(Add(Mul(4.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(Add(Mul(4.0, y), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, E)), Mul(pi, Div(Sub(Pow(y, 2.0), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

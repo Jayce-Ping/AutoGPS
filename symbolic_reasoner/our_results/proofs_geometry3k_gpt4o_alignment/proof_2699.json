@@ -1,0 +1,138 @@
+{
+    "problem_id": "2699",
+    "solved": true,
+    "problem_text": "In \\odot X, A B = 30, C D = 30, and m \\widehat C Z = 40. Find N D.",
+    "logic_forms": [
+        "PointLiesOnLine(N, Line(C, D))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "PointLiesOnLine(M, Line(Y, X))",
+        "PointLiesOnLine(M, Line(A, B))",
+        "PointLiesOnCircle(C, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(X, radius_0_0))",
+        "Perpendicular(Line(Y, M), Line(A, M))",
+        "Perpendicular(Line(D, N), Line(Z, N))",
+        "Circle(X)",
+        "Equals(LengthOf(Line(A,B)),30)",
+        "Equals(LengthOf(Line(C,D)),30)",
+        "Equals(MeasureOf(Arc(C,Z)),40)",
+        "Find(LengthOf(Line(N,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "Z",
+        "N",
+        "D",
+        "Y",
+        "A",
+        "X",
+        "C",
+        "M"
+    ],
+    "line_instances": [
+        "CN",
+        "CD",
+        "ND",
+        "XN",
+        "XZ",
+        "NZ",
+        "YM",
+        "YX",
+        "MX",
+        "AM",
+        "AB",
+        "MB"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "B": [
+            194.48010610079575,
+            66.84350132625994
+        ],
+        "Z": [
+            181.21750663129973,
+            193.10344827586206
+        ],
+        "N": [
+            165.30238726790452,
+            172.6790450928382
+        ],
+        "D": [
+            214.1087533156499,
+            135.0132625994695
+        ],
+        "Y": [
+            136.3899204244032,
+            35.0132625994695
+        ],
+        "A": [
+            72.46419098143237,
+            53.315649867374006
+        ],
+        "X": [
+            127.10610079575596,
+            122.81167108753316
+        ],
+        "C": [
+            118.35278514588859,
+            210.87533156498674
+        ],
+        "M": [
+            134.0026525198939,
+            59.94694960212202
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "15",
+        "20",
+        "30"
+    ],
+    "choices_precise_value": [
+        10.0,
+        15.0,
+        20.0,
+        30.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 321.59428,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(N, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on CD, CN \u22a5 NX, \u2299(X, radius_0_0), 30 = CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : N on CD\nConclusions: CD = CN + DN\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : CN \u22a5 NX, \u2299(X, radius_0_0), N on CD\nConclusions: CN = DN\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 30 = CD, CD = CN + DN\nConclusions: 30 = CN + DN\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 30 = CN + DN, CN = DN\nConclusions: 15 = CN\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 15 = CN, CN = DN\nConclusions: 15 = DN\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, N)",
+        "Line(C, D)",
+        "Line(N, D)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(N, Z)",
+        "Line(Y, M)",
+        "Line(Y, X)",
+        "Line(M, X)",
+        "Line(A, M)",
+        "Line(A, B)",
+        "Line(M, B)",
+        "Circle(X, radius_0_0)",
+        "PointLiesOnLine(N, Line(C, D))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "PointLiesOnLine(M, Line(Y, X))",
+        "PointLiesOnLine(M, Line(A, B))",
+        "PointLiesOnCircle(C, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(X, radius_0_0))",
+        "Perpendicular(Line(Y, M), Line(A, M))",
+        "Perpendicular(Line(D, N), Line(Z, N))",
+        "Circle(X, radius_0_0)",
+        "Equals(LengthOf(Line(A, B)), 30.0)",
+        "Equals(LengthOf(Line(C, D)), 30.0)",
+        "Equals(MeasureOf(Arc(C, X, Z)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,124 @@
+{
+    "problem_id": "2849",
+    "solved": true,
+    "problem_text": "m \\angle 4 = 2 y + 32 and m \\angle 5 = 3 y - 3. Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(F, Line(H, A))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(F, Line(C, G))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Parallel(Line(D, B), Line(H, A))",
+        "Equals(MeasureOf(Angle(D, E, F)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, F, G)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, F, E)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(H, F, G)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(B, E, F)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, E, C)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(H, F, E)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(4)),2y+32)",
+        "Equals(MeasureOf(Angle(5)),3y-3)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "DE",
+        "DB",
+        "EB",
+        "HF",
+        "HA",
+        "FA",
+        "CE",
+        "CF",
+        "CG",
+        "EF",
+        "EG",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            261.0919540229885,
+            257.4712643678161
+        ],
+        "B": [
+            105.3448275862069,
+            258.9080459770115
+        ],
+        "C": [
+            26.896551724137932,
+            198.27586206896552
+        ],
+        "D": [
+            105.05747126436782,
+            18.39080459770115
+        ],
+        "E": [
+            105.63218390804597,
+            178.73563218390805
+        ],
+        "F": [
+            261.6666666666667,
+            139.6551724137931
+        ],
+        "G": [
+            339.5402298850575,
+            120.6896551724138
+        ],
+        "H": [
+            261.3793103448276,
+            18.96551724137931
+        ]
+    },
+    "problem_choices": [
+        "18",
+        "35",
+        "55",
+        "72"
+    ],
+    "choices_precise_value": [
+        18.0,
+        35.0,
+        55.0,
+        72.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 36.315577,
+    "solution_predicate": "Equals(35.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((3 * y - 3) / 180) = \u2220HFE, AH || BD, pi * ((32 + 2 * y) / 180) = \u2220BEF\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * y - 3) / 180) = \u2220HFE\nConclusions: 3.14 * ((3 * y - 3) / 180) = \u2220HFE\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AH || BD\nConclusions: \u2220BEF = \u2220HFE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEF = \u2220HFE, pi * ((32 + 2 * y) / 180) = \u2220BEF\nConclusions: pi * ((32 + 2 * y) / 180) = \u2220HFE\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((32 + 2 * y) / 180) = \u2220HFE, 3.14 = pi\nConclusions: 3.14 * ((32 + 2 * y) / 180) = \u2220HFE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((32 + 2 * y) / 180) = \u2220HFE, 3.14 * ((3 * y - 3) / 180) = \u2220HFE\nConclusions: 3.14 * ((32 + 2 * y) / 180) = 3.14 * ((3 * y - 3) / 180)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((32 + 2 * y) / 180) = 3.14 * ((3 * y - 3) / 180)\nConclusions: 35 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(H, F)",
+        "Line(H, A)",
+        "Line(F, A)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(F, Line(H, A))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(F, Line(C, G))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Parallel(Line(D, B), Line(H, A))",
+        "Equals(MeasureOf(Angle(B, E, F)), Mul(pi, Div(Add(Mul(2.0, y), 32.0), 180.0)))",
+        "Equals(MeasureOf(Angle(H, F, E)), Mul(pi, Div(Sub(Mul(3.0, y), 3.0), 180.0)))"
+    ],
+    "correct": true
+}

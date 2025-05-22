@@ -1,0 +1,93 @@
+{
+    "problem_id": "2837",
+    "solved": true,
+    "problem_text": "Find a in the given parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(Y, X))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Equals(LengthOf(Line(W, A)), 10)",
+        "Equals(LengthOf(Line(A, X)), a-7)",
+        "Equals(LengthOf(Line(A, Z)), 2b-6)",
+        "Equals(LengthOf(Line(Y, A)), 2)",
+        "Parallelogram(W, X, Z, Y)",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "X",
+        "Z",
+        "A"
+    ],
+    "line_instances": [
+        "YA",
+        "YX",
+        "AX",
+        "WA",
+        "WZ",
+        "AZ",
+        "WY",
+        "YZ",
+        "XZ",
+        "WX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            63.35714285714283,
+            62.49999999999999
+        ],
+        "Y": [
+            86.57142857142856,
+            280.8035714285714
+        ],
+        "X": [
+            255.7678571428571,
+            115.17857142857142
+        ],
+        "Z": [
+            279.4285714285714,
+            334.37499999999994
+        ],
+        "A": [
+            170.5,
+            197.7678571428571
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "8",
+        "9",
+        "10"
+    ],
+    "choices_precise_value": [
+        2.0,
+        8.0,
+        9.0,
+        10.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 58.795541,
+    "solution_predicate": "Equals(9.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = AY, Parallelogram(W, X, Z, Y), A on WZ, A on XY, a - 7 = AX\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : A on WZ, Parallelogram(W, X, Z, Y), A on XY\nConclusions: AX = AY\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : a - 7 = AX, 2 = AY, AX = AY\nConclusions: 2 = a - 7\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 2 = a - 7\nConclusions: 9 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, A)",
+        "Line(Y, X)",
+        "Line(A, X)",
+        "Line(W, A)",
+        "Line(W, Z)",
+        "Line(A, Z)",
+        "Line(W, Y)",
+        "Line(Y, Z)",
+        "Line(X, Z)",
+        "Line(W, X)",
+        "PointLiesOnLine(A, Line(Y, X))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Parallelogram(W, X, Z, Y)",
+        "Equals(LengthOf(Line(W, A)), 10.0)",
+        "Equals(LengthOf(Line(A, X)), Sub(a, 7.0))",
+        "Equals(LengthOf(Line(A, Z)), Sub(Mul(2.0, b), 6.0))",
+        "Equals(LengthOf(Line(Y, A)), 2.0)"
+    ],
+    "correct": true
+}

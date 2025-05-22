@@ -1,0 +1,61 @@
+{
+    "problem_id": "2921",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle T to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(R, S), Line(T, S))",
+        "Equals(LengthOf(Line(T, S)), 10\\sqrt{3})",
+        "Equals(LengthOf(Line(S, R)), 4\\sqrt{3})",
+        "Find(MeasureOf(Angle(T)))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "SR",
+        "RT",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            44.96787148594376,
+            111.64658634538152
+        ],
+        "T": [
+            157.8192771084337,
+            330.12048192771084
+        ],
+        "R": [
+            167.859437751004,
+            49.39759036144578
+        ]
+    },
+    "problem_choices": [
+        "21.8",
+        "23.6",
+        "66.4",
+        "68.2"
+    ],
+    "choices_precise_value": [
+        21.8,
+        23.6,
+        66.4,
+        68.2
+    ],
+    "problem_answer": 21.8,
+    "total_time": 15.040878,
+    "solution_predicate": "Equals(0.3805063771, MeasureOf(Angle(R, T, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS \u22a5 ST, 6.93 = 4 * SqrtOf(3), RT, 10 * SqrtOf(3) = ST, \u2220RTS, RS, 4 * SqrtOf(3) = RS, ST\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : 10 * SqrtOf(3) = ST\nConclusions: 17.32 = ST\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 6.93 = 4 * SqrtOf(3), 4 * SqrtOf(3) = RS\nConclusions: 6.93 = RS\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : ST, RT, RS\nConclusions: \u25b3RST\n\nStep 5:\nTheorem: Tan Function Definition\nPremises : \u25b3RST, RS \u22a5 ST, \u2220RTS\nConclusions: RS / ST = tan(\u2220RTS)\n\nStep 6:\nTheorem: Substitution\nPremises : RS / ST = tan(\u2220RTS), 17.32 = ST, 6.93 = RS\nConclusions: 6.93 / 17.32 = tan(\u2220RTS)\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 6.93 / 17.32 = tan(\u2220RTS)\nConclusions: 0.38 = \u2220RTS\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Perpendicular(Line(R, S), Line(T, S))",
+        "Equals(LengthOf(Line(T, S)), Mul(10.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(S, R)), Mul(4.0, SqrtOf(3.0)))"
+    ],
+    "correct": true
+}

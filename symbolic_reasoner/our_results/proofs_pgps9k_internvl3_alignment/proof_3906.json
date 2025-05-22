@@ -1,0 +1,93 @@
+{
+    "problem_id": "3906",
+    "solved": true,
+    "problem_text": "m \\angle 13 = 2x+94, m \\angle 14 = 7x+49, find the measurement of \\angle 14.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(13)))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(Angle(14)))",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(13)),2x+94)",
+        "Equals(MeasureOf(Angle(14)),7x+49)",
+        "Find(MeasureOf(Angle(14)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "AC",
+        "AE",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            27.002175489485133,
+            28.53877551020408
+        ],
+        "B": [
+            303.0761421319797,
+            28.228571428571428
+        ],
+        "C": [
+            165.11675126903552,
+            127.02857142857142
+        ],
+        "D": [
+            27.622915155910075,
+            223.65714285714284
+        ],
+        "E": [
+            302.42436548223344,
+            224.5257142857143
+        ]
+    },
+    "problem_choices": [
+        77.778,
+        102.222,
+        112.0,
+        224.0
+    ],
+    "choices_precise_value": [
+        77.778,
+        102.222,
+        112.0,
+        224.0
+    ],
+    "problem_answer": 112.0,
+    "total_time": 9.396938,
+    "solution_predicate": "Equals(1.9547687622, MeasureOf(Angle(D, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((94 + 2 * x) / 180) = \u2220BCA, 3.14 = pi, C on AE, C on BD, pi * ((49 + 7 * x) / 180) = \u2220DCE\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((94 + 2 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((94 + 2 * x) / 180) = \u2220BCA\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220BCA = \u2220DCE\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((49 + 7 * x) / 180) = \u2220DCE\nConclusions: 3.14 * ((49 + 7 * x) / 180) = \u2220DCE\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220DCE, pi * ((94 + 2 * x) / 180) = \u2220BCA, pi * ((49 + 7 * x) / 180) = \u2220DCE\nConclusions: pi * ((49 + 7 * x) / 180) = pi * ((94 + 2 * x) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((49 + 7 * x) / 180) = pi * ((94 + 2 * x) / 180), pi * ((49 + 7 * x) / 180) = \u2220DCE\nConclusions: pi * ((94 + 2 * x) / 180) = \u2220DCE\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((94 + 2 * x) / 180) = \u2220DCE\nConclusions: 3.14 * ((94 + 2 * x) / 180) = \u2220DCE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((94 + 2 * x) / 180) = \u2220DCE, 3.14 * ((49 + 7 * x) / 180) = \u2220DCE\nConclusions: 3.14 * ((49 + 7 * x) / 180) = pi * ((94 + 2 * x) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((49 + 7 * x) / 180) = pi * ((94 + 2 * x) / 180), pi * ((94 + 2 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((49 + 7 * x) / 180) = \u2220BCA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((94 + 2 * x) / 180) = \u2220BCA, 3.14 * ((49 + 7 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((49 + 7 * x) / 180) = 3.14 * ((94 + 2 * x) / 180)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((94 + 2 * x) / 180) = \u2220DCE, 3.14 * ((49 + 7 * x) / 180) = 3.14 * ((94 + 2 * x) / 180)\nConclusions: 1.95 = \u2220DCE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(Add(Mul(2.0, x), 94.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(Add(Mul(7.0, x), 49.0), 180.0)))"
+    ],
+    "correct": true
+}

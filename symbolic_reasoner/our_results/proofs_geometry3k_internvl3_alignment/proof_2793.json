@@ -1,0 +1,72 @@
+{
+    "problem_id": "2793",
+    "solved": true,
+    "problem_text": "Find y so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 6x+14)",
+        "Equals(MeasureOf(Angle(B, A, D)), 6y+16)",
+        "Equals(MeasureOf(Angle(B, C, D)), 7y+2)",
+        "Equals(MeasureOf(Angle(C, D, A)), 8x-8)",
+        "Find(y)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            150.70422535211267,
+            196.0985915492958
+        ],
+        "B": [
+            563.3802816901409,
+            195.62910798122067
+        ],
+        "C": [
+            439.906103286385,
+            34.59624413145541
+        ],
+        "D": [
+            28.169014084507044,
+            34.12676056338029
+        ]
+    },
+    "problem_choices": [
+        "11",
+        "14",
+        "77",
+        "98"
+    ],
+    "choices_precise_value": [
+        11.0,
+        14.0,
+        77.0,
+        98.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 9.301789,
+    "solution_predicate": "Equals(14.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((8 * x - 8) / 180) = \u2220ADC, pi * ((14 + 6 * x) / 180) = \u2220CBA, Parallelogram(A, B, C, D), pi * ((2 + 7 * y) / 180) = \u2220DCB\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((14 + 6 * x) / 180) = \u2220CBA\nConclusions: 3.14 * ((14 + 6 * x) / 180) = \u2220CBA\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220ADC = \u2220CBA\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 + 7 * y) / 180) = \u2220DCB\nConclusions: 3.14 * ((2 + 7 * y) / 180) = \u2220DCB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADC = \u2220CBA, pi * ((8 * x - 8) / 180) = \u2220ADC\nConclusions: pi * ((8 * x - 8) / 180) = \u2220CBA\n\nStep 7:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220CBA + \u2220DCB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((8 * x - 8) / 180) = \u2220CBA\nConclusions: 3.14 * ((8 * x - 8) / 180) = \u2220CBA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CBA + \u2220DCB\nConclusions: 3.14 = \u2220CBA + \u2220DCB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((14 + 6 * x) / 180) = \u2220CBA, 3.14 * ((8 * x - 8) / 180) = \u2220CBA\nConclusions: 3.14 * ((14 + 6 * x) / 180) = 3.14 * ((8 * x - 8) / 180)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220CBA + \u2220DCB, 3.14 * ((14 + 6 * x) / 180) = 3.14 * ((8 * x - 8) / 180), 3.14 * ((14 + 6 * x) / 180) = \u2220CBA, 3.14 * ((2 + 7 * y) / 180) = \u2220DCB\nConclusions: 14 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Add(Mul(6.0, x), 14.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(Add(Mul(6.0, y), 16.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(Add(Mul(7.0, y), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(Sub(Mul(8.0, x), 8.0), 180.0)))"
+    ],
+    "correct": true
+}

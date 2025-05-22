@@ -1,0 +1,81 @@
+{
+    "problem_id": "6905",
+    "solved": true,
+    "problem_text": "Determine m \\widehat AC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 11)",
+        "Equals(LengthOf(Line(B, A)), 11)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Arc(B, A)), x)",
+        "Equals(MeasureOf(Arc(C, B)), 114)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "Find(MeasureOf(Arc(A,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "AC",
+        "BA"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "B": [
+            96.1227786752827,
+            44.43457189014539
+        ],
+        "D": [
+            119.12581837115056,
+            117.32688861963341
+        ],
+        "C": [
+            195.31502423263328,
+            126.66397415185781
+        ],
+        "A": [
+            69.62843295638126,
+            175.1292407108239
+        ]
+    },
+    "problem_choices": [
+        57.0,
+        114.0,
+        123.0,
+        132.0
+    ],
+    "choices_precise_value": [
+        57.0,
+        114.0,
+        123.0,
+        132.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 37.676452,
+    "solution_predicate": "Equals(2.14675498, MeasureOf(Arc(A, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(BDA), Arc(CDB), Arc(ADC), \u2220CDB, AB = AC, 3.14 = pi, \u2220ADC, \u2220CAD, \u2220DAB, \u2220BDA, pi * (114 / 180) = Arc(CDB), B on \u2299(D, radius_D), C on \u2299(D, radius_D), \u2220BAC, pi * (x / 180) = Arc(BDA)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BDA)\nConclusions: \u2220BDA = Arc(BDA)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CDB)\nConclusions: \u2220CDB = Arc(CDB)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ADC)\nConclusions: \u2220ADC = Arc(ADC)\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ADC, \u2220CDB, \u2220BDA\nConclusions: 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220CAD, \u2220DAB, \u2220BAC\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = Arc(BDA), \u2220BDA = Arc(BDA)\nConclusions: pi * (x / 180) = \u2220BDA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDB = Arc(CDB), pi * (114 / 180) = Arc(CDB)\nConclusions: pi * (114 / 180) = \u2220CDB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = CD, radius_D = BD\nConclusions: BD = CD\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\nConclusions: 2 * 3.14 = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BDA\nConclusions: 3.14 * (x / 180) = \u2220BDA\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (114 / 180) = \u2220CDB, \u2220ADC = Arc(ADC), 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB\nConclusions: 2 * 3.14 = pi * (114 / 180) + \u2220BDA + Arc(ADC)\n\nStep 15:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = AC, BD = CD\nConclusions: \u25b3ABD \u2245 \u25b3ACD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BAC + \u2220CAD + \u2220DAB, 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 17:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3ACD\nConclusions: AB = AC, \u2220ADC = \u2220BDA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (114 / 180) + \u2220BDA + Arc(ADC), 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (114 / 180) + \u2220BDA + Arc(ADC)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220BDA, \u2220ADC = Arc(ADC), \u2220ADC = \u2220BDA\nConclusions: 3.14 * (x / 180) = Arc(ADC)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = Arc(ADC), \u2220ADC = Arc(ADC)\nConclusions: 3.14 * (x / 180) = \u2220ADC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = Arc(ADC), 3.14 * (x / 180) = \u2220ADC, \u2220ADC = \u2220BDA\nConclusions: \u2220BDA = Arc(ADC)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : \u2220BDA = Arc(ADC), 2 * pi = pi * (114 / 180) + \u2220BDA + Arc(ADC), 2 * 3.14 = pi * (114 / 180) + \u2220BDA + Arc(ADC)\nConclusions: 2.15 = Arc(ADC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, A)",
+        "Circle(D, radius_D)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "Equals(LengthOf(Line(A, C)), 11.0)",
+        "Equals(LengthOf(Line(B, A)), 11.0)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Arc(B, D, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(C, D, B)), Mul(pi, Div(114.0, 180.0)))"
+    ],
+    "correct": true
+}

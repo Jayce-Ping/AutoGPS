@@ -1,0 +1,105 @@
+{
+    "problem_id": "2976",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(F, B))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, B, C)), 22)",
+        "Equals(MeasureOf(Angle(D, F, E)), 23)",
+        "Equals(MeasureOf(Angle(D, E, F)), 32)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "FD",
+        "FB",
+        "FC",
+        "DB",
+        "DC",
+        "BC",
+        "ED",
+        "EA",
+        "DA",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            161.8343195266272,
+            219.01183431952663
+        ],
+        "B": [
+            278.698224852071,
+            141.49704142011834
+        ],
+        "C": [
+            374.5562130177515,
+            140.31360946745562
+        ],
+        "D": [
+            215.97633136094674,
+            140.90532544378698
+        ],
+        "E": [
+            303.2544378698225,
+            16.644970414201183
+        ],
+        "F": [
+            16.568047337278106,
+            140.31360946745562
+        ]
+    },
+    "problem_choices": [
+        "32",
+        "33",
+        "45",
+        "55"
+    ],
+    "choices_precise_value": [
+        32.0,
+        33.0,
+        45.0,
+        55.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 36.919572,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(B, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (23 / 180) = \u2220DFE, DF, DE, \u2220CFE, pi * (32 / 180) = \u2220FED, \u2220CFE, \u2220EFC, \u2220EDF, \u2220BFE, D on BF, \u2220BDE, \u2220DFE, \u2220BFE, B on CF, 3.14 = pi, EF, \u2220EFB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CFE\nConclusions: \u2220CFE = 2 * pi - \u2220EFC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BFE\nConclusions: \u2220BFE = 2 * pi - \u2220EFB\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220EDF, \u2220BDE\nConclusions: pi = \u2220BDE + \u2220EDF\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220DFE\nConclusions: \u2220DFE = 2 * pi - \u2220EFD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220BFE, D on BF\nConclusions: \u2220BFE = \u2220DFE\n\nStep 7:\nTheorem: Same Angle\nPremises : B on CF, \u2220EFC\nConclusions: \u2220EFB = \u2220EFC\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CFE, B on CF\nConclusions: \u2220BFE = \u2220CFE\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : DE, EF, DF\nConclusions: \u25b3DEF\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220EFB, D on BF\nConclusions: \u2220EFB = \u2220EFD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BDE + \u2220EDF, 3.14 = pi\nConclusions: 3.14 = \u2220BDE + \u2220EDF\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (23 / 180) = \u2220DFE, \u2220BFE = \u2220DFE\nConclusions: pi * (23 / 180) = \u2220BFE\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(F, E, D)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DFE + \u2220EDF + \u2220FED\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFB = \u2220EFC, \u2220EFB = \u2220EFD\nConclusions: \u2220EFC = \u2220EFD\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (23 / 180) = \u2220BFE, \u2220BFE = 2 * pi - \u2220EFB, \u2220EFB = \u2220EFD\nConclusions: 3.14 * (23 / 180) = 2 * 3.14 - \u2220EFD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (23 / 180) = \u2220BFE, \u2220BFE = \u2220CFE\nConclusions: pi * (23 / 180) = \u2220CFE\n\nStep 17:\nTheorem: Substitution\nPremises : pi = \u2220DFE + \u2220EDF + \u2220FED, pi * (23 / 180) = \u2220DFE, pi * (32 / 180) = \u2220FED, 3.14 = pi\nConclusions: 3.14 = 3.14 * (23 / 180) + pi * (32 / 180) + \u2220EDF\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220EFC = \u2220EFD, 3.14 = pi, pi * (23 / 180) = \u2220CFE, \u2220CFE = 2 * pi - \u2220EFC\nConclusions: pi * (23 / 180) = 2 * 3.14 - \u2220EFD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (23 / 180) = 2 * 3.14 - \u2220EFD, pi * (23 / 180) = 2 * 3.14 - \u2220EFD\nConclusions: 3.14 * (23 / 180) = pi * (23 / 180)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (23 / 180) = pi * (23 / 180), pi * (23 / 180) = \u2220DFE\nConclusions: 3.14 * (23 / 180) = \u2220DFE\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (23 / 180) = \u2220DFE, \u2220DFE = 2 * pi - \u2220EFD\nConclusions: 3.14 * (23 / 180) = 2 * pi - \u2220EFD\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (23 / 180) = 2 * pi - \u2220EFD, pi * (23 / 180) = 2 * 3.14 - \u2220EFD, 3.14 = 3.14 * (23 / 180) + pi * (32 / 180) + \u2220EDF, 3.14 = \u2220BDE + \u2220EDF\nConclusions: 0.96 = \u2220BDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(F, D)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(E, D)",
+        "Line(E, A)",
+        "Line(D, A)",
+        "Line(F, E)",
+        "PointLiesOnLine(D, Line(F, B))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(22.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, E)), Mul(pi, Div(23.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, E, D)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": false
+}

@@ -1,0 +1,90 @@
+{
+    "problem_id": "3819",
+    "solved": true,
+    "problem_text": "What is the length of QN?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(N, R)), 18)",
+        "Equals(LengthOf(Line(Q, R)), x)",
+        "Equals(LengthOf(Line(R, P)), 12)",
+        "Line(N, P)",
+        "Line(N, R)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, P)",
+        "Perpendicular(Line(Q, N), Line(N, P))",
+        "Perpendicular(Line(Q, P), Line(N, R))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "Find(LengthOf(Line(Q,N)))"
+    ],
+    "point_instances": [
+        "N",
+        "Q",
+        "R",
+        "P"
+    ],
+    "line_instances": [
+        "QR",
+        "QP",
+        "RP",
+        "QN",
+        "NP",
+        "NR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            284.90047393364927,
+            49.628571428571426
+        ],
+        "Q": [
+            39.0173775671406,
+            211.99365079365077
+        ],
+        "R": [
+            284.90047393364927,
+            211.11836734693875
+        ],
+        "P": [
+            394.22274881516586,
+            211.7485714285714
+        ]
+    },
+    "problem_choices": [
+        14.422,
+        14.697,
+        19.698,
+        32.45
+    ],
+    "choices_precise_value": [
+        14.422,
+        14.697,
+        19.698,
+        32.45
+    ],
+    "problem_answer": 32.45,
+    "total_time": 69.980406,
+    "solution_predicate": "Equals(32.4499614792, LengthOf(Line(Q, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: NQ, NP \u22a5 NQ, NP, NR, sin(\u2220RNP), \u2220NPQ, 3.14 = pi, NR \u22a5 QR, x = QR, sin(\u2220RQN), 12 = PR, \u2220NPR, PR, NR \u22a5 PR, QR, R on PQ, 18 = NR, \u2220PQN, \u2220RNP, PQ, \u2220RQN, \u2220QNR\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : NP \u22a5 NQ\nConclusions: pi / 2 = \u2220QNP\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : NR \u22a5 QR\nConclusions: pi / 2 = \u2220NRQ\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220RQN), NR \u22a5 QR\nConclusions: NR / NQ = sin(\u2220RQN)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : PR, NP, NR\nConclusions: \u25b3NPR\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220RNP), NR \u22a5 PR\nConclusions: PR / NP = sin(\u2220RNP)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : NR \u22a5 PR\nConclusions: pi / 2 = \u2220PRN\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : QR, NQ, NR\nConclusions: \u25b3NQR\n\nStep 9:\nTheorem: Same Angle\nPremises : R on PQ, \u2220NPQ\nConclusions: \u2220NPQ = \u2220NPR\n\nStep 10:\nTheorem: Same Angle\nPremises : R on PQ, \u2220PQN\nConclusions: \u2220PQN = \u2220RQN\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : PQ, NP, NQ\nConclusions: \u25b3NPQ\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220NRQ, pi / 2 = \u2220QNP\nConclusions: \u2220NRQ = \u2220QNP\n\nStep 13:\nTheorem: Substitution\nPremises : NR / NQ = sin(\u2220RQN), 18 = NR\nConclusions: 18 / NQ = sin(\u2220RQN)\n\nStep 14:\nTheorem: Tan Function Definition\nPremises : \u2220NPR, \u25b3NPR, NR \u22a5 PR\nConclusions: NR / PR = tan(\u2220NPR)\n\nStep 15:\nTheorem: Cos Function Definition\nPremises : \u2220NPR, \u25b3NPR, NR \u22a5 PR\nConclusions: PR / NP = cos(\u2220NPR)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(N, P, R)\nPremises : \u25b3NPR\nConclusions: pi = \u2220NPR + \u2220PRN + \u2220RNP\n\nStep 17:\nTheorem: Sin Function Definition\nPremises : \u25b3NPR, NR \u22a5 PR, \u2220RNP\nConclusions: PR / NP = sin(\u2220RNP)\n\nStep 18:\nTheorem: Substitution\nPremises : PR / NP = sin(\u2220RNP), 12 = PR\nConclusions: 12 / NP = sin(\u2220RNP)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220NRQ, pi / 2 = \u2220PRN\nConclusions: \u2220NRQ = \u2220PRN\n\nStep 20:\nTheorem: Tan Function Definition\nPremises : \u2220QNR, NR \u22a5 QR, \u25b3NQR\nConclusions: QR / NR = tan(\u2220QNR)\n\nStep 21:\nTheorem: Pythagorean Theorem\nPremises : \u25b3NQR, NR \u22a5 QR\nConclusions: NQ = SqrtOf(NR ** 2 + QR ** 2)\n\nStep 22:\nTheorem: Cos Function Definition\nPremises : \u2220QNR, NR \u22a5 QR, \u25b3NQR\nConclusions: NR / NQ = cos(\u2220QNR)\n\nStep 23:\nTheorem: Sin Function Definition\nPremises : \u25b3NQR, NR \u22a5 QR, \u2220RQN\nConclusions: NR / NQ = sin(\u2220RQN)\n\nStep 24:\nTheorem: Interior Angle Sum Theorem for Triangle(N, P, Q)\nPremises : \u25b3NPQ\nConclusions: pi = \u2220NPQ + \u2220PQN + \u2220QNP\n\nStep 25:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220NRQ = \u2220QNP, \u2220PQN = \u2220RQN\nConclusions: \u25b3NPQ ~ \u25b3RNQ\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220NPR + \u2220PRN + \u2220RNP, pi / 2 = \u2220PRN\nConclusions: 3.14 = 3.14 / 2 + \u2220NPR + \u2220RNP\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 12 / NP = sin(\u2220RNP), PR / NP = sin(\u2220RNP)\nConclusions: 12 / NP = PR / NP\n\nStep 28:\nTheorem: Substitution\nPremises : x = QR, 18 = NR, QR / NR = tan(\u2220QNR)\nConclusions: x / 18 = tan(\u2220QNR)\n\nStep 29:\nTheorem: Substitution\nPremises : NQ = SqrtOf(NR ** 2 + QR ** 2), x = QR, 18 = NR\nConclusions: SqrtOf(18 ** 2 + x ** 2) = NQ\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : NR / NQ = sin(\u2220RQN), 18 / NQ = sin(\u2220RQN)\nConclusions: 18 / NQ = NR / NQ\n\nStep 31:\nTheorem: Substitution\nPremises : pi = \u2220NPQ + \u2220PQN + \u2220QNP, \u2220NPQ = \u2220NPR, \u2220PQN = \u2220RQN, pi / 2 = \u2220QNP, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + \u2220NPR + \u2220RQN\n\nStep 32:\nTheorem: Similar Definition\nPremises : \u25b3NPQ ~ \u25b3RNQ\nConclusions: sim_ratio_triangle_n_p_q_triangle_r_n_q = NP / NR, \u2220NRQ = \u2220QNP\n\nStep 33:\nTheorem: Substitution\nPremises : 12 / NP = PR / NP, 12 = PR\nConclusions: 12 / NP = 12 / NP\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : NR / NQ = cos(\u2220QNR), 18 / NQ = NR / NQ\nConclusions: 18 / NQ = cos(\u2220QNR)\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + \u2220NPR + \u2220RNP, \u2220PQN = \u2220RQN, 3.14 = 3.14 / 2 + \u2220NPR + \u2220RQN\nConclusions: \u2220PQN = \u2220RNP\n\nStep 36:\nTheorem: Substitution\nPremises : sim_ratio_triangle_n_p_q_triangle_r_n_q = NP / NR, 18 = NR\nConclusions: sim_ratio_triangle_n_p_q_triangle_r_n_q = NP / 18\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQN = \u2220RNP, \u2220PQN = \u2220RQN\nConclusions: \u2220RNP = \u2220RQN\n\nStep 38:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220NRQ = \u2220PRN, \u2220RNP = \u2220RQN\nConclusions: \u25b3NPR ~ \u25b3QNR\n\nStep 39:\nTheorem: Similar Definition\nPremises : \u25b3NPR ~ \u25b3QNR\nConclusions: \u2220NPR = \u2220QNR, \u2220NRQ = \u2220PRN\n\nStep 40:\nTheorem: Substitution\nPremises : \u2220NPR = \u2220QNR, PR / NP = cos(\u2220NPR), 12 = PR\nConclusions: 12 / NP = cos(\u2220QNR)\n\nStep 41:\nTheorem: Substitution\nPremises : \u2220NPR = \u2220QNR, NR / PR = tan(\u2220NPR), 18 = NR, 12 = PR\nConclusions: 18 / 12 = tan(\u2220QNR)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 12 / NP = cos(\u2220QNR), 18 / NQ = cos(\u2220QNR)\nConclusions: 18 / NQ = 12 / NP\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 18 / 12 = tan(\u2220QNR), x / 18 = tan(\u2220QNR)\nConclusions: 18 / 12 = x / 18\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 18 / NQ = 12 / NP, 12 / NP = 12 / NP\nConclusions: 12 / NP = 18 / NQ\n\nStep 45:\nTheorem: Solve Linear Equation System\nPremises : 18 / 12 = x / 18, x = QR\nConclusions: 27 = QR\n\nStep 46:\nTheorem: Solve Linear Equation System\nPremises : 12 / NP = 18 / NQ, sim_ratio_triangle_n_p_q_triangle_r_n_q = NP / 18\nConclusions: 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q = NQ\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : x = QR, 27 = QR\nConclusions: 27 = x\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q = NQ, SqrtOf(18 ** 2 + x ** 2) = NQ\nConclusions: 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q = SqrtOf(18 ** 2 + x ** 2)\n\nStep 49:\nTheorem: Substitution\nPremises : 27 = x, 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q = SqrtOf(18 ** 2 + x ** 2)\nConclusions: SqrtOf(18 ** 2 + 27 ** 2) = 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(18 ** 2 + 27 ** 2) = 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q, 27 * sim_ratio_triangle_n_p_q_triangle_r_n_q = NQ\nConclusions: SqrtOf(18 ** 2 + 27 ** 2) = NQ\n\nStep 51:\nTheorem: Evaluate\nPremises : SqrtOf(18 ** 2 + 27 ** 2) = NQ\nConclusions: 32.45 = NQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(Q, P)",
+        "Line(R, P)",
+        "Line(Q, N)",
+        "Line(N, P)",
+        "Line(N, R)",
+        "Line(N, P)",
+        "Line(N, R)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, P)",
+        "Perpendicular(Line(Q, N), Line(N, P))",
+        "Perpendicular(Line(Q, P), Line(N, R))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "Equals(LengthOf(Line(N, R)), 18.0)",
+        "Equals(LengthOf(Line(Q, R)), x)",
+        "Equals(LengthOf(Line(R, P)), 12.0)"
+    ],
+    "correct": true
+}

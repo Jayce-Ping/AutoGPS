@@ -1,0 +1,68 @@
+{
+    "problem_id": "2669",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(MeasureOf(Angle(A, B, D)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            14.925373134328359,
+            28.88059701492537
+        ],
+        "B": [
+            194.32835820895522,
+            29.179104477611943
+        ],
+        "C": [
+            372.5373134328358,
+            28.88059701492537
+        ],
+        "D": [
+            194.32835820895522,
+            151.2686567164179
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "90",
+        "180",
+        "360"
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 3.93374,
+    "solution_predicate": "Equals(90.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * (x / 180) = \u2220ABD, AB \u22a5 BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220ABD\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220ABD, pi * (x / 180) = \u2220ABD\nConclusions: 3.14 / 2 = 3.14 * (x / 180)\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 / 2 = 3.14 * (x / 180)\nConclusions: 90 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

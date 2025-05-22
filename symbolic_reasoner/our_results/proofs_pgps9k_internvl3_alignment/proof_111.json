@@ -1,0 +1,82 @@
+{
+    "problem_id": "111",
+    "solved": true,
+    "problem_text": "Use the diagram of \\parallelogram ABCD to find m \\angle A.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x+2)",
+        "Equals(LengthOf(Line(C, D)), 2x-3)",
+        "Equals(MeasureOf(Angle(A, B, C)), 127)",
+        "Find(MeasureOf(Angle(A)))",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(B, C), Line(A, D))",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "CD",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            184.9004524886878,
+            62.88
+        ],
+        "C": [
+            358.0197963800905,
+            62.910000000000004
+        ],
+        "A": [
+            79.85972850678732,
+            201.49714285714288
+        ],
+        "D": [
+            254.3280542986425,
+            201.24000000000004
+        ]
+    },
+    "problem_choices": [
+        26.5,
+        53.0,
+        90.0,
+        127.0
+    ],
+    "choices_precise_value": [
+        26.5,
+        53.0,
+        90.0,
+        127.0
+    ],
+    "problem_answer": 53.0,
+    "total_time": 6.579228,
+    "solution_predicate": "Equals(0.9250245036, MeasureOf(Angle(D, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, D), 3.14 = pi, pi * (127 / 180) = \u2220ABC\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BCD = \u2220DAB, \u2220ABC = \u2220CDA\n\nStep 3:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(A, B, C, D)\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220CDA, pi * (127 / 180) = \u2220ABC\nConclusions: pi * (127 / 180) = \u2220CDA\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (127 / 180) = \u2220ABC, pi * (127 / 180) = \u2220CDA, 3.14 = pi, \u2220BCD = \u2220DAB, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\nConclusions: 2 * 3.14 = 3.14 * (127 / 180) + 3.14 * (127 / 180) + \u2220DAB + \u2220DAB\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (127 / 180) + 3.14 * (127 / 180) + \u2220DAB + \u2220DAB\nConclusions: 0.93 = \u2220DAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(B, C), Line(A, D))",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(x, 2.0))",
+        "Equals(LengthOf(Line(C, D)), Sub(Mul(2.0, x), 3.0))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(127.0, 180.0)))"
+    ],
+    "correct": true
+}

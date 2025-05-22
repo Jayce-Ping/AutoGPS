@@ -1,0 +1,81 @@
+{
+    "problem_id": "2780",
+    "solved": true,
+    "problem_text": "Find \\angle 9.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnCircle(B, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(E, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Arc(C, B)), 120)",
+        "Tangent(Line(A, B), Circle(E))",
+        "Find(MeasureOf(angle 9))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            31.445945945945944,
+            125.16891891891892
+        ],
+        "B": [
+            95.12837837837839,
+            125.50675675675676
+        ],
+        "C": [
+            138.54054054054055,
+            43.24324324324324
+        ],
+        "D": [
+            152.5608108108108,
+            19.256756756756758
+        ],
+        "E": [
+            94.87837837837839,
+            72.33108108108108
+        ]
+    },
+    "problem_choices": [
+        "60",
+        "120",
+        "240",
+        "300"
+    ],
+    "choices_precise_value": [
+        60.0,
+        120.0,
+        240.0,
+        300.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 21.008344,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, CE, B on \u2299(E, radius_0_0), \u2220CBE, \u2220EBA, Arc(BEC), BE, \u2220ABD, \u2220DBA, Tangent(AB, \u2299(E, radius_0_0)), \u2220ABC, C on \u2299(E, radius_0_0), BC, 3.14 = pi, \u2220DBE, pi * (120 / 180) = Arc(BEC), \u2220ABC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : B on \u2299(E, radius_0_0)\nConclusions: radius_0_0 = BE\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BEC)\nConclusions: \u2220BEC = Arc(BEC)\n\nStep 4:\nTheorem: Same Angle\nPremises : C on BD, \u2220ABD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 5:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 6:\nTheorem: Tangent Definition\nPremises : Tangent(AB, \u2299(E, radius_0_0)), B on \u2299(E, radius_0_0)\nConclusions: AB \u22a5 BE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : C on \u2299(E, radius_0_0)\nConclusions: radius_0_0 = CE\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : BE, CE, BC\nConclusions: \u25b3BCE\n\nStep 10:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 2.09 = pi * (120 / 180)\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220DBE, C on BD\nConclusions: \u2220CBE = \u2220DBE\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220CBE, \u2220EBA, \u2220ABC\nConclusions: 2 * pi = \u2220ABC + \u2220CBE + \u2220EBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEC = Arc(BEC), pi * (120 / 180) = Arc(BEC)\nConclusions: pi * (120 / 180) = \u2220BEC\n\nStep 14:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BE\nConclusions: pi / 2 = \u2220EBA\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220ABD, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA, \u2220CBA = \u2220DBA\nConclusions: \u2220ABD = 2 * 3.14 - \u2220DBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BE, radius_0_0 = CE\nConclusions: BE = CE\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(E, C, B)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BEC + \u2220CBE + \u2220ECB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220BEC, 2.09 = pi * (120 / 180)\nConclusions: 2.09 = \u2220BEC\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220ABD, 3.14 = pi, pi / 2 = \u2220EBA, \u2220CBE = \u2220DBE, 2 * pi = \u2220ABC + \u2220CBE + \u2220EBA\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220ABD + \u2220DBE\n\nStep 20:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCE, BE = CE\nConclusions: \u2220CBE = \u2220ECB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220DBE, \u2220CBE = \u2220ECB\nConclusions: \u2220DBE = \u2220ECB\n\nStep 22:\nTheorem: Substitution\nPremises : 2.09 = \u2220BEC, 3.14 = pi, \u2220CBE = \u2220DBE, pi = \u2220BEC + \u2220CBE + \u2220ECB, \u2220DBE = \u2220ECB\nConclusions: 3.14 = 2.09 + \u2220DBE + \u2220DBE\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 2.09 + \u2220DBE + \u2220DBE, 2 * 3.14 = 3.14 / 2 + \u2220ABD + \u2220DBE, \u2220ABD = 2 * 3.14 - \u2220DBA, \u2220CBA = \u2220DBA\nConclusions: 2.09 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Circle(E, radius_0_0)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnCircle(B, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(E, radius_0_0))",
+        "Tangent(Line(A, B), Circle(E, radius_0_0))",
+        "Equals(MeasureOf(Arc(B, E, C)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

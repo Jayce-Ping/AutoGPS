@@ -1,0 +1,109 @@
+{
+    "problem_id": "2582",
+    "solved": true,
+    "problem_text": "Find P N.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(M, B))",
+        "PointLiesOnLine(N, Line(M, C))",
+        "PointLiesOnLine(L, Line(M, A))",
+        "Perpendicular(Line(M, L), Line(P, L))",
+        "Perpendicular(Line(M, N), Line(P, N))",
+        "Equals(LengthOf(Line(L, P)), 3x+6)",
+        "Equals(LengthOf(Line(P, N)), 4x-2)",
+        "Equals(MeasureOf(Angle(P, M, N)), 25)",
+        "Equals(MeasureOf(Angle(P, M, L)), 25)",
+        "Find(LengthOf(Line(P,N)))"
+    ],
+    "point_instances": [
+        "N",
+        "P",
+        "L",
+        "M",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "MP",
+        "MB",
+        "PB",
+        "MN",
+        "MC",
+        "NC",
+        "ML",
+        "MA",
+        "LA",
+        "LP",
+        "PN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            346.8619246861924,
+            298.94979079497904
+        ],
+        "P": [
+            399.581589958159,
+            182.63179916317992
+        ],
+        "L": [
+            345.60669456066944,
+            67.15062761506276
+        ],
+        "M": [
+            97.07112970711296,
+            182.63179916317992
+        ],
+        "A": [
+            411.2970711297071,
+            36.188284518828446
+        ],
+        "B": [
+            448.11715481171547,
+            183.0502092050209
+        ],
+        "C": [
+            412.9707112970711,
+            331.16736401673637
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "30",
+        "50",
+        "60"
+    ],
+    "choices_precise_value": [
+        25.0,
+        30.0,
+        50.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 117.000464,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(P, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MN \u22a5 NP, \u2220BPL, MN, \u2220AMC, LP, \u2220BML, \u2220AMN, 4 * x - 2 = NP, MP, \u2220BMA, pi * (25 / 180) = \u2220PML, LM, N on CM, L on AM, \u2220NPB, 6 + 3 * x = LP, pi * (25 / 180) = \u2220NMP, \u2220NML, \u2220LPM, tan(\u2220LPM), \u2220MPN, \u2220PMA, NP, LM \u22a5 LP, \u2220LPN, \u2220NMP, 3.14 = pi, P on BM, \u2220MPN\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : MN \u22a5 NP\nConclusions: pi / 2 = \u2220PNM\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : LP, LM, MP\nConclusions: \u25b3LMP\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220AMC, N on CM\nConclusions: \u2220AMC = \u2220AMN\n\nStep 5:\nTheorem: Same Angle\nPremises : L on AM, \u2220AMN\nConclusions: \u2220AMN = \u2220LMN\n\nStep 6:\nTheorem: Same Angle\nPremises : L on AM, \u2220AMC\nConclusions: \u2220AMC = \u2220LMC\n\nStep 7:\nTheorem: Same Angle\nPremises : L on AM, \u2220BMA\nConclusions: \u2220BMA = \u2220BML\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220NML\nConclusions: \u2220NML = 2 * pi - \u2220LMN\n\nStep 9:\nTheorem: Circumference Split\nPremises : \u2220NPB, \u2220MPN, \u2220BPL, \u2220LPM\nConclusions: 2 * pi = \u2220BPL + \u2220LPM + \u2220MPN + \u2220NPB\n\nStep 10:\nTheorem: Same Angle\nPremises : L on AM, \u2220PMA\nConclusions: \u2220PMA = \u2220PML\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : LP, MN, LM, NP\nConclusions: Quadrilateral(L, M, N, P)\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : NP, MN, MP\nConclusions: \u25b3MNP\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : LM \u22a5 LP\nConclusions: pi / 2 = \u2220MLP\n\nStep 14:\nTheorem: Angle Tan Definition\nPremises : LM \u22a5 LP, tan(\u2220LPM)\nConclusions: LM / LP = tan(\u2220LPM)\n\nStep 15:\nTheorem: Circumference splited\nPremises : \u2220NPB, \u2220BPL, \u2220LPN\nConclusions: 2 * pi = \u2220BPL + \u2220LPN + \u2220NPB\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220NMP, \u2220AMN, \u2220PMA\nConclusions: 2 * pi = \u2220AMN + \u2220NMP + \u2220PMA\n\nStep 17:\nTheorem: Same Angle\nPremises : P on BM, \u2220BMA\nConclusions: \u2220BMA = \u2220PMA\n\nStep 18:\nTheorem: Same Angle\nPremises : P on BM, \u2220BML\nConclusions: \u2220BML = \u2220PML\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(P, M, L)\nPremises : \u25b3LMP\nConclusions: pi = \u2220LPM + \u2220MLP + \u2220PML\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMC = \u2220LMC, \u2220AMC = \u2220AMN\nConclusions: \u2220AMN = \u2220LMC\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, N, M, L)\nPremises : Quadrilateral(L, M, N, P)\nConclusions: 2 * pi = \u2220LPN + \u2220MLP + \u2220NML + \u2220PNM\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(P, N, M)\nPremises : \u25b3MNP\nConclusions: pi = \u2220MPN + \u2220NMP + \u2220PNM\n\nStep 23:\nTheorem: Tan Function Definition\nPremises : \u25b3MNP, \u2220MPN, MN \u22a5 NP\nConclusions: MN / NP = tan(\u2220MPN)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MLP, pi / 2 = \u2220PNM\nConclusions: \u2220MLP = \u2220PNM\n\nStep 25:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BPL + \u2220LPN + \u2220NPB\nConclusions: 2 * 3.14 = \u2220BPL + \u2220LPN + \u2220NPB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BMA = \u2220PMA, \u2220BMA = \u2220BML\nConclusions: \u2220BML = \u2220PMA\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220MLP, pi * (25 / 180) = \u2220PML, pi = \u2220LPM + \u2220MLP + \u2220PML\nConclusions: 3.14 = pi / 2 + 3.14 * (25 / 180) + \u2220LPM\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMN = \u2220LMN, \u2220AMN = \u2220LMC\nConclusions: \u2220LMC = \u2220LMN\n\nStep 29:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220LPN + \u2220MLP + \u2220NML + \u2220PNM, pi / 2 = \u2220MLP, pi / 2 = \u2220PNM\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 / 2 + \u2220LPN + \u2220NML\n\nStep 30:\nTheorem: Substitution\nPremises : pi * (25 / 180) = \u2220NMP, pi = \u2220MPN + \u2220NMP + \u2220PNM, pi / 2 = \u2220PNM, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (25 / 180) + \u2220MPN\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220MPN + \u2220NMP + \u2220PNM\nConclusions: 3.14 = \u2220MPN + \u2220NMP + \u2220PNM\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BPL + \u2220LPN + \u2220NPB, 2 * pi = \u2220BPL + \u2220LPN + \u2220NPB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BML = \u2220PML, pi * (25 / 180) = \u2220PML, \u2220BML = \u2220PMA\nConclusions: pi * (25 / 180) = \u2220PMA\n\nStep 34:\nTheorem: Substitution\nPremises : \u2220LMC = \u2220LMN, \u2220NML = 2 * pi - \u2220LMN, 3.14 = pi\nConclusions: \u2220NML = 2 * 3.14 - \u2220LMC\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (25 / 180) + \u2220MPN\nConclusions: 1.13 = \u2220MPN\n\nStep 36:\nTheorem: Substitution\nPremises : pi * (25 / 180) = \u2220NMP, 3.14 = \u2220MPN + \u2220NMP + \u2220PNM, pi / 2 = \u2220PNM\nConclusions: 3.14 = pi / 2 + pi * (25 / 180) + \u2220MPN\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 / 2 + 3.14 / 2 + \u2220LPN + \u2220NML, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 / 2 + 3.14 / 2 + \u2220LPN + \u2220NML\n\nStep 38:\nTheorem: Substitution\nPremises : \u2220AMN = \u2220LMC, 2 * pi = \u2220AMN + \u2220NMP + \u2220PMA, 3.14 = pi, pi * (25 / 180) = \u2220NMP, pi * (25 / 180) = \u2220PMA\nConclusions: 2 * 3.14 = 3.14 * (25 / 180) + 3.14 * (25 / 180) + \u2220LMC\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : pi * (25 / 180) = \u2220NMP, \u2220PMA = \u2220PML, pi * (25 / 180) = \u2220PMA\nConclusions: \u2220NMP = \u2220PML\n\nStep 40:\nTheorem: Evaluate\nPremises : 1.13 = \u2220MPN\nConclusions: 2.14 = tan(\u2220MPN)\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (25 / 180) + 3.14 * (25 / 180) + \u2220LMC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (25 / 180) + 3.14 * (25 / 180) + \u2220LMC\n\nStep 42:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220NMP = \u2220PML, \u2220MLP = \u2220PNM\nConclusions: \u25b3LMP \u2245 \u25b3NMP\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 2.14 = tan(\u2220MPN), MN / NP = tan(\u2220MPN)\nConclusions: 2.14 = MN / NP\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + 3.14 * (25 / 180) + \u2220LPM, 2 * pi = \u2220BPL + \u2220LPM + \u2220MPN + \u2220NPB, 2 * pi = 3.14 / 2 + 3.14 / 2 + \u2220LPN + \u2220NML, 3.14 = pi / 2 + pi * (25 / 180) + \u2220MPN, 2 * 3.14 = \u2220BPL + \u2220LPN + \u2220NPB, 2 * pi = 3.14 * (25 / 180) + 3.14 * (25 / 180) + \u2220LMC, \u2220NML = 2 * 3.14 - \u2220LMC\nConclusions: 1.13 = \u2220LPM\n\nStep 45:\nTheorem: Congruent Definition\nPremises : \u25b3LMP \u2245 \u25b3NMP\nConclusions: LM = MN, \u2220MLP = \u2220PNM, LP = NP\n\nStep 46:\nTheorem: Substitution\nPremises : 6 + 3 * x = LP, LM = MN, 1.13 = \u2220LPM, LM / LP = tan(\u2220LPM)\nConclusions: tan(1.13) = MN / (6 + 3 * x)\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 6 + 3 * x = LP, LP = NP, 4 * x - 2 = NP\nConclusions: 6 + 3 * x = 4 * x - 2\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : 2.14 = MN / NP, 6 + 3 * x = 4 * x - 2, tan(1.13) = MN / (6 + 3 * x)\nConclusions: 30 = NP\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, B)",
+        "Line(P, B)",
+        "Line(M, N)",
+        "Line(M, C)",
+        "Line(N, C)",
+        "Line(M, L)",
+        "Line(M, A)",
+        "Line(L, A)",
+        "Line(L, P)",
+        "Line(P, N)",
+        "PointLiesOnLine(P, Line(M, B))",
+        "PointLiesOnLine(N, Line(M, C))",
+        "PointLiesOnLine(L, Line(M, A))",
+        "Perpendicular(Line(M, L), Line(P, L))",
+        "Perpendicular(Line(M, N), Line(P, N))",
+        "Equals(LengthOf(Line(L, P)), Add(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(P, N)), Sub(Mul(4.0, x), 2.0))",
+        "Equals(MeasureOf(Angle(N, M, P)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, M, L)), Mul(pi, Div(25.0, 180.0)))"
+    ],
+    "correct": true
+}

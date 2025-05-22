@@ -1,0 +1,111 @@
+{
+    "problem_id": "4044",
+    "solved": true,
+    "problem_text": "In rhombus ABCD, m \\angle DAB = 2 m \\angle ADC and CB = 6. Find m \\angle ADB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A,B,C,D)",
+        "Equals(MeasureOf(Angle(D,A,B)),Mul(MeasureOf(Angle(A,D,C)),2))",
+        "Equals(LengthOf(Line(C,B)),6)",
+        "Find(MeasureOf(Angle(A,D,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "E",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "CE",
+        "CA",
+        "EA",
+        "AD",
+        "CB",
+        "AB",
+        "DE",
+        "DB",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            36.29983277591973,
+            40.84527472527473
+        ],
+        "A": [
+            90.96991304347826,
+            136.06674285714286
+        ],
+        "B": [
+            198.91337161607876,
+            136.07935309973047
+        ],
+        "E": [
+            117.57213842058562,
+            88.63766763848396
+        ],
+        "C": [
+            144.67844990548204,
+            41.21590062111801
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 123.04145,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(A, D, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220CDA, E on BD, \u2220CDA, AB, AD, \u2220CBD, \u2220ADB, \u2220BDC, Rhombus(A, B, C, D), \u2220BAD = 2 * \u2220ADC, BD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 3:\nTheorem: Same Angle\nPremises : E on BD, \u2220CBD\nConclusions: \u2220CBD = \u2220CBE\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220ADB, \u2220CDA, \u2220BDC\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 5:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CBD = \u2220DBA, \u2220ADB = \u2220BDC\n\nStep 6:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BD, AD, AB\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220DBA, \u2220CBD = \u2220CBE\nConclusions: \u2220CBE = \u2220DBA\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220BDC = \u2220DBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220DBA, \u2220BDC = \u2220DBA\nConclusions: \u2220BDC = \u2220CBD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CBD, \u2220CBD = \u2220CBE\nConclusions: \u2220BDC = \u2220CBE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220BDC, \u2220BDC = \u2220CBE, \u2220CBE = \u2220DBA\nConclusions: \u2220ADB = \u2220DBA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, \u2220BAD = 2 * \u2220ADC, \u2220ADB = \u2220BDC, \u2220CDA = 2 * pi - \u2220ADC, 3.14 = \u2220ADB + \u2220BAD + \u2220DBA, \u2220ADB = \u2220DBA\nConclusions: 0.52 = \u2220ADB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(MeasureOf(Angle(A, D, C)), 2.0))",
+        "Equals(LengthOf(Line(C, B)), 6.0)"
+    ],
+    "correct": true
+}

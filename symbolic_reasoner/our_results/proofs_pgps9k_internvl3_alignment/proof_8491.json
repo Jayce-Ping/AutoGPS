@@ -1,0 +1,86 @@
+{
+    "problem_id": "8491",
+    "solved": true,
+    "problem_text": "Find the value of b that would make the quadrilateral a parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 1.4b)",
+        "Equals(LengthOf(Line(C, D)), b+8)",
+        "Equals(MeasureOf(Angle(B, C, D)), 4a-6.6)",
+        "Equals(MeasureOf(Angle(C, B, A)), 3a+1.8)",
+        "Find(b)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Parallelogram(A, B, C, D)",
+        "Quadrilateral(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "AC",
+        "BA",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            201.61111111111111,
+            33.73714285714286
+        ],
+        "B": [
+            21.375,
+            124.6692857142857
+        ],
+        "C": [
+            417.73611111111114,
+            124.6692857142857
+        ],
+        "D": [
+            238.29166666666669,
+            216.9192857142857
+        ]
+    },
+    "problem_choices": [
+        19.286,
+        19.615,
+        20.0,
+        71.667
+    ],
+    "choices_precise_value": [
+        19.286,
+        19.615,
+        20.0,
+        71.667
+    ],
+    "problem_answer": 20.0,
+    "total_time": 20.103289,
+    "solution_predicate": "Equals(20.0, b)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, D, C), 1.4 * b = AB, 8 + b = CD\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 1.4 * b = AB\nConclusions: 1.4 * b = CD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.4 * b = CD, 8 + b = CD\nConclusions: 8 + b = 1.4 * b\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 8 + b = 1.4 * b\nConclusions: 20 = b\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Parallelogram(A, B, D, C)",
+        "Quadrilateral(A, B, D, C)",
+        "Equals(LengthOf(Line(B, A)), Mul(1.4, b))",
+        "Equals(LengthOf(Line(C, D)), Add(b, 8.0))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Sub(Mul(4.0, a), 6.6), 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Add(Mul(3.0, a), 1.8), 180.0)))"
+    ],
+    "correct": true
+}

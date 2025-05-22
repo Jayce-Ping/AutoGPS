@@ -1,0 +1,80 @@
+{
+    "problem_id": "2444",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), 40)",
+        "Equals(LengthOf(Line(C, D)), 22)",
+        "Equals(MeasureOf(Angle(C, D, B)), x)",
+        "Equals(MeasureOf(Angle(B, A, D)), y)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            9.162303664921465,
+            200.54450261780104
+        ],
+        "B": [
+            162.30366492146595,
+            199.7591623036649
+        ],
+        "C": [
+            314.1361256544502,
+            200.282722513089
+        ],
+        "D": [
+            315.1832460732984,
+            31.43455497382199
+        ]
+    },
+    "problem_choices": [
+        "37.2",
+        "40.6",
+        "49.4",
+        "52.8"
+    ],
+    "choices_precise_value": [
+        37.2,
+        40.6,
+        49.4,
+        52.8
+    ],
+    "problem_answer": 37.2,
+    "total_time": 47.692457,
+    "solution_predicate": "Equals(37.207243574, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220BDC, BC, 3.14 = pi, B on AC, 22 = CD, \u2220BDC, cos(\u2220CAD), 40 = AD, CD, BC \u22a5 CD, AB = BC, BD, sin(\u2220CAD), AC \u22a5 CD\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220BDC, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220BDC\n\nStep 3:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : AC \u22a5 CD, cos(\u2220CAD)\nConclusions: AC / AD = cos(\u2220CAD)\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CAD), AC \u22a5 CD\nConclusions: CD / AD = sin(\u2220CAD)\n\nStep 7:\nTheorem: Tan Function Definition\nPremises : \u2220BDC, BC \u22a5 CD, \u25b3BCD\nConclusions: BC / CD = tan(\u2220BDC)\n\nStep 8:\nTheorem: Substitution\nPremises : AC / AD = cos(\u2220CAD), 40 = AD\nConclusions: AC / 40 = cos(\u2220CAD)\n\nStep 9:\nTheorem: Substitution\nPremises : 40 = AD, CD / AD = sin(\u2220CAD), 22 = CD\nConclusions: 22 / 40 = sin(\u2220CAD)\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220BDC, BC / CD = tan(\u2220BDC), 22 = CD\nConclusions: BC / 22 = tan(3.14 * (x / 180))\n\nStep 11:\nTheorem: Solve Univariate Equation\nPremises : 22 / 40 = sin(\u2220CAD)\nConclusions: 0.58 = \u2220CAD\n\nStep 12:\nTheorem: Substitution\nPremises : 0.58 = \u2220CAD, AC / 40 = cos(\u2220CAD)\nConclusions: cos(0.58) = AC / 40\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : AB = BC, cos(0.58) = AC / 40, AC = AB + BC\nConclusions: 16.7 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AB = BC, 16.7 = AB\nConclusions: 16.7 = BC\n\nStep 15:\nTheorem: Substitution\nPremises : BC / 22 = tan(3.14 * (x / 180)), 16.7 = BC\nConclusions: 16.7 / 22 = tan(3.14 * (x / 180))\n\nStep 16:\nTheorem: Solve Univariate Equation\nPremises : 16.7 / 22 = tan(3.14 * (x / 180))\nConclusions: 37.21 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), 40.0)",
+        "Equals(LengthOf(Line(C, D)), 22.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

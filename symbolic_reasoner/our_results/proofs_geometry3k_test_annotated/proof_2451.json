@@ -1,0 +1,61 @@
+{
+    "problem_id": "2451",
+    "solved": true,
+    "problem_text": "Find m \\angle R.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 37)",
+        "Equals(LengthOf(Line(S, Q)), 23)",
+        "Equals(LengthOf(Line(R, Q)), 18)",
+        "Find(MeasureOf(Angle(R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "S"
+    ],
+    "line_instances": [
+        "RS",
+        "QS",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            154.23280423280423,
+            42.30158730158729
+        ],
+        "R": [
+            53.7037037037037,
+            100.50264550264549
+        ],
+        "S": [
+            291.005291005291,
+            100.23809523809524
+        ]
+    },
+    "problem_choices": [
+        "29.1",
+        "43.7",
+        "54.8",
+        "56.1"
+    ],
+    "choices_precise_value": [
+        29.1,
+        43.7,
+        54.8,
+        56.1
+    ],
+    "problem_answer": 29.1,
+    "total_time": 4.573701,
+    "solution_predicate": "Equals(0.5076817592, MeasureOf(Angle(S, R, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 23 = QS, QR, 18 = QR, RS, 37 = RS, QS\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : QS, QR, RS\nConclusions: \u25b3QRS\n\nStep 3:\nTheorem: Law of Cosines\nPremises : \u25b3QRS\nConclusions: (QR ** 2 + RS ** 2) - QS ** 2 = 2 * QR * RS * cos(\u2220SRQ)\n\nStep 4:\nTheorem: Substitution\nPremises : (QR ** 2 + RS ** 2) - QS ** 2 = 2 * QR * RS * cos(\u2220SRQ), 23 = QS, 18 = QR, 37 = RS\nConclusions: (18 ** 2 + 37 ** 2) - 23 ** 2 = 18 * 2 * 37 * cos(\u2220SRQ)\n\nStep 5:\nTheorem: Solve Univariate Equation\nPremises : (18 ** 2 + 37 ** 2) - 23 ** 2 = 18 * 2 * 37 * cos(\u2220SRQ)\nConclusions: 0.51 = \u2220SRQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(Q, S)",
+        "Line(R, Q)",
+        "Equals(LengthOf(Line(R, S)), 37.0)",
+        "Equals(LengthOf(Line(S, Q)), 23.0)",
+        "Equals(LengthOf(Line(R, Q)), 18.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,83 @@
+{
+    "problem_id": "2707",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Equals(LengthOf(Line(A, E)), 13)",
+        "Equals(LengthOf(Line(E, D)), 15)",
+        "Find(AreaOf(Parallelogram(A, E, D, C)))",
+        "Perpendicular(Line(A, B), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "EB",
+        "EA",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            46.84466019417476,
+            156.10679611650485
+        ],
+        "B": [
+            112.62135922330097,
+            155.8640776699029
+        ],
+        "C": [
+            240.7766990291262,
+            155.8640776699029
+        ],
+        "D": [
+            307.28155339805824,
+            46.883495145631066
+        ],
+        "E": [
+            112.86407766990291,
+            46.883495145631066
+        ]
+    },
+    "problem_choices": [
+        "165",
+        "180",
+        "195",
+        "210"
+    ],
+    "choices_precise_value": [
+        165.0,
+        180.0,
+        195.0,
+        210.0
+    ],
+    "problem_answer": 180.0,
+    "total_time": 31.63944,
+    "solution_predicate": "Equals(180.0, AreaOf(Parallelogram(A, E, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAE, 5 = AB, cos(\u2220BAE), BE, 3.14 = pi, AE, AB, 15 = DE, Parallelogram(A, C, D, E), B on AC, AB \u22a5 BE, 13 = AE, BC \u22a5 BE\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 13 = 13 / sin(pi / 2)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AE, BE\nConclusions: \u25b3ABE\n\nStep 4:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, C, D, E)\nConclusions: \u2220CAE = \u2220EDC\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, C, D, E)\nConclusions: AC = DE\n\nStep 6:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAE\nConclusions: \u2220BAE = \u2220CAE\n\nStep 7:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BAE), AB \u22a5 BE\nConclusions: AB / AE = cos(\u2220BAE)\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BE\nConclusions: pi / 2 = \u2220EBA\n\nStep 9:\nTheorem: Area formula of Parallelogram(A, C, D, E)\nPremises : Parallelogram(A, C, D, E), BC \u22a5 BE\nConclusions: Area(Parallelogram(A, C, D, E)) = AC * BE\n\nStep 10:\nTheorem: Law of Sines\nPremises : \u25b3ABE\nConclusions: AB / sin(\u2220AEB) = BE / sin(\u2220BAE), AB / sin(\u2220AEB) = AE / sin(\u2220EBA)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : AC = DE, 15 = DE\nConclusions: 15 = AC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAE = \u2220EDC, \u2220BAE = \u2220CAE\nConclusions: \u2220BAE = \u2220EDC\n\nStep 13:\nTheorem: Substitution\nPremises : AB / sin(\u2220AEB) = AE / sin(\u2220EBA), 13 = AE, 5 = AB, pi / 2 = \u2220EBA\nConclusions: 13 / sin(pi / 2) = 5 / sin(\u2220AEB)\n\nStep 14:\nTheorem: Substitution\nPremises : Area(Parallelogram(A, C, D, E)) = AC * BE, 15 = AC\nConclusions: Area(Parallelogram(A, C, D, E)) = 15 * BE\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220BAE = \u2220EDC, AB / AE = cos(\u2220BAE), 5 = AB, 13 = AE\nConclusions: 5 / 13 = cos(\u2220EDC)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 13 = 13 / sin(pi / 2), 13 / sin(pi / 2) = 5 / sin(\u2220AEB)\nConclusions: 13 = 5 / sin(\u2220AEB)\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : 5 / 13 = cos(\u2220EDC)\nConclusions: 1.18 = \u2220EDC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = \u2220EDC, 1.18 = \u2220EDC\nConclusions: 1.18 = \u2220BAE\n\nStep 19:\nTheorem: Substitution\nPremises : AB / sin(\u2220AEB) = BE / sin(\u2220BAE), 5 = AB, 1.18 = \u2220BAE\nConclusions: 5 / sin(\u2220AEB) = BE / sin(1.18)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 13 = 5 / sin(\u2220AEB), 5 / sin(\u2220AEB) = BE / sin(1.18)\nConclusions: 13 = BE / sin(1.18)\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 13 = BE / sin(1.18), Area(Parallelogram(A, C, D, E)) = 15 * BE\nConclusions: 180 = Area(Parallelogram(A, C, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, B), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 5.0)",
+        "Equals(LengthOf(Line(A, E)), 13.0)",
+        "Equals(LengthOf(Line(E, D)), 15.0)"
+    ],
+    "correct": true
+}

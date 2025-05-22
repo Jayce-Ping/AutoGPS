@@ -1,0 +1,147 @@
+{
+    "problem_id": "2538",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 3 in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(C, Line(B, H))",
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(E, Line(C, H))",
+        "PointLiesOnLine(G, Line(B, H))",
+        "PointLiesOnLine(G, Line(C, H))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(E, C, A)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(H, G, F)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(G, E, F)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(C, E, F)), 120)",
+        "Equals(MeasureOf(Angle(B, A, C)), 78)",
+        "Equals(MeasureOf(Angle(C, B, A)), 50)",
+        "Equals(MeasureOf(Angle(E, F, G)), 56)",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "BC",
+        "BE",
+        "BG",
+        "BH",
+        "CE",
+        "CG",
+        "CH",
+        "EG",
+        "EH",
+        "GH",
+        "BA",
+        "DC",
+        "DA",
+        "CA",
+        "DE",
+        "DF",
+        "EF",
+        "GF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            131.4516129032258,
+            238.38709677419354
+        ],
+        "B": [
+            34.67741935483871,
+            124.67741935483872
+        ],
+        "C": [
+            220.96774193548387,
+            124.67741935483872
+        ],
+        "D": [
+            303.6290322580645,
+            20.241935483870975
+        ],
+        "E": [
+            365.7258064516129,
+            125.48387096774195
+        ],
+        "F": [
+            427.01612903225805,
+            232.74193548387098
+        ],
+        "G": [
+            476.61290322580646,
+            125.88709677419354
+        ],
+        "H": [
+            539.1129032258065,
+            125.88709677419354
+        ]
+    },
+    "problem_choices": [
+        "52",
+        "56",
+        "60",
+        "68"
+    ],
+    "choices_precise_value": [
+        52.0,
+        56.0,
+        60.0,
+        68.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 111.723138,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CEF, 3.14 = pi, AC, pi * (78 / 180) = \u2220CAB, AB, \u2220DEC, CD, C on AD, E on CH, DE, pi * (50 / 180) = \u2220ABC, \u2220HCD, CE, pi * (120 / 180) = \u2220CEF, BC, C on BH\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220CEF, \u2220DEC\nConclusions: pi = \u2220CEF + \u2220DEC\n\nStep 3:\nTheorem: Same Angle\nPremises : E on CH, \u2220HCD\nConclusions: \u2220ECD = \u2220HCD\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, CE, DE\nConclusions: \u25b3CDE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : C on BH, C on AD\nConclusions: \u2220BCA = \u2220HCD\n\nStep 7:\nTheorem: Substitution\nPremises : pi = \u2220CEF + \u2220DEC, 3.14 = pi, pi * (120 / 180) = \u2220CEF\nConclusions: 3.14 = 3.14 * (120 / 180) + \u2220DEC\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ECD = \u2220HCD, pi = \u2220CDE + \u2220DEC + \u2220ECD\nConclusions: 3.14 = \u2220CDE + \u2220DEC + \u2220HCD\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (50 / 180) = \u2220ABC, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (78 / 180) = \u2220CAB, \u2220BCA = \u2220HCD\nConclusions: 3.14 = pi * (50 / 180) + pi * (78 / 180) + \u2220HCD\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220CDE + \u2220DEC + \u2220HCD, 3.14 = pi, 3.14 = 3.14 * (120 / 180) + \u2220DEC, 3.14 = pi * (50 / 180) + pi * (78 / 180) + \u2220HCD\nConclusions: 1.19 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(B, G)",
+        "Line(B, H)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(C, H)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(B, A)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(C, Line(B, H))",
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(E, Line(C, H))",
+        "PointLiesOnLine(G, Line(B, H))",
+        "PointLiesOnLine(G, Line(C, H))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(C, E, F)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(78.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

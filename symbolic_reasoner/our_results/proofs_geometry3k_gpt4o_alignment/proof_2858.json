@@ -1,0 +1,89 @@
+{
+    "problem_id": "2858",
+    "solved": true,
+    "problem_text": "Find x in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Parallel(Line(C, B), Line(D, E))",
+        "Equals(MeasureOf(Angle(B, E, D)), 68)",
+        "Equals(MeasureOf(Angle(A, B, C)), 2x)",
+        "Equals(MeasureOf(Angle(C, D, E)), 3x-15)",
+        "Equals(MeasureOf(Angle(A, C, B)), y^{2})",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "EB",
+        "EA",
+        "BA",
+        "DC",
+        "DA",
+        "CA",
+        "DE",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            376.2917933130699,
+            160.51063829787233
+        ],
+        "B": [
+            165.95744680851064,
+            159.59878419452886
+        ],
+        "C": [
+            196.6565349544073,
+            77.22796352583586
+        ],
+        "D": [
+            68.38905775075987,
+            18.26139817629179
+        ],
+        "E": [
+            15.19756838905775,
+            160.51063829787233
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "34",
+        "60",
+        "68"
+    ],
+    "choices_precise_value": [
+        30.0,
+        34.0,
+        60.0,
+        68.0
+    ],
+    "problem_answer": 34.0,
+    "total_time": 27.842197,
+    "solution_predicate": "Equals(34.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((2 * x) / 180) = \u2220ABC, 3.14 = pi, B on AE, pi * (68 / 180) = \u2220BED, BC || ED, \u2220AED\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BC || ED\nConclusions: \u2220ABC = \u2220AED\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AE, \u2220AED\nConclusions: \u2220AED = \u2220BED\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220ABC, \u2220ABC = \u2220AED\nConclusions: pi * ((2 * x) / 180) = \u2220AED\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (68 / 180) = \u2220BED, \u2220AED = \u2220BED, pi * ((2 * x) / 180) = \u2220AED\nConclusions: pi * (68 / 180) = pi * ((2 * x) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220ABC, pi * (68 / 180) = pi * ((2 * x) / 180)\nConclusions: pi * (68 / 180) = \u2220ABC\n\nStep 7:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220ABC, pi * (68 / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * (68 / 180) = 3.14 * ((2 * x) / 180)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (68 / 180) = 3.14 * ((2 * x) / 180)\nConclusions: 34 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, B)",
+        "Line(E, A)",
+        "Line(B, A)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(D, E)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Parallel(Line(C, B), Line(D, E))",
+        "Equals(MeasureOf(Angle(B, E, D)), Mul(pi, Div(68.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(Sub(Mul(3.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(Pow(y, 2.0), 180.0)))"
+    ],
+    "correct": true
+}

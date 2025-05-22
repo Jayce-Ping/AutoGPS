@@ -1,0 +1,74 @@
+{
+    "problem_id": "2925",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 10)",
+        "Equals(LengthOf(Line(D, A)), 12)",
+        "Find(AreaOf(Rectangle(A, B, C, D)))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Perpendicular(Line(D, A), Line(B, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DA",
+        "BA",
+        "CB",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            211.609756097561,
+            182.43902439024393
+        ],
+        "B": [
+            211.85365853658539,
+            18.29268292682927
+        ],
+        "C": [
+            14.048780487804883,
+            18.29268292682927
+        ],
+        "D": [
+            14.292682926829272,
+            182.43902439024393
+        ]
+    },
+    "problem_choices": [
+        "22",
+        "44",
+        "60",
+        "120"
+    ],
+    "choices_precise_value": [
+        22.0,
+        44.0,
+        60.0,
+        120.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 8.700207,
+    "solution_predicate": "Equals(120.0, AreaOf(Rectangle(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AD, 10 = AB, Area(Rectangle(A, B, C, D)), Rectangle(A, B, C, D)\n\nStep 2:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 12 = AD, AD = BC\nConclusions: 12 = BC\n\nStep 6:\nTheorem: Substitution\nPremises : Area(Rectangle(A, B, C, D)) = AB * BC, 10 = AB, 12 = BC\nConclusions: 10 * 12 = Area(Rectangle(A, B, C, D))\n\nStep 7:\nTheorem: Evaluate\nPremises : 10 * 12 = Area(Rectangle(A, B, C, D))\nConclusions: 120 = Area(Rectangle(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), 10.0)",
+        "Equals(LengthOf(Line(D, A)), 12.0)"
+    ],
+    "correct": true
+}

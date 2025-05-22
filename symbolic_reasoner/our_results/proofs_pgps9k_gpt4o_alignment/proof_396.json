@@ -1,0 +1,76 @@
+{
+    "problem_id": "396",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, C)), 3x-14)",
+        "Equals(MeasureOf(Angle(D, C, A)), 2x-16)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "AC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            60.806451612903224,
+            23.357142857142858
+        ],
+        "B": [
+            292.80645161290323,
+            23.357142857142858
+        ],
+        "C": [
+            15.341935483870966,
+            134.53714285714287
+        ],
+        "D": [
+            247.30791788856305,
+            134.87688311688314
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        32.286,
+        42.0,
+        53.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        32.286,
+        42.0,
+        53.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 5.652443,
+    "solution_predicate": "Equals(42.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB || CD, pi * ((2 * x - 16) / 180) = \u2220DCA, 3.14 = pi, pi * ((3 * x - 14) / 180) = \u2220CAB\n\nStep 2:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || CD\nConclusions: pi = \u2220CAB + \u2220DCA\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x - 16) / 180) = \u2220DCA\nConclusions: 3.14 * ((2 * x - 16) / 180) = \u2220DCA\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x - 14) / 180) = \u2220CAB\nConclusions: 3.14 * ((3 * x - 14) / 180) = \u2220CAB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CAB + \u2220DCA\nConclusions: 3.14 = \u2220CAB + \u2220DCA\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x - 14) / 180) = \u2220CAB, 3.14 = \u2220CAB + \u2220DCA, 3.14 * ((2 * x - 16) / 180) = \u2220DCA\nConclusions: 42 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(Sub(Mul(3.0, x), 14.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Sub(Mul(2.0, x), 16.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,69 @@
+{
+    "problem_id": "4025",
+    "solved": true,
+    "problem_text": "If FG = 59, what is EF?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, F)), 8x-14)",
+        "Equals(LengthOf(Line(F, G)), 4x+1)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Equals(LengthOf(Line(F,G)),59)",
+        "Find(LengthOf(Line(E,F)))"
+    ],
+    "point_instances": [
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "EF",
+        "EG",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "E": [
+            20.900000000000002,
+            63.682432432432435
+        ],
+        "F": [
+            370.70000000000005,
+            63.682432432432435
+        ],
+        "G": [
+            632.5,
+            63.682432432432435
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        34.0,
+        37.5,
+        102.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        34.0,
+        37.5,
+        102.0
+    ],
+    "problem_answer": 102.0,
+    "total_time": 1.842798,
+    "solution_predicate": "Equals(102.0, LengthOf(Line(E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 59 = FG, 8 * x - 14 = EF, 1 + 4 * x = FG, F on EG\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 1 + 4 * x = FG, 59 = FG\nConclusions: 59 = 1 + 4 * x\n\nStep 3:\nTheorem: Line Segment Split\nPremises : F on EG\nConclusions: EG = EF + FG\n\nStep 4:\nTheorem: Substitution\nPremises : EG = EF + FG, 59 = FG, 8 * x - 14 = EF\nConclusions: 59 + (8 * x - 14) = EG\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : EG = EF + FG, 59 + (8 * x - 14) = EG\nConclusions: 59 + (8 * x - 14) = EF + FG\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 59 = 1 + 4 * x, 1 + 4 * x = FG, 59 + (8 * x - 14) = EF + FG\nConclusions: 102 = EF\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Equals(LengthOf(Line(E, F)), Sub(Mul(8.0, x), 14.0))",
+        "Equals(LengthOf(Line(F, G)), Add(Mul(4.0, x), 1.0))",
+        "Equals(LengthOf(Line(F, G)), 59.0)"
+    ],
+    "correct": true
+}

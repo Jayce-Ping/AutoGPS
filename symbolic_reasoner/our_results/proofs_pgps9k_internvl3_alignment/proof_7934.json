@@ -1,0 +1,74 @@
+{
+    "problem_id": "7934",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region of the circle.",
+    "logic_forms": [
+        "Circle(B, radius)",
+        "Equals(LengthOf(Line(A, B)), 9)",
+        "Equals(MeasureOf(Angle(C, B, A)), 75)",
+        "Equals(RadiusOf(Circle(B)), 9)",
+        "Find(AreaOf(Sector(B, A, C)))",
+        "Line(A, B)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "Sector(B, A, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            51.154285714285706,
+            50.54530612244898
+        ],
+        "B": [
+            122.12845342592065,
+            122.46535280751769
+        ],
+        "C": [
+            33.493877551020404,
+            174.77714285714285
+        ]
+    },
+    "problem_choices": [
+        13.894,
+        50.364,
+        53.014,
+        201.455
+    ],
+    "choices_precise_value": [
+        13.894,
+        50.364,
+        53.014,
+        201.455
+    ],
+    "problem_answer": 53.014,
+    "total_time": 2.007489,
+    "solution_predicate": "Equals(53.0143760295, AreaOf(Sector(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 9 = radius, Sector(A, B, C), pi * (75 / 180) = \u2220ABC\n\nStep 2:\nTheorem: Area formula of Sector(A, B, C)\nPremises : Sector(A, B, C)\nConclusions: Area(Sector(A, B, C)) = (radius ** 2 * \u2220ABC) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : Area(Sector(A, B, C)) = (radius ** 2 * \u2220ABC) / 2, pi * (75 / 180) = \u2220ABC, 9 = radius\nConclusions: (pi * (75 / 180) * 9 ** 2) / 2 = Area(Sector(A, B, C))\n\nStep 4:\nTheorem: Evaluate\nPremises : (pi * (75 / 180) * 9 ** 2) / 2 = Area(Sector(A, B, C))\nConclusions: 53.01 = Area(Sector(A, B, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, B)",
+        "Circle(B, radius)",
+        "Circle(B, radius)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B, radius))",
+        "PointLiesOnCircle(C, Circle(B, radius))",
+        "Sector(A, B, C)",
+        "Equals(LengthOf(Line(A, B)), 9.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(75.0, 180.0)))",
+        "Equals(radius, 9.0)"
+    ],
+    "correct": true
+}

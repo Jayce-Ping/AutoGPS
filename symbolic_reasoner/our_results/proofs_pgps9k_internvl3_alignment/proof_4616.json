@@ -1,0 +1,92 @@
+{
+    "problem_id": "4616",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(R, W, Z)), 45)",
+        "Equals(MeasureOf(Angle(W, R, T)), 4x)",
+        "Equals(MeasureOf(Angle(W, Z, T)), 2x+30)",
+        "Line(R, T)",
+        "Line(T, Z)",
+        "Line(W, R)",
+        "Line(W, Z)",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(T, Circle(A))",
+        "PointLiesOnCircle(W, Circle(A))",
+        "PointLiesOnCircle(Z, Circle(A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "W",
+        "Z",
+        "T",
+        "R",
+        "A"
+    ],
+    "line_instances": [
+        "WZ",
+        "ZT",
+        "TR",
+        "WR"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "W": [
+            102.62254901960785,
+            245.9142857142857
+        ],
+        "Z": [
+            413.0882352941177,
+            276.97714285714284
+        ],
+        "T": [
+            407.24264705882354,
+            179.58214285714286
+        ],
+        "R": [
+            297.90849673202615,
+            85.7104761904762
+        ],
+        "A": [
+            259.0673575129534,
+            237.06735751295338
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        32.5,
+        33.75,
+        47.5
+    ],
+    "choices_precise_value": [
+        25.0,
+        32.5,
+        33.75,
+        47.5
+    ],
+    "problem_answer": 25.0,
+    "total_time": 62.070761,
+    "solution_predicate": "Equals(25.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AWR, WZ, W on \u2299(A, radius_A), 3.14 = pi, \u2220RTZ, \u2220WRA, \u2220RAZ, \u2220RWZ, \u2220ZWA, pi * ((4 * x) / 180) = \u2220WRT, \u2220ZTR, \u2220TRW, AT, \u2220ATZ, 5.5 = 2 * 3.14 - 3.14 * (45 / 180), \u2220ART, \u2220RWZ, TZ, pi * ((30 + 2 * x) / 180) = \u2220TZW, RW, T on \u2299(A, radius_A), Z on \u2299(A, radius_A), R on \u2299(A, radius_A), \u2220RTA, AW, AR, pi * (45 / 180) = \u2220ZWR, AZ, RT\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : W on \u2299(A, radius_A)\nConclusions: radius_A = AW\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220RTZ\nConclusions: \u2220RTZ = 2 * pi - \u2220ZTR\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220RAZ\nConclusions: \u2220RAZ = 2 * pi - \u2220ZAR\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220RWZ\nConclusions: \u2220RWZ = 2 * pi - \u2220ZWR\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * x) / 180) = \u2220WRT\nConclusions: 3.14 * ((4 * x) / 180) = \u2220WRT\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220TRW, \u2220WRA, \u2220ART\nConclusions: 2 * pi = \u2220ART + \u2220TRW + \u2220WRA\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220ZWA, \u2220AWR, \u2220RWZ\nConclusions: 2 * pi = \u2220AWR + \u2220RWZ + \u2220ZWA\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((30 + 2 * x) / 180) = \u2220TZW\nConclusions: 3.14 * ((30 + 2 * x) / 180) = \u2220TZW\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : T on \u2299(A, radius_A)\nConclusions: radius_A = AT\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(A, radius_A)\nConclusions: radius_A = AZ\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : R on \u2299(A, radius_A)\nConclusions: radius_A = AR\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220ZTR, \u2220RTA, \u2220ATZ\nConclusions: 2 * pi = \u2220ATZ + \u2220RTA + \u2220ZTR\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : AW, RW, AR\nConclusions: \u25b3ARW\n\nStep 15:\nTheorem: Definition of Quadrilateral\nPremises : AZ, RW, WZ, AR\nConclusions: Quadrilateral(A, R, W, Z)\n\nStep 16:\nTheorem: Definition of Triangle\nPremises : AW, AZ, WZ\nConclusions: \u25b3AWZ\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : TZ, AT, AZ\nConclusions: \u25b3ATZ\n\nStep 18:\nTheorem: Definition of Quadrilateral\nPremises : TZ, WZ, RW, RT\nConclusions: Quadrilateral(R, T, Z, W)\n\nStep 19:\nTheorem: Definition of Quadrilateral\nPremises : TZ, AR, AZ, RT\nConclusions: Quadrilateral(A, R, T, Z)\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : AT, AR, RT\nConclusions: \u25b3ART\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220ZWR, \u2220RWZ = 2 * pi - \u2220ZWR\nConclusions: 2 * 3.14 - 3.14 * (45 / 180) = \u2220RWZ\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ART + \u2220TRW + \u2220WRA\nConclusions: 2 * 3.14 = \u2220ART + \u2220TRW + \u2220WRA\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AWR + \u2220RWZ + \u2220ZWA\nConclusions: 2 * 3.14 = \u2220AWR + \u2220RWZ + \u2220ZWA\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AW, radius_A = AZ\nConclusions: AW = AZ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AT, radius_A = AZ\nConclusions: AT = AZ\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AW, radius_A = AR\nConclusions: AR = AW\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AT, radius_A = AR\nConclusions: AR = AT\n\nStep 28:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ATZ + \u2220RTA + \u2220ZTR, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ATZ + \u2220RTA + \u2220ZTR\n\nStep 29:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(Z, W, R, A)\nPremises : Quadrilateral(A, R, W, Z)\nConclusions: 2 * pi = \u2220AZW + \u2220RAZ + \u2220WRA + \u2220ZWR\n\nStep 30:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(R, T, Z, W)\nPremises : Quadrilateral(R, T, Z, W)\nConclusions: 2 * pi = \u2220RTZ + \u2220TZW + \u2220WRT + \u2220ZWR\n\nStep 31:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, R, T, Z)\nPremises : Quadrilateral(A, R, T, Z)\nConclusions: 2 * pi = \u2220ART + \u2220RTZ + \u2220TZA + \u2220ZAR\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 5.5 = 2 * 3.14 - 3.14 * (45 / 180), 2 * 3.14 - 3.14 * (45 / 180) = \u2220RWZ\nConclusions: 5.5 = \u2220RWZ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ART + \u2220TRW + \u2220WRA, 2 * pi = \u2220ART + \u2220TRW + \u2220WRA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 34:\nTheorem: Issoceles Triangle Property\nPremises : AW = AZ, \u25b3AWZ\nConclusions: \u2220AZW = \u2220ZWA\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : AT = AZ, \u25b3ATZ\nConclusions: \u2220ATZ = \u2220TZA\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ARW, AR = AW\nConclusions: \u2220AWR = \u2220WRA\n\nStep 37:\nTheorem: Issoceles Triangle Property\nPremises : AR = AT, \u25b3ART\nConclusions: \u2220ART = \u2220RTA\n\nStep 38:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220ZWR, 2 * pi = \u2220AZW + \u2220RAZ + \u2220WRA + \u2220ZWR\nConclusions: 2 * 3.14 = 3.14 * (45 / 180) + \u2220AZW + \u2220RAZ + \u2220WRA\n\nStep 39:\nTheorem: Substitution\nPremises : 2 * pi = \u2220RTZ + \u2220TZW + \u2220WRT + \u2220ZWR, 3.14 = pi, pi * (45 / 180) = \u2220ZWR\nConclusions: 2 * 3.14 = 3.14 * (45 / 180) + \u2220RTZ + \u2220TZW + \u2220WRT\n\nStep 40:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ART + \u2220RTZ + \u2220TZA + \u2220ZAR, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ART + \u2220RTZ + \u2220TZA + \u2220ZAR\n\nStep 41:\nTheorem: Substitution\nPremises : \u2220AWR = \u2220WRA, 5.5 = \u2220RWZ, 2 * 3.14 = \u2220AWR + \u2220RWZ + \u2220ZWA\nConclusions: 2 * 3.14 = 5.5 + \u2220WRA + \u2220ZWA\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (45 / 180) + \u2220AZW + \u2220RAZ + \u2220WRA, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (45 / 180) + \u2220AZW + \u2220RAZ + \u2220WRA\n\nStep 43:\nTheorem: Substitution\nPremises : 3.14 * ((4 * x) / 180) = \u2220WRT, 2 * 3.14 = 3.14 * (45 / 180) + \u2220RTZ + \u2220TZW + \u2220WRT, 3.14 * ((30 + 2 * x) / 180) = \u2220TZW\nConclusions: 2 * 3.14 = 3.14 * (45 / 180) + 3.14 * ((4 * x) / 180) + 3.14 * ((30 + 2 * x) / 180) + \u2220RTZ\n\nStep 44:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AZW = \u2220ZWA, 2 * pi = 3.14 * (45 / 180) + \u2220AZW + \u2220RAZ + \u2220WRA\nConclusions: 2 * 3.14 = 3.14 * (45 / 180) + \u2220RAZ + \u2220WRA + \u2220ZWA\n\nStep 45:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 5.5 + \u2220WRA + \u2220ZWA, \u2220ART = \u2220RTA, 2 * 3.14 = 3.14 * (45 / 180) + 3.14 * ((4 * x) / 180) + 3.14 * ((30 + 2 * x) / 180) + \u2220RTZ, 2 * 3.14 = \u2220ART + \u2220RTZ + \u2220TZA + \u2220ZAR, \u2220ATZ = \u2220TZA, 2 * 3.14 = 3.14 * (45 / 180) + \u2220RAZ + \u2220WRA + \u2220ZWA, 2 * 3.14 = \u2220ATZ + \u2220RTA + \u2220ZTR, \u2220RAZ = 2 * pi - \u2220ZAR, \u2220RTZ = 2 * pi - \u2220ZTR\nConclusions: 25 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(Z, T)",
+        "Line(T, R)",
+        "Line(W, R)",
+        "Circle(A, radius_A)",
+        "Line(R, T)",
+        "Line(T, Z)",
+        "Line(W, R)",
+        "Line(W, Z)",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(T, Circle(A, radius_A))",
+        "PointLiesOnCircle(W, Circle(A, radius_A))",
+        "PointLiesOnCircle(Z, Circle(A, radius_A))",
+        "Equals(MeasureOf(Angle(Z, W, R)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(MeasureOf(Angle(W, R, T)), Mul(pi, Div(Mul(4.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(T, Z, W)), Mul(pi, Div(Add(Mul(2.0, x), 30.0), 180.0)))"
+    ],
+    "correct": true
+}

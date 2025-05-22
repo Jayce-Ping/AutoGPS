@@ -1,0 +1,117 @@
+{
+    "problem_id": "3883",
+    "solved": true,
+    "problem_text": "In \\odot B, m \\angle LBM = 3x and m \\angle LBQ = 4x+61. What is the measure of \\widehat LK?",
+    "logic_forms": [
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(L, P)",
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Perpendicular(Line(M, Q), Line(K, B))",
+        "PointLiesOnCircle(K, Circle(B))",
+        "PointLiesOnCircle(L, Circle(B))",
+        "PointLiesOnCircle(M, Circle(B))",
+        "PointLiesOnCircle(P, Circle(B))",
+        "PointLiesOnCircle(Q, Circle(B))",
+        "PointLiesOnLine(B, Line(L, P))",
+        "PointLiesOnLine(B, Line(M, Q))",
+        "Circle(B)",
+        "Equals(MeasureOf(Angle(L,B,M)),3x)",
+        "Equals(MeasureOf(Angle(L,B,Q)),4x+61)",
+        "Find(MeasureOf(Arc(L,K)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "K",
+        "B",
+        "Q",
+        "P"
+    ],
+    "line_instances": [
+        "MB",
+        "MQ",
+        "BQ",
+        "PB",
+        "PL",
+        "BL",
+        "BK"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "M": [
+            89.60000000000001,
+            231.97968253968253
+        ],
+        "L": [
+            136.0,
+            124.23682539682538
+        ],
+        "K": [
+            241.2,
+            81.40571428571428
+        ],
+        "B": [
+            240.38495575221236,
+            232.05752212389382
+        ],
+        "Q": [
+            392.79999999999995,
+            232.51174603174601
+        ],
+        "P": [
+            346.8,
+            341.18571428571425
+        ]
+    },
+    "problem_choices": [
+        39.0,
+        51.0,
+        77.571,
+        129.0
+    ],
+    "choices_precise_value": [
+        39.0,
+        51.0,
+        77.571,
+        129.0
+    ],
+    "problem_answer": 39.0,
+    "total_time": 29.159764,
+    "solution_predicate": "Equals(0.6806784083, MeasureOf(Arc(K, B, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BK \u22a5 BQ, 3.14 = pi, \u2220KBL, \u2220KBM, \u2220PBK, \u2220MBK, \u2220QBL, \u2220PBQ, \u2220QBK, Arc(KBL), \u2220MBP, B on MQ, \u2220MBK, BK \u22a5 BM, pi * ((3 * x) / 180) = \u2220LBM, \u2220LBQ, B on LP, pi * ((61 + 4 * x) / 180) = \u2220QBL, \u2220LBM\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BK \u22a5 BQ\nConclusions: pi / 2 = \u2220QBK\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220KBL, \u2220PBK\nConclusions: pi = \u2220KBL + \u2220PBK\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220MBK\nConclusions: \u2220MBK = 2 * pi - \u2220KBM\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220QBL\nConclusions: \u2220QBL = 2 * pi - \u2220LBQ\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KBL)\nConclusions: \u2220KBL = Arc(KBL)\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220KBM, \u2220PBK, \u2220MBP\nConclusions: 2 * pi = \u2220KBM + \u2220MBP + \u2220PBK\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : BK \u22a5 BM\nConclusions: pi / 2 = \u2220KBM\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = \u2220LBM\nConclusions: 3.14 * ((3 * x) / 180) = \u2220LBM\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220LBQ, \u2220KBL, \u2220QBK\nConclusions: 2 * pi = \u2220KBL + \u2220LBQ + \u2220QBK\n\nStep 11:\nTheorem: Vertical Angle Theorem\nPremises : B on MQ, B on LP\nConclusions: \u2220LBM = \u2220PBQ\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((61 + 4 * x) / 180) = \u2220QBL\nConclusions: 3.14 * ((61 + 4 * x) / 180) = \u2220QBL\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220KBL, \u2220MBK, \u2220LBM\nConclusions: 2 * pi = \u2220KBL + \u2220LBM + \u2220MBK\n\nStep 14:\nTheorem: Circumference Split\nPremises : \u2220KBL, \u2220LBM, \u2220MBP, \u2220PBQ, \u2220QBK\nConclusions: 2 * pi = \u2220KBL + \u2220LBM + \u2220MBP + \u2220PBQ + \u2220QBK\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220KBL + \u2220PBK, 3.14 = pi\nConclusions: 3.14 = \u2220KBL + \u2220PBK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220KBM, pi / 2 = \u2220QBK\nConclusions: \u2220KBM = \u2220QBK\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x) / 180) = \u2220LBM, pi * ((3 * x) / 180) = \u2220LBM\nConclusions: 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LBM = \u2220PBQ, pi * ((3 * x) / 180) = \u2220LBM\nConclusions: pi * ((3 * x) / 180) = \u2220PBQ\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QBL = 2 * pi - \u2220LBQ, 3.14 * ((61 + 4 * x) / 180) = \u2220QBL\nConclusions: 3.14 * ((61 + 4 * x) / 180) = 2 * pi - \u2220LBQ\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180), pi * ((3 * x) / 180) = \u2220PBQ\nConclusions: 3.14 * ((3 * x) / 180) = \u2220PBQ\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x) / 180) = \u2220LBM, 2 * pi = \u2220KBL + \u2220LBM + \u2220MBK, 3.14 = \u2220KBL + \u2220PBK, 3.14 * ((61 + 4 * x) / 180) = 2 * pi - \u2220LBQ, \u2220MBK = 2 * pi - \u2220KBM, 2 * pi = \u2220KBM + \u2220MBP + \u2220PBK, 3.14 * ((3 * x) / 180) = \u2220PBQ, \u2220KBM = \u2220QBK, 2 * pi = \u2220KBL + \u2220LBQ + \u2220QBK, 2 * pi = \u2220KBL + \u2220LBM + \u2220MBP + \u2220PBQ + \u2220QBK\nConclusions: 0.68 = \u2220KBL\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KBL = Arc(KBL), 0.68 = \u2220KBL\nConclusions: 0.68 = Arc(KBL)\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Line(B, Q)",
+        "Line(P, B)",
+        "Line(P, L)",
+        "Line(B, L)",
+        "Line(B, K)",
+        "Circle(B, radius_B)",
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(L, P)",
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Perpendicular(Line(M, Q), Line(K, B))",
+        "PointLiesOnCircle(K, Circle(B, radius_B))",
+        "PointLiesOnCircle(L, Circle(B, radius_B))",
+        "PointLiesOnCircle(M, Circle(B, radius_B))",
+        "PointLiesOnCircle(P, Circle(B, radius_B))",
+        "PointLiesOnCircle(Q, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(L, P))",
+        "PointLiesOnLine(B, Line(M, Q))",
+        "Circle(B, radius_B)",
+        "Equals(MeasureOf(Angle(L, B, M)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, B, L)), Mul(pi, Div(Add(Mul(4.0, x), 61.0), 180.0)))"
+    ],
+    "correct": true
+}

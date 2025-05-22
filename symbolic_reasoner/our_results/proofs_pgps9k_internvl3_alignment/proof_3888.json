@@ -1,0 +1,69 @@
+{
+    "problem_id": "3888",
+    "solved": true,
+    "problem_text": "What is the value of \\tan Y?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Y)), \\sqrt{13})",
+        "Equals(LengthOf(Line(Y, Z)), 3)",
+        "Equals(LengthOf(Line(Z, X)), 2)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(X, Z))",
+        "Find(TanOf(Angle(Y)))"
+    ],
+    "point_instances": [
+        "X",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "XY",
+        "YZ",
+        "ZX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            56.431718061674005,
+            37.599999999999994
+        ],
+        "Z": [
+            56.08970764917901,
+            251.5781818181818
+        ],
+        "Y": [
+            379.8629178543664,
+            251.4776470588235
+        ]
+    },
+    "problem_choices": [
+        0.555,
+        0.667,
+        0.832,
+        1.5
+    ],
+    "choices_precise_value": [
+        0.555,
+        0.667,
+        0.832,
+        1.5
+    ],
+    "problem_answer": 0.667,
+    "total_time": 15.981547,
+    "solution_predicate": "Equals(0.6666666667, TanOf(MeasureOf(Angle(X, Y, Z))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: YZ, XZ, XZ \u22a5 YZ, XY, 3 = YZ, \u2220XYZ, 2 = XZ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : YZ, XY, XZ\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Evaluate\nPremises : 3 = YZ, 2 = XZ\nConclusions: 0.67 = XZ / YZ\n\nStep 4:\nTheorem: Tan Function Definition\nPremises : XZ \u22a5 YZ, \u25b3XYZ, \u2220XYZ\nConclusions: XZ / YZ = tan(\u2220XYZ)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 0.67 = XZ / YZ, XZ / YZ = tan(\u2220XYZ)\nConclusions: 0.67 = tan(\u2220XYZ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Line(Z, X)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(X, Z))",
+        "Equals(LengthOf(Line(X, Y)), SqrtOf(13.0))",
+        "Equals(LengthOf(Line(Y, Z)), 3.0)",
+        "Equals(LengthOf(Line(Z, X)), 2.0)"
+    ],
+    "correct": true
+}

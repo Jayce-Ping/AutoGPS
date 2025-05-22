@@ -1,0 +1,92 @@
+{
+    "problem_id": "4847",
+    "solved": true,
+    "problem_text": "What is m \\widehat GE?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(F, R, E)), 110)",
+        "Equals(MeasureOf(Angle(G, R, H)), 40)",
+        "Equals(MeasureOf(Angle(H, R, E)), 80)",
+        "Line(F, R)",
+        "Line(G, R)",
+        "Line(H, R)",
+        "Line(R, E)",
+        "PointLiesOnCircle(E, Circle(R))",
+        "PointLiesOnCircle(F, Circle(R))",
+        "PointLiesOnCircle(G, Circle(R))",
+        "PointLiesOnCircle(H, Circle(R))",
+        "Find(MeasureOf(Arc(G,E)))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "R",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "GR",
+        "FR",
+        "RH",
+        "RE"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "G": [
+            187.62,
+            60.38135593220339
+        ],
+        "H": [
+            280.65538461538466,
+            94.03520208604955
+        ],
+        "R": [
+            187.56266286539002,
+            205.28025314523813
+        ],
+        "E": [
+            313.37454545454545,
+            277.15716486902926
+        ],
+        "F": [
+            76.956,
+            298.09322033898303
+        ]
+    },
+    "problem_choices": [
+        120.0,
+        130.0,
+        150.0,
+        190.0
+    ],
+    "choices_precise_value": [
+        120.0,
+        130.0,
+        150.0,
+        190.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 16.33491,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Arc(E, R, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220GRE, pi * (40 / 180) = \u2220HRG, 3.14 = pi, \u2220ERH, \u2220HRG, \u2220GRE, \u2220ERH, Arc(ERG), Arc(GRE), pi * (80 / 180) = \u2220ERH\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220GRE\nConclusions: \u2220GRE = 2 * pi - \u2220ERG\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220ERH, \u2220HRG, \u2220GRE\nConclusions: 2 * pi = \u2220ERH + \u2220GRE + \u2220HRG\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ERH\nConclusions: \u2220ERH = 2 * pi - \u2220HRE\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ERG)\nConclusions: \u2220ERG = Arc(ERG)\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GRE)\nConclusions: \u2220GRE = Arc(GRE)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ERH = 2 * pi - \u2220HRE, pi * (80 / 180) = \u2220ERH\nConclusions: pi * (80 / 180) = 2 * pi - \u2220HRE\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ERH = 2 * pi - \u2220HRE, pi * (80 / 180) = \u2220ERH\nConclusions: pi * (80 / 180) = 2 * 3.14 - \u2220HRE\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220GRE = Arc(GRE), 2 * pi = \u2220ERH + \u2220GRE + \u2220HRG, pi * (40 / 180) = \u2220HRG, pi * (80 / 180) = \u2220ERH\nConclusions: 2 * 3.14 = pi * (40 / 180) + pi * (80 / 180) + Arc(GRE)\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220GRE = 2 * pi - \u2220ERG, \u2220ERG = Arc(ERG), \u2220GRE = Arc(GRE)\nConclusions: Arc(GRE) = 2 * 3.14 - Arc(ERG)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : \u2220ERG = Arc(ERG), 2 * 3.14 = pi * (40 / 180) + pi * (80 / 180) + Arc(GRE), Arc(GRE) = 2 * 3.14 - Arc(ERG), pi * (80 / 180) = 2 * pi - \u2220HRE, pi * (80 / 180) = 2 * 3.14 - \u2220HRE\nConclusions: 2.09 = \u2220ERG\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2.09 = \u2220ERG, \u2220ERG = Arc(ERG)\nConclusions: 2.09 = Arc(ERG)\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, R)",
+        "Line(F, R)",
+        "Line(R, H)",
+        "Line(R, E)",
+        "Circle(R, radius_R)",
+        "Line(F, R)",
+        "Line(G, R)",
+        "Line(H, R)",
+        "Line(R, E)",
+        "PointLiesOnCircle(E, Circle(R, radius_R))",
+        "PointLiesOnCircle(F, Circle(R, radius_R))",
+        "PointLiesOnCircle(G, Circle(R, radius_R))",
+        "PointLiesOnCircle(H, Circle(R, radius_R))",
+        "Equals(MeasureOf(Angle(F, R, E)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(H, R, G)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, R, H)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

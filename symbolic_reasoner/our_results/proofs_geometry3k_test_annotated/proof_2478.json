@@ -1,0 +1,86 @@
+{
+    "problem_id": "2478",
+    "solved": true,
+    "problem_text": "If \\triangle L M N \\sim \\triangle Q R S, Q R = 35, R S = 37, S Q = 12, and N L = 5, find the perimeter of \\triangle L M N.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, N)), 5)",
+        "Equals(LengthOf(Line(R, S)), 37)",
+        "Equals(LengthOf(Line(Q, S)), 12)",
+        "Equals(LengthOf(Line(Q, R)), 35)",
+        "Similar(Triangle(L, M, N), Triangle(Q, R, S))",
+        "Find(PerimeterOf(Triangle(L, M, N)))"
+    ],
+    "point_instances": [
+        "M",
+        "S",
+        "N",
+        "Q",
+        "L",
+        "R"
+    ],
+    "line_instances": [
+        "QR",
+        "SR",
+        "SQ",
+        "NL",
+        "NM",
+        "LM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            354.0188679245283,
+            104.52830188679246
+        ],
+        "S": [
+            46.09433962264151,
+            156.9811320754717
+        ],
+        "N": [
+            221.18867924528303,
+            67.9245283018868
+        ],
+        "Q": [
+            45.716981132075475,
+            245.66037735849056
+        ],
+        "L": [
+            220.81132075471697,
+            104.52830188679246
+        ],
+        "R": [
+            304.5849056603774,
+            246.41509433962264
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "42",
+        "63",
+        "84"
+    ],
+    "choices_precise_value": [
+        35.0,
+        42.0,
+        63.0,
+        84.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 15.756528,
+    "solution_predicate": "Equals(35.0, PerimeterOf(Triangle(L, M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = QS, 37 = RS, \u25b3LMN ~ \u25b3QRS, 5 = LN, 35 = QR, \u25b3QRS\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3LMN ~ \u25b3QRS\nConclusions: sim_ratio_triangle_l_m_n_triangle_q_r_s = LN / QS, sim_ratio_triangle_l_m_n_triangle_q_r_s = Perimeter(\u25b3LMN) / Perimeter(\u25b3QRS)\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : \u25b3QRS\nConclusions: Perimeter(\u25b3QRS) = QR + QS + RS\n\nStep 4:\nTheorem: Substitution\nPremises : 12 = QS, sim_ratio_triangle_l_m_n_triangle_q_r_s = LN / QS, 5 = LN\nConclusions: 5 / 12 = sim_ratio_triangle_l_m_n_triangle_q_r_s\n\nStep 5:\nTheorem: Substitution\nPremises : Perimeter(\u25b3QRS) = QR + QS + RS, 35 = QR, 12 = QS, 37 = RS\nConclusions: 12 + 35 + 37 = Perimeter(\u25b3QRS)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 5 / 12 = sim_ratio_triangle_l_m_n_triangle_q_r_s, sim_ratio_triangle_l_m_n_triangle_q_r_s = Perimeter(\u25b3LMN) / Perimeter(\u25b3QRS)\nConclusions: 5 / 12 = Perimeter(\u25b3LMN) / Perimeter(\u25b3QRS)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 5 / 12 = Perimeter(\u25b3LMN) / Perimeter(\u25b3QRS), 12 + 35 + 37 = Perimeter(\u25b3QRS)\nConclusions: 35 = Perimeter(\u25b3LMN)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Line(S, Q)",
+        "Line(N, L)",
+        "Line(N, M)",
+        "Line(L, M)",
+        "Similar(Triangle(L, M, N), Triangle(Q, R, S))",
+        "Equals(LengthOf(Line(L, N)), 5.0)",
+        "Equals(LengthOf(Line(R, S)), 37.0)",
+        "Equals(LengthOf(Line(Q, S)), 12.0)",
+        "Equals(LengthOf(Line(Q, R)), 35.0)"
+    ],
+    "correct": true
+}

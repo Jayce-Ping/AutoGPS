@@ -1,0 +1,69 @@
+{
+    "problem_id": "5113",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Z)), 20)",
+        "Equals(LengthOf(Line(Z, Y)), 11)",
+        "Equals(MeasureOf(Angle(Z, X, Y)), x)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 115)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "XZ",
+        "ZY",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            385.9179632248939,
+            58.33142857142857
+        ],
+        "X": [
+            40.54455445544554,
+            257.52
+        ],
+        "Y": [
+            292.38415841584157,
+            258.912
+        ]
+    },
+    "problem_choices": [
+        24.62,
+        29.899,
+        65.0,
+        130.76
+    ],
+    "choices_precise_value": [
+        24.62,
+        29.899,
+        65.0,
+        130.76
+    ],
+    "problem_answer": 29.899,
+    "total_time": 12.943171,
+    "solution_predicate": "Equals(29.898780137, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XZ, XY, 20 = XZ, pi * (x / 180) = \u2220YXZ, 3.14 = pi, YZ, pi * (115 / 180) = \u2220ZYX, 11 = YZ\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220YXZ, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220YXZ\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : XZ, XY, YZ\nConclusions: \u25b3XYZ\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (115 / 180) = \u2220ZYX\nConclusions: 2.01 = \u2220ZYX\n\nStep 5:\nTheorem: Law of Sines\nPremises : \u25b3XYZ\nConclusions: XZ / sin(\u2220ZYX) = YZ / sin(\u2220YXZ)\n\nStep 6:\nTheorem: Substitution\nPremises : 2.01 = \u2220ZYX, 20 = XZ, XZ / sin(\u2220ZYX) = YZ / sin(\u2220YXZ), 3.14 * (x / 180) = \u2220YXZ, 11 = YZ\nConclusions: 20 / sin(2.01) = 11 / sin(3.14 * (x / 180))\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 20 / sin(2.01) = 11 / sin(3.14 * (x / 180))\nConclusions: 29.9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Equals(LengthOf(Line(X, Z)), 20.0)",
+        "Equals(LengthOf(Line(Z, Y)), 11.0)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), Mul(pi, Div(115.0, 180.0)))"
+    ],
+    "correct": true
+}

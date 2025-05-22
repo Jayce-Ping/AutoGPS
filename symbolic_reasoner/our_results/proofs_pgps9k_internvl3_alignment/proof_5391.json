@@ -1,0 +1,95 @@
+{
+    "problem_id": "5391",
+    "solved": true,
+    "problem_text": "Solve for a.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 89)",
+        "Equals(MeasureOf(Angle(A, D, C)), m)",
+        "Equals(MeasureOf(Angle(A, D, E)), 64)",
+        "Equals(MeasureOf(Angle(B, A, D)), 50)",
+        "Equals(MeasureOf(Angle(D, C, B)), a)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BA",
+        "AD",
+        "CD",
+        "CE",
+        "DE",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            338.58247422680415,
+            36.96
+        ],
+        "B": [
+            27.547864506627395,
+            112.00000000000001
+        ],
+        "C": [
+            62.78350515463917,
+            245.76000000000002
+        ],
+        "D": [
+            237.68041237113403,
+            245.76000000000002
+        ],
+        "E": [
+            331.8556701030928,
+            245.28000000000003
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        66.0,
+        91.0,
+        105.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        66.0,
+        91.0,
+        105.0
+    ],
+    "problem_answer": 105.0,
+    "total_time": 9.421776,
+    "solution_predicate": "Equals(105.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, pi * (50 / 180) = \u2220BAD, 3.14 = pi, CD, \u2220ECB, pi * (a / 180) = \u2220DCB, \u2220BCE, BC, \u2220EDA, pi * (89 / 180) = \u2220CBA, \u2220BCD, \u2220ADC, AB, \u2220ECB, pi * (64 / 180) = \u2220EDA, D on CE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECB\nConclusions: \u2220ECB = 2 * pi - \u2220BCE\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (a / 180) = \u2220DCB, 3.14 = pi\nConclusions: 3.14 * (a / 180) = \u2220DCB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220EDA, \u2220ADC\nConclusions: pi = \u2220ADC + \u2220EDA\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : AB, AD, BC, CD\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ECB, D on CE\nConclusions: \u2220DCB = \u2220ECB\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220BCE, D on CE\nConclusions: \u2220BCD = \u2220BCE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (a / 180) = \u2220DCB, 3.14 * (a / 180) = \u2220DCB\nConclusions: 3.14 * (a / 180) = pi * (a / 180)\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220ADC + \u2220EDA, 3.14 = pi, pi * (64 / 180) = \u2220EDA\nConclusions: 3.14 = pi * (64 / 180) + \u2220ADC\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (a / 180) = \u2220DCB, \u2220DCB = \u2220ECB\nConclusions: pi * (a / 180) = \u2220ECB\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220BCD = \u2220BCE, \u2220BCD = 2 * pi - \u2220DCB, 3.14 = pi\nConclusions: \u2220BCE = 2 * 3.14 - \u2220DCB\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (89 / 180) = \u2220CBA, pi * (50 / 180) = \u2220BAD, 3.14 = pi, 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\nConclusions: 2 * 3.14 = pi * (50 / 180) + pi * (89 / 180) + \u2220ADC + \u2220DCB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (a / 180) = pi * (a / 180), pi * (a / 180) = \u2220ECB\nConclusions: 3.14 * (a / 180) = \u2220ECB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECB = 2 * pi - \u2220BCE, 3.14 * (a / 180) = \u2220ECB\nConclusions: 3.14 * (a / 180) = 2 * pi - \u2220BCE\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = pi * (50 / 180) + pi * (89 / 180) + \u2220ADC + \u2220DCB, 3.14 * (a / 180) = \u2220DCB, \u2220BCE = 2 * 3.14 - \u2220DCB, 3.14 = pi * (64 / 180) + \u2220ADC, 3.14 * (a / 180) = 2 * pi - \u2220BCE\nConclusions: 105 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(89.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(m, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, A)), Mul(pi, Div(64.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(a, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,92 @@
+{
+    "problem_id": "4619",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 3)",
+        "Equals(LengthOf(Line(B, D)), 8)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(C, D))",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BD",
+        "BA",
+        "DA",
+        "DC",
+        "CA",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            39.96,
+            169.4009843659525
+        ],
+        "D": [
+            271.86420289855073,
+            169.52700083079478
+        ],
+        "A": [
+            360.0593333333333,
+            169.53171974522292
+        ],
+        "C": [
+            272.0733333333333,
+            32.74551244933411
+        ]
+    },
+    "problem_choices": [
+        5.385164807134504,
+        5.5677643628300215,
+        5.744562646538029,
+        5.916079783099616
+    ],
+    "choices_precise_value": [
+        5.385164807134504,
+        5.5677643628300215,
+        5.744562646538029,
+        5.916079783099616
+    ],
+    "problem_answer": 5.916079783099616,
+    "total_time": 57.903294,
+    "solution_predicate": "Equals(5.7445626465, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAB, AC \u22a5 BC, CD, AB, 3 = AD, \u2220DCA, \u2220CAB, BC, AD, y = AC, sin(\u2220DCA), AC, D on AB, \u2220CAD, 8 = BD, AD \u22a5 CD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 5:\nTheorem: Same Angle\nPremises : D on AB, \u2220CAB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220DCA), AD \u22a5 CD\nConclusions: AD / AC = sin(\u2220DCA)\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : \u25b3ABC, AC \u22a5 BC, \u2220CAB\nConclusions: AC / AB = cos(\u2220CAB)\n\nStep 8:\nTheorem: Cos Function Definition\nPremises : \u25b3ACD, AD \u22a5 CD, \u2220CAD\nConclusions: AD / AC = cos(\u2220CAD)\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : AD \u22a5 CD, \u2220DCA, \u25b3ACD\nConclusions: AD / AC = sin(\u2220DCA)\n\nStep 10:\nTheorem: Substitution\nPremises : 8 = BD, AB = AD + BD, 3 = AD\nConclusions: 3 + 8 = AB\n\nStep 11:\nTheorem: Substitution\nPremises : y = AC, AD / AC = sin(\u2220DCA), 3 = AD\nConclusions: 3 / y = sin(\u2220DCA)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3 + 8 = AB\nConclusions: 11 = AB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : AD / AC = sin(\u2220DCA), 3 / y = sin(\u2220DCA)\nConclusions: 3 / y = AD / AC\n\nStep 14:\nTheorem: Substitution\nPremises : y = AC, 11 = AB, AC / AB = cos(\u2220CAB), \u2220CAB = \u2220CAD\nConclusions: y / 11 = cos(\u2220CAD)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : AD / AC = cos(\u2220CAD), 3 / y = AD / AC\nConclusions: 3 / y = cos(\u2220CAD)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : y / 11 = cos(\u2220CAD), 3 / y = cos(\u2220CAD)\nConclusions: 3 / y = y / 11\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : 3 / y = y / 11\nConclusions: 5.74 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(C, D))",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "Equals(LengthOf(Line(A, D)), 3.0)",
+        "Equals(LengthOf(Line(B, D)), 8.0)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(D, C)), x)"
+    ],
+    "correct": true
+}

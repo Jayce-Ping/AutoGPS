@@ -1,0 +1,81 @@
+{
+    "problem_id": "350",
+    "solved": true,
+    "problem_text": "What is m \\angle 3 in the isosceles trapezoid?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, D)))",
+        "Equals(MeasureOf(Angle(A, B, C)), 111)",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(D, C, B)), MeasureOf(Angle(3)))",
+        "Find(MeasureOf(Angle(3)))",
+        "Isosceles(Trapezoid(A, B, C, D))",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, C), Line(A, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "BA",
+        "CD",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            153.08571428571426,
+            29.494949494949495
+        ],
+        "B": [
+            20.52,
+            81.00267379679144
+        ],
+        "C": [
+            20.194285714285716,
+            146.17349970291147
+        ],
+        "D": [
+            153.41142857142856,
+            199.0909090909091
+        ]
+    },
+    "problem_choices": [
+        34.5,
+        42.0,
+        69.0,
+        111.0
+    ],
+    "choices_precise_value": [
+        34.5,
+        42.0,
+        69.0,
+        111.0
+    ],
+    "problem_answer": 111.0,
+    "total_time": 4.237431,
+    "solution_predicate": "Equals(1.9373154697, MeasureOf(Angle(D, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Trapezoid(A, B, C, D), AB = CD, 3.14 = pi, pi * (111 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Issoceles Trapezoid Property\nPremises : Trapezoid(A, B, C, D), AB = CD\nConclusions: \u2220CBA = \u2220DCB\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.94 = pi * (111 / 180)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.94 = pi * (111 / 180), pi * (111 / 180) = \u2220CBA\nConclusions: 1.94 = \u2220CBA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DCB, 1.94 = \u2220CBA\nConclusions: 1.94 = \u2220DCB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Isosceles(Trapezoid(A, B, C, D))",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, C), Line(A, D))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, D)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(111.0, 180.0)))"
+    ],
+    "correct": true
+}

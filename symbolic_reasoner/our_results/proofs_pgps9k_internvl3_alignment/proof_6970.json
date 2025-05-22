@@ -1,0 +1,107 @@
+{
+    "problem_id": "6970",
+    "solved": true,
+    "problem_text": "Quadrilateral DKLM is a rhombus. If m \\angle DML = 82 find m \\angle MDK.",
+    "logic_forms": [
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(D, A)",
+        "Line(D, K)",
+        "Line(D, L)",
+        "Line(D, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "PointLiesOnLine(A, Line(D, L))",
+        "PointLiesOnLine(A, Line(M, K))",
+        "Rhombus(D,K,L,M)",
+        "Equals(MeasureOf(Angle(D,M,L)),82)",
+        "Find(MeasureOf(Angle(M,D,K)))"
+    ],
+    "point_instances": [
+        "D",
+        "K",
+        "A",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "MA",
+        "MK",
+        "AK",
+        "KL",
+        "DA",
+        "DL",
+        "AL",
+        "DM",
+        "ML",
+        "DK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            95.63157894736842,
+            45.63428571428572
+        ],
+        "K": [
+            230.76315789473685,
+            45.63428571428572
+        ],
+        "A": [
+            145.5263157894737,
+            112.01142857142857
+        ],
+        "M": [
+            60.058479532163744,
+            177.69714285714286
+        ],
+        "L": [
+            194.82706766917292,
+            178.38857142857142
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        49.0,
+        90.0,
+        98.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        49.0,
+        90.0,
+        98.0
+    ],
+    "problem_answer": 98.0,
+    "total_time": 109.075603,
+    "solution_predicate": "Equals(1.710422667, MeasureOf(Angle(M, D, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * (82 / 180) = \u2220LMD, Rhombus(D, K, L, M)\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(D, K, L, M)\nConclusions: Parallelogram(D, K, L, M)\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(D, K, L, M)\nConclusions: \u2220DKL = \u2220LMD\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(D, K, L, M)\nConclusions: DM || KL\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DKL = \u2220LMD, pi * (82 / 180) = \u2220LMD\nConclusions: pi * (82 / 180) = \u2220DKL\n\nStep 6:\nTheorem: Consecutive Interior Angle Theorem\nPremises : DM || KL\nConclusions: pi = \u2220DKL + \u2220MDK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220DKL + \u2220MDK\nConclusions: 3.14 = \u2220DKL + \u2220MDK\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DKL + \u2220MDK, pi = \u2220DKL + \u2220MDK, pi * (82 / 180) = \u2220DKL\nConclusions: 1.71 = \u2220MDK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(A, K)",
+        "Line(K, L)",
+        "Line(D, A)",
+        "Line(D, L)",
+        "Line(A, L)",
+        "Line(D, M)",
+        "Line(M, L)",
+        "Line(D, K)",
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(D, A)",
+        "Line(D, K)",
+        "Line(D, L)",
+        "Line(D, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "PointLiesOnLine(A, Line(D, L))",
+        "PointLiesOnLine(A, Line(M, K))",
+        "Rhombus(D, K, L, M)",
+        "Equals(MeasureOf(Angle(L, M, D)), Mul(pi, Div(82.0, 180.0)))"
+    ],
+    "correct": true
+}

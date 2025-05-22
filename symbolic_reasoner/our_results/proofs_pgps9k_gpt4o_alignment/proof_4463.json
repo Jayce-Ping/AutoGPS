@@ -1,0 +1,102 @@
+{
+    "problem_id": "4463",
+    "solved": true,
+    "problem_text": "What is m \\widehat KJ?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, M)), 4)",
+        "Equals(LengthOf(Line(A, N)), 3)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Perpendicular(Line(J, K), Line(N, M))",
+        "PointLiesOnCircle(J, Circle(M))",
+        "PointLiesOnCircle(K, Circle(M))",
+        "PointLiesOnCircle(N, Circle(M))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(A, Line(N, M))",
+        "Find(MeasureOf(Arc(K,J)))"
+    ],
+    "point_instances": [
+        "J",
+        "N",
+        "A",
+        "M",
+        "K"
+    ],
+    "line_instances": [
+        "JA",
+        "JK",
+        "AK",
+        "NA",
+        "NM",
+        "AM"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "J": [
+            148.944,
+            54.617142857142866
+        ],
+        "N": [
+            60.31999999999999,
+            112.24285714285715
+        ],
+        "A": [
+            101.69333333333333,
+            136.92857142857144
+        ],
+        "M": [
+            161.8037514695302,
+            170.6951320898851
+        ],
+        "K": [
+            54.519999999999996,
+            217.54285714285717
+        ]
+    },
+    "problem_choices": [
+        110.3,
+        120.0,
+        129.246,
+        135.951
+    ],
+    "choices_precise_value": [
+        110.3,
+        120.0,
+        129.246,
+        135.951
+    ],
+    "problem_answer": 110.3,
+    "total_time": 100.01252,
+    "solution_predicate": "Equals(1.9251014958, MeasureOf(Arc(J, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on MN, KM, 4 = AM, AJ \u22a5 AM, \u2220KMJ, Arc(JMK), \u2299(M, radius_M), \u2220KMJ, K on \u2299(M, radius_M), AK \u22a5 AM, AM, N on \u2299(M, radius_M), AK, \u2220JMN, 3 = AN, \u2220AMK, A on JK, \u2220NMK\n\nStep 2:\nTheorem: Line Segment Split\nPremises : A on MN\nConclusions: MN = AM + AN\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220KMJ\nConclusions: \u2220KMJ = 2 * pi - \u2220JMK\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JMK)\nConclusions: \u2220JMK = Arc(JMK)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : K on \u2299(M, radius_M)\nConclusions: radius_M = KM\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : N on \u2299(M, radius_M)\nConclusions: radius_M = MN\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : KM, AM, AK\nConclusions: \u25b3AKM\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220JMN, A on MN\nConclusions: \u2220JMA = \u2220JMN\n\nStep 9:\nTheorem: Circle Vertical Theorem\nPremises : AJ \u22a5 AM, \u2299(M, radius_M), A on JK\nConclusions: \u25b3AJM \u2245 \u25b3AKM\n\nStep 10:\nTheorem: Same Angle\nPremises : A on MN, \u2220NMK\nConclusions: \u2220AMK = \u2220NMK\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220JMN, \u2220NMK, \u2220KMJ\nConclusions: 2 * pi = \u2220JMN + \u2220KMJ + \u2220NMK\n\nStep 12:\nTheorem: Substitution\nPremises : 4 = AM, radius_M = MN, MN = AM + AN, 3 = AN\nConclusions: 3 + 4 = radius_M\n\nStep 13:\nTheorem: Cos Function Definition\nPremises : \u25b3AKM, \u2220AMK, AK \u22a5 AM\nConclusions: AM / KM = cos(\u2220AMK)\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3AJM \u2245 \u25b3AKM\nConclusions: \u2220AMK = \u2220JMA\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : radius_M = KM, 3 + 4 = radius_M\nConclusions: 7 = KM\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMK = \u2220JMA, \u2220AMK = \u2220NMK, \u2220JMA = \u2220JMN\nConclusions: \u2220JMN = \u2220NMK\n\nStep 17:\nTheorem: Substitution\nPremises : AM / KM = cos(\u2220AMK), 4 = AM, 7 = KM, \u2220AMK = \u2220NMK\nConclusions: 4 / 7 = cos(\u2220NMK)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : \u2220KMJ = 2 * pi - \u2220JMK, 2 * pi = \u2220JMN + \u2220KMJ + \u2220NMK, \u2220JMN = \u2220NMK\nConclusions: \u2220JMK = 2 * \u2220NMK\n\nStep 19:\nTheorem: Solve Univariate Equation\nPremises : 4 / 7 = cos(\u2220NMK)\nConclusions: 0.96 = \u2220NMK\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JMK = 2 * \u2220NMK, \u2220JMK = Arc(JMK)\nConclusions: Arc(JMK) = 2 * \u2220NMK\n\nStep 21:\nTheorem: Evaluate\nPremises : 0.96 = \u2220NMK\nConclusions: 1.93 = 2 * \u2220NMK\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 1.93 = 2 * \u2220NMK, Arc(JMK) = 2 * \u2220NMK\nConclusions: 1.93 = Arc(JMK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(A, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Line(A, M)",
+        "Circle(M, radius_M)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Perpendicular(Line(J, K), Line(N, M))",
+        "PointLiesOnCircle(J, Circle(M, radius_M))",
+        "PointLiesOnCircle(K, Circle(M, radius_M))",
+        "PointLiesOnCircle(N, Circle(M, radius_M))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(A, Line(N, M))",
+        "Equals(LengthOf(Line(A, M)), 4.0)",
+        "Equals(LengthOf(Line(A, N)), 3.0)"
+    ],
+    "correct": true
+}

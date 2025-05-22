@@ -1,0 +1,94 @@
+{
+    "problem_id": "5317",
+    "solved": true,
+    "problem_text": "What is w?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), w)",
+        "Equals(LengthOf(Line(A, C)), 102)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(D, A)), 102)",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(B, D, A)), 42)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(D, C), Line(A, B))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "Find(w)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "CD",
+        "BD",
+        "DA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            201.09890109890108,
+            27.428571428571427
+        ],
+        "B": [
+            200.9419152276295,
+            178.1899319727891
+        ],
+        "C": [
+            369.10336040770824,
+            178.15055900621118
+        ],
+        "D": [
+            32.55295429208472,
+            178.34136645962732
+        ]
+    },
+    "problem_choices": [
+        68.251,
+        75.801,
+        91.841,
+        152.437
+    ],
+    "choices_precise_value": [
+        68.251,
+        75.801,
+        91.841,
+        152.437
+    ],
+    "problem_answer": 68.251,
+    "total_time": 48.669622,
+    "solution_predicate": "Equals(68.2513218458, w)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CDA, pi * (42 / 180) = \u2220BDA, sin(\u2220BDA), w = AB, 102 = AD, B on CD, \u2220ADC, AB \u22a5 BD, \u2220BDA, 3.14 = pi, \u2220CDA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ADC, B on CD\nConclusions: \u2220ADB = \u2220ADC\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BDA), AB \u22a5 BD\nConclusions: AB / AD = sin(\u2220BDA)\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDA\nConclusions: \u2220BDA = 2 * pi - \u2220ADB\n\nStep 6:\nTheorem: Same Angle\nPremises : B on CD, \u2220CDA\nConclusions: \u2220BDA = \u2220CDA\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220BDA = 2 * pi - \u2220ADB, pi * (42 / 180) = \u2220BDA, 3.14 = pi, \u2220ADB = \u2220ADC\nConclusions: 3.14 * (42 / 180) = 2 * 3.14 - \u2220ADC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CDA, pi * (42 / 180) = \u2220BDA\nConclusions: pi * (42 / 180) = \u2220CDA\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220CDA = 2 * pi - \u2220ADC, pi * (42 / 180) = \u2220CDA, 3.14 = pi\nConclusions: pi * (42 / 180) = 2 * 3.14 - \u2220ADC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (42 / 180) = 2 * 3.14 - \u2220ADC, pi * (42 / 180) = 2 * 3.14 - \u2220ADC\nConclusions: 3.14 * (42 / 180) = pi * (42 / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220BDA, 3.14 * (42 / 180) = pi * (42 / 180)\nConclusions: 3.14 * (42 / 180) = \u2220BDA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (42 / 180) = \u2220BDA\nConclusions: 0.73 = \u2220BDA\n\nStep 13:\nTheorem: Evaluate\nPremises : 0.73 = \u2220BDA\nConclusions: 0.67 = sin(\u2220BDA)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AB / AD = sin(\u2220BDA), 0.67 = sin(\u2220BDA)\nConclusions: 0.67 = AB / AD\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 102 = AD, 0.67 = AB / AD\nConclusions: 68.25 = AB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : w = AB, 68.25 = AB\nConclusions: 68.25 = w\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(D, C), Line(A, B))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), w)",
+        "Equals(LengthOf(Line(A, C)), 102.0)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(D, A)), 102.0)",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(B, D, A)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

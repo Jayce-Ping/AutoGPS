@@ -1,0 +1,73 @@
+{
+    "problem_id": "6432",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 2y+6)",
+        "Equals(LengthOf(Line(P, L)), 5x-3)",
+        "Equals(LengthOf(Line(P, M)), 4)",
+        "Equals(MeasureOf(Angle(M, P, L)), 60)",
+        "Equals(MeasureOf(Angle(P, M, L)), 60)",
+        "Equals(MeasureOf(Angle(P, M, L)), MeasureOf(Angle(M, P, L)))",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "M",
+        "P",
+        "L"
+    ],
+    "line_instances": [
+        "PL",
+        "PM",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            106.60416666666666,
+            75.64
+        ],
+        "P": [
+            176.02083333333331,
+            350.92
+        ],
+        "L": [
+            379.3125,
+            153.76
+        ]
+    },
+    "problem_choices": [
+        0.8,
+        1.0,
+        1.4,
+        1.6
+    ],
+    "choices_precise_value": [
+        0.8,
+        1.0,
+        1.4,
+        1.6
+    ],
+    "problem_answer": 1.4,
+    "total_time": 13.849497,
+    "solution_predicate": "Equals(1.4, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = MP, \u2220LMP, 3.14 = pi, pi * (60 / 180) = \u2220LPM, MP, pi * (60 / 180) = \u2220PML, LM, LP, \u2220PML, 5 * x - 3 = LP\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220LMP\nConclusions: \u2220LMP = 2 * pi - \u2220PML\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : MP, LM, LP\nConclusions: \u25b3LMP\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220PML\nConclusions: \u2220PML = 2 * pi - \u2220LMP\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220PML, \u2220LMP = 2 * pi - \u2220PML, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (60 / 180) = \u2220LMP\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3LMP\nConclusions: LP / sin(\u2220PML) = MP / sin(\u2220MLP)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(P, M, L)\nPremises : \u25b3LMP\nConclusions: pi = \u2220LPM + \u2220MLP + \u2220PML\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220PML, \u2220PML = 2 * pi - \u2220LMP\nConclusions: pi * (60 / 180) = 2 * pi - \u2220LMP\n\nStep 9:\nTheorem: Substitution\nPremises : LP / sin(\u2220PML) = MP / sin(\u2220MLP), 4 = MP, pi * (60 / 180) = \u2220PML, 5 * x - 3 = LP\nConclusions: (5 * x - 3) / sin(pi * (60 / 180)) = 4 / sin(\u2220MLP)\n\nStep 10:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220PML, 3.14 = pi, pi = \u2220LPM + \u2220MLP + \u2220PML, pi * (60 / 180) = \u2220LPM\nConclusions: 3.14 = pi * (60 / 180) + pi * (60 / 180) + \u2220MLP\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi * (60 / 180) = \u2220LMP, pi * (60 / 180) = 2 * pi - \u2220LMP, 3.14 = pi * (60 / 180) + pi * (60 / 180) + \u2220MLP\nConclusions: 1.05 = \u2220MLP\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, 1.05 = \u2220MLP, (5 * x - 3) / sin(pi * (60 / 180)) = 4 / sin(\u2220MLP)\nConclusions: 4 / sin(1.05) = (5 * x - 3) / sin(3.14 * (60 / 180))\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 4 / sin(1.05) = (5 * x - 3) / sin(3.14 * (60 / 180))\nConclusions: 1.4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, L)",
+        "Line(P, M)",
+        "Line(M, L)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "Equals(LengthOf(Line(M, L)), Add(Mul(2.0, y), 6.0))",
+        "Equals(LengthOf(Line(P, L)), Sub(Mul(5.0, x), 3.0))",
+        "Equals(LengthOf(Line(P, M)), 4.0)",
+        "Equals(MeasureOf(Angle(L, P, M)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, M, L)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, M, L)), MeasureOf(Angle(L, P, M)))"
+    ],
+    "correct": true
+}

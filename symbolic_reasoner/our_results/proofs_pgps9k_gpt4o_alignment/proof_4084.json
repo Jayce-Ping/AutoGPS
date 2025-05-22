@@ -1,0 +1,113 @@
+{
+    "problem_id": "4084",
+    "solved": true,
+    "problem_text": "EFGH is a parallelogram. Find HF.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, J)), 3w)",
+        "Equals(LengthOf(Line(F, J)), 4z-9)",
+        "Equals(LengthOf(Line(G, J)), w+8)",
+        "Equals(LengthOf(Line(J, H)), 2z)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, J)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "PointLiesOnLine(J, Line(E, G))",
+        "PointLiesOnLine(J, Line(F, H))",
+        "Parallelogram(E,F,G,H)",
+        "Find(LengthOf(Line(H,F)))"
+    ],
+    "point_instances": [
+        "F",
+        "G",
+        "J",
+        "E",
+        "H"
+    ],
+    "line_instances": [
+        "EJ",
+        "EG",
+        "JG",
+        "EH",
+        "FG",
+        "FJ",
+        "FH",
+        "JH",
+        "FE",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            143.15666666666667,
+            50.3764367816092
+        ],
+        "G": [
+            581.6006666666667,
+            50.59080459770116
+        ],
+        "J": [
+            312.808,
+            123.90459770114943
+        ],
+        "E": [
+            44.25952380952381,
+            197.2183908045977
+        ],
+        "H": [
+            482.2761904761905,
+            197.2183908045977
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        12.0,
+        18.0,
+        24.0
+    ],
+    "choices_precise_value": [
+        9.0,
+        12.0,
+        18.0,
+        24.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 72.642149,
+    "solution_predicate": "Equals(18.0, LengthOf(Line(H, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * z - 9 = FJ, Parallelogram(E, F, G, H), J on FH, J on EG, 2 * z = HJ\n\nStep 2:\nTheorem: Line Segment Split\nPremises : J on FH\nConclusions: FH = FJ + HJ\n\nStep 3:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(E, F, G, H), J on FH, J on EG\nConclusions: FJ = HJ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 2 * z = HJ, FJ = HJ\nConclusions: 2 * z = FJ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 2 * z = FJ, 4 * z - 9 = FJ\nConclusions: 2 * z = 4 * z - 9\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 2 * z = FJ, FH = FJ + HJ, 2 * z = HJ, 2 * z = 4 * z - 9\nConclusions: 18 = FH\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, J)",
+        "Line(E, G)",
+        "Line(J, G)",
+        "Line(E, H)",
+        "Line(F, G)",
+        "Line(F, J)",
+        "Line(F, H)",
+        "Line(J, H)",
+        "Line(F, E)",
+        "Line(G, H)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, J)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "PointLiesOnLine(J, Line(E, G))",
+        "PointLiesOnLine(J, Line(F, H))",
+        "Parallelogram(E, F, G, H)",
+        "Equals(LengthOf(Line(E, J)), Mul(3.0, w))",
+        "Equals(LengthOf(Line(F, J)), Sub(Mul(4.0, z), 9.0))",
+        "Equals(LengthOf(Line(G, J)), Add(w, 8.0))",
+        "Equals(LengthOf(Line(J, H)), Mul(2.0, z))"
+    ],
+    "correct": true
+}

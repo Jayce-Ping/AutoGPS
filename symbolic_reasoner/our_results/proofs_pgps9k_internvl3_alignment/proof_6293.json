@@ -1,0 +1,129 @@
+{
+    "problem_id": "6293",
+    "solved": true,
+    "problem_text": "Tangent MP is drawn to \\odot O. Find x if MO = 20.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, P)), 16)",
+        "Equals(LengthOf(Line(O, P)), x)",
+        "Equals(LengthOf(Line(R, P)), 5)",
+        "Line(A, O)",
+        "Line(B, O)",
+        "Line(M, B)",
+        "Line(M, O)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(P, O)",
+        "Line(P, R)",
+        "Line(R, A)",
+        "Line(R, O)",
+        "PointLiesOnCircle(A, Circle(O))",
+        "PointLiesOnCircle(B, Circle(O))",
+        "PointLiesOnCircle(P, Circle(O))",
+        "PointLiesOnLine(A, Line(R, O))",
+        "PointLiesOnLine(B, Line(M, O))",
+        "PointLiesOnLine(P, Line(M, R))",
+        "Tangent(Line(M,P),Circle(O))",
+        "Equals(LengthOf(Line(M,O)),20)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "M",
+        "P",
+        "R",
+        "A",
+        "O",
+        "B"
+    ],
+    "line_instances": [
+        "MP",
+        "MR",
+        "PR",
+        "MB",
+        "MO",
+        "BO",
+        "OA",
+        "OR",
+        "AR",
+        "OP"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "M": [
+            39.06534653465347,
+            73.23977142857143
+        ],
+        "P": [
+            188.28618576143327,
+            74.29224489795918
+        ],
+        "R": [
+            234.39207920792083,
+            73.02308571428571
+        ],
+        "A": [
+            225.2862677572105,
+            86.37987577639751
+        ],
+        "O": [
+            186.75,
+            142.5
+        ],
+        "B": [
+            125.07466996699671,
+            114.04214285714285
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        8.94427190999916,
+        12.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        8.94427190999916,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 64.775306,
+    "solution_predicate": "Equals(12.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = OP, Tangent(MP, \u2299(O, radius_O)), 16 = MP, 20 = MO, MO, P on \u2299(O, radius_O), MP, OP\n\nStep 2:\nTheorem: Tangent Definition\nPremises : P on \u2299(O, radius_O), Tangent(MP, \u2299(O, radius_O))\nConclusions: MP \u22a5 OP\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : P on \u2299(O, radius_O)\nConclusions: radius_O = OP\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : MP, OP, MO\nConclusions: \u25b3MOP\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = OP, x = OP\nConclusions: radius_O = x\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : \u25b3MOP, MP \u22a5 OP\nConclusions: OP = SqrtOf(MO ** 2 - MP ** 2)\n\nStep 7:\nTheorem: Substitution\nPremises : 16 = MP, OP = SqrtOf(MO ** 2 - MP ** 2), radius_O = OP, 20 = MO\nConclusions: SqrtOf(20 ** 2 - 16 ** 2) = radius_O\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(20 ** 2 - 16 ** 2) = radius_O, radius_O = x\nConclusions: SqrtOf(20 ** 2 - 16 ** 2) = x\n\nStep 9:\nTheorem: Evaluate\nPremises : SqrtOf(20 ** 2 - 16 ** 2) = x\nConclusions: 12 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(P, R)",
+        "Line(M, B)",
+        "Line(M, O)",
+        "Line(B, O)",
+        "Line(O, A)",
+        "Line(O, R)",
+        "Line(A, R)",
+        "Line(O, P)",
+        "Circle(O, radius_O)",
+        "Line(A, O)",
+        "Line(B, O)",
+        "Line(M, B)",
+        "Line(M, O)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(P, O)",
+        "Line(P, R)",
+        "Line(R, A)",
+        "Line(R, O)",
+        "PointLiesOnCircle(A, Circle(O, radius_O))",
+        "PointLiesOnCircle(B, Circle(O, radius_O))",
+        "PointLiesOnCircle(P, Circle(O, radius_O))",
+        "PointLiesOnLine(A, Line(R, O))",
+        "PointLiesOnLine(B, Line(M, O))",
+        "PointLiesOnLine(P, Line(M, R))",
+        "Tangent(Line(M, P), Circle(O, radius_O))",
+        "Equals(LengthOf(Line(M, P)), 16.0)",
+        "Equals(LengthOf(Line(O, P)), x)",
+        "Equals(LengthOf(Line(R, P)), 5.0)",
+        "Equals(LengthOf(Line(M, O)), 20.0)"
+    ],
+    "correct": true
+}

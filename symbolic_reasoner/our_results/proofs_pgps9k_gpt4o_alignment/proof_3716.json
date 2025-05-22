@@ -1,0 +1,90 @@
+{
+    "problem_id": "3716",
+    "solved": true,
+    "problem_text": "Find the area of the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(B, D)), 2)",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(C, D)), 2)",
+        "Find(AreaOf(Triangle(C, D, A)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "PointLiesOnLine(D, Line(C, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "BC",
+        "DC",
+        "CA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            275.6814159292035,
+            20.354285714285712
+        ],
+        "B": [
+            275.8656949505466,
+            220.12100840336134
+        ],
+        "C": [
+            20.61015370284117,
+            219.44721804511278
+        ],
+        "D": [
+            148.45722713864305,
+            219.98285714285714
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        2.236,
+        3.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        2.236,
+        3.0,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 15.774903,
+    "solution_predicate": "Equals(3.0, AreaOf(Triangle(C, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ACD, 2 = CD, AB \u22a5 BC, 3 = AB\n\nStep 2:\nTheorem: Area formula of Triangle(A, C, D)\nPremises : AB \u22a5 BC, \u25b3ACD\nConclusions: Area(\u25b3ACD) = (AB * CD) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : 3 = AB, Area(\u25b3ACD) = (AB * CD) / 2, 2 = CD\nConclusions: (2 * 3) / 2 = Area(\u25b3ACD)\n\nStep 4:\nTheorem: Evaluate\nPremises : (2 * 3) / 2 = Area(\u25b3ACD)\nConclusions: 3 = Area(\u25b3ACD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "PointLiesOnLine(D, Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(B, D)), 2.0)",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(C, D)), 2.0)"
+    ],
+    "correct": true
+}

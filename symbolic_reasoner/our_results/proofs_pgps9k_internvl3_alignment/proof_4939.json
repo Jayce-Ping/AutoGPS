@@ -1,0 +1,108 @@
+{
+    "problem_id": "4939",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(A, C, B)), 125)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(D, C, E)))",
+        "Equals(MeasureOf(Angle(D, C, E)), 125)",
+        "Equals(RadiusOf(Circle(C)), 8)",
+        "Find(Sub(AreaOf(Circle(C)), Add(AreaOf(Sector(C, A, B)), AreaOf(Sector(C, D, E)))))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(E, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "EC",
+        "EB",
+        "CB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            50.040983606557376,
+            83.35714285714286
+        ],
+        "B": [
+            262.43715846994536,
+            85.58
+        ],
+        "C": [
+            155.40994048339618,
+            139.4708637876499
+        ],
+        "D": [
+            262.71516393442624,
+            193.1107142857143
+        ],
+        "E": [
+            49.20696721311475,
+            195.33357142857142
+        ]
+    },
+    "problem_choices": [
+        15.359,
+        61.436,
+        139.626,
+        262.498
+    ],
+    "choices_precise_value": [
+        15.359,
+        61.436,
+        139.626,
+        262.498
+    ],
+    "problem_answer": 139.626,
+    "total_time": 20.626074,
+    "solution_predicate": "Equals(61.4355896704, Sub(AreaOf(Circle(C, radius_C)), Add(AreaOf(Sector(B, C, A)), AreaOf(Sector(E, C, D)))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (125 / 180) = \u2220ECD, Sector(B, C, A), 8 = radius_C, 3.14 = pi, pi * (125 / 180) = \u2220BCA, Sector(E, C, D), Area(\u2299(C, radius_C))\n\nStep 2:\nTheorem: Area formula of Sector(B, C, A)\nPremises : Sector(B, C, A)\nConclusions: Area(Sector(B, C, A)) = (radius_C ** 2 * \u2220BCA) / 2\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 69.81 = (pi * (125 / 180) * 8 ** 2) / 2\n\nStep 4:\nTheorem: Area formula of Sector(E, C, D)\nPremises : Sector(E, C, D)\nConclusions: Area(Sector(E, C, D)) = (radius_C ** 2 * \u2220ECD) / 2\n\nStep 5:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, radius_C))\nConclusions: pi * radius_C ** 2 = Area(\u2299(C, radius_C))\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (125 / 180) = \u2220BCA, Area(Sector(B, C, A)) = (radius_C ** 2 * \u2220BCA) / 2, 8 = radius_C\nConclusions: (pi * (125 / 180) * 8 ** 2) / 2 = Area(Sector(B, C, A))\n\nStep 7:\nTheorem: Substitution\nPremises : Area(Sector(E, C, D)) = (radius_C ** 2 * \u2220ECD) / 2, pi * (125 / 180) = \u2220ECD, 8 = radius_C\nConclusions: (pi * (125 / 180) * 8 ** 2) / 2 = Area(Sector(E, C, D))\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 8 = radius_C, pi * radius_C ** 2 = Area(\u2299(C, radius_C))\nConclusions: 3.14 * 8 ** 2 = Area(\u2299(C, radius_C))\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 69.81 = (pi * (125 / 180) * 8 ** 2) / 2, (pi * (125 / 180) * 8 ** 2) / 2 = Area(Sector(B, C, A))\nConclusions: 69.81 = Area(Sector(B, C, A))\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : (pi * (125 / 180) * 8 ** 2) / 2 = Area(Sector(E, C, D)), 69.81 = (pi * (125 / 180) * 8 ** 2) / 2\nConclusions: 69.81 = Area(Sector(E, C, D))\n\nStep 11:\nTheorem: Solve Univariate Equation\nPremises : 3.14 * 8 ** 2 = Area(\u2299(C, radius_C))\nConclusions: 201.06 = Area(\u2299(C, radius_C))\n\nStep 12:\nTheorem: Evaluate\nPremises : 69.81 = Area(Sector(E, C, D)), 201.06 = Area(\u2299(C, radius_C)), 69.81 = Area(Sector(B, C, A))\nConclusions: 61.44 = Area(\u2299(C, radius_C)) - (Area(Sector(B, C, A)) + Area(Sector(E, C, D)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Circle(C, radius_C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(E, B))",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(125.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(E, C, D)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(125.0, 180.0)))",
+        "Equals(radius_C, 8.0)"
+    ],
+    "correct": false
+}

@@ -1,0 +1,98 @@
+{
+    "problem_id": "7392",
+    "solved": true,
+    "problem_text": "In \\odot A, AE = 13.1 and AC \\perp BD. If BC = 6.8, what is AC?",
+    "logic_forms": [
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(E, Circle(A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Circle(A)",
+        "Equals(LengthOf(Line(A,E)),13.1)",
+        "Perpendicular(Line(A,C),Line(B,D))",
+        "Equals(LengthOf(Line(B,C)),6.8)",
+        "Find(LengthOf(Line(A,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "D",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "CA",
+        "AE"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "B": [
+            96.096,
+            50.93785310734463
+        ],
+        "C": [
+            199.264,
+            93.5593220338983
+        ],
+        "D": [
+            309.92,
+            137.6361581920904
+        ],
+        "A": [
+            170.56710780136967,
+            173.33835339094517
+        ],
+        "E": [
+            219.96,
+            308.39924670433146
+        ]
+    },
+    "problem_choices": [
+        1.827,
+        4.973,
+        11.197,
+        22.394
+    ],
+    "choices_precise_value": [
+        1.827,
+        4.973,
+        11.197,
+        22.394
+    ],
+    "problem_answer": 11.197,
+    "total_time": 47.933744,
+    "solution_predicate": "Equals(11.1968745639, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, 13.1 = AE, 6.8 = BC, B on \u2299(A, radius_A), AC, AC \u22a5 BC, AB, E on \u2299(A, radius_A)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : B on \u2299(A, radius_A)\nConclusions: radius_A = AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : E on \u2299(A, radius_A)\nConclusions: radius_A = AE\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : AC \u22a5 BC, \u25b3ABC\nConclusions: AC = SqrtOf(AB ** 2 - BC ** 2)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AE, 13.1 = AE\nConclusions: 13.1 = radius_A\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AB, 13.1 = radius_A\nConclusions: 13.1 = AB\n\nStep 8:\nTheorem: Substitution\nPremises : 6.8 = BC, AC = SqrtOf(AB ** 2 - BC ** 2), 13.1 = AB\nConclusions: SqrtOf(13.1 ** 2 - 6.8 ** 2) = AC\n\nStep 9:\nTheorem: Evaluate\nPremises : SqrtOf(13.1 ** 2 - 6.8 ** 2) = AC\nConclusions: 11.2 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(A, E)",
+        "Circle(A, radius_A)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(E, Circle(A, radius_A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Circle(A, radius_A)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Equals(LengthOf(Line(A, E)), 13.1)",
+        "Equals(LengthOf(Line(B, C)), 6.8)"
+    ],
+    "correct": true
+}

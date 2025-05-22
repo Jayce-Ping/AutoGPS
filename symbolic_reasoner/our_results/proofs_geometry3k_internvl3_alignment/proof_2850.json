@@ -1,0 +1,91 @@
+{
+    "problem_id": "2850",
+    "solved": true,
+    "problem_text": "Quadrilateral E F G H is a rectangle. If E F = 4 x - 6 and H G = x + 3, find E F.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(H, F))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "Perpendicular(Line(G, H), Line(E, H))",
+        "Rectangle(E,F,G,H)",
+        "Equals(LengthOf(Line(E,F)),4x-6)",
+        "Equals(LengthOf(Line(H,G)),x+3)",
+        "Find(LengthOf(Line(E,F)))"
+    ],
+    "point_instances": [
+        "K",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "HG",
+        "FG",
+        "EF",
+        "EH",
+        "HK",
+        "HF",
+        "KF",
+        "EK",
+        "EG",
+        "KG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            303.49344978165936,
+            140.55021834061134
+        ],
+        "E": [
+            134.06113537117903,
+            61.07423580786026
+        ],
+        "F": [
+            473.3624454148472,
+            60.20087336244541
+        ],
+        "G": [
+            472.92576419213975,
+            220.89956331877727
+        ],
+        "H": [
+            133.6244541484716,
+            220.46288209606985
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "12",
+        "18",
+        "20"
+    ],
+    "choices_precise_value": [
+        6.0,
+        12.0,
+        18.0,
+        20.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 79.397346,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 + x = GH, 4 * x - 6 = EF, Rectangle(E, F, G, H)\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(E, F, G, H)\nConclusions: Parallelogram(E, F, G, H)\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: EF = GH\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : EF = GH, 4 * x - 6 = EF\nConclusions: 4 * x - 6 = GH\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3 + x = GH, 4 * x - 6 = GH\nConclusions: 3 + x = 4 * x - 6\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3 + x = 4 * x - 6, 4 * x - 6 = EF\nConclusions: 3 + x = EF\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3 + x = 4 * x - 6, 3 + x = EF\nConclusions: 6 = EF\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, G)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(H, K)",
+        "Line(H, F)",
+        "Line(K, F)",
+        "Line(E, K)",
+        "Line(E, G)",
+        "Line(K, G)",
+        "PointLiesOnLine(K, Line(H, F))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "Perpendicular(Line(G, H), Line(E, H))",
+        "Rectangle(E, F, G, H)",
+        "Equals(LengthOf(Line(E, F)), Sub(Mul(4.0, x), 6.0))",
+        "Equals(LengthOf(Line(H, G)), Add(x, 3.0))"
+    ],
+    "correct": true
+}

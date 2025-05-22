@@ -1,0 +1,115 @@
+{
+    "problem_id": "5121",
+    "solved": true,
+    "problem_text": "Use rhombus XYZW with m \\angle WYZ = 53, VW = 3, XV = 2a-2, and ZV = \\frac{5a+1}{4}. Find XW.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Z, Y, V)), 53)",
+        "Line(V, W)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, V)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, V)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(V, Line(X, Z))",
+        "PointLiesOnLine(V, Line(Y, W))",
+        "Rhombus(X,Y,Z,W)",
+        "Equals(MeasureOf(Angle(W,Y,Z)),53)",
+        "Equals(LengthOf(Line(V,W)),3)",
+        "Equals(LengthOf(Line(X,V)),2a-2)",
+        "Equals(LengthOf(Line(Z,V)),\\frac{5a+1}{4})",
+        "Find(LengthOf(Line(X,W)))"
+    ],
+    "point_instances": [
+        "W",
+        "X",
+        "Y",
+        "V",
+        "Z"
+    ],
+    "line_instances": [
+        "XV",
+        "XZ",
+        "VZ",
+        "WV",
+        "WY",
+        "VY",
+        "XW",
+        "WZ",
+        "XY",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            112.59968102073367,
+            143.87161904761905
+        ],
+        "X": [
+            46.342028090754745,
+            49.00423963133641
+        ],
+        "Y": [
+            152.18397900910634,
+            49.196866359447014
+        ],
+        "V": [
+            132.19515731477455,
+            96.26666666666668
+        ],
+        "Z": [
+            218.4645498042627,
+            143.67619047619047
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        15.0,
+        20.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        15.0,
+        20.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 222.633824,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(W, X, Y, Z), 3 = VW, 2 * a - 2 = VX, V on WY, XY, VX, (1 + 5 * a) / 4 = VZ, VY, V on XZ\n\nStep 2:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(W, X, Y, Z)\nConclusions: VX \u22a5 VY\n\nStep 3:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(W, X, Y, Z)\nConclusions: XY = YZ\n\nStep 4:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : VX, XY, VY\nConclusions: \u25b3VXY\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ\n\nStep 7:\nTheorem: Parallelogram Diagonals Bisect\nPremises : V on XZ, V on WY, Parallelogram(W, X, Y, Z)\nConclusions: VW = VY, VX = VZ\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : \u25b3VXY, VX \u22a5 VY\nConclusions: XY = SqrtOf(VX ** 2 + VY ** 2)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3 = VW, VW = VY\nConclusions: 3 = VY\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : (1 + 5 * a) / 4 = VZ, VX = VZ\nConclusions: (1 + 5 * a) / 4 = VX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : XY = YZ, XY = SqrtOf(VX ** 2 + VY ** 2)\nConclusions: YZ = SqrtOf(VX ** 2 + VY ** 2)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 * a - 2 = VX, (1 + 5 * a) / 4 = VX\nConclusions: 2 * a - 2 = (1 + 5 * a) / 4\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : (1 + 5 * a) / 4 = VX, 2 * a - 2 = (1 + 5 * a) / 4\nConclusions: 4 = VX\n\nStep 14:\nTheorem: Evaluate\nPremises : 3 = VY, 4 = VX\nConclusions: 5 = SqrtOf(VX ** 2 + VY ** 2)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 5 = SqrtOf(VX ** 2 + VY ** 2), YZ = SqrtOf(VX ** 2 + VY ** 2)\nConclusions: 5 = YZ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 5 = YZ, WX = YZ\nConclusions: 5 = WX\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, V)",
+        "Line(X, Z)",
+        "Line(V, Z)",
+        "Line(W, V)",
+        "Line(W, Y)",
+        "Line(V, Y)",
+        "Line(X, W)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Line(V, W)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, V)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, V)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(V, Line(X, Z))",
+        "PointLiesOnLine(V, Line(Y, W))",
+        "Rhombus(X, Y, Z, W)",
+        "Equals(MeasureOf(Angle(V, Y, Z)), Mul(pi, Div(53.0, 180.0)))",
+        "Equals(MeasureOf(Angle(W, Y, Z)), Mul(pi, Div(53.0, 180.0)))",
+        "Equals(LengthOf(Line(V, W)), 3.0)",
+        "Equals(LengthOf(Line(X, V)), Sub(Mul(2.0, a), 2.0))",
+        "Equals(LengthOf(Line(Z, V)), Div(Add(Mul(5.0, a), 1.0), 4.0))"
+    ],
+    "correct": true
+}

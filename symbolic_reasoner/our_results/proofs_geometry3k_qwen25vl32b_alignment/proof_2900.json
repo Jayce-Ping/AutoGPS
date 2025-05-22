@@ -1,0 +1,63 @@
+{
+    "problem_id": "2900",
+    "solved": true,
+    "problem_text": "Find the area of the triangle. Round to the nearest hundredth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, C)), 5)",
+        "Equals(MeasureOf(Angle(C, A, B)), 59)",
+        "Find(AreaOf(Triangle(A, B, C)))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "BA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            189.822695035461,
+            152.6595744680851
+        ],
+        "B": [
+            189.645390070922,
+            46.808510638297875
+        ],
+        "C": [
+            12.695035460992909,
+            45.92198581560284
+        ]
+    },
+    "problem_choices": [
+        "3.76",
+        "7.51",
+        "13.84",
+        "15.02"
+    ],
+    "choices_precise_value": [
+        3.76,
+        7.51,
+        13.84,
+        15.02
+    ],
+    "problem_answer": 7.51,
+    "total_time": 14.321527,
+    "solution_predicate": "Equals(7.5107577374, AreaOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (59 / 180) = \u2220BAC, AB \u22a5 BC, \u25b3ABC, 5 = BC, 3.14 = pi, tan(\u2220BAC)\n\nStep 2:\nTheorem: Area formula of Triangle(A, B, C)\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: Area(\u25b3ABC) = (AB * BC) / 2\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.03 = pi * (59 / 180)\n\nStep 4:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220BAC), AB \u22a5 BC\nConclusions: BC / AB = tan(\u2220BAC)\n\nStep 5:\nTheorem: Substitution\nPremises : Area(\u25b3ABC) = (AB * BC) / 2, 5 = BC\nConclusions: Area(\u25b3ABC) = (5 * AB) / 2\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (59 / 180) = \u2220BAC, 1.03 = pi * (59 / 180)\nConclusions: 1.03 = \u2220BAC\n\nStep 7:\nTheorem: Substitution\nPremises : 1.03 = \u2220BAC, BC / AB = tan(\u2220BAC), 5 = BC\nConclusions: tan(1.03) = 5 / AB\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3ABC) = (5 * AB) / 2, tan(1.03) = 5 / AB\nConclusions: 7.51 = Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(B, C)), 5.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(59.0, 180.0)))"
+    ],
+    "correct": true
+}

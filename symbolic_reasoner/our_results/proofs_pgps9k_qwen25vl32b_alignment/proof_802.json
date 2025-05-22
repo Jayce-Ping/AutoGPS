@@ -1,0 +1,78 @@
+{
+    "problem_id": "802",
+    "solved": true,
+    "problem_text": "WXYZ is a rhombus. If m \\angle XYZ = 110, find m \\angle ZWY.",
+    "logic_forms": [
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Rhombus(W,X,Y,Z)",
+        "Equals(MeasureOf(Angle(X,Y,Z)),110)",
+        "Find(MeasureOf(Angle(Z,W,Y)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "ZY",
+        "YX",
+        "XW",
+        "WZ",
+        "YW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            91.45054945054945,
+            283.6571428571429
+        ],
+        "Y": [
+            394.61538461538464,
+            283.6571428571429
+        ],
+        "X": [
+            496.2271062271062,
+            73.52142857142857
+        ],
+        "W": [
+            193.4798534798535,
+            73.52142857142857
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        55.0,
+        70.0,
+        110.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        55.0,
+        70.0,
+        110.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 21.021109,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(Z, W, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ZWX, Rhombus(W, X, Y, Z), pi * (110 / 180) = \u2220XYZ, \u2220XWZ, \u2220YWX, 3.14 = pi, \u2220XYZ, \u2220ZWY\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZWX\nConclusions: \u2220ZWX = 2 * pi - \u2220XWZ\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 4:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(W, X, Y, Z)\nConclusions: \u2220YWX = \u2220ZWY\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220XYZ\nConclusions: \u2220XYZ = 2 * pi - \u2220ZYX\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220YWX, \u2220ZWY, \u2220XWZ\nConclusions: 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220XYZ = \u2220ZWX, \u2220XWZ = \u2220ZYX\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYZ = 2 * pi - \u2220ZYX, pi * (110 / 180) = \u2220XYZ\nConclusions: pi * (110 / 180) = 2 * pi - \u2220ZYX\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYZ = \u2220ZWX, pi * (110 / 180) = \u2220XYZ\nConclusions: pi * (110 / 180) = \u2220ZWX\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY, \u2220XWZ = \u2220ZYX, \u2220YWX = \u2220ZWY\nConclusions: 2 * 3.14 = \u2220ZWY + \u2220ZWY + \u2220ZYX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (110 / 180) = \u2220ZWX, \u2220ZWX = 2 * pi - \u2220XWZ\nConclusions: pi * (110 / 180) = 2 * pi - \u2220XWZ\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : \u2220YWX = \u2220ZWY, pi * (110 / 180) = 2 * pi - \u2220XWZ, 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY, pi * (110 / 180) = 2 * pi - \u2220ZYX, 2 * 3.14 = \u2220ZWY + \u2220ZWY + \u2220ZYX\nConclusions: 0.96 = \u2220YWX\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YWX = \u2220ZWY, 0.96 = \u2220YWX\nConclusions: 0.96 = \u2220ZWY\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(W, Z)",
+        "Line(Y, W)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Rhombus(W, X, Y, Z)",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(110.0, 180.0)))"
+    ],
+    "correct": true
+}

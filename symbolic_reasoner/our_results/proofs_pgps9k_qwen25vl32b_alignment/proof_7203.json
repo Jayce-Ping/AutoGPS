@@ -1,0 +1,111 @@
+{
+    "problem_id": "7203",
+    "solved": true,
+    "problem_text": "Quadrilateral DEFG is a rectangle. If m \\angle EDF = 5x-3 and m \\angle DFG = 3x+7, find m \\angle GDF.",
+    "logic_forms": [
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(G, A)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(G, F), Line(D, G))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "PointLiesOnLine(A, Line(G, E))",
+        "Rectangle(D,E,F,G)",
+        "Equals(MeasureOf(Angle(E,D,F)),5x-3)",
+        "Equals(MeasureOf(Angle(D,F,G)),3x+7)",
+        "Find(MeasureOf(Angle(G,D,F)))"
+    ],
+    "point_instances": [
+        "D",
+        "G",
+        "A",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "GA",
+        "GE",
+        "AE",
+        "DA",
+        "DF",
+        "AF",
+        "GF",
+        "DE",
+        "DG",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            94.51,
+            52.6656034024455
+        ],
+        "G": [
+            94.24999999999999,
+            177.06539074960128
+        ],
+        "A": [
+            230.7747619047619,
+            114.55973266499582
+        ],
+        "E": [
+            366.3908695652174,
+            52.67124332570556
+        ],
+        "F": [
+            366.938,
+            176.99274853801168
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        39.25,
+        50.75,
+        68.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        39.25,
+        50.75,
+        68.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 242.559669,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(G, D, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FG, DF, pi * ((7 + 3 * x) / 180) = \u2220DFG, Rectangle(D, E, F, G), DG \u22a5 FG, 3.14 = pi, DG, pi * ((5 * x - 3) / 180) = \u2220FDE\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(D, E, F, G)\nConclusions: DG \u22a5 FG, EF \u22a5 FG\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(D, E, F, G)\nConclusions: Parallelogram(D, E, F, G)\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : DG \u22a5 FG\nConclusions: pi / 2 = \u2220FGD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : DG, DF, FG\nConclusions: \u25b3DFG\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : EF \u22a5 FG\nConclusions: pi / 2 = \u2220EFG\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(D, E, F, G)\nConclusions: \u2220EFG = \u2220GDE\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(D, E, F, G)\nConclusions: DE || GF\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(D, E, F, G)\nConclusions: DE = FG\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(D, F, G)\nPremises : \u25b3DFG\nConclusions: pi = \u2220DFG + \u2220FGD + \u2220GDF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220FGD, pi / 2 = \u2220EFG, \u2220EFG = \u2220GDE\nConclusions: \u2220FGD = \u2220GDE\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : DE || GF\nConclusions: \u2220DEG = \u2220FGE, \u2220DFG = \u2220FDE\n\nStep 13:\nTheorem: Substitution\nPremises : pi = \u2220DFG + \u2220FGD + \u2220GDF, pi / 2 = \u2220FGD, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + \u2220DFG + \u2220GDF\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : DE = FG, \u2220FGD = \u2220GDE\nConclusions: \u25b3DEG \u2245 \u25b3GFD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFG = \u2220FDE, pi * ((5 * x - 3) / 180) = \u2220FDE\nConclusions: pi * ((5 * x - 3) / 180) = \u2220DFG\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3DEG \u2245 \u25b3GFD\nConclusions: \u2220DEG = \u2220DFG, DE = FG\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 3) / 180) = \u2220DFG, pi * ((7 + 3 * x) / 180) = \u2220DFG\nConclusions: pi * ((7 + 3 * x) / 180) = pi * ((5 * x - 3) / 180)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEG = \u2220FGE, pi * ((5 * x - 3) / 180) = \u2220DFG, \u2220DEG = \u2220DFG\nConclusions: pi * ((5 * x - 3) / 180) = \u2220FGE\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 * x - 3) / 180) = \u2220FGE\nConclusions: 3.14 * ((5 * x - 3) / 180) = \u2220FGE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * x - 3) / 180) = \u2220FGE, pi * ((5 * x - 3) / 180) = \u2220FGE\nConclusions: 3.14 * ((5 * x - 3) / 180) = pi * ((5 * x - 3) / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * x - 3) / 180) = pi * ((5 * x - 3) / 180), pi * ((7 + 3 * x) / 180) = pi * ((5 * x - 3) / 180)\nConclusions: 3.14 * ((5 * x - 3) / 180) = pi * ((7 + 3 * x) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * x - 3) / 180) = pi * ((5 * x - 3) / 180), pi * ((5 * x - 3) / 180) = \u2220DFG\nConclusions: 3.14 * ((5 * x - 3) / 180) = \u2220DFG\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 * ((5 * x - 3) / 180) = pi * ((7 + 3 * x) / 180), 3.14 = pi\nConclusions: 3.14 * ((7 + 3 * x) / 180) = 3.14 * ((5 * x - 3) / 180)\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((5 * x - 3) / 180) = \u2220DFG, 3.14 = 3.14 / 2 + \u2220DFG + \u2220GDF, 3.14 * ((7 + 3 * x) / 180) = 3.14 * ((5 * x - 3) / 180)\nConclusions: 1.19 = \u2220GDF\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, E)",
+        "Line(A, E)",
+        "Line(D, A)",
+        "Line(D, F)",
+        "Line(A, F)",
+        "Line(G, F)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(G, A)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(G, F), Line(D, G))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "PointLiesOnLine(A, Line(G, E))",
+        "Rectangle(D, E, F, G)",
+        "Equals(MeasureOf(Angle(F, D, E)), Mul(pi, Div(Sub(Mul(5.0, x), 3.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, G)), Mul(pi, Div(Add(Mul(3.0, x), 7.0), 180.0)))"
+    ],
+    "correct": true
+}

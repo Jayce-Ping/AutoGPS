@@ -1,0 +1,101 @@
+{
+    "problem_id": "6685",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle B.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(G, N, E)), 46)",
+        "Equals(MeasureOf(Angle(N, G, E)), 53)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(E, G)",
+        "Line(E, N)",
+        "Line(G, A)",
+        "Line(G, N)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Parallel(Line(A, B), Line(E, G))",
+        "PointLiesOnLine(N, Line(E, B))",
+        "PointLiesOnLine(N, Line(G, A))",
+        "Find(MeasureOf(Angle(B)))"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "N",
+        "B",
+        "G"
+    ],
+    "line_instances": [
+        "GN",
+        "GA",
+        "NA",
+        "EN",
+        "EB",
+        "NB",
+        "EG",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            321.6330396475771,
+            44.89714285714285
+        ],
+        "E": [
+            52.45374449339207,
+            110.58
+        ],
+        "N": [
+            202.3215859030837,
+            134.2379220779221
+        ],
+        "B": [
+            321.6461859494552,
+            153.50796992481202
+        ],
+        "G": [
+            53.04845814977974,
+            246.65714285714287
+        ]
+    },
+    "problem_choices": [
+        46.0,
+        53.0,
+        81.0,
+        134.0
+    ],
+    "choices_precise_value": [
+        46.0,
+        53.0,
+        81.0,
+        134.0
+    ],
+    "problem_answer": 81.0,
+    "total_time": 31.549286,
+    "solution_predicate": "Equals(1.4137166941, MeasureOf(Angle(A, B, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABE, pi * (46 / 180) = \u2220ENG, \u2220EBA, AB || EG, BN, N on BE, pi * (53 / 180) = \u2220NGE, N on AG, 3.14 = pi, AB, \u2220EBA, \u2220GEB, AN, \u2220GAB, \u2220AGE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBA\nConclusions: \u2220EBA = 2 * pi - \u2220ABE\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || EG\nConclusions: \u2220AGE = \u2220GAB, \u2220ABE = \u2220GEB\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220ABE, N on BE\nConclusions: \u2220ABE = \u2220ABN\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : N on AG, N on BE\nConclusions: \u2220BNA = \u2220ENG\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220EBA, N on BE\nConclusions: \u2220EBA = \u2220NBA\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220GEB, N on BE\nConclusions: \u2220GEB = \u2220GEN\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AB, BN, AN\nConclusions: \u25b3ABN\n\nStep 9:\nTheorem: Same Angle\nPremises : N on AG, \u2220GAB\nConclusions: \u2220GAB = \u2220NAB\n\nStep 10:\nTheorem: Same Angle\nPremises : N on AG, \u2220AGE\nConclusions: \u2220AGE = \u2220NGE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220GEB, \u2220ABE = \u2220ABN\nConclusions: \u2220ABN = \u2220GEB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (46 / 180) = \u2220ENG, \u2220BNA = \u2220ENG\nConclusions: pi * (46 / 180) = \u2220BNA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBA = 2 * pi - \u2220ABE, \u2220EBA = \u2220NBA\nConclusions: \u2220NBA = 2 * pi - \u2220ABE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220GEB, \u2220GEB = \u2220GEN\nConclusions: \u2220ABE = \u2220GEN\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, N)\nPremises : \u25b3ABN\nConclusions: pi = \u2220ABN + \u2220BNA + \u2220NAB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GAB = \u2220NAB, \u2220AGE = \u2220GAB\nConclusions: \u2220AGE = \u2220NAB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GEB = \u2220GEN, \u2220ABN = \u2220GEB\nConclusions: \u2220ABN = \u2220GEN\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220EBA = 2 * pi - \u2220ABE, \u2220EBA = \u2220NBA, \u2220ABE = \u2220GEN\nConclusions: \u2220NBA = 2 * 3.14 - \u2220GEN\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (53 / 180) = \u2220NGE, \u2220AGE = \u2220NGE, \u2220AGE = \u2220NAB\nConclusions: pi * (53 / 180) = \u2220NAB\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (53 / 180) = \u2220NAB, 3.14 = pi, pi = \u2220ABN + \u2220BNA + \u2220NAB, \u2220ABN = \u2220GEN, pi * (46 / 180) = \u2220BNA\nConclusions: 3.14 = 3.14 * (46 / 180) + pi * (53 / 180) + \u2220GEN\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABE = \u2220GEN, \u2220NBA = 2 * pi - \u2220ABE, \u2220NBA = 2 * 3.14 - \u2220GEN, 3.14 = 3.14 * (46 / 180) + pi * (53 / 180) + \u2220GEN\nConclusions: 1.41 = \u2220ABE\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, N)",
+        "Line(G, A)",
+        "Line(N, A)",
+        "Line(E, N)",
+        "Line(E, B)",
+        "Line(N, B)",
+        "Line(E, G)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(E, G)",
+        "Line(E, N)",
+        "Line(G, A)",
+        "Line(G, N)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Parallel(Line(A, B), Line(E, G))",
+        "PointLiesOnLine(N, Line(E, B))",
+        "PointLiesOnLine(N, Line(G, A))",
+        "Equals(MeasureOf(Angle(E, N, G)), Mul(pi, Div(46.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, G, E)), Mul(pi, Div(53.0, 180.0)))"
+    ],
+    "correct": true
+}

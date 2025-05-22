@@ -1,0 +1,111 @@
+{
+    "problem_id": "1463",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 3)",
+        "Equals(LengthOf(Line(B, C)), 9)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(E, C)), 6)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            39.865243902439026,
+            66.64
+        ],
+        "B": [
+            147.23739837398375,
+            221.1259259259259
+        ],
+        "C": [
+            106.47365853658538,
+            63.55733333333334
+        ],
+        "D": [
+            94.58780487804879,
+            17.97142857142857
+        ],
+        "E": [
+            220.16397748592874,
+            58.06153846153847
+        ],
+        "F": [
+            131.99748743718592,
+            115.99748743718592
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        6.0,
+        9.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        6.0,
+        9.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 52.627144,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, 3 = AC, 9 = BC, A on \u2299(F, radius_F), x = CD, D on \u2299(F, radius_F), C on AE, 6 = CE, B on \u2299(F, radius_F), E on \u2299(F, radius_F)\n\nStep 2:\nTheorem: Intersecting Chord Theorem\nPremises : A on \u2299(F, radius_F), D on \u2299(F, radius_F), C on BD, C on AE, B on \u2299(F, radius_F), E on \u2299(F, radius_F)\nConclusions: AC * CE = BC * CD\n\nStep 3:\nTheorem: Substitution\nPremises : AC * CE = BC * CD, x = CD, 3 = AC, 6 = CE, 9 = BC\nConclusions: 3 * 6 = 9 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3 * 6 = 9 * x, x = CD\nConclusions: 2 = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 2 = CD, x = CD\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Circle(F, radius_F)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), 3.0)",
+        "Equals(LengthOf(Line(B, C)), 9.0)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(E, C)), 6.0)"
+    ],
+    "correct": true
+}

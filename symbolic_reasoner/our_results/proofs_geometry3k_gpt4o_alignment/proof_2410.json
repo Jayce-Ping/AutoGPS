@@ -1,0 +1,89 @@
+{
+    "problem_id": "2410",
+    "solved": true,
+    "problem_text": "Find C D if A C = x - 3, B E = 20, A B = 16, and C D = x + 5.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(D, E), Line(C, B))",
+        "Equals(LengthOf(Line(A,C)),x-3)",
+        "Equals(LengthOf(Line(B,E)),20)",
+        "Equals(LengthOf(Line(A,B)),16)",
+        "Equals(LengthOf(Line(C,D)),x+5)",
+        "Find(LengthOf(Line(C,D)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "A",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "BE",
+        "DE",
+        "AC",
+        "AD",
+        "CD",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            181.07479224376732,
+            89.19667590027701
+        ],
+        "D": [
+            273.59556786703604,
+            46.81440443213297
+        ],
+        "A": [
+            95.202216066482,
+            128.25484764542938
+        ],
+        "B": [
+            180.52077562326872,
+            166.7590027700831
+        ],
+        "E": [
+            274.14958448753464,
+            209.69529085872577
+        ]
+    },
+    "problem_choices": [
+        "32",
+        "35",
+        "36",
+        "40"
+    ],
+    "choices_precise_value": [
+        32.0,
+        35.0,
+        36.0,
+        40.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 32.906295,
+    "solution_predicate": "Equals(40.0, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBA, \u2220EAC, \u2220BAD, 20 = BE, \u2220DEA, 3.14 = pi, C on AD, 16 = AB, \u2220AED, \u2220EAD, 5 + x = CD, B on AE, BC || ED, x - 3 = AC, \u2220DEA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEA\nConclusions: \u2220DEA = 2 * pi - \u2220AED\n\nStep 4:\nTheorem: Same Angle\nPremises : C on AD, \u2220BAD\nConclusions: \u2220BAC = \u2220BAD\n\nStep 5:\nTheorem: Line Segment Split\nPremises : C on AD\nConclusions: AD = AC + CD\n\nStep 6:\nTheorem: Line Segment Split\nPremises : B on AE\nConclusions: AE = AB + BE\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AED, B on AE\nConclusions: \u2220AED = \u2220BED\n\nStep 8:\nTheorem: Same Angle\nPremises : B on AE, \u2220EAD\nConclusions: \u2220BAD = \u2220EAD\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220EAC, B on AE\nConclusions: \u2220BAC = \u2220EAC\n\nStep 10:\nTheorem: Corresponding Angle Theorem\nPremises : BC || ED\nConclusions: \u2220ABC = \u2220AED, \u2220ACB = \u2220ADE\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220DEA, B on AE\nConclusions: \u2220DEA = \u2220DEB\n\nStep 12:\nTheorem: Substitution\nPremises : AD = AC + CD, x - 3 = AC, 5 + x = CD\nConclusions: (5 + x) + (x - 3) = AD\n\nStep 13:\nTheorem: Substitution\nPremises : 20 = BE, AE = AB + BE, 16 = AB\nConclusions: 16 + 20 = AE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220EAC, \u2220BAC = \u2220BAD\nConclusions: \u2220BAD = \u2220EAC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220AED, \u2220AED = \u2220BED\nConclusions: \u2220ABC = \u2220BED\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AED = \u2220BED, \u2220DEA = \u2220DEB, \u2220DEA = 2 * pi - \u2220AED\nConclusions: \u2220DEB = 2 * 3.14 - \u2220BED\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 16 + 20 = AE\nConclusions: 36 = AE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220EAC, \u2220BAD = \u2220EAD\nConclusions: \u2220EAC = \u2220EAD\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi, \u2220ABC = \u2220BED\nConclusions: \u2220CBA = 2 * 3.14 - \u2220BED\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220EAC, \u2220EAC = \u2220EAD\nConclusions: \u2220BAC = \u2220EAD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * 3.14 - \u2220BED, \u2220DEB = 2 * 3.14 - \u2220BED\nConclusions: \u2220CBA = \u2220DEB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DEB, \u2220DEA = \u2220DEB\nConclusions: \u2220CBA = \u2220DEA\n\nStep 23:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACB = \u2220ADE, \u2220CBA = \u2220DEA, \u2220BAC = \u2220EAD\nConclusions: \u25b3ABC ~ \u25b3AED\n\nStep 24:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3AED\nConclusions: sim_ratio_triangle_a_b_c_triangle_a_e_d = AB / AE, \u2220BAC = \u2220EAD, \u2220CBA = \u2220DEA, sim_ratio_triangle_a_b_c_triangle_a_e_d = AC / AD, \u2220ABC = \u2220AED\n\nStep 25:\nTheorem: Substitution\nPremises : 36 = AE, sim_ratio_triangle_a_b_c_triangle_a_e_d = AB / AE, 16 = AB\nConclusions: 16 / 36 = sim_ratio_triangle_a_b_c_triangle_a_e_d\n\nStep 26:\nTheorem: Substitution\nPremises : x - 3 = AC, (5 + x) + (x - 3) = AD, sim_ratio_triangle_a_b_c_triangle_a_e_d = AC / AD\nConclusions: sim_ratio_triangle_a_b_c_triangle_a_e_d = (x - 3) / ((5 + x) + (x - 3))\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_a_e_d = (x - 3) / ((5 + x) + (x - 3)), 16 / 36 = sim_ratio_triangle_a_b_c_triangle_a_e_d\nConclusions: 16 / 36 = (x - 3) / ((5 + x) + (x - 3))\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 16 / 36 = (x - 3) / ((5 + x) + (x - 3)), 5 + x = CD\nConclusions: 40 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(D, E), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), Sub(x, 3.0))",
+        "Equals(LengthOf(Line(B, E)), 20.0)",
+        "Equals(LengthOf(Line(A, B)), 16.0)",
+        "Equals(LengthOf(Line(C, D)), Add(x, 5.0))"
+    ],
+    "correct": true
+}

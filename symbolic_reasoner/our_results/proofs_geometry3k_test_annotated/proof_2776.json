@@ -1,0 +1,97 @@
+{
+    "problem_id": "2776",
+    "solved": true,
+    "problem_text": "Quadrilateral A B D C is a rectangle. m \\angle 2 = 40. Find m \\angle 8.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Equals(MeasureOf(Angle(D, B, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(B, E, D)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(C, A, E)), MeasureOf(angle 1))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(angle 2), 40)",
+        "Find(MeasureOf(angle 8))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "BD",
+        "CD",
+        "AC",
+        "AB",
+        "BE",
+        "BC",
+        "EC",
+        "AE",
+        "AD",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            57.6271186440678,
+            57.11864406779661
+        ],
+        "D": [
+            292.3728813559322,
+            174.91525423728814
+        ],
+        "B": [
+            57.6271186440678,
+            174.3502824858757
+        ],
+        "C": [
+            292.6553672316384,
+            56.55367231638418
+        ],
+        "E": [
+            174.85875706214688,
+            115.31073446327684
+        ]
+    },
+    "problem_choices": [
+        "40",
+        "50",
+        "80",
+        "100"
+    ],
+    "choices_precise_value": [
+        40.0,
+        50.0,
+        80.0,
+        100.0
+    ],
+    "problem_answer": 100.0,
+    "total_time": 174.184076,
+    "solution_predicate": "Equals(1.745329252, MeasureOf(Angle(D, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCD, E on BC, pi * (40 / 180) = \u2220BAE, Rectangle(A, B, D, C), CE, CD, 3.14 = pi, AB \u22a5 BD, \u2220CDA, E on AD, \u2220BAD, \u2220CBA, DE\n\nStep 2:\nTheorem: Same Angle\nPremises : E on BC, \u2220BCD\nConclusions: \u2220BCD = \u2220ECD\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, D, C)\nConclusions: BD \u22a5 CD, AB \u22a5 BD\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 6:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 7:\nTheorem: Same Angle\nPremises : E on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CBA, E on BC\nConclusions: \u2220CBA = \u2220EBA\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : CD, DE, CE\nConclusions: \u25b3CDE\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD\n\nStep 11:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220ACD = \u2220DBA\n\nStep 12:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AC = BD\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220CDB\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 15:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BAD = \u2220CDA, \u2220BCD = \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220DBA, pi / 2 = \u2220DBA, pi / 2 = \u2220CDB\nConclusions: \u2220ACD = \u2220CDB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CDA, pi * (40 / 180) = \u2220BAE, \u2220BAD = \u2220BAE\nConclusions: pi * (40 / 180) = \u2220CDA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220CBA, \u2220CBA = \u2220EBA\nConclusions: \u2220BCD = \u2220EBA\n\nStep 19:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AC = BD, \u2220ACD = \u2220CDB\nConclusions: \u25b3ACD \u2245 \u25b3BDC\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : pi * (40 / 180) = \u2220CDA, 3.14 = pi\nConclusions: 0.7 = \u2220CDA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDA = \u2220CDE, pi * (40 / 180) = \u2220CDA\nConclusions: pi * (40 / 180) = \u2220CDE\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220EBA, \u2220BCD = \u2220ECD\nConclusions: \u2220EBA = \u2220ECD\n\nStep 23:\nTheorem: Congruent Definition\nPremises : \u25b3ACD \u2245 \u25b3BDC\nConclusions: AC = BD, \u2220BCD = \u2220CDA\n\nStep 24:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220CDE, \u2220EBA = \u2220ECD, pi = \u2220CDE + \u2220DEC + \u2220ECD, 3.14 = pi\nConclusions: 3.14 = 3.14 * (40 / 180) + \u2220DEC + \u2220EBA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 0.7 = \u2220CDA, \u2220BCD = \u2220EBA, \u2220BCD = \u2220CDA\nConclusions: 0.7 = \u2220EBA\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 0.7 = \u2220EBA, 3.14 = 3.14 * (40 / 180) + \u2220DEC + \u2220EBA\nConclusions: 1.75 = \u2220DEC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(Angle(B, A, E)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

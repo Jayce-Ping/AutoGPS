@@ -1,0 +1,102 @@
+{
+    "problem_id": "2786",
+    "solved": true,
+    "problem_text": "Find X W.",
+    "logic_forms": [
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "PointLiesOnLine(X, Line(B, Z))",
+        "PointLiesOnLine(X, Line(B, A))",
+        "PointLiesOnLine(Z, Line(B, A))",
+        "PointLiesOnLine(Z, Line(X, A))",
+        "Perpendicular(Line(Y, Z), Line(X, Z))",
+        "Equals(LengthOf(Line(Z, Y)), LengthOf(Line(W, Z)))",
+        "Equals(LengthOf(Line(X, Y)), 12)",
+        "Find(LengthOf(Line(X,W)))"
+    ],
+    "point_instances": [
+        "Z",
+        "X",
+        "Y",
+        "W",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "XW",
+        "WZ",
+        "WY",
+        "ZY",
+        "XY",
+        "BX",
+        "BZ",
+        "BA",
+        "XZ",
+        "XA",
+        "ZA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            260.59071729957805,
+            279.746835443038
+        ],
+        "X": [
+            261.0126582278481,
+            93.67088607594937
+        ],
+        "Y": [
+            421.77215189873414,
+            280.59071729957805
+        ],
+        "W": [
+            90.97046413502109,
+            279.746835443038
+        ],
+        "A": [
+            261.0126582278481,
+            370.042194092827
+        ],
+        "B": [
+            260.59071729957805,
+            25.31645569620253
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "12",
+        "18",
+        "24"
+    ],
+    "choices_precise_value": [
+        6.0,
+        12.0,
+        18.0,
+        24.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 45.111811,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WZ \u22a5 XZ, 12 = XY, WZ = YZ, X on BZ, BZ \u22a5 YZ, \u2220YZB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 XZ\nConclusions: pi / 2 = \u2220XZW\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BZ \u22a5 YZ\nConclusions: pi / 2 = \u2220YZB\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220YZB, X on BZ\nConclusions: \u2220YZB = \u2220YZX\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZB = \u2220YZX, pi / 2 = \u2220XZW, pi / 2 = \u2220YZB\nConclusions: \u2220XZW = \u2220YZX\n\nStep 6:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : WZ = YZ, \u2220XZW = \u2220YZX\nConclusions: \u25b3WXZ \u2245 \u25b3YXZ\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3WXZ \u2245 \u25b3YXZ\nConclusions: WX = XY, WZ = YZ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 12 = XY, WX = XY\nConclusions: 12 = WX\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, W)",
+        "Line(W, Z)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(B, X)",
+        "Line(B, Z)",
+        "Line(B, A)",
+        "Line(X, Z)",
+        "Line(X, A)",
+        "Line(Z, A)",
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "PointLiesOnLine(X, Line(B, Z))",
+        "PointLiesOnLine(X, Line(B, A))",
+        "PointLiesOnLine(Z, Line(B, A))",
+        "PointLiesOnLine(Z, Line(X, A))",
+        "Perpendicular(Line(Y, Z), Line(X, Z))",
+        "Equals(LengthOf(Line(Z, Y)), LengthOf(Line(W, Z)))",
+        "Equals(LengthOf(Line(X, Y)), 12.0)"
+    ],
+    "correct": true
+}

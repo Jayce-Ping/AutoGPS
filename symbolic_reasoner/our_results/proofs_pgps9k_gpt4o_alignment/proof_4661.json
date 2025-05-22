@@ -1,0 +1,68 @@
+{
+    "problem_id": "4661",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(MeasureOf(Arc(B, A)), 110)",
+        "Find(AreaOf(Sector(C, A, B)))",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "CB",
+        "AC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            195.97916666666666,
+            48.12500000000001
+        ],
+        "C": [
+            125.53204336358596,
+            130.6476634651516
+        ],
+        "B": [
+            179.36943164362518,
+            224.71428571428572
+        ]
+    },
+    "problem_choices": [
+        17.643,
+        19.635,
+        34.558,
+        78.54
+    ],
+    "choices_precise_value": [
+        17.643,
+        19.635,
+        34.558,
+        78.54
+    ],
+    "problem_answer": 34.558,
+    "total_time": 2.071541,
+    "solution_predicate": "Equals(34.5575191896, AreaOf(Sector(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (110 / 180) = Arc(BCA), Sector(B, C, A), 6 = AC, A on \u2299(C, radius_C), Arc(BCA)\n\nStep 2:\nTheorem: Area formula of Sector(B, C, A)\nPremises : Sector(B, C, A)\nConclusions: Area(Sector(B, C, A)) = (radius_C ** 2 * \u2220BCA) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BCA)\nConclusions: \u2220BCA = Arc(BCA)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = AC, 6 = AC\nConclusions: 6 = radius_C\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (110 / 180) = Arc(BCA), \u2220BCA = Arc(BCA)\nConclusions: pi * (110 / 180) = \u2220BCA\n\nStep 7:\nTheorem: Substitution\nPremises : Area(Sector(B, C, A)) = (radius_C ** 2 * \u2220BCA) / 2, pi * (110 / 180) = \u2220BCA, 6 = radius_C\nConclusions: (pi * (110 / 180) * 6 ** 2) / 2 = Area(Sector(B, C, A))\n\nStep 8:\nTheorem: Evaluate\nPremises : (pi * (110 / 180) * 6 ** 2) / 2 = Area(Sector(B, C, A))\nConclusions: 34.56 = Area(Sector(B, C, A))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, C)",
+        "Circle(C, radius_C)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(MeasureOf(Arc(B, C, A)), Mul(pi, Div(110.0, 180.0)))"
+    ],
+    "correct": true
+}

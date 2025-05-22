@@ -1,0 +1,90 @@
+{
+    "problem_id": "2405",
+    "solved": true,
+    "problem_text": "What is the value of x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(N, M)), LengthOf(Line(L, N)))",
+        "Equals(MeasureOf(Angle(L, N, O)), x)",
+        "Equals(MeasureOf(Angle(M, N, O)), MeasureOf(Angle(L, N, O)))",
+        "Equals(MeasureOf(Angle(M, N, O)), x)",
+        "Equals(MeasureOf(Angle(O, L, N)), 42)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, O)",
+        "Line(N, M)",
+        "Line(O, M)",
+        "Line(O, N)",
+        "PointLiesOnLine(O, Line(L, M))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "L",
+        "O",
+        "M",
+        "N"
+    ],
+    "line_instances": [
+        "NL",
+        "LO",
+        "LM",
+        "OM",
+        "MN",
+        "NO"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            45.57021897810219,
+            54.193371428571425
+        ],
+        "O": [
+            165.1094890510949,
+            54.327950310559004
+        ],
+        "M": [
+            286.2838605028386,
+            54.454603174603164
+        ],
+        "N": [
+            165.74452554744525,
+            162.37714285714284
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        48.0,
+        69.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        48.0,
+        69.0,
+        90.0
+    ],
+    "problem_answer": 48.0,
+    "total_time": 31.000055,
+    "solution_predicate": "Equals(48.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220MLN, pi * (x / 180) = \u2220ONL, LN, 3.14 = pi, MN, \u2220LMN, pi * (x / 180) = \u2220MNO, \u2220ONL, \u2220NLM, LM, \u2220NLO, pi * (42 / 180) = \u2220NLO, \u2220LNM, \u2220MNO, LN = MN, \u2220NLM, \u2220MNL, O on LM\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ONL\nConclusions: 3.14 * (x / 180) = \u2220ONL\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220MNO\nConclusions: 3.14 * (x / 180) = \u2220MNO\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : MN, LM, LN\nConclusions: \u25b3LMN\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220NLO\nConclusions: \u2220NLO = 2 * pi - \u2220OLN\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220ONL, \u2220LNM, \u2220MNO\nConclusions: 2 * pi = \u2220LNM + \u2220MNO + \u2220ONL\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220NLM\nConclusions: \u2220NLM = 2 * pi - \u2220MLN\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220MNL\nConclusions: \u2220MNL = 2 * pi - \u2220LNM\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220MLN, O on LM\nConclusions: \u2220MLN = \u2220OLN\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220LMN, O on LM\nConclusions: \u2220LMN = \u2220OMN\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220NLM, O on LM\nConclusions: \u2220NLM = \u2220NLO\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(L, M, N)\nPremises : \u25b3LMN\nConclusions: pi = \u2220LMN + \u2220MNL + \u2220NLM\n\nStep 13:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3LMN, LN = MN\nConclusions: \u2220LMN = \u2220NLM\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (42 / 180) = \u2220NLO, 3.14 = pi, \u2220NLO = 2 * pi - \u2220OLN\nConclusions: 3.14 * (42 / 180) = 2 * 3.14 - \u2220OLN\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220LNM + \u2220MNO + \u2220ONL\nConclusions: 2 * 3.14 = \u2220LNM + \u2220MNO + \u2220ONL\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220MNL = 2 * pi - \u2220LNM\nConclusions: \u2220MNL = 2 * 3.14 - \u2220LNM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220NLO, \u2220NLM = \u2220NLO\nConclusions: pi * (42 / 180) = \u2220NLM\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220ONL, 2 * 3.14 = \u2220LNM + \u2220MNO + \u2220ONL, 3.14 * (x / 180) = \u2220MNO\nConclusions: 2 * 3.14 = 3.14 * (x / 180) + 3.14 * (x / 180) + \u2220LNM\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (42 / 180) = \u2220NLM, 3.14 = pi, \u2220MLN = \u2220OLN, \u2220NLM = 2 * pi - \u2220MLN\nConclusions: pi * (42 / 180) = 2 * 3.14 - \u2220OLN\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (42 / 180) = 2 * 3.14 - \u2220OLN, pi * (42 / 180) = 2 * 3.14 - \u2220OLN\nConclusions: 3.14 * (42 / 180) = pi * (42 / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220NLM, 3.14 * (42 / 180) = pi * (42 / 180)\nConclusions: 3.14 * (42 / 180) = \u2220NLM\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (42 / 180) = \u2220NLM\nConclusions: 0.73 = \u2220NLM\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 0.73 = \u2220NLM, \u2220LMN = \u2220NLM, \u2220LMN = \u2220OMN\nConclusions: 0.73 = \u2220OMN\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMN = \u2220OMN, 0.73 = \u2220OMN\nConclusions: 0.73 = \u2220LMN\n\nStep 25:\nTheorem: Substitution\nPremises : 0.73 = \u2220NLM, 3.14 = pi, 0.73 = \u2220LMN, pi = \u2220LMN + \u2220MNL + \u2220NLM\nConclusions: 3.14 = 0.73 + 0.73 + \u2220MNL\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.73 + 0.73 + \u2220MNL, 2 * 3.14 = 3.14 * (x / 180) + 3.14 * (x / 180) + \u2220LNM, \u2220MNL = 2 * 3.14 - \u2220LNM\nConclusions: 48 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, L)",
+        "Line(L, O)",
+        "Line(L, M)",
+        "Line(O, M)",
+        "Line(M, N)",
+        "Line(N, O)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, O)",
+        "Line(N, M)",
+        "Line(O, M)",
+        "Line(O, N)",
+        "PointLiesOnLine(O, Line(L, M))",
+        "Equals(LengthOf(Line(N, M)), LengthOf(Line(L, N)))",
+        "Equals(MeasureOf(Angle(O, N, L)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(M, N, O)), MeasureOf(Angle(O, N, L)))",
+        "Equals(MeasureOf(Angle(M, N, O)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(N, L, O)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

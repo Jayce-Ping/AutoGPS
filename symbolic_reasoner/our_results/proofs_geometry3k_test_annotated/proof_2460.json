@@ -1,0 +1,63 @@
+{
+    "problem_id": "2460",
+    "solved": true,
+    "problem_text": "Find x. Round the angle measure to the nearest degree.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 29)",
+        "Equals(LengthOf(Line(B, C)), 50)",
+        "Equals(LengthOf(Line(C, A)), 61)",
+        "Equals(MeasureOf(Angle(C, B, A)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            57.97478991596639,
+            16.176470588235293
+        ],
+        "B": [
+            58.18487394957983,
+            133.61344537815125
+        ],
+        "C": [
+            256.29411764705884,
+            157.7731092436975
+        ]
+    },
+    "problem_choices": [
+        "98",
+        "103",
+        "108",
+        "113"
+    ],
+    "choices_precise_value": [
+        98.0,
+        103.0,
+        108.0,
+        113.0
+    ],
+    "problem_answer": 98.0,
+    "total_time": 11.416867,
+    "solution_predicate": "Equals(97.5293751967, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, pi * (x / 180) = \u2220CBA, 29 = AB, 3.14 = pi, AC, 61 = AC, AB, 50 = BC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220CBA\nConclusions: 3.14 * (x / 180) = \u2220CBA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\n\nStep 5:\nTheorem: Substitution\nPremises : (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA), 29 = AB, 50 = BC, 61 = AC\nConclusions: (29 ** 2 + 50 ** 2) - 61 ** 2 = 2 * 29 * 50 * cos(\u2220CBA)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : (29 ** 2 + 50 ** 2) - 61 ** 2 = 2 * 29 * 50 * cos(\u2220CBA)\nConclusions: 1.7 = \u2220CBA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 1.7 = \u2220CBA, 3.14 * (x / 180) = \u2220CBA\nConclusions: 1.7 = 3.14 * (x / 180)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 1.7 = 3.14 * (x / 180)\nConclusions: 97.53 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Equals(LengthOf(Line(A, B)), 29.0)",
+        "Equals(LengthOf(Line(B, C)), 50.0)",
+        "Equals(LengthOf(Line(C, A)), 61.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

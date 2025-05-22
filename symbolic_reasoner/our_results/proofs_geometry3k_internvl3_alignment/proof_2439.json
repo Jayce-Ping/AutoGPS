@@ -1,0 +1,59 @@
+{
+    "problem_id": "2439",
+    "solved": true,
+    "problem_text": "Find m \\angle R S T.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), LengthOf(Line(R, S)))",
+        "Equals(MeasureOf(Angle(T, R, S)), 70)",
+        "Find(MeasureOf(Angle(R,S,T)))"
+    ],
+    "point_instances": [
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "ST",
+        "RT",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            314.0070921985816,
+            251.41843971631207
+        ],
+        "S": [
+            90.95744680851064,
+            254.2553191489362
+        ],
+        "R": [
+            201.59574468085108,
+            92.1985815602837
+        ]
+    },
+    "problem_choices": [
+        "55",
+        "70",
+        "75",
+        "80"
+    ],
+    "choices_precise_value": [
+        55.0,
+        70.0,
+        75.0,
+        80.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 6.238683,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(T, S, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS, pi * (70 / 180) = \u2220SRT, RS = RT, RT, 3.14 = pi, ST\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.22 = pi * (70 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : RT, RS, ST\nConclusions: \u25b3RST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = \u2220SRT, 1.22 = pi * (70 / 180)\nConclusions: 1.22 = \u2220SRT\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(T, S, R)\nPremises : \u25b3RST\nConclusions: pi = \u2220RTS + \u2220SRT + \u2220TSR\n\nStep 6:\nTheorem: Issoceles Triangle Property\nPremises : RS = RT, \u25b3RST\nConclusions: \u2220RTS = \u2220TSR\n\nStep 7:\nTheorem: Substitution\nPremises : 1.22 = \u2220SRT, 3.14 = pi, \u2220RTS = \u2220TSR, pi = \u2220RTS + \u2220SRT + \u2220TSR\nConclusions: 3.14 = 1.22 + \u2220TSR + \u2220TSR\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.22 + \u2220TSR + \u2220TSR\nConclusions: 0.96 = \u2220TSR\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, T)",
+        "Line(R, T)",
+        "Line(R, S)",
+        "Equals(LengthOf(Line(R, T)), LengthOf(Line(R, S)))",
+        "Equals(MeasureOf(Angle(S, R, T)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

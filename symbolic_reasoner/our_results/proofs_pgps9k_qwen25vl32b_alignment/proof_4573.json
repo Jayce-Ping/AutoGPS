@@ -1,0 +1,85 @@
+{
+    "problem_id": "4573",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat BDA shown in red.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, B)), 36)",
+        "Equals(MeasureOf(Arc(A, B)), 30)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(LengthOf(Arc(B,D,A)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            76.3125,
+            79.61142857142856
+        ],
+        "B": [
+            59.999320652173914,
+            139.04357142857143
+        ],
+        "C": [
+            178.70770544292276,
+            138.68421613187564
+        ],
+        "D": [
+            298.3376358695652,
+            139.04357142857143
+        ]
+    },
+    "problem_choices": [
+        18.85,
+        103.673,
+        131.947,
+        207.345
+    ],
+    "choices_precise_value": [
+        18.85,
+        103.673,
+        131.947,
+        207.345
+    ],
+    "problem_answer": 103.673,
+    "total_time": 6.571645,
+    "solution_predicate": "Equals(103.6725575688, LengthOf(Arc(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, B on \u2299(C, radius_C), pi * (30 / 180) = Arc(ACB), D on \u2299(C, radius_C), Arc(BCA), 36 = BD, \u2220BCA, 3.14 = pi, Arc(BCA), A on \u2299(C, radius_C), Arc(ACB)\n\nStep 2:\nTheorem: Diameter Definition\nPremises : C on BD, B on \u2299(C, radius_C), D on \u2299(C, radius_C)\nConclusions: IsDiameterOf(BD, \u2299(C, radius_C))\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BCA)\nConclusions: \u2220BCA = Arc(BCA)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 5.76 = 2 * 3.14 - pi * (30 / 180)\n\nStep 6:\nTheorem: Arc Length Definition\nPremises : Arc(BCA)\nConclusions: Arc(BCA) = radius_C * \u2220BCA\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ACB)\nConclusions: \u2220ACB = Arc(ACB)\n\nStep 9:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(BD, \u2299(C, radius_C))\nConclusions: B on \u2299(C, radius_C), 2 * radius_C = BD, D on \u2299(C, radius_C)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = Arc(ACB), \u2220ACB = Arc(ACB)\nConclusions: pi * (30 / 180) = \u2220ACB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_C = BD, 36 = BD\nConclusions: 36 = 2 * radius_C\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220BCA = 2 * pi - \u2220ACB, 3.14 = pi, \u2220BCA = Arc(BCA), pi * (30 / 180) = \u2220ACB\nConclusions: 2 * 3.14 - pi * (30 / 180) = Arc(BCA)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 36 = 2 * radius_C, radius_C = AC\nConclusions: 18 = AC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (30 / 180) = Arc(BCA), \u2220BCA = Arc(BCA)\nConclusions: 2 * 3.14 - pi * (30 / 180) = \u2220BCA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 18 = AC, radius_C = AC\nConclusions: 18 = radius_C\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (30 / 180) = \u2220BCA, 5.76 = 2 * 3.14 - pi * (30 / 180)\nConclusions: 5.76 = \u2220BCA\n\nStep 17:\nTheorem: Substitution\nPremises : Arc(BCA) = radius_C * \u2220BCA, 18 = radius_C, 5.76 = \u2220BCA\nConclusions: 18 * 5.76 = Arc(BCA)\n\nStep 18:\nTheorem: Evaluate\nPremises : 18 * 5.76 = Arc(BCA)\nConclusions: 103.67 = Arc(BCA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Circle(C, radius_C)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(D, B)), 36.0)",
+        "Equals(MeasureOf(Arc(A, C, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

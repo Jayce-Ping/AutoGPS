@@ -1,0 +1,90 @@
+{
+    "problem_id": "4040",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Equals(LengthOf(Line(D, C)), 13)",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(Angle(B, D, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "DC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            72.82677848467323,
+            235.58637362637361
+        ],
+        "B": [
+            223.5304169514696,
+            235.627012987013
+        ],
+        "C": [
+            440.6839213418161,
+            235.58637362637361
+        ],
+        "D": [
+            174.99277038750725,
+            35.61362637362637
+        ]
+    },
+    "problem_choices": [
+        1.3333333333333333,
+        4.333333333333333,
+        6.0,
+        8.666666666666666
+    ],
+    "choices_precise_value": [
+        1.3333333333333333,
+        4.333333333333333,
+        6.0,
+        8.666666666666666
+    ],
+    "problem_answer": 4.333333333333333,
+    "total_time": 23.047979,
+    "solution_predicate": "Equals(8.6666666667, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, 4 = AB, 13 = CD, \u2220ADB = \u2220BDC, AC, 6 = BC, x = AD, CD\n\nStep 2:\nTheorem: Evaluate\nPremises : 4 = AB, 6 = BC\nConclusions: 1.5 = BC / AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220ADB = \u2220BDC, \u25b3ACD\nConclusions: BC / AB = CD / AD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.5 = BC / AB, BC / AB = CD / AD\nConclusions: 1.5 = CD / AD\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 13 = CD, 1.5 = CD / AD\nConclusions: 8.67 = AD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : x = AD, 8.67 = AD\nConclusions: 8.67 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 4.0)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(LengthOf(Line(D, C)), 13.0)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(B, D, C)))"
+    ],
+    "correct": false
+}

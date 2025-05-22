@@ -1,0 +1,94 @@
+{
+    "problem_id": "8517",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, D)), 9)",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(D, C)), 16)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "AB",
+        "BC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            23.074471894020764,
+            156.92781954887218
+        ],
+        "B": [
+            122.8017006802721,
+            16.27857142857143
+        ],
+        "C": [
+            428.8991960420532,
+            237.46753246753246
+        ],
+        "D": [
+            94.05442176870747,
+            171.1142857142857
+        ]
+    },
+    "problem_choices": [
+        18.0,
+        20.0,
+        22.0,
+        24.0
+    ],
+    "choices_precise_value": [
+        18.0,
+        20.0,
+        22.0,
+        24.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 51.794708,
+    "solution_predicate": "Equals(20.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, \u2220BCA, CD, D on AC, \u2220BCD, sin(\u2220DBC), BD, BD \u22a5 CD, 16 = CD, z = BC, AB, \u2220DBC, BC, AB \u22a5 BC, 9 = AD, AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 3:\nTheorem: Same Angle\nPremises : D on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCD\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220DBC), BD \u22a5 CD\nConclusions: CD / BC = sin(\u2220DBC)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, BD, BC\nConclusions: \u25b3BCD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Substitution\nPremises : 16 = CD, 9 = AD, AC = AD + CD\nConclusions: 16 + 9 = AC\n\nStep 8:\nTheorem: Substitution\nPremises : 16 = CD, CD / BC = sin(\u2220DBC), z = BC\nConclusions: 16 / z = sin(\u2220DBC)\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : BD \u22a5 CD, \u25b3BCD, \u2220DBC\nConclusions: CD / BC = sin(\u2220DBC)\n\nStep 10:\nTheorem: Cos Function Definition\nPremises : BD \u22a5 CD, \u25b3BCD, \u2220BCD\nConclusions: CD / BC = cos(\u2220BCD)\n\nStep 11:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 BC, \u2220BCA, \u25b3ABC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 16 + 9 = AC\nConclusions: 25 = AC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 16 / z = sin(\u2220DBC), CD / BC = sin(\u2220DBC)\nConclusions: 16 / z = CD / BC\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220BCA = \u2220BCD, 25 = AC, z = BC, BC / AC = cos(\u2220BCA)\nConclusions: z / 25 = cos(\u2220BCD)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 16 / z = CD / BC, CD / BC = cos(\u2220BCD)\nConclusions: 16 / z = cos(\u2220BCD)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 16 / z = cos(\u2220BCD), z / 25 = cos(\u2220BCD)\nConclusions: 16 / z = z / 25\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : 16 / z = z / 25\nConclusions: 20 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, D)), 9.0)",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(D, C)), 16.0)"
+    ],
+    "correct": true
+}

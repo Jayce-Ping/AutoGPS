@@ -1,0 +1,111 @@
+{
+    "problem_id": "6522",
+    "solved": true,
+    "problem_text": "Quadrilateral WXYZ is a rectangle. If PY = 3x-5 and WP = 2x+11, find ZP.",
+    "logic_forms": [
+        "Line(P, X)",
+        "Line(P, Y)",
+        "Line(W, P)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, P)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(W, X), Line(Z, W))",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "PointLiesOnLine(P, Line(Z, X))",
+        "Rectangle(W,X,Y,Z)",
+        "Equals(LengthOf(Line(P,Y)),3x-5)",
+        "Equals(LengthOf(Line(W,P)),2x+11)",
+        "Find(LengthOf(Line(Z,P)))"
+    ],
+    "point_instances": [
+        "W",
+        "Z",
+        "P",
+        "Y",
+        "X"
+    ],
+    "line_instances": [
+        "WX",
+        "WZ",
+        "WP",
+        "WY",
+        "PY",
+        "ZY",
+        "XY",
+        "ZP",
+        "ZX",
+        "PX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            46.184183673469384,
+            189.16897959183675
+        ],
+        "Z": [
+            46.451530612244895,
+            54.0195918367347
+        ],
+        "P": [
+            183.16607142857143,
+            121.59428571428572
+        ],
+        "Y": [
+            319.3125,
+            53.80051948051948
+        ],
+        "X": [
+            319.3125,
+            189.38805194805192
+        ]
+    },
+    "problem_choices": [
+        8.0,
+        16.0,
+        32.0,
+        43.0
+    ],
+    "choices_precise_value": [
+        8.0,
+        16.0,
+        32.0,
+        43.0
+    ],
+    "problem_answer": 43.0,
+    "total_time": 170.779119,
+    "solution_predicate": "Equals(43.0, LengthOf(Line(Z, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on WY, 11 + 2 * x = PW, Rectangle(W, X, Y, Z), WX \u22a5 WZ, 3 * x - 5 = PY, P on XZ\n\nStep 2:\nTheorem: Line Segment Split\nPremises : P on WY\nConclusions: WY = PW + PY\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(W, X, Y, Z)\nConclusions: WX \u22a5 WZ, WX \u22a5 XY\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WZ\nConclusions: pi / 2 = \u2220XWZ\n\nStep 6:\nTheorem: Line Segment Split\nPremises : P on XZ\nConclusions: XZ = PX + PZ\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 XY\nConclusions: pi / 2 = \u2220YXW\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ\n\nStep 9:\nTheorem: Parallelogram Diagonals Bisect\nPremises : P on XZ, Parallelogram(W, X, Y, Z), P on WY\nConclusions: PW = PY, PX = PZ\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220WZY = \u2220YXW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 11 + 2 * x = PW, PW = PY, 3 * x - 5 = PY\nConclusions: 11 + 2 * x = 3 * x - 5\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : XZ = PX + PZ, PX = PZ\nConclusions: PX = 0.5 * XZ\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220YXW, \u2220WZY = \u2220YXW, pi / 2 = \u2220XWZ\nConclusions: \u2220WZY = \u2220XWZ\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 11 + 2 * x = 3 * x - 5, 3 * x - 5 = PY\nConclusions: 11 + 2 * x = PY\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : PX = 0.5 * XZ, PX = PZ\nConclusions: PZ = 0.5 * XZ\n\nStep 16:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : WX = YZ, \u2220WZY = \u2220XWZ\nConclusions: \u25b3WXZ \u2245 \u25b3ZYW\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 11 + 2 * x = PW, 11 + 2 * x = PY, 11 + 2 * x = 3 * x - 5, WY = PW + PY\nConclusions: 86 = WY\n\nStep 18:\nTheorem: Congruent Definition\nPremises : \u25b3WXZ \u2245 \u25b3ZYW\nConclusions: WX = YZ, WY = XZ\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : WY = XZ, 86 = WY\nConclusions: 86 = XZ\n\nStep 20:\nTheorem: Evaluate\nPremises : 86 = XZ\nConclusions: 43 = 0.5 * XZ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 43 = 0.5 * XZ, PZ = 0.5 * XZ\nConclusions: 43 = PZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(P, Y)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(Z, P)",
+        "Line(Z, X)",
+        "Line(P, X)",
+        "Line(P, X)",
+        "Line(P, Y)",
+        "Line(W, P)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, P)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(W, X), Line(Z, W))",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "PointLiesOnLine(P, Line(Z, X))",
+        "Rectangle(W, X, Y, Z)",
+        "Equals(LengthOf(Line(P, Y)), Sub(Mul(3.0, x), 5.0))",
+        "Equals(LengthOf(Line(W, P)), Add(Mul(2.0, x), 11.0))"
+    ],
+    "correct": true
+}

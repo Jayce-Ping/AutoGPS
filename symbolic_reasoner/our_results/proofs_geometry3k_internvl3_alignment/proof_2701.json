@@ -1,0 +1,70 @@
+{
+    "problem_id": "2701",
+    "solved": true,
+    "problem_text": "Use parallelogram W X Y Z to find m \\angle X Y Z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Z, Y)), 28)",
+        "Equals(LengthOf(Line(Y, X)), 24)",
+        "Equals(MeasureOf(Angle(Z, W, X)), 105)",
+        "Parallelogram(W,X,Y,Z)",
+        "Find(MeasureOf(Angle(X,Y,Z)))"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "Z",
+        "X"
+    ],
+    "line_instances": [
+        "ZY",
+        "WZ",
+        "WX",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            144.1077441077441,
+            50.65656565656565
+        ],
+        "Y": [
+            309.09090909090907,
+            224.05723905723903
+        ],
+        "Z": [
+            60.26936026936026,
+            224.05723905723903
+        ],
+        "X": [
+            391.9191919191919,
+            49.98316498316498
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "75",
+        "105",
+        "180"
+    ],
+    "choices_precise_value": [
+        30.0,
+        75.0,
+        105.0,
+        180.0
+    ],
+    "problem_answer": 105.0,
+    "total_time": 4.731461,
+    "solution_predicate": "Equals(1.8325957146, MeasureOf(Angle(X, Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(W, X, Y, Z), pi * (105 / 180) = \u2220ZWX\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220XYZ = \u2220ZWX\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYZ = \u2220ZWX, pi * (105 / 180) = \u2220ZWX\nConclusions: pi * (105 / 180) = \u2220XYZ\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (105 / 180) = \u2220XYZ\nConclusions: 1.83 = \u2220XYZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(W, Z)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Parallelogram(W, X, Y, Z)",
+        "Equals(LengthOf(Line(Z, Y)), 28.0)",
+        "Equals(LengthOf(Line(Y, X)), 24.0)",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(105.0, 180.0)))"
+    ],
+    "correct": true
+}

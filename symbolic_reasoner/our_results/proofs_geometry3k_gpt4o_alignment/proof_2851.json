@@ -1,0 +1,61 @@
+{
+    "problem_id": "2851",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), 35)",
+        "Equals(MeasureOf(Angle(B, A, C)), 52)",
+        "Equals(MeasureOf(Angle(A, B, C)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.155038759689923,
+            152.6201550387597
+        ],
+        "B": [
+            126.35658914728681,
+            12.568475452196381
+        ],
+        "C": [
+            322.99741602067184,
+            153.13695090439276
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "52",
+        "77",
+        "93"
+    ],
+    "choices_precise_value": [
+        35.0,
+        52.0,
+        77.0,
+        93.0
+    ],
+    "problem_answer": 93.0,
+    "total_time": 5.427155,
+    "solution_predicate": "Equals(93.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, pi * (x / 180) = \u2220ABC, pi * (52 / 180) = \u2220CAB, 3.14 = pi, BC, AC, pi * (35 / 180) = \u2220BCA\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ABC\nConclusions: 3.14 * (x / 180) = \u2220ABC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (35 / 180) = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (52 / 180) = \u2220CAB\nConclusions: 3.14 = 3.14 * (35 / 180) + 3.14 * (52 / 180) + \u2220ABC\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220ABC, 3.14 = 3.14 * (35 / 180) + 3.14 * (52 / 180) + \u2220ABC\nConclusions: 93 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(35.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,92 @@
+{
+    "problem_id": "3773",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 36)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), 24)",
+        "Equals(MeasureOf(Angle(B, D, C)), y)",
+        "Equals(MeasureOf(Angle(D, A, B)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "AB",
+        "AC",
+        "BC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            19.552087397580962,
+            16.5412987012987
+        ],
+        "B": [
+            141.65258640162637,
+            16.641203007518794
+        ],
+        "C": [
+            262.86695278969955,
+            16.405714285714286
+        ],
+        "D": [
+            263.00273117440497,
+            240.2555844155844
+        ]
+    },
+    "problem_choices": [
+        21.1,
+        29.2,
+        32.7,
+        42.4
+    ],
+    "choices_precise_value": [
+        21.1,
+        29.2,
+        32.7,
+        42.4
+    ],
+    "problem_answer": 32.7,
+    "total_time": 60.363839,
+    "solution_predicate": "Equals(29.205932248, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on AC, 3.14 = pi, cos(\u2220CDA), AC \u22a5 CD, tan(\u2220CDB), 24 = CD, sin(\u2220CDA), 36 = AD, AB = BC, pi * (y / 180) = \u2220CDB, BC \u22a5 CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220CDA), AC \u22a5 CD\nConclusions: CD / AD = cos(\u2220CDA)\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CDA), AC \u22a5 CD\nConclusions: AC / AD = sin(\u2220CDA)\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220CDB, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220CDB\n\nStep 6:\nTheorem: Angle Tan Definition\nPremises : BC \u22a5 CD, tan(\u2220CDB)\nConclusions: BC / CD = tan(\u2220CDB)\n\nStep 7:\nTheorem: Substitution\nPremises : 24 = CD, 36 = AD, CD / AD = cos(\u2220CDA)\nConclusions: 24 / 36 = cos(\u2220CDA)\n\nStep 8:\nTheorem: Substitution\nPremises : 36 = AD, AC / AD = sin(\u2220CDA)\nConclusions: AC / 36 = sin(\u2220CDA)\n\nStep 9:\nTheorem: Substitution\nPremises : 24 = CD, 3.14 * (y / 180) = \u2220CDB, BC / CD = tan(\u2220CDB)\nConclusions: BC / 24 = tan(3.14 * (y / 180))\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 24 / 36 = cos(\u2220CDA)\nConclusions: 0.84 = \u2220CDA\n\nStep 11:\nTheorem: Substitution\nPremises : AC / 36 = sin(\u2220CDA), 0.84 = \u2220CDA\nConclusions: sin(0.84) = AC / 36\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : AB = BC, sin(0.84) = AC / 36, AC = AB + BC\nConclusions: 13.42 = AB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 13.42 = AB, AB = BC\nConclusions: 13.42 = BC\n\nStep 14:\nTheorem: Substitution\nPremises : 13.42 = BC, BC / 24 = tan(3.14 * (y / 180))\nConclusions: 13.42 / 24 = tan(3.14 * (y / 180))\n\nStep 15:\nTheorem: Solve Univariate Equation\nPremises : 13.42 / 24 = tan(3.14 * (y / 180))\nConclusions: 29.21 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, D)), 36.0)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), 24.0)",
+        "Equals(MeasureOf(Angle(C, D, B)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": false
+}

@@ -1,0 +1,67 @@
+{
+    "problem_id": "6024",
+    "solved": true,
+    "problem_text": "What is the perimeter of the right triangle?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 14)",
+        "Equals(MeasureOf(Angle(B, C, A)), 55)",
+        "Find(PerimeterOf(Triangle(A, B, C)))",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, A), Line(A, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            31.759999999999998,
+            177.04
+        ],
+        "B": [
+            259.2,
+            177.36774193548388
+        ],
+        "C": [
+            31.799999999999997,
+            17.742857142857144
+        ]
+    },
+    "problem_choices": [
+        33.5,
+        39.1,
+        49.9,
+        55.5
+    ],
+    "choices_precise_value": [
+        33.5,
+        39.1,
+        49.9,
+        55.5
+    ],
+    "problem_answer": 49.9,
+    "total_time": 12.648157,
+    "solution_predicate": "Equals(33.4981987289, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABC, 3.14 = pi, sin(\u2220ACB), pi * (55 / 180) = \u2220ACB, 14 = BC, cos(\u2220ACB), AB \u22a5 AC\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.96 = pi * (55 / 180)\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 AC, cos(\u2220ACB)\nConclusions: AC / BC = cos(\u2220ACB)\n\nStep 5:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 AC, sin(\u2220ACB)\nConclusions: AB / BC = sin(\u2220ACB)\n\nStep 6:\nTheorem: Substitution\nPremises : 14 = BC, Perimeter(\u25b3ABC) = AB + AC + BC\nConclusions: Perimeter(\u25b3ABC) = 14 + AB + AC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 0.96 = pi * (55 / 180), pi * (55 / 180) = \u2220ACB\nConclusions: 0.96 = \u2220ACB\n\nStep 8:\nTheorem: Substitution\nPremises : 0.96 = \u2220ACB, 14 = BC, AC / BC = cos(\u2220ACB)\nConclusions: cos(0.96) = AC / 14\n\nStep 9:\nTheorem: Substitution\nPremises : 0.96 = \u2220ACB, 14 = BC, AB / BC = sin(\u2220ACB)\nConclusions: sin(0.96) = AB / 14\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : sin(0.96) = AB / 14, cos(0.96) = AC / 14, Perimeter(\u25b3ABC) = 14 + AB + AC\nConclusions: 33.5 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, A), Line(A, B))",
+        "Equals(LengthOf(Line(C, B)), 14.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": false
+}

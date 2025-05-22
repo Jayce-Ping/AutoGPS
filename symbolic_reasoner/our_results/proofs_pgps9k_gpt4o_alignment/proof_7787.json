@@ -1,0 +1,134 @@
+{
+    "problem_id": "7787",
+    "solved": true,
+    "problem_text": "PR and QT are diameters of \\odot A. Solve for the measure of \\widehat PQS.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, A, U)), 40)",
+        "Equals(MeasureOf(Angle(R, A, S)), 50)",
+        "Equals(MeasureOf(Angle(T, A, S)), 40)",
+        "Equals(MeasureOf(Angle(T, A, S)), MeasureOf(Angle(P, A, U)))",
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(R, A)",
+        "Line(R, P)",
+        "Line(S, A)",
+        "Line(T, A)",
+        "Line(T, Q)",
+        "Line(U, A)",
+        "Perpendicular(Line(T, Q), Line(R, P))",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnCircle(Q, Circle(A))",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnCircle(T, Circle(A))",
+        "PointLiesOnCircle(U, Circle(A))",
+        "PointLiesOnLine(A, Line(R, P))",
+        "PointLiesOnLine(A, Line(T, Q))",
+        "IsDiameterOf(Line(P,R),Circle(A))",
+        "IsDiameterOf(Line(Q,T),Circle(A))",
+        "Find(MeasureOf(Arc(P,Q,S)))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "R",
+        "A",
+        "U",
+        "P",
+        "Q"
+    ],
+    "line_instances": [
+        "TA",
+        "TQ",
+        "AQ",
+        "RA",
+        "RP",
+        "AP",
+        "UA",
+        "SA"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "S": [
+            116.33750000000002,
+            42.65277777777778
+        ],
+        "T": [
+            64.2675,
+            67.32222222222221
+        ],
+        "R": [
+            182.41339285714287,
+            67.30026455026454
+        ],
+        "A": [
+            123.01072522682585,
+            125.99947666105268
+        ],
+        "U": [
+            40.21153846153846,
+            133.0128205128205
+        ],
+        "P": [
+            64.575,
+            185.32275132275132
+        ],
+        "Q": [
+            182.19375000000002,
+            185.54232804232802
+        ]
+    },
+    "problem_choices": [
+        140.0,
+        180.0,
+        230.0,
+        320.0
+    ],
+    "choices_precise_value": [
+        140.0,
+        180.0,
+        230.0,
+        320.0
+    ],
+    "problem_answer": 230.0,
+    "total_time": 47.543399,
+    "solution_predicate": "Equals(4.0142572796, MeasureOf(Arc(P, A, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = \u2220SAT, \u2220PAS, Arc(PAS), \u2220TAP, 3.14 = pi, \u2220SAT, AP \u22a5 AT\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PAS)\nConclusions: \u2220PAS = Arc(PAS)\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220SAT, \u2220PAS, \u2220TAP\nConclusions: 2 * pi = \u2220PAS + \u2220SAT + \u2220TAP\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AP \u22a5 AT\nConclusions: pi / 2 = \u2220TAP\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220SAT, \u2220PAS = Arc(PAS), pi / 2 = \u2220TAP, 2 * pi = \u2220PAS + \u2220SAT + \u2220TAP, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (40 / 180) + Arc(PAS)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : \u2220PAS = Arc(PAS), 2 * 3.14 = 3.14 / 2 + 3.14 * (40 / 180) + Arc(PAS)\nConclusions: 4.01 = \u2220PAS\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PAS = Arc(PAS), 4.01 = \u2220PAS\nConclusions: 4.01 = Arc(PAS)\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, A)",
+        "Line(T, Q)",
+        "Line(A, Q)",
+        "Line(R, A)",
+        "Line(R, P)",
+        "Line(A, P)",
+        "Line(U, A)",
+        "Line(S, A)",
+        "Circle(A, radius_A)",
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(R, A)",
+        "Line(R, P)",
+        "Line(S, A)",
+        "Line(T, A)",
+        "Line(T, Q)",
+        "Line(U, A)",
+        "Perpendicular(Line(T, Q), Line(R, P))",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnCircle(Q, Circle(A, radius_A))",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnCircle(T, Circle(A, radius_A))",
+        "PointLiesOnCircle(U, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(R, P))",
+        "PointLiesOnLine(A, Line(T, Q))",
+        "IsDiameterOf(Line(P, R), Circle(A, radius_A))",
+        "IsDiameterOf(Line(Q, T), Circle(A, radius_A))",
+        "Equals(MeasureOf(Angle(U, A, P)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(R, A, S)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(S, A, T)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(S, A, T)), MeasureOf(Angle(U, A, P)))"
+    ],
+    "correct": true
+}

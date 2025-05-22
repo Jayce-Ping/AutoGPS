@@ -1,0 +1,89 @@
+{
+    "problem_id": "1890",
+    "solved": true,
+    "problem_text": "Given isosceles \\triangle JKL with base JL. If m \\angle L = 58, what is m \\angle LKJ?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(J, K, M)), MeasureOf(Angle(L, K, M)))",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Isosceles(Triangle(J,K,L))",
+        "IsBaseOf(Line(J,L),Isosceles(Triangle(J,K,L)))",
+        "Equals(MeasureOf(Angle(L)),58)",
+        "Find(MeasureOf(Angle(L,K,J)))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "KL",
+        "LM",
+        "LJ",
+        "MJ",
+        "JK",
+        "KM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            138.1688888888889,
+            59.08064516129032
+        ],
+        "J": [
+            49.388571428571424,
+            275.07027649769583
+        ],
+        "M": [
+            137.99873015873015,
+            275.5391705069124
+        ],
+        "L": [
+            226.99174603174603,
+            275.45391705069125
+        ]
+    },
+    "problem_choices": [
+        29.0,
+        32.0,
+        64.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        29.0,
+        32.0,
+        64.0,
+        90.0
+    ],
+    "problem_answer": 64.0,
+    "total_time": 44.803767,
+    "solution_predicate": "Equals(1.1170107212, MeasureOf(Angle(J, K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LJK, 3.14 = pi, M on JL, \u25b3JKL, JK = KL, pi * (58 / 180) = \u2220KLJ\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.01 = pi * (58 / 180)\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220LJK, M on JL\nConclusions: \u2220LJK = \u2220MJK\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 5:\nTheorem: Issoceles Triangle Property\nPremises : JK = KL, \u25b3JKL\nConclusions: \u2220KLJ = \u2220LJK\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (58 / 180) = \u2220KLJ, 1.01 = pi * (58 / 180)\nConclusions: 1.01 = \u2220KLJ\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (58 / 180) = \u2220KLJ, pi = \u2220JKL + \u2220KLJ + \u2220LJK, \u2220LJK = \u2220MJK\nConclusions: 3.14 = pi * (58 / 180) + \u2220JKL + \u2220MJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = \u2220KLJ, \u2220KLJ = \u2220LJK, \u2220LJK = \u2220MJK\nConclusions: 1.01 = \u2220MJK\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, 3.14 = pi * (58 / 180) + \u2220JKL + \u2220MJK, 1.01 = \u2220MJK\nConclusions: 3.14 = 1.01 + 3.14 * (58 / 180) + \u2220JKL\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.01 + 3.14 * (58 / 180) + \u2220JKL\nConclusions: 1.12 = \u2220JKL\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(L, M)",
+        "Line(L, J)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(K, M)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Isosceles(Triangle(J, K, L))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(J, K, M)), MeasureOf(Angle(M, K, L)))",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(58.0, 180.0)))"
+    ],
+    "correct": true
+}

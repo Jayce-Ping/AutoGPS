@@ -1,0 +1,90 @@
+{
+    "problem_id": "1488",
+    "solved": true,
+    "problem_text": "Find the length of CB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 12)",
+        "Equals(LengthOf(Line(B, C)), z-4)",
+        "Equals(LengthOf(Line(D, A)), 10)",
+        "Equals(LengthOf(Line(D, C)), \\frac{z}{2})",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(D, A, C)))",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(LengthOf(Line(C,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "D",
+        "A"
+    ],
+    "line_instances": [
+        "BA",
+        "DA",
+        "CA",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            48.24038461538462,
+            60.88428571428572
+        ],
+        "C": [
+            160.16923076923078,
+            61.44285714285715
+        ],
+        "D": [
+            252.0769230769231,
+            61.92163265306123
+        ],
+        "A": [
+            187.3846153846154,
+            235.23836734693882
+        ]
+    },
+    "problem_choices": [
+        2.857,
+        5.0,
+        6.0,
+        13.62
+    ],
+    "choices_precise_value": [
+        2.857,
+        5.0,
+        6.0,
+        13.62
+    ],
+    "problem_answer": 6.0,
+    "total_time": 26.532422,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, 3.14 = pi, \u2220CAB = \u2220DAC, z / 2 = CD, AB, C on BD, 10 = AD, AD, \u2220CAD, 12 = AB, \u2220BAC, z - 4 = BC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAD\nConclusions: \u2220CAD = 2 * pi - \u2220DAC\n\nStep 5:\nTheorem: Evaluate\nPremises : 12 = AB, 10 = AD\nConclusions: 1.2 = AB / AD\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 7:\nTheorem: Substitution\nPremises : BD = BC + CD, z - 4 = BC, z / 2 = CD\nConclusions: z / 2 + (z - 4) = BD\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220CAD = 2 * pi - \u2220DAC, 3.14 = pi\nConclusions: \u2220CAD = 2 * 3.14 - \u2220DAC\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220CAB = \u2220DAC, \u2220BAC = 2 * pi - \u2220CAB, 3.14 = pi\nConclusions: \u2220BAC = 2 * 3.14 - \u2220DAC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : z / 2 + (z - 4) = BD, BD = BC + CD\nConclusions: z / 2 + (z - 4) = BC + CD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = 2 * 3.14 - \u2220DAC, \u2220BAC = 2 * 3.14 - \u2220DAC\nConclusions: \u2220BAC = \u2220CAD\n\nStep 12:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220BAC = \u2220CAD, \u25b3ABD\nConclusions: AB / AD = BC / CD\n\nStep 13:\nTheorem: Substitution\nPremises : AB / AD = BC / CD, 12 = AB, 10 = AD, z - 4 = BC, z / 2 = CD\nConclusions: 12 / 10 = (z - 4) / (z / 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 1.2 = AB / AD, AB / AD = BC / CD\nConclusions: 1.2 = BC / CD\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 1.2 = BC / CD, z / 2 + (z - 4) = BC + CD, 12 / 10 = (z - 4) / (z / 2)\nConclusions: 6 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(B, A)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), Sub(z, 4.0))",
+        "Equals(LengthOf(Line(D, A)), 10.0)",
+        "Equals(LengthOf(Line(D, C)), Div(z, 2.0))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(D, A, C)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,129 @@
+{
+    "problem_id": "1010",
+    "solved": true,
+    "problem_text": "What is the value of x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(M, K)))",
+        "Equals(MeasureOf(Angle(K, L, M)), 9x-4)",
+        "Equals(MeasureOf(Angle(M, L, J)), 6x+8)",
+        "Line(C, J)",
+        "Line(C, L)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, A)",
+        "Line(L, A)",
+        "Line(L, B)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(M, B)",
+        "Line(M, K)",
+        "Perpendicular(Line(C, L), Line(J, M))",
+        "Perpendicular(Line(L, A), Line(M, K))",
+        "PointLiesOnLine(J, Line(C, L))",
+        "PointLiesOnLine(K, Line(L, A))",
+        "PointLiesOnLine(M, Line(L, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "L",
+        "K",
+        "A",
+        "B",
+        "M",
+        "C",
+        "J"
+    ],
+    "line_instances": [
+        "LJ",
+        "LC",
+        "JC",
+        "LM",
+        "LB",
+        "MB",
+        "LK",
+        "LA",
+        "KA",
+        "MJ",
+        "MK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            74.05140186915888,
+            467.40489795918364
+        ],
+        "K": [
+            484.23177570093463,
+            467.1291428571428
+        ],
+        "A": [
+            637.4859813084113,
+            468.0942857142857
+        ],
+        "B": [
+            548.256341789052,
+            244.50285714285712
+        ],
+        "M": [
+            484.55373831775705,
+            275.0657142857143
+        ],
+        "C": [
+            389.9772196261682,
+            51.87642857142857
+        ],
+        "J": [
+            319.6628838451269,
+            144.77142857142857
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        5.733,
+        7.5,
+        10.444
+    ],
+    "choices_precise_value": [
+        4.0,
+        5.733,
+        7.5,
+        10.444
+    ],
+    "problem_answer": 4.0,
+    "total_time": 115.578641,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220BLC, M on BL, \u2220BLJ, \u2220ALB, KL \u22a5 KM, pi * ((9 * x - 4) / 180) = \u2220KLM, JL \u22a5 JM, pi * ((8 + 6 * x) / 180) = \u2220MLJ, K on AL, \u2220ALM, JM = KM, J on CL\n\nStep 2:\nTheorem: Same Angle\nPremises : M on BL, \u2220BLC\nConclusions: \u2220BLC = \u2220MLC\n\nStep 3:\nTheorem: Same Angle\nPremises : M on BL, \u2220BLJ\nConclusions: \u2220BLJ = \u2220MLJ\n\nStep 4:\nTheorem: Same Angle\nPremises : M on BL, \u2220ALB\nConclusions: \u2220ALB = \u2220ALM\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 KM\nConclusions: pi / 2 = \u2220MKL\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : JL \u22a5 JM\nConclusions: pi / 2 = \u2220LJM\n\nStep 7:\nTheorem: Same Angle\nPremises : K on AL, \u2220ALB\nConclusions: \u2220ALB = \u2220KLB\n\nStep 8:\nTheorem: Same Angle\nPremises : K on AL, \u2220ALM\nConclusions: \u2220ALM = \u2220KLM\n\nStep 9:\nTheorem: Same Angle\nPremises : J on CL, \u2220BLC\nConclusions: \u2220BLC = \u2220BLJ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MKL, pi / 2 = \u2220LJM\nConclusions: \u2220LJM = \u2220MKL\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ALB = \u2220ALM, \u2220ALB = \u2220KLB\nConclusions: \u2220ALM = \u2220KLB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BLC = \u2220MLC, \u2220BLC = \u2220BLJ\nConclusions: \u2220BLJ = \u2220MLC\n\nStep 13:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : JM = KM, \u2220LJM = \u2220MKL\nConclusions: \u25b3JLM \u2245 \u25b3KLM\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((9 * x - 4) / 180) = \u2220KLM, \u2220ALM = \u2220KLB, \u2220ALM = \u2220KLM\nConclusions: pi * ((9 * x - 4) / 180) = \u2220KLB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BLJ = \u2220MLJ, \u2220BLJ = \u2220MLC, pi * ((8 + 6 * x) / 180) = \u2220MLJ\nConclusions: pi * ((8 + 6 * x) / 180) = \u2220MLC\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3JLM \u2245 \u25b3KLM\nConclusions: \u2220KLM = \u2220MLJ, \u2220LJM = \u2220MKL\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((9 * x - 4) / 180) = \u2220KLB, \u2220ALB = \u2220KLB\nConclusions: pi * ((9 * x - 4) / 180) = \u2220ALB\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((8 + 6 * x) / 180) = \u2220MLC\nConclusions: 3.14 * ((8 + 6 * x) / 180) = \u2220MLC\n\nStep 19:\nTheorem: Substitution\nPremises : pi * ((9 * x - 4) / 180) = \u2220ALB, 3.14 = pi\nConclusions: 3.14 * ((9 * x - 4) / 180) = \u2220ALB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((8 + 6 * x) / 180) = \u2220MLC, pi * ((8 + 6 * x) / 180) = \u2220MLC\nConclusions: 3.14 * ((8 + 6 * x) / 180) = pi * ((8 + 6 * x) / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((9 * x - 4) / 180) = \u2220ALB, pi * ((9 * x - 4) / 180) = \u2220ALB\nConclusions: 3.14 * ((9 * x - 4) / 180) = pi * ((9 * x - 4) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((8 + 6 * x) / 180) = pi * ((8 + 6 * x) / 180), pi * ((8 + 6 * x) / 180) = \u2220MLJ\nConclusions: 3.14 * ((8 + 6 * x) / 180) = \u2220MLJ\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((9 * x - 4) / 180) = \u2220KLM, 3.14 * ((9 * x - 4) / 180) = pi * ((9 * x - 4) / 180)\nConclusions: 3.14 * ((9 * x - 4) / 180) = \u2220KLM\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((8 + 6 * x) / 180) = \u2220MLJ, \u2220KLM = \u2220MLJ, 3.14 * ((9 * x - 4) / 180) = \u2220KLM\nConclusions: 3.14 * ((8 + 6 * x) / 180) = 3.14 * ((9 * x - 4) / 180)\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((8 + 6 * x) / 180) = 3.14 * ((9 * x - 4) / 180)\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, J)",
+        "Line(L, C)",
+        "Line(J, C)",
+        "Line(L, M)",
+        "Line(L, B)",
+        "Line(M, B)",
+        "Line(L, K)",
+        "Line(L, A)",
+        "Line(K, A)",
+        "Line(M, J)",
+        "Line(M, K)",
+        "Line(C, J)",
+        "Line(C, L)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, A)",
+        "Line(L, A)",
+        "Line(L, B)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(M, B)",
+        "Line(M, K)",
+        "Perpendicular(Line(C, L), Line(J, M))",
+        "Perpendicular(Line(L, A), Line(M, K))",
+        "PointLiesOnLine(J, Line(C, L))",
+        "PointLiesOnLine(K, Line(L, A))",
+        "PointLiesOnLine(M, Line(L, B))",
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(M, K)))",
+        "Equals(MeasureOf(Angle(K, L, M)), Mul(pi, Div(Sub(Mul(9.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(M, L, J)), Mul(pi, Div(Add(Mul(6.0, x), 8.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "2483",
+    "solved": true,
+    "problem_text": "Find Q P.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(M, P))",
+        "PointLiesOnLine(N, Line(M, O))",
+        "Parallel(Line(Q, N), Line(P, O))",
+        "Equals(LengthOf(Line(M, N)), 6)",
+        "Equals(LengthOf(Line(M, Q)), 5)",
+        "Equals(LengthOf(Line(O, N)), 3+\\frac{3}{5})",
+        "Equals(LengthOf(Line(P, Q)), x)",
+        "Find(LengthOf(Line(Q,P)))"
+    ],
+    "point_instances": [
+        "O",
+        "M",
+        "Q",
+        "N",
+        "P"
+    ],
+    "line_instances": [
+        "PO",
+        "MQ",
+        "MP",
+        "QP",
+        "MN",
+        "MO",
+        "NO",
+        "QN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "O": [
+            416.10144927536237,
+            373.9130434782609
+        ],
+        "M": [
+            239.2898550724638,
+            84.54106280193237
+        ],
+        "Q": [
+            148.46859903381645,
+            307.72946859903385
+        ],
+        "N": [
+            369.24154589371983,
+            298.0676328502416
+        ],
+        "P": [
+            114.6521739130435,
+            388.4057971014493
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "3.6",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.0,
+        3.6,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 32.58113,
+    "solution_predicate": "Equals(3.0, LengthOf(Line(Q, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: NQ || OP, Q on MP, \u2220POM, 3 + 3 / 5 = NO, \u2220MOP, \u2220OMQ, \u2220QNM, 3.14 = pi, x = PQ, 6 = MN, N on MO, \u2220POM, \u2220NMP, \u2220OMP, 5 = MQ\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : NQ || OP\nConclusions: \u2220MPO = \u2220MQN, \u2220MNQ = \u2220MOP\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Q on MP\nConclusions: MP = MQ + PQ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220QNM\nConclusions: \u2220QNM = 2 * pi - \u2220MNQ\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220POM, N on MO\nConclusions: \u2220POM = \u2220PON\n\nStep 6:\nTheorem: Line Segment Split\nPremises : N on MO\nConclusions: MO = MN + NO\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220MOP, N on MO\nConclusions: \u2220MOP = \u2220NOP\n\nStep 8:\nTheorem: Same Angle\nPremises : N on MO, \u2220OMQ\nConclusions: \u2220NMQ = \u2220OMQ\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220POM\nConclusions: \u2220POM = 2 * pi - \u2220MOP\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220NMP, Q on MP\nConclusions: \u2220NMP = \u2220NMQ\n\nStep 11:\nTheorem: Same Angle\nPremises : N on MO, \u2220OMP\nConclusions: \u2220NMP = \u2220OMP\n\nStep 12:\nTheorem: Substitution\nPremises : x = PQ, 5 = MQ, MP = MQ + PQ\nConclusions: 5 + x = MP\n\nStep 13:\nTheorem: Substitution\nPremises : 3 + 3 / 5 = NO, MO = MN + NO, 6 = MN\nConclusions: 6 + (3 + 3 / 5) = MO\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MOP = \u2220NOP, \u2220MNQ = \u2220MOP\nConclusions: \u2220MNQ = \u2220NOP\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220POM = 2 * pi - \u2220MOP, \u2220POM = \u2220PON, \u2220MOP = \u2220NOP, 3.14 = pi\nConclusions: \u2220PON = 2 * 3.14 - \u2220NOP\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMP = \u2220NMQ, \u2220NMQ = \u2220OMQ\nConclusions: \u2220NMP = \u2220OMQ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 5 + x = MP, MP = MQ + PQ\nConclusions: 5 + x = MQ + PQ\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 6 + (3 + 3 / 5) = MO\nConclusions: 9.6 = MO\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220MNQ = \u2220NOP, \u2220QNM = 2 * pi - \u2220MNQ, 3.14 = pi\nConclusions: \u2220QNM = 2 * 3.14 - \u2220NOP\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMP = \u2220OMQ, \u2220NMP = \u2220OMP\nConclusions: \u2220OMP = \u2220OMQ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PON = 2 * 3.14 - \u2220NOP, \u2220QNM = 2 * 3.14 - \u2220NOP\nConclusions: \u2220PON = \u2220QNM\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMP = \u2220NMQ, \u2220NMP = \u2220OMQ, \u2220OMP = \u2220OMQ\nConclusions: \u2220NMQ = \u2220OMP\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PON = \u2220QNM, \u2220POM = \u2220PON\nConclusions: \u2220POM = \u2220QNM\n\nStep 24:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220MPO = \u2220MQN, \u2220POM = \u2220QNM, \u2220NMQ = \u2220OMP\nConclusions: \u25b3MNQ ~ \u25b3MOP\n\nStep 25:\nTheorem: Similar Definition\nPremises : \u25b3MNQ ~ \u25b3MOP\nConclusions: \u2220MPO = \u2220MQN, \u2220NMQ = \u2220OMP, sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO, \u2220MNQ = \u2220MOP\n\nStep 26:\nTheorem: Substitution\nPremises : 5 + x = MP, sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, 5 = MQ\nConclusions: sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x)\n\nStep 27:\nTheorem: Substitution\nPremises : 9.6 = MO, 6 = MN, sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO\nConclusions: 6 / 9.6 = sim_ratio_triangle_m_n_q_triangle_m_o_p\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, 6 / 9.6 = sim_ratio_triangle_m_n_q_triangle_m_o_p\nConclusions: 6 / 9.6 = MQ / MP\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x), 6 / 9.6 = sim_ratio_triangle_m_n_q_triangle_m_o_p\nConclusions: 6 / 9.6 = 5 / (5 + x)\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : 6 / 9.6 = MQ / MP, 5 + x = MQ + PQ, 6 / 9.6 = 5 / (5 + x), MP = MQ + PQ\nConclusions: 3 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, O)",
+        "Line(M, Q)",
+        "Line(M, P)",
+        "Line(Q, P)",
+        "Line(M, N)",
+        "Line(M, O)",
+        "Line(N, O)",
+        "Line(Q, N)",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "PointLiesOnLine(N, Line(M, O))",
+        "Parallel(Line(Q, N), Line(P, O))",
+        "Equals(LengthOf(Line(M, N)), 6.0)",
+        "Equals(LengthOf(Line(M, Q)), 5.0)",
+        "Equals(LengthOf(Line(O, N)), Add(3.0, Div(3.0, 5.0)))",
+        "Equals(LengthOf(Line(P, Q)), x)"
+    ],
+    "correct": true
+}

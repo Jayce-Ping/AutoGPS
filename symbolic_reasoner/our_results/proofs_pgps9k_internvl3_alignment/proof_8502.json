@@ -1,0 +1,138 @@
+{
+    "problem_id": "8502",
+    "solved": true,
+    "problem_text": "The angle bisectors of \\triangle XYZ intersect at W. Find WB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Y, A)), 8)",
+        "Equals(LengthOf(Line(Y, W)), 10)",
+        "Equals(MeasureOf(Angle(A, Y, W)), MeasureOf(Angle(X, Y, W)))",
+        "Equals(MeasureOf(Angle(B, X, W)), MeasureOf(Angle(W, X, Y)))",
+        "Equals(MeasureOf(Angle(B, Z, W)), MeasureOf(Angle(A, Z, W)))",
+        "Find(LengthOf(Line(W, B)))",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(B, W)",
+        "Line(B, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, B)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, X), Line(B, W))",
+        "Perpendicular(Line(Z, Y), Line(A, X))",
+        "PointLiesOnLine(A, Line(Z, Y))",
+        "PointLiesOnLine(B, Line(Z, X))",
+        "PointLiesOnLine(W, Line(A, X))",
+        "Triangle(X, Y, Z)"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "A",
+        "Y",
+        "Z",
+        "B"
+    ],
+    "line_instances": [
+        "YA",
+        "YZ",
+        "AZ",
+        "ZB",
+        "ZX",
+        "BX",
+        "XW",
+        "XA",
+        "WA",
+        "YX",
+        "YW",
+        "WB",
+        "WZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            466.01909039865245,
+            161.05406593406593
+        ],
+        "W": [
+            143.51824817518246,
+            160.79714285714286
+        ],
+        "A": [
+            54.55540809555408,
+            160.4935064935065
+        ],
+        "Y": [
+            54.2956204379562,
+            281.10530612244895
+        ],
+        "Z": [
+            54.07580011229646,
+            40.81406593406593
+        ],
+        "B": [
+            168.8619774386198,
+            74.26077922077921
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 235.614977,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(W, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BW \u22a5 BZ, W on AX, AY, \u2220AZW = \u2220WZB, AW, WY, AW \u22a5 AY, AX \u22a5 AZ, 10 = WY, 8 = AY, \u2220XAZ\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BW \u22a5 BZ\nConclusions: pi / 2 = \u2220ZBW\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : WY, AW, AY\nConclusions: \u25b3AWY\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AX \u22a5 AZ\nConclusions: pi / 2 = \u2220XAZ\n\nStep 5:\nTheorem: Evaluate\nPremises : 10 = WY, 8 = AY\nConclusions: 6 = SqrtOf(WY ** 2 - AY ** 2)\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220XAZ, W on AX\nConclusions: \u2220WAZ = \u2220XAZ\n\nStep 7:\nTheorem: Pythagorean Theorem\nPremises : \u25b3AWY, AW \u22a5 AY\nConclusions: AW = SqrtOf(WY ** 2 - AY ** 2)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ZBW, \u2220WAZ = \u2220XAZ, pi / 2 = \u2220XAZ\nConclusions: \u2220WAZ = \u2220ZBW\n\nStep 9:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220AZW = \u2220WZB, \u2220WAZ = \u2220ZBW\nConclusions: \u25b3AWZ \u2245 \u25b3BWZ\n\nStep 10:\nTheorem: Congruent Definition\nPremises : \u25b3AWZ \u2245 \u25b3BWZ\nConclusions: \u2220AZW = \u2220WZB, AW = BW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : AW = SqrtOf(WY ** 2 - AY ** 2), AW = BW\nConclusions: BW = SqrtOf(WY ** 2 - AY ** 2)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 6 = SqrtOf(WY ** 2 - AY ** 2), BW = SqrtOf(WY ** 2 - AY ** 2)\nConclusions: 6 = BW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, A)",
+        "Line(Y, Z)",
+        "Line(A, Z)",
+        "Line(Z, B)",
+        "Line(Z, X)",
+        "Line(B, X)",
+        "Line(X, W)",
+        "Line(X, A)",
+        "Line(W, A)",
+        "Line(Y, X)",
+        "Line(Y, W)",
+        "Line(W, B)",
+        "Line(W, Z)",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(B, W)",
+        "Line(B, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, B)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, X), Line(B, W))",
+        "Perpendicular(Line(Z, Y), Line(A, X))",
+        "PointLiesOnLine(A, Line(Z, Y))",
+        "PointLiesOnLine(B, Line(Z, X))",
+        "PointLiesOnLine(W, Line(A, X))",
+        "Triangle(X, Y, Z)",
+        "Equals(LengthOf(Line(Y, A)), 8.0)",
+        "Equals(LengthOf(Line(Y, W)), 10.0)",
+        "Equals(MeasureOf(Angle(W, Y, A)), MeasureOf(Angle(X, Y, W)))",
+        "Equals(MeasureOf(Angle(B, X, W)), MeasureOf(Angle(W, X, Y)))",
+        "Equals(MeasureOf(Angle(W, Z, B)), MeasureOf(Angle(A, Z, W)))"
+    ],
+    "correct": true
+}

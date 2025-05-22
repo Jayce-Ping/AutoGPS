@@ -1,0 +1,97 @@
+{
+    "problem_id": "3016",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 20)",
+        "Equals(LengthOf(Line(D, B)), 15)",
+        "Equals(MeasureOf(Angle(B, A, C)), 60)",
+        "Find(AreaOf(Parallelogram(A, B, D, E)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Perpendicular(Line(C, B), Line(A, E))",
+        "PointLiesOnLine(C, Line(A, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AE",
+        "CE",
+        "ED",
+        "DB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.23205221174764,
+            20.033469387755105
+        ],
+        "B": [
+            114.28934010152284,
+            196.61714285714285
+        ],
+        "C": [
+            114.42085832948777,
+            20.371428571428574
+        ],
+        "D": [
+            256.1975080756807,
+            196.4857142857143
+        ],
+        "E": [
+            183.52429296591734,
+            19.964625850340138
+        ]
+    },
+    "problem_choices": [
+        86.6,
+        129.9,
+        150.0,
+        259.8
+    ],
+    "choices_precise_value": [
+        86.6,
+        129.9,
+        150.0,
+        259.8
+    ],
+    "problem_answer": 259.8,
+    "total_time": 41.360471,
+    "solution_predicate": "Equals(259.8076211351, AreaOf(Parallelogram(A, B, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, \u2220BCA, AB, \u2220ACB, AC \u22a5 BC, cos(\u2220CBA), \u2220ECB, pi * (60 / 180) = \u2220BAC, BC \u22a5 CE, 3.14 = pi, 15 = BD, AC, 20 = AB, Parallelogram(A, B, D, E)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220CBA), AC \u22a5 BC\nConclusions: BC / AB = cos(\u2220CBA)\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECB\nConclusions: \u2220ECB = 2 * pi - \u2220BCE\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CE\nConclusions: pi / 2 = \u2220BCE, (3 * pi) / 2 = \u2220ECB\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, E)\nConclusions: AE = BD\n\nStep 10:\nTheorem: Area formula of Parallelogram(A, B, D, E)\nPremises : Parallelogram(A, B, D, E), BC \u22a5 CE\nConclusions: Area(Parallelogram(A, B, D, E)) = AE * BC\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220ACB, \u2220ACB = 2 * pi - \u2220BCA, (3 * pi) / 2 = \u2220BCA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 12:\nTheorem: Substitution\nPremises : 20 = AB, BC / AB = cos(\u2220CBA)\nConclusions: BC / 20 = cos(\u2220CBA)\n\nStep 13:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCE, 3.14 = pi, (3 * pi) / 2 = \u2220ECB, \u2220ECB = 2 * pi - \u2220BCE\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 15 = BD, AE = BD\nConclusions: 15 = AE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220BCA\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220BCA\n\nStep 18:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ACB, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (60 / 180) = \u2220BAC\nConclusions: 3.14 = pi / 2 + 3.14 * (60 / 180) + \u2220CBA\n\nStep 19:\nTheorem: Substitution\nPremises : 15 = AE, Area(Parallelogram(A, B, D, E)) = AE * BC\nConclusions: Area(Parallelogram(A, B, D, E)) = 15 * BC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ACB\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220ACB, 3.14 = pi / 2 + 3.14 * (60 / 180) + \u2220CBA, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ACB\nConclusions: 0.52 = \u2220CBA\n\nStep 22:\nTheorem: Substitution\nPremises : 0.52 = \u2220CBA, BC / 20 = cos(\u2220CBA)\nConclusions: cos(0.52) = BC / 20\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : cos(0.52) = BC / 20, Area(Parallelogram(A, B, D, E)) = 15 * BC\nConclusions: 259.81 = Area(Parallelogram(A, B, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Line(D, B)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Perpendicular(Line(C, B), Line(A, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Equals(LengthOf(Line(B, A)), 20.0)",
+        "Equals(LengthOf(Line(D, B)), 15.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

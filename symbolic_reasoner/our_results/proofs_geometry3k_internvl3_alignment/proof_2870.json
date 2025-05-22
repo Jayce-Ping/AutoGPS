@@ -1,0 +1,92 @@
+{
+    "problem_id": "2870",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(E, D, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, A)), 109)",
+        "Equals(MeasureOf(Angle(A, D, C)), 33)",
+        "Equals(MeasureOf(Angle(D, A, C)), 24)",
+        "Equals(MeasureOf(Angle(C, E, D)), 95)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DA",
+        "EC",
+        "EA",
+        "CA",
+        "ED",
+        "DC",
+        "DB",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            583.0182648401826,
+            214.675799086758
+        ],
+        "B": [
+            319.54794520547944,
+            20.15525114155251
+        ],
+        "C": [
+            243.7488584474886,
+            69.01369863013699
+        ],
+        "D": [
+            19.547945205479454,
+            214.675799086758
+        ],
+        "E": [
+            123.65753424657535,
+            17.41552511415526
+        ]
+    },
+    "problem_choices": [
+        "23",
+        "24",
+        "28",
+        "33"
+    ],
+    "choices_precise_value": [
+        23.0,
+        24.0,
+        28.0,
+        33.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 36.936311,
+    "solution_predicate": "Equals(0.4886921906, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DCA, pi * (95 / 180) = \u2220DEC, pi * (33 / 180) = \u2220ADC, AC, \u2220CDE, pi * (24 / 180) = \u2220CAD, AD, C on BD, \u2220ACB, \u2220DEA, CE, \u2220EDA, \u2220ECD, \u2220BCE, DE, \u2220ADC, CD, \u2220EAD, AE, 3.14 = pi, \u2220ADE, C on AE\n\nStep 2:\nTheorem: Circumference Split\nPremises : \u2220BCE, \u2220ACB, \u2220DCA, \u2220ECD\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220ADC, \u2220EDA, \u2220CDE\nConclusions: 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : DE, CD, CE\nConclusions: \u25b3CDE\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : DE, AD, AE\nConclusions: \u25b3ADE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 8:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220ACB = \u2220ECD, \u2220BCE = \u2220DCA\n\nStep 9:\nTheorem: Same Angle\nPremises : C on AE, \u2220EAD\nConclusions: \u2220CAD = \u2220EAD\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220DEA, C on AE\nConclusions: \u2220DEA = \u2220DEC\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(A, D, E)\nPremises : \u25b3ADE\nConclusions: pi = \u2220ADE + \u2220DEA + \u2220EAD\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220ADE = 2 * pi - \u2220EDA, 3.14 = pi\nConclusions: \u2220ADE = 2 * 3.14 - \u2220EDA\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220ECD, \u2220BCE = \u2220DCA, 3.14 = pi, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\nConclusions: 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (24 / 180) = \u2220CAD, \u2220CAD = \u2220EAD\nConclusions: pi * (24 / 180) = \u2220EAD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEA = \u2220DEC, pi * (95 / 180) = \u2220DEC\nConclusions: pi * (95 / 180) = \u2220DEA\n\nStep 18:\nTheorem: Substitution\nPremises : pi * (33 / 180) = \u2220ADC, 3.14 = pi, pi = \u2220ADC + \u2220CAD + \u2220DCA, pi * (24 / 180) = \u2220CAD\nConclusions: 3.14 = pi * (24 / 180) + pi * (33 / 180) + \u2220DCA\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (95 / 180) = \u2220DEC, pi = \u2220CDE + \u2220DEC + \u2220ECD\nConclusions: 3.14 = 3.14 * (95 / 180) + \u2220CDE + \u2220ECD\n\nStep 20:\nTheorem: Substitution\nPremises : pi = \u2220ADE + \u2220DEA + \u2220EAD, 3.14 = pi, pi * (95 / 180) = \u2220DEA, pi * (24 / 180) = \u2220EAD\nConclusions: 3.14 = 3.14 * (24 / 180) + 3.14 * (95 / 180) + \u2220ADE\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (24 / 180) + 3.14 * (95 / 180) + \u2220ADE, 3.14 = pi * (24 / 180) + pi * (33 / 180) + \u2220DCA, 3.14 = 3.14 * (95 / 180) + \u2220CDE + \u2220ECD, pi * (33 / 180) = \u2220ADC, \u2220ADE = 2 * 3.14 - \u2220EDA, 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA, 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD\nConclusions: 0.49 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(E, C)",
+        "Line(E, A)",
+        "Line(C, A)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "PointLiesOnLine(C, Line(E, A))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(109.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(24.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(95.0, 180.0)))"
+    ],
+    "correct": true
+}

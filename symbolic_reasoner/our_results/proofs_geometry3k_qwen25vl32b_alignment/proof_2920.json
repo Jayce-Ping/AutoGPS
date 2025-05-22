@@ -1,0 +1,96 @@
+{
+    "problem_id": "2920",
+    "solved": true,
+    "problem_text": "For trapezoid Q R T U, V and S are midpoints of the legs. If Q R = 4 and U T = 16, find V S.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(V, Line(Q, U))",
+        "Trapezoid(Q,R,T,U)",
+        "IsMidpointOf(Point(V),LegOf(Trapezoid(Q,R,T,U)))",
+        "IsMidpointOf(Point(S),LegOf(Trapezoid(Q,R,T,U)))",
+        "Equals(LengthOf(Line(Q,R)),4)",
+        "Equals(LengthOf(Line(U,T)),16)",
+        "Find(LengthOf(Line(V,S)))"
+    ],
+    "point_instances": [
+        "U",
+        "Q",
+        "T",
+        "S",
+        "V",
+        "R"
+    ],
+    "line_instances": [
+        "UT",
+        "RS",
+        "RT",
+        "ST",
+        "QV",
+        "QU",
+        "VU",
+        "VS",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "U": [
+            53.036585365853654,
+            201.21951219512192
+        ],
+        "Q": [
+            113.09756097560975,
+            63.414634146341456
+        ],
+        "T": [
+            300.9024390243902,
+            200.60975609756096
+        ],
+        "S": [
+            267.36585365853654,
+            128.96341463414632
+        ],
+        "V": [
+            84.1341463414634,
+            129.5731707317073
+        ],
+        "R": [
+            236.5731707317073,
+            62.80487804878048
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "9",
+        "10",
+        "12"
+    ],
+    "choices_precise_value": [
+        5.0,
+        9.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 22.04048,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(V, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Trapezoid(Q, R, T, U), IsMidpointOf(S, RT), V on QU, 16 = TU, IsMidpointOf(V, QU), S on RT, 4 = QR\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(S, RT)\nConclusions: RS = ST\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(V, QU)\nConclusions: QV = UV\n\nStep 4:\nTheorem: Median of Trapezoid\nPremises : Trapezoid(Q, R, T, U), RS = ST, QV = UV\nConclusions: IsMedianOf(SV, Trapezoid(Q, R, T, U))\n\nStep 5:\nTheorem: Median of a Trapezoid Properties\nPremises : V on QU, S on RT, IsMedianOf(SV, Trapezoid(Q, R, T, U))\nConclusions: SV = (QR + TU) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : SV = (QR + TU) / 2, 4 = QR, 16 = TU\nConclusions: (16 + 4) / 2 = SV\n\nStep 7:\nTheorem: Evaluate\nPremises : (16 + 4) / 2 = SV\nConclusions: 10 = SV\n\n",
+    "logic_fomrs_refined": [
+        "Line(U, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(Q, V)",
+        "Line(Q, U)",
+        "Line(V, U)",
+        "Line(V, S)",
+        "Line(Q, R)",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(V, Line(Q, U))",
+        "Trapezoid(Q, R, T, U)",
+        "IsMidpointOf(V, Line(Q, U))",
+        "IsMidpointOf(S, Line(R, T))",
+        "Equals(LengthOf(Line(Q, R)), 4.0)",
+        "Equals(LengthOf(Line(U, T)), 16.0)"
+    ],
+    "correct": true
+}

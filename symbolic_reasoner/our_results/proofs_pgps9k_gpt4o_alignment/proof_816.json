@@ -1,0 +1,113 @@
+{
+    "problem_id": "816",
+    "solved": true,
+    "problem_text": "In kite WXYZ, m \\angle VXY = 58, and m \\angle ZWX = 50. What is m \\angle WZY?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, X)), LengthOf(Line(Z, W)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, V)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(V, Line(W, Y))",
+        "PointLiesOnLine(V, Line(X, Z))",
+        "Kite(W,X,Y,Z)",
+        "Equals(MeasureOf(Angle(V,X,Y)),58)",
+        "Equals(MeasureOf(Angle(Z,W,X)),50)",
+        "Find(MeasureOf(Angle(W,Z,Y)))"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "V",
+        "Y",
+        "Z"
+    ],
+    "line_instances": [
+        "WV",
+        "WY",
+        "VY",
+        "WX",
+        "WZ",
+        "XY",
+        "ZY",
+        "XV",
+        "XZ",
+        "VZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            197.2173913043478,
+            47.971428571428575
+        ],
+        "W": [
+            59.47826086956522,
+            112.62857142857143
+        ],
+        "V": [
+            197.2173913043478,
+            112.62857142857143
+        ],
+        "Y": [
+            301.1180124223602,
+            112.62857142857143
+        ],
+        "Z": [
+            197.2173913043478,
+            177.2857142857143
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        65.0,
+        90.0,
+        123.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        65.0,
+        90.0,
+        123.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 102.142816,
+    "solution_predicate": "Equals(0.5585053606, MeasureOf(Angle(Y, Z, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220VYZ, \u2220ZWV, \u2220XZW, \u2220WXY, \u2220YZX, \u2220WXZ, Kite(W, X, Y, Z), WZ, V on WY, VX, \u2220WXV, \u2220YVX, \u2220ZVY, \u2220YXZ, XY = YZ, V on XZ, XZ, \u2220VXY, WX, 3.14 = pi, pi * (50 / 180) = \u2220ZWX, YZ, pi * (58 / 180) = \u2220VXY, \u2220YZV, VZ, \u2220XZY, VY, \u2220ZWY, \u2220XYV, XY, \u2220XYW, \u2220YWX, VW, \u2220VXY, \u2220ZXY, \u2220VWX, \u2220ZWX, \u2220WYZ, WX = WZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220WXY\nConclusions: \u2220WXY = 2 * pi - \u2220YXW\n\nStep 3:\nTheorem: Kite side equality\nPremises : Kite(W, X, Y, Z)\nConclusions: WX = WZ, XY = XZ\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Kite(W, X, Y, Z)\nPremises : Kite(W, X, Y, Z)\nConclusions: 2 * pi = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX\n\nStep 5:\nTheorem: Quadrilateral to is components\nPremises : Kite(W, X, Y, Z)\nConclusions: \u2220ZYX, WZ, \u2220YXW, \u2220XWZ, YZ, \u2220WZY, XY, WX\n\nStep 6:\nTheorem: Kite has perpendicular diagonals\nPremises : Kite(W, X, Y, Z)\nConclusions: WY \u22a5 XZ\n\nStep 7:\nTheorem: Kite angle equality\nPremises : Kite(W, X, Y, Z)\nConclusions: \u2220WZY = \u2220YXW, \u2220WXY = \u2220YZW\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220ZVY, \u2220YVX\nConclusions: pi = \u2220YVX + \u2220ZVY\n\nStep 9:\nTheorem: Same Angle\nPremises : V on XZ, \u2220WXZ\nConclusions: \u2220WXV = \u2220WXZ\n\nStep 10:\nTheorem: Same Angle\nPremises : V on XZ, \u2220YZX\nConclusions: \u2220YZV = \u2220YZX\n\nStep 11:\nTheorem: Same Angle\nPremises : V on XZ, \u2220XZW\nConclusions: \u2220VZW = \u2220XZW\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220YXZ, V on XZ\nConclusions: \u2220YXV = \u2220YXZ\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220VXY\nConclusions: \u2220VXY = 2 * pi - \u2220YXV\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : WZ, WX, XZ\nConclusions: \u25b3WXZ\n\nStep 15:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.01 = pi * (58 / 180)\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220YZV\nConclusions: \u2220YZV = 2 * pi - \u2220VZY\n\nStep 17:\nTheorem: Same Angle\nPremises : V on XZ, \u2220XZY\nConclusions: \u2220VZY = \u2220XZY\n\nStep 18:\nTheorem: Same Angle\nPremises : V on WY, \u2220ZWY\nConclusions: \u2220ZWV = \u2220ZWY\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : XY, VY, VX\nConclusions: \u25b3VXY\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : XY, YZ, XZ\nConclusions: \u25b3XYZ\n\nStep 21:\nTheorem: Same Angle\nPremises : V on WY, \u2220XYW\nConclusions: \u2220XYV = \u2220XYW\n\nStep 22:\nTheorem: Definition of Triangle\nPremises : WZ, VW, VZ\nConclusions: \u25b3VWZ\n\nStep 23:\nTheorem: Same Angle\nPremises : V on XZ, \u2220ZXY\nConclusions: \u2220VXY = \u2220ZXY\n\nStep 24:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZWX\nConclusions: \u2220ZWX = 2 * pi - \u2220XWZ\n\nStep 25:\nTheorem: Same Angle\nPremises : V on WY, \u2220WYZ\nConclusions: \u2220VYZ = \u2220WYZ\n\nStep 26:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : XY = YZ, WX = WZ\nConclusions: \u25b3WXY \u2245 \u25b3WZY\n\nStep 27:\nTheorem: Circumference splited\nPremises : \u2220ZYX, \u2220XYV, \u2220VYZ\nConclusions: 2 * pi = \u2220VYZ + \u2220XYV + \u2220ZYX\n\nStep 28:\nTheorem: Circumference splited\nPremises : \u2220YXW, \u2220WXV, \u2220VXY\nConclusions: 2 * pi = \u2220VXY + \u2220WXV + \u2220YXW\n\nStep 29:\nTheorem: Circumference splited\nPremises : \u2220ZWY, \u2220YWX, \u2220XWZ\nConclusions: 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY\n\nStep 30:\nTheorem: Circumference splited\nPremises : \u2220XWZ, \u2220ZWV, \u2220VWX\nConclusions: 2 * pi = \u2220VWX + \u2220XWZ + \u2220ZWV\n\nStep 31:\nTheorem: Circumference splited\nPremises : \u2220WZY, \u2220YZX, \u2220XZW\nConclusions: 2 * pi = \u2220WZY + \u2220XZW + \u2220YZX\n\nStep 32:\nTheorem: Perpendicular Extension\nPremises : WY \u22a5 XZ\nConclusions: VY \u22a5 VZ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXY = 2 * pi - \u2220YXW, \u2220WXY = \u2220YZW\nConclusions: \u2220YZW = 2 * pi - \u2220YXW\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220YVX + \u2220ZVY\nConclusions: 3.14 = \u2220YVX + \u2220ZVY\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : pi * (58 / 180) = \u2220VXY, \u2220VXY = 2 * pi - \u2220YXV\nConclusions: pi * (58 / 180) = 2 * pi - \u2220YXV\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3WXZ, WX = WZ\nConclusions: \u2220WXZ = \u2220XZW\n\nStep 37:\nTheorem: Interior Angle Sum Theorem for Triangle(W, X, Z)\nPremises : \u25b3WXZ\nConclusions: pi = \u2220WXZ + \u2220XZW + \u2220ZWX\n\nStep 38:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3WXZ, WX = WZ\nConclusions: VW \u22a5 VZ, VX = VZ\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = pi * (58 / 180), pi * (58 / 180) = \u2220VXY\nConclusions: 1.01 = \u2220VXY\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZV = \u2220YZX, \u2220YZV = 2 * pi - \u2220VZY\nConclusions: \u2220YZX = 2 * pi - \u2220VZY\n\nStep 41:\nTheorem: Interior Angle Sum Theorem for Triangle(V, X, Y)\nPremises : \u25b3VXY\nConclusions: pi = \u2220VXY + \u2220XYV + \u2220YVX\n\nStep 42:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3XYZ, XY = YZ\nConclusions: VX \u22a5 VY, VY \u22a5 VZ, \u2220VYZ = \u2220XYV, VX = VZ\n\nStep 43:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 44:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3XYZ, XY = XZ\nConclusions: \u2220XZY = \u2220ZYX, \u2220XYZ = \u2220YZX\n\nStep 45:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3XYZ, XY = YZ\nConclusions: \u2220YZX = \u2220ZXY, \u2220XZY = \u2220YXZ\n\nStep 46:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, W, V)\nPremises : \u25b3VWZ\nConclusions: pi = \u2220VZW + \u2220WVZ + \u2220ZWV\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VXY = \u2220ZXY, pi * (58 / 180) = \u2220VXY\nConclusions: pi * (58 / 180) = \u2220ZXY\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ZWX = 2 * pi - \u2220XWZ, pi * (50 / 180) = \u2220ZWX\nConclusions: pi * (50 / 180) = 2 * pi - \u2220XWZ\n\nStep 49:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3WZY\nConclusions: \u2220WXY = \u2220YZW, XY = YZ, \u2220WZY = \u2220YXW, \u2220YWX = \u2220ZWY\n\nStep 50:\nTheorem: Substitution\nPremises : 2 * pi = \u2220VYZ + \u2220XYV + \u2220ZYX, 3.14 = pi, \u2220VYZ = \u2220WYZ, \u2220XYV = \u2220XYW\nConclusions: 2 * 3.14 = \u2220WYZ + \u2220XYW + \u2220ZYX\n\nStep 51:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (58 / 180) = \u2220VXY, 2 * pi = \u2220VXY + \u2220WXV + \u2220YXW, \u2220WXV = \u2220WXZ\nConclusions: 2 * 3.14 = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW\n\nStep 52:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY\nConclusions: 2 * 3.14 = \u2220XWZ + \u2220YWX + \u2220ZWY\n\nStep 53:\nTheorem: Substitution\nPremises : \u2220WZY = \u2220YXW, 3.14 = pi, 2 * pi = \u2220WZY + \u2220XZW + \u2220YZX\nConclusions: 2 * 3.14 = \u2220XZW + \u2220YXW + \u2220YZX\n\nStep 54:\nTheorem: Perpendicular to Right Angle\nPremises : VY \u22a5 VZ\nConclusions: pi / 2 = \u2220ZVY\n\nStep 55:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220WXZ + \u2220XZW + \u2220ZWX, pi * (50 / 180) = \u2220ZWX\nConclusions: 3.14 = 3.14 * (50 / 180) + \u2220WXZ + \u2220XZW\n\nStep 56:\nTheorem: Perpendicular to Right Angle\nPremises : VW \u22a5 VZ\nConclusions: pi / 2 = \u2220WVZ\n\nStep 57:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : WX = WZ, VX = VZ\nConclusions: \u25b3VWX \u2245 \u25b3VWZ\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220VXY + \u2220XYV + \u2220YVX\nConclusions: 3.14 = \u2220VXY + \u2220XYV + \u2220YVX\n\nStep 59:\nTheorem: Perpendicular to Right Angle\nPremises : VX \u22a5 VY\nConclusions: pi / 2 = \u2220YVX\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220XYZ + \u2220YZX + \u2220ZXY\nConclusions: 3.14 = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = pi * (58 / 180), pi * (58 / 180) = \u2220ZXY\nConclusions: 1.01 = \u2220ZXY\n\nStep 62:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220XYZ + \u2220YZX + \u2220ZXY, pi * (58 / 180) = \u2220ZXY\nConclusions: 3.14 = 3.14 * (58 / 180) + \u2220XYZ + \u2220YZX\n\nStep 63:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YWX = \u2220ZWY, \u2220ZWV = \u2220ZWY\nConclusions: \u2220YWX = \u2220ZWV\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220XWZ + \u2220YWX + \u2220ZWY, 2 * 3.14 = \u2220XWZ + \u2220YWX + \u2220ZWY\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 65:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ZWV = \u2220ZWY, pi / 2 = \u2220WVZ, \u2220VZW = \u2220XZW, pi = \u2220VZW + \u2220WVZ + \u2220ZWV\nConclusions: 3.14 = pi / 2 + \u2220XZW + \u2220ZWY\n\nStep 66:\nTheorem: Congruent Definition\nPremises : \u25b3VWX \u2245 \u25b3VWZ\nConclusions: \u2220VWX = \u2220ZWV\n\nStep 67:\nTheorem: Substitution\nPremises : 3.14 = \u2220VXY + \u2220XYV + \u2220YVX, pi / 2 = \u2220YVX, pi * (58 / 180) = \u2220VXY, \u2220XYV = \u2220XYW\nConclusions: 3.14 = pi / 2 + pi * (58 / 180) + \u2220XYW\n\nStep 68:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ZVY, pi / 2 = \u2220YVX\nConclusions: \u2220YVX = \u2220ZVY\n\nStep 69:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220VXY + \u2220XYV + \u2220YVX, pi / 2 = \u2220YVX, \u2220XYV = \u2220XYW, pi * (58 / 180) = \u2220VXY\nConclusions: 3.14 = pi / 2 + 3.14 * (58 / 180) + \u2220XYW\n\nStep 70:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZX = \u2220ZXY, 1.01 = \u2220ZXY\nConclusions: 1.01 = \u2220YZX\n\nStep 71:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW\n\nStep 72:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220XZW + \u2220YXW + \u2220YZX\nConclusions: 2 * pi = \u2220XZW + \u2220YXW + \u2220YZX\n\nStep 73:\nTheorem: Solve Linear Equation System\nPremises : \u2220YVX = \u2220ZVY, pi = \u2220VXY + \u2220XYV + \u2220YVX, 3.14 = pi / 2 + 3.14 * (58 / 180) + \u2220XYW, \u2220XYV = \u2220XYW, 3.14 = \u2220YVX + \u2220ZVY, pi * (58 / 180) = \u2220VXY\nConclusions: 0.56 = \u2220XYV\n\nStep 74:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYZ = \u2220YZX, 1.01 = \u2220YZX\nConclusions: 1.01 = \u2220XYZ\n\nStep 75:\nTheorem: Solve Linear Equation System\nPremises : pi * (58 / 180) = 2 * pi - \u2220YXV, 2 * 3.14 = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW, 2 * pi = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW\nConclusions: 5.27 = \u2220YXV\n\nStep 76:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220XZW + \u2220YXW + \u2220YZX, pi * (50 / 180) = 2 * pi - \u2220XWZ, 2 * 3.14 = \u2220XZW + \u2220YXW + \u2220YZX\nConclusions: 5.41 = \u2220XWZ\n\nStep 77:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VYZ = \u2220WYZ, 0.56 = \u2220XYV, \u2220VYZ = \u2220XYV\nConclusions: 0.56 = \u2220WYZ\n\nStep 78:\nTheorem: Transtivity of Equivalence\nPremises : 5.27 = \u2220YXV, \u2220YXV = \u2220YXZ\nConclusions: 5.27 = \u2220YXZ\n\nStep 79:\nTheorem: Solve linear equation system\nPremises : 2 * pi = \u2220VYZ + \u2220XYV + \u2220ZYX, 1.01 = \u2220XYZ, 0.56 = \u2220WYZ, \u2220VYZ = \u2220XYV, 3.14 = pi / 2 + 3.14 * (58 / 180) + \u2220XYW, \u2220XYV = \u2220XYW, 1.01 = \u2220YZX, 3.14 = 3.14 * (58 / 180) + \u2220XYZ + \u2220YZX, 2 * 3.14 = \u2220WYZ + \u2220XYW + \u2220ZYX\nConclusions: \u2220XYV = \u2220ZYX\n\nStep 80:\nTheorem: Transtivity of Equivalence\nPremises : 5.27 = \u2220YXZ, \u2220XZY = \u2220YXZ\nConclusions: 5.27 = \u2220XZY\n\nStep 81:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZY = \u2220ZYX, 5.27 = \u2220XZY\nConclusions: 5.27 = \u2220ZYX\n\nStep 82:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VZY = \u2220XZY, 5.27 = \u2220XZY\nConclusions: 5.27 = \u2220VZY\n\nStep 83:\nTheorem: Transtivity of Equivalence\nPremises : 0.56 = \u2220XYV, \u2220XYV = \u2220ZYX, 5.27 = \u2220ZYX\nConclusions: 0.56 = 5.27\n\nStep 84:\nTheorem: Solve linear equation system\nPremises : 2 * pi = \u2220VYZ + \u2220XYV + \u2220ZYX, 2 * 3.14 = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW, 5.27 = \u2220ZYX, 3.14 = 3.14 * (50 / 180) + \u2220WXZ + \u2220XZW, \u2220VYZ = \u2220XYV, \u2220XYV = \u2220XYW, 3.14 = pi / 2 + pi * (58 / 180) + \u2220XYW, \u2220WZY = \u2220YXW, \u2220XYV = \u2220ZYX, \u2220VZW = \u2220XZW\nConclusions: \u2220VZW = \u2220WZY\n\nStep 85:\nTheorem: Transtivity of Equivalence\nPremises : 0.56 = 5.27, 5.27 = \u2220VZY\nConclusions: 0.56 = \u2220VZY\n\nStep 86:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WZY = \u2220YXW, \u2220VZW = \u2220WZY, \u2220VZW = \u2220XZW\nConclusions: \u2220XZW = \u2220YXW\n\nStep 87:\nTheorem: Solve linear equation system\nPremises : 5.27 = \u2220ZYX, 3.14 = 3.14 * (50 / 180) + \u2220WXZ + \u2220XZW, \u2220XYV = \u2220XYW, \u2220VWX = \u2220ZWV, pi * (50 / 180) = 2 * pi - \u2220XWZ, 2 * pi = \u2220VWX + \u2220XWZ + \u2220ZWV, 3.14 = pi / 2 + pi * (58 / 180) + \u2220XYW, 2 * pi = 3.14 * (58 / 180) + \u2220WXZ + \u2220YXW, \u2220XYV = \u2220ZYX, \u2220XZW = \u2220YXW\nConclusions: \u2220XWZ = \u2220ZWV\n\nStep 88:\nTheorem: Transtivity of Equivalence\nPremises : 5.41 = \u2220XWZ, \u2220YWX = \u2220ZWV, \u2220XWZ = \u2220ZWV\nConclusions: 5.41 = \u2220YWX\n\nStep 89:\nTheorem: Solve linear equation system\nPremises : \u2220VXY = \u2220ZXY, 3.14 = 3.14 * (50 / 180) + \u2220WXZ + \u2220XZW, 2 * pi = \u2220XZW + \u2220YXW + \u2220YZX, \u2220WXZ = \u2220XZW, \u2220YWX = \u2220ZWY, 5.41 = \u2220YWX, pi * (58 / 180) = \u2220VXY, 3.14 = \u2220XYZ + \u2220YZX + \u2220ZXY, \u2220XYZ = \u2220YZX, 3.14 = pi / 2 + \u2220XZW + \u2220ZWY, \u2220XZW = \u2220YXW\nConclusions: \u2220VXY = \u2220YXW\n\nStep 90:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = \u2220VXY, \u2220VXY = \u2220YXW, \u2220XZW = \u2220YXW\nConclusions: 1.01 = \u2220XZW\n\nStep 91:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = \u2220XZW, \u2220XZW = \u2220YXW\nConclusions: 1.01 = \u2220YXW\n\nStep 92:\nTheorem: Solve linear equation system\nPremises : pi * (50 / 180) = \u2220ZWX, \u2220WXY = \u2220YZW, \u2220YZW = 2 * pi - \u2220YXW, 2 * pi = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX, 3.14 = 3.14 * (58 / 180) + \u2220XYZ + \u2220YZX, 1.01 = \u2220YXW, 5.27 = \u2220VZY, \u2220XYZ = \u2220YZX, \u2220YZX = 2 * pi - \u2220VZY\nConclusions: \u2220VZY = \u2220YZW\n\nStep 93:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VZY = \u2220YZW, 0.56 = \u2220VZY\nConclusions: 0.56 = \u2220YZW\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, V)",
+        "Line(W, Y)",
+        "Line(V, Y)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Line(X, V)",
+        "Line(X, Z)",
+        "Line(V, Z)",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, V)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(V, Line(W, Y))",
+        "PointLiesOnLine(V, Line(X, Z))",
+        "Kite(W, X, Y, Z)",
+        "Equals(LengthOf(Line(W, X)), LengthOf(Line(Z, W)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(MeasureOf(Angle(V, X, Y)), Mul(pi, Div(58.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(50.0, 180.0)))"
+    ],
+    "correct": false
+}

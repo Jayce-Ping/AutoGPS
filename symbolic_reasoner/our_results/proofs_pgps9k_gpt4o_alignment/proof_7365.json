@@ -1,0 +1,88 @@
+{
+    "problem_id": "7365",
+    "solved": true,
+    "problem_text": "\\angle 6 and \\angle 8 are complementary, m \\angle 8 = 47. Find the measure of \\angle 7.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(A, C, E)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(Angle(8)))",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(SumOf(MeasureOf(Angle(6)),MeasureOf(Angle(6))),90)",
+        "Equals(MeasureOf(Angle(8)),47)",
+        "Find(MeasureOf(Angle(7)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            35.474733096085416,
+            121.95805714285713
+        ],
+        "B": [
+            20.395444839857653,
+            28.21885714285714
+        ],
+        "C": [
+            148.38971925662318,
+            28.162666666666667
+        ],
+        "D": [
+            266.6947490740069,
+            28.278717201166177
+        ],
+        "E": [
+            258.75459983342165,
+            159.22468085106382
+        ]
+    },
+    "problem_choices": [
+        43.0,
+        47.0,
+        86.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        43.0,
+        47.0,
+        86.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 6.597279,
+    "solution_predicate": "Equals(Minus(42.6787120948), MeasureOf(Angle(A, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DCA, \u2220ACD, \u2220ACE, pi * (47 / 180) = \u2220ECD, \u2220ECB, \u2220BCA, \u2220BCE, 3.14 = pi, \u2220ECD, 90 = \u2220BCA + \u2220BCA, \u2220ACD, \u2220BCE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220BCA, \u2220ACE, \u2220ECB\nConclusions: 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ACE, \u2220DCA, \u2220ECD\nConclusions: 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220ACD, \u2220BCA\nConclusions: pi = \u2220ACD + \u2220BCA\n\nStep 7:\nTheorem: Straight Angle\nPremises : \u2220ECD, \u2220BCE\nConclusions: pi = \u2220BCE + \u2220ECD\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220BCE = 2 * pi - \u2220ECB, 3.14 = pi\nConclusions: \u2220BCE = 2 * 3.14 - \u2220ECB\n\nStep 9:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD, pi * (47 / 180) = \u2220ECD, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ACD + \u2220BCA, 3.14 = pi\nConclusions: 3.14 = \u2220ACD + \u2220BCA\n\nStep 11:\nTheorem: Substitution\nPremises : pi = \u2220BCE + \u2220ECD, pi * (47 / 180) = \u2220ECD, 3.14 = pi\nConclusions: 3.14 = 3.14 * (47 / 180) + \u2220BCE\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACD = 2 * pi - \u2220DCA, 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB, 2 * 3.14 = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA, 3.14 = 3.14 * (47 / 180) + \u2220BCE, 3.14 = \u2220ACD + \u2220BCA, \u2220BCE = 2 * 3.14 - \u2220ECB, 90 = \u2220BCA + \u2220BCA\nConclusions: -42.68 = \u2220ACE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(Add(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(B, C, A))), 90.0)",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(47.0, 180.0)))"
+    ],
+    "correct": false
+}

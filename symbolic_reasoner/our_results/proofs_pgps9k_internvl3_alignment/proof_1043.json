@@ -1,0 +1,76 @@
+{
+    "problem_id": "1043",
+    "solved": true,
+    "problem_text": "Find m \\angle B.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(MeasureOf(Angle(B, C, D)), 101)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Find(MeasureOf(Angle(B)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "AB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            63.388209920920204,
+            43.31076923076923
+        ],
+        "B": [
+            227.32527427874848,
+            43.52
+        ],
+        "C": [
+            200.57242990654208,
+            180.88000000000002
+        ],
+        "D": [
+            90.27066858375271,
+            180.77538461538464
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        39.5,
+        79.0,
+        101.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        39.5,
+        79.0,
+        101.0
+    ],
+    "problem_answer": 79.0,
+    "total_time": 5.35748,
+    "solution_predicate": "Equals(1.3788101091, MeasureOf(Angle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (101 / 180) = \u2220BCD, AB || DC, 3.14 = pi\n\nStep 2:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220ABC + \u2220BCD\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (101 / 180) = \u2220BCD, pi = \u2220ABC + \u2220BCD, 3.14 = pi\nConclusions: 3.14 = 3.14 * (101 / 180) + \u2220ABC\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (101 / 180) + \u2220ABC\nConclusions: 1.38 = \u2220ABC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(101.0, 180.0)))"
+    ],
+    "correct": true
+}

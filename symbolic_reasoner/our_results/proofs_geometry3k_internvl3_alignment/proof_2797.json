@@ -1,0 +1,87 @@
+{
+    "problem_id": "2797",
+    "solved": true,
+    "problem_text": "If R L = 5, R T = 9, and W S = 6, find R W.",
+    "logic_forms": [
+        "PointLiesOnLine(W, Line(R, S))",
+        "PointLiesOnLine(L, Line(R, T))",
+        "Parallel(Line(L, W), Line(T, S))",
+        "Equals(LengthOf(Line(R,L)),5)",
+        "Equals(LengthOf(Line(R,T)),9)",
+        "Equals(LengthOf(Line(W,S)),6)",
+        "Find(LengthOf(Line(R,W)))"
+    ],
+    "point_instances": [
+        "S",
+        "W",
+        "L",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "RW",
+        "RS",
+        "WS",
+        "TS",
+        "RL",
+        "RT",
+        "LT",
+        "LW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            354.35435435435437,
+            126.16816816816817
+        ],
+        "W": [
+            249.24924924924923,
+            135.47747747747746
+        ],
+        "L": [
+            155.85585585585585,
+            83.22522522522522
+        ],
+        "T": [
+            207.2072072072072,
+            40.28228228228228
+        ],
+        "R": [
+            71.17117117117117,
+            152.8948948948949
+        ]
+    },
+    "problem_choices": [
+        "5.4",
+        "6",
+        "6.6",
+        "7.5"
+    ],
+    "choices_precise_value": [
+        5.4,
+        6.0,
+        6.6,
+        7.5
+    ],
+    "problem_answer": 7.5,
+    "total_time": 32.526091,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(R, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: L on RT, 6 = SW, LW || TS, \u2220STR, W on RS, \u2220SRT, 5 = LR, \u2220SRL, 3.14 = pi, \u2220WLR, 9 = RT\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : LW || TS\nConclusions: \u2220RLW = \u2220RTS, \u2220RST = \u2220RWL\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220STR\nConclusions: \u2220STR = 2 * pi - \u2220RTS\n\nStep 4:\nTheorem: Line Segment Split\nPremises : W on RS\nConclusions: RS = RW + SW\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220SRT, L on RT\nConclusions: \u2220SRL = \u2220SRT\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220SRL, W on RS\nConclusions: \u2220SRL = \u2220WRL\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220WLR\nConclusions: \u2220WLR = 2 * pi - \u2220RLW\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220STR = 2 * pi - \u2220RTS, 3.14 = pi\nConclusions: \u2220STR = 2 * 3.14 - \u2220RTS\n\nStep 9:\nTheorem: Substitution\nPremises : 6 = SW, RS = RW + SW\nConclusions: RS = 6 + RW\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SRL = \u2220SRT, \u2220SRL = \u2220WRL\nConclusions: \u2220SRT = \u2220WRL\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220RLW = \u2220RTS, \u2220WLR = 2 * pi - \u2220RLW, 3.14 = pi\nConclusions: \u2220WLR = 2 * 3.14 - \u2220RTS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WLR = 2 * 3.14 - \u2220RTS, \u2220STR = 2 * 3.14 - \u2220RTS\nConclusions: \u2220STR = \u2220WLR\n\nStep 13:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220STR = \u2220WLR, \u2220SRT = \u2220WRL, \u2220RST = \u2220RWL\nConclusions: \u25b3LRW ~ \u25b3TRS\n\nStep 14:\nTheorem: Similar Definition\nPremises : \u25b3LRW ~ \u25b3TRS\nConclusions: \u2220RST = \u2220RWL, \u2220SRT = \u2220WRL, LR / RT = RW / RS\n\nStep 15:\nTheorem: Substitution\nPremises : 9 = RT, 5 = LR, LR / RT = RW / RS\nConclusions: 5 / 9 = RW / RS\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : RS = 6 + RW, 5 / 9 = RW / RS\nConclusions: 7.5 = RW\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, W)",
+        "Line(R, S)",
+        "Line(W, S)",
+        "Line(T, S)",
+        "Line(R, L)",
+        "Line(R, T)",
+        "Line(L, T)",
+        "Line(L, W)",
+        "PointLiesOnLine(W, Line(R, S))",
+        "PointLiesOnLine(L, Line(R, T))",
+        "Parallel(Line(L, W), Line(T, S))",
+        "Equals(LengthOf(Line(R, L)), 5.0)",
+        "Equals(LengthOf(Line(R, T)), 9.0)",
+        "Equals(LengthOf(Line(W, S)), 6.0)"
+    ],
+    "correct": true
+}

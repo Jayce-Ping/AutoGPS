@@ -1,0 +1,91 @@
+{
+    "problem_id": "1822",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 1?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, D)))",
+        "Equals(MeasureOf(Angle(B, A, C)), 74)",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, D, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, C, A)), MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            122.37434430138293,
+            20.447619047619046
+        ],
+        "B": [
+            22.259656652360515,
+            153.03428571428572
+        ],
+        "C": [
+            221.62875536480686,
+            153.03428571428572
+        ],
+        "D": [
+            386.47925608011445,
+            152.8190476190476
+        ]
+    },
+    "problem_choices": [
+        26.5,
+        53.0,
+        74.0,
+        127.0
+    ],
+    "choices_precise_value": [
+        26.5,
+        53.0,
+        74.0,
+        127.0
+    ],
+    "problem_answer": 127.0,
+    "total_time": 31.421432,
+    "solution_predicate": "Equals(2.21656815, MeasureOf(Angle(D, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220DCA, C on BD, AC, \u2220ACB, pi * (74 / 180) = \u2220BAC, \u2220DBA, AB, BC, AB = AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.29 = pi * (74 / 180)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220DCA, \u2220ACB\nConclusions: pi = \u2220ACB + \u2220DCA\n\nStep 4:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (74 / 180) = \u2220BAC, 1.29 = pi * (74 / 180)\nConclusions: 1.29 = \u2220BAC\n\nStep 7:\nTheorem: Issoceles Triangle Property\nPremises : AB = AC, \u25b3ABC\nConclusions: \u2220ACB = \u2220CBA\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220CBA, \u2220CBA = \u2220DBA\nConclusions: \u2220ACB = \u2220DBA\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220DBA, 3.14 = pi, \u2220CBA = \u2220DBA, 1.29 = \u2220BAC, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 1.29 + \u2220DBA + \u2220DBA\n\nStep 11:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220DCA, \u2220ACB = \u2220DBA, 3.14 = pi\nConclusions: 3.14 = \u2220DBA + \u2220DCA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DBA + \u2220DCA, 3.14 = 1.29 + \u2220DBA + \u2220DBA\nConclusions: 2.22 = \u2220DCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, D)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(74.0, 180.0)))"
+    ],
+    "correct": true
+}

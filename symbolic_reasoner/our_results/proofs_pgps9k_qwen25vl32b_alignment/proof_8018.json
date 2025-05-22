@@ -1,0 +1,81 @@
+{
+    "problem_id": "8018",
+    "solved": true,
+    "problem_text": "Find m \\angle 1 in the rhombus.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, D)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, A, D)), 57)",
+        "Equals(MeasureOf(Angle(D, B, A)), MeasureOf(Angle(3)))",
+        "Find(MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Rhombus(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BD",
+        "AC",
+        "AB",
+        "AD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            87.19072164948453,
+            22.912
+        ],
+        "B": [
+            260.80283505154637,
+            22.75857142857143
+        ],
+        "C": [
+            16.412371134020617,
+            181.0457142857143
+        ],
+        "D": [
+            189.76804123711338,
+            180.02285714285716
+        ]
+    },
+    "problem_choices": [
+        57.0,
+        61.5,
+        66.0,
+        114.0
+    ],
+    "choices_precise_value": [
+        57.0,
+        61.5,
+        66.0,
+        114.0
+    ],
+    "problem_answer": 57.0,
+    "total_time": 14.046886,
+    "solution_predicate": "Equals(0.9948376736, MeasureOf(Angle(D, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (57 / 180) = \u2220CAD, Rhombus(A, B, D, C)\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, D, C)\nConclusions: \u2220CAD = \u2220DAB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (57 / 180) = \u2220CAD, \u2220CAD = \u2220DAB\nConclusions: pi * (57 / 180) = \u2220DAB\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (57 / 180) = \u2220DAB\nConclusions: 0.99 = \u2220DAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Rhombus(A, B, D, C)",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(57.0, 180.0)))"
+    ],
+    "correct": true
+}

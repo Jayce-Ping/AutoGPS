@@ -1,0 +1,99 @@
+{
+    "problem_id": "2778",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(Y, Line(Z, T))",
+        "PointLiesOnLine(W, Line(X, T))",
+        "PointLiesOnCircle(Z, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), 12)",
+        "Equals(LengthOf(Line(T, W)), 7)",
+        "Equals(LengthOf(Line(T, Y)), 6)",
+        "Equals(LengthOf(Line(Z, Y)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "X",
+        "T",
+        "Z",
+        "W",
+        "Y",
+        "A"
+    ],
+    "line_instances": [
+        "ZY",
+        "ZT",
+        "YT",
+        "XW",
+        "XT",
+        "WT"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "X": [
+            249.52830188679246,
+            96.69811320754717
+        ],
+        "T": [
+            453.77358490566036,
+            342.92452830188677
+        ],
+        "Z": [
+            101.88679245283018,
+            258.0188679245283
+        ],
+        "W": [
+            378.77358490566036,
+            251.88679245283018
+        ],
+        "Y": [
+            352.35849056603774,
+            317.45283018867923
+        ],
+        "A": [
+            239.44339622641508,
+            235.5
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 72 } { 7 }",
+        "14",
+        "\\frac { 95 } { 6 }",
+        "\\frac { 97 } { 6 }"
+    ],
+    "choices_precise_value": [
+        10.285714285714286,
+        14.0,
+        15.833333333333334,
+        16.166666666666668
+    ],
+    "problem_answer": 16.166666666666668,
+    "total_time": 50.105631,
+    "solution_predicate": "Equals(16.1666666667, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: W on TX, TW, \u2299(A, radius_0_0), W on \u2299(A, radius_0_0), Y on TZ, TX, 12 = WX, 7 = TW, 6 = TY, TZ, Y on \u2299(A, radius_0_0), Z on \u2299(A, radius_0_0), X on \u2299(A, radius_0_0), x = YZ, TY\n\nStep 2:\nTheorem: Line Segment Split\nPremises : W on TX\nConclusions: TX = TW + WX\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Y on TZ\nConclusions: TZ = TY + YZ\n\nStep 4:\nTheorem: Circle Secant Theorem\nPremises : W on \u2299(A, radius_0_0), TX, TZ, Y on \u2299(A, radius_0_0), Z on \u2299(A, radius_0_0), X on \u2299(A, radius_0_0), TW, \u2299(A, radius_0_0), TY\nConclusions: TW * TX = TY * TZ\n\nStep 5:\nTheorem: Substitution\nPremises : TX = TW + WX, 7 = TW, 12 = WX\nConclusions: 12 + 7 = TX\n\nStep 6:\nTheorem: Substitution\nPremises : x = YZ, 6 = TY, TZ = TY + YZ\nConclusions: 6 + x = TZ\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 12 + 7 = TX\nConclusions: 19 = TX\n\nStep 8:\nTheorem: Substitution\nPremises : TW * TX = TY * TZ, 19 = TX, 7 = TW, 6 = TY, 6 + x = TZ\nConclusions: 19 * 7 = 6 * (6 + x)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 19 * 7 = 6 * (6 + x), x = YZ\nConclusions: 16.17 = YZ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : x = YZ, 16.17 = YZ\nConclusions: 16.17 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Z, T)",
+        "Line(Y, T)",
+        "Line(X, W)",
+        "Line(X, T)",
+        "Line(W, T)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(Y, Line(Z, T))",
+        "PointLiesOnLine(W, Line(X, T))",
+        "PointLiesOnCircle(Z, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), 12.0)",
+        "Equals(LengthOf(Line(T, W)), 7.0)",
+        "Equals(LengthOf(Line(T, Y)), 6.0)",
+        "Equals(LengthOf(Line(Z, Y)), x)"
+    ],
+    "correct": true
+}

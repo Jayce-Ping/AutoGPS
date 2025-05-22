@@ -1,0 +1,116 @@
+{
+    "problem_id": "2095",
+    "solved": true,
+    "problem_text": "Find the area of the regular polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, G)), 8)",
+        "Find(AreaOf(Regular(Polygon(A, B, C, D, F, H))))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, F)",
+        "Line(D, H)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Perpendicular(Line(F, H), Line(E, G))",
+        "PointLiesOnLine(G, Line(F, H))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "DH",
+        "HG",
+        "HF",
+        "GF",
+        "FC",
+        "CA",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            79.39166666666667,
+            28.0
+        ],
+        "B": [
+            185.73333333333332,
+            27.825
+        ],
+        "C": [
+            26.133333333333333,
+            119.52499999999999
+        ],
+        "D": [
+            238.48461538461535,
+            119.48461538461537
+        ],
+        "E": [
+            133.0,
+            121.8
+        ],
+        "F": [
+            79.55652173913043,
+            211.39999999999998
+        ],
+        "G": [
+            132.86875,
+            211.225
+        ],
+        "H": [
+            185.5,
+            211.39999999999998
+        ]
+    },
+    "problem_choices": [
+        456.507,
+        498.831,
+        665.108,
+        697.481
+    ],
+    "choices_precise_value": [
+        456.507,
+        498.831,
+        665.108,
+        697.481
+    ],
+    "problem_answer": 665.108,
+    "total_time": 27.105698,
+    "solution_predicate": "Equals(221.7025033697, AreaOf(Regular(Hexagon(A, B, D, H, F, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, 8 = EG, EG, Hexagon(A, B, D, H, F, C)\n\nStep 2:\nTheorem: Area formula of Regular Hexagon(A, B, D, H, F, C) by formula 4\nPremises : EG, Hexagon(A, B, D, H, F, C)\nConclusions: Area(Regular(Hexagon(A, B, D, H, F, C))) = 6 * tan(pi / 6) * EG ** 2\n\nStep 3:\nTheorem: Substitution\nPremises : Area(Regular(Hexagon(A, B, D, H, F, C))) = 6 * tan(pi / 6) * EG ** 2, 3.14 = pi, 8 = EG\nConclusions: 6 * 8 ** 2 * tan(3.14 / 6) = Area(Regular(Hexagon(A, B, D, H, F, C)))\n\nStep 4:\nTheorem: Evaluate\nPremises : 6 * 8 ** 2 * tan(3.14 / 6) = Area(Regular(Hexagon(A, B, D, H, F, C)))\nConclusions: 221.7 = Area(Regular(Hexagon(A, B, D, H, F, C)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, H)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(G, F)",
+        "Line(F, C)",
+        "Line(C, A)",
+        "Line(E, G)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, F)",
+        "Line(D, H)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Perpendicular(Line(F, H), Line(E, G))",
+        "PointLiesOnLine(G, Line(F, H))",
+        "Equals(LengthOf(Line(E, G)), 8.0)"
+    ],
+    "correct": false
+}

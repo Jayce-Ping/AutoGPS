@@ -1,0 +1,94 @@
+{
+    "problem_id": "3975",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), z)",
+        "Equals(LengthOf(Line(A, D)), 12)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, B), Line(B, D))",
+        "Perpendicular(Line(A, D), Line(C, B))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "AB",
+        "BD",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            32.703125,
+            59.519999999999996
+        ],
+        "B": [
+            32.57948369565218,
+            190.2052173913043
+        ],
+        "C": [
+            94.38541666666667,
+            103.11401360544217
+        ],
+        "D": [
+            220.390625,
+            190.60571428571427
+        ]
+    },
+    "problem_choices": [
+        2.449489742783178,
+        2.449489742783178,
+        4.0,
+        9.797958971132712
+    ],
+    "choices_precise_value": [
+        2.449489742783178,
+        2.449489742783178,
+        4.0,
+        9.797958971132712
+    ],
+    "problem_answer": 2.449489742783178,
+    "total_time": 57.310615,
+    "solution_predicate": "Equals(9.7979589711, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 BD, \u2220DBC, \u2220DBC, \u2220ABD, BD, 8 = CD, AC, BC \u22a5 CD, \u2220BCA, \u2220ADB, \u2220CBA, x = BD, \u2220ABD, AB, AD, 3.14 = pi, sin(\u2220BAD), C on AD, CD, \u2220BAD, BC, AC \u22a5 BC, 12 = AD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: (3 * pi) / 2 = \u2220ABD, pi / 2 = \u2220DBA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABD\nConclusions: \u2220ABD = 2 * pi - \u2220DBA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220BCD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220ABD, \u2220CBA, \u2220DBC\nConclusions: 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BAD), AB \u22a5 BD\nConclusions: BD / AD = sin(\u2220BAD)\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220ADB, C on AD\nConclusions: \u2220ADB = \u2220CDB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220BAD, C on AD\nConclusions: \u2220BAC = \u2220BAD\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220BCA\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220ABD = 2 * pi - \u2220DBA, (3 * pi) / 2 = \u2220ABD, pi / 2 = \u2220DBA, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220ABD, 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220CBA + \u2220DBC\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 17:\nTheorem: Substitution\nPremises : 12 = AD, BD / AD = sin(\u2220BAD), x = BD\nConclusions: x / 12 = sin(\u2220BAD)\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 19:\nTheorem: Sin Function Definition\nPremises : \u2220DBC, \u25b3BCD, BC \u22a5 CD\nConclusions: CD / BD = sin(\u2220DBC)\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220BCA\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220BCA\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220DBA, pi = \u2220ADB + \u2220BAD + \u2220DBA, \u2220ADB = \u2220CDB\nConclusions: 3.14 = 3.14 / 2 + \u2220BAD + \u2220CDB\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCD + \u2220CDB + \u2220DBC, pi / 2 = \u2220BCD\nConclusions: 3.14 = pi / 2 + \u2220CDB + \u2220DBC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = 2 * pi - \u2220ACB, 2 * 3.14 - 3.14 / 2 = \u2220BCA\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ACB\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * pi) / 2 + \u2220CBA + \u2220DBC, 3.14 = 3.14 / 2 + \u2220BAD + \u2220CDB, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ACB, \u2220BAC = \u2220BAD, 3.14 = pi / 2 + \u2220CDB + \u2220DBC, 3.14 = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: \u2220BAC = \u2220DBC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220BAD, \u2220BAC = \u2220DBC\nConclusions: \u2220BAD = \u2220DBC\n\nStep 28:\nTheorem: Substitution\nPremises : CD / BD = sin(\u2220DBC), 8 = CD, \u2220BAD = \u2220DBC, x = BD\nConclusions: 8 / x = sin(\u2220BAD)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 8 / x = sin(\u2220BAD), x / 12 = sin(\u2220BAD)\nConclusions: x / 12 = 8 / x\n\nStep 30:\nTheorem: Solve Univariate Equation\nPremises : x / 12 = 8 / x\nConclusions: 9.8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, B), Line(B, D))",
+        "Perpendicular(Line(A, D), Line(C, B))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Equals(LengthOf(Line(A, B)), z)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(D, C)), 8.0)"
+    ],
+    "correct": false
+}

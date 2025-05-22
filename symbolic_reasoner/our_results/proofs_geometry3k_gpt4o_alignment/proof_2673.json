@@ -1,0 +1,92 @@
+{
+    "problem_id": "2673",
+    "solved": true,
+    "problem_text": "In \\odot R, find T V. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "PointLiesOnCircle(V, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(R, radius_0_0))",
+        "Perpendicular(Line(V, S), Line(U, S))",
+        "Equals(LengthOf(Line(U, S)), 5)",
+        "Equals(LengthOf(Line(R, S)), 6)",
+        "Circle(R)",
+        "Find(LengthOf(Line(T,V)))"
+    ],
+    "point_instances": [
+        "S",
+        "U",
+        "V",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "TS",
+        "TV",
+        "SV",
+        "US",
+        "UR",
+        "SR"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "S": [
+            171.32558139534885,
+            226.046511627907
+        ],
+        "U": [
+            106.67441860465118,
+            225.58139534883722
+        ],
+        "V": [
+            171.79069767441862,
+            343.72093023255815
+        ],
+        "T": [
+            171.32558139534885,
+            109.76744186046513
+        ],
+        "R": [
+            248.53488372093022,
+            226.97674418604652
+        ]
+    },
+    "problem_choices": [
+        "9.22",
+        "11.00",
+        "12.00",
+        "18.44"
+    ],
+    "choices_precise_value": [
+        9.22,
+        11.0,
+        12.0,
+        18.44
+    ],
+    "problem_answer": 18.44,
+    "total_time": 79.613005,
+    "solution_predicate": "Equals(18.4390889146, LengthOf(Line(T, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS \u22a5 SV, RS, 6 = RS, RV, S on TV, V on \u2299(R, radius_0_0), 5 = SU, \u2299(R, radius_0_0), SV, S on RU, U on \u2299(R, radius_0_0), RS \u22a5 ST\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on TV\nConclusions: TV = ST + SV\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : V on \u2299(R, radius_0_0)\nConclusions: radius_0_0 = RV\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : RV, RS, SV\nConclusions: \u25b3RSV\n\nStep 5:\nTheorem: Line Segment Split\nPremises : S on RU\nConclusions: RU = RS + SU\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : U on \u2299(R, radius_0_0)\nConclusions: radius_0_0 = RU\n\nStep 7:\nTheorem: Circle Vertical Theorem\nPremises : RS \u22a5 ST, \u2299(R, radius_0_0), S on TV\nConclusions: ST = SV\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : \u25b3RSV, RS \u22a5 SV\nConclusions: SV = SqrtOf(RV ** 2 - RS ** 2)\n\nStep 9:\nTheorem: Substitution\nPremises : 6 = RS, radius_0_0 = RU, RU = RS + SU, 5 = SU\nConclusions: 5 + 6 = radius_0_0\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : radius_0_0 = RV, 5 + 6 = radius_0_0\nConclusions: 11 = RV\n\nStep 11:\nTheorem: Substitution\nPremises : 6 = RS, 11 = RV, SV = SqrtOf(RV ** 2 - RS ** 2)\nConclusions: SqrtOf(11 ** 2 - 6 ** 2) = SV\n\nStep 12:\nTheorem: Evaluate\nPremises : 6 = RS, 11 = RV\nConclusions: 9.22 = SqrtOf(RV ** 2 - RS ** 2)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(11 ** 2 - 6 ** 2) = SV, SV = SqrtOf(RV ** 2 - RS ** 2)\nConclusions: SqrtOf(11 ** 2 - 6 ** 2) = SqrtOf(RV ** 2 - RS ** 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(11 ** 2 - 6 ** 2) = SqrtOf(RV ** 2 - RS ** 2), 9.22 = SqrtOf(RV ** 2 - RS ** 2)\nConclusions: 9.22 = SqrtOf(11 ** 2 - 6 ** 2)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 9.22 = SqrtOf(11 ** 2 - 6 ** 2), SqrtOf(11 ** 2 - 6 ** 2) = SV\nConclusions: 9.22 = SV\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : ST = SV, 9.22 = SV\nConclusions: 9.22 = ST\n\nStep 17:\nTheorem: Evaluate\nPremises : 9.22 = ST, 9.22 = SV\nConclusions: 18.44 = ST + SV\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 18.44 = ST + SV, TV = ST + SV\nConclusions: 18.44 = TV\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, S)",
+        "Line(T, V)",
+        "Line(S, V)",
+        "Line(U, S)",
+        "Line(U, R)",
+        "Line(S, R)",
+        "Circle(R, radius_0_0)",
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "PointLiesOnCircle(V, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(R, radius_0_0))",
+        "Perpendicular(Line(V, S), Line(U, S))",
+        "Circle(R, radius_0_0)",
+        "Equals(LengthOf(Line(U, S)), 5.0)",
+        "Equals(LengthOf(Line(R, S)), 6.0)"
+    ],
+    "correct": true
+}

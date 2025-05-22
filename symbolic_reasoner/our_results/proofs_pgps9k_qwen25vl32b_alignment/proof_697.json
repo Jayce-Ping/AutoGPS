@@ -1,0 +1,110 @@
+{
+    "problem_id": "697",
+    "solved": true,
+    "problem_text": "JKLM is a rectangle. MLPR is a rhombus. m \\angle JMK = m \\angle RMP, m \\angle JMK = 55, and m \\angle MRP = 70. Find m \\angle KML.",
+    "logic_forms": [
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(L, P)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(R, P)",
+        "Rectangle(J,K,L,M)",
+        "Rhombus(M,L,P,R)",
+        "Equals(MeasureOf(Angle(J,M,K)),MeasureOf(Angle(R,M,P)))",
+        "Equals(MeasureOf(Angle(J,M,K)),55)",
+        "Equals(MeasureOf(Angle(M,R,P)),70)",
+        "Find(MeasureOf(Angle(K,M,L)))"
+    ],
+    "point_instances": [
+        "R",
+        "P",
+        "M",
+        "L",
+        "K",
+        "J"
+    ],
+    "line_instances": [
+        "RP",
+        "RM",
+        "PL",
+        "MP",
+        "ML",
+        "LK",
+        "MJ",
+        "MK",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            34.372571428571426,
+            198.5867724867725
+        ],
+        "P": [
+            141.54088669950738,
+            198.73234811165844
+        ],
+        "M": [
+            69.3464039408867,
+            91.8856048166393
+        ],
+        "L": [
+            175.93359605911328,
+            91.8856048166393
+        ],
+        "K": [
+            175.71783251231525,
+            38.52709359605912
+        ],
+        "J": [
+            69.2308163265306,
+            38.46995464852608
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        70.0,
+        110.0,
+        140.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        70.0,
+        110.0,
+        140.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 72.346893,
+    "solution_predicate": "Equals(0.6108652382, MeasureOf(Angle(L, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (55 / 180) = \u2220KMJ, \u2220KMJ, \u2220LMK, \u2220JML, Rectangle(J, K, L, M), 3.14 = pi\n\nStep 2:\nTheorem: Circumference splited\nPremises : \u2220JML, \u2220LMK, \u2220KMJ\nConclusions: 2 * pi = \u2220JML + \u2220KMJ + \u2220LMK\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, L, M)\nConclusions: JM \u22a5 LM\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : JM \u22a5 LM\nConclusions: (3 * pi) / 2 = \u2220JML\n\nStep 7:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JKM = \u2220LMK\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (55 / 180) = \u2220KMJ, (3 * pi) / 2 = \u2220JML, 2 * pi = \u2220JML + \u2220KMJ + \u2220LMK, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (55 / 180) + \u2220LMK\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (55 / 180) + \u2220LMK, \u2220JKM = \u2220LMK\nConclusions: 0.61 = \u2220JKM\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.61 = \u2220JKM, \u2220JKM = \u2220LMK\nConclusions: 0.61 = \u2220LMK\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, P)",
+        "Line(R, M)",
+        "Line(P, L)",
+        "Line(M, P)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(M, J)",
+        "Line(M, K)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(L, P)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(R, P)",
+        "Rectangle(J, K, L, M)",
+        "Rhombus(M, L, P, R)",
+        "Equals(MeasureOf(Angle(K, M, J)), MeasureOf(Angle(R, M, P)))",
+        "Equals(MeasureOf(Angle(K, M, J)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, R, M)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

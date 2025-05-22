@@ -1,0 +1,93 @@
+{
+    "problem_id": "2883",
+    "solved": true,
+    "problem_text": "Find m \\angle 3.",
+    "logic_forms": [
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Perpendicular(Line(Y, Z), Line(T, Z))",
+        "Perpendicular(Line(X, W), Line(T, W))",
+        "Perpendicular(Line(W, X), Line(Y, X))",
+        "Perpendicular(Line(X, Y), Line(T, Y))",
+        "Equals(MeasureOf(Angle(Z, T, W)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(Z, T, Y)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(X, W, Z)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(Z, W, T)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), 52)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 38)",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "Z",
+        "W",
+        "T"
+    ],
+    "line_instances": [
+        "WX",
+        "YZ",
+        "YW",
+        "ZW",
+        "YX",
+        "TZ",
+        "TY",
+        "TW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            87.34234234234233,
+            374.77477477477476
+        ],
+        "X": [
+            497.2522522522522,
+            375.2252252252252
+        ],
+        "Z": [
+            245.45045045045043,
+            252.70270270270268
+        ],
+        "W": [
+            495.90090090090087,
+            56.75675675675675
+        ],
+        "T": [
+            85.99099099099098,
+            56.75675675675675
+        ]
+    },
+    "problem_choices": [
+        "28",
+        "38",
+        "52",
+        "62"
+    ],
+    "choices_precise_value": [
+        28.0,
+        38.0,
+        52.0,
+        62.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 35.543324,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(T, W, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on WY, TW \u22a5 WX, WX \u22a5 XY, \u2220TWY, pi * (38 / 180) = \u2220XYZ, \u2220XYW\n\nStep 2:\nTheorem: Perpendicular to Parallel\nPremises : WX \u22a5 XY, TW \u22a5 WX\nConclusions: TW || YX\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220TWY, Z on WY\nConclusions: \u2220TWY = \u2220TWZ\n\nStep 4:\nTheorem: Same Angle\nPremises : Z on WY, \u2220XYW\nConclusions: \u2220XYW = \u2220XYZ\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : TW || YX\nConclusions: \u2220TWY = \u2220XYW\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220XYZ, \u2220XYW = \u2220XYZ\nConclusions: pi * (38 / 180) = \u2220XYW\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TWY = \u2220TWZ, \u2220TWY = \u2220XYW, pi * (38 / 180) = \u2220XYW\nConclusions: pi * (38 / 180) = \u2220TWZ\n\nStep 8:\nTheorem: Evaluate\nPremises : pi * (38 / 180) = \u2220TWZ\nConclusions: 0.66 = \u2220TWZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(Y, Z)",
+        "Line(Y, W)",
+        "Line(Z, W)",
+        "Line(Y, X)",
+        "Line(T, Z)",
+        "Line(T, Y)",
+        "Line(T, W)",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Perpendicular(Line(Y, Z), Line(T, Z))",
+        "Perpendicular(Line(X, W), Line(T, W))",
+        "Perpendicular(Line(W, X), Line(Y, X))",
+        "Perpendicular(Line(X, Y), Line(T, Y))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,63 @@
+{
+    "problem_id": "2889",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F, D)), x)",
+        "Equals(LengthOf(Line(G, F)), 19)",
+        "Equals(LengthOf(Line(D, G)), 15)",
+        "Equals(MeasureOf(Angle(F, G, D)), 125)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "G",
+        "D",
+        "F"
+    ],
+    "line_instances": [
+        "GF",
+        "DF",
+        "DG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            111.88630490956072,
+            155.67700258397932
+        ],
+        "D": [
+            33.07493540051679,
+            40.94832041343669
+        ],
+        "F": [
+            284.7545219638243,
+            154.9018087855297
+        ]
+    },
+    "problem_choices": [
+        "15.1",
+        "30.2",
+        "60.4",
+        "912.9"
+    ],
+    "choices_precise_value": [
+        15.1,
+        30.2,
+        60.4,
+        912.9
+    ],
+    "problem_answer": 30.2,
+    "total_time": 9.454625,
+    "solution_predicate": "Equals(30.2148733031, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 19 = FG, 3.14 = pi, DF, FG, pi * (125 / 180) = \u2220FGD, DG, x = DF, 15 = DG\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 2.18 = pi * (125 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : DG, FG, DF\nConclusions: \u25b3DFG\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (125 / 180) = \u2220FGD, 2.18 = pi * (125 / 180)\nConclusions: 2.18 = \u2220FGD\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3DFG\nConclusions: (DG ** 2 + FG ** 2) - DF ** 2 = 2 * DG * FG * cos(\u2220FGD)\n\nStep 6:\nTheorem: Substitution\nPremises : 19 = FG, (DG ** 2 + FG ** 2) - DF ** 2 = 2 * DG * FG * cos(\u2220FGD), x = DF, 15 = DG, 2.18 = \u2220FGD\nConclusions: 15 * 19 * 2 * cos(2.18) = (15 ** 2 + 19 ** 2) - x ** 2\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 15 * 19 * 2 * cos(2.18) = (15 ** 2 + 19 ** 2) - x ** 2\nConclusions: 30.21 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Equals(LengthOf(Line(F, D)), x)",
+        "Equals(LengthOf(Line(G, F)), 19.0)",
+        "Equals(LengthOf(Line(D, G)), 15.0)",
+        "Equals(MeasureOf(Angle(F, G, D)), Mul(pi, Div(125.0, 180.0)))"
+    ],
+    "correct": true
+}

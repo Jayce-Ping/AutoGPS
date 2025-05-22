@@ -1,0 +1,98 @@
+{
+    "problem_id": "5922",
+    "solved": true,
+    "problem_text": "Find the perimeter of the \\triangle ABC, if \\triangle ABC \\sim \\triangle CBD, AD = 5, CD = 12, and BC = 31.2.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 5)",
+        "Equals(LengthOf(Line(C, B)), 31.2)",
+        "Equals(LengthOf(Line(C, D)), 12)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Similar(Triangle(A,B,C),Triangle(C,B,D))",
+        "Equals(LengthOf(Line(A,D)),5)",
+        "Equals(LengthOf(Line(C,D)),12)",
+        "Equals(LengthOf(Line(B,C)),31.2)",
+        "Find(PerimeterOf(Triangle(A,B,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "DB",
+        "AC",
+        "CB",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            128.93571428571425,
+            192.46621621621622
+        ],
+        "A": [
+            68.16461538461539,
+            46.30977130977131
+        ],
+        "D": [
+            128.545,
+            46.520270270270274
+        ],
+        "B": [
+            477.0120512820513,
+            46.30977130977131
+        ]
+    },
+    "problem_choices": [
+        32.5,
+        72.0,
+        78.0,
+        187.2
+    ],
+    "choices_precise_value": [
+        32.5,
+        72.0,
+        78.0,
+        187.2
+    ],
+    "problem_answer": 78.0,
+    "total_time": 66.249374,
+    "solution_predicate": "Equals(77.9999999988, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD \u22a5 CD, AC, \u25b3ABC ~ \u25b3CBD, AD, 3.14 = pi, \u2220DCA, sin(\u2220DBC), 12 = CD, sin(\u2220CAB), AC \u22a5 BC, AD \u22a5 CD, tan(\u2220CAB), D on AB, \u2220CAD, 31.2 = BC, 5 = AD, CD, \u2220CAB, \u25b3ABC\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3CBD\nConclusions: \u2220ABC = \u2220DBC\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220DBC), BD \u22a5 CD\nConclusions: CD / BC = sin(\u2220DBC)\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CAB), AC \u22a5 BC\nConclusions: BC / AB = sin(\u2220CAB)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC\n\nStep 7:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CAB), AC \u22a5 BC\nConclusions: BC / AC = tan(\u2220CAB)\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220CAB, D on AB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 10:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 12:\nTheorem: Substitution\nPremises : 12 = CD, CD / BC = sin(\u2220DBC), 31.2 = BC\nConclusions: 12 / 31.2 = sin(\u2220DBC)\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 14:\nTheorem: Tan Function Definition\nPremises : \u25b3ACD, \u2220CAD, AD \u22a5 CD\nConclusions: CD / AD = tan(\u2220CAD)\n\nStep 15:\nTheorem: Cos Function Definition\nPremises : \u2220DCA, \u25b3ACD, AD \u22a5 CD\nConclusions: CD / AC = cos(\u2220DCA)\n\nStep 16:\nTheorem: Sin Function Definition\nPremises : \u25b3ACD, \u2220CAD, AD \u22a5 CD\nConclusions: CD / AC = sin(\u2220CAD)\n\nStep 17:\nTheorem: Substitution\nPremises : 31.2 = BC, \u2220CAB = \u2220CAD, BC / AB = sin(\u2220CAB)\nConclusions: 31.2 / AB = sin(\u2220CAD)\n\nStep 18:\nTheorem: Substitution\nPremises : 31.2 = BC, \u2220CAB = \u2220CAD, BC / AC = tan(\u2220CAB)\nConclusions: 31.2 / AC = tan(\u2220CAD)\n\nStep 19:\nTheorem: Substitution\nPremises : 31.2 = BC, Perimeter(\u25b3ABC) = AB + AC + BC\nConclusions: Perimeter(\u25b3ABC) = 31.2 + AB + AC\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220CAB = \u2220CAD, 3.14 = pi, pi / 2 = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220ABC = \u2220DBC\nConclusions: 3.14 = pi / 2 + \u2220CAD + \u2220DBC\n\nStep 21:\nTheorem: Solve Univariate Equation\nPremises : 12 / 31.2 = sin(\u2220DBC)\nConclusions: 0.39 = \u2220DBC\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220ADC, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = pi / 2 + \u2220CAD + \u2220DCA\n\nStep 23:\nTheorem: Substitution\nPremises : 12 = CD, CD / AD = tan(\u2220CAD), 5 = AD\nConclusions: 12 / 5 = tan(\u2220CAD)\n\nStep 24:\nTheorem: Substitution\nPremises : 12 = CD, CD / AC = sin(\u2220CAD)\nConclusions: 12 / AC = sin(\u2220CAD)\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220CAD + \u2220DCA, 3.14 = pi / 2 + \u2220CAD + \u2220DBC, \u2220ABC = \u2220DBC\nConclusions: \u2220ABC = \u2220DCA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 31.2 / AC = tan(\u2220CAD), 12 / 5 = tan(\u2220CAD)\nConclusions: 12 / 5 = 31.2 / AC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 31.2 / AB = sin(\u2220CAD), 12 / AC = sin(\u2220CAD)\nConclusions: 31.2 / AB = 12 / AC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DBC, \u2220ABC = \u2220DCA\nConclusions: \u2220DBC = \u2220DCA\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 0.39 = \u2220DBC, \u2220DBC = \u2220DCA\nConclusions: 0.39 = \u2220DCA\n\nStep 30:\nTheorem: Substitution\nPremises : 12 = CD, 0.39 = \u2220DCA, CD / AC = cos(\u2220DCA)\nConclusions: cos(0.39) = 12 / AC\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : cos(0.39) = 12 / AC, 31.2 / AB = 12 / AC\nConclusions: cos(0.39) = 31.2 / AB\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : cos(0.39) = 31.2 / AB, Perimeter(\u25b3ABC) = 31.2 + AB + AC, 12 / 5 = 31.2 / AC\nConclusions: 78 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Similar(Triangle(A, B, C), Triangle(C, B, D))",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), 31.2)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 31.2)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,82 @@
+{
+    "problem_id": "2895",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(B, C)), 3)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 12)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.97035040431267,
+            183.3746630727763
+        ],
+        "B": [
+            40.700808625336926,
+            37.01347708894879
+        ],
+        "C": [
+            99.46091644204851,
+            64.50673854447439
+        ],
+        "D": [
+            336.6576819407008,
+            183.10512129380055
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "6 \\sqrt { 2 }",
+        "6 \\sqrt { 3 }",
+        "6 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.485281374238571,
+        10.392304845413264,
+        13.416407864998739
+    ],
+    "problem_answer": 13.416407864998739,
+    "total_time": 43.511993,
+    "solution_predicate": "Equals(13.416407865, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, C on BD, AB, AB \u22a5 AD, BD, \u2220BDA, 3 = BC, \u2220BDA, AC \u22a5 CD, z = AD, 12 = CD, cos(\u2220CDA)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BD, AD\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220CDA), AC \u22a5 CD\nConclusions: CD / AD = cos(\u2220CDA)\n\nStep 6:\nTheorem: Substitution\nPremises : 12 = CD, BD = BC + CD, 3 = BC\nConclusions: 12 + 3 = BD\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : \u2220BDA, \u25b3ABD, AB \u22a5 AD\nConclusions: AD / BD = cos(\u2220BDA)\n\nStep 8:\nTheorem: Substitution\nPremises : z = AD, 12 = CD, CD / AD = cos(\u2220CDA)\nConclusions: 12 / z = cos(\u2220CDA)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 12 + 3 = BD\nConclusions: 15 = BD\n\nStep 10:\nTheorem: Substitution\nPremises : z = AD, 15 = BD, AD / BD = cos(\u2220BDA), \u2220BDA = \u2220CDA\nConclusions: z / 15 = cos(\u2220CDA)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 12 / z = cos(\u2220CDA), z / 15 = cos(\u2220CDA)\nConclusions: 12 / z = z / 15\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 12 / z = z / 15\nConclusions: 13.42 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(B, C)), 3.0)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 12.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,96 @@
+{
+    "problem_id": "2822",
+    "solved": true,
+    "problem_text": "For trapezoid T R S V, M and N are midpoints of the legs. If T R = 32 and M N = 25, find V S.",
+    "logic_forms": [
+        "PointLiesOnLine(N, Line(R, S))",
+        "PointLiesOnLine(M, Line(T, V))",
+        "Trapezoid(T,R,S,V)",
+        "IsMidpointOf(Point(M),LegOf(Trapezoid(T,R,S,V)))",
+        "IsMidpointOf(Point(N),LegOf(Trapezoid(T,R,S,V)))",
+        "Equals(LengthOf(Line(T,R)),32)",
+        "Equals(LengthOf(Line(M,N)),25)",
+        "Find(LengthOf(Line(V,S)))"
+    ],
+    "point_instances": [
+        "N",
+        "T",
+        "S",
+        "V",
+        "R",
+        "M"
+    ],
+    "line_instances": [
+        "VS",
+        "RN",
+        "RS",
+        "NS",
+        "TR",
+        "TM",
+        "TV",
+        "MV",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            192.34831460674155,
+            108.76404494382022
+        ],
+        "T": [
+            39.31460674157303,
+            48.53932584269663
+        ],
+        "S": [
+            183.35955056179773,
+            170.1123595505618
+        ],
+        "V": [
+            92.12359550561797,
+            170.1123595505618
+        ],
+        "R": [
+            201.56179775280899,
+            48.08988764044943
+        ],
+        "M": [
+            66.0561797752809,
+            109.6629213483146
+        ]
+    },
+    "problem_choices": [
+        "18",
+        "36",
+        "50",
+        "64"
+    ],
+    "choices_precise_value": [
+        18.0,
+        36.0,
+        50.0,
+        64.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 22.218512,
+    "solution_predicate": "Equals(18.0, LengthOf(Line(V, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 25 = MN, 32 = RT, Trapezoid(R, S, V, T), N on RS, M on TV, IsMidpointOf(M, TV), IsMidpointOf(N, RS)\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(M, TV)\nConclusions: MT = MV\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(N, RS)\nConclusions: NR = NS\n\nStep 4:\nTheorem: Median of Trapezoid\nPremises : Trapezoid(R, S, V, T), MT = MV, NR = NS\nConclusions: IsMedianOf(MN, Trapezoid(R, S, V, T))\n\nStep 5:\nTheorem: Median of a Trapezoid Properties\nPremises : N on RS, M on TV, IsMedianOf(MN, Trapezoid(R, S, V, T))\nConclusions: MN = (RT + SV) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : 32 = RT, MN = (RT + SV) / 2, 25 = MN\nConclusions: 25 = (32 + SV) / 2\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 25 = (32 + SV) / 2\nConclusions: 18 = SV\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, S)",
+        "Line(R, N)",
+        "Line(R, S)",
+        "Line(N, S)",
+        "Line(T, R)",
+        "Line(T, M)",
+        "Line(T, V)",
+        "Line(M, V)",
+        "Line(M, N)",
+        "PointLiesOnLine(N, Line(R, S))",
+        "PointLiesOnLine(M, Line(T, V))",
+        "Trapezoid(T, R, S, V)",
+        "IsMidpointOf(M, Line(T, V))",
+        "IsMidpointOf(N, Line(R, S))",
+        "Equals(LengthOf(Line(T, R)), 32.0)",
+        "Equals(LengthOf(Line(M, N)), 25.0)"
+    ],
+    "correct": true
+}

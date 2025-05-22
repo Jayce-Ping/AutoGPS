@@ -1,0 +1,163 @@
+{
+    "problem_id": "6837",
+    "solved": true,
+    "problem_text": "PA = 2.9, and HC = 10.8. Solve for the length of PC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, H)), LengthOf(Line(G, A)))",
+        "Equals(LengthOf(Line(G, C)), LengthOf(Line(J, C)))",
+        "Equals(LengthOf(Line(H, B)), LengthOf(Line(B, J)))",
+        "Line(A, H)",
+        "Line(A, J)",
+        "Line(A, P)",
+        "Line(B, J)",
+        "Line(C, H)",
+        "Line(C, J)",
+        "Line(C, P)",
+        "Line(G, A)",
+        "Line(G, B)",
+        "Line(G, C)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, P)",
+        "Line(H, B)",
+        "Line(H, J)",
+        "Line(P, B)",
+        "Line(P, H)",
+        "Line(P, J)",
+        "PointLiesOnLine(A, Line(G, H))",
+        "PointLiesOnLine(B, Line(H, J))",
+        "PointLiesOnLine(C, Line(G, J))",
+        "PointLiesOnLine(P, Line(A, J))",
+        "PointLiesOnLine(P, Line(C, H))",
+        "PointLiesOnLine(P, Line(G, B))",
+        "Equals(LengthOf(Line(P,A)),2.9)",
+        "Equals(LengthOf(Line(H,C)),10.8)",
+        "Find(LengthOf(Line(P,C)))"
+    ],
+    "point_instances": [
+        "H",
+        "A",
+        "B",
+        "P",
+        "G",
+        "C",
+        "J"
+    ],
+    "line_instances": [
+        "GA",
+        "GH",
+        "AH",
+        "GP",
+        "GB",
+        "PB",
+        "GC",
+        "GJ",
+        "CJ",
+        "CP",
+        "CH",
+        "PH",
+        "AP",
+        "AJ",
+        "PJ",
+        "HB",
+        "HJ",
+        "BJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            409.6875,
+            48.471428571428575
+        ],
+        "A": [
+            226.40625,
+            117.87020408163266
+        ],
+        "B": [
+            402.94921875,
+            133.29642857142858
+        ],
+        "P": [
+            282.46875,
+            151.41551020408164
+        ],
+        "G": [
+            43.364583333333336,
+            185.98666666666665
+        ],
+        "C": [
+            218.859375,
+            202.50285714285715
+        ],
+        "J": [
+            394.59375,
+            218.1983673469388
+        ]
+    },
+    "problem_choices": [
+        3.6,
+        7.2,
+        8.7,
+        32.4
+    ],
+    "choices_precise_value": [
+        3.6,
+        7.2,
+        8.7,
+        32.4
+    ],
+    "problem_answer": 3.6,
+    "total_time": 265.156757,
+    "solution_predicate": "Equals(3.6, LengthOf(Line(P, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on CH, P on BG, GH, CG = CJ, AG = AH, P on AJ, 10.8 = CH, HJ, GJ, BH = BJ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : GH, GJ, HJ\nConclusions: \u25b3GHJ\n\nStep 3:\nTheorem: Centroid of Triangle\nPremises : CG = CJ, P on CH, P on AJ, AG = AH, P on BG, BH = BJ, \u25b3GHJ\nConclusions: IsCentroidOf(P, \u25b3GHJ)\n\nStep 4:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(P, \u25b3GHJ)\nConclusions: AG = AH, BH = BJ, CH = 3 * CP\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 10.8 = CH, CH = 3 * CP\nConclusions: 10.8 = 3 * CP\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 10.8 = 3 * CP\nConclusions: 3.6 = CP\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, H)",
+        "Line(A, H)",
+        "Line(G, P)",
+        "Line(G, B)",
+        "Line(P, B)",
+        "Line(G, C)",
+        "Line(G, J)",
+        "Line(C, J)",
+        "Line(C, P)",
+        "Line(C, H)",
+        "Line(P, H)",
+        "Line(A, P)",
+        "Line(A, J)",
+        "Line(P, J)",
+        "Line(H, B)",
+        "Line(H, J)",
+        "Line(B, J)",
+        "Line(A, H)",
+        "Line(A, J)",
+        "Line(A, P)",
+        "Line(B, J)",
+        "Line(C, H)",
+        "Line(C, J)",
+        "Line(C, P)",
+        "Line(G, A)",
+        "Line(G, B)",
+        "Line(G, C)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, P)",
+        "Line(H, B)",
+        "Line(H, J)",
+        "Line(P, B)",
+        "Line(P, H)",
+        "Line(P, J)",
+        "PointLiesOnLine(A, Line(G, H))",
+        "PointLiesOnLine(B, Line(H, J))",
+        "PointLiesOnLine(C, Line(G, J))",
+        "PointLiesOnLine(P, Line(A, J))",
+        "PointLiesOnLine(P, Line(C, H))",
+        "PointLiesOnLine(P, Line(G, B))",
+        "Equals(LengthOf(Line(A, H)), LengthOf(Line(G, A)))",
+        "Equals(LengthOf(Line(G, C)), LengthOf(Line(J, C)))",
+        "Equals(LengthOf(Line(H, B)), LengthOf(Line(B, J)))",
+        "Equals(LengthOf(Line(P, A)), 2.9)",
+        "Equals(LengthOf(Line(H, C)), 10.8)"
+    ],
+    "correct": true
+}

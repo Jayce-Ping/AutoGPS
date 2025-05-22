@@ -1,0 +1,111 @@
+{
+    "problem_id": "112",
+    "solved": true,
+    "problem_text": "PRYZ is a rhombus. If RK = 5, RY = 13 and m \\angle YRZ = 67, what is m \\angle RYK?",
+    "logic_forms": [
+        "Line(K, P)",
+        "Line(K, Z)",
+        "Line(P, Z)",
+        "Line(R, K)",
+        "Line(R, P)",
+        "Line(R, Y)",
+        "Line(R, Z)",
+        "Line(Y, K)",
+        "Line(Y, P)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(K, Line(R, Z))",
+        "PointLiesOnLine(K, Line(Y, P))",
+        "Rhombus(P,R,Y,Z)",
+        "Equals(LengthOf(Line(R,K)),5)",
+        "Equals(LengthOf(Line(R,Y)),13)",
+        "Equals(MeasureOf(Angle(Y,R,Z)),67)",
+        "Find(MeasureOf(Angle(R,Y,K)))"
+    ],
+    "point_instances": [
+        "Y",
+        "R",
+        "K",
+        "Z",
+        "P"
+    ],
+    "line_instances": [
+        "RK",
+        "RZ",
+        "KZ",
+        "YK",
+        "YP",
+        "KP",
+        "RP",
+        "YZ",
+        "RY",
+        "PZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            192.76190476190476,
+            37.64571428571429
+        ],
+        "R": [
+            65.55102040816327,
+            69.01714285714286
+        ],
+        "K": [
+            147.36507936507937,
+            113.16952380952382
+        ],
+        "Z": [
+            229.42857142857144,
+            158.94857142857146
+        ],
+        "P": [
+            101.96825396825398,
+            190.08761904761906
+        ]
+    },
+    "problem_choices": [
+        23.0,
+        46.0,
+        90.0,
+        134.0
+    ],
+    "choices_precise_value": [
+        23.0,
+        46.0,
+        90.0,
+        134.0
+    ],
+    "problem_answer": 23.0,
+    "total_time": 116.680343,
+    "solution_predicate": "Equals(0.401425728, MeasureOf(Angle(R, Y, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on PY, PR, \u2220PRZ, 3.14 = pi, \u2220RYP, pi * (67 / 180) = \u2220ZRY, K on RZ, KR, \u2220YPR, Rhombus(P, R, Y, Z), KP\n\nStep 2:\nTheorem: Same Angle\nPremises : K on PY, \u2220RYP\nConclusions: \u2220RYK = \u2220RYP\n\nStep 3:\nTheorem: Same Angle\nPremises : K on RZ, \u2220PRZ\nConclusions: \u2220PRK = \u2220PRZ\n\nStep 4:\nTheorem: Same Angle\nPremises : K on PY, \u2220YPR\nConclusions: \u2220KPR = \u2220YPR\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(P, R, Y, Z)\nConclusions: Parallelogram(P, R, Y, Z)\n\nStep 6:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(P, R, Y, Z)\nConclusions: \u2220YPR = \u2220ZPY, \u2220PRZ = \u2220ZRY\n\nStep 7:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(P, R, Y, Z)\nConclusions: KP \u22a5 KR\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : KP, PR, KR\nConclusions: \u25b3KPR\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(P, R, Y, Z)\nConclusions: PZ || RY\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YPR = \u2220ZPY, \u2220KPR = \u2220YPR\nConclusions: \u2220KPR = \u2220ZPY\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (67 / 180) = \u2220ZRY, \u2220PRZ = \u2220ZRY\nConclusions: pi * (67 / 180) = \u2220PRZ\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : KP \u22a5 KR\nConclusions: pi / 2 = \u2220RKP\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(K, P, R)\nPremises : \u25b3KPR\nConclusions: pi = \u2220KPR + \u2220PRK + \u2220RKP\n\nStep 14:\nTheorem: Alternate Interior Angle Theorem\nPremises : PZ || RY\nConclusions: \u2220RYP = \u2220ZPY\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRK = \u2220PRZ, pi * (67 / 180) = \u2220PRZ\nConclusions: pi * (67 / 180) = \u2220PRK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RYP = \u2220ZPY, \u2220RYK = \u2220RYP\nConclusions: \u2220RYK = \u2220ZPY\n\nStep 17:\nTheorem: Substitution\nPremises : pi = \u2220KPR + \u2220PRK + \u2220RKP, pi * (67 / 180) = \u2220PRK, \u2220KPR = \u2220ZPY, pi / 2 = \u2220RKP, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (67 / 180) + \u2220ZPY\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (67 / 180) + \u2220ZPY, \u2220RYK = \u2220ZPY\nConclusions: 0.4 = \u2220RYK\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, K)",
+        "Line(R, Z)",
+        "Line(K, Z)",
+        "Line(Y, K)",
+        "Line(Y, P)",
+        "Line(K, P)",
+        "Line(R, P)",
+        "Line(Y, Z)",
+        "Line(R, Y)",
+        "Line(P, Z)",
+        "Line(K, P)",
+        "Line(K, Z)",
+        "Line(P, Z)",
+        "Line(R, K)",
+        "Line(R, P)",
+        "Line(R, Y)",
+        "Line(R, Z)",
+        "Line(Y, K)",
+        "Line(Y, P)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(K, Line(R, Z))",
+        "PointLiesOnLine(K, Line(Y, P))",
+        "Rhombus(P, R, Y, Z)",
+        "Equals(LengthOf(Line(R, K)), 5.0)",
+        "Equals(LengthOf(Line(R, Y)), 13.0)",
+        "Equals(MeasureOf(Angle(Z, R, Y)), Mul(pi, Div(67.0, 180.0)))"
+    ],
+    "correct": true
+}

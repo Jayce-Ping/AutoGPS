@@ -1,0 +1,133 @@
+{
+    "problem_id": "2790",
+    "solved": true,
+    "problem_text": "U J = 9, V J = 3, and Z T = 18. Find S V.",
+    "logic_forms": [
+        "PointLiesOnLine(V, Line(Z, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "PointLiesOnLine(Y, Line(S, Z))",
+        "PointLiesOnLine(J, Line(T, Z))",
+        "PointLiesOnLine(J, Line(S, V))",
+        "PointLiesOnLine(J, Line(Y, U))",
+        "Equals(LengthOf(Line(S, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(Z, V)), LengthOf(Line(V, U)))",
+        "Equals(LengthOf(Line(S, T)), LengthOf(Line(T, U)))",
+        "Equals(LengthOf(Line(V, J)), 3)",
+        "Equals(LengthOf(Line(U, J)), 9)",
+        "Equals(LengthOf(Line(U,J)),9)",
+        "Equals(LengthOf(Line(V,J)),3)",
+        "Equals(LengthOf(Line(Z,T)),18)",
+        "Find(LengthOf(Line(S,V)))"
+    ],
+    "point_instances": [
+        "Y",
+        "S",
+        "Z",
+        "U",
+        "V",
+        "T",
+        "J"
+    ],
+    "line_instances": [
+        "ZV",
+        "ZU",
+        "VU",
+        "ST",
+        "SU",
+        "TU",
+        "SY",
+        "SZ",
+        "YZ",
+        "TJ",
+        "TZ",
+        "JZ",
+        "SJ",
+        "SV",
+        "JV",
+        "YJ",
+        "YU",
+        "JU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            155.14285714285714,
+            279.1666666666667
+        ],
+        "S": [
+            162.88095238095238,
+            95.83333333333334
+        ],
+        "Z": [
+            149.1904761904762,
+            464.2857142857143
+        ],
+        "U": [
+            675.9761904761905,
+            213.6904761904762
+        ],
+        "V": [
+            415.26190476190476,
+            339.2857142857143
+        ],
+        "T": [
+            420.0238095238095,
+            154.76190476190476
+        ],
+        "J": [
+            330.14285714285717,
+            257.14285714285717
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "6",
+        "9",
+        "12"
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 240.593301,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(S, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: J on UY, UZ, J on TZ, SZ, ST = TU, SY = YZ, J on SV, 3 = JV, SU, UV = VZ\n\nStep 2:\nTheorem: Evaluate\nPremises : 3 = JV\nConclusions: 9 = 3 * JV\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : UZ, SU, SZ\nConclusions: \u25b3SUZ\n\nStep 4:\nTheorem: Centroid of Triangle\nPremises : \u25b3SUZ, SY = YZ, J on UY, J on SV, UV = VZ, ST = TU, J on TZ\nConclusions: IsCentroidOf(J, \u25b3SUZ)\n\nStep 5:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(J, \u25b3SUZ)\nConclusions: UV = VZ, ST = TU, SV = 3 * JV\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : SV = 3 * JV, 9 = 3 * JV\nConclusions: 9 = SV\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, V)",
+        "Line(Z, U)",
+        "Line(V, U)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(T, U)",
+        "Line(S, Y)",
+        "Line(S, Z)",
+        "Line(Y, Z)",
+        "Line(T, J)",
+        "Line(T, Z)",
+        "Line(J, Z)",
+        "Line(S, J)",
+        "Line(S, V)",
+        "Line(J, V)",
+        "Line(Y, J)",
+        "Line(Y, U)",
+        "Line(J, U)",
+        "PointLiesOnLine(V, Line(Z, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "PointLiesOnLine(Y, Line(S, Z))",
+        "PointLiesOnLine(J, Line(T, Z))",
+        "PointLiesOnLine(J, Line(S, V))",
+        "PointLiesOnLine(J, Line(Y, U))",
+        "Equals(LengthOf(Line(S, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(Z, V)), LengthOf(Line(V, U)))",
+        "Equals(LengthOf(Line(S, T)), LengthOf(Line(T, U)))",
+        "Equals(LengthOf(Line(V, J)), 3.0)",
+        "Equals(LengthOf(Line(U, J)), 9.0)",
+        "Equals(LengthOf(Line(U, J)), 9.0)",
+        "Equals(LengthOf(Line(V, J)), 3.0)",
+        "Equals(LengthOf(Line(Z, T)), 18.0)"
+    ],
+    "correct": true
+}

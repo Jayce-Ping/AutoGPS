@@ -1,0 +1,92 @@
+{
+    "problem_id": "987",
+    "solved": true,
+    "problem_text": "Quadrilateral ABCD is inscribed in \\odot P. If m \\angle B = 80 and m \\angle C = 40, find m \\widehat DCB.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "InscribedIn(Quadrilateral(A,B,C,D),Circle(P))",
+        "Equals(MeasureOf(Angle(B)),80)",
+        "Equals(MeasureOf(Angle(C)),40)",
+        "Find(MeasureOf(Arc(D,C,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "B": [
+            192.34285714285713,
+            43.55865921787709
+        ],
+        "A": [
+            94.45274725274724,
+            73.79243661366567
+        ],
+        "D": [
+            47.32244897959184,
+            148.44932162809258
+        ],
+        "P": [
+            179.3498253330487,
+            178.88974615147293
+        ],
+        "C": [
+            222.45714285714286,
+            308.8403830806065
+        ]
+    },
+    "problem_choices": [
+        180.0,
+        200.0,
+        240.0,
+        280.0
+    ],
+    "choices_precise_value": [
+        180.0,
+        200.0,
+        240.0,
+        280.0
+    ],
+    "problem_answer": 280.0,
+    "total_time": 68.772995,
+    "solution_predicate": "Equals(4.8869219056, MeasureOf(Arc(D, P, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(DPB), Quadrilateral(A, B, C, D), C on \u2299(P, radius_P), \u2220BCP, CD, B on \u2299(P, radius_P), CP, \u2220DCB, pi * (40 / 180) = \u2220BCD, D on \u2299(P, radius_P), BP, \u2220PCD, 3.14 = pi, BC, 5.59 = 2 * 3.14 - 3.14 * (40 / 180), DP\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DPB)\nConclusions: \u2220DPB = Arc(DPB)\n\nStep 3:\nTheorem: Quadrilateral to is components\nPremises : Quadrilateral(A, B, C, D)\nConclusions: \u2220DCB, BC, CD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(P, radius_P)\nConclusions: radius_P = CP\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : B on \u2299(P, radius_P)\nConclusions: radius_P = BP\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCB\nConclusions: \u2220DCB = 2 * pi - \u2220BCD\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : D on \u2299(P, radius_P)\nConclusions: radius_P = DP\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : BC, CP, BP\nConclusions: \u25b3BCP\n\nStep 9:\nTheorem: Definition of Quadrilateral\nPremises : BC, CD, BP, DP\nConclusions: Quadrilateral(B, C, D, P)\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : CP, CD, DP\nConclusions: \u25b3CDP\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220DCB, \u2220PCD, \u2220BCP\nConclusions: 2 * pi = \u2220BCP + \u2220DCB + \u2220PCD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = BP, radius_P = CP\nConclusions: BP = CP\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (40 / 180) = \u2220BCD, \u2220DCB = 2 * pi - \u2220BCD\nConclusions: 2 * 3.14 - 3.14 * (40 / 180) = \u2220DCB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = DP, radius_P = CP\nConclusions: CP = DP\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(B, C, D, P)\nPremises : Quadrilateral(B, C, D, P)\nConclusions: 2 * pi = \u2220BCD + \u2220CDP + \u2220DPB + \u2220PBC\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BCP + \u2220DCB + \u2220PCD\nConclusions: 2 * 3.14 = \u2220BCP + \u2220DCB + \u2220PCD\n\nStep 17:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCP, BP = CP\nConclusions: \u2220BCP = \u2220PBC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 5.59 = 2 * 3.14 - 3.14 * (40 / 180), 2 * 3.14 - 3.14 * (40 / 180) = \u2220DCB\nConclusions: 5.59 = \u2220DCB\n\nStep 19:\nTheorem: Issoceles Triangle Property\nPremises : CP = DP, \u25b3CDP\nConclusions: \u2220CDP = \u2220PCD\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (40 / 180) = \u2220BCD, \u2220DPB = Arc(DPB), 2 * pi = \u2220BCD + \u2220CDP + \u2220DPB + \u2220PBC\nConclusions: 2 * 3.14 = pi * (40 / 180) + \u2220CDP + \u2220PBC + Arc(DPB)\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220BCP = \u2220PBC, 2 * 3.14 = \u2220BCP + \u2220DCB + \u2220PCD, 5.59 = \u2220DCB\nConclusions: 2 * 3.14 = 5.59 + \u2220PBC + \u2220PCD\n\nStep 22:\nTheorem: Substitution\nPremises : 2 * 3.14 = pi * (40 / 180) + \u2220CDP + \u2220PBC + Arc(DPB), 3.14 = pi, \u2220CDP = \u2220PCD\nConclusions: 2 * 3.14 = 3.14 * (40 / 180) + \u2220PBC + \u2220PCD + Arc(DPB)\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (40 / 180) + \u2220PBC + \u2220PCD + Arc(DPB), \u2220DPB = Arc(DPB), 2 * 3.14 = 5.59 + \u2220PBC + \u2220PCD\nConclusions: 4.89 = \u2220DPB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 4.89 = \u2220DPB, \u2220DPB = Arc(DPB)\nConclusions: 4.89 = Arc(DPB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Circle(P, radius_P)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "InscribedIn(Quadrilateral(A, B, C, D), Circle(P, radius_P))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

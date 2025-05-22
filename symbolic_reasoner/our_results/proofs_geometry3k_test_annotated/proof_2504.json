@@ -1,0 +1,63 @@
+{
+    "problem_id": "2504",
+    "solved": true,
+    "problem_text": "Find x to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(C, B)), 15)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(MeasureOf(Angle(A, C, B)), 70)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            19.060773480662984,
+            129.4917127071823
+        ],
+        "B": [
+            298.3425414364641,
+            129.4917127071823
+        ],
+        "C": [
+            298.3425414364641,
+            26.729281767955797
+        ]
+    },
+    "problem_choices": [
+        "5.13",
+        "5.46",
+        "15.96",
+        "43.86"
+    ],
+    "choices_precise_value": [
+        5.13,
+        5.46,
+        15.96,
+        43.86
+    ],
+    "problem_answer": 43.86,
+    "total_time": 15.351496,
+    "solution_predicate": "Equals(43.8570660023, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (70 / 180) = \u2220ACB, AC, AB, 3.14 = pi, 15 = BC, AB \u22a5 BC, x = AC, BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220CBA\nConclusions: 1.57 = \u2220CBA\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 8:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, pi * (70 / 180) = \u2220ACB, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (70 / 180) + \u2220BAC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (70 / 180) + \u2220BAC\nConclusions: 0.35 = \u2220BAC\n\nStep 10:\nTheorem: Substitution\nPremises : 0.35 = \u2220BAC, x = AC, 15 = BC, AC / sin(\u2220CBA) = BC / sin(\u2220BAC), 1.57 = \u2220CBA\nConclusions: 15 / sin(0.35) = x / sin(1.57)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : x = AC, 15 / sin(0.35) = x / sin(1.57)\nConclusions: 43.86 = AC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 43.86 = AC\nConclusions: 43.86 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(C, B)), 15.0)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

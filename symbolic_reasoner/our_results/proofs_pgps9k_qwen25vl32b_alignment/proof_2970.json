@@ -1,0 +1,128 @@
+{
+    "problem_id": "2970",
+    "solved": true,
+    "problem_text": "JH, JP, and PH are midsegments of \\triangle KLM. Find m \\angle JPM.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(H, J, P)), 57)",
+        "Equals(MeasureOf(Angle(J, H, L)), x)",
+        "Line(H, M)",
+        "Line(J, H)",
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(K, P)",
+        "Line(L, H)",
+        "Line(L, M)",
+        "Line(P, H)",
+        "Line(P, M)",
+        "PointLiesOnLine(H, Line(L, M))",
+        "PointLiesOnLine(J, Line(K, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "IsMidsegmentOf(Line(J,H),Triangle(K,L,M))",
+        "IsMidsegmentOf(Line(J,P),Triangle(K,L,M))",
+        "IsMidsegmentOf(Line(P,H),Triangle(K,L,M))",
+        "Find(MeasureOf(Angle(J,P,M)))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "P",
+        "H",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "MH",
+        "ML",
+        "HL",
+        "LJ",
+        "LK",
+        "JK",
+        "KP",
+        "KM",
+        "PM",
+        "PH",
+        "HJ",
+        "PJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            79.9604743083004,
+            81.52897959183674
+        ],
+        "J": [
+            282.5074110671937,
+            84.25500000000001
+        ],
+        "P": [
+            246.93675889328065,
+            220.7657142857143
+        ],
+        "H": [
+            414.1743522178305,
+            230.94285714285715
+        ],
+        "L": [
+            464.8682476943347,
+            86.63619047619048
+        ],
+        "M": [
+            380.2826086956522,
+            331.8531428571429
+        ]
+    },
+    "problem_choices": [
+        28.5,
+        57.0,
+        66.0,
+        123.0
+    ],
+    "choices_precise_value": [
+        28.5,
+        57.0,
+        66.0,
+        123.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 110.775088,
+    "solution_predicate": "Equals(2.14675498, MeasureOf(Angle(M, P, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, MP, J on KL, H on LM, HM, HJ, \u2220LMP, JP, pi * (x / 180) = \u2220LHJ, IsMidsegmentOf(JP, \u25b3KLM), P on KM, \u2220LMK, pi * (57 / 180) = \u2220PJH, IsMidsegmentOf(HJ, \u25b3KLM)\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220LMP, H on LM\nConclusions: \u2220HMP = \u2220LMP\n\nStep 3:\nTheorem: Midsegment of a Triangle Properties\nPremises : IsMidsegmentOf(JP, \u25b3KLM), P on KM, J on KL\nConclusions: JP || LM\n\nStep 4:\nTheorem: Same Angle\nPremises : P on KM, \u2220LMK\nConclusions: \u2220LMK = \u2220LMP\n\nStep 5:\nTheorem: Midsegment of a Triangle Properties\nPremises : IsMidsegmentOf(HJ, \u25b3KLM), H on LM, J on KL\nConclusions: HJ || MK\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : JP || LM\nConclusions: \u2220LHJ = \u2220PJH\n\nStep 7:\nTheorem: Corresponding Angle Theorem\nPremises : HJ || MK\nConclusions: \u2220LHJ = \u2220LMK\n\nStep 8:\nTheorem: Definition of Parallelogram\nPremises : JP, JP || LM, MP, HJ || MK, HM, HJ\nConclusions: Parallelogram(H, J, P, M)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (57 / 180) = \u2220PJH, pi * (x / 180) = \u2220LHJ, \u2220LHJ = \u2220PJH\nConclusions: pi * (57 / 180) = pi * (x / 180)\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(H, J, P, M)\nConclusions: \u2220JHM = \u2220MPJ\n\nStep 11:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(H, J, P, M)\nConclusions: Quadrilateral(H, J, P, M)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220LHJ, pi * (57 / 180) = pi * (x / 180)\nConclusions: pi * (57 / 180) = \u2220LHJ\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(M, P, J, H)\nPremises : Quadrilateral(H, J, P, M)\nConclusions: 2 * pi = \u2220HMP + \u2220JHM + \u2220MPJ + \u2220PJH\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LHJ = \u2220LMK, pi * (57 / 180) = \u2220LHJ\nConclusions: pi * (57 / 180) = \u2220LMK\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMK = \u2220LMP, pi * (57 / 180) = \u2220LMK\nConclusions: pi * (57 / 180) = \u2220LMP\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (57 / 180) = \u2220LMP, \u2220HMP = \u2220LMP\nConclusions: pi * (57 / 180) = \u2220HMP\n\nStep 17:\nTheorem: Substitution\nPremises : pi * (57 / 180) = \u2220HMP, 3.14 = pi, pi * (57 / 180) = \u2220PJH, 2 * pi = \u2220HMP + \u2220JHM + \u2220MPJ + \u2220PJH, \u2220JHM = \u2220MPJ\nConclusions: 2 * 3.14 = 3.14 * (57 / 180) + pi * (57 / 180) + \u2220MPJ + \u2220MPJ\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : pi * (57 / 180) = \u2220HMP, 2 * 3.14 = 3.14 * (57 / 180) + pi * (57 / 180) + \u2220MPJ + \u2220MPJ, pi * (57 / 180) = \u2220PJH, 2 * pi = \u2220HMP + \u2220JHM + \u2220MPJ + \u2220PJH, \u2220JHM = \u2220MPJ\nConclusions: 2.15 = \u2220JHM\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 2.15 = \u2220JHM, \u2220JHM = \u2220MPJ\nConclusions: 2.15 = \u2220MPJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, H)",
+        "Line(M, L)",
+        "Line(H, L)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Line(J, K)",
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Line(P, H)",
+        "Line(H, J)",
+        "Line(P, J)",
+        "Line(H, M)",
+        "Line(J, H)",
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(K, P)",
+        "Line(L, H)",
+        "Line(L, M)",
+        "Line(P, H)",
+        "Line(P, M)",
+        "PointLiesOnLine(H, Line(L, M))",
+        "PointLiesOnLine(J, Line(K, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "IsMidsegmentOf(Line(J, H), Triangle(K, L, M))",
+        "IsMidsegmentOf(Line(J, P), Triangle(K, L, M))",
+        "IsMidsegmentOf(Line(P, H), Triangle(K, L, M))",
+        "Equals(MeasureOf(Angle(P, J, H)), Mul(pi, Div(57.0, 180.0)))",
+        "Equals(MeasureOf(Angle(L, H, J)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

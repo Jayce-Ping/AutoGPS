@@ -1,0 +1,105 @@
+{
+    "problem_id": "2907",
+    "solved": true,
+    "problem_text": "Find m \\angle J K L.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(J, Line(C, K))",
+        "PointLiesOnLine(M, Line(K, A))",
+        "Perpendicular(Line(K, J), Line(L, J))",
+        "Perpendicular(Line(A, M), Line(L, M))",
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(L, M)))",
+        "Equals(MeasureOf(Angle(L, K, M)), 37)",
+        "Find(MeasureOf(Angle(J, K, L)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L",
+        "M",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "KL",
+        "KB",
+        "LB",
+        "CJ",
+        "CK",
+        "JK",
+        "KM",
+        "KA",
+        "MA",
+        "JL",
+        "LM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            171.719298245614,
+            163.59649122807016
+        ],
+        "K": [
+            101.98245614035085,
+            306.14035087719293
+        ],
+        "L": [
+            243.21052631578942,
+            200.43859649122805
+        ],
+        "M": [
+            244.0877192982456,
+            307.45614035087715
+        ],
+        "A": [
+            389.7017543859649,
+            307.45614035087715
+        ],
+        "B": [
+            368.6491228070175,
+            104.82456140350877
+        ],
+        "C": [
+            218.64912280701753,
+            66.66666666666666
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "37",
+        "53",
+        "73"
+    ],
+    "choices_precise_value": [
+        35.0,
+        37.0,
+        53.0,
+        73.0
+    ],
+    "problem_answer": 37.0,
+    "total_time": 52.078409,
+    "solution_predicate": "Equals(0.6457718232, MeasureOf(Angle(L, K, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JK \u22a5 JL, 3.14 = pi, KM \u22a5 LM, \u2220BKC, JL = LM, J on CK, pi * (37 / 180) = \u2220MKL, L on BK, \u2220BKJ\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 JL\nConclusions: pi / 2 = \u2220KJL\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.65 = pi * (37 / 180)\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 LM\nConclusions: pi / 2 = \u2220LMK\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BKC, J on CK\nConclusions: \u2220BKC = \u2220BKJ\n\nStep 6:\nTheorem: Same Angle\nPremises : L on BK, \u2220BKC\nConclusions: \u2220BKC = \u2220LKC\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220BKJ, L on BK\nConclusions: \u2220BKJ = \u2220LKJ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 0.65 = pi * (37 / 180), pi * (37 / 180) = \u2220MKL\nConclusions: 0.65 = \u2220MKL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220LMK, pi / 2 = \u2220KJL\nConclusions: \u2220KJL = \u2220LMK\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BKC = \u2220BKJ, \u2220BKC = \u2220LKC\nConclusions: \u2220BKJ = \u2220LKC\n\nStep 11:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220KJL = \u2220LMK, JL = LM\nConclusions: \u25b3JKL \u2245 \u25b3MKL\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BKJ = \u2220LKC, \u2220BKJ = \u2220LKJ\nConclusions: \u2220LKC = \u2220LKJ\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3JKL \u2245 \u25b3MKL\nConclusions: \u2220KJL = \u2220LMK, \u2220LKJ = \u2220MKL\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LKJ = \u2220MKL, \u2220LKC = \u2220LKJ, 0.65 = \u2220MKL\nConclusions: 0.65 = \u2220LKC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LKC = \u2220LKJ, 0.65 = \u2220LKC\nConclusions: 0.65 = \u2220LKJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(C, J)",
+        "Line(C, K)",
+        "Line(J, K)",
+        "Line(K, M)",
+        "Line(K, A)",
+        "Line(M, A)",
+        "Line(J, L)",
+        "Line(L, M)",
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(J, Line(C, K))",
+        "PointLiesOnLine(M, Line(K, A))",
+        "Perpendicular(Line(K, J), Line(L, J))",
+        "Perpendicular(Line(A, M), Line(L, M))",
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(L, M)))",
+        "Equals(MeasureOf(Angle(M, K, L)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

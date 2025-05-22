@@ -1,0 +1,136 @@
+{
+    "problem_id": "3048",
+    "solved": true,
+    "problem_text": "Find m \\widehat CD.",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(B, D)), 40)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(G, A)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Perpendicular(Line(D, E), Line(B, C))",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(C, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(E, Circle(A))",
+        "PointLiesOnCircle(F, Circle(A))",
+        "PointLiesOnLine(A, Line(D, E))",
+        "PointLiesOnLine(A, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "PointLiesOnLine(G, Line(D, A))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "Find(MeasureOf(Arc(C,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "A",
+        "G",
+        "D",
+        "F",
+        "C"
+    ],
+    "line_instances": [
+        "DG",
+        "DA",
+        "DE",
+        "GA",
+        "GE",
+        "AE",
+        "BG",
+        "BC",
+        "GC",
+        "AF"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "B": [
+            77.22826086956522,
+            82.46
+        ],
+        "E": [
+            287.6086956521739,
+            121.97999999999999
+        ],
+        "A": [
+            174.5333268891853,
+            141.3492976405357
+        ],
+        "G": [
+            91.30434782608695,
+            156.6685714285714
+        ],
+        "D": [
+            61.630434782608695,
+            161.88
+        ],
+        "F": [
+            262.5,
+            215.45999999999998
+        ],
+        "C": [
+            103.3695652173913,
+            231.25714285714284
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        50.0,
+        80.0,
+        140.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        50.0,
+        80.0,
+        140.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 83.577477,
+    "solution_predicate": "Equals(0.6981317008, MeasureOf(Arc(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = Arc(BAD), G on BC, \u2220BAD, Arc(BAD), \u2299(A, radius_A), G on AD, Arc(DAC), \u2220DAC, AG \u22a5 BG, 3.14 = pi\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BAD)\nConclusions: \u2220BAD = Arc(BAD)\n\nStep 3:\nTheorem: Same Angle\nPremises : G on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAG\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DAC)\nConclusions: \u2220DAC = Arc(DAC)\n\nStep 5:\nTheorem: Same Angle\nPremises : G on AD, \u2220DAC\nConclusions: \u2220DAC = \u2220GAC\n\nStep 6:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(A, radius_A), G on BC, AG \u22a5 BG\nConclusions: \u25b3ABG \u2245 \u25b3ACG\n\nStep 7:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.7 = pi * (40 / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = Arc(BAD), \u2220BAD = Arc(BAD)\nConclusions: pi * (40 / 180) = \u2220BAD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220GAC, \u2220DAC = Arc(DAC)\nConclusions: \u2220GAC = Arc(DAC)\n\nStep 10:\nTheorem: Congruent Definition\nPremises : \u25b3ABG \u2245 \u25b3ACG\nConclusions: \u2220BAG = \u2220GAC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220BAD, \u2220BAD = \u2220BAG\nConclusions: pi * (40 / 180) = \u2220BAG\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220BAG, 0.7 = pi * (40 / 180)\nConclusions: 0.7 = \u2220BAG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GAC = Arc(DAC), 0.7 = \u2220BAG, \u2220BAG = \u2220GAC\nConclusions: 0.7 = Arc(DAC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, G)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(G, A)",
+        "Line(G, E)",
+        "Line(A, E)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(G, C)",
+        "Line(A, F)",
+        "Circle(A, radius_A)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(G, A)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Perpendicular(Line(D, E), Line(B, C))",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(C, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(E, Circle(A, radius_A))",
+        "PointLiesOnCircle(F, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(D, E))",
+        "PointLiesOnLine(A, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "PointLiesOnLine(G, Line(D, A))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "Equals(MeasureOf(Arc(B, A, D)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

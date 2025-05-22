@@ -1,0 +1,100 @@
+{
+    "problem_id": "2989",
+    "solved": true,
+    "problem_text": "For the pair of similar figures, use the given areas to find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(E, F)), 40)",
+        "Similar(Polygon(A, B, D, C), Polygon(E, F, G, H))",
+        "Equals(AreaOf(Polygon(A, B, D, C)), 64)",
+        "Equals(AreaOf(Polygon(E, F, G, H)), 400)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "FE",
+        "GF",
+        "GH",
+        "HE",
+        "BA",
+        "DB",
+        "DC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            280.188679245283,
+            194.9496855345912
+        ],
+        "B": [
+            305.0314465408805,
+            119.79245283018867
+        ],
+        "C": [
+            256.9182389937107,
+            119.47798742138363
+        ],
+        "D": [
+            280.50314465408803,
+            73.25157232704402
+        ],
+        "E": [
+            57.861635220125784,
+            232.37106918238993
+        ],
+        "F": [
+            101.25786163522012,
+            100.61006289308176
+        ],
+        "G": [
+            57.23270440251572,
+            17.59119496855346
+        ],
+        "H": [
+            15.723270440251572,
+            100.61006289308176
+        ]
+    },
+    "problem_choices": [
+        "6.4",
+        "16",
+        "100",
+        "250"
+    ],
+    "choices_precise_value": [
+        6.4,
+        16.0,
+        100.0,
+        250.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 15.762247,
+    "solution_predicate": "Equals(16.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 40 = EF, x = AB, 64 = Area(Quadrilateral(A, B, D, C)), Quadrilateral(A, B, D, C) ~ Quadrilateral(E, F, G, H), 400 = Area(Quadrilateral(E, F, G, H))\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, D, C) ~ Quadrilateral(E, F, G, H)\nConclusions: sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h = AB / EF, sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h ** 2 = Area(Quadrilateral(A, B, D, C)) / Area(Quadrilateral(E, F, G, H))\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h ** 2 = Area(Quadrilateral(A, B, D, C)) / Area(Quadrilateral(E, F, G, H)), 400 = Area(Quadrilateral(E, F, G, H)), 64 = Area(Quadrilateral(A, B, D, C))\nConclusions: 64 / 400 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h ** 2\n\nStep 4:\nTheorem: Solve Univariate Equation\nPremises : 64 / 400 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h ** 2\nConclusions: 0.4 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 0.4 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h, sim_ratio_quadrilateral_a_b_d_c_quadrilateral_e_f_g_h = AB / EF\nConclusions: 0.4 = AB / EF\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 0.4 = AB / EF, 40 = EF\nConclusions: 16 = AB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 16 = AB, x = AB\nConclusions: 16 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, E)",
+        "Line(G, F)",
+        "Line(G, H)",
+        "Line(H, E)",
+        "Line(B, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Similar(Quadrilateral(A, B, D, C), Quadrilateral(E, F, G, H))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(E, F)), 40.0)",
+        "Equals(AreaOf(Quadrilateral(A, B, D, C)), 64.0)",
+        "Equals(AreaOf(Quadrilateral(E, F, G, H)), 400.0)"
+    ],
+    "correct": true
+}

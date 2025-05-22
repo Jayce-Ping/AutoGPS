@@ -1,0 +1,65 @@
+{
+    "problem_id": "2873",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), 30)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            263.95348837209303,
+            118.32558139534885
+        ],
+        "B": [
+            15.58139534883721,
+            119.02325581395348
+        ],
+        "C": [
+            81.16279069767442,
+            16.0
+        ]
+    },
+    "problem_choices": [
+        "\\sqrt { 3 }",
+        "6",
+        "6 \\sqrt { 3 }",
+        "18"
+    ],
+    "choices_precise_value": [
+        1.7320508075688772,
+        6.0,
+        10.392304845413264,
+        18.0
+    ],
+    "problem_answer": 10.392304845413264,
+    "total_time": 12.805612,
+    "solution_predicate": "Equals(10.3923048454, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, y = AC, BC, pi * (30 / 180) = \u2220CAB, 6 = BC, AC \u22a5 BC, AB, 3.14 = pi\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180)\n\nStep 5:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220ABC) = BC / sin(\u2220CAB)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220CAB, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220CAB\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, pi / 2 = \u2220BCA, pi * (30 / 180) = \u2220CAB, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220ABC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220ABC\nConclusions: 1.05 = \u2220ABC\n\nStep 10:\nTheorem: Substitution\nPremises : y = AC, 0.52 = \u2220CAB, 6 = BC, AC / sin(\u2220ABC) = BC / sin(\u2220CAB), 1.05 = \u2220ABC\nConclusions: 6 / sin(0.52) = y / sin(1.05)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 6 / sin(0.52) = y / sin(1.05), y = AC\nConclusions: 10.39 = AC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 10.39 = AC, y = AC\nConclusions: 10.39 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

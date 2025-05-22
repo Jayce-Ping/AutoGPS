@@ -1,0 +1,114 @@
+{
+    "problem_id": "2406",
+    "solved": true,
+    "problem_text": "Find the value of x in the diagram.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(C, Line(E, D))",
+        "PointLiesOnLine(H, Line(G, B))",
+        "PointLiesOnLine(E, Line(H, F))",
+        "Equals(MeasureOf(Angle(C, E, F)), x+10)",
+        "Equals(MeasureOf(Angle(A, B, H)), x-1)",
+        "Equals(MeasureOf(Angle(G, H, E)), 79)",
+        "Equals(MeasureOf(Angle(B, C, D)), 2x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "EC",
+        "ED",
+        "CD",
+        "GH",
+        "GB",
+        "HB",
+        "HE",
+        "HF",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            75.78571428571428,
+            242.33928571428567
+        ],
+        "B": [
+            186.05357142857142,
+            241.8928571428571
+        ],
+        "C": [
+            430.69642857142856,
+            241.0
+        ],
+        "D": [
+            497.6607142857142,
+            304.83928571428567
+        ],
+        "E": [
+            266.85714285714283,
+            81.17857142857142
+        ],
+        "F": [
+            323.5535714285714,
+            42.33928571428571
+        ],
+        "G": [
+            105.69642857142856,
+            51.71428571428571
+        ],
+        "H": [
+            151.23214285714283,
+            159.30357142857142
+        ]
+    },
+    "problem_choices": [
+        "68",
+        "78",
+        "79",
+        "136"
+    ],
+    "choices_precise_value": [
+        68.0,
+        78.0,
+        79.0,
+        136.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 34.241048,
+    "solution_predicate": "Equals(68.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DEF, 3.14 = pi, EH, \u2220HED, \u2220CEF, \u2220BCD, \u2220CBH, \u2220EHG, \u2220BHE, E on FH, pi * ((10 + x) / 180) = \u2220CEF, \u2220BHF, pi * ((2 * x) / 180) = \u2220BCD, C on DE, CE, \u2220HBA, BH, pi * ((x - 1) / 180) = \u2220HBA, BC, pi * (79 / 180) = \u2220EHG, \u2220ECB, \u2220HEC\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220HED, \u2220DEF\nConclusions: pi = \u2220DEF + \u2220HED\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220BHE, \u2220EHG\nConclusions: pi = \u2220BHE + \u2220EHG\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((10 + x) / 180) = \u2220CEF, 3.14 = pi\nConclusions: 3.14 * ((10 + x) / 180) = \u2220CEF\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BHF, E on FH\nConclusions: \u2220BHE = \u2220BHF\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x) / 180) = \u2220BCD\nConclusions: 3.14 * ((2 * x) / 180) = \u2220BCD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220HED, C on DE\nConclusions: \u2220HEC = \u2220HED\n\nStep 8:\nTheorem: Same Angle\nPremises : C on DE, \u2220DEF\nConclusions: \u2220CEF = \u2220DEF\n\nStep 9:\nTheorem: Straight Angle\nPremises : \u2220CBH, \u2220HBA\nConclusions: pi = \u2220CBH + \u2220HBA\n\nStep 10:\nTheorem: Substitution\nPremises : pi * ((x - 1) / 180) = \u2220HBA, 3.14 = pi\nConclusions: 3.14 * ((x - 1) / 180) = \u2220HBA\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : BC, BH, CE, EH\nConclusions: Quadrilateral(B, C, E, H)\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220BCD, \u2220ECB\nConclusions: pi = \u2220BCD + \u2220ECB\n\nStep 13:\nTheorem: Straight Angle\nPremises : \u2220HEC, \u2220CEF\nConclusions: pi = \u2220CEF + \u2220HEC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + x) / 180) = \u2220CEF, 3.14 * ((10 + x) / 180) = \u2220CEF\nConclusions: 3.14 * ((10 + x) / 180) = pi * ((10 + x) / 180)\n\nStep 15:\nTheorem: Substitution\nPremises : pi * (79 / 180) = \u2220EHG, 3.14 = pi, pi = \u2220BHE + \u2220EHG, \u2220BHE = \u2220BHF\nConclusions: 3.14 = pi * (79 / 180) + \u2220BHF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + x) / 180) = \u2220CEF, \u2220CEF = \u2220DEF\nConclusions: pi * ((10 + x) / 180) = \u2220DEF\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CBH + \u2220HBA, 3.14 = pi\nConclusions: 3.14 = \u2220CBH + \u2220HBA\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(H, E, C, B)\nPremises : Quadrilateral(B, C, E, H)\nConclusions: 2 * pi = \u2220BHE + \u2220CBH + \u2220ECB + \u2220HEC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220BCD + \u2220ECB\nConclusions: 3.14 = \u2220BCD + \u2220ECB\n\nStep 20:\nTheorem: Substitution\nPremises : pi = \u2220CEF + \u2220HEC, \u2220HEC = \u2220HED, 3.14 = pi\nConclusions: 3.14 = \u2220CEF + \u2220HED\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + x) / 180) = \u2220DEF, 3.14 * ((10 + x) / 180) = pi * ((10 + x) / 180)\nConclusions: 3.14 * ((10 + x) / 180) = \u2220DEF\n\nStep 22:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BHE + \u2220CBH + \u2220ECB + \u2220HEC, \u2220HEC = \u2220HED, 3.14 = pi, \u2220BHE = \u2220BHF\nConclusions: 2 * 3.14 = \u2220BHF + \u2220CBH + \u2220ECB + \u2220HED\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((10 + x) / 180) = \u2220CEF, 3.14 * ((2 * x) / 180) = \u2220BCD, pi = \u2220DEF + \u2220HED, 3.14 = \u2220BCD + \u2220ECB, 3.14 = \u2220CBH + \u2220HBA, 3.14 * ((10 + x) / 180) = \u2220DEF, 3.14 = \u2220CEF + \u2220HED, 2 * 3.14 = \u2220BHF + \u2220CBH + \u2220ECB + \u2220HED, 3.14 = pi * (79 / 180) + \u2220BHF, 3.14 * ((x - 1) / 180) = \u2220HBA\nConclusions: 68 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(G, H)",
+        "Line(G, B)",
+        "Line(H, B)",
+        "Line(H, E)",
+        "Line(H, F)",
+        "Line(E, F)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(C, Line(E, D))",
+        "PointLiesOnLine(H, Line(G, B))",
+        "PointLiesOnLine(E, Line(H, F))",
+        "Equals(MeasureOf(Angle(C, E, F)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(H, B, A)), Mul(pi, Div(Sub(x, 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, H, G)), Mul(pi, Div(79.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Mul(2.0, x), 180.0)))"
+    ],
+    "correct": true
+}

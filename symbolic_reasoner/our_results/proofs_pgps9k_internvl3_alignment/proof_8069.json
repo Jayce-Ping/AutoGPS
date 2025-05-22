@@ -1,0 +1,87 @@
+{
+    "problem_id": "8069",
+    "solved": true,
+    "problem_text": "Use \\odot P to find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(A, C)), x)",
+        "Equals(MeasureOf(Arc(B, C)), 2x-30)",
+        "Line(B, A)",
+        "Line(B, P)",
+        "Line(P, A)",
+        "Line(P, C)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnLine(P, Line(B, A))",
+        "Circle(P)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "P",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "BP",
+        "BA",
+        "PA",
+        "PC"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "B": [
+            163.5897435897436,
+            58.68571428571428
+        ],
+        "P": [
+            115.46126071094336,
+            141.24327932252453
+        ],
+        "C": [
+            177.6117216117216,
+            215.71836734693878
+        ],
+        "A": [
+            67.97435897435898,
+            225.43214285714285
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        40.0,
+        70.0,
+        130.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        40.0,
+        70.0,
+        130.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 7.858013,
+    "solution_predicate": "Equals(70.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = Arc(APC), Arc(APC), Arc(CPB), \u2220APC, 3.14 = pi, \u2220CPB, pi * ((2 * x - 30) / 180) = Arc(CPB)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(APC)\nConclusions: \u2220APC = Arc(APC)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CPB)\nConclusions: \u2220CPB = Arc(CPB)\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220APC, \u2220CPB\nConclusions: pi = \u2220APC + \u2220CPB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = Arc(APC), \u2220APC = Arc(APC)\nConclusions: pi * (x / 180) = \u2220APC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CPB = Arc(CPB), pi * ((2 * x - 30) / 180) = Arc(CPB)\nConclusions: pi * ((2 * x - 30) / 180) = \u2220CPB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220APC + \u2220CPB, 3.14 = pi\nConclusions: 3.14 = \u2220APC + \u2220CPB\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220APC, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220APC\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x - 30) / 180) = \u2220CPB\nConclusions: 3.14 * ((2 * x - 30) / 180) = \u2220CPB\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220APC + \u2220CPB, 3.14 * ((2 * x - 30) / 180) = \u2220CPB, 3.14 * (x / 180) = \u2220APC\nConclusions: 70 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, P)",
+        "Line(B, A)",
+        "Line(P, A)",
+        "Line(P, C)",
+        "Circle(P, radius_P)",
+        "Line(B, A)",
+        "Line(B, P)",
+        "Line(P, A)",
+        "Line(P, C)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(B, A))",
+        "Circle(P, radius_P)",
+        "Equals(MeasureOf(Arc(A, P, C)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(C, P, B)), Mul(pi, Div(Sub(Mul(2.0, x), 30.0), 180.0)))"
+    ],
+    "correct": true
+}

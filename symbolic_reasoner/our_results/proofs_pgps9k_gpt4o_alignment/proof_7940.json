@@ -1,0 +1,103 @@
+{
+    "problem_id": "7940",
+    "solved": true,
+    "problem_text": "If DB = 6, AD = 2, and CB = 20, find EB.",
+    "logic_forms": [
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Parallel(Line(D, E), Line(A, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Equals(LengthOf(Line(D,B)),6)",
+        "Equals(LengthOf(Line(A,D)),2)",
+        "Equals(LengthOf(Line(C,B)),20)",
+        "Find(LengthOf(Line(E,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "E",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "BE",
+        "BC",
+        "EC",
+        "BD",
+        "BA",
+        "DA",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            106.56009615384615,
+            52.66285714285715
+        ],
+        "D": [
+            61.51923076923077,
+            170.05714285714288
+        ],
+        "E": [
+            281.2307692307692,
+            170.05714285714288
+        ],
+        "A": [
+            38.99879807692307,
+            227.65714285714287
+        ],
+        "C": [
+            368.0168269230769,
+            228.2057142857143
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        6.667,
+        15.0,
+        60.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.667,
+        15.0,
+        60.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 34.622986,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(E, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EBA, 20 = BC, 6 = BD, \u2220CAB, 3.14 = pi, 2 = AD, AC || DE, E on BC, \u2220EDB, \u2220CAB, \u2220CBA, D on AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AC || DE\nConclusions: \u2220BCA = \u2220BED, \u2220BAC = \u2220BDE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDB\nConclusions: \u2220EDB = 2 * pi - \u2220BDE\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CBA, E on BC\nConclusions: \u2220CBA = \u2220EBA\n\nStep 6:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EBA, D on AB\nConclusions: \u2220EBA = \u2220EBD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CAB, D on AB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220EDB = 2 * pi - \u2220BDE\nConclusions: \u2220EDB = 2 * 3.14 - \u2220BDE\n\nStep 10:\nTheorem: Substitution\nPremises : 6 = BD, AB = AD + BD, 2 = AD\nConclusions: 2 + 6 = AB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBA = \u2220EBD, \u2220CBA = \u2220EBA\nConclusions: \u2220CBA = \u2220EBD\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BAC = \u2220BDE, \u2220CAB = \u2220CAD, \u2220CAB = 2 * pi - \u2220BAC\nConclusions: \u2220CAD = 2 * 3.14 - \u2220BDE\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 2 + 6 = AB\nConclusions: 8 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDB = 2 * 3.14 - \u2220BDE, \u2220CAD = 2 * 3.14 - \u2220BDE\nConclusions: \u2220CAD = \u2220EDB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220EDB, \u2220CAB = \u2220CAD\nConclusions: \u2220CAB = \u2220EDB\n\nStep 16:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220EDB, \u2220CBA = \u2220EBD, \u2220BCA = \u2220BED\nConclusions: \u25b3ABC ~ \u25b3DBE\n\nStep 17:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DBE\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_b_e = AB / BD, \u2220BAC = \u2220BDE, sim_ratio_triangle_a_b_c_triangle_d_b_e = BC / BE, \u2220BCA = \u2220BED, \u2220CAB = \u2220EDB\n\nStep 18:\nTheorem: Substitution\nPremises : 6 = BD, 8 = AB, sim_ratio_triangle_a_b_c_triangle_d_b_e = AB / BD\nConclusions: 8 / 6 = sim_ratio_triangle_a_b_c_triangle_d_b_e\n\nStep 19:\nTheorem: Substitution\nPremises : 20 = BC, sim_ratio_triangle_a_b_c_triangle_d_b_e = BC / BE\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_b_e = 20 / BE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 6 = sim_ratio_triangle_a_b_c_triangle_d_b_e, sim_ratio_triangle_a_b_c_triangle_d_b_e = 20 / BE\nConclusions: 8 / 6 = 20 / BE\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 8 / 6 = 20 / BE\nConclusions: 15 = BE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Parallel(Line(D, E), Line(A, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Equals(LengthOf(Line(D, B)), 6.0)",
+        "Equals(LengthOf(Line(A, D)), 2.0)",
+        "Equals(LengthOf(Line(C, B)), 20.0)"
+    ],
+    "correct": false
+}

@@ -1,0 +1,94 @@
+{
+    "problem_id": "2718",
+    "solved": true,
+    "problem_text": "What is x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 10)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(D, C)), 20)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            88.39649321266968,
+            24.292857142857144
+        ],
+        "B": [
+            16.983839689722043,
+            167.74857142857144
+        ],
+        "C": [
+            88.48190045248867,
+            168.08952380952383
+        ],
+        "D": [
+            376.1334841628959,
+            167.74857142857144
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        14.142,
+        17.321,
+        40.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        14.142,
+        17.321,
+        40.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 54.2734,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = BC, AD, CD, 3.14 = pi, AB \u22a5 AD, C on BD, AC \u22a5 CD, AC, AB, \u2220BCA, \u2220CAD, \u2220ADC, BC, 20 = CD, AC \u22a5 BC, \u2220DAB, 10 = AC, \u2220ACD, \u2220BAC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220DAB\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220ACD, pi / 2 = \u2220DCA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 9:\nTheorem: Evaluate\nPremises : 10 = AC, 20 = CD\nConclusions: 2 = CD / AC\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220BAC, \u2220DAB, \u2220CAD\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 12:\nTheorem: Substitution\nPremises : BD = BC + CD, 20 = CD, x = BC\nConclusions: 20 + x = BD\n\nStep 13:\nTheorem: Tan Function Definition\nPremises : \u2220ADC, AC \u22a5 CD, \u25b3ACD\nConclusions: AC / CD = tan(\u2220ADC)\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ACD, (3 * pi) / 2 = \u2220BCA\nConclusions: \u2220ACD = \u2220BCA\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220ACD = 2 * pi - \u2220DCA, (3 * pi) / 2 = \u2220ACD, pi / 2 = \u2220DCA, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB, (3 * pi) / 2 = \u2220DAB\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220BAC + \u2220CAD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : BD = BC + CD, 20 + x = BD\nConclusions: 20 + x = BC + CD\n\nStep 19:\nTheorem: Substitution\nPremises : 10 = AC, 20 = CD, AC / CD = tan(\u2220ADC)\nConclusions: 10 / 20 = tan(\u2220ADC)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220BCA\nConclusions: 2 * 3.14 - pi / 2 = \u2220BCA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = 2 * pi - \u2220ACB, 2 * 3.14 - pi / 2 = \u2220BCA\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ACB + \u2220BAC + \u2220CBA, 2 * 3.14 = (3 * pi) / 2 + \u2220BAC + \u2220CAD, pi / 2 = \u2220ACB, 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB\nConclusions: \u2220CAD = \u2220CBA\n\nStep 24:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACD = \u2220BCA, \u2220CAD = \u2220CBA\nConclusions: \u25b3ABC ~ \u25b3DAC\n\nStep 25:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DAC\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD, sim_ratio_triangle_a_b_c_triangle_d_a_c = BC / AC, \u2220ACD = \u2220BCA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : AC / CD = tan(\u2220ADC), sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = tan(\u2220ADC)\n\nStep 27:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = BC / AC, 10 = AC, x = BC\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = x / 10\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = tan(\u2220ADC), 10 / 20 = tan(\u2220ADC)\nConclusions: 10 / 20 = sim_ratio_triangle_a_b_c_triangle_d_a_c\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = BC / AC, 10 / 20 = sim_ratio_triangle_a_b_c_triangle_d_a_c\nConclusions: 10 / 20 = BC / AC\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = x / 10, 10 / 20 = sim_ratio_triangle_a_b_c_triangle_d_a_c\nConclusions: 10 / 20 = x / 10\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 20 + x = BC + CD, 2 = CD / AC, 10 / 20 = x / 10, 10 / 20 = BC / AC\nConclusions: 5 = BC\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 5 = BC, x = BC\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), 10.0)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(D, C)), 20.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,118 @@
+{
+    "problem_id": "2764",
+    "solved": true,
+    "problem_text": "Find the value of the variable y in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "Parallel(Line(A, H), Line(B, G))",
+        "Equals(MeasureOf(Angle(B, E, F)), 105)",
+        "Equals(MeasureOf(Angle(E, D, A)), 3x-15)",
+        "Equals(MeasureOf(Angle(E, D, H)), y+25)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "BE",
+        "BG",
+        "EG",
+        "CD",
+        "CE",
+        "CF",
+        "DE",
+        "DF",
+        "EF",
+        "AD",
+        "AH",
+        "DH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            12.463126843657818,
+            81.71091445427729
+        ],
+        "B": [
+            12.463126843657818,
+            174.92625368731564
+        ],
+        "C": [
+            115.117994100295,
+            15.044247787610619
+        ],
+        "D": [
+            133.99705014749262,
+            82.59587020648968
+        ],
+        "E": [
+            158.77581120943952,
+            174.3362831858407
+        ],
+        "F": [
+            180.89970501474926,
+            256.047197640118
+        ],
+        "G": [
+            328.98230088495575,
+            174.63126843657815
+        ],
+        "H": [
+            329.2772861356932,
+            82.30088495575221
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "50",
+        "60",
+        "80"
+    ],
+    "choices_precise_value": [
+        30.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 47.14212,
+    "solution_predicate": "Equals(50.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on DF, pi * ((3 * x - 15) / 180) = \u2220ADE, pi * (105 / 180) = \u2220BEF, D on CE, \u2220FDH, AH || BG, \u2220GEC, 3.14 = pi, \u2220CEB, \u2220BEF, pi * ((25 + y) / 180) = \u2220EDH, E on BG, \u2220FEG, \u2220DEB, E on CF, \u2220GED\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220FDH, E on DF\nConclusions: \u2220EDH = \u2220FDH\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AH || BG\nConclusions: \u2220FDH = \u2220FEG\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AH || BG\nConclusions: \u2220ADE = \u2220GED, \u2220DEB = \u2220EDH\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220GEC, D on CE\nConclusions: \u2220GEC = \u2220GED\n\nStep 6:\nTheorem: Same Angle\nPremises : D on CE, \u2220CEB\nConclusions: \u2220CEB = \u2220DEB\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : E on CF, E on BG\nConclusions: \u2220BEF = \u2220GEC\n\nStep 8:\nTheorem: Circumference Split\nPremises : \u2220DEB, \u2220FEG, \u2220BEF, \u2220GED\nConclusions: 2 * pi = \u2220BEF + \u2220DEB + \u2220FEG + \u2220GED\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDH = \u2220FDH, \u2220FDH = \u2220FEG, pi * ((25 + y) / 180) = \u2220EDH\nConclusions: pi * ((25 + y) / 180) = \u2220FEG\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADE = \u2220GED, pi * ((3 * x - 15) / 180) = \u2220ADE\nConclusions: pi * ((3 * x - 15) / 180) = \u2220GED\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 + y) / 180) = \u2220EDH, \u2220DEB = \u2220EDH\nConclusions: pi * ((25 + y) / 180) = \u2220DEB\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((25 + y) / 180) = \u2220FEG\nConclusions: 3.14 * ((25 + y) / 180) = \u2220FEG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GEC = \u2220GED, pi * ((3 * x - 15) / 180) = \u2220GED\nConclusions: pi * ((3 * x - 15) / 180) = \u2220GEC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 + y) / 180) = \u2220DEB, \u2220CEB = \u2220DEB\nConclusions: pi * ((25 + y) / 180) = \u2220CEB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEF = \u2220GEC, pi * (105 / 180) = \u2220BEF, pi * ((3 * x - 15) / 180) = \u2220GEC\nConclusions: pi * (105 / 180) = pi * ((3 * x - 15) / 180)\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((25 + y) / 180) = \u2220CEB\nConclusions: 3.14 * ((25 + y) / 180) = \u2220CEB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (105 / 180) = pi * ((3 * x - 15) / 180), pi * ((3 * x - 15) / 180) = \u2220GED\nConclusions: pi * (105 / 180) = \u2220GED\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((25 + y) / 180) = \u2220CEB, pi * ((25 + y) / 180) = \u2220CEB\nConclusions: 3.14 * ((25 + y) / 180) = pi * ((25 + y) / 180)\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (105 / 180) = \u2220GED, 3.14 = pi, pi * (105 / 180) = \u2220BEF, 2 * pi = \u2220BEF + \u2220DEB + \u2220FEG + \u2220GED\nConclusions: 2 * 3.14 = 3.14 * (105 / 180) + pi * (105 / 180) + \u2220DEB + \u2220FEG\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((25 + y) / 180) = pi * ((25 + y) / 180), pi * ((25 + y) / 180) = \u2220DEB\nConclusions: 3.14 * ((25 + y) / 180) = \u2220DEB\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((25 + y) / 180) = \u2220FEG, 3.14 * ((25 + y) / 180) = \u2220DEB, 3.14 = pi, 2 * 3.14 = 3.14 * (105 / 180) + pi * (105 / 180) + \u2220DEB + \u2220FEG\nConclusions: 50 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, E)",
+        "Line(B, G)",
+        "Line(E, G)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(A, D)",
+        "Line(A, H)",
+        "Line(D, H)",
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "Parallel(Line(A, H), Line(B, G))",
+        "Equals(MeasureOf(Angle(B, E, F)), Mul(pi, Div(105.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, E)), Mul(pi, Div(Sub(Mul(3.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, H)), Mul(pi, Div(Add(y, 25.0), 180.0)))"
+    ],
+    "correct": true
+}

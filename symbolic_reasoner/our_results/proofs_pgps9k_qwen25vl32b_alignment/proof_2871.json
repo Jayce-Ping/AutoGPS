@@ -1,0 +1,97 @@
+{
+    "problem_id": "2871",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 10)",
+        "Equals(LengthOf(Line(A, D)), 13)",
+        "Equals(MeasureOf(Angle(D, C, E)), 45)",
+        "Find(AreaOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnLine(E, Line(B, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "BC",
+        "EC",
+        "CD",
+        "AD",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            27.02272727272727,
+            56.15521064301552
+        ],
+        "B": [
+            143.62885714285713,
+            173.51132404181186
+        ],
+        "C": [
+            358.545,
+            173.42378048780486
+        ],
+        "D": [
+            242.06400000000002,
+            56.50060975609756
+        ],
+        "E": [
+            241.71363636363634,
+            173.2937915742794
+        ]
+    },
+    "problem_choices": [
+        65.0,
+        91.9,
+        112.6,
+        130.0
+    ],
+    "choices_precise_value": [
+        65.0,
+        91.9,
+        112.6,
+        130.0
+    ],
+    "problem_answer": 91.9,
+    "total_time": 46.317222,
+    "solution_predicate": "Equals(91.9238815545, AreaOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CE, pi * (45 / 180) = \u2220DCE, 13 = AD, Parallelogram(A, B, C, D), 10 = AB, BC \u22a5 DE, DE, sin(\u2220EDC), CE \u22a5 DE, 3.14 = pi, CD\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 3:\nTheorem: Area formula of Parallelogram(A, B, C, D)\nPremises : BC \u22a5 DE, Parallelogram(A, B, C, D)\nConclusions: Area(Parallelogram(A, B, C, D)) = BC * DE\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 DE\nConclusions: pi / 2 = \u2220CED\n\nStep 5:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220EDC), CE \u22a5 DE\nConclusions: CE / CD = sin(\u2220EDC)\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : DE, CE, CD\nConclusions: \u25b3CDE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 10 = AB\nConclusions: 10 = CD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 13 = AD\nConclusions: 13 = BC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = pi * (45 / 180), pi * (45 / 180) = \u2220DCE\nConclusions: 0.79 = \u2220DCE\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, C)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CED + \u2220DCE + \u2220EDC\n\nStep 12:\nTheorem: Substitution\nPremises : 10 = CD, CE / CD = sin(\u2220EDC)\nConclusions: CE / 10 = sin(\u2220EDC)\n\nStep 13:\nTheorem: Substitution\nPremises : Area(Parallelogram(A, B, C, D)) = BC * DE, 13 = BC\nConclusions: Area(Parallelogram(A, B, C, D)) = 13 * DE\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220CED + \u2220DCE + \u2220EDC, pi * (45 / 180) = \u2220DCE, pi / 2 = \u2220CED\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220EDC\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220EDC\nConclusions: 0.79 = \u2220EDC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220EDC, 0.79 = \u2220DCE\nConclusions: \u2220DCE = \u2220EDC\n\nStep 17:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CDE, \u2220DCE = \u2220EDC\nConclusions: CE = DE\n\nStep 18:\nTheorem: Substitution\nPremises : 0.79 = \u2220EDC, CE / 10 = sin(\u2220EDC), CE = DE\nConclusions: sin(0.79) = DE / 10\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : Area(Parallelogram(A, B, C, D)) = 13 * DE, sin(0.79) = DE / 10\nConclusions: 91.92 = Area(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), 10.0)",
+        "Equals(LengthOf(Line(A, D)), 13.0)",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

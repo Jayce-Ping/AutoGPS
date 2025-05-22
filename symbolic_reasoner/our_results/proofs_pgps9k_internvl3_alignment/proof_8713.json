@@ -1,0 +1,82 @@
+{
+    "problem_id": "8713",
+    "solved": true,
+    "problem_text": "Find x. Perimeter = 41 yards.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 2x)",
+        "Equals(LengthOf(Line(B, A)), 2x-1)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(D, B)), 2x)",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(A, C)))",
+        "Equals(PerimeterOf(Quadrilateral(A, B, C, D)), 41)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "DB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.01319648093842,
+            41.691428571428574
+        ],
+        "B": [
+            246.0725806451613,
+            41.91648351648352
+        ],
+        "C": [
+            74.85483870967742,
+            220.46476190476193
+        ],
+        "D": [
+            189.33870967741936,
+            220.46476190476193
+        ]
+    },
+    "problem_choices": [
+        5.375,
+        6.0,
+        6.833,
+        7.0
+    ],
+    "choices_precise_value": [
+        5.375,
+        6.0,
+        6.833,
+        7.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 5.109961,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 41 = Perimeter(Quadrilateral(A, B, D, C)), x = CD, Quadrilateral(A, B, D, C), 2 * x = AC, 2 * x - 1 = AB, 2 * x = BD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, B, D, C)\nConclusions: Perimeter(Quadrilateral(A, B, D, C)) = AB + AC + BD + CD\n\nStep 3:\nTheorem: Substitution\nPremises : 2 * x = AC, 41 = Perimeter(Quadrilateral(A, B, D, C)), Perimeter(Quadrilateral(A, B, D, C)) = AB + AC + BD + CD, x = CD, 2 * x - 1 = AB, 2 * x = BD\nConclusions: 41 = x + 2 * x + 2 * x + (2 * x - 1)\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 41 = x + 2 * x + 2 * x + (2 * x - 1)\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Equals(LengthOf(Line(A, C)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(B, A)), Sub(Mul(2.0, x), 1.0))",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(D, B)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(A, C)))",
+        "Equals(PerimeterOf(Quadrilateral(A, B, D, C)), 41.0)"
+    ],
+    "correct": true
+}

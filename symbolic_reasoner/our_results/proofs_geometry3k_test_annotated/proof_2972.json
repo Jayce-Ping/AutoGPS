@@ -1,0 +1,129 @@
+{
+    "problem_id": "2972",
+    "solved": true,
+    "problem_text": "U J = 9, V J = 3, and Z T = 18. Find S J.",
+    "logic_forms": [
+        "PointLiesOnLine(V, Line(Z, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "PointLiesOnLine(Y, Line(S, Z))",
+        "PointLiesOnLine(J, Line(T, Z))",
+        "PointLiesOnLine(J, Line(S, V))",
+        "PointLiesOnLine(J, Line(Y, U))",
+        "Equals(LengthOf(Line(S, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(Z, V)), LengthOf(Line(V, U)))",
+        "Equals(LengthOf(Line(T, U)), LengthOf(Line(S, T)))",
+        "Equals(LengthOf(Line(U, J)), 9)",
+        "Equals(LengthOf(Line(V, J)), 3)",
+        "Equals(LengthOf(Line(Z, T)), 18)",
+        "Find(LengthOf(Line(S, J)))"
+    ],
+    "point_instances": [
+        "Y",
+        "S",
+        "Z",
+        "U",
+        "V",
+        "T",
+        "J"
+    ],
+    "line_instances": [
+        "ZV",
+        "ZU",
+        "VU",
+        "ST",
+        "SU",
+        "TU",
+        "SY",
+        "SZ",
+        "YZ",
+        "TJ",
+        "TZ",
+        "JZ",
+        "SJ",
+        "SV",
+        "JV",
+        "YJ",
+        "YU",
+        "JU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            155.73809523809524,
+            279.1666666666667
+        ],
+        "S": [
+            164.66666666666669,
+            96.42857142857143
+        ],
+        "Z": [
+            150.97619047619048,
+            462.5
+        ],
+        "U": [
+            675.9761904761905,
+            213.0952380952381
+        ],
+        "V": [
+            413.4761904761905,
+            337.5
+        ],
+        "T": [
+            418.83333333333337,
+            154.76190476190476
+        ],
+        "J": [
+            330.14285714285717,
+            256.54761904761904
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "6",
+        "9",
+        "12"
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 213.283813,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(S, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 = JV, SZ, J on UY, J on SV, SU, UZ, UV = VZ, SY = YZ, ST = TU, J on TZ\n\nStep 2:\nTheorem: Evaluate\nPremises : 3 = JV\nConclusions: 6 = 2 * JV\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : UZ, SU, SZ\nConclusions: \u25b3SUZ\n\nStep 4:\nTheorem: Centroid of Triangle\nPremises : J on SV, J on TZ, J on UY, SY = YZ, \u25b3SUZ, ST = TU, UV = VZ\nConclusions: IsCentroidOf(J, \u25b3SUZ)\n\nStep 5:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(J, \u25b3SUZ)\nConclusions: JS = 2 * JV, ST = TU, UV = VZ\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 6 = 2 * JV, JS = 2 * JV\nConclusions: 6 = JS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, V)",
+        "Line(Z, U)",
+        "Line(V, U)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(T, U)",
+        "Line(S, Y)",
+        "Line(S, Z)",
+        "Line(Y, Z)",
+        "Line(T, J)",
+        "Line(T, Z)",
+        "Line(J, Z)",
+        "Line(S, J)",
+        "Line(S, V)",
+        "Line(J, V)",
+        "Line(Y, J)",
+        "Line(Y, U)",
+        "Line(J, U)",
+        "PointLiesOnLine(V, Line(Z, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "PointLiesOnLine(Y, Line(S, Z))",
+        "PointLiesOnLine(J, Line(T, Z))",
+        "PointLiesOnLine(J, Line(S, V))",
+        "PointLiesOnLine(J, Line(Y, U))",
+        "Equals(LengthOf(Line(S, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(Z, V)), LengthOf(Line(V, U)))",
+        "Equals(LengthOf(Line(T, U)), LengthOf(Line(S, T)))",
+        "Equals(LengthOf(Line(U, J)), 9.0)",
+        "Equals(LengthOf(Line(V, J)), 3.0)",
+        "Equals(LengthOf(Line(Z, T)), 18.0)"
+    ],
+    "correct": true
+}

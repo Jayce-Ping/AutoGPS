@@ -1,0 +1,129 @@
+{
+    "problem_id": "5330",
+    "solved": true,
+    "problem_text": "Find m \\angle PQS.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(S, R)), LengthOf(Line(P, S)))",
+        "Equals(MeasureOf(Angle(R, S, Q)), 48)",
+        "Equals(MeasureOf(Angle(S, Q, P)), MeasureOf(Angle(S, Q, R)))",
+        "Line(P, A)",
+        "Line(P, S)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, C)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, C)",
+        "Line(S, B)",
+        "Line(S, R)",
+        "Perpendicular(Line(Q, A), Line(P, S))",
+        "Perpendicular(Line(Q, C), Line(S, R))",
+        "PointLiesOnLine(P, Line(Q, A))",
+        "PointLiesOnLine(R, Line(Q, C))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "Find(MeasureOf(Angle(P,Q,S)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "R",
+        "S",
+        "P",
+        "Q"
+    ],
+    "line_instances": [
+        "AP",
+        "AQ",
+        "PQ",
+        "BS",
+        "BQ",
+        "SQ",
+        "QR",
+        "QC",
+        "RC",
+        "PS",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            39.9639029892837,
+            317.68
+        ],
+        "B": [
+            250.48803480783175,
+            430.32
+        ],
+        "C": [
+            463.11111111111114,
+            315.92
+        ],
+        "R": [
+            382.1548223350254,
+            224.4
+        ],
+        "S": [
+            250.48803480783175,
+            340.56
+        ],
+        "P": [
+            121.32423857868021,
+            224.07000000000002
+        ],
+        "Q": [
+            250.91307106598984,
+            74.25
+        ]
+    },
+    "problem_choices": [
+        36.0,
+        42.0,
+        48.0,
+        63.0
+    ],
+    "choices_precise_value": [
+        36.0,
+        42.0,
+        48.0,
+        63.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 63.865381,
+    "solution_predicate": "Equals(0.7330382858, MeasureOf(Angle(P, Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CQP, \u2220PQS = \u2220SQR, 3.14 = pi, QR \u22a5 RS, \u2220SQC, P on AQ, \u2220PQS, RS, R on CQ, S on BQ, \u2220SQR, pi * (48 / 180) = \u2220RSQ, \u2220AQB, QS, \u2220RQP, QR, \u2220PQB, \u2220AQS\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : QR \u22a5 RS\nConclusions: pi / 2 = \u2220QRS\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220SQC, \u2220CQP, \u2220PQS\nConclusions: 2 * pi = \u2220CQP + \u2220PQS + \u2220SQC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CQP, R on CQ\nConclusions: \u2220CQP = \u2220RQP\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220SQC, R on CQ\nConclusions: \u2220SQC = \u2220SQR\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220AQB, S on BQ\nConclusions: \u2220AQB = \u2220AQS\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AQB, P on AQ\nConclusions: \u2220AQB = \u2220PQB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220RQP, \u2220PQS, \u2220SQR\nConclusions: 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : QR, QS, RS\nConclusions: \u25b3QRS\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220PQB, S on BQ\nConclusions: \u2220PQB = \u2220PQS\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220AQS, P on AQ\nConclusions: \u2220AQS = \u2220PQS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQB = \u2220PQB, \u2220AQB = \u2220AQS\nConclusions: \u2220AQS = \u2220PQB\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(Q, R, S)\nPremises : \u25b3QRS\nConclusions: pi = \u2220QRS + \u2220RSQ + \u2220SQR\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQS = \u2220PQB, \u2220AQS = \u2220PQS, \u2220PQS = \u2220SQR\nConclusions: \u2220PQB = \u2220SQR\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SQC = \u2220SQR, \u2220PQB = \u2220SQR\nConclusions: \u2220PQB = \u2220SQC\n\nStep 16:\nTheorem: Substitution\nPremises : pi = \u2220QRS + \u2220RSQ + \u2220SQR, 3.14 = pi, pi / 2 = \u2220QRS, \u2220PQB = \u2220SQR, pi * (48 / 180) = \u2220RSQ\nConclusions: 3.14 = pi / 2 + 3.14 * (48 / 180) + \u2220PQB\n\nStep 17:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CQP + \u2220PQS + \u2220SQC, \u2220PQB = \u2220SQC, 3.14 = pi, \u2220CQP = \u2220RQP, \u2220PQB = \u2220PQS\nConclusions: 2 * 3.14 = \u2220PQB + \u2220PQB + \u2220RQP\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR, 2 * 3.14 = \u2220PQB + \u2220PQB + \u2220RQP, \u2220PQS = \u2220SQR, 3.14 = pi / 2 + 3.14 * (48 / 180) + \u2220PQB, \u2220PQB = \u2220PQS\nConclusions: 0.73 = \u2220PQS\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(P, Q)",
+        "Line(B, S)",
+        "Line(B, Q)",
+        "Line(S, Q)",
+        "Line(Q, R)",
+        "Line(Q, C)",
+        "Line(R, C)",
+        "Line(P, S)",
+        "Line(S, R)",
+        "Line(P, A)",
+        "Line(P, S)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, C)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, C)",
+        "Line(S, B)",
+        "Line(S, R)",
+        "Perpendicular(Line(Q, A), Line(P, S))",
+        "Perpendicular(Line(Q, C), Line(S, R))",
+        "PointLiesOnLine(P, Line(Q, A))",
+        "PointLiesOnLine(R, Line(Q, C))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "Equals(LengthOf(Line(S, R)), LengthOf(Line(P, S)))",
+        "Equals(MeasureOf(Angle(R, S, Q)), Mul(pi, Div(48.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, Q, S)), MeasureOf(Angle(S, Q, R)))"
+    ],
+    "correct": true
+}

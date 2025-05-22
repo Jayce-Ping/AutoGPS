@@ -1,0 +1,127 @@
+{
+    "problem_id": "6944",
+    "solved": true,
+    "problem_text": "ABCD \\sim EFGD. What is the value of y?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Equals(LengthOf(Line(B, C)), 7.5)",
+        "Equals(LengthOf(Line(D, A)), 9)",
+        "Equals(LengthOf(Line(D, E)), 6)",
+        "Equals(LengthOf(Line(E, F)), y)",
+        "Equals(LengthOf(Line(F, G)), x)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, G)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(G, C)",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(G, Line(D, C))",
+        "Similar(Quadrilateral(A,B,C,D),Quadrilateral(E,F,G,D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "D",
+        "G",
+        "C"
+    ],
+    "line_instances": [
+        "DE",
+        "DA",
+        "EA",
+        "AB",
+        "BC",
+        "CG",
+        "CD",
+        "GD",
+        "EF",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            267.0527272727272,
+            83.60710553814002
+        ],
+        "B": [
+            410.3027272727272,
+            83.60710553814002
+        ],
+        "E": [
+            207.84272727272725,
+            144.6645768025078
+        ],
+        "F": [
+            303.308,
+            145.01149425287355
+        ],
+        "D": [
+            87.31428571428572,
+            269.9885057471264
+        ],
+        "G": [
+            375.0946153846154,
+            270.20866489832
+        ],
+        "C": [
+            518.7853846153846,
+            270.20866489832
+        ]
+    },
+    "problem_choices": [
+        3.333,
+        6.0,
+        7.5,
+        13.5
+    ],
+    "choices_precise_value": [
+        3.333,
+        6.0,
+        7.5,
+        13.5
+    ],
+    "problem_answer": 3.333,
+    "total_time": 32.37093,
+    "solution_predicate": "Equals(3.3333333333, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = DE, 9 = AD, y = EF, Quadrilateral(A, B, C, D) ~ Quadrilateral(E, F, G, D), 5 = AB\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, C, D) ~ Quadrilateral(E, F, G, D)\nConclusions: sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d = AB / EF, sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d = AD / DE\n\nStep 3:\nTheorem: Substitution\nPremises : 6 = DE, sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d = AD / DE, 9 = AD\nConclusions: 9 / 6 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d = AB / EF, 9 / 6 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_e_f_g_d\nConclusions: 9 / 6 = AB / EF\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 5 = AB, 9 / 6 = AB / EF\nConclusions: 3.33 = EF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.33 = EF, y = EF\nConclusions: 3.33 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, A)",
+        "Line(E, A)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, G)",
+        "Line(C, D)",
+        "Line(G, D)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, G)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(G, C)",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(G, Line(D, C))",
+        "Similar(Quadrilateral(A, B, C, D), Quadrilateral(E, F, G, D))",
+        "Equals(LengthOf(Line(A, B)), 5.0)",
+        "Equals(LengthOf(Line(B, C)), 7.5)",
+        "Equals(LengthOf(Line(D, A)), 9.0)",
+        "Equals(LengthOf(Line(D, E)), 6.0)",
+        "Equals(LengthOf(Line(E, F)), y)",
+        "Equals(LengthOf(Line(F, G)), x)"
+    ],
+    "correct": true
+}

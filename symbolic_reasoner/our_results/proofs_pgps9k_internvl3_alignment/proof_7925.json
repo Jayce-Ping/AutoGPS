@@ -1,0 +1,151 @@
+{
+    "problem_id": "7925",
+    "solved": true,
+    "problem_text": "BD = x-1, CE = x+2. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(E, F)), 8)",
+        "Equals(MeasureOf(Angle(G, A, B)), MeasureOf(Angle(E, F, G)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "Perpendicular(Line(B, E), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(C, F))",
+        "Equals(LengthOf(Line(B,D)),x-1)",
+        "Equals(LengthOf(Line(C,E)),x+2)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "G",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "BD",
+        "BE",
+        "CD",
+        "CE",
+        "DE",
+        "EF",
+        "FG",
+        "FC",
+        "GC",
+        "AG",
+        "AD",
+        "GD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            36.51806958473625,
+            246.83733333333333
+        ],
+        "A": [
+            37.57575757575758,
+            169.36
+        ],
+        "G": [
+            157.98518518518517,
+            207.904
+        ],
+        "C": [
+            99.36700336700336,
+            246.2069841269841
+        ],
+        "D": [
+            276.01945379723156,
+            246.29968253968255
+        ],
+        "E": [
+            417.3891293891294,
+            246.47183673469388
+        ],
+        "F": [
+            416.72906846240176,
+            41.9367619047619
+        ]
+    },
+    "problem_choices": [
+        1.0,
+        2.8,
+        4.623,
+        9.0
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.8,
+        4.623,
+        9.0
+    ],
+    "problem_answer": 2.8,
+    "total_time": 130.013474,
+    "solution_predicate": "Equals(2.8, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE \u22a5 EF, \u2220ECF, D on CE, \u2220ECG, BD, \u2220BAD, \u2220CFE, G on AD, AB \u22a5 BD, \u2220BAG = \u2220GFE, AD, AB, \u2220ADB, 2 + x = CE, 8 = EF, \u2220FEC, x - 1 = BD, tan(\u2220ECF), 3 = AB, \u2220ADB, G on CF, CE \u22a5 EF, \u2220DCF\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : DE \u22a5 EF\nConclusions: pi / 2 = \u2220FED\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ECF, D on CE\nConclusions: \u2220DCF = \u2220ECF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220ECG, D on CE\nConclusions: \u2220DCG = \u2220ECG\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BAD, G on AD\nConclusions: \u2220BAD = \u2220BAG\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220FEC, D on CE\nConclusions: \u2220FEC = \u2220FED\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220ADB, G on AD\nConclusions: \u2220ADB = \u2220GDB\n\nStep 10:\nTheorem: Same Angle\nPremises : G on CF, \u2220CFE\nConclusions: \u2220CFE = \u2220GFE\n\nStep 11:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220ECF), CE \u22a5 EF\nConclusions: EF / CE = tan(\u2220ECF)\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220DCF, G on CF\nConclusions: \u2220DCF = \u2220DCG\n\nStep 13:\nTheorem: Tan Function Definition\nPremises : \u25b3ABD, AB \u22a5 BD, \u2220ADB\nConclusions: AB / BD = tan(\u2220ADB)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DBA, \u2220FEC = \u2220FED, pi / 2 = \u2220FED\nConclusions: \u2220DBA = \u2220FEC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CFE = \u2220GFE, \u2220BAG = \u2220GFE, \u2220BAD = \u2220BAG\nConclusions: \u2220BAD = \u2220CFE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCG = \u2220ECG, \u2220DCF = \u2220DCG\nConclusions: \u2220DCF = \u2220ECG\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220ADB = \u2220GDB, 3 = AB, AB / BD = tan(\u2220ADB), x - 1 = BD\nConclusions: 3 / (x - 1) = tan(\u2220GDB)\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BAD = \u2220CFE, \u2220DBA = \u2220FEC\nConclusions: \u25b3ABD ~ \u25b3FEC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCF = \u2220ECG, \u2220DCF = \u2220ECF\nConclusions: \u2220ECF = \u2220ECG\n\nStep 20:\nTheorem: Similar Definition\nPremises : \u25b3ABD ~ \u25b3FEC\nConclusions: \u2220ADB = \u2220ECF, \u2220DBA = \u2220FEC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220GDB, \u2220ECF = \u2220ECG, \u2220ADB = \u2220ECF\nConclusions: \u2220ECG = \u2220GDB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECG = \u2220GDB, \u2220ECF = \u2220ECG\nConclusions: \u2220ECF = \u2220GDB\n\nStep 23:\nTheorem: Substitution\nPremises : EF / CE = tan(\u2220ECF), 2 + x = CE, 8 = EF, \u2220ECF = \u2220GDB\nConclusions: 8 / (2 + x) = tan(\u2220GDB)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 8 / (2 + x) = tan(\u2220GDB), 3 / (x - 1) = tan(\u2220GDB)\nConclusions: 8 / (2 + x) = 3 / (x - 1)\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 8 / (2 + x) = 3 / (x - 1)\nConclusions: 2.8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "Perpendicular(Line(B, E), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(C, F))",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(E, F)), 8.0)",
+        "Equals(MeasureOf(Angle(B, A, G)), MeasureOf(Angle(G, F, E)))",
+        "Equals(LengthOf(Line(B, D)), Sub(x, 1.0))",
+        "Equals(LengthOf(Line(C, E)), Add(x, 2.0))"
+    ],
+    "correct": true
+}

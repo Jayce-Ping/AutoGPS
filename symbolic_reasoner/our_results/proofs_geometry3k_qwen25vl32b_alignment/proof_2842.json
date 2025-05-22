@@ -1,0 +1,99 @@
+{
+    "problem_id": "2842",
+    "solved": true,
+    "problem_text": "Use parallelogram A B C D to find m \\angle D A C.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "Equals(LengthOf(Line(B, A)), 3y-8)",
+        "Equals(LengthOf(Line(A, D)), 13)",
+        "Equals(LengthOf(Line(C, B)), 2x+7)",
+        "Equals(LengthOf(Line(D, C)), 10)",
+        "Equals(MeasureOf(Angle(B, F, C)), 49)",
+        "Equals(MeasureOf(Angle(A, D, F)), 59)",
+        "Equals(MeasureOf(Angle(A, B, F)), 20)",
+        "Parallelogram(A,B,C,D)",
+        "Find(MeasureOf(Angle(D,A,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "F",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AB",
+        "AD",
+        "DF",
+        "DB",
+        "FB",
+        "AF",
+        "AC",
+        "FC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            137.9056603773585,
+            101.88679245283018
+        ],
+        "F": [
+            236.49056603773585,
+            219.81132075471697
+        ],
+        "B": [
+            431.3018867924528,
+            101.41509433962264
+        ],
+        "C": [
+            335.0754716981132,
+            337.73584905660374
+        ],
+        "D": [
+            44.98113207547169,
+            337.2641509433962
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "49",
+        "72",
+        "101"
+    ],
+    "choices_precise_value": [
+        25.0,
+        49.0,
+        72.0,
+        101.0
+    ],
+    "problem_answer": 72.0,
+    "total_time": 83.334175,
+    "solution_predicate": "Equals(1.2566370614, MeasureOf(Angle(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BDA, pi * (59 / 180) = \u2220FDA, 3.14 = pi, \u2220BCA, F on AC, \u2220DBC, Parallelogram(A, B, C, D), CF, F on BD, pi * (49 / 180) = \u2220CFB, BC, BF, \u2220DAC\n\nStep 2:\nTheorem: Same Angle\nPremises : F on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCF\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 4:\nTheorem: Same Angle\nPremises : F on BD, \u2220DBC\nConclusions: \u2220DBC = \u2220FBC\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BDA, F on BD\nConclusions: \u2220BDA = \u2220FDA\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BC, BF, CF\nConclusions: \u25b3BCF\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220DAC, F on AC\nConclusions: \u2220DAC = \u2220DAF\n\nStep 8:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC, \u2220BCA = \u2220DAC\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, F)\nPremises : \u25b3BCF\nConclusions: pi = \u2220BCF + \u2220CFB + \u2220FBC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220FDA, \u2220BDA = \u2220DBC, pi * (59 / 180) = \u2220FDA\nConclusions: pi * (59 / 180) = \u2220DBC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCF, \u2220BCA = \u2220DAC\nConclusions: \u2220BCF = \u2220DAC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (59 / 180) = \u2220DBC, \u2220DBC = \u2220FBC\nConclusions: pi * (59 / 180) = \u2220FBC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAF, \u2220BCF = \u2220DAC\nConclusions: \u2220BCF = \u2220DAF\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220BCF = \u2220DAF, pi * (49 / 180) = \u2220CFB, pi * (59 / 180) = \u2220FBC, pi = \u2220BCF + \u2220CFB + \u2220FBC, 3.14 = pi\nConclusions: 3.14 = 3.14 * (59 / 180) + pi * (49 / 180) + \u2220DAF\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : \u2220DAC = \u2220DAF, 3.14 = 3.14 * (59 / 180) + pi * (49 / 180) + \u2220DAF, 3.14 = pi\nConclusions: 1.26 = \u2220DAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(D, F)",
+        "Line(D, B)",
+        "Line(F, B)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(B, A)), Sub(Mul(3.0, y), 8.0))",
+        "Equals(LengthOf(Line(A, D)), 13.0)",
+        "Equals(LengthOf(Line(C, B)), Add(Mul(2.0, x), 7.0))",
+        "Equals(LengthOf(Line(D, C)), 10.0)",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(49.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, A)), Mul(pi, Div(59.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, F)), Mul(pi, Div(20.0, 180.0)))"
+    ],
+    "correct": true
+}

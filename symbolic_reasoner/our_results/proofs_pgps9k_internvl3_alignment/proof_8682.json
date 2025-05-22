@@ -1,0 +1,136 @@
+{
+    "problem_id": "8682",
+    "solved": true,
+    "problem_text": "What is the measure of \\widehat FA?",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(A, D)), 82)",
+        "Equals(MeasureOf(Arc(E, D)), 100)",
+        "Equals(MeasureOf(Arc(E, F)), 120)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(G))",
+        "PointLiesOnCircle(D, Circle(G))",
+        "PointLiesOnCircle(E, Circle(G))",
+        "PointLiesOnCircle(F, Circle(G))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(F, D))",
+        "PointLiesOnLine(F, Line(B, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Find(MeasureOf(Arc(F,A)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "F",
+        "E",
+        "B",
+        "G"
+    ],
+    "line_instances": [
+        "BF",
+        "BC",
+        "BD",
+        "FC",
+        "FD",
+        "CD",
+        "BA",
+        "AC",
+        "AE",
+        "CE"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "A": [
+            204.91626794258372,
+            75.18857142857142
+        ],
+        "D": [
+            313.46650717703346,
+            75.18857142857142
+        ],
+        "C": [
+            240.36124401913875,
+            116.76342857142856
+        ],
+        "F": [
+            177.96331738437,
+            150.13142857142856
+        ],
+        "E": [
+            311.2511961722488,
+            201.97714285714284
+        ],
+        "B": [
+            53.90590111642743,
+            218.68571428571425
+        ],
+        "G": [
+            259.81976630164587,
+            137.5218693694562
+        ]
+    },
+    "problem_choices": [
+        58.0,
+        140.0,
+        158.0,
+        182.0
+    ],
+    "choices_precise_value": [
+        58.0,
+        140.0,
+        158.0,
+        182.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 80.806838,
+    "solution_predicate": "Equals(1.0122909662, MeasureOf(Arc(A, G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(EGD), Arc(FGE), 3.14 = pi, pi * (82 / 180) = Arc(DGA), \u2220EGD, Arc(DGA), pi * (100 / 180) = Arc(EGD), \u2220AGF, pi * (120 / 180) = Arc(FGE), \u2220FGE, Arc(AGF), \u2220DGA\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EGD)\nConclusions: \u2220EGD = Arc(EGD)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FGE)\nConclusions: \u2220FGE = Arc(FGE)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DGA)\nConclusions: \u2220DGA = Arc(DGA)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AGF)\nConclusions: \u2220AGF = Arc(AGF)\n\nStep 6:\nTheorem: Circumference Split\nPremises : \u2220AGF, \u2220DGA, \u2220EGD, \u2220FGE\nConclusions: 2 * pi = \u2220AGF + \u2220DGA + \u2220EGD + \u2220FGE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EGD = Arc(EGD), pi * (100 / 180) = Arc(EGD)\nConclusions: pi * (100 / 180) = \u2220EGD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FGE = Arc(FGE), pi * (120 / 180) = Arc(FGE)\nConclusions: pi * (120 / 180) = \u2220FGE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DGA = Arc(DGA), pi * (82 / 180) = Arc(DGA)\nConclusions: pi * (82 / 180) = \u2220DGA\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (120 / 180) = \u2220FGE, pi * (100 / 180) = \u2220EGD, pi * (82 / 180) = \u2220DGA, \u2220AGF = Arc(AGF), 2 * pi = \u2220AGF + \u2220DGA + \u2220EGD + \u2220FGE\nConclusions: 2 * 3.14 = 3.14 * (100 / 180) + 3.14 * (120 / 180) + 3.14 * (82 / 180) + Arc(AGF)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : \u2220AGF = Arc(AGF), 2 * 3.14 = 3.14 * (100 / 180) + 3.14 * (120 / 180) + 3.14 * (82 / 180) + Arc(AGF)\nConclusions: 1.01 = \u2220AGF\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGF = Arc(AGF), 1.01 = \u2220AGF\nConclusions: 1.01 = Arc(AGF)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, F)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Circle(G, radius_G)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(G, radius_G))",
+        "PointLiesOnCircle(D, Circle(G, radius_G))",
+        "PointLiesOnCircle(E, Circle(G, radius_G))",
+        "PointLiesOnCircle(F, Circle(G, radius_G))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(F, D))",
+        "PointLiesOnLine(F, Line(B, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Equals(MeasureOf(Arc(D, G, A)), Mul(pi, Div(82.0, 180.0)))",
+        "Equals(MeasureOf(Arc(E, G, D)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Arc(F, G, E)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

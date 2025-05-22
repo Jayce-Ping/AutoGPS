@@ -1,0 +1,138 @@
+{
+    "problem_id": "8502",
+    "solved": true,
+    "problem_text": "The angle bisectors of \\triangle XYZ intersect at W. Find WB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Y, A)), 8)",
+        "Equals(LengthOf(Line(Y, W)), 10)",
+        "Equals(MeasureOf(Angle(A, Y, W)), MeasureOf(Angle(X, Y, W)))",
+        "Equals(MeasureOf(Angle(B, X, W)), MeasureOf(Angle(W, X, Y)))",
+        "Equals(MeasureOf(Angle(B, Z, W)), MeasureOf(Angle(A, Z, W)))",
+        "Find(LengthOf(Line(W, B)))",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(B, W)",
+        "Line(B, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, B)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, X), Line(B, W))",
+        "Perpendicular(Line(Z, Y), Line(A, X))",
+        "PointLiesOnLine(A, Line(Z, Y))",
+        "PointLiesOnLine(B, Line(Z, X))",
+        "PointLiesOnLine(W, Line(A, X))",
+        "Triangle(X, Y, Z)"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "A",
+        "Y",
+        "Z",
+        "B"
+    ],
+    "line_instances": [
+        "YA",
+        "YZ",
+        "AZ",
+        "ZB",
+        "ZX",
+        "BX",
+        "XW",
+        "XA",
+        "WA",
+        "YX",
+        "YW",
+        "WB",
+        "WZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            466.01909039865245,
+            161.05406593406593
+        ],
+        "W": [
+            143.51824817518246,
+            160.79714285714286
+        ],
+        "A": [
+            54.55540809555408,
+            160.4935064935065
+        ],
+        "Y": [
+            54.2956204379562,
+            281.10530612244895
+        ],
+        "Z": [
+            54.07580011229646,
+            40.81406593406593
+        ],
+        "B": [
+            168.8619774386198,
+            74.26077922077921
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 248.499277,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(W, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on XZ, 3.14 = pi, \u2220AWY, \u2220ZXA, \u2220XWZ, WZ, XZ, \u2220AZW = \u2220WZB, \u2220ZWA, AW, AZ, \u2220AXY, AW \u22a5 AY, W on AX, \u2220BXW = \u2220WXY, AW \u22a5 AZ, BW \u22a5 BZ, AY, XY, AX \u22a5 AZ, \u2220ZXW, 8 = AY, WY, \u2220YWX, \u2220YAX, WX, \u2220WYA = \u2220XYW, 10 = WY, AX \u22a5 AY, \u2220WZX\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220XWZ, \u2220ZWA\nConclusions: pi = \u2220XWZ + \u2220ZWA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AW, AZ, WZ\nConclusions: \u25b3AWZ\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AW \u22a5 AY\nConclusions: pi / 2 = \u2220YAW\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220AXY, W on AX\nConclusions: \u2220AXY = \u2220WXY\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ZXA, W on AX\nConclusions: \u2220ZXA = \u2220ZXW\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AW \u22a5 AZ\nConclusions: pi / 2 = \u2220WAZ\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : BW \u22a5 BZ\nConclusions: pi / 2 = \u2220ZBW\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AX \u22a5 AZ\nConclusions: pi / 2 = \u2220XAZ\n\nStep 10:\nTheorem: Same Angle\nPremises : B on XZ, \u2220ZXW\nConclusions: \u2220BXW = \u2220ZXW\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : WY, AW, AY\nConclusions: \u25b3AWY\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220AWY, \u2220YWX\nConclusions: pi = \u2220AWY + \u2220YWX\n\nStep 13:\nTheorem: Same Angle\nPremises : W on AX, \u2220YAX\nConclusions: \u2220YAW = \u2220YAX\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : WX, WZ, XZ\nConclusions: \u25b3WXZ\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : XY, WY, WX\nConclusions: \u25b3WXY\n\nStep 16:\nTheorem: Perpendicular to Right Angle\nPremises : AX \u22a5 AY\nConclusions: pi / 2 = \u2220YAX\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220WZX, B on XZ\nConclusions: \u2220WZB = \u2220WZX\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220XWZ + \u2220ZWA\nConclusions: 3.14 = \u2220XWZ + \u2220ZWA\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, W, A)\nPremises : \u25b3AWZ\nConclusions: pi = \u2220AZW + \u2220WAZ + \u2220ZWA\n\nStep 20:\nTheorem: Pythagorean Theorem\nPremises : \u25b3AWZ, AW \u22a5 AZ\nConclusions: AW = SqrtOf(WZ ** 2 - AZ ** 2)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ZBW, pi / 2 = \u2220WAZ\nConclusions: \u2220WAZ = \u2220ZBW\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BXW = \u2220ZXW, \u2220BXW = \u2220WXY\nConclusions: \u2220WXY = \u2220ZXW\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(A, W, Y)\nPremises : \u25b3AWY\nConclusions: pi = \u2220AWY + \u2220WYA + \u2220YAW\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AWY + \u2220YWX\nConclusions: 3.14 = \u2220AWY + \u2220YWX\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, X, W)\nPremises : \u25b3WXZ\nConclusions: pi = \u2220WZX + \u2220XWZ + \u2220ZXW\n\nStep 26:\nTheorem: Interior Angle Sum Theorem for Triangle(W, X, Y)\nPremises : \u25b3WXY\nConclusions: pi = \u2220WXY + \u2220XYW + \u2220YWX\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220XAZ, pi / 2 = \u2220YAX\nConclusions: \u2220XAZ = \u2220YAX\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YAW = \u2220YAX, pi / 2 = \u2220WAZ, pi / 2 = \u2220YAX\nConclusions: \u2220WAZ = \u2220YAW\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WZB = \u2220WZX, \u2220AZW = \u2220WZB\nConclusions: \u2220AZW = \u2220WZX\n\nStep 30:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220WAZ = \u2220ZBW, \u2220AZW = \u2220WZB\nConclusions: \u25b3AWZ \u2245 \u25b3BWZ\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ZXA = \u2220ZXW, \u2220WXY = \u2220ZXW, \u2220AXY = \u2220WXY\nConclusions: \u2220AXY = \u2220ZXA\n\nStep 32:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220AWY + \u2220WYA + \u2220YAW, \u2220WYA = \u2220XYW, pi / 2 = \u2220YAW\nConclusions: 3.14 = 3.14 / 2 + \u2220AWY + \u2220XYW\n\nStep 33:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220WZX + \u2220XWZ + \u2220ZXW, \u2220WXY = \u2220ZXW\nConclusions: 3.14 = \u2220WXY + \u2220WZX + \u2220XWZ\n\nStep 34:\nTheorem: Substitution\nPremises : pi = \u2220AZW + \u2220WAZ + \u2220ZWA, pi / 2 = \u2220WAZ, \u2220AZW = \u2220WZX, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220WZX + \u2220ZWA\n\nStep 35:\nTheorem: Congruent Definition\nPremises : \u25b3AWZ \u2245 \u25b3BWZ\nConclusions: AW = BW\n\nStep 36:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220AXY = \u2220ZXA, \u2220XAZ = \u2220YAX\nConclusions: \u25b3AXY ~ \u25b3AXZ\n\nStep 37:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220XWZ + \u2220ZWA, pi = \u2220AWY + \u2220YWX, 3.14 = \u2220AWY + \u2220YWX, 3.14 = 3.14 / 2 + \u2220AWY + \u2220XYW, 3.14 = pi / 2 + \u2220WZX + \u2220ZWA, 3.14 = \u2220WXY + \u2220WZX + \u2220XWZ, pi = \u2220WXY + \u2220XYW + \u2220YWX\nConclusions: \u2220AWY = \u2220ZWA\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : AW = SqrtOf(WZ ** 2 - AZ ** 2), AW = BW\nConclusions: BW = SqrtOf(WZ ** 2 - AZ ** 2)\n\nStep 39:\nTheorem: Similar Definition\nPremises : \u25b3AXY ~ \u25b3AXZ\nConclusions: \u2220XAZ = \u2220YAX, \u2220AZX = \u2220XYA\n\nStep 40:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220AWY = \u2220ZWA, \u2220WAZ = \u2220YAW\nConclusions: \u25b3AWY ~ \u25b3AWZ\n\nStep 41:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220XAZ = \u2220YAX, \u2220AZX = \u2220XYA\nConclusions: \u25b3AXY \u2245 \u25b3AXZ\n\nStep 42:\nTheorem: Similar Definition\nPremises : \u25b3AWY ~ \u25b3AWZ\nConclusions: \u2220AZW = \u2220WYA, \u2220WAZ = \u2220YAW\n\nStep 43:\nTheorem: Congruent Definition\nPremises : \u25b3AXY \u2245 \u25b3AXZ\nConclusions: \u2220XAZ = \u2220YAX, AY = AZ\n\nStep 44:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220AZW = \u2220WYA, \u2220WAZ = \u2220YAW\nConclusions: \u25b3AWY \u2245 \u25b3AWZ\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : AY = AZ, 8 = AY\nConclusions: 8 = AZ\n\nStep 46:\nTheorem: Congruent Definition\nPremises : \u25b3AWY \u2245 \u25b3AWZ\nConclusions: \u2220WAZ = \u2220YAW, AY = AZ, WY = WZ\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 10 = WY, WY = WZ\nConclusions: 10 = WZ\n\nStep 48:\nTheorem: Evaluate\nPremises : 10 = WZ, 8 = AZ\nConclusions: 6 = SqrtOf(WZ ** 2 - AZ ** 2)\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 6 = SqrtOf(WZ ** 2 - AZ ** 2), BW = SqrtOf(WZ ** 2 - AZ ** 2)\nConclusions: 6 = BW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, A)",
+        "Line(Y, Z)",
+        "Line(A, Z)",
+        "Line(Z, B)",
+        "Line(Z, X)",
+        "Line(B, X)",
+        "Line(X, W)",
+        "Line(X, A)",
+        "Line(W, A)",
+        "Line(Y, X)",
+        "Line(Y, W)",
+        "Line(W, B)",
+        "Line(W, Z)",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(B, W)",
+        "Line(B, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, B)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, X), Line(B, W))",
+        "Perpendicular(Line(Z, Y), Line(A, X))",
+        "PointLiesOnLine(A, Line(Z, Y))",
+        "PointLiesOnLine(B, Line(Z, X))",
+        "PointLiesOnLine(W, Line(A, X))",
+        "Triangle(X, Y, Z)",
+        "Equals(LengthOf(Line(Y, A)), 8.0)",
+        "Equals(LengthOf(Line(Y, W)), 10.0)",
+        "Equals(MeasureOf(Angle(W, Y, A)), MeasureOf(Angle(X, Y, W)))",
+        "Equals(MeasureOf(Angle(B, X, W)), MeasureOf(Angle(W, X, Y)))",
+        "Equals(MeasureOf(Angle(W, Z, B)), MeasureOf(Angle(A, Z, W)))"
+    ],
+    "correct": true
+}

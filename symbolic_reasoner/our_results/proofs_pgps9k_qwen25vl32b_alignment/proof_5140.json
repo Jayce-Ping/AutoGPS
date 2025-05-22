@@ -1,0 +1,95 @@
+{
+    "problem_id": "5140",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, E)), x+24)",
+        "Equals(MeasureOf(Angle(C, B, E)), 2y-56)",
+        "Equals(MeasureOf(Angle(D, E, B)), x)",
+        "Equals(MeasureOf(Angle(E, D, C)), 115)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Parallel(Line(B, E), Line(C, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "DE",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            124.02749999999999,
+            44.14643545279384
+        ],
+        "B": [
+            168.42272727272726,
+            121.15186547556492
+        ],
+        "C": [
+            267.651,
+            295.29826589595376
+        ],
+        "D": [
+            471.96,
+            295.9190751445087
+        ],
+        "E": [
+            553.0663636363636,
+            121.71623751970574
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        56.0,
+        65.0,
+        115.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        56.0,
+        65.0,
+        115.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 10.113254,
+    "solution_predicate": "Equals(65.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220BED, BE || CD, 3.14 = pi, pi * (115 / 180) = \u2220EDC\n\nStep 2:\nTheorem: Consecutive Interior Angle Theorem\nPremises : BE || CD\nConclusions: pi = \u2220BED + \u2220EDC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BED\nConclusions: 3.14 * (x / 180) = \u2220BED\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (115 / 180) = \u2220EDC, pi = \u2220BED + \u2220EDC\nConclusions: 3.14 = 3.14 * (115 / 180) + \u2220BED\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220BED, 3.14 = 3.14 * (115 / 180) + \u2220BED\nConclusions: 65 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Line(B, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Parallel(Line(B, E), Line(C, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(E, B, A)), Mul(pi, Div(Add(x, 24.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(Sub(Mul(2.0, y), 56.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, D)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(115.0, 180.0)))"
+    ],
+    "correct": true
+}

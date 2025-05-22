@@ -1,0 +1,116 @@
+{
+    "problem_id": "6999",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(Angle(B, A, C)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(B, A, C)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(D, E, C)))",
+        "Equals(MeasureOf(Angle(F, E, C)), x)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DE",
+        "DF",
+        "EF",
+        "BA",
+        "AC",
+        "BD",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            123.1388888888889,
+            23.506031746031745
+        ],
+        "B": [
+            18.7671568627451,
+            101.82285714285715
+        ],
+        "C": [
+            226.3033769063181,
+            102.15238095238095
+        ],
+        "D": [
+            37.5343137254902,
+            159.58367346938775
+        ],
+        "E": [
+            207.99089635854344,
+            159.3012244897959
+        ],
+        "F": [
+            287.43382352941177,
+            159.16
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        72.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        72.0,
+        120.0
+    ],
+    "problem_answer": 72.0,
+    "total_time": 14.833172,
+    "solution_predicate": "Equals(72.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220FEC, BD, E on DF, \u2220BAC = \u2220EDB, \u2220CED, \u2220DBA = \u2220EDB, \u2220CED = \u2220EDB, \u2220FDB, AC, 3.14 = pi, \u2220ACE = \u2220EDB, AB, DE, \u2220FEC, CE\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220FDB, E on DF\nConclusions: \u2220EDB = \u2220FDB\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220FEC, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220FEC\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220CED, \u2220FEC\nConclusions: pi = \u2220CED + \u2220FEC\n\nStep 5:\nTheorem: Definition of Pentagon\nPremises : AB, DE, BD, CE, AC\nConclusions: Pentagon(A, B, D, E, C)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACE = \u2220EDB, \u2220EDB = \u2220FDB\nConclusions: \u2220ACE = \u2220FDB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220EDB, \u2220EDB = \u2220FDB\nConclusions: \u2220DBA = \u2220FDB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220EDB, \u2220EDB = \u2220FDB\nConclusions: \u2220BAC = \u2220FDB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CED = \u2220EDB, \u2220EDB = \u2220FDB\nConclusions: \u2220CED = \u2220FDB\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Pentagon(C, E, D, B, A)\nPremises : Pentagon(A, B, D, E, C)\nConclusions: 3 * pi = \u2220ACE + \u2220BAC + \u2220CED + \u2220DBA + \u2220EDB\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220CED = \u2220FDB, pi = \u2220CED + \u2220FEC, 3.14 = pi\nConclusions: 3.14 = \u2220FDB + \u2220FEC\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220ACE = \u2220FDB, \u2220BAC = \u2220FDB, \u2220DBA = \u2220FDB, \u2220CED = \u2220FDB, 3 * pi = \u2220ACE + \u2220BAC + \u2220CED + \u2220DBA + \u2220EDB, \u2220EDB = \u2220FDB, 3.14 = pi\nConclusions: 3 * 3.14 = \u2220FDB + \u2220FDB + \u2220FDB + \u2220FDB + \u2220FDB\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220FEC, 3.14 = \u2220FDB + \u2220FEC, 3 * 3.14 = \u2220FDB + \u2220FDB + \u2220FDB + \u2220FDB + \u2220FDB\nConclusions: 72 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(D, B, A)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(D, B, A)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(D, B, A)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(B, A, C)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(D, B, A)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(A, C, E)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(B, A, C)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(C, E, D)))",
+        "Equals(MeasureOf(Angle(F, E, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

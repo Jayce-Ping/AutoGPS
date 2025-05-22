@@ -1,0 +1,68 @@
+{
+    "problem_id": "3649",
+    "solved": true,
+    "problem_text": "Find the circumference.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, P)), 7.6)",
+        "Equals(MeasureOf(Angle(A, P, B)), 162)",
+        "Find(CircumferenceOf(Circle(P)))",
+        "Line(A, P)",
+        "Line(P, B)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))"
+    ],
+    "point_instances": [
+        "A",
+        "P",
+        "B"
+    ],
+    "line_instances": [
+        "AP",
+        "PB"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "A": [
+            49.68360936607653,
+            149.0470588235294
+        ],
+        "P": [
+            181.2020235800203,
+            148.37221158835393
+        ],
+        "B": [
+            306.7495145631068,
+            189.6377142857143
+        ]
+    },
+    "problem_choices": [
+        23.876,
+        47.752,
+        181.458,
+        1221.305
+    ],
+    "choices_precise_value": [
+        23.876,
+        47.752,
+        181.458,
+        1221.305
+    ],
+    "problem_answer": 47.752,
+    "total_time": 2.59275,
+    "solution_predicate": "Equals(47.7522083347, CircumferenceOf(Circle(P, radius_P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Circumference(\u2299(P, radius_P)), 7.6 = AP, A on \u2299(P, radius_P), 3.14 = pi\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(P, radius_P))\nConclusions: pi * 2 * radius_P = Circumference(\u2299(P, radius_P))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(P, radius_P)\nConclusions: radius_P = AP\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = AP, 7.6 = AP\nConclusions: 7.6 = radius_P\n\nStep 5:\nTheorem: Substitution\nPremises : pi * 2 * radius_P = Circumference(\u2299(P, radius_P)), 3.14 = pi, 7.6 = radius_P\nConclusions: 3.14 * 2 * 7.6 = Circumference(\u2299(P, radius_P))\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 * 2 * 7.6 = Circumference(\u2299(P, radius_P))\nConclusions: 47.75 = Circumference(\u2299(P, radius_P))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(P, B)",
+        "Circle(P, radius_P)",
+        "Line(A, P)",
+        "Line(P, B)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "Equals(LengthOf(Line(A, P)), 7.6)",
+        "Equals(MeasureOf(Angle(A, P, B)), Mul(pi, Div(162.0, 180.0)))"
+    ],
+    "correct": true
+}

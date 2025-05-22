@@ -1,0 +1,94 @@
+{
+    "problem_id": "1594",
+    "solved": true,
+    "problem_text": "TV is tangent to the circle, and R and S are points on the circle. What is the value of x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), x+3)",
+        "Equals(LengthOf(Line(T, S)), x)",
+        "Equals(LengthOf(Line(T, V)), 9)",
+        "Find(x)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(V, T)",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnCircle(V, Circle(A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Tangent(Line(T, V), Circle(A))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T",
+        "V",
+        "A"
+    ],
+    "line_instances": [
+        "RS",
+        "RT",
+        "ST",
+        "TV"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "R": [
+            51.83597883597883,
+            109.46666666666665
+        ],
+        "S": [
+            243.8829365079365,
+            109.46666666666665
+        ],
+        "T": [
+            368.4989316239316,
+            109.89999999999999
+        ],
+        "V": [
+            191.17153996101365,
+            194.32982456140348
+        ],
+        "A": [
+            146.5,
+            107.95679012345678
+        ]
+    },
+    "problem_choices": [
+        4.8,
+        5.7,
+        6.4,
+        7.6
+    ],
+    "choices_precise_value": [
+        4.8,
+        5.7,
+        6.4,
+        7.6
+    ],
+    "problem_answer": 7.6,
+    "total_time": 23.263655,
+    "solution_predicate": "Equals(5.658002809, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: R on \u2299(A, radius_A), Tangent(TV, \u2299(A, radius_A)), S on RT, x = ST, 9 = TV, S on \u2299(A, radius_A), ST, \u2299(A, radius_A), 3 + x = RS, RT\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on RT\nConclusions: RT = RS + ST\n\nStep 3:\nTheorem: Circle Secant Theorem\nPremises : R on \u2299(A, radius_A), Tangent(TV, \u2299(A, radius_A)), \u2299(A, radius_A), S on \u2299(A, radius_A), ST, RT\nConclusions: TV ** 2 = RT * ST\n\nStep 4:\nTheorem: Substitution\nPremises : RT = RS + ST, 3 + x = RS, x = ST\nConclusions: x + (3 + x) = RT\n\nStep 5:\nTheorem: Substitution\nPremises : 9 = TV, TV ** 2 = RT * ST, x + (3 + x) = RT, x = ST\nConclusions: 9 ** 2 = x * (x + (3 + x))\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 9 ** 2 = x * (x + (3 + x))\nConclusions: 5.66 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(T, V)",
+        "Circle(A, radius_A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(V, T)",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnCircle(V, Circle(A, radius_A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Tangent(Line(T, V), Circle(A, radius_A))",
+        "Equals(LengthOf(Line(R, S)), Add(x, 3.0))",
+        "Equals(LengthOf(Line(T, S)), x)",
+        "Equals(LengthOf(Line(T, V)), 9.0)"
+    ],
+    "correct": false
+}

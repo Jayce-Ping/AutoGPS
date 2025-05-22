@@ -1,0 +1,86 @@
+{
+    "problem_id": "2811",
+    "solved": true,
+    "problem_text": "Find m \\widehat AD.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, E, D)), 80)",
+        "Equals(MeasureOf(Angle(D, E, C)), 65)",
+        "Line(A, E)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(B, Circle(E))",
+        "PointLiesOnCircle(C, Circle(E))",
+        "PointLiesOnCircle(D, Circle(E))",
+        "Find(MeasureOf(Arc(A,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "E",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AE",
+        "ED",
+        "EC"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "B": [
+            279.28977272727275,
+            102.0987012987013
+        ],
+        "A": [
+            46.15833333333333,
+            141.04990476190474
+        ],
+        "E": [
+            165.70570829960081,
+            141.1400153625525
+        ],
+        "C": [
+            263.77916666666664,
+            210.3672380952381
+        ],
+        "D": [
+            144.48214285714283,
+            259.94
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        65.0,
+        80.0,
+        145.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        65.0,
+        80.0,
+        145.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 5.992121,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Arc(A, E, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(AED), pi * (80 / 180) = \u2220AED\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AED)\nConclusions: \u2220AED = Arc(AED)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = \u2220AED, \u2220AED = Arc(AED)\nConclusions: pi * (80 / 180) = Arc(AED)\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (80 / 180) = Arc(AED)\nConclusions: 1.4 = Arc(AED)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Circle(E, radius_E)",
+        "Line(A, E)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(B, Circle(E, radius_E))",
+        "PointLiesOnCircle(C, Circle(E, radius_E))",
+        "PointLiesOnCircle(D, Circle(E, radius_E))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

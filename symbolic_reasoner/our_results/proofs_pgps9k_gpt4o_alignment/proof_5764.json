@@ -1,0 +1,111 @@
+{
+    "problem_id": "5764",
+    "solved": true,
+    "problem_text": "Find WT, if ZX = 20 and TY = 15.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(W, Z)))",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, T)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, T)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Parallel(Line(W, X), Line(Z, Y))",
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(T, Line(X, Z))",
+        "Equals(LengthOf(Line(Z,X)),20)",
+        "Equals(LengthOf(Line(T,Y)),15)",
+        "Find(LengthOf(Line(W,T)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W",
+        "T"
+    ],
+    "line_instances": [
+        "ZY",
+        "YX",
+        "WX",
+        "XT",
+        "XZ",
+        "TZ",
+        "ZW",
+        "WT",
+        "WY",
+        "TY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            55.3582995951417,
+            235.05263157894734
+        ],
+        "Y": [
+            244.75506072874495,
+            124.7218045112782
+        ],
+        "X": [
+            99.67813765182186,
+            49.70676691729323
+        ],
+        "W": [
+            59.48504273504273,
+            72.46031746031747
+        ],
+        "T": [
+            92.25,
+            81.71428571428571
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        15.0,
+        20.0,
+        35.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        15.0,
+        20.0,
+        35.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 121.946927,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(W, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = XZ, T on WY, 15 = TY, YZ, WZ = XY, XY, WX, WX || ZY, WZ\n\nStep 2:\nTheorem: Line Segment Split\nPremises : T on WY\nConclusions: WY = TW + TY\n\nStep 3:\nTheorem: Definition of Trapezoid\nPremises : YZ, XY, WX, WX || ZY, WZ\nConclusions: Trapezoid(W, X, Y, Z)\n\nStep 4:\nTheorem: Issoceles Trapezoid Property\nPremises : Trapezoid(W, X, Y, Z), WZ = XY\nConclusions: WY = XZ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 20 = XZ, WY = XZ\nConclusions: 20 = WY\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : WY = TW + TY, 20 = WY\nConclusions: 20 = TW + TY\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 15 = TY, 20 = TW + TY\nConclusions: 5 = TW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(W, X)",
+        "Line(X, T)",
+        "Line(X, Z)",
+        "Line(T, Z)",
+        "Line(Z, W)",
+        "Line(W, T)",
+        "Line(W, Y)",
+        "Line(T, Y)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, T)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, T)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Parallel(Line(W, X), Line(Z, Y))",
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(T, Line(X, Z))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(W, Z)))",
+        "Equals(LengthOf(Line(Z, X)), 20.0)",
+        "Equals(LengthOf(Line(T, Y)), 15.0)"
+    ],
+    "correct": true
+}

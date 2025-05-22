@@ -1,0 +1,71 @@
+{
+    "problem_id": "1401",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 20)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, A), Line(A, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            302.76190476190476,
+            329.40000000000003
+        ],
+        "B": [
+            552.3809523809524,
+            94.3044155844156
+        ],
+        "C": [
+            61.98412698412699,
+            76.86000000000001
+        ]
+    },
+    "problem_choices": [
+        1.4,
+        7.1,
+        14.1,
+        15.6
+    ],
+    "choices_precise_value": [
+        1.4,
+        7.1,
+        14.1,
+        15.6
+    ],
+    "problem_answer": 15.6,
+    "total_time": 13.479697,
+    "solution_predicate": "Equals(14.1421356237, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = AC, x = AB, AB \u22a5 AC, 20 = BC, 3.14 = pi, BC, AB, AC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220BAC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BAC, 1.57 = pi / 2\nConclusions: 1.57 = \u2220BAC\n\nStep 6:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220BAC)\n\nStep 7:\nTheorem: Substitution\nPremises : x = AC, (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220BAC), 1.57 = \u2220BAC, x = AB, 20 = BC\nConclusions: (x ** 2 + x ** 2) - 20 ** 2 = 2 * cos(1.57) * x * x\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : (x ** 2 + x ** 2) - 20 ** 2 = 2 * cos(1.57) * x * x\nConclusions: 14.14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, A), Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 20.0)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, A)), x)"
+    ],
+    "correct": true
+}

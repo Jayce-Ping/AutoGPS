@@ -1,0 +1,87 @@
+{
+    "problem_id": "2408",
+    "solved": true,
+    "problem_text": "If X N = 6, X M = 2, and X Y = 10, find N Z.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(M, N), Line(Y, Z))",
+        "Equals(LengthOf(Line(X,N)),6)",
+        "Equals(LengthOf(Line(X,M)),2)",
+        "Equals(LengthOf(Line(X,Y)),10)",
+        "Find(LengthOf(Line(N,Z)))"
+    ],
+    "point_instances": [
+        "Y",
+        "Z",
+        "N",
+        "X",
+        "M"
+    ],
+    "line_instances": [
+        "XM",
+        "XY",
+        "MY",
+        "YZ",
+        "XN",
+        "XZ",
+        "NZ",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            350.58365758754866,
+            88.9455252918288
+        ],
+        "Z": [
+            409.33852140077823,
+            252.75875486381324
+        ],
+        "N": [
+            237.35408560311285,
+            253.9260700389105
+        ],
+        "X": [
+            143.96887159533074,
+            253.53696498054478
+        ],
+        "M": [
+            216.3424124513619,
+            195.17120622568095
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "16",
+        "24",
+        "32"
+    ],
+    "choices_precise_value": [
+        12.0,
+        16.0,
+        24.0,
+        32.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 33.235445,
+    "solution_predicate": "Equals(24.0, LengthOf(Line(N, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220YZX, \u2220ZXM, \u2220MNX, M on XY, \u2220ZXY, 2 = MX, 6 = NX, MN || YZ, 3.14 = pi, 10 = XY, N on XZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220YZX\nConclusions: \u2220YZX = 2 * pi - \u2220XZY\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220MNX\nConclusions: \u2220MNX = 2 * pi - \u2220XNM\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220ZXY, M on XY\nConclusions: \u2220ZXM = \u2220ZXY\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : MN || YZ\nConclusions: \u2220XNM = \u2220XZY, \u2220XMN = \u2220XYZ\n\nStep 6:\nTheorem: Line Segment Split\nPremises : N on XZ\nConclusions: XZ = NX + NZ\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ZXM, N on XZ\nConclusions: \u2220NXM = \u2220ZXM\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220YZX = 2 * pi - \u2220XZY\nConclusions: \u2220YZX = 2 * 3.14 - \u2220XZY\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220MNX = 2 * pi - \u2220XNM, \u2220XNM = \u2220XZY\nConclusions: \u2220MNX = 2 * 3.14 - \u2220XZY\n\nStep 10:\nTheorem: Substitution\nPremises : XZ = NX + NZ, 6 = NX\nConclusions: XZ = 6 + NZ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NXM = \u2220ZXM, \u2220ZXM = \u2220ZXY\nConclusions: \u2220NXM = \u2220ZXY\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZX = 2 * 3.14 - \u2220XZY, \u2220MNX = 2 * 3.14 - \u2220XZY\nConclusions: \u2220MNX = \u2220YZX\n\nStep 13:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220NXM = \u2220ZXY, \u2220MNX = \u2220YZX, \u2220XMN = \u2220XYZ\nConclusions: \u25b3MNX ~ \u25b3YZX\n\nStep 14:\nTheorem: Similar Definition\nPremises : \u25b3MNX ~ \u25b3YZX\nConclusions: \u2220XMN = \u2220XYZ, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY, \u2220NXM = \u2220ZXY, sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ, \u2220XNM = \u2220XZY\n\nStep 15:\nTheorem: Substitution\nPremises : 2 = MX, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY, 10 = XY\nConclusions: 2 / 10 = sim_ratio_triangle_m_n_x_triangle_y_z_x\n\nStep 16:\nTheorem: Substitution\nPremises : sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ, 6 = NX\nConclusions: sim_ratio_triangle_m_n_x_triangle_y_z_x = 6 / XZ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 / 10 = sim_ratio_triangle_m_n_x_triangle_y_z_x, sim_ratio_triangle_m_n_x_triangle_y_z_x = 6 / XZ\nConclusions: 2 / 10 = 6 / XZ\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2 / 10 = 6 / XZ, XZ = 6 + NZ\nConclusions: 24 = NZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, M)",
+        "Line(X, Y)",
+        "Line(M, Y)",
+        "Line(Y, Z)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(N, Z)",
+        "Line(M, N)",
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(M, N), Line(Y, Z))",
+        "Equals(LengthOf(Line(X, N)), 6.0)",
+        "Equals(LengthOf(Line(X, M)), 2.0)",
+        "Equals(LengthOf(Line(X, Y)), 10.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,82 @@
+{
+    "problem_id": "7063",
+    "solved": true,
+    "problem_text": "Determine m \\angle S.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(R, U, T)), 2x+8)",
+        "Equals(MeasureOf(Angle(S, T, U)), 6x-4)",
+        "Equals(MeasureOf(Angle(T, S, R)), 2x+8)",
+        "Equals(MeasureOf(Angle(T, S, R)), MeasureOf(Angle(R, U, T)))",
+        "Equals(MeasureOf(Angle(U, R, S)), 6x-4)",
+        "Equals(MeasureOf(Angle(U, R, S)), MeasureOf(Angle(S, T, U)))",
+        "Line(R, S)",
+        "Line(R, U)",
+        "Line(S, T)",
+        "Line(U, T)",
+        "Find(MeasureOf(Angle(S)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "U",
+        "T"
+    ],
+    "line_instances": [
+        "ST",
+        "RU",
+        "RS",
+        "UT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            290.6149253731344,
+            73.04914285714285
+        ],
+        "S": [
+            691.5761194029851,
+            72.504
+        ],
+        "U": [
+            43.701492537313435,
+            388.4142857142857
+        ],
+        "T": [
+            445.2089552238806,
+            388.4142857142857
+        ]
+    },
+    "problem_choices": [
+        14.0,
+        52.0,
+        128.0,
+        242.0
+    ],
+    "choices_precise_value": [
+        14.0,
+        52.0,
+        128.0,
+        242.0
+    ],
+    "problem_answer": 52.0,
+    "total_time": 7.975378,
+    "solution_predicate": "Equals(0.907571211, MeasureOf(Angle(R, S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: TU, RU, RS, pi * ((6 * x - 4) / 180) = \u2220URS, pi * ((8 + 2 * x) / 180) = \u2220RST, pi * ((6 * x - 4) / 180) = \u2220STU, \u2220RST = \u2220TUR, 3.14 = pi, ST\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((8 + 2 * x) / 180) = \u2220RST\nConclusions: 3.14 * ((8 + 2 * x) / 180) = \u2220RST\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((6 * x - 4) / 180) = \u2220STU, 3.14 = pi\nConclusions: 3.14 * ((6 * x - 4) / 180) = \u2220STU\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : RU, RS, TU, ST\nConclusions: Quadrilateral(R, S, T, U)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 4) / 180) = \u2220STU, 3.14 * ((6 * x - 4) / 180) = \u2220STU\nConclusions: 3.14 * ((6 * x - 4) / 180) = pi * ((6 * x - 4) / 180)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(R, S, T, U)\nPremises : Quadrilateral(R, S, T, U)\nConclusions: 2 * pi = \u2220RST + \u2220STU + \u2220TUR + \u2220URS\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x - 4) / 180) = pi * ((6 * x - 4) / 180), pi * ((6 * x - 4) / 180) = \u2220URS\nConclusions: 3.14 * ((6 * x - 4) / 180) = \u2220URS\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220RST + \u2220STU + \u2220TUR + \u2220URS, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220RST + \u2220STU + \u2220TUR + \u2220URS\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((6 * x - 4) / 180) = \u2220URS, 3.14 * ((8 + 2 * x) / 180) = \u2220RST, \u2220RST = \u2220TUR, 3.14 * ((6 * x - 4) / 180) = \u2220STU, 2 * 3.14 = \u2220RST + \u2220STU + \u2220TUR + \u2220URS\nConclusions: 0.91 = \u2220RST\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, T)",
+        "Line(R, U)",
+        "Line(R, S)",
+        "Line(U, T)",
+        "Line(R, S)",
+        "Line(R, U)",
+        "Line(S, T)",
+        "Line(U, T)",
+        "Equals(MeasureOf(Angle(T, U, R)), Mul(pi, Div(Add(Mul(2.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(S, T, U)), Mul(pi, Div(Sub(Mul(6.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(Add(Mul(2.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, S, T)), MeasureOf(Angle(T, U, R)))",
+        "Equals(MeasureOf(Angle(U, R, S)), Mul(pi, Div(Sub(Mul(6.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(U, R, S)), MeasureOf(Angle(S, T, U)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,76 @@
+{
+    "problem_id": "5437",
+    "solved": true,
+    "problem_text": "KLMN is a rectangle. Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(M, N, K)), x+40)",
+        "Equals(MeasureOf(Angle(N, M, L)), 2x-10)",
+        "Line(K, L)",
+        "Line(K, N)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "Rectangle(K,L,M,N)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "NM",
+        "KL",
+        "LM",
+        "KN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            57.86770428015564,
+            38.9
+        ],
+        "L": [
+            505.22957198443584,
+            38.9
+        ],
+        "N": [
+            57.03307392996109,
+            222.84142857142857
+        ],
+        "M": [
+            505.67470817120625,
+            223.17485714285715
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        20.0,
+        50.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        20.0,
+        50.0,
+        90.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 14.687248,
+    "solution_predicate": "Equals(50.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((2 * x - 10) / 180) = \u2220LMN, 3.14 = pi, Rectangle(K, L, M, N)\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(K, L, M, N)\nConclusions: LM \u22a5 MN\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : LM \u22a5 MN\nConclusions: pi / 2 = \u2220LMN\n\nStep 4:\nTheorem: Substitution\nPremises : pi / 2 = \u2220LMN, 3.14 = pi, pi * ((2 * x - 10) / 180) = \u2220LMN\nConclusions: 3.14 / 2 = 3.14 * ((2 * x - 10) / 180)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 / 2 = 3.14 * ((2 * x - 10) / 180)\nConclusions: 50 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(K, L)",
+        "Line(L, M)",
+        "Line(K, N)",
+        "Line(K, L)",
+        "Line(K, N)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "Rectangle(K, L, M, N)",
+        "Equals(MeasureOf(Angle(M, N, K)), Mul(pi, Div(Add(x, 40.0), 180.0)))",
+        "Equals(MeasureOf(Angle(L, M, N)), Mul(pi, Div(Sub(Mul(2.0, x), 10.0), 180.0)))"
+    ],
+    "correct": true
+}

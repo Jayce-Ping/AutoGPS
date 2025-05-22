@@ -1,0 +1,72 @@
+{
+    "problem_id": "8325",
+    "solved": true,
+    "problem_text": "Find the area of the segment.",
+    "logic_forms": [
+        "Circle(B, radius)",
+        "Equals(MeasureOf(Angle(C, A, B)), 45)",
+        "Equals(RadiusOf(Circle(B)), 10)",
+        "Find(Sub(AreaOf(Sector(B, A, C)), AreaOf(Triangle(A, B, C))))",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "Sector(B, A, C)",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "BA",
+        "BC"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "B": [
+            117.27800615478624,
+            118.52396222855192
+        ],
+        "C": [
+            216.15999999999997,
+            119.41714285714285
+        ],
+        "A": [
+            117.63809523809523,
+            218.68571428571425
+        ]
+    },
+    "problem_choices": [
+        3.915,
+        28.54,
+        114.159,
+        310.245
+    ],
+    "choices_precise_value": [
+        3.915,
+        28.54,
+        114.159,
+        310.245
+    ],
+    "problem_answer": 28.54,
+    "total_time": 28.955568,
+    "solution_predicate": "Equals(28.53981634, Sub(AreaOf(Sector(A, B, C)), AreaOf(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(B, radius), A on \u2299(B, radius), pi * (45 / 180) = \u2220CAB, 3.14 = pi, Sector(A, B, C), \u25b3ABC, 10 = radius\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius)\nConclusions: radius = BC\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius)\nConclusions: radius = AB\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220CAB\nConclusions: 0.79 = \u2220CAB\n\nStep 5:\nTheorem: Area formula of Sector(A, B, C)\nPremises : Sector(A, B, C)\nConclusions: Area(Sector(A, B, C)) = (radius ** 2 * \u2220ABC) / 2\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 8:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius = BC, 10 = radius\nConclusions: 10 = BC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : radius = AB, radius = BC\nConclusions: AB = BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius = AB, 10 = radius\nConclusions: 10 = AB\n\nStep 12:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABC, AB = BC\nConclusions: \u2220BCA = \u2220CAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220CAB, 0.79 = \u2220CAB\nConclusions: 0.79 = \u2220BCA\n\nStep 14:\nTheorem: Substitution\nPremises : 10 = BC, 0.79 = \u2220BCA, (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA), 10 = AB\nConclusions: (10 ** 2 + AC ** 2) - 10 ** 2 = 10 * 2 * cos(0.79) * AC\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, 0.79 = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB, 0.79 = \u2220CAB\nConclusions: 3.14 = 0.79 + 0.79 + \u2220ABC\n\nStep 16:\nTheorem: Solve Univariate Equation\nPremises : (10 ** 2 + AC ** 2) - 10 ** 2 = 10 * 2 * cos(0.79) * AC\nConclusions: 14.14 = AC\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.79 + 0.79 + \u2220ABC\nConclusions: 1.57 = \u2220ABC\n\nStep 18:\nTheorem: Substitution\nPremises : 14.14 = AC, 10 = BC, Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 10 = AB\nConclusions: SqrtOf(((10 + 10 + 14.14) / 2) * ((10 + 10 + 14.14) / 2 - 10) * ((10 + 10 + 14.14) / 2 - 10) * ((10 + 10 + 14.14) / 2 - 14.14)) = Area(\u25b3ABC)\n\nStep 19:\nTheorem: Substitution\nPremises : 1.57 = \u2220ABC, Area(Sector(A, B, C)) = (radius ** 2 * \u2220ABC) / 2, 10 = radius\nConclusions: (1.57 * 10 ** 2) / 2 = Area(Sector(A, B, C))\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : SqrtOf(((10 + 10 + 14.14) / 2) * ((10 + 10 + 14.14) / 2 - 10) * ((10 + 10 + 14.14) / 2 - 10) * ((10 + 10 + 14.14) / 2 - 14.14)) = Area(\u25b3ABC)\nConclusions: 50 = Area(\u25b3ABC)\n\nStep 21:\nTheorem: Solve Univariate Equation\nPremises : (1.57 * 10 ** 2) / 2 = Area(Sector(A, B, C))\nConclusions: 78.54 = Area(Sector(A, B, C))\n\nStep 22:\nTheorem: Evaluate\nPremises : 50 = Area(\u25b3ABC), 78.54 = Area(Sector(A, B, C))\nConclusions: 28.54 = Area(Sector(A, B, C)) - Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Circle(B, radius)",
+        "Circle(B, radius)",
+        "PointLiesOnCircle(A, Circle(B, radius))",
+        "PointLiesOnCircle(C, Circle(B, radius))",
+        "Sector(A, B, C)",
+        "Triangle(A, B, C)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(radius, 10.0)"
+    ],
+    "correct": true
+}

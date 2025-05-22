@@ -1,0 +1,89 @@
+{
+    "problem_id": "2967",
+    "solved": true,
+    "problem_text": "If C E = t - 2. E B = t + 1, C D = 2, and C A = 10, find C E.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(C, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Parallel(Line(A, B), Line(D, E))",
+        "Equals(LengthOf(Line(C,E)),t-2)",
+        "Equals(LengthOf(Line(E,B)),t+1)",
+        "Equals(LengthOf(Line(C,D)),2)",
+        "Equals(LengthOf(Line(C,A)),10)",
+        "Find(LengthOf(Line(C,E)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "D",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "CE",
+        "CB",
+        "EB",
+        "AB",
+        "AD",
+        "AC",
+        "DC",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            116.86725663716814,
+            338.0530973451327
+        ],
+        "A": [
+            135.0088495575221,
+            80.08849557522123
+        ],
+        "D": [
+            125.71681415929203,
+            202.21238938053096
+        ],
+        "B": [
+            423.504424778761,
+            173.4513274336283
+        ],
+        "E": [
+            280.58407079646014,
+            249.11504424778758
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+    ],
+    "problem_answer": 1.0,
+    "total_time": 37.532966,
+    "solution_predicate": "Equals(1.0, LengthOf(Line(C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DEC, \u2220ABC, 3.14 = pi, D on AC, \u2220BCA, \u2220ABC, 10 = AC, E on BC, \u2220BCD, t - 2 = CE, 1 + t = BE, AB || DE, 2 = CD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEC\nConclusions: \u2220DEC = 2 * pi - \u2220CED\n\nStep 3:\nTheorem: Same Angle\nPremises : D on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCD\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 5:\nTheorem: Line Segment Split\nPremises : E on BC\nConclusions: BC = BE + CE\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220BCA, E on BC\nConclusions: \u2220BCA = \u2220ECA\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ABC, E on BC\nConclusions: \u2220ABC = \u2220ABE\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220BCD, E on BC\nConclusions: \u2220BCD = \u2220ECD\n\nStep 9:\nTheorem: Corresponding Angle Theorem\nPremises : AB || DE\nConclusions: \u2220CAB = \u2220CDE, \u2220CBA = \u2220CED\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220DEC = 2 * pi - \u2220CED, 3.14 = pi\nConclusions: \u2220DEC = 2 * 3.14 - \u2220CED\n\nStep 11:\nTheorem: Substitution\nPremises : BC = BE + CE, 1 + t = BE, t - 2 = CE\nConclusions: (1 + t) + (t - 2) = BC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220ECA, \u2220BCA = \u2220BCD\nConclusions: \u2220BCD = \u2220ECA\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220CED, \u2220ABC = \u2220ABE, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: \u2220ABE = 2 * 3.14 - \u2220CED\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220ECD, \u2220BCD = \u2220ECA\nConclusions: \u2220ECA = \u2220ECD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEC = 2 * 3.14 - \u2220CED, \u2220ABE = 2 * 3.14 - \u2220CED\nConclusions: \u2220ABE = \u2220DEC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220ECA, \u2220ECA = \u2220ECD\nConclusions: \u2220BCA = \u2220ECD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220DEC, \u2220ABC = \u2220ABE\nConclusions: \u2220ABC = \u2220DEC\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220CDE, \u2220ABC = \u2220DEC, \u2220BCA = \u2220ECD\nConclusions: \u25b3ABC ~ \u25b3DEC\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DEC\nConclusions: \u2220CAB = \u2220CDE, \u2220BCA = \u2220ECD, sim_ratio_triangle_a_b_c_triangle_d_e_c = AC / CD, \u2220CBA = \u2220CED, sim_ratio_triangle_a_b_c_triangle_d_e_c = BC / CE\n\nStep 20:\nTheorem: Substitution\nPremises : 2 = CD, sim_ratio_triangle_a_b_c_triangle_d_e_c = AC / CD, 10 = AC\nConclusions: 10 / 2 = sim_ratio_triangle_a_b_c_triangle_d_e_c\n\nStep 21:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_c_triangle_d_e_c = BC / CE, (1 + t) + (t - 2) = BC, t - 2 = CE\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_e_c = ((1 + t) + (t - 2)) / (t - 2)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_e_c = BC / CE, 10 / 2 = sim_ratio_triangle_a_b_c_triangle_d_e_c\nConclusions: 10 / 2 = BC / CE\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_e_c = ((1 + t) + (t - 2)) / (t - 2), 10 / 2 = sim_ratio_triangle_a_b_c_triangle_d_e_c\nConclusions: 10 / 2 = ((1 + t) + (t - 2)) / (t - 2)\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : (1 + t) + (t - 2) = BC, 10 / 2 = ((1 + t) + (t - 2)) / (t - 2), 10 / 2 = BC / CE\nConclusions: 1 = CE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, E)",
+        "Line(C, B)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(E, Line(C, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Parallel(Line(A, B), Line(D, E))",
+        "Equals(LengthOf(Line(C, E)), Sub(t, 2.0))",
+        "Equals(LengthOf(Line(E, B)), Add(t, 1.0))",
+        "Equals(LengthOf(Line(C, D)), 2.0)",
+        "Equals(LengthOf(Line(C, A)), 10.0)"
+    ],
+    "correct": true
+}

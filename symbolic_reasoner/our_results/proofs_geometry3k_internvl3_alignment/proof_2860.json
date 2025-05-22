@@ -1,0 +1,78 @@
+{
+    "problem_id": "2860",
+    "solved": true,
+    "problem_text": "Find the value of the variable t.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, C)), t+1)",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(LengthOf(Line(A, C)), 24)",
+        "Find(t)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BA",
+        "DC",
+        "DA",
+        "CA",
+        "BD",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.47352024922118,
+            267.601246105919
+        ],
+        "B": [
+            18.096573208722745,
+            22.429906542056074
+        ],
+        "C": [
+            136.78816199376948,
+            117.75700934579439
+        ],
+        "D": [
+            214.35825545171338,
+            23.052959501557634
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 46.451124,
+    "solution_predicate": "Equals(5.0, t)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC, \u2220BDC, \u2220BDA, 12 = BC, CD, 1 + t = CD, AB \u22a5 BD, BC \u22a5 CD, C on AD, AC \u22a5 BC, 24 = AC, AC, \u2220DAB, BC, BD, AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: (3 * pi) / 2 = \u2220DBA\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BDA, C on AD\nConclusions: \u2220BDA = \u2220BDC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ACB\n\nStep 5:\nTheorem: Same Angle\nPremises : C on AD, \u2220DAB\nConclusions: \u2220CAB = \u2220DAB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BD, BC, CD\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220DBA, (3 * pi) / 2 = \u2220ACB\nConclusions: \u2220ACB = \u2220DBA\n\nStep 9:\nTheorem: Tan Function Definition\nPremises : \u25b3BCD, \u2220BDC, BC \u22a5 CD\nConclusions: BC / CD = tan(\u2220BDC)\n\nStep 10:\nTheorem: Tan Function Definition\nPremises : AC \u22a5 BC, \u2220ABC, \u25b3ABC\nConclusions: AC / BC = tan(\u2220ABC)\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACB = \u2220DBA, \u2220CAB = \u2220DAB\nConclusions: \u25b3ABC ~ \u25b3ADB\n\nStep 12:\nTheorem: Substitution\nPremises : 1 + t = CD, BC / CD = tan(\u2220BDC), 12 = BC\nConclusions: 12 / (1 + t) = tan(\u2220BDC)\n\nStep 13:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ADB\nConclusions: \u2220ABC = \u2220BDA, \u2220ACB = \u2220DBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220BDC, \u2220ABC = \u2220BDA\nConclusions: \u2220ABC = \u2220BDC\n\nStep 15:\nTheorem: Substitution\nPremises : AC / BC = tan(\u2220ABC), 24 = AC, 12 = BC, \u2220ABC = \u2220BDC\nConclusions: 24 / 12 = tan(\u2220BDC)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 12 / (1 + t) = tan(\u2220BDC), 24 / 12 = tan(\u2220BDC)\nConclusions: 24 / 12 = 12 / (1 + t)\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 24 / 12 = 12 / (1 + t)\nConclusions: 5 = t\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, C)), Add(t, 1.0))",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 24.0)"
+    ],
+    "correct": true
+}

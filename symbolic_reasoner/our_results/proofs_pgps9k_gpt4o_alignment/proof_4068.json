@@ -1,0 +1,113 @@
+{
+    "problem_id": "4068",
+    "solved": true,
+    "problem_text": "VWXY is a rhombus. Find m \\angle ZWX if m \\angle WVY = 4b+10 and m \\angle XZW = 10b-5.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), 9a-18)",
+        "Equals(LengthOf(Line(X, Y)), 3a+15)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(Z, Line(V, X))",
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "Rhombus(V,W,X,Y)",
+        "Equals(MeasureOf(Angle(W,V,Y)),4b+10)",
+        "Equals(MeasureOf(Angle(X,Z,W)),10b-5)",
+        "Find(MeasureOf(Angle(Z,W,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "V",
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "VZ",
+        "VX",
+        "ZX",
+        "VW",
+        "VY",
+        "WX",
+        "YX",
+        "WZ",
+        "WY",
+        "ZY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            177.53125,
+            55.28571428571428
+        ],
+        "V": [
+            51.762054507337524,
+            112.45714285714284
+        ],
+        "Z": [
+            177.27358490566039,
+            112.1142857142857
+        ],
+        "X": [
+            303.5294811320755,
+            112.62857142857142
+        ],
+        "Y": [
+            177.53125,
+            166.88571428571427
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        45.0,
+        66.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        45.0,
+        66.0,
+        90.0
+    ],
+    "problem_answer": 66.0,
+    "total_time": 308.817856,
+    "solution_predicate": "Equals(1.1519173063, MeasureOf(Angle(Z, W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, VY, WY, Rhombus(V, W, X, Y), Z on WY, pi * ((10 * b - 5) / 180) = \u2220XZW, pi * ((10 + 4 * b) / 180) = \u2220YVW, VW, \u2220YWX\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(V, W, X, Y)\nConclusions: \u2220VWY = \u2220YWX, \u2220WYV = \u2220XYW\n\nStep 4:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(V, W, X, Y)\nConclusions: WZ \u22a5 XZ\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(V, W, X, Y)\nConclusions: Parallelogram(V, W, X, Y)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : VW, WY, VY\nConclusions: \u25b3VWY\n\nStep 7:\nTheorem: Same Angle\nPremises : Z on WY, \u2220YWX\nConclusions: \u2220YWX = \u2220ZWX\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 XZ\nConclusions: pi / 2 = \u2220XZW\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(V, W, X, Y)\nConclusions: VY || WX\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(V, W, Y)\nPremises : \u25b3VWY\nConclusions: pi = \u2220VWY + \u2220WYV + \u2220YVW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YWX = \u2220ZWX, \u2220VWY = \u2220YWX\nConclusions: \u2220VWY = \u2220ZWX\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 * b - 5) / 180) = \u2220XZW, pi / 2 = \u2220XZW\nConclusions: pi / 2 = pi * ((10 * b - 5) / 180)\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : VY || WX\nConclusions: \u2220WYV = \u2220YWX\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220VWY + \u2220WYV + \u2220YVW, 3.14 = pi\nConclusions: 3.14 = \u2220VWY + \u2220WYV + \u2220YVW\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = pi * ((10 * b - 5) / 180), 1.57 = pi / 2\nConclusions: 1.57 = pi * ((10 * b - 5) / 180)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYV = \u2220YWX, \u2220WYV = \u2220XYW\nConclusions: \u2220XYW = \u2220YWX\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, 1.57 = pi * ((10 * b - 5) / 180)\nConclusions: 1.57 = 3.14 * ((10 * b - 5) / 180)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYW = \u2220YWX, \u2220VWY = \u2220YWX, \u2220WYV = \u2220XYW\nConclusions: \u2220VWY = \u2220WYV\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 1.57 = 3.14 * ((10 * b - 5) / 180)\nConclusions: 9.5 = b\n\nStep 20:\nTheorem: Evaluate\nPremises : 9.5 = b, 3.14 = pi\nConclusions: 0.84 = pi * ((10 + 4 * b) / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 0.84 = pi * ((10 + 4 * b) / 180), pi * ((10 + 4 * b) / 180) = \u2220YVW\nConclusions: 0.84 = \u2220YVW\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220VWY + \u2220WYV + \u2220YVW, \u2220VWY = \u2220WYV, 0.84 = \u2220YVW\nConclusions: 1.15 = \u2220VWY\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 1.15 = \u2220VWY, \u2220VWY = \u2220ZWX\nConclusions: 1.15 = \u2220ZWX\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, Z)",
+        "Line(V, X)",
+        "Line(Z, X)",
+        "Line(V, W)",
+        "Line(V, Y)",
+        "Line(W, X)",
+        "Line(Y, X)",
+        "Line(W, Z)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(Z, Line(V, X))",
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "Rhombus(V, W, X, Y)",
+        "Equals(LengthOf(Line(X, W)), Sub(Mul(9.0, a), 18.0))",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(3.0, a), 15.0))",
+        "Equals(MeasureOf(Angle(Y, V, W)), Mul(pi, Div(Add(Mul(4.0, b), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(X, Z, W)), Mul(pi, Div(Sub(Mul(10.0, b), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

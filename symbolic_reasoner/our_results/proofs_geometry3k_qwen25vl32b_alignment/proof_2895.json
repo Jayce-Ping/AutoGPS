@@ -1,0 +1,82 @@
+{
+    "problem_id": "2895",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(B, C)), 3)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, D)), 12)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.97035040431267,
+            183.3746630727763
+        ],
+        "B": [
+            40.700808625336926,
+            37.01347708894879
+        ],
+        "C": [
+            99.46091644204851,
+            64.50673854447439
+        ],
+        "D": [
+            336.6576819407008,
+            183.10512129380055
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "6 \\sqrt { 2 }",
+        "6 \\sqrt { 3 }",
+        "6 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.485281374238571,
+        10.392304845413264,
+        13.416407864998739
+    ],
+    "problem_answer": 13.416407864998739,
+    "total_time": 52.040491,
+    "solution_predicate": "Equals(10.3923048454, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAC, AC, AC \u22a5 CD, \u2220ABD, AB \u22a5 AD, z = AD, 3 = BC, 3.14 = pi, \u2220DAC, 12 = BD, BC, CD, C on BD, AB, \u2220BAD, sin(\u2220ABD), \u2220CAB, AD, AC \u22a5 BC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220BAD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 AD, sin(\u2220ABD)\nConclusions: AD / BD = sin(\u2220ABD)\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220CAB, \u2220BAD, \u2220DAC\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 10:\nTheorem: Substitution\nPremises : 12 = BD, 3 = BC, BD = BC + CD\nConclusions: 12 = 3 + CD\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 12:\nTheorem: Substitution\nPremises : AD / BD = sin(\u2220ABD), 12 = BD, z = AD\nConclusions: z / 12 = sin(\u2220ABD)\n\nStep 13:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BAD, 3.14 = pi, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC\n\nStep 14:\nTheorem: Sin Function Definition\nPremises : \u25b3ACD, \u2220DAC, AC \u22a5 CD\nConclusions: CD / AD = sin(\u2220DAC)\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 12 = 3 + CD\nConclusions: 9 = CD\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220ABD, pi / 2 = \u2220BCA, 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = 3.14 / 2 + \u2220ABD + \u2220CAB\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABC = \u2220ABD, 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC, 3.14 = 3.14 / 2 + \u2220ABD + \u2220CAB\nConclusions: \u2220ABC = \u2220DAC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220ABD, \u2220ABC = \u2220DAC\nConclusions: \u2220ABD = \u2220DAC\n\nStep 19:\nTheorem: Substitution\nPremises : 9 = CD, CD / AD = sin(\u2220DAC), \u2220ABD = \u2220DAC, z = AD\nConclusions: 9 / z = sin(\u2220ABD)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 9 / z = sin(\u2220ABD), z / 12 = sin(\u2220ABD)\nConclusions: z / 12 = 9 / z\n\nStep 21:\nTheorem: Solve Univariate Equation\nPremises : z / 12 = 9 / z\nConclusions: 10.39 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(B, C)), 3.0)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, D)), 12.0)"
+    ],
+    "correct": false
+}

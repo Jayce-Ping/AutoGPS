@@ -1,0 +1,63 @@
+{
+    "problem_id": "2723",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(S, R)), 2z-15)",
+        "Equals(LengthOf(Line(T, S)), 7)",
+        "Equals(LengthOf(Line(R, T)), 9)",
+        "Equals(MeasureOf(Angle(R, T, S)), MeasureOf(Angle(R, S, T)))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "SR",
+        "RT",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            92.60714285714283,
+            226.78571428571428
+        ],
+        "T": [
+            318.94642857142856,
+            352.6785714285714
+        ],
+        "R": [
+            303.7678571428571,
+            86.60714285714285
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        7.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 8.817532,
+    "solution_predicate": "Equals(12.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RT, 9 = RT, 2 * z - 15 = RS, \u2220RTS = \u2220TSR, RS, ST\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : ST, RT, RS\nConclusions: \u25b3RST\n\nStep 3:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3RST, \u2220RTS = \u2220TSR\nConclusions: RS = RT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : RS = RT, 2 * z - 15 = RS, 9 = RT\nConclusions: 9 = 2 * z - 15\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 9 = 2 * z - 15\nConclusions: 12 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Equals(LengthOf(Line(S, R)), Sub(Mul(2.0, z), 15.0))",
+        "Equals(LengthOf(Line(T, S)), 7.0)",
+        "Equals(LengthOf(Line(R, T)), 9.0)",
+        "Equals(MeasureOf(Angle(R, T, S)), MeasureOf(Angle(T, S, R)))"
+    ],
+    "correct": true
+}

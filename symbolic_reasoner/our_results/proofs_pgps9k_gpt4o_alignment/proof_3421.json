@@ -1,0 +1,117 @@
+{
+    "problem_id": "3421",
+    "solved": true,
+    "problem_text": "AD and BE are diameters. Find m \\angle AQE.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, Q, A)), 35)",
+        "Equals(MeasureOf(Arc(D, C)), 55)",
+        "Find(MeasureOf(Angle(A, Q, E)))",
+        "IsDiameterOf(Line(A, D), Circle(Q))",
+        "IsDiameterOf(Line(B, E), Circle(Q))",
+        "Line(D, A)",
+        "Line(D, Q)",
+        "Line(E, B)",
+        "Line(E, Q)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, C)",
+        "PointLiesOnCircle(A, Circle(Q))",
+        "PointLiesOnCircle(B, Circle(Q))",
+        "PointLiesOnCircle(C, Circle(Q))",
+        "PointLiesOnCircle(D, Circle(Q))",
+        "PointLiesOnCircle(E, Circle(Q))",
+        "PointLiesOnLine(Q, Line(D, A))",
+        "PointLiesOnLine(Q, Line(E, B))"
+    ],
+    "point_instances": [
+        "E",
+        "D",
+        "Q",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "EQ",
+        "EB",
+        "QB",
+        "DQ",
+        "DA",
+        "QA",
+        "CQ"
+    ],
+    "circle_instances": [
+        "Q"
+    ],
+    "point_positions": {
+        "E": [
+            86.68812527185733,
+            80.37506493506494
+        ],
+        "D": [
+            63.5187969924812,
+            152.24571428571429
+        ],
+        "Q": [
+            188.96534912790702,
+            152.37590341574335
+        ],
+        "A": [
+            315.10047846889955,
+            152.76979591836735
+        ],
+        "B": [
+            292.50143540669853,
+            225.25028571428572
+        ],
+        "C": [
+            118.29517850570483,
+            256.0945054945055
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        55.0,
+        125.0,
+        145.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        55.0,
+        125.0,
+        145.0
+    ],
+    "problem_answer": 145.0,
+    "total_time": 22.778451,
+    "solution_predicate": "Equals(2.5307274154, MeasureOf(Angle(A, Q, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AQE, Q on AD, \u2220EQD, 3.14 = pi, pi * (35 / 180) = \u2220BQA, Q on BE, \u2220BQA\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220AQE, \u2220EQD\nConclusions: pi = \u2220AQE + \u2220EQD\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : Q on AD, Q on BE\nConclusions: \u2220BQA = \u2220EQD\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220AQE, \u2220BQA\nConclusions: pi = \u2220AQE + \u2220BQA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AQE + \u2220EQD, 3.14 = pi\nConclusions: 3.14 = \u2220AQE + \u2220EQD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (35 / 180) = \u2220BQA, \u2220BQA = \u2220EQD\nConclusions: pi * (35 / 180) = \u2220EQD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220AQE + \u2220BQA, pi * (35 / 180) = \u2220EQD, 3.14 = \u2220AQE + \u2220EQD, pi * (35 / 180) = \u2220BQA\nConclusions: 2.53 = \u2220AQE\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, Q)",
+        "Line(E, B)",
+        "Line(Q, B)",
+        "Line(D, Q)",
+        "Line(D, A)",
+        "Line(Q, A)",
+        "Line(C, Q)",
+        "Circle(Q, radius_Q)",
+        "IsDiameterOf(Line(A, D), Circle(Q, radius_Q))",
+        "IsDiameterOf(Line(B, E), Circle(Q, radius_Q))",
+        "Line(D, A)",
+        "Line(D, Q)",
+        "Line(E, B)",
+        "Line(E, Q)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, C)",
+        "PointLiesOnCircle(A, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(B, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(C, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(D, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(E, Circle(Q, radius_Q))",
+        "PointLiesOnLine(Q, Line(D, A))",
+        "PointLiesOnLine(Q, Line(E, B))",
+        "Equals(MeasureOf(Angle(B, Q, A)), Mul(pi, Div(35.0, 180.0)))",
+        "Equals(MeasureOf(Arc(D, Q, C)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": true
+}

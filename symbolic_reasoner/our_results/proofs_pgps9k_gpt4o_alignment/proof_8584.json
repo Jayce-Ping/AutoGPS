@@ -1,0 +1,151 @@
+{
+    "problem_id": "8584",
+    "solved": true,
+    "problem_text": "BD = x-1, CE = x+2. Find CF.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(E, F)), 8)",
+        "Equals(MeasureOf(Angle(G, A, B)), MeasureOf(Angle(E, F, G)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "Perpendicular(Line(B, E), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(C, F))",
+        "Equals(LengthOf(Line(B,D)),x-1)",
+        "Equals(LengthOf(Line(C,E)),x+2)",
+        "Find(LengthOf(Line(C,F)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "G",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "BD",
+        "BE",
+        "CD",
+        "CE",
+        "DE",
+        "EF",
+        "FG",
+        "FC",
+        "GC",
+        "AG",
+        "AD",
+        "GD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            36.51806958473625,
+            246.83733333333333
+        ],
+        "A": [
+            37.57575757575758,
+            169.36
+        ],
+        "G": [
+            157.98518518518517,
+            207.904
+        ],
+        "C": [
+            99.36700336700336,
+            246.2069841269841
+        ],
+        "D": [
+            276.01945379723156,
+            246.29968253968255
+        ],
+        "E": [
+            417.3891293891294,
+            246.47183673469388
+        ],
+        "F": [
+            416.72906846240176,
+            41.9367619047619
+        ]
+    },
+    "problem_choices": [
+        1.8,
+        3.499,
+        4.8,
+        9.33
+    ],
+    "choices_precise_value": [
+        1.8,
+        3.499,
+        4.8,
+        9.33
+    ],
+    "problem_answer": 9.33,
+    "total_time": 151.58025,
+    "solution_predicate": "Equals(9.3295230318, LengthOf(Line(C, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAD, CE, CE \u22a5 EF, EF, \u2220BAG = \u2220GFE, G on CF, AB \u22a5 BD, tan(\u2220BAD), \u2220CFE, G on AD, \u2220CFE, CF, 2 + x = CE, 8 = EF, x - 1 = BD, 3 = AB\n\nStep 2:\nTheorem: Angle Tan Definition\nPremises : AB \u22a5 BD, tan(\u2220BAD)\nConclusions: BD / AB = tan(\u2220BAD)\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BAD, G on AD\nConclusions: \u2220BAD = \u2220BAG\n\nStep 4:\nTheorem: Same Angle\nPremises : G on CF, \u2220CFE\nConclusions: \u2220CFE = \u2220GFE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CF, EF, CE\nConclusions: \u25b3CEF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220BAG, \u2220BAG = \u2220GFE\nConclusions: \u2220BAD = \u2220GFE\n\nStep 7:\nTheorem: Tan Function Definition\nPremises : \u25b3CEF, \u2220CFE, CE \u22a5 EF\nConclusions: CE / EF = tan(\u2220CFE)\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : \u25b3CEF, CE \u22a5 EF\nConclusions: CF = SqrtOf(CE ** 2 + EF ** 2)\n\nStep 9:\nTheorem: Substitution\nPremises : BD / AB = tan(\u2220BAD), \u2220BAD = \u2220GFE, 3 = AB, x - 1 = BD\nConclusions: (x - 1) / 3 = tan(\u2220GFE)\n\nStep 10:\nTheorem: Substitution\nPremises : CE / EF = tan(\u2220CFE), \u2220CFE = \u2220GFE, 8 = EF, 2 + x = CE\nConclusions: (2 + x) / 8 = tan(\u2220GFE)\n\nStep 11:\nTheorem: Substitution\nPremises : CF = SqrtOf(CE ** 2 + EF ** 2), 8 = EF, 2 + x = CE\nConclusions: SqrtOf(8 ** 2 + (2 + x) ** 2) = CF\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (2 + x) / 8 = tan(\u2220GFE), (x - 1) / 3 = tan(\u2220GFE)\nConclusions: (x - 1) / 3 = (2 + x) / 8\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : CF = SqrtOf(CE ** 2 + EF ** 2), SqrtOf(8 ** 2 + (2 + x) ** 2) = CF\nConclusions: SqrtOf(8 ** 2 + (2 + x) ** 2) = SqrtOf(CE ** 2 + EF ** 2)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : (x - 1) / 3 = (2 + x) / 8, 2 + x = CE\nConclusions: 4.8 = CE\n\nStep 15:\nTheorem: Evaluate\nPremises : 8 = EF, 4.8 = CE\nConclusions: 9.33 = SqrtOf(CE ** 2 + EF ** 2)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(8 ** 2 + (2 + x) ** 2) = SqrtOf(CE ** 2 + EF ** 2), 9.33 = SqrtOf(CE ** 2 + EF ** 2)\nConclusions: 9.33 = SqrtOf(8 ** 2 + (2 + x) ** 2)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 9.33 = SqrtOf(8 ** 2 + (2 + x) ** 2), SqrtOf(8 ** 2 + (2 + x) ** 2) = CF\nConclusions: 9.33 = CF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "Perpendicular(Line(B, E), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(C, F))",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(E, F)), 8.0)",
+        "Equals(MeasureOf(Angle(B, A, G)), MeasureOf(Angle(G, F, E)))",
+        "Equals(LengthOf(Line(B, D)), Sub(x, 1.0))",
+        "Equals(LengthOf(Line(C, E)), Add(x, 2.0))"
+    ],
+    "correct": true
+}

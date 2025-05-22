@@ -1,0 +1,129 @@
+{
+    "problem_id": "4684",
+    "solved": true,
+    "problem_text": "Find the length of MR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, P)), LengthOf(Line(N, P)))",
+        "Equals(LengthOf(Line(M, S)), LengthOf(Line(M, P)))",
+        "Equals(LengthOf(Line(M, S)), LengthOf(Line(N, P)))",
+        "Equals(LengthOf(Line(N, M)), 8)",
+        "Equals(LengthOf(Line(R, S)), 26)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(N, R)",
+        "Line(P, N)",
+        "Line(P, R)",
+        "Line(S, M)",
+        "Line(S, N)",
+        "Line(S, P)",
+        "Line(S, R)",
+        "PointLiesOnLine(M, Line(S, N))",
+        "PointLiesOnLine(M, Line(S, P))",
+        "PointLiesOnLine(M, Line(S, R))",
+        "PointLiesOnLine(N, Line(M, R))",
+        "PointLiesOnLine(N, Line(P, R))",
+        "PointLiesOnLine(N, Line(S, R))",
+        "PointLiesOnLine(P, Line(M, N))",
+        "PointLiesOnLine(P, Line(M, R))",
+        "PointLiesOnLine(P, Line(S, N))",
+        "PointLiesOnLine(P, Line(S, R))",
+        "Find(LengthOf(Line(M,R)))"
+    ],
+    "point_instances": [
+        "S",
+        "M",
+        "P",
+        "N",
+        "R"
+    ],
+    "line_instances": [
+        "SM",
+        "SP",
+        "SN",
+        "SR",
+        "MP",
+        "MN",
+        "MR",
+        "PN",
+        "PR",
+        "NR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            33.968333333333334,
+            140.3235294117647
+        ],
+        "M": [
+            131.675,
+            139.94117647058823
+        ],
+        "P": [
+            226.32833333333332,
+            139.55882352941177
+        ],
+        "N": [
+            320.21833333333336,
+            139.55882352941177
+        ],
+        "R": [
+            654.0240000000001,
+            139.48235294117646
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        12.0,
+        16.0,
+        22.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        12.0,
+        16.0,
+        22.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 4.509545,
+    "solution_predicate": "Equals(22.0, LengthOf(Line(M, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = MN, 26 = RS, MP = NP, MS = NP, P on MN, M on RS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : P on MN\nConclusions: MN = MP + NP\n\nStep 3:\nTheorem: Line Segment Split\nPremises : M on RS\nConclusions: RS = MR + MS\n\nStep 4:\nTheorem: Substitution\nPremises : MN = MP + NP, 8 = MN, MP = NP\nConclusions: 8 = NP + NP\n\nStep 5:\nTheorem: Substitution\nPremises : MS = NP, RS = MR + MS, 26 = RS\nConclusions: 26 = MR + NP\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 26 = MR + NP, 8 = NP + NP\nConclusions: 22 = MR\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, M)",
+        "Line(S, P)",
+        "Line(S, N)",
+        "Line(S, R)",
+        "Line(M, P)",
+        "Line(M, N)",
+        "Line(M, R)",
+        "Line(P, N)",
+        "Line(P, R)",
+        "Line(N, R)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(N, R)",
+        "Line(P, N)",
+        "Line(P, R)",
+        "Line(S, M)",
+        "Line(S, N)",
+        "Line(S, P)",
+        "Line(S, R)",
+        "PointLiesOnLine(M, Line(S, N))",
+        "PointLiesOnLine(M, Line(S, P))",
+        "PointLiesOnLine(M, Line(S, R))",
+        "PointLiesOnLine(N, Line(M, R))",
+        "PointLiesOnLine(N, Line(P, R))",
+        "PointLiesOnLine(N, Line(S, R))",
+        "PointLiesOnLine(P, Line(M, N))",
+        "PointLiesOnLine(P, Line(M, R))",
+        "PointLiesOnLine(P, Line(S, N))",
+        "PointLiesOnLine(P, Line(S, R))",
+        "Equals(LengthOf(Line(M, P)), LengthOf(Line(N, P)))",
+        "Equals(LengthOf(Line(M, S)), LengthOf(Line(M, P)))",
+        "Equals(LengthOf(Line(M, S)), LengthOf(Line(N, P)))",
+        "Equals(LengthOf(Line(N, M)), 8.0)",
+        "Equals(LengthOf(Line(R, S)), 26.0)"
+    ],
+    "correct": true
+}

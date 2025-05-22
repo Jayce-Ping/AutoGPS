@@ -1,0 +1,97 @@
+{
+    "problem_id": "2563",
+    "solved": true,
+    "problem_text": "Use parallelogram J K L M to find m \\angle K J L.",
+    "logic_forms": [
+        "PointLiesOnLine(R, Line(M, K))",
+        "PointLiesOnLine(R, Line(J, L))",
+        "Equals(LengthOf(Line(J, K)), 2b+3)",
+        "Equals(LengthOf(Line(L, K)), 21)",
+        "Equals(LengthOf(Line(M, L)), 45)",
+        "Equals(LengthOf(Line(M, J)), 3a)",
+        "Equals(MeasureOf(Angle(M, R, L)), 30)",
+        "Equals(MeasureOf(Angle(R, L, K)), 70)",
+        "Parallelogram(J,K,L,M)",
+        "Find(MeasureOf(Angle(K,J,L)))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "R",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "MR",
+        "MK",
+        "RK",
+        "JR",
+        "JL",
+        "RL",
+        "ML",
+        "JM",
+        "JK",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            520.2643171806168,
+            92.70484581497797
+        ],
+        "J": [
+            146.2555066079295,
+            92.70484581497797
+        ],
+        "R": [
+            313.6563876651982,
+            192.26431718061673
+        ],
+        "M": [
+            107.04845814977973,
+            291.8237885462555
+        ],
+        "L": [
+            481.057268722467,
+            292.26431718061673
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "40",
+        "50",
+        "60"
+    ],
+    "choices_precise_value": [
+        30.0,
+        40.0,
+        50.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 125.544205,
+    "solution_predicate": "Equals(0.4539548128, MeasureOf(Angle(L, J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JL, KL, R on JL, 45 = LM, \u2220LJK, 21 = KL, Parallelogram(J, K, L, M), JK, 3 + 2 * b = JK, pi * (70 / 180) = \u2220KLR, \u2220KLJ, 3.14 = pi\n\nStep 2:\nTheorem: Same Angle\nPremises : R on JL, \u2220LJK\nConclusions: \u2220LJK = \u2220RJK\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK = LM\n\nStep 4:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220JKL = \u2220LMJ\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JM || KL\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : KL, JK, JL\nConclusions: \u25b3JKL\n\nStep 7:\nTheorem: Same Angle\nPremises : R on JL, \u2220KLJ\nConclusions: \u2220KLJ = \u2220KLR\n\nStep 8:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 47.89 = 45 / sin(pi * (70 / 180))\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : JK = LM, 3 + 2 * b = JK\nConclusions: 3 + 2 * b = LM\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KLJ = \u2220MJL\n\nStep 11:\nTheorem: Law of Sines\nPremises : \u25b3JKL\nConclusions: JL / sin(\u2220JKL) = KL / sin(\u2220LJK), JK / sin(\u2220KLJ) = JL / sin(\u2220JKL)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 2 * b = LM, 45 = LM\nConclusions: 45 = 3 + 2 * b\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KLJ = \u2220KLR, pi * (70 / 180) = \u2220KLR, \u2220KLJ = \u2220MJL\nConclusions: pi * (70 / 180) = \u2220MJL\n\nStep 14:\nTheorem: Substitution\nPremises : JL / sin(\u2220JKL) = KL / sin(\u2220LJK), \u2220JKL = \u2220LMJ, 21 = KL, \u2220LJK = \u2220RJK\nConclusions: 21 / sin(\u2220RJK) = JL / sin(\u2220LMJ)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 45 = 3 + 2 * b, 3 + 2 * b = JK\nConclusions: 45 = JK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = \u2220MJL, \u2220KLJ = \u2220MJL\nConclusions: pi * (70 / 180) = \u2220KLJ\n\nStep 17:\nTheorem: Substitution\nPremises : 45 = JK, \u2220JKL = \u2220LMJ, JK / sin(\u2220KLJ) = JL / sin(\u2220JKL), pi * (70 / 180) = \u2220KLJ\nConclusions: 45 / sin(pi * (70 / 180)) = JL / sin(\u2220LMJ)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 21 / sin(\u2220RJK) = JL / sin(\u2220LMJ), 45 / sin(pi * (70 / 180)) = JL / sin(\u2220LMJ)\nConclusions: 45 / sin(pi * (70 / 180)) = 21 / sin(\u2220RJK)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 45 / sin(pi * (70 / 180)) = 21 / sin(\u2220RJK), 47.89 = 45 / sin(pi * (70 / 180))\nConclusions: 47.89 = 21 / sin(\u2220RJK)\n\nStep 20:\nTheorem: Solve Univariate Equation\nPremises : 47.89 = 21 / sin(\u2220RJK)\nConclusions: 0.45 = \u2220RJK\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 0.45 = \u2220RJK, \u2220LJK = \u2220RJK\nConclusions: 0.45 = \u2220LJK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, R)",
+        "Line(M, K)",
+        "Line(R, K)",
+        "Line(J, R)",
+        "Line(J, L)",
+        "Line(R, L)",
+        "Line(M, L)",
+        "Line(J, M)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "PointLiesOnLine(R, Line(M, K))",
+        "PointLiesOnLine(R, Line(J, L))",
+        "Parallelogram(J, K, L, M)",
+        "Equals(LengthOf(Line(J, K)), Add(Mul(2.0, b), 3.0))",
+        "Equals(LengthOf(Line(L, K)), 21.0)",
+        "Equals(LengthOf(Line(M, L)), 45.0)",
+        "Equals(LengthOf(Line(M, J)), Mul(3.0, a))",
+        "Equals(MeasureOf(Angle(M, R, L)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, R)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": false
+}

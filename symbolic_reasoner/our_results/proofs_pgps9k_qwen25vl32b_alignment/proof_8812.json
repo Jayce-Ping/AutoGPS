@@ -1,0 +1,71 @@
+{
+    "problem_id": "8812",
+    "solved": true,
+    "problem_text": "Find the value of variable y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), 37)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            304.4121212121212,
+            24.209142857142858
+        ],
+        "B": [
+            303.8095238095238,
+            241.96612244897958
+        ],
+        "C": [
+            17.77104377104377,
+            242.18888888888887
+        ]
+    },
+    "problem_choices": [
+        3.611,
+        4.792,
+        7.962,
+        9.97
+    ],
+    "choices_precise_value": [
+        3.611,
+        4.792,
+        7.962,
+        9.97
+    ],
+    "problem_answer": 7.962,
+    "total_time": 14.104464,
+    "solution_predicate": "Equals(7.9622689304, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = AB, 3.14 = pi, pi * (37 / 180) = \u2220BCA, BC, AB \u22a5 BC, AB, \u2220CBA, AC, x = AC, \u2220ABC, y = BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.65 = pi * (37 / 180)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC, (3 * pi) / 2 = \u2220CBA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (37 / 180) = \u2220BCA, 0.65 = pi * (37 / 180)\nConclusions: 0.65 = \u2220BCA\n\nStep 8:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CBA, \u2220CBA = 2 * pi - \u2220ABC, pi / 2 = \u2220ABC, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220BCA) = AC / sin(\u2220ABC), AC / sin(\u2220ABC) = BC / sin(\u2220CAB)\n\nStep 11:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CBA, pi / 2 = \u2220ABC, \u2220ABC = 2 * pi - \u2220CBA, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220CBA\nConclusions: 2 * 3.14 - pi / 2 = \u2220CBA\n\nStep 13:\nTheorem: Substitution\nPremises : pi * (37 / 180) = \u2220BCA, pi / 2 = \u2220ABC, pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (37 / 180) + \u2220CAB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ABC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 2 * 3.14 - pi / 2 = \u2220CBA\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220ABC\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = \u2220ABC, 2 * 3.14 - (3 * pi) / 2 = \u2220ABC\nConclusions: 1.57 = \u2220ABC\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + pi * (37 / 180) + \u2220CAB, 2 * 3.14 - (3 * pi) / 2 = \u2220ABC, 2 * 3.14 - pi / 2 = 2 * pi - \u2220ABC\nConclusions: 0.93 = \u2220CAB\n\nStep 18:\nTheorem: Substitution\nPremises : 6 = AB, AB / sin(\u2220BCA) = AC / sin(\u2220ABC), x = AC, 0.65 = \u2220BCA, 1.57 = \u2220ABC\nConclusions: 6 / sin(0.65) = x / sin(1.57)\n\nStep 19:\nTheorem: Substitution\nPremises : AC / sin(\u2220ABC) = BC / sin(\u2220CAB), 0.93 = \u2220CAB, x = AC, y = BC, 1.57 = \u2220ABC\nConclusions: x / sin(1.57) = y / sin(0.93)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : x / sin(1.57) = y / sin(0.93), 6 / sin(0.65) = x / sin(1.57)\nConclusions: 6 / sin(0.65) = y / sin(0.93)\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 6 / sin(0.65) = y / sin(0.93), y = BC\nConclusions: 7.96 = BC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 7.96 = BC, y = BC\nConclusions: 7.96 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

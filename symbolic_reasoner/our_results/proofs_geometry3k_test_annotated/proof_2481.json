@@ -1,0 +1,91 @@
+{
+    "problem_id": "2481",
+    "solved": true,
+    "problem_text": "\\odot P \\cong \\odot Q. Find x.",
+    "logic_forms": [
+        "PointLiesOnCircle(U, Circle(Q, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(Q, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(P, radius_1_0))",
+        "PointLiesOnCircle(S, Circle(P, radius_1_0))",
+        "Equals(LengthOf(Line(R, S)), 3x)",
+        "Equals(LengthOf(Line(U, T)), 7x-44)",
+        "Equals(MeasureOf(Arc(U, T)), 205)",
+        "Equals(MeasureOf(Arc(R, S)), 155)",
+        "Congruent(Circle(P), Circle(Q))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "P",
+        "Q",
+        "U",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "TU"
+    ],
+    "circle_instances": [
+        "Q",
+        "P"
+    ],
+    "point_positions": {
+        "R": [
+            94.65217391304347,
+            221.91304347826082
+        ],
+        "S": [
+            375.8115942028985,
+            223.3623188405797
+        ],
+        "P": [
+            235.231884057971,
+            251.62318840579707
+        ],
+        "Q": [
+            589.5797101449275,
+            251.62318840579707
+        ],
+        "U": [
+            600.4492753623188,
+            394.3768115942029
+        ],
+        "T": [
+            635.9565217391304,
+            115.39130434782606
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "11",
+        "22",
+        "44"
+    ],
+    "choices_precise_value": [
+        7.0,
+        11.0,
+        22.0,
+        44.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 32.580697,
+    "solution_predicate": "Equals(11.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2299(P, radius_1_0) \u2245 \u2299(Q, radius_0_0), S on \u2299(P, radius_1_0), Arc(TQU), T on \u2299(Q, radius_0_0), Arc(RPS), pi * (205 / 180) = Arc(TQU), U on \u2299(Q, radius_0_0), pi * (155 / 180) = Arc(SPR), \u2220RPS, \u2220TQU, Arc(SPR), 3 * x = RS, Arc(UQT), R on \u2299(P, radius_1_0), 7 * x - 44 = TU, 3.14 = pi\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u2299(P, radius_1_0) \u2245 \u2299(Q, radius_0_0)\nConclusions: radius_0_0 = radius_1_0\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : S on \u2299(P, radius_1_0)\nConclusions: radius_1_0 = PS\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : Arc(TQU)\nConclusions: Arc(TQU) = 2 * pi - Arc(UQT)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TQU)\nConclusions: \u2220TQU = Arc(TQU)\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : T on \u2299(Q, radius_0_0)\nConclusions: radius_0_0 = QT\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RPS)\nConclusions: \u2220RPS = Arc(RPS)\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : U on \u2299(Q, radius_0_0)\nConclusions: radius_0_0 = QU\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220RPS\nConclusions: \u2220RPS = 2 * pi - \u2220SPR\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220TQU\nConclusions: \u2220TQU = 2 * pi - \u2220UQT\n\nStep 11:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(SPR)\nConclusions: \u2220SPR = Arc(SPR)\n\nStep 12:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(UQT)\nConclusions: \u2220UQT = Arc(UQT)\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : R on \u2299(P, radius_1_0)\nConclusions: radius_1_0 = PR\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (205 / 180) = Arc(TQU), Arc(TQU) = 2 * pi - Arc(UQT)\nConclusions: pi * (205 / 180) = 2 * 3.14 - Arc(UQT)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TQU = Arc(TQU), pi * (205 / 180) = Arc(TQU)\nConclusions: pi * (205 / 180) = \u2220TQU\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = QT, radius_0_0 = radius_1_0\nConclusions: radius_1_0 = QT\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = radius_1_0, radius_0_0 = QU\nConclusions: radius_1_0 = QU\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SPR = Arc(SPR), pi * (155 / 180) = Arc(SPR)\nConclusions: pi * (155 / 180) = \u2220SPR\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220UQT = Arc(UQT), \u2220TQU = 2 * pi - \u2220UQT, pi * (205 / 180) = \u2220TQU\nConclusions: 3.14 * (205 / 180) = 2 * 3.14 - Arc(UQT)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = PS, radius_1_0 = QT\nConclusions: PS = QT\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = QU, radius_1_0 = PR\nConclusions: PR = QU\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220RPS = 2 * pi - \u2220SPR, \u2220RPS = Arc(RPS), pi * (155 / 180) = \u2220SPR\nConclusions: 2 * 3.14 - 3.14 * (155 / 180) = Arc(RPS)\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (205 / 180) = 2 * 3.14 - Arc(UQT), pi * (205 / 180) = 2 * 3.14 - Arc(UQT)\nConclusions: 3.14 * (205 / 180) = pi * (205 / 180)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (155 / 180) = Arc(RPS), \u2220RPS = Arc(RPS)\nConclusions: 2 * 3.14 - 3.14 * (155 / 180) = \u2220RPS\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (205 / 180) = \u2220TQU, 3.14 * (205 / 180) = pi * (205 / 180)\nConclusions: 3.14 * (205 / 180) = \u2220TQU\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 * (155 / 180) = \u2220RPS\nConclusions: 3.58 = \u2220RPS\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (205 / 180) = \u2220TQU\nConclusions: 3.58 = \u2220TQU\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 3.58 = \u2220RPS, 3.58 = \u2220TQU\nConclusions: \u2220RPS = \u2220TQU\n\nStep 29:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : PR = QU, \u2220RPS = \u2220TQU, PS = QT\nConclusions: \u25b3PRS \u2245 \u25b3QUT\n\nStep 30:\nTheorem: Congruent Definition\nPremises : \u25b3PRS \u2245 \u25b3QUT\nConclusions: RS = TU, \u2220RPS = \u2220TQU, PS = QT\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x = RS, RS = TU, 7 * x - 44 = TU\nConclusions: 3 * x = 7 * x - 44\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 3 * x = 7 * x - 44\nConclusions: 11 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(T, U)",
+        "Circle(P, radius_1_0)",
+        "Circle(Q, radius_0_0)",
+        "PointLiesOnCircle(U, Circle(Q, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(Q, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(P, radius_1_0))",
+        "PointLiesOnCircle(S, Circle(P, radius_1_0))",
+        "Congruent(Circle(P, radius_1_0), Circle(Q, radius_0_0))",
+        "Equals(LengthOf(Line(R, S)), Mul(3.0, x))",
+        "Equals(LengthOf(Line(U, T)), Sub(Mul(7.0, x), 44.0))",
+        "Equals(MeasureOf(Arc(T, Q, U)), Mul(pi, Div(205.0, 180.0)))",
+        "Equals(MeasureOf(Arc(S, P, R)), Mul(pi, Div(155.0, 180.0)))"
+    ],
+    "correct": true
+}

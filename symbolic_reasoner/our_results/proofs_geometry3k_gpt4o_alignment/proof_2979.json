@@ -1,0 +1,102 @@
+{
+    "problem_id": "2979",
+    "solved": true,
+    "problem_text": "Find the area of the regular polygon. Round to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 3)",
+        "Find(AreaOf(Regular(Polygon(A, C, F, H, G, E))))",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "PointLiesOnLine(D, Line(A, C))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "BA",
+        "BD",
+        "BC",
+        "AD",
+        "AC",
+        "DC",
+        "GC",
+        "FG",
+        "EF",
+        "EH",
+        "HA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            145.31952662721895,
+            234.9112426035503
+        ],
+        "A": [
+            85.55621301775149,
+            235.50295857988166
+        ],
+        "B": [
+            145.6153846153846,
+            130.76923076923077
+        ],
+        "C": [
+            207.15384615384616,
+            234.6153846153846
+        ],
+        "E": [
+            84.96449704142012,
+            22.781065088757398
+        ],
+        "F": [
+            208.0414201183432,
+            22.781065088757398
+        ],
+        "G": [
+            268.6923076923077,
+            129.58579881656806
+        ],
+        "H": [
+            24.31360946745562,
+            129.58579881656806
+        ]
+    },
+    "problem_choices": [
+        "3.9",
+        "11.7",
+        "23.4",
+        "46.8"
+    ],
+    "choices_precise_value": [
+        3.9,
+        11.7,
+        23.4,
+        46.8
+    ],
+    "problem_answer": 23.4,
+    "total_time": 53.567514,
+    "solution_predicate": "Equals(23.3826859021, AreaOf(Regular(Hexagon(A, C, G, F, E, H))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Hexagon(A, C, G, F, E, H), 3.14 = pi, 3 = AC\n\nStep 2:\nTheorem: Area formula of Regular Hexagon(A, C, G, F, E, H) by formula 3\nPremises : Hexagon(A, C, G, F, E, H)\nConclusions: Area(Regular(Hexagon(A, C, G, F, E, H))) = (6 * AC ** 2) / (4 * tan(pi / 6))\n\nStep 3:\nTheorem: Evaluate\nPremises : 3 = AC, 3.14 = pi\nConclusions: 23.38 = (6 * AC ** 2) / (4 * tan(pi / 6))\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 23.38 = (6 * AC ** 2) / (4 * tan(pi / 6)), Area(Regular(Hexagon(A, C, G, F, E, H))) = (6 * AC ** 2) / (4 * tan(pi / 6))\nConclusions: 23.38 = Area(Regular(Hexagon(A, C, G, F, E, H)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(G, C)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(H, A)",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 3.0)"
+    ],
+    "correct": true
+}

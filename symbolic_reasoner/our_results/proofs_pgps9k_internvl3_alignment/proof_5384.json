@@ -1,0 +1,148 @@
+{
+    "problem_id": "5384",
+    "solved": true,
+    "problem_text": "Find the area of the square.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, H)), 2)",
+        "Find(AreaOf(Square(A, B, C, H)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, H)",
+        "Line(D, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(I, H)",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnCircle(I, Circle(F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(E, Line(C, H))",
+        "PointLiesOnLine(I, Line(G, H))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CE",
+        "CH",
+        "EH",
+        "HI",
+        "HG",
+        "IG",
+        "GD",
+        "GA",
+        "DA"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            33.333333333333336,
+            27.95047619047619
+        ],
+        "B": [
+            140.11278195488723,
+            27.675102040816327
+        ],
+        "C": [
+            249.47368421052633,
+            28.388571428571428
+        ],
+        "D": [
+            32.53289473684211,
+            134.74714285714285
+        ],
+        "E": [
+            248.69969040247676,
+            136.2218487394958
+        ],
+        "F": [
+            140.33923610128915,
+            135.2630452963602
+        ],
+        "G": [
+            33.1578947368421,
+            243.9005042016807
+        ],
+        "H": [
+            249.2879256965944,
+            243.807731092437
+        ],
+        "I": [
+            140.5263157894737,
+            243.66857142857143
+        ]
+    },
+    "problem_choices": [
+        1.732,
+        3.142,
+        4.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        1.732,
+        3.142,
+        4.0,
+        16.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 144.848513,
+    "solution_predicate": "Equals(4.0, AreaOf(Square(A, B, C, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = CH, Square(A, B, C, H)\n\nStep 2:\nTheorem: Square is Rectangle\nPremises : Square(A, B, C, H)\nConclusions: Rectangle(A, B, C, H)\n\nStep 3:\nTheorem: Square is Rhombus\nPremises : Square(A, B, C, H)\nConclusions: Rhombus(A, B, C, H)\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, H)\nConclusions: Parallelogram(A, B, C, H)\n\nStep 5:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, H)\nConclusions: AB \u22a5 AH\n\nStep 6:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, C, H)\nConclusions: AB = AH\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, H)\nConclusions: AH = BC, AB = CH\n\nStep 8:\nTheorem: Perpendicular Extension\nPremises : AB \u22a5 AH\nConclusions: AC \u22a5 AH\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 = CH, AB = CH\nConclusions: 2 = AB\n\nStep 10:\nTheorem: Area formula of Square(A, B, C, H)\nPremises : Square(A, B, C, H), AC \u22a5 AH\nConclusions: Area(Square(A, B, C, H)) = AB * AH\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 2 = AB, AH = BC, AB = AH\nConclusions: 2 = BC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 = BC, AH = BC\nConclusions: 2 = AH\n\nStep 13:\nTheorem: Evaluate\nPremises : 2 = AH, 2 = AB\nConclusions: 4 = AB * AH\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AB * AH, Area(Square(A, B, C, H)) = AB * AH\nConclusions: 4 = Area(Square(A, B, C, H))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, H)",
+        "Line(E, H)",
+        "Line(H, I)",
+        "Line(H, G)",
+        "Line(I, G)",
+        "Line(G, D)",
+        "Line(G, A)",
+        "Line(D, A)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, H)",
+        "Line(D, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(I, H)",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnCircle(I, Circle(F, radius_F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(E, Line(C, H))",
+        "PointLiesOnLine(I, Line(G, H))",
+        "Equals(LengthOf(Line(C, H)), 2.0)"
+    ],
+    "correct": true
+}

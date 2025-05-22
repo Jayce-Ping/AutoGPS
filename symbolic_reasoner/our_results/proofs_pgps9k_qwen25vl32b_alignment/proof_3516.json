@@ -1,0 +1,69 @@
+{
+    "problem_id": "3516",
+    "solved": true,
+    "problem_text": "Solve for BA.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5x+27)",
+        "Equals(LengthOf(Line(A, C)), 15x)",
+        "Equals(MeasureOf(Angle(C, A, B)), 21)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Find(LengthOf(Line(B,A)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            342.054054054054,
+            42.36000000000001
+        ],
+        "A": [
+            51.123123123123115,
+            153.52698412698416
+        ],
+        "B": [
+            341.62162162162156,
+            153.30285714285716
+        ]
+    },
+    "problem_choices": [
+        11.885,
+        36.595,
+        41.994,
+        44.981
+    ],
+    "choices_precise_value": [
+        11.885,
+        36.595,
+        41.994,
+        44.981
+    ],
+    "problem_answer": 41.994,
+    "total_time": 12.72502,
+    "solution_predicate": "Equals(41.9938252136, LengthOf(Line(B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 27 + 5 * x = AB, BC, AB, 3.14 = pi, pi * (21 / 180) = \u2220BAC, 15 * x = AC, AC, AB \u22a5 BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220CBA\nConclusions: 1.57 = \u2220CBA\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (21 / 180) = \u2220BAC, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (21 / 180) + \u2220ACB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (21 / 180) + \u2220ACB\nConclusions: 1.2 = \u2220ACB\n\nStep 10:\nTheorem: Substitution\nPremises : 27 + 5 * x = AB, 15 * x = AC, AB / sin(\u2220ACB) = AC / sin(\u2220CBA), 1.57 = \u2220CBA, 1.2 = \u2220ACB\nConclusions: (15 * x) / sin(1.57) = (27 + 5 * x) / sin(1.2)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 27 + 5 * x = AB, (15 * x) / sin(1.57) = (27 + 5 * x) / sin(1.2)\nConclusions: 41.99 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(5.0, x), 27.0))",
+        "Equals(LengthOf(Line(A, C)), Mul(15.0, x))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(21.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "1190",
+    "solved": true,
+    "problem_text": "Find m \\widehat MN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, M)), LengthOf(Line(M, N)))",
+        "Equals(MeasureOf(Angle(M, N, A)), 2x-5)",
+        "Line(A, N)",
+        "Line(L, A)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(M, N)",
+        "PointLiesOnCircle(L, Circle(A))",
+        "PointLiesOnCircle(M, Circle(A))",
+        "PointLiesOnCircle(N, Circle(A))",
+        "PointLiesOnLine(A, Line(L, N))",
+        "Find(MeasureOf(Arc(M,N)))"
+    ],
+    "point_instances": [
+        "A",
+        "N",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "NA",
+        "NL",
+        "AL",
+        "LM",
+        "NM"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "A": [
+            231.5,
+            238.0463917525773
+        ],
+        "N": [
+            259.74242424242425,
+            393.17795918367347
+        ],
+        "M": [
+            387.86805555555554,
+            211.845
+        ],
+        "L": [
+            206.3276515151515,
+            83.83357142857143
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        67.5,
+        90.0,
+        180.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        67.5,
+        90.0,
+        180.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 25.638639,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Arc(N, A, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MN, LM, LM = MN, LN, Arc(NAM)\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : MN, LM, LN\nConclusions: \u25b3LMN\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NAM)\nConclusions: \u2220NAM = Arc(NAM)\n\nStep 4:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3LMN, LM = MN\nConclusions: AM \u22a5 AN\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AM \u22a5 AN\nConclusions: pi / 2 = \u2220NAM\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NAM = Arc(NAM), pi / 2 = \u2220NAM\nConclusions: pi / 2 = Arc(NAM)\n\nStep 7:\nTheorem: Evaluate\nPremises : pi / 2 = Arc(NAM)\nConclusions: 1.57 = Arc(NAM)\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, A)",
+        "Line(N, L)",
+        "Line(A, L)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "Circle(A, radius_A)",
+        "Line(A, N)",
+        "Line(L, A)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(M, N)",
+        "PointLiesOnCircle(L, Circle(A, radius_A))",
+        "PointLiesOnCircle(M, Circle(A, radius_A))",
+        "PointLiesOnCircle(N, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(L, N))",
+        "Equals(LengthOf(Line(L, M)), LengthOf(Line(M, N)))",
+        "Equals(MeasureOf(Angle(M, N, A)), Mul(pi, Div(Sub(Mul(2.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

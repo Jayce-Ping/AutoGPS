@@ -1,0 +1,78 @@
+{
+    "problem_id": "1729",
+    "solved": true,
+    "problem_text": "Use parallelogram to find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, S, R)), y)",
+        "Equals(MeasureOf(Angle(Q, R, S)), x)",
+        "Equals(MeasureOf(Angle(R, Q, P)), 101)",
+        "Find(x)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Parallelogram(P, Q, R, S)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "P",
+        "Q"
+    ],
+    "line_instances": [
+        "RS",
+        "SP",
+        "PQ",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            58.72942386831276,
+            282.8152380952381
+        ],
+        "S": [
+            319.86111111111114,
+            309.66
+        ],
+        "P": [
+            385.3960905349794,
+            93.76761904761906
+        ],
+        "Q": [
+            124.48495370370371,
+            66.07214285714286
+        ]
+    },
+    "problem_choices": [
+        39.0,
+        79.0,
+        101.0,
+        180.0
+    ],
+    "choices_precise_value": [
+        39.0,
+        79.0,
+        101.0,
+        180.0
+    ],
+    "problem_answer": 79.0,
+    "total_time": 7.794067,
+    "solution_predicate": "Equals(79.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220QRS, 3.14 = pi, Parallelogram(P, Q, R, S), pi * (y / 180) = \u2220PSR, pi * (x / 180) = \u2220SRQ, pi * (101 / 180) = \u2220RQP, \u2220QPS\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220QRS\nConclusions: \u2220QRS = 2 * pi - \u2220SRQ\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: \u2220PSR = \u2220RQP, \u2220QPS = \u2220SRQ, \u2220QRS = \u2220SPQ\n\nStep 4:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(P, Q, R, S)\nConclusions: Quadrilateral(P, Q, R, S)\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220SRQ\nConclusions: 3.14 * (x / 180) = \u2220SRQ\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220QPS\nConclusions: \u2220QPS = 2 * pi - \u2220SPQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PSR = \u2220RQP, pi * (y / 180) = \u2220PSR\nConclusions: pi * (y / 180) = \u2220RQP\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220SRQ, \u2220QPS = \u2220SRQ\nConclusions: pi * (x / 180) = \u2220QPS\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220QRS = 2 * pi - \u2220SRQ, \u2220QRS = \u2220SPQ\nConclusions: \u2220SPQ = 2 * 3.14 - \u2220SRQ\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(S, R, Q, P)\nPremises : Quadrilateral(P, Q, R, S)\nConclusions: 2 * pi = \u2220PSR + \u2220QPS + \u2220RQP + \u2220SRQ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220SRQ, 3.14 * (x / 180) = \u2220SRQ\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220RQP, pi * (101 / 180) = \u2220RQP\nConclusions: pi * (101 / 180) = pi * (y / 180)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = pi * (x / 180), pi * (x / 180) = \u2220QPS\nConclusions: 3.14 * (x / 180) = \u2220QPS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (101 / 180) = pi * (y / 180), pi * (y / 180) = \u2220PSR\nConclusions: pi * (101 / 180) = \u2220PSR\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220QPS, \u2220QPS = 2 * pi - \u2220SPQ\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220SPQ\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (101 / 180) = \u2220PSR, 2 * pi = \u2220PSR + \u2220QPS + \u2220RQP + \u2220SRQ, pi * (101 / 180) = \u2220RQP\nConclusions: 2 * 3.14 = 3.14 * (101 / 180) + pi * (101 / 180) + \u2220QPS + \u2220SRQ\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220SRQ, 3.14 * (x / 180) = 2 * pi - \u2220SPQ, 2 * 3.14 = 3.14 * (101 / 180) + pi * (101 / 180) + \u2220QPS + \u2220SRQ, \u2220SPQ = 2 * 3.14 - \u2220SRQ, 3.14 * (x / 180) = \u2220QPS\nConclusions: 79 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(S, P)",
+        "Line(P, Q)",
+        "Line(R, Q)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Parallelogram(P, Q, R, S)",
+        "Equals(MeasureOf(Angle(P, S, R)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(S, R, Q)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(R, Q, P)), Mul(pi, Div(101.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,86 @@
+{
+    "problem_id": "1613",
+    "solved": true,
+    "problem_text": "Find the area of the quadrilateral.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 18)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(B, D)), 18)",
+        "Equals(MeasureOf(Angle(C, B, D)), 60)",
+        "Find(AreaOf(Rectangle(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "Perpendicular(Line(C, D), Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CB",
+        "CD",
+        "AB",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            46.41095890410959,
+            29.777142857142856
+        ],
+        "B": [
+            415.48858447488584,
+            29.777142857142856
+        ],
+        "C": [
+            45.9689497716895,
+            243.51085714285713
+        ],
+        "D": [
+            415.9305936073059,
+            243.51085714285713
+        ]
+    },
+    "problem_choices": [
+        162.0,
+        187.061,
+        280.592,
+        561.185
+    ],
+    "choices_precise_value": [
+        162.0,
+        187.061,
+        280.592,
+        561.185
+    ],
+    "problem_answer": 561.185,
+    "total_time": 45.079493,
+    "solution_predicate": "Equals(561.1844616567, AreaOf(Rectangle(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (60 / 180) = \u2220CBD, BC, 3.14 = pi, \u2220BCA, Rectangle(A, B, D, C), 18 = BD, AC, Area(Rectangle(A, B, D, C)), AB, 18 = AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, D, C)\nConclusions: AB \u22a5 AC\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 5:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, D, C))\nConclusions: Area(Rectangle(A, B, D, C)) = AB * BD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AC || BD\n\nStep 9:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, AB \u22a5 AC, \u2220BCA\nConclusions: AB / AC = tan(\u2220BCA)\n\nStep 10:\nTheorem: Substitution\nPremises : Area(Rectangle(A, B, D, C)) = AB * BD, 18 = BD, AB = CD\nConclusions: Area(Rectangle(A, B, D, C)) = 18 * CD\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || BD\nConclusions: \u2220BCA = \u2220CBD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220CBD, pi * (60 / 180) = \u2220CBD\nConclusions: pi * (60 / 180) = \u2220BCA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220BCA, 1.05 = pi * (60 / 180)\nConclusions: 1.05 = \u2220BCA\n\nStep 14:\nTheorem: Substitution\nPremises : AB / AC = tan(\u2220BCA), 1.05 = \u2220BCA, AB = CD, 18 = AC\nConclusions: tan(1.05) = CD / 18\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : Area(Rectangle(A, B, D, C)) = 18 * CD, tan(1.05) = CD / 18\nConclusions: 561.18 = Area(Rectangle(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), 18.0)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(B, D)), 18.0)",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,98 @@
+{
+    "problem_id": "2452",
+    "solved": true,
+    "problem_text": "In the figure, m \\angle 1 = 58, m \\angle 2 = 47, and m \\angle 3 = 26. Find the measure of \\angle 5.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(E, C), Line(A, B))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(C, E, B)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, E)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, E, B)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Angle(A, B, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(1)),58)",
+        "Equals(MeasureOf(Angle(2)),47)",
+        "Equals(MeasureOf(Angle(3)),26)",
+        "Find(MeasureOf(Angle(5)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AB",
+        "AE",
+        "AD",
+        "ED",
+        "EC",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            243.78466076696162,
+            37.16814159292035
+        ],
+        "A": [
+            48.50442477876106,
+            36.87315634218289
+        ],
+        "C": [
+            205.4365781710914,
+            160.47197640117994
+        ],
+        "D": [
+            180.0678466076696,
+            242.18289085545723
+        ],
+        "E": [
+            128.1504424778761,
+            160.47197640117994
+        ]
+    },
+    "problem_choices": [
+        "43",
+        "47",
+        "58",
+        "73"
+    ],
+    "choices_precise_value": [
+        43.0,
+        47.0,
+        58.0,
+        73.0
+    ],
+    "problem_answer": 47.0,
+    "total_time": 20.037637,
+    "solution_predicate": "Equals(0.8203047484, MeasureOf(Angle(C, E, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB || EC, pi * (47 / 180) = \u2220ABE\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || EC\nConclusions: \u2220ABE = \u2220CEB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (47 / 180) = \u2220ABE, \u2220ABE = \u2220CEB\nConclusions: pi * (47 / 180) = \u2220CEB\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (47 / 180) = \u2220CEB\nConclusions: 0.82 = \u2220CEB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(B, E)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(E, C), Line(A, B))",
+        "Equals(MeasureOf(Angle(E, A, B)), Mul(pi, Div(58.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, C)), Mul(pi, Div(26.0, 180.0)))"
+    ],
+    "correct": true
+}

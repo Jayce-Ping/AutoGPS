@@ -1,0 +1,65 @@
+{
+    "problem_id": "2529",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(B, A)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 20)",
+        "Equals(MeasureOf(Angle(C, B, A)), 60)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            31.415929203539818,
+            155.38938053097343
+        ],
+        "B": [
+            31.637168141592916,
+            19.769911504424776
+        ],
+        "C": [
+            274.1150442477876,
+            155.83185840707964
+        ]
+    },
+    "problem_choices": [
+        "4 \\sqrt { 3 }",
+        "6 \\sqrt { 3 }",
+        "8 \\sqrt { 3 }",
+        "10 \\sqrt { 3 }"
+    ],
+    "choices_precise_value": [
+        6.928203230275509,
+        10.392304845413264,
+        13.856406460551018,
+        17.32050807568877
+    ],
+    "problem_answer": 17.32050807568877,
+    "total_time": 13.535316,
+    "solution_predicate": "Equals(17.3205080757, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = BC, x = AC, AB \u22a5 AC, 3.14 = pi, sin(\u2220ABC), pi * (60 / 180) = \u2220ABC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220ABC), AB \u22a5 AC\nConclusions: AC / BC = sin(\u2220ABC)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220ABC\nConclusions: 1.05 = \u2220ABC\n\nStep 5:\nTheorem: Evaluate\nPremises : 1.05 = \u2220ABC\nConclusions: 0.87 = sin(\u2220ABC)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = sin(\u2220ABC), 0.87 = sin(\u2220ABC)\nConclusions: 0.87 = AC / BC\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 20 = BC, 0.87 = AC / BC\nConclusions: 17.32 = AC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 17.32 = AC\nConclusions: 17.32 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(B, A)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 20.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,113 @@
+{
+    "problem_id": "4714",
+    "solved": true,
+    "problem_text": "Find m \\widehat KM.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(J, G, H)), 51)",
+        "Equals(MeasureOf(Angle(L, G, K)), 30)",
+        "Line(G, K)",
+        "Line(G, L)",
+        "Line(G, M)",
+        "Line(H, G)",
+        "Line(H, L)",
+        "Line(J, G)",
+        "Line(J, M)",
+        "PointLiesOnCircle(H, Circle(G))",
+        "PointLiesOnCircle(J, Circle(G))",
+        "PointLiesOnCircle(K, Circle(G))",
+        "PointLiesOnCircle(L, Circle(G))",
+        "PointLiesOnCircle(M, Circle(G))",
+        "PointLiesOnLine(G, Line(H, L))",
+        "PointLiesOnLine(G, Line(J, M))",
+        "Find(MeasureOf(Arc(K,M)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "H",
+        "G",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "JG",
+        "JM",
+        "GM",
+        "HG",
+        "HL",
+        "GL",
+        "GK"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "J": [
+            102.92383512544804,
+            59.19523809523809
+        ],
+        "K": [
+            273.18817204301075,
+            91.00244897959183
+        ],
+        "H": [
+            60.070788530465954,
+            147.03333333333333
+        ],
+        "G": [
+            174.84909913517203,
+            147.45980461118816
+        ],
+        "L": [
+            288.11021505376345,
+            147.79714285714286
+        ],
+        "M": [
+            246.02240143369178,
+            236.39904761904762
+        ]
+    },
+    "problem_choices": [
+        51.0,
+        81.0,
+        99.0,
+        129.0
+    ],
+    "choices_precise_value": [
+        51.0,
+        81.0,
+        99.0,
+        129.0
+    ],
+    "problem_answer": 81.0,
+    "total_time": 19.755418,
+    "solution_predicate": "Equals(1.4137166941, MeasureOf(Arc(M, G, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (51 / 180) = \u2220JGH, \u2220JGL, pi * (30 / 180) = \u2220LGK, \u2220MGL, Arc(MGK), \u2220JGH, \u2220HGJ, \u2220LGJ, \u2220KGJ, \u2220MGK, G on JM, 3.14 = pi, G on HL, \u2220LGK, \u2220HGM, \u2220LGJ\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(MGK)\nConclusions: \u2220MGK = Arc(MGK)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220HGJ\nConclusions: \u2220HGJ = 2 * pi - \u2220JGH\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220JGH, \u2220LGJ\nConclusions: pi = \u2220JGH + \u2220LGJ\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220KGJ, \u2220MGK\nConclusions: pi = \u2220KGJ + \u2220MGK\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : G on HL, G on JM\nConclusions: \u2220JGL = \u2220MGH, \u2220HGM = \u2220LGJ, \u2220HGJ = \u2220LGM, \u2220JGH = \u2220MGL\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220KGJ, \u2220JGL, \u2220LGK\nConclusions: 2 * pi = \u2220JGL + \u2220KGJ + \u2220LGK\n\nStep 8:\nTheorem: Circumference Split\nPremises : \u2220KGJ, \u2220MGL, \u2220JGH, \u2220LGK, \u2220HGM\nConclusions: 2 * pi = \u2220HGM + \u2220JGH + \u2220KGJ + \u2220LGK + \u2220MGL\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220LGJ\nConclusions: \u2220LGJ = 2 * pi - \u2220JGL\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220JGH + \u2220LGJ\nConclusions: 3.14 = \u2220JGH + \u2220LGJ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220KGJ + \u2220MGK\nConclusions: 3.14 = \u2220KGJ + \u2220MGK\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (51 / 180) = \u2220JGH, \u2220HGJ = \u2220LGM, \u2220HGJ = 2 * pi - \u2220JGH\nConclusions: 2 * 3.14 - pi * (51 / 180) = \u2220LGM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = \u2220JGH, \u2220JGH = \u2220MGL\nConclusions: pi * (51 / 180) = \u2220MGL\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JGL = \u2220MGH, 2 * pi = \u2220JGL + \u2220KGJ + \u2220LGK, pi * (30 / 180) = \u2220LGK\nConclusions: 2 * 3.14 = pi * (30 / 180) + \u2220KGJ + \u2220MGH\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JGL = \u2220MGH, \u2220LGJ = 2 * pi - \u2220JGL\nConclusions: \u2220LGJ = 2 * 3.14 - \u2220MGH\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGJ = \u2220LGM, 2 * 3.14 - pi * (51 / 180) = \u2220LGM\nConclusions: 2 * 3.14 - pi * (51 / 180) = \u2220HGJ\n\nStep 17:\nTheorem: Substitution\nPremises : 2 * pi = \u2220HGM + \u2220JGH + \u2220KGJ + \u2220LGK + \u2220MGL, pi * (51 / 180) = \u2220JGH, \u2220HGM = \u2220LGJ, pi * (30 / 180) = \u2220LGK, 3.14 = pi, pi * (51 / 180) = \u2220MGL\nConclusions: 2 * 3.14 = 3.14 * (51 / 180) + pi * (30 / 180) + pi * (51 / 180) + \u2220KGJ + \u2220LGJ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (51 / 180) = \u2220HGJ, \u2220HGJ = 2 * pi - \u2220JGH\nConclusions: 2 * 3.14 - pi * (51 / 180) = 2 * pi - \u2220JGH\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi * (51 / 180) = 2 * pi - \u2220JGH, 3.14 = \u2220JGH + \u2220LGJ, 2 * 3.14 = 3.14 * (51 / 180) + pi * (30 / 180) + pi * (51 / 180) + \u2220KGJ + \u2220LGJ, 3.14 = \u2220KGJ + \u2220MGK, 2 * 3.14 = pi * (30 / 180) + \u2220KGJ + \u2220MGH, \u2220LGJ = 2 * 3.14 - \u2220MGH\nConclusions: 1.41 = \u2220MGK\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 1.41 = \u2220MGK, \u2220MGK = Arc(MGK)\nConclusions: 1.41 = Arc(MGK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, G)",
+        "Line(J, M)",
+        "Line(G, M)",
+        "Line(H, G)",
+        "Line(H, L)",
+        "Line(G, L)",
+        "Line(G, K)",
+        "Circle(G, radius_G)",
+        "Line(G, K)",
+        "Line(G, L)",
+        "Line(G, M)",
+        "Line(H, G)",
+        "Line(H, L)",
+        "Line(J, G)",
+        "Line(J, M)",
+        "PointLiesOnCircle(H, Circle(G, radius_G))",
+        "PointLiesOnCircle(J, Circle(G, radius_G))",
+        "PointLiesOnCircle(K, Circle(G, radius_G))",
+        "PointLiesOnCircle(L, Circle(G, radius_G))",
+        "PointLiesOnCircle(M, Circle(G, radius_G))",
+        "PointLiesOnLine(G, Line(H, L))",
+        "PointLiesOnLine(G, Line(J, M))",
+        "Equals(MeasureOf(Angle(J, G, H)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(L, G, K)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

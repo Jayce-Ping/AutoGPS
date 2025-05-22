@@ -1,0 +1,84 @@
+{
+    "problem_id": "2812",
+    "solved": true,
+    "problem_text": "Quadrilateral W X Y Z is inscribed in \\odot V. Find m \\angle X.",
+    "logic_forms": [
+        "PointLiesOnCircle(W, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(V, radius_0_0))",
+        "Equals(MeasureOf(Angle(Y, Z, W)), 60)",
+        "Equals(MeasureOf(Angle(X, W, Z)), 95)",
+        "InscribedIn(Quadrilateral(W, X, Y, Z), Circle(V))",
+        "Find(MeasureOf(Angle(X)))"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "V",
+        "Z",
+        "X"
+    ],
+    "line_instances": [
+        "WX",
+        "YX",
+        "ZY",
+        "ZW"
+    ],
+    "circle_instances": [
+        "V"
+    ],
+    "point_positions": {
+        "W": [
+            162.24120603015075,
+            379.8994974874372
+        ],
+        "Y": [
+            387.86934673366835,
+            226.13065326633165
+        ],
+        "V": [
+            231.0854271356784,
+            238.69346733668343
+        ],
+        "Z": [
+            162.24120603015075,
+            95.47738693467336
+        ],
+        "X": [
+            275.3065326633166,
+            389.4472361809045
+        ]
+    },
+    "problem_choices": [
+        "85",
+        "95",
+        "115",
+        "120"
+    ],
+    "choices_precise_value": [
+        85.0,
+        95.0,
+        115.0,
+        120.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 59.128099,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(Y, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220VXW, \u2220YXV, VX, \u2220WXY, 3.14 = pi, VZ, \u2220VZY, X on \u2299(V, radius_0_0), \u2220YVW, Quadrilateral(W, X, Y, Z), Y on \u2299(V, radius_0_0), \u2220WZV, YZ, \u2220WZY, WX, Z on \u2299(V, radius_0_0), pi * (60 / 180) = \u2220WZY, WZ, VY, VW, XY, W on \u2299(V, radius_0_0)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220WXY\nConclusions: \u2220WXY = 2 * pi - \u2220YXW\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : X on \u2299(V, radius_0_0)\nConclusions: radius_0_0 = VX\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220YVW\nConclusions: \u2220YVW = 2 * pi - \u2220WVY\n\nStep 5:\nTheorem: Quadrilateral to is components\nPremises : Quadrilateral(W, X, Y, Z)\nConclusions: WZ, WX, \u2220WXY, \u2220YZW, XY, YZ\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(V, radius_0_0)\nConclusions: radius_0_0 = VY\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220WZY\nConclusions: \u2220WZY = 2 * pi - \u2220YZW\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(V, radius_0_0)\nConclusions: radius_0_0 = VZ\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : VZ, VY, YZ\nConclusions: \u25b3VYZ\n\nStep 10:\nTheorem: Definition of Quadrilateral\nPremises : WZ, VY, YZ, VW\nConclusions: Quadrilateral(V, W, Z, Y)\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : WZ, VZ, VW\nConclusions: \u25b3VWZ\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : VX, WX, VW\nConclusions: \u25b3VWX\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : VX, XY, VY\nConclusions: \u25b3VXY\n\nStep 14:\nTheorem: Definition of Quadrilateral\nPremises : WX, VY, VW, XY\nConclusions: Quadrilateral(V, W, X, Y)\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : W on \u2299(V, radius_0_0)\nConclusions: radius_0_0 = VW\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220WXY = 2 * pi - \u2220YXW, 3.14 = pi\nConclusions: \u2220WXY = 2 * 3.14 - \u2220YXW\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220YXV, \u2220VXW, \u2220WXY\nConclusions: 2 * pi = \u2220VXW + \u2220WXY + \u2220YXV\n\nStep 18:\nTheorem: Circumference splited\nPremises : \u2220VZY, \u2220WZV, \u2220YZW\nConclusions: 2 * pi = \u2220VZY + \u2220WZV + \u2220YZW\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = VX, radius_0_0 = VY\nConclusions: VX = VY\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220WZY, 3.14 = pi, \u2220WZY = 2 * pi - \u2220YZW\nConclusions: 3.14 * (60 / 180) = 2 * 3.14 - \u2220YZW\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = VZ, radius_0_0 = VY\nConclusions: VY = VZ\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(V, W, Z, Y)\nPremises : Quadrilateral(V, W, Z, Y)\nConclusions: 2 * pi = \u2220VWZ + \u2220WZY + \u2220YVW + \u2220ZYV\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(Y, X, W, V)\nPremises : Quadrilateral(V, W, X, Y)\nConclusions: 2 * pi = \u2220VYX + \u2220WVY + \u2220XWV + \u2220YXW\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = VX, radius_0_0 = VW\nConclusions: VW = VX\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = VZ, radius_0_0 = VW\nConclusions: VW = VZ\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220VXW + \u2220WXY + \u2220YXV\nConclusions: 2 * 3.14 = \u2220VXW + \u2220WXY + \u2220YXV\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220VZY + \u2220WZV + \u2220YZW\nConclusions: 2 * 3.14 = \u2220VZY + \u2220WZV + \u2220YZW\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : VX = VY, \u25b3VXY\nConclusions: \u2220VYX = \u2220YXV\n\nStep 29:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (60 / 180) = 2 * 3.14 - \u2220YZW\nConclusions: 5.24 = \u2220YZW\n\nStep 30:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3VYZ, VY = VZ\nConclusions: \u2220VZY = \u2220ZYV\n\nStep 31:\nTheorem: Substitution\nPremises : 2 * pi = \u2220VWZ + \u2220WZY + \u2220YVW + \u2220ZYV, 3.14 = pi, pi * (60 / 180) = \u2220WZY\nConclusions: 2 * 3.14 = 3.14 * (60 / 180) + \u2220VWZ + \u2220YVW + \u2220ZYV\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : VW = VX, \u25b3VWX\nConclusions: \u2220VXW = \u2220XWV\n\nStep 33:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3VWZ, VW = VZ\nConclusions: \u2220VWZ = \u2220WZV\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220VZY + \u2220WZV + \u2220YZW, 2 * pi = \u2220VZY + \u2220WZV + \u2220YZW\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 35:\nTheorem: Substitution\nPremises : 2 * 3.14 = \u2220VZY + \u2220WZV + \u2220YZW, 5.24 = \u2220YZW, \u2220VZY = \u2220ZYV\nConclusions: 2 * 3.14 = 5.24 + \u2220WZV + \u2220ZYV\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (60 / 180) + \u2220VWZ + \u2220YVW + \u2220ZYV, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (60 / 180) + \u2220VWZ + \u2220YVW + \u2220ZYV\n\nStep 37:\nTheorem: Substitution\nPremises : \u2220VWZ = \u2220WZV, 2 * pi = 3.14 * (60 / 180) + \u2220VWZ + \u2220YVW + \u2220ZYV, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (60 / 180) + \u2220WZV + \u2220YVW + \u2220ZYV\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : \u2220WXY = 2 * 3.14 - \u2220YXW, \u2220VYX = \u2220YXV, 2 * 3.14 = 5.24 + \u2220WZV + \u2220ZYV, 2 * pi = \u2220VYX + \u2220WVY + \u2220XWV + \u2220YXW, \u2220VXW = \u2220XWV, 2 * 3.14 = 3.14 * (60 / 180) + \u2220WZV + \u2220YVW + \u2220ZYV, 2 * 3.14 = \u2220VXW + \u2220WXY + \u2220YXV, \u2220YVW = 2 * pi - \u2220WVY\nConclusions: 2.09 = \u2220YXW\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(Y, X)",
+        "Line(Z, Y)",
+        "Line(Z, W)",
+        "Circle(V, radius_0_0)",
+        "PointLiesOnCircle(W, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(V, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(V, radius_0_0))",
+        "InscribedIn(Quadrilateral(W, X, Y, Z), Circle(V, radius_0_0))",
+        "Equals(MeasureOf(Angle(W, Z, Y)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, W, Z)), Mul(pi, Div(95.0, 180.0)))"
+    ],
+    "correct": true
+}

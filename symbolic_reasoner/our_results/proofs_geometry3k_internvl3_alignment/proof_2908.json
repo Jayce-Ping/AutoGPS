@@ -1,0 +1,82 @@
+{
+    "problem_id": "2908",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(K, J))",
+        "Perpendicular(Line(K, M), Line(L, M))",
+        "Perpendicular(Line(J, L), Line(K, L))",
+        "Equals(LengthOf(Line(J, M)), 5)",
+        "Equals(LengthOf(Line(L, M)), x)",
+        "Equals(LengthOf(Line(J, L)), y)",
+        "Equals(LengthOf(Line(L, K)), z)",
+        "Equals(LengthOf(Line(K, M)), 20)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "JL",
+        "KL",
+        "KM",
+        "KJ",
+        "MJ",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            210.45631067961165,
+            60.679611650485434
+        ],
+        "J": [
+            39.58252427184465,
+            404.8543689320388
+        ],
+        "L": [
+            210.45631067961165,
+            404.8543689320388
+        ],
+        "M": [
+            71.62135922330094,
+            336.40776699029124
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "5 \\sqrt { 3 }",
+        "10",
+        "5 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        5.0,
+        8.660254037844386,
+        10.0,
+        11.180339887498949
+    ],
+    "problem_answer": 11.180339887498949,
+    "total_time": 48.172079,
+    "solution_predicate": "Equals(11.1803398875, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LJK, KL, 5 = JM, JL, \u2220JKL, JM, \u2220JKL, M on JK, \u2220KLM, 3.14 = pi, JK, \u2220MLJ, \u2220LJM, \u2220JLK, KM \u22a5 LM, \u2220JLK, JL \u22a5 KL, KM, LM, JM \u22a5 LM, \u2220MLJ, sin(\u2220MKL), 20 = KM, y = JL, sin(\u2220MLJ)\n\nStep 2:\nTheorem: Same Angle\nPremises : M on JK, \u2220LJK\nConclusions: \u2220LJK = \u2220LJM\n\nStep 3:\nTheorem: Line Segment Split\nPremises : M on JK\nConclusions: JK = JM + KM\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220JKL, M on JK\nConclusions: \u2220JKL = \u2220MKL\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : KL, JK, JL\nConclusions: \u25b3JKL\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220JLK, \u2220MLJ, \u2220KLM\nConclusions: 2 * pi = \u2220JLK + \u2220KLM + \u2220MLJ\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 LM\nConclusions: pi / 2 = \u2220LMK\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220JLK\nConclusions: \u2220JLK = 2 * pi - \u2220KLJ\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : JL \u22a5 KL\nConclusions: pi / 2 = \u2220KLJ, (3 * pi) / 2 = \u2220JLK\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : KL, LM, KM\nConclusions: \u25b3KLM\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : LM, JL, JM\nConclusions: \u25b3JLM\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : JM \u22a5 LM\nConclusions: pi / 2 = \u2220JML\n\nStep 13:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220MKL), KM \u22a5 LM\nConclusions: LM / KL = sin(\u2220MKL)\n\nStep 14:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220MLJ), JM \u22a5 LM\nConclusions: JM / JL = sin(\u2220MLJ)\n\nStep 15:\nTheorem: Substitution\nPremises : JK = JM + KM, 5 = JM, 20 = KM\nConclusions: 20 + 5 = JK\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 17:\nTheorem: Sin Function Definition\nPremises : \u25b3JKL, JL \u22a5 KL, \u2220JKL\nConclusions: JL / JK = sin(\u2220JKL)\n\nStep 18:\nTheorem: Substitution\nPremises : pi / 2 = \u2220KLJ, 3.14 = pi, \u2220JLK = 2 * pi - \u2220KLJ, (3 * pi) / 2 = \u2220JLK\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(K, L, M)\nPremises : \u25b3KLM\nConclusions: pi = \u2220KLM + \u2220LMK + \u2220MKL\n\nStep 20:\nTheorem: Cos Function Definition\nPremises : \u2220LJM, \u25b3JLM, JM \u22a5 LM\nConclusions: JM / JL = cos(\u2220LJM)\n\nStep 21:\nTheorem: Sin Function Definition\nPremises : \u25b3JLM, JM \u22a5 LM, \u2220MLJ\nConclusions: JM / JL = sin(\u2220MLJ)\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(M, L, J)\nPremises : \u25b3JLM\nConclusions: pi = \u2220JML + \u2220LJM + \u2220MLJ\n\nStep 23:\nTheorem: Substitution\nPremises : JM / JL = sin(\u2220MLJ), y = JL, 5 = JM\nConclusions: 5 / y = sin(\u2220MLJ)\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 20 + 5 = JK\nConclusions: 25 = JK\n\nStep 25:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220LJK = \u2220LJM, pi / 2 = \u2220KLJ, \u2220JKL = \u2220MKL, pi = \u2220JKL + \u2220KLJ + \u2220LJK\nConclusions: 3.14 = 3.14 / 2 + \u2220LJM + \u2220MKL\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220JLK\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220JLK\n\nStep 27:\nTheorem: Substitution\nPremises : pi = \u2220KLM + \u2220LMK + \u2220MKL, 3.14 = pi, pi / 2 = \u2220LMK\nConclusions: 3.14 = pi / 2 + \u2220KLM + \u2220MKL\n\nStep 28:\nTheorem: Substitution\nPremises : y = JL, JM / JL = cos(\u2220LJM), 5 = JM\nConclusions: 5 / y = cos(\u2220LJM)\n\nStep 29:\nTheorem: Substitution\nPremises : pi / 2 = \u2220JML, 3.14 = pi, pi = \u2220JML + \u2220LJM + \u2220MLJ\nConclusions: 3.14 = pi / 2 + \u2220LJM + \u2220MLJ\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : JM / JL = sin(\u2220MLJ), 5 / y = sin(\u2220MLJ)\nConclusions: 5 / y = JM / JL\n\nStep 31:\nTheorem: Substitution\nPremises : y = JL, \u2220JKL = \u2220MKL, JL / JK = sin(\u2220JKL), 25 = JK\nConclusions: y / 25 = sin(\u2220MKL)\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220LJM + \u2220MLJ, 2 * pi = \u2220JLK + \u2220KLM + \u2220MLJ, 3.14 = 3.14 / 2 + \u2220LJM + \u2220MKL, 3.14 = pi / 2 + \u2220KLM + \u2220MKL, \u2220JKL = \u2220MKL, 2 * 3.14 - 3.14 / 2 = \u2220JLK\nConclusions: \u2220JKL = \u2220MLJ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : JM / JL = cos(\u2220LJM), 5 / y = JM / JL\nConclusions: 5 / y = cos(\u2220LJM)\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKL = \u2220MKL, \u2220JKL = \u2220MLJ\nConclusions: \u2220MKL = \u2220MLJ\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 5 / y = cos(\u2220LJM), 5 / y = cos(\u2220LJM)\nConclusions: 5 / y = 5 / y\n\nStep 36:\nTheorem: Substitution\nPremises : JM / JL = sin(\u2220MLJ), y = JL, \u2220MKL = \u2220MLJ, 5 = JM\nConclusions: 5 / y = sin(\u2220MKL)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 5 / y = sin(\u2220MKL), 5 / y = 5 / y, LM / KL = sin(\u2220MKL)\nConclusions: 5 / y = LM / KL\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 5 / y = LM / KL, LM / KL = sin(\u2220MKL)\nConclusions: 5 / y = sin(\u2220MKL)\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : y / 25 = sin(\u2220MKL), 5 / y = sin(\u2220MKL)\nConclusions: 5 / y = y / 25\n\nStep 40:\nTheorem: Solve Univariate Equation\nPremises : 5 / y = y / 25\nConclusions: 11.18 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(K, J)",
+        "Line(M, J)",
+        "Line(M, L)",
+        "PointLiesOnLine(M, Line(K, J))",
+        "Perpendicular(Line(K, M), Line(L, M))",
+        "Perpendicular(Line(J, L), Line(K, L))",
+        "Equals(LengthOf(Line(J, M)), 5.0)",
+        "Equals(LengthOf(Line(L, M)), x)",
+        "Equals(LengthOf(Line(J, L)), y)",
+        "Equals(LengthOf(Line(L, K)), z)",
+        "Equals(LengthOf(Line(K, M)), 20.0)"
+    ],
+    "correct": true
+}

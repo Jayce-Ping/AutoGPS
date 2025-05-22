@@ -1,0 +1,65 @@
+{
+    "problem_id": "2711",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(MeasureOf(Angle(B, A, C)), 45)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            44.96508728179552,
+            213.21695760598504
+        ],
+        "B": [
+            145.9625935162095,
+            111.7206982543641
+        ],
+        "C": [
+            44.71571072319203,
+            10.972568578553616
+        ]
+    },
+    "problem_choices": [
+        "\\sqrt { 2 }",
+        "3 \\sqrt { 2 }",
+        "6 \\sqrt { 2 }",
+        "9 \\sqrt { 2 }"
+    ],
+    "choices_precise_value": [
+        1.4142135623730951,
+        4.242640687119286,
+        8.485281374238571,
+        12.727922061357857
+    ],
+    "problem_answer": 8.485281374238571,
+    "total_time": 13.059444,
+    "solution_predicate": "Equals(8.4852813742, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AC, BC, AB, pi * (45 / 180) = \u2220BAC, \u2220ABC, AC, sin(\u2220BAC), AB \u22a5 BC, 3.14 = pi, x = BC, y = AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BAC), AB \u22a5 BC\nConclusions: BC / AC = sin(\u2220BAC)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 8:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA, pi / 2 = \u2220CBA\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = pi * (45 / 180), pi * (45 / 180) = \u2220BAC\nConclusions: 0.79 = \u2220BAC\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, pi * (45 / 180) = \u2220BAC, pi / 2 = \u2220CBA\nConclusions: 3.14 = pi / 2 + pi * (45 / 180) + \u2220ACB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 12:\nTheorem: Evaluate\nPremises : 0.79 = \u2220BAC\nConclusions: 0.71 = sin(\u2220BAC)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220ABC, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : BC / AC = sin(\u2220BAC), 0.71 = sin(\u2220BAC)\nConclusions: 0.71 = BC / AC\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + pi * (45 / 180) + \u2220ACB, 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA, pi / 2 = \u2220CBA\nConclusions: 0.79 = \u2220ACB\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 0.71 = BC / AC, 12 = AC\nConclusions: 8.49 = BC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220ACB, 0.79 = \u2220BAC\nConclusions: \u2220ACB = \u2220BAC\n\nStep 18:\nTheorem: Issoceles Triangle Property\nPremises : \u2220ACB = \u2220BAC, \u25b3ABC\nConclusions: AB = BC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : y = AB, x = BC, AB = BC\nConclusions: x = y\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : x = y, x = BC\nConclusions: y = BC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 8.49 = BC, y = BC\nConclusions: 8.49 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

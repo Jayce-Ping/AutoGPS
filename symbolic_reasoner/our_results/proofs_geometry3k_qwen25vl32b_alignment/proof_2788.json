@@ -1,0 +1,88 @@
+{
+    "problem_id": "2788",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(B, Line(C, D))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(E, B, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, A, C)), 35)",
+        "Equals(MeasureOf(Angle(B, E, D)), 28)",
+        "Equals(MeasureOf(Angle(B, C, A)), 75)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "BE",
+        "ED",
+        "CB",
+        "CD",
+        "BD",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            79.45977011494253,
+            280.86206896551727
+        ],
+        "B": [
+            357.62068965517244,
+            175.11494252873564
+        ],
+        "C": [
+            248.42528735632183,
+            44.08045977011494
+        ],
+        "D": [
+            469.11494252873564,
+            307.2988505747127
+        ],
+        "E": [
+            697.8505747126437,
+            43.50574712643677
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "70",
+        "75",
+        "82"
+    ],
+    "choices_precise_value": [
+        35.0,
+        70.0,
+        75.0,
+        82.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 26.137525,
+    "solution_predicate": "Equals(1.2217304764, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * (75 / 180) = \u2220ACB, BC, B on CD, AB, pi * (35 / 180) = \u2220BAC, B on AE, AC\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : B on CD, B on AE\nConclusions: \u2220CBA = \u2220DBE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 5:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220DBE, 3.14 = pi, pi * (75 / 180) = \u2220ACB, pi * (35 / 180) = \u2220BAC, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 3.14 * (35 / 180) + 3.14 * (75 / 180) + \u2220DBE\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : \u2220CBA = \u2220DBE, 3.14 = 3.14 * (35 / 180) + 3.14 * (75 / 180) + \u2220DBE\nConclusions: 1.22 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(B, Line(C, D))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(35.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, D)), Mul(pi, Div(28.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(75.0, 180.0)))"
+    ],
+    "correct": true
+}

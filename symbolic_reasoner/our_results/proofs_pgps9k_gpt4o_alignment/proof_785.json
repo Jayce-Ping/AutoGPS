@@ -1,0 +1,98 @@
+{
+    "problem_id": "785",
+    "solved": true,
+    "problem_text": "PM is a diameter of \\odot R. Find m \\widehat NMQ.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, R, P)), 115)",
+        "Line(N, R)",
+        "Line(P, M)",
+        "Line(P, R)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Perpendicular(Line(P, M), Line(N, R))",
+        "PointLiesOnCircle(M, Circle(R))",
+        "PointLiesOnCircle(N, Circle(R))",
+        "PointLiesOnCircle(P, Circle(R))",
+        "PointLiesOnCircle(Q, Circle(R))",
+        "PointLiesOnLine(R, Line(P, M))",
+        "IsDiameterOf(Line(P,M),Circle(R))",
+        "Find(MeasureOf(Arc(N,M,Q)))"
+    ],
+    "point_instances": [
+        "N",
+        "P",
+        "R",
+        "M",
+        "Q"
+    ],
+    "line_instances": [
+        "PR",
+        "PM",
+        "RM",
+        "RQ",
+        "RN"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "N": [
+            104.76190476190476,
+            217.34857142857143
+        ],
+        "P": [
+            313.8666666666666,
+            86.64571428571429
+        ],
+        "R": [
+            274.5853658536586,
+            255.609756097561
+        ],
+        "M": [
+            235.0333333333333,
+            425.5185714285714
+        ],
+        "Q": [
+            411.50476190476184,
+            364.2057142857143
+        ]
+    },
+    "problem_choices": [
+        155.0,
+        205.0,
+        270.0,
+        295.0
+    ],
+    "choices_precise_value": [
+        155.0,
+        205.0,
+        270.0,
+        295.0
+    ],
+    "problem_answer": 155.0,
+    "total_time": 10.240137,
+    "solution_predicate": "Equals(2.7052603406, MeasureOf(Arc(N, R, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220QRN, NR \u22a5 PR, \u2220MRQ, \u2220PRN, pi * (115 / 180) = \u2220QRP, MR \u22a5 NR, \u2220NRQ, Arc(NRQ), Arc(QRN), \u2220QRN, \u2220QRP, \u2220NRM\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220QRN\nConclusions: \u2220QRN = 2 * pi - \u2220NRQ\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : NR \u22a5 PR\nConclusions: pi / 2 = \u2220PRN\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : MR \u22a5 NR\nConclusions: pi / 2 = \u2220NRM\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NRQ)\nConclusions: \u2220NRQ = Arc(NRQ)\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QRN)\nConclusions: \u2220QRN = Arc(QRN)\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220NRQ, \u2220QRP, \u2220PRN\nConclusions: 2 * pi = \u2220NRQ + \u2220PRN + \u2220QRP\n\nStep 8:\nTheorem: Circumference Split\nPremises : \u2220QRP, \u2220MRQ, \u2220NRM, \u2220PRN\nConclusions: 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220QRN, \u2220MRQ, \u2220NRM\nConclusions: 2 * pi = \u2220MRQ + \u2220NRM + \u2220QRN\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QRN = Arc(QRN), \u2220QRN = 2 * pi - \u2220NRQ\nConclusions: Arc(QRN) = 2 * pi - \u2220NRQ\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220NRQ + \u2220PRN + \u2220QRP, \u2220NRQ = Arc(NRQ), pi / 2 = \u2220PRN, pi * (115 / 180) = \u2220QRP\nConclusions: 2 * 3.14 = 3.14 / 2 + pi * (115 / 180) + Arc(NRQ)\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220NRM, 3.14 = pi, pi / 2 = \u2220PRN, 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP, pi * (115 / 180) = \u2220QRP\nConclusions: 2 * 3.14 = 3.14 / 2 + pi / 2 + 3.14 * (115 / 180) + \u2220MRQ\n\nStep 13:\nTheorem: Substitution\nPremises : pi / 2 = \u2220NRM, 3.14 = pi, \u2220QRN = Arc(QRN), 2 * pi = \u2220MRQ + \u2220NRM + \u2220QRN\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220MRQ + Arc(QRN)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : Arc(QRN) = 2 * pi - \u2220NRQ, 2 * 3.14 = 3.14 / 2 + \u2220MRQ + Arc(QRN), 2 * 3.14 = 3.14 / 2 + pi * (115 / 180) + Arc(NRQ), \u2220NRQ = Arc(NRQ), 2 * 3.14 = 3.14 / 2 + pi / 2 + 3.14 * (115 / 180) + \u2220MRQ\nConclusions: 2.71 = \u2220NRQ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2.71 = \u2220NRQ, \u2220NRQ = Arc(NRQ)\nConclusions: 2.71 = Arc(NRQ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, R)",
+        "Line(P, M)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Line(R, N)",
+        "Circle(R, radius_R)",
+        "Line(N, R)",
+        "Line(P, M)",
+        "Line(P, R)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Perpendicular(Line(P, M), Line(N, R))",
+        "PointLiesOnCircle(M, Circle(R, radius_R))",
+        "PointLiesOnCircle(N, Circle(R, radius_R))",
+        "PointLiesOnCircle(P, Circle(R, radius_R))",
+        "PointLiesOnCircle(Q, Circle(R, radius_R))",
+        "PointLiesOnLine(R, Line(P, M))",
+        "IsDiameterOf(Line(P, M), Circle(R, radius_R))",
+        "Equals(MeasureOf(Angle(Q, R, P)), Mul(pi, Div(115.0, 180.0)))"
+    ],
+    "correct": true
+}

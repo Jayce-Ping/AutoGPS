@@ -1,0 +1,94 @@
+{
+    "problem_id": "1338",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), \\sqrt{3})",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(C, A)), 2\\sqrt{3})",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(C, A), Line(D, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "AD",
+        "AC",
+        "DC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            48.246153846153845,
+            304.8578595317726
+        ],
+        "B": [
+            269.27384615384614,
+            304.8578595317726
+        ],
+        "C": [
+            269.5,
+            57.877717391304344
+        ],
+        "D": [
+            146.44,
+            195.21467391304347
+        ]
+    },
+    "problem_choices": [
+        1.7320508075688772,
+        3.0,
+        5.196152422706632,
+        6.0
+    ],
+    "choices_precise_value": [
+        1.7320508075688772,
+        3.0,
+        5.196152422706632,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 37.190079,
+    "solution_predicate": "Equals(3.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 BC, SqrtOf(3) = AB, AB, 2 * SqrtOf(3) = AC, BC, AC, z = BC\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : SqrtOf(3) = AB\nConclusions: 1.73 = AB\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 2 * SqrtOf(3) = AC\nConclusions: 3.46 = AC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AB \u22a5 BC\nConclusions: BC = SqrtOf(AC ** 2 - AB ** 2)\n\nStep 6:\nTheorem: Substitution\nPremises : z = BC, 3.46 = AC, BC = SqrtOf(AC ** 2 - AB ** 2), 1.73 = AB\nConclusions: SqrtOf(3.46 ** 2 - 1.73 ** 2) = z\n\nStep 7:\nTheorem: Evaluate\nPremises : SqrtOf(3.46 ** 2 - 1.73 ** 2) = z\nConclusions: 3 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(C, A), Line(D, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), SqrtOf(3.0))",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(C, A)), Mul(2.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, D)), x)"
+    ],
+    "correct": true
+}

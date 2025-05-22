@@ -1,0 +1,115 @@
+{
+    "problem_id": "6699",
+    "solved": true,
+    "problem_text": "Determine the measure of \\widehat JK.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, H, J)), x)",
+        "Equals(MeasureOf(Angle(K, G, A)), 2x-54)",
+        "Line(A, J)",
+        "Line(A, K)",
+        "Line(G, A)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(H, A)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "PointLiesOnCircle(G, Circle(B))",
+        "PointLiesOnCircle(H, Circle(B))",
+        "PointLiesOnCircle(J, Circle(B))",
+        "PointLiesOnCircle(K, Circle(B))",
+        "PointLiesOnLine(A, Line(G, J))",
+        "PointLiesOnLine(A, Line(H, K))",
+        "Find(MeasureOf(Arc(J,K)))"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "K",
+        "J",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "GK",
+        "KA",
+        "KH",
+        "AH",
+        "GA",
+        "GJ",
+        "AJ",
+        "HJ"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "H": [
+            168.2390243902439,
+            122.04761904761905
+        ],
+        "G": [
+            160.24878048780488,
+            280.04380952380956
+        ],
+        "K": [
+            402.61951219512196,
+            327.08761904761906
+        ],
+        "J": [
+            421.58048780487803,
+            109.17714285714285
+        ],
+        "A": [
+            269.0048780487805,
+            209.60489795918366
+        ],
+        "B": [
+            299.1189427312775,
+            206.6079295154185
+        ]
+    },
+    "problem_choices": [
+        27.0,
+        54.0,
+        108.0,
+        126.0
+    ],
+    "choices_precise_value": [
+        27.0,
+        54.0,
+        108.0,
+        126.0
+    ],
+    "problem_answer": 108.0,
+    "total_time": 119.619444,
+    "solution_predicate": "Equals(1.8849555922, MeasureOf(Arc(K, B, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BJ, HK, GJ, \u2220KGJ, \u2220HBK, \u2220KGA, H on \u2299(B, radius_B), \u2220JHK, \u2220JBK, BG, G on \u2299(B, radius_B), \u2220KHB, Arc(KBJ), GK, \u2220BHJ, \u2220JHK, Arc(JBK), A on GJ, pi * (x / 180) = \u2220AHJ, HJ, \u2220JBH, \u2220BGJ, BH, \u2220JGK, J on \u2299(B, radius_B), \u2220KGB, 3.14 = pi, A on HK, \u2220AHJ, K on \u2299(B, radius_B), BK, \u2220KBJ, pi * ((2 * x - 54) / 180) = \u2220KGA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220KGJ\nConclusions: \u2220KGJ = 2 * pi - \u2220JGK\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220KGA\nConclusions: \u2220KGA = 2 * pi - \u2220AGK\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : H on \u2299(B, radius_B)\nConclusions: radius_B = BH\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220JBK\nConclusions: \u2220JBK = 2 * pi - \u2220KBJ\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BG, BJ, GJ\nConclusions: \u25b3BGJ\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : G on \u2299(B, radius_B)\nConclusions: radius_B = BG\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KBJ)\nConclusions: \u2220KBJ = Arc(KBJ)\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220KHB, \u2220BHJ, \u2220JHK\nConclusions: 2 * pi = \u2220BHJ + \u2220JHK + \u2220KHB\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220JHK\nConclusions: \u2220JHK = 2 * pi - \u2220KHJ\n\nStep 11:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JBK)\nConclusions: \u2220JBK = Arc(JBK)\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : BH, BJ, HJ\nConclusions: \u25b3BHJ\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220JGK, A on GJ\nConclusions: \u2220AGK = \u2220JGK\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : J on \u2299(B, radius_B)\nConclusions: radius_B = BJ\n\nStep 15:\nTheorem: Circumference splited\nPremises : \u2220BGJ, \u2220JGK, \u2220KGB\nConclusions: 2 * pi = \u2220BGJ + \u2220JGK + \u2220KGB\n\nStep 16:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 17:\nTheorem: Same Angle\nPremises : A on HK, \u2220JHK\nConclusions: \u2220JHA = \u2220JHK\n\nStep 18:\nTheorem: Reverse Angle Definition\nPremises : \u2220AHJ\nConclusions: \u2220AHJ = 2 * pi - \u2220JHA\n\nStep 19:\nTheorem: Point On Circle Def\nPremises : K on \u2299(B, radius_B)\nConclusions: radius_B = BK\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : HK, BH, BK\nConclusions: \u25b3BHK\n\nStep 21:\nTheorem: Definition of Quadrilateral\nPremises : HK, BJ, HJ, BK\nConclusions: Quadrilateral(B, J, H, K)\n\nStep 22:\nTheorem: Definition of Triangle\nPremises : BG, GK, BK\nConclusions: \u25b3BGK\n\nStep 23:\nTheorem: Definition of Quadrilateral\nPremises : GK, BJ, GJ, BK\nConclusions: Quadrilateral(B, J, G, K)\n\nStep 24:\nTheorem: Circumference splited\nPremises : \u2220JBH, \u2220HBK, \u2220KBJ\nConclusions: 2 * pi = \u2220HBK + \u2220JBH + \u2220KBJ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 54) / 180) = \u2220KGA, \u2220KGA = 2 * pi - \u2220AGK\nConclusions: pi * ((2 * x - 54) / 180) = 2 * pi - \u2220AGK\n\nStep 26:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BHJ + \u2220JHK + \u2220KHB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BHJ + \u2220JHK + \u2220KHB\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JBK = 2 * pi - \u2220KBJ, \u2220JBK = Arc(JBK)\nConclusions: Arc(JBK) = 2 * pi - \u2220KBJ\n\nStep 28:\nTheorem: Interior Angle Sum Theorem for Triangle(B, H, J)\nPremises : \u25b3BHJ\nConclusions: pi = \u2220BHJ + \u2220HJB + \u2220JBH\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BG, radius_B = BJ\nConclusions: BG = BJ\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BH, radius_B = BJ\nConclusions: BH = BJ\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220AHJ, \u2220AHJ = 2 * pi - \u2220JHA\nConclusions: pi * (x / 180) = 2 * pi - \u2220JHA\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BG, radius_B = BK\nConclusions: BG = BK\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BK, radius_B = BH\nConclusions: BH = BK\n\nStep 34:\nTheorem: Interior Angle Sum Theorem for Triangle(K, H, B)\nPremises : \u25b3BHK\nConclusions: pi = \u2220BKH + \u2220HBK + \u2220KHB\n\nStep 35:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(K, H, J, B)\nPremises : Quadrilateral(B, J, H, K)\nConclusions: 2 * pi = \u2220BKH + \u2220HJB + \u2220JBK + \u2220KHJ\n\nStep 36:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(K, G, J, B)\nPremises : Quadrilateral(B, J, G, K)\nConclusions: 2 * pi = \u2220BKG + \u2220GJB + \u2220JBK + \u2220KGJ\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220HBK + \u2220JBH + \u2220KBJ, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220HBK + \u2220JBH + \u2220KBJ\n\nStep 38:\nTheorem: Substitution\nPremises : \u2220AGK = \u2220JGK, pi * ((2 * x - 54) / 180) = 2 * pi - \u2220AGK, 3.14 = pi\nConclusions: 3.14 * ((2 * x - 54) / 180) = 2 * 3.14 - \u2220JGK\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BHJ + \u2220JHK + \u2220KHB, 2 * pi = \u2220BHJ + \u2220JHK + \u2220KHB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 40:\nTheorem: Issoceles Triangle Property\nPremises : BG = BJ, \u25b3BGJ\nConclusions: \u2220BGJ = \u2220GJB\n\nStep 41:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BHJ, BH = BJ\nConclusions: \u2220BHJ = \u2220HJB\n\nStep 42:\nTheorem: Substitution\nPremises : pi * (x / 180) = 2 * pi - \u2220JHA, \u2220JHA = \u2220JHK, 3.14 = pi\nConclusions: 3.14 * (x / 180) = 2 * 3.14 - \u2220JHK\n\nStep 43:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BGK, BG = BK\nConclusions: \u2220BKG = \u2220KGB\n\nStep 44:\nTheorem: Issoceles Triangle Property\nPremises : BH = BK, \u25b3BHK\nConclusions: \u2220BKH = \u2220KHB\n\nStep 45:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BKH + \u2220HJB + \u2220JBK + \u2220KHJ, 3.14 = pi, \u2220JBK = Arc(JBK)\nConclusions: 2 * 3.14 = \u2220BKH + \u2220HJB + \u2220KHJ + Arc(JBK)\n\nStep 46:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BKG + \u2220GJB + \u2220JBK + \u2220KGJ, 3.14 = pi, \u2220JBK = Arc(JBK)\nConclusions: 2 * 3.14 = \u2220BKG + \u2220GJB + \u2220KGJ + Arc(JBK)\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BKH + \u2220HJB + \u2220KHJ + Arc(JBK), 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220BKH + \u2220HJB + \u2220KHJ + Arc(JBK)\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BKG + \u2220GJB + \u2220KGJ + Arc(JBK), 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220BKG + \u2220GJB + \u2220KGJ + Arc(JBK)\n\nStep 49:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BKH + \u2220HJB + \u2220KHJ + Arc(JBK), 3.14 = pi, \u2220BKH = \u2220KHB\nConclusions: 2 * 3.14 = \u2220HJB + \u2220KHB + \u2220KHJ + Arc(JBK)\n\nStep 50:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BKG + \u2220GJB + \u2220KGJ + Arc(JBK), \u2220BKG = \u2220KGB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220GJB + \u2220KGB + \u2220KGJ + Arc(JBK)\n\nStep 51:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220HJB + \u2220KHB + \u2220KHJ + Arc(JBK), 2 * 3.14 = \u2220BHJ + \u2220JHK + \u2220KHB, 3.14 * ((2 * x - 54) / 180) = 2 * 3.14 - \u2220JGK, pi = \u2220BKH + \u2220HBK + \u2220KHB, Arc(JBK) = 2 * pi - \u2220KBJ, 6.28 = \u2220HBK + \u2220JBH + \u2220KBJ, \u2220BKH = \u2220KHB, pi = \u2220BHJ + \u2220HJB + \u2220JBH, 2 * 3.14 = \u2220GJB + \u2220KGB + \u2220KGJ + Arc(JBK), 2 * pi = \u2220BGJ + \u2220JGK + \u2220KGB, \u2220KGJ = 2 * pi - \u2220JGK, \u2220JHK = 2 * pi - \u2220KHJ, \u2220BHJ = \u2220HJB, \u2220BGJ = \u2220GJB, 3.14 * (x / 180) = 2 * 3.14 - \u2220JHK\nConclusions: 1.88 = \u2220KBJ\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : 1.88 = \u2220KBJ, \u2220KBJ = Arc(KBJ)\nConclusions: 1.88 = Arc(KBJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, K)",
+        "Line(K, A)",
+        "Line(K, H)",
+        "Line(A, H)",
+        "Line(G, A)",
+        "Line(G, J)",
+        "Line(A, J)",
+        "Line(H, J)",
+        "Circle(B, radius_B)",
+        "Line(A, J)",
+        "Line(A, K)",
+        "Line(G, A)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(H, A)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "PointLiesOnCircle(G, Circle(B, radius_B))",
+        "PointLiesOnCircle(H, Circle(B, radius_B))",
+        "PointLiesOnCircle(J, Circle(B, radius_B))",
+        "PointLiesOnCircle(K, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(G, J))",
+        "PointLiesOnLine(A, Line(H, K))",
+        "Equals(MeasureOf(Angle(A, H, J)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(K, G, A)), Mul(pi, Div(Sub(Mul(2.0, x), 54.0), 180.0)))"
+    ],
+    "correct": true
+}

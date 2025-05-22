@@ -1,0 +1,102 @@
+{
+    "problem_id": "7421",
+    "solved": true,
+    "problem_text": "\\triangle MNL \\sim \\triangle SPT. Find PT.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 8)",
+        "Equals(LengthOf(Line(M, N)), 10)",
+        "Equals(LengthOf(Line(P, S)), x+2)",
+        "Equals(LengthOf(Line(T, S)), x-1)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(T, S)",
+        "Perpendicular(Line(M, N), Line(M, L))",
+        "Perpendicular(Line(P, S), Line(T, S))",
+        "Similar(Triangle(M,N,L),Triangle(S,P,T))",
+        "Find(LengthOf(Line(P,T)))"
+    ],
+    "point_instances": [
+        "T",
+        "M",
+        "N",
+        "L",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "PT",
+        "PS",
+        "LN",
+        "TS",
+        "MN",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            311.84853333333336,
+            32.12203389830509
+        ],
+        "M": [
+            43.012571428571434,
+            63.152542372881356
+        ],
+        "N": [
+            140.12342857142858,
+            63.152542372881356
+        ],
+        "L": [
+            41.82692307692307,
+            139.72115384615384
+        ],
+        "P": [
+            164.66346153846152,
+            148.6153846153846
+        ],
+        "S": [
+            312.13458823529413,
+            150.3369890329013
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        14.422,
+        15.0,
+        19.209
+    ],
+    "choices_precise_value": [
+        12.0,
+        14.422,
+        15.0,
+        19.209
+    ],
+    "problem_answer": 19.209,
+    "total_time": 33.691059,
+    "solution_predicate": "Equals(19.2093727123, LengthOf(Line(P, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = LM, 2 + x = PS, \u25b3LMN ~ \u25b3TSP, 10 = MN, \u25b3PST, PS \u22a5 ST, x - 1 = ST\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3LMN ~ \u25b3TSP\nConclusions: LM / ST = MN / PS\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : PS \u22a5 ST, \u25b3PST\nConclusions: PT = SqrtOf(PS ** 2 + ST ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : LM / ST = MN / PS, 8 = LM, 2 + x = PS, 10 = MN, x - 1 = ST\nConclusions: 10 / (2 + x) = 8 / (x - 1)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 10 / (2 + x) = 8 / (x - 1), x - 1 = ST\nConclusions: 12 = ST\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 10 / (2 + x) = 8 / (x - 1), 2 + x = PS\nConclusions: 15 = PS\n\nStep 7:\nTheorem: Substitution\nPremises : PT = SqrtOf(PS ** 2 + ST ** 2), 12 = ST, 15 = PS\nConclusions: SqrtOf(12 ** 2 + 15 ** 2) = PT\n\nStep 8:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 15 ** 2) = PT\nConclusions: 19.21 = PT\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, T)",
+        "Line(P, S)",
+        "Line(L, N)",
+        "Line(T, S)",
+        "Line(M, N)",
+        "Line(M, L)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(T, S)",
+        "Perpendicular(Line(M, N), Line(M, L))",
+        "Perpendicular(Line(P, S), Line(T, S))",
+        "Similar(Triangle(M, N, L), Triangle(S, P, T))",
+        "Equals(LengthOf(Line(M, L)), 8.0)",
+        "Equals(LengthOf(Line(M, N)), 10.0)",
+        "Equals(LengthOf(Line(P, S)), Add(x, 2.0))",
+        "Equals(LengthOf(Line(T, S)), Sub(x, 1.0))"
+    ],
+    "correct": true
+}

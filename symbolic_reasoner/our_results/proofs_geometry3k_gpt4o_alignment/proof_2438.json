@@ -1,0 +1,89 @@
+{
+    "problem_id": "2438",
+    "solved": true,
+    "problem_text": "Find W R.",
+    "logic_forms": [
+        "PointLiesOnLine(R, Line(W, T))",
+        "PointLiesOnLine(R, Line(S, V))",
+        "Equals(LengthOf(Line(W, R)), x+6)",
+        "Equals(LengthOf(Line(V, T)), 10)",
+        "Equals(LengthOf(Line(W, S)), 8)",
+        "Equals(LengthOf(Line(T, R)), 2x+6)",
+        "Equals(MeasureOf(Angle(R, T, V)), MeasureOf(Angle(R, W, S)))",
+        "Find(LengthOf(Line(W,R)))"
+    ],
+    "point_instances": [
+        "R",
+        "V",
+        "T",
+        "S",
+        "W"
+    ],
+    "line_instances": [
+        "WR",
+        "WT",
+        "RT",
+        "SR",
+        "SV",
+        "RV",
+        "WS",
+        "VT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            422.20382165605093,
+            202.73248407643308
+        ],
+        "V": [
+            473.796178343949,
+            314.19745222929936
+        ],
+        "T": [
+            789.7197452229299,
+            182.35031847133757
+        ],
+        "S": [
+            373.796178343949,
+            102.09554140127389
+        ],
+        "W": [
+            116.47133757961782,
+            221.20382165605093
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "8",
+        "10",
+        "12"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 36.211042,
+    "solution_predicate": "Equals(8.0, LengthOf(Line(W, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RTV, 10 = TV, \u2220SWT, \u2220TWS, \u2220RTV = \u2220RWS, 8 = SW, R on TW, 6 + x = RW, R on SV, \u2220TWS, 6 + 2 * x = RT\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220RTV\nConclusions: \u2220RTV = 2 * pi - \u2220VTR\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220TWS\nConclusions: \u2220TWS = 2 * pi - \u2220SWT\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220SWT, R on TW\nConclusions: \u2220SWR = \u2220SWT\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : R on SV, R on TW\nConclusions: \u2220TRV = \u2220WRS\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220TWS, R on TW\nConclusions: \u2220RWS = \u2220TWS\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RWS = \u2220TWS, \u2220RTV = \u2220RWS\nConclusions: \u2220RTV = \u2220TWS\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RTV = 2 * pi - \u2220VTR, \u2220RTV = \u2220TWS\nConclusions: \u2220TWS = 2 * pi - \u2220VTR\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : \u2220TWS = 2 * pi - \u2220VTR, \u2220TWS = 2 * pi - \u2220SWT\nConclusions: \u2220SWT = \u2220VTR\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SWT = \u2220VTR, \u2220SWR = \u2220SWT\nConclusions: \u2220SWR = \u2220VTR\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220SWR = \u2220VTR, \u2220TRV = \u2220WRS\nConclusions: \u25b3RSW ~ \u25b3RVT\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3RSW ~ \u25b3RVT\nConclusions: sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV, sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, \u2220RTV = \u2220RWS, \u2220SWR = \u2220VTR\n\nStep 13:\nTheorem: Substitution\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV, 8 = SW, 10 = TV\nConclusions: 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t\n\nStep 14:\nTheorem: Substitution\nPremises : 6 + 2 * x = RT, sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, 6 + x = RW\nConclusions: sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x), 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t\nConclusions: 8 / 10 = (6 + x) / (6 + 2 * x)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 6 + x = RW, 8 / 10 = (6 + x) / (6 + 2 * x)\nConclusions: 8 = RW\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, R)",
+        "Line(W, T)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(R, V)",
+        "Line(W, S)",
+        "Line(V, T)",
+        "PointLiesOnLine(R, Line(W, T))",
+        "PointLiesOnLine(R, Line(S, V))",
+        "Equals(LengthOf(Line(W, R)), Add(x, 6.0))",
+        "Equals(LengthOf(Line(V, T)), 10.0)",
+        "Equals(LengthOf(Line(W, S)), 8.0)",
+        "Equals(LengthOf(Line(T, R)), Add(Mul(2.0, x), 6.0))",
+        "Equals(MeasureOf(Angle(R, T, V)), MeasureOf(Angle(R, W, S)))"
+    ],
+    "correct": true
+}

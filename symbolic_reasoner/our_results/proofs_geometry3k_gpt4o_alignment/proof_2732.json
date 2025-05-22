@@ -1,0 +1,86 @@
+{
+    "problem_id": "2732",
+    "solved": true,
+    "problem_text": "A square is inscribed in a circle having a radius of 6 inches. Find the length of the side of the square.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(RadiusOf(Circle(B)), 6)",
+        "Find(LengthOf(SideOf(Square(A, C, D, E))))",
+        "InscribedIn(Square(A, C, D, E), Circle(B))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "ED",
+        "DC",
+        "AC"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            61.96491228070175,
+            161.4035087719298
+        ],
+        "B": [
+            187.2280701754386,
+            162.10526315789474
+        ],
+        "C": [
+            188.6315789473684,
+            288.42105263157896
+        ],
+        "D": [
+            314.9473684210526,
+            161.75438596491227
+        ],
+        "E": [
+            188.28070175438594,
+            36.14035087719298
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 3 } { \\sqrt 2 }",
+        "3 \\sqrt 2",
+        "6 \\sqrt 2",
+        "12 \\sqrt 2"
+    ],
+    "choices_precise_value": [
+        2.1213203435596424,
+        4.242640687119286,
+        8.485281374238571,
+        16.970562748477143
+    ],
+    "problem_answer": 8.485281374238571,
+    "total_time": 288.090238,
+    "solution_predicate": "Equals(8.4852813742, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAE, \u2220BAC, 6 = radius_0_0, \u2220CAD, \u2220EAB, 3.14 = pi, Square(A, C, D, E), \u2220CAB, InscribedIn(Square(A, C, D, E), \u2299(B, radius_0_0)), \u2220EAC, D on \u2299(B, radius_0_0), \u2220EAD, 6 = AB, sin(\u2220CAD)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220EAB\nConclusions: \u2220EAB = 2 * pi - \u2220BAE\n\nStep 4:\nTheorem: Square is Rhombus\nPremises : Square(A, C, D, E)\nConclusions: Rhombus(A, C, D, E)\n\nStep 5:\nTheorem: Square is Rectangle\nPremises : Square(A, C, D, E)\nConclusions: Rectangle(A, C, D, E)\n\nStep 6:\nTheorem: Properties for Square inscribed in circle\nPremises : InscribedIn(Square(A, C, D, E), \u2299(B, radius_0_0))\nConclusions: B on AD, D on \u2299(B, radius_0_0), \u2220BAC = \u2220EAB\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220BAE, \u2220CAB, \u2220EAC\nConclusions: 2 * pi = \u2220BAE + \u2220CAB + \u2220EAC\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : D on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BD\n\nStep 9:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, C, D, E)\nConclusions: AC = CD\n\nStep 10:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, C, D, E)\nConclusions: AC \u22a5 CD, AC \u22a5 AE\n\nStep 11:\nTheorem: Same Angle\nPremises : B on AD, \u2220EAD\nConclusions: \u2220EAB = \u2220EAD\n\nStep 12:\nTheorem: Line Segment Split\nPremises : B on AD\nConclusions: AD = AB + BD\n\nStep 13:\nTheorem: Same Angle\nPremises : B on AD, \u2220CAD\nConclusions: \u2220CAB = \u2220CAD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BD, 6 = radius_0_0\nConclusions: 6 = BD\n\nStep 15:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CAD), AC \u22a5 CD\nConclusions: CD / AD = sin(\u2220CAD)\n\nStep 16:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 AE\nConclusions: (3 * pi) / 2 = \u2220EAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAD, \u2220EAB = 2 * pi - \u2220BAE\nConclusions: \u2220EAD = 2 * pi - \u2220BAE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAD, \u2220BAC = \u2220EAB\nConclusions: \u2220BAC = \u2220EAD\n\nStep 19:\nTheorem: Evaluate\nPremises : 6 = BD, 6 = AB\nConclusions: 12 = AB + BD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220EAD, \u2220BAC = 2 * pi - \u2220CAB\nConclusions: \u2220EAD = 2 * pi - \u2220CAB\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220EAC, 2 * pi = \u2220BAE + \u2220CAB + \u2220EAC, \u2220EAD = 2 * pi - \u2220CAB, \u2220EAD = 2 * pi - \u2220BAE\nConclusions: 0.79 = \u2220CAB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220CAB, \u2220CAB = \u2220CAD\nConclusions: 0.79 = \u2220CAD\n\nStep 23:\nTheorem: Evaluate\nPremises : 0.79 = \u2220CAD\nConclusions: 0.71 = sin(\u2220CAD)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 0.71 = sin(\u2220CAD), CD / AD = sin(\u2220CAD)\nConclusions: 0.71 = CD / AD\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 12 = AB + BD, AD = AB + BD, 0.71 = CD / AD, AC = CD\nConclusions: 8.49 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Circle(B, radius_0_0)",
+        "InscribedIn(Square(A, C, D, E), Circle(B, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(radius_0_0, 6.0)"
+    ],
+    "correct": true
+}

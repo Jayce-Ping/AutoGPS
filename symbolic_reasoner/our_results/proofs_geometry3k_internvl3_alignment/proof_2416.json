@@ -1,0 +1,118 @@
+{
+    "problem_id": "2416",
+    "solved": true,
+    "problem_text": "Find y in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(G, Line(F, C))",
+        "PointLiesOnLine(G, Line(F, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(C, Line(G, B))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(E, H), Line(A, D))",
+        "Equals(MeasureOf(Angle(G, C, D)), 8y+2)",
+        "Equals(MeasureOf(Angle(G, C, D)), 25y-20)",
+        "Equals(MeasureOf(Angle(E, G, C)), 10x)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "EG",
+        "EH",
+        "GH",
+        "FG",
+        "FC",
+        "FB",
+        "GC",
+        "GB",
+        "CB",
+        "AC",
+        "AD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            167.42671009771985,
+            180.8762214983713
+        ],
+        "B": [
+            342.9967426710097,
+            180.5504885993485
+        ],
+        "C": [
+            251.46579804560258,
+            139.83387622149834
+        ],
+        "D": [
+            381.4332247557003,
+            75.66449511400651
+        ],
+        "E": [
+            18.24104234527687,
+            126.15309446254071
+        ],
+        "F": [
+            15.30944625407166,
+            35.27361563517914
+        ],
+        "G": [
+            113.68078175895765,
+            78.5960912052117
+        ],
+        "H": [
+            230.94462540716611,
+            21.267100977198695
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "6",
+        "7",
+        "8"
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.0,
+        7.0,
+        8.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 34.728164,
+    "solution_predicate": "Equals(1.2941176471, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 * x) / 180) = \u2220EGC, 3.14 = pi, pi * ((2 + 8 * y) / 180) = \u2220DCG, pi * ((25 * y - 20) / 180) = \u2220DCG, AD || EH\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 * x) / 180) = \u2220EGC\nConclusions: 3.14 * ((10 * x) / 180) = \u2220EGC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 + 8 * y) / 180) = \u2220DCG\nConclusions: 3.14 * ((2 + 8 * y) / 180) = \u2220DCG\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || EH\nConclusions: \u2220DCG = \u2220EGC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 * x) / 180) = \u2220EGC, 3.14 * ((10 * x) / 180) = \u2220EGC\nConclusions: 3.14 * ((10 * x) / 180) = pi * ((10 * x) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCG = \u2220EGC, pi * ((25 * y - 20) / 180) = \u2220DCG\nConclusions: pi * ((25 * y - 20) / 180) = \u2220EGC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 * y - 20) / 180) = \u2220EGC, pi * ((10 * x) / 180) = \u2220EGC\nConclusions: pi * ((10 * x) / 180) = pi * ((25 * y - 20) / 180)\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 * x) / 180) = pi * ((25 * y - 20) / 180)\nConclusions: 3.14 * ((10 * x) / 180) = 3.14 * ((25 * y - 20) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 * y - 20) / 180) = \u2220DCG, pi * ((10 * x) / 180) = pi * ((25 * y - 20) / 180)\nConclusions: pi * ((10 * x) / 180) = \u2220DCG\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((10 * x) / 180) = pi * ((10 * x) / 180), pi * ((10 * x) / 180) = \u2220DCG\nConclusions: 3.14 * ((10 * x) / 180) = \u2220DCG\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 + 8 * y) / 180) = \u2220DCG, 3.14 * ((10 * x) / 180) = \u2220DCG\nConclusions: 3.14 * ((10 * x) / 180) = 3.14 * ((2 + 8 * y) / 180)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((10 * x) / 180) = 3.14 * ((2 + 8 * y) / 180), 3.14 * ((10 * x) / 180) = 3.14 * ((25 * y - 20) / 180)\nConclusions: 1.29 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(F, G)",
+        "Line(F, C)",
+        "Line(F, B)",
+        "Line(G, C)",
+        "Line(G, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(G, Line(F, C))",
+        "PointLiesOnLine(G, Line(F, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(C, Line(G, B))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(E, H), Line(A, D))",
+        "Equals(MeasureOf(Angle(D, C, G)), Mul(pi, Div(Add(Mul(8.0, y), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, G)), Mul(pi, Div(Sub(Mul(25.0, y), 20.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, G, C)), Mul(pi, Div(Mul(10.0, x), 180.0)))"
+    ],
+    "correct": false
+}

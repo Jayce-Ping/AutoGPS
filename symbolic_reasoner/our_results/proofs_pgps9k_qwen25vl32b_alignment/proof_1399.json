@@ -1,0 +1,69 @@
+{
+    "problem_id": "1399",
+    "solved": true,
+    "problem_text": "Find the area of triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(B, C)), 7.2)",
+        "Equals(MeasureOf(Angle(A, B, C)), 51)",
+        "Find(AreaOf(Triangle(A, B, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            145.9894736842105,
+            19.579591836734696
+        ],
+        "B": [
+            14.810526315789474,
+            180.28285714285715
+        ],
+        "C": [
+            275.4757894736842,
+            180.072
+        ]
+    },
+    "problem_choices": [
+        2.928,
+        16.004,
+        32.009,
+        142.684
+    ],
+    "choices_precise_value": [
+        2.928,
+        16.004,
+        32.009,
+        142.684
+    ],
+    "problem_answer": 16.004,
+    "total_time": 15.871349,
+    "solution_predicate": "Equals(16.0042671481, AreaOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (51 / 180) = \u2220CBA, 3.14 = pi, 7.2 = BC, AB = AC, \u25b3ABC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.89 = pi * (51 / 180)\n\nStep 3:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\n\nStep 4:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = \u2220CBA, 0.89 = pi * (51 / 180)\nConclusions: 0.89 = \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : 0.89 = \u2220CBA, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA), 7.2 = BC, AB = AC\nConclusions: (7.2 ** 2 + AC ** 2) - AC ** 2 = 2 * 7.2 * cos(0.89) * AC\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : (7.2 ** 2 + AC ** 2) - AC ** 2 = 2 * 7.2 * cos(0.89) * AC\nConclusions: 5.72 = AC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 5.72 = AC, AB = AC\nConclusions: 5.72 = AB\n\nStep 9:\nTheorem: Substitution\nPremises : Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 5.72 = AB, 5.72 = AC, 7.2 = BC\nConclusions: SqrtOf(((5.72 + 5.72 + 7.2) / 2) * ((5.72 + 5.72 + 7.2) / 2 - 5.72) * ((5.72 + 5.72 + 7.2) / 2 - 5.72) * ((5.72 + 5.72 + 7.2) / 2 - 7.2)) = Area(\u25b3ABC)\n\nStep 10:\nTheorem: Evaluate\nPremises : SqrtOf(((5.72 + 5.72 + 7.2) / 2) * ((5.72 + 5.72 + 7.2) / 2 - 5.72) * ((5.72 + 5.72 + 7.2) / 2 - 5.72) * ((5.72 + 5.72 + 7.2) / 2 - 7.2)) = Area(\u25b3ABC)\nConclusions: 16 = Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(B, C)), 7.2)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(51.0, 180.0)))"
+    ],
+    "correct": true
+}

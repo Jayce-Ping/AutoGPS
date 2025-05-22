@@ -1,0 +1,80 @@
+{
+    "problem_id": "4905",
+    "solved": true,
+    "problem_text": "If JM = KL = JK, find the value of y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, K)), 1.5y)",
+        "Equals(LengthOf(Line(K, L)), 3z+2)",
+        "Equals(LengthOf(Line(M, J)), 9z)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Equals(LengthOf(Line(J,M)),Line(K,L))",
+        "Equals(LengthOf(Line(K,L)),Line(J,K))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "K",
+        "J"
+    ],
+    "line_instances": [
+        "MJ",
+        "JK",
+        "KL",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            65.04201680672269,
+            232.9481632653061
+        ],
+        "L": [
+            228.47058823529412,
+            232.83885714285717
+        ],
+        "K": [
+            228.32579185520362,
+            69.54197802197803
+        ],
+        "J": [
+            65.29411764705883,
+            69.74571428571429
+        ]
+    },
+    "problem_choices": [
+        1.0,
+        2.0,
+        3.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        3.0,
+        6.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 5.466165,
+    "solution_predicate": "Equals(2.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1.5 * y = JK, JK = KL, 9 * z = JM, 2 + 3 * z = KL, JM = KL\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : JM = KL, 9 * z = JM, 2 + 3 * z = KL\nConclusions: 9 * z = 2 + 3 * z\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 2 + 3 * z = KL, 9 * z = 2 + 3 * z\nConclusions: 9 * z = KL\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 9 * z = KL, JK = KL\nConclusions: 9 * z = JK\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.5 * y = JK, 9 * z = JK\nConclusions: 1.5 * y = 9 * z\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 1.5 * y = 9 * z, 9 * z = 2 + 3 * z\nConclusions: 2 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Equals(LengthOf(Line(J, K)), Mul(1.5, y))",
+        "Equals(LengthOf(Line(K, L)), Add(Mul(3.0, z), 2.0))",
+        "Equals(LengthOf(Line(M, J)), Mul(9.0, z))",
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(K, L)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, K)))"
+    ],
+    "correct": true
+}

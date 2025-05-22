@@ -1,0 +1,80 @@
+{
+    "problem_id": "5150",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle TVU in rectangle STUV.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(S, V)), 3.2)",
+        "Equals(LengthOf(Line(V, U)), 4.5)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(T, U)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Rectangle(S,T,U,V)",
+        "Find(MeasureOf(Angle(T,V,U)))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "V",
+        "U"
+    ],
+    "line_instances": [
+        "VT",
+        "VU",
+        "ST",
+        "SV",
+        "TU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            98.36893203883494,
+            33.928888888888885
+        ],
+        "T": [
+            251.2864077669903,
+            33.956428571428575
+        ],
+        "V": [
+            99.02912621359224,
+            141.77428571428572
+        ],
+        "U": [
+            250.96809986130373,
+            142.7657142857143
+        ]
+    },
+    "problem_choices": [
+        35.417,
+        45.0,
+        45.325,
+        54.583
+    ],
+    "choices_precise_value": [
+        35.417,
+        45.0,
+        45.325,
+        54.583
+    ],
+    "problem_answer": 35.417,
+    "total_time": 40.987721,
+    "solution_predicate": "Equals(0.6181442259, MeasureOf(Angle(U, V, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.2 = SV, 4.5 = UV, Rectangle(S, T, U, V), tan(\u2220UVT)\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(S, T, U, V)\nConclusions: TU \u22a5 UV\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(S, T, U, V)\nConclusions: Parallelogram(S, T, U, V)\n\nStep 4:\nTheorem: Angle Tan Definition\nPremises : TU \u22a5 UV, tan(\u2220UVT)\nConclusions: TU / UV = tan(\u2220UVT)\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(S, T, U, V)\nConclusions: SV = TU\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.2 = SV, SV = TU\nConclusions: 3.2 = TU\n\nStep 7:\nTheorem: Substitution\nPremises : 4.5 = UV, TU / UV = tan(\u2220UVT), 3.2 = TU\nConclusions: 3.2 / 4.5 = tan(\u2220UVT)\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : 3.2 / 4.5 = tan(\u2220UVT)\nConclusions: 0.62 = \u2220UVT\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, T)",
+        "Line(V, U)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(T, U)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(T, U)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Rectangle(S, T, U, V)",
+        "Equals(LengthOf(Line(S, V)), 3.2)",
+        "Equals(LengthOf(Line(V, U)), 4.5)"
+    ],
+    "correct": true
+}

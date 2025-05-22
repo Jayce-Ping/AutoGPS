@@ -1,0 +1,111 @@
+{
+    "problem_id": "2496",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(F, A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(D, radius_0_0))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(LengthOf(Line(E, C)), 9)",
+        "Equals(LengthOf(Line(F, C)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "FC",
+        "FA",
+        "CA",
+        "BC",
+        "BD",
+        "BE",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            42.772378516624045,
+            186.95652173913044
+        ],
+        "B": [
+            23.07928388746803,
+            80.81841432225063
+        ],
+        "C": [
+            98.52685421994883,
+            102.30179028132991
+        ],
+        "D": [
+            122.8235294117647,
+            118.15856777493606
+        ],
+        "E": [
+            227.42710997442452,
+            138.87468030690536
+        ],
+        "F": [
+            154.537084398977,
+            16.624040920716112
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "6.5",
+        "7",
+        "7.5"
+    ],
+    "choices_precise_value": [
+        6.0,
+        6.5,
+        7.0,
+        7.5
+    ],
+    "problem_answer": 6.0,
+    "total_time": 83.830439,
+    "solution_predicate": "Equals(5.9999999175, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = BC, AF, AC, C on BD, A on \u2299(D, radius_0_0), C on BE, E on \u2299(D, radius_0_0), AD, B on \u2299(D, radius_0_0), D on BE, D on CE, DF, x = AC, F on \u2299(D, radius_0_0), CD, x = CF, 9 = CE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : C on BE\nConclusions: BE = BC + CE\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : E on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DE\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = BD\n\nStep 7:\nTheorem: Diameter Definition\nPremises : B on \u2299(D, radius_0_0), E on \u2299(D, radius_0_0), D on BE\nConclusions: IsDiameterOf(BE, \u2299(D, radius_0_0))\n\nStep 8:\nTheorem: Line Segment Split\nPremises : D on CE\nConclusions: CE = CD + DE\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : DF, AF, AD\nConclusions: \u25b3ADF\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : F on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DF\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, x = CF\nConclusions: AC = CF\n\nStep 13:\nTheorem: Substitution\nPremises : radius_0_0 = BD, 4 = BC, BD = BC + CD\nConclusions: radius_0_0 = 4 + CD\n\nStep 14:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(BE, \u2299(D, radius_0_0))\nConclusions: B on \u2299(D, radius_0_0), radius_0_0 = BD, E on \u2299(D, radius_0_0), radius_0_0 = DE, 2 * radius_0_0 = BE\n\nStep 15:\nTheorem: Substitution\nPremises : radius_0_0 = DE, CE = CD + DE, 9 = CE\nConclusions: 9 = radius_0_0 + CD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AD, radius_0_0 = DF\nConclusions: AD = DF\n\nStep 17:\nTheorem: Area formula of Triangle(A, C, D) by Heron's formula\nPremises : \u25b3ACD\nConclusions: Area(\u25b3ACD) = SqrtOf(((AC + AD + CD) / 2) * ((AC + AD + CD) / 2 - AC) * ((AC + AD + CD) / 2 - AD) * ((AC + AD + CD) / 2 - CD))\n\nStep 18:\nTheorem: Substitution\nPremises : 4 = BC, BE = BC + CE, 9 = CE, 2 * radius_0_0 = BE\nConclusions: 4 + 9 = 2 * radius_0_0\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : radius_0_0 = 4 + CD, 9 = radius_0_0 + CD\nConclusions: 2.5 = CD\n\nStep 20:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3ADF, AD = DF\nConclusions: AC = CF, AC \u22a5 CD\n\nStep 21:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AC = CF, AD = DF\nConclusions: \u25b3ACD \u2245 \u25b3FCD\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 4 + 9 = 2 * radius_0_0, radius_0_0 = AD\nConclusions: 6.5 = AD\n\nStep 23:\nTheorem: Area formula of Triangle(A, C, D)\nPremises : AC \u22a5 CD, \u25b3ACD\nConclusions: Area(\u25b3ACD) = (AC * CD) / 2\n\nStep 24:\nTheorem: Congruent Definition\nPremises : \u25b3ACD \u2245 \u25b3FCD\nConclusions: Area(\u25b3ACD) = Area(\u25b3CDF)\n\nStep 25:\nTheorem: Substitution\nPremises : 2.5 = CD, Area(\u25b3ACD) = Area(\u25b3CDF), x = AC, 6.5 = AD, Area(\u25b3ACD) = SqrtOf(((AC + AD + CD) / 2) * ((AC + AD + CD) / 2 - AC) * ((AC + AD + CD) / 2 - AD) * ((AC + AD + CD) / 2 - CD))\nConclusions: Area(\u25b3CDF) = SqrtOf(((2.5 + 6.5 + x) / 2) * ((2.5 + 6.5 + x) / 2 - 2.5) * ((2.5 + 6.5 + x) / 2 - 6.5) * ((2.5 + 6.5 + x) / 2 - x))\n\nStep 26:\nTheorem: Substitution\nPremises : Area(\u25b3ACD) = Area(\u25b3CDF), x = AC, 2.5 = CD, Area(\u25b3ACD) = (AC * CD) / 2\nConclusions: (2.5 * x) / 2 = Area(\u25b3CDF)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3CDF) = SqrtOf(((2.5 + 6.5 + x) / 2) * ((2.5 + 6.5 + x) / 2 - 2.5) * ((2.5 + 6.5 + x) / 2 - 6.5) * ((2.5 + 6.5 + x) / 2 - x)), (2.5 * x) / 2 = Area(\u25b3CDF)\nConclusions: (2.5 * x) / 2 = SqrtOf(((2.5 + 6.5 + x) / 2) * ((2.5 + 6.5 + x) / 2 - 2.5) * ((2.5 + 6.5 + x) / 2 - 6.5) * ((2.5 + 6.5 + x) / 2 - x))\n\nStep 28:\nTheorem: Solve Univariate Equation\nPremises : (2.5 * x) / 2 = SqrtOf(((2.5 + 6.5 + x) / 2) * ((2.5 + 6.5 + x) / 2 - 2.5) * ((2.5 + 6.5 + x) / 2 - 6.5) * ((2.5 + 6.5 + x) / 2 - x))\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, C)",
+        "Line(F, A)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(C, Line(F, A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(D, radius_0_0))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(LengthOf(Line(E, C)), 9.0)",
+        "Equals(LengthOf(Line(F, C)), x)"
+    ],
+    "correct": true
+}

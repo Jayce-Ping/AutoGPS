@@ -1,0 +1,96 @@
+{
+    "problem_id": "2887",
+    "solved": true,
+    "problem_text": "What is m \\angle APD?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, P, A)), 60)",
+        "Line(A, P)",
+        "Line(C, B)",
+        "Line(C, P)",
+        "Line(D, P)",
+        "Line(P, B)",
+        "Perpendicular(Line(D, P), Line(C, B))",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "PointLiesOnLine(P, Line(C, B))",
+        "Find(MeasureOf(Angle(A,P,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "DP",
+        "CP",
+        "CB",
+        "PB",
+        "AP"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "A": [
+            135.9921875,
+            66.29306122448979
+        ],
+        "D": [
+            91.0302734375,
+            87.31071428571428
+        ],
+        "B": [
+            225.88051470588235,
+            99.55428571428571
+        ],
+        "P": [
+            151.37762277598074,
+            160.69619281945046
+        ],
+        "C": [
+            78.0546875,
+            221.9453968253968
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        90.0,
+        120.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        90.0,
+        120.0,
+        150.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 10.155694,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(A, P, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (60 / 180) = \u2220BPA, \u2220CPD, BP \u22a5 DP, \u2220APD, \u2220DPB, \u2220DPC, \u2220DPB, 3.14 = pi, \u2220BPA, \u2220BPD, CP \u22a5 DP\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CPD\nConclusions: \u2220CPD = 2 * pi - \u2220DPC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BP \u22a5 DP\nConclusions: (3 * pi) / 2 = \u2220DPB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DPB\nConclusions: \u2220DPB = 2 * pi - \u2220BPD\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220BPA, \u2220DPB, \u2220APD\nConclusions: 2 * pi = \u2220APD + \u2220BPA + \u2220DPB\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220BPD, \u2220DPC\nConclusions: pi = \u2220BPD + \u2220DPC\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : CP \u22a5 DP\nConclusions: pi / 2 = \u2220DPC, (3 * pi) / 2 = \u2220CPD\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220BPA, 2 * pi = \u2220APD + \u2220BPA + \u2220DPB, 3.14 = pi, (3 * pi) / 2 = \u2220DPB\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + pi * (60 / 180) + \u2220APD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BPD + \u2220DPC, 3.14 = pi\nConclusions: 3.14 = \u2220BPD + \u2220DPC\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DPC, 3.14 = pi, \u2220CPD = 2 * pi - \u2220DPC, (3 * pi) / 2 = \u2220CPD\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220DPB\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220DPB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220CPD\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220CPD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DPB = 2 * pi - \u2220BPD, 2 * 3.14 - 3.14 / 2 = \u2220DPB\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BPD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220CPD, \u2220CPD = 2 * pi - \u2220DPC\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220DPC\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BPD, 2 * 3.14 = (3 * 3.14) / 2 + pi * (60 / 180) + \u2220APD, 3.14 = \u2220BPD + \u2220DPC, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220DPC\nConclusions: 0.52 = \u2220APD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, P)",
+        "Line(C, P)",
+        "Line(C, B)",
+        "Line(P, B)",
+        "Line(A, P)",
+        "Circle(P, radius_P)",
+        "Line(A, P)",
+        "Line(C, B)",
+        "Line(C, P)",
+        "Line(D, P)",
+        "Line(P, B)",
+        "Perpendicular(Line(D, P), Line(C, B))",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(C, B))",
+        "Equals(MeasureOf(Angle(B, P, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

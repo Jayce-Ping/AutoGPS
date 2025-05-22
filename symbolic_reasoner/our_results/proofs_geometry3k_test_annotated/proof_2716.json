@@ -1,0 +1,63 @@
+{
+    "problem_id": "2716",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 33)",
+        "Equals(LengthOf(Line(B, A)), 66)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.121588089330025,
+            91.42928039702232
+        ],
+        "B": [
+            266.5012406947891,
+            24.67990074441687
+        ],
+        "C": [
+            194.2928039702233,
+            174.80397022332505
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "33 \\sqrt { 2 }",
+        "33 \\sqrt { 3 }",
+        "33 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        33.0,
+        46.66904755831214,
+        57.157676649772945,
+        73.79024325749306
+    ],
+    "problem_answer": 57.157676649772945,
+    "total_time": 11.046269,
+    "solution_predicate": "Equals(57.1576766498, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 33 = AC, AC \u22a5 BC, x = BC, AC, AB, 66 = AB, BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : AC \u22a5 BC, \u25b3ABC\nConclusions: BC = SqrtOf(AB ** 2 - AC ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 66 = AB, 33 = AC, BC = SqrtOf(AB ** 2 - AC ** 2), x = BC\nConclusions: SqrtOf(66 ** 2 - 33 ** 2) = x\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(66 ** 2 - 33 ** 2) = x\nConclusions: 57.16 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 33.0)",
+        "Equals(LengthOf(Line(B, A)), 66.0)"
+    ],
+    "correct": true
+}

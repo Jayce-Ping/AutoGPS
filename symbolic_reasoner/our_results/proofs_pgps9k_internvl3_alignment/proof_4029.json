@@ -1,0 +1,80 @@
+{
+    "problem_id": "4029",
+    "solved": true,
+    "problem_text": "Find the value of variable x in the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3m-12)",
+        "Equals(LengthOf(Line(C, D)), m+7)",
+        "Equals(MeasureOf(Angle(A, B, D)), 8x+15)",
+        "Equals(MeasureOf(Angle(C, D, B)), 3x)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "AC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.491591928251122,
+            56.20714285714286
+        ],
+        "B": [
+            212.10954516335684,
+            56.46857142857144
+        ],
+        "C": [
+            134.28867713004485,
+            173.85000000000002
+        ],
+        "D": [
+            329.83183856502245,
+            173.58857142857144
+        ]
+    },
+    "problem_choices": [
+        9.375,
+        15.0,
+        18.562,
+        30.0
+    ],
+    "choices_precise_value": [
+        9.375,
+        15.0,
+        18.562,
+        30.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 10.217605,
+    "solution_predicate": "Equals(15.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, D, C), pi * ((3 * x) / 180) = \u2220BDC, 3.14 = pi, pi * ((15 + 8 * x) / 180) = \u2220ABD\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220BDC = \u2220CAB, \u2220ABD = \u2220DCA\n\nStep 3:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(A, B, D, C)\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = \u2220BDC\nConclusions: 3.14 * ((3 * x) / 180) = \u2220BDC\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((15 + 8 * x) / 180) = \u2220ABD\nConclusions: 3.14 * ((15 + 8 * x) / 180) = \u2220ABD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220BDC, \u2220BDC = \u2220CAB\nConclusions: pi * ((3 * x) / 180) = \u2220CAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 8 * x) / 180) = \u2220ABD, \u2220ABD = \u2220DCA\nConclusions: pi * ((15 + 8 * x) / 180) = \u2220DCA\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 8 * x) / 180) = \u2220ABD, 3.14 * ((15 + 8 * x) / 180) = \u2220ABD\nConclusions: 3.14 * ((15 + 8 * x) / 180) = pi * ((15 + 8 * x) / 180)\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = \u2220CAB\nConclusions: 3.14 * ((3 * x) / 180) = \u2220CAB\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\nConclusions: 2 * 3.14 = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 8 * x) / 180) = \u2220DCA, 3.14 * ((15 + 8 * x) / 180) = pi * ((15 + 8 * x) / 180)\nConclusions: 3.14 * ((15 + 8 * x) / 180) = \u2220DCA\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x) / 180) = \u2220CAB, 3.14 * ((3 * x) / 180) = \u2220BDC, 2 * 3.14 = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA, 3.14 * ((15 + 8 * x) / 180) = \u2220DCA, 3.14 * ((15 + 8 * x) / 180) = \u2220ABD\nConclusions: 15 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, D, C)",
+        "Equals(LengthOf(Line(A, B)), Sub(Mul(3.0, m), 12.0))",
+        "Equals(LengthOf(Line(C, D)), Add(m, 7.0))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(Add(Mul(8.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(Mul(3.0, x), 180.0)))"
+    ],
+    "correct": true
+}

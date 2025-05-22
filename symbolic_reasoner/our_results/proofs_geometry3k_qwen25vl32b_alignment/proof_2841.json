@@ -1,0 +1,63 @@
+{
+    "problem_id": "2841",
+    "solved": true,
+    "problem_text": "Express the ratio of \\cos A as a decimal to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 25)",
+        "Equals(LengthOf(Line(B, A)), 15)",
+        "Equals(LengthOf(Line(C, B)), 20)",
+        "Find(RatioOf(CosOf(Angle(A))))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "AB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            41.23456790123457,
+            174.7530864197531
+        ],
+        "B": [
+            273.8271604938272,
+            174.50617283950618
+        ],
+        "A": [
+            274.5679012345679,
+            44.62962962962963
+        ]
+    },
+    "problem_choices": [
+        "0.60",
+        "0.75",
+        "0.80",
+        "1.33"
+    ],
+    "choices_precise_value": [
+        0.6,
+        0.75,
+        0.8,
+        1.33
+    ],
+    "problem_answer": 0.6,
+    "total_time": 9.384636,
+    "solution_predicate": "Equals(0.6, CosOf(MeasureOf(Angle(C, A, B))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = AB, BC, 25 = AC, AC, \u2220CAB, \u2220BCA, AB \u22a5 BC, AB, sin(\u2220BCA)\n\nStep 2:\nTheorem: Evaluate\nPremises : 25 = AC, 15 = AB\nConclusions: 0.6 = AB / AC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BCA), AB \u22a5 BC\nConclusions: AB / AC = sin(\u2220BCA)\n\nStep 5:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 BC, \u25b3ABC, \u2220CAB\nConclusions: AB / AC = cos(\u2220CAB)\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : \u2220BCA, \u25b3ABC, AB \u22a5 BC\nConclusions: AB / AC = sin(\u2220BCA)\n\nStep 7:\nTheorem: Substitution\nPremises : 25 = AC, 15 = AB, AB / AC = sin(\u2220BCA)\nConclusions: 15 / 25 = sin(\u2220BCA)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 15 / 25 = sin(\u2220BCA), AB / AC = sin(\u2220BCA)\nConclusions: 15 / 25 = AB / AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = AB / AC, 15 / 25 = AB / AC\nConclusions: 0.6 = 15 / 25\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 15 / 25 = sin(\u2220BCA), 0.6 = 15 / 25\nConclusions: 0.6 = sin(\u2220BCA)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = sin(\u2220BCA), AB / AC = sin(\u2220BCA)\nConclusions: 0.6 = AB / AC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : AB / AC = cos(\u2220CAB), 0.6 = AB / AC\nConclusions: 0.6 = cos(\u2220CAB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 25.0)",
+        "Equals(LengthOf(Line(B, A)), 15.0)",
+        "Equals(LengthOf(Line(C, B)), 20.0)"
+    ],
+    "correct": true
+}

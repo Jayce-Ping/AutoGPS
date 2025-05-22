@@ -1,0 +1,96 @@
+{
+    "problem_id": "2649",
+    "solved": true,
+    "problem_text": "Find the measure of \\widehat TC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(T, P, C)), 128)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(T, D)",
+        "Line(T, P)",
+        "Perpendicular(Line(T, D), Line(P, B))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "PointLiesOnCircle(T, Circle(P))",
+        "PointLiesOnLine(P, Line(T, D))",
+        "Find(MeasureOf(Arc(T,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "T",
+        "P",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "TP",
+        "TD",
+        "PD",
+        "CP",
+        "PB"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "C": [
+            225.89473684210526,
+            73.58887218045112
+        ],
+        "T": [
+            55.13725490196078,
+            92.46857142857144
+        ],
+        "P": [
+            145.04341157655927,
+            124.63306051212267
+        ],
+        "D": [
+            235.33965844402275,
+            157.17781512605043
+        ],
+        "B": [
+            112.90967741935484,
+            215.388
+        ]
+    },
+    "problem_choices": [
+        52.0,
+        90.0,
+        128.0,
+        142.0
+    ],
+    "choices_precise_value": [
+        52.0,
+        90.0,
+        128.0,
+        142.0
+    ],
+    "problem_answer": 128.0,
+    "total_time": 9.532915,
+    "solution_predicate": "Equals(2.2340214426, MeasureOf(Arc(C, P, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (128 / 180) = \u2220CPT, Arc(CPT)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CPT)\nConclusions: \u2220CPT = Arc(CPT)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (128 / 180) = \u2220CPT, \u2220CPT = Arc(CPT)\nConclusions: pi * (128 / 180) = Arc(CPT)\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (128 / 180) = Arc(CPT)\nConclusions: 2.23 = Arc(CPT)\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, P)",
+        "Line(T, D)",
+        "Line(P, D)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "Circle(P, radius_P)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(T, D)",
+        "Line(T, P)",
+        "Perpendicular(Line(T, D), Line(P, B))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "PointLiesOnCircle(T, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(T, D))",
+        "Equals(MeasureOf(Angle(C, P, T)), Mul(pi, Div(128.0, 180.0)))"
+    ],
+    "correct": true
+}

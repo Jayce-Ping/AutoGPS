@@ -1,0 +1,83 @@
+{
+    "problem_id": "2945",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2 for the parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, D, C)), 110)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(D, B, C)), 38)",
+        "Equals(MeasureOf(Angle(D, C, B)), MeasureOf(Angle(2)))",
+        "Find(MeasureOf(Angle(2)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "BD",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            74.90208995910949,
+            22.506175115207373
+        ],
+        "B": [
+            267.1290322580645,
+            22.697880184331797
+        ],
+        "C": [
+            18.180427391937833,
+            177.5889655172414
+        ],
+        "D": [
+            209.8103134938664,
+            177.67225806451611
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        38.0,
+        70.0,
+        110.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        38.0,
+        70.0,
+        110.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 21.630561,
+    "solution_predicate": "Equals(0.5585053606, MeasureOf(Angle(D, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, pi * (110 / 180) = \u2220BDC, 3.14 = pi, Parallelogram(A, B, D, C), \u2220CBA, CD, BD, pi * (38 / 180) = \u2220CBD\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220ABC = \u2220DCB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220DCB, \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi\nConclusions: \u2220CBA = 2 * 3.14 - \u2220DCB\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (110 / 180) = \u2220BDC, pi * (38 / 180) = \u2220CBD, pi = \u2220BDC + \u2220CBD + \u2220DCB, 3.14 = pi\nConclusions: 3.14 = pi * (110 / 180) + pi * (38 / 180) + \u2220DCB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : \u2220CBA = 2 * 3.14 - \u2220DCB, 3.14 = pi * (110 / 180) + pi * (38 / 180) + \u2220DCB, \u2220ABC = \u2220DCB, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: 0.56 = \u2220ABC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DCB, 0.56 = \u2220ABC\nConclusions: 0.56 = \u2220DCB\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Parallelogram(A, B, D, C)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

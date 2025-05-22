@@ -1,0 +1,82 @@
+{
+    "problem_id": "2589",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, D)), 12)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BA",
+        "AD",
+        "BC",
+        "BD",
+        "CD",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            27.242966751918154,
+            207.41687979539643
+        ],
+        "B": [
+            28.010230179028135,
+            45.012787723785166
+        ],
+        "C": [
+            103.71355498721226,
+            98.97698209718669
+        ],
+        "D": [
+            256.9104859335038,
+            207.92838874680305
+        ]
+    },
+    "problem_choices": [
+        "2 \\sqrt { 3 }",
+        "2 \\sqrt { 6 }",
+        "4 \\sqrt { 3 }",
+        "4 \\sqrt { 6 }"
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "problem_answer": 9.797958971132712,
+    "total_time": 48.955489,
+    "solution_predicate": "Equals(9.7979589711, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 AD, BC, 8 = CD, \u2220ABD, \u2220BAD, AB, AD, AC \u22a5 CD, C on BD, 3.14 = pi, 12 = BD, AC, CD, \u2220DAC, AC \u22a5 BC, x = AD, \u2220DAC, \u2220CAB, sin(\u2220ABD)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220BAD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220CAB, \u2220DAC, \u2220BAD\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 8:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 AD, sin(\u2220ABD)\nConclusions: AD / BD = sin(\u2220ABD)\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u2220DAC, AC \u22a5 CD, \u25b3ACD\nConclusions: CD / AD = sin(\u2220DAC)\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC, 3.14 = pi, (3 * pi) / 2 = \u2220BAD\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC\n\nStep 12:\nTheorem: Substitution\nPremises : 12 = BD, AD / BD = sin(\u2220ABD), x = AD\nConclusions: x / 12 = sin(\u2220ABD)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, pi / 2 = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: \u2220ABC = \u2220DAC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DAC, \u2220ABC = \u2220ABD\nConclusions: \u2220ABD = \u2220DAC\n\nStep 16:\nTheorem: Substitution\nPremises : CD / AD = sin(\u2220DAC), \u2220ABD = \u2220DAC, x = AD, 8 = CD\nConclusions: 8 / x = sin(\u2220ABD)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 8 / x = sin(\u2220ABD), x / 12 = sin(\u2220ABD)\nConclusions: x / 12 = 8 / x\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : x / 12 = 8 / x\nConclusions: 9.8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, D)), 12.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,80 @@
+{
+    "problem_id": "2855",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, D)), 5)",
+        "Equals(LengthOf(Line(D, B)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(MeasureOf(Angle(B, A, D)), 45)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            6.797872340425531,
+            172.07446808510636
+        ],
+        "B": [
+            149.08510638297872,
+            171.54255319148936
+        ],
+        "C": [
+            290.30851063829783,
+            171.27659574468083
+        ],
+        "D": [
+            148.8191489361702,
+            34.84042553191489
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 5 \\sqrt { 2 } } { 2 }",
+        "5",
+        "5 \\sqrt { 2 }",
+        "10"
+    ],
+    "choices_precise_value": [
+        3.5355339059327378,
+        5.0,
+        7.0710678118654755,
+        10.0
+    ],
+    "problem_answer": 3.5355339059327378,
+    "total_time": 64.645496,
+    "solution_predicate": "Equals(3.5355339059, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, 5 = CD, \u2220ACD, \u2220CDA, pi * (45 / 180) = \u2220BAD, AB \u22a5 BD, \u2220ABD, tan(\u2220BAD), sin(\u2220BAD), y = BD, CD, \u2220DCA, \u2220ADB, BC \u22a5 BD, \u2220CAD, \u2220BDC, B on AC, \u2220BDC, \u2220CBD, AC, \u2220ACD, BC, AD \u22a5 CD, 3.14 = pi, \u2220DBA, AB, \u2220DBC, BD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA, (3 * pi) / 2 = \u2220ABD\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABD\nConclusions: \u2220ABD = 2 * pi - \u2220DBA\n\nStep 5:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220BAD), AB \u22a5 BD\nConclusions: BD / AB = tan(\u2220BAD)\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 BD, sin(\u2220BAD)\nConclusions: BD / AD = sin(\u2220BAD)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD, (3 * pi) / 2 = \u2220DBC\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220ADB, \u2220CDA, \u2220BDC\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 9:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220CAD, B on AC\nConclusions: \u2220BAD = \u2220CAD\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 12:\nTheorem: Same Angle\nPremises : B on AC, \u2220ACD\nConclusions: \u2220ACD = \u2220BCD\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDA, pi / 2 = \u2220ADC\n\nStep 14:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 15:\nTheorem: Straight Angle\nPremises : \u2220DBA, \u2220CBD\nConclusions: pi = \u2220CBD + \u2220DBA\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBC\nConclusions: \u2220DBC = 2 * pi - \u2220CBD\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220BAD, \u2220BAD = \u2220CAD\nConclusions: pi * (45 / 180) = \u2220CAD\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220ACD = 2 * pi - \u2220DCA, 3.14 = pi, \u2220DCA = \u2220DCB, \u2220ACD = \u2220BCD\nConclusions: \u2220BCD = 2 * 3.14 - \u2220DCB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = 2 * pi - \u2220DCA, \u2220ACD = \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCA\n\nStep 23:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CDA, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220ADB + \u2220BDC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = pi * (45 / 180), pi * (45 / 180) = \u2220BAD\nConclusions: 0.79 = \u2220BAD\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CBD + \u2220DBA, 3.14 = pi\nConclusions: 3.14 = \u2220CBD + \u2220DBA\n\nStep 26:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBD, \u2220DBC = 2 * pi - \u2220CBD, (3 * pi) / 2 = \u2220DBC, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 27:\nTheorem: Perimeter Definition\nPremises : \u25b3ABD\nConclusions: Perimeter(\u25b3ABD) = AB + AD + BD\n\nStep 28:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 29:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 30:\nTheorem: Sin Function Definition\nPremises : BC \u22a5 BD, \u25b3BCD, \u2220BDC\nConclusions: BC / CD = sin(\u2220BDC)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = pi * (45 / 180), pi * (45 / 180) = \u2220CAD\nConclusions: 0.79 = \u2220CAD\n\nStep 32:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220CAD, pi = \u2220ADC + \u2220CAD + \u2220DCA, \u2220DCA = \u2220DCB, pi / 2 = \u2220ADC, 3.14 = pi\nConclusions: 3.14 = pi / 2 + 3.14 * (45 / 180) + \u2220DCB\n\nStep 33:\nTheorem: Evaluate\nPremises : 0.79 = \u2220BAD\nConclusions: 1 = tan(\u2220BAD), 0.71 = sin(\u2220BAD)\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220DBC, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220DBC\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220ABD\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220ABD\n\nStep 36:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DBA, pi = \u2220ADB + \u2220BAD + \u2220DBA, pi * (45 / 180) = \u2220BAD, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220ADB\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BDC + \u2220CBD + \u2220DCB, 3.14 = pi\nConclusions: 3.14 = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : \u2220BCD = 2 * pi - \u2220DCA, 3.14 = pi / 2 + 3.14 * (45 / 180) + \u2220DCB, \u2220DCA = \u2220DCB, \u2220BCD = 2 * 3.14 - \u2220DCB\nConclusions: 0.79 = \u2220DCA\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 1 = tan(\u2220BAD), BD / AB = tan(\u2220BAD)\nConclusions: 1 = BD / AB\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : BD / AD = sin(\u2220BAD), 0.71 = sin(\u2220BAD)\nConclusions: 0.71 = BD / AD\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = 2 * pi - \u2220CBD, 2 * 3.14 - 3.14 / 2 = \u2220DBC\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220CBD\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220ABD, \u2220ABD = 2 * pi - \u2220DBA\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220DBA\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220DCA, 0.79 = \u2220CAD\nConclusions: \u2220CAD = \u2220DCA\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220ADB, 2 * 3.14 = (3 * 3.14) / 2 + \u2220ADB + \u2220BDC, 3.14 = pi / 2 + 3.14 * (45 / 180) + \u2220DCB, 3.14 = \u2220BDC + \u2220CBD + \u2220DCB, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220CBD\nConclusions: 0.79 = \u2220BDC\n\nStep 45:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220ADB, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220DBA, 3.14 = \u2220CBD + \u2220DBA, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220CBD\nConclusions: 0.79 = \u2220ADB\n\nStep 46:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACD, \u2220CAD = \u2220DCA\nConclusions: AD = CD\n\nStep 47:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3ACD, \u2220CAD = \u2220DCA\nConclusions: BC \u22a5 BD, AB \u22a5 BD, AB = BC\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220BDC, 0.79 = \u2220DCA, \u2220DCA = \u2220DCB\nConclusions: \u2220BDC = \u2220DCB\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220CAD, 0.79 = \u2220ADB, \u2220BAD = \u2220CAD\nConclusions: \u2220ADB = \u2220BAD\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CD, AD = CD\nConclusions: 5 = AD\n\nStep 51:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BDC = \u2220DCB, \u25b3BCD\nConclusions: BC = BD\n\nStep 52:\nTheorem: Issoceles Triangle Property\nPremises : \u2220ADB = \u2220BAD, \u25b3ABD\nConclusions: AB = BD\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : AB = BD, y = BD\nConclusions: y = AB\n\nStep 54:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : BC = BD, AB = BD, AD = CD\nConclusions: \u25b3ABD \u2245 \u25b3DBC\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : y = AB, AB = BC\nConclusions: y = BC\n\nStep 56:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3DBC\nConclusions: AB = BD, AD = CD, Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD)\n\nStep 57:\nTheorem: Substitution\nPremises : y = BC, BC / CD = sin(\u2220BDC), 0.79 = \u2220BDC, 5 = CD\nConclusions: sin(0.79) = y / 5\n\nStep 58:\nTheorem: Substitution\nPremises : Perimeter(\u25b3ABD) = AB + AD + BD, y = AB, Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), 5 = AD, y = BD\nConclusions: 5 + y + y = Perimeter(\u25b3BCD)\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), 5 + y + y = Perimeter(\u25b3BCD)\nConclusions: 5 + y + y = Perimeter(\u25b3ABD)\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : 5 + y + y = Perimeter(\u25b3ABD), Perimeter(\u25b3ABD) = AB + AD + BD\nConclusions: 5 + y + y = AB + AD + BD\n\nStep 61:\nTheorem: Solve Linear Equation System\nPremises : sin(0.79) = y / 5, 5 + y + y = AB + AD + BD, 1 = BD / AB, 0.71 = BD / AD\nConclusions: 3.54 = BD\n\nStep 62:\nTheorem: Transtivity of Equivalence\nPremises : 3.54 = BD, y = BD\nConclusions: 3.54 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, D)), 5.0)",
+        "Equals(LengthOf(Line(D, B)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

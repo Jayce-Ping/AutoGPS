@@ -1,0 +1,86 @@
+{
+    "problem_id": "4737",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 12)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(MeasureOf(Angle(B, A, C)), x)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            26.903225806451612,
+            164.32258064516128
+        ],
+        "B": [
+            172.7625,
+            164.4375
+        ],
+        "C": [
+            172.46896551724137,
+            18.20689655172414
+        ],
+        "D": [
+            26.357142857142858,
+            18.257142857142856
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        9.0,
+        12.0,
+        16.970562748477143
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        12.0,
+        16.970562748477143
+    ],
+    "problem_answer": 12.0,
+    "total_time": 24.537545,
+    "solution_predicate": "Equals(16.9705627485, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, y = AC, AC, 12 = AB, AB \u22a5 BC, 12 = BC, AB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AB \u22a5 BC\nConclusions: AC = SqrtOf(AB ** 2 + BC ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : AC = SqrtOf(AB ** 2 + BC ** 2), 12 = AB, 12 = BC, y = AC\nConclusions: SqrtOf(12 ** 2 + 12 ** 2) = y\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 12 ** 2) = y\nConclusions: 16.97 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": false
+}

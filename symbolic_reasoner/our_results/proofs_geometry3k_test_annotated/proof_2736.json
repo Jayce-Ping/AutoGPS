@@ -1,0 +1,73 @@
+{
+    "problem_id": "2736",
+    "solved": true,
+    "problem_text": "The segment is tangent to the circle. Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnCircle(Y, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(Z, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), 2x+9)",
+        "Equals(LengthOf(Line(Y, X)), 3x+6)",
+        "Tangent(Line(X, W), Circle(Z))",
+        "Tangent(Line(X, Y), Circle(Z))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "XY",
+        "WX"
+    ],
+    "circle_instances": [
+        "Z"
+    ],
+    "point_positions": {
+        "Z": [
+            160.75471698113208,
+            196.50943396226415
+        ],
+        "Y": [
+            247.18614718614717,
+            257.7748917748918
+        ],
+        "X": [
+            369.811320754717,
+            108.58490566037736
+        ],
+        "W": [
+            175.32467532467533,
+            91.97402597402598
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "3",
+        "6",
+        "9"
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        6.0,
+        9.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 8.521692,
+    "solution_predicate": "Equals(3.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Tangent(WX, \u2299(Z, radius_0_0)), Y on \u2299(Z, radius_0_0), W on \u2299(Z, radius_0_0), 6 + 3 * x = XY, Tangent(XY, \u2299(Z, radius_0_0)), 9 + 2 * x = WX\n\nStep 2:\nTheorem: Tangent Line Theorem\nPremises : Y on \u2299(Z, radius_0_0), W on \u2299(Z, radius_0_0), Tangent(XY, \u2299(Z, radius_0_0)), Tangent(WX, \u2299(Z, radius_0_0))\nConclusions: WX = XY\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 6 + 3 * x = XY, WX = XY, 9 + 2 * x = WX\nConclusions: 6 + 3 * x = 9 + 2 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 6 + 3 * x = 9 + 2 * x\nConclusions: 3 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Y)",
+        "Line(W, X)",
+        "Circle(Z, radius_0_0)",
+        "PointLiesOnCircle(Y, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(Z, radius_0_0))",
+        "Tangent(Line(X, W), Circle(Z, radius_0_0))",
+        "Tangent(Line(X, Y), Circle(Z, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), Add(Mul(2.0, x), 9.0))",
+        "Equals(LengthOf(Line(Y, X)), Add(Mul(3.0, x), 6.0))"
+    ],
+    "correct": true
+}

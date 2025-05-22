@@ -1,0 +1,134 @@
+{
+    "problem_id": "3711",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(DiameterOf(Circle(D)), 8)",
+        "Equals(DiameterOf(Circle(E)), 8)",
+        "Equals(LengthOf(Line(A, F)), 8)",
+        "Equals(LengthOf(Line(G, B)), 8)",
+        "Equals(LengthOf(Line(G, B)), LengthOf(Line(A, F)))",
+        "Find(Sub(AreaOf(Square(A, B, G, F)), Add(AreaOf(Sector(E, A, F)), AreaOf(Sector(D, B, G)))))",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "PointLiesOnCircle(C, Circle(E))",
+        "PointLiesOnCircle(F, Circle(E))",
+        "PointLiesOnCircle(G, Circle(D))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "Square(A, B, G, F)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "BA",
+        "AE",
+        "AF",
+        "EF",
+        "FG",
+        "GD",
+        "GB",
+        "DB"
+    ],
+    "circle_instances": [
+        "D",
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            246.8827091633466,
+            31.261714285714284
+        ],
+        "B": [
+            79.64669891861126,
+            31.31734693877551
+        ],
+        "C": [
+            163.1526308558868,
+            114.32807881773398
+        ],
+        "D": [
+            78.86154607788367,
+            114.750302402694
+        ],
+        "E": [
+            246.8040201005025,
+            114.82412060301507
+        ],
+        "F": [
+            246.89464364763168,
+            199.43915343915342
+        ],
+        "G": [
+            79.58551998900947,
+            199.53004926108372
+        ]
+    },
+    "problem_choices": [
+        13.735,
+        77.735,
+        100.531,
+        258.754
+    ],
+    "choices_precise_value": [
+        13.735,
+        77.735,
+        100.531,
+        258.754
+    ],
+    "problem_answer": 13.735,
+    "total_time": 84.884329,
+    "solution_predicate": "Equals(13.7345175424, Sub(AreaOf(Square(A, B, G, F)), Add(AreaOf(Sector(F, E, A)), AreaOf(Sector(G, D, B)))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FEA, D on BG, C on \u2299(D, radius_D), \u2220BDG, F on \u2299(E, radius_E), Square(A, B, G, F), Sector(G, D, B), \u2220AEC, E on AF, A on \u2299(E, radius_E), 8 = AF, Sector(F, E, A), 8 = BG, 3.14 = pi, \u2220CDB, \u2220BDG, \u2220CEF, B on \u2299(D, radius_D), G on \u2299(D, radius_D), \u2220GDC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : D on BG\nConclusions: BG = BD + DG\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : F on \u2299(E, radius_E)\nConclusions: radius_E = EF\n\nStep 5:\nTheorem: Square is Rectangle\nPremises : Square(A, B, G, F)\nConclusions: Rectangle(A, B, G, F)\n\nStep 6:\nTheorem: Square is Rhombus\nPremises : Square(A, B, G, F)\nConclusions: Rhombus(A, B, G, F)\n\nStep 7:\nTheorem: Area formula of Sector(G, D, B)\nPremises : Sector(G, D, B)\nConclusions: Area(Sector(G, D, B)) = (radius_D ** 2 * \u2220GDB) / 2\n\nStep 8:\nTheorem: Line Segment Split\nPremises : E on AF\nConclusions: AF = AE + EF\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : A on \u2299(E, radius_E)\nConclusions: radius_E = AE\n\nStep 10:\nTheorem: Area formula of Sector(F, E, A)\nPremises : Sector(F, E, A)\nConclusions: Area(Sector(F, E, A)) = (radius_E ** 2 * \u2220FEA) / 2\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDG\nConclusions: \u2220BDG = 2 * pi - \u2220GDB\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220CEF, \u2220AEC\nConclusions: pi = \u2220AEC + \u2220CEF\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220CEF, \u2220AEC, \u2220FEA\nConclusions: 2 * pi = \u2220AEC + \u2220CEF + \u2220FEA\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : G on \u2299(D, radius_D)\nConclusions: radius_D = DG\n\nStep 16:\nTheorem: Straight Angle\nPremises : \u2220CDB, \u2220GDC\nConclusions: pi = \u2220CDB + \u2220GDC\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220BDG, \u2220CDB, \u2220GDC\nConclusions: 2 * pi = \u2220BDG + \u2220CDB + \u2220GDC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : BG = BD + DG, 8 = BG\nConclusions: 8 = BD + DG\n\nStep 19:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, G, F)\nConclusions: AB \u22a5 AF\n\nStep 20:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, G, F)\nConclusions: Parallelogram(A, B, G, F)\n\nStep 21:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, G, F)\nConclusions: BG = FG\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AF, AF = AE + EF\nConclusions: 8 = AE + EF\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = EF, radius_E = AE\nConclusions: AE = EF\n\nStep 24:\nTheorem: Substitution\nPremises : \u2220BDG = 2 * pi - \u2220GDB, 3.14 = pi\nConclusions: \u2220BDG = 2 * 3.14 - \u2220GDB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AEC + \u2220CEF, 3.14 = pi\nConclusions: 3.14 = \u2220AEC + \u2220CEF\n\nStep 26:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AEC + \u2220CEF + \u2220FEA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AEC + \u2220CEF + \u2220FEA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = CD, radius_D = BD\nConclusions: BD = CD\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = DG, radius_D = CD\nConclusions: CD = DG\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CDB + \u2220GDC, 3.14 = pi\nConclusions: 3.14 = \u2220CDB + \u2220GDC\n\nStep 30:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDG + \u2220CDB + \u2220GDC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BDG + \u2220CDB + \u2220GDC\n\nStep 31:\nTheorem: Area formula of Square(A, B, G, F)\nPremises : AB \u22a5 AF, Square(A, B, G, F)\nConclusions: Area(Square(A, B, G, F)) = AB * AF\n\nStep 32:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, G, F)\nConclusions: AB = FG\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 8 = BG, BG = FG\nConclusions: 8 = FG\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 8 = AE + EF, AE = EF\nConclusions: 4 = AE\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220AEC + \u2220CEF, 2 * 3.14 = \u2220AEC + \u2220CEF + \u2220FEA\nConclusions: 3.14 = \u2220FEA\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : BD = CD, 8 = BD + DG, CD = DG\nConclusions: 4 = CD\n\nStep 37:\nTheorem: Solve Linear Equation System\nPremises : \u2220BDG = 2 * 3.14 - \u2220GDB, 2 * 3.14 = \u2220BDG + \u2220CDB + \u2220GDC, 3.14 = \u2220CDB + \u2220GDC\nConclusions: 3.14 = \u2220GDB\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : AB = FG, 8 = FG\nConclusions: 8 = AB\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AE, radius_E = AE\nConclusions: 4 = radius_E\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 4 = CD, radius_D = CD\nConclusions: 4 = radius_D\n\nStep 41:\nTheorem: Substitution\nPremises : 8 = AF, Area(Square(A, B, G, F)) = AB * AF, 8 = AB\nConclusions: 8 * 8 = Area(Square(A, B, G, F))\n\nStep 42:\nTheorem: Evaluate\nPremises : 4 = radius_E, 3.14 = \u2220FEA\nConclusions: 25.13 = (radius_E ** 2 * \u2220FEA) / 2\n\nStep 43:\nTheorem: Evaluate\nPremises : 4 = radius_D, 3.14 = \u2220GDB\nConclusions: 25.13 = (radius_D ** 2 * \u2220GDB) / 2\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : 8 * 8 = Area(Square(A, B, G, F))\nConclusions: 64 = Area(Square(A, B, G, F))\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : Area(Sector(F, E, A)) = (radius_E ** 2 * \u2220FEA) / 2, 25.13 = (radius_E ** 2 * \u2220FEA) / 2\nConclusions: 25.13 = Area(Sector(F, E, A))\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 25.13 = (radius_D ** 2 * \u2220GDB) / 2, Area(Sector(G, D, B)) = (radius_D ** 2 * \u2220GDB) / 2\nConclusions: 25.13 = Area(Sector(G, D, B))\n\nStep 47:\nTheorem: Evaluate\nPremises : 64 = Area(Square(A, B, G, F)), 25.13 = Area(Sector(F, E, A)), 25.13 = Area(Sector(G, D, B))\nConclusions: 13.73 = Area(Square(A, B, G, F)) - (Area(Sector(F, E, A)) + Area(Sector(G, D, B)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(G, D)",
+        "Line(G, B)",
+        "Line(D, B)",
+        "Circle(E, radius_E)",
+        "Circle(D, radius_D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(E, radius_E))",
+        "PointLiesOnCircle(F, Circle(E, radius_E))",
+        "PointLiesOnCircle(G, Circle(D, radius_D))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "Square(A, B, G, F)",
+        "Equals(Mul(2.0, radius_D), 8.0)",
+        "Equals(Mul(2.0, radius_E), 8.0)",
+        "Equals(LengthOf(Line(A, F)), 8.0)",
+        "Equals(LengthOf(Line(G, B)), 8.0)",
+        "Equals(LengthOf(Line(G, B)), LengthOf(Line(A, F)))"
+    ],
+    "correct": true
+}

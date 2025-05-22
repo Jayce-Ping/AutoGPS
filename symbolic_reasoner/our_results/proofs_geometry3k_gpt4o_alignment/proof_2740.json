@@ -1,0 +1,92 @@
+{
+    "problem_id": "2740",
+    "solved": true,
+    "problem_text": "In \\odot S, m \\widehat P Q R = 98. Find m \\widehat P Q.",
+    "logic_forms": [
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnCircle(R, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(S, radius_0_0))",
+        "Perpendicular(Line(Q, T), Line(P, T))",
+        "Equals(LengthOf(Line(R, T)), 6)",
+        "Circle(S)",
+        "Equals(MeasureOf(Arc(P,Q,R)),98)",
+        "Find(MeasureOf(Arc(P,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "T",
+        "S",
+        "Q",
+        "R"
+    ],
+    "line_instances": [
+        "QT",
+        "QS",
+        "TS",
+        "PT",
+        "PR",
+        "TR"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "P": [
+            147.60765550239236,
+            170.81339712918663
+        ],
+        "T": [
+            265.7894736842105,
+            169.85645933014357
+        ],
+        "S": [
+            265.7894736842105,
+            247.84688995215313
+        ],
+        "Q": [
+            265.31100478468903,
+            106.69856459330144
+        ],
+        "R": [
+            383.4928229665072,
+            170.33492822966508
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "49",
+        "90",
+        "98"
+    ],
+    "choices_precise_value": [
+        45.0,
+        49.0,
+        90.0,
+        98.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 52.348028,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Arc(Q, S, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: T on QS, Arc(QSP), pi * (98 / 180) = Arc(RSP), \u2220QSP, 3.14 = pi, \u2220RSQ, \u2220RSP, \u2220PSR, T on PR, Arc(RSP), \u2299(S, radius_0_0), PT \u22a5 ST\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QSP)\nConclusions: \u2220QSP = Arc(QSP)\n\nStep 3:\nTheorem: Same Angle\nPremises : T on QS, \u2220QSP\nConclusions: \u2220QSP = \u2220TSP\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 5:\nTheorem: Same Angle\nPremises : T on QS, \u2220RSQ\nConclusions: \u2220RSQ = \u2220RST\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220RSP\nConclusions: \u2220RSP = 2 * pi - \u2220PSR\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220RSQ, \u2220PSR, \u2220QSP\nConclusions: 2 * pi = \u2220PSR + \u2220QSP + \u2220RSQ\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RSP)\nConclusions: \u2220RSP = Arc(RSP)\n\nStep 9:\nTheorem: Circle Vertical Theorem\nPremises : T on PR, PT \u22a5 ST, \u2299(S, radius_0_0)\nConclusions: \u25b3PST \u2245 \u25b3RST\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220PSR + \u2220QSP + \u2220RSQ, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220PSR + \u2220QSP + \u2220RSQ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (98 / 180) = Arc(RSP), \u2220RSP = Arc(RSP)\nConclusions: pi * (98 / 180) = \u2220RSP\n\nStep 12:\nTheorem: Congruent Definition\nPremises : \u25b3PST \u2245 \u25b3RST\nConclusions: \u2220RST = \u2220TSP\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (98 / 180) = \u2220RSP, \u2220RSP = 2 * pi - \u2220PSR\nConclusions: pi * (98 / 180) = 2 * pi - \u2220PSR\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QSP = \u2220TSP, \u2220RSQ = \u2220RST, \u2220RST = \u2220TSP\nConclusions: \u2220QSP = \u2220RSQ\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220PSR + \u2220QSP + \u2220RSQ, pi * (98 / 180) = 2 * pi - \u2220PSR, 6.28 = \u2220PSR + \u2220QSP + \u2220RSQ, \u2220QSP = \u2220RSQ\nConclusions: 0.86 = \u2220QSP\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 0.86 = \u2220QSP, \u2220QSP = Arc(QSP)\nConclusions: 0.86 = Arc(QSP)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Circle(S, radius_0_0)",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnCircle(R, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(S, radius_0_0))",
+        "Perpendicular(Line(Q, T), Line(P, T))",
+        "Circle(S, radius_0_0)",
+        "Equals(LengthOf(Line(R, T)), 6.0)",
+        "Equals(MeasureOf(Arc(R, S, P)), Mul(pi, Div(98.0, 180.0)))"
+    ],
+    "correct": true
+}

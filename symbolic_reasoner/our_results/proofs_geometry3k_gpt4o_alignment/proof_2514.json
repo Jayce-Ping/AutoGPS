@@ -1,0 +1,87 @@
+{
+    "problem_id": "2514",
+    "solved": true,
+    "problem_text": "Find K J if G J = 8, G H = 12, and H I = 4.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G,J)),8)",
+        "Equals(LengthOf(Line(G,H)),12)",
+        "Equals(LengthOf(Line(H,I)),4)",
+        "Find(LengthOf(Line(K,J)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "JI",
+        "KH",
+        "GK",
+        "GJ",
+        "KJ",
+        "GH",
+        "GI",
+        "HI"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            57.95475113122172,
+            163.80090497737558
+        ],
+        "K": [
+            66.55203619909503,
+            127.14932126696833
+        ],
+        "G": [
+            88.04524886877829,
+            36.87782805429865
+        ],
+        "H": [
+            159.08597285067873,
+            127.14932126696833
+        ],
+        "I": [
+            188.0452488687783,
+            164.02714932126696
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "4",
+        "6",
+        "8"
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 35.912166,
+    "solution_predicate": "Equals(2.0, LengthOf(Line(K, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220HKG, H on GI, K on GJ, 4 = HI, 3.14 = pi, HK || IJ, \u2220KGI, 12 = GH, 8 = GJ, \u2220IJG, \u2220JGI, \u2220IJG\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220HKG\nConclusions: \u2220HKG = 2 * pi - \u2220GKH\n\nStep 3:\nTheorem: Line Segment Split\nPremises : H on GI\nConclusions: GI = GH + HI\n\nStep 4:\nTheorem: Line Segment Split\nPremises : K on GJ\nConclusions: GJ = GK + JK\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : HK || IJ\nConclusions: \u2220GHK = \u2220GIJ, \u2220GJI = \u2220GKH\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220KGI, H on GI\nConclusions: \u2220KGH = \u2220KGI\n\nStep 7:\nTheorem: Same Angle\nPremises : K on GJ, \u2220IJG\nConclusions: \u2220IJG = \u2220IJK\n\nStep 8:\nTheorem: Same Angle\nPremises : K on GJ, \u2220JGI\nConclusions: \u2220JGI = \u2220KGI\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220IJG\nConclusions: \u2220IJG = 2 * pi - \u2220GJI\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220HKG = 2 * pi - \u2220GKH, 3.14 = pi\nConclusions: \u2220HKG = 2 * 3.14 - \u2220GKH\n\nStep 11:\nTheorem: Substitution\nPremises : 12 = GH, GI = GH + HI, 4 = HI\nConclusions: 12 + 4 = GI\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : GJ = GK + JK, 8 = GJ\nConclusions: 8 = GK + JK\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JGI = \u2220KGI, \u2220KGH = \u2220KGI\nConclusions: \u2220JGI = \u2220KGH\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220IJG = 2 * pi - \u2220GJI, \u2220GJI = \u2220GKH, \u2220IJG = \u2220IJK, 3.14 = pi\nConclusions: \u2220IJK = 2 * 3.14 - \u2220GKH\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 12 + 4 = GI\nConclusions: 16 = GI\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HKG = 2 * 3.14 - \u2220GKH, \u2220IJK = 2 * 3.14 - \u2220GKH\nConclusions: \u2220HKG = \u2220IJK\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IJG = \u2220IJK, \u2220HKG = \u2220IJK\nConclusions: \u2220HKG = \u2220IJG\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220GHK = \u2220GIJ, \u2220HKG = \u2220IJG, \u2220JGI = \u2220KGH\nConclusions: \u25b3GHK ~ \u25b3GIJ\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3GHK ~ \u25b3GIJ\nConclusions: \u2220GJI = \u2220GKH, sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ, sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI, \u2220GHK = \u2220GIJ, \u2220HKG = \u2220IJG\n\nStep 20:\nTheorem: Substitution\nPremises : sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI, 12 = GH, 16 = GI\nConclusions: 12 / 16 = sim_ratio_triangle_g_h_k_triangle_g_i_j\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ, 12 / 16 = sim_ratio_triangle_g_h_k_triangle_g_i_j\nConclusions: 12 / 16 = GK / GJ\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : GJ = GK + JK, 8 = GK + JK, 12 / 16 = GK / GJ\nConclusions: 2 = JK\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, I)",
+        "Line(K, H)",
+        "Line(G, K)",
+        "Line(G, J)",
+        "Line(K, J)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(H, I)",
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G, J)), 8.0)",
+        "Equals(LengthOf(Line(G, H)), 12.0)",
+        "Equals(LengthOf(Line(H, I)), 4.0)"
+    ],
+    "correct": true
+}

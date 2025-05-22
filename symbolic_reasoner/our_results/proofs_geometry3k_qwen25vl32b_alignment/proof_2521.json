@@ -1,0 +1,69 @@
+{
+    "problem_id": "2521",
+    "solved": true,
+    "problem_text": "Find x for the equilateral triangle R S T if R S = x + 9, S T = 2 x, and R T = 3 x - 9.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 3x-9)",
+        "Equals(LengthOf(Line(S, R)), x+9)",
+        "Equals(LengthOf(Line(T, S)), 2x)",
+        "Equilateral(Triangle(R,S,T))",
+        "Equals(LengthOf(Line(R,S)),x+9)",
+        "Equals(LengthOf(Line(S,T)),2x)",
+        "Equals(LengthOf(Line(R,T)),3x-9)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "T",
+        "R",
+        "S"
+    ],
+    "line_instances": [
+        "RT",
+        "ST",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            310.9655172413793,
+            271.3793103448276
+        ],
+        "R": [
+            54.06896551724138,
+            270.6896551724138
+        ],
+        "S": [
+            182.6896551724138,
+            48.96551724137931
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "6",
+        "9",
+        "12"
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 8.707706,
+    "solution_predicate": "Equals(9.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Equilateral(\u25b3RST), 9 + x = RS, 3 * x - 9 = RT\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3RST)\nConclusions: RS = ST, RT = ST\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 9 + x = RS, RS = ST\nConclusions: 9 + x = ST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 9 + x = ST, RT = ST\nConclusions: 9 + x = RT\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 9 + x = RT, 3 * x - 9 = RT\nConclusions: 9 + x = 3 * x - 9\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 9 + x = 3 * x - 9\nConclusions: 9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(S, R)",
+        "Equilateral(Triangle(R, S, T))",
+        "Equals(LengthOf(Line(R, T)), Sub(Mul(3.0, x), 9.0))",
+        "Equals(LengthOf(Line(S, R)), Add(x, 9.0))",
+        "Equals(LengthOf(Line(T, S)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(R, S)), Add(x, 9.0))",
+        "Equals(LengthOf(Line(S, T)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(R, T)), Sub(Mul(3.0, x), 9.0))"
+    ],
+    "correct": true
+}

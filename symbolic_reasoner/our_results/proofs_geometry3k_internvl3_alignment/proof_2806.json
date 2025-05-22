@@ -1,0 +1,72 @@
+{
+    "problem_id": "2806",
+    "solved": true,
+    "problem_text": "Find \\angle C of quadrilateral A B C D.",
+    "logic_forms": [
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(MeasureOf(Angle(B, A, D)), 3x)",
+        "Equals(MeasureOf(Angle(C, D, A)), x)",
+        "Quadrilateral(A,B,C,D)",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            467.98148148148147,
+            83.57407407407406
+        ],
+        "A": [
+            200.38888888888889,
+            83.1111111111111
+        ],
+        "C": [
+            467.98148148148147,
+            261.35185185185185
+        ],
+        "D": [
+            72.6111111111111,
+            261.8148148148148
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "90",
+        "135",
+        "180"
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        135.0,
+        180.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 4.383654,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC \u22a5 CD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220BCD\n\nStep 3:\nTheorem: Evaluate\nPremises : pi / 2 = \u2220BCD\nConclusions: 1.57 = \u2220BCD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Quadrilateral(A, B, C, D)",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

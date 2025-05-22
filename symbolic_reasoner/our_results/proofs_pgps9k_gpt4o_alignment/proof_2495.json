@@ -1,0 +1,126 @@
+{
+    "problem_id": "2495",
+    "solved": true,
+    "problem_text": "In \\odot R, m \\widehat MN = 120. Solve for m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(R, M, N)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(R, M, Q)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(R, N, M)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(R, N, P)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(R, P, N)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(R, P, Q)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(R, Q, M)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(R, Q, P)), MeasureOf(Angle(4)))",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, P)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, N)",
+        "Line(R, P)",
+        "PointLiesOnCircle(M, Circle(R))",
+        "PointLiesOnCircle(N, Circle(R))",
+        "PointLiesOnCircle(P, Circle(R))",
+        "PointLiesOnCircle(Q, Circle(R))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(Q, N))",
+        "Circle(R)",
+        "Equals(MeasureOf(Arc(M,N)),120)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "M",
+        "N",
+        "R",
+        "Q",
+        "P"
+    ],
+    "line_instances": [
+        "QR",
+        "QN",
+        "RN",
+        "MR",
+        "MP",
+        "RP",
+        "QP",
+        "MN",
+        "MQ",
+        "NP"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "M": [
+            64.87983425414365,
+            82.98125
+        ],
+        "N": [
+            264.9307267318317,
+            82.74230769230769
+        ],
+        "R": [
+            164.273596405629,
+            141.79732863692203
+        ],
+        "Q": [
+            64.93667658308541,
+            201.2576923076923
+        ],
+        "P": [
+            264.9307267318317,
+            201.2576923076923
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        120.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        120.0,
+        150.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 163.3902,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(R, M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on \u2299(R, radius_R), MR, R on MP, \u2220PRN, pi * (120 / 180) = Arc(NRM), MN, \u2220NRM, M on \u2299(R, radius_R), Arc(MRN), R on NQ, \u2220NRP, Arc(NRM), \u2220PRQ, NR, \u2220MRQ, \u2220QRP, 3.14 = pi, \u2220QRM\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : N on \u2299(R, radius_R)\nConclusions: radius_R = NR\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : M on \u2299(R, radius_R)\nConclusions: radius_R = MR\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(MRN)\nConclusions: \u2220MRN = Arc(MRN)\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : R on NQ, R on MP\nConclusions: \u2220MRQ = \u2220PRN, \u2220MRN = \u2220PRQ, \u2220NRM = \u2220QRP, \u2220NRP = \u2220QRM\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220NRP\nConclusions: \u2220NRP = 2 * pi - \u2220PRN\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NRM)\nConclusions: \u2220NRM = Arc(NRM)\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220PRQ\nConclusions: \u2220PRQ = 2 * pi - \u2220QRP\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : MR, MN, NR\nConclusions: \u25b3MNR\n\nStep 10:\nTheorem: Circumference Split\nPremises : \u2220MRQ, \u2220PRN, \u2220NRM, \u2220QRP\nConclusions: 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP\n\nStep 11:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220QRM\nConclusions: \u2220QRM = 2 * pi - \u2220MRQ\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : radius_R = NR, radius_R = MR\nConclusions: MR = NR\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MRN = Arc(MRN), \u2220MRN = \u2220PRQ\nConclusions: \u2220PRQ = Arc(MRN)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRP = 2 * pi - \u2220PRN, \u2220NRP = \u2220QRM\nConclusions: \u2220QRM = 2 * pi - \u2220PRN\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRM = Arc(NRM), pi * (120 / 180) = Arc(NRM)\nConclusions: pi * (120 / 180) = \u2220NRM\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(M, N, R)\nPremises : \u25b3MNR\nConclusions: pi = \u2220MNR + \u2220NRM + \u2220RMN\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP\nConclusions: 6.28 = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220MRQ = \u2220PRN, \u2220QRM = 2 * pi - \u2220MRQ, 3.14 = pi\nConclusions: \u2220QRM = 2 * 3.14 - \u2220PRN\n\nStep 20:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3MNR, MR = NR\nConclusions: \u2220MNR = \u2220RMN\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRM = \u2220QRP, pi * (120 / 180) = \u2220NRM\nConclusions: pi * (120 / 180) = \u2220QRP\n\nStep 22:\nTheorem: Substitution\nPremises : pi = \u2220MNR + \u2220NRM + \u2220RMN, 3.14 = pi, pi * (120 / 180) = \u2220NRM\nConclusions: 3.14 = pi * (120 / 180) + \u2220MNR + \u2220RMN\n\nStep 23:\nTheorem: Substitution\nPremises : pi * (120 / 180) = \u2220QRP, \u2220PRQ = Arc(MRN), \u2220PRQ = 2 * pi - \u2220QRP, 3.14 = pi\nConclusions: 2 * 3.14 - 3.14 * (120 / 180) = Arc(MRN)\n\nStep 24:\nTheorem: Substitution\nPremises : \u2220MRQ = \u2220PRN, 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP, 3.14 = pi, pi * (120 / 180) = \u2220QRP, pi * (120 / 180) = \u2220NRM\nConclusions: 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (120 / 180) + \u2220PRN + \u2220PRN\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (120 / 180) = Arc(MRN), \u2220PRQ = Arc(MRN)\nConclusions: 2 * 3.14 - 3.14 * (120 / 180) = \u2220PRQ\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : \u2220QRM = 2 * 3.14 - \u2220PRN, 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (120 / 180) + \u2220PRN + \u2220PRN\nConclusions: 5.24 = \u2220QRM\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (120 / 180) = \u2220PRQ, \u2220PRQ = 2 * pi - \u2220QRP\nConclusions: 2 * 3.14 - 3.14 * (120 / 180) = 2 * pi - \u2220QRP\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 5.24 = \u2220QRM, \u2220QRM = 2 * pi - \u2220PRN\nConclusions: 5.24 = 2 * pi - \u2220PRN\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 5.24 = \u2220QRM, \u2220QRM = 2 * pi - \u2220MRQ\nConclusions: 5.24 = 2 * pi - \u2220MRQ\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : \u2220MNR = \u2220RMN, 3.14 = pi * (120 / 180) + \u2220MNR + \u2220RMN, 5.24 = 2 * pi - \u2220PRN, 2 * 3.14 - 3.14 * (120 / 180) = 2 * pi - \u2220QRP, 6.28 = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP, pi = \u2220MNR + \u2220NRM + \u2220RMN, 5.24 = 2 * pi - \u2220MRQ\nConclusions: 0.52 = \u2220RMN\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(Q, N)",
+        "Line(R, N)",
+        "Line(M, R)",
+        "Line(M, P)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(N, P)",
+        "Circle(R, radius_R)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, P)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, N)",
+        "Line(R, P)",
+        "PointLiesOnCircle(M, Circle(R, radius_R))",
+        "PointLiesOnCircle(N, Circle(R, radius_R))",
+        "PointLiesOnCircle(P, Circle(R, radius_R))",
+        "PointLiesOnCircle(Q, Circle(R, radius_R))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(Q, N))",
+        "Circle(R, radius_R)",
+        "Equals(MeasureOf(Arc(N, R, M)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

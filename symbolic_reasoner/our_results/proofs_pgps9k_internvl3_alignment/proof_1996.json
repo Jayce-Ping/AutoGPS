@@ -1,0 +1,116 @@
+{
+    "problem_id": "1996",
+    "solved": true,
+    "problem_text": "WX = ZY, and m \\widehat ZW = 120. Find the measure of \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, X, W)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(X, A, W)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(X, W, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(Y, Z, A)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(Z, A, Y)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(Z, Y, A)), MeasureOf(Angle(5)))",
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, A)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnCircle(W, Circle(A))",
+        "PointLiesOnCircle(X, Circle(A))",
+        "PointLiesOnCircle(Y, Circle(A))",
+        "PointLiesOnCircle(Z, Circle(A))",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(X, Z))",
+        "Equals(LengthOf(Line(W,X)),Line(Z,Y))",
+        "Equals(MeasureOf(Arc(Z,W)),120)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "A",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "ZY",
+        "ZA",
+        "ZX",
+        "AX",
+        "XW",
+        "WA",
+        "WY",
+        "AY"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "X": [
+            235.82742857142858,
+            60.12540540540541
+        ],
+        "W": [
+            106.21402597402597,
+            60.54054054054054
+        ],
+        "A": [
+            170.7639594353282,
+            172.77893279471536
+        ],
+        "Z": [
+            106.96775510204081,
+            286.0849420849421
+        ],
+        "Y": [
+            235.82742857142858,
+            286.1664864864865
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 67.79294,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(A, W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AY, WX = YZ, \u2220WAX, YZ, AZ, \u2220YWX, \u2220XAW, Y on \u2299(A, radius_A), X on \u2299(A, radius_A), 3.14 = pi, \u2220YAX, \u2220YZX, A on XZ, \u2220ZAY, Arc(WAZ), pi * (120 / 180) = Arc(WAZ), W on \u2299(A, radius_A), A on WY, Z on \u2299(A, radius_A), \u2220WYZ, \u2220WAZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220WAX\nConclusions: \u2220WAX = 2 * pi - \u2220XAW\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : YZ, AY, AZ\nConclusions: \u25b3AYZ\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(A, radius_A)\nConclusions: radius_A = AY\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : X on \u2299(A, radius_A)\nConclusions: radius_A = AX\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220YZX, A on XZ\nConclusions: \u2220YZA = \u2220YZX\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(WAZ)\nConclusions: \u2220WAZ = Arc(WAZ)\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : W on \u2299(A, radius_A)\nConclusions: radius_A = AW\n\nStep 9:\nTheorem: Vertical Angle Theorem\nPremises : A on WY, A on XZ\nConclusions: \u2220WAZ = \u2220YAX, \u2220WAX = \u2220YAZ, \u2220XAW = \u2220ZAY\n\nStep 10:\nTheorem: Same Angle\nPremises : A on WY, \u2220YWX\nConclusions: \u2220AWX = \u2220YWX\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(A, radius_A)\nConclusions: radius_A = AZ\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220WYZ, A on WY\nConclusions: \u2220AYZ = \u2220WYZ\n\nStep 13:\nTheorem: Circumference Split\nPremises : \u2220WAZ, \u2220XAW, \u2220YAX, \u2220ZAY\nConclusions: 2 * pi = \u2220WAZ + \u2220XAW + \u2220YAX + \u2220ZAY\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(A, Y, Z)\nPremises : \u25b3AYZ\nConclusions: pi = \u2220AYZ + \u2220YZA + \u2220ZAY\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AX, radius_A = AY\nConclusions: AX = AY\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WAZ = Arc(WAZ), pi * (120 / 180) = Arc(WAZ)\nConclusions: pi * (120 / 180) = \u2220WAZ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WAX = 2 * pi - \u2220XAW, \u2220WAX = \u2220YAZ\nConclusions: \u2220YAZ = 2 * pi - \u2220XAW\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220WAX = 2 * pi - \u2220XAW, \u2220XAW = \u2220ZAY, \u2220WAX = \u2220YAZ, 3.14 = pi\nConclusions: \u2220YAZ = 2 * 3.14 - \u2220ZAY\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AZ, radius_A = AY\nConclusions: AY = AZ\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AZ, radius_A = AW\nConclusions: AW = AZ\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220YZA = \u2220YZX, pi = \u2220AYZ + \u2220YZA + \u2220ZAY, 3.14 = pi, \u2220AYZ = \u2220WYZ\nConclusions: 3.14 = \u2220WYZ + \u2220YZX + \u2220ZAY\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220WAZ, \u2220WAZ = \u2220YAX\nConclusions: pi * (120 / 180) = \u2220YAX\n\nStep 23:\nTheorem: Issoceles Triangle Property\nPremises : AY = AZ, \u25b3AYZ\nConclusions: \u2220AYZ = \u2220YZA\n\nStep 24:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AX = AY, AW = AZ, WX = YZ\nConclusions: \u25b3AWX \u2245 \u25b3AZY\n\nStep 25:\nTheorem: Substitution\nPremises : pi * (120 / 180) = \u2220YAX, pi * (120 / 180) = \u2220WAZ, \u2220XAW = \u2220ZAY, 3.14 = pi, 2 * pi = \u2220WAZ + \u2220XAW + \u2220YAX + \u2220ZAY\nConclusions: 2 * 3.14 = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220ZAY + \u2220ZAY\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZA = \u2220YZX, \u2220AYZ = \u2220YZA, \u2220AYZ = \u2220WYZ\nConclusions: \u2220WYZ = \u2220YZX\n\nStep 27:\nTheorem: Congruent Definition\nPremises : \u25b3AWX \u2245 \u25b3AZY\nConclusions: AW = AZ, \u2220XAW = \u2220ZAY, WX = YZ, \u2220WAX = \u2220YAZ, \u2220AWX = \u2220YZA\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220ZAY + \u2220ZAY, \u2220YAZ = 2 * pi - \u2220XAW, \u2220YAZ = 2 * 3.14 - \u2220ZAY, \u2220XAW = \u2220ZAY\nConclusions: 1.05 = \u2220XAW\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YZA = \u2220YZX, \u2220WYZ = \u2220YZX\nConclusions: \u2220WYZ = \u2220YZA\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220XAW, \u2220XAW = \u2220ZAY\nConclusions: 1.05 = \u2220ZAY\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYZ = \u2220YZA, \u2220AWX = \u2220YWX, \u2220AWX = \u2220YZA\nConclusions: \u2220WYZ = \u2220YWX\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYZ = \u2220YZX, \u2220WYZ = \u2220YWX\nConclusions: \u2220YWX = \u2220YZX\n\nStep 33:\nTheorem: Substitution\nPremises : \u2220WYZ = \u2220YWX, \u2220YWX = \u2220YZX, 3.14 = \u2220WYZ + \u2220YZX + \u2220ZAY, 1.05 = \u2220ZAY\nConclusions: 3.14 = 1.05 + \u2220YWX + \u2220YWX\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : \u2220AWX = \u2220YWX, 3.14 = 1.05 + \u2220YWX + \u2220YWX\nConclusions: 1.05 = \u2220AWX\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Z, A)",
+        "Line(Z, X)",
+        "Line(A, X)",
+        "Line(X, W)",
+        "Line(W, A)",
+        "Line(W, Y)",
+        "Line(A, Y)",
+        "Circle(A, radius_A)",
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, A)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnCircle(W, Circle(A, radius_A))",
+        "PointLiesOnCircle(X, Circle(A, radius_A))",
+        "PointLiesOnCircle(Y, Circle(A, radius_A))",
+        "PointLiesOnCircle(Z, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(X, Z))",
+        "Equals(LengthOf(Line(W, X)), LengthOf(Line(Z, Y)))",
+        "Equals(MeasureOf(Arc(W, A, Z)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

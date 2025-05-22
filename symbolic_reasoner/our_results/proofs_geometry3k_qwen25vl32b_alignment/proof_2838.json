@@ -1,0 +1,121 @@
+{
+    "problem_id": "2838",
+    "solved": true,
+    "problem_text": "If P R \\parallel K L, K N = 9, L N = 16, P M = 2 K P, find P R.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P,R),Line(K,L))",
+        "Equals(LengthOf(Line(K,N)),9)",
+        "Equals(LengthOf(Line(L,N)),16)",
+        "Equals(LengthOf(Line(P,M)),Mul(Line(K,P),2))",
+        "Find(LengthOf(Line(P,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "N",
+        "M",
+        "K",
+        "P",
+        "R",
+        "L"
+    ],
+    "line_instances": [
+        "NQ",
+        "NM",
+        "QM",
+        "LN",
+        "LK",
+        "NK",
+        "MP",
+        "MK",
+        "PK",
+        "LR",
+        "LM",
+        "RM",
+        "RQ",
+        "RP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            288.2608695652174,
+            155.7391304347826
+        ],
+        "N": [
+            287.8260869565217,
+            70.95652173913042
+        ],
+        "M": [
+            288.2608695652174,
+            318.78260869565213
+        ],
+        "K": [
+            536.5217391304348,
+            71.39130434782608
+        ],
+        "P": [
+            451.3043478260869,
+            155.7391304347826
+        ],
+        "R": [
+            127.39130434782608,
+            156.6086956521739
+        ],
+        "L": [
+            43.47826086956521,
+            70.95652173913042
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "32 / 2",
+        "\\frac { 50 } { 3 }",
+        "17"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        16.666666666666668,
+        17.0
+    ],
+    "problem_answer": 16.666666666666668,
+    "total_time": 546.469144,
+    "solution_predicate": "Equals(16.6666666662, LengthOf(Line(P, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LKM, \u2220LKM, \u2220RPM, \u2220MLK, KL || PR, PR, P on KM, KN \u22a5 MN, \u2220MKL, MP \u22a5 MR, KM \u22a5 LM, KM, MR, N on KL, MP, 16 = LN, LM, 9 = KN, sin(\u2220MLK), cos(\u2220NKM), KL, MP = 2 * KP\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : KL || PR\nConclusions: \u2220MKL = \u2220MPR\n\nStep 3:\nTheorem: Line Segment Split\nPremises : P on KM\nConclusions: KM = KP + MP\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : KN \u22a5 MN\nConclusions: pi / 2 = \u2220MNK\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : MP \u22a5 MR\nConclusions: pi / 2 = \u2220PMR\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220LKM, N on KL\nConclusions: \u2220LKM = \u2220NKM\n\nStep 7:\nTheorem: Same Angle\nPremises : N on KL, \u2220MKL\nConclusions: \u2220MKL = \u2220MKN\n\nStep 8:\nTheorem: Line Segment Split\nPremises : N on KL\nConclusions: KL = KN + LN\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : MR, MP, PR\nConclusions: \u25b3MPR\n\nStep 10:\nTheorem: Evaluate\nPremises : 9 = KN, 16 = LN\nConclusions: 25 = KN + LN\n\nStep 11:\nTheorem: Angle Sin Definition\nPremises : KM \u22a5 LM, sin(\u2220MLK)\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 12:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220NKM), KN \u22a5 MN\nConclusions: KN / KM = cos(\u2220NKM)\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : KL, LM, KM\nConclusions: \u25b3KLM\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : MP = 2 * KP, KM = KP + MP\nConclusions: MP = 0.67 * KM\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MNK, pi / 2 = \u2220PMR\nConclusions: \u2220MNK = \u2220PMR\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKL = \u2220MKN, \u2220MKL = \u2220MPR\nConclusions: \u2220MKN = \u2220MPR\n\nStep 17:\nTheorem: Pythagorean Theorem\nPremises : MP \u22a5 MR, \u25b3MPR\nConclusions: PR = SqrtOf(MP ** 2 + MR ** 2)\n\nStep 18:\nTheorem: Tan Function Definition\nPremises : MP \u22a5 MR, \u2220RPM, \u25b3MPR\nConclusions: MR / MP = tan(\u2220RPM)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 25 = KN + LN, KL = KN + LN\nConclusions: 25 = KL\n\nStep 20:\nTheorem: Cos Function Definition\nPremises : \u25b3KLM, \u2220LKM, KM \u22a5 LM\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 21:\nTheorem: Sin Function Definition\nPremises : \u25b3KLM, KM \u22a5 LM, \u2220MLK\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 22:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220MNK = \u2220PMR, \u2220MKN = \u2220MPR\nConclusions: \u25b3KMN ~ \u25b3PRM\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = sin(\u2220MLK), KM / KL = sin(\u2220MLK)\nConclusions: KM / KL = KM / KL\n\nStep 24:\nTheorem: Similar Definition\nPremises : \u25b3KMN ~ \u25b3PRM\nConclusions: \u2220NKM = \u2220RPM, \u2220MNK = \u2220PMR\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = cos(\u2220LKM), KM / KL = KM / KL\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 26:\nTheorem: Substitution\nPremises : \u2220LKM = \u2220NKM, KM / KL = cos(\u2220LKM), 25 = KL\nConclusions: KM / 25 = cos(\u2220NKM)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : KM / 25 = cos(\u2220NKM), KN / KM = cos(\u2220NKM)\nConclusions: KM / 25 = KN / KM\n\nStep 28:\nTheorem: Substitution\nPremises : 9 = KN, KM / 25 = KN / KM\nConclusions: 9 / KM = KM / 25\n\nStep 29:\nTheorem: Solve Univariate Equation\nPremises : 9 / KM = KM / 25\nConclusions: 15 = KM\n\nStep 30:\nTheorem: Evaluate\nPremises : 15 = KM\nConclusions: 10 = 0.67 * KM\n\nStep 31:\nTheorem: Substitution\nPremises : \u2220LKM = \u2220NKM, KM / KL = cos(\u2220LKM), 25 = KL, 15 = KM\nConclusions: 15 / 25 = cos(\u2220NKM)\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 15 = KM, KM = KP + MP\nConclusions: 15 = KP + MP\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 10 = 0.67 * KM, MP = 0.67 * KM\nConclusions: 10 = MP\n\nStep 34:\nTheorem: Solve Univariate Equation\nPremises : 15 / 25 = cos(\u2220NKM)\nConclusions: 0.93 = \u2220NKM\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 0.93 = \u2220NKM, \u2220NKM = \u2220RPM\nConclusions: 0.93 = \u2220RPM\n\nStep 36:\nTheorem: Evaluate\nPremises : 0.93 = \u2220RPM\nConclusions: 1.33 = tan(\u2220RPM)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : MR / MP = tan(\u2220RPM), 1.33 = tan(\u2220RPM)\nConclusions: 1.33 = MR / MP\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : MP = 2 * KP, 15 = KP + MP, 1.33 = MR / MP\nConclusions: 13.33 = MR\n\nStep 39:\nTheorem: Evaluate\nPremises : 13.33 = MR, 10 = MP\nConclusions: 16.67 = SqrtOf(MP ** 2 + MR ** 2)\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : PR = SqrtOf(MP ** 2 + MR ** 2), 16.67 = SqrtOf(MP ** 2 + MR ** 2)\nConclusions: 16.67 = PR\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, Q)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(L, N)",
+        "Line(L, K)",
+        "Line(N, K)",
+        "Line(M, P)",
+        "Line(M, K)",
+        "Line(P, K)",
+        "Line(L, R)",
+        "Line(L, M)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9.0)",
+        "Equals(LengthOf(Line(L, N)), 16.0)",
+        "Equals(LengthOf(Line(P, M)), Mul(LengthOf(Line(K, P)), 2.0))"
+    ],
+    "correct": true
+}

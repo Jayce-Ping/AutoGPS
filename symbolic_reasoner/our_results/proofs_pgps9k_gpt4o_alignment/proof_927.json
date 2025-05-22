@@ -1,0 +1,109 @@
+{
+    "problem_id": "927",
+    "solved": true,
+    "problem_text": "If ABCD is a kite, find BC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, E)), 4)",
+        "Equals(LengthOf(Line(B, E)), 3)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Kite(A,B,C,D)",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "E",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "DE",
+        "DB",
+        "EB",
+        "CE",
+        "CA",
+        "EA",
+        "DA",
+        "DC",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            49.425000000000004,
+            123.08400000000002
+        ],
+        "A": [
+            191.85000000000002,
+            40.126285714285714
+        ],
+        "E": [
+            191.58333333333334,
+            123.06730158730159
+        ],
+        "B": [
+            264.0,
+            123.23428571428572
+        ],
+        "C": [
+            191.68421052631578,
+            207.94796992481204
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        4.0,
+        5.0,
+        8.0
+    ],
+    "choices_precise_value": [
+        2.5,
+        4.0,
+        5.0,
+        8.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 109.007677,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 = BE, CE, BE, Kite(A, B, C, D), BC, AB, AC, 4 = AE\n\nStep 2:\nTheorem: Kite side equality\nPremises : Kite(A, B, C, D)\nConclusions: AB = BC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BE, BC, CE\nConclusions: \u25b3BCE\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3ABC, AB = BC\nConclusions: BE \u22a5 CE, AE = CE\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : BE \u22a5 CE, \u25b3BCE\nConclusions: BC = SqrtOf(BE ** 2 + CE ** 2)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AE, AE = CE\nConclusions: 4 = CE\n\nStep 8:\nTheorem: Substitution\nPremises : BC = SqrtOf(BE ** 2 + CE ** 2), 4 = CE, 3 = BE\nConclusions: SqrtOf(3 ** 2 + 4 ** 2) = BC\n\nStep 9:\nTheorem: Evaluate\nPremises : SqrtOf(3 ** 2 + 4 ** 2) = BC\nConclusions: 5 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Kite(A, B, C, D)",
+        "Equals(LengthOf(Line(A, E)), 4.0)",
+        "Equals(LengthOf(Line(B, E)), 3.0)"
+    ],
+    "correct": true
+}

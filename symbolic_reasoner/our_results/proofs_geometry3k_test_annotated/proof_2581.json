@@ -1,0 +1,72 @@
+{
+    "problem_id": "2581",
+    "solved": true,
+    "problem_text": "Find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 2x+3)",
+        "Equals(LengthOf(Line(A, B)), y+11)",
+        "Equals(LengthOf(Line(D, C)), 3y-5)",
+        "Equals(LengthOf(Line(B, C)), x+7)",
+        "Parallelogram(A, B, C, D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DA",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            59.565217391304344,
+            230.78260869565213
+        ],
+        "B": [
+            396.08695652173907,
+            230.3478260869565
+        ],
+        "C": [
+            546.5217391304348,
+            66.43478260869564
+        ],
+        "D": [
+            209.99999999999997,
+            66.43478260869564
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "8",
+        "11",
+        "19"
+    ],
+    "choices_precise_value": [
+        4.0,
+        8.0,
+        11.0,
+        19.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 7.154077,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, D), 3 + 2 * x = AD, 7 + x = BC\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 2 * x = AD, 7 + x = BC, AD = BC\nConclusions: 7 + x = 3 + 2 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 7 + x = 3 + 2 * x\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(A, D)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(A, B)), Add(y, 11.0))",
+        "Equals(LengthOf(Line(D, C)), Sub(Mul(3.0, y), 5.0))",
+        "Equals(LengthOf(Line(B, C)), Add(x, 7.0))"
+    ],
+    "correct": true
+}

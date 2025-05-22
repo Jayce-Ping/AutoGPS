@@ -1,0 +1,111 @@
+{
+    "problem_id": "7503",
+    "solved": true,
+    "problem_text": "Find the measure of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(C, A)), 12\\sqrt{3})",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(D, B)))",
+        "Equals(LengthOf(Line(D, B)), 12\\sqrt{3})",
+        "Equals(LengthOf(Line(E, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, B)), y)",
+        "Equals(LengthOf(Line(E, D)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), 30)",
+        "Equals(MeasureOf(Angle(D, B, E)), 60)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(B, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "Find(MeasureOf(x))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DB",
+        "AB",
+        "AE",
+        "BE",
+        "ED",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            175.83189655172416,
+            28.982857142857146
+        ],
+        "B": [
+            175.65900383141764,
+            119.24825396825398
+        ],
+        "C": [
+            331.78113026819926,
+            118.90285714285714
+        ],
+        "D": [
+            19.018199233716476,
+            210.60571428571427
+        ],
+        "E": [
+            175.83189655172416,
+            209.82857142857142
+        ]
+    },
+    "problem_choices": [
+        10.392,
+        12.0,
+        18.0,
+        41.569
+    ],
+    "choices_precise_value": [
+        10.392,
+        12.0,
+        18.0,
+        41.569
+    ],
+    "problem_answer": 18.0,
+    "total_time": 30.83303,
+    "solution_predicate": "Equals(3.1415926536, MeasureOf(x))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, AE \u22a5 DE, \u2220CBE, \u2220DEA, AB \u22a5 BC, BC \u22a5 BE, \u2220ABC, \u2220EBC, x, \u2220CBA\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AE \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220DEA, pi / 2 = \u2220AED\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBE\nConclusions: \u2220CBE = 2 * pi - \u2220EBC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEA\nConclusions: \u2220DEA = 2 * pi - \u2220AED\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BE\nConclusions: (3 * pi) / 2 = \u2220CBE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : x\nConclusions: x = 2 * pi - x\n\nStep 9:\nTheorem: Straight Angle\nPremises : \u2220EBC, \u2220CBA\nConclusions: pi = \u2220CBA + \u2220EBC\n\nStep 10:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220DEA, 3.14 = pi, pi / 2 = \u2220AED, \u2220DEA = 2 * pi - \u2220AED\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CBA + \u2220EBC\nConclusions: 3.14 = \u2220CBA + \u2220EBC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CBE, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220CBE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220CBE, \u2220CBE = 2 * pi - \u2220EBC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220EBC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = 2 * pi - \u2220CBA, 2 * 3.14 - pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : x = 2 * pi - x, 2 * 3.14 - pi / 2 = 2 * pi - \u2220EBC, 3.14 = \u2220CBA + \u2220EBC, 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\nConclusions: 3.14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, E), Line(B, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(C, A)), Mul(12.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(D, B)))",
+        "Equals(LengthOf(Line(D, B)), Mul(12.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(E, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, B)), y)",
+        "Equals(LengthOf(Line(E, D)), x)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, E)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": false
+}

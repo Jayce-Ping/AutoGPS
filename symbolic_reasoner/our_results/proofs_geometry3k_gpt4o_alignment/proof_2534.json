@@ -1,0 +1,91 @@
+{
+    "problem_id": "2534",
+    "solved": true,
+    "problem_text": "E B \\parallel D C. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), x-2)",
+        "Equals(LengthOf(Line(D, E)), 4)",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Equals(LengthOf(Line(A, D)), 10)",
+        "Parallel(Line(E,B),Line(D,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "AB",
+        "AC",
+        "BC",
+        "AE",
+        "AD",
+        "ED",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            416.6811594202899,
+            283.09178743961354
+        ],
+        "A": [
+            285.76328502415464,
+            101.93236714975846
+        ],
+        "C": [
+            482.86473429951695,
+            371.49758454106285
+        ],
+        "D": [
+            124.4106280193237,
+            372.46376811594206
+        ],
+        "E": [
+            178.5169082125604,
+            282.60869565217394
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "7.5",
+        "9.5",
+        "10"
+    ],
+    "choices_precise_value": [
+        5.0,
+        7.5,
+        9.5,
+        10.0
+    ],
+    "problem_answer": 9.5,
+    "total_time": 32.290877,
+    "solution_predicate": "Equals(9.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = BC, \u2220CAD, 3.14 = pi, \u2220EBA, \u2220DCA, x - 2 = AB, \u2220BAD, BE || CD, B on AC, E on AD, \u2220DCA, \u2220ACD, 10 = AD, 4 = DE, \u2220CAE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBA\nConclusions: \u2220EBA = 2 * pi - \u2220ABE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 5:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 6:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220BAD, E on AD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 8:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 9:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220ACD, B on AC\nConclusions: \u2220ACD = \u2220BCD\n\nStep 11:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAE\nConclusions: \u2220BAE = \u2220CAE\n\nStep 12:\nTheorem: Substitution\nPremises : 5 = BC, AC = AB + BC, x - 2 = AB\nConclusions: 5 + (x - 2) = AC\n\nStep 13:\nTheorem: Substitution\nPremises : 4 = DE, 10 = AD, AD = AE + DE\nConclusions: 10 = 4 + AE\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220DCA = 2 * pi - \u2220ACD, \u2220DCA = \u2220DCB, 3.14 = pi, \u2220ACD = \u2220BCD\nConclusions: \u2220DCB = 2 * 3.14 - \u2220BCD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220ACD, \u2220ACD = \u2220BCD\nConclusions: \u2220ABE = \u2220BCD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = \u2220CAE, \u2220BAD = \u2220BAE\nConclusions: \u2220BAD = \u2220CAE\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 10 = 4 + AE\nConclusions: 6 = AE\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220EBA = 2 * pi - \u2220ABE, \u2220ABE = \u2220BCD\nConclusions: \u2220EBA = 2 * 3.14 - \u2220BCD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAD, \u2220BAD = \u2220CAE\nConclusions: \u2220CAD = \u2220CAE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBA = 2 * 3.14 - \u2220BCD, \u2220DCB = 2 * 3.14 - \u2220BCD\nConclusions: \u2220DCB = \u2220EBA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAE, \u2220BAD = \u2220BAE, \u2220CAD = \u2220CAE\nConclusions: \u2220BAE = \u2220CAD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCB = \u2220EBA, \u2220DCA = \u2220DCB\nConclusions: \u2220DCA = \u2220EBA\n\nStep 23:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DCA = \u2220EBA, \u2220ADC = \u2220AEB, \u2220BAE = \u2220CAD\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 24:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, \u2220DCA = \u2220EBA, \u2220ABE = \u2220ACD, \u2220BAE = \u2220CAD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC\n\nStep 25:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, 10 = AD, 6 = AE\nConclusions: 6 / 10 = sim_ratio_triangle_a_b_e_triangle_a_c_d\n\nStep 26:\nTheorem: Substitution\nPremises : 5 + (x - 2) = AC, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, x - 2 = AB\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = (x - 2) / (5 + (x - 2))\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_e_triangle_a_c_d = (x - 2) / (5 + (x - 2)), 6 / 10 = sim_ratio_triangle_a_b_e_triangle_a_c_d\nConclusions: 6 / 10 = (x - 2) / (5 + (x - 2))\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 6 / 10 = (x - 2) / (5 + (x - 2))\nConclusions: 9.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), Sub(x, 2.0))",
+        "Equals(LengthOf(Line(D, E)), 4.0)",
+        "Equals(LengthOf(Line(C, B)), 5.0)",
+        "Equals(LengthOf(Line(A, D)), 10.0)"
+    ],
+    "correct": true
+}

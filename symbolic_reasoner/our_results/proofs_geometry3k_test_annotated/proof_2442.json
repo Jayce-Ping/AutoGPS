@@ -1,0 +1,83 @@
+{
+    "problem_id": "2442",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(E, C, B)), x)",
+        "Equals(MeasureOf(Angle(E, C, D)), x)",
+        "Equals(MeasureOf(Angle(A, C, B)), x)",
+        "Equals(MeasureOf(Angle(A, C, D)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            46.71929824561403,
+            208.77192982456137
+        ],
+        "B": [
+            219.52631578947364,
+            33.7719298245614
+        ],
+        "C": [
+            219.0877192982456,
+            208.77192982456137
+        ],
+        "D": [
+            219.0877192982456,
+            381.578947368421
+        ],
+        "E": [
+            393.6491228070175,
+            209.21052631578945
+        ]
+    },
+    "problem_choices": [
+        "60",
+        "80",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        60.0,
+        80.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 9.472166,
+    "solution_predicate": "Equals(90.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220BCA, pi * (x / 180) = \u2220BCA, pi * (x / 180) = \u2220ECB, pi * (x / 180) = \u2220DCE, \u2220ACD, \u2220ECB, \u2220DCE, pi * (x / 180) = \u2220ACD\n\nStep 2:\nTheorem: Circumference Split\nPremises : \u2220BCA, \u2220ECB, \u2220ACD, \u2220DCE\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ACD\nConclusions: 3.14 * (x / 180) = \u2220ACD\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\nConclusions: 2 * 3.14 = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220ACD, pi * (x / 180) = \u2220ACD\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220DCE, 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = \u2220DCE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = pi * (x / 180), pi * (x / 180) = \u2220ECB\nConclusions: 3.14 * (x / 180) = \u2220ECB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = pi * (x / 180), pi * (x / 180) = \u2220BCA\nConclusions: 3.14 * (x / 180) = \u2220BCA\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220BCA, 2 * 3.14 = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB, 3.14 * (x / 180) = \u2220DCE, 3.14 * (x / 180) = \u2220ECB, 3.14 * (x / 180) = \u2220ACD\nConclusions: 90 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(E, C, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, D)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

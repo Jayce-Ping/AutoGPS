@@ -1,0 +1,90 @@
+{
+    "problem_id": "866",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Q, T)), x)",
+        "Equals(LengthOf(Line(R, Q)), 6)",
+        "Equals(LengthOf(Line(S, Q)), 18)",
+        "Equals(LengthOf(Line(S, R)), 14)",
+        "Equals(MeasureOf(Angle(Q, R, T)), MeasureOf(Angle(S, R, T)))",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "Q",
+        "R"
+    ],
+    "line_instances": [
+        "ST",
+        "SQ",
+        "TQ",
+        "SR",
+        "RT",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            169.140350877193,
+            496.49809523809523
+        ],
+        "T": [
+            349.8105263157895,
+            253.19771428571428
+        ],
+        "Q": [
+            455.2105263157895,
+            110.93714285714286
+        ],
+        "R": [
+            518.1894736842105,
+            318.4548571428571
+        ]
+    },
+    "problem_choices": [
+        2.7,
+        5.4,
+        6.0,
+        9.0
+    ],
+    "choices_precise_value": [
+        2.7,
+        5.4,
+        6.0,
+        9.0
+    ],
+    "problem_answer": 5.4,
+    "total_time": 33.910307,
+    "solution_predicate": "Equals(5.4000000001, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220SRT, \u2220TRQ, QS, \u2220QRT = \u2220TRS, x = QT, 6 = QR, 3.14 = pi, T on QS, QR, 18 = QS, RS, 14 = RS\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220SRT\nConclusions: \u2220SRT = 2 * pi - \u2220TRS\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220TRQ\nConclusions: \u2220TRQ = 2 * pi - \u2220QRT\n\nStep 4:\nTheorem: Line Segment Split\nPremises : T on QS\nConclusions: QS = QT + ST\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : QR, RS, QS\nConclusions: \u25b3QRS\n\nStep 6:\nTheorem: Evaluate\nPremises : 14 = RS, 6 = QR\nConclusions: 2.33 = RS / QR\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220SRT = 2 * pi - \u2220TRS\nConclusions: \u2220SRT = 2 * 3.14 - \u2220TRS\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220TRQ = 2 * pi - \u2220QRT, \u2220QRT = \u2220TRS, 3.14 = pi\nConclusions: \u2220TRQ = 2 * 3.14 - \u2220TRS\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : QS = QT + ST, 18 = QS\nConclusions: 18 = QT + ST\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRQ = 2 * 3.14 - \u2220TRS, \u2220SRT = 2 * 3.14 - \u2220TRS\nConclusions: \u2220SRT = \u2220TRQ\n\nStep 11:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220SRT = \u2220TRQ, \u25b3QRS\nConclusions: RS / QR = ST / QT\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : RS / QR = ST / QT, 2.33 = RS / QR\nConclusions: 2.33 = ST / QT\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 2.33 = ST / QT, 18 = QT + ST\nConclusions: 5.4 = QT\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : x = QT, 5.4 = QT\nConclusions: 5.4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, T)",
+        "Line(S, Q)",
+        "Line(T, Q)",
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(R, Q)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Equals(LengthOf(Line(Q, T)), x)",
+        "Equals(LengthOf(Line(R, Q)), 6.0)",
+        "Equals(LengthOf(Line(S, Q)), 18.0)",
+        "Equals(LengthOf(Line(S, R)), 14.0)",
+        "Equals(MeasureOf(Angle(Q, R, T)), MeasureOf(Angle(T, R, S)))"
+    ],
+    "correct": true
+}

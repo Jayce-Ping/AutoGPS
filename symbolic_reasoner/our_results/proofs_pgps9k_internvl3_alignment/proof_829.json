@@ -1,0 +1,117 @@
+{
+    "problem_id": "829",
+    "solved": true,
+    "problem_text": "In \\odot P, m \\angle MPL = 65 and NP \\perp PL. Find m \\widehat JM.",
+    "logic_forms": [
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(K, M)",
+        "Line(K, P)",
+        "Line(P, L)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "Perpendicular(Line(J, L), Line(P, N))",
+        "PointLiesOnCircle(J, Circle(P))",
+        "PointLiesOnCircle(K, Circle(P))",
+        "PointLiesOnCircle(L, Circle(P))",
+        "PointLiesOnCircle(M, Circle(P))",
+        "PointLiesOnCircle(N, Circle(P))",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "Circle(P)",
+        "Equals(MeasureOf(Angle(M,P,L)),65)",
+        "Perpendicular(Line(N,P),Line(P,L))",
+        "Find(MeasureOf(Arc(J,M)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "P",
+        "N",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "JP",
+        "JL",
+        "PL",
+        "NP",
+        "KP",
+        "KM",
+        "PM"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "J": [
+            73.98728813559322,
+            104.53199999999998
+        ],
+        "K": [
+            151.16650049850446,
+            45.62117647058823
+        ],
+        "P": [
+            158.31305637982194,
+            135.42284866468842
+        ],
+        "N": [
+            129.0819209039548,
+            221.7669841269841
+        ],
+        "M": [
+            168.26271186440678,
+            226.40571428571428
+        ],
+        "L": [
+            244.924670433145,
+            165.83460317460316
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        65.0,
+        90.0,
+        115.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        65.0,
+        90.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 22.537909,
+    "solution_predicate": "Equals(2.0071286398, MeasureOf(Arc(J, P, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on JL, 3.14 = pi, Arc(JPM), \u2220KPJ, \u2220MPL, pi * (65 / 180) = \u2220MPL, \u2220JPM, \u2220KPJ, P on KM\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JPM)\nConclusions: \u2220JPM = Arc(JPM)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220KPJ\nConclusions: \u2220KPJ = 2 * pi - \u2220JPK\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220MPL\nConclusions: \u2220MPL = 2 * pi - \u2220LPM\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220KPJ, \u2220JPM\nConclusions: pi = \u2220JPM + \u2220KPJ\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : P on JL, P on KM\nConclusions: \u2220KPJ = \u2220MPL, \u2220JPK = \u2220LPM\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220MPL = 2 * pi - \u2220LPM, 3.14 = pi, pi * (65 / 180) = \u2220MPL\nConclusions: 3.14 * (65 / 180) = 2 * 3.14 - \u2220LPM\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220JPM + \u2220KPJ, 3.14 = pi\nConclusions: 3.14 = \u2220JPM + \u2220KPJ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KPJ = \u2220MPL, pi * (65 / 180) = \u2220MPL\nConclusions: pi * (65 / 180) = \u2220KPJ\n\nStep 10:\nTheorem: Substitution\nPremises : pi * (65 / 180) = \u2220KPJ, \u2220KPJ = 2 * pi - \u2220JPK, 3.14 = pi, \u2220JPK = \u2220LPM\nConclusions: pi * (65 / 180) = 2 * 3.14 - \u2220LPM\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (65 / 180) = 2 * 3.14 - \u2220LPM, pi * (65 / 180) = 2 * 3.14 - \u2220LPM\nConclusions: 3.14 * (65 / 180) = pi * (65 / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (65 / 180) = \u2220KPJ, 3.14 * (65 / 180) = pi * (65 / 180)\nConclusions: 3.14 * (65 / 180) = \u2220KPJ\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (65 / 180) = \u2220KPJ, 3.14 = \u2220JPM + \u2220KPJ\nConclusions: 2.01 = \u2220JPM\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JPM = Arc(JPM), 2.01 = \u2220JPM\nConclusions: 2.01 = Arc(JPM)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, P)",
+        "Line(J, L)",
+        "Line(P, L)",
+        "Line(N, P)",
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Circle(P, radius_P)",
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(K, M)",
+        "Line(K, P)",
+        "Line(P, L)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "Perpendicular(Line(J, L), Line(P, N))",
+        "PointLiesOnCircle(J, Circle(P, radius_P))",
+        "PointLiesOnCircle(K, Circle(P, radius_P))",
+        "PointLiesOnCircle(L, Circle(P, radius_P))",
+        "PointLiesOnCircle(M, Circle(P, radius_P))",
+        "PointLiesOnCircle(N, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "Circle(P, radius_P)",
+        "Perpendicular(Line(N, P), Line(P, L))",
+        "Equals(MeasureOf(Angle(M, P, L)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,82 @@
+{
+    "problem_id": "2495",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(B, C)), 6)",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 8)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "BA",
+        "BC",
+        "BD",
+        "CD",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            25.247524752475247,
+            175.13861386138615
+        ],
+        "B": [
+            25.495049504950494,
+            50.633663366336634
+        ],
+        "C": [
+            69.55445544554455,
+            70.43564356435644
+        ],
+        "D": [
+            307.4257425742574,
+            175.13861386138615
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "\\frac { 32 } { 3 }",
+        "\\frac { 40 } { 3 }",
+        "\\frac { 50 } { 3 }"
+    ],
+    "choices_precise_value": [
+        10.0,
+        10.666666666666666,
+        13.333333333333334,
+        16.666666666666668
+    ],
+    "problem_answer": 13.333333333333334,
+    "total_time": 43.197624,
+    "solution_predicate": "Equals(13.3333333334, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = BC, z = AD, AC, \u2220CAB, AD, \u2220ABC, AB, AC \u22a5 BC, C on BD, \u2220ABD, \u2220DAC, AC \u22a5 CD, 8 = AC, CD, BC, \u2220BAD, AB \u22a5 AD, 3.14 = pi, \u2220DAC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 3:\nTheorem: Same Angle\nPremises : C on BD, \u2220ABD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220CAB, \u2220DAC, \u2220BAD\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220BAD\n\nStep 8:\nTheorem: Tan Function Definition\nPremises : AC \u22a5 CD, \u25b3ACD, \u2220DAC\nConclusions: CD / AC = tan(\u2220DAC)\n\nStep 9:\nTheorem: Pythagorean Theorem\nPremises : AC \u22a5 CD, \u25b3ACD\nConclusions: CD = SqrtOf(AD ** 2 - AC ** 2)\n\nStep 10:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, AC \u22a5 BC, \u2220ABC\nConclusions: AC / BC = tan(\u2220ABC)\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC, (3 * pi) / 2 = \u2220BAD\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC\n\nStep 13:\nTheorem: Substitution\nPremises : CD = SqrtOf(AD ** 2 - AC ** 2), z = AD, 8 = AC\nConclusions: SqrtOf(z ** 2 - 8 ** 2) = CD\n\nStep 14:\nTheorem: Substitution\nPremises : 8 = AC, \u2220ABC = \u2220ABD, AC / BC = tan(\u2220ABC), 6 = BC\nConclusions: 8 / 6 = tan(\u2220ABD)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi / 2 = \u2220BCA, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: \u2220ABC = \u2220DAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220ABD, \u2220ABC = \u2220DAC\nConclusions: \u2220ABD = \u2220DAC\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220ABD = \u2220DAC, 8 = AC, CD / AC = tan(\u2220DAC)\nConclusions: CD / 8 = tan(\u2220ABD)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : CD / 8 = tan(\u2220ABD), 8 / 6 = tan(\u2220ABD)\nConclusions: 8 / 6 = CD / 8\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 8 / 6 = CD / 8\nConclusions: 10.67 = CD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(z ** 2 - 8 ** 2) = CD, 10.67 = CD\nConclusions: 10.67 = SqrtOf(z ** 2 - 8 ** 2)\n\nStep 22:\nTheorem: Solve Univariate Equation\nPremises : 10.67 = SqrtOf(z ** 2 - 8 ** 2)\nConclusions: 13.33 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(D, A), Line(B, A))",
+        "Equals(LengthOf(Line(B, C)), 6.0)",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 8.0)",
+        "Equals(LengthOf(Line(B, D)), x)"
+    ],
+    "correct": true
+}

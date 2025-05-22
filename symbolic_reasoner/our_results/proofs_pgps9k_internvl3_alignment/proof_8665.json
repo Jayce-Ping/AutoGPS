@@ -1,0 +1,69 @@
+{
+    "problem_id": "8665",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), 4)",
+        "Equals(MeasureOf(Angle(A, B, C)), 45)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, C), Line(C, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            164.93577075098813,
+            178.73593073593074
+        ],
+        "B": [
+            10.15367316341829,
+            23.448275862068964
+        ],
+        "C": [
+            164.78962131837307,
+            23.63133640552995
+        ]
+    },
+    "problem_choices": [
+        5.656854249492381,
+        6.928203230275509,
+        8.0,
+        8.94427190999916
+    ],
+    "choices_precise_value": [
+        5.656854249492381,
+        6.928203230275509,
+        8.0,
+        8.94427190999916
+    ],
+    "problem_answer": 6.928203230275509,
+    "total_time": 13.879391,
+    "solution_predicate": "Equals(5.6568542495, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, AC, \u2220ACB, x = AB, \u2220BCA, AB, 3.14 = pi, AC \u22a5 BC, pi * (45 / 180) = \u2220ABC, 4 = AC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ACB, pi / 2 = \u2220BCA\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AC \u22a5 BC\nConclusions: AB = SqrtOf(AC ** 2 + BC ** 2)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = pi * (45 / 180), pi * (45 / 180) = \u2220ABC\nConclusions: 0.79 = \u2220ABC\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCA, 3.14 = pi, (3 * pi) / 2 = \u2220ACB, \u2220ACB = 2 * pi - \u2220BCA\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220BCA = 2 * pi - \u2220ACB, (3 * pi) / 2 = \u2220ACB, 3.14 = pi, pi / 2 = \u2220BCA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi, pi * (45 / 180) = \u2220ABC\nConclusions: 3.14 = pi / 2 + pi * (45 / 180) + \u2220CAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ACB, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220ACB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220BCA\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220BCA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220ACB, \u2220ACB = 2 * pi - \u2220BCA\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220BCA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + pi * (45 / 180) + \u2220CAB, 2 * 3.14 - pi / 2 = 2 * pi - \u2220BCA, 2 * 3.14 - (3 * pi) / 2 = \u2220BCA\nConclusions: 0.79 = \u2220CAB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220ABC, 0.79 = \u2220CAB\nConclusions: \u2220ABC = \u2220CAB\n\nStep 18:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABC, \u2220ABC = \u2220CAB\nConclusions: AC = BC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AC, AC = BC\nConclusions: 4 = BC\n\nStep 20:\nTheorem: Substitution\nPremises : AB = SqrtOf(AC ** 2 + BC ** 2), 4 = AC, x = AB, 4 = BC\nConclusions: SqrtOf(4 ** 2 + 4 ** 2) = x\n\nStep 21:\nTheorem: Evaluate\nPremises : SqrtOf(4 ** 2 + 4 ** 2) = x\nConclusions: 5.66 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, C), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), 4.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": false
+}

@@ -1,0 +1,104 @@
+{
+    "problem_id": "3890",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 3.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, B, A)), 95)",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(E, C, D)), 40)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Perpendicular(Line(E, D), Line(A, D))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BE",
+        "CE",
+        "ED",
+        "DC",
+        "DA",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            27.119999999999997,
+            135.52
+        ],
+        "B": [
+            126.37714285714286,
+            234.36952380952383
+        ],
+        "C": [
+            245.29904761904763,
+            136.14857142857142
+        ],
+        "D": [
+            387.98,
+            135.66
+        ],
+        "E": [
+            387.6,
+            17.48
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        45.0,
+        50.0,
+        95.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        45.0,
+        50.0,
+        95.0
+    ],
+    "problem_answer": 45.0,
+    "total_time": 31.594833,
+    "solution_predicate": "Equals(0.7853981634, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAD, BC, \u2220EDA, 3.14 = pi, C on AD, pi * (40 / 180) = \u2220DCE, CD \u22a5 DE, \u2220ADE, AC, C on BE, \u2220EDC, AD \u22a5 DE, AB, pi * (95 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDA\nConclusions: \u2220EDA = 2 * pi - \u2220ADE\n\nStep 3:\nTheorem: Same Angle\nPremises : C on AD, \u2220BAD\nConclusions: \u2220BAC = \u2220BAD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220CDE, pi / 2 = \u2220EDC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : C on AD, C on BE\nConclusions: \u2220ACB = \u2220DCE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDC\nConclusions: \u2220EDC = 2 * pi - \u2220CDE\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220ADE, pi / 2 = \u2220EDA\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220DCE, \u2220ACB = \u2220DCE\nConclusions: pi * (40 / 180) = \u2220ACB\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220ADE, pi / 2 = \u2220EDA, \u2220ADE = 2 * pi - \u2220EDA\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220ADE, pi / 2 = \u2220EDA, \u2220EDA = 2 * pi - \u2220ADE\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220CDE\nConclusions: 2 * 3.14 - pi / 2 = \u2220CDE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EDC, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220EDC\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220BAC = \u2220BAD, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (95 / 180) = \u2220CBA, 3.14 = pi, pi * (40 / 180) = \u2220ACB\nConclusions: 3.14 = pi * (40 / 180) + pi * (95 / 180) + \u2220BAD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220EDC, \u2220EDC = 2 * pi - \u2220CDE\nConclusions: 2 * 3.14 - (3 * pi) / 2 = 2 * pi - \u2220CDE\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = \u2220CDE, 3.14 = pi * (40 / 180) + pi * (95 / 180) + \u2220BAD, \u2220BAC = \u2220BAD, 2 * 3.14 - (3 * pi) / 2 = 2 * pi - \u2220CDE\nConclusions: 0.79 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Perpendicular(Line(E, D), Line(A, D))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(95.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,63 @@
+{
+    "problem_id": "2960",
+    "solved": true,
+    "problem_text": "find \\sin S.",
+    "logic_forms": [
+        "Perpendicular(Line(R, T), Line(S, T))",
+        "Equals(LengthOf(Line(R, T)), 3)",
+        "Equals(LengthOf(Line(S, R)), 5)",
+        "Equals(LengthOf(Line(S, T)), 4)",
+        "Find(SinOf(Angle(S)))"
+    ],
+    "point_instances": [
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "SR",
+        "TR",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            85.52631578947367,
+            141.0175438596491
+        ],
+        "R": [
+            247.1491228070175,
+            130.71052631578945
+        ],
+        "T": [
+            184.42982456140348,
+            58.12280701754385
+        ]
+    },
+    "problem_choices": [
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8"
+    ],
+    "choices_precise_value": [
+        0.2,
+        0.4,
+        0.6,
+        0.8
+    ],
+    "problem_answer": 0.6,
+    "total_time": 9.209471,
+    "solution_predicate": "Equals(0.6, SinOf(MeasureOf(Angle(R, S, T))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 = RT, \u2220RST, 5 = RS, RS, ST, \u2220TRS, cos(\u2220TRS), RT \u22a5 ST, RT\n\nStep 2:\nTheorem: Evaluate\nPremises : 3 = RT, 5 = RS\nConclusions: 0.6 = RT / RS\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : RT \u22a5 ST, cos(\u2220TRS)\nConclusions: RT / RS = cos(\u2220TRS)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : ST, RT, RS\nConclusions: \u25b3RST\n\nStep 5:\nTheorem: Substitution\nPremises : 3 = RT, 5 = RS, RT / RS = cos(\u2220TRS)\nConclusions: 3 / 5 = cos(\u2220TRS)\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : RT \u22a5 ST, \u25b3RST, \u2220TRS\nConclusions: RT / RS = cos(\u2220TRS)\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : RT \u22a5 ST, \u25b3RST, \u2220RST\nConclusions: RT / RS = sin(\u2220RST)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3 / 5 = cos(\u2220TRS), RT / RS = cos(\u2220TRS)\nConclusions: 3 / 5 = RT / RS\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = RT / RS, 3 / 5 = RT / RS\nConclusions: 0.6 = 3 / 5\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = 3 / 5, 3 / 5 = cos(\u2220TRS)\nConclusions: 0.6 = cos(\u2220TRS)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = cos(\u2220TRS), RT / RS = cos(\u2220TRS)\nConclusions: 0.6 = RT / RS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.6 = RT / RS, RT / RS = sin(\u2220RST)\nConclusions: 0.6 = sin(\u2220RST)\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(S, T)",
+        "Perpendicular(Line(R, T), Line(S, T))",
+        "Equals(LengthOf(Line(R, T)), 3.0)",
+        "Equals(LengthOf(Line(S, R)), 5.0)",
+        "Equals(LengthOf(Line(S, T)), 4.0)"
+    ],
+    "correct": true
+}

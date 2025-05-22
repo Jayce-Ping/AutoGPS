@@ -1,0 +1,72 @@
+{
+    "problem_id": "4022",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, D)), 4x-15)",
+        "Equals(MeasureOf(Angle(B, C, A)), 3x)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(B, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            211.63636363636363,
+            44.16489795918367
+        ],
+        "B": [
+            39.0,
+            45.99214285714285
+        ],
+        "C": [
+            39.272727272727266,
+            216.15918367346939
+        ],
+        "D": [
+            278.1818181818182,
+            215.97257142857143
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        15.0,
+        26.25,
+        27.857
+    ],
+    "choices_precise_value": [
+        10.0,
+        15.0,
+        26.25,
+        27.857
+    ],
+    "problem_answer": 15.0,
+    "total_time": 5.428621,
+    "solution_predicate": "Equals(15.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACB, \u2220DCA, pi * ((4 * x - 15) / 180) = \u2220DCA, \u2220BCD, \u2220BCD, BC \u22a5 CD, pi * ((3 * x) / 180) = \u2220ACB, 3.14 = pi\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220ACB, \u2220BCD, \u2220DCA\nConclusions: 2 * pi = \u2220ACB + \u2220BCD + \u2220DCA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220BCD, pi / 2 = \u2220DCB\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * x - 15) / 180) = \u2220DCA\nConclusions: 3.14 * ((4 * x - 15) / 180) = \u2220DCA\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((3 * x) / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 * ((3 * x) / 180) = \u2220ACB\n\nStep 7:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BCD, 3.14 = pi, 2 * pi = \u2220ACB + \u2220BCD + \u2220DCA\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220ACB + \u2220DCA\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCD = 2 * pi - \u2220DCB, pi / 2 = \u2220DCB, (3 * pi) / 2 = \u2220BCD\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220BCD\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220BCD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x - 15) / 180) = \u2220DCA, 3.14 * ((3 * x) / 180) = \u2220ACB, 2 * 3.14 = (3 * pi) / 2 + \u2220ACB + \u2220DCA, 2 * 3.14 - 3.14 / 2 = \u2220BCD, 2 * pi = \u2220ACB + \u2220BCD + \u2220DCA\nConclusions: 15 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Perpendicular(Line(C, D), Line(B, C))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Sub(Mul(4.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Mul(3.0, x), 180.0)))"
+    ],
+    "correct": true
+}

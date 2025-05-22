@@ -1,0 +1,72 @@
+{
+    "problem_id": "2775",
+    "solved": true,
+    "problem_text": "Find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 2y+12)",
+        "Equals(LengthOf(Line(B, C)), 3x-18)",
+        "Equals(LengthOf(Line(A, D)), 2x-5)",
+        "Equals(LengthOf(Line(C, D)), 5y)",
+        "Parallelogram(A, B, C, D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            65.85365853658537,
+            152.00000000000003
+        ],
+        "B": [
+            185.609756097561,
+            152.00000000000003
+        ],
+        "C": [
+            236.82926829268294,
+            36.146341463414636
+        ],
+        "D": [
+            116.34146341463416,
+            35.65853658536586
+        ]
+    },
+    "problem_choices": [
+        "13",
+        "26",
+        "39",
+        "52"
+    ],
+    "choices_precise_value": [
+        13.0,
+        26.0,
+        39.0,
+        52.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 5.676537,
+    "solution_predicate": "Equals(13.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, D), 3 * x - 18 = BC, 2 * x - 5 = AD\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 2 * x - 5 = AD\nConclusions: 2 * x - 5 = BC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 18 = BC, 2 * x - 5 = BC\nConclusions: 2 * x - 5 = 3 * x - 18\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 2 * x - 5 = 3 * x - 18\nConclusions: 13 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, y), 12.0))",
+        "Equals(LengthOf(Line(B, C)), Sub(Mul(3.0, x), 18.0))",
+        "Equals(LengthOf(Line(A, D)), Sub(Mul(2.0, x), 5.0))",
+        "Equals(LengthOf(Line(C, D)), Mul(5.0, y))"
+    ],
+    "correct": true
+}

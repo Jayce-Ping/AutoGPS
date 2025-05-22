@@ -1,0 +1,82 @@
+{
+    "problem_id": "2554",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(C, A)), 16)",
+        "Equals(LengthOf(Line(B, C)), 8)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "CA",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            81.57099697885197,
+            181.30513595166164
+        ],
+        "B": [
+            17.220543806646525,
+            36.29003021148036
+        ],
+        "C": [
+            81.87311178247734,
+            35.383685800604226
+        ],
+        "D": [
+            411.17824773413895,
+            35.68580060422961
+        ]
+    },
+    "problem_choices": [
+        "16 \\sqrt { 2 }",
+        "16 \\sqrt { 3 }",
+        "32",
+        "16 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        22.627416997969522,
+        27.712812921102035,
+        32.0,
+        35.77708763999664
+    ],
+    "problem_answer": 35.77708763999664,
+    "total_time": 45.373807,
+    "solution_predicate": "Equals(35.77708764, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = AC, tan(\u2220CDA), \u2220CAB, CD, AD, BC, \u2220CDA, AC, \u2220ABD, 8 = BC, \u2220BAD, \u2220BDA, 3.14 = pi, AC \u22a5 BC, \u2220DAC, C on BD, AB, y = AD, AC \u22a5 CD, BD, AB \u22a5 AD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ACB, pi / 2 = \u2220BCA\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220DAC, \u2220BAD, \u2220CAB\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220DCA, pi / 2 = \u2220ACD\n\nStep 9:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CDA), AC \u22a5 CD\nConclusions: AC / CD = tan(\u2220CDA)\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220DAB, (3 * pi) / 2 = \u2220BAD\n\nStep 12:\nTheorem: Pythagorean Theorem\nPremises : AC \u22a5 CD, \u25b3ACD\nConclusions: CD = SqrtOf(AD ** 2 - AC ** 2)\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 14:\nTheorem: Tan Function Definition\nPremises : \u2220CDA, AC \u22a5 CD, \u25b3ACD\nConclusions: AC / CD = tan(\u2220CDA)\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ACB, (3 * pi) / 2 = \u2220DCA\nConclusions: \u2220ACB = \u2220DCA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BCA, pi / 2 = \u2220ACD\nConclusions: \u2220ACD = \u2220BCA\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 19:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BAD, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC\n\nStep 20:\nTheorem: Substitution\nPremises : 16 = AC, y = AD, CD = SqrtOf(AD ** 2 - AC ** 2)\nConclusions: SqrtOf(y ** 2 - 16 ** 2) = CD\n\nStep 21:\nTheorem: Substitution\nPremises : 16 = AC, AC / CD = tan(\u2220CDA)\nConclusions: 16 / CD = tan(\u2220CDA)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : AC / CD = tan(\u2220CDA), AC / CD = tan(\u2220CDA)\nConclusions: AC / CD = AC / CD\n\nStep 23:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DAB, 3.14 = pi, pi = \u2220ABD + \u2220BDA + \u2220DAB, \u2220BDA = \u2220CDA\nConclusions: 3.14 = pi / 2 + \u2220ABD + \u2220CDA\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220ABD + \u2220CDA, pi = \u2220ACD + \u2220CDA + \u2220DAC, 2 * 3.14 = (3 * 3.14) / 2 + \u2220CAB + \u2220DAC, pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220ACD = \u2220BCA, \u2220ABC = \u2220ABD, pi / 2 = \u2220BCA\nConclusions: \u2220ABC = \u2220DAC\n\nStep 25:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220DAC, \u2220ACB = \u2220DCA\nConclusions: \u25b3ABC ~ \u25b3DAC\n\nStep 26:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DAC\nConclusions: \u2220ABC = \u2220DAC, sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD, \u2220ACD = \u2220BCA, sim_ratio_triangle_a_b_c_triangle_d_a_c = BC / AC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD, AC / CD = AC / CD\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD\n\nStep 28:\nTheorem: Substitution\nPremises : 16 = AC, sim_ratio_triangle_a_b_c_triangle_d_a_c = BC / AC, 8 = BC\nConclusions: 8 / 16 = sim_ratio_triangle_a_b_c_triangle_d_a_c\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = AC / CD, AC / CD = tan(\u2220CDA)\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = tan(\u2220CDA)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_d_a_c = tan(\u2220CDA), 16 / CD = tan(\u2220CDA)\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_a_c = 16 / CD\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 16 = sim_ratio_triangle_a_b_c_triangle_d_a_c, sim_ratio_triangle_a_b_c_triangle_d_a_c = 16 / CD\nConclusions: 8 / 16 = 16 / CD\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 8 / 16 = 16 / CD\nConclusions: 32 = CD\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(y ** 2 - 16 ** 2) = CD, 32 = CD\nConclusions: 32 = SqrtOf(y ** 2 - 16 ** 2)\n\nStep 34:\nTheorem: Solve Univariate Equation\nPremises : 32 = SqrtOf(y ** 2 - 16 ** 2)\nConclusions: 35.78 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(C, A)), 16.0)",
+        "Equals(LengthOf(Line(B, C)), 8.0)"
+    ],
+    "correct": true
+}

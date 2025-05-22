@@ -1,0 +1,110 @@
+{
+    "problem_id": "4208",
+    "solved": true,
+    "problem_text": "Find the exact circumference of the circle.",
+    "logic_forms": [
+        "Circle(C, r)",
+        "Equals(DiameterOf(Circle(C)), 15)",
+        "Equals(LengthOf(Line(B, E)), 8)",
+        "Equals(LengthOf(Line(D, E)), 15)",
+        "Find(CircumferenceOf(Circle(C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(A, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "AB",
+        "DE",
+        "BE",
+        "AD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            24.125,
+            59.25581395348837
+        ],
+        "B": [
+            171.2549019607843,
+            58.54341736694678
+        ],
+        "C": [
+            97.25151706642215,
+            98.34554557524154
+        ],
+        "D": [
+            22.79551820728291,
+            136.8347338935574
+        ],
+        "E": [
+            170.97478991596637,
+            137.81512605042016
+        ]
+    },
+    "problem_choices": [
+        53.407,
+        66.643,
+        106.814,
+        226.98
+    ],
+    "choices_precise_value": [
+        53.407,
+        66.643,
+        106.814,
+        226.98
+    ],
+    "problem_answer": 53.407,
+    "total_time": 94.162855,
+    "solution_predicate": "Equals(47.123889804, CircumferenceOf(Circle(C, r)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = 2 * r, Circumference(\u2299(C, r)), 3.14 = pi, D on \u2299(C, r)\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(C, r))\nConclusions: pi * 2 * r = Circumference(\u2299(C, r))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, r)\nConclusions: r = CD\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : r = CD, 15 = 2 * r\nConclusions: 7.5 = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : r = CD, 7.5 = CD\nConclusions: 7.5 = r\n\nStep 6:\nTheorem: Evaluate\nPremises : 7.5 = r, 3.14 = pi\nConclusions: 47.12 = pi * 2 * r\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * 2 * r = Circumference(\u2299(C, r)), 47.12 = pi * 2 * r\nConclusions: 47.12 = Circumference(\u2299(C, r))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, B)",
+        "Line(D, E)",
+        "Line(B, E)",
+        "Line(A, D)",
+        "Circle(C, r)",
+        "Circle(C, r)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, B), Line(B, E))",
+        "PointLiesOnCircle(A, Circle(C, r))",
+        "PointLiesOnCircle(B, Circle(C, r))",
+        "PointLiesOnCircle(D, Circle(C, r))",
+        "PointLiesOnCircle(E, Circle(C, r))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Equals(Mul(2.0, r), 15.0)",
+        "Equals(LengthOf(Line(B, E)), 8.0)",
+        "Equals(LengthOf(Line(D, E)), 15.0)"
+    ],
+    "correct": false
+}

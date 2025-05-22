@@ -1,0 +1,117 @@
+{
+    "problem_id": "679",
+    "solved": true,
+    "problem_text": "Find m \\angle 8.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(8)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(8)), MeasureOf(Angle(W, Z, X)))",
+        "Equals(MeasureOf(Angle(V, W, X)), 67)",
+        "Equals(MeasureOf(Angle(W, V, X)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(W, X, V)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(W, X, Z)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(W, Z, X)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), 58)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(Y, Z, X)), 65)",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(W, Z, X)))",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Z)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(V, Z))",
+        "PointLiesOnLine(X, Line(Y, W))",
+        "Find(MeasureOf(Angle(8)))"
+    ],
+    "point_instances": [
+        "V",
+        "W",
+        "X",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "VX",
+        "VZ",
+        "XZ",
+        "WX",
+        "WY",
+        "XY",
+        "VW",
+        "WZ",
+        "ZY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "V": [
+            71.28247422680413,
+            280.41599999999994
+        ],
+        "W": [
+            156.10309278350516,
+            407.09999999999997
+        ],
+        "X": [
+            241.16053019145804,
+            278.76
+        ],
+        "Z": [
+            466.92783505154637,
+            277.38
+        ],
+        "Y": [
+            373.7790868924889,
+            74.52
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        28.5,
+        56.0,
+        57.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        28.5,
+        56.0,
+        57.0
+    ],
+    "problem_answer": 28.5,
+    "total_time": 44.890604,
+    "solution_predicate": "Equals(0.4974188368, MeasureOf(Angle(X, Z, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XZ, \u2220XZW = \u2220ZWX, 3.14 = pi, YZ, XY, \u2220ZXY, pi * (65 / 180) = \u2220YZX, \u2220WXZ, pi * (58 / 180) = \u2220XYZ, WZ, WX\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : XZ, YZ, XY\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220WXZ, \u2220ZXY\nConclusions: pi = \u2220WXZ + \u2220ZXY\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : XZ, WX, WZ\nConclusions: \u25b3WXZ\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(W, X, Z)\nPremises : \u25b3WXZ\nConclusions: pi = \u2220WXZ + \u2220XZW + \u2220ZWX\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (58 / 180) = \u2220XYZ, 3.14 = pi, pi = \u2220XYZ + \u2220YZX + \u2220ZXY, pi * (65 / 180) = \u2220YZX\nConclusions: 3.14 = 3.14 * (58 / 180) + 3.14 * (65 / 180) + \u2220ZXY\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : \u2220XZW = \u2220ZWX, pi = \u2220WXZ + \u2220XZW + \u2220ZWX, 3.14 = 3.14 * (58 / 180) + 3.14 * (65 / 180) + \u2220ZXY, pi = \u2220WXZ + \u2220ZXY\nConclusions: 0.5 = \u2220XZW\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(X, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, Y)",
+        "Line(V, W)",
+        "Line(W, Z)",
+        "Line(Z, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Z)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(V, Z))",
+        "PointLiesOnLine(X, Line(Y, W))",
+        "Equals(MeasureOf(Angle(X, Z, W)), MeasureOf(Angle(X, Z, W)))",
+        "Equals(MeasureOf(Angle(X, W, V)), Mul(pi, Div(67.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(58.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, X)), Mul(pi, Div(65.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(X, Z, W)))"
+    ],
+    "correct": true
+}

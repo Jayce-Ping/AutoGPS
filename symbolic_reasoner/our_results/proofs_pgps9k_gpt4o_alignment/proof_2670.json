@@ -1,0 +1,82 @@
+{
+    "problem_id": "2670",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle S.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, S, R)), 3c)",
+        "Equals(MeasureOf(Angle(Q, R, S)), c)",
+        "Equals(MeasureOf(Angle(R, Q, P)), 3c)",
+        "Equals(MeasureOf(Angle(R, Q, P)), MeasureOf(Angle(P, S, R)))",
+        "Equals(MeasureOf(Angle(S, P, Q)), MeasureOf(Angle(Q, R, S)))",
+        "Equals(MeasureOf(Angle(S, P, Q)), c)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Find(MeasureOf(Angle(S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "QR",
+        "PS",
+        "SR",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            201.46153846153848,
+            40.00408163265306
+        ],
+        "P": [
+            36.0,
+            41.2552380952381
+        ],
+        "S": [
+            164.0769230769231,
+            175.72163265306122
+        ],
+        "R": [
+            330.2307692307693,
+            175.27714285714285
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        49.091,
+        67.5,
+        135.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        49.091,
+        67.5,
+        135.0
+    ],
+    "problem_answer": 135.0,
+    "total_time": 6.93992,
+    "solution_predicate": "Equals(2.3561944902, MeasureOf(Angle(R, S, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: PS, pi * (c / 180) = \u2220QRS, pi * (c / 180) = \u2220SPQ, PQ, RS, \u2220PQR = \u2220RSP, pi * ((3 * c) / 180) = \u2220RSP, 3.14 = pi, QR\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (c / 180) = \u2220SPQ, 3.14 = pi\nConclusions: 3.14 * (c / 180) = \u2220SPQ\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((3 * c) / 180) = \u2220RSP, 3.14 = pi\nConclusions: 3.14 * ((3 * c) / 180) = \u2220RSP\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : QR, PS, RS, PQ\nConclusions: Quadrilateral(P, Q, R, S)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (c / 180) = \u2220SPQ, 3.14 * (c / 180) = \u2220SPQ\nConclusions: 3.14 * (c / 180) = pi * (c / 180)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, Q, R, S)\nPremises : Quadrilateral(P, Q, R, S)\nConclusions: 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (c / 180) = pi * (c / 180), pi * (c / 180) = \u2220QRS\nConclusions: 3.14 * (c / 180) = \u2220QRS\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, \u2220PQR = \u2220RSP, 3.14 * (c / 180) = \u2220QRS, 3.14 * ((3 * c) / 180) = \u2220RSP, 3.14 * (c / 180) = \u2220SPQ\nConclusions: 2.36 = \u2220RSP\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(P, S)",
+        "Line(S, R)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Equals(MeasureOf(Angle(R, S, P)), Mul(pi, Div(Mul(3.0, c), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, R, S)), Mul(pi, Div(c, 180.0)))",
+        "Equals(MeasureOf(Angle(P, Q, R)), Mul(pi, Div(Mul(3.0, c), 180.0)))",
+        "Equals(MeasureOf(Angle(P, Q, R)), MeasureOf(Angle(R, S, P)))",
+        "Equals(MeasureOf(Angle(S, P, Q)), MeasureOf(Angle(Q, R, S)))",
+        "Equals(MeasureOf(Angle(S, P, Q)), Mul(pi, Div(c, 180.0)))"
+    ],
+    "correct": true
+}

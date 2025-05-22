@@ -1,0 +1,113 @@
+{
+    "problem_id": "3515",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 6.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(B, A, C)), 42)",
+        "Equals(MeasureOf(Angle(B, E, C)), 62)",
+        "Equals(MeasureOf(Angle(C, A, D)), 54)",
+        "Equals(MeasureOf(Angle(C, D, A)), 32)",
+        "Equals(MeasureOf(Angle(E, B, C)), MeasureOf(Angle(1, 0)))",
+        "Equals(MeasureOf(Angle(E, C, B)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(Angle(6)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(MeasureOf(Angle(6)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "EB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            142.44303797468353,
+            38.285714285714285
+        ],
+        "B": [
+            343.30741410488247,
+            139.6517006802721
+        ],
+        "C": [
+            160.82278481012656,
+            143.9542857142857
+        ],
+        "D": [
+            19.73119880863738,
+            147.9179831932773
+        ],
+        "E": [
+            178.63824117255163,
+            244.70616541353382
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        74.0,
+        86.0,
+        104.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        74.0,
+        86.0,
+        104.0
+    ],
+    "problem_answer": 86.0,
+    "total_time": 51.055246,
+    "solution_predicate": "Equals(1.5009831567, MeasureOf(Angle(D, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACD, pi * (32 / 180) = \u2220CDA, CD, pi * (54 / 180) = \u2220DAC, C on AE, C on BD, \u2220BCA, \u2220DCE, AC, 3.14 = pi, AD, \u2220ECB\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220ACD = \u2220ECB, \u2220BCA = \u2220DCE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220BCA, \u2220DCE, \u2220ECB, \u2220ACD\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220ACD = \u2220ECB, 3.14 = pi, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB, \u2220BCA = \u2220DCE\nConclusions: 2 * 3.14 = \u2220DCE + \u2220DCE + \u2220ECB + \u2220ECB\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (54 / 180) = \u2220DAC, \u2220ACD = \u2220ECB, 3.14 = pi, pi = \u2220ACD + \u2220CDA + \u2220DAC, pi * (32 / 180) = \u2220CDA\nConclusions: 3.14 = 3.14 * (32 / 180) + 3.14 * (54 / 180) + \u2220ECB\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (32 / 180) + 3.14 * (54 / 180) + \u2220ECB, 2 * 3.14 = \u2220DCE + \u2220DCE + \u2220ECB + \u2220ECB\nConclusions: 1.5 = \u2220DCE\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(42.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, C)), Mul(pi, Div(62.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, C)), Mul(pi, Div(54.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": true
+}

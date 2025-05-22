@@ -1,0 +1,88 @@
+{
+    "problem_id": "2537",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle A F B on \\odot F with diameter A C.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(D, F, C)), 4a-1)",
+        "Equals(MeasureOf(Arc(A, D)), 2a-5)",
+        "Equals(MeasureOf(Angle(B, F, C)), 72)",
+        "Circle(F)",
+        "IsDiameterOf(Line(A,C),Circle(F))",
+        "Find(MeasureOf(Angle(A,F,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "F",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "FA",
+        "BF",
+        "FD",
+        "CF"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "C": [
+            227.22972972972974,
+            50.67567567567568
+        ],
+        "A": [
+            82.29729729729729,
+            248.98648648648648
+        ],
+        "F": [
+            156.6216216216216,
+            151.6891891891892
+        ],
+        "D": [
+            179.93243243243245,
+            271.6216216216216
+        ],
+        "B": [
+            81.62162162162161,
+            52.7027027027027
+        ]
+    },
+    "problem_choices": [
+        "72",
+        "108",
+        "120",
+        "144"
+    ],
+    "choices_precise_value": [
+        72.0,
+        108.0,
+        120.0,
+        144.0
+    ],
+    "problem_answer": 108.0,
+    "total_time": 9.769199,
+    "solution_predicate": "Equals(1.8849555922, MeasureOf(Angle(B, F, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CFB, \u2220DFB, 3.14 = pi, \u2220BFA, \u2220AFD, \u2220DFC, pi * (72 / 180) = \u2220CFB\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220BFA, \u2220CFB\nConclusions: pi = \u2220BFA + \u2220CFB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220BFA, \u2220AFD, \u2220DFB\nConclusions: 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220BFA, \u2220DFC, \u2220AFD, \u2220CFB\nConclusions: 2 * pi = \u2220AFD + \u2220BFA + \u2220CFB + \u2220DFC\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220DFC, \u2220AFD\nConclusions: pi = \u2220AFD + \u2220DFC\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BFA + \u2220CFB, pi * (72 / 180) = \u2220CFB\nConclusions: 3.14 = pi * (72 / 180) + \u2220BFA\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB\nConclusions: 2 * 3.14 = \u2220AFD + \u2220BFA + \u2220DFB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (72 / 180) = \u2220CFB, 2 * pi = \u2220AFD + \u2220BFA + \u2220CFB + \u2220DFC\nConclusions: 2 * 3.14 = 3.14 * (72 / 180) + \u2220AFD + \u2220BFA + \u2220DFC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AFD + \u2220DFC\nConclusions: 3.14 = \u2220AFD + \u2220DFC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220AFD + \u2220BFA + \u2220DFB, 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (72 / 180) + \u2220AFD + \u2220BFA + \u2220DFC\nConclusions: 2 * pi = 3.14 * (72 / 180) + \u2220AFD + \u2220BFA + \u2220DFC\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220AFD + \u2220DFC, 2 * pi = 3.14 * (72 / 180) + \u2220AFD + \u2220BFA + \u2220DFC, 3.14 = pi * (72 / 180) + \u2220BFA\nConclusions: 1.88 = \u2220BFA\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, A)",
+        "Line(B, F)",
+        "Line(F, D)",
+        "Line(C, F)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "Circle(F, radius_0_0)",
+        "IsDiameterOf(Line(A, C), Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(D, F, C)), Mul(pi, Div(Sub(Mul(4.0, a), 1.0), 180.0)))",
+        "Equals(MeasureOf(Arc(A, F, D)), Mul(pi, Div(Sub(Mul(2.0, a), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(72.0, 180.0)))"
+    ],
+    "correct": true
+}

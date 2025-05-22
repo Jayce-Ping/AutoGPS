@@ -1,0 +1,126 @@
+{
+    "problem_id": "5936",
+    "solved": true,
+    "problem_text": "In \\odot R, m \\widehat MN = 120. Solve for m \\angle 3.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(R, M, N)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(R, M, Q)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(R, N, M)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(R, N, P)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(R, P, N)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(R, P, Q)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(R, Q, M)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(R, Q, P)), MeasureOf(Angle(4)))",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, P)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, N)",
+        "Line(R, P)",
+        "PointLiesOnCircle(M, Circle(R))",
+        "PointLiesOnCircle(N, Circle(R))",
+        "PointLiesOnCircle(P, Circle(R))",
+        "PointLiesOnCircle(Q, Circle(R))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(Q, N))",
+        "Circle(R)",
+        "Equals(MeasureOf(Arc(M,N)),120)",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "M",
+        "N",
+        "R",
+        "Q",
+        "P"
+    ],
+    "line_instances": [
+        "QR",
+        "QN",
+        "RN",
+        "MR",
+        "MP",
+        "RP",
+        "QP",
+        "MN",
+        "MQ",
+        "NP"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "M": [
+            64.87983425414365,
+            82.98125
+        ],
+        "N": [
+            264.9307267318317,
+            82.74230769230769
+        ],
+        "R": [
+            164.273596405629,
+            141.79732863692203
+        ],
+        "Q": [
+            64.93667658308541,
+            201.2576923076923
+        ],
+        "P": [
+            264.9307267318317,
+            201.2576923076923
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        120.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        120.0,
+        150.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 160.752482,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(R, Q, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220NRM, R on NQ, R on MP, QR, 3.14 = pi, MR, MQ, \u2220PQN, M on \u2299(R, radius_R), \u2220MQP, \u2220NQM, \u2220PQR, pi * (120 / 180) = Arc(NRM), \u2220QRP, \u2220RQM, Q on \u2299(R, radius_R), \u2220MRQ, Arc(NRM), \u2220PRN\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : R on MP, R on NQ\nConclusions: \u2220MRQ = \u2220PRN, \u2220NRM = \u2220QRP\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : MQ, MR, QR\nConclusions: \u25b3MQR\n\nStep 4:\nTheorem: Same Angle\nPremises : R on NQ, \u2220PQN\nConclusions: \u2220PQN = \u2220PQR\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : M on \u2299(R, radius_R)\nConclusions: radius_R = MR\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220NQM, \u2220PQN, \u2220MQP\nConclusions: 2 * pi = \u2220MQP + \u2220NQM + \u2220PQN\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220NQM, R on NQ\nConclusions: \u2220NQM = \u2220RQM\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220MQP, \u2220PQR, \u2220RQM\nConclusions: 2 * pi = \u2220MQP + \u2220PQR + \u2220RQM\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(R, radius_R)\nConclusions: radius_R = QR\n\nStep 10:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NRM)\nConclusions: \u2220NRM = Arc(NRM)\n\nStep 11:\nTheorem: Circumference Split\nPremises : \u2220QRP, \u2220MRQ, \u2220PRN, \u2220NRM\nConclusions: 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(R, Q, M)\nPremises : \u25b3MQR\nConclusions: pi = \u2220MRQ + \u2220QMR + \u2220RQM\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220NQM = \u2220RQM, \u2220PQN = \u2220PQR, 2 * pi = \u2220MQP + \u2220NQM + \u2220PQN, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220MQP + \u2220PQR + \u2220RQM\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_R = QR, radius_R = MR\nConclusions: MR = QR\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRM = Arc(NRM), pi * (120 / 180) = Arc(NRM)\nConclusions: pi * (120 / 180) = \u2220NRM\n\nStep 16:\nTheorem: Substitution\nPremises : pi = \u2220MRQ + \u2220QMR + \u2220RQM, \u2220MRQ = \u2220PRN, 3.14 = pi\nConclusions: 3.14 = \u2220PRN + \u2220QMR + \u2220RQM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220MQP + \u2220PQR + \u2220RQM, 2 * 3.14 = \u2220MQP + \u2220PQR + \u2220RQM\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 18:\nTheorem: Issoceles Triangle Property\nPremises : MR = QR, \u25b3MQR\nConclusions: \u2220QMR = \u2220RQM\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRM = \u2220QRP, pi * (120 / 180) = \u2220NRM\nConclusions: pi * (120 / 180) = \u2220QRP\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (120 / 180) = \u2220QRP, 2 * pi = \u2220MRQ + \u2220NRM + \u2220PRN + \u2220QRP, \u2220MRQ = \u2220PRN, pi * (120 / 180) = \u2220NRM, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220PRN + \u2220PRN\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220PRN + \u2220PRN, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220PRN + \u2220PRN\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220PRN + \u2220PRN, 2 * pi = 3.14 * (120 / 180) + pi * (120 / 180) + \u2220PRN + \u2220PRN, 3.14 = \u2220PRN + \u2220QMR + \u2220RQM, \u2220QMR = \u2220RQM\nConclusions: 1.05 = \u2220RQM\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(Q, N)",
+        "Line(R, N)",
+        "Line(M, R)",
+        "Line(M, P)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(N, P)",
+        "Circle(R, radius_R)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, P)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, N)",
+        "Line(R, P)",
+        "PointLiesOnCircle(M, Circle(R, radius_R))",
+        "PointLiesOnCircle(N, Circle(R, radius_R))",
+        "PointLiesOnCircle(P, Circle(R, radius_R))",
+        "PointLiesOnCircle(Q, Circle(R, radius_R))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(Q, N))",
+        "Circle(R, radius_R)",
+        "Equals(MeasureOf(Arc(N, R, M)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

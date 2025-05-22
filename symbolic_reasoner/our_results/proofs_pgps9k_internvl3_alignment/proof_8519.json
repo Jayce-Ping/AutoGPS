@@ -1,0 +1,88 @@
+{
+    "problem_id": "8519",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(C, D, B)), 64)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DA",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            155.4534632034632,
+            49.387142857142855
+        ],
+        "A": [
+            46.903318903318905,
+            169.39301587301586
+        ],
+        "B": [
+            155.78602350030923,
+            169.62285714285713
+        ],
+        "C": [
+            402.8167388167388,
+            169.8526984126984
+        ]
+    },
+    "problem_choices": [
+        9.946,
+        26.0,
+        47.621,
+        66.009
+    ],
+    "choices_precise_value": [
+        9.946,
+        26.0,
+        47.621,
+        66.009
+    ],
+    "problem_answer": 26.0,
+    "total_time": 14.91639,
+    "solution_predicate": "Equals(0.4537856055, MeasureOf(Angle(D, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACD, BC, CD, \u2220DCA, pi * (64 / 180) = \u2220BDC, 3.14 = pi, B on AC, BD, BC \u22a5 BD, \u2220ACD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, CD, BD\nConclusions: \u25b3BCD\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ACD, B on AC\nConclusions: \u2220ACD = \u2220BCD\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220ACD = 2 * pi - \u2220DCA, 3.14 = pi, \u2220DCA = \u2220DCB, \u2220ACD = \u2220BCD\nConclusions: \u2220BCD = 2 * 3.14 - \u2220DCB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = 2 * pi - \u2220DCA, \u2220ACD = \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCA\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220BDC + \u2220CBD + \u2220DCB, pi * (64 / 180) = \u2220BDC, 3.14 = pi, pi / 2 = \u2220CBD\nConclusions: 3.14 = 3.14 / 2 + pi * (64 / 180) + \u2220DCB\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : \u2220BCD = 2 * pi - \u2220DCA, \u2220BCD = 2 * 3.14 - \u2220DCB, \u2220DCA = \u2220DCB, 3.14 = 3.14 / 2 + pi * (64 / 180) + \u2220DCB\nConclusions: 0.45 = \u2220DCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(64.0, 180.0)))"
+    ],
+    "correct": true
+}

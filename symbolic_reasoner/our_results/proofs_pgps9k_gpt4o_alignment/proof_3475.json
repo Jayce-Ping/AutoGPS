@@ -1,0 +1,96 @@
+{
+    "problem_id": "3475",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, D)), 11)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(MeasureOf(Angle(A, D, B)), 30)",
+        "Equals(MeasureOf(Angle(D, A, B)), 60)",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(D, C, B)))",
+        "Equals(MeasureOf(Angle(D, C, B)), 60)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "DC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.768353174603174,
+            51.269659863945584
+        ],
+        "B": [
+            127.18177083333335,
+            51.27314285714285
+        ],
+        "C": [
+            232.703125,
+            51.2
+        ],
+        "D": [
+            126.9796626984127,
+            233.15156462585034
+        ]
+    },
+    "problem_choices": [
+        5.5,
+        7.778174593052023,
+        11.0,
+        15.556349186104047
+    ],
+    "choices_precise_value": [
+        5.5,
+        7.778174593052023,
+        11.0,
+        15.556349186104047
+    ],
+    "problem_answer": 5.5,
+    "total_time": 51.018164,
+    "solution_predicate": "Equals(5.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 11 = AD, \u2220ACD, x = AB, AC, B on AC, pi * (60 / 180) = \u2220DAB, \u2220DAC, CD, pi * (60 / 180) = \u2220BCD, AD\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220ACD, B on AC\nConclusions: \u2220ACD = \u2220BCD\n\nStep 3:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 4:\nTheorem: Same Angle\nPremises : B on AC, \u2220DAC\nConclusions: \u2220DAB = \u2220DAC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220BCD, pi * (60 / 180) = \u2220BCD\nConclusions: pi * (60 / 180) = \u2220ACD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220DAB, \u2220DAB = \u2220DAC\nConclusions: pi * (60 / 180) = \u2220DAC\n\nStep 8:\nTheorem: Equilateral Triangle Property\nPremises : \u25b3ACD\nConclusions: AC = AD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220DAC, pi * (60 / 180) = \u2220ACD\nConclusions: \u2220ACD = \u2220DAC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 11 = AD, AC = AD\nConclusions: 11 = AC\n\nStep 11:\nTheorem: Issoceles Triangle Theorem\nPremises : \u2220ACD = \u2220DAC, \u25b3ACD\nConclusions: AB = BC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 11 = AC, AC = AB + BC\nConclusions: 11 = AB + BC\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : AB = BC, 11 = AB + BC\nConclusions: 5.5 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, 5.5 = AB\nConclusions: 5.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, D)), 11.0)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(MeasureOf(Angle(B, D, A)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(B, C, D)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

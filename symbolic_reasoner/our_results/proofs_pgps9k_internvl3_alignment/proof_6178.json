@@ -1,0 +1,95 @@
+{
+    "problem_id": "6178",
+    "solved": true,
+    "problem_text": "The radius of \\odot P is 5 and PR = 3. Find QR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, R)), 3)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Perpendicular(Line(P, R), Line(Q, S))",
+        "PointLiesOnCircle(Q, Circle(P))",
+        "PointLiesOnCircle(S, Circle(P))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Equals(RadiusOf(Circle(P)),5)",
+        "Equals(LengthOf(Line(P,R)),3)",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "R",
+        "S"
+    ],
+    "line_instances": [
+        "PR",
+        "SR",
+        "SQ",
+        "RQ",
+        "PQ",
+        "PS"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            128.34615384615384,
+            109.1787330316742
+        ],
+        "Q": [
+            183.46923076923076,
+            41.38901098901099
+        ],
+        "R": [
+            183.24399999999997,
+            109.64952380952381
+        ],
+        "S": [
+            182.91866666666667,
+            179.35238095238094
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 33.798297,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2299(P, radius_P), PS, PR \u22a5 RS, 5 = radius_P, R on QS, PR \u22a5 QR, 3 = PR, S on \u2299(P, radius_P), RS, PR\n\nStep 2:\nTheorem: Circle Vertical Theorem\nPremises : R on QS, PR \u22a5 QR, \u2299(P, radius_P)\nConclusions: QR = RS\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : S on \u2299(P, radius_P)\nConclusions: radius_P = PS\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : RS, PS, PR\nConclusions: \u25b3PRS\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = PS, 5 = radius_P\nConclusions: 5 = PS\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : \u25b3PRS, PR \u22a5 RS\nConclusions: RS = SqrtOf(PS ** 2 - PR ** 2)\n\nStep 7:\nTheorem: Substitution\nPremises : RS = SqrtOf(PS ** 2 - PR ** 2), 5 = PS, 3 = PR\nConclusions: SqrtOf(5 ** 2 - 3 ** 2) = RS\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(5 ** 2 - 3 ** 2) = RS, QR = RS\nConclusions: SqrtOf(5 ** 2 - 3 ** 2) = QR\n\nStep 9:\nTheorem: Evaluate\nPremises : SqrtOf(5 ** 2 - 3 ** 2) = QR\nConclusions: 4 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, R)",
+        "Line(S, R)",
+        "Line(S, Q)",
+        "Line(R, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Circle(P, radius_P)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Perpendicular(Line(P, R), Line(Q, S))",
+        "PointLiesOnCircle(Q, Circle(P, radius_P))",
+        "PointLiesOnCircle(S, Circle(P, radius_P))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Equals(LengthOf(Line(P, R)), 3.0)",
+        "Equals(radius_P, 5.0)",
+        "Equals(LengthOf(Line(P, R)), 3.0)"
+    ],
+    "correct": true
+}

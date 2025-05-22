@@ -1,0 +1,117 @@
+{
+    "problem_id": "8186",
+    "solved": true,
+    "problem_text": "Given m \\angle GFI = 128, what is the value of x?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(E, F, I)), 4x)",
+        "Equals(MeasureOf(Angle(G, F, E)), 9x-2)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(E, C)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(F, I)",
+        "Line(G, F)",
+        "Line(I, B)",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(G, Line(A, F))",
+        "PointLiesOnLine(I, Line(F, B))",
+        "Equals(MeasureOf(Angle(G,F,I)),128)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "G",
+        "F",
+        "I",
+        "B",
+        "E",
+        "C"
+    ],
+    "line_instances": [
+        "AG",
+        "AF",
+        "GF",
+        "FE",
+        "FC",
+        "EC",
+        "FI",
+        "FB",
+        "IB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.483695652173914,
+            46.56428571428571
+        ],
+        "G": [
+            78.7536231884058,
+            101.45714285714286
+        ],
+        "F": [
+            158.06521739130434,
+            207.13834586466163
+        ],
+        "I": [
+            321.31159420289856,
+            207.21804511278194
+        ],
+        "B": [
+            390.40989287964715,
+            207.58881987577638
+        ],
+        "E": [
+            310.4710144927536,
+            83.82016806722689
+        ],
+        "C": [
+            363.14902331442977,
+            39.503105590062106
+        ]
+    },
+    "problem_choices": [
+        4.154,
+        10.0,
+        14.444,
+        26.0
+    ],
+    "choices_precise_value": [
+        4.154,
+        10.0,
+        14.444,
+        26.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 38.706807,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220IFE, G on AF, \u2220EFG, I on BF, pi * ((4 * x) / 180) = \u2220IFE, \u2220AFI, pi * (128 / 180) = \u2220IFG, \u2220BFA, \u2220BFG, \u2220IFG, \u2220AFB, pi * ((9 * x - 2) / 180) = \u2220EFG, \u2220GFB, \u2220IFA, \u2220GFI, 3.14 = pi\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220AFI, G on AF\nConclusions: \u2220AFI = \u2220GFI\n\nStep 3:\nTheorem: Same Angle\nPremises : I on BF, \u2220BFA\nConclusions: \u2220BFA = \u2220IFA\n\nStep 4:\nTheorem: Same Angle\nPremises : G on AF, \u2220BFA\nConclusions: \u2220BFA = \u2220BFG\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BFG\nConclusions: \u2220BFG = 2 * pi - \u2220GFB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220IFG\nConclusions: \u2220IFG = 2 * pi - \u2220GFI\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AFB, I on BF\nConclusions: \u2220AFB = \u2220AFI\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220AFB, G on AF\nConclusions: \u2220AFB = \u2220GFB\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220GFB\nConclusions: \u2220GFB = 2 * pi - \u2220BFG\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220IFA, G on AF\nConclusions: \u2220IFA = \u2220IFG\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220IFE, \u2220EFG, \u2220GFI\nConclusions: 2 * pi = \u2220EFG + \u2220GFI + \u2220IFE\n\nStep 12:\nTheorem: Substitution\nPremises : pi * ((9 * x - 2) / 180) = \u2220EFG, 3.14 = pi\nConclusions: 3.14 * ((9 * x - 2) / 180) = \u2220EFG\n\nStep 13:\nTheorem: Substitution\nPremises : pi * ((4 * x) / 180) = \u2220IFE, 3.14 = pi\nConclusions: 3.14 * ((4 * x) / 180) = \u2220IFE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFA = \u2220BFG, \u2220BFA = \u2220IFA\nConclusions: \u2220BFG = \u2220IFA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFB = \u2220AFI, \u2220AFB = \u2220GFB\nConclusions: \u2220AFI = \u2220GFB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (128 / 180) = \u2220IFG, \u2220IFA = \u2220IFG\nConclusions: pi * (128 / 180) = \u2220IFA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFI = \u2220GFB, \u2220AFI = \u2220GFI\nConclusions: \u2220GFB = \u2220GFI\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFG = \u2220IFA, pi * (128 / 180) = \u2220IFA\nConclusions: pi * (128 / 180) = \u2220BFG\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (128 / 180) = \u2220IFG, \u2220IFG = 2 * pi - \u2220GFI, 3.14 = pi, \u2220GFB = \u2220GFI\nConclusions: 3.14 * (128 / 180) = 2 * 3.14 - \u2220GFB\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220EFG + \u2220GFI + \u2220IFE, \u2220GFB = \u2220GFI\nConclusions: 2 * 3.14 = \u2220EFG + \u2220GFB + \u2220IFE\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220BFG = 2 * pi - \u2220GFB, pi * (128 / 180) = \u2220BFG, 3.14 = pi\nConclusions: pi * (128 / 180) = 2 * 3.14 - \u2220GFB\n\nStep 22:\nTheorem: Substitution\nPremises : pi * (128 / 180) = \u2220BFG, 3.14 = pi, \u2220GFB = 2 * pi - \u2220BFG\nConclusions: 2 * 3.14 - pi * (128 / 180) = \u2220GFB\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (128 / 180) = 2 * 3.14 - \u2220GFB, 3.14 * (128 / 180) = 2 * 3.14 - \u2220GFB\nConclusions: 3.14 * (128 / 180) = pi * (128 / 180)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * (128 / 180) = \u2220BFG, 3.14 * (128 / 180) = pi * (128 / 180)\nConclusions: 3.14 * (128 / 180) = \u2220BFG\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFG = 2 * pi - \u2220GFB, 3.14 * (128 / 180) = \u2220BFG\nConclusions: 3.14 * (128 / 180) = 2 * pi - \u2220GFB\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x) / 180) = \u2220IFE, 3.14 * (128 / 180) = 2 * pi - \u2220GFB, 2 * 3.14 = \u2220EFG + \u2220GFB + \u2220IFE, 3.14 * ((9 * x - 2) / 180) = \u2220EFG, 2 * 3.14 - pi * (128 / 180) = \u2220GFB\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, G)",
+        "Line(A, F)",
+        "Line(G, F)",
+        "Line(F, E)",
+        "Line(F, C)",
+        "Line(E, C)",
+        "Line(F, I)",
+        "Line(F, B)",
+        "Line(I, B)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(E, C)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(F, I)",
+        "Line(G, F)",
+        "Line(I, B)",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(G, Line(A, F))",
+        "PointLiesOnLine(I, Line(F, B))",
+        "Equals(MeasureOf(Angle(I, F, E)), Mul(pi, Div(Mul(4.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(Sub(Mul(9.0, x), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(I, F, G)), Mul(pi, Div(128.0, 180.0)))"
+    ],
+    "correct": true
+}

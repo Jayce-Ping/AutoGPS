@@ -1,0 +1,77 @@
+{
+    "problem_id": "689",
+    "solved": true,
+    "problem_text": "RS and RT are tangent to \\odot Q. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), \\frac{x}{4})",
+        "Equals(LengthOf(Line(R, T)), x-6.3)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "PointLiesOnCircle(S, Circle(Q))",
+        "PointLiesOnCircle(T, Circle(Q))",
+        "Tangent(Line(R,S),Circle(Q))",
+        "Tangent(Line(R,T),Circle(Q))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T",
+        "Q"
+    ],
+    "line_instances": [
+        "RS",
+        "RT"
+    ],
+    "circle_instances": [
+        "Q"
+    ],
+    "point_positions": {
+        "R": [
+            159.93828571428568,
+            56.49326424870467
+        ],
+        "S": [
+            53.15314285714285,
+            240.33575129533682
+        ],
+        "T": [
+            241.82285714285712,
+            248.95336787564767
+        ],
+        "Q": [
+            145.1087432242883,
+            294.22847230200034
+        ]
+    },
+    "problem_choices": [
+        5.457,
+        8.4,
+        12.6,
+        293.04
+    ],
+    "choices_precise_value": [
+        5.457,
+        8.4,
+        12.6,
+        293.04
+    ],
+    "problem_answer": 8.4,
+    "total_time": 9.408002,
+    "solution_predicate": "Equals(8.4, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Tangent(RT, \u2299(Q, radius_Q)), x - 6.3 = RT, x / 4 = RS, Tangent(RS, \u2299(Q, radius_Q)), S on \u2299(Q, radius_Q), T on \u2299(Q, radius_Q)\n\nStep 2:\nTheorem: Tangent Line Theorem\nPremises : Tangent(RS, \u2299(Q, radius_Q)), Tangent(RT, \u2299(Q, radius_Q)), S on \u2299(Q, radius_Q), T on \u2299(Q, radius_Q)\nConclusions: RS = RT\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : x - 6.3 = RT, x / 4 = RS, RS = RT\nConclusions: x / 4 = x - 6.3\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : x / 4 = x - 6.3\nConclusions: 8.4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Circle(Q, radius_Q)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "PointLiesOnCircle(S, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(T, Circle(Q, radius_Q))",
+        "Tangent(Line(R, S), Circle(Q, radius_Q))",
+        "Tangent(Line(R, T), Circle(Q, radius_Q))",
+        "Equals(LengthOf(Line(R, S)), Div(x, 4.0))",
+        "Equals(LengthOf(Line(R, T)), Sub(x, 6.3))"
+    ],
+    "correct": true
+}

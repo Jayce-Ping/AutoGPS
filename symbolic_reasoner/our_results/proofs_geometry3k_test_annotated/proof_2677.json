@@ -1,0 +1,91 @@
+{
+    "problem_id": "2677",
+    "solved": true,
+    "problem_text": "The perimeter of this polygon is 60 centimeters. Find the length of the side of the polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(E, A)))",
+        "Equals(PerimeterOf(Polygon(A, B, C, D, E)), 60)",
+        "Find(LengthOf(SideOf(Polygon(A, B, C, D, E))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "ED",
+        "EA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            93.66304347826086,
+            221.7391304347826
+        ],
+        "B": [
+            224.91304347826085,
+            220.65217391304347
+        ],
+        "C": [
+            265.40217391304344,
+            95.92391304347825
+        ],
+        "D": [
+            159.69565217391303,
+            18.206521739130434
+        ],
+        "E": [
+            52.086956521739125,
+            96.19565217391303
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "15",
+        "30",
+        "60"
+    ],
+    "choices_precise_value": [
+        12.0,
+        15.0,
+        30.0,
+        60.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 6.701445,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Pentagon(A, B, C, D, E), AB = BC, 60 = Perimeter(Pentagon(A, B, C, D, E)), AB = AE, AB = DE, AB = CD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Pentagon(A, B, C, D, E)\nConclusions: Perimeter(Pentagon(A, B, C, D, E)) = AB + AE + BC + CD + DE\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Pentagon(A, B, C, D, E)) = AB + AE + BC + CD + DE, 60 = Perimeter(Pentagon(A, B, C, D, E))\nConclusions: 60 = AB + AE + BC + CD + DE\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : AB = AE, AB = DE, AB = CD, AB = BC, 60 = AB + AE + BC + CD + DE\nConclusions: 12 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, A)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(E, A)))",
+        "Equals(PerimeterOf(Pentagon(A, B, C, D, E)), 60.0)"
+    ],
+    "correct": true
+}

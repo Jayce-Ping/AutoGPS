@@ -1,0 +1,94 @@
+{
+    "problem_id": "8679",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 3)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(C, B)), z)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Perpendicular(Line(D, A), Line(C, B))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "AB",
+        "CB",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            33.82597402597402,
+            218.21843945528155
+        ],
+        "B": [
+            127.82142857142856,
+            218.39372469635626
+        ],
+        "C": [
+            49.88571428571428,
+            182.59463562753035
+        ],
+        "D": [
+            128.3800664451827,
+            10.785613407400433
+        ]
+    },
+    "problem_choices": [
+        4.898979485566356,
+        5.744562646538029,
+        5.830951894845301,
+        6.6332495807108
+    ],
+    "choices_precise_value": [
+        4.898979485566356,
+        5.744562646538029,
+        5.830951894845301,
+        6.6332495807108
+    ],
+    "problem_answer": 4.898979485566356,
+    "total_time": 55.06624,
+    "solution_predicate": "Equals(5.7445626465, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAB, C on AD, y = AB, AC \u22a5 BC, AB \u22a5 BD, 8 = CD, 3 = AC\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220DAB, C on AD\nConclusions: \u2220CAB = \u2220DAB\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on AD\nConclusions: AD = AC + CD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 6:\nTheorem: Substitution\nPremises : 8 = CD, AD = AC + CD, 3 = AC\nConclusions: 3 + 8 = AD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DBA, pi / 2 = \u2220ACB\nConclusions: \u2220ACB = \u2220DBA\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3 + 8 = AD\nConclusions: 11 = AD\n\nStep 9:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220DAB, \u2220ACB = \u2220DBA\nConclusions: \u25b3ABC ~ \u25b3ADB\n\nStep 10:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ADB\nConclusions: AB / AD = AC / AB, \u2220CAB = \u2220DAB\n\nStep 11:\nTheorem: Substitution\nPremises : AB / AD = AC / AB, y = AB, 11 = AD, 3 = AC\nConclusions: 3 / y = y / 11\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 3 / y = y / 11\nConclusions: 5.74 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Perpendicular(Line(D, A), Line(C, B))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 3.0)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(C, B)), z)",
+        "Equals(LengthOf(Line(D, C)), 8.0)"
+    ],
+    "correct": false
+}

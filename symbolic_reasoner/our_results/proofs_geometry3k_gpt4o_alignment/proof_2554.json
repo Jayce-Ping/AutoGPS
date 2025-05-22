@@ -1,0 +1,82 @@
+{
+    "problem_id": "2554",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(C, A)), 16)",
+        "Equals(LengthOf(Line(B, C)), 8)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "CA",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            81.57099697885197,
+            181.30513595166164
+        ],
+        "B": [
+            17.220543806646525,
+            36.29003021148036
+        ],
+        "C": [
+            81.87311178247734,
+            35.383685800604226
+        ],
+        "D": [
+            411.17824773413895,
+            35.68580060422961
+        ]
+    },
+    "problem_choices": [
+        "16 \\sqrt { 2 }",
+        "16 \\sqrt { 3 }",
+        "32",
+        "16 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        22.627416997969522,
+        27.712812921102035,
+        32.0,
+        35.77708763999664
+    ],
+    "problem_answer": 35.77708763999664,
+    "total_time": 55.96377,
+    "solution_predicate": "Equals(35.77708764, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = AC, AB, y = AD, \u2220BDA, \u2220CAB, BC, \u2220ABC, \u2220ACB, AD, 3.14 = pi, AC \u22a5 BC, AC \u22a5 CD, AC, BD, CD, 8 = BC, C on BD, \u2220DAC, \u2220BAD, \u2220ABD, \u2220DAC, \u2220BAD, AB \u22a5 AD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ACB, pi / 2 = \u2220BCA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: pi / 2 = \u2220ACD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAD\nConclusions: \u2220BAD = 2 * pi - \u2220DAB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220BAD, \u2220CAB, \u2220DAC\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220DAB, (3 * pi) / 2 = \u2220BAD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BCA, pi / 2 = \u2220ACD\nConclusions: \u2220ACD = \u2220BCA\n\nStep 14:\nTheorem: Tan Function Definition\nPremises : \u2220ABC, \u25b3ABC, AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220ABC)\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 18:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AC \u22a5 CD\nConclusions: CD = SqrtOf(AD ** 2 - AC ** 2)\n\nStep 19:\nTheorem: Tan Function Definition\nPremises : \u2220DAC, \u25b3ACD, AC \u22a5 CD\nConclusions: CD / AC = tan(\u2220DAC)\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220BAD, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220CAB + \u2220DAC\n\nStep 21:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DAB, 3.14 = pi, (3 * pi) / 2 = \u2220BAD, \u2220BAD = 2 * pi - \u2220DAB\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 22:\nTheorem: Substitution\nPremises : 8 = BC, AC / BC = tan(\u2220ABC), 16 = AC, \u2220ABC = \u2220ABD\nConclusions: 16 / 8 = tan(\u2220ABD)\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 24:\nTheorem: Substitution\nPremises : pi = \u2220ABD + \u2220BDA + \u2220DAB, pi / 2 = \u2220DAB, 3.14 = pi, \u2220BDA = \u2220CDA\nConclusions: 3.14 = 3.14 / 2 + \u2220ABD + \u2220CDA\n\nStep 25:\nTheorem: Substitution\nPremises : CD = SqrtOf(AD ** 2 - AC ** 2), y = AD, 16 = AC\nConclusions: SqrtOf(y ** 2 - 16 ** 2) = CD\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ACB, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220ACB\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220ACB, \u2220ACB = 2 * pi - \u2220BCA\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BCA\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BCA, 2 * 3.14 = (3 * pi) / 2 + \u2220CAB + \u2220DAC, pi = \u2220ACD + \u2220CDA + \u2220DAC, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, \u2220ABC = \u2220ABD, \u2220ACD = \u2220BCA, 3.14 = 3.14 / 2 + \u2220ABD + \u2220CDA\nConclusions: \u2220ABC = \u2220DAC\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DAC, \u2220ABC = \u2220ABD\nConclusions: \u2220ABD = \u2220DAC\n\nStep 30:\nTheorem: Substitution\nPremises : CD / AC = tan(\u2220DAC), 16 = AC, \u2220ABD = \u2220DAC\nConclusions: CD / 16 = tan(\u2220ABD)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 16 / 8 = tan(\u2220ABD), CD / 16 = tan(\u2220ABD)\nConclusions: 16 / 8 = CD / 16\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 16 / 8 = CD / 16\nConclusions: 32 = CD\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 32 = CD, SqrtOf(y ** 2 - 16 ** 2) = CD\nConclusions: 32 = SqrtOf(y ** 2 - 16 ** 2)\n\nStep 34:\nTheorem: Solve Univariate Equation\nPremises : 32 = SqrtOf(y ** 2 - 16 ** 2)\nConclusions: 35.78 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Perpendicular(Line(D, C), Line(A, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(C, A)), 16.0)",
+        "Equals(LengthOf(Line(B, C)), 8.0)"
+    ],
+    "correct": true
+}

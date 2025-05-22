@@ -1,0 +1,98 @@
+{
+    "problem_id": "2730",
+    "solved": true,
+    "problem_text": "Each pair of polygons is similar. Find G F.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 20.7)",
+        "Equals(LengthOf(Line(F, G)), x)",
+        "Equals(LengthOf(Line(T, S)), 10)",
+        "Equals(LengthOf(Line(R, T)), 15)",
+        "Equals(LengthOf(Line(E, F)), 11.25)",
+        "Equals(MeasureOf(Angle(R, T, S)), 110)",
+        "Equals(MeasureOf(Angle(E, F, G)), 110)",
+        "Equals(MeasureOf(Angle(T, S, R)), 43)",
+        "Equals(MeasureOf(Angle(G, E, F)), 27)",
+        "Equals(MeasureOf(Angle(T, R, S)), 27)",
+        "Similar(Triangle(E, F, G), Triangle(R, T, S))",
+        "Find(LengthOf(Line(G, F)))"
+    ],
+    "point_instances": [
+        "G",
+        "S",
+        "F",
+        "E",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "RT",
+        "ST",
+        "RS",
+        "EF",
+        "GF",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            619.9183673469388,
+            61.46938775510205
+        ],
+        "S": [
+            311.2448979591837,
+            75.75510204081633
+        ],
+        "F": [
+            586.7551020408164,
+            160.9591836734694
+        ],
+        "E": [
+            441.8571428571429,
+            161.9795918367347
+        ],
+        "T": [
+            269.9183673469388,
+            194.63265306122452
+        ],
+        "R": [
+            79.61224489795919,
+            194.12244897959187
+        ]
+    },
+    "problem_choices": [
+        "7.5",
+        "11.25",
+        "20.7",
+        "40.7"
+    ],
+    "choices_precise_value": [
+        7.5,
+        11.25,
+        20.7,
+        40.7
+    ],
+    "problem_answer": 7.5,
+    "total_time": 22.877319,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = FG, 11.25 = EF, 10 = ST, 20.7 = RS, \u25b3EFG ~ \u25b3RTS, 15 = RT\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3EFG ~ \u25b3RTS\nConclusions: sim_ratio_triangle_e_f_g_triangle_r_t_s = EF / RT, EG / RS = FG / ST, sim_ratio_triangle_e_f_g_triangle_r_t_s = EG / RS\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_triangle_e_f_g_triangle_r_t_s = EF / RT, 15 = RT, 11.25 = EF\nConclusions: 11.25 / 15 = sim_ratio_triangle_e_f_g_triangle_r_t_s\n\nStep 4:\nTheorem: Substitution\nPremises : EG / RS = FG / ST, x = FG, 10 = ST, 20.7 = RS\nConclusions: x / 10 = EG / 20.7\n\nStep 5:\nTheorem: Substitution\nPremises : sim_ratio_triangle_e_f_g_triangle_r_t_s = EG / RS, 20.7 = RS\nConclusions: sim_ratio_triangle_e_f_g_triangle_r_t_s = EG / 20.7\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_e_f_g_triangle_r_t_s = EG / 20.7, 11.25 / 15 = sim_ratio_triangle_e_f_g_triangle_r_t_s\nConclusions: 11.25 / 15 = EG / 20.7\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : x = FG, 11.25 / 15 = EG / 20.7, x / 10 = EG / 20.7\nConclusions: 7.5 = FG\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(R, S)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(E, G)",
+        "Similar(Triangle(E, F, G), Triangle(R, T, S))",
+        "Equals(LengthOf(Line(R, S)), 20.7)",
+        "Equals(LengthOf(Line(F, G)), x)",
+        "Equals(LengthOf(Line(T, S)), 10.0)",
+        "Equals(LengthOf(Line(R, T)), 15.0)",
+        "Equals(LengthOf(Line(E, F)), 11.25)",
+        "Equals(MeasureOf(Angle(S, T, R)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(43.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, E, G)), Mul(pi, Div(27.0, 180.0)))",
+        "Equals(MeasureOf(Angle(T, R, S)), Mul(pi, Div(27.0, 180.0)))"
+    ],
+    "correct": true
+}

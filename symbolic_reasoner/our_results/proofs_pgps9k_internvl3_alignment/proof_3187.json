@@ -1,0 +1,102 @@
+{
+    "problem_id": "3187",
+    "solved": true,
+    "problem_text": "\\triangle ABC \\sim \\triangle XYZ. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 2)",
+        "Equals(LengthOf(Line(A, C)), 4)",
+        "Equals(LengthOf(Line(X, Y)), x)",
+        "Equals(LengthOf(Line(Z, X)), 3)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Perpendicular(Line(X, Y), Line(Y, Z))",
+        "Similar(Triangle(A,B,C),Triangle(X,Y,Z))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "X",
+        "Z",
+        "B",
+        "C",
+        "Y"
+    ],
+    "line_instances": [
+        "AC",
+        "XZ",
+        "AB",
+        "XY",
+        "BC",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            80.37500000000001,
+            50.90173410404624
+        ],
+        "X": [
+            438.3116666666667,
+            83.41040462427745
+        ],
+        "Z": [
+            585.3681481481482,
+            181.07899807321772
+        ],
+        "B": [
+            79.30333333333334,
+            180.72254335260115
+        ],
+        "C": [
+            276.49,
+            181.18084227910816
+        ],
+        "Y": [
+            437.852380952381,
+            180.56977704376547
+        ]
+    },
+    "problem_choices": [
+        1.5,
+        2.667,
+        3.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        1.5,
+        2.667,
+        3.0,
+        6.0
+    ],
+    "problem_answer": 1.5,
+    "total_time": 22.817557,
+    "solution_predicate": "Equals(1.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = AC, x = XY, 3 = XZ, \u25b3ABC ~ \u25b3XYZ, 2 = AB\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3XYZ\nConclusions: sim_ratio_triangle_a_b_c_triangle_x_y_z = AB / XY, sim_ratio_triangle_a_b_c_triangle_x_y_z = AC / XZ\n\nStep 3:\nTheorem: Substitution\nPremises : 4 = AC, 3 = XZ, sim_ratio_triangle_a_b_c_triangle_x_y_z = AC / XZ\nConclusions: 4 / 3 = sim_ratio_triangle_a_b_c_triangle_x_y_z\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_x_y_z = AB / XY, 4 / 3 = sim_ratio_triangle_a_b_c_triangle_x_y_z\nConclusions: 4 / 3 = AB / XY\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 2 = AB, 4 / 3 = AB / XY\nConclusions: 1.5 = XY\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 1.5 = XY, x = XY\nConclusions: 1.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(X, Z)",
+        "Line(A, B)",
+        "Line(X, Y)",
+        "Line(B, C)",
+        "Line(Y, Z)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Perpendicular(Line(X, Y), Line(Y, Z))",
+        "Similar(Triangle(A, B, C), Triangle(X, Y, Z))",
+        "Equals(LengthOf(Line(A, B)), 2.0)",
+        "Equals(LengthOf(Line(A, C)), 4.0)",
+        "Equals(LengthOf(Line(X, Y)), x)",
+        "Equals(LengthOf(Line(Z, X)), 3.0)"
+    ],
+    "correct": true
+}

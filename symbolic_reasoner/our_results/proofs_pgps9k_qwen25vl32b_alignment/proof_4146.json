@@ -1,0 +1,124 @@
+{
+    "problem_id": "4146",
+    "solved": true,
+    "problem_text": "XY and XZ are midsegments of \\triangle RST. Find SZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 13)",
+        "Equals(LengthOf(Line(Y, X)), 7)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), 124)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(R, Y)",
+        "Line(S, T)",
+        "Line(S, Z)",
+        "Line(X, S)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, T)",
+        "Line(Z, T)",
+        "PointLiesOnLine(X, Line(R, S))",
+        "PointLiesOnLine(Y, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, T))",
+        "IsMidsegmentOf(Line(X,Y),Triangle(R,S,T))",
+        "IsMidsegmentOf(Line(X,Z),Triangle(R,S,T))",
+        "Find(LengthOf(Line(S,Z)))"
+    ],
+    "point_instances": [
+        "R",
+        "Y",
+        "T",
+        "Z",
+        "S",
+        "X"
+    ],
+    "line_instances": [
+        "RY",
+        "RT",
+        "YT",
+        "TZ",
+        "TS",
+        "ZS",
+        "RX",
+        "RS",
+        "XS",
+        "YX",
+        "XZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            105.74747474747475,
+            408.20000000000005
+        ],
+        "Y": [
+            263.0663780663781,
+            408.20000000000005
+        ],
+        "T": [
+            487.5844155844156,
+            408.72
+        ],
+        "Z": [
+            563.1183261183261,
+            245.95999999999998
+        ],
+        "S": [
+            637.6103896103896,
+            85.8
+        ],
+        "X": [
+            373.50216450216453,
+            244.92000000000002
+        ]
+    },
+    "problem_choices": [
+        3.5,
+        6.5,
+        7.0,
+        13.0
+    ],
+    "choices_precise_value": [
+        3.5,
+        6.5,
+        7.0,
+        13.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 74.202949,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(S, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on ST, XZ, TY, X on RS, Y on RT, IsMidsegmentOf(XZ, \u25b3RST), 7 = XY, IsMidsegmentOf(XY, \u25b3RST), XY, TZ\n\nStep 2:\nTheorem: Line Segment Split\nPremises : Z on ST\nConclusions: ST = SZ + TZ\n\nStep 3:\nTheorem: Midsegment of a Triangle Properties\nPremises : Z on ST, X on RS, IsMidsegmentOf(XZ, \u25b3RST)\nConclusions: RT || XZ\n\nStep 4:\nTheorem: Evaluate\nPremises : 7 = XY\nConclusions: 14 = 2 * XY\n\nStep 5:\nTheorem: Midsegment of a Triangle Properties\nPremises : IsMidsegmentOf(XY, \u25b3RST), X on RS, Y on RT\nConclusions: ST || XY, ST = 2 * XY\n\nStep 6:\nTheorem: Definition of Parallelogram\nPremises : ST || XY, XY, RT || XZ, TY, XZ, TZ\nConclusions: Parallelogram(T, Y, X, Z)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : ST = 2 * XY, 14 = 2 * XY\nConclusions: 14 = ST\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(T, Y, X, Z)\nConclusions: TZ = XY\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : TZ = XY, 7 = XY\nConclusions: 7 = TZ\n\nStep 10:\nTheorem: Substitution\nPremises : ST = SZ + TZ, 7 = TZ\nConclusions: ST = 7 + SZ\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 14 = ST, ST = 7 + SZ\nConclusions: 7 = SZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Y)",
+        "Line(R, T)",
+        "Line(Y, T)",
+        "Line(T, Z)",
+        "Line(T, S)",
+        "Line(Z, S)",
+        "Line(R, X)",
+        "Line(R, S)",
+        "Line(X, S)",
+        "Line(Y, X)",
+        "Line(X, Z)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(R, Y)",
+        "Line(S, T)",
+        "Line(S, Z)",
+        "Line(X, S)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, T)",
+        "Line(Z, T)",
+        "PointLiesOnLine(X, Line(R, S))",
+        "PointLiesOnLine(Y, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, T))",
+        "IsMidsegmentOf(Line(X, Y), Triangle(R, S, T))",
+        "IsMidsegmentOf(Line(X, Z), Triangle(R, S, T))",
+        "Equals(LengthOf(Line(R, T)), 13.0)",
+        "Equals(LengthOf(Line(Y, X)), 7.0)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), Mul(pi, Div(124.0, 180.0)))"
+    ],
+    "correct": true
+}

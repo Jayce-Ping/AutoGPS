@@ -1,0 +1,81 @@
+{
+    "problem_id": "2658",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnCircle(F, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "Equals(LengthOf(Line(E, F)), 12)",
+        "Equals(LengthOf(Line(D, E)), 16)",
+        "Equals(LengthOf(Line(G, F)), x)",
+        "Tangent(Line(E, D), Circle(G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "F",
+        "E",
+        "G"
+    ],
+    "line_instances": [
+        "EF",
+        "EG",
+        "FG",
+        "DG",
+        "ED"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "D": [
+            188.30279898218828,
+            82.1882951653944
+        ],
+        "F": [
+            117.81933842239187,
+            103.81679389312977
+        ],
+        "E": [
+            36.3944020356234,
+            37.913486005089055
+        ],
+        "G": [
+            169.9821882951654,
+            146.31043256997455
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 3 } { 14 }",
+        "\\frac { 14 } { 3 }",
+        "12",
+        "16"
+    ],
+    "choices_precise_value": [
+        0.21428571428571427,
+        4.666666666666667,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 4.666666666666667,
+    "total_time": 17.553189,
+    "solution_predicate": "Equals(4.6666666667, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on EG, x = FG, Tangent(DE, \u2299(G, radius_0_0)), F on \u2299(G, radius_0_0), EG, 12 = EF, DG, 3.14 = pi, 16 = DE, D on \u2299(G, radius_0_0), DE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on EG\nConclusions: EG = EF + FG\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : F on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = FG\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 5:\nTheorem: Tangent Definition\nPremises : Tangent(DE, \u2299(G, radius_0_0)), D on \u2299(G, radius_0_0)\nConclusions: DE \u22a5 DG\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : D on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = DG\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : DG, EG, DE\nConclusions: \u25b3DEG\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : x = FG, radius_0_0 = FG\nConclusions: radius_0_0 = x\n\nStep 9:\nTheorem: Substitution\nPremises : radius_0_0 = FG, EG = EF + FG, 12 = EF\nConclusions: 12 + radius_0_0 = EG\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : DE \u22a5 DG\nConclusions: pi / 2 = \u2220EDG\n\nStep 11:\nTheorem: Law of Cosines\nPremises : \u25b3DEG\nConclusions: (DE ** 2 + DG ** 2) - EG ** 2 = 2 * DE * DG * cos(\u2220EDG)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220EDG\nConclusions: 1.57 = \u2220EDG\n\nStep 13:\nTheorem: Substitution\nPremises : 16 = DE, radius_0_0 = DG, (DE ** 2 + DG ** 2) - EG ** 2 = 2 * DE * DG * cos(\u2220EDG), 12 + radius_0_0 = EG, 1.57 = \u2220EDG\nConclusions: (16 ** 2 + radius_0_0 ** 2) - (12 + radius_0_0) ** 2 = 16 * 2 * cos(1.57) * radius_0_0\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : (16 ** 2 + radius_0_0 ** 2) - (12 + radius_0_0) ** 2 = 16 * 2 * cos(1.57) * radius_0_0\nConclusions: 4.67 = radius_0_0\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = x, 4.67 = radius_0_0\nConclusions: 4.67 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(D, G)",
+        "Line(E, D)",
+        "Circle(G, radius_0_0)",
+        "PointLiesOnLine(F, Line(E, G))",
+        "PointLiesOnCircle(F, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "Tangent(Line(E, D), Circle(G, radius_0_0))",
+        "Equals(LengthOf(Line(E, F)), 12.0)",
+        "Equals(LengthOf(Line(D, E)), 16.0)",
+        "Equals(LengthOf(Line(G, F)), x)"
+    ],
+    "correct": true
+}

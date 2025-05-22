@@ -1,0 +1,72 @@
+{
+    "problem_id": "7489",
+    "solved": true,
+    "problem_text": "Find m \\angle DIG if m \\angle DGI = 24 and IG = 6.",
+    "logic_forms": [
+        "Line(D, G)",
+        "Line(D, I)",
+        "Line(I, G)",
+        "PointLiesOnCircle(D, Circle(I))",
+        "PointLiesOnCircle(G, Circle(I))",
+        "Equals(MeasureOf(Angle(D,G,I)),24)",
+        "Equals(LengthOf(Line(I,G)),6)",
+        "Find(MeasureOf(Angle(D,I,G)))"
+    ],
+    "point_instances": [
+        "D",
+        "I",
+        "G"
+    ],
+    "line_instances": [
+        "DG",
+        "DI",
+        "IG"
+    ],
+    "circle_instances": [
+        "I"
+    ],
+    "point_positions": {
+        "D": [
+            79.34949694870525,
+            130.4384053156146
+        ],
+        "I": [
+            148.28571428571428,
+            99.0
+        ],
+        "G": [
+            218.43971631205673,
+            130.14620209059234
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        48.0,
+        78.0,
+        132.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        48.0,
+        78.0,
+        132.0
+    ],
+    "problem_answer": 132.0,
+    "total_time": 12.274047,
+    "solution_predicate": "Equals(2.3038346126, MeasureOf(Angle(D, I, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: G on \u2299(I, radius_I), 3.14 = pi, 6 = GI, GI, DG, D on \u2299(I, radius_I), DI, pi * (24 / 180) = \u2220IGD\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : G on \u2299(I, radius_I)\nConclusions: radius_I = GI\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.42 = pi * (24 / 180)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(I, radius_I)\nConclusions: radius_I = DI\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : DG, DI, GI\nConclusions: \u25b3DGI\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : radius_I = GI, 6 = GI\nConclusions: 6 = radius_I\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (24 / 180) = \u2220IGD, 0.42 = pi * (24 / 180)\nConclusions: 0.42 = \u2220IGD\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(I, G, D)\nPremises : \u25b3DGI\nConclusions: pi = \u2220DIG + \u2220GDI + \u2220IGD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_I = DI, 6 = radius_I\nConclusions: 6 = DI\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 6 = DI, 6 = GI\nConclusions: DI = GI\n\nStep 11:\nTheorem: Issoceles Triangle Property\nPremises : DI = GI, \u25b3DGI\nConclusions: \u2220GDI = \u2220IGD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = \u2220IGD, \u2220GDI = \u2220IGD\nConclusions: 0.42 = \u2220GDI\n\nStep 13:\nTheorem: Substitution\nPremises : 0.42 = \u2220IGD, 0.42 = \u2220GDI, pi = \u2220DIG + \u2220GDI + \u2220IGD, 3.14 = pi\nConclusions: 3.14 = 0.42 + 0.42 + \u2220DIG\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.42 + 0.42 + \u2220DIG\nConclusions: 2.3 = \u2220DIG\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, G)",
+        "Line(D, I)",
+        "Line(I, G)",
+        "Circle(I, radius_I)",
+        "Line(D, G)",
+        "Line(D, I)",
+        "Line(I, G)",
+        "PointLiesOnCircle(D, Circle(I, radius_I))",
+        "PointLiesOnCircle(G, Circle(I, radius_I))",
+        "Equals(MeasureOf(Angle(I, G, D)), Mul(pi, Div(24.0, 180.0)))",
+        "Equals(LengthOf(Line(I, G)), 6.0)"
+    ],
+    "correct": true
+}

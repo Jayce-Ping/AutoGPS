@@ -1,0 +1,129 @@
+{
+    "problem_id": "6283",
+    "solved": true,
+    "problem_text": "Find the area of the circle. Assume that all polygons that appear to be regular are regular.",
+    "logic_forms": [
+        "Circle(C)",
+        "Equals(DiameterOf(Circle(C)), 20)",
+        "Equals(LengthOf(Line(A, B)), 20)",
+        "Find(AreaOf(Circle(C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, G)",
+        "Line(B, F)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnCircle(F, Circle(C))",
+        "PointLiesOnCircle(G, Circle(C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "Regular(Hexagon(A, B, C, D, E, F, G))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB",
+        "BF",
+        "GF",
+        "GA",
+        "AD",
+        "DE",
+        "EB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            16.875,
+            109.4152380952381
+        ],
+        "B": [
+            177.5,
+            109.62285714285714
+        ],
+        "C": [
+            95.72727272727272,
+            109.54545454545453
+        ],
+        "D": [
+            57.24137931034483,
+            39.56216748768473
+        ],
+        "E": [
+            138.23275862068965,
+            40.42128078817734
+        ],
+        "F": [
+            138.29166666666669,
+            178.92609523809523
+        ],
+        "G": [
+            57.39583333333333,
+            179.27904761904762
+        ]
+    },
+    "problem_choices": [
+        62.832,
+        125.664,
+        314.159,
+        1256.637
+    ],
+    "choices_precise_value": [
+        62.832,
+        125.664,
+        314.159,
+        1256.637
+    ],
+    "problem_answer": 314.159,
+    "total_time": 131.016295,
+    "solution_predicate": "Equals(314.15926536, AreaOf(Circle(C, radius_C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(C, radius_C), C on AB, 20 = AB, Area(\u2299(C, radius_C)), B on \u2299(C, radius_C), 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on AB\nConclusions: AB = AC + BC\n\nStep 4:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, radius_C))\nConclusions: pi * radius_C ** 2 = Area(\u2299(C, radius_C))\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_C)\nConclusions: radius_C = BC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = AC + BC, 20 = AB\nConclusions: 20 = AC + BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = BC, radius_C = AC\nConclusions: AC = BC\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 20 = AC + BC, AC = BC\nConclusions: 10 = AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AC, radius_C = AC\nConclusions: 10 = radius_C\n\nStep 10:\nTheorem: Evaluate\nPremises : 3.14 = pi, 10 = radius_C\nConclusions: 314.16 = pi * radius_C ** 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 314.16 = pi * radius_C ** 2, pi * radius_C ** 2 = Area(\u2299(C, radius_C))\nConclusions: 314.16 = Area(\u2299(C, radius_C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(B, F)",
+        "Line(G, F)",
+        "Line(G, A)",
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Circle(C, radius_C)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, G)",
+        "Line(B, F)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnCircle(F, Circle(C, radius_C))",
+        "PointLiesOnCircle(G, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "Equals(Mul(2.0, radius_C), 20.0)",
+        "Equals(LengthOf(Line(A, B)), 20.0)"
+    ],
+    "correct": true
+}

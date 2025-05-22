@@ -1,0 +1,97 @@
+{
+    "problem_id": "7085",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 22)",
+        "Equals(LengthOf(Line(B, E)), 18)",
+        "Equals(MeasureOf(Angle(E, D, B)), 40)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(E, D))",
+        "PointLiesOnLine(B, Line(A, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "BE",
+        "ED",
+        "DC",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            50.31350114416475,
+            20.9609022556391
+        ],
+        "B": [
+            126.83606138107417,
+            139.4924369747899
+        ],
+        "C": [
+            250.94761904761904,
+            22.35374149659864
+        ],
+        "D": [
+            326.79816933638443,
+            140.43007518796992
+        ],
+        "E": [
+            186.08009153318076,
+            231.28721804511275
+        ]
+    },
+    "problem_choices": [
+        80.0,
+        93.438,
+        100.006,
+        104.452
+    ],
+    "choices_precise_value": [
+        80.0,
+        93.438,
+        100.006,
+        104.452
+    ],
+    "problem_answer": 100.006,
+    "total_time": 37.192803,
+    "solution_predicate": "Equals(100.0060577668, PerimeterOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BE, BE \u22a5 DE, Parallelogram(A, B, D, C), 18 = BE, pi * (40 / 180) = \u2220BDE, 3.14 = pi, 22 = AB, DE, BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 DE\nConclusions: pi / 2 = \u2220DEB\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD, AC = BD\n\nStep 4:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, D, C)\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BE, BD, DE\nConclusions: \u25b3BDE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 22 = AB\nConclusions: 22 = CD\n\nStep 7:\nTheorem: Law of Sines\nPremises : \u25b3BDE\nConclusions: BD / sin(\u2220DEB) = BE / sin(\u2220BDE)\n\nStep 8:\nTheorem: Substitution\nPremises : Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD, 22 = AB, AC = BD, 22 = CD\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = 22 + 22 + BD + BD\n\nStep 9:\nTheorem: Substitution\nPremises : BD / sin(\u2220DEB) = BE / sin(\u2220BDE), pi * (40 / 180) = \u2220BDE, pi / 2 = \u2220DEB, 18 = BE\nConclusions: 18 / sin(pi * (40 / 180)) = BD / sin(pi / 2)\n\nStep 10:\nTheorem: Substitution\nPremises : 18 / sin(pi * (40 / 180)) = BD / sin(pi / 2), 3.14 = pi\nConclusions: 18 / sin(3.14 * (40 / 180)) = BD / sin(3.14 / 2)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(Parallelogram(A, B, D, C)) = 22 + 22 + BD + BD, 18 / sin(3.14 * (40 / 180)) = BD / sin(3.14 / 2)\nConclusions: 100.01 = Perimeter(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(E, D))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), 22.0)",
+        "Equals(LengthOf(Line(B, E)), 18.0)",
+        "Equals(MeasureOf(Angle(B, D, E)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

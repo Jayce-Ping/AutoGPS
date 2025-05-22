@@ -1,0 +1,71 @@
+{
+    "problem_id": "8812",
+    "solved": true,
+    "problem_text": "Find the value of variable y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), 37)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            304.4121212121212,
+            24.209142857142858
+        ],
+        "B": [
+            303.8095238095238,
+            241.96612244897958
+        ],
+        "C": [
+            17.77104377104377,
+            242.18888888888887
+        ]
+    },
+    "problem_choices": [
+        3.611,
+        4.792,
+        7.962,
+        9.97
+    ],
+    "choices_precise_value": [
+        3.611,
+        4.792,
+        7.962,
+        9.97
+    ],
+    "problem_answer": 7.962,
+    "total_time": 15.245264,
+    "solution_predicate": "Equals(7.9622689304, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: y = BC, pi * (37 / 180) = \u2220BCA, AC, BC, AB, x = AC, 3.14 = pi, \u2220ACB, 6 = AB, AB \u22a5 BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.65 = pi * (37 / 180), 1.57 = pi / 2\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220BCA) = AC / sin(\u2220ABC), AC / sin(\u2220ABC) = BC / sin(\u2220CAB)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 0.65 = pi * (37 / 180), pi * (37 / 180) = \u2220BCA\nConclusions: 0.65 = \u2220BCA\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220ACB = 2 * pi - \u2220BCA, pi * (37 / 180) = \u2220BCA, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (37 / 180) = \u2220ACB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ABC\n\nStep 11:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ABC, pi * (37 / 180) = \u2220BCA, 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = 3.14 / 2 + pi * (37 / 180) + \u2220CAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = 2 * pi - \u2220BCA, 2 * 3.14 - pi * (37 / 180) = \u2220ACB\nConclusions: 2 * 3.14 - pi * (37 / 180) = 2 * pi - \u2220BCA\n\nStep 13:\nTheorem: Substitution\nPremises : AB / sin(\u2220BCA) = AC / sin(\u2220ABC), 0.65 = \u2220BCA, x = AC, 6 = AB, 1.57 = \u2220ABC\nConclusions: 6 / sin(0.65) = x / sin(1.57)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi * (37 / 180) = 2 * pi - \u2220BCA, 3.14 = 3.14 / 2 + pi * (37 / 180) + \u2220CAB, pi * (37 / 180) = \u2220BCA\nConclusions: 0.93 = \u2220CAB\n\nStep 15:\nTheorem: Substitution\nPremises : y = BC, 0.93 = \u2220CAB, AC / sin(\u2220ABC) = BC / sin(\u2220CAB), x = AC, 1.57 = \u2220ABC\nConclusions: x / sin(1.57) = y / sin(0.93)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : x / sin(1.57) = y / sin(0.93), 6 / sin(0.65) = x / sin(1.57)\nConclusions: 6 / sin(0.65) = y / sin(0.93)\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : y = BC, 6 / sin(0.65) = y / sin(0.93)\nConclusions: 7.96 = BC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : y = BC, 7.96 = BC\nConclusions: 7.96 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

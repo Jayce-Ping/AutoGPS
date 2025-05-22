@@ -1,0 +1,145 @@
+{
+    "problem_id": "5591",
+    "solved": true,
+    "problem_text": "Find m \\angle 5.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, F, E)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(C, F, G)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(F, C, B)), 65)",
+        "Equals(MeasureOf(Angle(F, C, D)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(H, F, E)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(H, F, G)), MeasureOf(Angle(5)))",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Parallel(Line(B, D), Line(E, G))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Find(MeasureOf(Angle(5)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AC",
+        "AF",
+        "AH",
+        "CF",
+        "CH",
+        "FH",
+        "EF",
+        "EG",
+        "FG",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            265.9064516129032,
+            33.371428571428574
+        ],
+        "B": [
+            28.088709677419352,
+            130.35714285714286
+        ],
+        "C": [
+            219.50806451612902,
+            130.35714285714286
+        ],
+        "D": [
+            338.1048387096774,
+            130.35714285714286
+        ],
+        "E": [
+            28.50483870967742,
+            258.0028571428572
+        ],
+        "F": [
+            161.00992555831266,
+            257.82637362637365
+        ],
+        "G": [
+            338.38856304985336,
+            257.6805194805195
+        ],
+        "H": [
+            119.3533724340176,
+            343.9532467532468
+        ]
+    },
+    "problem_choices": [
+        32.5,
+        65.0,
+        115.0,
+        230.0
+    ],
+    "choices_precise_value": [
+        32.5,
+        65.0,
+        115.0,
+        230.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 36.163793,
+    "solution_predicate": "Equals(2.0071286398, MeasureOf(Angle(H, F, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EFH, \u2220GFC, F on EG, BD || EG, \u2220BCF, F on CH, C on BD, \u2220GFA, \u2220ACB, \u2220HFG, \u2220DCA, \u2220CFE, pi * (65 / 180) = \u2220BCF, C on AF, 3.14 = pi, F on AH, \u2220FCD\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BD || EG\nConclusions: \u2220ACB = \u2220AFE\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : BD || EG\nConclusions: \u2220BCF = \u2220GFC\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : F on EG, F on CH\nConclusions: \u2220CFE = \u2220HFG\n\nStep 5:\nTheorem: Circumference Split\nPremises : \u2220HFG, \u2220GFC, \u2220CFE, \u2220EFH\nConclusions: 2 * pi = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : C on AF, C on BD\nConclusions: \u2220BCF = \u2220DCA, \u2220ACB = \u2220FCD\n\nStep 7:\nTheorem: Same Angle\nPremises : C on AF, \u2220GFA\nConclusions: \u2220GFA = \u2220GFC\n\nStep 8:\nTheorem: Vertical Angle Theorem\nPremises : F on EG, F on AH\nConclusions: \u2220EFH = \u2220GFA, \u2220AFE = \u2220HFG\n\nStep 9:\nTheorem: Circumference Split\nPremises : \u2220ACB, \u2220BCF, \u2220FCD, \u2220DCA\nConclusions: 2 * pi = \u2220ACB + \u2220BCF + \u2220DCA + \u2220FCD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCF = \u2220GFC, pi * (65 / 180) = \u2220BCF\nConclusions: pi * (65 / 180) = \u2220GFC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCF = \u2220DCA, pi * (65 / 180) = \u2220BCF\nConclusions: pi * (65 / 180) = \u2220DCA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220AFE, \u2220AFE = \u2220HFG\nConclusions: \u2220ACB = \u2220HFG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GFA = \u2220GFC, pi * (65 / 180) = \u2220GFC\nConclusions: pi * (65 / 180) = \u2220GFA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFH = \u2220GFA, pi * (65 / 180) = \u2220GFA\nConclusions: pi * (65 / 180) = \u2220EFH\n\nStep 15:\nTheorem: Substitution\nPremises : pi * (65 / 180) = \u2220EFH, 3.14 = pi, \u2220CFE = \u2220HFG, 2 * pi = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG, pi * (65 / 180) = \u2220GFC\nConclusions: 2 * 3.14 = 3.14 * (65 / 180) + pi * (65 / 180) + \u2220HFG + \u2220HFG\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : pi * (65 / 180) = \u2220BCF, 2 * 3.14 = 3.14 * (65 / 180) + pi * (65 / 180) + \u2220HFG + \u2220HFG, \u2220ACB = \u2220FCD, 2 * pi = \u2220ACB + \u2220BCF + \u2220DCA + \u2220FCD, pi * (65 / 180) = \u2220DCA, \u2220ACB = \u2220HFG\nConclusions: 2.01 = \u2220ACB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2.01 = \u2220ACB, \u2220ACB = \u2220HFG\nConclusions: 2.01 = \u2220HFG\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(F, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Parallel(Line(B, D), Line(E, G))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Equals(MeasureOf(Angle(B, C, F)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

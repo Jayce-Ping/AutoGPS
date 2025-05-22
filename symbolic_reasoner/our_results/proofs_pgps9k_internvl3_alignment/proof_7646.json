@@ -1,0 +1,114 @@
+{
+    "problem_id": "7646",
+    "solved": true,
+    "problem_text": "Find the area of the shaded figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, H)), 5)",
+        "Equals(LengthOf(Line(C, D)), 4)",
+        "Equals(LengthOf(Line(E, C)), 2)",
+        "Equals(LengthOf(Line(G, H)), 7)",
+        "Find(Sub(AreaOf(Rectangle(A, B, H, G)), AreaOf(Rectangle(C, D, F, E))))",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(B, H)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(G, H)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AB",
+        "GH",
+        "BH",
+        "AG",
+        "CD",
+        "EF",
+        "DF",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            101.84162895927602,
+            17.965714285714284
+        ],
+        "B": [
+            409.9366515837104,
+            17.965714285714284
+        ],
+        "C": [
+            168.66515837104072,
+            83.73306122448979
+        ],
+        "D": [
+            344.0769230769231,
+            83.73306122448979
+        ],
+        "E": [
+            168.29034690799395,
+            171.04857142857142
+        ],
+        "F": [
+            344.0769230769231,
+            171.31591836734694
+        ],
+        "G": [
+            102.09864253393665,
+            237.5965714285714
+        ],
+        "H": [
+            410.4185520361991,
+            236.92285714285714
+        ]
+    },
+    "problem_choices": [
+        1.25,
+        6.0,
+        15.0,
+        27.0
+    ],
+    "choices_precise_value": [
+        1.25,
+        6.0,
+        15.0,
+        27.0
+    ],
+    "problem_answer": 27.0,
+    "total_time": 47.824414,
+    "solution_predicate": "Equals(27.0, Sub(AreaOf(Rectangle(A, B, H, G)), AreaOf(Rectangle(C, D, F, E))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = CE, Rectangle(A, B, H, G), 7 = GH, 5 = BH, Area(Rectangle(A, B, H, G)), Area(Rectangle(C, D, F, E)), Rectangle(C, D, F, E), 4 = CD\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, H, G)\nConclusions: Parallelogram(A, B, H, G)\n\nStep 3:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, H, G))\nConclusions: Area(Rectangle(A, B, H, G)) = AB * BH\n\nStep 4:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(C, D, F, E))\nConclusions: Area(Rectangle(C, D, F, E)) = CD * DF\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(C, D, F, E)\nConclusions: Parallelogram(C, D, F, E)\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, H, G)\nConclusions: AB = GH\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(C, D, F, E)\nConclusions: CE = DF\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AB = GH, 7 = GH\nConclusions: 7 = AB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 = CE, CE = DF\nConclusions: 2 = DF\n\nStep 10:\nTheorem: Substitution\nPremises : 7 = AB, 5 = BH, Area(Rectangle(A, B, H, G)) = AB * BH\nConclusions: 5 * 7 = Area(Rectangle(A, B, H, G))\n\nStep 11:\nTheorem: Substitution\nPremises : 2 = DF, 4 = CD, Area(Rectangle(C, D, F, E)) = CD * DF\nConclusions: 2 * 4 = Area(Rectangle(C, D, F, E))\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 5 * 7 = Area(Rectangle(A, B, H, G))\nConclusions: 35 = Area(Rectangle(A, B, H, G))\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 2 * 4 = Area(Rectangle(C, D, F, E))\nConclusions: 8 = Area(Rectangle(C, D, F, E))\n\nStep 14:\nTheorem: Evaluate\nPremises : 35 = Area(Rectangle(A, B, H, G)), 8 = Area(Rectangle(C, D, F, E))\nConclusions: 27 = Area(Rectangle(A, B, H, G)) - Area(Rectangle(C, D, F, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(G, H)",
+        "Line(B, H)",
+        "Line(A, G)",
+        "Line(C, D)",
+        "Line(E, F)",
+        "Line(D, F)",
+        "Line(C, E)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(B, H)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(G, H)",
+        "Equals(LengthOf(Line(B, H)), 5.0)",
+        "Equals(LengthOf(Line(C, D)), 4.0)",
+        "Equals(LengthOf(Line(E, C)), 2.0)",
+        "Equals(LengthOf(Line(G, H)), 7.0)"
+    ],
+    "correct": true
+}

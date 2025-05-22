@@ -1,0 +1,71 @@
+{
+    "problem_id": "1790",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 8)",
+        "Equals(LengthOf(Line(B, A)), 8)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(B, C, A)), x)",
+        "Equals(MeasureOf(Angle(C, B, A)), 42)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            160.52264150943395,
+            21.434285714285714
+        ],
+        "B": [
+            17.966037735849053,
+            150.04
+        ],
+        "C": [
+            302.4445754716981,
+            149.79642857142858
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        69.0,
+        96.0,
+        138.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        69.0,
+        96.0,
+        138.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 9.038672,
+    "solution_predicate": "Equals(42.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, AB = AC, 3.14 = pi, pi * (42 / 180) = \u2220CBA, AB, pi * (x / 180) = \u2220ACB, AC\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : pi * (42 / 180) = \u2220CBA, 3.14 = pi\nConclusions: 0.73 = \u2220CBA\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ACB\nConclusions: 3.14 * (x / 180) = \u2220ACB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Issoceles Triangle Property\nPremises : AB = AC, \u25b3ABC\nConclusions: \u2220ACB = \u2220CBA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 0.73 = \u2220CBA, 3.14 * (x / 180) = \u2220ACB, \u2220ACB = \u2220CBA\nConclusions: 0.73 = 3.14 * (x / 180)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 0.73 = 3.14 * (x / 180)\nConclusions: 42 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, C)), 8.0)",
+        "Equals(LengthOf(Line(B, A)), 8.0)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

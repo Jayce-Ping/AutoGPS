@@ -1,0 +1,87 @@
+{
+    "problem_id": "2590",
+    "solved": true,
+    "problem_text": "Find G I if G H = 9, G K = 6, and K J = 4.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G, H)), 9)",
+        "Equals(LengthOf(Line(G, K)), 6)",
+        "Equals(LengthOf(Line(J, K)), 4)",
+        "Find(LengthOf(Line(G, I)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "JI",
+        "KH",
+        "GK",
+        "GJ",
+        "KJ",
+        "GH",
+        "GI",
+        "HI"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            57.276018099547514,
+            163.34841628959276
+        ],
+        "K": [
+            66.55203619909503,
+            127.14932126696833
+        ],
+        "G": [
+            87.81900452488688,
+            36.65158371040724
+        ],
+        "H": [
+            159.53846153846155,
+            127.37556561085972
+        ],
+        "I": [
+            187.3665158371041,
+            163.57466063348417
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 31.933252,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(G, I)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220IGK, 9 = GH, HK || IJ, \u2220HGJ, \u2220JIG, \u2220IGJ, \u2220IJG, 4 = JK, H on GI, 6 = GK, K on GJ, 3.14 = pi, \u2220JIG, \u2220HKG, \u2220GIJ, \u2220IJG, \u2220KHG\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : HK || IJ\nConclusions: \u2220GJI = \u2220GKH, \u2220GHK = \u2220GIJ\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220IJG\nConclusions: \u2220IJG = 2 * pi - \u2220GJI\n\nStep 4:\nTheorem: Same Angle\nPremises : H on GI, \u2220JIG\nConclusions: \u2220JIG = \u2220JIH\n\nStep 5:\nTheorem: Same Angle\nPremises : H on GI, \u2220IGJ\nConclusions: \u2220HGJ = \u2220IGJ\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220IGK, H on GI\nConclusions: \u2220HGK = \u2220IGK\n\nStep 7:\nTheorem: Line Segment Split\nPremises : K on GJ\nConclusions: GJ = GK + JK\n\nStep 8:\nTheorem: Same Angle\nPremises : K on GJ, \u2220HGJ\nConclusions: \u2220HGJ = \u2220HGK\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220JIG\nConclusions: \u2220JIG = 2 * pi - \u2220GIJ\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220HKG\nConclusions: \u2220HKG = 2 * pi - \u2220GKH\n\nStep 11:\nTheorem: Same Angle\nPremises : H on GI, \u2220GIJ\nConclusions: \u2220GIJ = \u2220HIJ\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220IJG, K on GJ\nConclusions: \u2220IJG = \u2220IJK\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220KHG\nConclusions: \u2220KHG = 2 * pi - \u2220GHK\n\nStep 14:\nTheorem: Substitution\nPremises : 6 = GK, GJ = GK + JK, 4 = JK\nConclusions: 4 + 6 = GJ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGJ = \u2220HGK, \u2220HGK = \u2220IGK\nConclusions: \u2220HGJ = \u2220IGK\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220HKG = 2 * pi - \u2220GKH, 3.14 = pi\nConclusions: \u2220HKG = 2 * 3.14 - \u2220GKH\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GIJ = \u2220HIJ, \u2220GHK = \u2220GIJ\nConclusions: \u2220GHK = \u2220HIJ\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220GIJ = \u2220HIJ, 3.14 = pi, \u2220JIG = \u2220JIH, \u2220JIG = 2 * pi - \u2220GIJ\nConclusions: \u2220JIH = 2 * 3.14 - \u2220HIJ\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220IJG = 2 * pi - \u2220GJI, \u2220IJG = \u2220IJK, 3.14 = pi, \u2220GJI = \u2220GKH\nConclusions: \u2220IJK = 2 * 3.14 - \u2220GKH\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 4 + 6 = GJ\nConclusions: 10 = GJ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGJ = \u2220IGJ, \u2220HGJ = \u2220IGK\nConclusions: \u2220IGJ = \u2220IGK\n\nStep 22:\nTheorem: Substitution\nPremises : \u2220KHG = 2 * pi - \u2220GHK, 3.14 = pi, \u2220GHK = \u2220HIJ\nConclusions: \u2220KHG = 2 * 3.14 - \u2220HIJ\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IJK = 2 * 3.14 - \u2220GKH, \u2220HKG = 2 * 3.14 - \u2220GKH\nConclusions: \u2220HKG = \u2220IJK\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IGJ = \u2220IGK, \u2220HGJ = \u2220HGK, \u2220HGJ = \u2220IGK\nConclusions: \u2220HGK = \u2220IGJ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JIH = 2 * 3.14 - \u2220HIJ, \u2220KHG = 2 * 3.14 - \u2220HIJ\nConclusions: \u2220JIH = \u2220KHG\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IJG = \u2220IJK, \u2220HKG = \u2220IJK\nConclusions: \u2220HKG = \u2220IJG\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JIG = \u2220JIH, \u2220JIH = \u2220KHG\nConclusions: \u2220JIG = \u2220KHG\n\nStep 28:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220HKG = \u2220IJG, \u2220JIG = \u2220KHG, \u2220HGK = \u2220IGJ\nConclusions: \u25b3GHK ~ \u25b3GIJ\n\nStep 29:\nTheorem: Similar Definition\nPremises : \u25b3GHK ~ \u25b3GIJ\nConclusions: sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI, \u2220JIG = \u2220KHG, sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ, \u2220GJI = \u2220GKH, \u2220HGK = \u2220IGJ, \u2220GHK = \u2220GIJ\n\nStep 30:\nTheorem: Substitution\nPremises : sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI, 9 = GH\nConclusions: sim_ratio_triangle_g_h_k_triangle_g_i_j = 9 / GI\n\nStep 31:\nTheorem: Substitution\nPremises : 10 = GJ, 6 = GK, sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ\nConclusions: 6 / 10 = sim_ratio_triangle_g_h_k_triangle_g_i_j\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_g_h_k_triangle_g_i_j = 9 / GI, 6 / 10 = sim_ratio_triangle_g_h_k_triangle_g_i_j\nConclusions: 6 / 10 = 9 / GI\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 6 / 10 = 9 / GI\nConclusions: 15 = GI\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, I)",
+        "Line(K, H)",
+        "Line(G, K)",
+        "Line(G, J)",
+        "Line(K, J)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(H, I)",
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G, H)), 9.0)",
+        "Equals(LengthOf(Line(G, K)), 6.0)",
+        "Equals(LengthOf(Line(J, K)), 4.0)"
+    ],
+    "correct": true
+}

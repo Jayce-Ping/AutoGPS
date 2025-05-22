@@ -1,0 +1,75 @@
+{
+    "problem_id": "5339",
+    "solved": true,
+    "problem_text": "What is the length of \\widehat QSR?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, R)), 5)",
+        "Equals(MeasureOf(Angle(Q, P, R)), 120)",
+        "Line(P, R)",
+        "Line(Q, P)",
+        "PointLiesOnCircle(Q, Circle(P))",
+        "PointLiesOnCircle(R, Circle(P))",
+        "PointLiesOnCircle(S, Circle(P))",
+        "Find(LengthOf(Arc(Q,S,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "QP",
+        "PR"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "Q": [
+            117.15692307692308,
+            56.449213769655756
+        ],
+        "P": [
+            159.95295954679375,
+            175.60024083707157
+        ],
+        "S": [
+            278.6514285714286,
+            222.05801104972375
+        ],
+        "R": [
+            79.14209523809524,
+            272.82320441988946
+        ]
+    },
+    "problem_choices": [
+        5.236,
+        10.472,
+        20.944,
+        26.18
+    ],
+    "choices_precise_value": [
+        5.236,
+        10.472,
+        20.944,
+        26.18
+    ],
+    "problem_answer": 20.944,
+    "total_time": 4.375036,
+    "solution_predicate": "Equals(20.943951024, LengthOf(Arc(R, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (120 / 180) = \u2220QPR, 3.14 = pi, Arc(RPQ), R on \u2299(P, radius_P), 5 = PR, \u2220QPR\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(RPQ)\nConclusions: Arc(RPQ) = radius_P * \u2220RPQ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : R on \u2299(P, radius_P)\nConclusions: radius_P = PR\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220QPR\nConclusions: \u2220QPR = 2 * pi - \u2220RPQ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 = PR, radius_P = PR\nConclusions: 5 = radius_P\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220QPR = 2 * pi - \u2220RPQ, pi * (120 / 180) = \u2220QPR, 3.14 = pi\nConclusions: pi * (120 / 180) = 2 * 3.14 - \u2220RPQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QPR = 2 * pi - \u2220RPQ, pi * (120 / 180) = \u2220QPR\nConclusions: pi * (120 / 180) = 2 * pi - \u2220RPQ\n\nStep 8:\nTheorem: Substitution\nPremises : 5 = radius_P, Arc(RPQ) = radius_P * \u2220RPQ\nConclusions: Arc(RPQ) = 5 * \u2220RPQ\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : pi * (120 / 180) = 2 * pi - \u2220RPQ, pi * (120 / 180) = 2 * 3.14 - \u2220RPQ, Arc(RPQ) = 5 * \u2220RPQ\nConclusions: 20.94 = Arc(RPQ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(P, R)",
+        "Circle(P, radius_P)",
+        "Line(P, R)",
+        "Line(Q, P)",
+        "PointLiesOnCircle(Q, Circle(P, radius_P))",
+        "PointLiesOnCircle(R, Circle(P, radius_P))",
+        "PointLiesOnCircle(S, Circle(P, radius_P))",
+        "Equals(LengthOf(Line(P, R)), 5.0)",
+        "Equals(MeasureOf(Angle(Q, P, R)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

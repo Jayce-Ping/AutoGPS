@@ -1,0 +1,117 @@
+{
+    "problem_id": "7728",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, Q, T)), 32)",
+        "Equals(MeasureOf(Angle(A, S, R)), 5x+4)",
+        "Equals(MeasureOf(Angle(A, T, Q)), 6x-2)",
+        "Line(A, S)",
+        "Line(A, T)",
+        "Line(Q, A)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "PointLiesOnCircle(Q, Circle(B))",
+        "PointLiesOnCircle(R, Circle(B))",
+        "PointLiesOnCircle(S, Circle(B))",
+        "PointLiesOnCircle(T, Circle(B))",
+        "PointLiesOnLine(A, Line(Q, S))",
+        "PointLiesOnLine(A, Line(R, T))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "A",
+        "T",
+        "Q",
+        "B"
+    ],
+    "line_instances": [
+        "QT",
+        "TA",
+        "TR",
+        "AR",
+        "RS",
+        "SA",
+        "SQ",
+        "AQ"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "R": [
+            120.0,
+            148.1057142857143
+        ],
+        "S": [
+            348.57142857142856,
+            149.44
+        ],
+        "A": [
+            235.42857142857144,
+            221.49142857142857
+        ],
+        "T": [
+            380.8,
+            313.29028571428574
+        ],
+        "Q": [
+            88.0,
+            313.5571428571429
+        ],
+        "B": [
+            233.9950495049505,
+            255.51980198019797
+        ]
+    },
+    "problem_choices": [
+        5.6,
+        5.667,
+        6.0,
+        13.273
+    ],
+    "choices_precise_value": [
+        5.6,
+        5.667,
+        6.0,
+        13.273
+    ],
+    "problem_answer": 6.0,
+    "total_time": 121.398894,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220SBQ, \u2220QSR, 3.14 = pi, \u2220QSB, A on RT, \u2220RSQ, BR, AQ, \u2220TBQ, AT, BS, \u2220SRB, \u2220QBT, \u2220TBS, \u2220BRT, AS, \u2220BTQ, \u2220RSQ, S on \u2299(B, radius_B), \u2220ATQ, AR, QS, \u2220QTR, BQ, \u2220BQS, RS, BT, A on QS, \u2220RTB, QT, pi * ((4 + 5 * x) / 180) = \u2220RSA, \u2220TRS, \u2220RSA, T on \u2299(B, radius_B), \u2220BSR, R on \u2299(B, radius_B), pi * ((6 * x - 2) / 180) = \u2220ATQ, Q on \u2299(B, radius_B), \u2220ASR, RT\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220TBQ\nConclusions: \u2220TBQ = 2 * pi - \u2220QBT\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220SBQ, \u2220QBT, \u2220TBS\nConclusions: 2 * pi = \u2220QBT + \u2220SBQ + \u2220TBS\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220RSQ\nConclusions: \u2220RSQ = 2 * pi - \u2220QSR\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : S on \u2299(B, radius_B)\nConclusions: radius_B = BS\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ATQ\nConclusions: \u2220ATQ = 2 * pi - \u2220QTA\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220QTR, A on RT\nConclusions: \u2220QTA = \u2220QTR\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : QS, BQ, BS\nConclusions: \u25b3BQS\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AR, AS, RS\nConclusions: \u25b3ARS\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : BR, RS, BS\nConclusions: \u25b3BRS\n\nStep 12:\nTheorem: Definition of Quadrilateral\nPremises : AQ, BQ, BT, AT\nConclusions: Quadrilateral(A, Q, B, T)\n\nStep 13:\nTheorem: Same Angle\nPremises : A on QS, \u2220BQS\nConclusions: \u2220BQA = \u2220BQS\n\nStep 14:\nTheorem: Vertical Angle Theorem\nPremises : A on QS, A on RT\nConclusions: \u2220QAT = \u2220SAR\n\nStep 15:\nTheorem: Same Angle\nPremises : A on QS, \u2220QSR\nConclusions: \u2220ASR = \u2220QSR\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220RTB, \u2220BTQ, \u2220QTR\nConclusions: 2 * pi = \u2220BTQ + \u2220QTR + \u2220RTB\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220RTB, A on RT\nConclusions: \u2220ATB = \u2220RTB\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : BQ, BT, QT\nConclusions: \u25b3BQT\n\nStep 19:\nTheorem: Same Angle\nPremises : A on RT, \u2220TRS\nConclusions: \u2220ARS = \u2220TRS\n\nStep 20:\nTheorem: Circumference splited\nPremises : \u2220BRT, \u2220TRS, \u2220SRB\nConclusions: 2 * pi = \u2220BRT + \u2220SRB + \u2220TRS\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220RSA\nConclusions: \u2220RSA = 2 * pi - \u2220ASR\n\nStep 22:\nTheorem: Point On Circle Def\nPremises : T on \u2299(B, radius_B)\nConclusions: radius_B = BT\n\nStep 23:\nTheorem: Circumference splited\nPremises : \u2220QSB, \u2220RSQ, \u2220BSR\nConclusions: 2 * pi = \u2220BSR + \u2220QSB + \u2220RSQ\n\nStep 24:\nTheorem: Point On Circle Def\nPremises : R on \u2299(B, radius_B)\nConclusions: radius_B = BR\n\nStep 25:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(B, radius_B)\nConclusions: radius_B = BQ\n\nStep 26:\nTheorem: Reverse Angle Definition\nPremises : \u2220ASR\nConclusions: \u2220ASR = 2 * pi - \u2220RSA\n\nStep 27:\nTheorem: Definition of Triangle\nPremises : BR, BT, RT\nConclusions: \u25b3BRT\n\nStep 28:\nTheorem: Substitution\nPremises : 2 * pi = \u2220QBT + \u2220SBQ + \u2220TBS, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220QBT + \u2220SBQ + \u2220TBS\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ATQ = 2 * pi - \u2220QTA, pi * ((6 * x - 2) / 180) = \u2220ATQ\nConclusions: pi * ((6 * x - 2) / 180) = 2 * pi - \u2220QTA\n\nStep 30:\nTheorem: Interior Angle Sum Theorem for Triangle(A, R, S)\nPremises : \u25b3ARS\nConclusions: pi = \u2220ARS + \u2220RSA + \u2220SAR\n\nStep 31:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(T, B, Q, A)\nPremises : Quadrilateral(A, Q, B, T)\nConclusions: 2 * pi = \u2220ATB + \u2220BQA + \u2220QAT + \u2220TBQ\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BTQ + \u2220QTR + \u2220RTB, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220BTQ + \u2220QTR + \u2220RTB\n\nStep 33:\nTheorem: Interior Angle Sum Theorem for Triangle(T, Q, B)\nPremises : \u25b3BQT\nConclusions: pi = \u2220BTQ + \u2220QBT + \u2220TQB\n\nStep 34:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BRT + \u2220SRB + \u2220TRS, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BRT + \u2220SRB + \u2220TRS\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + 5 * x) / 180) = \u2220RSA, \u2220RSA = 2 * pi - \u2220ASR\nConclusions: pi * ((4 + 5 * x) / 180) = 2 * pi - \u2220ASR\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BR, radius_B = BT\nConclusions: BR = BT\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BS, radius_B = BR\nConclusions: BR = BS\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BQ, radius_B = BT\nConclusions: BQ = BT\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BS, radius_B = BQ\nConclusions: BQ = BS\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ASR = \u2220QSR, \u2220ASR = 2 * pi - \u2220RSA\nConclusions: \u2220QSR = 2 * pi - \u2220RSA\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220QBT + \u2220SBQ + \u2220TBS, 2 * 3.14 = \u2220QBT + \u2220SBQ + \u2220TBS\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 42:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x - 2) / 180) = 2 * pi - \u2220QTA, \u2220QTA = \u2220QTR\nConclusions: 3.14 * ((6 * x - 2) / 180) = 2 * 3.14 - \u2220QTR\n\nStep 43:\nTheorem: Substitution\nPremises : \u2220ARS = \u2220TRS, 3.14 = pi, pi = \u2220ARS + \u2220RSA + \u2220SAR\nConclusions: 3.14 = \u2220RSA + \u2220SAR + \u2220TRS\n\nStep 44:\nTheorem: Substitution\nPremises : \u2220ATB = \u2220RTB, \u2220BQA = \u2220BQS, \u2220QAT = \u2220SAR, 3.14 = pi, 2 * pi = \u2220ATB + \u2220BQA + \u2220QAT + \u2220TBQ\nConclusions: 2 * 3.14 = \u2220BQS + \u2220RTB + \u2220SAR + \u2220TBQ\n\nStep 45:\nTheorem: Substitution\nPremises : \u2220ASR = \u2220QSR, pi * ((4 + 5 * x) / 180) = 2 * pi - \u2220ASR, 3.14 = pi\nConclusions: 3.14 * ((4 + 5 * x) / 180) = 2 * 3.14 - \u2220QSR\n\nStep 46:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BRT, BR = BT\nConclusions: \u2220BRT = \u2220RTB\n\nStep 47:\nTheorem: Issoceles Triangle Property\nPremises : BR = BS, \u25b3BRS\nConclusions: \u2220BSR = \u2220SRB\n\nStep 48:\nTheorem: Issoceles Triangle Property\nPremises : BQ = BT, \u25b3BQT\nConclusions: \u2220BTQ = \u2220TQB\n\nStep 49:\nTheorem: Issoceles Triangle Property\nPremises : BQ = BS, \u25b3BQS\nConclusions: \u2220BQS = \u2220QSB\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220BQS + \u2220RTB + \u2220SAR + \u2220TBQ\nConclusions: 2 * pi = \u2220BQS + \u2220RTB + \u2220SAR + \u2220TBQ\n\nStep 51:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BQS + \u2220RTB + \u2220SAR + \u2220TBQ, \u2220BQS = \u2220QSB\nConclusions: 2 * 3.14 = \u2220QSB + \u2220RTB + \u2220SAR + \u2220TBQ\n\nStep 52:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220QSB + \u2220RTB + \u2220SAR + \u2220TBQ, \u2220TBQ = 2 * pi - \u2220QBT, \u2220QSR = 2 * pi - \u2220RSA, 6.28 = \u2220BTQ + \u2220QTR + \u2220RTB, 3.14 * ((6 * x - 2) / 180) = 2 * 3.14 - \u2220QTR, \u2220BTQ = \u2220TQB, 3.14 * ((4 + 5 * x) / 180) = 2 * 3.14 - \u2220QSR, pi = \u2220BTQ + \u2220QBT + \u2220TQB, \u2220RSQ = 2 * pi - \u2220QSR, 2 * 3.14 = \u2220BRT + \u2220SRB + \u2220TRS, 2 * pi = \u2220BTQ + \u2220QTR + \u2220RTB, \u2220BRT = \u2220RTB, 2 * pi = \u2220BSR + \u2220QSB + \u2220RSQ, 3.14 = \u2220RSA + \u2220SAR + \u2220TRS, \u2220BSR = \u2220SRB\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(T, A)",
+        "Line(T, R)",
+        "Line(A, R)",
+        "Line(R, S)",
+        "Line(S, A)",
+        "Line(S, Q)",
+        "Line(A, Q)",
+        "Circle(B, radius_B)",
+        "Line(A, S)",
+        "Line(A, T)",
+        "Line(Q, A)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "PointLiesOnCircle(Q, Circle(B, radius_B))",
+        "PointLiesOnCircle(R, Circle(B, radius_B))",
+        "PointLiesOnCircle(S, Circle(B, radius_B))",
+        "PointLiesOnCircle(T, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(Q, S))",
+        "PointLiesOnLine(A, Line(R, T))",
+        "Equals(MeasureOf(Angle(T, Q, A)), Mul(pi, Div(32.0, 180.0)))",
+        "Equals(MeasureOf(Angle(R, S, A)), Mul(pi, Div(Add(Mul(5.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, T, Q)), Mul(pi, Div(Sub(Mul(6.0, x), 2.0), 180.0)))"
+    ],
+    "correct": true
+}

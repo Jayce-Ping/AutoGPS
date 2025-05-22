@@ -1,0 +1,105 @@
+{
+    "problem_id": "4779",
+    "solved": true,
+    "problem_text": "If RU = 8, US = 14, TV = x-1, and VS = 17.5, find x.",
+    "logic_forms": [
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(S, V)",
+        "Line(U, R)",
+        "Line(U, V)",
+        "Line(V, T)",
+        "Parallel(Line(U, V), Line(R, T))",
+        "PointLiesOnLine(U, Line(S, R))",
+        "PointLiesOnLine(V, Line(S, T))",
+        "Equals(LengthOf(Line(R,U)),8)",
+        "Equals(LengthOf(Line(U,S)),14)",
+        "Equals(LengthOf(Line(T,V)),x-1)",
+        "Equals(LengthOf(Line(V,S)),17.5)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "S",
+        "U",
+        "V",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "SV",
+        "ST",
+        "VT",
+        "RT",
+        "SU",
+        "SR",
+        "UR",
+        "UV"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            177.193031358885,
+            56.57142857142857
+        ],
+        "U": [
+            104.1170731707317,
+            171.33061224489794
+        ],
+        "V": [
+            301.48682926829264,
+            170.61942857142859
+        ],
+        "R": [
+            62.99837398373983,
+            235.71428571428572
+        ],
+        "T": [
+            373.0861788617886,
+            235.71428571428572
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        7.4,
+        11.0,
+        31.625
+    ],
+    "choices_precise_value": [
+        3.0,
+        7.4,
+        11.0,
+        31.625
+    ],
+    "problem_answer": 11.0,
+    "total_time": 35.267582,
+    "solution_predicate": "Equals(11.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: U on RS, x - 1 = TV, RT || UV, 14 = SU, 8 = RU, 17.5 = SV, \u2220VSR, \u2220TSR, V on ST\n\nStep 2:\nTheorem: Line Segment Split\nPremises : U on RS\nConclusions: RS = RU + SU\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : RT || UV\nConclusions: \u2220SRT = \u2220SUV, \u2220STR = \u2220SVU\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220VSR, U on RS\nConclusions: \u2220VSR = \u2220VSU\n\nStep 5:\nTheorem: Line Segment Split\nPremises : V on ST\nConclusions: ST = SV + TV\n\nStep 6:\nTheorem: Same Angle\nPremises : V on ST, \u2220TSR\nConclusions: \u2220TSR = \u2220VSR\n\nStep 7:\nTheorem: Substitution\nPremises : 8 = RU, RS = RU + SU, 14 = SU\nConclusions: 14 + 8 = RS\n\nStep 8:\nTheorem: Substitution\nPremises : 17.5 = SV, ST = SV + TV, x - 1 = TV\nConclusions: 17.5 + (x - 1) = ST\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VSR = \u2220VSU, \u2220TSR = \u2220VSR\nConclusions: \u2220TSR = \u2220VSU\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 14 + 8 = RS\nConclusions: 22 = RS\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220STR = \u2220SVU, \u2220SRT = \u2220SUV, \u2220TSR = \u2220VSU\nConclusions: \u25b3RST ~ \u25b3USV\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3RST ~ \u25b3USV\nConclusions: \u2220SRT = \u2220SUV, \u2220TSR = \u2220VSU, sim_ratio_triangle_r_s_t_triangle_u_s_v = ST / SV, sim_ratio_triangle_r_s_t_triangle_u_s_v = RS / SU\n\nStep 13:\nTheorem: Substitution\nPremises : 17.5 = SV, sim_ratio_triangle_r_s_t_triangle_u_s_v = ST / SV, 17.5 + (x - 1) = ST\nConclusions: sim_ratio_triangle_r_s_t_triangle_u_s_v = (17.5 + (x - 1)) / 17.5\n\nStep 14:\nTheorem: Substitution\nPremises : 22 = RS, sim_ratio_triangle_r_s_t_triangle_u_s_v = RS / SU, 14 = SU\nConclusions: 22 / 14 = sim_ratio_triangle_r_s_t_triangle_u_s_v\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_r_s_t_triangle_u_s_v = (17.5 + (x - 1)) / 17.5, 22 / 14 = sim_ratio_triangle_r_s_t_triangle_u_s_v\nConclusions: 22 / 14 = (17.5 + (x - 1)) / 17.5\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 22 / 14 = (17.5 + (x - 1)) / 17.5\nConclusions: 11 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, V)",
+        "Line(S, T)",
+        "Line(V, T)",
+        "Line(R, T)",
+        "Line(S, U)",
+        "Line(S, R)",
+        "Line(U, R)",
+        "Line(U, V)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(S, V)",
+        "Line(U, R)",
+        "Line(U, V)",
+        "Line(V, T)",
+        "Parallel(Line(U, V), Line(R, T))",
+        "PointLiesOnLine(U, Line(S, R))",
+        "PointLiesOnLine(V, Line(S, T))",
+        "Equals(LengthOf(Line(R, U)), 8.0)",
+        "Equals(LengthOf(Line(U, S)), 14.0)",
+        "Equals(LengthOf(Line(T, V)), Sub(x, 1.0))",
+        "Equals(LengthOf(Line(V, S)), 17.5)"
+    ],
+    "correct": true
+}

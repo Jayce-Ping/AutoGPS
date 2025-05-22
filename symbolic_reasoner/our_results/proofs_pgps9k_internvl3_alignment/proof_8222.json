@@ -1,0 +1,128 @@
+{
+    "problem_id": "8222",
+    "solved": true,
+    "problem_text": "Find RQ if AU = 15, QU = 25, AD = 3x+6, DR = 8x-2, and UD = 15.",
+    "logic_forms": [
+        "Line(A, D)",
+        "Line(A, R)",
+        "Line(D, R)",
+        "Line(L, D)",
+        "Line(L, R)",
+        "Line(Q, A)",
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(Q, U)",
+        "Line(U, A)",
+        "Line(U, D)",
+        "Parallel(Line(Q, A), Line(L, D))",
+        "Parallel(Line(U, D), Line(Q, R))",
+        "PointLiesOnLine(D, Line(A, R))",
+        "PointLiesOnLine(L, Line(Q, R))",
+        "PointLiesOnLine(U, Line(Q, A))",
+        "Equals(LengthOf(Line(A,U)),15)",
+        "Equals(LengthOf(Line(Q,U)),25)",
+        "Equals(LengthOf(Line(A,D)),3x+6)",
+        "Equals(LengthOf(Line(D,R)),8x-2)",
+        "Equals(LengthOf(Line(U,D)),15)",
+        "Find(LengthOf(Line(R,Q)))"
+    ],
+    "point_instances": [
+        "Q",
+        "U",
+        "A",
+        "L",
+        "D",
+        "R"
+    ],
+    "line_instances": [
+        "QL",
+        "QR",
+        "LR",
+        "RD",
+        "RA",
+        "DA",
+        "DU",
+        "DL",
+        "QU",
+        "QA",
+        "UA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            50.357142857142854,
+            72.02499999999999
+        ],
+        "U": [
+            206.78571428571428,
+            72.02499999999999
+        ],
+        "A": [
+            335.2597402597403,
+            71.73181818181818
+        ],
+        "L": [
+            94.28571428571428,
+            178.45
+        ],
+        "D": [
+            256.42857142857144,
+            178.2111111111111
+        ],
+        "R": [
+            152.14285714285714,
+            320.34999999999997
+        ]
+    },
+    "problem_choices": [
+        6.75,
+        18.0,
+        30.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        6.75,
+        18.0,
+        30.0,
+        40.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 134.889696,
+    "solution_predicate": "Equals(40.0, LengthOf(Line(R, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = AU, U on AQ, \u2220RAQ, DU || RQ, 15 = DU, D on AR, 25 = QU, \u2220DAQ\n\nStep 2:\nTheorem: Line Segment Split\nPremises : U on AQ\nConclusions: AQ = AU + QU\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : DU || RQ\nConclusions: \u2220ADU = \u2220ARQ, \u2220AQR = \u2220AUD\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220RAQ, D on AR\nConclusions: \u2220DAQ = \u2220RAQ\n\nStep 5:\nTheorem: Same Angle\nPremises : U on AQ, \u2220DAQ\nConclusions: \u2220DAQ = \u2220DAU\n\nStep 6:\nTheorem: Substitution\nPremises : 15 = AU, 25 = QU, AQ = AU + QU\nConclusions: 15 + 25 = AQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAQ = \u2220DAU, \u2220DAQ = \u2220RAQ\nConclusions: \u2220DAU = \u2220RAQ\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 15 + 25 = AQ\nConclusions: 40 = AQ\n\nStep 9:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ADU = \u2220ARQ, \u2220AQR = \u2220AUD, \u2220DAU = \u2220RAQ\nConclusions: \u25b3ADU ~ \u25b3ARQ\n\nStep 10:\nTheorem: Similar Definition\nPremises : \u25b3ADU ~ \u25b3ARQ\nConclusions: \u2220ADU = \u2220ARQ, sim_ratio_triangle_a_d_u_triangle_a_r_q = DU / QR, \u2220DAU = \u2220RAQ, sim_ratio_triangle_a_d_u_triangle_a_r_q = AU / AQ\n\nStep 11:\nTheorem: Substitution\nPremises : 15 = DU, sim_ratio_triangle_a_d_u_triangle_a_r_q = DU / QR\nConclusions: sim_ratio_triangle_a_d_u_triangle_a_r_q = 15 / QR\n\nStep 12:\nTheorem: Substitution\nPremises : 15 = AU, sim_ratio_triangle_a_d_u_triangle_a_r_q = AU / AQ, 40 = AQ\nConclusions: 15 / 40 = sim_ratio_triangle_a_d_u_triangle_a_r_q\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_d_u_triangle_a_r_q = 15 / QR, 15 / 40 = sim_ratio_triangle_a_d_u_triangle_a_r_q\nConclusions: 15 / 40 = 15 / QR\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 15 / 40 = 15 / QR\nConclusions: 40 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(L, R)",
+        "Line(R, D)",
+        "Line(R, A)",
+        "Line(D, A)",
+        "Line(D, U)",
+        "Line(D, L)",
+        "Line(Q, U)",
+        "Line(Q, A)",
+        "Line(U, A)",
+        "Line(A, D)",
+        "Line(A, R)",
+        "Line(D, R)",
+        "Line(L, D)",
+        "Line(L, R)",
+        "Line(Q, A)",
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(Q, U)",
+        "Line(U, A)",
+        "Line(U, D)",
+        "Parallel(Line(Q, A), Line(L, D))",
+        "Parallel(Line(U, D), Line(Q, R))",
+        "PointLiesOnLine(D, Line(A, R))",
+        "PointLiesOnLine(L, Line(Q, R))",
+        "PointLiesOnLine(U, Line(Q, A))",
+        "Equals(LengthOf(Line(A, U)), 15.0)",
+        "Equals(LengthOf(Line(Q, U)), 25.0)",
+        "Equals(LengthOf(Line(A, D)), Add(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(D, R)), Sub(Mul(8.0, x), 2.0))",
+        "Equals(LengthOf(Line(U, D)), 15.0)"
+    ],
+    "correct": true
+}

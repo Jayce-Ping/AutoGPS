@@ -1,0 +1,63 @@
+{
+    "problem_id": "2482",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), 4)",
+        "Equals(MeasureOf(Angle(C, B, A)), 45)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            164.67932489451476,
+            178.0590717299578
+        ],
+        "B": [
+            9.827004219409282,
+            23.628691983122362
+        ],
+        "C": [
+            164.46835443037975,
+            23.20675105485232
+        ]
+    },
+    "problem_choices": [
+        "4 \\sqrt { 2 }",
+        "4 \\sqrt { 3 }",
+        "8",
+        "4 \\sqrt { 5 }"
+    ],
+    "choices_precise_value": [
+        5.656854249492381,
+        6.928203230275509,
+        8.0,
+        8.94427190999916
+    ],
+    "problem_answer": 5.656854249492381,
+    "total_time": 13.41294,
+    "solution_predicate": "Equals(5.6568542495, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, AC \u22a5 BC, pi * (45 / 180) = \u2220ABC, BC, 4 = AC, AB, x = AB, AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220ABC, 0.79 = pi * (45 / 180)\nConclusions: 0.79 = \u2220ABC\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AC \u22a5 BC\nConclusions: AB = SqrtOf(AC ** 2 + BC ** 2)\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220ABC, pi / 2 = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220CAB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220CAB\nConclusions: 0.79 = \u2220CAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220CAB, 0.79 = \u2220ABC\nConclusions: \u2220ABC = \u2220CAB\n\nStep 11:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABC, \u2220ABC = \u2220CAB\nConclusions: AC = BC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AC, AC = BC\nConclusions: 4 = BC\n\nStep 13:\nTheorem: Substitution\nPremises : 4 = BC, 4 = AC, AB = SqrtOf(AC ** 2 + BC ** 2), x = AB\nConclusions: SqrtOf(4 ** 2 + 4 ** 2) = x\n\nStep 14:\nTheorem: Evaluate\nPremises : SqrtOf(4 ** 2 + 4 ** 2) = x\nConclusions: 5.66 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), 4.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

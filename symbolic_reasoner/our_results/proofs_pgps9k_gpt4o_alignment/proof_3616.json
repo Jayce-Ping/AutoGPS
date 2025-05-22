@@ -1,0 +1,69 @@
+{
+    "problem_id": "3616",
+    "solved": true,
+    "problem_text": "Find the area of sector JHG.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, H)), 9)",
+        "Equals(MeasureOf(Angle(J, H, G)), 100)",
+        "Find(AreaOf(Sector(H, J, G)))",
+        "Line(G, H)",
+        "Line(H, J)",
+        "PointLiesOnCircle(G, Circle(H, 9))",
+        "PointLiesOnCircle(J, Circle(H, 9))",
+        "Triangle(J, H, G)"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "J"
+    ],
+    "line_instances": [
+        "HJ",
+        "GH"
+    ],
+    "circle_instances": [
+        "H"
+    ],
+    "point_positions": {
+        "H": [
+            116.90986511543383,
+            122.84162915758118
+        ],
+        "G": [
+            43.09659090909091,
+            185.05142857142857
+        ],
+        "J": [
+            189.905303030303,
+            185.28507936507935
+        ]
+    },
+    "problem_choices": [
+        15.708,
+        40.841,
+        70.686,
+        183.783
+    ],
+    "choices_precise_value": [
+        15.708,
+        40.841,
+        70.686,
+        183.783
+    ],
+    "problem_answer": 70.686,
+    "total_time": 7.877107,
+    "solution_predicate": "Equals(70.685834706, AreaOf(Sector(G, H, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Sector(G, H, J), pi * (100 / 180) = \u2220GHJ, 3.14 = pi\n\nStep 2:\nTheorem: Area formula of Sector(G, H, J)\nPremises : Sector(G, H, J)\nConclusions: Area(Sector(G, H, J)) = (9 ** 2 * \u2220GHJ) / 2\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (100 / 180) = \u2220GHJ\nConclusions: 1.75 = \u2220GHJ\n\nStep 4:\nTheorem: Substitution\nPremises : Area(Sector(G, H, J)) = (9 ** 2 * \u2220GHJ) / 2, 1.75 = \u2220GHJ\nConclusions: (1.75 * 9 ** 2) / 2 = Area(Sector(G, H, J))\n\nStep 5:\nTheorem: Evaluate\nPremises : (1.75 * 9 ** 2) / 2 = Area(Sector(G, H, J))\nConclusions: 70.69 = Area(Sector(G, H, J))\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, J)",
+        "Line(G, H)",
+        "Line(G, H)",
+        "Line(H, J)",
+        "PointLiesOnCircle(G, Circle(H, 9))",
+        "PointLiesOnCircle(J, Circle(H, 9))",
+        "Triangle(J, H, G)",
+        "Equals(LengthOf(Line(G, H)), 9.0)",
+        "Equals(MeasureOf(Angle(G, H, J)), Mul(pi, Div(100.0, 180.0)))"
+    ],
+    "correct": true
+}

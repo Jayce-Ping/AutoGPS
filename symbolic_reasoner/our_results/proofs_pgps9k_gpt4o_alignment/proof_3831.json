@@ -1,0 +1,105 @@
+{
+    "problem_id": "3831",
+    "solved": true,
+    "problem_text": "Find ST.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, T)), 16)",
+        "Equals(LengthOf(Line(Q, S)), x)",
+        "Equals(LengthOf(Line(Q, T)), 20)",
+        "Equals(LengthOf(Line(R, S)), 12)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Parallel(Line(R, S), Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "Find(LengthOf(Line(S,T)))"
+    ],
+    "point_instances": [
+        "P",
+        "T",
+        "S",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "PT",
+        "TS",
+        "TQ",
+        "SQ",
+        "PR",
+        "PQ",
+        "RQ",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            104.99360341151385,
+            387.97714285714284
+        ],
+        "T": [
+            420.9800995024875,
+            387.97714285714284
+        ],
+        "S": [
+            331.8092868988391,
+            266.6171428571428
+        ],
+        "R": [
+            153.1860696517413,
+            266.52342857142855
+        ],
+        "Q": [
+            214.4792703150912,
+            109.17714285714287
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        12.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 36.661916,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220PQS, \u2220TPQ, 20 = QT, x = QS, S on QT, 16 = PT, \u2220PQT, \u2220SRQ, \u2220TPQ, R on PQ, 12 = RS, PT || RS\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220TPQ\nConclusions: \u2220TPQ = 2 * pi - \u2220QPT\n\nStep 3:\nTheorem: Line Segment Split\nPremises : S on QT\nConclusions: QT = QS + ST\n\nStep 4:\nTheorem: Same Angle\nPremises : S on QT, \u2220PQT\nConclusions: \u2220PQS = \u2220PQT\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220SRQ\nConclusions: \u2220SRQ = 2 * pi - \u2220QRS\n\nStep 6:\nTheorem: Same Angle\nPremises : R on PQ, \u2220PQS\nConclusions: \u2220PQS = \u2220RQS\n\nStep 7:\nTheorem: Same Angle\nPremises : R on PQ, \u2220PQT\nConclusions: \u2220PQT = \u2220RQT\n\nStep 8:\nTheorem: Same Angle\nPremises : R on PQ, \u2220TPQ\nConclusions: \u2220TPQ = \u2220TPR\n\nStep 9:\nTheorem: Corresponding Angle Theorem\nPremises : PT || RS\nConclusions: \u2220QPT = \u2220QRS, \u2220QSR = \u2220QTP\n\nStep 10:\nTheorem: Substitution\nPremises : x = QS, QT = QS + ST, 20 = QT\nConclusions: 20 = x + ST\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220SRQ = 2 * pi - \u2220QRS, 3.14 = pi\nConclusions: \u2220SRQ = 2 * 3.14 - \u2220QRS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQT = \u2220RQT, \u2220PQS = \u2220PQT, \u2220PQS = \u2220RQS\nConclusions: \u2220RQS = \u2220RQT\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220QPT = \u2220QRS, \u2220TPQ = 2 * pi - \u2220QPT, 3.14 = pi, \u2220TPQ = \u2220TPR\nConclusions: \u2220TPR = 2 * 3.14 - \u2220QRS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQT = \u2220RQT, \u2220RQS = \u2220RQT\nConclusions: \u2220PQT = \u2220RQS\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TPR = 2 * 3.14 - \u2220QRS, \u2220SRQ = 2 * 3.14 - \u2220QRS\nConclusions: \u2220SRQ = \u2220TPR\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SRQ = \u2220TPR, \u2220TPQ = \u2220TPR\nConclusions: \u2220SRQ = \u2220TPQ\n\nStep 17:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220PQT = \u2220RQS, \u2220QSR = \u2220QTP, \u2220SRQ = \u2220TPQ\nConclusions: \u25b3PQT ~ \u25b3RQS\n\nStep 18:\nTheorem: Similar Definition\nPremises : \u25b3PQT ~ \u25b3RQS\nConclusions: \u2220QPT = \u2220QRS, \u2220SRQ = \u2220TPQ, sim_ratio_triangle_p_q_t_triangle_r_q_s = QT / QS, sim_ratio_triangle_p_q_t_triangle_r_q_s = PT / RS, \u2220PQT = \u2220RQS\n\nStep 19:\nTheorem: Substitution\nPremises : x = QS, sim_ratio_triangle_p_q_t_triangle_r_q_s = QT / QS, 20 = QT\nConclusions: sim_ratio_triangle_p_q_t_triangle_r_q_s = 20 / x\n\nStep 20:\nTheorem: Substitution\nPremises : 16 = PT, sim_ratio_triangle_p_q_t_triangle_r_q_s = PT / RS, 12 = RS\nConclusions: 16 / 12 = sim_ratio_triangle_p_q_t_triangle_r_q_s\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 16 / 12 = sim_ratio_triangle_p_q_t_triangle_r_q_s, sim_ratio_triangle_p_q_t_triangle_r_q_s = 20 / x\nConclusions: 16 / 12 = 20 / x\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 20 = x + ST, 16 / 12 = 20 / x\nConclusions: 5 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, T)",
+        "Line(T, S)",
+        "Line(T, Q)",
+        "Line(S, Q)",
+        "Line(P, R)",
+        "Line(P, Q)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Parallel(Line(R, S), Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "Equals(LengthOf(Line(P, T)), 16.0)",
+        "Equals(LengthOf(Line(Q, S)), x)",
+        "Equals(LengthOf(Line(Q, T)), 20.0)",
+        "Equals(LengthOf(Line(R, S)), 12.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,100 @@
+{
+    "problem_id": "5247",
+    "solved": true,
+    "problem_text": "Find the value of variable c.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), a)",
+        "Equals(MeasureOf(Angle(D, B, E)), b)",
+        "Equals(MeasureOf(Angle(D, E, B)), c)",
+        "Equals(MeasureOf(Arc(B, A)), 100)",
+        "Equals(MeasureOf(Arc(B, E)), d)",
+        "Equals(MeasureOf(Arc(D, A)), 60)",
+        "Equals(MeasureOf(Arc(D, E)), 84)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "Find(c)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "DE",
+        "EB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            89.375,
+            88.75714285714285
+        ],
+        "B": [
+            240.5,
+            93.64285714285714
+        ],
+        "C": [
+            162.67192511082277,
+            149.41233289344552
+        ],
+        "D": [
+            73.57638888888889,
+            183.3047619047619
+        ],
+        "E": [
+            186.42361111111111,
+            242.47619047619048
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        42.0,
+        50.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        42.0,
+        50.0,
+        80.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 95.932453,
+    "solution_predicate": "Equals(80.0, c)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, D on \u2299(C, radius_C), BE, E on \u2299(C, radius_C), \u2220ACD, 3.14 = pi, CE, CD, Arc(DCA), \u2220CED, AC, Arc(ACB), pi * (c / 180) = \u2220BED, \u2220ACD, \u2220DCA, AB, \u2220BEC, \u2220DEB, B on \u2299(C, radius_C), Arc(ACD), \u2220BED, \u2220DEB, \u2220ACB, pi * (60 / 180) = Arc(ACD), DE, Arc(BCA), BC, \u2220BCA, \u2220DCB, pi * (100 / 180) = Arc(BCA)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, radius_C)\nConclusions: radius_C = CD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : E on \u2299(C, radius_C)\nConclusions: radius_C = CE\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : Arc(DCA)\nConclusions: Arc(DCA) = 2 * pi - Arc(ACD)\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DCA)\nConclusions: \u2220DCA = Arc(DCA)\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ACB)\nConclusions: \u2220ACB = Arc(ACB)\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEB\nConclusions: \u2220DEB = 2 * pi - \u2220BED\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_C)\nConclusions: radius_C = BC\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : Arc(ACD)\nConclusions: Arc(ACD) = 2 * pi - Arc(DCA)\n\nStep 14:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ACD)\nConclusions: \u2220ACD = Arc(ACD)\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : \u2220BED\nConclusions: \u2220BED = 2 * pi - \u2220DEB\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220BEC, \u2220CED, \u2220DEB\nConclusions: 2 * pi = \u2220BEC + \u2220CED + \u2220DEB\n\nStep 17:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 18:\nTheorem: Definition of Pentagon\nPremises : AB, AC, CD, DE, BE\nConclusions: Pentagon(A, B, E, D, C)\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : DE, CD, CE\nConclusions: \u25b3CDE\n\nStep 20:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BCA)\nConclusions: \u2220BCA = Arc(BCA)\n\nStep 21:\nTheorem: Definition of Triangle\nPremises : CE, BE, BC\nConclusions: \u25b3BCE\n\nStep 22:\nTheorem: Definition of Quadrilateral\nPremises : DE, CD, BE, BC\nConclusions: Quadrilateral(B, C, D, E)\n\nStep 23:\nTheorem: Circumference splited\nPremises : \u2220ACD, \u2220DCB, \u2220BCA\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = CD, radius_C = CE\nConclusions: CD = CE\n\nStep 25:\nTheorem: Substitution\nPremises : pi * (60 / 180) = Arc(ACD), Arc(DCA) = 2 * pi - Arc(ACD), 3.14 = pi\nConclusions: 2 * 3.14 - pi * (60 / 180) = Arc(DCA)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = BC, radius_C = CE\nConclusions: BC = CE\n\nStep 27:\nTheorem: Substitution\nPremises : pi * (60 / 180) = Arc(ACD), Arc(ACD) = 2 * pi - Arc(DCA), 3.14 = pi\nConclusions: pi * (60 / 180) = 2 * 3.14 - Arc(DCA)\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = Arc(ACD), pi * (60 / 180) = Arc(ACD)\nConclusions: pi * (60 / 180) = \u2220ACD\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * (c / 180) = \u2220BED, \u2220BED = 2 * pi - \u2220DEB\nConclusions: pi * (c / 180) = 2 * pi - \u2220DEB\n\nStep 30:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BEC + \u2220CED + \u2220DEB\nConclusions: 2 * 3.14 = \u2220BEC + \u2220CED + \u2220DEB\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = Arc(ACB), \u2220ACB = 2 * pi - \u2220BCA\nConclusions: Arc(ACB) = 2 * pi - \u2220BCA\n\nStep 32:\nTheorem: Interior Angle Sum Theorem for Pentagon(A, B, E, D, C)\nPremises : Pentagon(A, B, E, D, C)\nConclusions: 3 * pi = \u2220ABE + \u2220BED + \u2220CAB + \u2220DCA + \u2220EDC\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : pi * (100 / 180) = Arc(BCA), \u2220BCA = Arc(BCA)\nConclusions: pi * (100 / 180) = \u2220BCA\n\nStep 34:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, D, C, B)\nPremises : Quadrilateral(B, C, D, E)\nConclusions: 2 * pi = \u2220BED + \u2220CBE + \u2220DCB + \u2220EDC\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220ACD + \u2220BCA + \u2220DCB\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : CD = CE, \u25b3CDE\nConclusions: \u2220CED = \u2220EDC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (60 / 180) = Arc(DCA), \u2220DCA = Arc(DCA)\nConclusions: 2 * 3.14 - pi * (60 / 180) = \u2220DCA\n\nStep 38:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCE, BC = CE\nConclusions: \u2220BEC = \u2220CBE\n\nStep 39:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220ACD, \u2220DCA = Arc(DCA), \u2220ACD = 2 * pi - \u2220DCA, 3.14 = pi\nConclusions: 3.14 * (60 / 180) = 2 * 3.14 - Arc(DCA)\n\nStep 40:\nTheorem: Substitution\nPremises : pi * (c / 180) = 2 * pi - \u2220DEB, 3.14 = pi\nConclusions: 3.14 * (c / 180) = 2 * 3.14 - \u2220DEB\n\nStep 41:\nTheorem: Substitution\nPremises : 3 * pi = \u2220ABE + \u2220BED + \u2220CAB + \u2220DCA + \u2220EDC, \u2220DCA = Arc(DCA), 3.14 = pi\nConclusions: 3 * 3.14 = \u2220ABE + \u2220BED + \u2220CAB + \u2220EDC + Arc(DCA)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = 2 * pi - \u2220ACB, pi * (100 / 180) = \u2220BCA\nConclusions: pi * (100 / 180) = 2 * pi - \u2220ACB\n\nStep 43:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220ACD, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB, 3.14 = pi, pi * (100 / 180) = \u2220BCA\nConclusions: 2 * 3.14 = 3.14 * (100 / 180) + 3.14 * (60 / 180) + \u2220DCB\n\nStep 44:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BED + \u2220CBE + \u2220DCB + \u2220EDC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BED + \u2220CBE + \u2220DCB + \u2220EDC\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = 2 * pi - \u2220ACD, 2 * 3.14 - pi * (60 / 180) = \u2220DCA\nConclusions: 2 * 3.14 - pi * (60 / 180) = 2 * pi - \u2220ACD\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = 2 * 3.14 - Arc(DCA), pi * (60 / 180) = 2 * 3.14 - Arc(DCA)\nConclusions: 3.14 * (60 / 180) = pi * (60 / 180)\n\nStep 47:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (100 / 180) + 3.14 * (60 / 180) + \u2220DCB\nConclusions: 3.49 = \u2220DCB\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = Arc(ACD), 3.14 * (60 / 180) = pi * (60 / 180)\nConclusions: 3.14 * (60 / 180) = Arc(ACD)\n\nStep 49:\nTheorem: Substitution\nPremises : 3.49 = \u2220DCB, 2 * 3.14 = \u2220BED + \u2220CBE + \u2220DCB + \u2220EDC\nConclusions: 2 * 3.14 = 3.49 + \u2220BED + \u2220CBE + \u2220EDC\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = Arc(ACD), Arc(ACD) = 2 * pi - Arc(DCA)\nConclusions: 3.14 * (60 / 180) = 2 * pi - Arc(DCA)\n\nStep 51:\nTheorem: Solve Linear Equation System\nPremises : pi * (100 / 180) = 2 * pi - \u2220ACB, 3 * 3.14 = \u2220ABE + \u2220BED + \u2220CAB + \u2220EDC + Arc(DCA), 3.14 * (60 / 180) = 2 * pi - Arc(DCA), 3 * pi = \u2220ABE + \u2220BED + \u2220CAB + \u2220DCA + \u2220EDC, 2 * 3.14 - pi * (60 / 180) = \u2220DCA\nConclusions: 4.54 = \u2220ACB\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : 4.54 = \u2220ACB, \u2220ACB = Arc(ACB)\nConclusions: 4.54 = Arc(ACB)\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : Arc(ACB) = 2 * pi - \u2220BCA, 4.54 = Arc(ACB)\nConclusions: 4.54 = 2 * pi - \u2220BCA\n\nStep 54:\nTheorem: Solve Linear Equation System\nPremises : 6.28 = \u2220ACD + \u2220BCA + \u2220DCB, 3.14 * (c / 180) = 2 * 3.14 - \u2220DEB, 2 * 3.14 = \u2220BEC + \u2220CED + \u2220DEB, 2 * 3.14 = 3.49 + \u2220BED + \u2220CBE + \u2220EDC, 2 * pi = \u2220BED + \u2220CBE + \u2220DCB + \u2220EDC, \u2220DEB = 2 * pi - \u2220BED, 2 * 3.14 - pi * (60 / 180) = 2 * pi - \u2220ACD, \u2220BEC = \u2220CBE, 4.54 = 2 * pi - \u2220BCA, \u2220CED = \u2220EDC\nConclusions: 80 = c\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(a, 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, E)), Mul(pi, Div(b, 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, D)), Mul(pi, Div(c, 180.0)))",
+        "Equals(MeasureOf(Arc(B, C, A)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Arc(E, C, B)), Mul(pi, Div(d, 180.0)))",
+        "Equals(MeasureOf(Arc(A, C, D)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Arc(D, C, E)), Mul(pi, Div(84.0, 180.0)))"
+    ],
+    "correct": true
+}

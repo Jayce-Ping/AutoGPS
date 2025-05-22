@@ -1,0 +1,88 @@
+{
+    "problem_id": "2627",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, D)), 4)",
+        "Find(PerimeterOf(Triangle(A, B, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "AD",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.891812865497077,
+            142.88842105263157
+        ],
+        "B": [
+            109.25768321513002,
+            142.60522796352583
+        ],
+        "C": [
+            201.760101010101,
+            142.6895238095238
+        ],
+        "D": [
+            109.55050505050505,
+            20.29714285714286
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        14.0,
+        16.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        12.0,
+        14.0,
+        16.0,
+        18.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 48.33975,
+    "solution_predicate": "Equals(12.0, PerimeterOf(Triangle(A, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB = BC, AB \u22a5 BD, B on AC, 6 = AC, BC \u22a5 BD, 4 = BD, \u25b3ABD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 3:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD\n\nStep 5:\nTheorem: Perimeter Definition\nPremises : \u25b3ABD\nConclusions: Perimeter(\u25b3ABD) = AB + AD + BD\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABD, AB \u22a5 BD\nConclusions: AD = SqrtOf(AB ** 2 + BD ** 2)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : AC = AB + BC, 6 = AC\nConclusions: 6 = AB + BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DBA, pi / 2 = \u2220CBD\nConclusions: \u2220CBD = \u2220DBA\n\nStep 9:\nTheorem: Substitution\nPremises : 4 = BD, Perimeter(\u25b3ABD) = AB + AD + BD, AB = BC\nConclusions: Perimeter(\u25b3ABD) = 4 + AD + BC\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : AB = BC, 6 = AB + BC\nConclusions: 3 = AB\n\nStep 11:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AB = BC, \u2220CBD = \u2220DBA\nConclusions: \u25b3ABD \u2245 \u25b3CBD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3 = AB, AB = BC\nConclusions: 3 = BC\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: AD = CD, Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), AB = BC\n\nStep 14:\nTheorem: Substitution\nPremises : 4 = BD, AD = SqrtOf(AB ** 2 + BD ** 2), 3 = AB, AD = CD\nConclusions: SqrtOf(3 ** 2 + 4 ** 2) = CD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), Perimeter(\u25b3ABD) = 4 + AD + BC\nConclusions: Perimeter(\u25b3BCD) = 4 + AD + BC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : AD = CD, SqrtOf(3 ** 2 + 4 ** 2) = CD\nConclusions: SqrtOf(3 ** 2 + 4 ** 2) = AD\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : SqrtOf(3 ** 2 + 4 ** 2) = AD\nConclusions: 5 = AD\n\nStep 18:\nTheorem: Substitution\nPremises : Perimeter(\u25b3BCD) = 4 + AD + BC, 5 = AD, 3 = BC\nConclusions: 3 + 4 + 5 = Perimeter(\u25b3BCD)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 4 + 5 = Perimeter(\u25b3BCD), Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD)\nConclusions: 3 + 4 + 5 = Perimeter(\u25b3ABD)\n\nStep 20:\nTheorem: Evaluate\nPremises : 3 + 4 + 5 = Perimeter(\u25b3ABD)\nConclusions: 12 = Perimeter(\u25b3ABD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, D)), 4.0)"
+    ],
+    "correct": false
+}

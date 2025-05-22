@@ -1,0 +1,116 @@
+{
+    "problem_id": "2762",
+    "solved": true,
+    "problem_text": "\\triangle A B C \\sim \\triangle F D G. Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(C, B))",
+        "PointLiesOnLine(Q, Line(D, G))",
+        "Equals(LengthOf(Line(B, A)), 15)",
+        "Equals(LengthOf(Line(A, P)), x)",
+        "Equals(LengthOf(Line(F, D)), 12)",
+        "Equals(LengthOf(Line(F, Q)), 8)",
+        "Equals(MeasureOf(Angle(B, A, P)), MeasureOf(Angle(C, A, P)))",
+        "Equals(MeasureOf(Angle(Q, F, D)), MeasureOf(Angle(G, F, Q)))",
+        "Similar(Triangle(A,B,C),Triangle(F,D,G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "G",
+        "A",
+        "D",
+        "Q",
+        "P",
+        "F"
+    ],
+    "line_instances": [
+        "AC",
+        "CP",
+        "CB",
+        "PB",
+        "AB",
+        "AP",
+        "GF",
+        "QF",
+        "DF",
+        "DQ",
+        "DG",
+        "QG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            497.0,
+            446.3949579831933
+        ],
+        "C": [
+            153.30252100840337,
+            435.47058823529414
+        ],
+        "G": [
+            762.546218487395,
+            377.48739495798327
+        ],
+        "A": [
+            108.76470588235294,
+            96.81512605042019
+        ],
+        "D": [
+            730.6134453781513,
+            146.3949579831933
+        ],
+        "Q": [
+            749.1008403361345,
+            290.09243697478996
+        ],
+        "P": [
+            286.91596638655466,
+            439.6722689075631
+        ],
+        "F": [
+            991.9579831932773,
+            384.2100840336135
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "10",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        8.0,
+        10.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 70.158638,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DFQ, FQ, 8 = FQ, \u2220PAB, \u2220GDF, \u2220DFQ = \u2220QFG, BP, DF, \u2220ABC, \u2220GFD, 3.14 = pi, \u2220CAP, \u2220BAC, \u2220QFG, AB, \u2220CAP = \u2220PAB, AP, 15 = AB, 12 = DF, \u25b3ABC ~ \u25b3FDG, P on BC, x = AP, Q on DG, DQ\n\nStep 2:\nTheorem: Circumference splited\nPremises : \u2220CAP, \u2220PAB, \u2220BAC\nConclusions: 2 * pi = \u2220BAC + \u2220CAP + \u2220PAB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220QFG, \u2220GFD, \u2220DFQ\nConclusions: 2 * pi = \u2220DFQ + \u2220GFD + \u2220QFG\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BP, AP, AB\nConclusions: \u25b3ABP\n\nStep 5:\nTheorem: Evaluate\nPremises : 15 = AB, 12 = DF\nConclusions: 1.25 = AB / DF\n\nStep 6:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3FDG\nConclusions: \u2220ABC = \u2220GDF, \u2220BAC = \u2220GFD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ABC, P on BC\nConclusions: \u2220ABC = \u2220ABP\n\nStep 8:\nTheorem: Same Angle\nPremises : Q on DG, \u2220GDF\nConclusions: \u2220GDF = \u2220QDF\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : DQ, DF, FQ\nConclusions: \u25b3DFQ\n\nStep 10:\nTheorem: Substitution\nPremises : 2 * pi = \u2220DFQ + \u2220GFD + \u2220QFG, \u2220DFQ = \u2220QFG, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220GFD + \u2220QFG + \u2220QFG\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, P)\nPremises : \u25b3ABP\nConclusions: pi = \u2220ABP + \u2220BPA + \u2220PAB\n\nStep 12:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAC + \u2220CAP + \u2220PAB, \u2220CAP = \u2220PAB, \u2220BAC = \u2220GFD, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220GFD + \u2220PAB + \u2220PAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220GDF, \u2220ABC = \u2220ABP\nConclusions: \u2220ABP = \u2220GDF\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(D, F, Q)\nPremises : \u25b3DFQ\nConclusions: pi = \u2220DFQ + \u2220FQD + \u2220QDF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GDF = \u2220QDF, \u2220ABP = \u2220GDF\nConclusions: \u2220ABP = \u2220QDF\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220DFQ = \u2220QFG, pi = \u2220DFQ + \u2220FQD + \u2220QDF, 3.14 = pi\nConclusions: 3.14 = \u2220FQD + \u2220QDF + \u2220QFG\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220ABP = \u2220QDF, pi = \u2220ABP + \u2220BPA + \u2220PAB, 3.14 = pi\nConclusions: 3.14 = \u2220BPA + \u2220PAB + \u2220QDF\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220FQD + \u2220QDF + \u2220QFG, 2 * 3.14 = \u2220GFD + \u2220QFG + \u2220QFG, 3.14 = \u2220BPA + \u2220PAB + \u2220QDF, 2 * 3.14 = \u2220GFD + \u2220PAB + \u2220PAB\nConclusions: \u2220BPA = \u2220FQD\n\nStep 19:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABP = \u2220QDF, \u2220BPA = \u2220FQD\nConclusions: \u25b3ABP ~ \u25b3FDQ\n\nStep 20:\nTheorem: Similar Definition\nPremises : \u25b3ABP ~ \u25b3FDQ\nConclusions: sim_ratio_triangle_a_b_p_triangle_f_d_q = AP / FQ, sim_ratio_triangle_a_b_p_triangle_f_d_q = AB / DF\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_p_triangle_f_d_q = AB / DF, 1.25 = AB / DF\nConclusions: 1.25 = sim_ratio_triangle_a_b_p_triangle_f_d_q\n\nStep 22:\nTheorem: Substitution\nPremises : 8 = FQ, x = AP, 1.25 = sim_ratio_triangle_a_b_p_triangle_f_d_q, sim_ratio_triangle_a_b_p_triangle_f_d_q = AP / FQ\nConclusions: 1.25 = x / 8\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 1.25 = x / 8, x = AP\nConclusions: 10 = AP\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : x = AP, 10 = AP\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, P)",
+        "Line(C, B)",
+        "Line(P, B)",
+        "Line(A, B)",
+        "Line(A, P)",
+        "Line(G, F)",
+        "Line(Q, F)",
+        "Line(D, F)",
+        "Line(D, Q)",
+        "Line(D, G)",
+        "Line(Q, G)",
+        "PointLiesOnLine(P, Line(C, B))",
+        "PointLiesOnLine(Q, Line(D, G))",
+        "Similar(Triangle(A, B, C), Triangle(F, D, G))",
+        "Equals(LengthOf(Line(B, A)), 15.0)",
+        "Equals(LengthOf(Line(A, P)), x)",
+        "Equals(LengthOf(Line(F, D)), 12.0)",
+        "Equals(LengthOf(Line(F, Q)), 8.0)",
+        "Equals(MeasureOf(Angle(P, A, B)), MeasureOf(Angle(C, A, P)))",
+        "Equals(MeasureOf(Angle(D, F, Q)), MeasureOf(Angle(Q, F, G)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,90 @@
+{
+    "problem_id": "1138",
+    "solved": true,
+    "problem_text": "Find m \\angle B.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, B, A)), 21x-8)",
+        "Equals(MeasureOf(Angle(C, D, A)), 23x+12)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(B, Circle(E))",
+        "PointLiesOnCircle(C, Circle(E))",
+        "PointLiesOnCircle(D, Circle(E))",
+        "Find(MeasureOf(Angle(B)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            40.628571428571426,
+            212.74404761904762
+        ],
+        "D": [
+            110.00967032967031,
+            295.7007211538462
+        ],
+        "B": [
+            111.7135238095238,
+            66.02638888888889
+        ],
+        "C": [
+            266.0419047619048,
+            253.50277777777782
+        ],
+        "E": [
+            161.40109890109886,
+            180.7967032967033
+        ]
+    },
+    "problem_choices": [
+        52.0,
+        76.0,
+        104.0,
+        128.0
+    ],
+    "choices_precise_value": [
+        52.0,
+        76.0,
+        104.0,
+        128.0
+    ],
+    "problem_answer": 76.0,
+    "total_time": 68.37823,
+    "solution_predicate": "Equals(1.3264502315, MeasureOf(Angle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CD, D on \u2299(E, radius_E), pi * ((12 + 23 * x) / 180) = \u2220CDA, \u2220CDA, \u2220CBA, AD, \u2220CBA, pi * ((21 * x - 8) / 180) = \u2220ABC, AE, \u2220EBC, BC, \u2220ABE, A on \u2299(E, radius_E), C on \u2299(E, radius_E), DE, \u2220CDE, BE, CE, \u2220ADC, \u2220EDA, AB, \u2220AEC, B on \u2299(E, radius_E), 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : D on \u2299(E, radius_E)\nConclusions: radius_E = DE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ABE, \u2220CBA, \u2220EBC\nConclusions: 2 * pi = \u2220ABE + \u2220CBA + \u2220EBC\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : A on \u2299(E, radius_E)\nConclusions: radius_E = AE\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : C on \u2299(E, radius_E)\nConclusions: radius_E = CE\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AD, DE, AE\nConclusions: \u25b3ADE\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : CE, DE, CD\nConclusions: \u25b3CDE\n\nStep 10:\nTheorem: Definition of Quadrilateral\nPremises : CE, AD, AE, CD\nConclusions: Quadrilateral(A, D, C, E)\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : CE, BC, BE\nConclusions: \u25b3BCE\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220ADC, \u2220EDA, \u2220CDE\nConclusions: 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA\n\nStep 13:\nTheorem: Definition of Quadrilateral\nPremises : CE, AE, BC, AB\nConclusions: Quadrilateral(A, B, C, E)\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : AB, AE, BE\nConclusions: \u25b3ABE\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : \u2220AEC\nConclusions: \u2220AEC = 2 * pi - \u2220CEA\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : B on \u2299(E, radius_E)\nConclusions: radius_E = BE\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((12 + 23 * x) / 180) = \u2220CDA\nConclusions: 3.14 * ((12 + 23 * x) / 180) = \u2220CDA\n\nStep 18:\nTheorem: Substitution\nPremises : pi * ((21 * x - 8) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * ((21 * x - 8) / 180) = \u2220ABC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = AE, radius_E = DE\nConclusions: AE = DE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = CE, radius_E = DE\nConclusions: CE = DE\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, C, D, A)\nPremises : Quadrilateral(A, D, C, E)\nConclusions: 2 * pi = \u2220AEC + \u2220CDA + \u2220DAE + \u2220ECD\n\nStep 22:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ADC + \u2220CDE + \u2220EDA\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, E)\nPremises : Quadrilateral(A, B, C, E)\nConclusions: 2 * pi = \u2220ABC + \u2220BCE + \u2220CEA + \u2220EAB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = CE, radius_E = BE\nConclusions: BE = CE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = AE, radius_E = BE\nConclusions: AE = BE\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDA = 2 * pi - \u2220ADC, 3.14 * ((12 + 23 * x) / 180) = \u2220CDA\nConclusions: 3.14 * ((12 + 23 * x) / 180) = 2 * pi - \u2220ADC\n\nStep 27:\nTheorem: Issoceles Triangle Property\nPremises : AE = DE, \u25b3ADE\nConclusions: \u2220DAE = \u2220EDA\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CDE, CE = DE\nConclusions: \u2220CDE = \u2220ECD\n\nStep 29:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AEC + \u2220CDA + \u2220DAE + \u2220ECD, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AEC + \u2220CDA + \u2220DAE + \u2220ECD\n\nStep 30:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABC + \u2220BCE + \u2220CEA + \u2220EAB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ABC + \u2220BCE + \u2220CEA + \u2220EAB\n\nStep 31:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCE, BE = CE\nConclusions: \u2220BCE = \u2220EBC\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABE, AE = BE\nConclusions: \u2220ABE = \u2220EAB\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : \u2220DAE = \u2220EDA, 3.14 * ((12 + 23 * x) / 180) = \u2220CDA, 2 * pi = \u2220ABE + \u2220CBA + \u2220EBC, 2 * 3.14 = \u2220AEC + \u2220CDA + \u2220DAE + \u2220ECD, 2 * 3.14 = \u2220ADC + \u2220CDE + \u2220EDA, \u2220CDE = \u2220ECD, 3.14 * ((12 + 23 * x) / 180) = 2 * pi - \u2220ADC, 3.14 * ((21 * x - 8) / 180) = \u2220ABC, 2 * 3.14 = \u2220ABC + \u2220BCE + \u2220CEA + \u2220EAB, \u2220BCE = \u2220EBC, \u2220ABE = \u2220EAB, \u2220AEC = 2 * pi - \u2220CEA, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: 1.33 = \u2220ABC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Circle(E, radius_E)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(B, Circle(E, radius_E))",
+        "PointLiesOnCircle(C, Circle(E, radius_E))",
+        "PointLiesOnCircle(D, Circle(E, radius_E))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Sub(Mul(21.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(Add(Mul(23.0, x), 12.0), 180.0)))"
+    ],
+    "correct": true
+}

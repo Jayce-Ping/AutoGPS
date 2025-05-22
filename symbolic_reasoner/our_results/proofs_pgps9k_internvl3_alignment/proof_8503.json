@@ -1,0 +1,94 @@
+{
+    "problem_id": "8503",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 8)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, B)), 12.5)",
+        "Equals(LengthOf(Line(D, C)), z)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(C, B))",
+        "Perpendicular(Line(C, D), Line(C, A))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AD",
+        "BD",
+        "DC",
+        "CB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.707555555555555,
+            233.34787878787878
+        ],
+        "B": [
+            169.61641025641026,
+            233.48811188811186
+        ],
+        "C": [
+            169.44761904761907,
+            17.945454545454545
+        ],
+        "D": [
+            478.0562962962963,
+            233.67070707070707
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        8.0,
+        10.0,
+        12.806248474865697
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.806248474865697
+    ],
+    "problem_answer": 6.0,
+    "total_time": 55.601819,
+    "solution_predicate": "Equals(12.8062484749, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAC, CD, 12.5 = BD, AC \u22a5 CD, \u2220DAC, 8 = AB, AC, cos(\u2220BAC), AD, y = AC, AB \u22a5 BC, B on AD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 BC, cos(\u2220BAC)\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220DAC, B on AD\nConclusions: \u2220BAC = \u2220DAC\n\nStep 5:\nTheorem: Line Segment Split\nPremises : B on AD\nConclusions: AD = AB + BD\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : AC \u22a5 CD, \u2220DAC, \u25b3ACD\nConclusions: AC / AD = cos(\u2220DAC)\n\nStep 7:\nTheorem: Substitution\nPremises : y = AC, \u2220BAC = \u2220DAC, AB / AC = cos(\u2220BAC), 8 = AB\nConclusions: 8 / y = cos(\u2220DAC)\n\nStep 8:\nTheorem: Substitution\nPremises : AD = AB + BD, 8 = AB, 12.5 = BD\nConclusions: 12.5 + 8 = AD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AC / AD = cos(\u2220DAC), 8 / y = cos(\u2220DAC)\nConclusions: 8 / y = AC / AD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 12.5 + 8 = AD\nConclusions: 20.5 = AD\n\nStep 11:\nTheorem: Substitution\nPremises : 20.5 = AD, 8 / y = AC / AD, y = AC\nConclusions: 8 / y = y / 20.5\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 8 / y = y / 20.5\nConclusions: 12.81 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(C, B))",
+        "Perpendicular(Line(C, D), Line(C, A))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, B)), 12.5)",
+        "Equals(LengthOf(Line(D, C)), z)"
+    ],
+    "correct": false
+}

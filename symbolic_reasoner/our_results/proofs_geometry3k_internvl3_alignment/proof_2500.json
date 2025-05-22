@@ -1,0 +1,103 @@
+{
+    "problem_id": "2500",
+    "solved": true,
+    "problem_text": "Find m \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "Parallel(Line(F, C), Line(E, D))",
+        "Perpendicular(Line(F, E), Line(D, E))",
+        "Perpendicular(Line(A, F), Line(B, F))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(MeasureOf(Angle(B, F, D)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(C, D, F)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(F, B, A)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, A)), 48)",
+        "Equals(MeasureOf(Angle(E, D, F)), 39)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "B",
+        "F",
+        "C",
+        "E",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AF",
+        "AE",
+        "FE",
+        "ED",
+        "CD",
+        "FB",
+        "FC",
+        "BC",
+        "FD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            248.96446700507613,
+            161.94416243654823
+        ],
+        "F": [
+            133.73604060913706,
+            161.94416243654823
+        ],
+        "C": [
+            460.6395939086294,
+            162.4517766497462
+        ],
+        "E": [
+            134.751269035533,
+            427.4263959390863
+        ],
+        "A": [
+            133.2284263959391,
+            56.36040609137056
+        ],
+        "D": [
+            459.62436548223354,
+            426.9187817258883
+        ]
+    },
+    "problem_choices": [
+        "39",
+        "42",
+        "48",
+        "51"
+    ],
+    "choices_precise_value": [
+        39.0,
+        42.0,
+        48.0,
+        51.0
+    ],
+    "problem_answer": 39.0,
+    "total_time": 35.446052,
+    "solution_predicate": "Equals(0.6806784083, MeasureOf(Angle(D, F, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on CF, \u2220DFC, CF || DE, pi * (39 / 180) = \u2220FDE\n\nStep 2:\nTheorem: Same Angle\nPremises : B on CF, \u2220DFC\nConclusions: \u2220DFB = \u2220DFC\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : CF || DE\nConclusions: \u2220DFC = \u2220FDE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (39 / 180) = \u2220FDE, \u2220DFC = \u2220FDE\nConclusions: pi * (39 / 180) = \u2220DFC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFB = \u2220DFC, pi * (39 / 180) = \u2220DFC\nConclusions: pi * (39 / 180) = \u2220DFB\n\nStep 6:\nTheorem: Evaluate\nPremises : pi * (39 / 180) = \u2220DFB\nConclusions: 0.68 = \u2220DFB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, E)",
+        "Line(F, E)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(B, C)",
+        "Line(F, D)",
+        "Line(A, B)",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "Parallel(Line(F, C), Line(E, D))",
+        "Perpendicular(Line(F, E), Line(D, E))",
+        "Perpendicular(Line(A, F), Line(B, F))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(48.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, E)), Mul(pi, Div(39.0, 180.0)))"
+    ],
+    "correct": true
+}

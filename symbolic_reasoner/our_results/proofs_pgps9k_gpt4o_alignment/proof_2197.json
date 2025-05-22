@@ -1,0 +1,89 @@
+{
+    "problem_id": "2197",
+    "solved": true,
+    "problem_text": "Find the value of variable z.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, D)), 60)",
+        "Equals(MeasureOf(Arc(D, C)), z)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnCircle(D, Circle(B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AD",
+        "CD"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            21.43125,
+            118.34357142857142
+        ],
+        "B": [
+            118.75004745050867,
+            118.41619680270345
+        ],
+        "C": [
+            217.59333333333333,
+            119.13428571428571
+        ],
+        "D": [
+            168.275,
+            204.53142857142856
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 31.065339,
+    "solution_predicate": "Equals(60.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACD, \u2220ACD, CD, B on AC, C on \u2299(B, radius_B), 3.14 = pi, pi * (z / 180) = Arc(DBC), \u2220DCA, BD, BC, \u2220BCD, Arc(DBC), pi * (60 / 180) = \u2220BCD, D on \u2299(B, radius_B)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ACD, B on AC\nConclusions: \u2220ACD = \u2220BCD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_B)\nConclusions: radius_B = BC\n\nStep 5:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DBC)\nConclusions: \u2220DBC = Arc(DBC)\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : D on \u2299(B, radius_B)\nConclusions: radius_B = BD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220BCD, pi * (60 / 180) = \u2220BCD\nConclusions: pi * (60 / 180) = \u2220ACD\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220BCD = 2 * pi - \u2220DCB, 3.14 = pi, pi * (60 / 180) = \u2220BCD\nConclusions: 3.14 * (60 / 180) = 2 * 3.14 - \u2220DCB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = Arc(DBC), pi * (z / 180) = Arc(DBC)\nConclusions: pi * (z / 180) = \u2220DBC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BC, radius_B = BD\nConclusions: BC = BD\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ACD = 2 * pi - \u2220DCA, \u2220DCA = \u2220DCB, 3.14 = pi, pi * (60 / 180) = \u2220ACD\nConclusions: pi * (60 / 180) = 2 * 3.14 - \u2220DCB\n\nStep 16:\nTheorem: Substitution\nPremises : pi * (z / 180) = \u2220DBC, 3.14 = pi\nConclusions: 3.14 * (z / 180) = \u2220DBC\n\nStep 17:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCD, BC = BD\nConclusions: \u2220BCD = \u2220CDB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = 2 * 3.14 - \u2220DCB, pi * (60 / 180) = 2 * 3.14 - \u2220DCB\nConclusions: 3.14 * (60 / 180) = pi * (60 / 180)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = pi * (60 / 180), pi * (60 / 180) = \u2220BCD\nConclusions: 3.14 * (60 / 180) = \u2220BCD\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (60 / 180) = \u2220BCD\nConclusions: 1.05 = \u2220BCD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220BCD, \u2220BCD = \u2220CDB\nConclusions: 1.05 = \u2220CDB\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCD + \u2220CDB + \u2220DBC, 1.05 = \u2220CDB, 1.05 = \u2220BCD, 3.14 * (z / 180) = \u2220DBC\nConclusions: 3.14 = 1.05 + 1.05 + 3.14 * (z / 180)\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.05 + 1.05 + 3.14 * (z / 180)\nConclusions: 60 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnCircle(D, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Arc(D, B, C)), Mul(pi, Div(z, 180.0)))"
+    ],
+    "correct": true
+}

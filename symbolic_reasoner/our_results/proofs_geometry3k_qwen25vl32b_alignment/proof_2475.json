@@ -1,0 +1,124 @@
+{
+    "problem_id": "2475",
+    "solved": true,
+    "problem_text": "If m \\angle 5 = 7 x - 5 and m \\angle 4 = 2 x + 23, find x.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(E, Line(G, A))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Parallel(Line(G, A), Line(H, B))",
+        "Equals(MeasureOf(Angle(G, E, D)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(G, E, F)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(H, D, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(A, E, D)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, E, F)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(H, D, C)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(5)),7x-5)",
+        "Equals(MeasureOf(Angle(4)),2x+23)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "HD",
+        "HB",
+        "DB",
+        "GE",
+        "GA",
+        "EA",
+        "FE",
+        "FD",
+        "FC",
+        "ED",
+        "EC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            143.84375,
+            317.1875
+        ],
+        "B": [
+            291.109375,
+            316.015625
+        ],
+        "C": [
+            400.09375,
+            231.640625
+        ],
+        "D": [
+            291.5,
+            178.90625
+        ],
+        "E": [
+            143.0625,
+            108.203125
+        ],
+        "F": [
+            55.171875,
+            66.40625
+        ],
+        "G": [
+            144.234375,
+            14.84375
+        ],
+        "H": [
+            291.5,
+            14.453125
+        ]
+    },
+    "problem_choices": [
+        "5.6",
+        "18",
+        "20",
+        "22"
+    ],
+    "choices_precise_value": [
+        5.6,
+        18.0,
+        20.0,
+        22.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 30.46254,
+    "solution_predicate": "Equals(18.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BDC, pi * ((23 + 2 * x) / 180) = \u2220AED, AG || BH, \u2220HDE, \u2220CDH, 3.14 = pi, D on BH, \u2220CEG, D on CE, pi * ((7 * x - 5) / 180) = \u2220EDB, \u2220EDB\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220AED = \u2220HDE, \u2220DEG = \u2220EDB\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220CDH = \u2220CEG\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : D on BH, D on CE\nConclusions: \u2220BDC = \u2220HDE\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CEG, D on CE\nConclusions: \u2220CEG = \u2220DEG\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((7 * x - 5) / 180) = \u2220EDB, 3.14 = pi\nConclusions: 3.14 * ((7 * x - 5) / 180) = \u2220EDB\n\nStep 7:\nTheorem: Circumference Split\nPremises : \u2220HDE, \u2220BDC, \u2220CDH, \u2220EDB\nConclusions: 2 * pi = \u2220BDC + \u2220CDH + \u2220EDB + \u2220HDE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220HDE, pi * ((23 + 2 * x) / 180) = \u2220AED\nConclusions: pi * ((23 + 2 * x) / 180) = \u2220HDE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 * x - 5) / 180) = \u2220EDB, \u2220DEG = \u2220EDB\nConclusions: pi * ((7 * x - 5) / 180) = \u2220DEG\n\nStep 10:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDC + \u2220CDH + \u2220EDB + \u2220HDE, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BDC + \u2220CDH + \u2220EDB + \u2220HDE\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((23 + 2 * x) / 180) = \u2220HDE\nConclusions: 3.14 * ((23 + 2 * x) / 180) = \u2220HDE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220HDE, pi * ((23 + 2 * x) / 180) = \u2220HDE\nConclusions: pi * ((23 + 2 * x) / 180) = \u2220BDC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEG = \u2220DEG, pi * ((7 * x - 5) / 180) = \u2220DEG\nConclusions: pi * ((7 * x - 5) / 180) = \u2220CEG\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((23 + 2 * x) / 180) = \u2220BDC\nConclusions: 3.14 * ((23 + 2 * x) / 180) = \u2220BDC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 * x - 5) / 180) = \u2220CEG, \u2220CDH = \u2220CEG\nConclusions: pi * ((7 * x - 5) / 180) = \u2220CDH\n\nStep 16:\nTheorem: Substitution\nPremises : pi * ((7 * x - 5) / 180) = \u2220CDH, 3.14 = pi\nConclusions: 3.14 * ((7 * x - 5) / 180) = \u2220CDH\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((23 + 2 * x) / 180) = \u2220HDE, 3.14 * ((7 * x - 5) / 180) = \u2220CDH, 2 * 3.14 = \u2220BDC + \u2220CDH + \u2220EDB + \u2220HDE, 3.14 * ((7 * x - 5) / 180) = \u2220EDB, 3.14 * ((23 + 2 * x) / 180) = \u2220BDC\nConclusions: 18 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, D)",
+        "Line(H, B)",
+        "Line(D, B)",
+        "Line(G, E)",
+        "Line(G, A)",
+        "Line(E, A)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(E, Line(G, A))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Parallel(Line(G, A), Line(H, B))",
+        "Equals(MeasureOf(Angle(E, D, B)), Mul(pi, Div(Sub(Mul(7.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(Add(Mul(2.0, x), 23.0), 180.0)))"
+    ],
+    "correct": true
+}

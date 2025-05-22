@@ -1,0 +1,113 @@
+{
+    "problem_id": "7051",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Equals(LengthOf(Line(E, A)), x)",
+        "Equals(MeasureOf(Angle(D, E, C)), 60)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AD",
+        "BD",
+        "DE",
+        "EC",
+        "EA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            138.63852596314905,
+            33.0392380952381
+        ],
+        "B": [
+            226.07788944723617,
+            123.95755102040818
+        ],
+        "C": [
+            104.14824120603015,
+            153.92000000000002
+        ],
+        "D": [
+            312.6937629323086,
+            214.8114285714286
+        ],
+        "E": [
+            68.58542713567839,
+            275.2195918367347
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        5.0,
+        10.0,
+        60.0
+    ],
+    "choices_precise_value": [
+        2.5,
+        5.0,
+        10.0,
+        60.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 98.960424,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC = CE, x = AE, B on AD, C on AE, 5 = BC, BC, BD = CE, AB, AC, AB = CE, AB = AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AD\nConclusions: AD = AB + BD\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Substitution\nPremises : AD = AB + BD, AB = CE, BD = CE\nConclusions: AD = CE + CE\n\nStep 6:\nTheorem: Substitution\nPremises : AC = CE, x = AE, AE = AC + CE\nConclusions: x = CE + CE\n\nStep 7:\nTheorem: Equilateral Triangle Property\nPremises : AB = AC, \u25b3ABC\nConclusions: AB = AC, AC = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AD = CE + CE, x = CE + CE\nConclusions: x = AD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, AC = CE, 5 = BC\nConclusions: 5 = CE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : x = AD, AD = AB + BD\nConclusions: x = AB + BD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CE, AB = CE\nConclusions: 5 = AB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CE, BD = CE\nConclusions: 5 = BD\n\nStep 13:\nTheorem: Evaluate\nPremises : 5 = AB, 5 = BD\nConclusions: 10 = AB + BD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AB + BD, x = AB + BD\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Line(E, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(C, B)), 5.0)",
+        "Equals(LengthOf(Line(E, A)), x)",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

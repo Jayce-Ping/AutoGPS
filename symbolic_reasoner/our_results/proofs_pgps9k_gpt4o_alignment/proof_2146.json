@@ -1,0 +1,117 @@
+{
+    "problem_id": "2146",
+    "solved": true,
+    "problem_text": "Find the value of variable y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 75)",
+        "Equals(MeasureOf(Angle(C, D, E)), z)",
+        "Equals(MeasureOf(Arc(A, E)), y)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "BA",
+        "AC",
+        "AD",
+        "CD",
+        "DE",
+        "EC",
+        "EB",
+        "CB"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            203.17617866004966,
+            46.246153846153845
+        ],
+        "B": [
+            100.89400921658986,
+            50.57714285714286
+        ],
+        "C": [
+            141.63440860215053,
+            178.45142857142858
+        ],
+        "D": [
+            92.60711331679074,
+            285.1112087912088
+        ],
+        "E": [
+            180.8709677419355,
+            300.6
+        ],
+        "F": [
+            157.18525382324296,
+            169.73644668722943
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        75.0,
+        105.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        75.0,
+        105.0,
+        150.0
+    ],
+    "problem_answer": 150.0,
+    "total_time": 112.137539,
+    "solution_predicate": "Equals(150.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on \u2299(F, radius_F), \u2220FEB, pi * (75 / 180) = \u2220CBA, \u2220CBF, Arc(EFA), \u2220EBA, \u2220FBA, C on BE, BF, BE, A on \u2299(F, radius_F), EF, \u2220EBF, \u2220ABC, Arc(AFE), \u2220CBA, AF, AB, 3.14 = pi, B on \u2299(F, radius_F), pi * (y / 180) = Arc(EFA)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(F, radius_F)\nConclusions: radius_F = EF\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EFA)\nConclusions: \u2220EFA = Arc(EFA)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : Arc(EFA)\nConclusions: Arc(EFA) = 2 * pi - Arc(AFE)\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220EBA, C on BE\nConclusions: \u2220CBA = \u2220EBA\n\nStep 6:\nTheorem: Same Angle\nPremises : C on BE, \u2220FEB\nConclusions: \u2220FEB = \u2220FEC\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(F, radius_F)\nConclusions: radius_F = AF\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : EF, BF, BE\nConclusions: \u25b3BEF\n\nStep 9:\nTheorem: Same Angle\nPremises : C on BE, \u2220EBF\nConclusions: \u2220CBF = \u2220EBF\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220ABC, \u2220FBA, \u2220CBF\nConclusions: 2 * pi = \u2220ABC + \u2220CBF + \u2220FBA\n\nStep 11:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AFE)\nConclusions: \u2220AFE = Arc(AFE)\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AF, BF, AB\nConclusions: \u25b3ABF\n\nStep 14:\nTheorem: Definition of Quadrilateral\nPremises : EF, AF, AB, BE\nConclusions: Quadrilateral(A, B, E, F)\n\nStep 15:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi, 1.31 = pi * (75 / 180)\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : B on \u2299(F, radius_F)\nConclusions: radius_F = BF\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = Arc(EFA), \u2220EFA = Arc(EFA)\nConclusions: pi * (y / 180) = \u2220EFA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBA, pi * (75 / 180) = \u2220CBA\nConclusions: pi * (75 / 180) = \u2220EBA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * pi - \u2220ABC, pi * (75 / 180) = \u2220CBA\nConclusions: pi * (75 / 180) = 2 * pi - \u2220ABC\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, E, B, A)\nPremises : Quadrilateral(A, B, E, F)\nConclusions: 2 * pi = \u2220AFE + \u2220BAF + \u2220EBA + \u2220FEB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220ABC + \u2220CBF + \u2220FBA\nConclusions: 6.28 = \u2220ABC + \u2220CBF + \u2220FBA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = BF, radius_F = EF\nConclusions: BF = EF\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = AF, radius_F = BF\nConclusions: AF = BF\n\nStep 24:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220EFA, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220EFA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (75 / 180) = 2 * pi - \u2220ABC, 1.31 = pi * (75 / 180)\nConclusions: 1.31 = 2 * pi - \u2220ABC\n\nStep 26:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AFE + \u2220BAF + \u2220EBA + \u2220FEB, \u2220AFE = Arc(AFE), pi * (75 / 180) = \u2220EBA, \u2220FEB = \u2220FEC, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (75 / 180) + \u2220BAF + \u2220FEC + Arc(AFE)\n\nStep 27:\nTheorem: Issoceles Triangle Property\nPremises : BF = EF, \u25b3BEF\nConclusions: \u2220EBF = \u2220FEB\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : AF = BF, \u25b3ABF\nConclusions: \u2220BAF = \u2220FBA\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220EFA, pi * (y / 180) = \u2220EFA\nConclusions: 3.14 * (y / 180) = pi * (y / 180)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FEB = \u2220FEC, \u2220EBF = \u2220FEB\nConclusions: \u2220EBF = \u2220FEC\n\nStep 31:\nTheorem: Substitution\nPremises : 2 * 3.14 = pi * (75 / 180) + \u2220BAF + \u2220FEC + Arc(AFE), \u2220BAF = \u2220FBA, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (75 / 180) + \u2220FBA + \u2220FEC + Arc(AFE)\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = Arc(EFA), 3.14 * (y / 180) = pi * (y / 180)\nConclusions: 3.14 * (y / 180) = Arc(EFA)\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBF = \u2220FEC, \u2220CBF = \u2220EBF\nConclusions: \u2220CBF = \u2220FEC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : Arc(EFA) = 2 * pi - Arc(AFE), 3.14 * (y / 180) = Arc(EFA)\nConclusions: 3.14 * (y / 180) = 2 * pi - Arc(AFE)\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (75 / 180) + \u2220FBA + \u2220FEC + Arc(AFE), 3.14 * (y / 180) = 2 * pi - Arc(AFE), 1.31 = 2 * pi - \u2220ABC, \u2220CBF = \u2220FEC, 6.28 = \u2220ABC + \u2220CBF + \u2220FBA\nConclusions: 150 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Circle(F, radius_F)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(75.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(z, 180.0)))",
+        "Equals(MeasureOf(Arc(E, F, A)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

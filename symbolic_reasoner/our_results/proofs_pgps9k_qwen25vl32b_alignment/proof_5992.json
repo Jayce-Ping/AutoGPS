@@ -1,0 +1,68 @@
+{
+    "problem_id": "5992",
+    "solved": true,
+    "problem_text": "What is the circumference of \\odot P?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, P)), 4)",
+        "Equals(MeasureOf(Arc(D, C)), 80)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "Find(CircumferenceOf(Circle(P)))"
+    ],
+    "point_instances": [
+        "C",
+        "P",
+        "D"
+    ],
+    "line_instances": [
+        "PC",
+        "PD"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "C": [
+            241.03763440860217,
+            64.00285714285714
+        ],
+        "P": [
+            144.45695495230282,
+            143.1945990822903
+        ],
+        "D": [
+            240.47446236559142,
+            224.01
+        ]
+    },
+    "problem_choices": [
+        12.566,
+        25.133,
+        50.265,
+        7200.0
+    ],
+    "choices_precise_value": [
+        12.566,
+        25.133,
+        50.265,
+        7200.0
+    ],
+    "problem_answer": 25.133,
+    "total_time": 2.820378,
+    "solution_predicate": "Equals(25.1327412288, CircumferenceOf(Circle(P, radius_P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Circumference(\u2299(P, radius_P)), 4 = CP, C on \u2299(P, radius_P), 3.14 = pi\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(P, radius_P))\nConclusions: pi * 2 * radius_P = Circumference(\u2299(P, radius_P))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(P, radius_P)\nConclusions: radius_P = CP\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = CP, 4 = CP\nConclusions: 4 = radius_P\n\nStep 5:\nTheorem: Substitution\nPremises : pi * 2 * radius_P = Circumference(\u2299(P, radius_P)), 3.14 = pi, 4 = radius_P\nConclusions: 3.14 * 2 * 4 = Circumference(\u2299(P, radius_P))\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 * 2 * 4 = Circumference(\u2299(P, radius_P))\nConclusions: 25.13 = Circumference(\u2299(P, radius_P))\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, C)",
+        "Line(P, D)",
+        "Circle(P, radius_P)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "Equals(LengthOf(Line(C, P)), 4.0)",
+        "Equals(MeasureOf(Arc(D, P, C)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

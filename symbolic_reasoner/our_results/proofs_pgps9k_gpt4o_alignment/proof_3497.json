@@ -1,0 +1,86 @@
+{
+    "problem_id": "3497",
+    "solved": true,
+    "problem_text": "In quadrilateral PQRS, PQ = 721, QR = 547, RS = 593, PS = 756, and m \\angle P = 58. Find m \\angle PSQ.",
+    "logic_forms": [
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "Quadrilateral(P,Q,R,S)",
+        "Equals(LengthOf(Line(P,Q)),721)",
+        "Equals(LengthOf(Line(Q,R)),547)",
+        "Equals(LengthOf(Line(R,S)),593)",
+        "Equals(LengthOf(Line(P,S)),756)",
+        "Equals(MeasureOf(Angle(P)),58)",
+        "Find(MeasureOf(Angle(P,S,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "R",
+        "S"
+    ],
+    "line_instances": [
+        "SQ",
+        "QR",
+        "SR",
+        "PS",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            56.37735849056604,
+            36.01142857142857
+        ],
+        "Q": [
+            244.22358490566037,
+            43.99657142857143
+        ],
+        "R": [
+            268.0397219463754,
+            184.8366917293233
+        ],
+        "S": [
+            120.00794438927508,
+            221.91939849624058
+        ]
+    },
+    "problem_choices": [
+        40.333,
+        58.552,
+        77.793,
+        122.0
+    ],
+    "choices_precise_value": [
+        40.333,
+        58.552,
+        77.793,
+        122.0
+    ],
+    "problem_answer": 58.552,
+    "total_time": 28.681436,
+    "solution_predicate": "Equals(1.021926911, MeasureOf(Angle(Q, S, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QS, 756 = PS, 721 = PQ, pi * (58 / 180) = \u2220SPQ, 3.14 = pi, PQ, PS\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.01 = pi * (58 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : PQ, QS, PS\nConclusions: \u25b3PQS\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (58 / 180) = \u2220SPQ, 1.01 = pi * (58 / 180)\nConclusions: 1.01 = \u2220SPQ\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3PQS\nConclusions: (PS ** 2 + QS ** 2) - PQ ** 2 = 2 * PS * QS * cos(\u2220QSP), (PQ ** 2 + PS ** 2) - QS ** 2 = 2 * PQ * PS * cos(\u2220SPQ)\n\nStep 6:\nTheorem: Substitution\nPremises : (PS ** 2 + QS ** 2) - PQ ** 2 = 2 * PS * QS * cos(\u2220QSP), 721 = PQ, 756 = PS\nConclusions: (756 ** 2 + QS ** 2) - 721 ** 2 = 2 * 756 * QS * cos(\u2220QSP)\n\nStep 7:\nTheorem: Substitution\nPremises : 721 = PQ, 1.01 = \u2220SPQ, 756 = PS, (PQ ** 2 + PS ** 2) - QS ** 2 = 2 * PQ * PS * cos(\u2220SPQ)\nConclusions: 2 * 721 * 756 * cos(1.01) = (721 ** 2 + 756 ** 2) - QS ** 2\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : 2 * 721 * 756 * cos(1.01) = (721 ** 2 + 756 ** 2) - QS ** 2\nConclusions: 716.72 = QS\n\nStep 9:\nTheorem: Substitution\nPremises : (756 ** 2 + QS ** 2) - 721 ** 2 = 2 * 756 * QS * cos(\u2220QSP), 716.72 = QS\nConclusions: (716.72 ** 2 + 756 ** 2) - 721 ** 2 = 2 * 716.72 * 756 * cos(\u2220QSP)\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : (716.72 ** 2 + 756 ** 2) - 721 ** 2 = 2 * 716.72 * 756 * cos(\u2220QSP)\nConclusions: 1.02 = \u2220QSP\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, Q)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Line(P, S)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "Quadrilateral(P, Q, R, S)",
+        "Equals(LengthOf(Line(P, Q)), 721.0)",
+        "Equals(LengthOf(Line(Q, R)), 547.0)",
+        "Equals(LengthOf(Line(R, S)), 593.0)",
+        "Equals(LengthOf(Line(P, S)), 756.0)",
+        "Equals(MeasureOf(Angle(S, P, Q)), Mul(pi, Div(58.0, 180.0)))"
+    ],
+    "correct": true
+}

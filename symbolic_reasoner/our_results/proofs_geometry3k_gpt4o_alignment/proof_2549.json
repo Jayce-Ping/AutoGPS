@@ -1,0 +1,89 @@
+{
+    "problem_id": "2549",
+    "solved": true,
+    "problem_text": "If A E = m - 2, E C = m + 4, A D = 4, and A B = 20, find m.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(A,E)),m-2)",
+        "Equals(LengthOf(Line(E,C)),m+4)",
+        "Equals(LengthOf(Line(A,D)),4)",
+        "Equals(LengthOf(Line(A,B)),20)",
+        "Find(m)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "AD",
+        "AB",
+        "DB",
+        "BC",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            197.81447963800906,
+            30.09049773755656
+        ],
+        "C": [
+            236.2760180995475,
+            164.7058823529412
+        ],
+        "A": [
+            43.289592760180994,
+            165.15837104072398
+        ],
+        "D": [
+            107.54298642533936,
+            110.18099547511312
+        ],
+        "E": [
+            122.24886877828055,
+            164.93212669683257
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 36.720959,
+    "solution_predicate": "Equals(4.0, m)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = AD, 3.14 = pi, m - 2 = AE, \u2220BAC, \u2220BCA, \u2220CBA, \u2220CBA, \u2220BCA, \u2220DEA, 4 + m = CE, \u2220EDA, 20 = AB, \u2220DAC, E on AC, D on AB, BC || DE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEA\nConclusions: \u2220DEA = 2 * pi - \u2220AED\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDA\nConclusions: \u2220EDA = 2 * pi - \u2220ADE\n\nStep 6:\nTheorem: Same Angle\nPremises : E on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCE\n\nStep 7:\nTheorem: Line Segment Split\nPremises : E on AC\nConclusions: AC = AE + CE\n\nStep 8:\nTheorem: Same Angle\nPremises : E on AC, \u2220DAC\nConclusions: \u2220DAC = \u2220DAE\n\nStep 9:\nTheorem: Same Angle\nPremises : D on AB, \u2220BAC\nConclusions: \u2220BAC = \u2220DAC\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220CBA, D on AB\nConclusions: \u2220CBA = \u2220CBD\n\nStep 11:\nTheorem: Corresponding Angle Theorem\nPremises : BC || DE\nConclusions: \u2220ACB = \u2220AED, \u2220ABC = \u2220ADE\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DEA = 2 * pi - \u2220AED\nConclusions: \u2220DEA = 2 * 3.14 - \u2220AED\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220EDA = 2 * pi - \u2220ADE, 3.14 = pi\nConclusions: \u2220EDA = 2 * 3.14 - \u2220ADE\n\nStep 14:\nTheorem: Substitution\nPremises : AC = AE + CE, 4 + m = CE, m - 2 = AE\nConclusions: (4 + m) + (m - 2) = AC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAE, \u2220BAC = \u2220DAC\nConclusions: \u2220BAC = \u2220DAE\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220BCA = 2 * pi - \u2220ACB, \u2220BCA = \u2220BCE, 3.14 = pi, \u2220ACB = \u2220AED\nConclusions: \u2220BCE = 2 * 3.14 - \u2220AED\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220CBD, 3.14 = pi, \u2220CBA = 2 * pi - \u2220ABC, \u2220ABC = \u2220ADE\nConclusions: \u2220CBD = 2 * 3.14 - \u2220ADE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEA = 2 * 3.14 - \u2220AED, \u2220BCE = 2 * 3.14 - \u2220AED\nConclusions: \u2220BCE = \u2220DEA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDA = 2 * 3.14 - \u2220ADE, \u2220CBD = 2 * 3.14 - \u2220ADE\nConclusions: \u2220CBD = \u2220EDA\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCE, \u2220BCE = \u2220DEA\nConclusions: \u2220BCA = \u2220DEA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220CBD, \u2220CBD = \u2220EDA\nConclusions: \u2220CBA = \u2220EDA\n\nStep 22:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BCA = \u2220DEA, \u2220CBA = \u2220EDA, \u2220BAC = \u2220DAE\nConclusions: \u25b3ABC ~ \u25b3ADE\n\nStep 23:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ADE\nConclusions: \u2220CBA = \u2220EDA, \u2220BAC = \u2220DAE, \u2220ABC = \u2220ADE, sim_ratio_triangle_a_b_c_triangle_a_d_e = AB / AD, sim_ratio_triangle_a_b_c_triangle_a_d_e = AC / AE\n\nStep 24:\nTheorem: Substitution\nPremises : 4 = AD, sim_ratio_triangle_a_b_c_triangle_a_d_e = AB / AD, 20 = AB\nConclusions: 20 / 4 = sim_ratio_triangle_a_b_c_triangle_a_d_e\n\nStep 25:\nTheorem: Substitution\nPremises : (4 + m) + (m - 2) = AC, sim_ratio_triangle_a_b_c_triangle_a_d_e = AC / AE, m - 2 = AE\nConclusions: sim_ratio_triangle_a_b_c_triangle_a_d_e = ((4 + m) + (m - 2)) / (m - 2)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_a_d_e = ((4 + m) + (m - 2)) / (m - 2), 20 / 4 = sim_ratio_triangle_a_b_c_triangle_a_d_e\nConclusions: 20 / 4 = ((4 + m) + (m - 2)) / (m - 2)\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 20 / 4 = ((4 + m) + (m - 2)) / (m - 2)\nConclusions: 4 = m\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(A, E)), Sub(m, 2.0))",
+        "Equals(LengthOf(Line(E, C)), Add(m, 4.0))",
+        "Equals(LengthOf(Line(A, D)), 4.0)",
+        "Equals(LengthOf(Line(A, B)), 20.0)"
+    ],
+    "correct": true
+}

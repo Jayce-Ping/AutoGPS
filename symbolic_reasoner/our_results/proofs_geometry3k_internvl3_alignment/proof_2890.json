@@ -1,0 +1,91 @@
+{
+    "problem_id": "2890",
+    "solved": true,
+    "problem_text": "Find P T.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(R, Q))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "Parallel(Line(P, Q), Line(T, S))",
+        "Perpendicular(Line(S, R), Line(T, R))",
+        "Equals(LengthOf(Line(R, S)), 10)",
+        "Equals(LengthOf(Line(Q, S)), 5)",
+        "Equals(LengthOf(Line(Q, P)), 25)",
+        "Equals(LengthOf(Line(R, T)), x)",
+        "Find(LengthOf(Line(P,T)))"
+    ],
+    "point_instances": [
+        "Q",
+        "S",
+        "R",
+        "P",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "RQ",
+        "SQ",
+        "PQ",
+        "PT",
+        "PR",
+        "TR",
+        "TS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            168.38522427440634,
+            209.2348284960422
+        ],
+        "S": [
+            127.48812664907652,
+            208.70712401055408
+        ],
+        "R": [
+            45.43007915567283,
+            209.49868073878628
+        ],
+        "P": [
+            44.9023746701847,
+            44.5910290237467
+        ],
+        "T": [
+            44.9023746701847,
+            99.2084432717678
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "\\frac { 20 } { 3 }",
+        "7",
+        "22 / 3"
+    ],
+    "choices_precise_value": [
+        6.0,
+        6.666666666666667,
+        7.0,
+        7.333333333333333
+    ],
+    "problem_answer": 6.666666666666667,
+    "total_time": 75.653121,
+    "solution_predicate": "Equals(6.6666666667, LengthOf(Line(P, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, PR \u22a5 QR, 10 = RS, \u2220PQR, T on PR, x = RT, ST, \u2220TSR, QR, 25 = PQ, PQ || TS, PQ, RS \u22a5 RT, \u2220PQR, 5 = QS, S on QR, RT, PR, RS\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : PR \u22a5 QR\nConclusions: (3 * pi) / 2 = \u2220PRQ\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220PQR\nConclusions: \u2220PQR = 2 * pi - \u2220RQP\n\nStep 4:\nTheorem: Line Segment Split\nPremises : T on PR\nConclusions: PR = PT + RT\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220TSR\nConclusions: \u2220TSR = 2 * pi - \u2220RST\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : PQ || TS\nConclusions: \u2220RQP = \u2220RST, \u2220RPQ = \u2220RTS\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : RS \u22a5 RT\nConclusions: (3 * pi) / 2 = \u2220TRS\n\nStep 8:\nTheorem: Line Segment Split\nPremises : S on QR\nConclusions: QR = QS + RS\n\nStep 9:\nTheorem: Same Angle\nPremises : S on QR, \u2220PQR\nConclusions: \u2220PQR = \u2220PQS\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : PQ, QR, PR\nConclusions: \u25b3PQR\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : RT, ST, RS\nConclusions: \u25b3RST\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220TSR = 2 * pi - \u2220RST, 3.14 = pi\nConclusions: \u2220TSR = 2 * 3.14 - \u2220RST\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220PRQ, (3 * pi) / 2 = \u2220TRS\nConclusions: \u2220PRQ = \u2220TRS\n\nStep 14:\nTheorem: Substitution\nPremises : 10 = RS, 5 = QS, QR = QS + RS\nConclusions: 10 + 5 = QR\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220RQP = \u2220RST, \u2220PQR = 2 * pi - \u2220RQP, \u2220PQR = \u2220PQS, 3.14 = pi\nConclusions: \u2220PQS = 2 * 3.14 - \u2220RST\n\nStep 16:\nTheorem: Pythagorean Theorem\nPremises : \u25b3PQR, PR \u22a5 QR\nConclusions: PR = SqrtOf(PQ ** 2 - QR ** 2)\n\nStep 17:\nTheorem: Pythagorean Theorem\nPremises : \u25b3RST, RS \u22a5 RT\nConclusions: ST = SqrtOf(RS ** 2 + RT ** 2)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 10 + 5 = QR\nConclusions: 15 = QR\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TSR = 2 * 3.14 - \u2220RST, \u2220PQS = 2 * 3.14 - \u2220RST\nConclusions: \u2220PQS = \u2220TSR\n\nStep 20:\nTheorem: Substitution\nPremises : x = RT, ST = SqrtOf(RS ** 2 + RT ** 2), 10 = RS\nConclusions: SqrtOf(10 ** 2 + x ** 2) = ST\n\nStep 21:\nTheorem: Evaluate\nPremises : 15 = QR, 25 = PQ\nConclusions: 20 = SqrtOf(PQ ** 2 - QR ** 2)\n\nStep 22:\nTheorem: Substitution\nPremises : PR = SqrtOf(PQ ** 2 - QR ** 2), 15 = QR, 25 = PQ\nConclusions: SqrtOf(25 ** 2 - 15 ** 2) = PR\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQS = \u2220TSR, \u2220PQR = \u2220PQS\nConclusions: \u2220PQR = \u2220TSR\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(25 ** 2 - 15 ** 2) = PR, PR = SqrtOf(PQ ** 2 - QR ** 2)\nConclusions: SqrtOf(25 ** 2 - 15 ** 2) = SqrtOf(PQ ** 2 - QR ** 2)\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(25 ** 2 - 15 ** 2) = PR, PR = PT + RT\nConclusions: SqrtOf(25 ** 2 - 15 ** 2) = PT + RT\n\nStep 26:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220PRQ = \u2220TRS, \u2220PQR = \u2220TSR, \u2220RPQ = \u2220RTS\nConclusions: \u25b3PQR ~ \u25b3TSR\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(25 ** 2 - 15 ** 2) = SqrtOf(PQ ** 2 - QR ** 2), 20 = SqrtOf(PQ ** 2 - QR ** 2)\nConclusions: 20 = SqrtOf(25 ** 2 - 15 ** 2)\n\nStep 28:\nTheorem: Similar Definition\nPremises : \u25b3PQR ~ \u25b3TSR\nConclusions: \u2220RPQ = \u2220RTS, PQ / ST = QR / RS, \u2220PRQ = \u2220TRS, \u2220RQP = \u2220RST\n\nStep 29:\nTheorem: Substitution\nPremises : PQ / ST = QR / RS, 15 = QR, 25 = PQ, 10 = RS\nConclusions: 15 / 10 = 25 / ST\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : 15 / 10 = 25 / ST\nConclusions: 16.67 = ST\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(10 ** 2 + x ** 2) = ST, 16.67 = ST\nConclusions: 16.67 = SqrtOf(10 ** 2 + x ** 2)\n\nStep 32:\nTheorem: Solve Univariate Equation\nPremises : 16.67 = SqrtOf(10 ** 2 + x ** 2)\nConclusions: 13.33 = x\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 13.33 = x, x = RT\nConclusions: 13.33 = RT\n\nStep 34:\nTheorem: Substitution\nPremises : 13.33 = RT, SqrtOf(25 ** 2 - 15 ** 2) = PT + RT\nConclusions: SqrtOf(25 ** 2 - 15 ** 2) = 13.33 + PT\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(25 ** 2 - 15 ** 2) = 13.33 + PT, 20 = SqrtOf(25 ** 2 - 15 ** 2)\nConclusions: 20 = 13.33 + PT\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 20 = 13.33 + PT\nConclusions: 6.67 = PT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, Q)",
+        "Line(S, Q)",
+        "Line(P, Q)",
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(S, Line(R, Q))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "Parallel(Line(P, Q), Line(T, S))",
+        "Perpendicular(Line(S, R), Line(T, R))",
+        "Equals(LengthOf(Line(R, S)), 10.0)",
+        "Equals(LengthOf(Line(Q, S)), 5.0)",
+        "Equals(LengthOf(Line(Q, P)), 25.0)",
+        "Equals(LengthOf(Line(R, T)), x)"
+    ],
+    "correct": true
+}

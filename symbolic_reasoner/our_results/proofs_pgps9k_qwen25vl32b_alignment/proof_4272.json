@@ -1,0 +1,132 @@
+{
+    "problem_id": "4272",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, F)), x)",
+        "Equals(LengthOf(Line(D, C)), 7)",
+        "Equals(LengthOf(Line(D, O)), 5)",
+        "Equals(LengthOf(Line(E, D)), 7)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(O, B)), 5)",
+        "Equals(LengthOf(Line(O, B)), LengthOf(Line(D, O)))",
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(B, F)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(O, B)",
+        "Line(O, D)",
+        "Perpendicular(Line(A, F), Line(O, B))",
+        "PointLiesOnCircle(A, Circle(O))",
+        "PointLiesOnCircle(C, Circle(O))",
+        "PointLiesOnCircle(E, Circle(O))",
+        "PointLiesOnCircle(F, Circle(O))",
+        "PointLiesOnLine(B, Line(A, F))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "O",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AF",
+        "BF",
+        "ED",
+        "EC",
+        "DC",
+        "DO",
+        "OB"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "A": [
+            183.25773195876286,
+            20.618556701030926
+        ],
+        "B": [
+            227.24398625429552,
+            119.93127147766323
+        ],
+        "O": [
+            157.66750700868266,
+            150.24783994258337
+        ],
+        "C": [
+            264.701030927835,
+            226.8041237113402
+        ],
+        "D": [
+            155.78285714285715,
+            225.91767554479418
+        ],
+        "E": [
+            48.072527472527476,
+            226.97392438070406
+        ],
+        "F": [
+            270.8865979381443,
+            217.86941580756013
+        ]
+    },
+    "problem_choices": [
+        6.103,
+        7.0,
+        7.433,
+        14.0
+    ],
+    "choices_precise_value": [
+        6.103,
+        7.0,
+        7.433,
+        14.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 211.510366,
+    "solution_predicate": "Equals(14.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: EO, \u2299(O, radius_O), E on \u2299(O, radius_O), AB, 5 = BO, A on \u2299(O, radius_O), 3.14 = pi, AO, 7 = CD, C on \u2299(O, radius_O), BO, x = AF, CE, CO, BO = DO, B on AF, AB \u22a5 BO\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(O, radius_O)\nConclusions: radius_O = EO\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(O, radius_O)\nConclusions: radius_O = AO\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_O)\nConclusions: radius_O = CO\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AO, BO, AB\nConclusions: \u25b3ABO\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : EO, CO, CE\nConclusions: \u25b3CEO\n\nStep 8:\nTheorem: Line Segment Split\nPremises : B on AF\nConclusions: AF = AB + BF\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BO\nConclusions: pi / 2 = \u2220ABO\n\nStep 10:\nTheorem: Circle Vertical Theorem\nPremises : B on AF, AB \u22a5 BO, \u2299(O, radius_O)\nConclusions: AB = BF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = CO, radius_O = AO\nConclusions: AO = CO\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = CO, radius_O = EO\nConclusions: CO = EO\n\nStep 13:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABO, AB \u22a5 BO\nConclusions: AB = SqrtOf(AO ** 2 - BO ** 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AF = AB + BF, x = AF\nConclusions: x = AB + BF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220ABO\nConclusions: 1.57 = \u2220ABO\n\nStep 16:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3CEO, CO = EO\nConclusions: CD \u22a5 DO\n\nStep 17:\nTheorem: Substitution\nPremises : 5 = BO, AB = SqrtOf(AO ** 2 - BO ** 2), AB = BF, radius_O = AO\nConclusions: SqrtOf(radius_O ** 2 - 5 ** 2) = BF\n\nStep 18:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DO\nConclusions: pi / 2 = \u2220CDO\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(radius_O ** 2 - 5 ** 2) = BF, AB = BF\nConclusions: SqrtOf(radius_O ** 2 - 5 ** 2) = AB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220CDO\nConclusions: 1.57 = \u2220CDO\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = \u2220ABO, 1.57 = \u2220CDO\nConclusions: \u2220ABO = \u2220CDO\n\nStep 22:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : AO = CO, BO = DO, \u2220ABO = \u2220CDO\nConclusions: \u25b3ABO \u2245 \u25b3CDO\n\nStep 23:\nTheorem: Congruent Definition\nPremises : \u25b3ABO \u2245 \u25b3CDO\nConclusions: \u2220ABO = \u2220CDO, AB = CD, BO = DO\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 7 = CD, AB = CD, SqrtOf(radius_O ** 2 - 5 ** 2) = AB\nConclusions: 7 = SqrtOf(radius_O ** 2 - 5 ** 2)\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 7 = SqrtOf(radius_O ** 2 - 5 ** 2), SqrtOf(radius_O ** 2 - 5 ** 2) = BF\nConclusions: 7 = BF\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 7 = SqrtOf(radius_O ** 2 - 5 ** 2), SqrtOf(radius_O ** 2 - 5 ** 2) = AB\nConclusions: 7 = AB\n\nStep 27:\nTheorem: Evaluate\nPremises : 7 = BF, 7 = AB\nConclusions: 14 = AB + BF\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 14 = AB + BF, x = AB + BF\nConclusions: 14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(B, F)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(D, O)",
+        "Line(O, B)",
+        "Circle(O, radius_O)",
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(B, F)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(O, B)",
+        "Line(O, D)",
+        "Perpendicular(Line(A, F), Line(O, B))",
+        "PointLiesOnCircle(A, Circle(O, radius_O))",
+        "PointLiesOnCircle(C, Circle(O, radius_O))",
+        "PointLiesOnCircle(E, Circle(O, radius_O))",
+        "PointLiesOnCircle(F, Circle(O, radius_O))",
+        "PointLiesOnLine(B, Line(A, F))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(A, F)), x)",
+        "Equals(LengthOf(Line(D, C)), 7.0)",
+        "Equals(LengthOf(Line(D, O)), 5.0)",
+        "Equals(LengthOf(Line(E, D)), 7.0)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(O, B)), 5.0)",
+        "Equals(LengthOf(Line(O, B)), LengthOf(Line(D, O)))"
+    ],
+    "correct": true
+}

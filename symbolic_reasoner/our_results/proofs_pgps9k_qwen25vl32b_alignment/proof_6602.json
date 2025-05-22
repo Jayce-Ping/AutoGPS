@@ -1,0 +1,82 @@
+{
+    "problem_id": "6602",
+    "solved": true,
+    "problem_text": "\\triangle ABD \\cong \\triangle CDB, m \\angle A = 2x+14, m \\angle C = 3x-15, and m \\angle DBA = 49. Find x.",
+    "logic_forms": [
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Congruent(Triangle(A,B,D),Triangle(C,D,B))",
+        "Equals(MeasureOf(Angle(A)),2x+14)",
+        "Equals(MeasureOf(Angle(C)),3x-15)",
+        "Equals(MeasureOf(Angle(D,B,A)),49)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "BA",
+        "BD",
+        "CD",
+        "BC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            105.81914893617021,
+            46.31714285714286
+        ],
+        "C": [
+            252.67021276595744,
+            46.31714285714286
+        ],
+        "A": [
+            54.34929078014184,
+            205.0161904761905
+        ],
+        "D": [
+            200.8404255319149,
+            205.2726530612245
+        ]
+    },
+    "problem_choices": [
+        17.5,
+        21.333,
+        26.4,
+        29.0
+    ],
+    "choices_precise_value": [
+        17.5,
+        21.333,
+        26.4,
+        29.0
+    ],
+    "problem_answer": 29.0,
+    "total_time": 19.387813,
+    "solution_predicate": "Equals(29.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABD \u2245 \u25b3CDB, pi * ((3 * x - 15) / 180) = \u2220BCD, 3.14 = pi, pi * ((14 + 2 * x) / 180) = \u2220DAB\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CDB\nConclusions: \u2220BCD = \u2220DAB\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((3 * x - 15) / 180) = \u2220BCD, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 15) / 180) = \u2220BCD\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((14 + 2 * x) / 180) = \u2220DAB, 3.14 = pi\nConclusions: 3.14 * ((14 + 2 * x) / 180) = \u2220DAB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((14 + 2 * x) / 180) = \u2220DAB, \u2220BCD = \u2220DAB\nConclusions: pi * ((14 + 2 * x) / 180) = \u2220BCD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((14 + 2 * x) / 180) = \u2220DAB, 3.14 * ((14 + 2 * x) / 180) = \u2220DAB\nConclusions: 3.14 * ((14 + 2 * x) / 180) = pi * ((14 + 2 * x) / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((14 + 2 * x) / 180) = \u2220BCD, 3.14 * ((14 + 2 * x) / 180) = pi * ((14 + 2 * x) / 180)\nConclusions: 3.14 * ((14 + 2 * x) / 180) = \u2220BCD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x - 15) / 180) = \u2220BCD, 3.14 * ((14 + 2 * x) / 180) = \u2220BCD\nConclusions: 3.14 * ((14 + 2 * x) / 180) = 3.14 * ((3 * x - 15) / 180)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((14 + 2 * x) / 180) = 3.14 * ((3 * x - 15) / 180)\nConclusions: 29 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Congruent(Triangle(A, B, D), Triangle(C, D, B))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(Add(Mul(2.0, x), 14.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Sub(Mul(3.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(49.0, 180.0)))"
+    ],
+    "correct": true
+}

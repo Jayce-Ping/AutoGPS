@@ -1,0 +1,93 @@
+{
+    "problem_id": "2997",
+    "solved": true,
+    "problem_text": "The segment is tangent to the circle. Find m \\angle J.",
+    "logic_forms": [
+        "Circle(L)",
+        "Equals(LengthOf(Line(J, K)), x)",
+        "Equals(LengthOf(Line(J, L)), 5)",
+        "Equals(LengthOf(Line(L, K)), 4)",
+        "Find(MeasureOf(Angle(J)))",
+        "Line(A, L)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "PointLiesOnCircle(A, Circle(L))",
+        "PointLiesOnCircle(K, Circle(L))",
+        "PointLiesOnLine(A, Line(J, L))",
+        "Tangent(Line(J, K), Circle(L))"
+    ],
+    "point_instances": [
+        "J",
+        "A",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "JA",
+        "JL",
+        "AL",
+        "LK",
+        "JK"
+    ],
+    "circle_instances": [
+        "L"
+    ],
+    "point_positions": {
+        "J": [
+            103.41880341880342,
+            183.96581196581198
+        ],
+        "A": [
+            256.4102564102564,
+            183.53846153846155
+        ],
+        "L": [
+            379.2332268370607,
+            184.34504792332268
+        ],
+        "K": [
+            325.21367521367523,
+            75.84615384615385
+        ]
+    },
+    "problem_choices": [
+        36.87,
+        38.66,
+        51.34,
+        53.13
+    ],
+    "choices_precise_value": [
+        36.87,
+        38.66,
+        51.34,
+        53.13
+    ],
+    "problem_answer": 53.13,
+    "total_time": 19.339579,
+    "solution_predicate": "Equals(0.927295218, MeasureOf(Angle(L, J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JL, JK, 3.14 = pi, K on \u2299(L, radius_L), 4 = KL, 5 = JL, cos(\u2220KLJ), Tangent(JK, \u2299(L, radius_L)), KL\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Tangent Definition\nPremises : K on \u2299(L, radius_L), Tangent(JK, \u2299(L, radius_L))\nConclusions: JK \u22a5 KL\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : KL, JL, JK\nConclusions: \u25b3JKL\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 KL\nConclusions: pi / 2 = \u2220JKL\n\nStep 6:\nTheorem: Angle Cos Definition\nPremises : JK \u22a5 KL, cos(\u2220KLJ)\nConclusions: KL / JL = cos(\u2220KLJ)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220JKL, 1.57 = pi / 2\nConclusions: 1.57 = \u2220JKL\n\nStep 9:\nTheorem: Substitution\nPremises : KL / JL = cos(\u2220KLJ), 5 = JL, 4 = KL\nConclusions: 4 / 5 = cos(\u2220KLJ)\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 4 / 5 = cos(\u2220KLJ)\nConclusions: 0.64 = \u2220KLJ\n\nStep 11:\nTheorem: Substitution\nPremises : 0.64 = \u2220KLJ, pi = \u2220JKL + \u2220KLJ + \u2220LJK, 1.57 = \u2220JKL, 3.14 = pi\nConclusions: 3.14 = 0.64 + 1.57 + \u2220LJK\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.64 + 1.57 + \u2220LJK\nConclusions: 0.93 = \u2220LJK\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, A)",
+        "Line(J, L)",
+        "Line(A, L)",
+        "Line(L, K)",
+        "Line(J, K)",
+        "Circle(L, radius_L)",
+        "Circle(L, radius_L)",
+        "Line(A, L)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "PointLiesOnCircle(A, Circle(L, radius_L))",
+        "PointLiesOnCircle(K, Circle(L, radius_L))",
+        "PointLiesOnLine(A, Line(J, L))",
+        "Tangent(Line(J, K), Circle(L, radius_L))",
+        "Equals(LengthOf(Line(J, K)), x)",
+        "Equals(LengthOf(Line(J, L)), 5.0)",
+        "Equals(LengthOf(Line(L, K)), 4.0)"
+    ],
+    "correct": true
+}

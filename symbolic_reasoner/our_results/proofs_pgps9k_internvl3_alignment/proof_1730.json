@@ -1,0 +1,128 @@
+{
+    "problem_id": "1730",
+    "solved": true,
+    "problem_text": "Find the length of UR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Q, T)), 2x)",
+        "Equals(LengthOf(Line(Q, U)), 14)",
+        "Equals(LengthOf(Line(R, S)), 27)",
+        "Equals(LengthOf(Line(S, T)), 17)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(T, S)",
+        "Line(U, Q)",
+        "Line(V, S)",
+        "PointLiesOnCircle(T, Circle(W))",
+        "PointLiesOnCircle(U, Circle(W))",
+        "PointLiesOnCircle(V, Circle(W))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(U, Line(R, Q))",
+        "PointLiesOnLine(V, Line(R, S))",
+        "Find(LengthOf(Line(U,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "T",
+        "S",
+        "V",
+        "U",
+        "R",
+        "W"
+    ],
+    "line_instances": [
+        "QU",
+        "QR",
+        "UR",
+        "RV",
+        "RS",
+        "VS",
+        "ST",
+        "SQ",
+        "TQ"
+    ],
+    "circle_instances": [
+        "W"
+    ],
+    "point_positions": {
+        "Q": [
+            112.11458333333333,
+            422.4590476190477
+        ],
+        "T": [
+            327.66477272727275,
+            423.21558441558443
+        ],
+        "S": [
+            614.3046875,
+            422.5814285714286
+        ],
+        "V": [
+            423.6778846153846,
+            216.67076923076925
+        ],
+        "U": [
+            220.45238095238096,
+            234.5518367346939
+        ],
+        "R": [
+            304.03125,
+            86.64571428571429
+        ],
+        "W": [
+            327.5,
+            297.5
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        14.0,
+        17.0,
+        27.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        14.0,
+        17.0,
+        27.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 52.84605,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(U, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QR, T on QS, 27 = RS, 17 = ST, QS, T on \u2299(W, radius_W), V on RS, V on \u2299(W, radius_W), RS, U on QR, U on \u2299(W, radius_W), \u2299(W, radius_W)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : V on RS\nConclusions: RS = RV + SV\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : QS, RS, QR\nConclusions: \u25b3QRS\n\nStep 4:\nTheorem: Incenter definition\nPremises : U on QR, V on RS, T on \u2299(W, radius_W), V on \u2299(W, radius_W), \u2299(W, radius_W), \u25b3QRS, T on QS, U on \u2299(W, radius_W)\nConclusions: IsIncenterOf(W, \u25b3QRS)\n\nStep 5:\nTheorem: Properties of Incenter W of Triangle\nPremises : IsIncenterOf(W, \u25b3QRS)\nConclusions: RU = RV, ST = SV\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : ST = SV, 17 = ST\nConclusions: 17 = SV\n\nStep 7:\nTheorem: Substitution\nPremises : 17 = SV, 27 = RS, RS = RV + SV\nConclusions: 27 = 17 + RV\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 27 = 17 + RV, RU = RV\nConclusions: 10 = RU\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, U)",
+        "Line(Q, R)",
+        "Line(U, R)",
+        "Line(R, V)",
+        "Line(R, S)",
+        "Line(V, S)",
+        "Line(S, T)",
+        "Line(S, Q)",
+        "Line(T, Q)",
+        "Circle(W, radius_W)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(T, S)",
+        "Line(U, Q)",
+        "Line(V, S)",
+        "PointLiesOnCircle(T, Circle(W, radius_W))",
+        "PointLiesOnCircle(U, Circle(W, radius_W))",
+        "PointLiesOnCircle(V, Circle(W, radius_W))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(U, Line(R, Q))",
+        "PointLiesOnLine(V, Line(R, S))",
+        "Equals(LengthOf(Line(Q, T)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(Q, U)), 14.0)",
+        "Equals(LengthOf(Line(R, S)), 27.0)",
+        "Equals(LengthOf(Line(S, T)), 17.0)"
+    ],
+    "correct": true
+}

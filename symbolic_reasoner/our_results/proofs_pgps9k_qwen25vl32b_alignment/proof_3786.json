@@ -1,0 +1,110 @@
+{
+    "problem_id": "3786",
+    "solved": true,
+    "problem_text": "Use rhombus QRST. Find m \\angle TQS if m \\angle RST = 56.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, R, Q)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(P, R, S)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Q, P, R)), MeasureOf(Angle(3)))",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(P, Line(R, T))",
+        "Rhombus(Q,R,S,T)",
+        "Equals(MeasureOf(Angle(R,S,T)),56)",
+        "Find(MeasureOf(Angle(T,Q,S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "P",
+        "T",
+        "S"
+    ],
+    "line_instances": [
+        "QP",
+        "QS",
+        "PS",
+        "RP",
+        "RT",
+        "PT",
+        "QT",
+        "RS",
+        "QR",
+        "TS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            41.54407051282052,
+            47.760714285714286
+        ],
+        "R": [
+            269.7187028657617,
+            47.98285714285714
+        ],
+        "P": [
+            203.8666666666667,
+            151.768
+        ],
+        "T": [
+            138.10897435897436,
+            255.40081632653062
+        ],
+        "S": [
+            366.15213675213676,
+            255.67161904761906
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        56.0,
+        62.0,
+        124.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        56.0,
+        62.0,
+        124.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 126.567187,
+    "solution_predicate": "Equals(0.4886921906, MeasureOf(Angle(T, Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220SQR, \u2220TQR, \u2220RQT, 3.14 = pi, pi * (56 / 180) = \u2220RST, \u2220TQS, Rhombus(Q, R, S, T)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220TQR\nConclusions: \u2220TQR = 2 * pi - \u2220RQT\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220SQR, \u2220RQT, \u2220TQS\nConclusions: 2 * pi = \u2220RQT + \u2220SQR + \u2220TQS\n\nStep 4:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(Q, R, S, T)\nConclusions: Parallelogram(Q, R, S, T)\n\nStep 5:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(Q, R, S, T)\nConclusions: \u2220SQR = \u2220TQS\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(Q, R, S, T)\nConclusions: \u2220RST = \u2220TQR\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (56 / 180) = \u2220RST, \u2220RST = \u2220TQR\nConclusions: pi * (56 / 180) = \u2220TQR\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TQR = 2 * pi - \u2220RQT, pi * (56 / 180) = \u2220TQR\nConclusions: pi * (56 / 180) = 2 * pi - \u2220RQT\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (56 / 180) = 2 * pi - \u2220RQT, \u2220SQR = \u2220TQS, 2 * pi = \u2220RQT + \u2220SQR + \u2220TQS\nConclusions: 0.49 = \u2220SQR\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.49 = \u2220SQR, \u2220SQR = \u2220TQS\nConclusions: 0.49 = \u2220TQS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(P, S)",
+        "Line(R, P)",
+        "Line(R, T)",
+        "Line(P, T)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(Q, R)",
+        "Line(T, S)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(P, Line(R, T))",
+        "Rhombus(Q, R, S, T)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

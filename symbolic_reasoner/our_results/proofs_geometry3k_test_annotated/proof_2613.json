@@ -1,0 +1,103 @@
+{
+    "problem_id": "2613",
+    "solved": true,
+    "problem_text": "Find x. Assume that any segment that appears to be tangent is tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(E, A, B)), x+2.5)",
+        "Equals(MeasureOf(Arc(C, B)), 50)",
+        "Equals(MeasureOf(Arc(D, B)), 4x+5)",
+        "Tangent(Line(A, B), Circle(F))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "AD",
+        "AE",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            94.36997319034853,
+            138.1823056300268
+        ],
+        "B": [
+            174.2627345844504,
+            138.71849865951742
+        ],
+        "C": [
+            133.24396782841822,
+            118.343163538874
+        ],
+        "D": [
+            228.9544235924933,
+            71.69436997319035
+        ],
+        "E": [
+            260.857908847185,
+            58.825737265415555
+        ],
+        "F": [
+            175.37667560321717,
+            83.55093833780163
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "27.5",
+        "50",
+        "105"
+    ],
+    "choices_precise_value": [
+        25.0,
+        27.5,
+        50.0,
+        105.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 41.233399,
+    "solution_predicate": "Equals(25.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CFD, Arc(CFB), D on \u2299(F, radius_0_0), AC, Arc(BFD), C on \u2299(F, radius_0_0), pi * ((5 + 4 * x) / 180) = Arc(BFD), DF, Tangent(AB, \u2299(F, radius_0_0)), AB, \u2220ACF, \u2220DFC, 3.14 = pi, CF, \u2220CFB, \u2220BAE, \u2220BFD, pi * ((2.5 + x) / 180) = \u2220BAE, \u2220FCA, pi * (50 / 180) = Arc(CFB), CD, D on CE, BF, \u2220ECF, C on AE, B on \u2299(F, radius_0_0)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CFD\nConclusions: \u2220CFD = 2 * pi - \u2220DFC\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CFB)\nConclusions: \u2220CFB = Arc(CFB)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = DF\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BFD)\nConclusions: \u2220BFD = Arc(BFD)\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : C on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = CF\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACF\nConclusions: \u2220ACF = 2 * pi - \u2220FCA\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220DFC, \u2220CFB, \u2220BFD\nConclusions: 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2.5 + x) / 180) = \u2220BAE\nConclusions: 3.14 * ((2.5 + x) / 180) = \u2220BAE\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : CF, CD, DF\nConclusions: \u25b3CDF\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : AC, CF, BF, AB\nConclusions: Quadrilateral(A, B, F, C)\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220FCA, \u2220ECF\nConclusions: pi = \u2220ECF + \u2220FCA\n\nStep 13:\nTheorem: Same Angle\nPremises : D on CE, \u2220ECF\nConclusions: \u2220DCF = \u2220ECF\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220BAE, C on AE\nConclusions: \u2220BAC = \u2220BAE\n\nStep 15:\nTheorem: Tangent Definition\nPremises : B on \u2299(F, radius_0_0), Tangent(AB, \u2299(F, radius_0_0))\nConclusions: AB \u22a5 BF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (50 / 180) = Arc(CFB), \u2220CFB = Arc(CFB)\nConclusions: pi * (50 / 180) = \u2220CFB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFD = Arc(BFD), pi * ((5 + 4 * x) / 180) = Arc(BFD)\nConclusions: pi * ((5 + 4 * x) / 180) = \u2220BFD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CF, radius_0_0 = DF\nConclusions: CF = DF\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2.5 + x) / 180) = \u2220BAE, pi * ((2.5 + x) / 180) = \u2220BAE\nConclusions: 3.14 * ((2.5 + x) / 180) = pi * ((2.5 + x) / 180)\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(F, D, C)\nPremises : \u25b3CDF\nConclusions: pi = \u2220CFD + \u2220DCF + \u2220FDC\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(C, F, B, A)\nPremises : Quadrilateral(A, B, F, C)\nConclusions: 2 * pi = \u2220ACF + \u2220BAC + \u2220CFB + \u2220FBA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220BAE, pi * ((2.5 + x) / 180) = \u2220BAE\nConclusions: pi * ((2.5 + x) / 180) = \u2220BAC\n\nStep 23:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BF\nConclusions: pi / 2 = \u2220FBA\n\nStep 24:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220CFB, 3.14 = pi, 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC\nConclusions: 2 * 3.14 = pi * (50 / 180) + \u2220BFD + \u2220DFC\n\nStep 25:\nTheorem: Substitution\nPremises : pi * ((5 + 4 * x) / 180) = \u2220BFD, 3.14 = pi\nConclusions: 3.14 * ((5 + 4 * x) / 180) = \u2220BFD\n\nStep 26:\nTheorem: Issoceles Triangle Property\nPremises : CF = DF, \u25b3CDF\nConclusions: \u2220DCF = \u2220FDC\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220CFD + \u2220DCF + \u2220FDC, \u2220DCF = \u2220ECF\nConclusions: 3.14 = \u2220CFD + \u2220ECF + \u2220FDC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2.5 + x) / 180) = \u2220BAC, 3.14 * ((2.5 + x) / 180) = pi * ((2.5 + x) / 180)\nConclusions: 3.14 * ((2.5 + x) / 180) = \u2220BAC\n\nStep 29:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220CFB, 3.14 = pi, pi / 2 = \u2220FBA, 2 * pi = \u2220ACF + \u2220BAC + \u2220CFB + \u2220FBA\nConclusions: 2 * 3.14 = pi / 2 + 3.14 * (50 / 180) + \u2220ACF + \u2220BAC\n\nStep 30:\nTheorem: Substitution\nPremises : 3.14 * ((5 + 4 * x) / 180) = \u2220BFD, 3.14 = pi, 2 * 3.14 = pi * (50 / 180) + \u2220BFD + \u2220DFC\nConclusions: 2 * 3.14 = 3.14 * (50 / 180) + 3.14 * ((5 + 4 * x) / 180) + \u2220DFC\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCF = \u2220ECF, \u2220DCF = \u2220FDC\nConclusions: \u2220ECF = \u2220FDC\n\nStep 32:\nTheorem: Substitution\nPremises : 3.14 * ((2.5 + x) / 180) = \u2220BAC, 3.14 = pi, 2 * 3.14 = pi / 2 + 3.14 * (50 / 180) + \u2220ACF + \u2220BAC\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (50 / 180) + 3.14 * ((2.5 + x) / 180) + \u2220ACF\n\nStep 33:\nTheorem: Substitution\nPremises : 3.14 = \u2220CFD + \u2220ECF + \u2220FDC, \u2220ECF = \u2220FDC\nConclusions: 3.14 = \u2220CFD + \u2220ECF + \u2220ECF\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (50 / 180) + 3.14 * ((5 + 4 * x) / 180) + \u2220DFC, \u2220ACF = 2 * pi - \u2220FCA, \u2220CFD = 2 * pi - \u2220DFC, pi = \u2220ECF + \u2220FCA, 3.14 = \u2220CFD + \u2220ECF + \u2220ECF, 2 * 3.14 = 3.14 / 2 + 3.14 * (50 / 180) + 3.14 * ((2.5 + x) / 180) + \u2220ACF\nConclusions: 25 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "Tangent(Line(A, B), Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(B, A, E)), Mul(pi, Div(Add(x, 2.5), 180.0)))",
+        "Equals(MeasureOf(Arc(C, F, B)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Arc(B, F, D)), Mul(pi, Div(Add(Mul(4.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,86 @@
+{
+    "problem_id": "2515",
+    "solved": true,
+    "problem_text": "\\triangle R S T \\cong \\triangle A B C. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), y+13)",
+        "Equals(LengthOf(Line(S, T)), 2y-8)",
+        "Equals(MeasureOf(Angle(A, C, B)), 3x+40)",
+        "Equals(MeasureOf(Angle(S, T, R)), 5x+20)",
+        "Congruent(Triangle(R,S,T),Triangle(A,B,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "S",
+        "B",
+        "C",
+        "A",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "ST",
+        "RS",
+        "RT",
+        "CA",
+        "BA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            227.2051282051282,
+            315.71794871794873
+        ],
+        "B": [
+            677.8461538461538,
+            92.64102564102564
+        ],
+        "C": [
+            453.48717948717945,
+            92.0
+        ],
+        "A": [
+            634.2564102564103,
+            316.35897435897436
+        ],
+        "T": [
+            450.9230769230769,
+            315.71794871794873
+        ],
+        "R": [
+            270.15384615384613,
+            92.64102564102564
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "10",
+        "13",
+        "21"
+    ],
+    "choices_precise_value": [
+        8.0,
+        10.0,
+        13.0,
+        21.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 14.526983,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((40 + 3 * x) / 180) = \u2220ACB, pi * ((20 + 5 * x) / 180) = \u2220RTS, \u25b3ABC \u2245 \u25b3RST\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((20 + 5 * x) / 180) = \u2220RTS, 3.14 = pi\nConclusions: 3.14 * ((20 + 5 * x) / 180) = \u2220RTS\n\nStep 3:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3RST\nConclusions: \u2220ACB = \u2220RTS\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220RTS, pi * ((40 + 3 * x) / 180) = \u2220ACB\nConclusions: pi * ((40 + 3 * x) / 180) = \u2220RTS\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((40 + 3 * x) / 180) = \u2220RTS, 3.14 = pi\nConclusions: 3.14 * ((40 + 3 * x) / 180) = \u2220RTS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((20 + 5 * x) / 180) = \u2220RTS, 3.14 * ((40 + 3 * x) / 180) = \u2220RTS\nConclusions: 3.14 * ((20 + 5 * x) / 180) = 3.14 * ((40 + 3 * x) / 180)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((20 + 5 * x) / 180) = 3.14 * ((40 + 3 * x) / 180)\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Congruent(Triangle(R, S, T), Triangle(A, B, C))",
+        "Equals(LengthOf(Line(C, B)), Add(y, 13.0))",
+        "Equals(LengthOf(Line(S, T)), Sub(Mul(2.0, y), 8.0))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Add(Mul(3.0, x), 40.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, T, S)), Mul(pi, Div(Add(Mul(5.0, x), 20.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,145 @@
+{
+    "problem_id": "3144",
+    "solved": true,
+    "problem_text": "Find ML. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, L)), x)",
+        "Equals(LengthOf(Line(K, L)), 36)",
+        "Equals(LengthOf(Line(K, M)), 15)",
+        "Equals(MeasureOf(Angle(E, M, A)), 66)",
+        "Find(LengthOf(Line(M, L)))",
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(A, P)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(E, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "PointLiesOnCircle(E, Circle(M))",
+        "PointLiesOnCircle(K, Circle(M))",
+        "PointLiesOnCircle(P, Circle(M))",
+        "PointLiesOnLine(A, Line(E, K))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "PointLiesOnLine(A, Line(M, P))",
+        "PointLiesOnLine(P, Line(A, L))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Tangent(Line(E, L), Circle(M))"
+    ],
+    "point_instances": [
+        "K",
+        "M",
+        "E",
+        "A",
+        "P",
+        "L"
+    ],
+    "line_instances": [
+        "MA",
+        "MP",
+        "ML",
+        "AP",
+        "AL",
+        "PL",
+        "KL",
+        "KM",
+        "ME",
+        "EA",
+        "EK",
+        "AK",
+        "EL"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "K": [
+            152.78900000000002,
+            202.33226744186047
+        ],
+        "M": [
+            115.04065040650407,
+            121.65040650406505
+        ],
+        "E": [
+            152.57,
+            41.18475452196382
+        ],
+        "A": [
+            152.6742857142857,
+            122.4424141749723
+        ],
+        "P": [
+            204.473,
+            122.72732558139533
+        ],
+        "L": [
+            357.4694736842105,
+            122.81181150550796
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        32.726,
+        36.0,
+        39.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        32.726,
+        36.0,
+        39.0
+    ],
+    "problem_answer": 39.0,
+    "total_time": 123.631042,
+    "solution_predicate": "Equals(36.8789000318, LengthOf(Line(M, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: LM, A on LM, 15 = KM, \u2220LME, EL, E on \u2299(M, radius_M), K on \u2299(M, radius_M), x = EL, Tangent(EL, \u2299(M, radius_M)), \u2220LME, 3.14 = pi, EM, pi * (66 / 180) = \u2220AME\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(M, radius_M)\nConclusions: radius_M = EM\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : K on \u2299(M, radius_M)\nConclusions: radius_M = KM\n\nStep 4:\nTheorem: Tangent Definition\nPremises : Tangent(EL, \u2299(M, radius_M)), E on \u2299(M, radius_M)\nConclusions: EL \u22a5 EM\n\nStep 5:\nTheorem: Same Angle\nPremises : A on LM, \u2220LME\nConclusions: \u2220AME = \u2220LME\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : LM, EL, EM\nConclusions: \u25b3ELM\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_M = KM, 15 = KM\nConclusions: 15 = radius_M\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (66 / 180) = \u2220AME, \u2220AME = \u2220LME\nConclusions: pi * (66 / 180) = \u2220LME\n\nStep 9:\nTheorem: Tan Function Definition\nPremises : \u25b3ELM, EL \u22a5 EM, \u2220LME\nConclusions: EL / EM = tan(\u2220LME)\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u25b3ELM, EL \u22a5 EM, \u2220LME\nConclusions: EL / LM = sin(\u2220LME)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_M = EM, 15 = radius_M\nConclusions: 15 = EM\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (66 / 180) = \u2220LME\nConclusions: 1.15 = \u2220LME\n\nStep 13:\nTheorem: Substitution\nPremises : 15 = EM, 1.15 = \u2220LME, x = EL, EL / EM = tan(\u2220LME)\nConclusions: tan(1.15) = x / 15\n\nStep 14:\nTheorem: Substitution\nPremises : 1.15 = \u2220LME, x = EL, EL / LM = sin(\u2220LME)\nConclusions: sin(1.15) = x / LM\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : tan(1.15) = x / 15, sin(1.15) = x / LM\nConclusions: 36.88 = LM\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, A)",
+        "Line(M, P)",
+        "Line(M, L)",
+        "Line(A, P)",
+        "Line(A, L)",
+        "Line(P, L)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, E)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(A, K)",
+        "Line(E, L)",
+        "Circle(M, radius_M)",
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(A, P)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(E, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "PointLiesOnCircle(E, Circle(M, radius_M))",
+        "PointLiesOnCircle(K, Circle(M, radius_M))",
+        "PointLiesOnCircle(P, Circle(M, radius_M))",
+        "PointLiesOnLine(A, Line(E, K))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "PointLiesOnLine(A, Line(M, P))",
+        "PointLiesOnLine(P, Line(A, L))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Tangent(Line(E, L), Circle(M, radius_M))",
+        "Equals(LengthOf(Line(E, L)), x)",
+        "Equals(LengthOf(Line(K, L)), 36.0)",
+        "Equals(LengthOf(Line(K, M)), 15.0)",
+        "Equals(MeasureOf(Angle(A, M, E)), Mul(pi, Div(66.0, 180.0)))"
+    ],
+    "correct": true
+}

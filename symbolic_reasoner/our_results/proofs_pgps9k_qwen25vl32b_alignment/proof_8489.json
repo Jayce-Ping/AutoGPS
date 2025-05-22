@@ -1,0 +1,113 @@
+{
+    "problem_id": "8489",
+    "solved": true,
+    "problem_text": "For rhombus ABCD, find m \\angle BAD, given that m \\angle DEC = 30y, m \\angle EDC = 8y+15, AB = 2x+8, and BC = 4x.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A,B,C,D)",
+        "Equals(MeasureOf(Angle(D,E,C)),30y)",
+        "Equals(MeasureOf(Angle(E,D,C)),8y+15)",
+        "Equals(LengthOf(Line(A,B)),2x+8)",
+        "Equals(LengthOf(Line(B,C)),4x)",
+        "Find(MeasureOf(Angle(B,A,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "DE",
+        "DB",
+        "EB",
+        "AD",
+        "AE",
+        "AC",
+        "EC",
+        "BC",
+        "DC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            80.36524822695036,
+            46.70857142857143
+        ],
+        "B": [
+            223.6755319148936,
+            46.608979591836736
+        ],
+        "E": [
+            137.370820668693,
+            117.12
+        ],
+        "D": [
+            50.170212765957444,
+            187.63102040816327
+        ],
+        "C": [
+            194.06117021276594,
+            187.88
+        ]
+    },
+    "problem_choices": [
+        51.0,
+        78.0,
+        90.0,
+        102.0
+    ],
+    "choices_precise_value": [
+        51.0,
+        78.0,
+        90.0,
+        102.0
+    ],
+    "problem_answer": 102.0,
+    "total_time": 246.116581,
+    "solution_predicate": "Equals(1.780235837, MeasureOf(Angle(D, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((30 * y) / 180) = \u2220DEC, pi * ((15 + 8 * y) / 180) = \u2220CDE, E on BD, \u2220CDB, Rhombus(A, B, C, D), AB, AD, 3.14 = pi, BD\n\nStep 2:\nTheorem: Same Angle\nPremises : E on BD, \u2220CDB\nConclusions: \u2220CDB = \u2220CDE\n\nStep 3:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220BDA = \u2220CDB, \u2220ABD = \u2220DBC\n\nStep 4:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(A, B, C, D)\nConclusions: CE \u22a5 DE\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 DE\nConclusions: pi / 2 = \u2220DEC\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DEC, pi * ((30 * y) / 180) = \u2220DEC\nConclusions: pi / 2 = pi * ((30 * y) / 180)\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABD + \u2220BDA + \u2220DAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = pi * ((30 * y) / 180), 1.57 = pi / 2\nConclusions: 1.57 = pi * ((30 * y) / 180)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBC, \u2220BDA = \u2220CDB\nConclusions: \u2220CDB = \u2220DBC\n\nStep 16:\nTheorem: Substitution\nPremises : 1.57 = pi * ((30 * y) / 180), 3.14 = pi\nConclusions: 1.57 = 3.14 * ((30 * y) / 180)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDB = \u2220DBC, \u2220CDB = \u2220CDE, pi * ((15 + 8 * y) / 180) = \u2220CDE\nConclusions: pi * ((15 + 8 * y) / 180) = \u2220DBC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = \u2220DBC, pi * ((15 + 8 * y) / 180) = \u2220DBC\nConclusions: pi * ((15 + 8 * y) / 180) = \u2220ABD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBC, pi * ((15 + 8 * y) / 180) = \u2220DBC\nConclusions: pi * ((15 + 8 * y) / 180) = \u2220BDA\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((15 + 8 * y) / 180) = \u2220ABD\nConclusions: 3.14 * ((15 + 8 * y) / 180) = \u2220ABD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 8 * y) / 180) = \u2220ABD, pi * ((15 + 8 * y) / 180) = \u2220ABD\nConclusions: 3.14 * ((15 + 8 * y) / 180) = pi * ((15 + 8 * y) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 8 * y) / 180) = pi * ((15 + 8 * y) / 180), pi * ((15 + 8 * y) / 180) = \u2220BDA\nConclusions: 3.14 * ((15 + 8 * y) / 180) = \u2220BDA\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((15 + 8 * y) / 180) = \u2220ABD, 3.14 * ((15 + 8 * y) / 180) = \u2220BDA, 1.57 = 3.14 * ((30 * y) / 180), 3.14 = \u2220ABD + \u2220BDA + \u2220DAB\nConclusions: 1.78 = \u2220DAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(Mul(30.0, y), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, E)), Mul(pi, Div(Add(Mul(8.0, y), 15.0), 180.0)))",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, x), 8.0))",
+        "Equals(LengthOf(Line(B, C)), Mul(4.0, x))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,85 @@
+{
+    "problem_id": "2877",
+    "solved": true,
+    "problem_text": "Find the area of the regular polygon figure. Round to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, D)), 5)",
+        "Find(AreaOf(Regular(Hexagon(A, B, C, D, E, F))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "GD",
+        "DC",
+        "BC",
+        "AB",
+        "FA",
+        "FE",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            13.049429657794676,
+            121.48288973384031
+        ],
+        "B": [
+            78.63878326996198,
+            159.31558935361218
+        ],
+        "C": [
+            143.65779467680608,
+            120.72243346007605
+        ],
+        "D": [
+            143.27756653992395,
+            45.247148288973385
+        ],
+        "E": [
+            78.06844106463879,
+            7.984790874524715
+        ],
+        "F": [
+            12.859315589353614,
+            45.627376425855516
+        ],
+        "G": [
+            78.63878326996198,
+            83.65019011406845
+        ]
+    },
+    "problem_choices": [
+        "10.8",
+        "21.7",
+        "65.0",
+        "129.9"
+    ],
+    "choices_precise_value": [
+        10.8,
+        21.7,
+        65.0,
+        129.9
+    ],
+    "problem_answer": 65.0,
+    "total_time": 18.467318,
+    "solution_predicate": "Equals(64.951905284, AreaOf(Regular(Hexagon(A, B, C, D, E, F))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, 5 = DG, Hexagon(A, B, C, D, E, F)\n\nStep 2:\nTheorem: Regular Hexagon(A, B, C, D, E, F) Area formula by formula 2\nPremises : Hexagon(A, B, C, D, E, F)\nConclusions: Area(Regular(Hexagon(A, B, C, D, E, F))) = (6 * sin(2 * (pi / 6)) * DG ** 2) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, Area(Regular(Hexagon(A, B, C, D, E, F))) = (6 * sin(2 * (pi / 6)) * DG ** 2) / 2, 5 = DG\nConclusions: (6 * 5 ** 2 * sin(2 * (3.14 / 6))) / 2 = Area(Regular(Hexagon(A, B, C, D, E, F)))\n\nStep 4:\nTheorem: Evaluate\nPremises : (6 * 5 ** 2 * sin(2 * (3.14 / 6))) / 2 = Area(Regular(Hexagon(A, B, C, D, E, F)))\nConclusions: 64.95 = Area(Regular(Hexagon(A, B, C, D, E, F)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, D)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(F, A)",
+        "Line(F, E)",
+        "Line(E, D)",
+        "Equals(LengthOf(Line(G, D)), 5.0)"
+    ],
+    "correct": true
+}

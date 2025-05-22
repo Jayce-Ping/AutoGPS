@@ -1,0 +1,116 @@
+{
+    "problem_id": "2647",
+    "solved": true,
+    "problem_text": "Find x so that m \\parallel n.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(MeasureOf(Angle(G, D, C)), 2x+17)",
+        "Equals(MeasureOf(Angle(B, E, F)), 4x-23)",
+        "Parallel(Line(B, H), Line(A, G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AD",
+        "AG",
+        "DG",
+        "BE",
+        "BH",
+        "EH",
+        "FE",
+        "FD",
+        "FC",
+        "ED",
+        "EC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            54.90196078431372,
+            218.9299719887955
+        ],
+        "B": [
+            30.252100840336134,
+            171.03081232492997
+        ],
+        "C": [
+            175.07002801120447,
+            216.40896358543415
+        ],
+        "D": [
+            166.38655462184872,
+            160.94677871148457
+        ],
+        "E": [
+            157.9831932773109,
+            105.484593837535
+        ],
+        "F": [
+            148.73949579831933,
+            46.661064425770306
+        ],
+        "G": [
+            306.7226890756302,
+            88.11764705882352
+        ],
+        "H": [
+            282.0728291316526,
+            41.89915966386554
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "20",
+        "31",
+        "40"
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        31.0,
+        40.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 36.881348,
+    "solution_predicate": "Equals(20.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CEH, pi * ((4 * x - 23) / 180) = \u2220FEB, D on CE, \u2220FDA, 3.14 = pi, pi * ((17 + 2 * x) / 180) = \u2220CDG, AG || BH, E on DF\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220CEH, D on CE\nConclusions: \u2220CEH = \u2220DEH\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((4 * x - 23) / 180) = \u2220FEB, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 23) / 180) = \u2220FEB\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((17 + 2 * x) / 180) = \u2220CDG\nConclusions: 3.14 * ((17 + 2 * x) / 180) = \u2220CDG\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220FDA = \u2220FEB, \u2220CDG = \u2220CEH\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220DEH = \u2220EDA\n\nStep 7:\nTheorem: Same Angle\nPremises : E on DF, \u2220FDA\nConclusions: \u2220EDA = \u2220FDA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((17 + 2 * x) / 180) = \u2220CDG, pi * ((17 + 2 * x) / 180) = \u2220CDG\nConclusions: 3.14 * ((17 + 2 * x) / 180) = pi * ((17 + 2 * x) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 23) / 180) = \u2220FEB, \u2220FDA = \u2220FEB\nConclusions: pi * ((4 * x - 23) / 180) = \u2220FDA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDG = \u2220CEH, pi * ((17 + 2 * x) / 180) = \u2220CDG\nConclusions: pi * ((17 + 2 * x) / 180) = \u2220CEH\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((17 + 2 * x) / 180) = \u2220CEH, \u2220CEH = \u2220DEH, \u2220DEH = \u2220EDA\nConclusions: pi * ((17 + 2 * x) / 180) = \u2220EDA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((17 + 2 * x) / 180) = \u2220EDA, pi * ((4 * x - 23) / 180) = \u2220FDA, \u2220EDA = \u2220FDA\nConclusions: pi * ((17 + 2 * x) / 180) = pi * ((4 * x - 23) / 180)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 23) / 180) = \u2220FEB, pi * ((17 + 2 * x) / 180) = pi * ((4 * x - 23) / 180)\nConclusions: pi * ((17 + 2 * x) / 180) = \u2220FEB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((17 + 2 * x) / 180) = \u2220FEB, 3.14 * ((17 + 2 * x) / 180) = pi * ((17 + 2 * x) / 180)\nConclusions: 3.14 * ((17 + 2 * x) / 180) = \u2220FEB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((17 + 2 * x) / 180) = \u2220FEB, 3.14 * ((4 * x - 23) / 180) = \u2220FEB\nConclusions: 3.14 * ((17 + 2 * x) / 180) = 3.14 * ((4 * x - 23) / 180)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((17 + 2 * x) / 180) = 3.14 * ((4 * x - 23) / 180)\nConclusions: 20 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(D, G)",
+        "Line(B, E)",
+        "Line(B, H)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Parallel(Line(B, H), Line(A, G))",
+        "Equals(MeasureOf(Angle(C, D, G)), Mul(pi, Div(Add(Mul(2.0, x), 17.0), 180.0)))",
+        "Equals(MeasureOf(Angle(F, E, B)), Mul(pi, Div(Sub(Mul(4.0, x), 23.0), 180.0)))"
+    ],
+    "correct": true
+}

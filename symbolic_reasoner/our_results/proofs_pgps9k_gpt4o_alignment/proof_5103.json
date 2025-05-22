@@ -1,0 +1,113 @@
+{
+    "problem_id": "5103",
+    "solved": true,
+    "problem_text": "PQ is the perpendicular bisector of ST. Find the value of n.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, S)), 3m+9)",
+        "Equals(LengthOf(Line(P, T)), 5m-13)",
+        "Equals(LengthOf(Line(Q, S)), 6n-3)",
+        "Equals(LengthOf(Line(Q, T)), 4n+14)",
+        "Line(A, Q)",
+        "Line(A, T)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(S, A)",
+        "Line(S, Q)",
+        "Line(S, T)",
+        "Line(T, Q)",
+        "PointLiesOnLine(A, Line(P, Q))",
+        "PointLiesOnLine(A, Line(S, T))",
+        "IsPerpendicularBisectorOf(Line(P,Q),Line(S,T))",
+        "Find(n)"
+    ],
+    "point_instances": [
+        "S",
+        "P",
+        "A",
+        "Q",
+        "T"
+    ],
+    "line_instances": [
+        "PA",
+        "PQ",
+        "AQ",
+        "SQ",
+        "TQ",
+        "PT",
+        "PS",
+        "SA",
+        "ST",
+        "AT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            196.5072463768116,
+            55.440000000000005
+        ],
+        "P": [
+            68.14009661835749,
+            135.77142857142857
+        ],
+        "A": [
+            195.99436392914654,
+            136.03333333333336
+        ],
+        "Q": [
+            349.4927536231884,
+            135.77142857142857
+        ],
+        "T": [
+            196.72705314009661,
+            215.60000000000002
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        7.0,
+        7.833,
+        8.5
+    ],
+    "choices_precise_value": [
+        2.5,
+        7.0,
+        7.833,
+        8.5
+    ],
+    "problem_answer": 8.5,
+    "total_time": 56.99137,
+    "solution_predicate": "Equals(8.5, n)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 * n - 3 = QS, IsPerpendicularBisectorOf(PQ, ST), 14 + 4 * n = QT\n\nStep 2:\nTheorem: Perpendicular Bisector Properties\nPremises : IsPerpendicularBisectorOf(PQ, ST)\nConclusions: QS = QT\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 6 * n - 3 = QS, QS = QT\nConclusions: 6 * n - 3 = QT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 * n - 3 = QT, 14 + 4 * n = QT\nConclusions: 14 + 4 * n = 6 * n - 3\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 14 + 4 * n = 6 * n - 3\nConclusions: 8.5 = n\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(A, Q)",
+        "Line(S, Q)",
+        "Line(T, Q)",
+        "Line(P, T)",
+        "Line(P, S)",
+        "Line(S, A)",
+        "Line(S, T)",
+        "Line(A, T)",
+        "Line(A, Q)",
+        "Line(A, T)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(S, A)",
+        "Line(S, Q)",
+        "Line(S, T)",
+        "Line(T, Q)",
+        "PointLiesOnLine(A, Line(P, Q))",
+        "PointLiesOnLine(A, Line(S, T))",
+        "IsPerpendicularBisectorOf(Line(P, Q), Line(S, T))",
+        "Equals(LengthOf(Line(P, S)), Add(Mul(3.0, m), 9.0))",
+        "Equals(LengthOf(Line(P, T)), Sub(Mul(5.0, m), 13.0))",
+        "Equals(LengthOf(Line(Q, S)), Sub(Mul(6.0, n), 3.0))",
+        "Equals(LengthOf(Line(Q, T)), Add(Mul(4.0, n), 14.0))"
+    ],
+    "correct": true
+}

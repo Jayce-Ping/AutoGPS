@@ -1,0 +1,109 @@
+{
+    "problem_id": "2130",
+    "solved": true,
+    "problem_text": "Quadrilateral ABCD is a rectangle. If m \\angle ADB = 4x+8 and m \\angle DBA = 6x+12, find \\angle DBC.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, C)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Rectangle(A,B,C,D)",
+        "Equals(MeasureOf(Angle(A,D,B)),4x+8)",
+        "Equals(MeasureOf(Angle(D,B,A)),6x+12)",
+        "Find(MeasureOf(Angle(D,B,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "B",
+        "F"
+    ],
+    "line_instances": [
+        "BC",
+        "CD",
+        "AD",
+        "BA",
+        "AF",
+        "AC",
+        "FC",
+        "BF",
+        "BD",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            112.27833333333332,
+            81.21854304635761
+        ],
+        "D": [
+            556.9449999999999,
+            81.21854304635761
+        ],
+        "C": [
+            557.612,
+            267.01986754966885
+        ],
+        "B": [
+            111.61133333333333,
+            267.01986754966885
+        ],
+        "F": [
+            334.2411111111111,
+            173.8101545253863
+        ]
+    },
+    "problem_choices": [
+        36.0,
+        54.0,
+        72.0,
+        108.0
+    ],
+    "choices_precise_value": [
+        36.0,
+        54.0,
+        72.0,
+        108.0
+    ],
+    "problem_answer": 36.0,
+    "total_time": 207.78352,
+    "solution_predicate": "Equals(0.6283185307, MeasureOf(Angle(C, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on AC, \u2220CAD, Rectangle(A, B, C, D), CD, 3.14 = pi, AC, \u2220DCA, AD, pi * ((8 + 4 * x) / 180) = \u2220ADB, pi * ((12 + 6 * x) / 180) = \u2220DBA\n\nStep 2:\nTheorem: Same Angle\nPremises : F on AC, \u2220CAD\nConclusions: \u2220CAD = \u2220FAD\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AD \u22a5 CD, AB \u22a5 BC, AB \u22a5 AD\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220DCA, F on AC\nConclusions: \u2220DCA = \u2220DCF\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220ADC = \u2220CBA\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220BAD\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 14:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220ACB = \u2220CAD, \u2220ADB = \u2220CBD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BAD, pi / 2 = \u2220CBA, \u2220ADC = \u2220CBA\nConclusions: \u2220ADC = \u2220BAD\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220CAD = \u2220FAD, \u2220DCA = \u2220DCF, 3.14 = pi, pi / 2 = \u2220ADC, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = 3.14 / 2 + \u2220DCF + \u2220FAD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220FAD, \u2220ACB = \u2220CAD\nConclusions: \u2220ACB = \u2220FAD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 4 * x) / 180) = \u2220ADB, \u2220ADB = \u2220CBD\nConclusions: pi * ((8 + 4 * x) / 180) = \u2220CBD\n\nStep 19:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220ADC = \u2220BAD, AB = CD\nConclusions: \u25b3ABD \u2245 \u25b3DCA\n\nStep 20:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3DCA\nConclusions: \u2220ADB = \u2220CAD, \u2220DBA = \u2220DCA, AB = CD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 4 * x) / 180) = \u2220ADB, \u2220CAD = \u2220FAD, \u2220ADB = \u2220CAD\nConclusions: pi * ((8 + 4 * x) / 180) = \u2220FAD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCF, pi * ((12 + 6 * x) / 180) = \u2220DBA, \u2220DBA = \u2220DCA\nConclusions: pi * ((12 + 6 * x) / 180) = \u2220DCF\n\nStep 23:\nTheorem: Substitution\nPremises : pi * ((8 + 4 * x) / 180) = \u2220FAD, 3.14 = pi\nConclusions: 3.14 * ((8 + 4 * x) / 180) = \u2220FAD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 4 * x) / 180) = \u2220FAD, \u2220ACB = \u2220FAD\nConclusions: pi * ((8 + 4 * x) / 180) = \u2220ACB\n\nStep 25:\nTheorem: Substitution\nPremises : pi * ((12 + 6 * x) / 180) = \u2220DCF, 3.14 = pi\nConclusions: 3.14 * ((12 + 6 * x) / 180) = \u2220DCF\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 4 * x) / 180) = \u2220FAD, 3.14 * ((8 + 4 * x) / 180) = \u2220FAD\nConclusions: 3.14 * ((8 + 4 * x) / 180) = pi * ((8 + 4 * x) / 180)\n\nStep 27:\nTheorem: Substitution\nPremises : pi * ((8 + 4 * x) / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 * ((8 + 4 * x) / 180) = \u2220ACB\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((8 + 4 * x) / 180) = pi * ((8 + 4 * x) / 180), pi * ((8 + 4 * x) / 180) = \u2220CBD\nConclusions: 3.14 * ((8 + 4 * x) / 180) = \u2220CBD\n\nStep 29:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACB = \u2220FAD, 3.14 * ((8 + 4 * x) / 180) = \u2220ACB, 3.14 * ((12 + 6 * x) / 180) = \u2220DCF, 3.14 = 3.14 / 2 + \u2220DCF + \u2220FAD\nConclusions: 0.63 = \u2220ACB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 0.63 = \u2220ACB, 3.14 * ((8 + 4 * x) / 180) = \u2220ACB\nConclusions: 0.63 = 3.14 * ((8 + 4 * x) / 180)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 0.63 = 3.14 * ((8 + 4 * x) / 180), 3.14 * ((8 + 4 * x) / 180) = \u2220CBD\nConclusions: 0.63 = \u2220CBD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(B, F)",
+        "Line(B, D)",
+        "Line(F, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, C)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Rectangle(A, B, C, D)",
+        "Equals(MeasureOf(Angle(A, D, B)), Mul(pi, Div(Add(Mul(4.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, A)), Mul(pi, Div(Add(Mul(6.0, x), 12.0), 180.0)))"
+    ],
+    "correct": true
+}

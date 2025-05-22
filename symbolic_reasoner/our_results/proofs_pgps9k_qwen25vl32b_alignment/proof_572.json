@@ -1,0 +1,92 @@
+{
+    "problem_id": "572",
+    "solved": true,
+    "problem_text": "Find m \\angle JKL.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, K)), 11)",
+        "Equals(LengthOf(Line(J, K)), LengthOf(Line(L, K)))",
+        "Equals(LengthOf(Line(L, K)), 11)",
+        "Equals(LengthOf(Line(L, M)), 5.5)",
+        "Equals(MeasureOf(Angle(K, J, M)), 60)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "Perpendicular(Line(J, L), Line(K, M))",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Find(MeasureOf(Angle(J,K,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "M",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "JM",
+        "JL",
+        "ML",
+        "LK",
+        "MK",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            102.38562091503269,
+            323.05777777777774
+        ],
+        "M": [
+            237.06209150326796,
+            323.05777777777774
+        ],
+        "L": [
+            371.24632352941177,
+            323.025
+        ],
+        "K": [
+            236.56985294117646,
+            89.975
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 52.334149,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(J, K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LKJ, 3.14 = pi, JM \u22a5 KM, pi * (60 / 180) = \u2220MJK, M on JL, \u2220MKL, JK, \u2220LKM, \u2220LMK, \u2220KLJ, \u2220LJK, \u2220JKM, JK = KL, KL, \u2220JMK, KM \u22a5 LM, JM, \u2220MKJ, \u2220KML, \u2220KMJ, KM, \u2220LKJ, JL\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : JM \u22a5 KM\nConclusions: (3 * pi) / 2 = \u2220JMK, pi / 2 = \u2220KMJ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220LKM\nConclusions: \u2220LKM = 2 * pi - \u2220MKL\n\nStep 5:\nTheorem: Same Angle\nPremises : M on JL, \u2220KLJ\nConclusions: \u2220KLJ = \u2220KLM\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220LJK, M on JL\nConclusions: \u2220LJK = \u2220MJK\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220MKL, \u2220JKM, \u2220LKJ\nConclusions: 2 * pi = \u2220JKM + \u2220LKJ + \u2220MKL\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220JMK\nConclusions: \u2220JMK = 2 * pi - \u2220KMJ\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 LM\nConclusions: (3 * pi) / 2 = \u2220KML\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220MKJ\nConclusions: \u2220MKJ = 2 * pi - \u2220JKM\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220KML\nConclusions: \u2220KML = 2 * pi - \u2220LMK\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220KMJ, \u2220LMK\nConclusions: pi = \u2220KMJ + \u2220LMK\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : JM, JK, KM\nConclusions: \u25b3JKM\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220LKJ\nConclusions: \u2220LKJ = 2 * pi - \u2220JKL\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : JL, JK, KL\nConclusions: \u25b3JKL\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220MJK, \u2220LJK = \u2220MJK\nConclusions: pi * (60 / 180) = \u2220LJK\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220JKM + \u2220LKJ + \u2220MKL\nConclusions: 2 * 3.14 = \u2220JKM + \u2220LKJ + \u2220MKL\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220JMK = 2 * pi - \u2220KMJ, 3.14 = pi, (3 * pi) / 2 = \u2220JMK, pi / 2 = \u2220KMJ\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220MKJ = 2 * pi - \u2220JKM, 3.14 = pi\nConclusions: \u2220MKJ = 2 * 3.14 - \u2220JKM\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220KMJ + \u2220LMK, 3.14 = pi\nConclusions: 3.14 = \u2220KMJ + \u2220LMK\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, M)\nPremises : \u25b3JKM\nConclusions: pi = \u2220JKM + \u2220KMJ + \u2220MJK\n\nStep 22:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3JKL, JK = KL\nConclusions: JM = LM, KM \u22a5 LM, JM \u22a5 KM\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 24:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3JKL, JK = KL\nConclusions: \u2220KLJ = \u2220LJK\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220LJK, 1.05 = pi * (60 / 180)\nConclusions: 1.05 = \u2220LJK\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220JMK, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220JMK\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220KML\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220KML\n\nStep 28:\nTheorem: Substitution\nPremises : pi = \u2220JKM + \u2220KMJ + \u2220MJK, 3.14 = pi, pi / 2 = \u2220KMJ, pi * (60 / 180) = \u2220MJK\nConclusions: 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220JKM\n\nStep 29:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : JM = LM, JK = KL\nConclusions: \u25b3JKM \u2245 \u25b3LKM\n\nStep 30:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (60 / 180) = \u2220LJK, \u2220KLJ = \u2220KLM, pi = \u2220JKL + \u2220KLJ + \u2220LJK\nConclusions: 3.14 = pi * (60 / 180) + \u2220JKL + \u2220KLM\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KLJ = \u2220LJK, \u2220KLJ = \u2220KLM, 1.05 = \u2220LJK\nConclusions: 1.05 = \u2220KLM\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JMK = 2 * pi - \u2220KMJ, 2 * 3.14 - 3.14 / 2 = \u2220JMK\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220KMJ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220KML, \u2220KML = 2 * pi - \u2220LMK\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220LMK\n\nStep 34:\nTheorem: Congruent Definition\nPremises : \u25b3JKM \u2245 \u25b3LKM\nConclusions: \u2220LKM = \u2220MKJ\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : \u2220MKJ = 2 * 3.14 - \u2220JKM, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220LMK, 3.14 = \u2220KMJ + \u2220LMK, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220KMJ, 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220JKM\nConclusions: 5.76 = \u2220MKJ\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 5.76 = \u2220MKJ, \u2220LKM = \u2220MKJ\nConclusions: 5.76 = \u2220LKM\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKJ = 2 * pi - \u2220JKM, 5.76 = \u2220MKJ\nConclusions: 5.76 = 2 * pi - \u2220JKM\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 5.76 = \u2220LKM, \u2220LKM = 2 * pi - \u2220MKL\nConclusions: 5.76 = 2 * pi - \u2220MKL\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : \u2220LKJ = 2 * pi - \u2220JKL, 3.14 = pi * (60 / 180) + \u2220JKL + \u2220KLM, 1.05 = \u2220KLM, 2 * 3.14 = \u2220JKM + \u2220LKJ + \u2220MKL, 5.76 = 2 * pi - \u2220JKM, 5.76 = 2 * pi - \u2220MKL\nConclusions: 1.05 = \u2220JKL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, M)",
+        "Line(J, L)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(M, K)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "Perpendicular(Line(J, L), Line(K, M))",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Equals(LengthOf(Line(J, K)), 11.0)",
+        "Equals(LengthOf(Line(J, K)), LengthOf(Line(L, K)))",
+        "Equals(LengthOf(Line(L, K)), 11.0)",
+        "Equals(LengthOf(Line(L, M)), 5.5)",
+        "Equals(MeasureOf(Angle(M, J, K)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

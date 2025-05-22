@@ -1,0 +1,92 @@
+{
+    "problem_id": "812",
+    "solved": true,
+    "problem_text": "Find the value of variable y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(B, D)), 14)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "DB",
+        "CB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            173.20849420849422,
+            24.502857142857142
+        ],
+        "B": [
+            29.123552123552123,
+            191.42857142857142
+        ],
+        "C": [
+            173.20849420849422,
+            191.42857142857142
+        ],
+        "D": [
+            364.81081081081084,
+            191.42857142857142
+        ]
+    },
+    "problem_choices": [
+        4.571,
+        6.928,
+        10.583,
+        24.5
+    ],
+    "choices_precise_value": [
+        4.571,
+        6.928,
+        10.583,
+        24.5
+    ],
+    "problem_answer": 6.928,
+    "total_time": 53.655285,
+    "solution_predicate": "Equals(6.9282032303, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: tan(\u2220CBA), \u2220DBA, AB \u22a5 AD, AC \u22a5 CD, tan(\u2220CAD), y = AC, BD, 8 = CD, \u2220ADB, 3.14 = pi, C on BD, AD, AC \u22a5 BC, AC, AB, CD, 14 = BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220BAD\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: pi / 2 = \u2220DCA\n\nStep 4:\nTheorem: Angle Tan Definition\nPremises : AC \u22a5 CD, tan(\u2220CAD)\nConclusions: CD / AC = tan(\u2220CAD)\n\nStep 5:\nTheorem: Same Angle\nPremises : C on BD, \u2220ADB\nConclusions: \u2220ADB = \u2220ADC\n\nStep 6:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 7:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 8:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBA), AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AB, BD, AD\nConclusions: \u25b3ABD\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 11:\nTheorem: Substitution\nPremises : 14 = BD, 8 = CD, BD = BC + CD\nConclusions: 14 = 8 + BC\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 14 = 8 + BC\nConclusions: 6 = BC\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ADB = \u2220ADC, pi = \u2220ADB + \u2220BAD + \u2220DBA, pi / 2 = \u2220BAD, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220ADC + \u2220DBA\n\nStep 16:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DCA, pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220ADC + \u2220CAD\n\nStep 17:\nTheorem: Substitution\nPremises : AC / BC = tan(\u2220CBA), 6 = BC, \u2220CBA = \u2220DBA, y = AC\nConclusions: y / 6 = tan(\u2220DBA)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220ADC + \u2220CAD, 3.14 = pi / 2 + \u2220ADC + \u2220DBA, \u2220CBA = \u2220DBA\nConclusions: \u2220CAD = \u2220CBA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CBA, \u2220CBA = \u2220DBA\nConclusions: \u2220CAD = \u2220DBA\n\nStep 20:\nTheorem: Substitution\nPremises : CD / AC = tan(\u2220CAD), 8 = CD, \u2220CAD = \u2220DBA, y = AC\nConclusions: 8 / y = tan(\u2220DBA)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : y / 6 = tan(\u2220DBA), 8 / y = tan(\u2220DBA)\nConclusions: 8 / y = y / 6\n\nStep 22:\nTheorem: Solve Univariate Equation\nPremises : 8 / y = y / 6\nConclusions: 6.93 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(B, D)), 14.0)",
+        "Equals(LengthOf(Line(D, C)), 8.0)"
+    ],
+    "correct": true
+}

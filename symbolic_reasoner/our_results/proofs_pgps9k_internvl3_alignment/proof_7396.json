@@ -1,0 +1,106 @@
+{
+    "problem_id": "7396",
+    "solved": true,
+    "problem_text": "Find the area of the inscribed regular polygon shown.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, D)), 12)",
+        "Equals(LengthOf(Line(D, E)), 6)",
+        "Find(AreaOf(Polygon(A, B, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Regular(Polygon(A, B, C))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "E",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "BA",
+        "AC",
+        "CE",
+        "CB",
+        "EB",
+        "BD",
+        "DE"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            167.1329523809524,
+            61.688413547237076
+        ],
+        "D": [
+            166.6612508779237,
+            196.66040537910195
+        ],
+        "E": [
+            166.454025974026,
+            262.920758385999
+        ],
+        "C": [
+            49.95961904761905,
+            264.17611408199645
+        ],
+        "B": [
+            283.2761904761905,
+            264.30516934046346
+        ]
+    },
+    "problem_choices": [
+        46.765,
+        72.0,
+        187.061,
+        288.0
+    ],
+    "choices_precise_value": [
+        46.765,
+        72.0,
+        187.061,
+        288.0
+    ],
+    "problem_answer": 187.061,
+    "total_time": 338.63021,
+    "solution_predicate": "Equals(187.061487217, AreaOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on BC, CE, DE, C on \u2299(D, radius_D), CE \u22a5 DE, CD, cos(\u2220EDB), \u25b3ABC, B on \u2299(D, radius_D), Regular(\u25b3ABC), sin(\u2220EDB), 6 = DE, BE \u22a5 DE, 12 = BD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on BC\nConclusions: BC = BE + CE\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : DE, CD, CE\nConclusions: \u25b3CDE\n\nStep 5:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 7:\nTheorem: Regular Triangle Definition\nPremises : Regular(\u25b3ABC)\nConclusions: AC = BC, AB = BC\n\nStep 8:\nTheorem: Angle Cos Definition\nPremises : BE \u22a5 DE, cos(\u2220EDB)\nConclusions: DE / BD = cos(\u2220EDB)\n\nStep 9:\nTheorem: Angle Sin Definition\nPremises : BE \u22a5 DE, sin(\u2220EDB)\nConclusions: BE / BD = sin(\u2220EDB)\n\nStep 10:\nTheorem: Pythagorean Theorem\nPremises : CE \u22a5 DE, \u25b3CDE\nConclusions: CE = SqrtOf(CD ** 2 - DE ** 2)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 12 = BD, radius_D = BD\nConclusions: 12 = radius_D\n\nStep 12:\nTheorem: Substitution\nPremises : DE / BD = cos(\u2220EDB), 12 = BD, 6 = DE\nConclusions: 6 / 12 = cos(\u2220EDB)\n\nStep 13:\nTheorem: Substitution\nPremises : 12 = BD, BE / BD = sin(\u2220EDB)\nConclusions: BE / 12 = sin(\u2220EDB)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = CD, 12 = radius_D\nConclusions: 12 = CD\n\nStep 15:\nTheorem: Solve Univariate Equation\nPremises : 6 / 12 = cos(\u2220EDB)\nConclusions: 1.05 = \u2220EDB\n\nStep 16:\nTheorem: Evaluate\nPremises : 12 = CD, 6 = DE\nConclusions: 10.39 = SqrtOf(CD ** 2 - DE ** 2)\n\nStep 17:\nTheorem: Evaluate\nPremises : 1.05 = \u2220EDB\nConclusions: 0.87 = sin(\u2220EDB)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 10.39 = SqrtOf(CD ** 2 - DE ** 2), CE = SqrtOf(CD ** 2 - DE ** 2)\nConclusions: 10.39 = CE\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : BE / 12 = sin(\u2220EDB), 0.87 = sin(\u2220EDB)\nConclusions: 0.87 = BE / 12\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : AC = BC, BC = BE + CE, 10.39 = CE, 0.87 = BE / 12\nConclusions: 20.78 = AC\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : BC = BE + CE, 0.87 = BE / 12, 10.39 = CE, AB = BC\nConclusions: 20.78 = AB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 20.78 = AB, AB = BC\nConclusions: 20.78 = BC\n\nStep 23:\nTheorem: Evaluate\nPremises : 20.78 = AB, 20.78 = AC, 20.78 = BC\nConclusions: 187.06 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 187.06 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\nConclusions: 187.06 = Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(C, E)",
+        "Line(C, B)",
+        "Line(E, B)",
+        "Line(B, D)",
+        "Line(D, E)",
+        "Circle(D, radius_D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Regular(Triangle(A, B, C))",
+        "Equals(LengthOf(Line(B, D)), 12.0)",
+        "Equals(LengthOf(Line(D, E)), 6.0)"
+    ],
+    "correct": true
+}

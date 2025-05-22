@@ -1,0 +1,81 @@
+{
+    "problem_id": "2624",
+    "solved": true,
+    "problem_text": "m \\angle 9 = 2 x - 4, m \\angle 10 = 2 x + 4. Find the measure of \\angle 10.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(E, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(E, D, C)), MeasureOf(angle 10))",
+        "Equals(MeasureOf(Angle(E, D, A)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Angle(9)),2x-4)",
+        "Equals(MeasureOf(Angle(10)),2x+4)",
+        "Find(MeasureOf(Angle(10)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "ED",
+        "EB",
+        "DB",
+        "CD",
+        "CA",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            84.50735294117646,
+            155.6985294117647
+        ],
+        "B": [
+            196.45588235294116,
+            90.25735294117646
+        ],
+        "C": [
+            136.52941176470588,
+            14.338235294117647
+        ],
+        "D": [
+            108.58823529411764,
+            89.70588235294117
+        ],
+        "E": [
+            16.30882352941176,
+            90.625
+        ]
+    },
+    "problem_choices": [
+        "86",
+        "94",
+        "98",
+        "104"
+    ],
+    "choices_precise_value": [
+        86.0,
+        94.0,
+        98.0,
+        104.0
+    ],
+    "problem_answer": 94.0,
+    "total_time": 10.497504,
+    "solution_predicate": "Equals(1.6406094969, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on BE, D on AC, 3.14 = pi, pi * ((2 * x - 4) / 180) = \u2220EDA, pi * ((4 + 2 * x) / 180) = \u2220CDE, \u2220CDE, \u2220BDC\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : D on BE, D on AC\nConclusions: \u2220BDC = \u2220EDA\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((2 * x - 4) / 180) = \u2220EDA, 3.14 = pi\nConclusions: 3.14 * ((2 * x - 4) / 180) = \u2220EDA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((4 + 2 * x) / 180) = \u2220CDE, 3.14 = pi\nConclusions: 3.14 * ((4 + 2 * x) / 180) = \u2220CDE\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220BDC, \u2220CDE\nConclusions: pi = \u2220BDC + \u2220CDE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 4) / 180) = \u2220EDA, \u2220BDC = \u2220EDA\nConclusions: pi * ((2 * x - 4) / 180) = \u2220BDC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 4) / 180) = \u2220EDA, 3.14 * ((2 * x - 4) / 180) = \u2220EDA\nConclusions: 3.14 * ((2 * x - 4) / 180) = pi * ((2 * x - 4) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BDC + \u2220CDE, 3.14 = pi\nConclusions: 3.14 = \u2220BDC + \u2220CDE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x - 4) / 180) = pi * ((2 * x - 4) / 180), pi * ((2 * x - 4) / 180) = \u2220BDC\nConclusions: 3.14 * ((2 * x - 4) / 180) = \u2220BDC\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((2 * x - 4) / 180) = \u2220BDC, 3.14 = \u2220BDC + \u2220CDE, 3.14 * ((4 + 2 * x) / 180) = \u2220CDE\nConclusions: 1.64 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(E, B)",
+        "Line(D, B)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "PointLiesOnLine(D, Line(E, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(E, D, A)), Mul(pi, Div(Sub(Mul(2.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, E)), Mul(pi, Div(Add(Mul(2.0, x), 4.0), 180.0)))"
+    ],
+    "correct": true
+}

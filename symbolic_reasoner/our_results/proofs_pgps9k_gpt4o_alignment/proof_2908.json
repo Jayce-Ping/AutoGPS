@@ -1,0 +1,175 @@
+{
+    "problem_id": "2908",
+    "solved": true,
+    "problem_text": "Find m \\angle DBC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), MeasureOf(Angle(C, B, E)))",
+        "Equals(MeasureOf(Angle(A, B, D)), x)",
+        "Equals(MeasureOf(Angle(C, B, E)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(B, G)",
+        "Line(B, I)",
+        "Line(C, G)",
+        "Line(D, B)",
+        "Line(E, I)",
+        "Line(F, A)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, G)",
+        "Line(H, B)",
+        "Line(H, D)",
+        "Perpendicular(Line(H, B), Line(B, I))",
+        "PointLiesOnLine(A, Line(F, B))",
+        "PointLiesOnLine(A, Line(F, C))",
+        "PointLiesOnLine(A, Line(F, G))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, G))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(C, Line(F, G))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(E, Line(B, I))",
+        "Find(MeasureOf(Angle(D,B,C)))"
+    ],
+    "point_instances": [
+        "F",
+        "A",
+        "C",
+        "G",
+        "B",
+        "D",
+        "E",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "FA",
+        "FB",
+        "FC",
+        "FG",
+        "AB",
+        "AC",
+        "AG",
+        "BC",
+        "BG",
+        "CG",
+        "HD",
+        "HB",
+        "DB",
+        "BE",
+        "BI",
+        "EI"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            18.17237308146399,
+            60.21818181818182
+        ],
+        "A": [
+            55.163636363636364,
+            60.096
+        ],
+        "C": [
+            320.025974025974,
+            59.903999999999996
+        ],
+        "G": [
+            358.1471861471862,
+            59.73333333333333
+        ],
+        "B": [
+            162.89610389610388,
+            60.72
+        ],
+        "D": [
+            104.61595547309834,
+            117.39428571428572
+        ],
+        "E": [
+            220.07792207792207,
+            117.504
+        ],
+        "H": [
+            78.8051948051948,
+            144.0
+        ],
+        "I": [
+            246.4103896103896,
+            144.0
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        90.0,
+        135.0,
+        180.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        135.0,
+        180.0
+    ],
+    "problem_answer": 135.0,
+    "total_time": 77.95798,
+    "solution_predicate": "Equals(2.3561944902, MeasureOf(Angle(D, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DBC, \u2220CBH, BE \u22a5 BH, \u2220CBD, \u2220EBH, \u2220EBG, pi * (x / 180) = \u2220EBC, pi * (x / 180) = \u2220ABD, \u2220FBD, D on BH, C on BG, \u2220HBE, A on BF, \u2220GBH, 3.14 = pi\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 BH\nConclusions: (3 * pi) / 2 = \u2220EBH\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBD\nConclusions: \u2220CBD = 2 * pi - \u2220DBC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBH\nConclusions: \u2220EBH = 2 * pi - \u2220HBE\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220FBD, \u2220DBC\nConclusions: pi = \u2220DBC + \u2220FBD\n\nStep 6:\nTheorem: Same Angle\nPremises : D on BH, \u2220CBH\nConclusions: \u2220CBD = \u2220CBH\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EBG, C on BG\nConclusions: \u2220EBC = \u2220EBG\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220FBD, A on BF\nConclusions: \u2220ABD = \u2220FBD\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220GBH, C on BG\nConclusions: \u2220CBH = \u2220GBH\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220HBE, \u2220GBH, \u2220EBG\nConclusions: 2 * pi = \u2220EBG + \u2220GBH + \u2220HBE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220EBH, \u2220EBH = 2 * pi - \u2220HBE\nConclusions: (3 * pi) / 2 = 2 * pi - \u2220HBE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220DBC + \u2220FBD\nConclusions: 3.14 = \u2220DBC + \u2220FBD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220EBC, \u2220EBC = \u2220EBG\nConclusions: pi * (x / 180) = \u2220EBG\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220CBH, \u2220CBH = \u2220GBH\nConclusions: \u2220CBD = \u2220GBH\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220EBG, pi * (x / 180) = \u2220ABD, \u2220ABD = \u2220FBD\nConclusions: \u2220EBG = \u2220FBD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = 2 * pi - \u2220DBC, \u2220CBD = \u2220GBH\nConclusions: \u2220GBH = 2 * pi - \u2220DBC\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DBC + \u2220FBD, \u2220GBH = 2 * pi - \u2220DBC, (3 * pi) / 2 = 2 * pi - \u2220HBE, 3.14 = pi, \u2220EBG = \u2220FBD, 2 * pi = \u2220EBG + \u2220GBH + \u2220HBE\nConclusions: 2.36 = \u2220DBC\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, A)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, G)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(C, G)",
+        "Line(H, D)",
+        "Line(H, B)",
+        "Line(D, B)",
+        "Line(B, E)",
+        "Line(B, I)",
+        "Line(E, I)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(B, G)",
+        "Line(B, I)",
+        "Line(C, G)",
+        "Line(D, B)",
+        "Line(E, I)",
+        "Line(F, A)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, G)",
+        "Line(H, B)",
+        "Line(H, D)",
+        "Perpendicular(Line(H, B), Line(B, I))",
+        "PointLiesOnLine(A, Line(F, B))",
+        "PointLiesOnLine(A, Line(F, C))",
+        "PointLiesOnLine(A, Line(F, G))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, G))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(C, Line(F, G))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(E, Line(B, I))",
+        "Equals(MeasureOf(Angle(A, B, D)), MeasureOf(Angle(E, B, C)))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

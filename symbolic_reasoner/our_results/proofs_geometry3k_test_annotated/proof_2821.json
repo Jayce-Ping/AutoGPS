@@ -1,0 +1,70 @@
+{
+    "problem_id": "2821",
+    "solved": true,
+    "problem_text": "Quadrilateral A B C D is a rhombus. If A B = 2 x + 3 and B C = x + 7, find C D.",
+    "logic_forms": [
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), 2x+3)",
+        "Equals(LengthOf(Line(C, B)), x+7)",
+        "Find(LengthOf(Line(C, D)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "AC",
+        "AD",
+        "BC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            89.37362637362638,
+            48.57142857142858
+        ],
+        "D": [
+            57.06593406593407,
+            159.34065934065936
+        ],
+        "B": [
+            191.57142857142858,
+            48.791208791208796
+        ],
+        "C": [
+            159.4835164835165,
+            159.12087912087912
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "11",
+        "19",
+        "20"
+    ],
+    "choices_precise_value": [
+        4.0,
+        11.0,
+        19.0,
+        20.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 16.73854,
+    "solution_predicate": "Equals(11.0, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 7 + x = BC, 3 + 2 * x = AB, Rhombus(A, B, C, D)\n\nStep 2:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, C, D)\nConclusions: AB = AD\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC, AB = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, AB = AD, 3 + 2 * x = AB\nConclusions: 3 + 2 * x = BC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 3 + 2 * x = AB\nConclusions: 3 + 2 * x = CD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 7 + x = BC, 3 + 2 * x = BC\nConclusions: 7 + x = 3 + 2 * x\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 7 + x = 3 + 2 * x, 3 + 2 * x = CD\nConclusions: 7 + x = CD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 7 + x = CD, 7 + x = 3 + 2 * x\nConclusions: 11 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(C, B)), Add(x, 7.0))"
+    ],
+    "correct": true
+}

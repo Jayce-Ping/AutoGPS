@@ -1,0 +1,105 @@
+{
+    "problem_id": "2976",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(F, B))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, B, C)), 22)",
+        "Equals(MeasureOf(Angle(D, F, E)), 23)",
+        "Equals(MeasureOf(Angle(D, E, F)), 32)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "FD",
+        "FB",
+        "FC",
+        "DB",
+        "DC",
+        "BC",
+        "ED",
+        "EA",
+        "DA",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            161.8343195266272,
+            219.01183431952663
+        ],
+        "B": [
+            278.698224852071,
+            141.49704142011834
+        ],
+        "C": [
+            374.5562130177515,
+            140.31360946745562
+        ],
+        "D": [
+            215.97633136094674,
+            140.90532544378698
+        ],
+        "E": [
+            303.2544378698225,
+            16.644970414201183
+        ],
+        "F": [
+            16.568047337278106,
+            140.31360946745562
+        ]
+    },
+    "problem_choices": [
+        "32",
+        "33",
+        "45",
+        "55"
+    ],
+    "choices_precise_value": [
+        32.0,
+        33.0,
+        45.0,
+        55.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 29.630552,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(B, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CDA, EF, \u2220EDF, \u2220ADB, \u2220ADC, \u2220BDA, \u2220ADB, pi * (23 / 180) = \u2220DFE, \u2220FDA, DE, \u2220CDE, D on BF, \u2220BDE, B on CD, D on AE, DF, 3.14 = pi, pi * (32 / 180) = \u2220FED\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADB\nConclusions: \u2220ADB = 2 * pi - \u2220BDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDA\nConclusions: \u2220BDA = 2 * pi - \u2220ADB\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ADB, \u2220BDE\nConclusions: pi = \u2220ADB + \u2220BDE\n\nStep 5:\nTheorem: Circumference Split\nPremises : \u2220FDA, \u2220ADB, \u2220EDF, \u2220BDE\nConclusions: 2 * pi = \u2220ADB + \u2220BDE + \u2220EDF + \u2220FDA\n\nStep 6:\nTheorem: Same Angle\nPremises : B on CD, \u2220ADC\nConclusions: \u2220ADB = \u2220ADC\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220CDE, B on CD\nConclusions: \u2220BDE = \u2220CDE\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CDA, B on CD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 9:\nTheorem: Vertical Angle Theorem\nPremises : D on AE, D on BF\nConclusions: \u2220BDE = \u2220FDA, \u2220ADB = \u2220EDF\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : DE, DF, EF\nConclusions: \u25b3DEF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BDE\nConclusions: 3.14 = \u2220ADB + \u2220BDE\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220ADB = \u2220ADC, 3.14 = pi, \u2220ADB = 2 * pi - \u2220BDA, \u2220BDA = \u2220CDA\nConclusions: \u2220ADC = 2 * 3.14 - \u2220CDA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CDA, \u2220BDA = 2 * pi - \u2220ADB\nConclusions: \u2220CDA = 2 * pi - \u2220ADB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDE = \u2220CDE, \u2220BDE = \u2220FDA\nConclusions: \u2220CDE = \u2220FDA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220ADC, \u2220ADB = \u2220EDF\nConclusions: \u2220ADC = \u2220EDF\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(F, E, D)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DFE + \u2220EDF + \u2220FED\n\nStep 17:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADB + \u2220BDE + \u2220EDF + \u2220FDA, \u2220ADB = \u2220ADC, 3.14 = pi, \u2220CDE = \u2220FDA, \u2220BDE = \u2220CDE, \u2220ADC = \u2220EDF\nConclusions: 2 * 3.14 = \u2220ADC + \u2220ADC + \u2220CDE + \u2220CDE\n\nStep 18:\nTheorem: Substitution\nPremises : pi * (23 / 180) = \u2220DFE, 3.14 = pi, pi = \u2220DFE + \u2220EDF + \u2220FED, pi * (32 / 180) = \u2220FED, \u2220ADC = \u2220EDF\nConclusions: 3.14 = pi * (23 / 180) + pi * (32 / 180) + \u2220ADC\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : \u2220ADC = 2 * 3.14 - \u2220CDA, 3.14 = pi * (23 / 180) + pi * (32 / 180) + \u2220ADC, 2 * 3.14 = \u2220ADC + \u2220ADC + \u2220CDE + \u2220CDE, 3.14 = \u2220ADB + \u2220BDE, \u2220BDE = \u2220CDE, \u2220CDA = 2 * pi - \u2220ADB\nConclusions: 0.96 = \u2220BDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(F, D)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(E, D)",
+        "Line(E, A)",
+        "Line(D, A)",
+        "Line(F, E)",
+        "PointLiesOnLine(D, Line(F, B))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(B, Line(F, C))",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(22.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, E)), Mul(pi, Div(23.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, E, D)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": false
+}

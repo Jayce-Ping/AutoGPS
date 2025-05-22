@@ -1,0 +1,67 @@
+{
+    "problem_id": "6941",
+    "solved": true,
+    "problem_text": "Find the area of the polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(LengthOf(Line(A, C)), 10)",
+        "Find(AreaOf(Triangle(A, B, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            41.81443298969072,
+            25.714285714285715
+        ],
+        "B": [
+            41.35493372606774,
+            214.28571428571428
+        ],
+        "C": [
+            295.20274914089345,
+            214.52380952380952
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        30.0,
+        48.0,
+        60.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        30.0,
+        48.0,
+        60.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 15.296965,
+    "solution_predicate": "Equals(24.0, AreaOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 BC, \u25b3ABC, 10 = AC, sin(\u2220BAC), cos(\u2220BAC), 6 = AB\n\nStep 2:\nTheorem: Area formula of Triangle(A, B, C)\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: Area(\u25b3ABC) = (AB * BC) / 2\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 BC, sin(\u2220BAC)\nConclusions: BC / AC = sin(\u2220BAC)\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BAC), AB \u22a5 BC\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 5:\nTheorem: Substitution\nPremises : Area(\u25b3ABC) = (AB * BC) / 2, 6 = AB\nConclusions: Area(\u25b3ABC) = (6 * BC) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : AB / AC = cos(\u2220BAC), 6 = AB, 10 = AC\nConclusions: 6 / 10 = cos(\u2220BAC)\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 6 / 10 = cos(\u2220BAC)\nConclusions: 0.93 = \u2220BAC\n\nStep 8:\nTheorem: Substitution\nPremises : 0.93 = \u2220BAC, BC / AC = sin(\u2220BAC), 10 = AC\nConclusions: sin(0.93) = BC / 10\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3ABC) = (6 * BC) / 2, sin(0.93) = BC / 10\nConclusions: 24 = Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(A, C)), 10.0)"
+    ],
+    "correct": true
+}

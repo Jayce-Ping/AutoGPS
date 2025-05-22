@@ -1,0 +1,63 @@
+{
+    "problem_id": "2518",
+    "solved": true,
+    "problem_text": "Express the ratio of \\cos X as a decimal to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(X, W), Line(V, W))",
+        "Equals(LengthOf(Line(X, V)), 75)",
+        "Equals(LengthOf(Line(W, X)), 21)",
+        "Equals(LengthOf(Line(W, V)), 72)",
+        "Find(RatioOf(CosOf(Angle(X))))"
+    ],
+    "point_instances": [
+        "X",
+        "V",
+        "W"
+    ],
+    "line_instances": [
+        "WX",
+        "VW",
+        "VX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            209.07023411371233,
+            272.5752508361204
+        ],
+        "V": [
+            56.56187290969899,
+            53.17725752508361
+        ],
+        "W": [
+            56.22742474916387,
+            272.5752508361204
+        ]
+    },
+    "problem_choices": [
+        "0.28",
+        "0.29",
+        "0.96",
+        "3.43"
+    ],
+    "choices_precise_value": [
+        0.28,
+        0.29,
+        0.96,
+        3.43
+    ],
+    "problem_answer": 0.28,
+    "total_time": 7.205528,
+    "solution_predicate": "Equals(0.28, CosOf(MeasureOf(Angle(V, X, W))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WX, sin(\u2220WVX), 75 = VX, VX, \u2220VXW, VW, VW \u22a5 WX, 21 = WX, \u2220WVX\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : VX, VW, WX\nConclusions: \u25b3VWX\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220WVX), VW \u22a5 WX\nConclusions: WX / VX = sin(\u2220WVX)\n\nStep 4:\nTheorem: Evaluate\nPremises : 75 = VX, 21 = WX\nConclusions: 0.28 = WX / VX\n\nStep 5:\nTheorem: Cos Function Definition\nPremises : \u2220VXW, VW \u22a5 WX, \u25b3VWX\nConclusions: WX / VX = cos(\u2220VXW)\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : VW \u22a5 WX, \u2220WVX, \u25b3VWX\nConclusions: WX / VX = sin(\u2220WVX)\n\nStep 7:\nTheorem: Substitution\nPremises : WX / VX = sin(\u2220WVX), 75 = VX, 21 = WX\nConclusions: 21 / 75 = sin(\u2220WVX)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : WX / VX = sin(\u2220WVX), 21 / 75 = sin(\u2220WVX)\nConclusions: 21 / 75 = WX / VX\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.28 = WX / VX, 21 / 75 = WX / VX\nConclusions: 0.28 = 21 / 75\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 21 / 75 = sin(\u2220WVX), 0.28 = 21 / 75\nConclusions: 0.28 = sin(\u2220WVX)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : WX / VX = sin(\u2220WVX), 0.28 = sin(\u2220WVX)\nConclusions: 0.28 = WX / VX\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : WX / VX = cos(\u2220VXW), 0.28 = WX / VX\nConclusions: 0.28 = cos(\u2220VXW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Perpendicular(Line(X, W), Line(V, W))",
+        "Equals(LengthOf(Line(X, V)), 75.0)",
+        "Equals(LengthOf(Line(W, X)), 21.0)",
+        "Equals(LengthOf(Line(W, V)), 72.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,120 @@
+{
+    "problem_id": "4100",
+    "solved": true,
+    "problem_text": "\\parallelogram ABCD \\sim \\parallelogram EFGH. Find the perimeter of \\parallelogram EFGH.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 4)",
+        "Equals(LengthOf(Line(C, D)), 6)",
+        "Equals(LengthOf(Line(H, G)), 3)",
+        "Equals(MeasureOf(Angle(A, D, C)), 30)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(H, E)",
+        "Line(H, G)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Parallel(Line(D, A), Line(C, B))",
+        "Similar(Parallelogram(A,B,C,D),Parallelogram(E,F,G,H))",
+        "Find(PerimeterOf(Parallelogram(E,F,G,H)))"
+    ],
+    "point_instances": [
+        "E",
+        "F",
+        "H",
+        "G",
+        "A",
+        "B",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "GF",
+        "DA",
+        "DC",
+        "AB",
+        "CB",
+        "EF",
+        "HG",
+        "HE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "E": [
+            315.8048780487805,
+            60.0204081632653
+        ],
+        "F": [
+            444.5560975609756,
+            59.49999999999999
+        ],
+        "H": [
+            241.71219512195123,
+            103.21428571428571
+        ],
+        "G": [
+            370.4634146341463,
+            103.21428571428571
+        ],
+        "A": [
+            185.02926829268293,
+            215.7380952380952
+        ],
+        "B": [
+            444.15121951219515,
+            215.7380952380952
+        ],
+        "D": [
+            35.05087108013937,
+            301.4897959183673
+        ],
+        "C": [
+            294.42731707317074,
+            302.1142857142857
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        12.0,
+        14.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        12.0,
+        14.0,
+        18.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 28.942507,
+    "solution_predicate": "Equals(10.0, PerimeterOf(Parallelogram(E, F, G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = BC, 3 = GH, Parallelogram(A, B, C, D) ~ Parallelogram(E, F, G, H), Parallelogram(A, B, C, D), 6 = CD, Parallelogram(E, F, G, H)\n\nStep 2:\nTheorem: Similar Definition\nPremises : Parallelogram(A, B, C, D) ~ Parallelogram(E, F, G, H)\nConclusions: AB / EF = Perimeter(Parallelogram(A, B, C, D)) / Perimeter(Parallelogram(E, F, G, H))\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 4:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, C, D)\nConclusions: Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: EF = GH\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 6 = CD, AB = CD\nConclusions: 6 = AB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BC, AD = BC\nConclusions: 4 = AD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : EF = GH, 3 = GH\nConclusions: 3 = EF\n\nStep 9:\nTheorem: Substitution\nPremises : 6 = CD, 4 = BC, Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD, 4 = AD, 6 = AB\nConclusions: 4 + 4 + 6 + 6 = Perimeter(Parallelogram(A, B, C, D))\n\nStep 10:\nTheorem: Substitution\nPremises : AB / EF = Perimeter(Parallelogram(A, B, C, D)) / Perimeter(Parallelogram(E, F, G, H)), 3 = EF, 6 = AB\nConclusions: 6 / 3 = Perimeter(Parallelogram(A, B, C, D)) / Perimeter(Parallelogram(E, F, G, H))\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 6 / 3 = Perimeter(Parallelogram(A, B, C, D)) / Perimeter(Parallelogram(E, F, G, H)), 4 + 4 + 6 + 6 = Perimeter(Parallelogram(A, B, C, D))\nConclusions: 10 = Perimeter(Parallelogram(E, F, G, H))\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(E, F)",
+        "Line(H, G)",
+        "Line(H, E)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(H, E)",
+        "Line(H, G)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Parallel(Line(D, A), Line(C, B))",
+        "Similar(Parallelogram(A, B, C, D), Parallelogram(E, F, G, H))",
+        "Equals(LengthOf(Line(C, B)), 4.0)",
+        "Equals(LengthOf(Line(C, D)), 6.0)",
+        "Equals(LengthOf(Line(H, G)), 3.0)",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

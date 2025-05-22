@@ -1,0 +1,63 @@
+{
+    "problem_id": "2450",
+    "solved": true,
+    "problem_text": "A plane travels from Des Moines to Phoenix, on to Atlanta, and back to Des Moines, as shown below. Find the distance in miles from Phoenix to Atlanta if the total trip was 3482 miles.",
+    "logic_forms": [
+        "Equals(Add(LengthOf(Line(Phoenix, DesMoines)), LengthOf(Line(DesMoines, Atlanta)), LengthOf(Line(Atlanta, Phoenix))), 3482)",
+        "Equals(LengthOf(Line(Atlanta, DesMoines)), 73.8x)",
+        "Equals(LengthOf(Line(Phoenix, Atlanta)), 150x + 91)",
+        "Equals(LengthOf(Line(Phoenix, DesMoines)), 110x + 53)",
+        "Find(LengthOf(Line(Phoenix, Atlanta)))"
+    ],
+    "point_instances": [
+        "Phoenix",
+        "Atlanta",
+        "DesMoines"
+    ],
+    "line_instances": [
+        "PhoenixAtlanta",
+        "DesMoinesAtlanta",
+        "PhoenixDesMoines"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Phoenix": [
+            138.9189189189189,
+            232.18918918918916
+        ],
+        "Atlanta": [
+            648.6486486486486,
+            239.75675675675672
+        ],
+        "DesMoines": [
+            479.4594594594594,
+            83.54054054054052
+        ]
+    },
+    "problem_choices": [
+        "53",
+        "73.8",
+        "110",
+        "1591"
+    ],
+    "choices_precise_value": [
+        53.0,
+        73.8,
+        110.0,
+        1591.0
+    ],
+    "problem_answer": 1591.0,
+    "total_time": 5.120676,
+    "solution_predicate": "Equals(1591.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3482 = AB + AC + BC, 53 + 110 * x = AB, 91 + 150 * x = BC, 73.8 * x = AC\n\nStep 2:\nTheorem: Substitution\nPremises : 73.8 * x = AC, 91 + 150 * x = BC, 3482 = AB + AC + BC, 53 + 110 * x = AB\nConclusions: 3482 = 73.8 * x + (53 + 110 * x) + (91 + 150 * x)\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 91 + 150 * x = BC, 3482 = 73.8 * x + (53 + 110 * x) + (91 + 150 * x)\nConclusions: 1591 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Equals(Add(LengthOf(Line(B, A)), LengthOf(Line(A, C)), LengthOf(Line(C, B))), 3482.0)",
+        "Equals(LengthOf(Line(C, A)), Mul(73.8, x))",
+        "Equals(LengthOf(Line(B, C)), Add(Mul(150.0, x), 91.0))",
+        "Equals(LengthOf(Line(B, A)), Add(Mul(110.0, x), 53.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,92 @@
+{
+    "problem_id": "7122",
+    "solved": true,
+    "problem_text": "\\triangle ADB \\cong \\triangle CDB, find the length of AD.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 14-2s)",
+        "Equals(LengthOf(Line(B, A)), s^{2}-4s)",
+        "Equals(LengthOf(Line(B, C)), 5)",
+        "Equals(LengthOf(Line(B, D)), s-2)",
+        "Equals(LengthOf(Line(C, D)), 4)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Congruent(Triangle(A,D,B),Triangle(C,D,B))",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "AB",
+        "BC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            252.82165271966528,
+            47.25
+        ],
+        "A": [
+            44.34518828451883,
+            203.04000000000002
+        ],
+        "D": [
+            253.092050209205,
+            202.42285714285714
+        ],
+        "C": [
+            461.37537358039447,
+            203.04000000000002
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        4.0,
+        5.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 11.136438,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 14 - 2 * s = AD, 4 = CD, \u25b3ABD \u2245 \u25b3CBD\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: AD = CD\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 14 - 2 * s = AD, AD = CD, 4 = CD\nConclusions: 4 = 14 - 2 * s\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 14 - 2 * s = AD, 4 = 14 - 2 * s\nConclusions: 4 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Congruent(Triangle(A, D, B), Triangle(C, D, B))",
+        "Equals(LengthOf(Line(A, D)), Sub(14.0, Mul(2.0, s)))",
+        "Equals(LengthOf(Line(B, A)), Sub(Pow(s, 2.0), Mul(4.0, s)))",
+        "Equals(LengthOf(Line(B, C)), 5.0)",
+        "Equals(LengthOf(Line(B, D)), Sub(s, 2.0))",
+        "Equals(LengthOf(Line(C, D)), 4.0)"
+    ],
+    "correct": true
+}

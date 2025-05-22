@@ -1,0 +1,105 @@
+{
+    "problem_id": "2071",
+    "solved": true,
+    "problem_text": "Find AB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x+3)",
+        "Equals(LengthOf(Line(C, B)), 2x-8)",
+        "Equals(LengthOf(Line(D, B)), 3)",
+        "Equals(LengthOf(Line(E, B)), 5)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Parallel(Line(D, C), Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "EA",
+        "EB",
+        "ED",
+        "BD",
+        "AB",
+        "AC",
+        "BC",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "E": [
+            54.8208,
+            195.8625
+        ],
+        "A": [
+            52.169999999999995,
+            29.94140625
+        ],
+        "B": [
+            224.36624999999998,
+            127.5
+        ],
+        "C": [
+            342.63,
+            194.765625
+        ],
+        "D": [
+            333.2480769230769,
+            83.88822115384615
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        6.0,
+        10.0,
+        11.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        10.0,
+        11.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 34.48829,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AE || DC, 3 + x = AB, \u2220DEA, \u2220EAC, 5 = BE, 3 = BD, B on AC, 2 * x - 8 = BC, B on DE, \u2220DCA, \u2220EDC\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AE || DC\nConclusions: \u2220DCA = \u2220EAC, \u2220DEA = \u2220EDC\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AC, \u2220EAC\nConclusions: \u2220EAB = \u2220EAC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220DEA, B on DE\nConclusions: \u2220BEA = \u2220DEA\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : B on AC, B on DE\nConclusions: \u2220ABE = \u2220CBD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220DCA, B on AC\nConclusions: \u2220DCA = \u2220DCB\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EDC, B on DE\nConclusions: \u2220BDC = \u2220EDC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAC, \u2220DCA = \u2220EAC, \u2220DCA = \u2220DCB\nConclusions: \u2220DCB = \u2220EAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220EDC, \u2220BEA = \u2220DEA, \u2220DEA = \u2220EDC\nConclusions: \u2220BDC = \u2220BEA\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DCB = \u2220EAB, \u2220BDC = \u2220BEA, \u2220ABE = \u2220CBD\nConclusions: \u25b3ABE ~ \u25b3CBD\n\nStep 11:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3CBD\nConclusions: \u2220DCB = \u2220EAB, AB / BC = BE / BD, \u2220ABE = \u2220CBD\n\nStep 12:\nTheorem: Substitution\nPremises : AB / BC = BE / BD, 5 = BE, 3 + x = AB, 3 = BD, 2 * x - 8 = BC\nConclusions: 5 / 3 = (3 + x) / (2 * x - 8)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 5 / 3 = (3 + x) / (2 * x - 8), 3 + x = AB\nConclusions: 10 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Parallel(Line(D, C), Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "Equals(LengthOf(Line(A, B)), Add(x, 3.0))",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(2.0, x), 8.0))",
+        "Equals(LengthOf(Line(D, B)), 3.0)",
+        "Equals(LengthOf(Line(E, B)), 5.0)"
+    ],
+    "correct": true
+}

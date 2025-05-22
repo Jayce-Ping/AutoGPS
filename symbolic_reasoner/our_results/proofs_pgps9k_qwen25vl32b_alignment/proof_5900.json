@@ -1,0 +1,69 @@
+{
+    "problem_id": "5900",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 29)",
+        "Equals(LengthOf(Line(B, C)), 50)",
+        "Equals(LengthOf(Line(C, A)), 61)",
+        "Equals(MeasureOf(Angle(C, B, A)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            58.91376720901126,
+            16.52201680672269
+        ],
+        "B": [
+            59.21856866537718,
+            134.04502164502165
+        ],
+        "C": [
+            256.6324468085106,
+            158.6314285714286
+        ]
+    },
+    "problem_choices": [
+        97.53,
+        103.0,
+        108.0,
+        113.0
+    ],
+    "choices_precise_value": [
+        97.53,
+        103.0,
+        108.0,
+        113.0
+    ],
+    "problem_answer": 103.0,
+    "total_time": 11.965372,
+    "solution_predicate": "Equals(97.5293751967, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 61 = AC, 29 = AB, 50 = BC, AB, AC, 3.14 = pi, BC, pi * (x / 180) = \u2220CBA\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CBA, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CBA\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\n\nStep 5:\nTheorem: Substitution\nPremises : 61 = AC, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA), 50 = BC, 29 = AB\nConclusions: (29 ** 2 + 50 ** 2) - 61 ** 2 = 2 * 29 * 50 * cos(\u2220CBA)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : (29 ** 2 + 50 ** 2) - 61 ** 2 = 2 * 29 * 50 * cos(\u2220CBA)\nConclusions: 1.7 = \u2220CBA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220CBA, 1.7 = \u2220CBA\nConclusions: 1.7 = 3.14 * (x / 180)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 1.7 = 3.14 * (x / 180)\nConclusions: 97.53 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, B)), 29.0)",
+        "Equals(LengthOf(Line(B, C)), 50.0)",
+        "Equals(LengthOf(Line(C, A)), 61.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

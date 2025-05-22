@@ -1,0 +1,78 @@
+{
+    "problem_id": "2845",
+    "solved": true,
+    "problem_text": "Use parallelogram to find y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, S, R)), y)",
+        "Equals(MeasureOf(Angle(Q, R, S)), x)",
+        "Equals(MeasureOf(Angle(R, Q, P)), 101)",
+        "Find(y)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Parallelogram(P, Q, R, S)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "P",
+        "Q"
+    ],
+    "line_instances": [
+        "RS",
+        "SP",
+        "PQ",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            58.72942386831276,
+            282.8152380952381
+        ],
+        "S": [
+            319.86111111111114,
+            309.66
+        ],
+        "P": [
+            385.3960905349794,
+            93.76761904761906
+        ],
+        "Q": [
+            124.48495370370371,
+            66.07214285714286
+        ]
+    },
+    "problem_choices": [
+        79.0,
+        101.0,
+        180.0,
+        360.0
+    ],
+    "choices_precise_value": [
+        79.0,
+        101.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 101.0,
+    "total_time": 7.745684,
+    "solution_predicate": "Equals(101.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, Parallelogram(P, Q, R, S), pi * (101 / 180) = \u2220RQP, pi * (y / 180) = \u2220PSR\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: \u2220PSR = \u2220RQP\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (101 / 180) = \u2220RQP, \u2220PSR = \u2220RQP\nConclusions: pi * (101 / 180) = \u2220PSR\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220PSR, pi * (101 / 180) = \u2220PSR\nConclusions: pi * (101 / 180) = pi * (y / 180)\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (101 / 180) = pi * (y / 180)\nConclusions: 3.14 * (101 / 180) = 3.14 * (y / 180)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (101 / 180) = 3.14 * (y / 180)\nConclusions: 101 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(S, P)",
+        "Line(P, Q)",
+        "Line(R, Q)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Parallelogram(P, Q, R, S)",
+        "Equals(MeasureOf(Angle(P, S, R)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(S, R, Q)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(R, Q, P)), Mul(pi, Div(101.0, 180.0)))"
+    ],
+    "correct": true
+}

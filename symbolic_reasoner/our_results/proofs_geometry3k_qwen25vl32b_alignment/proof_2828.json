@@ -1,0 +1,86 @@
+{
+    "problem_id": "2828",
+    "solved": true,
+    "problem_text": "\\triangle J K L \\sim \\triangle W Y Z. Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(L, K, J)), 4x-13)",
+        "Equals(MeasureOf(Angle(W, Z, Y)), 44)",
+        "Equals(MeasureOf(Angle(L, K, J)), y)",
+        "Equals(MeasureOf(Angle(Z, W, Y)), 71)",
+        "Similar(Triangle(J,K,L),Triangle(W,Y,Z))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Y",
+        "K",
+        "W",
+        "J",
+        "L",
+        "Z"
+    ],
+    "line_instances": [
+        "KL",
+        "JL",
+        "JK",
+        "ZW",
+        "ZY",
+        "WY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            947.3816793893129,
+            377.39694656488547
+        ],
+        "K": [
+            80.20610687022901,
+            350.6793893129771
+        ],
+        "W": [
+            928.2977099236641,
+            91.90076335877862
+        ],
+        "J": [
+            203.87022900763358,
+            91.90076335877862
+        ],
+        "L": [
+            472.57251908396944,
+            354.4961832061069
+        ],
+        "Z": [
+            583.2595419847328,
+            236.93893129770993
+        ]
+    },
+    "problem_choices": [
+        "13",
+        "21",
+        "32",
+        "44"
+    ],
+    "choices_precise_value": [
+        13.0,
+        21.0,
+        32.0,
+        44.0
+    ],
+    "problem_answer": 21.0,
+    "total_time": 15.486914,
+    "solution_predicate": "Equals(19.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((4 * x - 13) / 180) = \u2220LKJ, pi * (71 / 180) = \u2220ZWY, pi * (44 / 180) = \u2220YZW, 3.14 = pi, \u25b3JKL ~ \u25b3WYZ, \u25b3JKL\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((4 * x - 13) / 180) = \u2220LKJ, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 13) / 180) = \u2220LKJ\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3JKL ~ \u25b3WYZ\nConclusions: \u2220KJL = \u2220ZWY, \u2220JLK = \u2220YZW\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(L, K, J)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JLK + \u2220KJL + \u2220LKJ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (71 / 180) = \u2220ZWY, \u2220KJL = \u2220ZWY\nConclusions: pi * (71 / 180) = \u2220KJL\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (44 / 180) = \u2220YZW, \u2220JLK = \u2220YZW\nConclusions: pi * (44 / 180) = \u2220JLK\n\nStep 7:\nTheorem: Substitution\nPremises : pi = \u2220JLK + \u2220KJL + \u2220LKJ, pi * (71 / 180) = \u2220KJL, 3.14 = pi, pi * (44 / 180) = \u2220JLK\nConclusions: 3.14 = 3.14 * (44 / 180) + 3.14 * (71 / 180) + \u2220LKJ\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (44 / 180) + 3.14 * (71 / 180) + \u2220LKJ, 3.14 * ((4 * x - 13) / 180) = \u2220LKJ\nConclusions: 19.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(J, L)",
+        "Line(J, K)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Line(W, Y)",
+        "Similar(Triangle(J, K, L), Triangle(W, Y, Z))",
+        "Equals(MeasureOf(Angle(L, K, J)), Mul(pi, Div(Sub(Mul(4.0, x), 13.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, W)), Mul(pi, Div(44.0, 180.0)))",
+        "Equals(MeasureOf(Angle(L, K, J)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, Y)), Mul(pi, Div(71.0, 180.0)))"
+    ],
+    "correct": true
+}

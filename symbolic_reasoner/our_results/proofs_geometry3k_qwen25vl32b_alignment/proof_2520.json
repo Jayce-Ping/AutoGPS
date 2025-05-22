@@ -1,0 +1,114 @@
+{
+    "problem_id": "2520",
+    "solved": true,
+    "problem_text": "A B \\perp D C and G H \\perp F E. If \\triangle A C D \\sim \\triangle G E F, find A B.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(H, Line(F, E))",
+        "Equals(LengthOf(Line(H, G)), 3.15)",
+        "Equals(LengthOf(Line(G, E)), 6.3)",
+        "Equals(LengthOf(Line(A, C)), 4.4)",
+        "Perpendicular(Line(A,B),Line(D,C))",
+        "Perpendicular(Line(G,H),Line(F,E))",
+        "Similar(Triangle(A,C,D),Triangle(G,E,F))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "E",
+        "C",
+        "F",
+        "H",
+        "G"
+    ],
+    "line_instances": [
+        "DB",
+        "DC",
+        "BC",
+        "AB",
+        "AD",
+        "AC",
+        "GF",
+        "FH",
+        "FE",
+        "HE",
+        "GH",
+        "GE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            158.92857142857144,
+            127.40476190476193
+        ],
+        "D": [
+            95.23809523809524,
+            217.28571428571428
+        ],
+        "B": [
+            158.92857142857144,
+            215.5
+        ],
+        "E": [
+            700.5952380952381,
+            216.09523809523813
+        ],
+        "C": [
+            285.11904761904765,
+            217.28571428571428
+        ],
+        "F": [
+            392.26190476190476,
+            217.8809523809524
+        ],
+        "H": [
+            497.61904761904765,
+            216.6904761904762
+        ],
+        "G": [
+            497.0238095238095,
+            70.26190476190476
+        ]
+    },
+    "problem_choices": [
+        "2.2",
+        "3.6",
+        "4.4",
+        "6.3"
+    ],
+    "choices_precise_value": [
+        2.2,
+        3.6,
+        4.4,
+        6.3
+    ],
+    "problem_answer": 2.2,
+    "total_time": 87.968335,
+    "solution_predicate": "Equals(2.1999999999, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4.4 = AC, EH \u22a5 GH, \u2220GEF, EH, 3.15 = GH, BC, 3.14 = pi, AB, B on CD, \u25b3ACD ~ \u25b3GEF, AC, 6.3 = EG, \u2220ACD, \u2220FEG, H on EF, AB \u22a5 BC, \u2220DCA, EG, GH\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : EH \u22a5 GH\nConclusions: (3 * pi) / 2 = \u2220GHE, pi / 2 = \u2220EHG\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3GEF\nConclusions: \u2220DCA = \u2220FEG, \u2220ACD = \u2220GEF\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Evaluate\nPremises : 6.3 = EG, 4.4 = AC\nConclusions: 0.7 = AC / EG\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ACD, B on CD\nConclusions: \u2220ACB = \u2220ACD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220GEF, H on EF\nConclusions: \u2220GEF = \u2220GEH\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220FEG, H on EF\nConclusions: \u2220FEG = \u2220HEG\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220DCA, B on CD\nConclusions: \u2220BCA = \u2220DCA\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : EG, EH, GH\nConclusions: \u25b3EGH\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220ACD, \u2220ACD = \u2220GEF\nConclusions: \u2220ACB = \u2220GEF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220GHE, (3 * pi) / 2 = \u2220ABC\nConclusions: \u2220ABC = \u2220GHE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220DCA, \u2220DCA = \u2220FEG\nConclusions: \u2220BCA = \u2220FEG\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(H, G, E)\nPremises : \u25b3EGH\nConclusions: pi = \u2220EHG + \u2220GEH + \u2220HGE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220GEF, \u2220GEF = \u2220GEH\nConclusions: \u2220ACB = \u2220GEH\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220FEG, \u2220FEG = \u2220HEG\nConclusions: \u2220BCA = \u2220HEG\n\nStep 19:\nTheorem: Substitution\nPremises : pi = \u2220EHG + \u2220GEH + \u2220HGE, 3.14 = pi, pi / 2 = \u2220EHG\nConclusions: 3.14 = 3.14 / 2 + \u2220GEH + \u2220HGE\n\nStep 20:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, \u2220ACB = \u2220GEH, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + \u2220BAC + \u2220GEH\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + \u2220GEH + \u2220HGE, 3.14 = 3.14 / 2 + \u2220BAC + \u2220GEH\nConclusions: \u2220BAC = \u2220HGE\n\nStep 22:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220GHE, \u2220BCA = \u2220HEG, \u2220BAC = \u2220HGE\nConclusions: \u25b3ABC ~ \u25b3GHE\n\nStep 23:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3GHE\nConclusions: \u2220BCA = \u2220HEG, sim_ratio_triangle_a_b_c_triangle_g_h_e = AC / EG, \u2220ABC = \u2220GHE, \u2220ACB = \u2220GEH, sim_ratio_triangle_a_b_c_triangle_g_h_e = AB / GH\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 0.7 = AC / EG, sim_ratio_triangle_a_b_c_triangle_g_h_e = AC / EG\nConclusions: 0.7 = sim_ratio_triangle_a_b_c_triangle_g_h_e\n\nStep 25:\nTheorem: Substitution\nPremises : 0.7 = sim_ratio_triangle_a_b_c_triangle_g_h_e, 3.15 = GH, sim_ratio_triangle_a_b_c_triangle_g_h_e = AB / GH\nConclusions: 0.7 = AB / 3.15\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 0.7 = AB / 3.15\nConclusions: 2.2 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(G, F)",
+        "Line(F, H)",
+        "Line(F, E)",
+        "Line(H, E)",
+        "Line(G, H)",
+        "Line(G, E)",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(H, Line(F, E))",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(G, H), Line(F, E))",
+        "Similar(Triangle(A, C, D), Triangle(G, E, F))",
+        "Equals(LengthOf(Line(H, G)), 3.15)",
+        "Equals(LengthOf(Line(G, E)), 6.3)",
+        "Equals(LengthOf(Line(A, C)), 4.4)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,163 @@
+{
+    "problem_id": "7215",
+    "solved": true,
+    "problem_text": "Points P, Q, and R are the midpoints of JK, KL, and JL, respectively. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, D)), 6x+23)",
+        "Equals(LengthOf(Line(R, D)), 28)",
+        "Line(D, J)",
+        "Line(D, P)",
+        "Line(D, R)",
+        "Line(K, D)",
+        "Line(K, J)",
+        "Line(K, P)",
+        "Line(K, R)",
+        "Line(L, D)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Line(L, P)",
+        "Line(L, Q)",
+        "Line(L, R)",
+        "Line(P, J)",
+        "Line(Q, D)",
+        "Line(Q, J)",
+        "Line(Q, K)",
+        "Line(R, J)",
+        "PointLiesOnLine(D, Line(K, R))",
+        "PointLiesOnLine(D, Line(L, P))",
+        "PointLiesOnLine(D, Line(Q, J))",
+        "PointLiesOnLine(P, Line(K, J))",
+        "PointLiesOnLine(Q, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, J))",
+        "IsMidpointOf(Point(P),Line(J,K))",
+        "IsMidpointOf(Point(Q),Line(K,L))",
+        "IsMidpointOf(Point(R),Line(J,L))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "K",
+        "P",
+        "J",
+        "R",
+        "L",
+        "Q",
+        "D"
+    ],
+    "line_instances": [
+        "KD",
+        "KR",
+        "DR",
+        "KQ",
+        "KL",
+        "QL",
+        "KP",
+        "KJ",
+        "PJ",
+        "QD",
+        "QJ",
+        "DJ",
+        "LR",
+        "LJ",
+        "RJ",
+        "LD",
+        "LP",
+        "DP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            51.23891402714933,
+            244.82386554621846
+        ],
+        "P": [
+            238.61589743589744,
+            258.50819047619046
+        ],
+        "J": [
+            427.1666666666667,
+            272.6975238095238
+        ],
+        "R": [
+            318.4706730769231,
+            160.74785714285713
+        ],
+        "L": [
+            214.18076923076924,
+            53.14612244897959
+        ],
+        "Q": [
+            133.910989010989,
+            147.55714285714285
+        ],
+        "D": [
+            230.49076923076922,
+            188.51542857142857
+        ]
+    },
+    "problem_choices": [
+        0.83,
+        1.1,
+        2.0,
+        5.5
+    ],
+    "choices_precise_value": [
+        0.83,
+        1.1,
+        2.0,
+        5.5
+    ],
+    "problem_answer": 5.5,
+    "total_time": 286.517242,
+    "solution_predicate": "Equals(5.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 23 + 6 * x = DK, D on JQ, IsMidpointOf(Q, KL), KL, D on LP, D on KR, IsMidpointOf(R, JL), JL, IsMidpointOf(P, JK), JK, 28 = DR\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(Q, KL)\nConclusions: KQ = LQ\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(R, JL)\nConclusions: JR = LR\n\nStep 4:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(P, JK)\nConclusions: JP = KP\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : JK, JL, KL\nConclusions: \u25b3JKL\n\nStep 6:\nTheorem: Evaluate\nPremises : 28 = DR\nConclusions: 56 = 2 * DR\n\nStep 7:\nTheorem: Centroid of Triangle\nPremises : KQ = LQ, JR = LR, JP = KP, \u25b3JKL, D on JQ, D on LP, D on KR\nConclusions: IsCentroidOf(D, \u25b3JKL)\n\nStep 8:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(D, \u25b3JKL)\nConclusions: KQ = LQ, JP = KP, DK = 2 * DR\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : DK = 2 * DR, 23 + 6 * x = DK\nConclusions: 23 + 6 * x = 2 * DR\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 23 + 6 * x = 2 * DR, 56 = 2 * DR\nConclusions: 56 = 23 + 6 * x\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 56 = 23 + 6 * x\nConclusions: 5.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, D)",
+        "Line(K, R)",
+        "Line(D, R)",
+        "Line(K, Q)",
+        "Line(K, L)",
+        "Line(Q, L)",
+        "Line(K, P)",
+        "Line(K, J)",
+        "Line(P, J)",
+        "Line(Q, D)",
+        "Line(Q, J)",
+        "Line(D, J)",
+        "Line(L, R)",
+        "Line(L, J)",
+        "Line(R, J)",
+        "Line(L, D)",
+        "Line(L, P)",
+        "Line(D, P)",
+        "Line(D, J)",
+        "Line(D, P)",
+        "Line(D, R)",
+        "Line(K, D)",
+        "Line(K, J)",
+        "Line(K, P)",
+        "Line(K, R)",
+        "Line(L, D)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Line(L, P)",
+        "Line(L, Q)",
+        "Line(L, R)",
+        "Line(P, J)",
+        "Line(Q, D)",
+        "Line(Q, J)",
+        "Line(Q, K)",
+        "Line(R, J)",
+        "PointLiesOnLine(D, Line(K, R))",
+        "PointLiesOnLine(D, Line(L, P))",
+        "PointLiesOnLine(D, Line(Q, J))",
+        "PointLiesOnLine(P, Line(K, J))",
+        "PointLiesOnLine(Q, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, J))",
+        "IsMidpointOf(P, Line(J, K))",
+        "IsMidpointOf(Q, Line(K, L))",
+        "IsMidpointOf(R, Line(J, L))",
+        "Equals(LengthOf(Line(K, D)), Add(Mul(6.0, x), 23.0))",
+        "Equals(LengthOf(Line(R, D)), 28.0)"
+    ],
+    "correct": true
+}

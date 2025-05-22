@@ -1,0 +1,103 @@
+{
+    "problem_id": "200",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 3?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, D, A)), 38)",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, D, F)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(E, D, F)), MeasureOf(Angle(3)))",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Perpendicular(Line(C, E), Line(A, D))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "DE",
+        "BD",
+        "BF",
+        "DF",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            167.3448275862069,
+            5.2
+        ],
+        "B": [
+            81.07389162561576,
+            32.24
+        ],
+        "C": [
+            16.89039408866995,
+            154.18
+        ],
+        "D": [
+            166.89936664320902,
+            153.92000000000002
+        ],
+        "E": [
+            316.32676518883414,
+            154.26666666666668
+        ],
+        "F": [
+            205.80295566502463,
+            211.56571428571428
+        ]
+    },
+    "problem_choices": [
+        38.0,
+        52.0,
+        90.0,
+        128.0
+    ],
+    "choices_precise_value": [
+        38.0,
+        52.0,
+        90.0,
+        128.0
+    ],
+    "problem_answer": 52.0,
+    "total_time": 16.029748,
+    "solution_predicate": "Equals(0.907571211, MeasureOf(Angle(F, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (38 / 180) = \u2220ADB, D on BF, 3.14 = pi, \u2220ADE, \u2220CDA, AD \u22a5 DE, D on CE, \u2220ADC, \u2220EDA, \u2220BDC, \u2220ADB, AD \u22a5 CD, \u2220CDA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220ADE\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : D on BF, D on CE\nConclusions: \u2220BDC = \u2220FDE\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220ADC, \u2220EDA\nConclusions: pi = \u2220ADC + \u2220EDA\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC, (3 * pi) / 2 = \u2220CDA\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220BDC, \u2220ADB, \u2220CDA\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ADC + \u2220EDA, 3.14 = pi\nConclusions: 3.14 = \u2220ADC + \u2220EDA\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ADC, (3 * pi) / 2 = \u2220CDA, 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, \u2220BDC = \u2220FDE, (3 * pi) / 2 = \u2220CDA, pi * (38 / 180) = \u2220ADB\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + pi * (38 / 180) + \u2220FDE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CDA, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220CDA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2, (3 * pi) / 2 = \u2220ADE\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220ADE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220CDA, \u2220CDA = 2 * pi - \u2220ADC\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ADC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADE = 2 * pi - \u2220EDA, 2 * 3.14 - 3.14 / 2 = \u2220ADE\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220EDA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220EDA, 3.14 = \u2220ADC + \u2220EDA, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ADC, 2 * 3.14 = (3 * 3.14) / 2 + pi * (38 / 180) + \u2220FDE\nConclusions: 0.91 = \u2220FDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, F)",
+        "Line(A, D)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Perpendicular(Line(C, E), Line(A, D))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(MeasureOf(Angle(A, D, B)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

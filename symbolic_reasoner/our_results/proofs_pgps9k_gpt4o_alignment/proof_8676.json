@@ -1,0 +1,109 @@
+{
+    "problem_id": "8676",
+    "solved": true,
+    "problem_text": "In rectangle PLCM, LC = 19, and LM = 23. Find TC.",
+    "logic_forms": [
+        "Line(C, M)",
+        "Line(L, C)",
+        "Line(L, M)",
+        "Line(L, P)",
+        "Line(L, T)",
+        "Line(P, C)",
+        "Line(P, M)",
+        "Line(P, T)",
+        "Line(T, C)",
+        "Line(T, M)",
+        "PointLiesOnLine(T, Line(L, M))",
+        "PointLiesOnLine(T, Line(P, C))",
+        "Rectangle(P,L,C,M)",
+        "Equals(LengthOf(Line(L,C)),19)",
+        "Equals(LengthOf(Line(L,M)),23)",
+        "Find(LengthOf(Line(T,C)))"
+    ],
+    "point_instances": [
+        "L",
+        "C",
+        "T",
+        "P",
+        "M"
+    ],
+    "line_instances": [
+        "LT",
+        "LM",
+        "TM",
+        "PT",
+        "PC",
+        "TC",
+        "LC",
+        "PM",
+        "LP",
+        "CM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            46.74626865671641,
+            32.27428571428572
+        ],
+        "C": [
+            235.7462686567164,
+            32.27428571428572
+        ],
+        "T": [
+            141.04477611940297,
+            96.82285714285715
+        ],
+        "P": [
+            47.350746268656714,
+            161.3714285714286
+        ],
+        "M": [
+            235.9981343283582,
+            161.62357142857144
+        ]
+    },
+    "problem_choices": [
+        9.5,
+        11.5,
+        12.961,
+        19.0
+    ],
+    "choices_precise_value": [
+        9.5,
+        11.5,
+        12.961,
+        19.0
+    ],
+    "problem_answer": 11.5,
+    "total_time": 166.95649,
+    "solution_predicate": "Equals(11.5, LengthOf(Line(T, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(C, L, P, M), T on LM, T on CP, 23 = LM\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(C, L, P, M)\nConclusions: Parallelogram(C, L, P, M)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(C, L, P, M)\nConclusions: LP \u22a5 MP, CM \u22a5 MP\n\nStep 4:\nTheorem: Line Segment Split\nPremises : T on CP\nConclusions: CP = CT + PT\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(C, L, P, M)\nConclusions: CL = MP\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(C, L, P, M)\nConclusions: \u2220LCM = \u2220MPL\n\nStep 7:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(C, L, P, M), T on LM, T on CP\nConclusions: CT = PT\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : LP \u22a5 MP\nConclusions: pi / 2 = \u2220MPL\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : CM \u22a5 MP\nConclusions: pi / 2 = \u2220CMP\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : CP = CT + PT, CT = PT\nConclusions: CT = 0.5 * CP\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LCM = \u2220MPL, pi / 2 = \u2220MPL, pi / 2 = \u2220CMP\nConclusions: \u2220CMP = \u2220LCM\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : CT = 0.5 * CP, CT = PT\nConclusions: PT = 0.5 * CP\n\nStep 13:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : CL = MP, \u2220CMP = \u2220LCM\nConclusions: \u25b3CLM \u2245 \u25b3MPC\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3CLM \u2245 \u25b3MPC\nConclusions: CL = MP, CP = LM\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 23 = LM, CP = LM\nConclusions: 23 = CP\n\nStep 16:\nTheorem: Evaluate\nPremises : 23 = CP\nConclusions: 11.5 = 0.5 * CP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 11.5 = 0.5 * CP, PT = 0.5 * CP\nConclusions: 11.5 = PT\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 11.5 = PT, CT = PT\nConclusions: 11.5 = CT\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, T)",
+        "Line(L, M)",
+        "Line(T, M)",
+        "Line(P, T)",
+        "Line(P, C)",
+        "Line(T, C)",
+        "Line(L, C)",
+        "Line(P, M)",
+        "Line(L, P)",
+        "Line(C, M)",
+        "Line(C, M)",
+        "Line(L, C)",
+        "Line(L, M)",
+        "Line(L, P)",
+        "Line(L, T)",
+        "Line(P, C)",
+        "Line(P, M)",
+        "Line(P, T)",
+        "Line(T, C)",
+        "Line(T, M)",
+        "PointLiesOnLine(T, Line(L, M))",
+        "PointLiesOnLine(T, Line(P, C))",
+        "Rectangle(P, L, C, M)",
+        "Equals(LengthOf(Line(L, C)), 19.0)",
+        "Equals(LengthOf(Line(L, M)), 23.0)"
+    ],
+    "correct": true
+}

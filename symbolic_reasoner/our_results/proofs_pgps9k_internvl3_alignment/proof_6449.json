@@ -1,0 +1,83 @@
+{
+    "problem_id": "6449",
+    "solved": true,
+    "problem_text": "Find m \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, P, C)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Arc(B, C)), 145)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BP",
+        "PC",
+        "CA"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "A": [
+            130.40983606557378,
+            31.375999999999998
+        ],
+        "B": [
+            277.5,
+            147.18857142857144
+        ],
+        "P": [
+            149.0411603455571,
+            158.30087806184446
+        ],
+        "C": [
+            51.47072599531616,
+            240.77142857142857
+        ]
+    },
+    "problem_choices": [
+        17.5,
+        72.5,
+        90.0,
+        145.0
+    ],
+    "choices_precise_value": [
+        17.5,
+        72.5,
+        90.0,
+        145.0
+    ],
+    "problem_answer": 145.0,
+    "total_time": 8.784901,
+    "solution_predicate": "Equals(2.5307274154, MeasureOf(Angle(C, P, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (145 / 180) = Arc(CPB), Arc(CPB)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CPB)\nConclusions: \u2220CPB = Arc(CPB)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (145 / 180) = Arc(CPB), \u2220CPB = Arc(CPB)\nConclusions: pi * (145 / 180) = \u2220CPB\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (145 / 180) = \u2220CPB\nConclusions: 2.53 = \u2220CPB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, P)",
+        "Line(P, C)",
+        "Line(C, A)",
+        "Circle(P, radius_P)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "Equals(MeasureOf(Arc(C, P, B)), Mul(pi, Div(145.0, 180.0)))"
+    ],
+    "correct": true
+}

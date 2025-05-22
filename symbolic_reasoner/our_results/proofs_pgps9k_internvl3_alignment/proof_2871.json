@@ -1,0 +1,97 @@
+{
+    "problem_id": "2871",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 10)",
+        "Equals(LengthOf(Line(A, D)), 13)",
+        "Equals(MeasureOf(Angle(D, C, E)), 45)",
+        "Find(AreaOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnLine(E, Line(B, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "BC",
+        "EC",
+        "CD",
+        "AD",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            27.02272727272727,
+            56.15521064301552
+        ],
+        "B": [
+            143.62885714285713,
+            173.51132404181186
+        ],
+        "C": [
+            358.545,
+            173.42378048780486
+        ],
+        "D": [
+            242.06400000000002,
+            56.50060975609756
+        ],
+        "E": [
+            241.71363636363634,
+            173.2937915742794
+        ]
+    },
+    "problem_choices": [
+        65.0,
+        91.9,
+        112.6,
+        130.0
+    ],
+    "choices_precise_value": [
+        65.0,
+        91.9,
+        112.6,
+        130.0
+    ],
+    "problem_answer": 91.9,
+    "total_time": 41.004417,
+    "solution_predicate": "Equals(91.9238815545, AreaOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DCE, 13 = AD, pi * (45 / 180) = \u2220DCE, \u2220DCB, \u2220BAD, DE, CE, \u2220BCD, 10 = AB, 3.14 = pi, Parallelogram(A, B, C, D), CD, E on BC, sin(\u2220EDC), CE \u22a5 DE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCE\nConclusions: \u2220DCE = 2 * pi - \u2220ECD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAD\nConclusions: \u2220BAD = 2 * pi - \u2220DAB\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 5:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BAD = \u2220DCB, \u2220BCD = \u2220DAB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : DE, CD, CE\nConclusions: \u25b3CDE\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220DCB, E on BC\nConclusions: \u2220DCB = \u2220DCE\n\nStep 8:\nTheorem: Same Angle\nPremises : E on BC, \u2220BCD\nConclusions: \u2220BCD = \u2220ECD\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 DE\nConclusions: pi / 2 = \u2220CED\n\nStep 10:\nTheorem: Area formula of Parallelogram(A, B, C, D)\nPremises : CE \u22a5 DE, Parallelogram(A, B, C, D)\nConclusions: Area(Parallelogram(A, B, C, D)) = BC * DE\n\nStep 11:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220EDC), CE \u22a5 DE\nConclusions: CE / CD = sin(\u2220EDC)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 10 = AB\nConclusions: 10 = CD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 13 = AD\nConclusions: 13 = BC\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, C)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CED + \u2220DCE + \u2220EDC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCB = \u2220DCE, pi * (45 / 180) = \u2220DCE\nConclusions: pi * (45 / 180) = \u2220DCB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220ECD, \u2220BCD = \u2220DAB\nConclusions: \u2220DAB = \u2220ECD\n\nStep 17:\nTheorem: Substitution\nPremises : CE / CD = sin(\u2220EDC), 10 = CD\nConclusions: CE / 10 = sin(\u2220EDC)\n\nStep 18:\nTheorem: Substitution\nPremises : 13 = BC, Area(Parallelogram(A, B, C, D)) = BC * DE\nConclusions: Area(Parallelogram(A, B, C, D)) = 13 * DE\n\nStep 19:\nTheorem: Substitution\nPremises : pi = \u2220CED + \u2220DCE + \u2220EDC, pi / 2 = \u2220CED, pi * (45 / 180) = \u2220DCE, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220EDC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220DCB, \u2220BAD = \u2220DCB\nConclusions: pi * (45 / 180) = \u2220BAD\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220DCE = 2 * pi - \u2220ECD, \u2220DAB = \u2220ECD, pi * (45 / 180) = \u2220DCE, 3.14 = pi\nConclusions: 3.14 * (45 / 180) = 2 * 3.14 - \u2220DAB\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220EDC\nConclusions: 0.79 = \u2220EDC\n\nStep 23:\nTheorem: Substitution\nPremises : \u2220BAD = 2 * pi - \u2220DAB, pi * (45 / 180) = \u2220BAD, 3.14 = pi\nConclusions: pi * (45 / 180) = 2 * 3.14 - \u2220DAB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (45 / 180) = 2 * 3.14 - \u2220DAB, pi * (45 / 180) = 2 * 3.14 - \u2220DAB\nConclusions: 3.14 * (45 / 180) = pi * (45 / 180)\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (45 / 180) = pi * (45 / 180), pi * (45 / 180) = \u2220DCE\nConclusions: 3.14 * (45 / 180) = \u2220DCE\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (45 / 180) = \u2220DCE\nConclusions: 0.79 = \u2220DCE\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220DCE, 0.79 = \u2220EDC\nConclusions: \u2220DCE = \u2220EDC\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : \u2220DCE = \u2220EDC, \u25b3CDE\nConclusions: CE = DE\n\nStep 29:\nTheorem: Substitution\nPremises : 0.79 = \u2220EDC, CE = DE, CE / 10 = sin(\u2220EDC)\nConclusions: sin(0.79) = DE / 10\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : sin(0.79) = DE / 10, Area(Parallelogram(A, B, C, D)) = 13 * DE\nConclusions: 91.92 = Area(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), 10.0)",
+        "Equals(LengthOf(Line(A, D)), 13.0)",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

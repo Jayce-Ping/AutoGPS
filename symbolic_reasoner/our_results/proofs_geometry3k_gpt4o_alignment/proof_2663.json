@@ -1,0 +1,85 @@
+{
+    "problem_id": "2663",
+    "solved": true,
+    "problem_text": "Trapezoid G H J K has an area of 188.35 square feet. If H J is 16.5 feet, find G K.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(G, K))",
+        "Perpendicular(Line(H, A), Line(K, A))",
+        "Equals(LengthOf(Line(H, J)), 16.5)",
+        "Equals(LengthOf(Line(A, H)), 8.7)",
+        "Equals(AreaOf(Trapezoid(G,H,J,K)),188.35)",
+        "Equals(Line(H,J),16.5)",
+        "Find(LengthOf(Line(G,K)))"
+    ],
+    "point_instances": [
+        "J",
+        "G",
+        "K",
+        "H",
+        "A"
+    ],
+    "line_instances": [
+        "HA",
+        "HJ",
+        "JK",
+        "GA",
+        "GK",
+        "AK",
+        "HG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            316.9184290030211,
+            51.12386706948641
+        ],
+        "G": [
+            34.74320241691843,
+            158.67673716012084
+        ],
+        "K": [
+            359.81873111782477,
+            158.37462235649548
+        ],
+        "H": [
+            112.08459214501511,
+            50.51963746223565
+        ],
+        "A": [
+            111.48036253776435,
+            158.0725075528701
+        ]
+    },
+    "problem_choices": [
+        "5.1",
+        "21.6",
+        "22.8",
+        "26.8"
+    ],
+    "choices_precise_value": [
+        5.1,
+        21.6,
+        22.8,
+        26.8
+    ],
+    "problem_answer": 26.8,
+    "total_time": 17.187235,
+    "solution_predicate": "Equals(26.7988505747, LengthOf(Line(G, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Trapezoid(G, H, J, K), 16.5 = HJ, AH \u22a5 AK, 8.7 = AH, 188.35 = Area(Trapezoid(G, H, J, K))\n\nStep 2:\nTheorem: Area formula of Trapezoid(G, H, J, K)\nPremises : Trapezoid(G, H, J, K), AH \u22a5 AK\nConclusions: Area(Trapezoid(G, H, J, K)) = AH * ((GK + HJ) / 2)\n\nStep 3:\nTheorem: Substitution\nPremises : Area(Trapezoid(G, H, J, K)) = AH * ((GK + HJ) / 2), 8.7 = AH, 16.5 = HJ, 188.35 = Area(Trapezoid(G, H, J, K))\nConclusions: 188.35 = 8.7 * ((16.5 + GK) / 2)\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 188.35 = 8.7 * ((16.5 + GK) / 2)\nConclusions: 26.8 = GK\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, A)",
+        "Line(H, J)",
+        "Line(J, K)",
+        "Line(G, A)",
+        "Line(G, K)",
+        "Line(A, K)",
+        "Line(H, G)",
+        "PointLiesOnLine(A, Line(G, K))",
+        "Perpendicular(Line(H, A), Line(K, A))",
+        "Equals(LengthOf(Line(H, J)), 16.5)",
+        "Equals(LengthOf(Line(A, H)), 8.7)",
+        "Equals(AreaOf(Trapezoid(G, H, J, K)), 188.35)",
+        "Equals(LengthOf(Line(H, J)), 16.5)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,61 @@
+{
+    "problem_id": "2930",
+    "solved": true,
+    "problem_text": "Use a calculator to find the measure of \\angle J to the nearest degree.",
+    "logic_forms": [
+        "Perpendicular(Line(K, L), Line(J, L))",
+        "Equals(LengthOf(Line(K, L)), 9)",
+        "Equals(LengthOf(Line(J, K)), 14)",
+        "Find(MeasureOf(Angle(J)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JK",
+        "LK",
+        "JL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            41.12903225806451,
+            146.29032258064515
+        ],
+        "K": [
+            307.258064516129,
+            174.78494623655914
+        ],
+        "L": [
+            232.25806451612902,
+            40.64516129032258
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "40",
+        "50",
+        "57"
+    ],
+    "choices_precise_value": [
+        33.0,
+        40.0,
+        50.0,
+        57.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 10.752814,
+    "solution_predicate": "Equals(0.6982224734, MeasureOf(Angle(K, J, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: cos(\u2220LKJ), 9 = KL, JL, KL, JK, 14 = JK, \u2220JLK, 3.14 = pi, JL \u22a5 KL\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : JK, JL, KL\nConclusions: \u25b3JKL\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220JLK\nConclusions: \u2220JLK = 2 * pi - \u2220KLJ\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : JL \u22a5 KL\nConclusions: (3 * pi) / 2 = \u2220KLJ, pi / 2 = \u2220JLK\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : JL \u22a5 KL, cos(\u2220LKJ)\nConclusions: KL / JK = cos(\u2220LKJ)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(L, K, J)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JLK + \u2220KJL + \u2220LKJ\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220KLJ, \u2220JLK = 2 * pi - \u2220KLJ, pi / 2 = \u2220JLK\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 8:\nTheorem: Substitution\nPremises : 14 = JK, 9 = KL, KL / JK = cos(\u2220LKJ)\nConclusions: 9 / 14 = cos(\u2220LKJ)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220JLK\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220JLK\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 9 / 14 = cos(\u2220LKJ)\nConclusions: 0.87 = \u2220LKJ\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220JLK, pi / 2 = \u2220JLK\nConclusions: 1.57 = \u2220JLK\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220JLK + \u2220KJL + \u2220LKJ, 1.57 = \u2220JLK, 3.14 = pi, 0.87 = \u2220LKJ\nConclusions: 3.14 = 0.87 + 1.57 + \u2220KJL\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.87 + 1.57 + \u2220KJL\nConclusions: 0.7 = \u2220KJL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, K)",
+        "Line(L, K)",
+        "Line(J, L)",
+        "Perpendicular(Line(K, L), Line(J, L))",
+        "Equals(LengthOf(Line(K, L)), 9.0)",
+        "Equals(LengthOf(Line(J, K)), 14.0)"
+    ],
+    "correct": true
+}

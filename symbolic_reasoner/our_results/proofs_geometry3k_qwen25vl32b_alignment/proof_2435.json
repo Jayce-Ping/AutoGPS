@@ -1,0 +1,61 @@
+{
+    "problem_id": "2435",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, B, A)), 40)",
+        "Equals(MeasureOf(Angle(A, C, B)), 25)",
+        "Equals(MeasureOf(Angle(C, A, B)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            77.52525252525253,
+            148.76767676767676
+        ],
+        "B": [
+            12.121212121212121,
+            13.161616161616159
+        ],
+        "C": [
+            305.3030303030303,
+            148.51515151515153
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "40",
+        "65",
+        "115"
+    ],
+    "choices_precise_value": [
+        25.0,
+        40.0,
+        65.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 6.511452,
+    "solution_predicate": "Equals(115.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 3.14 = pi, pi * (x / 180) = \u2220CAB, AB, pi * (25 / 180) = \u2220BCA, BC, pi * (40 / 180) = \u2220ABC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220CAB\nConclusions: 3.14 * (x / 180) = \u2220CAB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 5:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (40 / 180) = \u2220ABC, 3.14 = pi, pi * (25 / 180) = \u2220BCA\nConclusions: 3.14 = 3.14 * (25 / 180) + 3.14 * (40 / 180) + \u2220CAB\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (25 / 180) + 3.14 * (40 / 180) + \u2220CAB, 3.14 * (x / 180) = \u2220CAB\nConclusions: 115 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

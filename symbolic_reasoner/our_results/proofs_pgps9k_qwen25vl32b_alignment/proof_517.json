@@ -1,0 +1,70 @@
+{
+    "problem_id": "517",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(AreaOf(Sector(X, W, Y)), Mul(Div(26, 45), Pi))",
+        "Equals(LengthOf(Line(X, W)), 2)",
+        "Equals(MeasureOf(Angle(W, X, Y)), 52)",
+        "Find(AreaOf(Sector(X, W, Y)))",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X))",
+        "PointLiesOnCircle(Y, Circle(X))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "XW",
+        "XY"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "X": [
+            111.05754475703324,
+            118.70971867007673
+        ],
+        "Y": [
+            205.18253968253967,
+            125.14857142857142
+        ],
+        "W": [
+            172.7348901098901,
+            48.745714285714286
+        ]
+    },
+    "problem_choices": [
+        0.9,
+        1.8,
+        10.8,
+        12.6
+    ],
+    "choices_precise_value": [
+        0.9,
+        1.8,
+        10.8,
+        12.6
+    ],
+    "problem_answer": 1.8,
+    "total_time": 2.32937,
+    "solution_predicate": "Equals(1.8151424221, AreaOf(Sector(Y, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = WX, (26 / 45) * Pi = Area(Sector(Y, X, W)), W on \u2299(X, radius_X), pi * (52 / 180) = \u2220YXW, Sector(Y, X, W)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : W on \u2299(X, radius_X)\nConclusions: radius_X = WX\n\nStep 3:\nTheorem: Area formula of Sector(Y, X, W)\nPremises : Sector(Y, X, W)\nConclusions: Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 2 = WX, radius_X = WX\nConclusions: 2 = radius_X\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (52 / 180) = \u2220YXW, Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2, (26 / 45) * Pi = Area(Sector(Y, X, W)), 2 = radius_X\nConclusions: (pi * (52 / 180) * 2 ** 2) / 2 = (26 / 45) * Pi\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : (pi * (52 / 180) * 2 ** 2) / 2 = (26 / 45) * Pi, (26 / 45) * Pi = Area(Sector(Y, X, W))\nConclusions: (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\n\nStep 7:\nTheorem: Evaluate\nPremises : (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\nConclusions: 1.82 = Area(Sector(Y, X, W))\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Circle(X, radius_X)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X, radius_X))",
+        "PointLiesOnCircle(Y, Circle(X, radius_X))",
+        "Equals(AreaOf(Sector(Y, X, W)), Mul(Div(26.0, 45.0), Pi))",
+        "Equals(LengthOf(Line(X, W)), 2.0)",
+        "Equals(MeasureOf(Angle(Y, X, W)), Mul(pi, Div(52.0, 180.0)))"
+    ],
+    "correct": true
+}

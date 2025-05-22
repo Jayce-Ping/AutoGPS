@@ -1,0 +1,95 @@
+{
+    "problem_id": "5391",
+    "solved": true,
+    "problem_text": "Solve for a.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 89)",
+        "Equals(MeasureOf(Angle(A, D, C)), m)",
+        "Equals(MeasureOf(Angle(A, D, E)), 64)",
+        "Equals(MeasureOf(Angle(B, A, D)), 50)",
+        "Equals(MeasureOf(Angle(D, C, B)), a)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BA",
+        "AD",
+        "CD",
+        "CE",
+        "DE",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            338.58247422680415,
+            36.96
+        ],
+        "B": [
+            27.547864506627395,
+            112.00000000000001
+        ],
+        "C": [
+            62.78350515463917,
+            245.76000000000002
+        ],
+        "D": [
+            237.68041237113403,
+            245.76000000000002
+        ],
+        "E": [
+            331.8556701030928,
+            245.28000000000003
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        66.0,
+        91.0,
+        105.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        66.0,
+        91.0,
+        105.0
+    ],
+    "problem_answer": 105.0,
+    "total_time": 10.366635,
+    "solution_predicate": "Equals(105.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (50 / 180) = \u2220BAD, \u2220ADE, 3.14 = pi, \u2220EDA, BC, AB, pi * (64 / 180) = \u2220EDA, CD, pi * (89 / 180) = \u2220CBA, \u2220ADC, AD, pi * (a / 180) = \u2220DCB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220EDA, \u2220ADC\nConclusions: pi = \u2220ADC + \u2220EDA\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : AB, AD, BC, CD\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (a / 180) = \u2220DCB\nConclusions: 3.14 * (a / 180) = \u2220DCB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (64 / 180) = \u2220EDA, \u2220ADE = 2 * pi - \u2220EDA\nConclusions: 2 * 3.14 - 3.14 * (64 / 180) = \u2220ADE\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (64 / 180) = \u2220EDA, 3.14 = pi, pi = \u2220ADC + \u2220EDA\nConclusions: 3.14 = 3.14 * (64 / 180) + \u2220ADC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADC + \u2220EDA\nConclusions: 3.14 = \u2220ADC + \u2220EDA\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (64 / 180) = \u2220ADE, \u2220ADE = 2 * pi - \u2220EDA\nConclusions: 2 * 3.14 - 3.14 * (64 / 180) = 2 * pi - \u2220EDA\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220BAD, 3.14 = pi, pi * (89 / 180) = \u2220CBA, 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\nConclusions: 2 * 3.14 = 3.14 * (50 / 180) + pi * (89 / 180) + \u2220ADC + \u2220DCB\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (64 / 180) + \u2220ADC, 3.14 * (a / 180) = \u2220DCB, 3.14 = \u2220ADC + \u2220EDA, 2 * 3.14 = 3.14 * (50 / 180) + pi * (89 / 180) + \u2220ADC + \u2220DCB, 2 * 3.14 - 3.14 * (64 / 180) = 2 * pi - \u2220EDA\nConclusions: 105 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(89.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(m, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, A)), Mul(pi, Div(64.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(a, 180.0)))"
+    ],
+    "correct": true
+}

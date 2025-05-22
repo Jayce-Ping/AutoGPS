@@ -1,0 +1,66 @@
+{
+    "problem_id": "5950",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 1?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 117)",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, C, A)), 33)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            13.625,
+            76.48481012658227
+        ],
+        "B": [
+            219.82142857142858,
+            20.811482820976494
+        ],
+        "C": [
+            351.1363636363637,
+            165.60759493670886
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        33.0,
+        84.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        33.0,
+        84.0,
+        150.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 4.767582,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(C, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, pi * (117 / 180) = \u2220ABC, BC, AB, pi * (33 / 180) = \u2220BCA, 3.14 = pi\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (33 / 180) = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (117 / 180) = \u2220ABC\nConclusions: 3.14 = 3.14 * (117 / 180) + 3.14 * (33 / 180) + \u2220CAB\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (117 / 180) + 3.14 * (33 / 180) + \u2220CAB\nConclusions: 0.52 = \u2220CAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(117.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(33.0, 180.0)))"
+    ],
+    "correct": true
+}

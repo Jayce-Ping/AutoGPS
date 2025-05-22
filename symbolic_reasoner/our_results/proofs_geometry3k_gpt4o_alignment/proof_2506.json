@@ -1,0 +1,101 @@
+{
+    "problem_id": "2506",
+    "solved": true,
+    "problem_text": "Use parallelogram J K L M to find m \\angle K J L if J K = 2 b + 3 and J M = 3 a.",
+    "logic_forms": [
+        "PointLiesOnLine(R, Line(M, K))",
+        "PointLiesOnLine(R, Line(J, L))",
+        "Equals(LengthOf(Line(L, K)), 21)",
+        "Equals(LengthOf(Line(M, J)), 3a)",
+        "Equals(LengthOf(Line(M, L)), 45)",
+        "Equals(LengthOf(Line(J, K)), 2b+3)",
+        "Equals(MeasureOf(Angle(R, L, M)), 30)",
+        "Equals(MeasureOf(Angle(R, L, K)), 70)",
+        "Parallelogram(J,K,L,M)",
+        "Equals(LengthOf(Line(J,K)),2b+3)",
+        "Equals(LengthOf(Line(J,M)),3a)",
+        "Find(MeasureOf(Angle(K,J,L)))"
+    ],
+    "point_instances": [
+        "K",
+        "R",
+        "J",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "MR",
+        "MK",
+        "RK",
+        "JR",
+        "JL",
+        "RL",
+        "ML",
+        "JM",
+        "JK",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            331.83023872679047,
+            45.54111405835544
+        ],
+        "R": [
+            183.81962864721484,
+            116.62864721485411
+        ],
+        "J": [
+            59.15119363395225,
+            45.54111405835544
+        ],
+        "M": [
+            34.217506631299734,
+            188.24668435013263
+        ],
+        "L": [
+            306.8965517241379,
+            188.77718832891247
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "70",
+        "80",
+        "100"
+    ],
+    "choices_precise_value": [
+        30.0,
+        70.0,
+        80.0,
+        100.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 46.586979,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(L, J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: R on JL, Parallelogram(J, K, L, M), \u2220JLM, pi * (30 / 180) = \u2220RLM, \u2220LJK\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML\n\nStep 3:\nTheorem: Same Angle\nPremises : R on JL, \u2220JLM\nConclusions: \u2220JLM = \u2220RLM\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220LJK, R on JL\nConclusions: \u2220LJK = \u2220RJK\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JLM = \u2220LJK\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JLM = \u2220LJK, \u2220LJK = \u2220RJK\nConclusions: \u2220JLM = \u2220RJK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220RLM, \u2220JLM = \u2220RJK, \u2220JLM = \u2220RLM\nConclusions: pi * (30 / 180) = \u2220RJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220RJK, \u2220LJK = \u2220RJK\nConclusions: pi * (30 / 180) = \u2220LJK\n\nStep 9:\nTheorem: Evaluate\nPremises : pi * (30 / 180) = \u2220LJK\nConclusions: 0.52 = \u2220LJK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, R)",
+        "Line(M, K)",
+        "Line(R, K)",
+        "Line(J, R)",
+        "Line(J, L)",
+        "Line(R, L)",
+        "Line(M, L)",
+        "Line(J, M)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "PointLiesOnLine(R, Line(M, K))",
+        "PointLiesOnLine(R, Line(J, L))",
+        "Parallelogram(J, K, L, M)",
+        "Equals(LengthOf(Line(L, K)), 21.0)",
+        "Equals(LengthOf(Line(M, J)), Mul(3.0, a))",
+        "Equals(LengthOf(Line(M, L)), 45.0)",
+        "Equals(LengthOf(Line(J, K)), Add(Mul(2.0, b), 3.0))",
+        "Equals(MeasureOf(Angle(R, L, M)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, R)), Mul(pi, Div(70.0, 180.0)))",
+        "Equals(LengthOf(Line(J, K)), Add(Mul(2.0, b), 3.0))",
+        "Equals(LengthOf(Line(J, M)), Mul(3.0, a))"
+    ],
+    "correct": true
+}

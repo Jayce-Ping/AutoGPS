@@ -1,0 +1,100 @@
+{
+    "problem_id": "8320",
+    "solved": true,
+    "problem_text": "What is the measure of \\widehat PQR in \\odot T?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(S, T, R)), 60)",
+        "Equals(MeasureOf(Arc(P, S)), 120)",
+        "Equals(MeasureOf(Arc(R, Q)), 40)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, T)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnCircle(P, Circle(T))",
+        "PointLiesOnCircle(Q, Circle(T))",
+        "PointLiesOnCircle(R, Circle(T))",
+        "PointLiesOnCircle(S, Circle(T))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "Circle(T)",
+        "Find(MeasureOf(Arc(P,Q,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "T",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "QT",
+        "TS",
+        "PT",
+        "PR",
+        "TR"
+    ],
+    "circle_instances": [
+        "T"
+    ],
+    "point_positions": {
+        "Q": [
+            258.80555555555554,
+            66.55999999999999
+        ],
+        "R": [
+            303.60805860805857,
+            137.64923076923077
+        ],
+        "T": [
+            183.3632676692894,
+            163.74327004050892
+        ],
+        "P": [
+            63.63703703703704,
+            189.05599999999998
+        ],
+        "S": [
+            265.815873015873,
+            256.128
+        ]
+    },
+    "problem_choices": [
+        120.0,
+        180.0,
+        220.0,
+        240.0
+    ],
+    "choices_precise_value": [
+        120.0,
+        180.0,
+        220.0,
+        240.0
+    ],
+    "problem_answer": 180.0,
+    "total_time": 20.822743,
+    "solution_predicate": "Equals(3.1415926536, MeasureOf(Arc(R, T, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(RTP), pi * (60 / 180) = \u2220STR, pi * (120 / 180) = Arc(PTS), \u2220PTS, Arc(PTS), \u2220STR, 3.14 = pi, \u2220RTP\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RTP)\nConclusions: \u2220RTP = Arc(RTP)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PTS)\nConclusions: \u2220PTS = Arc(PTS)\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220STR, \u2220RTP, \u2220PTS\nConclusions: 2 * pi = \u2220PTS + \u2220RTP + \u2220STR\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PTS = Arc(PTS), pi * (120 / 180) = Arc(PTS)\nConclusions: pi * (120 / 180) = \u2220PTS\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220RTP = Arc(RTP), 2 * pi = \u2220PTS + \u2220RTP + \u2220STR, 3.14 = pi, pi * (60 / 180) = \u2220STR, pi * (120 / 180) = \u2220PTS\nConclusions: 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (60 / 180) + Arc(RTP)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (60 / 180) + Arc(RTP), \u2220RTP = Arc(RTP)\nConclusions: 3.14 = \u2220RTP\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = \u2220RTP, \u2220RTP = Arc(RTP)\nConclusions: 3.14 = Arc(RTP)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(T, S)",
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Circle(T, radius_T)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, T)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnCircle(P, Circle(T, radius_T))",
+        "PointLiesOnCircle(Q, Circle(T, radius_T))",
+        "PointLiesOnCircle(R, Circle(T, radius_T))",
+        "PointLiesOnCircle(S, Circle(T, radius_T))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "Circle(T, radius_T)",
+        "Equals(MeasureOf(Angle(S, T, R)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Arc(P, T, S)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Arc(R, T, Q)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

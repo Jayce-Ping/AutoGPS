@@ -1,0 +1,113 @@
+{
+    "problem_id": "7941",
+    "solved": true,
+    "problem_text": "In kite EFGH, m \\angle FEJ = 25, and m \\angle FGJ = 57. Find the measure of \\angle GFJ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, F)), LengthOf(Line(E, H)))",
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(G, H)))",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, J)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "PointLiesOnLine(J, Line(E, G))",
+        "PointLiesOnLine(J, Line(F, H))",
+        "Kite(E,F,G,H)",
+        "Equals(MeasureOf(Angle(F,E,J)),25)",
+        "Equals(MeasureOf(Angle(F,G,J)),57)",
+        "Find(MeasureOf(Angle(G,F,J)))"
+    ],
+    "point_instances": [
+        "F",
+        "E",
+        "J",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "EF",
+        "EH",
+        "FJ",
+        "FH",
+        "JH",
+        "EJ",
+        "EG",
+        "JG",
+        "FG",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            228.04166666666669,
+            59.09142857142857
+        ],
+        "E": [
+            60.518750000000004,
+            136.12914285714285
+        ],
+        "J": [
+            228.04166666666669,
+            136.31673469387755
+        ],
+        "G": [
+            278.47395833333337,
+            136.78571428571428
+        ],
+        "H": [
+            227.41517857142858,
+            214.48000000000002
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        33.0,
+        65.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        33.0,
+        65.0,
+        90.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 67.152844,
+    "solution_predicate": "Equals(0.5759586532, MeasureOf(Angle(J, F, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Kite(E, F, G, H), GJ, 3.14 = pi, FG, pi * (57 / 180) = \u2220FGJ, FJ\n\nStep 2:\nTheorem: Kite has perpendicular diagonals\nPremises : Kite(E, F, G, H)\nConclusions: EG \u22a5 FH\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : FJ, FG, GJ\nConclusions: \u25b3FGJ\n\nStep 4:\nTheorem: Perpendicular Extension\nPremises : EG \u22a5 FH\nConclusions: GJ \u22a5 HJ\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(F, G, J)\nPremises : \u25b3FGJ\nConclusions: pi = \u2220FGJ + \u2220GJF + \u2220JFG\n\nStep 6:\nTheorem: Perpendicular Extension\nPremises : GJ \u22a5 HJ\nConclusions: FJ \u22a5 GJ\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : FJ \u22a5 GJ\nConclusions: pi / 2 = \u2220GJF\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220FGJ + \u2220GJF + \u2220JFG, pi / 2 = \u2220GJF, pi * (57 / 180) = \u2220FGJ, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (57 / 180) + \u2220JFG\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (57 / 180) + \u2220JFG\nConclusions: 0.58 = \u2220JFG\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(F, J)",
+        "Line(F, H)",
+        "Line(J, H)",
+        "Line(E, J)",
+        "Line(E, G)",
+        "Line(J, G)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, J)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "PointLiesOnLine(J, Line(E, G))",
+        "PointLiesOnLine(J, Line(F, H))",
+        "Kite(E, F, G, H)",
+        "Equals(LengthOf(Line(E, F)), LengthOf(Line(E, H)))",
+        "Equals(LengthOf(Line(F, G)), LengthOf(Line(G, H)))",
+        "Equals(MeasureOf(Angle(J, E, F)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, G, J)), Mul(pi, Div(57.0, 180.0)))"
+    ],
+    "correct": true
+}

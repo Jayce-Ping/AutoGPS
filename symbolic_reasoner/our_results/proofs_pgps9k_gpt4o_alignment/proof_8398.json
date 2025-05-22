@@ -1,0 +1,69 @@
+{
+    "problem_id": "8398",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 9)",
+        "Equals(LengthOf(Line(S, R)), 2z-15)",
+        "Equals(LengthOf(Line(T, S)), 7)",
+        "Equals(MeasureOf(Angle(R, T, S)), MeasureOf(Angle(T, S, R)))",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "SR",
+        "RT",
+        "TS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            93.02432432432433,
+            227.21142857142857
+        ],
+        "R": [
+            304.4432432432433,
+            87.01714285714286
+        ],
+        "T": [
+            318.63851351351354,
+            353.20500000000004
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "choices_precise_value": [
+        7.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 8.976191,
+    "solution_predicate": "Equals(12.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS, ST, \u2220RTS = \u2220TSR, 9 = RT, 2 * z - 15 = RS, RT\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : RS, ST, RT\nConclusions: \u25b3RST\n\nStep 3:\nTheorem: Issoceles Triangle Property\nPremises : \u2220RTS = \u2220TSR, \u25b3RST\nConclusions: RS = RT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 2 * z - 15 = RS, RS = RT, 9 = RT\nConclusions: 9 = 2 * z - 15\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 9 = 2 * z - 15\nConclusions: 12 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Equals(LengthOf(Line(R, T)), 9.0)",
+        "Equals(LengthOf(Line(S, R)), Sub(Mul(2.0, z), 15.0))",
+        "Equals(LengthOf(Line(T, S)), 7.0)",
+        "Equals(MeasureOf(Angle(R, T, S)), MeasureOf(Angle(T, S, R)))"
+    ],
+    "correct": true
+}

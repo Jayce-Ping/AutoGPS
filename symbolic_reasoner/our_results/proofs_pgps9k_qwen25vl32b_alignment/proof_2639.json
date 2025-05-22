@@ -1,0 +1,161 @@
+{
+    "problem_id": "2639",
+    "solved": true,
+    "problem_text": "ZA = 9. What is the length of ZC?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, Z)), LengthOf(Line(Y, B)))",
+        "Equals(LengthOf(Line(X, D)), LengthOf(Line(D, Z)))",
+        "Equals(LengthOf(Line(Y, C)), LengthOf(Line(C, X)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, Z)",
+        "Line(B, Z)",
+        "Line(C, A)",
+        "Line(C, X)",
+        "Line(C, Z)",
+        "Line(D, Z)",
+        "Line(X, A)",
+        "Line(X, B)",
+        "Line(X, D)",
+        "Line(X, Z)",
+        "Line(Y, A)",
+        "Line(Y, B)",
+        "Line(Y, C)",
+        "Line(Y, D)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(A, Line(C, Z))",
+        "PointLiesOnLine(A, Line(X, B))",
+        "PointLiesOnLine(A, Line(Y, D))",
+        "PointLiesOnLine(B, Line(Y, Z))",
+        "PointLiesOnLine(C, Line(Y, X))",
+        "PointLiesOnLine(D, Line(X, Z))",
+        "Equals(LengthOf(Line(Z,A)),9)",
+        "Find(LengthOf(Line(Z,C)))"
+    ],
+    "point_instances": [
+        "Y",
+        "C",
+        "B",
+        "A",
+        "X",
+        "D",
+        "Z"
+    ],
+    "line_instances": [
+        "YB",
+        "YZ",
+        "BZ",
+        "ZD",
+        "ZX",
+        "DX",
+        "XC",
+        "XY",
+        "CY",
+        "YA",
+        "YD",
+        "AD",
+        "CA",
+        "CZ",
+        "AZ",
+        "BA",
+        "BX",
+        "AX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            157.52416666666664,
+            54.27142857142857
+        ],
+        "C": [
+            107.9262962962963,
+            135.824126984127
+        ],
+        "B": [
+            275.38666666666666,
+            135.92481203007517
+        ],
+        "A": [
+            203.33285714285714,
+            163.18857142857144
+        ],
+        "X": [
+            58.193921568627445,
+            217.96638655462186
+        ],
+        "D": [
+            225.82058823529408,
+            217.96638655462186
+        ],
+        "Z": [
+            393.05317460317457,
+            217.94122448979593
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.5,
+        6.0,
+        13.5
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.5,
+        6.0,
+        13.5
+    ],
+    "problem_answer": 13.5,
+    "total_time": 275.88893,
+    "solution_predicate": "Equals(13.5, LengthOf(Line(Z, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 9 = AZ, A on CZ, A on DY, BY = BZ, CX = CY, YZ, A on BX, XZ, XY, DX = DZ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : YZ, XY, XZ\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Centroid of Triangle\nPremises : A on BX, \u25b3XYZ, BY = BZ, CX = CY, A on DY, A on CZ, DX = DZ\nConclusions: IsCentroidOf(A, \u25b3XYZ)\n\nStep 4:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(A, \u25b3XYZ)\nConclusions: BY = BZ, AZ = 2 * AC, CX = CY, CZ = 3 * AC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 9 = AZ, AZ = 2 * AC\nConclusions: 9 = 2 * AC\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : CZ = 3 * AC, 9 = 2 * AC\nConclusions: 13.5 = CZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, B)",
+        "Line(Y, Z)",
+        "Line(B, Z)",
+        "Line(Z, D)",
+        "Line(Z, X)",
+        "Line(D, X)",
+        "Line(X, C)",
+        "Line(X, Y)",
+        "Line(C, Y)",
+        "Line(Y, A)",
+        "Line(Y, D)",
+        "Line(A, D)",
+        "Line(C, A)",
+        "Line(C, Z)",
+        "Line(A, Z)",
+        "Line(B, A)",
+        "Line(B, X)",
+        "Line(A, X)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, Z)",
+        "Line(B, Z)",
+        "Line(C, A)",
+        "Line(C, X)",
+        "Line(C, Z)",
+        "Line(D, Z)",
+        "Line(X, A)",
+        "Line(X, B)",
+        "Line(X, D)",
+        "Line(X, Z)",
+        "Line(Y, A)",
+        "Line(Y, B)",
+        "Line(Y, C)",
+        "Line(Y, D)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(A, Line(C, Z))",
+        "PointLiesOnLine(A, Line(X, B))",
+        "PointLiesOnLine(A, Line(Y, D))",
+        "PointLiesOnLine(B, Line(Y, Z))",
+        "PointLiesOnLine(C, Line(Y, X))",
+        "PointLiesOnLine(D, Line(X, Z))",
+        "Equals(LengthOf(Line(B, Z)), LengthOf(Line(Y, B)))",
+        "Equals(LengthOf(Line(X, D)), LengthOf(Line(D, Z)))",
+        "Equals(LengthOf(Line(Y, C)), LengthOf(Line(C, X)))",
+        "Equals(LengthOf(Line(Z, A)), 9.0)"
+    ],
+    "correct": true
+}

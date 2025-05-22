@@ -1,0 +1,93 @@
+{
+    "problem_id": "2906",
+    "solved": true,
+    "problem_text": "Quadrilateral A B C D is a rectangle. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Equals(MeasureOf(Angle(D, E, C)), 3y+10)",
+        "Equals(MeasureOf(Angle(D, A, E)), 5x+5)",
+        "Equals(MeasureOf(Angle(B, E, A)), 2x+1)",
+        "Equals(MeasureOf(Angle(C, B, E)), y^{2})",
+        "Rectangle(A,B,C,D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "D",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AB",
+        "AD",
+        "DE",
+        "DB",
+        "EB",
+        "AE",
+        "AC",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            364.4012944983819,
+            180.3009708737864
+        ],
+        "A": [
+            40.1294498381877,
+            33.05177993527508
+        ],
+        "D": [
+            40.45307443365696,
+            180.62459546925567
+        ],
+        "B": [
+            364.07766990291265,
+            33.05177993527508
+        ],
+        "E": [
+            201.94174757281553,
+            106.19093851132686
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "12",
+        "24",
+        "25"
+    ],
+    "choices_precise_value": [
+        5.0,
+        12.0,
+        24.0,
+        25.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 175.707595,
+    "solution_predicate": "Equals(Minus(1.125), x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAD, \u2220BEA, AE, DE, \u2220ADE, \u2220CBE, \u2220AED, \u2220CBD, \u2220ADB, \u2220DAC, pi * ((10 + 3 * y) / 180) = \u2220DEC, \u2220DAE, 3.14 = pi, CE, AD, BC, \u2220CEB, pi * ((1 + 2 * x) / 180) = \u2220BEA, \u2220BCA, Rectangle(A, B, C, D), \u2220DEC, E on BD, BE, pi * ((5 + 5 * x) / 180) = \u2220DAE, E on AC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBE\nConclusions: \u2220CBE = 2 * pi - \u2220EBC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAE\nConclusions: \u2220DAE = 2 * pi - \u2220EAD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AE, DE, AD\nConclusions: \u25b3ADE\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 7:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AB \u22a5 BC, BC \u22a5 CD\n\nStep 8:\nTheorem: Circumference Split\nPremises : \u2220DEC, \u2220AED, \u2220BEA, \u2220CEB\nConclusions: 2 * pi = \u2220AED + \u2220BEA + \u2220CEB + \u2220DEC\n\nStep 9:\nTheorem: Same Angle\nPremises : E on BD, \u2220CBD\nConclusions: \u2220CBD = \u2220CBE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220ADB, E on BD\nConclusions: \u2220ADB = \u2220ADE\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : BC, BE, CE\nConclusions: \u25b3BCE\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220DAC, E on AC\nConclusions: \u2220DAC = \u2220DAE\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220BCA, E on AC\nConclusions: \u2220BCA = \u2220BCE\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220CAD, E on AC\nConclusions: \u2220CAD = \u2220EAD\n\nStep 15:\nTheorem: Vertical Angle Theorem\nPremises : E on BD, E on AC\nConclusions: \u2220BEA = \u2220DEC\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, A)\nPremises : \u25b3ADE\nConclusions: pi = \u2220AED + \u2220DAE + \u2220EDA\n\nStep 17:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 18:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 19:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220ABC = \u2220CDA\n\nStep 20:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 21:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220BCD\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, E)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BCE + \u2220CEB + \u2220EBC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAE, pi * ((5 + 5 * x) / 180) = \u2220DAE\nConclusions: pi * ((5 + 5 * x) / 180) = \u2220DAC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + 3 * y) / 180) = \u2220DEC, pi * ((1 + 2 * x) / 180) = \u2220BEA, \u2220BEA = \u2220DEC\nConclusions: pi * ((1 + 2 * x) / 180) = pi * ((10 + 3 * y) / 180)\n\nStep 25:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220ADB = \u2220CBD, \u2220BCA = \u2220DAC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BCD, pi / 2 = \u2220ABC, \u2220ABC = \u2220CDA\nConclusions: \u2220BCD = \u2220CDA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + 3 * y) / 180) = \u2220DEC, pi * ((1 + 2 * x) / 180) = pi * ((10 + 3 * y) / 180)\nConclusions: pi * ((1 + 2 * x) / 180) = \u2220DEC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220ADE, \u2220ADB = \u2220CBD\nConclusions: \u2220ADE = \u2220CBD\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 5 * x) / 180) = \u2220DAC, \u2220BCA = \u2220DAC\nConclusions: pi * ((5 + 5 * x) / 180) = \u2220BCA\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCE, \u2220BCA = \u2220DAC\nConclusions: \u2220BCE = \u2220DAC\n\nStep 31:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220BCD = \u2220CDA, AD = BC\nConclusions: \u25b3ACD \u2245 \u25b3BDC\n\nStep 32:\nTheorem: Substitution\nPremises : pi * ((1 + 2 * x) / 180) = \u2220DEC, 3.14 = pi\nConclusions: 3.14 * ((1 + 2 * x) / 180) = \u2220DEC\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADE = \u2220CBD, \u2220CBD = \u2220CBE\nConclusions: \u2220ADE = \u2220CBE\n\nStep 34:\nTheorem: Substitution\nPremises : pi * ((5 + 5 * x) / 180) = \u2220BCA, 3.14 = pi\nConclusions: 3.14 * ((5 + 5 * x) / 180) = \u2220BCA\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = \u2220DAC, pi * ((5 + 5 * x) / 180) = \u2220DAC\nConclusions: pi * ((5 + 5 * x) / 180) = \u2220BCE\n\nStep 36:\nTheorem: Congruent Definition\nPremises : \u25b3ACD \u2245 \u25b3BDC\nConclusions: \u2220CAD = \u2220CBD, AD = BC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((1 + 2 * x) / 180) = \u2220DEC, pi * ((1 + 2 * x) / 180) = \u2220DEC\nConclusions: 3.14 * ((1 + 2 * x) / 180) = pi * ((1 + 2 * x) / 180)\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADE = \u2220CBE, \u2220ADE = 2 * pi - \u2220EDA\nConclusions: \u2220CBE = 2 * pi - \u2220EDA\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 5 * x) / 180) = \u2220BCA, pi * ((5 + 5 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((5 + 5 * x) / 180) = pi * ((5 + 5 * x) / 180)\n\nStep 40:\nTheorem: Substitution\nPremises : pi * ((5 + 5 * x) / 180) = \u2220BCE, 3.14 = pi\nConclusions: 3.14 * ((5 + 5 * x) / 180) = \u2220BCE\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CBD, \u2220CAD = \u2220EAD, \u2220CBD = \u2220CBE\nConclusions: \u2220CBE = \u2220EAD\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((1 + 2 * x) / 180) = \u2220BEA, 3.14 * ((1 + 2 * x) / 180) = pi * ((1 + 2 * x) / 180)\nConclusions: 3.14 * ((1 + 2 * x) / 180) = \u2220BEA\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 5 * x) / 180) = \u2220DAE, 3.14 * ((5 + 5 * x) / 180) = pi * ((5 + 5 * x) / 180)\nConclusions: 3.14 * ((5 + 5 * x) / 180) = \u2220DAE\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220EAD, \u2220CBE = 2 * pi - \u2220EDA\nConclusions: \u2220EAD = 2 * pi - \u2220EDA\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = 2 * pi - \u2220EBC, \u2220CBE = \u2220EAD\nConclusions: \u2220EAD = 2 * pi - \u2220EBC\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAE = 2 * pi - \u2220EAD, 3.14 * ((5 + 5 * x) / 180) = \u2220DAE\nConclusions: 3.14 * ((5 + 5 * x) / 180) = 2 * pi - \u2220EAD\n\nStep 47:\nTheorem: Solve Linear Equation System\nPremises : \u2220EAD = 2 * pi - \u2220EBC, 3.14 * ((1 + 2 * x) / 180) = \u2220BEA, pi = \u2220AED + \u2220DAE + \u2220EDA, 3.14 * ((5 + 5 * x) / 180) = \u2220DAE, 3.14 * ((5 + 5 * x) / 180) = \u2220BCE, 2 * pi = \u2220AED + \u2220BEA + \u2220CEB + \u2220DEC, 3.14 * ((5 + 5 * x) / 180) = 2 * pi - \u2220EAD, \u2220EAD = 2 * pi - \u2220EDA, 3.14 * ((1 + 2 * x) / 180) = \u2220DEC, pi = \u2220BCE + \u2220CEB + \u2220EBC\nConclusions: -1.12 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Rectangle(A, B, C, D)",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(Add(Mul(3.0, y), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, E)), Mul(pi, Div(Add(Mul(5.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, A)), Mul(pi, Div(Add(Mul(2.0, x), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, C)), Mul(pi, Div(Pow(y, 2.0), 180.0)))"
+    ],
+    "correct": false
+}

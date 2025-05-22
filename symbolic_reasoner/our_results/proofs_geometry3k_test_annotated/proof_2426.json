@@ -1,0 +1,100 @@
+{
+    "problem_id": "2426",
+    "solved": true,
+    "problem_text": "For the pair of similar figures, use the given areas to find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, B)), 4)",
+        "Equals(LengthOf(Line(H, E)), x)",
+        "Equals(AreaOf(Quadrilateral(A, C, D, B)), 8)",
+        "Equals(AreaOf(Quadrilateral(F, G, H, E)), 32)",
+        "Similar(Quadrilateral(A, C, D, B), Quadrilateral(F, G, H, E))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "FG",
+        "HG",
+        "EH",
+        "EF",
+        "DC",
+        "BD",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            12.558139534883722,
+            154.5581395348837
+        ],
+        "B": [
+            12.093023255813954,
+            69.44186046511629
+        ],
+        "C": [
+            216.27906976744188,
+            155.02325581395348
+        ],
+        "D": [
+            217.2093023255814,
+            69.44186046511629
+        ],
+        "E": [
+            280.4651162790698,
+            38.279069767441854
+        ],
+        "F": [
+            280.4651162790698,
+            154.5581395348837
+        ],
+        "G": [
+            582.7906976744187,
+            154.093023255814
+        ],
+        "H": [
+            582.7906976744187,
+            39.209302325581405
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "8",
+        "16"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        8.0,
+        16.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 16.804079,
+    "solution_predicate": "Equals(8.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = Area(Quadrilateral(A, B, D, C)), Quadrilateral(A, B, D, C) ~ Quadrilateral(F, E, H, G), 32 = Area(Quadrilateral(E, F, G, H)), x = EH, 4 = BD\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, D, C) ~ Quadrilateral(F, E, H, G)\nConclusions: sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g = BD / EH, sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g ** 2 = Area(Quadrilateral(A, B, D, C)) / Area(Quadrilateral(E, F, G, H))\n\nStep 3:\nTheorem: Substitution\nPremises : 32 = Area(Quadrilateral(E, F, G, H)), 8 = Area(Quadrilateral(A, B, D, C)), sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g ** 2 = Area(Quadrilateral(A, B, D, C)) / Area(Quadrilateral(E, F, G, H))\nConclusions: 8 / 32 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g ** 2\n\nStep 4:\nTheorem: Solve Univariate Equation\nPremises : 8 / 32 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g ** 2\nConclusions: 0.5 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g\n\nStep 5:\nTheorem: Substitution\nPremises : sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g = BD / EH, x = EH, 4 = BD, 0.5 = sim_ratio_quadrilateral_a_b_d_c_quadrilateral_f_e_h_g\nConclusions: 0.5 = 4 / x\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : x = EH, 0.5 = 4 / x\nConclusions: 8 = EH\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : x = EH, 8 = EH\nConclusions: 8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, G)",
+        "Line(H, G)",
+        "Line(E, H)",
+        "Line(E, F)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Similar(Quadrilateral(A, C, D, B), Quadrilateral(F, G, H, E))",
+        "Equals(LengthOf(Line(D, B)), 4.0)",
+        "Equals(LengthOf(Line(H, E)), x)",
+        "Equals(AreaOf(Quadrilateral(A, C, D, B)), 8.0)",
+        "Equals(AreaOf(Quadrilateral(F, G, H, E)), 32.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,101 @@
+{
+    "problem_id": "2648",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Perpendicular(Line(D, F), Line(E, F))",
+        "Equals(MeasureOf(Angle(A, F, E)), x)",
+        "Equals(MeasureOf(Angle(C, F, D)), 67)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AF",
+        "AC",
+        "FC",
+        "DF",
+        "DB",
+        "FB",
+        "EF"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            35.11400651465797,
+            212.70358306188922
+        ],
+        "B": [
+            155.63517915309444,
+            289.25081433224756
+        ],
+        "C": [
+            276.80781758957653,
+            97.71986970684038
+        ],
+        "D": [
+            155.63517915309444,
+            21.824104234527685
+        ],
+        "E": [
+            21.75895765472312,
+            155.37459283387622
+        ],
+        "F": [
+            155.30944625407164,
+            155.37459283387622
+        ]
+    },
+    "problem_choices": [
+        "23",
+        "30",
+        "67",
+        "90"
+    ],
+    "choices_precise_value": [
+        23.0,
+        30.0,
+        67.0,
+        90.0
+    ],
+    "problem_answer": 23.0,
+    "total_time": 20.086232,
+    "solution_predicate": "Equals(23.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BFE, pi * (67 / 180) = \u2220CFD, BF \u22a5 EF, \u2220EFA, \u2220EFA, F on BD, F on AC, 3.14 = pi, \u2220AFE, \u2220AFB, pi * (x / 180) = \u2220EFA\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BF \u22a5 EF\nConclusions: (3 * pi) / 2 = \u2220BFE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220EFA\nConclusions: \u2220EFA = 2 * pi - \u2220AFE\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : F on BD, F on AC\nConclusions: \u2220AFB = \u2220CFD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFE\nConclusions: \u2220AFE = 2 * pi - \u2220EFA\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220EFA, \u2220AFB, \u2220BFE\nConclusions: 2 * pi = \u2220AFB + \u2220BFE + \u2220EFA\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220EFA\nConclusions: 3.14 * (x / 180) = \u2220EFA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFB = \u2220CFD, pi * (67 / 180) = \u2220CFD\nConclusions: pi * (67 / 180) = \u2220AFB\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AFE = 2 * pi - \u2220EFA\nConclusions: \u2220AFE = 2 * 3.14 - \u2220EFA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220EFA, \u2220EFA = 2 * pi - \u2220AFE\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220AFE\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220BFE, 2 * pi = \u2220AFB + \u2220BFE + \u2220EFA, pi * (67 / 180) = \u2220AFB\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + pi * (67 / 180) + \u2220EFA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + pi * (67 / 180) + \u2220EFA, 3.14 * (x / 180) = \u2220EFA, \u2220AFE = 2 * 3.14 - \u2220EFA, 3.14 * (x / 180) = 2 * pi - \u2220AFE\nConclusions: 23 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(D, F)",
+        "Line(D, B)",
+        "Line(F, B)",
+        "Line(E, F)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Perpendicular(Line(D, F), Line(E, F))",
+        "Equals(MeasureOf(Angle(E, F, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, D)), Mul(pi, Div(67.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,133 @@
+{
+    "problem_id": "8534",
+    "solved": true,
+    "problem_text": "In \\odot T, ZV = 1, and TW = 13. Find VT.",
+    "logic_forms": [
+        "Line(T, W)",
+        "Line(V, T)",
+        "Line(V, W)",
+        "Line(V, Y)",
+        "Line(X, T)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(Z, T)",
+        "Line(Z, V)",
+        "Line(Z, W)",
+        "Perpendicular(Line(X, Y), Line(Z, W))",
+        "PointLiesOnCircle(W, Circle(T))",
+        "PointLiesOnCircle(X, Circle(T))",
+        "PointLiesOnCircle(Y, Circle(T))",
+        "PointLiesOnCircle(Z, Circle(T))",
+        "PointLiesOnLine(T, Line(V, W))",
+        "PointLiesOnLine(T, Line(Z, W))",
+        "PointLiesOnLine(V, Line(X, Y))",
+        "PointLiesOnLine(V, Line(Z, T))",
+        "PointLiesOnLine(V, Line(Z, W))",
+        "Circle(T)",
+        "Equals(LengthOf(Line(Z,V)),1)",
+        "Equals(LengthOf(Line(T,W)),13)",
+        "Find(LengthOf(Line(V,T)))"
+    ],
+    "point_instances": [
+        "W",
+        "T",
+        "X",
+        "V",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "XV",
+        "XY",
+        "VY",
+        "XT",
+        "ZT",
+        "ZV",
+        "ZW",
+        "TV",
+        "TW",
+        "VW"
+    ],
+    "circle_instances": [
+        "T"
+    ],
+    "point_positions": {
+        "W": [
+            125.80000000000001,
+            228.43485617597293
+        ],
+        "T": [
+            125.08356940509913,
+            139.5169971671388
+        ],
+        "X": [
+            57.652173913043484,
+            85.40984330169941
+        ],
+        "V": [
+            125.6521739130435,
+            85.05495475612447
+        ],
+        "Z": [
+            126.08333333333334,
+            52.092216582064296
+        ],
+        "Y": [
+            194.7890909090909,
+            84.96354407014306
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        12.0,
+        13.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 53.521536,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(V, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1 = VZ, V on TZ, Z on \u2299(T, radius_T), 13 = TW, W on \u2299(T, radius_T)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : V on TZ\nConclusions: TZ = TV + VZ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(T, radius_T)\nConclusions: radius_T = TZ\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : W on \u2299(T, radius_T)\nConclusions: radius_T = TW\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 13 = TW, radius_T = TW\nConclusions: 13 = radius_T\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_T, radius_T = TZ\nConclusions: 13 = TZ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : TZ = TV + VZ, 13 = TZ\nConclusions: 13 = TV + VZ\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 13 = TV + VZ, 1 = VZ\nConclusions: 12 = TV\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(V, Y)",
+        "Line(X, T)",
+        "Line(Z, T)",
+        "Line(Z, V)",
+        "Line(Z, W)",
+        "Line(T, V)",
+        "Line(T, W)",
+        "Line(V, W)",
+        "Circle(T, radius_T)",
+        "Line(T, W)",
+        "Line(V, T)",
+        "Line(V, W)",
+        "Line(V, Y)",
+        "Line(X, T)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(Z, T)",
+        "Line(Z, V)",
+        "Line(Z, W)",
+        "Perpendicular(Line(X, Y), Line(Z, W))",
+        "PointLiesOnCircle(W, Circle(T, radius_T))",
+        "PointLiesOnCircle(X, Circle(T, radius_T))",
+        "PointLiesOnCircle(Y, Circle(T, radius_T))",
+        "PointLiesOnCircle(Z, Circle(T, radius_T))",
+        "PointLiesOnLine(T, Line(V, W))",
+        "PointLiesOnLine(T, Line(Z, W))",
+        "PointLiesOnLine(V, Line(X, Y))",
+        "PointLiesOnLine(V, Line(Z, T))",
+        "PointLiesOnLine(V, Line(Z, W))",
+        "Circle(T, radius_T)",
+        "Equals(LengthOf(Line(Z, V)), 1.0)",
+        "Equals(LengthOf(Line(T, W)), 13.0)"
+    ],
+    "correct": true
+}

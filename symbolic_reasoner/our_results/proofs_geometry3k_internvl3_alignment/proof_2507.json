@@ -1,0 +1,94 @@
+{
+    "problem_id": "2507",
+    "solved": true,
+    "problem_text": "Find x if \\triangle J L M \\sim \\triangle Q S T.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, S)), 3)",
+        "Equals(LengthOf(Line(Q, S)), 5)",
+        "Equals(LengthOf(Line(J, L)), 3y-2)",
+        "Equals(LengthOf(Line(L, M)), 6x-3)",
+        "Equals(LengthOf(Line(J, M)), 4)",
+        "Equals(LengthOf(Line(T, Q)), 2)",
+        "Equals(MeasureOf(Angle(L, J, M)), MeasureOf(Angle(T, Q, S)))",
+        "Equals(MeasureOf(Angle(L, M, J)), MeasureOf(Angle(Q, T, S)))",
+        "Similar(Triangle(J,L,M),Triangle(Q,S,T))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "S",
+        "Q",
+        "L",
+        "T",
+        "J",
+        "M"
+    ],
+    "line_instances": [
+        "JL",
+        "LM",
+        "JM",
+        "TQ",
+        "TS",
+        "SQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            834.8993288590605,
+            92.28859060402684
+        ],
+        "Q": [
+            832.2147651006711,
+            315.10738255033556
+        ],
+        "L": [
+            185.23489932885906,
+            363.4295302013423
+        ],
+        "T": [
+            637.5838926174497,
+            252.02013422818794
+        ],
+        "J": [
+            184.56375838926175,
+            91.61744966442953
+        ],
+        "M": [
+            454.36241610738256,
+            171.4832214765101
+        ]
+    },
+    "problem_choices": [
+        "1.5",
+        "2",
+        "3",
+        "4"
+    ],
+    "choices_precise_value": [
+        1.5,
+        2.0,
+        3.0,
+        4.0
+    ],
+    "problem_answer": 1.5,
+    "total_time": 20.469268,
+    "solution_predicate": "Equals(1.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 * x - 3 = LM, 4 = JM, 2 = QT, \u25b3JLM ~ \u25b3QST, 3 = ST, 3 * y - 2 = JL, 5 = QS\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3JLM ~ \u25b3QST\nConclusions: JL / QS = LM / ST, sim_ratio_triangle_j_l_m_triangle_q_s_t = JL / QS, sim_ratio_triangle_j_l_m_triangle_q_s_t = JM / QT\n\nStep 3:\nTheorem: Substitution\nPremises : 3 = ST, 6 * x - 3 = LM, JL / QS = LM / ST, 3 * y - 2 = JL, 5 = QS\nConclusions: (3 * y - 2) / 5 = (6 * x - 3) / 3\n\nStep 4:\nTheorem: Substitution\nPremises : 3 * y - 2 = JL, sim_ratio_triangle_j_l_m_triangle_q_s_t = JL / QS, 5 = QS\nConclusions: sim_ratio_triangle_j_l_m_triangle_q_s_t = (3 * y - 2) / 5\n\nStep 5:\nTheorem: Substitution\nPremises : sim_ratio_triangle_j_l_m_triangle_q_s_t = JM / QT, 4 = JM, 2 = QT\nConclusions: 4 / 2 = sim_ratio_triangle_j_l_m_triangle_q_s_t\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_j_l_m_triangle_q_s_t = (3 * y - 2) / 5, 4 / 2 = sim_ratio_triangle_j_l_m_triangle_q_s_t\nConclusions: 4 / 2 = (3 * y - 2) / 5\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 4 / 2 = (3 * y - 2) / 5, (3 * y - 2) / 5 = (6 * x - 3) / 3\nConclusions: 1.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(L, M)",
+        "Line(J, M)",
+        "Line(T, Q)",
+        "Line(T, S)",
+        "Line(S, Q)",
+        "Similar(Triangle(J, L, M), Triangle(Q, S, T))",
+        "Equals(LengthOf(Line(T, S)), 3.0)",
+        "Equals(LengthOf(Line(Q, S)), 5.0)",
+        "Equals(LengthOf(Line(J, L)), Sub(Mul(3.0, y), 2.0))",
+        "Equals(LengthOf(Line(L, M)), Sub(Mul(6.0, x), 3.0))",
+        "Equals(LengthOf(Line(J, M)), 4.0)",
+        "Equals(LengthOf(Line(T, Q)), 2.0)",
+        "Equals(MeasureOf(Angle(L, J, M)), MeasureOf(Angle(S, Q, T)))",
+        "Equals(MeasureOf(Angle(J, M, L)), MeasureOf(Angle(Q, T, S)))"
+    ],
+    "correct": true
+}

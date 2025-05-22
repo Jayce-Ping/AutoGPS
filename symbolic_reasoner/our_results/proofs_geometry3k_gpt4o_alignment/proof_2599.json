@@ -1,0 +1,87 @@
+{
+    "problem_id": "2599",
+    "solved": true,
+    "problem_text": "If S T = 8, T R = 4, and P T = 6, find Q R.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(T, Line(S, R))",
+        "Parallel(Line(P, T), Line(Q, R))",
+        "Equals(LengthOf(Line(S,T)),8)",
+        "Equals(LengthOf(Line(T,R)),4)",
+        "Equals(LengthOf(Line(P,T)),6)",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "P",
+        "Q",
+        "T"
+    ],
+    "line_instances": [
+        "QP",
+        "QS",
+        "PS",
+        "ST",
+        "SR",
+        "TR",
+        "PT",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            350.61224489795916,
+            308.1632653061224
+        ],
+        "S": [
+            405.3061224489796,
+            85.71428571428571
+        ],
+        "P": [
+            243.67346938775506,
+            92.24489795918366
+        ],
+        "Q": [
+            112.24489795918367,
+            97.55102040816325
+        ],
+        "T": [
+            375.91836734693874,
+            202.44897959183672
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "8",
+        "9",
+        "10"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        9.0,
+        10.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 26.490118,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RSQ, \u2220TPS, T on RS, 6 = PT, \u2220RSP, 3.14 = pi, PT || QR, P on QS, \u2220RQS, 8 = ST, 4 = RT\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220TPS\nConclusions: \u2220TPS = 2 * pi - \u2220SPT\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220RSQ, T on RS\nConclusions: \u2220RSQ = \u2220TSQ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : T on RS\nConclusions: RS = RT + ST\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220RSP, T on RS\nConclusions: \u2220RSP = \u2220TSP\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : PT || QR\nConclusions: \u2220SRQ = \u2220STP, \u2220SPT = \u2220SQR\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220RSQ, P on QS\nConclusions: \u2220RSP = \u2220RSQ\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220RQS\nConclusions: \u2220RQS = 2 * pi - \u2220SQR\n\nStep 9:\nTheorem: Substitution\nPremises : 4 = RT, RS = RT + ST, 8 = ST\nConclusions: 4 + 8 = RS\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220TPS = 2 * pi - \u2220SPT, 3.14 = pi, \u2220SPT = \u2220SQR\nConclusions: \u2220TPS = 2 * 3.14 - \u2220SQR\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220TSQ, \u2220RSP = \u2220RSQ, \u2220RSP = \u2220TSP\nConclusions: \u2220TSP = \u2220TSQ\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220RQS = 2 * pi - \u2220SQR\nConclusions: \u2220RQS = 2 * 3.14 - \u2220SQR\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 4 + 8 = RS\nConclusions: 12 = RS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220TSQ, \u2220TSP = \u2220TSQ\nConclusions: \u2220RSQ = \u2220TSP\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQS = 2 * 3.14 - \u2220SQR, \u2220TPS = 2 * 3.14 - \u2220SQR\nConclusions: \u2220RQS = \u2220TPS\n\nStep 16:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220RQS = \u2220TPS, \u2220SRQ = \u2220STP, \u2220RSQ = \u2220TSP\nConclusions: \u25b3PST ~ \u25b3QSR\n\nStep 17:\nTheorem: Similar Definition\nPremises : \u25b3PST ~ \u25b3QSR\nConclusions: sim_ratio_triangle_p_s_t_triangle_q_s_r = PT / QR, \u2220RSQ = \u2220TSP, \u2220SRQ = \u2220STP, sim_ratio_triangle_p_s_t_triangle_q_s_r = ST / RS\n\nStep 18:\nTheorem: Substitution\nPremises : sim_ratio_triangle_p_s_t_triangle_q_s_r = PT / QR, 6 = PT\nConclusions: sim_ratio_triangle_p_s_t_triangle_q_s_r = 6 / QR\n\nStep 19:\nTheorem: Substitution\nPremises : sim_ratio_triangle_p_s_t_triangle_q_s_r = ST / RS, 12 = RS, 8 = ST\nConclusions: 8 / 12 = sim_ratio_triangle_p_s_t_triangle_q_s_r\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 12 = sim_ratio_triangle_p_s_t_triangle_q_s_r, sim_ratio_triangle_p_s_t_triangle_q_s_r = 6 / QR\nConclusions: 8 / 12 = 6 / QR\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 8 / 12 = 6 / QR\nConclusions: 9 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(P, S)",
+        "Line(S, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(T, Line(S, R))",
+        "Parallel(Line(P, T), Line(Q, R))",
+        "Equals(LengthOf(Line(S, T)), 8.0)",
+        "Equals(LengthOf(Line(T, R)), 4.0)",
+        "Equals(LengthOf(Line(P, T)), 6.0)"
+    ],
+    "correct": true
+}

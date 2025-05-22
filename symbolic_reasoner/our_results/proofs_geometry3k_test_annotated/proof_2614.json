@@ -1,0 +1,76 @@
+{
+    "problem_id": "2614",
+    "solved": true,
+    "problem_text": "\\triangle E F G is equilateral, and E H bisects \\angle E. Find m \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(H, Line(F, G))",
+        "Equals(MeasureOf(Angle(H, E, G)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(F, E, H)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(F, H, E)), 15x)",
+        "Equilateral(Triangle(E, F, G))",
+        "BisectsAngle(Line(E, H), Angle(F, E, G))",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "H",
+        "E",
+        "G",
+        "F"
+    ],
+    "line_instances": [
+        "FH",
+        "FG",
+        "HG",
+        "EF",
+        "EH",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            161.61290322580643,
+            254.51612903225805
+        ],
+        "E": [
+            160.96774193548387,
+            43.225806451612904
+        ],
+        "G": [
+            283.22580645161287,
+            254.19354838709677
+        ],
+        "F": [
+            39.35483870967742,
+            254.51612903225805
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "30",
+        "45",
+        "60"
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        45.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 21.334874,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(H, E, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FEH, Equilateral(\u25b3EFG), \u2220HEG, \u2220GEF, 3.14 = pi, BisectsAngle(EH, \u2220FEG)\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3EFG)\nConclusions: 5 * (pi / 3) = \u2220GEF\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220GEF, \u2220HEG, \u2220FEH\nConclusions: 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG\n\nStep 4:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(EH, \u2220FEG)\nConclusions: \u2220FEH = \u2220HEG\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, 5 * (pi / 3) = \u2220GEF, 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG, \u2220FEH = \u2220HEG\nConclusions: 2 * 3.14 = 5 * (3.14 / 3) + \u2220HEG + \u2220HEG\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 5 * (3.14 / 3) + \u2220HEG + \u2220HEG\nConclusions: 0.52 = \u2220HEG\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, H)",
+        "Line(F, G)",
+        "Line(H, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(E, G)",
+        "PointLiesOnLine(H, Line(F, G))",
+        "Equilateral(Triangle(E, F, G))",
+        "BisectsAngle(Line(E, H), Angle(F, E, G))",
+        "Equals(MeasureOf(Angle(E, H, F)), Mul(pi, Div(Mul(15.0, x), 180.0)))"
+    ],
+    "correct": true
+}

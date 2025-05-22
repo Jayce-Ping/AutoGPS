@@ -1,0 +1,107 @@
+{
+    "problem_id": "5642",
+    "solved": true,
+    "problem_text": "Find the area of the rhombus.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 4)",
+        "Equals(MeasureOf(Angle(A, B, C)), 60)",
+        "Find(AreaOf(Rhombus(A, B, E, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "DE",
+        "EB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            175.81081081081084,
+            23.552123552123554
+        ],
+        "B": [
+            86.23552123552125,
+            179.15057915057915
+        ],
+        "C": [
+            175.81081081081084,
+            177.992277992278
+        ],
+        "D": [
+            265.7722007722008,
+            177.22007722007723
+        ],
+        "E": [
+            176.58301158301163,
+            333.976833976834
+        ]
+    },
+    "problem_choices": [
+        16.0,
+        18.475,
+        27.713,
+        55.426
+    ],
+    "choices_precise_value": [
+        16.0,
+        18.475,
+        27.713,
+        55.426
+    ],
+    "problem_answer": 55.426,
+    "total_time": 341.605548,
+    "solution_predicate": "Equals(55.4256258432, AreaOf(Rhombus(A, B, E, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, Rhombus(A, B, E, D), AD, BD, 4 = BC, C on AE, AB, AC, CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, E, D)\nConclusions: Parallelogram(A, B, E, D)\n\nStep 4:\nTheorem: Area formula of Rhombus(A, B, E, D)\nPremises : Rhombus(A, B, E, D)\nConclusions: Area(Rhombus(A, B, E, D)) = (AE * BD) / 2\n\nStep 5:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(A, B, E, D)\nConclusions: AC \u22a5 CD\n\nStep 6:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, E, D)\nConclusions: AD = DE, AB = AD\n\nStep 7:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : BD, AD, AB\nConclusions: \u25b3ABD\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 10:\nTheorem: Parallelogram Diagonals Bisect\nPremises : C on AE, C on BD, Parallelogram(A, B, E, D)\nConclusions: BC = CD, AC = CE\n\nStep 11:\nTheorem: Equilateral Triangle Property\nPremises : \u25b3ABD, AB = AD\nConclusions: AD = BD, AB = AD\n\nStep 12:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AC \u22a5 CD\nConclusions: AC = SqrtOf(AD ** 2 - CD ** 2)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : BC = CD, 4 = BC\nConclusions: 4 = CD\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : AC = CE, AE = AC + CE\nConclusions: AC = 0.5 * AE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : AC = SqrtOf(AD ** 2 - CD ** 2), AC = CE\nConclusions: CE = SqrtOf(AD ** 2 - CD ** 2)\n\nStep 16:\nTheorem: Evaluate\nPremises : 4 = BC, 4 = CD\nConclusions: 8 = BC + CD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AC = 0.5 * AE, AC = CE\nConclusions: CE = 0.5 * AE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : BD = BC + CD, 8 = BC + CD\nConclusions: 8 = BD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 8 = BD, AD = BD, AD = DE\nConclusions: 8 = DE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : AD = DE, 8 = DE\nConclusions: 8 = AD\n\nStep 21:\nTheorem: Evaluate\nPremises : 8 = AD, 4 = CD\nConclusions: 6.93 = SqrtOf(AD ** 2 - CD ** 2)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : CE = SqrtOf(AD ** 2 - CD ** 2), 6.93 = SqrtOf(AD ** 2 - CD ** 2)\nConclusions: 6.93 = CE\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : CE = 0.5 * AE, 6.93 = CE\nConclusions: 13.86 = AE\n\nStep 24:\nTheorem: Evaluate\nPremises : 8 = BD, 13.86 = AE\nConclusions: 55.43 = (AE * BD) / 2\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 55.43 = (AE * BD) / 2, Area(Rhombus(A, B, E, D)) = (AE * BD) / 2\nConclusions: 55.43 = Area(Rhombus(A, B, E, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(C, B)), 4.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

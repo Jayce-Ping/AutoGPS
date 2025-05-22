@@ -1,0 +1,80 @@
+{
+    "problem_id": "46",
+    "solved": true,
+    "problem_text": "If ABCD is a kite. Find m \\angle C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(D, C)))",
+        "Equals(MeasureOf(Angle(A, D, C)), 85)",
+        "Equals(MeasureOf(Angle(B, A, D)), 120)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Kite(A,B,C,D)",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "DA",
+        "AB",
+        "BC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            56.81990521327014,
+            100.4436974789916
+        ],
+        "A": [
+            159.44549763033174,
+            33.44962406015037
+        ],
+        "B": [
+            253.80758293838863,
+            98.77714285714285
+        ],
+        "C": [
+            162.02369668246445,
+            219.2360902255639
+        ]
+    },
+    "problem_choices": [
+        60.0,
+        70.0,
+        85.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        60.0,
+        70.0,
+        85.0,
+        120.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 74.44544,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Kite(A, B, C, D), pi * (120 / 180) = \u2220DAB\n\nStep 2:\nTheorem: Kite angle equality\nPremises : Kite(A, B, C, D)\nConclusions: \u2220BCD = \u2220DAB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220DAB, pi * (120 / 180) = \u2220DAB\nConclusions: pi * (120 / 180) = \u2220BCD\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (120 / 180) = \u2220BCD\nConclusions: 2.09 = \u2220BCD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Kite(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(D, C)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(85.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": false
+}

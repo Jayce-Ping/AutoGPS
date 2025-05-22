@@ -1,0 +1,78 @@
+{
+    "problem_id": "8450",
+    "solved": true,
+    "problem_text": "What is m \\angle A?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, D)), 32x+15)",
+        "Equals(MeasureOf(Angle(C, B, A)), 133)",
+        "Equals(MeasureOf(Angle(C, D, A)), 80)",
+        "Equals(MeasureOf(Angle(D, C, B)), 44x-1)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            60.86830357142858,
+            278.5420408163265
+        ],
+        "C": [
+            340.05185439560444,
+            278.4421978021978
+        ],
+        "B": [
+            309.86229395604397,
+            157.81186813186812
+        ],
+        "A": [
+            102.65848214285715,
+            42.3134693877551
+        ]
+    },
+    "problem_choices": [
+        71.0,
+        76.0,
+        80.0,
+        133.0
+    ],
+    "choices_precise_value": [
+        71.0,
+        76.0,
+        80.0,
+        133.0
+    ],
+    "problem_answer": 71.0,
+    "total_time": 6.298583,
+    "solution_predicate": "Equals(1.2391837689, MeasureOf(Angle(D, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DCB, AD, BC, pi * ((15 + 32 * x) / 180) = \u2220DAB, pi * (80 / 180) = \u2220CDA, \u2220BCD, pi * (133 / 180) = \u2220ABC, pi * ((44 * x - 1) / 180) = \u2220BCD, AB, 3.14 = pi, CD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCB\nConclusions: \u2220DCB = 2 * pi - \u2220BCD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((44 * x - 1) / 180) = \u2220BCD, 3.14 = pi\nConclusions: 3.14 * ((44 * x - 1) / 180) = \u2220BCD\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((15 + 32 * x) / 180) = \u2220DAB, 3.14 = pi\nConclusions: 3.14 * ((15 + 32 * x) / 180) = \u2220DAB\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : BC, AD, CD, AB\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220DCB = 2 * pi - \u2220BCD, 3.14 = pi\nConclusions: \u2220DCB = 2 * 3.14 - \u2220BCD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = 2 * pi - \u2220DCB, 3.14 * ((44 * x - 1) / 180) = \u2220BCD\nConclusions: 3.14 * ((44 * x - 1) / 180) = 2 * pi - \u2220DCB\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 10:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, pi * (80 / 180) = \u2220CDA, pi * (133 / 180) = \u2220ABC, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (133 / 180) + pi * (80 / 180) + \u2220BCD + \u2220DAB\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((44 * x - 1) / 180) = 2 * pi - \u2220DCB, 2 * 3.14 = pi * (133 / 180) + pi * (80 / 180) + \u2220BCD + \u2220DAB, 3.14 * ((15 + 32 * x) / 180) = \u2220DAB, 3.14 * ((44 * x - 1) / 180) = \u2220BCD, \u2220DCB = 2 * 3.14 - \u2220BCD\nConclusions: 1.24 = \u2220DAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(Add(Mul(32.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(133.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Sub(Mul(44.0, x), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

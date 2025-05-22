@@ -1,0 +1,95 @@
+{
+    "problem_id": "2490",
+    "solved": true,
+    "problem_text": "Find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Equals(LengthOf(Line(B, C)), 3x-6)",
+        "Equals(LengthOf(Line(A, E)), x+4)",
+        "Equals(MeasureOf(Angle(D, E, C)), 60)",
+        "Equals(MeasureOf(Angle(D, E, A)), 55)",
+        "Equals(MeasureOf(Angle(D, B, A)), 5y)",
+        "Parallelogram(A, E, C, B)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "BD",
+        "BE",
+        "DE",
+        "AE",
+        "AB",
+        "BC",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            30.76923076923077,
+            42.10989010989012
+        ],
+        "B": [
+            154.94505494505495,
+            230.02197802197804
+        ],
+        "C": [
+            497.43589743589746,
+            231.12087912087912
+        ],
+        "D": [
+            264.1025641025641,
+            136.24908424908426
+        ],
+        "E": [
+            373.2600732600733,
+            42.47619047619048
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "5",
+        "12",
+        "18"
+    ],
+    "choices_precise_value": [
+        3.0,
+        5.0,
+        12.0,
+        18.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 67.293134,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, E), 4 + x = AE, 3 * x - 6 = BC\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, E)\nConclusions: AE = BC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : AE = BC, 3 * x - 6 = BC, 4 + x = AE\nConclusions: 4 + x = 3 * x - 6\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 4 + x = 3 * x - 6\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Parallelogram(A, E, C, B)",
+        "Equals(LengthOf(Line(B, C)), Sub(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(A, E)), Add(x, 4.0))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, A)), Mul(pi, Div(Mul(5.0, y), 180.0)))"
+    ],
+    "correct": true
+}

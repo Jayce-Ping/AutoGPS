@@ -1,0 +1,76 @@
+{
+    "problem_id": "2747",
+    "solved": true,
+    "problem_text": "Find the area of the figure. Round to the nearest hundredth, if necessary.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), 3)",
+        "Equals(MeasureOf(Angle(D, B, C)), 62)",
+        "Find(AreaOf(Rectangle(A, B, C, D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "DB",
+        "DA",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            35.86626139817629,
+            231.20060790273556
+        ],
+        "B": [
+            375.6838905775076,
+            231.50455927051672
+        ],
+        "C": [
+            376.2917933130699,
+            50.653495440729486
+        ],
+        "D": [
+            36.474164133738604,
+            50.95744680851064
+        ]
+    },
+    "problem_choices": [
+        "4.2",
+        "4.8",
+        "7.9",
+        "16.9"
+    ],
+    "choices_precise_value": [
+        4.2,
+        4.8,
+        7.9,
+        16.9
+    ],
+    "problem_answer": 4.8,
+    "total_time": 47.733242,
+    "solution_predicate": "Equals(4.7853848853, AreaOf(Rectangle(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBD, \u2220ADB, AB = CD, BC \u22a5 CD, pi * (62 / 180) = \u2220CBD, tan(\u2220CBD), 3.14 = pi, 3 = CD, Rectangle(A, B, C, D), Area(Rectangle(A, B, C, D))\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBD\nConclusions: \u2220CBD = 2 * pi - \u2220DBC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADB\nConclusions: \u2220ADB = 2 * pi - \u2220BDA\n\nStep 4:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBD), BC \u22a5 CD\nConclusions: CD / BC = tan(\u2220CBD)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 3 = CD\nConclusions: 3 = AB\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 7:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220CBD = 2 * pi - \u2220DBC, pi * (62 / 180) = \u2220CBD, 3.14 = pi\nConclusions: 3.14 * (62 / 180) = 2 * 3.14 - \u2220DBC\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 10:\nTheorem: Substitution\nPremises : Area(Rectangle(A, B, C, D)) = AB * BC, 3 = AB\nConclusions: Area(Rectangle(A, B, C, D)) = 3 * BC\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC, \u2220ADB = \u2220CBD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (62 / 180) = \u2220CBD, \u2220ADB = \u2220CBD\nConclusions: pi * (62 / 180) = \u2220ADB\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220BDA = \u2220DBC, 3.14 = pi, \u2220ADB = 2 * pi - \u2220BDA, pi * (62 / 180) = \u2220ADB\nConclusions: pi * (62 / 180) = 2 * 3.14 - \u2220DBC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (62 / 180) = 2 * 3.14 - \u2220DBC, pi * (62 / 180) = 2 * 3.14 - \u2220DBC\nConclusions: 3.14 * (62 / 180) = pi * (62 / 180)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (62 / 180) = \u2220CBD, 3.14 * (62 / 180) = pi * (62 / 180)\nConclusions: 3.14 * (62 / 180) = \u2220CBD\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (62 / 180) = \u2220CBD\nConclusions: 1.08 = \u2220CBD\n\nStep 17:\nTheorem: Substitution\nPremises : CD / BC = tan(\u2220CBD), 1.08 = \u2220CBD, 3 = CD\nConclusions: tan(1.08) = 3 / BC\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : Area(Rectangle(A, B, C, D)) = 3 * BC, tan(1.08) = 3 / BC\nConclusions: 4.79 = Area(Rectangle(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), 3.0)",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(62.0, 180.0)))"
+    ],
+    "correct": true
+}

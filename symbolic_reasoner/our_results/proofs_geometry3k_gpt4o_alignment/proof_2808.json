@@ -1,0 +1,185 @@
+{
+    "problem_id": "2808",
+    "solved": true,
+    "problem_text": "Find x so that B E and A D are perpendicular.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(G, F))",
+        "PointLiesOnLine(A, Line(G, D))",
+        "PointLiesOnLine(A, Line(G, K))",
+        "PointLiesOnLine(F, Line(G, D))",
+        "PointLiesOnLine(F, Line(G, K))",
+        "PointLiesOnLine(F, Line(A, D))",
+        "PointLiesOnLine(F, Line(A, K))",
+        "PointLiesOnLine(D, Line(G, K))",
+        "PointLiesOnLine(D, Line(A, K))",
+        "PointLiesOnLine(D, Line(F, K))",
+        "PointLiesOnLine(B, Line(I, F))",
+        "PointLiesOnLine(B, Line(I, E))",
+        "PointLiesOnLine(B, Line(I, H))",
+        "PointLiesOnLine(F, Line(I, E))",
+        "PointLiesOnLine(F, Line(I, H))",
+        "PointLiesOnLine(F, Line(B, E))",
+        "PointLiesOnLine(F, Line(B, H))",
+        "PointLiesOnLine(E, Line(I, H))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, H))",
+        "PointLiesOnLine(C, Line(F, J))",
+        "Equals(MeasureOf(Angle(A, F, E)), 12y-10)",
+        "Equals(MeasureOf(Angle(D, F, C)), 3x)",
+        "Equals(MeasureOf(Angle(B, F, C)), 6x)",
+        "Perpendicular(Line(B,E),Line(A,D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "F",
+        "B",
+        "C",
+        "E",
+        "D",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K"
+    ],
+    "line_instances": [
+        "GA",
+        "GF",
+        "GD",
+        "GK",
+        "AF",
+        "AD",
+        "AK",
+        "FD",
+        "FK",
+        "DK",
+        "IB",
+        "IF",
+        "IE",
+        "IH",
+        "BF",
+        "BE",
+        "BH",
+        "FE",
+        "FH",
+        "EH",
+        "FC",
+        "FJ",
+        "CJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            79.83539094650206,
+            158.0082304526749
+        ],
+        "F": [
+            272.8395061728395,
+            157.59670781893004
+        ],
+        "B": [
+            272.8395061728395,
+            77.76131687242798
+        ],
+        "C": [
+            418.5185185185185,
+            74.88065843621399
+        ],
+        "E": [
+            274.0740740740741,
+            245.6625514403292
+        ],
+        "D": [
+            467.0781893004115,
+            158.0082304526749
+        ],
+        "G": [
+            18.51851851851852,
+            157.18518518518516
+        ],
+        "H": [
+            273.6625514403292,
+            304.92181069958843
+        ],
+        "I": [
+            272.8395061728395,
+            17.679012345679013
+        ],
+        "J": [
+            474.8971193415638,
+            41.54732510288065
+        ],
+        "K": [
+            526.7489711934156,
+            158.41975308641975
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "20",
+        "30"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        20.0,
+        30.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 253.679199,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220JFK, \u2220EFD, \u2220DFC, pi * ((3 * x) / 180) = \u2220DFC, \u2220CFD, \u2220CFB, \u2220JFB, B on FI, AF \u22a5 EF, \u2220JFD, D on FK, BF \u22a5 DF, \u2220JFI, DF \u22a5 EF, C on FJ, \u2220BFD, \u2220BFA, pi * ((6 * x) / 180) = \u2220CFB, \u2220AFE, AF \u22a5 BF, \u2220DFC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CFD\nConclusions: \u2220CFD = 2 * pi - \u2220DFC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AF \u22a5 EF\nConclusions: pi / 2 = \u2220AFE\n\nStep 4:\nTheorem: Same Angle\nPremises : D on FK, \u2220JFK\nConclusions: \u2220JFD = \u2220JFK\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BF \u22a5 DF\nConclusions: (3 * pi) / 2 = \u2220BFD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220JFI, B on FI\nConclusions: \u2220JFB = \u2220JFI\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : DF \u22a5 EF\nConclusions: pi / 2 = \u2220EFD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220JFB, C on FJ\nConclusions: \u2220CFB = \u2220JFB\n\nStep 9:\nTheorem: Same Angle\nPremises : C on FJ, \u2220JFD\nConclusions: \u2220CFD = \u2220JFD\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220DFC, \u2220BFD, \u2220CFB\nConclusions: 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC\n\nStep 11:\nTheorem: Circumference Split\nPremises : \u2220BFA, \u2220DFC, \u2220EFD, \u2220AFE, \u2220CFB\nConclusions: 2 * pi = \u2220AFE + \u2220BFA + \u2220CFB + \u2220DFC + \u2220EFD\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : AF \u22a5 BF\nConclusions: pi / 2 = \u2220BFA\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220DFC\nConclusions: \u2220DFC = 2 * pi - \u2220CFD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JFB = \u2220JFI, \u2220CFB = \u2220JFB, pi * ((6 * x) / 180) = \u2220CFB\nConclusions: pi * ((6 * x) / 180) = \u2220JFI\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JFD = \u2220JFK, \u2220CFD = \u2220JFD\nConclusions: \u2220CFD = \u2220JFK\n\nStep 16:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BFA, pi / 2 = \u2220AFE, pi / 2 = \u2220EFD, 3.14 = pi, 2 * pi = \u2220AFE + \u2220BFA + \u2220CFB + \u2220DFC + \u2220EFD\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + pi / 2 + \u2220CFB + \u2220DFC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFC = 2 * pi - \u2220CFD, pi * ((3 * x) / 180) = \u2220DFC\nConclusions: pi * ((3 * x) / 180) = 2 * pi - \u2220CFD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x) / 180) = \u2220JFI, \u2220JFB = \u2220JFI\nConclusions: pi * ((6 * x) / 180) = \u2220JFB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CFD = 2 * pi - \u2220DFC, \u2220CFD = \u2220JFK\nConclusions: \u2220JFK = 2 * pi - \u2220DFC\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = 2 * pi - \u2220CFD, \u2220CFD = \u2220JFK\nConclusions: 3.14 * ((3 * x) / 180) = 2 * 3.14 - \u2220JFK\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x) / 180) = \u2220JFB\nConclusions: 3.14 * ((6 * x) / 180) = \u2220JFB\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JFK = 2 * pi - \u2220DFC\nConclusions: \u2220JFK = 2 * 3.14 - \u2220DFC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x) / 180) = \u2220JFB, pi * ((6 * x) / 180) = \u2220JFB\nConclusions: 3.14 * ((6 * x) / 180) = pi * ((6 * x) / 180)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x) / 180) = pi * ((6 * x) / 180), pi * ((6 * x) / 180) = \u2220CFB\nConclusions: 3.14 * ((6 * x) / 180) = \u2220CFB\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : (3 * pi) / 2 = \u2220BFD, \u2220JFK = 2 * 3.14 - \u2220DFC, 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC, 3.14 * ((6 * x) / 180) = \u2220CFB, 3.14 * ((3 * x) / 180) = 2 * 3.14 - \u2220JFK, 2 * 3.14 = pi / 2 + pi / 2 + pi / 2 + \u2220CFB + \u2220DFC\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, F)",
+        "Line(G, D)",
+        "Line(G, K)",
+        "Line(A, F)",
+        "Line(A, D)",
+        "Line(A, K)",
+        "Line(F, D)",
+        "Line(F, K)",
+        "Line(D, K)",
+        "Line(I, B)",
+        "Line(I, F)",
+        "Line(I, E)",
+        "Line(I, H)",
+        "Line(B, F)",
+        "Line(B, E)",
+        "Line(B, H)",
+        "Line(F, E)",
+        "Line(F, H)",
+        "Line(E, H)",
+        "Line(F, C)",
+        "Line(F, J)",
+        "Line(C, J)",
+        "PointLiesOnLine(A, Line(G, F))",
+        "PointLiesOnLine(A, Line(G, D))",
+        "PointLiesOnLine(A, Line(G, K))",
+        "PointLiesOnLine(F, Line(G, D))",
+        "PointLiesOnLine(F, Line(G, K))",
+        "PointLiesOnLine(F, Line(A, D))",
+        "PointLiesOnLine(F, Line(A, K))",
+        "PointLiesOnLine(D, Line(G, K))",
+        "PointLiesOnLine(D, Line(A, K))",
+        "PointLiesOnLine(D, Line(F, K))",
+        "PointLiesOnLine(B, Line(I, F))",
+        "PointLiesOnLine(B, Line(I, E))",
+        "PointLiesOnLine(B, Line(I, H))",
+        "PointLiesOnLine(F, Line(I, E))",
+        "PointLiesOnLine(F, Line(I, H))",
+        "PointLiesOnLine(F, Line(B, E))",
+        "PointLiesOnLine(F, Line(B, H))",
+        "PointLiesOnLine(E, Line(I, H))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, H))",
+        "PointLiesOnLine(C, Line(F, J))",
+        "Perpendicular(Line(B, E), Line(A, D))",
+        "Equals(MeasureOf(Angle(A, F, E)), Mul(pi, Div(Sub(Mul(12.0, y), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, C)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(Mul(6.0, x), 180.0)))"
+    ],
+    "correct": true
+}

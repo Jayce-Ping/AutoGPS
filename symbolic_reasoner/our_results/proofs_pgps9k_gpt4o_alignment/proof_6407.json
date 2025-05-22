@@ -1,0 +1,111 @@
+{
+    "problem_id": "6407",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, C)), 45)",
+        "Equals(LengthOf(Line(C, A)), x-5)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(C, E)), 36)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(A, Line(C, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "CA",
+        "CB",
+        "AB",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            153.06666666666666,
+            137.6822857142857
+        ],
+        "B": [
+            301.0,
+            137.88163265306122
+        ],
+        "C": [
+            45.5,
+            138.38
+        ],
+        "D": [
+            170.04166666666669,
+            188.67357142857142
+        ],
+        "E": [
+            232.75000000000003,
+            214.54714285714286
+        ],
+        "F": [
+            226.19949536123707,
+            140.5807554449331
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        40.249,
+        42.827,
+        56.25
+    ],
+    "choices_precise_value": [
+        25.0,
+        40.249,
+        42.827,
+        56.25
+    ],
+    "problem_answer": 25.0,
+    "total_time": 53.523077,
+    "solution_predicate": "Equals(25.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 45 = BC, E on \u2299(F, radius_F), x - 5 = AC, B on \u2299(F, radius_F), CD, BC, D on \u2299(F, radius_F), A on \u2299(F, radius_F), x = CD, AC, \u2299(F, radius_F), 36 = CE, CE\n\nStep 2:\nTheorem: Circle Secant Theorem\nPremises : CE, B on \u2299(F, radius_F), AC, \u2299(F, radius_F), CD, E on \u2299(F, radius_F), BC, D on \u2299(F, radius_F), A on \u2299(F, radius_F)\nConclusions: AC * BC = CD * CE\n\nStep 3:\nTheorem: Substitution\nPremises : x - 5 = AC, 36 = CE, x = CD, AC * BC = CD * CE, 45 = BC\nConclusions: 36 * x = 45 * (x - 5)\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 36 * x = 45 * (x - 5)\nConclusions: 25 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(A, Line(C, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(LengthOf(Line(B, C)), 45.0)",
+        "Equals(LengthOf(Line(C, A)), Sub(x, 5.0))",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(C, E)), 36.0)"
+    ],
+    "correct": true
+}

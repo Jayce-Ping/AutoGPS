@@ -1,0 +1,105 @@
+{
+    "problem_id": "7649",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 7)",
+        "Equals(LengthOf(Line(A, C)), 15)",
+        "Equals(LengthOf(Line(A, E)), 13)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, C)), 13)",
+        "Equals(LengthOf(Line(E, D)), 15)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, C)))",
+        "Find(PerimeterOf(Quadrilateral(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AE",
+        "ED",
+        "CD",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            69.02,
+            139.78
+        ],
+        "B": [
+            104.61090909090909,
+            139.76242424242423
+        ],
+        "C": [
+            175.73999999999998,
+            139.97333333333333
+        ],
+        "D": [
+            210.64,
+            49.559999999999995
+        ],
+        "E": [
+            104.8921212121212,
+            49.38787878787879
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        56.0,
+        112.0,
+        164.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        56.0,
+        112.0,
+        164.0
+    ],
+    "problem_answer": 56.0,
+    "total_time": 105.633122,
+    "solution_predicate": "Equals(52.5764114549, PerimeterOf(Quadrilateral(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EAC, \u2220CAE, 13 = CD, AC = DE, 7 = AB, AE = CD, AB \u22a5 BE, cos(\u2220BAE), AC, \u2220EDA, \u2220CAD, B on AC, Quadrilateral(A, B, C, D), CD, 3.14 = pi, 15 = AC, \u2220DAE, \u2220CDE, \u2220DCA, \u2220CAE, 13 = AE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAE\nConclusions: \u2220CAE = 2 * pi - \u2220EAC\n\nStep 3:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AC = DE, AE = CD\nConclusions: \u25b3ACD \u2245 \u25b3DEA\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 BE, cos(\u2220BAE)\nConclusions: AB / AE = cos(\u2220BAE)\n\nStep 5:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 6:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 8:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, B, C, D)\nConclusions: Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\n\nStep 9:\nTheorem: Quadrilateral to is components\nPremises : Quadrilateral(A, B, C, D)\nConclusions: AD, CD, \u2220ADC\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220EAC, \u2220CAD, \u2220DAE\nConclusions: 2 * pi = \u2220CAD + \u2220DAE + \u2220EAC\n\nStep 11:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 12:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAE\nConclusions: \u2220BAE = \u2220CAE\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3ACD \u2245 \u25b3DEA\nConclusions: AC = DE, Perimeter(\u25b3ACD) = Perimeter(\u25b3ADE), \u2220ADC = \u2220DAE, \u2220CAD = \u2220EDA\n\nStep 14:\nTheorem: Substitution\nPremises : 15 = AC, 7 = AB, AC = AB + BC\nConclusions: 15 = 7 + BC\n\nStep 15:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB, 3.14 = pi, \u2220BAD = \u2220CAD\nConclusions: 2 * 3.14 = \u2220ADC + \u2220CAD + \u2220CBA + \u2220DCB\n\nStep 16:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220EDA, \u2220CDE, \u2220ADC\nConclusions: 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220BAE = \u2220CAE, 13 = AE, AB / AE = cos(\u2220BAE), 7 = AB\nConclusions: 7 / 13 = cos(\u2220CAE)\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 15 = 7 + BC\nConclusions: 8 = BC\n\nStep 20:\nTheorem: Perimeter Definition\nPremises : \u25b3ACD\nConclusions: Perimeter(\u25b3ACD) = AC + AD + CD\n\nStep 21:\nTheorem: Law of Cosines\nPremises : \u25b3ACD\nConclusions: (AC ** 2 + CD ** 2) - AD ** 2 = 2 * AC * CD * cos(\u2220DCA)\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA\nConclusions: 2 * 3.14 = \u2220ADC + \u2220CDE + \u2220EDA\n\nStep 24:\nTheorem: Solve Univariate Equation\nPremises : 7 / 13 = cos(\u2220CAE)\nConclusions: 1 = \u2220CAE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3ACD) = AC + AD + CD, Perimeter(\u25b3ACD) = Perimeter(\u25b3ADE)\nConclusions: Perimeter(\u25b3ADE) = AC + AD + CD\n\nStep 26:\nTheorem: Substitution\nPremises : \u2220DCA = \u2220DCB, 15 = AC, 13 = CD, (AC ** 2 + CD ** 2) - AD ** 2 = 2 * AC * CD * cos(\u2220DCA)\nConclusions: (13 ** 2 + 15 ** 2) - AD ** 2 = 13 * 15 * 2 * cos(\u2220DCB)\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DCA = \u2220DCB, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = \u2220ADC + \u2220CAD + \u2220DCB\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220ADC + \u2220CDE + \u2220EDA, 2 * 3.14 = \u2220ADC + \u2220CDE + \u2220EDA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAE = 2 * pi - \u2220EAC, 1 = \u2220CAE\nConclusions: 1 = 2 * pi - \u2220EAC\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD, AC = AB + BC, Perimeter(\u25b3ADE) = AC + AD + CD\nConclusions: Perimeter(Quadrilateral(A, B, C, D)) = Perimeter(\u25b3ADE)\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220ADC + \u2220CAD + \u2220CBA + \u2220DCB, 3.14 = \u2220ADC + \u2220CAD + \u2220DCB\nConclusions: 3.14 = \u2220CBA\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ADC + \u2220CAD + \u2220CBA + \u2220DCB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220ADC + \u2220CAD + \u2220CBA + \u2220DCB\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Quadrilateral(A, B, C, D)) = Perimeter(\u25b3ADE), Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\nConclusions: Perimeter(\u25b3ADE) = AB + AD + BC + CD\n\nStep 34:\nTheorem: Substitution\nPremises : 3.14 = \u2220CBA, 2 * pi = \u2220ADC + \u2220CAD + \u2220CBA + \u2220DCB, \u2220ADC = \u2220DAE, \u2220CAD = \u2220EDA, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 + \u2220DAE + \u2220DCB + \u2220EDA\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 1 = 2 * pi - \u2220EAC, 2 * 3.14 = 3.14 + \u2220DAE + \u2220DCB + \u2220EDA, 2 * pi = \u2220CAD + \u2220DAE + \u2220EAC, \u2220CAD = \u2220EDA\nConclusions: 2.14 = \u2220DCB\n\nStep 36:\nTheorem: Evaluate\nPremises : 2.14 = \u2220DCB\nConclusions: -210 = 13 * 15 * 2 * cos(\u2220DCB)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : -210 = 13 * 15 * 2 * cos(\u2220DCB), (13 ** 2 + 15 ** 2) - AD ** 2 = 13 * 15 * 2 * cos(\u2220DCB)\nConclusions: -210 = (13 ** 2 + 15 ** 2) - AD ** 2\n\nStep 38:\nTheorem: Solve Univariate Equation\nPremises : -210 = (13 ** 2 + 15 ** 2) - AD ** 2\nConclusions: 24.58 = AD\n\nStep 39:\nTheorem: Substitution\nPremises : 24.58 = AD, 13 = CD, Perimeter(\u25b3ADE) = AB + AD + BC + CD, 8 = BC, 7 = AB\nConclusions: 13 + 24.58 + 7 + 8 = Perimeter(\u25b3ADE)\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Quadrilateral(A, B, C, D)) = Perimeter(\u25b3ADE), 13 + 24.58 + 7 + 8 = Perimeter(\u25b3ADE)\nConclusions: 13 + 24.58 + 7 + 8 = Perimeter(Quadrilateral(A, B, C, D))\n\nStep 41:\nTheorem: Evaluate\nPremises : 13 + 24.58 + 7 + 8 = Perimeter(Quadrilateral(A, B, C, D))\nConclusions: 52.58 = Perimeter(Quadrilateral(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(B, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 7.0)",
+        "Equals(LengthOf(Line(A, C)), 15.0)",
+        "Equals(LengthOf(Line(A, E)), 13.0)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, C)), 13.0)",
+        "Equals(LengthOf(Line(E, D)), 15.0)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, C)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,93 @@
+{
+    "problem_id": "2688",
+    "solved": true,
+    "problem_text": "Find the value of t in the parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(X, Y))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Equals(LengthOf(Line(Z, A)), 2t-6)",
+        "Equals(LengthOf(Line(X, A)), s-7)",
+        "Equals(LengthOf(Line(Y, A)), 6)",
+        "Equals(LengthOf(Line(W, A)), 8)",
+        "Parallelogram(W, X, Z, Y)",
+        "Find(t)"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "Z",
+        "X",
+        "A"
+    ],
+    "line_instances": [
+        "XA",
+        "XY",
+        "AY",
+        "WA",
+        "WZ",
+        "AZ",
+        "YZ",
+        "XZ",
+        "WY",
+        "WX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            59.69198312236287,
+            48.52320675105485
+        ],
+        "Y": [
+            85.43037974683543,
+            268.77637130801685
+        ],
+        "Z": [
+            276.9915611814346,
+            320.253164556962
+        ],
+        "X": [
+            250.831223628692,
+            98.73417721518987
+        ],
+        "A": [
+            167.28691983122363,
+            183.9662447257384
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "7",
+        "8",
+        "13"
+    ],
+    "choices_precise_value": [
+        6.0,
+        7.0,
+        8.0,
+        13.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 56.105417,
+    "solution_predicate": "Equals(7.0, t)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on WZ, 2 * t - 6 = AZ, Parallelogram(W, X, Z, Y), A on XY, 8 = AW\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(W, X, Z, Y), A on XY, A on WZ\nConclusions: AW = AZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 2 * t - 6 = AZ, AW = AZ\nConclusions: 2 * t - 6 = AW\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 2 * t - 6 = AW, 8 = AW\nConclusions: 8 = 2 * t - 6\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 8 = 2 * t - 6\nConclusions: 7 = t\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, A)",
+        "Line(X, Y)",
+        "Line(A, Y)",
+        "Line(W, A)",
+        "Line(W, Z)",
+        "Line(A, Z)",
+        "Line(Y, Z)",
+        "Line(X, Z)",
+        "Line(W, Y)",
+        "Line(W, X)",
+        "PointLiesOnLine(A, Line(X, Y))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Parallelogram(W, X, Z, Y)",
+        "Equals(LengthOf(Line(Z, A)), Sub(Mul(2.0, t), 6.0))",
+        "Equals(LengthOf(Line(X, A)), Sub(s, 7.0))",
+        "Equals(LengthOf(Line(Y, A)), 6.0)",
+        "Equals(LengthOf(Line(W, A)), 8.0)"
+    ],
+    "correct": true
+}

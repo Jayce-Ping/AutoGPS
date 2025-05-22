@@ -1,0 +1,74 @@
+{
+    "problem_id": "2745",
+    "solved": true,
+    "problem_text": "A B C D is a parallelogram with side lengths as indicated in the figure at the right. The perimeter of A B C D is 22. Find A B.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 2y+1)",
+        "Equals(LengthOf(Line(D, C)), 3-4w)",
+        "Equals(LengthOf(Line(C, B)), x-w+1)",
+        "Equals(LengthOf(Line(D, A)), 3x-2)",
+        "Parallelogram(A,B,C,D)",
+        "Equals(PerimeterOf(Quadrilateral(A,B,C,D)),22)",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            166.793893129771,
+            62.122137404580144
+        ],
+        "D": [
+            85.49618320610686,
+            169.3740458015267
+        ],
+        "C": [
+            331.6793893129771,
+            169.3740458015267
+        ],
+        "B": [
+            412.21374045801525,
+            61.35877862595419
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "12",
+        "19",
+        "22"
+    ],
+    "choices_precise_value": [
+        7.0,
+        12.0,
+        19.0,
+        22.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 7.422843,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1 + (x - w) = BC, Quadrilateral(A, B, C, D), 3 - 4 * w = CD, 22 = Perimeter(Quadrilateral(A, B, C, D)), 3 * x - 2 = AD, Parallelogram(A, B, C, D)\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, B, C, D)\nConclusions: Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD, 22 = Perimeter(Quadrilateral(A, B, C, D))\nConclusions: 22 = AB + AD + BC + CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 3 - 4 * w = CD\nConclusions: 3 - 4 * w = AB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 2 = AD, AD = BC\nConclusions: 3 * x - 2 = BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 1 + (x - w) = BC, 3 * x - 2 = BC\nConclusions: 3 * x - 2 = 1 + (x - w)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 22 = AB + AD + BC + CD, AB = CD, 3 * x - 2 = 1 + (x - w), 1 + (x - w) = BC, 3 * x - 2 = AD, 3 - 4 * w = AB\nConclusions: 7 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(B, A)), Add(Mul(2.0, y), 1.0))",
+        "Equals(LengthOf(Line(D, C)), Sub(3.0, Mul(4.0, w)))",
+        "Equals(LengthOf(Line(C, B)), Add(Sub(x, w), 1.0))",
+        "Equals(LengthOf(Line(D, A)), Sub(Mul(3.0, x), 2.0))",
+        "Equals(PerimeterOf(Quadrilateral(A, B, C, D)), 22.0)"
+    ],
+    "correct": true
+}

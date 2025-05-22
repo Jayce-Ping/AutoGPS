@@ -1,0 +1,76 @@
+{
+    "problem_id": "2953",
+    "solved": true,
+    "problem_text": "Parallelogram MNPQ is shown. Solve for m \\angle M.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(M, Q, P)), 6x)",
+        "Equals(MeasureOf(Angle(N, P, Q)), 7x+11)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(N, P)",
+        "Line(Q, P)",
+        "Parallelogram(M,N,P,Q)",
+        "Find(MeasureOf(Angle(M)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "QP",
+        "PN",
+        "NM",
+        "QM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            53.4520202020202,
+            149.0707070707071
+        ],
+        "P": [
+            273.0784848484849,
+            149.35203890759445
+        ],
+        "N": [
+            295.94601851851854,
+            40.16598079561043
+        ],
+        "M": [
+            76.34,
+            40.13374485596708
+        ]
+    },
+    "problem_choices": [
+        78.0,
+        90.0,
+        102.0,
+        246.0
+    ],
+    "choices_precise_value": [
+        78.0,
+        90.0,
+        102.0,
+        246.0
+    ],
+    "problem_answer": 102.0,
+    "total_time": 9.324839,
+    "solution_predicate": "Equals(1.780235837, MeasureOf(Angle(Q, M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((11 + 7 * x) / 180) = \u2220NPQ, Parallelogram(M, N, P, Q), pi * ((6 * x) / 180) = \u2220PQM, 3.14 = pi\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(M, N, P, Q)\nConclusions: \u2220NPQ = \u2220QMN, \u2220MNP = \u2220PQM\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(M, N, P, Q)\nConclusions: MQ || NP\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((11 + 7 * x) / 180) = \u2220NPQ, 3.14 = pi\nConclusions: 3.14 * ((11 + 7 * x) / 180) = \u2220NPQ\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((6 * x) / 180) = \u2220PQM, 3.14 = pi\nConclusions: 3.14 * ((6 * x) / 180) = \u2220PQM\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NPQ = \u2220QMN, pi * ((11 + 7 * x) / 180) = \u2220NPQ\nConclusions: pi * ((11 + 7 * x) / 180) = \u2220QMN\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x) / 180) = \u2220PQM, \u2220MNP = \u2220PQM\nConclusions: pi * ((6 * x) / 180) = \u2220MNP\n\nStep 8:\nTheorem: Consecutive Interior Angle Theorem\nPremises : MQ || NP\nConclusions: pi = \u2220MNP + \u2220QMN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((11 + 7 * x) / 180) = \u2220NPQ, pi * ((11 + 7 * x) / 180) = \u2220NPQ\nConclusions: 3.14 * ((11 + 7 * x) / 180) = pi * ((11 + 7 * x) / 180)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x) / 180) = \u2220PQM, 3.14 * ((6 * x) / 180) = \u2220PQM\nConclusions: 3.14 * ((6 * x) / 180) = pi * ((6 * x) / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220MNP + \u2220QMN, 3.14 = pi\nConclusions: 3.14 = \u2220MNP + \u2220QMN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((11 + 7 * x) / 180) = pi * ((11 + 7 * x) / 180), pi * ((11 + 7 * x) / 180) = \u2220QMN\nConclusions: 3.14 * ((11 + 7 * x) / 180) = \u2220QMN\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x) / 180) = pi * ((6 * x) / 180), pi * ((6 * x) / 180) = \u2220MNP\nConclusions: 3.14 * ((6 * x) / 180) = \u2220MNP\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((11 + 7 * x) / 180) = \u2220QMN, 3.14 = \u2220MNP + \u2220QMN, 3.14 * ((6 * x) / 180) = \u2220MNP\nConclusions: 1.78 = \u2220QMN\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(P, N)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(N, P)",
+        "Line(Q, P)",
+        "Parallelogram(M, N, P, Q)",
+        "Equals(MeasureOf(Angle(P, Q, M)), Mul(pi, Div(Mul(6.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(N, P, Q)), Mul(pi, Div(Add(Mul(7.0, x), 11.0), 180.0)))"
+    ],
+    "correct": true
+}

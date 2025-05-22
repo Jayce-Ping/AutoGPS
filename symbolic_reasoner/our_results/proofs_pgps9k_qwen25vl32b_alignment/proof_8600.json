@@ -1,0 +1,73 @@
+{
+    "problem_id": "8600",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 17\\sqrt{2})",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(A, C, B)), 45)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(C, A, B)))",
+        "Equals(MeasureOf(Angle(C, A, B)), 45)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            13.942857142857143,
+            56.1124763705104
+        ],
+        "B": [
+            196.0486956521739,
+            56.96266540642722
+        ],
+        "C": [
+            195.20000000000002,
+            241.22848731884062
+        ]
+    },
+    "problem_choices": [
+        17.0,
+        24.041630560342618,
+        34.0,
+        41.641325627314025
+    ],
+    "choices_precise_value": [
+        17.0,
+        24.041630560342618,
+        34.0,
+        41.641325627314025
+    ],
+    "problem_answer": 34.0,
+    "total_time": 13.112799,
+    "solution_predicate": "Equals(33.9999999999, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, 24.04 = 17 * SqrtOf(2), x = AC, 17 * SqrtOf(2) = AB, AC, AB \u22a5 BC, \u2220BCA = \u2220CAB, BC\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 24.04 = 17 * SqrtOf(2), 17 * SqrtOf(2) = AB\nConclusions: 24.04 = AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BCA = \u2220CAB, \u25b3ABC\nConclusions: AB = BC\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: AC = SqrtOf(AB ** 2 + BC ** 2)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 24.04 = AB, AB = BC\nConclusions: 24.04 = BC\n\nStep 7:\nTheorem: Substitution\nPremises : AC = SqrtOf(AB ** 2 + BC ** 2), 24.04 = BC, 24.04 = AB, x = AC\nConclusions: SqrtOf(24.04 ** 2 + 24.04 ** 2) = x\n\nStep 8:\nTheorem: Evaluate\nPremises : SqrtOf(24.04 ** 2 + 24.04 ** 2) = x\nConclusions: 34 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), Mul(17.0, SqrtOf(2.0)))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(C, A, B)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

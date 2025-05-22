@@ -1,0 +1,116 @@
+{
+    "problem_id": "2679",
+    "solved": true,
+    "problem_text": "The diagram shows the layout of Elm, Plum, and Oak streets. Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(G, A))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "Parallel(Line(G, A), Line(H, B))",
+        "Equals(MeasureOf(Angle(E, D, B)), x)",
+        "Equals(MeasureOf(Angle(A, E, D)), 55)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "GE",
+        "GA",
+        "EA",
+        "FE",
+        "FD",
+        "FC",
+        "ED",
+        "EC",
+        "DC",
+        "HD",
+        "HB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            101.88888888888889,
+            317.46031746031747
+        ],
+        "B": [
+            252.28571428571428,
+            318.6507936507937
+        ],
+        "C": [
+            321.73015873015873,
+            251.5873015873016
+        ],
+        "D": [
+            252.6825396825397,
+            201.984126984127
+        ],
+        "E": [
+            102.28571428571428,
+            98.80952380952381
+        ],
+        "F": [
+            33.63492063492063,
+            50.79365079365079
+        ],
+        "G": [
+            101.88888888888889,
+            19.047619047619047
+        ],
+        "H": [
+            251.8888888888889,
+            19.047619047619047
+        ]
+    },
+    "problem_choices": [
+        "55",
+        "115",
+        "125",
+        "135"
+    ],
+    "choices_precise_value": [
+        55.0,
+        115.0,
+        125.0,
+        135.0
+    ],
+    "problem_answer": 125.0,
+    "total_time": 36.916012,
+    "solution_predicate": "Equals(125.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FDB, E on DF, pi * (55 / 180) = \u2220AED, AG || BH, E on CF, \u2220AED, 3.14 = pi, \u2220AEC, \u2220GEF, pi * (x / 180) = \u2220EDB, E on AG, \u2220FEA, \u2220DEG, D on CE\n\nStep 2:\nTheorem: Same Angle\nPremises : E on DF, \u2220FDB\nConclusions: \u2220EDB = \u2220FDB\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220FDB = \u2220FEA\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220DEG = \u2220EDB\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : E on AG, E on CF\nConclusions: \u2220AEC = \u2220GEF\n\nStep 6:\nTheorem: Circumference Split\nPremises : \u2220AED, \u2220FEA, \u2220GEF, \u2220DEG\nConclusions: 2 * pi = \u2220AED + \u2220DEG + \u2220FEA + \u2220GEF\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AEC, D on CE\nConclusions: \u2220AEC = \u2220AED\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FDB = \u2220FEA, pi * (x / 180) = \u2220EDB, \u2220EDB = \u2220FDB\nConclusions: pi * (x / 180) = \u2220FEA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220EDB, \u2220DEG = \u2220EDB\nConclusions: pi * (x / 180) = \u2220DEG\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220AED, pi * (55 / 180) = \u2220AED\nConclusions: pi * (55 / 180) = \u2220AEC\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220FEA, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220FEA\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220DEG, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220DEG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (55 / 180) = \u2220AEC, \u2220AEC = \u2220GEF\nConclusions: pi * (55 / 180) = \u2220GEF\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (55 / 180) = \u2220AED, 2 * pi = \u2220AED + \u2220DEG + \u2220FEA + \u2220GEF, pi * (55 / 180) = \u2220GEF, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (55 / 180) + pi * (55 / 180) + \u2220DEG + \u2220FEA\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (55 / 180) + pi * (55 / 180) + \u2220DEG + \u2220FEA, 3.14 * (x / 180) = \u2220DEG, 3.14 * (x / 180) = \u2220FEA, 3.14 = pi\nConclusions: 125 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, E)",
+        "Line(G, A)",
+        "Line(E, A)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(H, D)",
+        "Line(H, B)",
+        "Line(D, B)",
+        "PointLiesOnLine(E, Line(G, A))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "Parallel(Line(G, A), Line(H, B))",
+        "Equals(MeasureOf(Angle(E, D, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": true
+}

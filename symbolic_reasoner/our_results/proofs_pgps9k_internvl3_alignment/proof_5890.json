@@ -1,0 +1,78 @@
+{
+    "problem_id": "5890",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), 130)",
+        "Equals(MeasureOf(Angle(C, A, B)), 110)",
+        "Equals(MeasureOf(Angle(C, D, B)), x)",
+        "Equals(MeasureOf(Angle(D, C, A)), x-3)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "AC",
+        "AB",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            97.48527131782944,
+            19.817777777777778
+        ],
+        "B": [
+            260.06976744186045,
+            48.608
+        ],
+        "C": [
+            20.609302325581393,
+            153.272
+        ],
+        "D": [
+            320.32744186046506,
+            152.88
+        ]
+    },
+    "problem_choices": [
+        13.0,
+        51.5,
+        61.5,
+        123.0
+    ],
+    "choices_precise_value": [
+        13.0,
+        51.5,
+        61.5,
+        123.0
+    ],
+    "problem_answer": 61.5,
+    "total_time": 7.301956,
+    "solution_predicate": "Equals(61.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, 3.14 = pi, AB, pi * (130 / 180) = \u2220ABD, \u2220ACD, CD, \u2220DCA, AC, pi * (x / 180) = \u2220BDC, pi * ((x - 3) / 180) = \u2220DCA, pi * (110 / 180) = \u2220CAB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : CD, BD, AB, AC\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BDC\nConclusions: 3.14 * (x / 180) = \u2220BDC\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((x - 3) / 180) = \u2220DCA\nConclusions: 3.14 * ((x - 3) / 180) = \u2220DCA\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ACD = 2 * pi - \u2220DCA\nConclusions: \u2220ACD = 2 * 3.14 - \u2220DCA\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = 2 * pi - \u2220ACD, 3.14 * ((x - 3) / 180) = \u2220DCA\nConclusions: 3.14 * ((x - 3) / 180) = 2 * pi - \u2220ACD\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA, pi * (130 / 180) = \u2220ABD, pi * (110 / 180) = \u2220CAB\nConclusions: 2 * 3.14 = pi * (110 / 180) + pi * (130 / 180) + \u2220BDC + \u2220DCA\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220BDC, 2 * 3.14 = pi * (110 / 180) + pi * (130 / 180) + \u2220BDC + \u2220DCA, 3.14 * ((x - 3) / 180) = \u2220DCA, 3.14 * ((x - 3) / 180) = 2 * pi - \u2220ACD, \u2220ACD = 2 * 3.14 - \u2220DCA\nConclusions: 61.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(130.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Sub(x, 3.0), 180.0)))"
+    ],
+    "correct": true
+}

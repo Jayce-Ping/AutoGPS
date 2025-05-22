@@ -1,0 +1,70 @@
+{
+    "problem_id": "2984",
+    "solved": true,
+    "problem_text": "Find m \\angle Y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(X, W, Z)), \\frac{1}{2}a+8)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), a-28)",
+        "Equals(MeasureOf(Angle(Y, Z, W)), a+2)",
+        "Equals(MeasureOf(Angle(Y, X, W)), a)",
+        "Find(MeasureOf(Angle(Y)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "YZ",
+        "XY",
+        "XW",
+        "WZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            183.68737060041408,
+            151.5527950310559
+        ],
+        "Y": [
+            222.19668737060042,
+            75.77639751552795
+        ],
+        "X": [
+            101.4927536231884,
+            37.060041407867494
+        ],
+        "W": [
+            32.13457556935818,
+            132.29813664596273
+        ]
+    },
+    "problem_choices": [
+        "80",
+        "108",
+        "110",
+        "114"
+    ],
+    "choices_precise_value": [
+        80.0,
+        108.0,
+        110.0,
+        114.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 5.558531,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Angle(X, Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((2 + a) / 180) = \u2220YZW, XY, YZ, pi * ((a - 28) / 180) = \u2220XYZ, pi * (a / 180) = \u2220WXY, WX, pi * ((8 + (1 / 2) * a) / 180) = \u2220ZWX, 3.14 = pi, WZ\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 + a) / 180) = \u2220YZW\nConclusions: 3.14 * ((2 + a) / 180) = \u2220YZW\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((a - 28) / 180) = \u2220XYZ\nConclusions: 3.14 * ((a - 28) / 180) = \u2220XYZ\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((8 + (1 / 2) * a) / 180) = \u2220ZWX\nConclusions: 3.14 * ((8 + (1 / 2) * a) / 180) = \u2220ZWX\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (a / 180) = \u2220WXY\nConclusions: 3.14 * (a / 180) = \u2220WXY\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : WZ, YZ, XY, WX\nConclusions: Quadrilateral(W, X, Y, Z)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(W, X, Y, Z)\nPremises : Quadrilateral(W, X, Y, Z)\nConclusions: 2 * pi = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX\nConclusions: 2 * 3.14 = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (a / 180) = \u2220WXY, 2 * 3.14 = \u2220WXY + \u2220XYZ + \u2220YZW + \u2220ZWX, 3.14 * ((8 + (1 / 2) * a) / 180) = \u2220ZWX, 3.14 * ((2 + a) / 180) = \u2220YZW, 3.14 * ((a - 28) / 180) = \u2220XYZ\nConclusions: 1.4 = \u2220XYZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, Z)",
+        "Line(X, Y)",
+        "Line(X, W)",
+        "Line(W, Z)",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(Add(Mul(Div(1.0, 2.0), a), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(Sub(a, 28.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, W)), Mul(pi, Div(Add(a, 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(W, X, Y)), Mul(pi, Div(a, 180.0)))"
+    ],
+    "correct": true
+}

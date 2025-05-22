@@ -1,0 +1,124 @@
+{
+    "problem_id": "2656",
+    "solved": true,
+    "problem_text": "If CW = WF and ED = 30, what is AB?",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "Line(W, F)",
+        "Perpendicular(Line(A, B), Line(C, W))",
+        "Perpendicular(Line(W, F), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(W))",
+        "PointLiesOnCircle(B, Circle(W))",
+        "PointLiesOnCircle(D, Circle(W))",
+        "PointLiesOnCircle(E, Circle(W))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(C,W)),Line(W,F))",
+        "Equals(LengthOf(Line(E,D)),30)",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "E",
+        "F",
+        "D",
+        "B",
+        "C",
+        "A",
+        "W"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB",
+        "CW",
+        "WF",
+        "EF",
+        "ED",
+        "FD"
+    ],
+    "circle_instances": [
+        "W"
+    ],
+    "point_positions": {
+        "E": [
+            157.42829363150216,
+            340.9376623376623
+        ],
+        "F": [
+            251.3368983957219,
+            323.60571428571427
+        ],
+        "D": [
+            343.0748663101604,
+            306.04571428571427
+        ],
+        "B": [
+            342.0974450386215,
+            117.06666666666665
+        ],
+        "C": [
+            251.83957219251337,
+            100.34285714285714
+        ],
+        "A": [
+            158.3422459893048,
+            82.06612244897958
+        ],
+        "W": [
+            228.89534883720933,
+            210.89534883720933
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        30.0,
+        42.426,
+        60.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        42.426,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 127.176067,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on DE, CW = FW, A on \u2299(W, radius_W), \u2299(W, radius_W), DF \u22a5 FW, EF \u22a5 FW, AC \u22a5 CW, 30 = DE, E on \u2299(W, radius_W), C on AB\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on DE\nConclusions: DE = DF + EF\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(W, radius_W)\nConclusions: radius_W = AW\n\nStep 4:\nTheorem: Circle Vertical Theorem\nPremises : DF \u22a5 FW, F on DE, \u2299(W, radius_W)\nConclusions: DF = EF\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : EF \u22a5 FW\nConclusions: pi / 2 = \u2220WFE\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CW\nConclusions: pi / 2 = \u2220ACW\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : E on \u2299(W, radius_W)\nConclusions: radius_W = EW\n\nStep 8:\nTheorem: Circle Vertical Theorem\nPremises : C on AB, AC \u22a5 CW, \u2299(W, radius_W)\nConclusions: AC = BC\n\nStep 9:\nTheorem: Line Segment Split\nPremises : C on AB\nConclusions: AB = AC + BC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 30 = DE, DE = DF + EF\nConclusions: 30 = DF + EF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACW, pi / 2 = \u2220WFE\nConclusions: \u2220ACW = \u2220WFE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_W = EW, radius_W = AW\nConclusions: AW = EW\n\nStep 13:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220ACW = \u2220WFE, CW = FW, AW = EW\nConclusions: \u25b3ACW \u2245 \u25b3EFW\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3ACW \u2245 \u25b3EFW\nConclusions: CW = FW, AC = EF, \u2220ACW = \u2220WFE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, AC = EF\nConclusions: BC = EF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : BC = EF, DF = EF\nConclusions: BC = DF\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : BC = DF, AB = AC + BC, AC = EF, 30 = DF + EF\nConclusions: 30 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(W, F)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Circle(W, radius_W)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "Line(W, F)",
+        "Perpendicular(Line(A, B), Line(C, W))",
+        "Perpendicular(Line(W, F), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(W, radius_W))",
+        "PointLiesOnCircle(B, Circle(W, radius_W))",
+        "PointLiesOnCircle(D, Circle(W, radius_W))",
+        "PointLiesOnCircle(E, Circle(W, radius_W))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(C, W)), LengthOf(Line(W, F)))",
+        "Equals(LengthOf(Line(E, D)), 30.0)"
+    ],
+    "correct": true
+}

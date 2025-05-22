@@ -1,0 +1,116 @@
+{
+    "problem_id": "439",
+    "solved": true,
+    "problem_text": "m \\angle RST = x+50, and m \\angle STU = 3x+20. Find m \\angle SRV.",
+    "logic_forms": [
+        "Line(R, S)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(T, A)",
+        "Line(T, U)",
+        "Line(U, A)",
+        "Line(V, A)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Parallel(Line(R, S), Line(V, A))",
+        "Parallel(Line(S, T), Line(R, V))",
+        "PointLiesOnLine(T, Line(V, A))",
+        "PointLiesOnLine(T, Line(V, U))",
+        "PointLiesOnLine(U, Line(T, A))",
+        "PointLiesOnLine(U, Line(V, A))",
+        "Equals(MeasureOf(Angle(R,S,T)),x+50)",
+        "Equals(MeasureOf(Angle(S,T,U)),3x+20)",
+        "Find(MeasureOf(Angle(S,R,V)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "V",
+        "T",
+        "U",
+        "A"
+    ],
+    "line_instances": [
+        "VT",
+        "VU",
+        "VA",
+        "TU",
+        "TA",
+        "UA",
+        "RS",
+        "RV",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            96.36363636363636,
+            45.593142857142865
+        ],
+        "S": [
+            392.7865612648221,
+            46.011428571428574
+        ],
+        "V": [
+            35.612648221343875,
+            175.68
+        ],
+        "T": [
+            332.82114624505925,
+            175.9414285714286
+        ],
+        "U": [
+            460.27103331451156,
+            175.68
+        ],
+        "A": [
+            515.3359683794466,
+            176.2775510204082
+        ]
+    },
+    "problem_choices": [
+        65.0,
+        77.5,
+        102.5,
+        115.0
+    ],
+    "choices_precise_value": [
+        65.0,
+        77.5,
+        102.5,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 19.81654,
+    "solution_predicate": "Equals(2.0071286398, MeasureOf(Angle(V, R, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((20 + 3 * x) / 180) = \u2220UTS, TV, 3.14 = pi, RS, pi * ((50 + x) / 180) = \u2220RST, ST, RV || ST, U on AT, AV || SR, RV, \u2220ATS, T on AV, \u2220AVR\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((20 + 3 * x) / 180) = \u2220UTS, 3.14 = pi\nConclusions: 3.14 * ((20 + 3 * x) / 180) = \u2220UTS\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((50 + x) / 180) = \u2220RST\nConclusions: 3.14 * ((50 + x) / 180) = \u2220RST\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : RV || ST\nConclusions: \u2220ATS = \u2220AVR\n\nStep 5:\nTheorem: Consecutive Interior Angle Theorem\nPremises : RV || ST\nConclusions: pi = \u2220STV + \u2220TVR\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AV || SR\nConclusions: \u2220ATS = \u2220RST\n\nStep 7:\nTheorem: Definition of Parallelogram\nPremises : TV, RV || ST, AV || SR, RS, ST, RV\nConclusions: Parallelogram(R, S, T, V)\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220ATS, U on AT\nConclusions: \u2220ATS = \u2220UTS\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220AVR, T on AV\nConclusions: \u2220AVR = \u2220TVR\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((50 + x) / 180) = \u2220RST, 3.14 * ((50 + x) / 180) = \u2220RST\nConclusions: 3.14 * ((50 + x) / 180) = pi * ((50 + x) / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220STV + \u2220TVR, 3.14 = pi\nConclusions: 3.14 = \u2220STV + \u2220TVR\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((50 + x) / 180) = \u2220RST, \u2220ATS = \u2220RST\nConclusions: pi * ((50 + x) / 180) = \u2220ATS\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ATS = \u2220RST, \u2220ATS = \u2220AVR\nConclusions: \u2220AVR = \u2220RST\n\nStep 14:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(R, S, T, V)\nConclusions: \u2220STV = \u2220VRS\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((20 + 3 * x) / 180) = \u2220UTS, pi * ((50 + x) / 180) = \u2220ATS, \u2220ATS = \u2220UTS\nConclusions: pi * ((50 + x) / 180) = pi * ((20 + 3 * x) / 180)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AVR = \u2220RST, pi * ((50 + x) / 180) = \u2220RST\nConclusions: pi * ((50 + x) / 180) = \u2220AVR\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((20 + 3 * x) / 180) = \u2220UTS, pi * ((50 + x) / 180) = pi * ((20 + 3 * x) / 180)\nConclusions: pi * ((50 + x) / 180) = \u2220UTS\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((50 + x) / 180) = \u2220AVR, \u2220AVR = \u2220TVR\nConclusions: pi * ((50 + x) / 180) = \u2220TVR\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((50 + x) / 180) = \u2220UTS, 3.14 * ((50 + x) / 180) = pi * ((50 + x) / 180)\nConclusions: 3.14 * ((50 + x) / 180) = \u2220UTS\n\nStep 20:\nTheorem: Substitution\nPremises : pi * ((50 + x) / 180) = \u2220TVR, 3.14 = pi\nConclusions: 3.14 * ((50 + x) / 180) = \u2220TVR\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((50 + x) / 180) = \u2220UTS, 3.14 * ((20 + 3 * x) / 180) = \u2220UTS\nConclusions: 3.14 * ((50 + x) / 180) = 3.14 * ((20 + 3 * x) / 180)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220STV + \u2220TVR, 3.14 * ((50 + x) / 180) = 3.14 * ((20 + 3 * x) / 180), 3.14 * ((50 + x) / 180) = \u2220TVR\nConclusions: 2.01 = \u2220STV\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STV = \u2220VRS, 2.01 = \u2220STV\nConclusions: 2.01 = \u2220VRS\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, T)",
+        "Line(V, U)",
+        "Line(V, A)",
+        "Line(T, U)",
+        "Line(T, A)",
+        "Line(U, A)",
+        "Line(R, S)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(R, S)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(T, A)",
+        "Line(T, U)",
+        "Line(U, A)",
+        "Line(V, A)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Parallel(Line(R, S), Line(V, A))",
+        "Parallel(Line(S, T), Line(R, V))",
+        "PointLiesOnLine(T, Line(V, A))",
+        "PointLiesOnLine(T, Line(V, U))",
+        "PointLiesOnLine(U, Line(T, A))",
+        "PointLiesOnLine(U, Line(V, A))",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(Add(x, 50.0), 180.0)))",
+        "Equals(MeasureOf(Angle(U, T, S)), Mul(pi, Div(Add(Mul(3.0, x), 20.0), 180.0)))"
+    ],
+    "correct": true
+}

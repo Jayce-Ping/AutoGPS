@@ -1,0 +1,91 @@
+{
+    "problem_id": "4293",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, D)), x+10)",
+        "Equals(MeasureOf(Angle(E, C, B)), 4x-35)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            23.55072463768116,
+            29.228571428571428
+        ],
+        "B": [
+            472.42753623188406,
+            33.31428571428572
+        ],
+        "C": [
+            247.75362318840578,
+            81.08571428571429
+        ],
+        "D": [
+            23.864734299516908,
+            128.0190476190476
+        ],
+        "E": [
+            470.6376811594203,
+            132.0
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        27.5,
+        41.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        27.5,
+        41.0,
+        80.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 9.030742,
+    "solution_predicate": "Equals(15.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on AE, pi * ((4 * x - 35) / 180) = \u2220ECB, 3.14 = pi, pi * ((10 + x) / 180) = \u2220ACD, C on BD\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((4 * x - 35) / 180) = \u2220ECB, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 35) / 180) = \u2220ECB\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((10 + x) / 180) = \u2220ACD, 3.14 = pi\nConclusions: 3.14 * ((10 + x) / 180) = \u2220ACD\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220ACD = \u2220ECB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + x) / 180) = \u2220ACD, 3.14 * ((10 + x) / 180) = \u2220ACD\nConclusions: 3.14 * ((10 + x) / 180) = pi * ((10 + x) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220ECB, pi * ((10 + x) / 180) = \u2220ACD, pi * ((4 * x - 35) / 180) = \u2220ECB\nConclusions: pi * ((10 + x) / 180) = pi * ((4 * x - 35) / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 + x) / 180) = pi * ((4 * x - 35) / 180), pi * ((4 * x - 35) / 180) = \u2220ECB\nConclusions: pi * ((10 + x) / 180) = \u2220ECB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((10 + x) / 180) = pi * ((10 + x) / 180), pi * ((10 + x) / 180) = \u2220ECB\nConclusions: 3.14 * ((10 + x) / 180) = \u2220ECB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((10 + x) / 180) = \u2220ECB, 3.14 * ((4 * x - 35) / 180) = \u2220ECB\nConclusions: 3.14 * ((10 + x) / 180) = 3.14 * ((4 * x - 35) / 180)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((10 + x) / 180) = 3.14 * ((4 * x - 35) / 180)\nConclusions: 15 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(A, C, D)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, B)), Mul(pi, Div(Sub(Mul(4.0, x), 35.0), 180.0)))"
+    ],
+    "correct": true
+}

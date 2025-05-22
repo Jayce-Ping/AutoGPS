@@ -1,0 +1,106 @@
+{
+    "problem_id": "7403",
+    "solved": true,
+    "problem_text": "Find DA.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), 3)",
+        "Equals(LengthOf(Line(E, C)), 2)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, D), Line(E, A))",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(E, Circle(A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(E, A))",
+        "Find(LengthOf(Line(D,A)))"
+    ],
+    "point_instances": [
+        "E",
+        "B",
+        "C",
+        "D",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "EC",
+        "EA",
+        "CA"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "E": [
+            164.3676948051948,
+            64.49142857142857
+        ],
+        "B": [
+            68.17329545454545,
+            112.26285714285716
+        ],
+        "C": [
+            164.65246212121212,
+            112.66095238095238
+        ],
+        "D": [
+            260.049512987013,
+            112.26285714285716
+        ],
+        "A": [
+            165.01259563682,
+            184.49544281323512
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        5.0,
+        8.0,
+        9.165
+    ],
+    "choices_precise_value": [
+        2.5,
+        5.0,
+        8.0,
+        9.165
+    ],
+    "problem_answer": 5.0,
+    "total_time": 28.300592,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on AE, 2 = CE, 3 = AC, E on \u2299(A, radius_A), D on \u2299(A, radius_A)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(A, radius_A)\nConclusions: radius_A = AE\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(A, radius_A)\nConclusions: radius_A = AD\n\nStep 5:\nTheorem: Substitution\nPremises : radius_A = AE, 3 = AC, AE = AC + CE, 2 = CE\nConclusions: 2 + 3 = radius_A\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 2 + 3 = radius_A, radius_A = AD\nConclusions: 2 + 3 = AD\n\nStep 7:\nTheorem: Evaluate\nPremises : 2 + 3 = AD\nConclusions: 5 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(E, C)",
+        "Line(E, A)",
+        "Line(C, A)",
+        "Circle(A, radius_A)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, D), Line(E, A))",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(E, Circle(A, radius_A))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(E, A))",
+        "Equals(LengthOf(Line(C, A)), 3.0)",
+        "Equals(LengthOf(Line(E, C)), 2.0)"
+    ],
+    "correct": true
+}

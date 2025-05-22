@@ -1,0 +1,83 @@
+{
+    "problem_id": "2739",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 8)",
+        "Equals(LengthOf(Line(C, D)), 17)",
+        "Equals(LengthOf(Line(E, D)), 21)",
+        "Find(AreaOf(Parallelogram(A, E, D, C)))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "ED",
+        "EA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            105.14492753623188,
+            209.8550724637681
+        ],
+        "B": [
+            242.82608695652172,
+            210.14492753623188
+        ],
+        "C": [
+            326.0144927536232,
+            209.8550724637681
+        ],
+        "D": [
+            241.66666666666666,
+            47.53623188405797
+        ],
+        "E": [
+            20.507246376811594,
+            47.53623188405797
+        ]
+    },
+    "problem_choices": [
+        "294",
+        "315",
+        "336",
+        "357"
+    ],
+    "choices_precise_value": [
+        294.0,
+        315.0,
+        336.0,
+        357.0
+    ],
+    "problem_answer": 315.0,
+    "total_time": 30.800343,
+    "solution_predicate": "Equals(314.9999999922, AreaOf(Parallelogram(A, E, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: cos(\u2220BDC), 17 = CD, AB \u22a5 BD, sin(\u2220BDC), BC \u22a5 BD, 8 = BC, 21 = DE, Parallelogram(A, C, D, E)\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BDC), BC \u22a5 BD\nConclusions: BD / CD = cos(\u2220BDC)\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BDC), BC \u22a5 BD\nConclusions: BC / CD = sin(\u2220BDC)\n\nStep 4:\nTheorem: Area formula of Parallelogram(A, C, D, E)\nPremises : Parallelogram(A, C, D, E), AB \u22a5 BD\nConclusions: Area(Parallelogram(A, C, D, E)) = AC * BD\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, C, D, E)\nConclusions: AC = DE\n\nStep 6:\nTheorem: Substitution\nPremises : 17 = CD, BD / CD = cos(\u2220BDC)\nConclusions: BD / 17 = cos(\u2220BDC)\n\nStep 7:\nTheorem: Substitution\nPremises : 17 = CD, BC / CD = sin(\u2220BDC), 8 = BC\nConclusions: 8 / 17 = sin(\u2220BDC)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AC = DE, 21 = DE\nConclusions: 21 = AC\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 8 / 17 = sin(\u2220BDC)\nConclusions: 0.49 = \u2220BDC\n\nStep 10:\nTheorem: Substitution\nPremises : Area(Parallelogram(A, C, D, E)) = AC * BD, 21 = AC\nConclusions: Area(Parallelogram(A, C, D, E)) = 21 * BD\n\nStep 11:\nTheorem: Substitution\nPremises : 0.49 = \u2220BDC, BD / 17 = cos(\u2220BDC)\nConclusions: cos(0.49) = BD / 17\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : Area(Parallelogram(A, C, D, E)) = 21 * BD, cos(0.49) = BD / 17\nConclusions: 315 = Area(Parallelogram(A, C, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(E, D)",
+        "Line(E, A)",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), 8.0)",
+        "Equals(LengthOf(Line(C, D)), 17.0)",
+        "Equals(LengthOf(Line(E, D)), 21.0)"
+    ],
+    "correct": true
+}

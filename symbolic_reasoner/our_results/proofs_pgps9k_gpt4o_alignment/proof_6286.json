@@ -1,0 +1,111 @@
+{
+    "problem_id": "6286",
+    "solved": true,
+    "problem_text": "In parallelogram ABCD, BD and AC intersect at E. If AE = 9, BE = 3x-7, and DE = x+5, find DE.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "IntersectAt(Parallelogram(A,B,C,D),Line(B,D),Line(A,C),Point(E))",
+        "Equals(LengthOf(Line(A,E)),9)",
+        "Equals(LengthOf(Line(B,E)),3x-7)",
+        "Equals(LengthOf(Line(D,E)),x+5)",
+        "Find(LengthOf(Line(D,E)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "B",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AD",
+        "DE",
+        "DB",
+        "EB",
+        "AE",
+        "AC",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            52.51155555555556,
+            201.7125
+        ],
+        "C": [
+            373.42800000000005,
+            201.825
+        ],
+        "B": [
+            440.021568627451,
+            49.63235294117647
+        ],
+        "A": [
+            119.27142857142857,
+            49.78125
+        ],
+        "E": [
+            246.47822222222223,
+            125.77499999999999
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        9.8,
+        10.333,
+        11.0
+    ],
+    "choices_precise_value": [
+        9.0,
+        9.8,
+        10.333,
+        11.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 63.508425,
+    "solution_predicate": "Equals(11.0, LengthOf(Line(D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 + x = DE, Parallelogram(A, B, C, D), E on BD, E on AC, 3 * x - 7 = BE\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : E on AC, E on BD, Parallelogram(A, B, C, D)\nConclusions: BE = DE\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : BE = DE, 5 + x = DE\nConclusions: 5 + x = BE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 7 = BE, 5 + x = BE\nConclusions: 5 + x = 3 * x - 7\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 5 + x = DE, 5 + x = 3 * x - 7\nConclusions: 11 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "IntersectAt(Parallelogram(A, B, C, D), Line(B, D), Line(A, C), E)",
+        "Equals(LengthOf(Line(A, E)), 9.0)",
+        "Equals(LengthOf(Line(B, E)), Sub(Mul(3.0, x), 7.0))",
+        "Equals(LengthOf(Line(D, E)), Add(x, 5.0))"
+    ],
+    "correct": true
+}

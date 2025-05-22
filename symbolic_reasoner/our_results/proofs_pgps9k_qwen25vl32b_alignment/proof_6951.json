@@ -1,0 +1,113 @@
+{
+    "problem_id": "6951",
+    "solved": true,
+    "problem_text": "GHJK is a rhombus. Find m \\angle GHJ if m \\angle JLH = 4b-6 and m \\angle JKH = 2b+11.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(H, G)), 6a-7)",
+        "Equals(LengthOf(Line(K, G)), 3a+9)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(G, L)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "Line(H, L)",
+        "Line(K, J)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "PointLiesOnLine(L, Line(G, J))",
+        "PointLiesOnLine(L, Line(H, K))",
+        "Rhombus(G,H,J,K)",
+        "Equals(MeasureOf(Angle(J,L,H)),4b-6)",
+        "Equals(MeasureOf(Angle(J,K,H)),2b+11)",
+        "Find(MeasureOf(Angle(G,H,J)))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "L",
+        "J",
+        "K"
+    ],
+    "line_instances": [
+        "GL",
+        "GJ",
+        "LJ",
+        "HL",
+        "HK",
+        "LK",
+        "KJ",
+        "GK",
+        "HJ",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            77.29411764705883,
+            53.0
+        ],
+        "H": [
+            234.45378151260502,
+            53.0
+        ],
+        "L": [
+            192.10084033613444,
+            120.84
+        ],
+        "J": [
+            307.05882352941177,
+            189.2857142857143
+        ],
+        "K": [
+            149.2941176470588,
+            189.74
+        ]
+    },
+    "problem_choices": [
+        31.0,
+        59.0,
+        90.0,
+        118.0
+    ],
+    "choices_precise_value": [
+        31.0,
+        59.0,
+        90.0,
+        118.0
+    ],
+    "problem_answer": 118.0,
+    "total_time": 338.188095,
+    "solution_predicate": "Equals(2.0594885174, MeasureOf(Angle(G, H, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((4 * b - 6) / 180) = \u2220JLH, HK, GK, pi * ((11 + 2 * b) / 180) = \u2220JKH, Rhombus(G, H, J, K), GH\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(G, H, J, K)\nConclusions: HL \u22a5 JL\n\nStep 4:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(G, H, J, K)\nConclusions: Parallelogram(G, H, J, K)\n\nStep 5:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(G, H, J, K)\nConclusions: \u2220HKG = \u2220JKH, \u2220GHK = \u2220KHJ\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : GK, GH, HK\nConclusions: \u25b3GHK\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : HL \u22a5 JL\nConclusions: pi / 2 = \u2220JLH\n\nStep 8:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(G, H, J, K)\nConclusions: \u2220GHJ = \u2220JKG\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(G, H, J, K)\nConclusions: GH || KJ, GK || HJ\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(G, H, K)\nPremises : \u25b3GHK\nConclusions: pi = \u2220GHK + \u2220HKG + \u2220KGH\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220JLH, pi * ((4 * b - 6) / 180) = \u2220JLH\nConclusions: pi / 2 = pi * ((4 * b - 6) / 180)\n\nStep 12:\nTheorem: Consecutive Interior Angle Theorem\nPremises : GH || KJ\nConclusions: pi = \u2220JKG + \u2220KGH\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : GK || HJ\nConclusions: \u2220HKG = \u2220KHJ\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220GHK + \u2220HKG + \u2220KGH, 3.14 = pi\nConclusions: 3.14 = \u2220GHK + \u2220HKG + \u2220KGH\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = pi * ((4 * b - 6) / 180), 1.57 = pi / 2\nConclusions: 1.57 = pi * ((4 * b - 6) / 180)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220JKG + \u2220KGH, 3.14 = pi\nConclusions: 3.14 = \u2220JKG + \u2220KGH\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HKG = \u2220KHJ, \u2220HKG = \u2220JKH\nConclusions: \u2220JKH = \u2220KHJ\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, 1.57 = pi * ((4 * b - 6) / 180)\nConclusions: 1.57 = 3.14 * ((4 * b - 6) / 180)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKH = \u2220KHJ, pi * ((11 + 2 * b) / 180) = \u2220JKH\nConclusions: pi * ((11 + 2 * b) / 180) = \u2220KHJ\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 1.57 = 3.14 * ((4 * b - 6) / 180)\nConclusions: 24 = b\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 + 2 * b) / 180) = \u2220KHJ, \u2220HKG = \u2220KHJ\nConclusions: pi * ((11 + 2 * b) / 180) = \u2220HKG\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 + 2 * b) / 180) = \u2220KHJ, \u2220GHK = \u2220KHJ\nConclusions: pi * ((11 + 2 * b) / 180) = \u2220GHK\n\nStep 23:\nTheorem: Evaluate\nPremises : 24 = b, 3.14 = pi\nConclusions: 1.03 = pi * ((11 + 2 * b) / 180)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 + 2 * b) / 180) = \u2220GHK, 1.03 = pi * ((11 + 2 * b) / 180)\nConclusions: 1.03 = \u2220GHK\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 1.03 = pi * ((11 + 2 * b) / 180), pi * ((11 + 2 * b) / 180) = \u2220HKG\nConclusions: 1.03 = \u2220HKG\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220GHK + \u2220HKG + \u2220KGH, 3.14 = \u2220JKG + \u2220KGH, 1.03 = \u2220GHK, 1.03 = \u2220HKG\nConclusions: 2.06 = \u2220JKG\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GHJ = \u2220JKG, 2.06 = \u2220JKG\nConclusions: 2.06 = \u2220GHJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, L)",
+        "Line(G, J)",
+        "Line(L, J)",
+        "Line(H, L)",
+        "Line(H, K)",
+        "Line(L, K)",
+        "Line(K, J)",
+        "Line(G, K)",
+        "Line(H, J)",
+        "Line(G, H)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(G, L)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "Line(H, L)",
+        "Line(K, J)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "PointLiesOnLine(L, Line(G, J))",
+        "PointLiesOnLine(L, Line(H, K))",
+        "Rhombus(G, H, J, K)",
+        "Equals(LengthOf(Line(H, G)), Sub(Mul(6.0, a), 7.0))",
+        "Equals(LengthOf(Line(K, G)), Add(Mul(3.0, a), 9.0))",
+        "Equals(MeasureOf(Angle(J, L, H)), Mul(pi, Div(Sub(Mul(4.0, b), 6.0), 180.0)))",
+        "Equals(MeasureOf(Angle(J, K, H)), Mul(pi, Div(Add(Mul(2.0, b), 11.0), 180.0)))"
+    ],
+    "correct": true
+}

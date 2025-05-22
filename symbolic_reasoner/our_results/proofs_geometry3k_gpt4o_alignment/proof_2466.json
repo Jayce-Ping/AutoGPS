@@ -1,0 +1,87 @@
+{
+    "problem_id": "2466",
+    "solved": true,
+    "problem_text": "If A B = 12, A C = 16, and E D = 5, find A E.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A,B)),12)",
+        "Equals(LengthOf(Line(A,C)),16)",
+        "Equals(LengthOf(Line(E,D)),5)",
+        "Find(LengthOf(Line(A,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "C",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA",
+        "AE",
+        "AD",
+        "ED",
+        "CD",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            275.1004016064257,
+            143.1847389558233
+        ],
+        "D": [
+            445.78313253012044,
+            299.4096385542168
+        ],
+        "C": [
+            329.718875502008,
+            84.95180722891565
+        ],
+        "A": [
+            126.50602409638553,
+            299.008032128514
+        ],
+        "E": [
+            358.2329317269076,
+            298.60642570281124
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "12",
+        "15",
+        "16"
+    ],
+    "choices_precise_value": [
+        10.0,
+        12.0,
+        15.0,
+        16.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 32.771305,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, 5 = DE, E on AD, \u2220BAD, \u2220BEA, 16 = AC, BE || CD, \u2220CDA, \u2220CDA, B on AC, 12 = AB, \u2220CAD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 3:\nTheorem: Same Angle\nPremises : E on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BEA\nConclusions: \u2220BEA = 2 * pi - \u2220AEB\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 7:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 8:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 9:\nTheorem: Substitution\nPremises : AD = AE + DE, 5 = DE\nConclusions: AD = 5 + AE\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BEA = 2 * pi - \u2220AEB\nConclusions: \u2220BEA = 2 * 3.14 - \u2220AEB\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220ADC = \u2220AEB, 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC, \u2220CDA = \u2220CDE\nConclusions: \u2220CDE = 2 * 3.14 - \u2220AEB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAD, \u2220BAD = \u2220BAE\nConclusions: \u2220BAE = \u2220CAD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = 2 * 3.14 - \u2220AEB, \u2220BEA = 2 * 3.14 - \u2220AEB\nConclusions: \u2220BEA = \u2220CDE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220CDE, \u2220CDA = \u2220CDE\nConclusions: \u2220BEA = \u2220CDA\n\nStep 15:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABE = \u2220ACD, \u2220BEA = \u2220CDA, \u2220BAE = \u2220CAD\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 16:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220BEA = \u2220CDA, AB / AC = AE / AD, \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 17:\nTheorem: Substitution\nPremises : 16 = AC, 12 = AB, AB / AC = AE / AD\nConclusions: 12 / 16 = AE / AD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 12 / 16 = AE / AD, AD = 5 + AE\nConclusions: 15 = AE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(B, E)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(LengthOf(Line(E, D)), 5.0)"
+    ],
+    "correct": true
+}

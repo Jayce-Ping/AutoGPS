@@ -1,0 +1,159 @@
+{
+    "problem_id": "8240",
+    "solved": true,
+    "problem_text": "The perpendicular bisectors of \\triangle ABC meet at point G. Find BF.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 5)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(A, G)), 7)",
+        "Equals(LengthOf(Line(C, F)), LengthOf(Line(F, B)))",
+        "Equals(LengthOf(Line(D, B)), 5)",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(G, F)), 2)",
+        "Find(LengthOf(Line(B, F)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, B)",
+        "Line(D, G)",
+        "Line(E, C)",
+        "Line(E, G)",
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(D, G))",
+        "Perpendicular(Line(A, C), Line(E, G))",
+        "Perpendicular(Line(B, C), Line(G, F))",
+        "Point(G)",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, C))",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "D",
+        "G",
+        "C",
+        "F",
+        "B"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "BF",
+        "BC",
+        "FC",
+        "AD",
+        "AB",
+        "DB",
+        "GC",
+        "BG",
+        "AG",
+        "DG",
+        "EG",
+        "GF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            159.07343049327355,
+            56.0
+        ],
+        "E": [
+            338.8445440956652,
+            179.20000000000002
+        ],
+        "D": [
+            106.81101857783473,
+            225.28
+        ],
+        "G": [
+            273.1240657698057,
+            276.19555555555553
+        ],
+        "C": [
+            521.0695067264575,
+            304.64
+        ],
+        "F": [
+            287.5118513773223,
+            348.16
+        ],
+        "B": [
+            55.05156950672646,
+            394.24
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        4.899,
+        6.708,
+        7.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.899,
+        6.708,
+        7.0
+    ],
+    "problem_answer": 6.708,
+    "total_time": 230.494903,
+    "solution_predicate": "Equals(6.7082039325, LengthOf(Line(B, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CF, CE \u22a5 EG, 2 = FG, AE \u22a5 EG, CF \u22a5 FG, AE = CE, CG, FG, 7 = AG, BF = CF\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 EG\nConclusions: pi / 2 = \u2220GEC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AE \u22a5 EG\nConclusions: pi / 2 = \u2220AEG\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CG, FG, CF\nConclusions: \u25b3CFG\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220GEC, pi / 2 = \u2220AEG\nConclusions: \u2220AEG = \u2220GEC\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : CF \u22a5 FG, \u25b3CFG\nConclusions: CF = SqrtOf(CG ** 2 - FG ** 2)\n\nStep 7:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220AEG = \u2220GEC, AE = CE\nConclusions: \u25b3AEG \u2245 \u25b3CEG\n\nStep 8:\nTheorem: Congruent Definition\nPremises : \u25b3AEG \u2245 \u25b3CEG\nConclusions: AE = CE, AG = CG\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 7 = AG, AG = CG\nConclusions: 7 = CG\n\nStep 10:\nTheorem: Substitution\nPremises : 2 = FG, CF = SqrtOf(CG ** 2 - FG ** 2), 7 = CG\nConclusions: SqrtOf(7 ** 2 - 2 ** 2) = CF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(7 ** 2 - 2 ** 2) = CF, BF = CF\nConclusions: SqrtOf(7 ** 2 - 2 ** 2) = BF\n\nStep 12:\nTheorem: Evaluate\nPremises : SqrtOf(7 ** 2 - 2 ** 2) = BF\nConclusions: 6.71 = BF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(B, F)",
+        "Line(B, C)",
+        "Line(F, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(G, C)",
+        "Line(B, G)",
+        "Line(A, G)",
+        "Line(D, G)",
+        "Line(E, G)",
+        "Line(G, F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, B)",
+        "Line(D, G)",
+        "Line(E, C)",
+        "Line(E, G)",
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, B), Line(D, G))",
+        "Perpendicular(Line(A, C), Line(E, G))",
+        "Perpendicular(Line(B, C), Line(G, F))",
+        "G",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, C))",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(A, G)), 7.0)",
+        "Equals(LengthOf(Line(C, F)), LengthOf(Line(F, B)))",
+        "Equals(LengthOf(Line(D, B)), 5.0)",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(G, F)), 2.0)"
+    ],
+    "correct": true
+}

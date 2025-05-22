@@ -1,0 +1,77 @@
+{
+    "problem_id": "2832",
+    "solved": true,
+    "problem_text": "Find m \\angle 3.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(C, A, D)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, A)), 38)",
+        "Equals(MeasureOf(Angle(A, C, D)), 72)",
+        "Equals(MeasureOf(Angle(C, D, A)), 42)",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "DC",
+        "DB",
+        "CB",
+        "DA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            261.1336032388664,
+            229.14170040485828
+        ],
+        "B": [
+            490.68825910931173,
+            48.97975708502024
+        ],
+        "C": [
+            319.43319838056675,
+            48.97975708502024
+        ],
+        "D": [
+            60.32388663967611,
+            48.97975708502024
+        ]
+    },
+    "problem_choices": [
+        "38",
+        "60",
+        "66",
+        "72"
+    ],
+    "choices_precise_value": [
+        38.0,
+        60.0,
+        66.0,
+        72.0
+    ],
+    "problem_answer": 66.0,
+    "total_time": 19.761383,
+    "solution_predicate": "Equals(1.1519173063, MeasureOf(Angle(C, A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CD, pi * (72 / 180) = \u2220DCA, AD, pi * (42 / 180) = \u2220ADC, 3.14 = pi, AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (72 / 180) = \u2220DCA, pi * (42 / 180) = \u2220ADC, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = 3.14 * (42 / 180) + 3.14 * (72 / 180) + \u2220CAD\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (42 / 180) + 3.14 * (72 / 180) + \u2220CAD\nConclusions: 1.15 = \u2220CAD\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(38.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(72.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

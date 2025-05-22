@@ -1,0 +1,88 @@
+{
+    "problem_id": "4062",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle ADB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(C, D, B)), 64)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(MeasureOf(Angle(A,D,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DA",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            155.4534632034632,
+            49.387142857142855
+        ],
+        "A": [
+            46.903318903318905,
+            169.39301587301586
+        ],
+        "B": [
+            155.78602350030923,
+            169.62285714285713
+        ],
+        "C": [
+            402.8167388167388,
+            169.8526984126984
+        ]
+    },
+    "problem_choices": [
+        23.991,
+        26.0,
+        42.379,
+        79.901
+    ],
+    "choices_precise_value": [
+        23.991,
+        26.0,
+        42.379,
+        79.901
+    ],
+    "problem_answer": 42.379,
+    "total_time": 52.694052,
+    "solution_predicate": "Equals(0.7396613944, MeasureOf(Angle(A, D, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.2 = AB, BD, 3.14 = pi, pi * (64 / 180) = \u2220BDC, sin(\u2220BDC), 8 = CD, AD, AB \u22a5 BD, BC \u22a5 BD, AB, tan(\u2220BDC), \u2220ADB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.12 = pi * (64 / 180)\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BDC), BC \u22a5 BD\nConclusions: BC / CD = sin(\u2220BDC)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 5:\nTheorem: Angle Tan Definition\nPremises : BC \u22a5 BD, tan(\u2220BDC)\nConclusions: BC / BD = tan(\u2220BDC)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 1.12 = pi * (64 / 180), pi * (64 / 180) = \u2220BDC\nConclusions: 1.12 = \u2220BDC\n\nStep 7:\nTheorem: Substitution\nPremises : BC / CD = sin(\u2220BDC), pi * (64 / 180) = \u2220BDC, 8 = CD\nConclusions: sin(pi * (64 / 180)) = BC / 8\n\nStep 8:\nTheorem: Tan Function Definition\nPremises : \u2220ADB, AB \u22a5 BD, \u25b3ABD\nConclusions: AB / BD = tan(\u2220ADB)\n\nStep 9:\nTheorem: Substitution\nPremises : BC / BD = tan(\u2220BDC), 1.12 = \u2220BDC\nConclusions: tan(1.12) = BC / BD\n\nStep 10:\nTheorem: Substitution\nPremises : sin(pi * (64 / 180)) = BC / 8, 3.14 = pi\nConclusions: sin(3.14 * (64 / 180)) = BC / 8\n\nStep 11:\nTheorem: Substitution\nPremises : 3.2 = AB, AB / BD = tan(\u2220ADB)\nConclusions: 3.2 / BD = tan(\u2220ADB)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : tan(1.12) = BC / BD, sin(3.14 * (64 / 180)) = BC / 8\nConclusions: 3.51 = BD\n\nStep 13:\nTheorem: Substitution\nPremises : 3.51 = BD, 3.2 / BD = tan(\u2220ADB)\nConclusions: 3.2 / 3.51 = tan(\u2220ADB)\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : 3.2 / 3.51 = tan(\u2220ADB)\nConclusions: 0.74 = \u2220ADB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(64.0, 180.0)))"
+    ],
+    "correct": true
+}

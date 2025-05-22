@@ -1,0 +1,96 @@
+{
+    "problem_id": "6215",
+    "solved": true,
+    "problem_text": "What is z?",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(R, Q)), 10z)",
+        "Equals(MeasureOf(Arc(S, T)), 6z)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(S, P)",
+        "PointLiesOnCircle(Q, Circle(P))",
+        "PointLiesOnCircle(R, Circle(P))",
+        "PointLiesOnCircle(S, Circle(P))",
+        "PointLiesOnCircle(T, Circle(P))",
+        "PointLiesOnLine(P, Line(Q, R))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "Q",
+        "S",
+        "P",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "QP",
+        "QR",
+        "PR",
+        "SP",
+        "PT"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "Q": [
+            175.67837837837837,
+            64.38095238095238
+        ],
+        "S": [
+            214.92972972972976,
+            74.28571428571428
+        ],
+        "P": [
+            175.87421459080926,
+            150.26252142397246
+        ],
+        "T": [
+            235.50810810810813,
+            211.42857142857142
+        ],
+        "R": [
+            175.60216216216216,
+            236.79999999999998
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        15.0,
+        18.0,
+        30.0
+    ],
+    "choices_precise_value": [
+        9.0,
+        15.0,
+        18.0,
+        30.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 13.837558,
+    "solution_predicate": "Equals(18.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(QPR), \u2220QPR, \u2220RPS, 3.14 = pi, \u2220SPQ, pi * ((10 * z) / 180) = Arc(QPR)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QPR)\nConclusions: \u2220QPR = Arc(QPR)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220SPQ, \u2220RPS\nConclusions: pi = \u2220RPS + \u2220SPQ\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220QPR, \u2220SPQ, \u2220RPS\nConclusions: 2 * pi = \u2220QPR + \u2220RPS + \u2220SPQ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 * z) / 180) = Arc(QPR), \u2220QPR = Arc(QPR)\nConclusions: pi * ((10 * z) / 180) = \u2220QPR\n\nStep 6:\nTheorem: Substitution\nPremises : 2 * pi = \u2220QPR + \u2220RPS + \u2220SPQ, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220QPR + \u2220RPS + \u2220SPQ\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 * z) / 180) = \u2220QPR\nConclusions: 3.14 * ((10 * z) / 180) = \u2220QPR\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220RPS + \u2220SPQ, 2 * pi = \u2220QPR + \u2220RPS + \u2220SPQ, 3.14 * ((10 * z) / 180) = \u2220QPR, 2 * 3.14 = \u2220QPR + \u2220RPS + \u2220SPQ\nConclusions: 18 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(P, R)",
+        "Line(S, P)",
+        "Line(P, T)",
+        "Circle(P, radius_P)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(S, P)",
+        "PointLiesOnCircle(Q, Circle(P, radius_P))",
+        "PointLiesOnCircle(R, Circle(P, radius_P))",
+        "PointLiesOnCircle(S, Circle(P, radius_P))",
+        "PointLiesOnCircle(T, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(Q, R))",
+        "Equals(MeasureOf(Arc(Q, P, R)), Mul(pi, Div(Mul(10.0, z), 180.0)))",
+        "Equals(MeasureOf(Arc(T, P, S)), Mul(pi, Div(Mul(6.0, z), 180.0)))"
+    ],
+    "correct": true
+}

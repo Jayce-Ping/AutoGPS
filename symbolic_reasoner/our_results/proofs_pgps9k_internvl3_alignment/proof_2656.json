@@ -1,0 +1,124 @@
+{
+    "problem_id": "2656",
+    "solved": true,
+    "problem_text": "If CW = WF and ED = 30, what is AB?",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "Line(W, F)",
+        "Perpendicular(Line(A, B), Line(C, W))",
+        "Perpendicular(Line(W, F), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(W))",
+        "PointLiesOnCircle(B, Circle(W))",
+        "PointLiesOnCircle(D, Circle(W))",
+        "PointLiesOnCircle(E, Circle(W))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(C,W)),Line(W,F))",
+        "Equals(LengthOf(Line(E,D)),30)",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "E",
+        "F",
+        "D",
+        "B",
+        "C",
+        "A",
+        "W"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB",
+        "CW",
+        "WF",
+        "EF",
+        "ED",
+        "FD"
+    ],
+    "circle_instances": [
+        "W"
+    ],
+    "point_positions": {
+        "E": [
+            157.42829363150216,
+            340.9376623376623
+        ],
+        "F": [
+            251.3368983957219,
+            323.60571428571427
+        ],
+        "D": [
+            343.0748663101604,
+            306.04571428571427
+        ],
+        "B": [
+            342.0974450386215,
+            117.06666666666665
+        ],
+        "C": [
+            251.83957219251337,
+            100.34285714285714
+        ],
+        "A": [
+            158.3422459893048,
+            82.06612244897958
+        ],
+        "W": [
+            228.89534883720933,
+            210.89534883720933
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        30.0,
+        42.426,
+        60.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        42.426,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 148.009765,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DF \u22a5 FW, AC \u22a5 CW, \u2299(W, radius_W), A on \u2299(W, radius_W), F on DE, C on AB, B on \u2299(W, radius_W), 30 = DE, BC \u22a5 CW, D on \u2299(W, radius_W), CW = FW\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : DF \u22a5 FW\nConclusions: pi / 2 = \u2220DFW\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CW\nConclusions: pi / 2 = \u2220ACW\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(W, radius_W)\nConclusions: radius_W = AW\n\nStep 5:\nTheorem: Line Segment Split\nPremises : F on DE\nConclusions: DE = DF + EF\n\nStep 6:\nTheorem: Circle Vertical Theorem\nPremises : DF \u22a5 FW, F on DE, \u2299(W, radius_W)\nConclusions: DF = EF\n\nStep 7:\nTheorem: Line Segment Split\nPremises : C on AB\nConclusions: AB = AC + BC\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : B on \u2299(W, radius_W)\nConclusions: radius_W = BW\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CW\nConclusions: pi / 2 = \u2220WCB\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : D on \u2299(W, radius_W)\nConclusions: radius_W = DW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACW, pi / 2 = \u2220DFW\nConclusions: \u2220ACW = \u2220DFW\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : DE = DF + EF, 30 = DE\nConclusions: 30 = DF + EF\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DFW, pi / 2 = \u2220WCB\nConclusions: \u2220DFW = \u2220WCB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_W = BW, radius_W = DW\nConclusions: BW = DW\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : radius_W = DW, radius_W = AW\nConclusions: AW = DW\n\nStep 16:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : BW = DW, CW = FW, \u2220DFW = \u2220WCB\nConclusions: \u25b3BCW \u2245 \u25b3DFW\n\nStep 17:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : AW = DW, \u2220ACW = \u2220DFW, CW = FW\nConclusions: \u25b3ACW \u2245 \u25b3DFW\n\nStep 18:\nTheorem: Congruent Definition\nPremises : \u25b3BCW \u2245 \u25b3DFW\nConclusions: CW = FW, BC = DF, \u2220DFW = \u2220WCB\n\nStep 19:\nTheorem: Congruent Definition\nPremises : \u25b3ACW \u2245 \u25b3DFW\nConclusions: \u2220ACW = \u2220DFW, CW = FW, AC = DF\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : DF = EF, BC = DF\nConclusions: BC = EF\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 30 = DF + EF, AC = DF, BC = EF, AB = AC + BC\nConclusions: 30 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(W, F)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Circle(W, radius_W)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "Line(W, F)",
+        "Perpendicular(Line(A, B), Line(C, W))",
+        "Perpendicular(Line(W, F), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(W, radius_W))",
+        "PointLiesOnCircle(B, Circle(W, radius_W))",
+        "PointLiesOnCircle(D, Circle(W, radius_W))",
+        "PointLiesOnCircle(E, Circle(W, radius_W))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(C, W)), LengthOf(Line(W, F)))",
+        "Equals(LengthOf(Line(E, D)), 30.0)"
+    ],
+    "correct": true
+}

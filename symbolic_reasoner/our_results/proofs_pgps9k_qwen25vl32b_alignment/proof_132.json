@@ -1,0 +1,78 @@
+{
+    "problem_id": "132",
+    "solved": true,
+    "problem_text": "What is m \\angle C?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 3x-5)",
+        "Equals(MeasureOf(Angle(B, A, D)), 110)",
+        "Equals(MeasureOf(Angle(C, D, A)), 70)",
+        "Equals(MeasureOf(Angle(D, C, B)), 4x+10)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "AB",
+        "BC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            92.45418719211823,
+            56.61257142857143
+        ],
+        "B": [
+            351.679802955665,
+            56.86530612244898
+        ],
+        "D": [
+            38.70689655172414,
+            203.45142857142855
+        ],
+        "C": [
+            297.49014778325125,
+            203.45142857142855
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        70.0,
+        82.0,
+        110.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        70.0,
+        82.0,
+        110.0
+    ],
+    "problem_answer": 110.0,
+    "total_time": 6.980391,
+    "solution_predicate": "Equals(1.9198621772, MeasureOf(Angle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 + 4 * x) / 180) = \u2220BCD, pi * (70 / 180) = \u2220CDA, pi * (110 / 180) = \u2220DAB, AD, CD, 3.14 = pi, AB, pi * ((3 * x - 5) / 180) = \u2220ABC, BC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 + 4 * x) / 180) = \u2220BCD\nConclusions: 3.14 * ((10 + 4 * x) / 180) = \u2220BCD\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x - 5) / 180) = \u2220ABC\nConclusions: 3.14 * ((3 * x - 5) / 180) = \u2220ABC\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : CD, AD, AB, BC\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (110 / 180) = \u2220DAB, 3.14 = pi, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, pi * (70 / 180) = \u2220CDA\nConclusions: 2 * 3.14 = 3.14 * (110 / 180) + 3.14 * (70 / 180) + \u2220ABC + \u2220BCD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x - 5) / 180) = \u2220ABC, 2 * 3.14 = 3.14 * (110 / 180) + 3.14 * (70 / 180) + \u2220ABC + \u2220BCD, 3.14 * ((10 + 4 * x) / 180) = \u2220BCD\nConclusions: 1.92 = \u2220BCD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Sub(Mul(3.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(70.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Add(Mul(4.0, x), 10.0), 180.0)))"
+    ],
+    "correct": true
+}

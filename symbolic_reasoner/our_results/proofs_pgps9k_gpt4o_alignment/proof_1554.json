@@ -1,0 +1,163 @@
+{
+    "problem_id": "1554",
+    "solved": true,
+    "problem_text": "Find m \\angle KLM.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(E, K, F)), 26x+22)",
+        "Equals(MeasureOf(Angle(K, L, M)), 38x-14)",
+        "Line(A, D)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(C, F)",
+        "Line(C, K)",
+        "Line(E, B)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(K, B)",
+        "Line(K, F)",
+        "Line(K, L)",
+        "Line(L, B)",
+        "Line(L, D)",
+        "Line(L, M)",
+        "Line(M, D)",
+        "Parallel(Line(C, F), Line(A, D))",
+        "PointLiesOnLine(K, Line(C, F))",
+        "PointLiesOnLine(K, Line(E, B))",
+        "PointLiesOnLine(K, Line(E, L))",
+        "PointLiesOnLine(L, Line(A, D))",
+        "PointLiesOnLine(L, Line(A, M))",
+        "PointLiesOnLine(L, Line(E, B))",
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(M, Line(L, D))",
+        "Find(MeasureOf(Angle(K,L,M)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "L",
+        "K",
+        "M",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "EK",
+        "EL",
+        "EB",
+        "KL",
+        "KB",
+        "LB",
+        "AL",
+        "AM",
+        "AD",
+        "LM",
+        "LD",
+        "MD",
+        "CK",
+        "CF",
+        "KF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            361.28297872340426,
+            13.097142857142856
+        ],
+        "B": [
+            495.90000000000003,
+            59.30095238095238
+        ],
+        "C": [
+            153.0813829787234,
+            67.94142857142857
+        ],
+        "L": [
+            400.5765957446809,
+            89.49714285714286
+        ],
+        "K": [
+            196.468085106383,
+            152.17632653061224
+        ],
+        "M": [
+            434.7246200607903,
+            156.5420408163265
+        ],
+        "D": [
+            451.87659574468086,
+            189.28489795918367
+        ],
+        "E": [
+            15.280851063829788,
+            207.37142857142857
+        ],
+        "F": [
+            242.5835106382979,
+            242.02428571428572
+        ]
+    },
+    "problem_choices": [
+        80.0,
+        88.125,
+        91.875,
+        100.0
+    ],
+    "choices_precise_value": [
+        80.0,
+        88.125,
+        91.875,
+        100.0
+    ],
+    "problem_answer": 100.0,
+    "total_time": 81.323213,
+    "solution_predicate": "Equals(1.745329252, MeasureOf(Angle(K, L, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: L on AD, M on DL, \u2220BKC, \u2220ELD, K on EL, \u2220KLD, pi * ((22 + 26 * x) / 180) = \u2220EKF, L on BK, pi * ((38 * x - 14) / 180) = \u2220KLM, AD || CF, 3.14 = pi\n\nStep 2:\nTheorem: Same Angle\nPremises : K on EL, \u2220ELD\nConclusions: \u2220ELD = \u2220KLD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220KLD, M on DL\nConclusions: \u2220KLD = \u2220KLM\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : L on BK, L on AD\nConclusions: \u2220BLA = \u2220KLD\n\nStep 5:\nTheorem: Same Angle\nPremises : L on BK, \u2220BKC\nConclusions: \u2220BKC = \u2220LKC\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : AD || CF\nConclusions: \u2220EKF = \u2220ELD, \u2220BKC = \u2220BLA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EKF = \u2220ELD, pi * ((22 + 26 * x) / 180) = \u2220EKF\nConclusions: pi * ((22 + 26 * x) / 180) = \u2220ELD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BKC = \u2220LKC, \u2220BKC = \u2220BLA\nConclusions: \u2220BLA = \u2220LKC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((22 + 26 * x) / 180) = \u2220ELD, \u2220ELD = \u2220KLD, \u2220BLA = \u2220KLD\nConclusions: pi * ((22 + 26 * x) / 180) = \u2220BLA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((22 + 26 * x) / 180) = \u2220BLA, \u2220BLA = \u2220LKC\nConclusions: pi * ((22 + 26 * x) / 180) = \u2220LKC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((22 + 26 * x) / 180) = \u2220BLA, \u2220BLA = \u2220KLD\nConclusions: pi * ((22 + 26 * x) / 180) = \u2220KLD\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((22 + 26 * x) / 180) = \u2220LKC\nConclusions: 3.14 * ((22 + 26 * x) / 180) = \u2220LKC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((38 * x - 14) / 180) = \u2220KLM, \u2220KLD = \u2220KLM, pi * ((22 + 26 * x) / 180) = \u2220KLD\nConclusions: pi * ((22 + 26 * x) / 180) = pi * ((38 * x - 14) / 180)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((22 + 26 * x) / 180) = \u2220LKC, pi * ((22 + 26 * x) / 180) = \u2220LKC\nConclusions: 3.14 * ((22 + 26 * x) / 180) = pi * ((22 + 26 * x) / 180)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((22 + 26 * x) / 180) = pi * ((38 * x - 14) / 180), pi * ((38 * x - 14) / 180) = \u2220KLM\nConclusions: pi * ((22 + 26 * x) / 180) = \u2220KLM\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((22 + 26 * x) / 180) = pi * ((38 * x - 14) / 180), 3.14 * ((22 + 26 * x) / 180) = pi * ((22 + 26 * x) / 180)\nConclusions: 3.14 * ((22 + 26 * x) / 180) = pi * ((38 * x - 14) / 180)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((22 + 26 * x) / 180) = pi * ((22 + 26 * x) / 180), pi * ((22 + 26 * x) / 180) = \u2220KLM\nConclusions: 3.14 * ((22 + 26 * x) / 180) = \u2220KLM\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 * ((22 + 26 * x) / 180) = pi * ((38 * x - 14) / 180), 3.14 = pi\nConclusions: 3.14 * ((22 + 26 * x) / 180) = 3.14 * ((38 * x - 14) / 180)\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((22 + 26 * x) / 180) = \u2220KLM, 3.14 * ((22 + 26 * x) / 180) = 3.14 * ((38 * x - 14) / 180)\nConclusions: 1.75 = \u2220KLM\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(E, B)",
+        "Line(K, L)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(A, D)",
+        "Line(L, M)",
+        "Line(L, D)",
+        "Line(M, D)",
+        "Line(C, K)",
+        "Line(C, F)",
+        "Line(K, F)",
+        "Line(A, D)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(C, F)",
+        "Line(C, K)",
+        "Line(E, B)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(K, B)",
+        "Line(K, F)",
+        "Line(K, L)",
+        "Line(L, B)",
+        "Line(L, D)",
+        "Line(L, M)",
+        "Line(M, D)",
+        "Parallel(Line(C, F), Line(A, D))",
+        "PointLiesOnLine(K, Line(C, F))",
+        "PointLiesOnLine(K, Line(E, B))",
+        "PointLiesOnLine(K, Line(E, L))",
+        "PointLiesOnLine(L, Line(A, D))",
+        "PointLiesOnLine(L, Line(A, M))",
+        "PointLiesOnLine(L, Line(E, B))",
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(M, Line(L, D))",
+        "Equals(MeasureOf(Angle(E, K, F)), Mul(pi, Div(Add(Mul(26.0, x), 22.0), 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, M)), Mul(pi, Div(Sub(Mul(38.0, x), 14.0), 180.0)))"
+    ],
+    "correct": true
+}

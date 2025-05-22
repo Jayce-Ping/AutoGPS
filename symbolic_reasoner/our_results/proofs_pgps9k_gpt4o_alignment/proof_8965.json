@@ -1,0 +1,107 @@
+{
+    "problem_id": "8965",
+    "solved": true,
+    "problem_text": "m \\angle 11 = x+40, m \\angle 12 = x+10, m \\angle 13 = 3x+30, what is the measure of \\angle 12?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(12)))",
+        "Equals(MeasureOf(Angle(D, C, F)), MeasureOf(Angle(13)))",
+        "Equals(MeasureOf(Angle(E, C, B)), MeasureOf(Angle(11)))",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Perpendicular(Line(D, E), Line(A, F))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(D, E))",
+        "Equals(MeasureOf(Angle(11)),x+40)",
+        "Equals(MeasureOf(Angle(12)),x+10)",
+        "Equals(MeasureOf(Angle(13)),3x+30)",
+        "Find(MeasureOf(Angle(12)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DC",
+        "DE",
+        "CE",
+        "FC",
+        "FA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            129.71052631578948,
+            23.49203007518797
+        ],
+        "B": [
+            184.71428571428572,
+            38.78802721088436
+        ],
+        "C": [
+            129.75,
+            134.08825396825398
+        ],
+        "D": [
+            19.5,
+            134.50571428571428
+        ],
+        "E": [
+            239.28571428571428,
+            134.68462585034015
+        ],
+        "F": [
+            129.75,
+            244.96571428571428
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        30.0,
+        60.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 23.533081,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 + x) / 180) = \u2220BCA, CD \u22a5 CF, pi * ((30 + 3 * x) / 180) = \u2220DCF, 3.14 = pi\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 CF\nConclusions: pi / 2 = \u2220DCF\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 + x) / 180) = \u2220BCA\nConclusions: 3.14 * ((10 + x) / 180) = \u2220BCA\n\nStep 4:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DCF, 3.14 = pi, pi * ((30 + 3 * x) / 180) = \u2220DCF\nConclusions: 3.14 / 2 = 3.14 * ((30 + 3 * x) / 180)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 / 2 = 3.14 * ((30 + 3 * x) / 180), 3.14 * ((10 + x) / 180) = \u2220BCA\nConclusions: 0.52 = \u2220BCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(C, E)",
+        "Line(F, C)",
+        "Line(F, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Perpendicular(Line(D, E), Line(A, F))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(D, E))",
+        "Equals(MeasureOf(Angle(E, C, B)), Mul(pi, Div(Add(x, 40.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, F)), Mul(pi, Div(Add(Mul(3.0, x), 30.0), 180.0)))"
+    ],
+    "correct": true
+}

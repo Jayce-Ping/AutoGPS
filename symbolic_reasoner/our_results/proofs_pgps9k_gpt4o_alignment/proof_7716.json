@@ -1,0 +1,99 @@
+{
+    "problem_id": "7716",
+    "solved": true,
+    "problem_text": "Find the area of the regular polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, D)), 6)",
+        "Find(AreaOf(Regular(Hexagon(A, B, C, E, G, F))))",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, F)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, G)",
+        "Line(G, E)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "EG",
+        "GF",
+        "FB",
+        "BA",
+        "AC",
+        "CE",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            109.24952380952382,
+            30.482026143790847
+        ],
+        "B": [
+            16.859627329192545,
+            83.66879795396419
+        ],
+        "C": [
+            202.57714285714286,
+            84.30882352941175
+        ],
+        "D": [
+            112.98857142857143,
+            138.10588235294117
+        ],
+        "E": [
+            202.8768472906404,
+            192.2444219066937
+        ],
+        "F": [
+            16.300408163265306,
+            192.51470588235293
+        ],
+        "G": [
+            109.21591836734694,
+            245.8051470588235
+        ]
+    },
+    "problem_choices": [
+        256.785,
+        280.592,
+        305.47,
+        374.123
+    ],
+    "choices_precise_value": [
+        256.785,
+        280.592,
+        305.47,
+        374.123
+    ],
+    "problem_answer": 280.592,
+    "total_time": 17.664089,
+    "solution_predicate": "Equals(93.5307436089, AreaOf(Regular(Hexagon(A, B, F, G, E, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Hexagon(A, B, F, G, E, C), 3.14 = pi, 6 = DE\n\nStep 2:\nTheorem: Regular Hexagon(A, B, F, G, E, C) Area formula by formula 2\nPremises : Hexagon(A, B, F, G, E, C)\nConclusions: Area(Regular(Hexagon(A, B, F, G, E, C))) = (6 * sin(2 * (pi / 6)) * DE ** 2) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : 6 = DE, 3.14 = pi, Area(Regular(Hexagon(A, B, F, G, E, C))) = (6 * sin(2 * (pi / 6)) * DE ** 2) / 2\nConclusions: (6 * 6 ** 2 * sin(2 * (3.14 / 6))) / 2 = Area(Regular(Hexagon(A, B, F, G, E, C)))\n\nStep 4:\nTheorem: Evaluate\nPremises : (6 * 6 ** 2 * sin(2 * (3.14 / 6))) / 2 = Area(Regular(Hexagon(A, B, F, G, E, C)))\nConclusions: 93.53 = Area(Regular(Hexagon(A, B, F, G, E, C)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, G)",
+        "Line(G, F)",
+        "Line(F, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, F)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, G)",
+        "Line(G, E)",
+        "Equals(LengthOf(Line(E, D)), 6.0)"
+    ],
+    "correct": false
+}

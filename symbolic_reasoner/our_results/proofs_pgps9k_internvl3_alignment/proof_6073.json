@@ -1,0 +1,71 @@
+{
+    "problem_id": "6073",
+    "solved": true,
+    "problem_text": "Find the diameter.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 10)",
+        "Equals(MeasureOf(Arc(D, C)), 90)",
+        "Find(DiameterOf(Circle(B)))",
+        "Line(A, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnCircle(D, Circle(B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AB"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            53.620000000000005,
+            54.714285714285715
+        ],
+        "B": [
+            114.55013202931745,
+            115.53034372532827
+        ],
+        "D": [
+            200.41061224489795,
+            115.68163265306121
+        ],
+        "C": [
+            113.80571428571429,
+            201.97387755102042
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        20.0,
+        31.416
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        20.0,
+        31.416
+    ],
+    "problem_answer": 20.0,
+    "total_time": 5.436004,
+    "solution_predicate": "Equals(20.0, Mul(2.0, radius_B))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(B, radius_B), 10 = AB\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_B)\nConclusions: radius_B = AB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = AB, 10 = AB\nConclusions: 10 = radius_B\n\nStep 4:\nTheorem: Evaluate\nPremises : 10 = radius_B\nConclusions: 20 = 2 * radius_B\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnCircle(D, Circle(B, radius_B))",
+        "Equals(LengthOf(Line(A, B)), 10.0)",
+        "Equals(MeasureOf(Arc(C, B, D)), Mul(pi, Div(90.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,69 @@
+{
+    "problem_id": "3272",
+    "solved": true,
+    "problem_text": "Find AB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4x)",
+        "Equals(LengthOf(Line(C, B)), 3x+3)",
+        "Equals(MeasureOf(Angle(C, A, B)), 42)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            271.6635101010101,
+            42.495714285714286
+        ],
+        "A": [
+            53.93939393939394,
+            237.5257142857143
+        ],
+        "B": [
+            270.82070707070704,
+            237.5257142857143
+        ]
+    },
+    "problem_choices": [
+        8.319,
+        9.239,
+        17.96,
+        19.946
+    ],
+    "choices_precise_value": [
+        8.319,
+        9.239,
+        17.96,
+        19.946
+    ],
+    "problem_answer": 19.946,
+    "total_time": 15.401347,
+    "solution_predicate": "Equals(19.9462721601, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 3 + 3 * x = BC, 4 * x = AB, \u2220ACB, pi * (42 / 180) = \u2220BAC, \u2220ABC, BC, AB, AB \u22a5 BC, 3.14 = pi, \u2220CBA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 7:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, AB \u22a5 BC, \u2220ACB\nConclusions: AB / BC = tan(\u2220ACB)\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220ABC = 2 * pi - \u2220CBA, (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 9:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, \u2220CBA = 2 * pi - \u2220ABC, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, pi / 2 = \u2220CBA, pi * (42 / 180) = \u2220BAC, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (42 / 180) + \u2220ACB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ABC, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220CBA\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = 2 * pi - \u2220CBA, 2 * 3.14 - pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220CBA, 3.14 = pi / 2 + pi * (42 / 180) + \u2220ACB, 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\nConclusions: 0.84 = \u2220ACB\n\nStep 15:\nTheorem: Substitution\nPremises : AB / BC = tan(\u2220ACB), 4 * x = AB, 0.84 = \u2220ACB, 3 + 3 * x = BC\nConclusions: tan(0.84) = (4 * x) / (3 + 3 * x)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 4 * x = AB, tan(0.84) = (4 * x) / (3 + 3 * x)\nConclusions: 19.95 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), Mul(4.0, x))",
+        "Equals(LengthOf(Line(C, B)), Add(Mul(3.0, x), 3.0))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

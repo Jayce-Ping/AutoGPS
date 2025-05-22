@@ -1,0 +1,81 @@
+{
+    "problem_id": "2580",
+    "solved": true,
+    "problem_text": "A B is a diameter, A C = 8 inches, and B C = 15 inches. Find the circumference of the circle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A,C)),8)",
+        "Equals(LengthOf(Line(B,C)),15)",
+        "Find(CircumferenceOf(Circle(D)))",
+        "IsDiameterOf(Line(A,B),Circle(D))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "PointLiesOnLine(D, Line(A, B))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "DB",
+        "AC",
+        "CB"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "C": [
+            136.55555555555554,
+            317.77777777777777
+        ],
+        "B": [
+            406.3333333333333,
+            206.66666666666666
+        ],
+        "A": [
+            92.11111111111111,
+            207.55555555555554
+        ],
+        "D": [
+            248.55555555555554,
+            207.55555555555554
+        ]
+    },
+    "problem_choices": [
+        "8.5 \\pi",
+        "15 \\pi",
+        "16 \\pi",
+        "17 \\pi"
+    ],
+    "choices_precise_value": [
+        26.703537555513243,
+        47.12388980384689,
+        50.26548245743669,
+        53.40707511102649
+    ],
+    "problem_answer": 53.40707511102649,
+    "total_time": 44.058389,
+    "solution_predicate": "Equals(53.4070751083, CircumferenceOf(Circle(D, radius_0_0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = AC, AC, AB, 15 = BC, BC, C on \u2299(D, radius_0_0), 3.14 = pi, IsDiameterOf(AB, \u2299(D, radius_0_0)), Circumference(\u2299(D, radius_0_0))\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Thales Theorem\nPremises : IsDiameterOf(AB, \u2299(D, radius_0_0)), C on \u2299(D, radius_0_0)\nConclusions: AC \u22a5 BC\n\nStep 4:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AB, \u2299(D, radius_0_0))\nConclusions: 2 * radius_0_0 = AB\n\nStep 5:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(D, radius_0_0))\nConclusions: pi * 2 * radius_0_0 = Circumference(\u2299(D, radius_0_0))\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AC \u22a5 BC\nConclusions: AB = SqrtOf(AC ** 2 + BC ** 2)\n\nStep 7:\nTheorem: Substitution\nPremises : pi * 2 * radius_0_0 = Circumference(\u2299(D, radius_0_0)), 3.14 = pi\nConclusions: 3.14 * 2 * radius_0_0 = Circumference(\u2299(D, radius_0_0))\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * radius_0_0 = AB, 15 = BC, 8 = AC, AB = SqrtOf(AC ** 2 + BC ** 2)\nConclusions: SqrtOf(15 ** 2 + 8 ** 2) = 2 * radius_0_0\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * 2 * radius_0_0 = Circumference(\u2299(D, radius_0_0)), 2 * radius_0_0 = AB\nConclusions: AB = 0.32 * Circumference(\u2299(D, radius_0_0))\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_0_0 = AB, AB = 0.32 * Circumference(\u2299(D, radius_0_0))\nConclusions: 2 * radius_0_0 = 0.32 * Circumference(\u2299(D, radius_0_0))\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(15 ** 2 + 8 ** 2) = 2 * radius_0_0, 2 * radius_0_0 = 0.32 * Circumference(\u2299(D, radius_0_0))\nConclusions: SqrtOf(15 ** 2 + 8 ** 2) = 0.32 * Circumference(\u2299(D, radius_0_0))\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : SqrtOf(15 ** 2 + 8 ** 2) = 0.32 * Circumference(\u2299(D, radius_0_0))\nConclusions: 53.41 = Circumference(\u2299(D, radius_0_0))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Circle(D, radius_0_0)",
+        "IsDiameterOf(Line(A, B), Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), 15.0)"
+    ],
+    "correct": true
+}

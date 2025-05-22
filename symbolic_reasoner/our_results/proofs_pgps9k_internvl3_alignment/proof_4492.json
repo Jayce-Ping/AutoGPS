@@ -1,0 +1,107 @@
+{
+    "problem_id": "4492",
+    "solved": true,
+    "problem_text": "Find the area of the rhombus.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, E)), 13)",
+        "Equals(LengthOf(Line(D, E)), 11)",
+        "Find(AreaOf(Rhombus(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "BE",
+        "BD",
+        "ED",
+        "DC",
+        "BC",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            82.18385070214339,
+            83.47662337662338
+        ],
+        "B": [
+            143.20569105691058,
+            144.04342857142856
+        ],
+        "C": [
+            203.6711012564671,
+            83.58701298701298
+        ],
+        "D": [
+            142.98979223125565,
+            22.947301587301588
+        ],
+        "E": [
+            142.98979223125565,
+            83.73714285714286
+        ]
+    },
+    "problem_choices": [
+        48.0,
+        143.0,
+        286.0,
+        572.0
+    ],
+    "choices_precise_value": [
+        48.0,
+        143.0,
+        286.0,
+        572.0
+    ],
+    "problem_answer": 286.0,
+    "total_time": 193.685195,
+    "solution_predicate": "Equals(286.0, AreaOf(Rhombus(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(A, B, C, D), E on AC, 11 = DE, 13 = AE, E on BD\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 3:\nTheorem: Area formula of Rhombus(A, B, C, D)\nPremises : Rhombus(A, B, C, D)\nConclusions: Area(Rhombus(A, B, C, D)) = (AC * BD) / 2\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on AC\nConclusions: AC = AE + CE\n\nStep 5:\nTheorem: Line Segment Split\nPremises : E on BD\nConclusions: BD = BE + DE\n\nStep 6:\nTheorem: Parallelogram Diagonals Bisect\nPremises : E on AC, Parallelogram(A, B, C, D), E on BD\nConclusions: BE = DE, AE = CE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 11 = DE, BE = DE\nConclusions: 11 = BE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 13 = AE, AE = CE\nConclusions: 13 = CE\n\nStep 9:\nTheorem: Evaluate\nPremises : 11 = DE, 11 = BE\nConclusions: 22 = BE + DE\n\nStep 10:\nTheorem: Evaluate\nPremises : 13 = CE, 13 = AE\nConclusions: 26 = AE + CE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 22 = BE + DE, BD = BE + DE\nConclusions: 22 = BD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 26 = AE + CE, AC = AE + CE\nConclusions: 26 = AC\n\nStep 13:\nTheorem: Evaluate\nPremises : 26 = AC, 22 = BD\nConclusions: 286 = (AC * BD) / 2\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : Area(Rhombus(A, B, C, D)) = (AC * BD) / 2, 286 = (AC * BD) / 2\nConclusions: 286 = Area(Rhombus(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Equals(LengthOf(Line(A, E)), 13.0)",
+        "Equals(LengthOf(Line(D, E)), 11.0)"
+    ],
+    "correct": true
+}

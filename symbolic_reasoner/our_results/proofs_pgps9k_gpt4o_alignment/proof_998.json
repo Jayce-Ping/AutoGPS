@@ -1,0 +1,102 @@
+{
+    "problem_id": "998",
+    "solved": true,
+    "problem_text": "If \\triangle CAB \\sim \\triangle FDE, find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 7)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, B)), 9)",
+        "Equals(LengthOf(Line(D, E)), 14)",
+        "Equals(LengthOf(Line(D, F)), 20)",
+        "Equals(LengthOf(Line(F, E)), y)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Similar(Triangle(C,A,B),Triangle(F,D,E))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "CB",
+        "DE",
+        "DF",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.391304347826086,
+            159.68571428571428
+        ],
+        "B": [
+            96.0,
+            159.68571428571428
+        ],
+        "C": [
+            75.13043478260869,
+            62.89071428571428
+        ],
+        "D": [
+            147.60474308300394,
+            208.41194805194806
+        ],
+        "E": [
+            304.5691699604743,
+            208.15948051948052
+        ],
+        "F": [
+            263.1304347826087,
+            14.348571428571429
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        14.0,
+        16.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        12.0,
+        14.0,
+        16.0,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 12.083643,
+    "solution_predicate": "Equals(18.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABC ~ \u25b3DEF, 9 = BC, 14 = DE, 7 = AB, y = EF\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DEF\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_e_f = BC / EF, sim_ratio_triangle_a_b_c_triangle_d_e_f = AB / DE\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_c_triangle_d_e_f = BC / EF, y = EF, 9 = BC\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_e_f = 9 / y\n\nStep 4:\nTheorem: Substitution\nPremises : 7 = AB, 14 = DE, sim_ratio_triangle_a_b_c_triangle_d_e_f = AB / DE\nConclusions: 7 / 14 = sim_ratio_triangle_a_b_c_triangle_d_e_f\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 7 / 14 = sim_ratio_triangle_a_b_c_triangle_d_e_f, sim_ratio_triangle_a_b_c_triangle_d_e_f = 9 / y\nConclusions: 7 / 14 = 9 / y\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 7 / 14 = 9 / y, y = EF\nConclusions: 18 = EF\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 18 = EF, y = EF\nConclusions: 18 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Similar(Triangle(C, A, B), Triangle(F, D, E))",
+        "Equals(LengthOf(Line(A, B)), 7.0)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, B)), 9.0)",
+        "Equals(LengthOf(Line(D, E)), 14.0)",
+        "Equals(LengthOf(Line(D, F)), 20.0)",
+        "Equals(LengthOf(Line(F, E)), y)"
+    ],
+    "correct": true
+}

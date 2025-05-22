@@ -1,0 +1,102 @@
+{
+    "problem_id": "2598",
+    "solved": true,
+    "problem_text": "Find the perimeter of \\triangle R U W if \\triangle R U W \\sim \\triangle S T V, S T = 24, V S = 12, V T = 18 and U W = 21.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(S, Line(R, U))",
+        "PointLiesOnLine(T, Line(R, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "Similar(Triangle(R, U, W), Triangle(S, T, V))",
+        "Equals(LengthOf(Line(S, T)), 24)",
+        "Equals(LengthOf(Line(V, S)), 12)",
+        "Equals(LengthOf(Line(V, T)), 18)",
+        "Equals(LengthOf(Line(U, W)), 21)",
+        "Find(PerimeterOf(Triangle(R, U, W)))"
+    ],
+    "point_instances": [
+        "V",
+        "T",
+        "W",
+        "S",
+        "U",
+        "R"
+    ],
+    "line_instances": [
+        "RS",
+        "RT",
+        "RU",
+        "ST",
+        "SU",
+        "TU",
+        "VT",
+        "VS",
+        "WR",
+        "WU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "V": [
+            213.1246290801187,
+            99.40652818991097
+        ],
+        "T": [
+            267.7240356083086,
+            189.3175074183976
+        ],
+        "W": [
+            206.59643916913947,
+            48.6646884272997
+        ],
+        "S": [
+            124.40059347181008,
+            190.50445103857567
+        ],
+        "U": [
+            291.75964391691394,
+            189.61424332344214
+        ],
+        "R": [
+            65.64688427299703,
+            189.61424332344214
+        ]
+    },
+    "problem_choices": [
+        "63",
+        "68",
+        "70",
+        "75"
+    ],
+    "choices_precise_value": [
+        63.0,
+        68.0,
+        70.0,
+        75.0
+    ],
+    "problem_answer": 63.0,
+    "total_time": 41.420573,
+    "solution_predicate": "Equals(63.0, PerimeterOf(Triangle(R, U, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 18 = TV, 21 = UW, \u25b3RUW ~ \u25b3STV, 12 = SV, \u25b3STV, 24 = ST\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3RUW ~ \u25b3STV\nConclusions: sim_ratio_triangle_r_u_w_triangle_s_t_v = Perimeter(\u25b3RUW) / Perimeter(\u25b3STV), sim_ratio_triangle_r_u_w_triangle_s_t_v = UW / TV\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : \u25b3STV\nConclusions: Perimeter(\u25b3STV) = ST + SV + TV\n\nStep 4:\nTheorem: Substitution\nPremises : 21 = UW, 18 = TV, sim_ratio_triangle_r_u_w_triangle_s_t_v = UW / TV\nConclusions: 21 / 18 = sim_ratio_triangle_r_u_w_triangle_s_t_v\n\nStep 5:\nTheorem: Substitution\nPremises : 24 = ST, 18 = TV, 12 = SV, Perimeter(\u25b3STV) = ST + SV + TV\nConclusions: 12 + 18 + 24 = Perimeter(\u25b3STV)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_r_u_w_triangle_s_t_v = Perimeter(\u25b3RUW) / Perimeter(\u25b3STV), 21 / 18 = sim_ratio_triangle_r_u_w_triangle_s_t_v\nConclusions: 21 / 18 = Perimeter(\u25b3RUW) / Perimeter(\u25b3STV)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 12 + 18 + 24 = Perimeter(\u25b3STV), 21 / 18 = Perimeter(\u25b3RUW) / Perimeter(\u25b3STV)\nConclusions: 63 = Perimeter(\u25b3RUW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(T, U)",
+        "Line(V, T)",
+        "Line(V, S)",
+        "Line(W, R)",
+        "Line(W, U)",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(S, Line(R, U))",
+        "PointLiesOnLine(T, Line(R, U))",
+        "PointLiesOnLine(T, Line(S, U))",
+        "Similar(Triangle(R, U, W), Triangle(S, T, V))",
+        "Equals(LengthOf(Line(S, T)), 24.0)",
+        "Equals(LengthOf(Line(V, S)), 12.0)",
+        "Equals(LengthOf(Line(V, T)), 18.0)",
+        "Equals(LengthOf(Line(U, W)), 21.0)"
+    ],
+    "correct": true
+}

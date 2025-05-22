@@ -1,0 +1,65 @@
+{
+    "problem_id": "2423",
+    "solved": true,
+    "problem_text": "Find A B if \\triangle A B C is an isosceles triangle with A B \\cong B C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), x-3)",
+        "Equals(LengthOf(Line(B, A)), 2x-7)",
+        "Equals(LengthOf(Line(C, B)), 4x-21)",
+        "Isosceles(Triangle(A,B,C))",
+        "Equals(LengthOf(Line(A,B)),Line(B,C))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            413.11650485436894,
+            397.5728155339806
+        ],
+        "B": [
+            255.83495145631065,
+            80.58252427184466
+        ],
+        "A": [
+            99.52427184466018,
+            397.5728155339806
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "7",
+        "11"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        7.0,
+        11.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 4.893545,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * x - 21 = BC, 2 * x - 7 = AB, AB = BC\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 2 * x - 7 = AB, AB = BC\nConclusions: 2 * x - 7 = BC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x - 21 = BC, 2 * x - 7 = BC\nConclusions: 2 * x - 7 = 4 * x - 21\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 2 * x - 7 = 4 * x - 21, 2 * x - 7 = AB\nConclusions: 7 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Isosceles(Triangle(A, B, C))",
+        "Equals(LengthOf(Line(A, C)), Sub(x, 3.0))",
+        "Equals(LengthOf(Line(B, A)), Sub(Mul(2.0, x), 7.0))",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(4.0, x), 21.0))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))"
+    ],
+    "correct": true
+}

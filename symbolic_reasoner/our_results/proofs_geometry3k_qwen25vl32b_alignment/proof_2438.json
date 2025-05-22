@@ -1,0 +1,89 @@
+{
+    "problem_id": "2438",
+    "solved": true,
+    "problem_text": "Find W R.",
+    "logic_forms": [
+        "PointLiesOnLine(R, Line(W, T))",
+        "PointLiesOnLine(R, Line(S, V))",
+        "Equals(LengthOf(Line(W, R)), x+6)",
+        "Equals(LengthOf(Line(V, T)), 10)",
+        "Equals(LengthOf(Line(W, S)), 8)",
+        "Equals(LengthOf(Line(T, R)), 2x+6)",
+        "Equals(MeasureOf(Angle(R, T, V)), MeasureOf(Angle(R, W, S)))",
+        "Find(LengthOf(Line(W,R)))"
+    ],
+    "point_instances": [
+        "R",
+        "V",
+        "T",
+        "S",
+        "W"
+    ],
+    "line_instances": [
+        "WR",
+        "WT",
+        "RT",
+        "SR",
+        "SV",
+        "RV",
+        "WS",
+        "VT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            422.20382165605093,
+            202.73248407643308
+        ],
+        "V": [
+            473.796178343949,
+            314.19745222929936
+        ],
+        "T": [
+            789.7197452229299,
+            182.35031847133757
+        ],
+        "S": [
+            373.796178343949,
+            102.09554140127389
+        ],
+        "W": [
+            116.47133757961782,
+            221.20382165605093
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "8",
+        "10",
+        "12"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 31.649662,
+    "solution_predicate": "Equals(8.0, LengthOf(Line(W, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RTV = \u2220RWS, RS, \u2220TWS, SW, RV, 6 + x = RW, 3.14 = pi, \u2220WSV, RW, R on TW, \u2220SVT, R on SV, 10 = TV, \u2220WSR, TV, \u2220TVS, \u2220VSW, 6 + 2 * x = RT, 8 = SW, RT, \u2220TVS\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : RW, SW, RS\nConclusions: \u25b3RSW\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220TWS, R on TW\nConclusions: \u2220RWS = \u2220TWS\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : R on SV, R on TW\nConclusions: \u2220TRV = \u2220WRS, \u2220SRW = \u2220VRT\n\nStep 5:\nTheorem: Same Angle\nPremises : R on SV, \u2220SVT\nConclusions: \u2220RVT = \u2220SVT\n\nStep 6:\nTheorem: Same Angle\nPremises : R on SV, \u2220WSV\nConclusions: \u2220WSR = \u2220WSV\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220WSR\nConclusions: \u2220WSR = 2 * pi - \u2220RSW\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220TVS, R on SV\nConclusions: \u2220TVR = \u2220TVS\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220VSW, R on SV\nConclusions: \u2220RSW = \u2220VSW\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : TV, RT, RV\nConclusions: \u25b3RTV\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220TVS\nConclusions: \u2220TVS = 2 * pi - \u2220SVT\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(W, S, R)\nPremises : \u25b3RSW\nConclusions: pi = \u2220RWS + \u2220SRW + \u2220WSR\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RWS = \u2220TWS, \u2220RTV = \u2220RWS\nConclusions: \u2220RTV = \u2220TWS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WSR = 2 * pi - \u2220RSW, \u2220WSR = \u2220WSV\nConclusions: \u2220WSV = 2 * pi - \u2220RSW\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(R, T, V)\nPremises : \u25b3RTV\nConclusions: pi = \u2220RTV + \u2220TVR + \u2220VRT\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220WSR = \u2220WSV, \u2220SRW = \u2220VRT, \u2220RWS = \u2220TWS, pi = \u2220RWS + \u2220SRW + \u2220WSR, 3.14 = pi\nConclusions: 3.14 = \u2220TWS + \u2220VRT + \u2220WSV\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220TVR = \u2220TVS, pi = \u2220RTV + \u2220TVR + \u2220VRT, \u2220RTV = \u2220TWS, 3.14 = pi\nConclusions: 3.14 = \u2220TVS + \u2220TWS + \u2220VRT\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220TVS + \u2220TWS + \u2220VRT, \u2220TVS = 2 * pi - \u2220SVT, 3.14 = \u2220TWS + \u2220VRT + \u2220WSV, \u2220WSV = 2 * pi - \u2220RSW\nConclusions: \u2220RSW = \u2220SVT\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSW = \u2220SVT, \u2220RSW = \u2220VSW\nConclusions: \u2220SVT = \u2220VSW\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RVT = \u2220SVT, \u2220SVT = \u2220VSW, \u2220RSW = \u2220VSW\nConclusions: \u2220RSW = \u2220RVT\n\nStep 21:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220TRV = \u2220WRS, \u2220RTV = \u2220RWS, \u2220RSW = \u2220RVT\nConclusions: \u25b3RSW ~ \u25b3RVT\n\nStep 22:\nTheorem: Similar Definition\nPremises : \u25b3RSW ~ \u25b3RVT\nConclusions: \u2220RTV = \u2220RWS, sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, \u2220SRW = \u2220VRT, sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV, \u2220RSW = \u2220RVT\n\nStep 23:\nTheorem: Substitution\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, 6 + x = RW, 6 + 2 * x = RT\nConclusions: sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x)\n\nStep 24:\nTheorem: Substitution\nPremises : 8 = SW, sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV, 10 = TV\nConclusions: 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x), 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t\nConclusions: 8 / 10 = (6 + x) / (6 + 2 * x)\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 8 / 10 = (6 + x) / (6 + 2 * x), 6 + x = RW\nConclusions: 8 = RW\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, R)",
+        "Line(W, T)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(R, V)",
+        "Line(W, S)",
+        "Line(V, T)",
+        "PointLiesOnLine(R, Line(W, T))",
+        "PointLiesOnLine(R, Line(S, V))",
+        "Equals(LengthOf(Line(W, R)), Add(x, 6.0))",
+        "Equals(LengthOf(Line(V, T)), 10.0)",
+        "Equals(LengthOf(Line(W, S)), 8.0)",
+        "Equals(LengthOf(Line(T, R)), Add(Mul(2.0, x), 6.0))",
+        "Equals(MeasureOf(Angle(R, T, V)), MeasureOf(Angle(R, W, S)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,90 @@
+{
+    "problem_id": "2419",
+    "solved": true,
+    "problem_text": "The rectangle is inscribed into the circle. Find the exact circumference of the circle.",
+    "logic_forms": [
+        "Equals(CircumferenceOf(Circle(C, radius_0_0)), Mul(2, Pi, 5))",
+        "Equals(DiameterOf(Circle(C, radius_0_0)), 10)",
+        "Equals(LengthOf(Line(D, E)), 8)",
+        "Equals(LengthOf(Line(E, B)), 6)",
+        "Equals(RadiusOf(Circle(C, radius_0_0)), 5)",
+        "Find(CircumferenceOf(Circle(C, radius_0_0)))",
+        "InscribedIn(Rectangle(A, B, D, E), Circle(C, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DE",
+        "EB",
+        "AB",
+        "DA"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            144.5,
+            349.58333333333337
+        ],
+        "B": [
+            355.33333333333337,
+            235.41666666666669
+        ],
+        "C": [
+            207.83333333333334,
+            213.33333333333334
+        ],
+        "D": [
+            58.25,
+            191.25
+        ],
+        "E": [
+            269.5,
+            77.91666666666667
+        ]
+    },
+    "problem_choices": [
+        "8 \\pi",
+        "10 \\pi",
+        "16 \\pi",
+        "20 \\pi"
+    ],
+    "choices_precise_value": [
+        25.132741228718345,
+        31.41592653589793,
+        50.26548245743669,
+        62.83185307179586
+    ],
+    "problem_answer": 31.41592653589793,
+    "total_time": 67.633861,
+    "solution_predicate": "Equals(31.415926536, CircumferenceOf(Circle(C, radius_0_0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 * 5 * Pi = Circumference(\u2299(C, radius_0_0)), 3.14 = pi, 5 = radius_0_0, Circumference(\u2299(C, radius_0_0))\n\nStep 2:\nTheorem: Evaluate\nPremises : 5 = radius_0_0, 3.14 = pi\nConclusions: 31.42 = pi * 2 * radius_0_0\n\nStep 3:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(C, radius_0_0))\nConclusions: pi * 2 * radius_0_0 = Circumference(\u2299(C, radius_0_0))\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * 2 * radius_0_0 = Circumference(\u2299(C, radius_0_0)), 2 * 5 * Pi = Circumference(\u2299(C, radius_0_0))\nConclusions: 2 * 5 * Pi = pi * 2 * radius_0_0\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 31.42 = pi * 2 * radius_0_0, 2 * 5 * Pi = pi * 2 * radius_0_0\nConclusions: 31.42 = 2 * 5 * Pi\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 31.42 = 2 * 5 * Pi, 2 * 5 * Pi = Circumference(\u2299(C, radius_0_0))\nConclusions: 31.42 = Circumference(\u2299(C, radius_0_0))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "Circle(C, radius_0_0)",
+        "InscribedIn(Rectangle(A, B, E, D), Circle(C, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "Equals(CircumferenceOf(Circle(C, radius_0_0)), Mul(2.0, Pi, 5.0))",
+        "Equals(Mul(2.0, radius_0_0), 10.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)",
+        "Equals(LengthOf(Line(E, B)), 6.0)",
+        "Equals(radius_0_0, 5.0)"
+    ],
+    "correct": true
+}

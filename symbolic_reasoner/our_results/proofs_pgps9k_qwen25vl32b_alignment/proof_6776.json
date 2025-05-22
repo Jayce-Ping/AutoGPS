@@ -1,0 +1,109 @@
+{
+    "problem_id": "6776",
+    "solved": true,
+    "problem_text": "In rectangle ABCD, CD = 18, and CE = 19.8. Find the length of BE.",
+    "logic_forms": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Rectangle(A,B,C,D)",
+        "Equals(LengthOf(Line(C,D)),18)",
+        "Equals(LengthOf(Line(C,E)),19.8)",
+        "Find(LengthOf(Line(B,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "E",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "BE",
+        "BD",
+        "ED",
+        "AD",
+        "BC",
+        "BA",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            52.48543689320388,
+            40.053714285714285
+        ],
+        "C": [
+            261.43689320388347,
+            40.64857142857143
+        ],
+        "E": [
+            156.96116504854368,
+            93.93785714285714
+        ],
+        "A": [
+            52.15533980582524,
+            148.49396825396826
+        ],
+        "D": [
+            260.4466019417476,
+            148.71428571428572
+        ]
+    },
+    "problem_choices": [
+        9.9,
+        18.0,
+        19.8,
+        39.6
+    ],
+    "choices_precise_value": [
+        9.9,
+        18.0,
+        19.8,
+        39.6
+    ],
+    "problem_answer": 19.8,
+    "total_time": 159.18627,
+    "solution_predicate": "Equals(19.8, LengthOf(Line(B, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(A, B, C, D), E on AC, E on BD, 19.8 = CE\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AB \u22a5 AD, AD \u22a5 CD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on AC\nConclusions: AC = AE + CE\n\nStep 5:\nTheorem: Line Segment Split\nPremises : E on BD\nConclusions: BD = BE + DE\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220ABC = \u2220CDA\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 8:\nTheorem: Parallelogram Diagonals Bisect\nPremises : E on BD, Parallelogram(A, B, C, D), E on AC\nConclusions: AE = CE, BE = DE\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220DAB\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220CDA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : AE = CE, 19.8 = CE\nConclusions: 19.8 = AE\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : BD = BE + DE, BE = DE\nConclusions: BE = 0.5 * BD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220CDA, pi / 2 = \u2220CDA, pi / 2 = \u2220DAB\nConclusions: \u2220ABC = \u2220DAB\n\nStep 14:\nTheorem: Evaluate\nPremises : 19.8 = AE, 19.8 = CE\nConclusions: 39.6 = AE + CE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : BE = 0.5 * BD, BE = DE\nConclusions: DE = 0.5 * BD\n\nStep 16:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AD = BC, \u2220ABC = \u2220DAB\nConclusions: \u25b3ABC \u2245 \u25b3BAD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AC = AE + CE, 39.6 = AE + CE\nConclusions: 39.6 = AC\n\nStep 18:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3BAD\nConclusions: AD = BC, AC = BD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 39.6 = AC, AC = BD\nConclusions: 39.6 = BD\n\nStep 20:\nTheorem: Evaluate\nPremises : 39.6 = BD\nConclusions: 19.8 = 0.5 * BD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 19.8 = 0.5 * BD, DE = 0.5 * BD\nConclusions: 19.8 = DE\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 19.8 = DE, BE = DE\nConclusions: 19.8 = BE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Rectangle(A, B, C, D)",
+        "Equals(LengthOf(Line(C, D)), 18.0)",
+        "Equals(LengthOf(Line(C, E)), 19.8)"
+    ],
+    "correct": true
+}

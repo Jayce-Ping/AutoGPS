@@ -1,0 +1,72 @@
+{
+    "problem_id": "2568",
+    "solved": true,
+    "problem_text": "Find x in the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3y + 13)",
+        "Equals(LengthOf(Line(D, C)), 2y + 19)",
+        "Equals(MeasureOf(Angle(B, A, D)), 115)",
+        "Equals(MeasureOf(Angle(D, C, B)), 2x + 41)",
+        "Find(x)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "DA",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            81.92682926829268,
+            290.1544715447155
+        ],
+        "B": [
+            539.650406504065,
+            290.5609756097561
+        ],
+        "C": [
+            476.2357723577236,
+            69.42276422764228
+        ],
+        "D": [
+            17.29268292682927,
+            69.42276422764228
+        ]
+    },
+    "problem_choices": [
+        "37",
+        "41",
+        "78",
+        "115"
+    ],
+    "choices_precise_value": [
+        37.0,
+        41.0,
+        78.0,
+        115.0
+    ],
+    "problem_answer": 37.0,
+    "total_time": 7.131734,
+    "solution_predicate": "Equals(37.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((41 + 2 * x) / 180) = \u2220DCB, 3.14 = pi, pi * (115 / 180) = \u2220BAD, Parallelogram(A, B, C, D)\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BAD = \u2220DCB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (115 / 180) = \u2220BAD, \u2220BAD = \u2220DCB\nConclusions: pi * (115 / 180) = \u2220DCB\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (115 / 180) = \u2220DCB, pi * ((41 + 2 * x) / 180) = \u2220DCB\nConclusions: 3.14 * (115 / 180) = 3.14 * ((41 + 2 * x) / 180)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (115 / 180) = 3.14 * ((41 + 2 * x) / 180)\nConclusions: 37 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(3.0, y), 13.0))",
+        "Equals(LengthOf(Line(D, C)), Add(Mul(2.0, y), 19.0))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(115.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(Add(Mul(2.0, x), 41.0), 180.0)))"
+    ],
+    "correct": true
+}

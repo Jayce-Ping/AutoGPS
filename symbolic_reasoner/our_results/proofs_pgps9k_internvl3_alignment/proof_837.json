@@ -1,0 +1,105 @@
+{
+    "problem_id": "837",
+    "solved": true,
+    "problem_text": "Find QP.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, N)), 6)",
+        "Equals(LengthOf(Line(M, Q)), 5)",
+        "Equals(LengthOf(Line(O, N)), 3\\frac{3}{5})",
+        "Equals(LengthOf(Line(P, Q)), x)",
+        "Line(M, N)",
+        "Line(M, O)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(N, O)",
+        "Line(P, O)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Parallel(Line(Q, N), Line(P, O))",
+        "PointLiesOnLine(N, Line(M, O))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Find(LengthOf(Line(Q,P)))"
+    ],
+    "point_instances": [
+        "P",
+        "O",
+        "N",
+        "M",
+        "Q"
+    ],
+    "line_instances": [
+        "PO",
+        "QN",
+        "PQ",
+        "PM",
+        "QM",
+        "MN",
+        "MO",
+        "NO"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            115.65054945054943,
+            389.6114285714286
+        ],
+        "O": [
+            416.79999999999995,
+            374.3624489795918
+        ],
+        "N": [
+            371.37948717948717,
+            298.88
+        ],
+        "M": [
+            240.46153846153845,
+            83.48816326530613
+        ],
+        "Q": [
+            149.17521367521368,
+            307.3304761904762
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 37.43623,
+    "solution_predicate": "Equals(1.5, LengthOf(Line(Q, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * (3 / 5) = NO, N on MO, 6 = MN, NQ || OP, Q on MP, \u2220NMP, \u2220OMP, x = PQ, 5 = MQ, 7.8 = 6 + 3 * (3 / 5)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : N on MO\nConclusions: MO = MN + NO\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : NQ || OP\nConclusions: \u2220MPO = \u2220MQN, \u2220MNQ = \u2220MOP\n\nStep 4:\nTheorem: Line Segment Split\nPremises : Q on MP\nConclusions: MP = MQ + PQ\n\nStep 5:\nTheorem: Same Angle\nPremises : Q on MP, \u2220NMP\nConclusions: \u2220NMP = \u2220NMQ\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220OMP, N on MO\nConclusions: \u2220NMP = \u2220OMP\n\nStep 7:\nTheorem: Substitution\nPremises : 6 = MN, 3 * (3 / 5) = NO, MO = MN + NO\nConclusions: 6 + 3 * (3 / 5) = MO\n\nStep 8:\nTheorem: Substitution\nPremises : 5 = MQ, MP = MQ + PQ, x = PQ\nConclusions: 5 + x = MP\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMP = \u2220NMQ, \u2220NMP = \u2220OMP\nConclusions: \u2220NMQ = \u2220OMP\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 7.8 = 6 + 3 * (3 / 5), 6 + 3 * (3 / 5) = MO\nConclusions: 7.8 = MO\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 5 + x = MP, MP = MQ + PQ\nConclusions: 5 + x = MQ + PQ\n\nStep 12:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220MPO = \u2220MQN, \u2220MNQ = \u2220MOP, \u2220NMQ = \u2220OMP\nConclusions: \u25b3MNQ ~ \u25b3MOP\n\nStep 13:\nTheorem: Similar Definition\nPremises : \u25b3MNQ ~ \u25b3MOP\nConclusions: sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, \u2220NMQ = \u2220OMP, sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO, \u2220MNQ = \u2220MOP\n\nStep 14:\nTheorem: Substitution\nPremises : 5 + x = MP, sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, 5 = MQ\nConclusions: sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x)\n\nStep 15:\nTheorem: Substitution\nPremises : sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO, 6 = MN, 7.8 = MO\nConclusions: 6 / 7.8 = sim_ratio_triangle_m_n_q_triangle_m_o_p\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, 6 / 7.8 = sim_ratio_triangle_m_n_q_triangle_m_o_p\nConclusions: 6 / 7.8 = MQ / MP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x), 6 / 7.8 = sim_ratio_triangle_m_n_q_triangle_m_o_p\nConclusions: 6 / 7.8 = 5 / (5 + x)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 6 / 7.8 = 5 / (5 + x), MP = MQ + PQ, 5 + x = MQ + PQ, 6 / 7.8 = MQ / MP\nConclusions: 1.5 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, O)",
+        "Line(Q, N)",
+        "Line(P, Q)",
+        "Line(P, M)",
+        "Line(Q, M)",
+        "Line(M, N)",
+        "Line(M, O)",
+        "Line(N, O)",
+        "Line(M, N)",
+        "Line(M, O)",
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(N, O)",
+        "Line(P, O)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Parallel(Line(Q, N), Line(P, O))",
+        "PointLiesOnLine(N, Line(M, O))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Equals(LengthOf(Line(M, N)), 6.0)",
+        "Equals(LengthOf(Line(M, Q)), 5.0)",
+        "Equals(LengthOf(Line(O, N)), Mul(3.0, Div(3.0, 5.0)))",
+        "Equals(LengthOf(Line(P, Q)), x)"
+    ],
+    "correct": false
+}

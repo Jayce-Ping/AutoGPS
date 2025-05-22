@@ -1,0 +1,104 @@
+{
+    "problem_id": "5291",
+    "solved": true,
+    "problem_text": "In \\odot A, m \\angle EAD = 42. Find m \\widehat BC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(E, A, D)), 42)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(C, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(E, Circle(A))",
+        "PointLiesOnLine(A, Line(B, D))",
+        "PointLiesOnLine(A, Line(C, E))",
+        "Circle(A)",
+        "Equals(MeasureOf(Angle(E,A,D)),42)",
+        "Find(MeasureOf(Arc(B,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "E",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "CA",
+        "CE",
+        "AE",
+        "DA",
+        "DB",
+        "AB"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "C": [
+            40.579949238578685,
+            129.9697142857143
+        ],
+        "D": [
+            181.3886874546773,
+            199.1643537414966
+        ],
+        "E": [
+            207.98042059463378,
+            145.25986394557825
+        ],
+        "A": [
+            123.8095238095238,
+            137.3015873015873
+        ],
+        "B": [
+            67.44379985496737,
+            75.52136054421769
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        48.0,
+        52.0,
+        108.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        48.0,
+        52.0,
+        108.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 6.28791,
+    "solution_predicate": "Equals(0.7330382858, MeasureOf(Arc(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on CE, Arc(BAC), pi * (42 / 180) = \u2220DAE, A on BD\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BAC)\nConclusions: \u2220BAC = Arc(BAC)\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : A on CE, A on BD\nConclusions: \u2220BAC = \u2220DAE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DAE, \u2220BAC = Arc(BAC), pi * (42 / 180) = \u2220DAE\nConclusions: pi * (42 / 180) = Arc(BAC)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi * (42 / 180) = Arc(BAC)\nConclusions: 0.73 = Arc(BAC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(A, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Circle(A, radius_A)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(C, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(E, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(B, D))",
+        "PointLiesOnLine(A, Line(C, E))",
+        "Circle(A, radius_A)",
+        "Equals(MeasureOf(Angle(D, A, E)), Mul(pi, Div(42.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, E)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

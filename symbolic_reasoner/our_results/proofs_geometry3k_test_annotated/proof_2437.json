@@ -1,0 +1,90 @@
+{
+    "problem_id": "2437",
+    "solved": true,
+    "problem_text": "Find m \\angle V X W.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(Y, V))",
+        "PointLiesOnLine(X, Line(Z, W))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "Equals(MeasureOf(Angle(V, X, Z)), 2x+65)",
+        "Equals(MeasureOf(Angle(Y, X, W)), 4x+15)",
+        "Find(MeasureOf(Angle(V, X, W)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "V",
+        "Z",
+        "W"
+    ],
+    "line_instances": [
+        "YX",
+        "YV",
+        "XV",
+        "ZX",
+        "ZW",
+        "XW"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "X": [
+            202.0408163265306,
+            141.6472303206997
+        ],
+        "Y": [
+            123.9067055393586,
+            172.25947521865888
+        ],
+        "V": [
+            279.59183673469386,
+            110.45189504373177
+        ],
+        "Z": [
+            140.81632653061223,
+            83.0466472303207
+        ],
+        "W": [
+            262.6822157434402,
+            198.2069970845481
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "65",
+        "115",
+        "180"
+    ],
+    "choices_precise_value": [
+        25.0,
+        65.0,
+        115.0,
+        180.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 8.662586,
+    "solution_predicate": "Equals(1.1344640138, MeasureOf(Angle(W, X, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((15 + 4 * x) / 180) = \u2220YXW, \u2220WXV, \u2220YXW, pi * ((65 + 2 * x) / 180) = \u2220VXZ, X on WZ, X on VY\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((15 + 4 * x) / 180) = \u2220YXW\nConclusions: 3.14 * ((15 + 4 * x) / 180) = \u2220YXW\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220YXW, \u2220WXV\nConclusions: pi = \u2220WXV + \u2220YXW\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((65 + 2 * x) / 180) = \u2220VXZ, 3.14 = pi\nConclusions: 3.14 * ((65 + 2 * x) / 180) = \u2220VXZ\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : X on VY, X on WZ\nConclusions: \u2220VXZ = \u2220YXW\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220WXV + \u2220YXW\nConclusions: 3.14 = \u2220WXV + \u2220YXW\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((65 + 2 * x) / 180) = \u2220VXZ, 3.14 * ((65 + 2 * x) / 180) = \u2220VXZ\nConclusions: 3.14 * ((65 + 2 * x) / 180) = pi * ((65 + 2 * x) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((65 + 2 * x) / 180) = \u2220VXZ, pi * ((15 + 4 * x) / 180) = \u2220YXW, \u2220VXZ = \u2220YXW\nConclusions: pi * ((15 + 4 * x) / 180) = pi * ((65 + 2 * x) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * x) / 180) = \u2220YXW, pi * ((15 + 4 * x) / 180) = pi * ((65 + 2 * x) / 180)\nConclusions: pi * ((65 + 2 * x) / 180) = \u2220YXW\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((65 + 2 * x) / 180) = \u2220YXW, 3.14 * ((65 + 2 * x) / 180) = pi * ((65 + 2 * x) / 180)\nConclusions: 3.14 * ((65 + 2 * x) / 180) = \u2220YXW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((65 + 2 * x) / 180) = \u2220YXW, 3.14 * ((15 + 4 * x) / 180) = \u2220YXW\nConclusions: 3.14 * ((15 + 4 * x) / 180) = 3.14 * ((65 + 2 * x) / 180)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((15 + 4 * x) / 180) = 3.14 * ((65 + 2 * x) / 180), 3.14 * ((65 + 2 * x) / 180) = \u2220YXW, 3.14 = \u2220WXV + \u2220YXW\nConclusions: 1.13 = \u2220WXV\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, X)",
+        "Line(Y, V)",
+        "Line(X, V)",
+        "Line(Z, X)",
+        "Line(Z, W)",
+        "Line(X, W)",
+        "Circle(X, radius_0_0)",
+        "PointLiesOnLine(X, Line(Y, V))",
+        "PointLiesOnLine(X, Line(Z, W))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "Equals(MeasureOf(Angle(V, X, Z)), Mul(pi, Div(Add(Mul(2.0, x), 65.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, X, W)), Mul(pi, Div(Add(Mul(4.0, x), 15.0), 180.0)))"
+    ],
+    "correct": true
+}

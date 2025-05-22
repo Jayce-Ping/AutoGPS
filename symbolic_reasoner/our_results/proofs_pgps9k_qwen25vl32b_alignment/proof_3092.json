@@ -1,0 +1,93 @@
+{
+    "problem_id": "3092",
+    "solved": true,
+    "problem_text": "m \\angle 19 = 100+20x, m \\angle 20 = 20x. Find the measure of \\angle 20.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(20)))",
+        "Equals(MeasureOf(Angle(E, C, A)), MeasureOf(Angle(19)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(MeasureOf(Angle(19)),100+20x)",
+        "Equals(MeasureOf(Angle(20)),20x)",
+        "Find(MeasureOf(Angle(20)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "EC",
+        "EB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.060218112849693,
+            124.51737451737453
+        ],
+        "B": [
+            49.12280701754386,
+            15.971428571428572
+        ],
+        "C": [
+            144.68201754385964,
+            116.06160714285716
+        ],
+        "D": [
+            263.68969298245617,
+            108.72857142857144
+        ],
+        "E": [
+            222.95825771324866,
+            198.3083743842365
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        40.0,
+        60.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        40.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 8.356092,
+    "solution_predicate": "Equals(0.6981317008, MeasureOf(Angle(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, pi * ((20 * x) / 180) = \u2220BCA, C on BE, pi * ((100 + 20 * x) / 180) = \u2220ACE, C on AD, 3.14 = pi, \u2220DCB\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : C on BE, C on AD\nConclusions: \u2220ACE = \u2220DCB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((20 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((20 * x) / 180) = \u2220BCA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((100 + 20 * x) / 180) = \u2220ACE, 3.14 = pi\nConclusions: 3.14 * ((100 + 20 * x) / 180) = \u2220ACE\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220BCA, \u2220DCB\nConclusions: pi = \u2220BCA + \u2220DCB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((100 + 20 * x) / 180) = \u2220ACE, \u2220ACE = \u2220DCB\nConclusions: pi * ((100 + 20 * x) / 180) = \u2220DCB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((100 + 20 * x) / 180) = \u2220ACE, pi * ((100 + 20 * x) / 180) = \u2220ACE\nConclusions: 3.14 * ((100 + 20 * x) / 180) = pi * ((100 + 20 * x) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BCA + \u2220DCB, 3.14 = pi\nConclusions: 3.14 = \u2220BCA + \u2220DCB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((100 + 20 * x) / 180) = \u2220DCB, 3.14 * ((100 + 20 * x) / 180) = pi * ((100 + 20 * x) / 180)\nConclusions: 3.14 * ((100 + 20 * x) / 180) = \u2220DCB\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((100 + 20 * x) / 180) = \u2220DCB, 3.14 * ((20 * x) / 180) = \u2220BCA, 3.14 = \u2220BCA + \u2220DCB\nConclusions: 0.7 = \u2220BCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(MeasureOf(Angle(A, C, E)), Mul(pi, Div(Add(100.0, Mul(20.0, x)), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(Mul(20.0, x), 180.0)))"
+    ],
+    "correct": true
+}

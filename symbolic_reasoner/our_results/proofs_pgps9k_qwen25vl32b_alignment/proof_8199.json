@@ -1,0 +1,116 @@
+{
+    "problem_id": "8199",
+    "solved": true,
+    "problem_text": "Solve for t.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(B, D)), 12t)",
+        "Equals(LengthOf(Line(E, A)), 16t)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(F, D)))",
+        "Equals(LengthOf(Line(F, C)), 10)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, F)",
+        "Line(D, F)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Parallel(Line(A, E), Line(C, F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, F))",
+        "Find(t)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AE",
+        "ED",
+        "EF",
+        "DF",
+        "BD",
+        "CF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            74.45273631840796,
+            24.48
+        ],
+        "B": [
+            161.65422885572139,
+            62.730000000000004
+        ],
+        "C": [
+            247.83582089552237,
+            99.96000000000001
+        ],
+        "D": [
+            161.14427860696517,
+            171.94285714285715
+        ],
+        "E": [
+            75.4726368159204,
+            172.38
+        ],
+        "F": [
+            248.44776119402982,
+            172.584
+        ]
+    },
+    "problem_choices": [
+        0.5,
+        0.714,
+        0.833,
+        1.25
+    ],
+    "choices_precise_value": [
+        0.5,
+        0.714,
+        0.833,
+        1.25
+    ],
+    "problem_answer": 1.25,
+    "total_time": 26.626675,
+    "solution_predicate": "Equals(1.25, t)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AE || CF, AC, EF, DE = DF, CF, 12 * t = BD, AB = BC, 10 = CF, AE, B on AC, 16 * t = AE, D on EF\n\nStep 2:\nTheorem: Definition of Trapezoid\nPremises : EF, AC, AE, CF, AE || CF\nConclusions: Trapezoid(A, C, F, E)\n\nStep 3:\nTheorem: Median of Trapezoid\nPremises : DE = DF, AB = BC, Trapezoid(A, C, F, E)\nConclusions: IsMedianOf(BD, Trapezoid(A, C, F, E))\n\nStep 4:\nTheorem: Median of a Trapezoid Properties\nPremises : B on AC, D on EF, IsMedianOf(BD, Trapezoid(A, C, F, E))\nConclusions: BD = (AE + CF) / 2\n\nStep 5:\nTheorem: Substitution\nPremises : 10 = CF, 12 * t = BD, 16 * t = AE, BD = (AE + CF) / 2\nConclusions: 12 * t = (10 + 16 * t) / 2\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 12 * t = (10 + 16 * t) / 2\nConclusions: 1.25 = t\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(D, F)",
+        "Line(B, D)",
+        "Line(C, F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, F)",
+        "Line(D, F)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Parallel(Line(A, E), Line(C, F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, F))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(B, D)), Mul(12.0, t))",
+        "Equals(LengthOf(Line(E, A)), Mul(16.0, t))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(F, D)))",
+        "Equals(LengthOf(Line(F, C)), 10.0)"
+    ],
+    "correct": true
+}

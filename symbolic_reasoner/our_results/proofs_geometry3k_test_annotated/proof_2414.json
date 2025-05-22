@@ -1,0 +1,87 @@
+{
+    "problem_id": "2414",
+    "solved": true,
+    "problem_text": "Find A E if A B = 12, A C = 16, and E D = 5.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, A))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A, B)), 12)",
+        "Equals(LengthOf(Line(A, C)), 16)",
+        "Equals(LengthOf(Line(E, D)), 5)",
+        "Find(LengthOf(Line(A, E)))"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "D",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "DE",
+        "DA",
+        "EA",
+        "CD",
+        "CB",
+        "CA",
+        "BA",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            66.99453551912569,
+            103.82513661202185
+        ],
+        "E": [
+            146.50273224043715,
+            112.8415300546448
+        ],
+        "D": [
+            200.87431693989072,
+            56.01092896174863
+        ],
+        "C": [
+            76.01092896174862,
+            41.803278688524586
+        ],
+        "A": [
+            51.69398907103826,
+            207.37704918032787
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "15",
+        "16",
+        "20"
+    ],
+    "choices_precise_value": [
+        12.0,
+        15.0,
+        16.0,
+        20.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 29.531274,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on AC, E on AD, \u2220BAD, \u2220CDA, BE || CD, \u2220BEA, \u2220CAD, \u2220CAE, \u2220CDA, 16 = AC, 3.14 = pi, 12 = AB, 5 = DE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 3:\nTheorem: Same Angle\nPremises : E on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 4:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220BEA\nConclusions: \u2220BEA = 2 * pi - \u2220AEB\n\nStep 7:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 8:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAE\nConclusions: \u2220BAE = \u2220CAE\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 10:\nTheorem: Substitution\nPremises : 5 = DE, AD = AE + DE\nConclusions: AD = 5 + AE\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BEA = 2 * pi - \u2220AEB\nConclusions: \u2220BEA = 2 * 3.14 - \u2220AEB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220BAE, \u2220BAE = \u2220CAE\nConclusions: \u2220BAD = \u2220CAE\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC, \u2220ADC = \u2220AEB, \u2220CDA = \u2220CDE\nConclusions: \u2220CDE = 2 * 3.14 - \u2220AEB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAD, \u2220BAD = \u2220CAE\nConclusions: \u2220CAD = \u2220CAE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = 2 * 3.14 - \u2220AEB, \u2220BEA = 2 * 3.14 - \u2220AEB\nConclusions: \u2220BEA = \u2220CDE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CAE, \u2220BAE = \u2220CAE\nConclusions: \u2220BAE = \u2220CAD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220CDE, \u2220CDA = \u2220CDE\nConclusions: \u2220BEA = \u2220CDA\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BEA = \u2220CDA, \u2220BAE = \u2220CAD, \u2220ABE = \u2220ACD\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220BAE = \u2220CAD, \u2220ABE = \u2220ACD, AB / AC = AE / AD, \u2220ADC = \u2220AEB\n\nStep 20:\nTheorem: Substitution\nPremises : 12 = AB, 16 = AC, AB / AC = AE / AD\nConclusions: 12 / 16 = AE / AD\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : AD = 5 + AE, 12 / 16 = AE / AD\nConclusions: 15 = AE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, A)",
+        "Line(E, A)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, E)",
+        "PointLiesOnLine(E, Line(D, A))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(LengthOf(Line(E, D)), 5.0)"
+    ],
+    "correct": true
+}

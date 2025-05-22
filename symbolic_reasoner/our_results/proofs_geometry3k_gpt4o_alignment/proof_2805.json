@@ -1,0 +1,118 @@
+{
+    "problem_id": "2805",
+    "solved": true,
+    "problem_text": "In \\odot O, E C and A B are diameters, and \\angle B O D \\cong \\angle D O E \\cong \\angle E O F \\cong \\angle F O A. Find m \\widehat A E.",
+    "logic_forms": [
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Perpendicular(Line(A, O), Line(C, O))",
+        "Circle(O)",
+        "IsDiameterOf(Line(E,C),Circle(O))",
+        "IsDiameterOf(Line(A,B),Circle(O))",
+        "Equals(Angle(B,O,D),Angle(D,O,E))",
+        "Equals(Angle(D,O,E),Angle(E,O,F))",
+        "Equals(Angle(E,O,F),Angle(F,O,A))",
+        "Find(MeasureOf(Arc(A,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "O",
+        "C",
+        "D",
+        "E",
+        "F",
+        "A"
+    ],
+    "line_instances": [
+        "BO",
+        "BA",
+        "OA",
+        "EO",
+        "EC",
+        "OC",
+        "DO",
+        "FO"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "B": [
+            215.5041782729805,
+            73.53760445682451
+        ],
+        "O": [
+            158.40111420612814,
+            134.26183844011143
+        ],
+        "C": [
+            218.5682451253482,
+            191.64345403899722
+        ],
+        "D": [
+            155.89415041782732,
+            50.97493036211699
+        ],
+        "E": [
+            97.67688022284123,
+            76.88022284122563
+        ],
+        "F": [
+            74.27855153203343,
+            137.04735376044567
+        ],
+        "A": [
+            100.74094707520892,
+            195.8217270194986
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "90",
+        "180",
+        "360"
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 25.078717,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Arc(E, O, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AO \u22a5 EO, Arc(EOA)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AO \u22a5 EO\nConclusions: pi / 2 = \u2220EOA\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EOA)\nConclusions: \u2220EOA = Arc(EOA)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EOA = Arc(EOA), pi / 2 = \u2220EOA\nConclusions: pi / 2 = Arc(EOA)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 2 = Arc(EOA)\nConclusions: 1.57 = Arc(EOA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, O)",
+        "Line(B, A)",
+        "Line(O, A)",
+        "Line(E, O)",
+        "Line(E, C)",
+        "Line(O, C)",
+        "Line(D, O)",
+        "Line(F, O)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Perpendicular(Line(A, O), Line(C, O))",
+        "Circle(O, radius_0_0)",
+        "IsDiameterOf(Line(E, C), Circle(O, radius_0_0))",
+        "IsDiameterOf(Line(A, B), Circle(O, radius_0_0))",
+        "Equals(MeasureOf(Angle(B, O, D)), MeasureOf(Angle(D, O, E)))",
+        "Equals(MeasureOf(Angle(D, O, E)), MeasureOf(Angle(E, O, F)))",
+        "Equals(MeasureOf(Angle(E, O, F)), MeasureOf(Angle(F, O, A)))"
+    ],
+    "correct": true
+}

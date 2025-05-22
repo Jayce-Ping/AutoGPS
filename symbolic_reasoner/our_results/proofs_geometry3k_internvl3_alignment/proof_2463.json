@@ -1,0 +1,82 @@
+{
+    "problem_id": "2463",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(C, A))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, D)), 8)",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BA",
+        "CD",
+        "CA",
+        "DA",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            218.40409207161122,
+            190.28132992327366
+        ],
+        "B": [
+            31.447570332480822,
+            189.51406649616368
+        ],
+        "C": [
+            31.191815856777495,
+            58.567774936061376
+        ],
+        "D": [
+            93.34015345268543,
+            102.30179028132991
+        ]
+    },
+    "problem_choices": [
+        "\\frac { \\sqrt { 2 } } { 2 }",
+        "\\sqrt { 2 }",
+        "2 \\sqrt { 2 }",
+        "4 \\sqrt { 2 }"
+    ],
+    "choices_precise_value": [
+        0.7071067811865476,
+        1.4142135623730951,
+        2.8284271247461903,
+        5.656854249492381
+    ],
+    "problem_answer": 5.656854249492381,
+    "total_time": 45.718341,
+    "solution_predicate": "Equals(5.6568542495, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, 3.14 = pi, AD \u22a5 BD, y = BD, AB, BC, tan(\u2220DAB), AB \u22a5 BC, 8 = AD, D on AC, AC, CD, \u2220BCA, 12 = AC, \u2220CAB, tan(\u2220DBC), BD \u22a5 CD\n\nStep 2:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220DAB), AD \u22a5 BD\nConclusions: BD / AD = tan(\u2220DAB)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220BCA, D on AC\nConclusions: \u2220BCA = \u2220BCD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CAB, D on AC\nConclusions: \u2220CAB = \u2220DAB\n\nStep 9:\nTheorem: Angle Tan Definition\nPremises : BD \u22a5 CD, tan(\u2220DBC)\nConclusions: CD / BD = tan(\u2220DBC)\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220CDB\n\nStep 11:\nTheorem: Substitution\nPremises : BD / AD = tan(\u2220DAB), y = BD, 8 = AD\nConclusions: y / 8 = tan(\u2220DAB)\n\nStep 12:\nTheorem: Substitution\nPremises : 12 = AC, AC = AD + CD, 8 = AD\nConclusions: 12 = 8 + CD\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 12 = 8 + CD\nConclusions: 4 = CD\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220CAB = \u2220DAB, pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi, pi / 2 = \u2220ABC, \u2220BCA = \u2220BCD\nConclusions: 3.14 = pi / 2 + \u2220BCD + \u2220DAB\n\nStep 17:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CDB, pi = \u2220BCD + \u2220CDB + \u2220DBC, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220BCD + \u2220DBC\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220BCD + \u2220DAB, 3.14 = pi / 2 + \u2220BCD + \u2220DBC, \u2220CAB = \u2220DAB\nConclusions: \u2220CAB = \u2220DBC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DAB, \u2220CAB = \u2220DBC\nConclusions: \u2220DAB = \u2220DBC\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220DAB = \u2220DBC, 4 = CD, y = BD, CD / BD = tan(\u2220DBC)\nConclusions: 4 / y = tan(\u2220DAB)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : y / 8 = tan(\u2220DAB), 4 / y = tan(\u2220DAB)\nConclusions: 4 / y = y / 8\n\nStep 22:\nTheorem: Solve Univariate Equation\nPremises : 4 / y = y / 8\nConclusions: 5.66 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, D)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), z)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(B, A)), x)"
+    ],
+    "correct": true
+}

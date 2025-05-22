@@ -1,0 +1,99 @@
+{
+    "problem_id": "538",
+    "solved": true,
+    "problem_text": "Find the area of the polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, D)), 8)",
+        "Equals(LengthOf(Line(C, E)), 15)",
+        "Find(AreaOf(Parallelogram(A, B, C, E)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Parallel(Line(A, B), Line(C, E))",
+        "Parallel(Line(A, C), Line(B, E))",
+        "Perpendicular(Line(C, E), Line(B, D))",
+        "PointLiesOnLine(D, Line(C, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "CE",
+        "DE",
+        "BE",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            31.780032467532468,
+            31.125714285714285
+        ],
+        "B": [
+            310.9659090909091,
+            135.79020408163265
+        ],
+        "C": [
+            31.780032467532468,
+            201.11999999999998
+        ],
+        "D": [
+            254.9237012987013,
+            284.57795918367344
+        ],
+        "E": [
+            310.9659090909091,
+            305.27142857142854
+        ]
+    },
+    "problem_choices": [
+        60.0,
+        92.0,
+        120.0,
+        172.5
+    ],
+    "choices_precise_value": [
+        60.0,
+        92.0,
+        120.0,
+        172.5
+    ],
+    "problem_answer": 120.0,
+    "total_time": 20.135296,
+    "solution_predicate": "Equals(120.0, AreaOf(Parallelogram(A, B, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = BD, 15 = CE, Parallelogram(A, B, E, C), BD \u22a5 CD\n\nStep 2:\nTheorem: Area formula of Parallelogram(A, B, E, C)\nPremises : BD \u22a5 CD, Parallelogram(A, B, E, C)\nConclusions: Area(Parallelogram(A, B, E, C)) = BD * CE\n\nStep 3:\nTheorem: Substitution\nPremises : 8 = BD, 15 = CE, Area(Parallelogram(A, B, E, C)) = BD * CE\nConclusions: 15 * 8 = Area(Parallelogram(A, B, E, C))\n\nStep 4:\nTheorem: Evaluate\nPremises : 15 * 8 = Area(Parallelogram(A, B, E, C))\nConclusions: 120 = Area(Parallelogram(A, B, E, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Parallel(Line(A, B), Line(C, E))",
+        "Parallel(Line(A, C), Line(B, E))",
+        "Perpendicular(Line(C, E), Line(B, D))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(LengthOf(Line(B, D)), 8.0)",
+        "Equals(LengthOf(Line(C, E)), 15.0)"
+    ],
+    "correct": true
+}

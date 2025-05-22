@@ -1,0 +1,69 @@
+{
+    "problem_id": "731",
+    "solved": true,
+    "problem_text": "Find CB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), 3)",
+        "Equals(MeasureOf(Angle(B, A, C)), 55)",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(C, B, A)))",
+        "Equals(MeasureOf(Angle(C, B, A)), 55)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Find(LengthOf(Line(C,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            115.15591836734694,
+            379.33714285714285
+        ],
+        "B": [
+            363.5314285714286,
+            246.3057142857143
+        ],
+        "A": [
+            124.56408163265306,
+            97.46857142857144
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        4.0,
+        55.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        4.0,
+        55.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 5.949277,
+    "solution_predicate": "Equals(3.0, LengthOf(Line(C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC = \u2220CAB, BC, 3 = AC, AB, AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Issoceles Triangle Property\nPremises : \u2220ABC = \u2220CAB, \u25b3ABC\nConclusions: AC = BC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 3 = AC\nConclusions: 3 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Equals(LengthOf(Line(C, A)), 3.0)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(A, B, C)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": true
+}

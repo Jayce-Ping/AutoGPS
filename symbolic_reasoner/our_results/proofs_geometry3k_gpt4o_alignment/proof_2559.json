@@ -1,0 +1,65 @@
+{
+    "problem_id": "2559",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(C, B)), 8\\sqrt{3})",
+        "Equals(MeasureOf(Angle(B, A, C)), 60)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            15.533333333333331,
+            221.33333333333334
+        ],
+        "B": [
+            135.53333333333333,
+            222.93333333333334
+        ],
+        "C": [
+            136.6,
+            17.333333333333332
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "8 \\sqrt { 3 }",
+        "24",
+        "16 \\sqrt { 3 }"
+    ],
+    "choices_precise_value": [
+        8.0,
+        13.856406460551018,
+        24.0,
+        27.712812921102035
+    ],
+    "problem_answer": 8.0,
+    "total_time": 13.22188,
+    "solution_predicate": "Equals(8.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 * SqrtOf(3) = BC, tan(\u2220BAC), AB \u22a5 BC, pi * (60 / 180) = \u2220BAC, x = AB, 3.14 = pi\n\nStep 2:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220BAC), AB \u22a5 BC\nConclusions: BC / AB = tan(\u2220BAC)\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220BAC\nConclusions: 1.05 = \u2220BAC\n\nStep 5:\nTheorem: Evaluate\nPremises : 1.05 = \u2220BAC\nConclusions: 1.73 = tan(\u2220BAC)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 1.73 = tan(\u2220BAC), BC / AB = tan(\u2220BAC)\nConclusions: 1.73 = BC / AB\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 8 * SqrtOf(3) = BC, 1.73 = BC / AB\nConclusions: 8 = AB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, 8 = AB\nConclusions: 8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(C, B)), Mul(8.0, SqrtOf(3.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

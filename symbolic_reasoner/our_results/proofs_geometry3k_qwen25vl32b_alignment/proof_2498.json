@@ -1,0 +1,71 @@
+{
+    "problem_id": "2498",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, D, A)), 52)",
+        "Equals(MeasureOf(Angle(B, A, D)), 27)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            33.93449781659388,
+            185.54585152838428
+        ],
+        "B": [
+            322.14410480349346,
+            184.67248908296943
+        ],
+        "C": [
+            526.0742358078603,
+            185.10917030567686
+        ],
+        "D": [
+            353.5851528384279,
+            23.100436681222703
+        ]
+    },
+    "problem_choices": [
+        "21",
+        "27",
+        "52",
+        "79"
+    ],
+    "choices_precise_value": [
+        21.0,
+        27.0,
+        52.0,
+        79.0
+    ],
+    "problem_answer": 79.0,
+    "total_time": 7.563374,
+    "solution_predicate": "Equals(1.3788101091, MeasureOf(Angle(C, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (52 / 180) = \u2220ADB, AD, 3.14 = pi, AB, \u2220DBA, \u2220CBD, pi * (27 / 180) = \u2220BAD, BD\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220DBA, \u2220CBD\nConclusions: pi = \u2220CBD + \u2220DBA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CBD + \u2220DBA, 3.14 = pi\nConclusions: 3.14 = \u2220CBD + \u2220DBA\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (27 / 180) = \u2220BAD, pi = \u2220ADB + \u2220BAD + \u2220DBA, 3.14 = pi, pi * (52 / 180) = \u2220ADB\nConclusions: 3.14 = 3.14 * (27 / 180) + 3.14 * (52 / 180) + \u2220DBA\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (27 / 180) + 3.14 * (52 / 180) + \u2220DBA, 3.14 = \u2220CBD + \u2220DBA\nConclusions: 1.38 = \u2220CBD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(A, D, B)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(27.0, 180.0)))"
+    ],
+    "correct": true
+}

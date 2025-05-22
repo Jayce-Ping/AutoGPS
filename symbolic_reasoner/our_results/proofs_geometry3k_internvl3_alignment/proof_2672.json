@@ -1,0 +1,78 @@
+{
+    "problem_id": "2672",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), 8)",
+        "Equals(LengthOf(Line(A, D)), 30)",
+        "Equals(LengthOf(Line(C, A)), 28)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(C, D, B)))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DA",
+        "DC",
+        "AB",
+        "AC",
+        "BC",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            70.75,
+            462.125
+        ],
+        "B": [
+            416.375,
+            301.5
+        ],
+        "C": [
+            551.375,
+            238.375
+        ],
+        "D": [
+            443.875,
+            37.75
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        8.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 23.504516,
+    "solution_predicate": "Equals(12.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ADB = \u2220BDC, B on AC, 30 = AD, CD, y = CD, 28 = AC, AC, AD, 8 = BC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Substitution\nPremises : AC = AB + BC, 28 = AC, 8 = BC\nConclusions: 28 = 8 + AB\n\nStep 5:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220ADB = \u2220BDC, \u25b3ACD\nConclusions: AB / BC = AD / CD\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 28 = 8 + AB\nConclusions: 20 = AB\n\nStep 7:\nTheorem: Evaluate\nPremises : 20 = AB, 8 = BC\nConclusions: 2.5 = AB / BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AB / BC = AD / CD, 2.5 = AB / BC\nConclusions: 2.5 = AD / CD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2.5 = AD / CD, 30 = AD\nConclusions: 12 = CD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : y = CD, 12 = CD\nConclusions: 12 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), 8.0)",
+        "Equals(LengthOf(Line(A, D)), 30.0)",
+        "Equals(LengthOf(Line(C, A)), 28.0)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(B, D, C)))"
+    ],
+    "correct": true
+}

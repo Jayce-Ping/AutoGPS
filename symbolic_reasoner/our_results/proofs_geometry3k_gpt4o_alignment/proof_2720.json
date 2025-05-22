@@ -1,0 +1,102 @@
+{
+    "problem_id": "2720",
+    "solved": true,
+    "problem_text": "Use rectangle L M N P, parallelogram L K M J to solve the problem. If L N = 10, L J = 2 x + 1, and P J = 3 x - 1, find x.",
+    "logic_forms": [
+        "PointLiesOnLine(J, Line(L, N))",
+        "PointLiesOnLine(J, Line(P, M))",
+        "Rectangle(L,M,N,P)",
+        "Parallelogram(L,K,M,J)",
+        "Equals(LengthOf(Line(L,N)),10)",
+        "Equals(LengthOf(Line(L,J)),2x+1)",
+        "Equals(LengthOf(Line(P,J)),3x-1)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "P",
+        "M",
+        "L",
+        "N"
+    ],
+    "line_instances": [
+        "NM",
+        "KM",
+        "LK",
+        "LM",
+        "LJ",
+        "LN",
+        "JN",
+        "PL",
+        "PN",
+        "PJ",
+        "PM",
+        "JM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            117.72727272727272,
+            110.38961038961038
+        ],
+        "K": [
+            241.88311688311688,
+            110.64935064935065
+        ],
+        "P": [
+            57.467532467532465,
+            34.285714285714285
+        ],
+        "M": [
+            179.02597402597402,
+            186.75324675324674
+        ],
+        "L": [
+            179.54545454545453,
+            34.8051948051948
+        ],
+        "N": [
+            56.94805194805194,
+            185.97402597402598
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "4",
+        "5",
+        "10"
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        5.0,
+        10.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 116.438522,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(L, M, N, P), 1 + 2 * x = JL, 10 = LN, J on MP, J on LN\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(L, M, N, P)\nConclusions: Parallelogram(L, M, N, P)\n\nStep 3:\nTheorem: Line Segment Split\nPremises : J on LN\nConclusions: LN = JL + JN\n\nStep 4:\nTheorem: Parallelogram Diagonals Bisect\nPremises : J on LN, Parallelogram(L, M, N, P), J on MP\nConclusions: JL = JN\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 10 = LN, LN = JL + JN\nConclusions: 10 = JL + JN\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : JL = JN, 1 + 2 * x = JL\nConclusions: 1 + 2 * x = JN\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 10 = JL + JN, 1 + 2 * x = JL, 1 + 2 * x = JN\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(K, M)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(L, J)",
+        "Line(L, N)",
+        "Line(J, N)",
+        "Line(P, L)",
+        "Line(P, N)",
+        "Line(P, J)",
+        "Line(P, M)",
+        "Line(J, M)",
+        "PointLiesOnLine(J, Line(L, N))",
+        "PointLiesOnLine(J, Line(P, M))",
+        "Rectangle(L, M, N, P)",
+        "Parallelogram(L, K, M, J)",
+        "Equals(LengthOf(Line(L, N)), 10.0)",
+        "Equals(LengthOf(Line(L, J)), Add(Mul(2.0, x), 1.0))",
+        "Equals(LengthOf(Line(P, J)), Sub(Mul(3.0, x), 1.0))"
+    ],
+    "correct": true
+}

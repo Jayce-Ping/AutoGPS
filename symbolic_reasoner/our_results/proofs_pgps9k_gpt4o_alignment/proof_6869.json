@@ -1,0 +1,80 @@
+{
+    "problem_id": "6869",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 4)",
+        "Equals(MeasureOf(Angle(C, A, B)), 45)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(C, B), Line(A, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BD",
+        "DC",
+        "CB",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.66666666666667,
+            202.51543209876544
+        ],
+        "B": [
+            203.32000000000002,
+            202.3456790123457
+        ],
+        "C": [
+            202.83428571428573,
+            21.469723691945916
+        ],
+        "D": [
+            382.9878260869566,
+            20.665593129361245
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        13.7,
+        14.9,
+        16.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        13.7,
+        14.9,
+        16.0
+    ],
+    "problem_answer": 13.7,
+    "total_time": 40.842161,
+    "solution_predicate": "Equals(13.6568542495, PerimeterOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 3.14 = pi, AB, BC, CD, AB \u22a5 BC, BD, pi * (45 / 180) = \u2220BAC, \u2220CBA, Parallelogram(A, B, D, C), 4 = AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD, AC = BD\n\nStep 8:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, D, C)\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD, AC || BD\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220BAC = \u2220CDB\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 12:\nTheorem: Law of Sines\nPremises : \u25b3BCD\nConclusions: BC / sin(\u2220CDB) = CD / sin(\u2220DBC), BD / sin(\u2220BCD) = CD / sin(\u2220DBC)\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : AC = BD, 4 = AC\nConclusions: 4 = BD\n\nStep 16:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BCD = \u2220CBA\n\nStep 17:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || BD\nConclusions: \u2220ACB = \u2220DBC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220CDB, pi * (45 / 180) = \u2220BAC\nConclusions: pi * (45 / 180) = \u2220CDB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 20:\nTheorem: Substitution\nPremises : 4 = BD, AB = CD, Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD, 4 = AC\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = 4 + 4 + CD + CD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, \u2220BCD = \u2220CBA\nConclusions: pi / 2 = \u2220BCD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220CDB, 0.79 = pi * (45 / 180)\nConclusions: 0.79 = \u2220CDB\n\nStep 23:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCD, 4 = BD, BD / sin(\u2220BCD) = CD / sin(\u2220DBC)\nConclusions: 4 / sin(pi / 2) = CD / sin(\u2220DBC)\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220CDB, pi / 2 = \u2220BCD, pi = \u2220BCD + \u2220CDB + \u2220DBC\nConclusions: 3.14 = pi / 2 + 3.14 * (45 / 180) + \u2220DBC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 4 / sin(pi / 2) = CD / sin(\u2220DBC), BC / sin(\u2220CDB) = CD / sin(\u2220DBC)\nConclusions: 4 / sin(pi / 2) = BC / sin(\u2220CDB)\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACB = \u2220DBC, 3.14 = pi / 2 + 3.14 * (45 / 180) + \u2220DBC, pi * (45 / 180) = \u2220BAC, 2 * 3.14 - (3 * pi) / 2 = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 0.79 = \u2220ACB\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220ACB, \u2220ACB = \u2220DBC\nConclusions: 0.79 = \u2220DBC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220CDB, 0.79 = \u2220DBC\nConclusions: \u2220CDB = \u2220DBC\n\nStep 29:\nTheorem: Issoceles Triangle Property\nPremises : \u2220CDB = \u2220DBC, \u25b3BCD\nConclusions: BC = CD\n\nStep 30:\nTheorem: Substitution\nPremises : BC = CD, 3.14 = pi, 0.79 = \u2220CDB, 4 / sin(pi / 2) = BC / sin(\u2220CDB)\nConclusions: 4 / sin(3.14 / 2) = CD / sin(0.79)\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 4 / sin(3.14 / 2) = CD / sin(0.79), Perimeter(Parallelogram(A, B, D, C)) = 4 + 4 + CD + CD\nConclusions: 13.66 = Perimeter(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 4.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

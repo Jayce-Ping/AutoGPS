@@ -1,0 +1,147 @@
+{
+    "problem_id": "2517",
+    "solved": true,
+    "problem_text": "\\overrightarrow B A and \\overrightarrow B C are opposite rays and \\overrightarrow B D bisects \\angle A B F. If m \\angle F B C = 2 x + 25 and m \\angle A B F = 10 x - 1, find m \\angle D B F.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(I, B))",
+        "PointLiesOnLine(A, Line(I, C))",
+        "PointLiesOnLine(A, Line(I, E))",
+        "PointLiesOnLine(B, Line(I, C))",
+        "PointLiesOnLine(B, Line(I, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(I, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "Line(B,A)",
+        "Line(B,C)",
+        "PointLiesOnLine(B,Line(A,C))",
+        "BisectsAngle(Line(B,D),Angle(A,B,F))",
+        "Equals(MeasureOf(Angle(F,B,C)),2x+25)",
+        "Equals(MeasureOf(Angle(A,B,F)),10x-1)",
+        "Find(MeasureOf(Angle(D,B,F)))"
+    ],
+    "point_instances": [
+        "B",
+        "F",
+        "A",
+        "C",
+        "D",
+        "E",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "IA",
+        "IB",
+        "IC",
+        "IE",
+        "AB",
+        "AC",
+        "AE",
+        "BC",
+        "BE",
+        "CE",
+        "HD",
+        "HB",
+        "DB",
+        "BF",
+        "BG",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            213.44444444444446,
+            232.44444444444446
+        ],
+        "F": [
+            363.22222222222223,
+            225.77777777777777
+        ],
+        "A": [
+            126.77777777777777,
+            119.55555555555556
+        ],
+        "C": [
+            290.77777777777777,
+            333.77777777777777
+        ],
+        "D": [
+            281.44444444444446,
+            99.11111111111111
+        ],
+        "E": [
+            329.44444444444446,
+            383.55555555555554
+        ],
+        "G": [
+            444.55555555555554,
+            221.33333333333334
+        ],
+        "H": [
+            311.6666666666667,
+            41.77777777777778
+        ],
+        "I": [
+            84.55555555555554,
+            65.33333333333333
+        ]
+    },
+    "problem_choices": [
+        "25.5",
+        "50",
+        "54",
+        "64.5"
+    ],
+    "choices_precise_value": [
+        25.5,
+        50.0,
+        54.0,
+        64.5
+    ],
+    "problem_answer": 64.5,
+    "total_time": 85.404298,
+    "solution_predicate": "Equals(1.1257373675, MeasureOf(Angle(F, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220GBD, \u2220CBG, pi * ((25 + 2 * x) / 180) = \u2220CBF, F on BG, \u2220GBH, \u2220IBG, \u2220HBI, \u2220FBA, \u2220DBI, \u2220ABF, \u2220FBH, \u2220DBA, \u2220CBF, \u2220EBG, \u2220IBF, C on BE, pi * ((10 * x - 1) / 180) = \u2220FBA, \u2220FBA, \u2220ABF, \u2220FBD, A on BI, D on BH, BisectsAngle(BD, \u2220FBA), 3.14 = pi\n\nStep 2:\nTheorem: Same Angle\nPremises : F on BG, \u2220GBD\nConclusions: \u2220FBD = \u2220GBD\n\nStep 3:\nTheorem: Same Angle\nPremises : F on BG, \u2220CBG\nConclusions: \u2220CBF = \u2220CBG\n\nStep 4:\nTheorem: Same Angle\nPremises : F on BG, \u2220GBH\nConclusions: \u2220FBH = \u2220GBH\n\nStep 5:\nTheorem: Same Angle\nPremises : F on BG, \u2220IBG\nConclusions: \u2220IBF = \u2220IBG\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220GBH, \u2220HBI, \u2220IBG\nConclusions: 2 * pi = \u2220GBH + \u2220HBI + \u2220IBG\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220FBA\nConclusions: \u2220FBA = 2 * pi - \u2220ABF\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABF\nConclusions: \u2220ABF = 2 * pi - \u2220FBA\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220EBG, C on BE\nConclusions: \u2220CBG = \u2220EBG\n\nStep 10:\nTheorem: Straight Angle\nPremises : \u2220CBF, \u2220FBA\nConclusions: pi = \u2220CBF + \u2220FBA\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220FBD, \u2220ABF, \u2220DBA\nConclusions: 2 * pi = \u2220ABF + \u2220DBA + \u2220FBD\n\nStep 12:\nTheorem: Same Angle\nPremises : A on BI, \u2220IBF\nConclusions: \u2220ABF = \u2220IBF\n\nStep 13:\nTheorem: Same Angle\nPremises : A on BI, \u2220DBI\nConclusions: \u2220DBA = \u2220DBI\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220HBI, D on BH\nConclusions: \u2220DBI = \u2220HBI\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220FBH, D on BH\nConclusions: \u2220FBD = \u2220FBH\n\nStep 16:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(BD, \u2220FBA)\nConclusions: \u2220DBA = \u2220FBD\n\nStep 17:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBF = \u2220CBG, pi * ((25 + 2 * x) / 180) = \u2220CBF\nConclusions: pi * ((25 + 2 * x) / 180) = \u2220CBG\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 * x - 1) / 180) = \u2220FBA, \u2220FBA = 2 * pi - \u2220ABF\nConclusions: pi * ((10 * x - 1) / 180) = 2 * pi - \u2220ABF\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IBF = \u2220IBG, \u2220ABF = \u2220IBF\nConclusions: \u2220ABF = \u2220IBG\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FBD = \u2220FBH, \u2220FBD = \u2220GBD\nConclusions: \u2220FBH = \u2220GBD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220DBI, \u2220DBI = \u2220HBI, \u2220DBA = \u2220FBD\nConclusions: \u2220FBD = \u2220HBI\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220FBD, \u2220FBD = \u2220GBD\nConclusions: \u2220DBA = \u2220GBD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220GBH + \u2220HBI + \u2220IBG\nConclusions: 6.28 = \u2220GBH + \u2220HBI + \u2220IBG\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 + 2 * x) / 180) = \u2220CBG, \u2220CBG = \u2220EBG\nConclusions: pi * ((25 + 2 * x) / 180) = \u2220EBG\n\nStep 26:\nTheorem: Substitution\nPremises : \u2220ABF = \u2220IBG, pi * ((10 * x - 1) / 180) = 2 * pi - \u2220ABF, 3.14 = pi\nConclusions: 3.14 * ((10 * x - 1) / 180) = 2 * 3.14 - \u2220IBG\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FBH = \u2220GBH, \u2220FBH = \u2220GBD\nConclusions: \u2220GBD = \u2220GBH\n\nStep 28:\nTheorem: Substitution\nPremises : pi * ((25 + 2 * x) / 180) = \u2220EBG, 3.14 = pi\nConclusions: 3.14 * ((25 + 2 * x) / 180) = \u2220EBG\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220FBD, \u2220DBA = \u2220GBD, \u2220GBD = \u2220GBH\nConclusions: \u2220FBD = \u2220GBH\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 + 2 * x) / 180) = \u2220EBG, 3.14 * ((25 + 2 * x) / 180) = \u2220EBG\nConclusions: 3.14 * ((25 + 2 * x) / 180) = pi * ((25 + 2 * x) / 180)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((25 + 2 * x) / 180) = pi * ((25 + 2 * x) / 180), pi * ((25 + 2 * x) / 180) = \u2220CBF\nConclusions: 3.14 * ((25 + 2 * x) / 180) = \u2220CBF\n\nStep 32:\nTheorem: Substitution\nPremises : pi = \u2220CBF + \u2220FBA, 3.14 * ((25 + 2 * x) / 180) = \u2220CBF, 3.14 = pi\nConclusions: 3.14 = 3.14 * ((25 + 2 * x) / 180) + \u2220FBA\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : \u2220DBA = \u2220FBD, 3.14 = 3.14 * ((25 + 2 * x) / 180) + \u2220FBA, 3.14 * ((10 * x - 1) / 180) = 2 * 3.14 - \u2220IBG, 2 * pi = \u2220ABF + \u2220DBA + \u2220FBD, \u2220FBD = \u2220HBI, 6.28 = \u2220GBH + \u2220HBI + \u2220IBG, \u2220FBD = \u2220GBH, \u2220ABF = 2 * pi - \u2220FBA\nConclusions: 1.13 = \u2220FBD\n\n",
+    "logic_fomrs_refined": [
+        "Line(I, A)",
+        "Line(I, B)",
+        "Line(I, C)",
+        "Line(I, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(H, D)",
+        "Line(H, B)",
+        "Line(D, B)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(F, G)",
+        "PointLiesOnLine(A, Line(I, B))",
+        "PointLiesOnLine(A, Line(I, C))",
+        "PointLiesOnLine(A, Line(I, E))",
+        "PointLiesOnLine(B, Line(I, C))",
+        "PointLiesOnLine(B, Line(I, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(I, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "Line(B, A)",
+        "Line(B, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "BisectsAngle(Line(B, D), Angle(F, B, A))",
+        "Equals(MeasureOf(Angle(C, B, F)), Mul(pi, Div(Add(Mul(2.0, x), 25.0), 180.0)))",
+        "Equals(MeasureOf(Angle(F, B, A)), Mul(pi, Div(Sub(Mul(10.0, x), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

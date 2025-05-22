@@ -1,0 +1,90 @@
+{
+    "problem_id": "7923",
+    "solved": true,
+    "problem_text": "Find the value of q.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 17.5)",
+        "Equals(LengthOf(Line(A, D)), q)",
+        "Equals(LengthOf(Line(C, B)), 21)",
+        "Equals(LengthOf(Line(D, C)), 33)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(C, D, B)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(q)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA",
+        "AD",
+        "DC",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            234.3137254901961,
+            19.82655462184874
+        ],
+        "B": [
+            140.47619047619048,
+            124.30857142857143
+        ],
+        "C": [
+            35.490196078431374,
+            240.66689075630254
+        ],
+        "D": [
+            289.0,
+            240.9417142857143
+        ]
+    },
+    "problem_choices": [
+        11.136,
+        14.583,
+        27.5,
+        39.6
+    ],
+    "choices_precise_value": [
+        11.136,
+        14.583,
+        27.5,
+        39.6
+    ],
+    "problem_answer": 27.5,
+    "total_time": 24.658165,
+    "solution_predicate": "Equals(27.5, q)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: q = AD, \u2220ADB = \u2220BDC, 21 = BC, 17.5 = AB, AD, AC, 33 = CD, CD\n\nStep 2:\nTheorem: Evaluate\nPremises : 21 = BC, 17.5 = AB\nConclusions: 1.2 = BC / AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u25b3ACD, \u2220ADB = \u2220BDC\nConclusions: BC / AB = CD / AD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.2 = BC / AB, BC / AB = CD / AD\nConclusions: 1.2 = CD / AD\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 33 = CD, 1.2 = CD / AD\nConclusions: 27.5 = AD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 27.5 = AD, q = AD\nConclusions: 27.5 = q\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 17.5)",
+        "Equals(LengthOf(Line(A, D)), q)",
+        "Equals(LengthOf(Line(C, B)), 21.0)",
+        "Equals(LengthOf(Line(D, C)), 33.0)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(B, D, C)))"
+    ],
+    "correct": true
+}

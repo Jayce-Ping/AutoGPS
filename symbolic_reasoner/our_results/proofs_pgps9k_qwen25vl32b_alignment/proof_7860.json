@@ -1,0 +1,109 @@
+{
+    "problem_id": "7860",
+    "solved": true,
+    "problem_text": "QRST is a rectangle. If m \\angle QTR = 2x^{2}-7 and m \\angle SRT = x^{2}+18, find m \\angle PSR.",
+    "logic_forms": [
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(T, P)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(P, Line(T, R))",
+        "Rectangle(Q,R,S,T)",
+        "Equals(MeasureOf(Angle(Q,T,R)),2x^{2}-7)",
+        "Equals(MeasureOf(Angle(S,R,T)),x^{2}+18)",
+        "Find(MeasureOf(Angle(P,S,R)))"
+    ],
+    "point_instances": [
+        "T",
+        "Q",
+        "P",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "QR",
+        "TS",
+        "TP",
+        "TR",
+        "PR",
+        "QP",
+        "QS",
+        "PS",
+        "TQ",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            41.45054945054945,
+            149.0625306122449
+        ],
+        "Q": [
+            41.82995951417004,
+            42.223157894736836
+        ],
+        "P": [
+            146.25641025641028,
+            95.65435540069686
+        ],
+        "S": [
+            250.73076923076923,
+            149.1526530612245
+        ],
+        "R": [
+            250.5805860805861,
+            42.48272108843537
+        ]
+    },
+    "problem_choices": [
+        43.0,
+        44.333,
+        45.667,
+        86.0
+    ],
+    "choices_precise_value": [
+        43.0,
+        44.333,
+        45.667,
+        86.0
+    ],
+    "problem_answer": 43.0,
+    "total_time": 240.829461,
+    "solution_predicate": "Equals(0.7504915784, MeasureOf(Angle(R, S, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((18 + x ** 2) / 180) = \u2220TRS, P on QS, pi * ((2 * x ** 2 - 7) / 180) = \u2220RTQ, Rectangle(Q, R, S, T), \u2220RSQ\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(Q, R, S, T)\nConclusions: QR \u22a5 QT, QR \u22a5 RS\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(Q, R, S, T)\nConclusions: Parallelogram(Q, R, S, T)\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220RSQ, P on QS\nConclusions: \u2220RSP = \u2220RSQ\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : QR \u22a5 QT\nConclusions: pi / 2 = \u2220TQR\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : QR \u22a5 RS\nConclusions: pi / 2 = \u2220QRS\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(Q, R, S, T)\nConclusions: QR = ST\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(Q, R, S, T)\nConclusions: QT || RS\n\nStep 9:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(Q, R, S, T)\nConclusions: \u2220RST = \u2220TQR\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : QT || RS\nConclusions: \u2220RSQ = \u2220TQS, \u2220RTQ = \u2220TRS\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220QRS, pi / 2 = \u2220TQR, \u2220RST = \u2220TQR\nConclusions: \u2220QRS = \u2220RST\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220TQS, \u2220RSP = \u2220RSQ\nConclusions: \u2220RSP = \u2220TQS\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RTQ = \u2220TRS, pi * ((18 + x ** 2) / 180) = \u2220TRS\nConclusions: pi * ((18 + x ** 2) / 180) = \u2220RTQ\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : QR = ST, \u2220QRS = \u2220RST\nConclusions: \u25b3QRS \u2245 \u25b3TSR\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x ** 2 - 7) / 180) = \u2220RTQ, pi * ((18 + x ** 2) / 180) = \u2220RTQ\nConclusions: pi * ((18 + x ** 2) / 180) = pi * ((2 * x ** 2 - 7) / 180)\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3QRS \u2245 \u25b3TSR\nConclusions: \u2220RSQ = \u2220TRS, QR = ST\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220TQS, pi * ((18 + x ** 2) / 180) = \u2220TRS, \u2220RSQ = \u2220TRS\nConclusions: pi * ((18 + x ** 2) / 180) = \u2220TQS\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSP = \u2220TQS, pi * ((18 + x ** 2) / 180) = \u2220TQS\nConclusions: pi * ((18 + x ** 2) / 180) = \u2220RSP\n\nStep 19:\nTheorem: Substitution\nPremises : pi * ((18 + x ** 2) / 180) = \u2220TQS, 3.14 = pi\nConclusions: 3.14 * ((18 + x ** 2) / 180) = \u2220TQS\n\nStep 20:\nTheorem: Substitution\nPremises : pi * ((18 + x ** 2) / 180) = \u2220RSP, 3.14 = pi\nConclusions: 3.14 * ((18 + x ** 2) / 180) = \u2220RSP\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((18 + x ** 2) / 180) = \u2220TQS, pi * ((18 + x ** 2) / 180) = \u2220TQS\nConclusions: 3.14 * ((18 + x ** 2) / 180) = pi * ((18 + x ** 2) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((18 + x ** 2) / 180) = pi * ((18 + x ** 2) / 180), pi * ((18 + x ** 2) / 180) = pi * ((2 * x ** 2 - 7) / 180)\nConclusions: 3.14 * ((18 + x ** 2) / 180) = pi * ((2 * x ** 2 - 7) / 180)\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 * ((18 + x ** 2) / 180) = pi * ((2 * x ** 2 - 7) / 180), 3.14 = pi\nConclusions: 3.14 * ((18 + x ** 2) / 180) = 3.14 * ((2 * x ** 2 - 7) / 180)\n\nStep 24:\nTheorem: Solve Univariate Equation\nPremises : 3.14 * ((18 + x ** 2) / 180) = 3.14 * ((2 * x ** 2 - 7) / 180)\nConclusions: 5 = x\n\nStep 25:\nTheorem: Evaluate\nPremises : 5 = x, 3.14 = pi\nConclusions: 0.75 = pi * ((18 + x ** 2) / 180)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((18 + x ** 2) / 180) = pi * ((18 + x ** 2) / 180), 0.75 = pi * ((18 + x ** 2) / 180)\nConclusions: 0.75 = 3.14 * ((18 + x ** 2) / 180)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 0.75 = 3.14 * ((18 + x ** 2) / 180), 3.14 * ((18 + x ** 2) / 180) = \u2220RSP\nConclusions: 0.75 = \u2220RSP\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(T, S)",
+        "Line(T, P)",
+        "Line(T, R)",
+        "Line(P, R)",
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(P, S)",
+        "Line(T, Q)",
+        "Line(S, R)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(T, P)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(P, Line(Q, S))",
+        "PointLiesOnLine(P, Line(T, R))",
+        "Rectangle(Q, R, S, T)",
+        "Equals(MeasureOf(Angle(R, T, Q)), Mul(pi, Div(Sub(Mul(2.0, Pow(x, 2.0)), 7.0), 180.0)))",
+        "Equals(MeasureOf(Angle(T, R, S)), Mul(pi, Div(Add(Pow(x, 2.0), 18.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,81 @@
+{
+    "problem_id": "3689",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 1?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, D, A)), 63)",
+        "Equals(MeasureOf(Angle(D, A, C)), 60)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            278.24519230769226,
+            25.0865306122449
+        ],
+        "B": [
+            28.9375,
+            243.40285714285713
+        ],
+        "C": [
+            135.78365384615384,
+            243.40285714285713
+        ],
+        "D": [
+            389.5432692307692,
+            243.40285714285713
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        63.0,
+        123.0,
+        126.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        63.0,
+        123.0,
+        126.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 8.777717,
+    "solution_predicate": "Equals(2.14675498, MeasureOf(Angle(A, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (63 / 180) = \u2220ADC, CD, \u2220BCA, AD, 3.14 = pi, pi * (60 / 180) = \u2220CAD, AC, \u2220DCA, \u2220ACB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220DCA, \u2220ACB\nConclusions: pi = \u2220ACB + \u2220DCA\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: \u2220BCA = 2 * 3.14 - \u2220ACB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220DCA\nConclusions: 3.14 = \u2220ACB + \u2220DCA\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ADC + \u2220CAD + \u2220DCA, pi * (60 / 180) = \u2220CAD, pi * (63 / 180) = \u2220ADC\nConclusions: 3.14 = 3.14 * (63 / 180) + pi * (60 / 180) + \u2220DCA\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ACB + \u2220DCA, 3.14 = 3.14 * (63 / 180) + pi * (60 / 180) + \u2220DCA, \u2220BCA = 2 * 3.14 - \u2220ACB, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: 2.15 = \u2220ACB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(63.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

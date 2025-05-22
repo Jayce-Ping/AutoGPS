@@ -1,0 +1,113 @@
+{
+    "problem_id": "784",
+    "solved": true,
+    "problem_text": "Solve for x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(C, E)))",
+        "Equals(MeasureOf(Angle(C, E, D)), 2x)",
+        "Equals(MeasureOf(Angle(E, B, D)), 2x-4)",
+        "Equals(MeasureOf(Angle(E, C, D)), x+6)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "EC",
+        "CA",
+        "AD",
+        "AE",
+        "DE",
+        "CD",
+        "CB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            251.97570850202428,
+            32.81142857142857
+        ],
+        "B": [
+            367.5060728744939,
+            180.96
+        ],
+        "C": [
+            32.26882591093117,
+            180.96
+        ],
+        "D": [
+            251.64372469635626,
+            180.73904761904762
+        ],
+        "E": [
+            251.97570850202428,
+            329.10857142857145
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        10.0,
+        28.0,
+        29.333
+    ],
+    "choices_precise_value": [
+        6.0,
+        10.0,
+        28.0,
+        29.333
+    ],
+    "problem_answer": 28.0,
+    "total_time": 109.746617,
+    "solution_predicate": "Equals(28.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE, \u2220BCE, \u2220DCA, \u2220CEA, \u2220BDA, D on BC, pi * ((6 + x) / 180) = \u2220ECD, \u2220DEC, 3.14 = pi, \u2220CAE, CE, \u2220DCA, \u2220ECB, \u2220ACB, \u2220DCE, \u2220EAC, \u2220ADC, D on AE, AC, AD, AE, \u2220EDB, \u2220BCA, \u2220CAD, \u2220ACE, \u2220CED, \u2220AEC, AC = CE, \u2220CDE, pi * ((2 * x) / 180) = \u2220DEC, AB = BE, CD, \u2220ECD\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220BCE, D on BC\nConclusions: \u2220BCE = \u2220DCE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEC\nConclusions: \u2220DEC = 2 * pi - \u2220CED\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 5:\nTheorem: Same Angle\nPremises : D on BC, \u2220ECB\nConclusions: \u2220ECB = \u2220ECD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ACB, D on BC\nConclusions: \u2220ACB = \u2220ACD\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCE\nConclusions: \u2220DCE = 2 * pi - \u2220ECD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CEA, D on AE\nConclusions: \u2220CEA = \u2220CED\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220EAC, D on AE\nConclusions: \u2220DAC = \u2220EAC\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220CAE, D on AE\nConclusions: \u2220CAD = \u2220CAE\n\nStep 11:\nTheorem: Vertical Angle Theorem\nPremises : D on BC, D on AE\nConclusions: \u2220ADC = \u2220EDB, \u2220BDA = \u2220CDE\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : AC, AE, CE\nConclusions: \u25b3ACE\n\nStep 13:\nTheorem: Same Angle\nPremises : D on BC, \u2220BCA\nConclusions: \u2220BCA = \u2220DCA\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAD\nConclusions: \u2220CAD = 2 * pi - \u2220DAC\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : \u2220CED\nConclusions: \u2220CED = 2 * pi - \u2220DEC\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220AEC, D on AE\nConclusions: \u2220AEC = \u2220DEC\n\nStep 17:\nTheorem: Circumference Split\nPremises : \u2220BDA, \u2220ADC, \u2220CDE, \u2220EDB\nConclusions: 2 * pi = \u2220ADC + \u2220BDA + \u2220CDE + \u2220EDB\n\nStep 18:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AC = CE, AB = BE\nConclusions: \u25b3ABC \u2245 \u25b3EBC\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : CE, DE, CD\nConclusions: \u25b3CDE\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 21:\nTheorem: Circumference splited\nPremises : \u2220DCA, \u2220ECD, \u2220ACE\nConclusions: 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEC = 2 * pi - \u2220CED, pi * ((2 * x) / 180) = \u2220DEC\nConclusions: pi * ((2 * x) / 180) = 2 * pi - \u2220CED\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECB = \u2220ECD, pi * ((6 + x) / 180) = \u2220ECD\nConclusions: pi * ((6 + x) / 180) = \u2220ECB\n\nStep 24:\nTheorem: Issoceles Triangle Property\nPremises : AC = CE, \u25b3ACE\nConclusions: \u2220CEA = \u2220EAC, \u2220AEC = \u2220CAE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CAE, \u2220CAD = 2 * pi - \u2220DAC\nConclusions: \u2220CAE = 2 * pi - \u2220DAC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220DEC, pi * ((2 * x) / 180) = \u2220DEC\nConclusions: pi * ((2 * x) / 180) = \u2220AEC\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ADC = \u2220EDB, \u2220BDA = \u2220CDE, 2 * pi = \u2220ADC + \u2220BDA + \u2220CDE + \u2220EDB\nConclusions: 2 * 3.14 = \u2220CDE + \u2220CDE + \u2220EDB + \u2220EDB\n\nStep 28:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3EBC\nConclusions: AB = BE, \u2220ACB = \u2220BCE, \u2220BCA = \u2220ECB\n\nStep 29:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 30:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 31:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ACE + \u2220DCA + \u2220ECD\n\nStep 32:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x) / 180) = 2 * pi - \u2220CED\nConclusions: 3.14 * ((2 * x) / 180) = 2 * 3.14 - \u2220CED\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEA = \u2220EAC, \u2220CEA = \u2220CED\nConclusions: \u2220CED = \u2220EAC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220AEC, \u2220AEC = \u2220CAE\nConclusions: pi * ((2 * x) / 180) = \u2220CAE\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220ACD, \u2220BCE = \u2220DCE, \u2220ACB = \u2220BCE\nConclusions: \u2220ACD = \u2220DCE\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 + x) / 180) = \u2220ECB, \u2220BCA = \u2220DCA, \u2220BCA = \u2220ECB\nConclusions: pi * ((6 + x) / 180) = \u2220DCA\n\nStep 37:\nTheorem: Substitution\nPremises : \u2220ADC = \u2220EDB, \u2220CAD = \u2220CAE, 3.14 = pi, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = \u2220CAE + \u2220DCA + \u2220EDB\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ACE + \u2220DCA + \u2220ECD, 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CED = \u2220EAC, \u2220DAC = \u2220EAC\nConclusions: \u2220CED = \u2220DAC\n\nStep 40:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220CAE, 3.14 = pi\nConclusions: 3.14 * ((2 * x) / 180) = \u2220CAE\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220DCE, \u2220DCE = 2 * pi - \u2220ECD\nConclusions: \u2220ACD = 2 * pi - \u2220ECD\n\nStep 42:\nTheorem: Substitution\nPremises : pi * ((6 + x) / 180) = \u2220DCA, 3.14 = pi\nConclusions: 3.14 * ((6 + x) / 180) = \u2220DCA\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220CDE + \u2220CDE + \u2220EDB + \u2220EDB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220CDE + \u2220CDE + \u2220EDB + \u2220EDB\n\nStep 44:\nTheorem: Substitution\nPremises : \u2220CAE = 2 * pi - \u2220DAC, \u2220CED = \u2220DAC, 3.14 = pi\nConclusions: \u2220CAE = 2 * 3.14 - \u2220CED\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = 2 * pi - \u2220ACD, 3.14 * ((6 + x) / 180) = \u2220DCA\nConclusions: 3.14 * ((6 + x) / 180) = 2 * pi - \u2220ACD\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220CAE, \u2220CAE = 2 * 3.14 - \u2220CED, 3.14 * ((2 * x) / 180) = 2 * 3.14 - \u2220CED\nConclusions: 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180), pi * ((2 * x) / 180) = 2 * pi - \u2220CED\nConclusions: 3.14 * ((2 * x) / 180) = 2 * pi - \u2220CED\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((6 + x) / 180) = 2 * pi - \u2220ACD, 3.14 = \u2220CAE + \u2220DCA + \u2220EDB, \u2220ACD = 2 * pi - \u2220ECD, pi = \u2220CDE + \u2220DEC + \u2220ECD, 3.14 * ((6 + x) / 180) = \u2220DCA, \u2220CED = 2 * pi - \u2220DEC, 3.14 * ((2 * x) / 180) = \u2220CAE, 2 * pi = \u2220CDE + \u2220CDE + \u2220EDB + \u2220EDB, 3.14 * ((2 * x) / 180) = 2 * pi - \u2220CED\nConclusions: 28 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(E, C)",
+        "Line(C, A)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, B))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(C, E)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, E)), Mul(pi, Div(Sub(Mul(2.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(Add(x, 6.0), 180.0)))"
+    ],
+    "correct": true
+}

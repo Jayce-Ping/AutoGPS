@@ -1,0 +1,104 @@
+{
+    "problem_id": "3700",
+    "solved": true,
+    "problem_text": "In \\odot R, find m \\widehat TUV.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 6)",
+        "Equals(LengthOf(Line(U, S)), 5)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(T, S)",
+        "Line(T, V)",
+        "Line(U, R)",
+        "Line(U, S)",
+        "Perpendicular(Line(T, V), Line(U, R))",
+        "PointLiesOnCircle(T, Circle(R))",
+        "PointLiesOnCircle(U, Circle(R))",
+        "PointLiesOnCircle(V, Circle(R))",
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "Circle(R)",
+        "Find(MeasureOf(Arc(T,U,V)))"
+    ],
+    "point_instances": [
+        "V",
+        "U",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "VS",
+        "VT",
+        "ST",
+        "US",
+        "UR",
+        "SR"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "V": [
+            172.61424731182797,
+            344.615
+        ],
+        "U": [
+            107.96236559139786,
+            227.56326530612242
+        ],
+        "T": [
+            172.92809139784947,
+            110.06357142857142
+        ],
+        "S": [
+            173.24193548387098,
+            227.56326530612242
+        ],
+        "R": [
+            247.63953488372096,
+            226.5
+        ]
+    },
+    "problem_choices": [
+        54.071,
+        113.889,
+        125.929,
+        130.751
+    ],
+    "choices_precise_value": [
+        54.071,
+        113.889,
+        125.929,
+        130.751
+    ],
+    "problem_answer": 113.889,
+    "total_time": 107.883255,
+    "solution_predicate": "Equals(1.9877299632, MeasureOf(Arc(T, R, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: S on RU, RV, 3.14 = pi, \u2220VRT, \u2299(R, radius_R), \u2220SRV, T on \u2299(R, radius_R), ST, \u2220TVR, \u2220RTV, RS \u22a5 ST, 5 = SU, \u2220TRS, \u2220URV, Arc(VRT), \u2220STR, TV, Arc(TRV), \u2220TVR, \u2220SVR, S on TV, \u2220RTV, \u2220RVT, 6 = RS, \u2220VRT, \u2220VTR, \u2220TRU, U on \u2299(R, radius_R), \u2220TRS, RT, RS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on RU\nConclusions: RU = RS + SU\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : T on \u2299(R, radius_R)\nConclusions: radius_R = RT\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220SRV, \u2220TRS, \u2220VRT\nConclusions: 2 * pi = \u2220SRV + \u2220TRS + \u2220VRT\n\nStep 6:\nTheorem: Same Angle\nPremises : S on RU, \u2220URV\nConclusions: \u2220SRV = \u2220URV\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(VRT)\nConclusions: \u2220VRT = Arc(VRT)\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TRV)\nConclusions: \u2220TRV = Arc(TRV)\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220TVR\nConclusions: \u2220TVR = 2 * pi - \u2220RVT\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220SVR\nConclusions: \u2220SVR = 2 * pi - \u2220RVS\n\nStep 11:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(R, radius_R), RS \u22a5 ST, S on TV\nConclusions: \u25b3RST \u2245 \u25b3RSV\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220TVR, S on TV\nConclusions: \u2220SVR = \u2220TVR\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220RTV, S on TV\nConclusions: \u2220RTS = \u2220RTV\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220RTV\nConclusions: \u2220RTV = 2 * pi - \u2220VTR\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220RVT, S on TV\nConclusions: \u2220RVS = \u2220RVT\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220VRT\nConclusions: \u2220VRT = 2 * pi - \u2220TRV\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220VTR, S on TV\nConclusions: \u2220STR = \u2220VTR\n\nStep 18:\nTheorem: Same Angle\nPremises : S on RU, \u2220TRU\nConclusions: \u2220TRS = \u2220TRU\n\nStep 19:\nTheorem: Point On Circle Def\nPremises : U on \u2299(R, radius_R)\nConclusions: radius_R = RU\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : TV, RV, RT\nConclusions: \u25b3RTV\n\nStep 21:\nTheorem: Definition of Triangle\nPremises : RS, RT, ST\nConclusions: \u25b3RST\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220SRV + \u2220TRS + \u2220VRT\nConclusions: 6.28 = \u2220SRV + \u2220TRS + \u2220VRT\n\nStep 23:\nTheorem: Congruent Definition\nPremises : \u25b3RST \u2245 \u25b3RSV\nConclusions: \u2220RTS = \u2220SVR, \u2220RVS = \u2220STR, \u2220SRV = \u2220TRS\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SVR = \u2220TVR, \u2220SVR = 2 * pi - \u2220RVS\nConclusions: \u2220TVR = 2 * pi - \u2220RVS\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VRT = 2 * pi - \u2220TRV, \u2220VRT = Arc(VRT)\nConclusions: Arc(VRT) = 2 * pi - \u2220TRV\n\nStep 26:\nTheorem: Substitution\nPremises : RU = RS + SU, 5 = SU, radius_R = RU, 6 = RS\nConclusions: 5 + 6 = radius_R\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Triangle(V, T, R)\nPremises : \u25b3RTV\nConclusions: pi = \u2220RVT + \u2220TRV + \u2220VTR\n\nStep 28:\nTheorem: Cos Function Definition\nPremises : \u2220TRS, RS \u22a5 ST, \u25b3RST\nConclusions: RS / RT = cos(\u2220TRS)\n\nStep 29:\nTheorem: Sin Function Definition\nPremises : \u2220STR, RS \u22a5 ST, \u25b3RST\nConclusions: RS / RT = sin(\u2220STR)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SVR = \u2220TVR, \u2220RTS = \u2220RTV, \u2220RTS = \u2220SVR\nConclusions: \u2220RTV = \u2220TVR\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RVS = \u2220RVT, \u2220RVS = \u2220STR, \u2220STR = \u2220VTR\nConclusions: \u2220RVT = \u2220VTR\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRS = \u2220TRU, \u2220SRV = \u2220URV, \u2220SRV = \u2220TRS\nConclusions: \u2220TRU = \u2220URV\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 5 + 6 = radius_R, radius_R = RT\nConclusions: 11 = RT\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220RVT + \u2220TRV + \u2220VTR\nConclusions: 3.14 = \u2220RVT + \u2220TRV + \u2220VTR\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RTV = \u2220TVR, \u2220TVR = 2 * pi - \u2220RVS\nConclusions: \u2220RTV = 2 * pi - \u2220RVS\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TVR = 2 * pi - \u2220RVT, \u2220RTV = \u2220TVR\nConclusions: \u2220RTV = 2 * pi - \u2220RVT\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STR = \u2220VTR, \u2220RVT = \u2220VTR\nConclusions: \u2220RVT = \u2220STR\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRU = \u2220URV, \u2220TRS = \u2220TRU\nConclusions: \u2220TRS = \u2220URV\n\nStep 39:\nTheorem: Substitution\nPremises : RS / RT = sin(\u2220STR), \u2220RVT = \u2220STR, 11 = RT, 6 = RS\nConclusions: 6 / 11 = sin(\u2220RVT)\n\nStep 40:\nTheorem: Substitution\nPremises : RS / RT = cos(\u2220TRS), \u2220TRS = \u2220URV, 11 = RT, 6 = RS\nConclusions: 6 / 11 = cos(\u2220URV)\n\nStep 41:\nTheorem: Solve Univariate Equation\nPremises : 6 / 11 = sin(\u2220RVT)\nConclusions: 0.58 = \u2220RVT\n\nStep 42:\nTheorem: Solve Univariate Equation\nPremises : 6 / 11 = cos(\u2220URV)\nConclusions: 0.99 = \u2220URV\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RVS = \u2220RVT, 0.58 = \u2220RVT\nConclusions: 0.58 = \u2220RVS\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SRV = \u2220URV, 0.99 = \u2220URV\nConclusions: 0.99 = \u2220SRV\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRS = \u2220URV, 0.99 = \u2220URV\nConclusions: 0.99 = \u2220TRS\n\nStep 46:\nTheorem: Substitution\nPremises : 0.58 = \u2220RVS, \u2220RTV = 2 * pi - \u2220RVS, 3.14 = pi\nConclusions: 2 * 3.14 - 0.58 = \u2220RTV\n\nStep 47:\nTheorem: Substitution\nPremises : 6.28 = \u2220SRV + \u2220TRS + \u2220VRT, 0.99 = \u2220SRV, \u2220VRT = Arc(VRT), 0.99 = \u2220TRS\nConclusions: 6.28 = 0.99 + 0.99 + Arc(VRT)\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RTV = 2 * pi - \u2220VTR, 2 * 3.14 - 0.58 = \u2220RTV\nConclusions: 2 * 3.14 - 0.58 = 2 * pi - \u2220VTR\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RTV = 2 * pi - \u2220RVT, 2 * 3.14 - 0.58 = \u2220RTV\nConclusions: 2 * 3.14 - 0.58 = 2 * pi - \u2220RVT\n\nStep 50:\nTheorem: Solve Linear Equation System\nPremises : Arc(VRT) = 2 * pi - \u2220TRV, 6.28 = 0.99 + 0.99 + Arc(VRT), 2 * 3.14 - 0.58 = 2 * pi - \u2220VTR, 2 * 3.14 - 0.58 = 2 * pi - \u2220RVT, 3.14 = \u2220RVT + \u2220TRV + \u2220VTR\nConclusions: 1.99 = \u2220TRV\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRV = Arc(TRV), 1.99 = \u2220TRV\nConclusions: 1.99 = Arc(TRV)\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, S)",
+        "Line(V, T)",
+        "Line(S, T)",
+        "Line(U, S)",
+        "Line(U, R)",
+        "Line(S, R)",
+        "Circle(R, radius_R)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(T, S)",
+        "Line(T, V)",
+        "Line(U, R)",
+        "Line(U, S)",
+        "Perpendicular(Line(T, V), Line(U, R))",
+        "PointLiesOnCircle(T, Circle(R, radius_R))",
+        "PointLiesOnCircle(U, Circle(R, radius_R))",
+        "PointLiesOnCircle(V, Circle(R, radius_R))",
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "Circle(R, radius_R)",
+        "Equals(LengthOf(Line(R, S)), 6.0)",
+        "Equals(LengthOf(Line(U, S)), 5.0)"
+    ],
+    "correct": true
+}

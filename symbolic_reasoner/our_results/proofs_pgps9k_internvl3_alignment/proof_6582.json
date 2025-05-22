@@ -1,0 +1,55 @@
+{
+    "problem_id": "6582",
+    "solved": true,
+    "problem_text": "Find the circumference of the circle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 4.2)",
+        "Find(CircumferenceOf(Circle(B)))",
+        "Line(A, B)",
+        "PointLiesOnCircle(A, Circle(B))"
+    ],
+    "point_instances": [
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AB"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            42.24,
+            47.86741573033707
+        ],
+        "B": [
+            102.95297565032989,
+            108.5051702011511
+        ]
+    },
+    "problem_choices": [
+        13.195,
+        26.389,
+        55.418,
+        360.0
+    ],
+    "choices_precise_value": [
+        13.195,
+        26.389,
+        55.418,
+        360.0
+    ],
+    "problem_answer": 26.389,
+    "total_time": 1.234372,
+    "solution_predicate": "Equals(26.3893782902, CircumferenceOf(Circle(B, radius_B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Circumference(\u2299(B, radius_B)), 3.14 = pi, A on \u2299(B, radius_B), 4.2 = AB\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(B, radius_B))\nConclusions: pi * 2 * radius_B = Circumference(\u2299(B, radius_B))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_B)\nConclusions: radius_B = AB\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = AB, 4.2 = AB\nConclusions: 4.2 = radius_B\n\nStep 5:\nTheorem: Substitution\nPremises : pi * 2 * radius_B = Circumference(\u2299(B, radius_B)), 3.14 = pi, 4.2 = radius_B\nConclusions: 3.14 * 2 * 4.2 = Circumference(\u2299(B, radius_B))\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 * 2 * 4.2 = Circumference(\u2299(B, radius_B))\nConclusions: 26.39 = Circumference(\u2299(B, radius_B))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "Equals(LengthOf(Line(B, A)), 4.2)"
+    ],
+    "correct": true
+}

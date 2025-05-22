@@ -1,0 +1,105 @@
+{
+    "problem_id": "4939",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(A, C, B)), 125)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(D, C, E)))",
+        "Equals(MeasureOf(Angle(D, C, E)), 125)",
+        "Find(Add(AreaOf(Sector(C, A, B)), AreaOf(Sector(C, D, E))))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C, 8))",
+        "PointLiesOnCircle(B, Circle(C, 8))",
+        "PointLiesOnCircle(D, Circle(C, 8))",
+        "PointLiesOnCircle(E, Circle(C, 8))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(E, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "EC",
+        "EB",
+        "CB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            50.040983606557376,
+            83.35714285714286
+        ],
+        "B": [
+            262.43715846994536,
+            85.58
+        ],
+        "C": [
+            155.40994048339618,
+            139.4708637876499
+        ],
+        "D": [
+            262.71516393442624,
+            193.1107142857143
+        ],
+        "E": [
+            49.20696721311475,
+            195.33357142857142
+        ]
+    },
+    "problem_choices": [
+        15.359,
+        61.436,
+        139.626,
+        262.498
+    ],
+    "choices_precise_value": [
+        15.359,
+        61.436,
+        139.626,
+        262.498
+    ],
+    "problem_answer": 139.626,
+    "total_time": 16.39501,
+    "solution_predicate": "Equals(139.62634016, Add(AreaOf(Sector(B, C, A)), AreaOf(Sector(E, C, D))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, Sector(E, C, D), C on AD, C on BE, Sector(B, C, A), \u2220BCA, pi * (125 / 180) = \u2220BCA, pi * (125 / 180) = \u2220ECD, \u2220ECD\n\nStep 2:\nTheorem: Area formula of Sector(E, C, D)\nPremises : Sector(E, C, D)\nConclusions: Area(Sector(E, C, D)) = (8 ** 2 * \u2220ECD) / 2\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : C on BE, C on AD\nConclusions: \u2220ACB = \u2220DCE\n\nStep 4:\nTheorem: Area formula of Sector(B, C, A)\nPremises : Sector(B, C, A)\nConclusions: Area(Sector(B, C, A)) = (8 ** 2 * \u2220BCA) / 2\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220DCE\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (125 / 180) = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB, 3.14 = pi, \u2220ACB = \u2220DCE\nConclusions: 3.14 * (125 / 180) = 2 * 3.14 - \u2220DCE\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (125 / 180) = \u2220ECD, 3.14 = pi, \u2220ECD = 2 * pi - \u2220DCE\nConclusions: pi * (125 / 180) = 2 * 3.14 - \u2220DCE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (125 / 180) = 2 * 3.14 - \u2220DCE, 3.14 * (125 / 180) = 2 * 3.14 - \u2220DCE\nConclusions: 3.14 * (125 / 180) = pi * (125 / 180)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (125 / 180) = \u2220ECD, 3.14 * (125 / 180) = pi * (125 / 180)\nConclusions: 3.14 * (125 / 180) = \u2220ECD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (125 / 180) = \u2220BCA, 3.14 * (125 / 180) = pi * (125 / 180)\nConclusions: 3.14 * (125 / 180) = \u2220BCA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (125 / 180) = \u2220ECD\nConclusions: 2.18 = \u2220ECD\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (125 / 180) = \u2220BCA\nConclusions: 2.18 = \u2220BCA\n\nStep 14:\nTheorem: Substitution\nPremises : Area(Sector(E, C, D)) = (8 ** 2 * \u2220ECD) / 2, 2.18 = \u2220ECD\nConclusions: (2.18 * 8 ** 2) / 2 = Area(Sector(E, C, D))\n\nStep 15:\nTheorem: Substitution\nPremises : Area(Sector(B, C, A)) = (8 ** 2 * \u2220BCA) / 2, 2.18 = \u2220BCA\nConclusions: (2.18 * 8 ** 2) / 2 = Area(Sector(B, C, A))\n\nStep 16:\nTheorem: Solve Univariate Equation\nPremises : (2.18 * 8 ** 2) / 2 = Area(Sector(E, C, D))\nConclusions: 69.81 = Area(Sector(E, C, D))\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : (2.18 * 8 ** 2) / 2 = Area(Sector(B, C, A))\nConclusions: 69.81 = Area(Sector(B, C, A))\n\nStep 18:\nTheorem: Evaluate\nPremises : 69.81 = Area(Sector(B, C, A)), 69.81 = Area(Sector(E, C, D))\nConclusions: 139.63 = Area(Sector(B, C, A)) + Area(Sector(E, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "PointLiesOnCircle(A, Circle(C, 8))",
+        "PointLiesOnCircle(B, Circle(C, 8))",
+        "PointLiesOnCircle(D, Circle(C, 8))",
+        "PointLiesOnCircle(E, Circle(C, 8))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(E, B))",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(125.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(E, C, D)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(125.0, 180.0)))"
+    ],
+    "correct": true
+}

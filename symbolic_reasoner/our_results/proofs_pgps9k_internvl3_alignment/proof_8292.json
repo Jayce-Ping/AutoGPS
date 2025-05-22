@@ -1,0 +1,151 @@
+{
+    "problem_id": "8292",
+    "solved": true,
+    "problem_text": "H is the incenter of \\triangle ABC. Find m \\angle DHG.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, F)), 24)",
+        "Equals(LengthOf(Line(A, H)), 25)",
+        "Equals(MeasureOf(Angle(D, B, H)), 30)",
+        "Equals(MeasureOf(Angle(H, C, G)), 28)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(D, B)",
+        "Line(D, H)",
+        "Line(F, C)",
+        "Line(F, H)",
+        "Line(G, C)",
+        "Line(H, B)",
+        "Line(H, C)",
+        "Line(H, G)",
+        "Perpendicular(Line(D, H), Line(A, B))",
+        "Perpendicular(Line(F, H), Line(A, C))",
+        "Perpendicular(Line(H, G), Line(B, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "IsIncenterOf(Point(H),Triangle(A,B,C))",
+        "Find(MeasureOf(Angle(D,H,G)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "G",
+        "C",
+        "F",
+        "H"
+    ],
+    "line_instances": [
+        "BH",
+        "HG",
+        "HC",
+        "BG",
+        "BC",
+        "GC",
+        "DH",
+        "HF",
+        "AF",
+        "AC",
+        "FC",
+        "BD",
+        "BA",
+        "DA",
+        "AH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            87.08108108108107,
+            63.78378378378378
+        ],
+        "D": [
+            188.16216216216216,
+            285.94594594594594
+        ],
+        "B": [
+            257.35135135135135,
+            431.8918918918919
+        ],
+        "G": [
+            373.02702702702703,
+            317.2972972972973
+        ],
+        "C": [
+            512.4864864864865,
+            177.83783783783784
+        ],
+        "F": [
+            320.5945945945946,
+            126.48648648648648
+        ],
+        "H": [
+            290.86486486486484,
+            239.45945945945945
+        ]
+    },
+    "problem_choices": [
+        60.0,
+        100.0,
+        120.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        60.0,
+        100.0,
+        120.0,
+        150.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 223.319967,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(D, H, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on AB, \u2220ABH, BH, BD, \u2220HBC, FH, BC, GH, DH, \u2220CBH, \u2220HDA, \u2220BHG, AC, BD \u22a5 DH, \u2220HBA, F on AC, CG \u22a5 GH, CF, 3.14 = pi, G on BC, IsIncenterOf(H, \u25b3ABC), AD \u22a5 DH, \u2220DAC, \u2220ACB, \u2220CBA, \u2220GHD, \u2220HGB, AF, \u2220GBH, \u2220DHB, \u2220AFH, \u2220GHD, pi * (30 / 180) = \u2220HBD, \u2220BDH, BG \u22a5 GH, \u2220HFC, AD, \u2220BHF, \u2220GBA, \u2220ABC, CG, \u2220CBA, \u2220FHD, BG, \u2220CGH, \u2220HBC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABH\nConclusions: \u2220ABH = 2 * pi - \u2220HBA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220HBC\nConclusions: \u2220HBC = 2 * pi - \u2220CBH\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : DH, BD, BH\nConclusions: \u25b3BDH\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 DH\nConclusions: pi / 2 = \u2220BDH\n\nStep 6:\nTheorem: Same Angle\nPremises : D on AB, \u2220HBA\nConclusions: \u2220HBA = \u2220HBD\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : CG \u22a5 GH\nConclusions: pi / 2 = \u2220CGH\n\nStep 8:\nTheorem: Definition of Quadrilateral\nPremises : BC, CF, BH, FH\nConclusions: Quadrilateral(B, C, F, H)\n\nStep 9:\nTheorem: Properties of Incenter H of Triangle\nPremises : IsIncenterOf(H, \u25b3ABC)\nConclusions: \u2220ABH = \u2220HBC\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 DH\nConclusions: pi / 2 = \u2220HDA\n\nStep 11:\nTheorem: Same Angle\nPremises : F on AC, \u2220DAC\nConclusions: \u2220DAC = \u2220DAF\n\nStep 12:\nTheorem: Same Angle\nPremises : G on BC, \u2220ACB\nConclusions: \u2220ACB = \u2220ACG\n\nStep 13:\nTheorem: Same Angle\nPremises : F on AC, \u2220ACB\nConclusions: \u2220ACB = \u2220FCB\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : \u2220GHD\nConclusions: \u2220GHD = 2 * pi - \u2220DHG\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220GBH\nConclusions: \u2220GBH = 2 * pi - \u2220HBG\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220DHB, \u2220GHD, \u2220BHG\nConclusions: 2 * pi = \u2220BHG + \u2220DHB + \u2220GHD\n\nStep 18:\nTheorem: Straight Angle\nPremises : \u2220HDA, \u2220BDH\nConclusions: pi = \u2220BDH + \u2220HDA\n\nStep 19:\nTheorem: Perpendicular to Right Angle\nPremises : BG \u22a5 GH\nConclusions: pi / 2 = \u2220HGB\n\nStep 20:\nTheorem: Straight Angle\nPremises : \u2220AFH, \u2220HFC\nConclusions: pi = \u2220AFH + \u2220HFC\n\nStep 21:\nTheorem: Definition of Quadrilateral\nPremises : AF, DH, AD, FH\nConclusions: Quadrilateral(A, D, H, F)\n\nStep 22:\nTheorem: Same Angle\nPremises : D on AB, \u2220GBA\nConclusions: \u2220GBA = \u2220GBD\n\nStep 23:\nTheorem: Circumference splited\nPremises : \u2220CBH, \u2220HBA, \u2220ABC\nConclusions: 2 * pi = \u2220ABC + \u2220CBH + \u2220HBA\n\nStep 24:\nTheorem: Definition of Pentagon\nPremises : DH, CG, AC, AD, GH\nConclusions: Pentagon(A, C, G, H, D)\n\nStep 25:\nTheorem: Same Angle\nPremises : G on BC, \u2220CBA\nConclusions: \u2220CBA = \u2220GBA\n\nStep 26:\nTheorem: Circumference splited\nPremises : \u2220FHD, \u2220DHB, \u2220BHF\nConclusions: 2 * pi = \u2220BHF + \u2220DHB + \u2220FHD\n\nStep 27:\nTheorem: Definition of Triangle\nPremises : BG, GH, BH\nConclusions: \u25b3BGH\n\nStep 28:\nTheorem: Definition of Quadrilateral\nPremises : DH, BG, BD, GH\nConclusions: Quadrilateral(B, D, H, G)\n\nStep 29:\nTheorem: Straight Angle\nPremises : \u2220HGB, \u2220CGH\nConclusions: pi = \u2220CGH + \u2220HGB\n\nStep 30:\nTheorem: Same Angle\nPremises : G on BC, \u2220HBC\nConclusions: \u2220HBC = \u2220HBG\n\nStep 31:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, H)\nPremises : \u25b3BDH\nConclusions: pi = \u2220BDH + \u2220DHB + \u2220HBD\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220HBD, \u2220HBA = \u2220HBD\nConclusions: pi * (30 / 180) = \u2220HBA\n\nStep 33:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(H, F, C, B)\nPremises : Quadrilateral(B, C, F, H)\nConclusions: 2 * pi = \u2220BHF + \u2220CBH + \u2220FCB + \u2220HFC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220FCB, \u2220ACB = \u2220ACG\nConclusions: \u2220ACG = \u2220FCB\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220BDH + \u2220HDA\nConclusions: 3.14 = \u2220BDH + \u2220HDA\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CGH, pi / 2 = \u2220HGB\nConclusions: \u2220CGH = \u2220HGB\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AFH + \u2220HFC\nConclusions: 3.14 = \u2220AFH + \u2220HFC\n\nStep 38:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, H, D, A)\nPremises : Quadrilateral(A, D, H, F)\nConclusions: 2 * pi = \u2220AFH + \u2220DAF + \u2220FHD + \u2220HDA\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Pentagon(A, C, G, H, D)\nPremises : Pentagon(A, C, G, H, D)\nConclusions: 3 * pi = \u2220ACG + \u2220CGH + \u2220DAC + \u2220GHD + \u2220HDA\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220GBA, \u2220GBA = \u2220GBD\nConclusions: \u2220CBA = \u2220GBD\n\nStep 41:\nTheorem: Interior Angle Sum Theorem for Triangle(H, G, B)\nPremises : \u25b3BGH\nConclusions: pi = \u2220BHG + \u2220GBH + \u2220HGB\n\nStep 42:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(B, D, H, G)\nPremises : Quadrilateral(B, D, H, G)\nConclusions: 2 * pi = \u2220BDH + \u2220DHG + \u2220GBD + \u2220HGB\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CGH + \u2220HGB\nConclusions: 3.14 = \u2220CGH + \u2220HGB\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABH = \u2220HBC, \u2220HBC = \u2220HBG\nConclusions: \u2220ABH = \u2220HBG\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HBC = 2 * pi - \u2220CBH, \u2220HBC = \u2220HBG\nConclusions: \u2220HBG = 2 * pi - \u2220CBH\n\nStep 46:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BDH, 3.14 = pi, pi * (30 / 180) = \u2220HBD, pi = \u2220BDH + \u2220DHB + \u2220HBD\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220DHB\n\nStep 47:\nTheorem: Substitution\nPremises : \u2220DAC = \u2220DAF, pi / 2 = \u2220CGH, 3.14 = pi, pi / 2 = \u2220HDA, \u2220ACG = \u2220FCB, 3 * pi = \u2220ACG + \u2220CGH + \u2220DAC + \u2220GHD + \u2220HDA\nConclusions: 3 * 3.14 = 3.14 / 2 + pi / 2 + \u2220DAF + \u2220FCB + \u2220GHD\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220GBD, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: \u2220GBD = 2 * pi - \u2220ABC\n\nStep 49:\nTheorem: Substitution\nPremises : pi / 2 = \u2220HGB, 3.14 = pi, pi = \u2220BHG + \u2220GBH + \u2220HGB\nConclusions: 3.14 = 3.14 / 2 + \u2220BHG + \u2220GBH\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABH = 2 * pi - \u2220HBA, \u2220ABH = \u2220HBG\nConclusions: \u2220HBG = 2 * pi - \u2220HBA\n\nStep 51:\nTheorem: Solve Linear Equation System\nPremises : \u2220GBD = 2 * pi - \u2220ABC, 2 * pi = \u2220BHF + \u2220DHB + \u2220FHD, 3 * 3.14 = 3.14 / 2 + pi / 2 + \u2220DAF + \u2220FCB + \u2220GHD, 3.14 = \u2220AFH + \u2220HFC, 3.14 = \u2220BDH + \u2220HDA, \u2220HBG = 2 * pi - \u2220CBH, 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220DHB, 2 * pi = \u2220BHG + \u2220DHB + \u2220GHD, 2 * pi = \u2220BDH + \u2220DHG + \u2220GBD + \u2220HGB, 2 * pi = \u2220AFH + \u2220DAF + \u2220FHD + \u2220HDA, \u2220GHD = 2 * pi - \u2220DHG, 3.14 = 3.14 / 2 + \u2220BHG + \u2220GBH, \u2220CGH = \u2220HGB, \u2220HBG = 2 * pi - \u2220HBA, 3.14 = \u2220CGH + \u2220HGB, 2 * pi = \u2220BHF + \u2220CBH + \u2220FCB + \u2220HFC, \u2220GBH = 2 * pi - \u2220HBG, pi * (30 / 180) = \u2220HBA, 2 * pi = \u2220ABC + \u2220CBH + \u2220HBA\nConclusions: 2.09 = \u2220DHG\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, H)",
+        "Line(H, G)",
+        "Line(H, C)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(G, C)",
+        "Line(D, H)",
+        "Line(H, F)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(A, H)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(D, B)",
+        "Line(D, H)",
+        "Line(F, C)",
+        "Line(F, H)",
+        "Line(G, C)",
+        "Line(H, B)",
+        "Line(H, C)",
+        "Line(H, G)",
+        "Perpendicular(Line(D, H), Line(A, B))",
+        "Perpendicular(Line(F, H), Line(A, C))",
+        "Perpendicular(Line(H, G), Line(B, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "IsIncenterOf(H, Triangle(A, B, C))",
+        "Equals(LengthOf(Line(A, F)), 24.0)",
+        "Equals(LengthOf(Line(A, H)), 25.0)",
+        "Equals(MeasureOf(Angle(H, B, D)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(H, C, G)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,119 @@
+{
+    "problem_id": "2772",
+    "solved": true,
+    "problem_text": "Find m \\widehat X Z.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(A, Y))",
+        "PointLiesOnLine(Z, Line(Y, B))",
+        "PointLiesOnLine(Z, Line(Y, C))",
+        "PointLiesOnLine(B, Line(Y, C))",
+        "PointLiesOnLine(B, Line(Z, C))",
+        "PointLiesOnCircle(X, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(D, radius_0_0))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), 68)",
+        "Equals(MeasureOf(Arc(X, W, B)), 224)",
+        "Tangent(Line(A, Y), Circle(D))",
+        "Find(MeasureOf(Arc(X, Z)))"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "Z",
+        "Y",
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AX",
+        "AY",
+        "XY",
+        "YZ",
+        "YB",
+        "YC",
+        "ZB",
+        "ZC",
+        "BC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "X": [
+            211.8121546961326,
+            177.90055248618785
+        ],
+        "W": [
+            186.3977900552486,
+            401.6574585635359
+        ],
+        "Z": [
+            375.34806629834253,
+            215.4696132596685
+        ],
+        "Y": [
+            367.060773480663,
+            103.86740331491713
+        ],
+        "A": [
+            56.5635359116022,
+            253.03867403314916
+        ],
+        "B": [
+            385.29281767955797,
+            368.50828729281767
+        ],
+        "C": [
+            390.2651933701657,
+            445.8563535911602
+        ],
+        "D": [
+            269.9475138121547,
+            297.15745856353595
+        ]
+    },
+    "problem_choices": [
+        "56",
+        "68",
+        "88",
+        "92"
+    ],
+    "choices_precise_value": [
+        56.0,
+        68.0,
+        88.0,
+        92.0
+    ],
+    "problem_answer": 88.0,
+    "total_time": 70.234415,
+    "solution_predicate": "Equals(1.5358897417, MeasureOf(Arc(Z, D, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: X on AY, XY, \u2220DZC, X on \u2299(D, radius_0_0), B on CZ, BY, BD, Arc(BDX), Arc(ZDX), BZ, \u2220WDB, DX, \u2220YBD, \u2220BDX, \u2220BDZ, \u2220XDB, 3.14 = pi, \u2220AYB, \u2220ZDX, Z on \u2299(D, radius_0_0), Tangent(AY, \u2299(D, radius_0_0)), \u2220AYZ, \u2220ZDW, \u2220XDW, Arc(XDB), B on \u2299(D, radius_0_0), pi * (68 / 180) = \u2220XYZ, DZ, pi * (224 / 180) = Arc(XDB), Z on BY, \u2220XDB, \u2220BDX\n\nStep 2:\nTheorem: Same Angle\nPremises : B on CZ, \u2220DZC\nConclusions: \u2220DZB = \u2220DZC\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BDX)\nConclusions: \u2220BDX = Arc(BDX)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ZDX)\nConclusions: \u2220ZDX = Arc(ZDX)\n\nStep 5:\nTheorem: Definition of Quadrilateral\nPremises : XY, BY, DX, BD\nConclusions: Quadrilateral(B, D, X, Y)\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDX\nConclusions: \u2220BDX = 2 * pi - \u2220XDB\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220XDB\nConclusions: \u2220XDB = 2 * pi - \u2220BDX\n\nStep 8:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 9:\nTheorem: Same Angle\nPremises : X on AY, \u2220AYB\nConclusions: \u2220AYB = \u2220XYB\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DZ\n\nStep 11:\nTheorem: Tangent Definition\nPremises : X on AY, X on \u2299(D, radius_0_0), Tangent(AY, \u2299(D, radius_0_0))\nConclusions: DX \u22a5 XY\n\nStep 12:\nTheorem: Same Angle\nPremises : X on AY, \u2220AYZ\nConclusions: \u2220AYZ = \u2220XYZ\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220BDZ, \u2220WDB, \u2220ZDW\nConclusions: 2 * pi = \u2220BDZ + \u2220WDB + \u2220ZDW\n\nStep 14:\nTheorem: Circumference Split\nPremises : \u2220BDZ, \u2220XDW, \u2220WDB, \u2220ZDX\nConclusions: 2 * pi = \u2220BDZ + \u2220WDB + \u2220XDW + \u2220ZDX\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : Arc(XDB)\nConclusions: Arc(XDB) = 2 * pi - Arc(BDX)\n\nStep 16:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(XDB)\nConclusions: \u2220XDB = Arc(XDB)\n\nStep 17:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = BD\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : BZ, BD, DZ\nConclusions: \u25b3BDZ\n\nStep 19:\nTheorem: Same Angle\nPremises : Z on BY, \u2220AYB\nConclusions: \u2220AYB = \u2220AYZ\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220YBD, Z on BY\nConclusions: \u2220YBD = \u2220ZBD\n\nStep 21:\nTheorem: Circumference splited\nPremises : \u2220BDZ, \u2220ZDX, \u2220XDB\nConclusions: 2 * pi = \u2220BDZ + \u2220XDB + \u2220ZDX\n\nStep 22:\nTheorem: Circumference splited\nPremises : \u2220XDW, \u2220BDX, \u2220WDB\nConclusions: 2 * pi = \u2220BDX + \u2220WDB + \u2220XDW\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(B, D, X, Y)\nPremises : Quadrilateral(B, D, X, Y)\nConclusions: 2 * pi = \u2220BDX + \u2220DXY + \u2220XYB + \u2220YBD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDX = Arc(BDX), \u2220BDX = 2 * pi - \u2220XDB\nConclusions: Arc(BDX) = 2 * pi - \u2220XDB\n\nStep 25:\nTheorem: Perpendicular to Right Angle\nPremises : DX \u22a5 XY\nConclusions: pi / 2 = \u2220DXY\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AYZ = \u2220XYZ, pi * (68 / 180) = \u2220XYZ\nConclusions: pi * (68 / 180) = \u2220AYZ\n\nStep 27:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDZ + \u2220WDB + \u2220ZDW, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BDZ + \u2220WDB + \u2220ZDW\n\nStep 28:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BDZ + \u2220WDB + \u2220XDW + \u2220ZDX, \u2220ZDX = Arc(ZDX)\nConclusions: 2 * 3.14 = \u2220BDZ + \u2220WDB + \u2220XDW + Arc(ZDX)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * (224 / 180) = Arc(XDB), Arc(XDB) = 2 * pi - Arc(BDX)\nConclusions: pi * (224 / 180) = 2 * pi - Arc(BDX)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi * (224 / 180) = Arc(XDB), \u2220XDB = Arc(XDB)\nConclusions: pi * (224 / 180) = \u2220XDB\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BD, radius_0_0 = DZ\nConclusions: BD = DZ\n\nStep 32:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, Z)\nPremises : \u25b3BDZ\nConclusions: pi = \u2220BDZ + \u2220DZB + \u2220ZBD\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BDZ + \u2220XDB + \u2220ZDX, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220BDZ + \u2220XDB + \u2220ZDX\n\nStep 34:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDX + \u2220WDB + \u2220XDW, \u2220BDX = Arc(BDX), 3.14 = pi\nConclusions: 2 * 3.14 = \u2220WDB + \u2220XDW + Arc(BDX)\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AYB = \u2220XYB, pi * (68 / 180) = \u2220AYZ, \u2220AYB = \u2220AYZ\nConclusions: pi * (68 / 180) = \u2220XYB\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BDZ + \u2220WDB + \u2220ZDW, 2 * pi = \u2220BDZ + \u2220WDB + \u2220ZDW\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : pi * (224 / 180) = \u2220XDB, \u2220XDB = 2 * pi - \u2220BDX\nConclusions: pi * (224 / 180) = 2 * pi - \u2220BDX\n\nStep 38:\nTheorem: Substitution\nPremises : pi * (224 / 180) = \u2220XDB, 2 * pi = \u2220BDZ + \u2220XDB + \u2220ZDX, 3.14 = pi, \u2220ZDX = Arc(ZDX)\nConclusions: 2 * 3.14 = pi * (224 / 180) + \u2220BDZ + Arc(ZDX)\n\nStep 39:\nTheorem: Issoceles Triangle Property\nPremises : BD = DZ, \u25b3BDZ\nConclusions: \u2220DZB = \u2220ZBD\n\nStep 40:\nTheorem: Substitution\nPremises : pi = \u2220BDZ + \u2220DZB + \u2220ZBD, \u2220DZB = \u2220DZC, 3.14 = pi\nConclusions: 3.14 = \u2220BDZ + \u2220DZC + \u2220ZBD\n\nStep 41:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DXY, \u2220YBD = \u2220ZBD, pi * (68 / 180) = \u2220XYB, 2 * pi = \u2220BDX + \u2220DXY + \u2220XYB + \u2220YBD, \u2220BDX = Arc(BDX), 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + pi * (68 / 180) + \u2220ZBD + Arc(BDX)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220BDZ + \u2220WDB + \u2220XDW + Arc(ZDX)\nConclusions: 2 * pi = \u2220BDZ + \u2220WDB + \u2220XDW + Arc(ZDX)\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220WDB + \u2220XDW + Arc(BDX)\nConclusions: 2 * pi = \u2220WDB + \u2220XDW + Arc(BDX)\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 / 2 + pi * (68 / 180) + \u2220ZBD + Arc(BDX)\nConclusions: 2 * pi = 3.14 / 2 + pi * (68 / 180) + \u2220ZBD + Arc(BDX)\n\nStep 45:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220WDB + \u2220XDW + Arc(BDX), 2 * 3.14 = pi * (224 / 180) + \u2220BDZ + Arc(ZDX), pi * (224 / 180) = 2 * pi - \u2220BDX, \u2220BDX = Arc(BDX), 2 * pi = \u2220BDZ + \u2220WDB + \u2220XDW + Arc(ZDX)\nConclusions: 2.37 = \u2220BDX\n\nStep 46:\nTheorem: Solve Linear Equation System\nPremises : \u2220YBD = \u2220ZBD, 2 * pi = 3.14 / 2 + pi * (68 / 180) + \u2220ZBD + Arc(BDX), pi * (224 / 180) = 2 * pi - Arc(BDX), 2 * 3.14 = 3.14 / 2 + pi * (68 / 180) + \u2220ZBD + Arc(BDX)\nConclusions: 1.15 = \u2220YBD\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 2.37 = \u2220BDX, \u2220BDX = Arc(BDX)\nConclusions: 2.37 = Arc(BDX)\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 1.15 = \u2220YBD, \u2220YBD = \u2220ZBD\nConclusions: 1.15 = \u2220ZBD\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 2.37 = Arc(BDX), Arc(BDX) = 2 * pi - \u2220XDB\nConclusions: 2.37 = 2 * pi - \u2220XDB\n\nStep 50:\nTheorem: Substitution\nPremises : 2.37 = Arc(BDX), 2 * pi = \u2220WDB + \u2220XDW + Arc(BDX), 3.14 = pi\nConclusions: 2 * 3.14 = 2.37 + \u2220WDB + \u2220XDW\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : 1.15 = \u2220ZBD, \u2220DZB = \u2220DZC, \u2220DZB = \u2220ZBD\nConclusions: 1.15 = \u2220DZC\n\nStep 52:\nTheorem: Substitution\nPremises : 1.15 = \u2220DZC, 1.15 = \u2220ZBD, 3.14 = \u2220BDZ + \u2220DZC + \u2220ZBD\nConclusions: 3.14 = 1.15 + 1.15 + \u2220BDZ\n\nStep 53:\nTheorem: Solve Linear Equation System\nPremises : 6.28 = \u2220BDZ + \u2220XDB + \u2220ZDX, 3.14 = 1.15 + 1.15 + \u2220BDZ, 2 * 3.14 = 2.37 + \u2220WDB + \u2220XDW, 2.37 = 2 * pi - \u2220XDB, 2 * pi = \u2220BDZ + \u2220WDB + \u2220XDW + \u2220ZDX\nConclusions: 1.54 = \u2220ZDX\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : 1.54 = \u2220ZDX, \u2220ZDX = Arc(ZDX)\nConclusions: 1.54 = Arc(ZDX)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Line(Y, B)",
+        "Line(Y, C)",
+        "Line(Z, B)",
+        "Line(Z, C)",
+        "Line(B, C)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(X, Line(A, Y))",
+        "PointLiesOnLine(Z, Line(Y, B))",
+        "PointLiesOnLine(Z, Line(Y, C))",
+        "PointLiesOnLine(B, Line(Y, C))",
+        "PointLiesOnLine(B, Line(Z, C))",
+        "PointLiesOnCircle(X, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Z, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(D, radius_0_0))",
+        "Tangent(Line(A, Y), Circle(D, radius_0_0))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(68.0, 180.0)))",
+        "Equals(MeasureOf(Arc(X, D, B)), Mul(pi, Div(224.0, 180.0)))"
+    ],
+    "correct": true
+}

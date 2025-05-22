@@ -1,0 +1,111 @@
+{
+    "problem_id": "2635",
+    "solved": true,
+    "problem_text": "Find T X if E X = 24 and D E = 7.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(X, D))",
+        "PointLiesOnLine(Q, Line(X, T))",
+        "PointLiesOnLine(D, Line(X, T))",
+        "PointLiesOnLine(D, Line(Q, T))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(D, radius_0_0))",
+        "Perpendicular(Line(X, A), Line(D, A))",
+        "Perpendicular(Line(X, E), Line(D, E))",
+        "Equals(LengthOf(Line(E, X)), 24)",
+        "Equals(LengthOf(Line(D, E)), 7)",
+        "Find(LengthOf(Line(T, X)))"
+    ],
+    "point_instances": [
+        "D",
+        "E",
+        "A",
+        "Q",
+        "X",
+        "T"
+    ],
+    "line_instances": [
+        "XA",
+        "XQ",
+        "XD",
+        "XT",
+        "QD",
+        "QT",
+        "DT",
+        "XE",
+        "DE",
+        "AD"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "D": [
+            390.7563025210084,
+            100.65546218487395
+        ],
+        "E": [
+            378.9915966386555,
+            156.53781512605042
+        ],
+        "A": [
+            378.5714285714286,
+            45.613445378151255
+        ],
+        "Q": [
+            334.0336134453782,
+            101.07563025210084
+        ],
+        "X": [
+            46.21848739495798,
+            101.07563025210084
+        ],
+        "T": [
+            447.47899159663865,
+            101.07563025210084
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "24",
+        "25",
+        "32"
+    ],
+    "choices_precise_value": [
+        7.0,
+        24.0,
+        25.0,
+        32.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 93.532877,
+    "solution_predicate": "Equals(32.0, LengthOf(Line(T, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DX, AX, Q on \u2299(D, radius_0_0), AD, AD \u22a5 AX, Q on TX, A on \u2299(D, radius_0_0), 24 = EX, E on \u2299(D, radius_0_0), 7 = DE, DE \u22a5 EX, D on QT, T on \u2299(D, radius_0_0), Q on DX\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DQ\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, AX, DX\nConclusions: \u25b3ADX\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 AX\nConclusions: pi / 2 = \u2220XAD\n\nStep 5:\nTheorem: Line Segment Split\nPremises : Q on TX\nConclusions: TX = QT + QX\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : E on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DE\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : DE \u22a5 EX\nConclusions: pi / 2 = \u2220DEX\n\nStep 9:\nTheorem: Diameter Definition\nPremises : D on QT, Q on \u2299(D, radius_0_0), T on \u2299(D, radius_0_0)\nConclusions: IsDiameterOf(QT, \u2299(D, radius_0_0))\n\nStep 10:\nTheorem: Line Segment Split\nPremises : Q on DX\nConclusions: DX = DQ + QX\n\nStep 11:\nTheorem: Pythagorean Theorem\nPremises : AD \u22a5 AX, \u25b3ADX\nConclusions: DX = SqrtOf(AD ** 2 + AX ** 2)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 7 = DE, radius_0_0 = DE\nConclusions: 7 = radius_0_0\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220XAD, pi / 2 = \u2220DEX\nConclusions: \u2220DEX = \u2220XAD\n\nStep 14:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(QT, \u2299(D, radius_0_0))\nConclusions: Q on \u2299(D, radius_0_0), 2 * radius_0_0 = QT, radius_0_0 = DQ, T on \u2299(D, radius_0_0)\n\nStep 15:\nTheorem: Evaluate\nPremises : 7 = radius_0_0\nConclusions: 14 = 2 * radius_0_0\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = DQ, 7 = radius_0_0\nConclusions: 7 = DQ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 7 = radius_0_0, radius_0_0 = AD\nConclusions: 7 = AD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 14 = 2 * radius_0_0, 2 * radius_0_0 = QT\nConclusions: 14 = QT\n\nStep 19:\nTheorem: Substitution\nPremises : 7 = DQ, DX = DQ + QX\nConclusions: DX = 7 + QX\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 7 = AD, 7 = DE\nConclusions: AD = DE\n\nStep 21:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220DEX = \u2220XAD, AD = DE\nConclusions: \u25b3ADX \u2245 \u25b3EDX\n\nStep 22:\nTheorem: Congruent Definition\nPremises : \u25b3ADX \u2245 \u25b3EDX\nConclusions: \u2220DEX = \u2220XAD, AX = EX\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 24 = EX, AX = EX\nConclusions: 24 = AX\n\nStep 24:\nTheorem: Substitution\nPremises : 7 = AD, DX = SqrtOf(AD ** 2 + AX ** 2), 24 = AX\nConclusions: SqrtOf(24 ** 2 + 7 ** 2) = DX\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : DX = 7 + QX, SqrtOf(24 ** 2 + 7 ** 2) = DX\nConclusions: SqrtOf(24 ** 2 + 7 ** 2) = 7 + QX\n\nStep 26:\nTheorem: Solve Univariate Equation\nPremises : SqrtOf(24 ** 2 + 7 ** 2) = 7 + QX\nConclusions: 18 = QX\n\nStep 27:\nTheorem: Evaluate\nPremises : 18 = QX, 14 = QT\nConclusions: 32 = QT + QX\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 32 = QT + QX, TX = QT + QX\nConclusions: 32 = TX\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, A)",
+        "Line(X, Q)",
+        "Line(X, D)",
+        "Line(X, T)",
+        "Line(Q, D)",
+        "Line(Q, T)",
+        "Line(D, T)",
+        "Line(X, E)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(Q, Line(X, D))",
+        "PointLiesOnLine(Q, Line(X, T))",
+        "PointLiesOnLine(D, Line(X, T))",
+        "PointLiesOnLine(D, Line(Q, T))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(D, radius_0_0))",
+        "Perpendicular(Line(X, A), Line(D, A))",
+        "Perpendicular(Line(X, E), Line(D, E))",
+        "Equals(LengthOf(Line(E, X)), 24.0)",
+        "Equals(LengthOf(Line(D, E)), 7.0)"
+    ],
+    "correct": true
+}

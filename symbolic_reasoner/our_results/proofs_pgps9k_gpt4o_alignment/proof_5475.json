@@ -1,0 +1,77 @@
+{
+    "problem_id": "5475",
+    "solved": true,
+    "problem_text": "What is the length of diameter?",
+    "logic_forms": [
+        "Circle(A)",
+        "Equals(DiameterOf(Circle(A)), 12)",
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(MeasureOf(Arc(G, H)), 40)",
+        "Equals(RadiusOf(Circle(A)), 6)",
+        "Find(DiameterOf(Circle(A)))",
+        "Line(A, B)",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(G, Circle(A))",
+        "PointLiesOnCircle(H, Circle(A))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AB"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "G": [
+            167.0095238095238,
+            57.39428571428572
+        ],
+        "H": [
+            204.8,
+            102.03428571428572
+        ],
+        "A": [
+            124.26471414948094,
+            131.51703886604258
+        ],
+        "B": [
+            123.73333333333333,
+            217.4302040816327
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        6.0,
+        12.0,
+        18.85
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        12.0,
+        18.85
+    ],
+    "problem_answer": 12.0,
+    "total_time": 3.06575,
+    "solution_predicate": "Equals(12.0, Mul(2.0, radius_A))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = 2 * radius_A\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Circle(A, radius_A)",
+        "Circle(A, radius_A)",
+        "Line(A, B)",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(G, Circle(A, radius_A))",
+        "PointLiesOnCircle(H, Circle(A, radius_A))",
+        "Equals(Mul(2.0, radius_A), 12.0)",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(MeasureOf(Arc(H, A, G)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(radius_A, 6.0)"
+    ],
+    "correct": true
+}

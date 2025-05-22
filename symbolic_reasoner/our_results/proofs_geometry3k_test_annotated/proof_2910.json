@@ -1,0 +1,82 @@
+{
+    "problem_id": "2910",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(LengthOf(Line(B, D)), 36)",
+        "Equals(LengthOf(Line(A, B)), 6x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DB",
+        "DC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.571059431524546,
+            136.7906976744186
+        ],
+        "B": [
+            264.8578811369509,
+            136.27390180878552
+        ],
+        "C": [
+            316.7958656330749,
+            136.53229974160206
+        ],
+        "D": [
+            264.59948320413434,
+            24.129198966408268
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "3 \\sqrt { 6 }",
+        "12",
+        "6 \\sqrt { 6 }"
+    ],
+    "choices_precise_value": [
+        6.0,
+        7.348469228349534,
+        12.0,
+        14.696938456699067
+    ],
+    "problem_answer": 14.696938456699067,
+    "total_time": 50.506312,
+    "solution_predicate": "Equals(14.6969384567, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ADB, AB, AD \u22a5 CD, AD, x = BC, 36 = BD, BD, \u2220BDC, \u2220CDA, 6 * x = AB, AB \u22a5 BD, 3.14 = pi, BC \u22a5 BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220CDA, \u2220ADB, \u2220BDC\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 8:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CDA, 3.14 = pi, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220ADB + \u2220BDC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DBA, pi / 2 = \u2220CBD\nConclusions: \u2220CBD = \u2220DBA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220ADB + \u2220BDC, 3.14 = \u2220ADB + \u2220BAD + \u2220DBA, pi = \u2220ADB + \u2220BAD + \u2220DBA, pi / 2 = \u2220DBA\nConclusions: \u2220BAD = \u2220BDC\n\nStep 12:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CBD = \u2220DBA, \u2220BAD = \u2220BDC\nConclusions: \u25b3ABD ~ \u25b3DBC\n\nStep 13:\nTheorem: Similar Definition\nPremises : \u25b3ABD ~ \u25b3DBC\nConclusions: \u2220CBD = \u2220DBA, AB / BD = BD / BC\n\nStep 14:\nTheorem: Substitution\nPremises : 6 * x = AB, 36 = BD, x = BC, AB / BD = BD / BC\nConclusions: 36 / x = (6 * x) / 36\n\nStep 15:\nTheorem: Solve Univariate Equation\nPremises : 36 / x = (6 * x) / 36\nConclusions: 14.7 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(LengthOf(Line(B, D)), 36.0)",
+        "Equals(LengthOf(Line(A, B)), Mul(6.0, x))"
+    ],
+    "correct": true
+}

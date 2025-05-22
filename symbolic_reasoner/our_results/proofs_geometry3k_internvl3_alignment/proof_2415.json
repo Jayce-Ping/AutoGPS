@@ -1,0 +1,107 @@
+{
+    "problem_id": "2415",
+    "solved": true,
+    "problem_text": "Use parallelogram M N P R to find m \\angle R N P.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(R, N))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Equals(LengthOf(Line(M, R)), 17.9)",
+        "Equals(LengthOf(Line(N, M)), 3x-4)",
+        "Equals(LengthOf(Line(R, P)), 20)",
+        "Equals(LengthOf(Line(R, N)), 3z-3)",
+        "Equals(LengthOf(Line(P, N)), 2y+5)",
+        "Equals(LengthOf(Line(P, Q)), 11.1)",
+        "Equals(LengthOf(Line(N, Q)), 15.4)",
+        "Equals(LengthOf(Line(M, Q)), 4w-3)",
+        "Equals(MeasureOf(Angle(N, Q, P)), 83)",
+        "Equals(MeasureOf(Angle(M, N, Q)), 33)",
+        "Equals(MeasureOf(Angle(M, R, Q)), 38)",
+        "Parallelogram(M,N,P,R)",
+        "Find(MeasureOf(Angle(R,N,P)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "P",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "RP",
+        "NP",
+        "MN",
+        "MR",
+        "RQ",
+        "RN",
+        "QN",
+        "MQ",
+        "MP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            157.27272727272725,
+            124.33155080213903
+        ],
+        "R": [
+            27.86096256684492,
+            206.951871657754
+        ],
+        "P": [
+            223.31550802139037,
+            206.41711229946523
+        ],
+        "N": [
+            286.4171122994652,
+            42.24598930481283
+        ],
+        "M": [
+            90.6951871657754,
+            41.97860962566845
+        ]
+    },
+    "problem_choices": [
+        "38",
+        "52",
+        "52",
+        "62"
+    ],
+    "choices_precise_value": [
+        38.0,
+        52.0,
+        52.0,
+        62.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 44.137088,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(R, N, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Q on NR, \u2220NRM, Parallelogram(M, N, P, R), pi * (38 / 180) = \u2220QRM\n\nStep 2:\nTheorem: Same Angle\nPremises : Q on NR, \u2220NRM\nConclusions: \u2220NRM = \u2220QRM\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(M, N, P, R)\nConclusions: MR || NP\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : MR || NP\nConclusions: \u2220NRM = \u2220RNP\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRM = \u2220RNP, pi * (38 / 180) = \u2220QRM, \u2220NRM = \u2220QRM\nConclusions: pi * (38 / 180) = \u2220RNP\n\nStep 6:\nTheorem: Evaluate\nPremises : pi * (38 / 180) = \u2220RNP\nConclusions: 0.66 = \u2220RNP\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, P)",
+        "Line(N, P)",
+        "Line(M, N)",
+        "Line(M, R)",
+        "Line(R, Q)",
+        "Line(R, N)",
+        "Line(Q, N)",
+        "Line(M, Q)",
+        "Line(M, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(Q, Line(R, N))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Parallelogram(M, N, P, R)",
+        "Equals(LengthOf(Line(M, R)), 17.9)",
+        "Equals(LengthOf(Line(N, M)), Sub(Mul(3.0, x), 4.0))",
+        "Equals(LengthOf(Line(R, P)), 20.0)",
+        "Equals(LengthOf(Line(R, N)), Sub(Mul(3.0, z), 3.0))",
+        "Equals(LengthOf(Line(P, N)), Add(Mul(2.0, y), 5.0))",
+        "Equals(LengthOf(Line(P, Q)), 11.1)",
+        "Equals(LengthOf(Line(N, Q)), 15.4)",
+        "Equals(LengthOf(Line(M, Q)), Sub(Mul(4.0, w), 3.0))",
+        "Equals(MeasureOf(Angle(P, Q, N)), Mul(pi, Div(83.0, 180.0)))",
+        "Equals(MeasureOf(Angle(M, N, Q)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, R, M)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

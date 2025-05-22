@@ -1,0 +1,74 @@
+{
+    "problem_id": "5035",
+    "solved": true,
+    "problem_text": "What is area of sector RST?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 1)",
+        "Equals(MeasureOf(Angle(T, S, R)), 60)",
+        "Find(AreaOf(Sector(S, R, T)))",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "PointLiesOnCircle(R, Circle(S))",
+        "PointLiesOnCircle(T, Circle(S))",
+        "Triangle(R, S, T)"
+    ],
+    "point_instances": [
+        "R",
+        "T",
+        "S"
+    ],
+    "line_instances": [
+        "RT",
+        "TS",
+        "RS"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "R": [
+            93.78932584269664,
+            52.65714285714285
+        ],
+        "T": [
+            43.641853932584276,
+            138.7
+        ],
+        "S": [
+            144.33955743694216,
+            138.89797914078093
+        ]
+    },
+    "problem_choices": [
+        0.091,
+        0.524,
+        1.047,
+        2.618
+    ],
+    "choices_precise_value": [
+        0.091,
+        0.524,
+        1.047,
+        2.618
+    ],
+    "problem_answer": 0.524,
+    "total_time": 4.921421,
+    "solution_predicate": "Equals(0.5235987756, AreaOf(Sector(R, S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: R on \u2299(S, radius_S), pi * (60 / 180) = \u2220RST, 1 = RS, Sector(R, S, T)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : R on \u2299(S, radius_S)\nConclusions: radius_S = RS\n\nStep 3:\nTheorem: Area formula of Sector(R, S, T)\nPremises : Sector(R, S, T)\nConclusions: Area(Sector(R, S, T)) = (radius_S ** 2 * \u2220RST) / 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_S = RS, 1 = RS\nConclusions: 1 = radius_S\n\nStep 5:\nTheorem: Substitution\nPremises : Area(Sector(R, S, T)) = (radius_S ** 2 * \u2220RST) / 2, pi * (60 / 180) = \u2220RST, 1 = radius_S\nConclusions: (pi * (60 / 180) * 1 ** 2) / 2 = Area(Sector(R, S, T))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (60 / 180) * 1 ** 2) / 2 = Area(Sector(R, S, T))\nConclusions: 0.52 = Area(Sector(R, S, T))\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(T, S)",
+        "Line(R, S)",
+        "Circle(S, radius_S)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "PointLiesOnCircle(R, Circle(S, radius_S))",
+        "PointLiesOnCircle(T, Circle(S, radius_S))",
+        "Triangle(R, S, T)",
+        "Equals(LengthOf(Line(R, S)), 1.0)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

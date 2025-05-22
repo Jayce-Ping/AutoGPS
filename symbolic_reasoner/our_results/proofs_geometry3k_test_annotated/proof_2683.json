@@ -1,0 +1,89 @@
+{
+    "problem_id": "2683",
+    "solved": true,
+    "problem_text": "Find P Q.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(S, T))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "Parallel(Line(P, T), Line(S, R))",
+        "Equals(LengthOf(Line(S, Q)), 3+x)",
+        "Equals(LengthOf(Line(R, Q)), 6+x)",
+        "Equals(LengthOf(Line(P, Q)), 6-x)",
+        "Equals(LengthOf(Line(T, Q)), 3)",
+        "Find(LengthOf(Line(P, Q)))"
+    ],
+    "point_instances": [
+        "S",
+        "Q",
+        "T",
+        "R",
+        "P"
+    ],
+    "line_instances": [
+        "SQ",
+        "ST",
+        "QT",
+        "PQ",
+        "PR",
+        "QR",
+        "PT",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            222.15463917525773,
+            31.185567010309278
+        ],
+        "Q": [
+            129.37113402061857,
+            128.35051546391753
+        ],
+        "T": [
+            64.42268041237114,
+            196.13402061855672
+        ],
+        "R": [
+            270.09278350515467,
+            181.70103092783506
+        ],
+        "P": [
+            30.917525773195877,
+            90.72164948453609
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "6",
+        "9"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        6.0,
+        9.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 38.220346,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Q on PR, 3 = QT, 6 - x = PQ, PT || SR, \u2220PTS, \u2220TPR, \u2220RST, Q on ST, 6 + x = QR, \u2220SRP, 3 + x = QS\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : PT || SR\nConclusions: \u2220PTS = \u2220RST, \u2220SRP = \u2220TPR\n\nStep 3:\nTheorem: Same Angle\nPremises : Q on PR, \u2220TPR\nConclusions: \u2220TPQ = \u2220TPR\n\nStep 4:\nTheorem: Same Angle\nPremises : Q on ST, \u2220RST\nConclusions: \u2220RSQ = \u2220RST\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : Q on ST, Q on PR\nConclusions: \u2220SQR = \u2220TQP\n\nStep 6:\nTheorem: Same Angle\nPremises : Q on ST, \u2220PTS\nConclusions: \u2220PTQ = \u2220PTS\n\nStep 7:\nTheorem: Same Angle\nPremises : Q on PR, \u2220SRP\nConclusions: \u2220SRP = \u2220SRQ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PTS = \u2220RST, \u2220PTQ = \u2220PTS\nConclusions: \u2220PTQ = \u2220RST\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TPQ = \u2220TPR, \u2220SRP = \u2220SRQ, \u2220SRP = \u2220TPR\nConclusions: \u2220SRQ = \u2220TPQ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PTQ = \u2220RST, \u2220RSQ = \u2220RST\nConclusions: \u2220PTQ = \u2220RSQ\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220PTQ = \u2220RSQ, \u2220SRQ = \u2220TPQ, \u2220SQR = \u2220TQP\nConclusions: \u25b3PQT ~ \u25b3RQS\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3PQT ~ \u25b3RQS\nConclusions: PQ / QR = QT / QS, \u2220PTQ = \u2220RSQ, \u2220SQR = \u2220TQP\n\nStep 13:\nTheorem: Substitution\nPremises : 3 + x = QS, 3 = QT, PQ / QR = QT / QS, 6 + x = QR, 6 - x = PQ\nConclusions: 3 / (3 + x) = (6 - x) / (6 + x)\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : 3 / (3 + x) = (6 - x) / (6 + x)\nConclusions: 0 = x\n\nStep 15:\nTheorem: Evaluate\nPremises : 0 = x\nConclusions: 6 = 6 - x\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 6 - x = PQ, 6 = 6 - x\nConclusions: 6 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, Q)",
+        "Line(S, T)",
+        "Line(Q, T)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, R)",
+        "Line(P, T)",
+        "Line(S, R)",
+        "PointLiesOnLine(Q, Line(S, T))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "Parallel(Line(P, T), Line(S, R))",
+        "Equals(LengthOf(Line(S, Q)), Add(3.0, x))",
+        "Equals(LengthOf(Line(R, Q)), Add(6.0, x))",
+        "Equals(LengthOf(Line(P, Q)), Sub(6.0, x))",
+        "Equals(LengthOf(Line(T, Q)), 3.0)"
+    ],
+    "correct": true
+}

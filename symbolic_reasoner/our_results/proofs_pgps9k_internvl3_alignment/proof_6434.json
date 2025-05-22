@@ -1,0 +1,155 @@
+{
+    "problem_id": "6434",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2 if AB \\perp BC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, E, F)), 104)",
+        "Equals(MeasureOf(Angle(B, C, F)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(B, E, F)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(B, F, C)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(B, F, E)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(C, B, F)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(C, F, G)), 40)",
+        "Equals(MeasureOf(Angle(D, A, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, E, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(E, B, F)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(E, D, A)), 36)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(E, F)",
+        "Line(F, C)",
+        "Line(F, G)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(E, Line(D, C))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(E, C))",
+        "Perpendicular(Line(A,B),Line(B,C))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "E",
+        "B",
+        "F",
+        "G",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "CE",
+        "CF",
+        "CD",
+        "EF",
+        "ED",
+        "FD",
+        "DA",
+        "AE",
+        "AB",
+        "EB",
+        "BF",
+        "BG",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            42.85666666666667,
+            123.57089552238806
+        ],
+        "A": [
+            155.37333333333333,
+            42.024110218140066
+        ],
+        "E": [
+            174.90488888888888,
+            123.63283582089551
+        ],
+        "B": [
+            194.93333333333334,
+            201.83008036739378
+        ],
+        "F": [
+            287.6109803921568,
+            123.62554872695347
+        ],
+        "G": [
+            385.71,
+            41.809701492537314
+        ],
+        "C": [
+            508.47078431372546,
+            123.73485513608429
+        ]
+    },
+    "problem_choices": [
+        64.0,
+        68.0,
+        72.0,
+        76.0
+    ],
+    "choices_precise_value": [
+        64.0,
+        68.0,
+        72.0,
+        76.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 86.026143,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(D, A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DEB, pi * (104 / 180) = \u2220FEA, 3.14 = pi, AD, E on AB, \u2220BEF, \u2220AED, E on DF, AE, DE, \u2220FEA, pi * (36 / 180) = \u2220EDA\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : E on DF, E on AB\nConclusions: \u2220DEB = \u2220FEA, \u2220AED = \u2220BEF\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AE, DE, AD\nConclusions: \u25b3ADE\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220BEF, \u2220DEB, \u2220FEA, \u2220AED\nConclusions: 2 * pi = \u2220AED + \u2220BEF + \u2220DEB + \u2220FEA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (104 / 180) = \u2220FEA, \u2220DEB = \u2220FEA\nConclusions: pi * (104 / 180) = \u2220DEB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, A)\nPremises : \u25b3ADE\nConclusions: pi = \u2220AED + \u2220DAE + \u2220EDA\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (104 / 180) = \u2220FEA, 2 * pi = \u2220AED + \u2220BEF + \u2220DEB + \u2220FEA, \u2220AED = \u2220BEF, pi * (104 / 180) = \u2220DEB, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (104 / 180) + pi * (104 / 180) + \u2220BEF + \u2220BEF\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (36 / 180) = \u2220EDA, pi = \u2220AED + \u2220DAE + \u2220EDA, 3.14 = pi, \u2220AED = \u2220BEF\nConclusions: 3.14 = 3.14 * (36 / 180) + \u2220BEF + \u2220DAE\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (36 / 180) + \u2220BEF + \u2220DAE, 3.14 = pi, 2 * 3.14 = 3.14 * (104 / 180) + pi * (104 / 180) + \u2220BEF + \u2220BEF\nConclusions: 1.19 = \u2220DAE\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, D)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Line(D, A)",
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(F, G)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(E, F)",
+        "Line(F, C)",
+        "Line(F, G)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(E, Line(D, C))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(E, C))",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Equals(MeasureOf(Angle(F, E, A)), Mul(pi, Div(104.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, G)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, A)), Mul(pi, Div(36.0, 180.0)))"
+    ],
+    "correct": true
+}

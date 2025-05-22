@@ -1,0 +1,70 @@
+{
+    "problem_id": "2839",
+    "solved": true,
+    "problem_text": "The area A of the shaded region is given. Find x. A = 66 cm^2.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(J, L))",
+        "PointLiesOnCircle(J, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(K, radius_0_0))",
+        "Equals(LengthOf(Line(J, L)), x)",
+        "Equals(MeasureOf(Arc(J, L)), 180)",
+        "Equals(HalfOf(AreaOf(Circle(K))), 66)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "L"
+    ],
+    "line_instances": [
+        "JK",
+        "JL",
+        "KL"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "K": [
+            121.37160120845923,
+            145.619335347432
+        ],
+        "J": [
+            121.37160120845923,
+            41.389728096676734
+        ],
+        "L": [
+            120.76737160120845,
+            250.45317220543805
+        ]
+    },
+    "problem_choices": [
+        "4.6",
+        "6.5",
+        "13.0",
+        "26.0"
+    ],
+    "choices_precise_value": [
+        4.6,
+        6.5,
+        13.0,
+        26.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 5.334435,
+    "solution_predicate": "Equals(12.9640896288, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: L on \u2299(K, radius_0_0), 66 = Area(\u2299(K, radius_0_0)) / 2, x = JL, 3.14 = pi, Area(\u2299(K, radius_0_0)), J on \u2299(K, radius_0_0), K on JL\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : L on \u2299(K, radius_0_0)\nConclusions: radius_0_0 = KL\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 66 = Area(\u2299(K, radius_0_0)) / 2\nConclusions: 132 = Area(\u2299(K, radius_0_0))\n\nStep 4:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(K, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(K, radius_0_0))\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : J on \u2299(K, radius_0_0)\nConclusions: radius_0_0 = JK\n\nStep 6:\nTheorem: Line Segment Split\nPremises : K on JL\nConclusions: JL = JK + KL\n\nStep 7:\nTheorem: Substitution\nPremises : pi * radius_0_0 ** 2 = Area(\u2299(K, radius_0_0)), 3.14 = pi\nConclusions: 3.14 * radius_0_0 ** 2 = Area(\u2299(K, radius_0_0))\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 132 = Area(\u2299(K, radius_0_0)), 3.14 * radius_0_0 ** 2 = Area(\u2299(K, radius_0_0))\nConclusions: 132 = 3.14 * radius_0_0 ** 2\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 132 = 3.14 * radius_0_0 ** 2\nConclusions: 6.48 = radius_0_0\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 6.48 = radius_0_0, radius_0_0 = KL\nConclusions: 6.48 = KL\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 6.48 = radius_0_0, radius_0_0 = JK\nConclusions: 6.48 = JK\n\nStep 12:\nTheorem: Substitution\nPremises : 6.48 = JK, x = JL, 6.48 = KL, JL = JK + KL\nConclusions: 6.48 + 6.48 = x\n\nStep 13:\nTheorem: Evaluate\nPremises : 6.48 + 6.48 = x\nConclusions: 12.96 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Circle(K, radius_0_0)",
+        "PointLiesOnLine(K, Line(J, L))",
+        "PointLiesOnCircle(J, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(K, radius_0_0))",
+        "Equals(LengthOf(Line(J, L)), x)",
+        "Equals(MeasureOf(Arc(L, K, J)), Mul(pi, Div(180.0, 180.0)))",
+        "Equals(Div(AreaOf(Circle(K, radius_0_0)), 2.0), 66.0)"
+    ],
+    "correct": true
+}

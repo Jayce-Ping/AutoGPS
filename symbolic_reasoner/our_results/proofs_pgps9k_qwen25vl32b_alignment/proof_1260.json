@@ -1,0 +1,83 @@
+{
+    "problem_id": "1260",
+    "solved": true,
+    "problem_text": "PR and PS are tangent to \\odot Q. What is m \\angle Q?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(S, P, R)), 42)",
+        "Line(Q, S)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(S, P)",
+        "PointLiesOnCircle(R, Circle(Q))",
+        "PointLiesOnCircle(S, Circle(Q))",
+        "Tangent(Line(P,R),Circle(Q))",
+        "Tangent(Line(P,S),Circle(Q))",
+        "Find(MeasureOf(Angle(Q)))"
+    ],
+    "point_instances": [
+        "R",
+        "Q",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "SP",
+        "RP",
+        "RQ",
+        "QS"
+    ],
+    "circle_instances": [
+        "Q"
+    ],
+    "point_positions": {
+        "R": [
+            173.7637102234259,
+            56.58448979591837
+        ],
+        "Q": [
+            129.14358956103644,
+            148.2024073455052
+        ],
+        "P": [
+            415.45023696682466,
+            161.8579591836735
+        ],
+        "S": [
+            156.94786729857822,
+            247.55714285714288
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        48.0,
+        90.0,
+        138.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        48.0,
+        90.0,
+        138.0
+    ],
+    "problem_answer": 138.0,
+    "total_time": 8.611214,
+    "solution_predicate": "Equals(2.4085543678, MeasureOf(Angle(S, Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: S on \u2299(Q, radius_Q), QS, R on \u2299(Q, radius_Q), QR, Tangent(PS, \u2299(Q, radius_Q)), pi * (42 / 180) = \u2220RPS, PS, PR, 3.14 = pi, \u2220PSQ, Tangent(PR, \u2299(Q, radius_Q))\n\nStep 2:\nTheorem: Tangent Definition\nPremises : S on \u2299(Q, radius_Q), Tangent(PS, \u2299(Q, radius_Q))\nConclusions: PS \u22a5 QS\n\nStep 3:\nTheorem: Definition of Quadrilateral\nPremises : PS, QS, QR, PR\nConclusions: Quadrilateral(P, R, Q, S)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220PSQ\nConclusions: \u2220PSQ = 2 * pi - \u2220QSP\n\nStep 5:\nTheorem: Tangent Definition\nPremises : R on \u2299(Q, radius_Q), Tangent(PR, \u2299(Q, radius_Q))\nConclusions: PR \u22a5 QR\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : PS \u22a5 QS\nConclusions: (3 * pi) / 2 = \u2220QSP, pi / 2 = \u2220PSQ\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(S, Q, R, P)\nPremises : Quadrilateral(P, R, Q, S)\nConclusions: 2 * pi = \u2220PSQ + \u2220QRP + \u2220RPS + \u2220SQR\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : PR \u22a5 QR\nConclusions: pi / 2 = \u2220QRP\n\nStep 9:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220QSP, \u2220PSQ = 2 * pi - \u2220QSP, pi / 2 = \u2220PSQ, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220PSQ, pi * (42 / 180) = \u2220RPS, 3.14 = pi, 2 * pi = \u2220PSQ + \u2220QRP + \u2220RPS + \u2220SQR, pi / 2 = \u2220QRP\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + pi * (42 / 180) + \u2220SQR\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220QRP\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220QRP\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220PSQ\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220PSQ\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220PSQ, 2 * 3.14 - (3 * pi) / 2 = \u2220QRP, pi * (42 / 180) = \u2220RPS, 2 * 3.14 = pi / 2 + pi / 2 + pi * (42 / 180) + \u2220SQR, 2 * pi = \u2220PSQ + \u2220QRP + \u2220RPS + \u2220SQR\nConclusions: 2.41 = \u2220SQR\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, P)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(Q, S)",
+        "Circle(Q, radius_Q)",
+        "Line(Q, S)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(S, P)",
+        "PointLiesOnCircle(R, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(S, Circle(Q, radius_Q))",
+        "Tangent(Line(P, R), Circle(Q, radius_Q))",
+        "Tangent(Line(P, S), Circle(Q, radius_Q))",
+        "Equals(MeasureOf(Angle(R, P, S)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

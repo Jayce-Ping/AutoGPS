@@ -1,0 +1,102 @@
+{
+    "problem_id": "2553",
+    "solved": true,
+    "problem_text": "\\triangle DFG \\sim \\triangle HKM. Determine the length of GD.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, F)), 30)",
+        "Equals(LengthOf(Line(G, F)), 27.5)",
+        "Equals(LengthOf(Line(H, K)), 18)",
+        "Equals(LengthOf(Line(M, H)), 15)",
+        "Equals(MeasureOf(Angle(D, G, F)), 70)",
+        "Equals(MeasureOf(Angle(F, D, G)), 59)",
+        "Line(D, F)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Line(H, K)",
+        "Line(M, H)",
+        "Line(M, K)",
+        "Similar(Triangle(D,F,G),Triangle(H,K,M))",
+        "Find(LengthOf(Line(G,D)))"
+    ],
+    "point_instances": [
+        "G",
+        "M",
+        "D",
+        "F",
+        "H",
+        "K"
+    ],
+    "line_instances": [
+        "DF",
+        "GD",
+        "GF",
+        "HK",
+        "MK",
+        "MH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            147.46572580645162,
+            68.57142857142857
+        ],
+        "M": [
+            437.82459677419354,
+            130.28571428571428
+        ],
+        "D": [
+            58.681451612903224,
+            221.46031746031744
+        ],
+        "F": [
+            275.49798387096774,
+            221.7142857142857
+        ],
+        "H": [
+            384.09677419354836,
+            221.0612244897959
+        ],
+        "K": [
+            515.0685483870967,
+            221.7142857142857
+        ]
+    },
+    "problem_choices": [
+        9.818,
+        13.75,
+        16.364,
+        25.0
+    ],
+    "choices_precise_value": [
+        9.818,
+        13.75,
+        16.364,
+        25.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 19.334133,
+    "solution_predicate": "Equals(25.0, LengthOf(Line(G, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 30 = DF, \u25b3DFG ~ \u25b3HKM, 15 = HM, 18 = HK\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3DFG ~ \u25b3HKM\nConclusions: sim_ratio_triangle_d_f_g_triangle_h_k_m = DG / HM, sim_ratio_triangle_d_f_g_triangle_h_k_m = DF / HK\n\nStep 3:\nTheorem: Substitution\nPremises : 15 = HM, sim_ratio_triangle_d_f_g_triangle_h_k_m = DG / HM\nConclusions: sim_ratio_triangle_d_f_g_triangle_h_k_m = DG / 15\n\nStep 4:\nTheorem: Substitution\nPremises : sim_ratio_triangle_d_f_g_triangle_h_k_m = DF / HK, 30 = DF, 18 = HK\nConclusions: 30 / 18 = sim_ratio_triangle_d_f_g_triangle_h_k_m\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_d_f_g_triangle_h_k_m = DG / 15, 30 / 18 = sim_ratio_triangle_d_f_g_triangle_h_k_m\nConclusions: 30 / 18 = DG / 15\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 30 / 18 = DG / 15\nConclusions: 25 = DG\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Line(H, K)",
+        "Line(M, K)",
+        "Line(M, H)",
+        "Line(D, F)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Line(H, K)",
+        "Line(M, H)",
+        "Line(M, K)",
+        "Similar(Triangle(D, F, G), Triangle(H, K, M))",
+        "Equals(LengthOf(Line(D, F)), 30.0)",
+        "Equals(LengthOf(Line(G, F)), 27.5)",
+        "Equals(LengthOf(Line(H, K)), 18.0)",
+        "Equals(LengthOf(Line(M, H)), 15.0)",
+        "Equals(MeasureOf(Angle(D, G, F)), Mul(pi, Div(70.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, G)), Mul(pi, Div(59.0, 180.0)))"
+    ],
+    "correct": true
+}

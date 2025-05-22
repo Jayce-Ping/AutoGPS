@@ -1,0 +1,64 @@
+{
+    "problem_id": "2962",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnCircle(R, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(S, radius_0_0))",
+        "Equals(LengthOf(Line(S, T)), 15)",
+        "Equals(MeasureOf(Angle(R, S, T)), 93)",
+        "Find(AreaOf(Sector(S, R, T)))"
+    ],
+    "point_instances": [
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "SR",
+        "ST"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "T": [
+            200.52631578947367,
+            160.52631578947367
+        ],
+        "S": [
+            118.42105263157893,
+            115.78947368421052
+        ],
+        "R": [
+            68.68421052631578,
+            196.05263157894734
+        ]
+    },
+    "problem_choices": [
+        "24.3",
+        "91.3",
+        "182.6",
+        "524.3"
+    ],
+    "choices_precise_value": [
+        24.3,
+        91.3,
+        182.6,
+        524.3
+    ],
+    "problem_answer": 182.6,
+    "total_time": 1.695315,
+    "solution_predicate": "Equals(182.6050729905, AreaOf(Sector(R, S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (93 / 180) = \u2220RST, Sector(R, S, T), T on \u2299(S, radius_0_0), 15 = ST\n\nStep 2:\nTheorem: Area formula of Sector(R, S, T)\nPremises : Sector(R, S, T)\nConclusions: Area(Sector(R, S, T)) = (radius_0_0 ** 2 * \u2220RST) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : T on \u2299(S, radius_0_0)\nConclusions: radius_0_0 = ST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 15 = ST, radius_0_0 = ST\nConclusions: 15 = radius_0_0\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (93 / 180) = \u2220RST, Area(Sector(R, S, T)) = (radius_0_0 ** 2 * \u2220RST) / 2, 15 = radius_0_0\nConclusions: (pi * (93 / 180) * 15 ** 2) / 2 = Area(Sector(R, S, T))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (93 / 180) * 15 ** 2) / 2 = Area(Sector(R, S, T))\nConclusions: 182.61 = Area(Sector(R, S, T))\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(S, T)",
+        "Circle(S, radius_0_0)",
+        "PointLiesOnCircle(R, Circle(S, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(S, radius_0_0))",
+        "Equals(LengthOf(Line(S, T)), 15.0)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(93.0, 180.0)))"
+    ],
+    "correct": true
+}

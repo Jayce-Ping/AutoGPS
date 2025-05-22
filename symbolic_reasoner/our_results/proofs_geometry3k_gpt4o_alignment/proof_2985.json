@@ -1,0 +1,93 @@
+{
+    "problem_id": "2985",
+    "solved": true,
+    "problem_text": "Each pair of polygons is similar. Find A C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), x+7)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(LengthOf(Line(D, C)), 6)",
+        "Equals(LengthOf(Line(E, C)), 12-x)",
+        "Find(LengthOf(Line(A, C)))",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Similar(Triangle(A, C, B), Triangle(D, C, E))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DE",
+        "DC",
+        "DB",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            208.16326530612244,
+            159.85714285714286
+        ],
+        "B": [
+            208.16326530612244,
+            235.02721088435374
+        ],
+        "A": [
+            88.77551020408164,
+            235.02721088435374
+        ],
+        "D": [
+            208.50340136054422,
+            47.27210884353741
+        ],
+        "E": [
+            386.3945578231293,
+            47.61224489795919
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "7.6",
+        "12",
+        "19"
+    ],
+    "choices_precise_value": [
+        7.0,
+        7.6,
+        12.0,
+        19.0
+    ],
+    "problem_answer": 7.6,
+    "total_time": 48.897122,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABC ~ \u25b3DEC, CD \u22a5 DE, 7 + x = AC, AB \u22a5 BC, \u25b3ABC, 4 = BC\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DEC\nConclusions: \u2220BAC = \u2220CDE, \u2220CBA = \u2220DEC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DE\nConclusions: pi / 2 = \u2220CDE\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220CDE, pi / 2 = \u2220CDE\nConclusions: pi / 2 = \u2220BAC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, \u2220CBA = \u2220DEC\nConclusions: pi / 2 = \u2220DEC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DEC, pi / 2 = \u2220BAC, \u2220CBA = \u2220DEC\nConclusions: \u2220BAC = \u2220CBA\n\nStep 8:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BAC = \u2220CBA, \u25b3ABC\nConclusions: AC = BC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BC, AC = BC, 7 + x = AC\nConclusions: 4 = 7 + x\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 4 = 7 + x, 7 + x = AC\nConclusions: 4 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Similar(Triangle(A, C, B), Triangle(D, C, E))",
+        "Equals(LengthOf(Line(A, C)), Add(x, 7.0))",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(LengthOf(Line(D, C)), 6.0)",
+        "Equals(LengthOf(Line(E, C)), Sub(12.0, x))"
+    ],
+    "correct": false
+}

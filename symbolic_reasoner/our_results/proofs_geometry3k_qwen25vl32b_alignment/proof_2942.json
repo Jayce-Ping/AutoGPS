@@ -1,0 +1,61 @@
+{
+    "problem_id": "2942",
+    "solved": true,
+    "problem_text": "Find B C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 9)",
+        "Equals(LengthOf(Line(A, C)), 9)",
+        "Equals(MeasureOf(Angle(B, A, C)), 60)",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            208.1111111111111,
+            298.41269841269843
+        ],
+        "B": [
+            326.76190476190476,
+            82.53968253968254
+        ],
+        "A": [
+            89.46031746031747,
+            70.63492063492063
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "9",
+        "15",
+        "60"
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        15.0,
+        60.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 11.433477,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, AC, 9 = AC, pi * (60 / 180) = \u2220CAB, 3.14 = pi, 9 = AB, AB\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (60 / 180) = \u2220CAB\nConclusions: 1.05 = \u2220CAB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\n\nStep 5:\nTheorem: Substitution\nPremises : 1.05 = \u2220CAB, 9 = AC, (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB), 9 = AB\nConclusions: 2 * 9 * 9 * cos(1.05) = (9 ** 2 + 9 ** 2) - BC ** 2\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 2 * 9 * 9 * cos(1.05) = (9 ** 2 + 9 ** 2) - BC ** 2\nConclusions: 9 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Equals(LengthOf(Line(B, A)), 9.0)",
+        "Equals(LengthOf(Line(A, C)), 9.0)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

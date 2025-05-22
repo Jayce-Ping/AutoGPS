@@ -1,0 +1,72 @@
+{
+    "problem_id": "1842",
+    "solved": true,
+    "problem_text": "Find the radius of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Find(RadiusOf(Circle(B)))",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnLine(B, Line(C, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            154.2276933245208,
+            154.9798319327731
+        ],
+        "B": [
+            93.36780383795309,
+            93.77931769722814
+        ],
+        "C": [
+            33.85112359550562,
+            34.40412698412699
+        ]
+    },
+    "problem_choices": [
+        1.55,
+        3.1,
+        6.2,
+        12.4
+    ],
+    "choices_precise_value": [
+        1.55,
+        3.1,
+        6.2,
+        12.4
+    ],
+    "problem_answer": 3.1,
+    "total_time": 1.243198,
+    "solution_predicate": "Equals(3.1, radius_B)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(B, radius_B), A on \u2299(B, radius_B), B on AC, 6.2 = AC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_B)\nConclusions: radius_B = BC\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_B)\nConclusions: radius_B = AB\n\nStep 4:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BC, radius_B = AB\nConclusions: AB = BC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AC = AB + BC, 6.2 = AC\nConclusions: 6.2 = AB + BC\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 6.2 = AB + BC, AB = BC\nConclusions: 3.1 = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BC, 3.1 = BC\nConclusions: 3.1 = radius_B\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Circle(B, radius_B)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Equals(LengthOf(Line(C, A)), 6.2)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,130 @@
+{
+    "problem_id": "4968",
+    "solved": true,
+    "problem_text": "Find x if AB = 6, AF = 8, BC = x, CD = y, DE = 2y-3, and FE = x+\\frac{10}{3}.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Parallel(Line(A, C), Line(F, D))",
+        "Parallel(Line(B, F), Line(C, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "Equals(LengthOf(Line(A,B)),6)",
+        "Equals(LengthOf(Line(A,F)),8)",
+        "Equals(LengthOf(Line(B,C)),x)",
+        "Equals(LengthOf(Line(C,D)),y)",
+        "Equals(LengthOf(Line(D,E)),2y-3)",
+        "Equals(LengthOf(Line(F,E)),x+\\frac{10}{3})",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "DE",
+        "CB",
+        "CA",
+        "BA",
+        "BF",
+        "DF",
+        "EF",
+        "EA",
+        "FA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            60.05022222222222,
+            215.3537142857143
+        ],
+        "D": [
+            153.85466666666665,
+            215.3537142857143
+        ],
+        "E": [
+            286.4111111111111,
+            215.58428571428573
+        ],
+        "F": [
+            192.5840522875817,
+            117.18453781512605
+        ],
+        "A": [
+            130.95391812865498,
+            52.020150375939856
+        ],
+        "B": [
+            102.30745098039215,
+            117.81747899159663
+        ]
+    },
+    "problem_choices": [
+        5.459,
+        6.0,
+        10.0,
+        13.333
+    ],
+    "choices_precise_value": [
+        5.459,
+        6.0,
+        10.0,
+        13.333
+    ],
+    "problem_answer": 10.0,
+    "total_time": 79.269661,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = AB, 10 / 3 + x = EF, B on AC, x = BC, \u2220CAF, AC || FD, F on AE, \u2220CAE, 8 = AF, BF || CE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAF\nConclusions: \u2220BAF = \u2220CAF\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || FD\nConclusions: \u2220BFD = \u2220FBA\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : AC || FD\nConclusions: \u2220ECA = \u2220EDF\n\nStep 6:\nTheorem: Line Segment Split\nPremises : F on AE\nConclusions: AE = AF + EF\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220CAE, F on AE\nConclusions: \u2220CAE = \u2220CAF\n\nStep 8:\nTheorem: Corresponding Angle Theorem\nPremises : BF || CE\nConclusions: \u2220AEC = \u2220AFB\n\nStep 9:\nTheorem: Alternate Interior Angle Theorem\nPremises : BF || CE\nConclusions: \u2220BFD = \u2220EDF\n\nStep 10:\nTheorem: Substitution\nPremises : 6 = AB, AC = AB + BC, x = BC\nConclusions: 6 + x = AC\n\nStep 11:\nTheorem: Substitution\nPremises : 8 = AF, 10 / 3 + x = EF, AE = AF + EF\nConclusions: 8 + (10 / 3 + x) = AE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAE = \u2220CAF, \u2220BAF = \u2220CAF\nConclusions: \u2220BAF = \u2220CAE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFD = \u2220FBA, \u2220BFD = \u2220EDF\nConclusions: \u2220EDF = \u2220FBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECA = \u2220EDF, \u2220EDF = \u2220FBA\nConclusions: \u2220ECA = \u2220FBA\n\nStep 15:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BAF = \u2220CAE, \u2220ECA = \u2220FBA, \u2220AEC = \u2220AFB\nConclusions: \u25b3ABF ~ \u25b3ACE\n\nStep 16:\nTheorem: Similar Definition\nPremises : \u25b3ABF ~ \u25b3ACE\nConclusions: \u2220ECA = \u2220FBA, \u2220BAF = \u2220CAE, AB / AC = AF / AE\n\nStep 17:\nTheorem: Substitution\nPremises : 6 = AB, 6 + x = AC, 8 = AF, AB / AC = AF / AE, 8 + (10 / 3 + x) = AE\nConclusions: 6 / (6 + x) = 8 / (8 + (10 / 3 + x))\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 6 / (6 + x) = 8 / (8 + (10 / 3 + x)), x = BC\nConclusions: 10 = BC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 10 = BC, x = BC\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, F)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(E, A)",
+        "Line(F, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Parallel(Line(A, C), Line(F, D))",
+        "Parallel(Line(B, F), Line(C, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(A, F)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), y)",
+        "Equals(LengthOf(Line(D, E)), Sub(Mul(2.0, y), 3.0))",
+        "Equals(LengthOf(Line(F, E)), Add(x, Div(10.0, 3.0)))"
+    ],
+    "correct": true
+}

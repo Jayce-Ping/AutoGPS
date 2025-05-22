@@ -1,0 +1,111 @@
+{
+    "problem_id": "2825",
+    "solved": true,
+    "problem_text": "In \\odot P, \\widehat J K = 134. Find m \\widehat J L.",
+    "logic_forms": [
+        "Circle(P, radius_0_0)",
+        "Equals(LengthOf(Line(M, P)), 6)",
+        "Equals(MeasureOf(Arc(J, K)), 134)",
+        "Find(MeasureOf(Arc(J, L)))",
+        "Perpendicular(Line(P, Q), Line(K, Q))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "PointLiesOnLine(P, Line(M, Q))",
+        "PointLiesOnLine(Q, Line(J, K))",
+        "PointLiesOnLine(Q, Line(M, L))",
+        "PointLiesOnLine(Q, Line(P, L))"
+    ],
+    "point_instances": [
+        "M",
+        "Q",
+        "J",
+        "K",
+        "L",
+        "P"
+    ],
+    "line_instances": [
+        "MP",
+        "MQ",
+        "ML",
+        "PQ",
+        "PL",
+        "QL",
+        "JQ",
+        "JK",
+        "QK"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "M": [
+            323.6168224299065,
+            102.33644859813083
+        ],
+        "Q": [
+            176.8878504672897,
+            264.01869158878503
+        ],
+        "J": [
+            84.83177570093457,
+            183.6448598130841
+        ],
+        "K": [
+            268.47663551401865,
+            347.66355140186914
+        ],
+        "L": [
+            130.15887850467288,
+            316.822429906542
+        ],
+        "P": [
+            226.8878504672897,
+            209.34579439252335
+        ]
+    },
+    "problem_choices": [
+        "46",
+        "67",
+        "92",
+        "134"
+    ],
+    "choices_precise_value": [
+        46,
+        67,
+        92.0,
+        134.0
+    ],
+    "problem_answer": 67,
+    "total_time": 95.301626,
+    "solution_predicate": "Equals(1.1693705988, MeasureOf(Arc(J, P, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220JPL, \u2220LPK, 3.14 = pi, \u2299(P, radius_0_0), JQ \u22a5 PQ, Q on LP, Arc(JPK), \u2220KPJ, Q on JK, \u2220JPK, Arc(JPL), pi * (134 / 180) = Arc(JPK)\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 2.34 = pi * (134 / 180)\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220LPK, Q on LP\nConclusions: \u2220LPK = \u2220QPK\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220JPL, Q on LP\nConclusions: \u2220JPL = \u2220JPQ\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JPK)\nConclusions: \u2220JPK = Arc(JPK)\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220JPL, \u2220KPJ, \u2220LPK\nConclusions: 2 * pi = \u2220JPL + \u2220KPJ + \u2220LPK\n\nStep 7:\nTheorem: Circle Vertical Theorem\nPremises : JQ \u22a5 PQ, \u2299(P, radius_0_0), Q on JK\nConclusions: \u25b3JPQ \u2245 \u25b3KPQ\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220JPK\nConclusions: \u2220JPK = 2 * pi - \u2220KPJ\n\nStep 9:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JPL)\nConclusions: \u2220JPL = Arc(JPL)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (134 / 180) = Arc(JPK), \u2220JPK = Arc(JPK)\nConclusions: pi * (134 / 180) = \u2220JPK\n\nStep 11:\nTheorem: Congruent Definition\nPremises : \u25b3JPQ \u2245 \u25b3KPQ\nConclusions: \u2220JPQ = \u2220QPK\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JPL = \u2220JPQ, \u2220JPL = Arc(JPL)\nConclusions: \u2220JPQ = Arc(JPL)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JPK = 2 * pi - \u2220KPJ, pi * (134 / 180) = \u2220JPK\nConclusions: pi * (134 / 180) = 2 * pi - \u2220KPJ\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JPQ = \u2220QPK, \u2220JPQ = Arc(JPL)\nConclusions: \u2220QPK = Arc(JPL)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2.34 = pi * (134 / 180), pi * (134 / 180) = 2 * pi - \u2220KPJ\nConclusions: 2.34 = 2 * pi - \u2220KPJ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QPK = Arc(JPL), \u2220LPK = \u2220QPK\nConclusions: \u2220LPK = Arc(JPL)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JPL = \u2220JPQ, \u2220JPQ = Arc(JPL), \u2220LPK = Arc(JPL)\nConclusions: \u2220JPL = \u2220LPK\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2.34 = 2 * pi - \u2220KPJ, \u2220JPL = \u2220LPK, 2 * pi = \u2220JPL + \u2220KPJ + \u2220LPK\nConclusions: 1.17 = \u2220JPL\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 1.17 = \u2220JPL, \u2220JPL = Arc(JPL)\nConclusions: 1.17 = Arc(JPL)\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, Q)",
+        "Line(M, L)",
+        "Line(P, Q)",
+        "Line(P, L)",
+        "Line(Q, L)",
+        "Line(J, Q)",
+        "Line(J, K)",
+        "Line(Q, K)",
+        "Circle(P, radius_0_0)",
+        "Circle(P, radius_0_0)",
+        "Perpendicular(Line(P, Q), Line(K, Q))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "PointLiesOnLine(P, Line(M, Q))",
+        "PointLiesOnLine(Q, Line(J, K))",
+        "PointLiesOnLine(Q, Line(M, L))",
+        "PointLiesOnLine(Q, Line(P, L))",
+        "Equals(LengthOf(Line(M, P)), 6.0)",
+        "Equals(MeasureOf(Arc(J, P, K)), Mul(pi, Div(134.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,76 @@
+{
+    "problem_id": "2443",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(P, R))",
+        "Perpendicular(Line(P, Q), Line(R, Q))",
+        "Equals(MeasureOf(Angle(S, Q, R)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(R, S, Q)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(S, Q, P)), 51)",
+        "Equals(MeasureOf(Angle(S, R, Q)), 33)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "S",
+        "P",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "PS",
+        "PR",
+        "SR",
+        "QS",
+        "QP",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            295.6923076923077,
+            254.32692307692307
+        ],
+        "P": [
+            80.78846153846153,
+            392.78846153846155
+        ],
+        "R": [
+            563.0,
+            80.28846153846153
+        ],
+        "Q": [
+            80.78846153846153,
+            80.76923076923076
+        ]
+    },
+    "problem_choices": [
+        "39",
+        "84",
+        "108",
+        "129"
+    ],
+    "choices_precise_value": [
+        39.0,
+        84.0,
+        108.0,
+        129.0
+    ],
+    "problem_answer": 108.0,
+    "total_time": 15.821965,
+    "solution_predicate": "Equals(1.8849555922, MeasureOf(Angle(R, S, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: PQ \u22a5 QR, QR, PQ, \u2220RPQ, \u2220RQP, 3.14 = pi, S on PR, pi * (51 / 180) = \u2220PQS, \u2220PQS, RS, pi * (33 / 180) = \u2220QRS, \u2220QSP, QS, \u2220SQR, \u2220RSQ, PR, PS, \u2220QRP\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : PQ \u22a5 QR\nConclusions: pi / 2 = \u2220PQR, (3 * pi) / 2 = \u2220RQP\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220RPQ, S on PR\nConclusions: \u2220RPQ = \u2220SPQ\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : QR, QS, RS\nConclusions: \u25b3QRS\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220RQP, \u2220SQR, \u2220PQS\nConclusions: 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220RSQ, \u2220QSP\nConclusions: pi = \u2220QSP + \u2220RSQ\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : PQ, QR, PR\nConclusions: \u25b3PQR\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : QS, PQ, PS\nConclusions: \u25b3PQS\n\nStep 9:\nTheorem: Same Angle\nPremises : S on PR, \u2220QRP\nConclusions: \u2220QRP = \u2220QRS\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(Q, R, S)\nPremises : \u25b3QRS\nConclusions: pi = \u2220QRS + \u2220RSQ + \u2220SQR\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR, 3.14 = pi, pi * (51 / 180) = \u2220PQS, (3 * pi) / 2 = \u2220RQP\nConclusions: 2 * 3.14 = (3 * pi) / 2 + pi * (51 / 180) + \u2220SQR\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220QSP + \u2220RSQ\nConclusions: 3.14 = \u2220QSP + \u2220RSQ\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, R)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, S)\nPremises : \u25b3PQS\nConclusions: pi = \u2220PQS + \u2220QSP + \u2220SPQ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (33 / 180) = \u2220QRS, \u2220QRP = \u2220QRS\nConclusions: pi * (33 / 180) = \u2220QRP\n\nStep 16:\nTheorem: Substitution\nPremises : pi = \u2220QRS + \u2220RSQ + \u2220SQR, 3.14 = pi, pi * (33 / 180) = \u2220QRS\nConclusions: 3.14 = pi * (33 / 180) + \u2220RSQ + \u2220SQR\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220PQR + \u2220QRP + \u2220RPQ\nConclusions: 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220PQS + \u2220QSP + \u2220SPQ, pi * (51 / 180) = \u2220PQS\nConclusions: 3.14 = 3.14 * (51 / 180) + \u2220QSP + \u2220SPQ\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220RPQ = \u2220SPQ, 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ, pi / 2 = \u2220PQR, pi * (33 / 180) = \u2220QRP\nConclusions: 3.14 = pi / 2 + pi * (33 / 180) + \u2220SPQ\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (51 / 180) + \u2220QSP + \u2220SPQ, 3.14 = pi / 2 + pi * (33 / 180) + \u2220SPQ, 3.14 = pi * (33 / 180) + \u2220RSQ + \u2220SQR, 2 * 3.14 = (3 * pi) / 2 + pi * (51 / 180) + \u2220SQR, 3.14 = \u2220QSP + \u2220RSQ\nConclusions: 1.88 = \u2220RSQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, S)",
+        "Line(P, R)",
+        "Line(S, R)",
+        "Line(Q, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "PointLiesOnLine(S, Line(P, R))",
+        "Perpendicular(Line(P, Q), Line(R, Q))",
+        "Equals(MeasureOf(Angle(P, Q, S)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, R, S)), Mul(pi, Div(33.0, 180.0)))"
+    ],
+    "correct": true
+}

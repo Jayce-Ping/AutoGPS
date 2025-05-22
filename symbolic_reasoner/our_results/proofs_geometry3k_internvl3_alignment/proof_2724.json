@@ -1,0 +1,86 @@
+{
+    "problem_id": "2724",
+    "solved": true,
+    "problem_text": "\\triangle L M N \\cong \\triangle Q R S. Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 2x+11)",
+        "Equals(LengthOf(Line(R, Q)), 3x-9)",
+        "Equals(MeasureOf(Angle(S, R, Q)), 2y-40)",
+        "Equals(MeasureOf(Angle(N, M, L)), y+10)",
+        "Congruent(Triangle(L,M,N),Triangle(Q,R,S))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "L",
+        "S",
+        "N",
+        "R",
+        "M",
+        "Q"
+    ],
+    "line_instances": [
+        "MN",
+        "LN",
+        "LM",
+        "SR",
+        "RQ",
+        "SQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            273.0,
+            92.38709677419354
+        ],
+        "S": [
+            686.7096774193549,
+            89.9677419354839
+        ],
+        "N": [
+            410.90322580645164,
+            312.5483870967742
+        ],
+        "R": [
+            958.483870967742,
+            89.16129032258067
+        ],
+        "M": [
+            136.70967741935485,
+            313.35483870967744
+        ],
+        "Q": [
+            822.1935483870968,
+            309.3225806451613
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "20",
+        "40",
+        "50"
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        40.0,
+        50.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 10.703717,
+    "solution_predicate": "Equals(20.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 11 + 2 * x = LM, 3 * x - 9 = QR, \u25b3LMN \u2245 \u25b3QRS\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3LMN \u2245 \u25b3QRS\nConclusions: LM = QR\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 9 = QR, LM = QR, 11 + 2 * x = LM\nConclusions: 11 + 2 * x = 3 * x - 9\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 11 + 2 * x = 3 * x - 9\nConclusions: 20 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(L, N)",
+        "Line(L, M)",
+        "Line(S, R)",
+        "Line(R, Q)",
+        "Line(S, Q)",
+        "Congruent(Triangle(L, M, N), Triangle(Q, R, S))",
+        "Equals(LengthOf(Line(M, L)), Add(Mul(2.0, x), 11.0))",
+        "Equals(LengthOf(Line(R, Q)), Sub(Mul(3.0, x), 9.0))",
+        "Equals(MeasureOf(Angle(S, R, Q)), Mul(pi, Div(Sub(Mul(2.0, y), 40.0), 180.0)))",
+        "Equals(MeasureOf(Angle(N, M, L)), Mul(pi, Div(Add(y, 10.0), 180.0)))"
+    ],
+    "correct": true
+}

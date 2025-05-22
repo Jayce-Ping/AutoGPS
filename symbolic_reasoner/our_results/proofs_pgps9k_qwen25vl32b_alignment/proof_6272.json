@@ -1,0 +1,115 @@
+{
+    "problem_id": "6272",
+    "solved": true,
+    "problem_text": "QS is the angle bisector of \\angle PQR, find the measure of \\angle PQR.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(S, Q, R)), 52)",
+        "Line(B, Q)",
+        "Line(B, S)",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(P, Q)",
+        "Line(Q, A)",
+        "Line(Q, R)",
+        "Line(R, A)",
+        "Line(S, Q)",
+        "PointLiesOnLine(P, Line(C, Q))",
+        "PointLiesOnLine(R, Line(Q, A))",
+        "PointLiesOnLine(S, Line(B, Q))",
+        "BisectsAngle(Line(Q,S),Angle(P,Q,R))",
+        "Find(MeasureOf(Angle(P,Q,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "A",
+        "B",
+        "S",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "QS",
+        "QB",
+        "SB",
+        "CP",
+        "CQ",
+        "PQ",
+        "QR",
+        "QA",
+        "RA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            84.31818181818181,
+            213.07159663865548
+        ],
+        "R": [
+            254.36868686868686,
+            214.07714285714286
+        ],
+        "A": [
+            318.1818181818182,
+            213.6342857142857
+        ],
+        "B": [
+            225.82535885167462,
+            31.96962406015038
+        ],
+        "S": [
+            190.11363636363635,
+            77.32285714285715
+        ],
+        "P": [
+            50.73232323232323,
+            76.96857142857144
+        ],
+        "C": [
+            39.330808080808076,
+            33.30285714285714
+        ]
+    },
+    "problem_choices": [
+        26.0,
+        52.0,
+        104.0,
+        128.0
+    ],
+    "choices_precise_value": [
+        26.0,
+        52.0,
+        104.0,
+        128.0
+    ],
+    "problem_answer": 104.0,
+    "total_time": 39.837659,
+    "solution_predicate": "Equals(1.8151424221, MeasureOf(Angle(R, Q, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AQC, \u2220CQA, \u2220CQA, \u2220PQA, 3.14 = pi, \u2220SQP, \u2220AQP, R on AQ, \u2220RQS, \u2220PQR, pi * (52 / 180) = \u2220RQS, BisectsAngle(QS, \u2220RQP), P on CQ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CQA\nConclusions: \u2220CQA = 2 * pi - \u2220AQC\n\nStep 3:\nTheorem: Same Angle\nPremises : R on AQ, \u2220AQC\nConclusions: \u2220AQC = \u2220RQC\n\nStep 4:\nTheorem: Same Angle\nPremises : R on AQ, \u2220PQA\nConclusions: \u2220PQA = \u2220PQR\n\nStep 5:\nTheorem: Same Angle\nPremises : R on AQ, \u2220AQP\nConclusions: \u2220AQP = \u2220RQP\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220SQP, \u2220RQS, \u2220PQR\nConclusions: 2 * pi = \u2220PQR + \u2220RQS + \u2220SQP\n\nStep 7:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(QS, \u2220RQP)\nConclusions: \u2220RQS = \u2220SQP\n\nStep 8:\nTheorem: Same Angle\nPremises : P on CQ, \u2220CQA\nConclusions: \u2220CQA = \u2220PQA\n\nStep 9:\nTheorem: Same Angle\nPremises : P on CQ, \u2220AQC\nConclusions: \u2220AQC = \u2220AQP\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQS = \u2220SQP, pi * (52 / 180) = \u2220RQS\nConclusions: pi * (52 / 180) = \u2220SQP\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CQA = \u2220PQA, \u2220PQA = \u2220PQR\nConclusions: \u2220CQA = \u2220PQR\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQC = \u2220AQP, \u2220AQC = \u2220RQC\nConclusions: \u2220AQP = \u2220RQC\n\nStep 13:\nTheorem: Substitution\nPremises : pi * (52 / 180) = \u2220SQP, 2 * pi = \u2220PQR + \u2220RQS + \u2220SQP, 3.14 = pi, pi * (52 / 180) = \u2220RQS\nConclusions: 2 * 3.14 = 3.14 * (52 / 180) + 3.14 * (52 / 180) + \u2220PQR\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220CQA = 2 * pi - \u2220AQC, 3.14 = pi, \u2220AQC = \u2220RQC, \u2220CQA = \u2220PQR\nConclusions: \u2220PQR = 2 * 3.14 - \u2220RQC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQP = \u2220RQC, \u2220AQP = \u2220RQP\nConclusions: \u2220RQC = \u2220RQP\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (52 / 180) + 3.14 * (52 / 180) + \u2220PQR, \u2220PQR = 2 * 3.14 - \u2220RQC, \u2220RQC = \u2220RQP\nConclusions: 1.82 = \u2220RQP\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, S)",
+        "Line(Q, B)",
+        "Line(S, B)",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(P, Q)",
+        "Line(Q, R)",
+        "Line(Q, A)",
+        "Line(R, A)",
+        "Line(B, Q)",
+        "Line(B, S)",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(P, Q)",
+        "Line(Q, A)",
+        "Line(Q, R)",
+        "Line(R, A)",
+        "Line(S, Q)",
+        "PointLiesOnLine(P, Line(C, Q))",
+        "PointLiesOnLine(R, Line(Q, A))",
+        "PointLiesOnLine(S, Line(B, Q))",
+        "BisectsAngle(Line(Q, S), Angle(R, Q, P))",
+        "Equals(MeasureOf(Angle(R, Q, S)), Mul(pi, Div(52.0, 180.0)))"
+    ],
+    "correct": true
+}

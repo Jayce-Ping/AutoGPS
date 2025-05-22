@@ -1,0 +1,74 @@
+{
+    "problem_id": "2686",
+    "solved": true,
+    "problem_text": "Find m \\angle A B C.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, D)))",
+        "Equals(MeasureOf(Angle(C, D, A)), 92)",
+        "Find(MeasureOf(Angle(A,B,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "AD",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            85.08247422680412,
+            40.35051546391753
+        ],
+        "C": [
+            279.9278350515464,
+            309.93814432989694
+        ],
+        "D": [
+            93.3298969072165,
+            310.45360824742266
+        ],
+        "B": [
+            590.7525773195877,
+            309.93814432989694
+        ]
+    },
+    "problem_choices": [
+        "22",
+        "24",
+        "42",
+        "44"
+    ],
+    "choices_precise_value": [
+        22.0,
+        24.0,
+        42.0,
+        44.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 23.600986,
+    "solution_predicate": "Equals(0.3839724354, MeasureOf(Angle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, C on BD, \u2220BCA, \u2220BDA, BC, AD, pi * (92 / 180) = \u2220CDA, 3.14 = pi, \u2220BDA, AD = CD, \u2220ACD, \u2220CDA, \u2220ADB, AC, AC = BC, CD\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDA\nConclusions: \u2220BDA = 2 * pi - \u2220ADB\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220BCA, \u2220ACD\nConclusions: pi = \u2220ACD + \u2220BCA\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ADB, C on BD\nConclusions: \u2220ADB = \u2220ADC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CDA, pi * (92 / 180) = \u2220CDA\nConclusions: pi * (92 / 180) = \u2220BDA\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC, pi * (92 / 180) = \u2220CDA\nConclusions: 3.14 * (92 / 180) = 2 * 3.14 - \u2220ADC\n\nStep 11:\nTheorem: Issoceles Triangle Property\nPremises : AC = BC, \u25b3ABC\nConclusions: \u2220ABC = \u2220CAB\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 14:\nTheorem: Issoceles Triangle Property\nPremises : AD = CD, \u25b3ACD\nConclusions: \u2220ACD = \u2220DAC\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ADB = \u2220ADC, \u2220BDA = 2 * pi - \u2220ADB, pi * (92 / 180) = \u2220BDA\nConclusions: pi * (92 / 180) = 2 * 3.14 - \u2220ADC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ACD + \u2220BCA, \u2220ACD = \u2220DAC\nConclusions: 3.14 = \u2220BCA + \u2220DAC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (92 / 180) = 2 * 3.14 - \u2220ADC, 3.14 * (92 / 180) = 2 * 3.14 - \u2220ADC\nConclusions: 3.14 * (92 / 180) = pi * (92 / 180)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (92 / 180) = pi * (92 / 180), pi * (92 / 180) = \u2220CDA\nConclusions: 3.14 * (92 / 180) = \u2220CDA\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (92 / 180) = \u2220CDA\nConclusions: 1.61 = \u2220CDA\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220ACD = \u2220DAC, 3.14 = pi, pi = \u2220ACD + \u2220CDA + \u2220DAC, 1.61 = \u2220CDA\nConclusions: 3.14 = 1.61 + \u2220DAC + \u2220DAC\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220BCA + \u2220DAC, \u2220ABC = \u2220CAB, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = 1.61 + \u2220DAC + \u2220DAC\nConclusions: 0.38 = \u2220ABC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, D)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(92.0, 180.0)))"
+    ],
+    "correct": true
+}

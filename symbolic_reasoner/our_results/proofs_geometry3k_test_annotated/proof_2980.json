@@ -1,0 +1,64 @@
+{
+    "problem_id": "2980",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat Z Y. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "Equals(LengthOf(Line(X, Y)), 6)",
+        "Equals(MeasureOf(Angle(Z, X, Y)), 75)",
+        "Find(LengthOf(Arc(Z, Y)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "Z"
+    ],
+    "line_instances": [
+        "ZX",
+        "YX"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "Y": [
+            200.76190476190476,
+            83.33333333333333
+        ],
+        "X": [
+            244.57142857142856,
+            245.23809523809524
+        ],
+        "Z": [
+            76.95238095238093,
+            244.28571428571428
+        ]
+    },
+    "problem_choices": [
+        "3.93",
+        "6.00",
+        "7.85",
+        "15.71"
+    ],
+    "choices_precise_value": [
+        3.93,
+        6.0,
+        7.85,
+        15.71
+    ],
+    "problem_answer": 7.85,
+    "total_time": 2.666224,
+    "solution_predicate": "Equals(7.853981634, LengthOf(Arc(Y, X, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(YXZ), pi * (75 / 180) = \u2220YXZ, Y on \u2299(X, radius_0_0), 6 = XY\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(YXZ)\nConclusions: Arc(YXZ) = radius_0_0 * \u2220YXZ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(X, radius_0_0)\nConclusions: radius_0_0 = XY\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 = XY, radius_0_0 = XY\nConclusions: 6 = radius_0_0\n\nStep 5:\nTheorem: Substitution\nPremises : Arc(YXZ) = radius_0_0 * \u2220YXZ, pi * (75 / 180) = \u2220YXZ, 6 = radius_0_0\nConclusions: 6 * pi * (75 / 180) = Arc(YXZ)\n\nStep 6:\nTheorem: Evaluate\nPremises : 6 * pi * (75 / 180) = Arc(YXZ)\nConclusions: 7.85 = Arc(YXZ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, X)",
+        "Line(Y, X)",
+        "Circle(X, radius_0_0)",
+        "PointLiesOnCircle(Z, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "Equals(LengthOf(Line(X, Y)), 6.0)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), Mul(pi, Div(75.0, 180.0)))"
+    ],
+    "correct": true
+}

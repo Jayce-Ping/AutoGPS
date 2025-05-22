@@ -1,0 +1,96 @@
+{
+    "problem_id": "2722",
+    "solved": true,
+    "problem_text": "Each pair of polygons is similar. Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, F)), 12)",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(LengthOf(Line(D, F)), y+4)",
+        "Equals(LengthOf(Line(D, E)), 15)",
+        "Equals(LengthOf(Line(A, C)), 2x)",
+        "Equals(LengthOf(Line(B, A)), 20)",
+        "Equals(MeasureOf(Angle(E, F, D)), MeasureOf(Angle(A, C, B)))",
+        "Equals(MeasureOf(Angle(E, D, F)), MeasureOf(Angle(C, B, A)))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(D, E, F)))",
+        "Similar(Triangle(E, D, F), Triangle(A, B, C))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "CA",
+        "CB",
+        "BA",
+        "DE",
+        "FE",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            306.0344827586207,
+            241.48275862068965
+        ],
+        "B": [
+            31.896551724137932,
+            241.48275862068965
+        ],
+        "C": [
+            88.79310344827587,
+            87.17241379310346
+        ],
+        "D": [
+            346.98275862068965,
+            176.39655172413794
+        ],
+        "E": [
+            550.8620689655173,
+            176.39655172413794
+        ],
+        "F": [
+            388.7931034482759,
+            60.87931034482759
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "12",
+        "15",
+        "20"
+    ],
+    "choices_precise_value": [
+        5.0,
+        12.0,
+        15.0,
+        20.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 13.615487,
+    "solution_predicate": "Equals(5.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 + y = DF, 20 = AB, \u25b3ABC ~ \u25b3EDF, 12 = BC, 15 = DE\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3EDF\nConclusions: sim_ratio_triangle_a_b_c_triangle_e_d_f = AB / DE, sim_ratio_triangle_a_b_c_triangle_e_d_f = BC / DF\n\nStep 3:\nTheorem: Substitution\nPremises : 20 = AB, 15 = DE, sim_ratio_triangle_a_b_c_triangle_e_d_f = AB / DE\nConclusions: 20 / 15 = sim_ratio_triangle_a_b_c_triangle_e_d_f\n\nStep 4:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_c_triangle_e_d_f = BC / DF, 12 = BC, 4 + y = DF\nConclusions: sim_ratio_triangle_a_b_c_triangle_e_d_f = 12 / (4 + y)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 20 / 15 = sim_ratio_triangle_a_b_c_triangle_e_d_f, sim_ratio_triangle_a_b_c_triangle_e_d_f = 12 / (4 + y)\nConclusions: 20 / 15 = 12 / (4 + y)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 20 / 15 = 12 / (4 + y)\nConclusions: 5 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Similar(Triangle(E, D, F), Triangle(A, B, C))",
+        "Equals(LengthOf(Line(E, F)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(LengthOf(Line(D, F)), Add(y, 4.0))",
+        "Equals(LengthOf(Line(D, E)), 15.0)",
+        "Equals(LengthOf(Line(A, C)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(B, A)), 20.0)",
+        "Equals(MeasureOf(Angle(D, F, E)), MeasureOf(Angle(B, C, A)))",
+        "Equals(MeasureOf(Angle(E, D, F)), MeasureOf(Angle(A, B, C)))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(F, E, D)))"
+    ],
+    "correct": true
+}

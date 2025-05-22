@@ -1,0 +1,124 @@
+{
+    "problem_id": "2963",
+    "solved": true,
+    "problem_text": "In the figure, C P is an altitude, C Q is the angle bisector of \\angle A C B, and R is the midpoint of A B. Find m \\angle A C Q if m \\angle A C B = 123 - x and m \\angle Q C B = 42 + x.",
+    "logic_forms": [
+        "BisectsAngle(Line(C,Q), Angle(A,C,B))",
+        "Equals(MeasureOf(Angle(A,C,B)), 123-x)",
+        "Equals(MeasureOf(Angle(Q,C,B)), 42+x)",
+        "Find(MeasureOf(Angle(A,C,Q)))",
+        "IsAltitudeOf(Line(C,P), Triangle(A,B,C))",
+        "IsMidpointOf(Point(R), Line(A,B))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(P, Line(A, Q))",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(Q, Line(A, B))",
+        "PointLiesOnLine(Q, Line(A, R))",
+        "PointLiesOnLine(Q, Line(P, B))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(R, Line(P, B))",
+        "PointLiesOnLine(R, Line(Q, B))"
+    ],
+    "point_instances": [
+        "B",
+        "P",
+        "Q",
+        "R",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "AP",
+        "AQ",
+        "AR",
+        "AB",
+        "PQ",
+        "PR",
+        "PB",
+        "QR",
+        "QB",
+        "RB",
+        "CB",
+        "CA",
+        "CP",
+        "CQ",
+        "CR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            316.78873239436615,
+            207.04225352112675
+        ],
+        "P": [
+            140.73239436619718,
+            205.91549295774647
+        ],
+        "Q": [
+            164.39436619718307,
+            206.4788732394366
+        ],
+        "R": [
+            183.54929577464787,
+            205.91549295774647
+        ],
+        "C": [
+            140.73239436619718,
+            56.05633802816901
+        ],
+        "A": [
+            50.87323943661971,
+            205.07042253521126
+        ]
+    },
+    "problem_choices": [
+        "40",
+        "45",
+        "50",
+        "55"
+    ],
+    "choices_precise_value": [
+        40.0,
+        45.0,
+        50.0,
+        55.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 104.214803,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(A, C, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((123 - x) / 180) = \u2220ACB, \u2220BCA, \u2220ACQ, BisectsAngle(CQ, \u2220ACB), \u2220ACB, 3.14 = pi, pi * ((42 + x) / 180) = \u2220QCB, \u2220QCB\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(CQ, \u2220ACB)\nConclusions: \u2220ACQ = \u2220QCB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ACQ, \u2220BCA, \u2220QCB\nConclusions: 2 * pi = \u2220ACQ + \u2220BCA + \u2220QCB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((42 + x) / 180) = \u2220QCB, \u2220ACQ = \u2220QCB\nConclusions: pi * ((42 + x) / 180) = \u2220ACQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = 2 * pi - \u2220BCA, pi * ((123 - x) / 180) = \u2220ACB\nConclusions: pi * ((123 - x) / 180) = 2 * pi - \u2220BCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220ACQ + \u2220BCA + \u2220QCB, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220ACQ + \u2220BCA + \u2220QCB\n\nStep 9:\nTheorem: Substitution\nPremises : pi * ((42 + x) / 180) = \u2220ACQ, 3.14 = pi\nConclusions: 3.14 * ((42 + x) / 180) = \u2220ACQ\n\nStep 10:\nTheorem: Substitution\nPremises : pi * ((123 - x) / 180) = 2 * pi - \u2220BCA, 3.14 = pi\nConclusions: 3.14 * ((123 - x) / 180) = 2 * 3.14 - \u2220BCA\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((42 + x) / 180) = \u2220ACQ, 3.14 * ((123 - x) / 180) = 2 * 3.14 - \u2220BCA, 6.28 = \u2220ACQ + \u2220BCA + \u2220QCB, \u2220ACQ = \u2220QCB\nConclusions: 0.96 = \u2220ACQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(A, B)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, B)",
+        "Line(Q, R)",
+        "Line(Q, B)",
+        "Line(R, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(C, R)",
+        "BisectsAngle(Line(C, Q), Angle(A, C, B))",
+        "Perpendicular(Line(C, P), Line(A, B))",
+        "IsMidpointOf(R, Line(A, B))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(P, Line(A, Q))",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(Q, Line(A, B))",
+        "PointLiesOnLine(Q, Line(A, R))",
+        "PointLiesOnLine(Q, Line(P, B))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(R, Line(P, B))",
+        "PointLiesOnLine(R, Line(Q, B))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Sub(123.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, C, B)), Mul(pi, Div(Add(42.0, x), 180.0)))"
+    ],
+    "correct": true
+}

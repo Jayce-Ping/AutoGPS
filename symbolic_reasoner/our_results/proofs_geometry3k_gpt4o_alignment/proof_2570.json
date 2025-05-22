@@ -1,0 +1,85 @@
+{
+    "problem_id": "2570",
+    "solved": true,
+    "problem_text": "In the figure, K L is tangent to \\odot M at K. Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, A)), 10)",
+        "Equals(LengthOf(Line(L, K)), 17)",
+        "Equals(LengthOf(Line(M, A)), x)",
+        "Equals(LengthOf(Line(M, K)), x)",
+        "Find(x)",
+        "Perpendicular(Line(M, K), Line(L, K))",
+        "PointLiesOnCircle(A, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "Tangent(Line(K, L), Circle(M))"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "M",
+        "A"
+    ],
+    "line_instances": [
+        "MK",
+        "MA",
+        "ML",
+        "AL",
+        "KL"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "K": [
+            213.81844380403456,
+            64.8414985590778
+        ],
+        "L": [
+            292.492795389049,
+            217.29106628242073
+        ],
+        "M": [
+            124.76945244956772,
+            117.86743515850144
+        ],
+        "A": [
+            214.39481268011525,
+            171.46974063400575
+        ]
+    },
+    "problem_choices": [
+        "6.00",
+        "9.45",
+        "18.9",
+        "37.8"
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.45,
+        18.9,
+        37.8
+    ],
+    "problem_answer": 9.45,
+    "total_time": 15.788551,
+    "solution_predicate": "Equals(9.4500000001, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 17 = KL, KM, K on \u2299(M, radius_0_0), 10 = AL, KL, x = AM, A on \u2299(M, radius_0_0), 3.14 = pi, LM, KL \u22a5 KM, A on LM\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : K on \u2299(M, radius_0_0)\nConclusions: radius_0_0 = KM\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(M, radius_0_0)\nConclusions: radius_0_0 = AM\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : LM, KM, KL\nConclusions: \u25b3KLM\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 KM\nConclusions: pi / 2 = \u2220MKL\n\nStep 7:\nTheorem: Line Segment Split\nPremises : A on LM\nConclusions: LM = AL + AM\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : x = AM, radius_0_0 = AM\nConclusions: radius_0_0 = x\n\nStep 9:\nTheorem: Law of Cosines\nPremises : \u25b3KLM\nConclusions: (KL ** 2 + KM ** 2) - LM ** 2 = 2 * KL * KM * cos(\u2220MKL)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220MKL\nConclusions: 1.57 = \u2220MKL\n\nStep 11:\nTheorem: Substitution\nPremises : LM = AL + AM, 10 = AL, radius_0_0 = AM\nConclusions: 10 + radius_0_0 = LM\n\nStep 12:\nTheorem: Substitution\nPremises : 17 = KL, 1.57 = \u2220MKL, radius_0_0 = KM, 10 + radius_0_0 = LM, (KL ** 2 + KM ** 2) - LM ** 2 = 2 * KL * KM * cos(\u2220MKL)\nConclusions: (17 ** 2 + radius_0_0 ** 2) - (10 + radius_0_0) ** 2 = 17 * 2 * cos(1.57) * radius_0_0\n\nStep 13:\nTheorem: Solve Univariate Equation\nPremises : (17 ** 2 + radius_0_0 ** 2) - (10 + radius_0_0) ** 2 = 17 * 2 * cos(1.57) * radius_0_0\nConclusions: 9.45 = radius_0_0\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 9.45 = radius_0_0, radius_0_0 = x\nConclusions: 9.45 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, K)",
+        "Line(M, A)",
+        "Line(M, L)",
+        "Line(A, L)",
+        "Line(K, L)",
+        "Circle(M, radius_0_0)",
+        "Perpendicular(Line(M, K), Line(L, K))",
+        "PointLiesOnCircle(A, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "Tangent(Line(K, L), Circle(M, radius_0_0))",
+        "Equals(LengthOf(Line(L, A)), 10.0)",
+        "Equals(LengthOf(Line(L, K)), 17.0)",
+        "Equals(LengthOf(Line(M, A)), x)",
+        "Equals(LengthOf(Line(M, K)), x)"
+    ],
+    "correct": true
+}

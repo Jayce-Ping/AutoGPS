@@ -1,0 +1,94 @@
+{
+    "problem_id": "8946",
+    "solved": true,
+    "problem_text": "Find the perimeter of the polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 2)",
+        "Equals(LengthOf(Line(A, D)), 4)",
+        "Equals(LengthOf(Line(C, A)), 7)",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Equals(LengthOf(Line(D, C)), SqrtOf(65))",
+        "Equals(PerimeterOf(Polygon(A, B, C, D)), Add(LengthOf(Line(A, B)), LengthOf(Line(B, C)), LengthOf(Line(C, D)), LengthOf(Line(D, A))))",
+        "Find(PerimeterOf(Polygon(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, A))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "DB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.01913875598086,
+            220.18857142857144
+        ],
+        "B": [
+            136.0,
+            219.70142857142858
+        ],
+        "C": [
+            375.3711551606288,
+            219.21428571428572
+        ],
+        "D": [
+            40.995215311004785,
+            29.228571428571428
+        ]
+    },
+    "problem_choices": [
+        16.0,
+        17.534,
+        17.602,
+        19.602
+    ],
+    "choices_precise_value": [
+        16.0,
+        17.534,
+        17.602,
+        19.602
+    ],
+    "problem_answer": 17.534,
+    "total_time": 21.249857,
+    "solution_predicate": "Equals(19.0622577483, PerimeterOf(Quadrilateral(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = AD, SqrtOf(65) = CD, 2 = AB, 5 = BC, Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\n\nStep 2:\nTheorem: Substitution\nPremises : 2 = AB, 4 = AD, SqrtOf(65) = CD, 5 = BC, Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\nConclusions: 2 + 4 + 5 + SqrtOf(65) = Perimeter(Quadrilateral(A, B, C, D))\n\nStep 3:\nTheorem: Evaluate\nPremises : 2 + 4 + 5 + SqrtOf(65) = Perimeter(Quadrilateral(A, B, C, D))\nConclusions: 19.06 = Perimeter(Quadrilateral(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, A))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 2.0)",
+        "Equals(LengthOf(Line(A, D)), 4.0)",
+        "Equals(LengthOf(Line(C, A)), 7.0)",
+        "Equals(LengthOf(Line(C, B)), 5.0)",
+        "Equals(LengthOf(Line(D, C)), SqrtOf(65.0))",
+        "Equals(PerimeterOf(Quadrilateral(A, B, C, D)), Add(LengthOf(Line(A, B)), LengthOf(Line(B, C)), LengthOf(Line(C, D)), LengthOf(Line(D, A))))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,101 @@
+{
+    "problem_id": "7866",
+    "solved": true,
+    "problem_text": "What is the length of QP?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, A)), 11)",
+        "Equals(LengthOf(Line(R, A)), 12)",
+        "Equals(LengthOf(Line(S, A)), 2)",
+        "Line(A, R)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, A)",
+        "Line(S, R)",
+        "Parallel(Line(P, Q), Line(S, R))",
+        "Parallel(Line(P, S), Line(Q, R))",
+        "Perpendicular(Line(P, A), Line(S, R))",
+        "PointLiesOnLine(A, Line(S, R))",
+        "Find(LengthOf(Line(Q,P)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "S",
+        "A",
+        "R"
+    ],
+    "line_instances": [
+        "QR",
+        "PQ",
+        "PS",
+        "PA",
+        "SA",
+        "SR",
+        "AR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            92.08163265306122,
+            36.48
+        ],
+        "Q": [
+            349.7142857142857,
+            35.339999999999996
+        ],
+        "S": [
+            54.857142857142854,
+            238.26
+        ],
+        "A": [
+            91.88571428571429,
+            238.03199999999998
+        ],
+        "R": [
+            313.1428571428571,
+            238.26
+        ]
+    },
+    "problem_choices": [
+        11.18,
+        12.166,
+        14.0,
+        22.0
+    ],
+    "choices_precise_value": [
+        11.18,
+        12.166,
+        14.0,
+        22.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 17.094854,
+    "solution_predicate": "Equals(14.0, LengthOf(Line(Q, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: PS || QR, QR, 12 = AR, RS, PS, PQ, A on RS, PQ || SR, 2 = AS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : A on RS\nConclusions: RS = AR + AS\n\nStep 3:\nTheorem: Definition of Parallelogram\nPremises : QR, RS, PQ || SR, PS, PS || QR, PQ\nConclusions: Parallelogram(P, Q, R, S)\n\nStep 4:\nTheorem: Substitution\nPremises : RS = AR + AS, 12 = AR, 2 = AS\nConclusions: 12 + 2 = RS\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: PQ = RS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 12 + 2 = RS, PQ = RS\nConclusions: 12 + 2 = PQ\n\nStep 7:\nTheorem: Evaluate\nPremises : 12 + 2 = PQ\nConclusions: 14 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(P, A)",
+        "Line(S, A)",
+        "Line(S, R)",
+        "Line(A, R)",
+        "Line(A, R)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, A)",
+        "Line(S, R)",
+        "Parallel(Line(P, Q), Line(S, R))",
+        "Parallel(Line(P, S), Line(Q, R))",
+        "Perpendicular(Line(P, A), Line(S, R))",
+        "PointLiesOnLine(A, Line(S, R))",
+        "Equals(LengthOf(Line(P, A)), 11.0)",
+        "Equals(LengthOf(Line(R, A)), 12.0)",
+        "Equals(LengthOf(Line(S, A)), 2.0)"
+    ],
+    "correct": true
+}

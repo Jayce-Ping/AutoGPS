@@ -1,0 +1,88 @@
+{
+    "problem_id": "2519",
+    "solved": true,
+    "problem_text": "Find m \\angle R C M.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(M, L))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(R, C, L)), 3x+5)",
+        "Equals(MeasureOf(Angle(R, C, M)), x-1)",
+        "Equals(MeasureOf(Angle(M, C, N)), 60)",
+        "Find(MeasureOf(Angle(R, C, M)))"
+    ],
+    "point_instances": [
+        "M",
+        "R",
+        "N",
+        "L",
+        "C"
+    ],
+    "line_instances": [
+        "MC",
+        "ML",
+        "CL",
+        "RC",
+        "CN"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "M": [
+            231.0086455331412,
+            62.82420749279539
+        ],
+        "R": [
+            169.62536023054753,
+            74.35158501440922
+        ],
+        "N": [
+            292.9682997118155,
+            119.59654178674351
+        ],
+        "L": [
+            197.29106628242073,
+            227.66570605187317
+        ],
+        "C": [
+            213.71757925072046,
+            144.95677233429393
+        ]
+    },
+    "problem_choices": [
+        "27",
+        "43",
+        "47",
+        "67"
+    ],
+    "choices_precise_value": [
+        27.0,
+        43.0,
+        47.0,
+        67.0
+    ],
+    "problem_answer": 43.0,
+    "total_time": 10.791912,
+    "solution_predicate": "Equals(0.7504915784, MeasureOf(Angle(M, C, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 + 3 * x) / 180) = \u2220RCL, \u2220RCL, 3.14 = pi, pi * ((x - 1) / 180) = \u2220MCR, \u2220MCR\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 3 * x) / 180) = \u2220RCL\nConclusions: 3.14 * ((5 + 3 * x) / 180) = \u2220RCL\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((x - 1) / 180) = \u2220MCR, 3.14 = pi\nConclusions: 3.14 * ((x - 1) / 180) = \u2220MCR\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220RCL, \u2220MCR\nConclusions: pi = \u2220MCR + \u2220RCL\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220MCR + \u2220RCL, 3.14 = pi\nConclusions: 3.14 = \u2220MCR + \u2220RCL\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((x - 1) / 180) = \u2220MCR, 3.14 = \u2220MCR + \u2220RCL, 3.14 * ((5 + 3 * x) / 180) = \u2220RCL\nConclusions: 0.75 = \u2220MCR\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, C)",
+        "Line(M, L)",
+        "Line(C, L)",
+        "Line(R, C)",
+        "Line(C, N)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(C, Line(M, L))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(R, C, L)), Mul(pi, Div(Add(Mul(3.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(M, C, R)), Mul(pi, Div(Sub(x, 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(N, C, M)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

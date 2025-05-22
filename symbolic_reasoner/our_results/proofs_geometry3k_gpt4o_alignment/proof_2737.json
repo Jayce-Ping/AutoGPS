@@ -1,0 +1,63 @@
+{
+    "problem_id": "2737",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(B, C)), 13)",
+        "Equals(MeasureOf(Angle(A, B, C)), 52)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.92307692307692,
+            237.0879120879121
+        ],
+        "B": [
+            189.02197802197801,
+            43.13186813186813
+        ],
+        "C": [
+            38.19780219780219,
+            43.13186813186813
+        ]
+    },
+    "problem_choices": [
+        "8.00",
+        "10.16",
+        "10.24",
+        "16.64"
+    ],
+    "choices_precise_value": [
+        8.0,
+        10.16,
+        10.24,
+        16.64
+    ],
+    "problem_answer": 16.64,
+    "total_time": 14.241458,
+    "solution_predicate": "Equals(16.6392412171, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACB, \u2220BCA, sin(\u2220CBA), 3.14 = pi, AC, BC, pi * (52 / 180) = \u2220CBA, AC \u22a5 BC, x = AC, 13 = BC, AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.91 = pi * (52 / 180)\n\nStep 5:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 0.91 = pi * (52 / 180), pi * (52 / 180) = \u2220CBA\nConclusions: 0.91 = \u2220CBA\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ACB = 2 * pi - \u2220BCA, pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 11:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC), AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 13:\nTheorem: Evaluate\nPremises : 0.91 = \u2220CBA\nConclusions: 0.79 = sin(\u2220CBA)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220BCA\nConclusions: 2 * 3.14 - pi / 2 = \u2220BCA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi / 2 = \u2220ACB, pi * (52 / 180) = \u2220CBA\nConclusions: 3.14 = pi / 2 + 3.14 * (52 / 180) + \u2220BAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = sin(\u2220CBA), 0.79 = sin(\u2220CBA)\nConclusions: 0.79 = AC / AB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = \u2220ACB, 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\nConclusions: 1.57 = \u2220ACB\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB, 3.14 = pi / 2 + 3.14 * (52 / 180) + \u2220BAC, 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\nConclusions: 0.66 = \u2220BAC\n\nStep 21:\nTheorem: Substitution\nPremises : 0.91 = \u2220CBA, 1.57 = \u2220ACB, x = AC, AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\nConclusions: x / sin(0.91) = AB / sin(1.57)\n\nStep 22:\nTheorem: Substitution\nPremises : AC / sin(\u2220CBA) = BC / sin(\u2220BAC), 0.91 = \u2220CBA, x = AC, 0.66 = \u2220BAC, 13 = BC\nConclusions: 13 / sin(0.66) = x / sin(0.91)\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 13 / sin(0.66) = x / sin(0.91), x / sin(0.91) = AB / sin(1.57)\nConclusions: 13 / sin(0.66) = AB / sin(1.57)\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 0.79 = AC / AB, 13 / sin(0.66) = AB / sin(1.57)\nConclusions: 16.64 = AC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 16.64 = AC\nConclusions: 16.64 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(B, C)), 13.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(52.0, 180.0)))"
+    ],
+    "correct": true
+}

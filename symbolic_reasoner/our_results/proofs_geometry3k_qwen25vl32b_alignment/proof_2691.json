@@ -1,0 +1,67 @@
+{
+    "problem_id": "2691",
+    "solved": true,
+    "problem_text": "Find Q S.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(R, Q)))",
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(Q, S)))",
+        "Equals(LengthOf(Line(R, Q)), LengthOf(Line(Q, S)))",
+        "Equals(LengthOf(Line(Q, S)), 3x+10)",
+        "Equals(LengthOf(Line(R, S)), 6x-5)",
+        "Equals(LengthOf(Line(Q, R)), 5x)",
+        "Find(LengthOf(Line(Q,S)))"
+    ],
+    "point_instances": [
+        "S",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "RQ",
+        "QS",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            397.02489626556013,
+            304.56431535269707
+        ],
+        "R": [
+            219.4315352697095,
+            80.91286307053942
+        ],
+        "Q": [
+            72.95850622406638,
+            303.7344398340249
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "15",
+        "20",
+        "25"
+    ],
+    "choices_precise_value": [
+        5.0,
+        15.0,
+        20.0,
+        25.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 4.90235,
+    "solution_predicate": "Equals(25.0, LengthOf(Line(Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QR = RS, 5 * x = QR, QS = RS, 6 * x - 5 = RS, 10 + 3 * x = QS\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 6 * x - 5 = RS, QR = RS\nConclusions: 6 * x - 5 = QR\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x = QR, 6 * x - 5 = QR\nConclusions: 5 * x = 6 * x - 5\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 * x - 5 = RS, 5 * x = 6 * x - 5\nConclusions: 5 * x = RS\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x = RS, QS = RS\nConclusions: 5 * x = QS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x = QS, 10 + 3 * x = QS\nConclusions: 5 * x = 10 + 3 * x\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 5 * x = 10 + 3 * x, 10 + 3 * x = QS\nConclusions: 25 = QS\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Q)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(R, Q)))",
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(Q, S)))",
+        "Equals(LengthOf(Line(R, Q)), LengthOf(Line(Q, S)))",
+        "Equals(LengthOf(Line(Q, S)), Add(Mul(3.0, x), 10.0))",
+        "Equals(LengthOf(Line(R, S)), Sub(Mul(6.0, x), 5.0))",
+        "Equals(LengthOf(Line(Q, R)), Mul(5.0, x))"
+    ],
+    "correct": true
+}

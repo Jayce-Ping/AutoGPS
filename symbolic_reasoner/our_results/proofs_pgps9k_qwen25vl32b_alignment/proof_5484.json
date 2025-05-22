@@ -1,0 +1,98 @@
+{
+    "problem_id": "5484",
+    "solved": true,
+    "problem_text": "Find AC, if \\triangle ABC \\sim \\triangle CBD, AD = 5, CD = 12, and BC = 31.2.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 5)",
+        "Equals(LengthOf(Line(C, B)), 31.2)",
+        "Equals(LengthOf(Line(C, D)), 12)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Similar(Triangle(A,B,C),Triangle(C,B,D))",
+        "Equals(LengthOf(Line(A,D)),5)",
+        "Equals(LengthOf(Line(C,D)),12)",
+        "Equals(LengthOf(Line(B,C)),31.2)",
+        "Find(LengthOf(Line(A,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "DB",
+        "AC",
+        "CB",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            128.93571428571425,
+            192.46621621621622
+        ],
+        "A": [
+            68.16461538461539,
+            46.30977130977131
+        ],
+        "D": [
+            128.545,
+            46.520270270270274
+        ],
+        "B": [
+            477.0120512820513,
+            46.30977130977131
+        ]
+    },
+    "problem_choices": [
+        10.909,
+        13.0,
+        28.8,
+        33.428
+    ],
+    "choices_precise_value": [
+        10.909,
+        13.0,
+        28.8,
+        33.428
+    ],
+    "problem_answer": 13.0,
+    "total_time": 51.716757,
+    "solution_predicate": "Equals(13.0, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, AD, 12 = CD, AD \u22a5 CD, 5 = AD, CD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AD \u22a5 CD\nConclusions: AC = SqrtOf(AD ** 2 + CD ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 12 = CD, AC = SqrtOf(AD ** 2 + CD ** 2), 5 = AD\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = AC\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = AC\nConclusions: 13 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Similar(Triangle(A, B, C), Triangle(C, B, D))",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), 31.2)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 31.2)"
+    ],
+    "correct": true
+}

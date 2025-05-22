@@ -1,0 +1,83 @@
+{
+    "problem_id": "2447",
+    "solved": true,
+    "problem_text": "Find the value of the variable y in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, E), Line(A, D))",
+        "Equals(MeasureOf(Angle(A, B, E)), 3y+40)",
+        "Equals(MeasureOf(Angle(E, D, A)), 120)",
+        "Equals(MeasureOf(Angle(C, B, E)), 3x-70)",
+        "Equals(MeasureOf(Angle(B, E, D)), x)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "BE",
+        "DE",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            8.594900849858355,
+            109.63172804532577
+        ],
+        "B": [
+            170.91784702549575,
+            60.05665722379603
+        ],
+        "C": [
+            301.5127478753541,
+            20.963172804532576
+        ],
+        "D": [
+            36.07365439093484,
+            210.1983002832861
+        ],
+        "E": [
+            223.60906515580734,
+            258.64022662889516
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "20",
+        "30",
+        "70"
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        30.0,
+        70.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 11.579125,
+    "solution_predicate": "Equals(10.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DEB, pi * ((40 + 3 * y) / 180) = \u2220ABE, \u2220DAC, \u2220EBC, 3.14 = pi, pi * ((3 * x - 70) / 180) = \u2220EBC, \u2220DAC, B on AC, AD || BE, pi * (x / 180) = \u2220BED, \u2220BED, pi * (120 / 180) = \u2220EDA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEB\nConclusions: \u2220DEB = 2 * pi - \u2220BED\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBC\nConclusions: \u2220EBC = 2 * pi - \u2220CBE\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((40 + 3 * y) / 180) = \u2220ABE, 3.14 = pi\nConclusions: 3.14 * ((40 + 3 * y) / 180) = \u2220ABE\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((3 * x - 70) / 180) = \u2220EBC, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 70) / 180) = \u2220EBC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAC\nConclusions: \u2220DAC = 2 * pi - \u2220CAD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220DAC, B on AC\nConclusions: \u2220DAB = \u2220DAC\n\nStep 8:\nTheorem: Corresponding Angle Theorem\nPremises : AD || BE\nConclusions: \u2220CAD = \u2220CBE\n\nStep 9:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AD || BE\nConclusions: pi = \u2220ABE + \u2220DAB, pi = \u2220BED + \u2220EDA\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BED\nConclusions: 3.14 * (x / 180) = \u2220BED\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220BED\nConclusions: \u2220BED = 2 * pi - \u2220DEB\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220DEB = 2 * pi - \u2220BED, 3.14 = pi\nConclusions: \u2220DEB = 2 * 3.14 - \u2220BED\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220EBC = 2 * pi - \u2220CBE, 3.14 = pi\nConclusions: \u2220EBC = 2 * 3.14 - \u2220CBE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x - 70) / 180) = \u2220EBC, pi * ((3 * x - 70) / 180) = \u2220EBC\nConclusions: 3.14 * ((3 * x - 70) / 180) = pi * ((3 * x - 70) / 180)\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220DAC = 2 * pi - \u2220CAD, \u2220CAD = \u2220CBE, 3.14 = pi\nConclusions: \u2220DAC = 2 * 3.14 - \u2220CBE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABE + \u2220DAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABE + \u2220DAB\n\nStep 17:\nTheorem: Substitution\nPremises : pi * (120 / 180) = \u2220EDA, 3.14 = pi, pi = \u2220BED + \u2220EDA\nConclusions: 3.14 = pi * (120 / 180) + \u2220BED\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220BED, \u2220BED = 2 * pi - \u2220DEB\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220DEB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = 2 * 3.14 - \u2220CBE, \u2220EBC = 2 * 3.14 - \u2220CBE, pi * ((3 * x - 70) / 180) = \u2220EBC\nConclusions: pi * ((3 * x - 70) / 180) = \u2220DAC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x - 70) / 180) = pi * ((3 * x - 70) / 180), pi * ((3 * x - 70) / 180) = \u2220DAC\nConclusions: 3.14 * ((3 * x - 70) / 180) = \u2220DAC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 * x - 70) / 180) = \u2220DAC, \u2220DAB = \u2220DAC\nConclusions: 3.14 * ((3 * x - 70) / 180) = \u2220DAB\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : \u2220DEB = 2 * 3.14 - \u2220BED, 3.14 = \u2220ABE + \u2220DAB, 3.14 * (x / 180) = 2 * pi - \u2220DEB, 3.14 * ((3 * x - 70) / 180) = \u2220DAB, 3.14 * ((40 + 3 * y) / 180) = \u2220ABE, 3.14 = pi * (120 / 180) + \u2220BED, 3.14 * (x / 180) = \u2220BED\nConclusions: 10 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, E), Line(A, D))",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(Add(Mul(3.0, y), 40.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, A)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, C)), Mul(pi, Div(Sub(Mul(3.0, x), 70.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, E, D)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

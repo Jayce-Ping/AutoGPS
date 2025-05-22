@@ -1,0 +1,155 @@
+{
+    "problem_id": "3247",
+    "solved": true,
+    "problem_text": "What is the length of GC?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 10\\sqrt{3})",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(F, C)))",
+        "Equals(MeasureOf(Angle(B, A, D)), 60)",
+        "Equals(MeasureOf(Angle(D, A, E)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(F, C, G)), 45)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, C), Line(G, E))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "Find(LengthOf(Line(G,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "G",
+        "A",
+        "D",
+        "F",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BG",
+        "BC",
+        "GC",
+        "CD",
+        "CF",
+        "CA",
+        "DF",
+        "DA",
+        "FA",
+        "AE",
+        "EF",
+        "EG",
+        "FG",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            209.1260504201681,
+            37.84
+        ],
+        "G": [
+            331.47058823529414,
+            159.46857142857144
+        ],
+        "A": [
+            67.64705882352942,
+            284.5722448979592
+        ],
+        "D": [
+            208.8039215686275,
+            284.2504761904762
+        ],
+        "F": [
+            331.47058823529414,
+            283.8
+        ],
+        "C": [
+            457.29411764705884,
+            284.5722448979592
+        ],
+        "E": [
+            331.47058823529414,
+            437.86285714285714
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        17.321,
+        21.213,
+        30.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        17.321,
+        21.213,
+        30.0
+    ],
+    "problem_answer": 21.213,
+    "total_time": 329.444859,
+    "solution_predicate": "Equals(21.2132034355, LengthOf(Line(G, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, \u2220CDB, F on CD, pi * (60 / 180) = \u2220DAB, 10 * SqrtOf(3) = AD, \u2220BDA, D on AC, CD, \u2220BCA, pi * (45 / 180) = \u2220GCF, G on BC, \u2220EGC, FG, CF \u22a5 FG, AD \u22a5 BD, F on EG, 3.14 = pi, DF \u22a5 FG, F on AC, tan(\u2220DAB), CG, BD, CF = DF, \u2220BCF, sin(\u2220FGC), CF, BD \u22a5 DF, \u2220GCF\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on CD\nConclusions: CD = CF + DF\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 10 * SqrtOf(3) = AD\nConclusions: 17.32 = AD\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220CDB, \u2220BDA\nConclusions: pi = \u2220BDA + \u2220CDB\n\nStep 5:\nTheorem: Same Angle\nPremises : D on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220BCA, G on BC\nConclusions: \u2220BCA = \u2220GCA\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : CF \u22a5 FG\nConclusions: pi / 2 = \u2220CFG\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: pi / 2 = \u2220BDA\n\nStep 9:\nTheorem: Same Angle\nPremises : F on EG, \u2220EGC\nConclusions: \u2220EGC = \u2220FGC\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (60 / 180) = \u2220DAB\nConclusions: 1.05 = \u2220DAB\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : pi * (45 / 180) = \u2220GCF, 3.14 = pi\nConclusions: 0.79 = \u2220GCF\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220BCA, F on AC\nConclusions: \u2220BCA = \u2220BCF\n\nStep 13:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220DAB), AD \u22a5 BD\nConclusions: BD / AD = tan(\u2220DAB)\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : BC, CD, BD\nConclusions: \u25b3BCD\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220BCF, G on BC\nConclusions: \u2220BCF = \u2220GCF\n\nStep 16:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220FGC), CF \u22a5 FG\nConclusions: CF / CG = sin(\u2220FGC)\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : CG, CF, FG\nConclusions: \u25b3CFG\n\nStep 18:\nTheorem: Perpendicular to Parallel\nPremises : BD \u22a5 DF, DF \u22a5 FG\nConclusions: BD || GF\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220BDA + \u2220CDB\nConclusions: 3.14 = \u2220BDA + \u2220CDB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCD, \u2220BCA = \u2220GCA\nConclusions: \u2220BCD = \u2220GCA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220GCA, \u2220BCA = \u2220BCF\nConclusions: \u2220BCF = \u2220GCA\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(C, F, G)\nPremises : \u25b3CFG\nConclusions: pi = \u2220CFG + \u2220FGC + \u2220GCF\n\nStep 24:\nTheorem: Sin Function Definition\nPremises : \u25b3CFG, CF \u22a5 FG, \u2220GCF\nConclusions: FG / CG = sin(\u2220GCF)\n\nStep 25:\nTheorem: Corresponding Angle Theorem\nPremises : BD || GF\nConclusions: \u2220CDB = \u2220CFG\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220GCF, \u2220BCF = \u2220GCF, \u2220BCF = \u2220GCA\nConclusions: pi * (45 / 180) = \u2220GCA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220BCD + \u2220CDB + \u2220DBC\nConclusions: 3.14 = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 28:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CFG, 3.14 = pi, pi * (45 / 180) = \u2220GCF, pi = \u2220CFG + \u2220FGC + \u2220GCF\nConclusions: 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220FGC\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CFG, \u2220CDB = \u2220CFG, pi / 2 = \u2220BDA\nConclusions: \u2220BDA = \u2220CDB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCF = \u2220GCA, pi * (45 / 180) = \u2220GCA\nConclusions: pi * (45 / 180) = \u2220BCF\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220GCA, pi * (45 / 180) = \u2220GCA\nConclusions: pi * (45 / 180) = \u2220BCD\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : \u2220EGC = \u2220FGC, 3.14 = pi, 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220FGC\nConclusions: 0.79 = \u2220EGC\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220BCF\nConclusions: 0.79 = \u2220BCF\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220BDA + \u2220CDB, pi * (45 / 180) = \u2220BCD, pi = \u2220BCD + \u2220CDB + \u2220DBC, 3.14 = \u2220BCD + \u2220CDB + \u2220DBC, \u2220BDA = \u2220CDB\nConclusions: 0.79 = \u2220DBC\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220BCD\nConclusions: 0.79 = \u2220BCD\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EGC = \u2220FGC, 0.79 = \u2220EGC\nConclusions: 0.79 = \u2220FGC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220BCD, 0.79 = \u2220DBC\nConclusions: \u2220BCD = \u2220DBC\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220FGC, \u2220BCF = \u2220GCF, 0.79 = \u2220BCF\nConclusions: \u2220FGC = \u2220GCF\n\nStep 39:\nTheorem: Evaluate\nPremises : 0.79 = \u2220FGC\nConclusions: 0.71 = sin(\u2220FGC)\n\nStep 40:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BCD = \u2220DBC, \u25b3BCD\nConclusions: BD = CD\n\nStep 41:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CFG, \u2220FGC = \u2220GCF\nConclusions: CF = FG\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 0.71 = sin(\u2220FGC), CF / CG = sin(\u2220FGC)\nConclusions: 0.71 = CF / CG\n\nStep 43:\nTheorem: Substitution\nPremises : 1.05 = \u2220DAB, BD / AD = tan(\u2220DAB), 17.32 = AD, BD = CD\nConclusions: tan(1.05) = CD / 17.32\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : CF = FG, CF = DF\nConclusions: DF = FG\n\nStep 45:\nTheorem: Substitution\nPremises : 0.79 = \u2220GCF, DF = FG, FG / CG = sin(\u2220GCF)\nConclusions: sin(0.79) = DF / CG\n\nStep 46:\nTheorem: Solve Linear Equation System\nPremises : tan(1.05) = CD / 17.32, 0.71 = CF / CG, CD = CF + DF, sin(0.79) = DF / CG\nConclusions: 21.21 = CG\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(G, C)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, A)",
+        "Line(D, F)",
+        "Line(D, A)",
+        "Line(F, A)",
+        "Line(A, E)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, C), Line(G, E))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "Equals(LengthOf(Line(A, D)), Mul(10.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(F, C)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, A, D)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(G, C, F)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,109 @@
+{
+    "problem_id": "1380",
+    "solved": true,
+    "problem_text": "Quadrilateral RSTU is a rectangle. If RZ = 3x+8 and ZS = 6x-28, find UZ.",
+    "logic_forms": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, Z)",
+        "Line(S, T)",
+        "Line(U, S)",
+        "Line(U, T)",
+        "Line(U, Z)",
+        "Line(Z, S)",
+        "Line(Z, T)",
+        "PointLiesOnLine(Z, Line(R, T))",
+        "PointLiesOnLine(Z, Line(U, S))",
+        "Rectangle(R,S,T,U)",
+        "Equals(LengthOf(Line(R,Z)),3x+8)",
+        "Equals(LengthOf(Line(Z,S)),6x-28)",
+        "Find(LengthOf(Line(U,Z)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "Z",
+        "U",
+        "T"
+    ],
+    "line_instances": [
+        "RZ",
+        "RT",
+        "ZT",
+        "UZ",
+        "US",
+        "ZS",
+        "RS",
+        "UT",
+        "RU",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            59.74358974358974,
+            55.13214285714286
+        ],
+        "S": [
+            238.53479853479854,
+            55.38857142857143
+        ],
+        "Z": [
+            149.05982905982907,
+            110.54920634920636
+        ],
+        "U": [
+            59.74358974358974,
+            164.37071428571429
+        ],
+        "T": [
+            239.31623931623932,
+            164.34222222222223
+        ]
+    },
+    "problem_choices": [
+        14.667,
+        29.333,
+        44.0,
+        88.0
+    ],
+    "choices_precise_value": [
+        14.667,
+        29.333,
+        44.0,
+        88.0
+    ],
+    "problem_answer": 44.0,
+    "total_time": 172.213523,
+    "solution_predicate": "Equals(44.0, LengthOf(Line(U, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on RT, 8 + 3 * x = RZ, Z on SU, 6 * x - 28 = SZ, Rectangle(R, S, T, U)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : Z on RT\nConclusions: RT = RZ + TZ\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Z on SU\nConclusions: SU = SZ + UZ\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(R, S, T, U)\nConclusions: Parallelogram(R, S, T, U)\n\nStep 5:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(R, S, T, U)\nConclusions: RU \u22a5 TU, ST \u22a5 TU\n\nStep 6:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Z on RT, Parallelogram(R, S, T, U), Z on SU\nConclusions: RZ = TZ, SZ = UZ\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(R, S, T, U)\nConclusions: \u2220RST = \u2220TUR\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(R, S, T, U)\nConclusions: RS = TU\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : RU \u22a5 TU\nConclusions: pi / 2 = \u2220TUR\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : ST \u22a5 TU\nConclusions: pi / 2 = \u2220STU\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : RZ = TZ, 8 + 3 * x = RZ\nConclusions: 8 + 3 * x = TZ\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : SZ = UZ, SU = SZ + UZ\nConclusions: SZ = 0.5 * SU\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220TUR, pi / 2 = \u2220STU, \u2220RST = \u2220TUR\nConclusions: \u2220RST = \u2220STU\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : SZ = 0.5 * SU, 6 * x - 28 = SZ\nConclusions: 6 * x - 28 = 0.5 * SU\n\nStep 15:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220RST = \u2220STU, RS = TU\nConclusions: \u25b3RST \u2245 \u25b3UTS\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3RST \u2245 \u25b3UTS\nConclusions: RT = SU, RS = TU\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : RT = SU, RT = RZ + TZ\nConclusions: SU = RZ + TZ\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : SU = RZ + TZ, SU = SZ + UZ, 6 * x - 28 = 0.5 * SU, 8 + 3 * x = RZ, SZ = UZ, 8 + 3 * x = TZ\nConclusions: 44 = UZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Z)",
+        "Line(R, T)",
+        "Line(Z, T)",
+        "Line(U, Z)",
+        "Line(U, S)",
+        "Line(Z, S)",
+        "Line(R, S)",
+        "Line(U, T)",
+        "Line(R, U)",
+        "Line(S, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, Z)",
+        "Line(S, T)",
+        "Line(U, S)",
+        "Line(U, T)",
+        "Line(U, Z)",
+        "Line(Z, S)",
+        "Line(Z, T)",
+        "PointLiesOnLine(Z, Line(R, T))",
+        "PointLiesOnLine(Z, Line(U, S))",
+        "Rectangle(R, S, T, U)",
+        "Equals(LengthOf(Line(R, Z)), Add(Mul(3.0, x), 8.0))",
+        "Equals(LengthOf(Line(Z, S)), Sub(Mul(6.0, x), 28.0))"
+    ],
+    "correct": true
+}

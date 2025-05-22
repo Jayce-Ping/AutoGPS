@@ -1,0 +1,111 @@
+{
+    "problem_id": "4716",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, R)), 6)",
+        "Equals(LengthOf(Line(N, R)), 3)",
+        "Equals(LengthOf(Line(P, R)), x)",
+        "Equals(LengthOf(Line(Q, R)), 10)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(N, Q)",
+        "Line(N, R)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "PointLiesOnCircle(M, Circle(A))",
+        "PointLiesOnCircle(N, Circle(A))",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnCircle(Q, Circle(A))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(N, Q))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "M",
+        "Q",
+        "R",
+        "N",
+        "P",
+        "A"
+    ],
+    "line_instances": [
+        "MR",
+        "MP",
+        "RP",
+        "QR",
+        "QN",
+        "RN"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "M": [
+            53.01245048104131,
+            95.52000000000001
+        ],
+        "Q": [
+            86.96604414261459,
+            217.12
+        ],
+        "R": [
+            137.25580079230335,
+            84.56
+        ],
+        "N": [
+            153.2494026284349,
+            42.72888888888889
+        ],
+        "P": [
+            211.24900962082626,
+            74.72
+        ],
+        "A": [
+            138.11111111111111,
+            136.94444444444443
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 50.959583,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: R on NQ, P on \u2299(A, radius_A), N on \u2299(A, radius_A), Q on \u2299(A, radius_A), 3 = NR, 6 = MR, x = PR, R on MP, M on \u2299(A, radius_A), 10 = QR\n\nStep 2:\nTheorem: Intersecting Chord Theorem\nPremises : R on NQ, P on \u2299(A, radius_A), N on \u2299(A, radius_A), M on \u2299(A, radius_A), R on MP, Q on \u2299(A, radius_A)\nConclusions: MR * PR = NR * QR\n\nStep 3:\nTheorem: Substitution\nPremises : 3 = NR, MR * PR = NR * QR, 10 = QR, 6 = MR, x = PR\nConclusions: 10 * 3 = 6 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : x = PR, 10 * 3 = 6 * x\nConclusions: 5 = PR\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 = PR, x = PR\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, R)",
+        "Line(M, P)",
+        "Line(R, P)",
+        "Line(Q, R)",
+        "Line(Q, N)",
+        "Line(R, N)",
+        "Circle(A, radius_A)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(N, Q)",
+        "Line(N, R)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "PointLiesOnCircle(M, Circle(A, radius_A))",
+        "PointLiesOnCircle(N, Circle(A, radius_A))",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnCircle(Q, Circle(A, radius_A))",
+        "PointLiesOnLine(R, Line(M, P))",
+        "PointLiesOnLine(R, Line(N, Q))",
+        "Equals(LengthOf(Line(M, R)), 6.0)",
+        "Equals(LengthOf(Line(N, R)), 3.0)",
+        "Equals(LengthOf(Line(P, R)), x)",
+        "Equals(LengthOf(Line(Q, R)), 10.0)"
+    ],
+    "correct": true
+}

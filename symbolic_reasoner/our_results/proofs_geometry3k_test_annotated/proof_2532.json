@@ -1,0 +1,86 @@
+{
+    "problem_id": "2532",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(MeasureOf(Angle(A, C, E)), 150)",
+        "Equals(MeasureOf(Angle(A, C, B)), x)",
+        "Equals(MeasureOf(Angle(E, C, D)), 85)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CA",
+        "EC",
+        "CB",
+        "CD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            130.89915966386556,
+            337.8151260504202
+        ],
+        "B": [
+            206.10924369747903,
+            358.4033613445378
+        ],
+        "C": [
+            206.9495798319328,
+            205.8823529411765
+        ],
+        "D": [
+            359.05042016806726,
+            206.72268907563026
+        ],
+        "E": [
+            206.9495798319328,
+            55.46218487394958
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "35",
+        "45",
+        "85"
+    ],
+    "choices_precise_value": [
+        30.0,
+        35.0,
+        45.0,
+        85.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 8.6019,
+    "solution_predicate": "Equals(35.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCD, \u2220ACB, pi * (150 / 180) = \u2220ECA, 3.14 = pi, BC \u22a5 CD, \u2220ECA, \u2220DCE, pi * (x / 180) = \u2220ACB, pi * (85 / 180) = \u2220DCE\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220BCD\n\nStep 3:\nTheorem: Circumference Split\nPremises : \u2220ECA, \u2220DCE, \u2220ACB, \u2220BCD\nConclusions: 2 * pi = \u2220ACB + \u2220BCD + \u2220DCE + \u2220ECA\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ACB\nConclusions: 3.14 * (x / 180) = \u2220ACB\n\nStep 5:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACB + \u2220BCD + \u2220DCE + \u2220ECA, pi / 2 = \u2220BCD, 3.14 = pi, pi * (150 / 180) = \u2220ECA, pi * (85 / 180) = \u2220DCE\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (150 / 180) + 3.14 * (85 / 180) + \u2220ACB\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 / 2 + 3.14 * (150 / 180) + 3.14 * (85 / 180) + \u2220ACB, 3.14 * (x / 180) = \u2220ACB\nConclusions: 35 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(E, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(MeasureOf(Angle(E, C, A)), Mul(pi, Div(150.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(85.0, 180.0)))"
+    ],
+    "correct": true
+}

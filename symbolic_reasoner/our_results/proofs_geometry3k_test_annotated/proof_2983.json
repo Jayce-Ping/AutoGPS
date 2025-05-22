@@ -1,0 +1,210 @@
+{
+    "problem_id": "2983",
+    "solved": true,
+    "problem_text": "Cut four congruent triangles off the corners of a rectangle to make an octagon. What is the area of the octagon?",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(I, F))",
+        "PointLiesOnLine(G, Line(I, E))",
+        "PointLiesOnLine(F, Line(I, E))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(L, Line(K, A))",
+        "PointLiesOnLine(B, Line(K, A))",
+        "PointLiesOnLine(B, Line(L, A))",
+        "PointLiesOnLine(J, Line(K, H))",
+        "PointLiesOnLine(J, Line(K, I))",
+        "PointLiesOnLine(H, Line(K, I))",
+        "PointLiesOnLine(H, Line(J, I))",
+        "Perpendicular(Line(G, I), Line(H, I))",
+        "Perpendicular(Line(F, E), Line(D, E))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Perpendicular(Line(L, K), Line(J, K))",
+        "Equals(LengthOf(Line(K, I)), 20)",
+        "Equals(LengthOf(Line(I, E)), 30)",
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Congruent(Triangle(A, B, C), Triangle(E, D, F))",
+        "Congruent(Triangle(A, B, C), Triangle(I, G, H))",
+        "Congruent(Triangle(A, B, C), Triangle(K, J, L))",
+        "Congruent(Triangle(E, D, F), Triangle(I, G, H))",
+        "Congruent(Triangle(E, D, F), Triangle(K, J, L))",
+        "Congruent(Triangle(I, G, H), Triangle(K, J, L))",
+        "Find(Sub(AreaOf(Rectangle(A, K, I, E)), Add(AreaOf(Triangle(A, B, C)), AreaOf(Triangle(D, E, F)), AreaOf(Triangle(I, G, H)), AreaOf(Triangle(L, J, K)))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "IG",
+        "IF",
+        "IE",
+        "GF",
+        "GE",
+        "FE",
+        "FD",
+        "AC",
+        "AD",
+        "AE",
+        "CD",
+        "CE",
+        "DE",
+        "BC",
+        "KL",
+        "KB",
+        "KA",
+        "LB",
+        "LA",
+        "BA",
+        "KJ",
+        "KH",
+        "KI",
+        "JH",
+        "JI",
+        "HI",
+        "HG",
+        "LJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            691.9254658385092,
+            68.3167701863354
+        ],
+        "B": [
+            589.4409937888198,
+            68.93788819875776
+        ],
+        "C": [
+            691.3043478260869,
+            170.18012422360246
+        ],
+        "D": [
+            691.9254658385092,
+            329.1863354037267
+        ],
+        "E": [
+            692.5465838509316,
+            431.04968944099375
+        ],
+        "F": [
+            590.0621118012422,
+            430.4285714285714
+        ],
+        "G": [
+            251.5527950310559,
+            430.4285714285714
+        ],
+        "H": [
+            149.68944099378882,
+            328.5652173913043
+        ],
+        "I": [
+            147.82608695652172,
+            431.04968944099375
+        ],
+        "J": [
+            148.44720496894408,
+            171.4223602484472
+        ],
+        "K": [
+            149.68944099378882,
+            67.69565217391303
+        ],
+        "L": [
+            250.93167701863354,
+            68.3167701863354
+        ]
+    },
+    "problem_choices": [
+        "456",
+        "528",
+        "552",
+        "564"
+    ],
+    "choices_precise_value": [
+        456.0,
+        528.0,
+        552.0,
+        564.0
+    ],
+    "problem_answer": 528.0,
+    "total_time": 549.742989,
+    "solution_predicate": "Equals(528.0, Sub(AreaOf(Rectangle(A, K, I, E)), Add(AreaOf(Triangle(A, B, C)), AreaOf(Triangle(D, E, F)), AreaOf(Triangle(I, G, H)), AreaOf(Triangle(L, J, K)))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3DEF, \u25b3ABC \u2245 \u25b3KJL, 20 = IK, 30 = EI, 6 = AC, \u25b3ABC \u2245 \u25b3IGH, Rectangle(A, E, I, K), 6 = AB, Area(Rectangle(A, E, I, K)), DE \u22a5 EF, \u25b3DEF \u2245 \u25b3JKL, \u25b3GHI \u2245 \u25b3JLK\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3KJL\nConclusions: Area(\u25b3ABC) = Area(\u25b3JKL), AC = KL\n\nStep 3:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3IGH\nConclusions: AB = GI\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, E, I, K)\nConclusions: Parallelogram(A, E, I, K)\n\nStep 5:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, E, I, K))\nConclusions: Area(Rectangle(A, E, I, K)) = AE * EI\n\nStep 6:\nTheorem: Area formula of Triangle(D, E, F)\nPremises : \u25b3DEF, DE \u22a5 EF\nConclusions: Area(\u25b3DEF) = (DE * EF) / 2\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3DEF \u2245 \u25b3JKL\nConclusions: DE = JK, EF = KL, Area(\u25b3DEF) = Area(\u25b3JKL)\n\nStep 8:\nTheorem: Congruent Definition\nPremises : \u25b3GHI \u2245 \u25b3JLK\nConclusions: GI = JK, Area(\u25b3GHI) = Area(\u25b3JKL)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 6 = AC, AC = KL\nConclusions: 6 = KL\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, E, I, K)\nConclusions: AE = IK\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3DEF) = Area(\u25b3JKL), Area(\u25b3DEF) = (DE * EF) / 2\nConclusions: Area(\u25b3JKL) = (DE * EF) / 2\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : AB = GI, GI = JK, 6 = AB\nConclusions: 6 = JK\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : EF = KL, 6 = KL\nConclusions: 6 = EF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 20 = IK, AE = IK\nConclusions: 20 = AE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : DE = JK, 6 = JK\nConclusions: 6 = DE\n\nStep 16:\nTheorem: Evaluate\nPremises : 20 = AE, 30 = EI\nConclusions: 600 = AE * EI\n\nStep 17:\nTheorem: Evaluate\nPremises : 6 = DE, 6 = EF\nConclusions: 18 = (DE * EF) / 2\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : Area(Rectangle(A, E, I, K)) = AE * EI, 600 = AE * EI\nConclusions: 600 = Area(Rectangle(A, E, I, K))\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3JKL) = (DE * EF) / 2, 18 = (DE * EF) / 2\nConclusions: 18 = Area(\u25b3JKL)\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3DEF) = Area(\u25b3JKL), 18 = Area(\u25b3JKL)\nConclusions: 18 = Area(\u25b3DEF)\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3GHI) = Area(\u25b3JKL), 18 = Area(\u25b3JKL)\nConclusions: 18 = Area(\u25b3GHI)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : Area(\u25b3ABC) = Area(\u25b3JKL), 18 = Area(\u25b3JKL)\nConclusions: 18 = Area(\u25b3ABC)\n\nStep 23:\nTheorem: Evaluate\nPremises : 18 = Area(\u25b3DEF), 600 = Area(Rectangle(A, E, I, K)), 18 = Area(\u25b3ABC), 18 = Area(\u25b3GHI), 18 = Area(\u25b3JKL)\nConclusions: 528 = Area(Rectangle(A, E, I, K)) - (Area(\u25b3ABC) + Area(\u25b3DEF) + Area(\u25b3GHI) + Area(\u25b3JKL))\n\n",
+    "logic_fomrs_refined": [
+        "Line(I, G)",
+        "Line(I, F)",
+        "Line(I, E)",
+        "Line(G, F)",
+        "Line(G, E)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, C)",
+        "Line(K, L)",
+        "Line(K, B)",
+        "Line(K, A)",
+        "Line(L, B)",
+        "Line(L, A)",
+        "Line(B, A)",
+        "Line(K, J)",
+        "Line(K, H)",
+        "Line(K, I)",
+        "Line(J, H)",
+        "Line(J, I)",
+        "Line(H, I)",
+        "Line(H, G)",
+        "Line(L, J)",
+        "PointLiesOnLine(G, Line(I, F))",
+        "PointLiesOnLine(G, Line(I, E))",
+        "PointLiesOnLine(F, Line(I, E))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(L, Line(K, B))",
+        "PointLiesOnLine(L, Line(K, A))",
+        "PointLiesOnLine(B, Line(K, A))",
+        "PointLiesOnLine(B, Line(L, A))",
+        "PointLiesOnLine(J, Line(K, H))",
+        "PointLiesOnLine(J, Line(K, I))",
+        "PointLiesOnLine(H, Line(K, I))",
+        "PointLiesOnLine(H, Line(J, I))",
+        "Perpendicular(Line(G, I), Line(H, I))",
+        "Perpendicular(Line(F, E), Line(D, E))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Perpendicular(Line(L, K), Line(J, K))",
+        "Congruent(Triangle(A, B, C), Triangle(E, D, F))",
+        "Congruent(Triangle(A, B, C), Triangle(I, G, H))",
+        "Congruent(Triangle(A, B, C), Triangle(K, J, L))",
+        "Congruent(Triangle(E, D, F), Triangle(I, G, H))",
+        "Congruent(Triangle(E, D, F), Triangle(K, J, L))",
+        "Congruent(Triangle(I, G, H), Triangle(K, J, L))",
+        "Equals(LengthOf(Line(K, I)), 20.0)",
+        "Equals(LengthOf(Line(I, E)), 30.0)",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(LengthOf(Line(A, B)), 6.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,119 @@
+{
+    "problem_id": "7361",
+    "solved": true,
+    "problem_text": "Find the value of the variable z for the quadrilateral.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 80)",
+        "Equals(MeasureOf(Angle(D, A, C)), z)",
+        "Equals(MeasureOf(Angle(E, C, B)), x)",
+        "Equals(MeasureOf(Angle(E, D, C)), y)",
+        "Find(z)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Parallel(Line(A, D), Line(B, E))",
+        "Parallel(Line(D, E), Line(A, B))",
+        "Perpendicular(Line(A, B), Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Quadrilateral(A, B, D, E)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "ED",
+        "DA",
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            30.72,
+            31.331730769230766
+        ],
+        "B": [
+            191.65866666666665,
+            31.587499999999995
+        ],
+        "C": [
+            110.98666666666666,
+            127.88461538461537
+        ],
+        "D": [
+            30.72,
+            223.15865384615384
+        ],
+        "E": [
+            191.36,
+            223.15865384615384
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        45.0,
+        80.0,
+        160.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        45.0,
+        80.0,
+        160.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 185.748726,
+    "solution_predicate": "Equals(40.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (z / 180) = \u2220DAC, pi * (80 / 180) = \u2220BCA, \u2220ACB, CE, 3.14 = pi, AB || DE, \u2220DCA, AB, AD, \u2220ACD, C on AE, DE, \u2220BCE, AD || BE, AC, \u2220DBE, BE, \u2220BCA, BC, \u2220ECB, C on BD, \u2220BDA, \u2220DAE, CD, AB \u22a5 AD, \u2220BEA, \u2220DCE, \u2220BCA, \u2220ECD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BE\nConclusions: \u2220BEA = \u2220DAE, \u2220BDA = \u2220DBE\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BE, BC, CE\nConclusions: \u25b3BCE\n\nStep 8:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220ACB = \u2220ECD, \u2220BCE = \u2220DCA, \u2220BCA = \u2220DCE\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220DBE, C on BD\nConclusions: \u2220CBE = \u2220DBE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220DAE, C on AE\nConclusions: \u2220DAC = \u2220DAE\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 13:\nTheorem: Definition of Rectangle\nPremises : AB, BE, AB \u22a5 AD, DE, AD, AD || BE, AB || DE\nConclusions: Rectangle(A, B, E, D)\n\nStep 14:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: pi / 2 = \u2220DAB\n\nStep 15:\nTheorem: Same Angle\nPremises : C on AE, \u2220BEA\nConclusions: \u2220BEA = \u2220BEC\n\nStep 16:\nTheorem: Straight Angle\nPremises : \u2220DCE, \u2220ECB\nConclusions: pi = \u2220DCE + \u2220ECB\n\nStep 17:\nTheorem: Circumference Split\nPremises : \u2220DCE, \u2220ACD, \u2220ECB, \u2220BCA\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 18:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 19:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220DCE\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(E, C, B)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BEC + \u2220CBE + \u2220ECB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = 2 * pi - \u2220BCA, \u2220ACB = \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220BCA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220DCE, pi * (80 / 180) = \u2220BCA\nConclusions: pi * (80 / 180) = \u2220DCE\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CDA, \u2220BDA = \u2220DBE\nConclusions: \u2220CDA = \u2220DBE\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAE, pi * (z / 180) = \u2220DAC\nConclusions: pi * (z / 180) = \u2220DAE\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 26:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, E, D)\nConclusions: Parallelogram(A, B, E, D)\n\nStep 27:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, E, D)\nConclusions: AB \u22a5 BE\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220DAE, \u2220BEA = \u2220BEC\nConclusions: \u2220BEC = \u2220DAE\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = 2 * pi - \u2220ACB, pi * (80 / 180) = \u2220BCA\nConclusions: pi * (80 / 180) = 2 * pi - \u2220ACB\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : \u2220BCE = 2 * pi - \u2220ECB, 3.14 = pi, pi * (80 / 180) = \u2220DCE, pi = \u2220DCE + \u2220ECB\nConclusions: 4.54 = \u2220BCE\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi * (z / 180) = \u2220DAE, \u2220BEA = \u2220DAE\nConclusions: pi * (z / 180) = \u2220BEA\n\nStep 33:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD = BE\n\nStep 34:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: \u2220BED = \u2220DAB\n\nStep 35:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BE\nConclusions: pi / 2 = \u2220ABE\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEC = \u2220DAE, pi * (z / 180) = \u2220DAE\nConclusions: pi * (z / 180) = \u2220BEC\n\nStep 37:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (80 / 180) = 2 * pi - \u2220ACB\nConclusions: 4.89 = \u2220ACB\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = \u2220DCA, 4.54 = \u2220BCE\nConclusions: 4.54 = \u2220DCA\n\nStep 39:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (z / 180) = \u2220BEA\nConclusions: 3.14 * (z / 180) = \u2220BEA\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DAB, \u2220BED = \u2220DAB\nConclusions: pi / 2 = \u2220BED\n\nStep 41:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (z / 180) = \u2220BEC\nConclusions: 3.14 * (z / 180) = \u2220BEC\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 4.89 = \u2220ACB, \u2220ACB = \u2220ECD\nConclusions: 4.89 = \u2220ECD\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 4.54 = \u2220DCA, \u2220DCA = 2 * pi - \u2220ACD\nConclusions: 4.54 = 2 * pi - \u2220ACD\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : pi * (z / 180) = \u2220BEA, 3.14 * (z / 180) = \u2220BEA\nConclusions: 3.14 * (z / 180) = pi * (z / 180)\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BED, pi / 2 = \u2220ABE, \u2220BED = \u2220DAB\nConclusions: \u2220ABE = \u2220DAB\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 4.89 = \u2220ECD, \u2220ECD = 2 * pi - \u2220BCA\nConclusions: 4.89 = 2 * pi - \u2220BCA\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 4.89 = \u2220ECD, \u2220ECD = 2 * pi - \u2220DCE\nConclusions: 4.89 = 2 * pi - \u2220DCE\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : pi * (z / 180) = \u2220DAC, 3.14 * (z / 180) = pi * (z / 180)\nConclusions: 3.14 * (z / 180) = \u2220DAC\n\nStep 49:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AD = BE, \u2220ABE = \u2220DAB\nConclusions: \u25b3ABD \u2245 \u25b3BAE\n\nStep 50:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3BAE\nConclusions: AD = BE, \u2220BDA = \u2220BEA\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220BEA, 3.14 * (z / 180) = \u2220BEA, \u2220BDA = \u2220DBE\nConclusions: 3.14 * (z / 180) = \u2220DBE\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220DBE, 3.14 * (z / 180) = \u2220DBE\nConclusions: 3.14 * (z / 180) = \u2220CBE\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDA = \u2220DBE, 3.14 * (z / 180) = \u2220DBE\nConclusions: 3.14 * (z / 180) = \u2220CDA\n\nStep 54:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220ACD + \u2220CDA + \u2220DAC, pi = \u2220BEC + \u2220CBE + \u2220ECB, 4.89 = 2 * pi - \u2220DCE, 4.54 = 2 * pi - \u2220ACD, 6.28 = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB, 4.89 = 2 * pi - \u2220BCA, 3.14 * (z / 180) = \u2220BEC, 3.14 * (z / 180) = \u2220CBE, 3.14 * (z / 180) = \u2220DAC, 3.14 * (z / 180) = \u2220CDA\nConclusions: 40 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(D, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Parallel(Line(A, D), Line(B, E))",
+        "Parallel(Line(D, E), Line(A, B))",
+        "Perpendicular(Line(A, B), Line(A, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Quadrilateral(A, B, E, D)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, C)), Mul(pi, Div(z, 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

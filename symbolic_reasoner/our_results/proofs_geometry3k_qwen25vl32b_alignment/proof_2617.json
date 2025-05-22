@@ -1,0 +1,69 @@
+{
+    "problem_id": "2617",
+    "solved": true,
+    "problem_text": "In \\triangle D E F, m \\angle E = 108, m \\angle F = 26, and f = 20. Find d to the nearest whole number.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, F)), d)",
+        "Equals(LengthOf(Line(D, F)), e)",
+        "Equals(LengthOf(Line(D, E)), f)",
+        "Triangle(D,E,F)",
+        "Equals(MeasureOf(Angle(E)),108)",
+        "Equals(MeasureOf(Angle(F)),26)",
+        "Equals(f,20)",
+        "Find(d)"
+    ],
+    "point_instances": [
+        "F",
+        "E",
+        "D"
+    ],
+    "line_instances": [
+        "DE",
+        "EF",
+        "DF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            753.3333333333334,
+            288.0
+        ],
+        "E": [
+            437.3333333333333,
+            104.66666666666666
+        ],
+        "D": [
+            122.0,
+            288.0
+        ]
+    },
+    "problem_choices": [
+        "26",
+        "33",
+        "60",
+        "65"
+    ],
+    "choices_precise_value": [
+        26.0,
+        33.0,
+        60.0,
+        65.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 12.001759,
+    "solution_predicate": "Equals(32.8187566916, d)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = f, \u25b3DEF, pi * (108 / 180) = \u2220DEF, f = DE, pi * (26 / 180) = \u2220EFD, e = DF, d = EF, 3.14 = pi\n\nStep 2:\nTheorem: Law of Sines\nPremises : \u25b3DEF\nConclusions: DF / sin(\u2220DEF) = EF / sin(\u2220FDE), DE / sin(\u2220EFD) = DF / sin(\u2220DEF)\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, F)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : f = DE, 20 = f\nConclusions: 20 = DE\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.45 = pi * (26 / 180), 1.88 = pi * (108 / 180)\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220DEF + \u2220EFD + \u2220FDE, pi * (108 / 180) = \u2220DEF, pi * (26 / 180) = \u2220EFD, 3.14 = pi\nConclusions: 3.14 = pi * (108 / 180) + pi * (26 / 180) + \u2220FDE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 0.45 = pi * (26 / 180), pi * (26 / 180) = \u2220EFD\nConclusions: 0.45 = \u2220EFD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (108 / 180) = \u2220DEF, 1.88 = pi * (108 / 180)\nConclusions: 1.88 = \u2220DEF\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = pi * (108 / 180) + pi * (26 / 180) + \u2220FDE\nConclusions: 0.8 = \u2220FDE\n\nStep 10:\nTheorem: Substitution\nPremises : DE / sin(\u2220EFD) = DF / sin(\u2220DEF), 0.45 = \u2220EFD, 1.88 = \u2220DEF, e = DF, 20 = DE\nConclusions: 20 / sin(0.45) = e / sin(1.88)\n\nStep 11:\nTheorem: Substitution\nPremises : DF / sin(\u2220DEF) = EF / sin(\u2220FDE), d = EF, 0.8 = \u2220FDE, 1.88 = \u2220DEF, e = DF\nConclusions: d / sin(0.8) = e / sin(1.88)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 20 / sin(0.45) = e / sin(1.88), d / sin(0.8) = e / sin(1.88)\nConclusions: 20 / sin(0.45) = d / sin(0.8)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : d = EF, 20 / sin(0.45) = d / sin(0.8)\nConclusions: 32.82 = EF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : d = EF, 32.82 = EF\nConclusions: 32.82 = d\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(E, F)",
+        "Line(D, F)",
+        "Triangle(D, E, F)",
+        "Equals(LengthOf(Line(E, F)), d)",
+        "Equals(LengthOf(Line(D, F)), e)",
+        "Equals(LengthOf(Line(D, E)), f)",
+        "Equals(MeasureOf(Angle(D, E, F)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, D)), Mul(pi, Div(26.0, 180.0)))",
+        "Equals(f, 20.0)"
+    ],
+    "correct": true
+}

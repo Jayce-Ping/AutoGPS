@@ -1,0 +1,94 @@
+{
+    "problem_id": "7280",
+    "solved": true,
+    "problem_text": "Find the value of d.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 14)",
+        "Equals(LengthOf(Line(A, C)), 16)",
+        "Equals(LengthOf(Line(A, D)), c)",
+        "Equals(LengthOf(Line(B, D)), e)",
+        "Equals(LengthOf(Line(C, D)), d)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Find(d)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "CD",
+        "CA",
+        "DA",
+        "AB",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.79009433962264,
+            59.605714285714285
+        ],
+        "B": [
+            385.14740566037733,
+            59.93142857142857
+        ],
+        "C": [
+            385.2808747855917,
+            241.97610389610387
+        ],
+        "D": [
+            306.5820029027576,
+            198.5854945054945
+        ]
+    },
+    "problem_choices": [
+        3.75,
+        10.293,
+        12.25,
+        18.286
+    ],
+    "choices_precise_value": [
+        3.75,
+        10.293,
+        12.25,
+        18.286
+    ],
+    "problem_answer": 3.75,
+    "total_time": 53.019908,
+    "solution_predicate": "Equals(3.7500000002, d)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, BD \u22a5 CD, \u2220BCA, 3.14 = pi, \u2220BCA, \u2220CAB, AB, AC, BC, sin(\u2220BCA), d = CD, \u2220CBA, \u2220ABD, AB \u22a5 BC, AD \u22a5 BD, \u2220DBC, D on AC, 16 = AC, AD, 14 = AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220BDC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 BC, sin(\u2220BCA)\nConclusions: AB / AC = sin(\u2220BCA)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220CBA\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: pi / 2 = \u2220BDA, (3 * pi) / 2 = \u2220ADB\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220CBA, \u2220ABD, \u2220DBC\nConclusions: 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220BCA, D on AC\nConclusions: \u2220BCA = \u2220BCD\n\nStep 9:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220CAB, D on AC\nConclusions: \u2220CAB = \u2220DAB\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 12:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, AB \u22a5 BC, \u2220BCA\nConclusions: AB / BC = tan(\u2220BCA)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BDC, (3 * pi) / 2 = \u2220ADB\nConclusions: \u2220ADB = \u2220BDC\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220CBA, 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220ABD + \u2220DBC\n\nStep 15:\nTheorem: Substitution\nPremises : AB / AC = sin(\u2220BCA), 16 = AC, \u2220BCA = \u2220BCD, 14 = AB\nConclusions: 14 / 16 = sin(\u2220BCD)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : AC = AD + CD, 16 = AC\nConclusions: 16 = AD + CD\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : 14 / 16 = sin(\u2220BCD)\nConclusions: 1.07 = \u2220BCD\n\nStep 19:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BDA, pi = \u2220ABD + \u2220BDA + \u2220DAB, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + \u2220ABD + \u2220DAB\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 1.07 = \u2220BCD, \u2220BCA = \u2220BCD\nConclusions: 1.07 = \u2220BCA\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : \u2220CAB = \u2220DAB, 3.14 = 3.14 / 2 + \u2220ABD + \u2220DAB, 2 * 3.14 = (3 * 3.14) / 2 + \u2220ABD + \u2220DBC\nConclusions: \u2220CAB = \u2220DBC\n\nStep 22:\nTheorem: Substitution\nPremises : 1.07 = \u2220BCA, AB / BC = tan(\u2220BCA), 14 = AB\nConclusions: tan(1.07) = 14 / BC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DAB, \u2220CAB = \u2220DBC\nConclusions: \u2220DAB = \u2220DBC\n\nStep 24:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DAB = \u2220DBC, \u2220ADB = \u2220BDC\nConclusions: \u25b3ABD ~ \u25b3BCD\n\nStep 25:\nTheorem: Similar Definition\nPremises : \u25b3ABD ~ \u25b3BCD\nConclusions: \u2220ADB = \u2220BDC, sim_ratio_triangle_a_b_d_triangle_b_c_d = BD / CD, sim_ratio_triangle_a_b_d_triangle_b_c_d = AD / BD, sim_ratio_triangle_a_b_d_triangle_b_c_d = AB / BC\n\nStep 26:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_d_triangle_b_c_d = AB / BC, 14 = AB\nConclusions: sim_ratio_triangle_a_b_d_triangle_b_c_d = 14 / BC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : tan(1.07) = 14 / BC, sim_ratio_triangle_a_b_d_triangle_b_c_d = 14 / BC\nConclusions: tan(1.07) = sim_ratio_triangle_a_b_d_triangle_b_c_d\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_d_triangle_b_c_d = AD / BD, tan(1.07) = sim_ratio_triangle_a_b_d_triangle_b_c_d\nConclusions: tan(1.07) = AD / BD\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : tan(1.07) = sim_ratio_triangle_a_b_d_triangle_b_c_d, sim_ratio_triangle_a_b_d_triangle_b_c_d = BD / CD\nConclusions: tan(1.07) = BD / CD\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : 16 = AD + CD, tan(1.07) = AD / BD, tan(1.07) = BD / CD\nConclusions: 3.75 = CD\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3.75 = CD, d = CD\nConclusions: 3.75 = d\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 14.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(LengthOf(Line(A, D)), c)",
+        "Equals(LengthOf(Line(B, D)), e)",
+        "Equals(LengthOf(Line(C, D)), d)"
+    ],
+    "correct": true
+}

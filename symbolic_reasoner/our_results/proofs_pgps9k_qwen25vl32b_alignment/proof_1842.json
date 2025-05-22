@@ -1,0 +1,76 @@
+{
+    "problem_id": "1842",
+    "solved": true,
+    "problem_text": "Find the radius of the figure.",
+    "logic_forms": [
+        "Equals(DiameterOf(Circle(B)), LengthOf(Line(C, A)))",
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Equals(RadiusOf(Circle(B)), Div(LengthOf(Line(C, A)), 2))",
+        "Find(RadiusOf(Circle(B)))",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnLine(B, Line(C, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            154.2276933245208,
+            154.9798319327731
+        ],
+        "B": [
+            93.36780383795309,
+            93.77931769722814
+        ],
+        "C": [
+            33.85112359550562,
+            34.40412698412699
+        ]
+    },
+    "problem_choices": [
+        1.55,
+        3.1,
+        6.2,
+        12.4
+    ],
+    "choices_precise_value": [
+        1.55,
+        3.1,
+        6.2,
+        12.4
+    ],
+    "problem_answer": 3.1,
+    "total_time": 1.997956,
+    "solution_predicate": "Equals(3.1, radius_B)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6.2 = AC, radius_B = AC / 2\n\nStep 2:\nTheorem: Evaluate\nPremises : 6.2 = AC\nConclusions: 3.1 = AC / 2\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3.1 = AC / 2, radius_B = AC / 2\nConclusions: 3.1 = radius_B\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Circle(B, radius_B)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Equals(Mul(2.0, radius_B), LengthOf(Line(C, A)))",
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Equals(radius_B, Div(LengthOf(Line(C, A)), 2.0))"
+    ],
+    "correct": true
+}

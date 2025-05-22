@@ -1,0 +1,112 @@
+{
+    "problem_id": "2404",
+    "solved": true,
+    "problem_text": "Find m \\angle C A M.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(T, N))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnCircle(T, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(M, radius_0_0))",
+        "Perpendicular(Line(M, D), Line(A, D))",
+        "Perpendicular(Line(T, B), Line(M, B))",
+        "Equals(LengthOf(Line(D, M)), LengthOf(Line(M, B)))",
+        "Equals(MeasureOf(Angle(M, T, B)), 28)",
+        "Find(MeasureOf(Angle(C, A, M)))"
+    ],
+    "point_instances": [
+        "C",
+        "T",
+        "N",
+        "A",
+        "M",
+        "B",
+        "D"
+    ],
+    "line_instances": [
+        "TB",
+        "TN",
+        "BN",
+        "MT",
+        "MB",
+        "MA",
+        "DM",
+        "CD",
+        "CA",
+        "DA"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "C": [
+            45.66101694915254,
+            63.922518159806295
+        ],
+        "T": [
+            50.50363196125909,
+            184.26150121065376
+        ],
+        "N": [
+            200.86682808716708,
+            138.25665859564165
+        ],
+        "A": [
+            197.71912832929783,
+            96.12590799031477
+        ],
+        "M": [
+            113.6997578692494,
+            121.06537530266344
+        ],
+        "B": [
+            126.29055690072639,
+            160.77481840193704
+        ],
+        "D": [
+            121.20581113801452,
+            79.90314769975787
+        ]
+    },
+    "problem_choices": [
+        "14",
+        "28",
+        "36",
+        "90"
+    ],
+    "choices_precise_value": [
+        14.0,
+        28.0,
+        36.0,
+        90.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 94.772972,
+    "solution_predicate": "Equals(0.4886921906, MeasureOf(Angle(C, A, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on \u2299(M, radius_0_0), pi * (28 / 180) = \u2220BTM, D on AC, 3.14 = pi, \u2220MNT, AD \u22a5 DM, CD \u22a5 DM, B on NT, \u2220CAM, BM = DM, C on \u2299(M, radius_0_0), BM \u22a5 BN, \u2299(M, radius_0_0)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : N on \u2299(M, radius_0_0)\nConclusions: radius_0_0 = MN\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.49 = pi * (28 / 180)\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DM\nConclusions: pi / 2 = \u2220CDM\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220MNT, B on NT\nConclusions: \u2220MNB = \u2220MNT\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220CAM, D on AC\nConclusions: \u2220CAM = \u2220DAM\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : C on \u2299(M, radius_0_0)\nConclusions: radius_0_0 = CM\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : BM \u22a5 BN\nConclusions: pi / 2 = \u2220NBM\n\nStep 9:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(M, radius_0_0), AD \u22a5 DM, D on AC\nConclusions: \u25b3ADM \u2245 \u25b3CDM\n\nStep 10:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(M, radius_0_0), BM \u22a5 BN, B on NT\nConclusions: \u25b3BMN \u2245 \u25b3BMT\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (28 / 180) = \u2220BTM, 0.49 = pi * (28 / 180)\nConclusions: 0.49 = \u2220BTM\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CM, radius_0_0 = MN\nConclusions: CM = MN\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220NBM, pi / 2 = \u2220CDM\nConclusions: \u2220CDM = \u2220NBM\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3ADM \u2245 \u25b3CDM\nConclusions: \u2220DAM = \u2220MCD\n\nStep 15:\nTheorem: Congruent Definition\nPremises : \u25b3BMN \u2245 \u25b3BMT\nConclusions: \u2220BTM = \u2220MNB\n\nStep 16:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : CM = MN, \u2220CDM = \u2220NBM, BM = DM\nConclusions: \u25b3BMN \u2245 \u25b3DMC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAM = \u2220MCD, \u2220CAM = \u2220DAM\nConclusions: \u2220CAM = \u2220MCD\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNB = \u2220MNT, \u2220BTM = \u2220MNB, 0.49 = \u2220BTM\nConclusions: 0.49 = \u2220MNT\n\nStep 19:\nTheorem: Congruent Definition\nPremises : \u25b3BMN \u2245 \u25b3DMC\nConclusions: \u2220MCD = \u2220MNB, \u2220CDM = \u2220NBM, BM = DM\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNB = \u2220MNT, 0.49 = \u2220MNT\nConclusions: 0.49 = \u2220MNB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 0.49 = \u2220MNB, \u2220MCD = \u2220MNB\nConclusions: 0.49 = \u2220MCD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAM = \u2220MCD, 0.49 = \u2220MCD\nConclusions: 0.49 = \u2220CAM\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, B)",
+        "Line(T, N)",
+        "Line(B, N)",
+        "Line(M, T)",
+        "Line(M, B)",
+        "Line(M, A)",
+        "Line(D, M)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Circle(M, radius_0_0)",
+        "PointLiesOnLine(B, Line(T, N))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnCircle(T, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(M, radius_0_0))",
+        "Perpendicular(Line(M, D), Line(A, D))",
+        "Perpendicular(Line(T, B), Line(M, B))",
+        "Equals(LengthOf(Line(D, M)), LengthOf(Line(M, B)))",
+        "Equals(MeasureOf(Angle(B, T, M)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

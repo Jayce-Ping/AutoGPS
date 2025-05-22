@@ -1,0 +1,67 @@
+{
+    "problem_id": "6701",
+    "solved": true,
+    "problem_text": "Find m \\angle LMN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, N)), 12.9)",
+        "Equals(LengthOf(Line(M, N)), 10.1)",
+        "Equals(MeasureOf(Angle(L, N, M)), 112)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Find(MeasureOf(Angle(L,M,N)))"
+    ],
+    "point_instances": [
+        "L",
+        "M",
+        "N"
+    ],
+    "line_instances": [
+        "ML",
+        "LN",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            267.5509499136442,
+            28.020317460317457
+        ],
+        "M": [
+            52.30051813471503,
+            203.0285714285714
+        ],
+        "N": [
+            197.2476683937824,
+            203.456
+        ]
+    },
+    "problem_choices": [
+        19.132,
+        21.453,
+        38.694,
+        46.547
+    ],
+    "choices_precise_value": [
+        19.132,
+        21.453,
+        38.694,
+        46.547
+    ],
+    "problem_answer": 38.694,
+    "total_time": 14.045214,
+    "solution_predicate": "Equals(0.6753422116, MeasureOf(Angle(N, M, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: LN, pi * (112 / 180) = \u2220LNM, 12.9 = LN, LM, 3.14 = pi, MN, 10.1 = MN\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.95 = pi * (112 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : LM, LN, MN\nConclusions: \u25b3LMN\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.95 = pi * (112 / 180), pi * (112 / 180) = \u2220LNM\nConclusions: 1.95 = \u2220LNM\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3LMN\nConclusions: (LN ** 2 + MN ** 2) - LM ** 2 = 2 * LN * MN * cos(\u2220LNM), (LM ** 2 + MN ** 2) - LN ** 2 = 2 * LM * MN * cos(\u2220NML)\n\nStep 6:\nTheorem: Substitution\nPremises : 10.1 = MN, 12.9 = LN, (LN ** 2 + MN ** 2) - LM ** 2 = 2 * LN * MN * cos(\u2220LNM), 1.95 = \u2220LNM\nConclusions: 10.1 * 12.9 * 2 * cos(1.95) = (10.1 ** 2 + 12.9 ** 2) - LM ** 2\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 10.1 * 12.9 * 2 * cos(1.95) = (10.1 ** 2 + 12.9 ** 2) - LM ** 2\nConclusions: 19.13 = LM\n\nStep 8:\nTheorem: Substitution\nPremises : 10.1 = MN, 12.9 = LN, (LM ** 2 + MN ** 2) - LN ** 2 = 2 * LM * MN * cos(\u2220NML), 19.13 = LM\nConclusions: (10.1 ** 2 + 19.13 ** 2) - 12.9 ** 2 = 10.1 * 19.13 * 2 * cos(\u2220NML)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : (10.1 ** 2 + 19.13 ** 2) - 12.9 ** 2 = 10.1 * 19.13 * 2 * cos(\u2220NML)\nConclusions: 0.68 = \u2220NML\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, L)",
+        "Line(L, N)",
+        "Line(M, N)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Equals(LengthOf(Line(L, N)), 12.9)",
+        "Equals(LengthOf(Line(M, N)), 10.1)",
+        "Equals(MeasureOf(Angle(L, N, M)), Mul(pi, Div(112.0, 180.0)))"
+    ],
+    "correct": true
+}

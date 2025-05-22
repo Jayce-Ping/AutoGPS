@@ -1,0 +1,98 @@
+{
+    "problem_id": "2845",
+    "solved": true,
+    "problem_text": "In the figure, m \\angle 1 = 58, m \\angle 2 = 47, and m \\angle 3 = 26. Find the measure of \\angle 9.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(A, B), Line(E, C))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(C, E, B)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, B, E)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, E, B)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Angle(A, B, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(1)),58)",
+        "Equals(MeasureOf(Angle(2)),47)",
+        "Equals(MeasureOf(Angle(3)),26)",
+        "Find(MeasureOf(Angle(9)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AB",
+        "AE",
+        "AD",
+        "ED",
+        "EC",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            244.81268882175226,
+            37.16012084592145
+        ],
+        "A": [
+            49.344410876132926,
+            37.16012084592145
+        ],
+        "C": [
+            205.2356495468278,
+            161.32930513595167
+        ],
+        "D": [
+            179.85800604229607,
+            242.29607250755288
+        ],
+        "E": [
+            127.59214501510573,
+            160.4229607250755
+        ]
+    },
+    "problem_choices": [
+        "39",
+        "47",
+        "49",
+        "58"
+    ],
+    "choices_precise_value": [
+        39.0,
+        47.0,
+        49.0,
+        58.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 44.76403,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCE, DE, pi * (26 / 180) = \u2220EBC, \u2220BDE, BE, E on AD, \u2220ABD, BC, CE, BD, \u2220BDA, \u2220ECD, pi * (47 / 180) = \u2220ABE, \u2220DAB, AD, C on BD, AB || EC, CD, pi * (58 / 180) = \u2220EAB, AB, 3.14 = pi\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BE, CE, BC\nConclusions: \u25b3BCE\n\nStep 3:\nTheorem: Same Angle\nPremises : E on AD, \u2220BDA\nConclusions: \u2220BDA = \u2220BDE\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220BCE, \u2220ECD\nConclusions: pi = \u2220BCE + \u2220ECD\n\nStep 5:\nTheorem: Same Angle\nPremises : E on AD, \u2220DAB\nConclusions: \u2220DAB = \u2220EAB\n\nStep 6:\nTheorem: Same Angle\nPremises : C on BD, \u2220BDA\nConclusions: \u2220BDA = \u2220CDA\n\nStep 7:\nTheorem: Same Angle\nPremises : C on BD, \u2220ABD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 8:\nTheorem: Same Angle\nPremises : C on BD, \u2220BDE\nConclusions: \u2220BDE = \u2220CDE\n\nStep 9:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || EC\nConclusions: \u2220ABE = \u2220CEB\n\nStep 10:\nTheorem: Corresponding Angle Theorem\nPremises : AB || EC\nConclusions: \u2220DAB = \u2220DEC\n\nStep 11:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || EC\nConclusions: pi = \u2220ABC + \u2220BCE\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : CD, DE, CE\nConclusions: \u25b3CDE\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, E)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BCE + \u2220CEB + \u2220EBC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BCE + \u2220ECD, 3.14 = pi\nConclusions: 3.14 = \u2220BCE + \u2220ECD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220BDE, \u2220BDA = \u2220CDA\nConclusions: \u2220BDE = \u2220CDA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220CEB, pi * (47 / 180) = \u2220ABE\nConclusions: pi * (47 / 180) = \u2220CEB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAB = \u2220EAB, pi * (58 / 180) = \u2220EAB, \u2220DAB = \u2220DEC\nConclusions: pi * (58 / 180) = \u2220DEC\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ABC + \u2220BCE, \u2220ABC = \u2220ABD\nConclusions: 3.14 = \u2220ABD + \u2220BCE\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDE = \u2220CDA, \u2220BDE = \u2220CDE\nConclusions: \u2220CDA = \u2220CDE\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCE + \u2220CEB + \u2220EBC, pi * (26 / 180) = \u2220EBC, pi * (47 / 180) = \u2220CEB\nConclusions: 3.14 = 3.14 * (47 / 180) + pi * (26 / 180) + \u2220BCE\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * (58 / 180) = \u2220DEC, \u2220DAB = \u2220DEC\nConclusions: pi * (58 / 180) = \u2220DAB\n\nStep 25:\nTheorem: Substitution\nPremises : \u2220BDA = \u2220CDA, pi = \u2220ABD + \u2220BDA + \u2220DAB, 3.14 = pi, pi * (58 / 180) = \u2220DAB\nConclusions: 3.14 = 3.14 * (58 / 180) + \u2220ABD + \u2220CDA\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220BCE + \u2220ECD, 3.14 = 3.14 * (58 / 180) + \u2220ABD + \u2220CDA, pi * (58 / 180) = \u2220DEC, pi = \u2220CDE + \u2220DEC + \u2220ECD, 3.14 = 3.14 * (47 / 180) + pi * (26 / 180) + \u2220BCE, 3.14 = \u2220ABD + \u2220BCE, \u2220CDA = \u2220CDE\nConclusions: 0.86 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(B, E)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(A, B), Line(E, C))",
+        "Equals(MeasureOf(Angle(E, A, B)), Mul(pi, Div(58.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, C)), Mul(pi, Div(26.0, 180.0)))"
+    ],
+    "correct": true
+}

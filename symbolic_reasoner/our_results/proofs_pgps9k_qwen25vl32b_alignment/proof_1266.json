@@ -1,0 +1,117 @@
+{
+    "problem_id": "1266",
+    "solved": true,
+    "problem_text": "Square WXYZ is inscribed in \\odot R. Determine the measure of \\widehat ZY.",
+    "logic_forms": [
+        "Line(R, S)",
+        "Line(R, X)",
+        "Line(R, Y)",
+        "Line(S, Y)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, S)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(X, Y), Line(R, S))",
+        "PointLiesOnCircle(W, Circle(R))",
+        "PointLiesOnCircle(X, Circle(R))",
+        "PointLiesOnCircle(Y, Circle(R))",
+        "PointLiesOnCircle(Z, Circle(R))",
+        "PointLiesOnLine(S, Line(X, Y))",
+        "InscribedIn(Square(W,X,Y,Z),Circle(R))",
+        "Find(MeasureOf(Arc(Z,Y)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "S",
+        "X",
+        "R",
+        "W"
+    ],
+    "line_instances": [
+        "ZY",
+        "YS",
+        "YX",
+        "SX",
+        "ZW",
+        "WX",
+        "RX",
+        "RY",
+        "RS"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "Z": [
+            40.347586206896544,
+            167.25843122394846
+        ],
+        "Y": [
+            163.62285714285713,
+            167.74725274725276
+        ],
+        "S": [
+            163.24108108108106,
+            106.06326106326107
+        ],
+        "X": [
+            163.62285714285713,
+            44.02149321266968
+        ],
+        "R": [
+            101.18181818181819,
+            104.54545454545455
+        ],
+        "W": [
+            40.02285714285714,
+            43.82692307692308
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        60.0,
+        72.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        60.0,
+        72.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 256.20442,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Arc(Z, R, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, XY, \u2220ZRY, \u2220ZXY, RY, RX, YZ, \u2220YZX, Square(W, X, Y, Z), \u2220WXZ, \u2220XZW, \u2220YRX, InscribedIn(Square(W, X, Y, Z), \u2299(R, radius_R)), Arc(ZRY), RZ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : XY, RY, RX\nConclusions: \u25b3RXY\n\nStep 3:\nTheorem: Square is Rectangle\nPremises : Square(W, X, Y, Z)\nConclusions: Rectangle(W, X, Y, Z)\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ZRY, \u2220YRX\nConclusions: pi = \u2220YRX + \u2220ZRY\n\nStep 5:\nTheorem: Properties for Square inscribed in circle\nPremises : InscribedIn(Square(W, X, Y, Z), \u2299(R, radius_R))\nConclusions: \u2220RXY = \u2220WXR, R on XZ, \u2220RZW = \u2220YZR, \u2220RYZ = \u2220XYR\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ZRY)\nConclusions: \u2220ZRY = Arc(ZRY)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : RY, YZ, RZ\nConclusions: \u25b3RYZ\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(R, X, Y)\nPremises : \u25b3RXY\nConclusions: pi = \u2220RXY + \u2220XYR + \u2220YRX\n\nStep 9:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(W, X, Y, Z)\nConclusions: WX \u22a5 WZ, WX \u22a5 XY\n\nStep 10:\nTheorem: Same Angle\nPremises : R on XZ, \u2220ZXY\nConclusions: \u2220RXY = \u2220ZXY\n\nStep 11:\nTheorem: Same Angle\nPremises : R on XZ, \u2220XZW\nConclusions: \u2220RZW = \u2220XZW\n\nStep 12:\nTheorem: Same Angle\nPremises : R on XZ, \u2220WXZ\nConclusions: \u2220WXR = \u2220WXZ\n\nStep 13:\nTheorem: Same Angle\nPremises : R on XZ, \u2220YZX\nConclusions: \u2220YZR = \u2220YZX\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(R, Y, Z)\nPremises : \u25b3RYZ\nConclusions: pi = \u2220RYZ + \u2220YZR + \u2220ZRY\n\nStep 15:\nTheorem: Perpendicular Extension\nPremises : WX \u22a5 XY\nConclusions: SX \u22a5 WX\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RZW = \u2220XZW, \u2220RZW = \u2220YZR\nConclusions: \u2220XZW = \u2220YZR\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXR = \u2220WXZ, \u2220RXY = \u2220WXR\nConclusions: \u2220RXY = \u2220WXZ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220RYZ + \u2220YZR + \u2220ZRY, 3.14 = pi\nConclusions: 3.14 = \u2220RYZ + \u2220YZR + \u2220ZRY\n\nStep 19:\nTheorem: Perpendicular to Parallel\nPremises : WX \u22a5 WZ, SX \u22a5 WX\nConclusions: SX || ZW\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZW = \u2220YZR, \u2220YZR = \u2220YZX\nConclusions: \u2220XZW = \u2220YZX\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RXY = \u2220ZXY, \u2220RXY = \u2220WXZ\nConclusions: \u2220WXZ = \u2220ZXY\n\nStep 22:\nTheorem: Alternate Interior Angle Theorem\nPremises : SX || ZW\nConclusions: \u2220XZW = \u2220ZXY\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZW = \u2220ZXY, \u2220WXZ = \u2220ZXY, \u2220XZW = \u2220YZX\nConclusions: \u2220WXZ = \u2220YZX\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXZ = \u2220YZX, \u2220RXY = \u2220WXZ\nConclusions: \u2220RXY = \u2220YZX\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZW = \u2220YZR, \u2220XZW = \u2220YZX, \u2220RXY = \u2220YZX\nConclusions: \u2220RXY = \u2220YZR\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : \u2220RXY = \u2220YZR, pi = \u2220YRX + \u2220ZRY, pi = \u2220RXY + \u2220XYR + \u2220YRX, \u2220RYZ = \u2220XYR, 3.14 = \u2220RYZ + \u2220YZR + \u2220ZRY\nConclusions: 1.57 = \u2220ZRY\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ZRY = Arc(ZRY), 1.57 = \u2220ZRY\nConclusions: 1.57 = Arc(ZRY)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Y, S)",
+        "Line(Y, X)",
+        "Line(S, X)",
+        "Line(Z, W)",
+        "Line(W, X)",
+        "Line(R, X)",
+        "Line(R, Y)",
+        "Line(R, S)",
+        "Circle(R, radius_R)",
+        "Line(R, S)",
+        "Line(R, X)",
+        "Line(R, Y)",
+        "Line(S, Y)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, S)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(X, Y), Line(R, S))",
+        "PointLiesOnCircle(W, Circle(R, radius_R))",
+        "PointLiesOnCircle(X, Circle(R, radius_R))",
+        "PointLiesOnCircle(Y, Circle(R, radius_R))",
+        "PointLiesOnCircle(Z, Circle(R, radius_R))",
+        "PointLiesOnLine(S, Line(X, Y))",
+        "InscribedIn(Square(W, X, Y, Z), Circle(R, radius_R))"
+    ],
+    "correct": true
+}

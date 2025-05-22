@@ -1,0 +1,89 @@
+{
+    "problem_id": "2827",
+    "solved": true,
+    "problem_text": "In rhombus A B C D, m \\angle D A B = 2 m \\angle A D C and C B = 6. Find m \\angle A D B.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(2, MeasureOf(Angle(A, D, C))))",
+        "Find(MeasureOf(Angle(A, D, B)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "E",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CE",
+        "CA",
+        "EA",
+        "CB",
+        "DE",
+        "DB",
+        "EB",
+        "DC",
+        "DA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            198.98548094373868,
+            135.75317604355718
+        ],
+        "A": [
+            90.63702359346642,
+            134.84573502722324
+        ],
+        "E": [
+            117.13430127041742,
+            88.2032667876588
+        ],
+        "C": [
+            143.81306715063522,
+            40.653357531760435
+        ],
+        "D": [
+            36.00907441016334,
+            40.83484573502722
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "60",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 102.517924,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(A, D, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, 3.14 = pi, Rhombus(A, B, C, D), \u2220CBD, E on BD, AD, BD, \u2220BAD = 2 * \u2220ADC, \u2220DBA\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CBD = \u2220DBA\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CBD, E on BD\nConclusions: \u2220CBD = \u2220CBE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 6:\nTheorem: Same Angle\nPremises : E on BD, \u2220DBA\nConclusions: \u2220DBA = \u2220EBA\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC, AB || DC\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220DBA, \u2220DBA = \u2220EBA\nConclusions: \u2220CBD = \u2220EBA\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220ADB = \u2220CBD\n\nStep 11:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220ADC + \u2220BAD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220EBA, \u2220CBD = \u2220CBE\nConclusions: \u2220CBE = \u2220EBA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220CBE, \u2220ADB = \u2220CBD\nConclusions: \u2220ADB = \u2220CBE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220EBA, \u2220ADB = \u2220CBE, \u2220DBA = \u2220EBA\nConclusions: \u2220ADB = \u2220DBA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : \u2220BAD = 2 * \u2220ADC, 3.14 = \u2220ADB + \u2220BAD + \u2220DBA, \u2220ADB = \u2220DBA, pi = \u2220ADB + \u2220BAD + \u2220DBA, pi = \u2220ADC + \u2220BAD\nConclusions: 0.52 = \u2220ADB\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(2.0, MeasureOf(Angle(A, D, C))))"
+    ],
+    "correct": true
+}

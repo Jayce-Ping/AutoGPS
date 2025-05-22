@@ -1,0 +1,97 @@
+{
+    "problem_id": "2882",
+    "solved": true,
+    "problem_text": "G H \\cong K J. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(G, H))",
+        "PointLiesOnLine(A, Line(K, J))",
+        "PointLiesOnCircle(G, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "Equals(MeasureOf(Arc(H, K)), 2x-27)",
+        "Equals(MeasureOf(Arc(G, J)), 83)",
+        "Equals(LengthOf(Line(G,H)),Line(K,J))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "J",
+        "L",
+        "K",
+        "A"
+    ],
+    "line_instances": [
+        "GA",
+        "GH",
+        "AH",
+        "KA",
+        "KJ",
+        "AJ"
+    ],
+    "circle_instances": [
+        "L"
+    ],
+    "point_positions": {
+        "G": [
+            92.30516431924883,
+            230.98591549295776
+        ],
+        "H": [
+            336.906103286385,
+            311.73708920187795
+        ],
+        "J": [
+            273.9953051643193,
+            349.29577464788736
+        ],
+        "L": [
+            235.0281690140845,
+            211.73708920187795
+        ],
+        "K": [
+            322.3521126760564,
+            97.65258215962442
+        ],
+        "A": [
+            283.8544600938967,
+            292.48826291079814
+        ]
+    },
+    "problem_choices": [
+        "27",
+        "54",
+        "55",
+        "83"
+    ],
+    "choices_precise_value": [
+        27.0,
+        54.0,
+        55.0,
+        83.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 87.48083,
+    "solution_predicate": "Equals(55.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220JLH, \u2220KLJ, \u2220HLG, Arc(GLJ), \u2220JLK, G on \u2299(L, radius_0_0), pi * (83 / 180) = Arc(GLJ), \u2220GLH, K on \u2299(L, radius_0_0), GH = JK, H on \u2299(L, radius_0_0), pi * ((2 * x - 27) / 180) = Arc(HLK), \u2220GLJ, \u2220GLH, \u2220KLG, Arc(HLK), \u2220HLK, \u2220HLG, 3.14 = pi, J on \u2299(L, radius_0_0)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GLJ)\nConclusions: \u2220GLJ = Arc(GLJ)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : G on \u2299(L, radius_0_0)\nConclusions: radius_0_0 = GL\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : K on \u2299(L, radius_0_0)\nConclusions: radius_0_0 = KL\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : H on \u2299(L, radius_0_0)\nConclusions: radius_0_0 = HL\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220HLG, \u2220GLJ, \u2220JLH\nConclusions: 2 * pi = \u2220GLJ + \u2220HLG + \u2220JLH\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220GLH\nConclusions: \u2220GLH = 2 * pi - \u2220HLG\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220KLG, \u2220GLJ, \u2220JLK\nConclusions: 2 * pi = \u2220GLJ + \u2220JLK + \u2220KLG\n\nStep 9:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(HLK)\nConclusions: \u2220HLK = Arc(HLK)\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220GLH, \u2220KLG, \u2220HLK\nConclusions: 2 * pi = \u2220GLH + \u2220HLK + \u2220KLG\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220HLK, \u2220KLJ, \u2220JLH\nConclusions: 2 * pi = \u2220HLK + \u2220JLH + \u2220KLJ\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220HLG\nConclusions: \u2220HLG = 2 * pi - \u2220GLH\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : J on \u2299(L, radius_0_0)\nConclusions: radius_0_0 = JL\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GLJ = Arc(GLJ), pi * (83 / 180) = Arc(GLJ)\nConclusions: pi * (83 / 180) = \u2220GLJ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = KL, radius_0_0 = GL\nConclusions: GL = KL\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220GLH = 2 * pi - \u2220HLG, 3.14 = pi\nConclusions: \u2220GLH = 2 * 3.14 - \u2220HLG\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 27) / 180) = Arc(HLK), \u2220HLK = Arc(HLK)\nConclusions: pi * ((2 * x - 27) / 180) = \u2220HLK\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220GLH + \u2220HLK + \u2220KLG\nConclusions: 2 * 3.14 = \u2220GLH + \u2220HLK + \u2220KLG\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220HLG = 2 * pi - \u2220GLH, 3.14 = pi\nConclusions: \u2220HLG = 2 * 3.14 - \u2220GLH\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = HL, radius_0_0 = JL\nConclusions: HL = JL\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (83 / 180) = \u2220GLJ, 2 * pi = \u2220GLJ + \u2220JLK + \u2220KLG\nConclusions: 2 * 3.14 = 3.14 * (83 / 180) + \u2220JLK + \u2220KLG\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (83 / 180) = \u2220GLJ, 2 * pi = \u2220GLJ + \u2220HLG + \u2220JLH\nConclusions: 2 * 3.14 = 3.14 * (83 / 180) + \u2220HLG + \u2220JLH\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x - 27) / 180) = \u2220HLK\nConclusions: 3.14 * ((2 * x - 27) / 180) = \u2220HLK\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220GLH + \u2220HLK + \u2220KLG, 2 * pi = \u2220GLH + \u2220HLK + \u2220KLG\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 25:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : GL = KL, GH = JK, HL = JL\nConclusions: \u25b3GHL \u2245 \u25b3KJL\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (83 / 180) + \u2220HLG + \u2220JLH\nConclusions: 2 * pi = 3.14 * (83 / 180) + \u2220HLG + \u2220JLH\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (83 / 180) + \u2220JLK + \u2220KLG\nConclusions: 2 * pi = 3.14 * (83 / 180) + \u2220JLK + \u2220KLG\n\nStep 28:\nTheorem: Congruent Definition\nPremises : \u25b3GHL \u2245 \u25b3KJL\nConclusions: GL = KL, GH = JK, \u2220GLH = \u2220JLK, \u2220HLG = \u2220KLJ\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GLH = 2 * 3.14 - \u2220HLG, \u2220GLH = \u2220JLK\nConclusions: \u2220JLK = 2 * 3.14 - \u2220HLG\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HLG = 2 * 3.14 - \u2220GLH, \u2220HLG = \u2220KLJ\nConclusions: \u2220KLJ = 2 * 3.14 - \u2220GLH\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220HLK + \u2220JLH + \u2220KLJ, 2 * pi = 3.14 * (83 / 180) + \u2220HLG + \u2220JLH, \u2220JLK = 2 * 3.14 - \u2220HLG, 2 * pi = 3.14 * (83 / 180) + \u2220JLK + \u2220KLG, \u2220KLJ = 2 * 3.14 - \u2220GLH, 2 * pi = \u2220GLH + \u2220HLK + \u2220KLG, 3.14 * ((2 * x - 27) / 180) = \u2220HLK\nConclusions: 55 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, H)",
+        "Line(A, H)",
+        "Line(K, A)",
+        "Line(K, J)",
+        "Line(A, J)",
+        "Circle(L, radius_0_0)",
+        "PointLiesOnLine(A, Line(G, H))",
+        "PointLiesOnLine(A, Line(K, J))",
+        "PointLiesOnCircle(G, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "Equals(MeasureOf(Arc(H, L, K)), Mul(pi, Div(Sub(Mul(2.0, x), 27.0), 180.0)))",
+        "Equals(MeasureOf(Arc(G, L, J)), Mul(pi, Div(83.0, 180.0)))",
+        "Equals(LengthOf(Line(G, H)), LengthOf(Line(K, J)))"
+    ],
+    "correct": true
+}

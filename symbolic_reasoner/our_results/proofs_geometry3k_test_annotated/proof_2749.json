@@ -1,0 +1,91 @@
+{
+    "problem_id": "2749",
+    "solved": true,
+    "problem_text": "If Z P = 4 x - 9 and P Y = 2 x + 5, find Z X.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(Z, X))",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "Perpendicular(Line(X, W), Line(Z, W))",
+        "Rectangle(Z, Y, X, W)",
+        "Equals(LengthOf(Line(Z, P)), 4x-9)",
+        "Equals(LengthOf(Line(P, Y)), 2x+5)",
+        "Find(LengthOf(Line(Z, X)))"
+    ],
+    "point_instances": [
+        "P",
+        "Y",
+        "Z",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "WX",
+        "YX",
+        "ZY",
+        "ZW",
+        "ZP",
+        "ZX",
+        "PX",
+        "WP",
+        "WY",
+        "PY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            182.16374269005848,
+            121.5497076023392
+        ],
+        "Y": [
+            319.29824561403507,
+            54.005847953216374
+        ],
+        "Z": [
+            45.6140350877193,
+            53.12865497076024
+        ],
+        "X": [
+            318.42105263157896,
+            188.21637426900585
+        ],
+        "W": [
+            45.32163742690059,
+            187.92397660818713
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "10",
+        "19",
+        "38"
+    ],
+    "choices_precise_value": [
+        9.0,
+        10.0,
+        19.0,
+        38.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 166.037072,
+    "solution_predicate": "Equals(38.0, LengthOf(Line(Z, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on XZ, WX \u22a5 WZ, 5 + 2 * x = PY, P on WY, 4 * x - 9 = PZ, Rectangle(W, X, Y, Z)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : P on XZ\nConclusions: XZ = PX + PZ\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WZ\nConclusions: pi / 2 = \u2220XWZ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : P on WY\nConclusions: WY = PW + PY\n\nStep 5:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(W, X, Y, Z)\nConclusions: WX \u22a5 WZ, WZ \u22a5 YZ\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 YZ\nConclusions: pi / 2 = \u2220WZY\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WZ = XY\n\nStep 9:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220WZY = \u2220YXW\n\nStep 10:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(W, X, Y, Z), P on XZ, P on WY\nConclusions: PX = PZ, PW = PY\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220WZY, \u2220WZY = \u2220YXW, pi / 2 = \u2220XWZ\nConclusions: \u2220XWZ = \u2220YXW\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : PX = PZ, 4 * x - 9 = PZ\nConclusions: 4 * x - 9 = PX\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 5 + 2 * x = PY, PW = PY\nConclusions: 5 + 2 * x = PW\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220XWZ = \u2220YXW, WZ = XY\nConclusions: \u25b3WXY \u2245 \u25b3XWZ\n\nStep 15:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3XWZ\nConclusions: WZ = XY, WY = XZ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : WY = PW + PY, WY = XZ\nConclusions: XZ = PW + PY\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 5 + 2 * x = PY, XZ = PW + PY, 4 * x - 9 = PX, 4 * x - 9 = PZ, XZ = PX + PZ, 5 + 2 * x = PW\nConclusions: 38 = XZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(Y, X)",
+        "Line(Z, Y)",
+        "Line(Z, W)",
+        "Line(Z, P)",
+        "Line(Z, X)",
+        "Line(P, X)",
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(P, Y)",
+        "PointLiesOnLine(P, Line(Z, X))",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "Perpendicular(Line(X, W), Line(Z, W))",
+        "Rectangle(Z, Y, X, W)",
+        "Equals(LengthOf(Line(Z, P)), Sub(Mul(4.0, x), 9.0))",
+        "Equals(LengthOf(Line(P, Y)), Add(Mul(2.0, x), 5.0))"
+    ],
+    "correct": true
+}

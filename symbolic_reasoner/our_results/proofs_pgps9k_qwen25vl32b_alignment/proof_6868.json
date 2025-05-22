@@ -1,0 +1,97 @@
+{
+    "problem_id": "6868",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 21)",
+        "Equals(LengthOf(Line(A, D)), 25)",
+        "Equals(LengthOf(Line(C, E)), 20)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(A, C), Line(E, C))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CE",
+        "DE",
+        "AD",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            41.51454545454545,
+            151.20849210669573
+        ],
+        "B": [
+            176.27677419354836,
+            151.5648058721267
+        ],
+        "C": [
+            268.38896551724133,
+            151.6855255007227
+        ],
+        "D": [
+            133.4711111111111,
+            15.94699489909071
+        ],
+        "E": [
+            267.86,
+            15.925149700598803
+        ]
+    },
+    "problem_choices": [
+        46.0,
+        92.0,
+        184.0,
+        420.0
+    ],
+    "choices_precise_value": [
+        46.0,
+        92.0,
+        184.0,
+        420.0
+    ],
+    "problem_answer": 92.0,
+    "total_time": 28.797945,
+    "solution_predicate": "Equals(92.0, PerimeterOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 21 = AB, Parallelogram(A, B, C, D), 25 = AD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, C, D)\nConclusions: Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 21 = AB\nConclusions: 21 = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 25 = AD\nConclusions: 25 = BC\n\nStep 6:\nTheorem: Substitution\nPremises : Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD, 25 = BC, 21 = CD, 21 = AB, 25 = AD\nConclusions: 21 + 21 + 25 + 25 = Perimeter(Parallelogram(A, B, C, D))\n\nStep 7:\nTheorem: Evaluate\nPremises : 21 + 21 + 25 + 25 = Perimeter(Parallelogram(A, B, C, D))\nConclusions: 92 = Perimeter(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(A, C), Line(E, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 21.0)",
+        "Equals(LengthOf(Line(A, D)), 25.0)",
+        "Equals(LengthOf(Line(C, E)), 20.0)"
+    ],
+    "correct": true
+}

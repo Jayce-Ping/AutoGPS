@@ -1,0 +1,85 @@
+{
+    "problem_id": "908",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat AB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, B)), 26)",
+        "Equals(MeasureOf(Angle(B, C, A)), 88)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(LengthOf(Arc(A,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "D": [
+            223.66369047619048,
+            33.88897959183673
+        ],
+        "C": [
+            223.70015481965478,
+            146.24560083705657
+        ],
+        "A": [
+            337.4866071428571,
+            151.17142857142858
+        ],
+        "B": [
+            223.9955357142857,
+            260.14775510204083
+        ]
+    },
+    "problem_choices": [
+        19.967,
+        20.874,
+        39.933,
+        41.748
+    ],
+    "choices_precise_value": [
+        19.967,
+        20.874,
+        39.933,
+        41.748
+    ],
+    "problem_answer": 19.967,
+    "total_time": 6.698476,
+    "solution_predicate": "Equals(19.9665666434, LengthOf(Arc(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 26 = BD, pi * (88 / 180) = \u2220BCA, 3.14 = pi, Arc(BCA), C on BD, D on \u2299(C, radius_C), B on \u2299(C, radius_C)\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.54 = pi * (88 / 180)\n\nStep 3:\nTheorem: Arc Length Definition\nPremises : Arc(BCA)\nConclusions: Arc(BCA) = radius_C * \u2220BCA\n\nStep 4:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, radius_C)\nConclusions: radius_C = CD\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_C)\nConclusions: radius_C = BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (88 / 180) = \u2220BCA, 1.54 = pi * (88 / 180)\nConclusions: 1.54 = \u2220BCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : BD = BC + CD, 26 = BD\nConclusions: 26 = BC + CD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = CD, radius_C = BC\nConclusions: BC = CD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : BC = CD, 26 = BC + CD\nConclusions: 13 = BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 13 = BC, radius_C = BC\nConclusions: 13 = radius_C\n\nStep 12:\nTheorem: Substitution\nPremises : 13 = radius_C, 1.54 = \u2220BCA, Arc(BCA) = radius_C * \u2220BCA\nConclusions: 1.54 * 13 = Arc(BCA)\n\nStep 13:\nTheorem: Evaluate\nPremises : 1.54 * 13 = Arc(BCA)\nConclusions: 19.97 = Arc(BCA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Circle(C, radius_C)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(D, B)), 26.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(88.0, 180.0)))"
+    ],
+    "correct": true
+}

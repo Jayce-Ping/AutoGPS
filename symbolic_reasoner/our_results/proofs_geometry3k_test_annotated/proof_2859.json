@@ -1,0 +1,83 @@
+{
+    "problem_id": "2859",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(E, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, E)), 10)",
+        "Equals(LengthOf(Line(E, C)), 12)",
+        "Equals(MeasureOf(Angle(A, B, E)), 60)",
+        "Find(PerimeterOf(Parallelogram(A, B, E, C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BA",
+        "DA",
+        "ED",
+        "EC",
+        "DC",
+        "CA",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            234.65608465608463,
+            200.1111111111111
+        ],
+        "B": [
+            24.867724867724867,
+            200.9047619047619
+        ],
+        "C": [
+            330.4232804232804,
+            35.29629629629629
+        ],
+        "D": [
+            234.39153439153438,
+            35.56084656084656
+        ],
+        "E": [
+            120.1058201058201,
+            35.03174603174603
+        ]
+    },
+    "problem_choices": [
+        "22",
+        "40",
+        "44",
+        "48"
+    ],
+    "choices_precise_value": [
+        22.0,
+        40.0,
+        44.0,
+        48.0
+    ],
+    "problem_answer": 44.0,
+    "total_time": 17.407666,
+    "solution_predicate": "Equals(44.0, PerimeterOf(Parallelogram(A, B, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = CE, Parallelogram(A, B, E, C), 10 = BE\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, E, C)\nConclusions: AC = BE, AB = CE\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, E, C)\nConclusions: Perimeter(Parallelogram(A, B, E, C)) = AB + AC + BE + CE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AC = BE, 10 = BE\nConclusions: 10 = AC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 12 = CE, AB = CE\nConclusions: 12 = AB\n\nStep 6:\nTheorem: Substitution\nPremises : 10 = BE, Perimeter(Parallelogram(A, B, E, C)) = AB + AC + BE + CE, 12 = CE, 10 = AC, 12 = AB\nConclusions: 10 + 10 + 12 + 12 = Perimeter(Parallelogram(A, B, E, C))\n\nStep 7:\nTheorem: Evaluate\nPremises : 10 + 10 + 12 + 12 = Perimeter(Parallelogram(A, B, E, C))\nConclusions: 44 = Perimeter(Parallelogram(A, B, E, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(B, E)), 10.0)",
+        "Equals(LengthOf(Line(E, C)), 12.0)",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

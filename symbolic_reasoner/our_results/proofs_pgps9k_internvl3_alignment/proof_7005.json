@@ -1,0 +1,71 @@
+{
+    "problem_id": "7005",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 19)",
+        "Equals(LengthOf(Line(B, A)), 2\\sqrt{70})",
+        "Equals(LengthOf(Line(C, B)), 9)",
+        "Equals(MeasureOf(Angle(B, A, C)), x)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "AC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            310.0805300713557,
+            49.4
+        ],
+        "B": [
+            40.75567358763882,
+            100.56
+        ],
+        "C": [
+            68.00603573153066,
+            241.11999999999998
+        ]
+    },
+    "problem_choices": [
+        28.274,
+        32.538,
+        61.726,
+        90.0
+    ],
+    "choices_precise_value": [
+        28.274,
+        32.538,
+        61.726,
+        90.0
+    ],
+    "problem_answer": 28.274,
+    "total_time": 19.353255,
+    "solution_predicate": "Equals(28.2737136294, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220BAC, 3.14 = pi, 19 = AC, cos(\u2220BAC), 2 * SqrtOf(70) = AB, AB \u22a5 BC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BAC\nConclusions: 3.14 * (x / 180) = \u2220BAC\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BAC), AB \u22a5 BC\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 4:\nTheorem: Substitution\nPremises : 2 * SqrtOf(70) = AB, AB / AC = cos(\u2220BAC), 19 = AC\nConclusions: (2 * SqrtOf(70)) / 19 = cos(\u2220BAC)\n\nStep 5:\nTheorem: Solve Univariate Equation\nPremises : (2 * SqrtOf(70)) / 19 = cos(\u2220BAC)\nConclusions: 0.49 = \u2220BAC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220BAC, 0.49 = \u2220BAC\nConclusions: 0.49 = 3.14 * (x / 180)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 0.49 = 3.14 * (x / 180)\nConclusions: 28.27 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "Equals(LengthOf(Line(A, C)), 19.0)",
+        "Equals(LengthOf(Line(B, A)), Mul(2.0, SqrtOf(70.0)))",
+        "Equals(LengthOf(Line(C, B)), 9.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

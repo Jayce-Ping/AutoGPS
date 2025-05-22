@@ -1,0 +1,118 @@
+{
+    "problem_id": "1375",
+    "solved": true,
+    "problem_text": "QRST is an isosceles trapezoid with median XY. Find TS if QR = 22 and XY = 15.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Q,R)), 22)",
+        "Equals(LengthOf(Line(X,Y)), 15)",
+        "Equals(MeasureOf(Angle(Q, R, Y)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(X, Q, R)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(X, T, S)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(Y, S, T)), MeasureOf(Angle(4)))",
+        "Find(LengthOf(Line(T,S)))",
+        "IsMedianOf(Line(X,Y), Trapezoid(Q, R, S, T))",
+        "Isosceles(Quadrilateral(Q,R,S,T))",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, Y)",
+        "Line(T, S)",
+        "Line(X, T)",
+        "Line(X, Y)",
+        "Line(Y, S)",
+        "PointLiesOnLine(X, Line(Q, T))",
+        "PointLiesOnLine(Y, Line(R, S))",
+        "Trapezoid(Q, R, S, T)"
+    ],
+    "point_instances": [
+        "Q",
+        "X",
+        "T",
+        "S",
+        "Y",
+        "R"
+    ],
+    "line_instances": [
+        "QR",
+        "RY",
+        "RS",
+        "YS",
+        "ST",
+        "TX",
+        "TQ",
+        "XQ",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            49.57534246575342,
+            36.21583673469387
+        ],
+        "X": [
+            86.02780016116036,
+            85.78605042016807
+        ],
+        "T": [
+            123.46035699460357,
+            136.8595670995671
+        ],
+        "S": [
+            208.47397260273974,
+            136.53306122448978
+        ],
+        "Y": [
+            246.60554970144008,
+            85.69860805860804
+        ],
+        "R": [
+            283.93150684931504,
+            36.38795366795367
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        4.0,
+        8.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        8.0,
+        16.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 24.35633,
+    "solution_predicate": "Equals(8.0, LengthOf(Line(T, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IsMedianOf(XY, Trapezoid(Q, R, S, T)), 22 = QR, Y on RS, 15 = XY, X on QT\n\nStep 2:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(XY, Trapezoid(Q, R, S, T)), Y on RS, X on QT\nConclusions: XY = (QR + ST) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : 22 = QR, XY = (QR + ST) / 2, 15 = XY\nConclusions: 15 = (22 + ST) / 2\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 15 = (22 + ST) / 2\nConclusions: 8 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(R, Y)",
+        "Line(R, S)",
+        "Line(Y, S)",
+        "Line(S, T)",
+        "Line(T, X)",
+        "Line(T, Q)",
+        "Line(X, Q)",
+        "Line(X, Y)",
+        "IsMedianOf(Line(X, Y), Trapezoid(Q, R, S, T))",
+        "Isosceles(Quadrilateral(Q, R, S, T))",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, Y)",
+        "Line(T, S)",
+        "Line(X, T)",
+        "Line(X, Y)",
+        "Line(Y, S)",
+        "PointLiesOnLine(X, Line(Q, T))",
+        "PointLiesOnLine(Y, Line(R, S))",
+        "Trapezoid(Q, R, S, T)",
+        "Equals(LengthOf(Line(Q, R)), 22.0)",
+        "Equals(LengthOf(Line(X, Y)), 15.0)"
+    ],
+    "correct": true
+}

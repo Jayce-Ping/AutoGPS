@@ -1,0 +1,94 @@
+{
+    "problem_id": "2402",
+    "solved": true,
+    "problem_text": "Circle O has a radius of 13 inches. Radius O B is perpendicular to chord C D which is 24 inches long. Find O X.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "Perpendicular(Line(B, X), Line(D, X))",
+        "Equals(RadiusOf(Circle(O)), 13)",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "Equals(LengthOf(Line(C, D)), 24)",
+        "Find(LengthOf(Line(O, X)))"
+    ],
+    "point_instances": [
+        "X",
+        "B",
+        "O",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BX",
+        "BO",
+        "XO",
+        "CO",
+        "CX",
+        "CD",
+        "XD"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "X": [
+            176.30481283422458,
+            98.93048128342245
+        ],
+        "B": [
+            196.62566844919786,
+            60.695187165775394
+        ],
+        "O": [
+            157.05347593582886,
+            137.4331550802139
+        ],
+        "C": [
+            108.1229946524064,
+            64.70588235294117
+        ],
+        "D": [
+            243.68449197860963,
+            133.4224598930481
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "12",
+        "13",
+        "26"
+    ],
+    "choices_precise_value": [
+        5.0,
+        12.0,
+        13.0,
+        26.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 64.414835,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(O, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 24 = CD, D on \u2299(O, radius_0_0), X on CD, CD, CX, \u2220OCD, CX \u22a5 OX, CO, 13 = radius_0_0, C on \u2299(O, radius_0_0), DO, OX, \u2220OCX\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : D on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = DO\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220OCD, X on CD\nConclusions: \u2220OCD = \u2220OCX\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = CO\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CO, CD, DO\nConclusions: \u25b3CDO\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : CX, OX, CO\nConclusions: \u25b3COX\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_0_0, radius_0_0 = DO\nConclusions: 13 = DO\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CO, 13 = radius_0_0\nConclusions: 13 = CO\n\nStep 9:\nTheorem: Law of Cosines\nPremises : \u25b3CDO\nConclusions: (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(\u2220OCD)\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u2220OCX, \u25b3COX, CX \u22a5 OX\nConclusions: OX / CO = sin(\u2220OCX)\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220OCD = \u2220OCX, 13 = DO, 24 = CD, (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(\u2220OCD), 13 = CO\nConclusions: (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(\u2220OCX)\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(\u2220OCX)\nConclusions: 0.39 = \u2220OCX\n\nStep 13:\nTheorem: Substitution\nPremises : 13 = CO, 0.39 = \u2220OCX, OX / CO = sin(\u2220OCX)\nConclusions: sin(0.39) = OX / 13\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : sin(0.39) = OX / 13\nConclusions: 5 = OX\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, X)",
+        "Line(B, O)",
+        "Line(X, O)",
+        "Line(C, O)",
+        "Line(C, X)",
+        "Line(C, D)",
+        "Line(X, D)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(O, radius_0_0))",
+        "Perpendicular(Line(B, X), Line(D, X))",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "Equals(radius_0_0, 13.0)",
+        "Equals(LengthOf(Line(C, D)), 24.0)"
+    ],
+    "correct": true
+}

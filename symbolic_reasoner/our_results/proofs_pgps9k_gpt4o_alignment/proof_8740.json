@@ -1,0 +1,78 @@
+{
+    "problem_id": "8740",
+    "solved": true,
+    "problem_text": "Determine the area of the circle.",
+    "logic_forms": [
+        "Circle(C, r)",
+        "Equals(DiameterOf(Circle(C)), 20)",
+        "Equals(LengthOf(Line(A, B)), 20)",
+        "Equals(RadiusOf(Circle(C)), 10)",
+        "Find(AreaOf(Circle(C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnLine(C, Line(A, B))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            88.07274011299434,
+            33.745000000000005
+        ],
+        "C": [
+            150.16729724863097,
+            142.22781361935904
+        ],
+        "B": [
+            212.9604519774011,
+            251.8114285714286
+        ]
+    },
+    "problem_choices": [
+        62.832,
+        314.159,
+        1186.824,
+        1256.637
+    ],
+    "choices_precise_value": [
+        62.832,
+        314.159,
+        1186.824,
+        1256.637
+    ],
+    "problem_answer": 314.159,
+    "total_time": 2.515646,
+    "solution_predicate": "Equals(314.15926536, AreaOf(Circle(C, r)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 10 = r, Area(\u2299(C, r)), 3.14 = pi\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, r))\nConclusions: pi * r ** 2 = Area(\u2299(C, r))\n\nStep 3:\nTheorem: Substitution\nPremises : pi * r ** 2 = Area(\u2299(C, r)), 3.14 = pi, 10 = r\nConclusions: 3.14 * 10 ** 2 = Area(\u2299(C, r))\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 * 10 ** 2 = Area(\u2299(C, r))\nConclusions: 314.16 = Area(\u2299(C, r))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Circle(C, r)",
+        "Circle(C, r)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C, r))",
+        "PointLiesOnCircle(B, Circle(C, r))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "Equals(Mul(2.0, r), 20.0)",
+        "Equals(LengthOf(Line(A, B)), 20.0)",
+        "Equals(r, 10.0)"
+    ],
+    "correct": true
+}

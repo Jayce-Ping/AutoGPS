@@ -1,0 +1,80 @@
+{
+    "problem_id": "2668",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, B)), 12)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(MeasureOf(Angle(B, A, D)), 55)",
+        "Equals(MeasureOf(Angle(B, C, D)), 47)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DA",
+        "DB",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            10.847006651884701,
+            146.7849223946785
+        ],
+        "B": [
+            103.30820399113082,
+            146.56319290465632
+        ],
+        "C": [
+            248.54101995565412,
+            146.56319290465632
+        ],
+        "D": [
+            103.529933481153,
+            16.851441241685144
+        ]
+    },
+    "problem_choices": [
+        "21.1",
+        "22.4",
+        "23.4",
+        "42.2"
+    ],
+    "choices_precise_value": [
+        21.1,
+        22.4,
+        23.4,
+        42.2
+    ],
+    "problem_answer": 23.4,
+    "total_time": 30.942287,
+    "solution_predicate": "Equals(23.4329518575, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on AC, pi * (47 / 180) = \u2220DCB, CD, BD, y = CD, AB, 3.14 = pi, \u2220CAD, AD, AB \u22a5 BD, AC, \u2220DCA, pi * (55 / 180) = \u2220BAD, 12 = AB\n\nStep 2:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAD, pi * (55 / 180) = \u2220BAD\nConclusions: pi * (55 / 180) = \u2220CAD\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 9:\nTheorem: Law of Sines\nPremises : \u25b3ABD\nConclusions: AB / sin(\u2220ADB) = AD / sin(\u2220DBA)\n\nStep 10:\nTheorem: Law of Sines\nPremises : \u25b3ACD\nConclusions: AD / sin(\u2220DCA) = CD / sin(\u2220CAD)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, pi * (47 / 180) = \u2220DCB\nConclusions: pi * (47 / 180) = \u2220DCA\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220ADB + \u2220BAD + \u2220DBA, pi * (55 / 180) = \u2220BAD, 3.14 = pi, pi / 2 = \u2220DBA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (55 / 180) + \u2220ADB\n\nStep 13:\nTheorem: Substitution\nPremises : 12 = AB, AB / sin(\u2220ADB) = AD / sin(\u2220DBA), pi / 2 = \u2220DBA\nConclusions: 12 / sin(\u2220ADB) = AD / sin(pi / 2)\n\nStep 14:\nTheorem: Substitution\nPremises : AD / sin(\u2220DCA) = CD / sin(\u2220CAD), y = CD, pi * (55 / 180) = \u2220CAD, pi * (47 / 180) = \u2220DCA\nConclusions: y / sin(pi * (55 / 180)) = AD / sin(pi * (47 / 180))\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (55 / 180) + \u2220ADB\nConclusions: 0.61 = \u2220ADB\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, y / sin(pi * (55 / 180)) = AD / sin(pi * (47 / 180))\nConclusions: y / sin(3.14 * (55 / 180)) = AD / sin(3.14 * (47 / 180))\n\nStep 17:\nTheorem: Substitution\nPremises : 0.61 = \u2220ADB, 3.14 = pi, 12 / sin(\u2220ADB) = AD / sin(pi / 2)\nConclusions: 12 / sin(0.61) = AD / sin(3.14 / 2)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : y / sin(3.14 * (55 / 180)) = AD / sin(3.14 * (47 / 180)), y = CD, 12 / sin(0.61) = AD / sin(3.14 / 2)\nConclusions: 23.43 = CD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : y = CD, 23.43 = CD\nConclusions: 23.43 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(47.0, 180.0)))"
+    ],
+    "correct": true
+}

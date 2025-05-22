@@ -1,0 +1,103 @@
+{
+    "problem_id": "2867",
+    "solved": true,
+    "problem_text": "A D and C G are diameters of \\odot B. Find m \\widehat A G.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, G))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(C, B, D)), 55)",
+        "Equals(MeasureOf(Angle(G, B, F)), 35)",
+        "IsDiameterOf(Line(A, D), Circle(B))",
+        "IsDiameterOf(Line(C, G), Circle(B))",
+        "Find(MeasureOf(Arc(A, G)))"
+    ],
+    "point_instances": [
+        "G",
+        "D",
+        "F",
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "CG",
+        "BG",
+        "AB",
+        "AD",
+        "BD",
+        "BF"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "G": [
+            253.44680851063828,
+            435.1063829787234
+        ],
+        "D": [
+            394.93617021276594,
+            163.82978723404256
+        ],
+        "F": [
+            351.31914893617017,
+            402.12765957446805
+        ],
+        "C": [
+            252.38297872340422,
+            89.8936170212766
+        ],
+        "B": [
+            253.44680851063828,
+            261.17021276595744
+        ],
+        "A": [
+            111.42553191489361,
+            360.1063829787234
+        ]
+    },
+    "problem_choices": [
+        "35",
+        "40",
+        "45",
+        "55"
+    ],
+    "choices_precise_value": [
+        35.0,
+        40.0,
+        45.0,
+        55.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 11.590448,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Arc(A, B, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (55 / 180) = \u2220DBC, B on CG, Arc(ABG), B on AD\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ABG)\nConclusions: \u2220ABG = Arc(ABG)\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : B on AD, B on CG\nConclusions: \u2220ABG = \u2220DBC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABG = \u2220DBC, pi * (55 / 180) = \u2220DBC, \u2220ABG = Arc(ABG)\nConclusions: pi * (55 / 180) = Arc(ABG)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi * (55 / 180) = Arc(ABG)\nConclusions: 0.96 = Arc(ABG)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, G)",
+        "Line(B, G)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(B, Line(C, G))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "IsDiameterOf(Line(A, D), Circle(B, radius_0_0))",
+        "IsDiameterOf(Line(C, G), Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(D, B, C)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, B, F)), Mul(pi, Div(35.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "891",
+    "solved": true,
+    "problem_text": "Given isosceles \\triangle JKL with base JL. If JL = 5, find ML.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(J, K, M)), MeasureOf(Angle(L, K, M)))",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Isosceles(Triangle(J,K,L))",
+        "IsBaseOf(Line(J,L),Isosceles(Triangle(J,K,L)))",
+        "Equals(LengthOf(Line(J,L)),5)",
+        "Find(LengthOf(Line(M,L)))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "KL",
+        "LM",
+        "LJ",
+        "MJ",
+        "JK",
+        "KM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            138.1688888888889,
+            59.08064516129032
+        ],
+        "J": [
+            49.388571428571424,
+            275.07027649769583
+        ],
+        "M": [
+            137.99873015873015,
+            275.5391705069124
+        ],
+        "L": [
+            226.99174603174603,
+            275.45391705069125
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        4.33,
+        5.0,
+        10.0
+    ],
+    "choices_precise_value": [
+        2.5,
+        4.33,
+        5.0,
+        10.0
+    ],
+    "problem_answer": 2.5,
+    "total_time": 33.370227,
+    "solution_predicate": "Equals(2.5, LengthOf(Line(M, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JK = KL, 5 = JL, \u25b3JKL, M on JL\n\nStep 2:\nTheorem: Issoceles Triangle Theorem\nPremises : JK = KL, \u25b3JKL\nConclusions: JM = LM\n\nStep 3:\nTheorem: Line Segment Split\nPremises : M on JL\nConclusions: JL = JM + LM\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : JL = JM + LM, 5 = JL\nConclusions: 5 = JM + LM\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : JM = LM, 5 = JM + LM\nConclusions: 2.5 = JM\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : JM = LM, 2.5 = JM\nConclusions: 2.5 = LM\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(L, M)",
+        "Line(L, J)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(K, M)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, L)",
+        "PointLiesOnLine(M, Line(J, L))",
+        "Isosceles(Triangle(J, K, L))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(J, K, M)), MeasureOf(Angle(M, K, L)))",
+        "Equals(LengthOf(Line(J, L)), 5.0)"
+    ],
+    "correct": true
+}

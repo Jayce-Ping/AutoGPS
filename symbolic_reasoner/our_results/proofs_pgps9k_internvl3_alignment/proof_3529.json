@@ -1,0 +1,82 @@
+{
+    "problem_id": "3529",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle DEF?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, E, D)), 5x)",
+        "Equals(MeasureOf(Angle(F, D, E)), x)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Perpendicular(Line(D, F), Line(A, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "Find(MeasureOf(Angle(D,E,F)))"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "D",
+        "F"
+    ],
+    "line_instances": [
+        "DF",
+        "FE",
+        "FA",
+        "EA",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            323.9530726256983,
+            9.59142857142857
+        ],
+        "E": [
+            324.1427684667908,
+            191.11809523809524
+        ],
+        "D": [
+            35.567970204841714,
+            313.08317460317454
+        ],
+        "F": [
+            323.66852886405957,
+            313.08317460317454
+        ]
+    },
+    "problem_choices": [
+        67.5,
+        112.5,
+        202.5,
+        292.5
+    ],
+    "choices_precise_value": [
+        67.5,
+        112.5,
+        202.5,
+        292.5
+    ],
+    "problem_answer": 67.5,
+    "total_time": 11.261033,
+    "solution_predicate": "Equals(1.1780972451, MeasureOf(Angle(D, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 * x) / 180) = \u2220AED, DE, \u2220AFD, DF, EF, \u2220DEF, DF \u22a5 EF, 3.14 = pi, AF \u22a5 DF, \u2220AED, pi * (x / 180) = \u2220FDE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFD\nConclusions: \u2220AFD = 2 * pi - \u2220DFA\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : EF, DF, DE\nConclusions: \u25b3DEF\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : DF \u22a5 EF\nConclusions: pi / 2 = \u2220EFD\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 * x) / 180) = \u2220AED\nConclusions: 3.14 * ((5 * x) / 180) = \u2220AED\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AF \u22a5 DF\nConclusions: pi / 2 = \u2220AFD, (3 * pi) / 2 = \u2220DFA\n\nStep 7:\nTheorem: Straight Angle\nPremises : \u2220AED, \u2220DEF\nConclusions: pi = \u2220AED + \u2220DEF\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220FDE\nConclusions: 3.14 * (x / 180) = \u2220FDE\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, F)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220AFD, \u2220AFD = 2 * pi - \u2220DFA, (3 * pi) / 2 = \u2220DFA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AED + \u2220DEF, 3.14 = pi\nConclusions: 3.14 = \u2220AED + \u2220DEF\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220DEF + \u2220EFD + \u2220FDE, pi / 2 = \u2220EFD, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220DEF + \u2220FDE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EFD, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220EFD\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220DEF + \u2220FDE, 2 * 3.14 - (3 * pi) / 2 = \u2220EFD, pi = \u2220DEF + \u2220EFD + \u2220FDE, 3.14 * ((5 * x) / 180) = \u2220AED, 3.14 * (x / 180) = \u2220FDE, 3.14 = \u2220AED + \u2220DEF\nConclusions: 1.18 = \u2220DEF\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(F, E)",
+        "Line(F, A)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Perpendicular(Line(D, F), Line(A, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(Mul(5.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, E)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

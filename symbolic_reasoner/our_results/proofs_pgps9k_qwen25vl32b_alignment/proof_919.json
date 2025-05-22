@@ -1,0 +1,127 @@
+{
+    "problem_id": "919",
+    "solved": true,
+    "problem_text": "In the diagram of the collinear points, PT = 20, QS = 6, and PQ = QR = RS. Find ST.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P,Q)), LengthOf(Line(Q,R)))",
+        "Equals(LengthOf(Line(P,T)), 20)",
+        "Equals(LengthOf(Line(Q,R)), LengthOf(Line(R,S)))",
+        "Equals(LengthOf(Line(Q,S)), 6)",
+        "Find(LengthOf(Line(S,T)))",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(Q, Line(P, S))",
+        "PointLiesOnLine(Q, Line(P, T))",
+        "PointLiesOnLine(R, Line(P, S))",
+        "PointLiesOnLine(R, Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "PointLiesOnLine(R, Line(Q, T))",
+        "PointLiesOnLine(S, Line(P, T))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "PointLiesOnLine(S, Line(R, T))"
+    ],
+    "point_instances": [
+        "T",
+        "S",
+        "R",
+        "Q",
+        "P"
+    ],
+    "line_instances": [
+        "PQ",
+        "PR",
+        "PS",
+        "PT",
+        "QR",
+        "QS",
+        "QT",
+        "RS",
+        "RT",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            565.411111111111,
+            32.612068965517246
+        ],
+        "S": [
+            272.6053333333333,
+            90.37241379310343
+        ],
+        "R": [
+            192.94444444444443,
+            105.23275862068965
+        ],
+        "Q": [
+            113.32190476190475,
+            121.03448275862068
+        ],
+        "P": [
+            33.22,
+            137.17241379310343
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        6.0,
+        9.0,
+        11.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        9.0,
+        11.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 5.024982,
+    "solution_predicate": "Equals(11.0, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = QS, R on QS, 20 = PT, PQ = QR, S on PT, QR = RS, Q on PS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : R on QS\nConclusions: QS = QR + RS\n\nStep 3:\nTheorem: Line Segment Split\nPremises : S on PT\nConclusions: PT = PS + ST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : PQ = QR, QR = RS\nConclusions: PQ = RS\n\nStep 5:\nTheorem: Line Segment Split\nPremises : Q on PS\nConclusions: PS = PQ + QS\n\nStep 6:\nTheorem: Substitution\nPremises : QS = QR + RS, 6 = QS, QR = RS\nConclusions: 6 = RS + RS\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : PT = PS + ST, 20 = PT\nConclusions: 20 = PS + ST\n\nStep 8:\nTheorem: Substitution\nPremises : PS = PQ + QS, PQ = RS, 6 = QS\nConclusions: PS = 6 + RS\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 6 = RS + RS, PS = 6 + RS, 20 = PS + ST\nConclusions: 11 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(Q, Line(P, S))",
+        "PointLiesOnLine(Q, Line(P, T))",
+        "PointLiesOnLine(R, Line(P, S))",
+        "PointLiesOnLine(R, Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "PointLiesOnLine(R, Line(Q, T))",
+        "PointLiesOnLine(S, Line(P, T))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Equals(LengthOf(Line(P, Q)), LengthOf(Line(Q, R)))",
+        "Equals(LengthOf(Line(P, T)), 20.0)",
+        "Equals(LengthOf(Line(Q, R)), LengthOf(Line(R, S)))",
+        "Equals(LengthOf(Line(Q, S)), 6.0)"
+    ],
+    "correct": true
+}

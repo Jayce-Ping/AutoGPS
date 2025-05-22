@@ -1,0 +1,199 @@
+{
+    "problem_id": "8275",
+    "solved": true,
+    "problem_text": "CE bisects \\angle DCF, and CG bisects \\angle FCB. If m \\angle DCE = 4x+15 and m \\angle ECF = 6x-5, find m \\angle GCB.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, K)",
+        "Line(B, K)",
+        "Line(C, B)",
+        "Line(C, G)",
+        "Line(C, J)",
+        "Line(C, K)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, K)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(G, J)",
+        "Line(H, C)",
+        "Line(H, E)",
+        "Line(I, C)",
+        "Line(I, F)",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(C, K))",
+        "PointLiesOnLine(B, Line(D, K))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(D, K))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, K))",
+        "PointLiesOnLine(E, Line(H, C))",
+        "PointLiesOnLine(F, Line(I, C))",
+        "PointLiesOnLine(G, Line(C, J))",
+        "BisectsAngle(Line(C,E),Angle(D,C,F))",
+        "BisectsAngle(Line(C,G),Angle(F,C,B))",
+        "Equals(MeasureOf(Angle(D,C,E)),4x+15)",
+        "Equals(MeasureOf(Angle(E,C,F)),6x-5)",
+        "Find(MeasureOf(Angle(G,C,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "H",
+        "E",
+        "C",
+        "F",
+        "I",
+        "G",
+        "B",
+        "J",
+        "K"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "AB",
+        "AK",
+        "DC",
+        "DB",
+        "DK",
+        "CB",
+        "CK",
+        "BK",
+        "HE",
+        "HC",
+        "EC",
+        "IF",
+        "IC",
+        "FC",
+        "CG",
+        "CJ",
+        "GJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            150.17105263157896,
+            26.64
+        ],
+        "D": [
+            150.17105263157896,
+            67.932
+        ],
+        "H": [
+            32.891447368421055,
+            85.581
+        ],
+        "E": [
+            66.11513157894737,
+            109.557
+        ],
+        "C": [
+            149.4890510948905,
+            170.43795620437956
+        ],
+        "F": [
+            53.86861313868613,
+            210.5839416058394
+        ],
+        "I": [
+            18.467153284671525,
+            225.54744525547443
+        ],
+        "G": [
+            90.72992700729927,
+            256.93430656934305
+        ],
+        "B": [
+            150.17105263157896,
+            277.05600000000004
+        ],
+        "J": [
+            68.10218978102188,
+            289.7810218978102
+        ],
+        "K": [
+            150.17105263157896,
+            317.682
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        55.0,
+        70.0,
+        125.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        55.0,
+        70.0,
+        125.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 295.137345,
+    "solution_predicate": "Equals(0.6108652382, MeasureOf(Angle(G, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((6 * x - 5) / 180) = \u2220ECF, BisectsAngle(CE, \u2220DCF), \u2220GCA, \u2220ECD, \u2220ICA, D on AC, 3.14 = pi, \u2220ACG, \u2220DCF, \u2220ACH, \u2220ACF, \u2220ACF, \u2220DCE, F on CI, \u2220ICD, \u2220FCA, \u2220DCI, \u2220ACE, \u2220GCB, \u2220ECF, \u2220GCA, \u2220FCD, \u2220FCH, \u2220ICG, pi * ((15 + 4 * x) / 180) = \u2220DCE, \u2220GCD, BisectsAngle(CG, \u2220FCB), E on CH, \u2220ICH, \u2220FCG\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(CE, \u2220DCF)\nConclusions: \u2220DCE = \u2220ECF, \u2220ECD = \u2220FCE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220GCA\nConclusions: \u2220GCA = 2 * pi - \u2220ACG\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220DCE\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220ICA, D on AC\nConclusions: \u2220ICA = \u2220ICD\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ACH, D on AC\nConclusions: \u2220ACH = \u2220DCH\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACF\nConclusions: \u2220ACF = 2 * pi - \u2220FCA\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220ACF, D on AC\nConclusions: \u2220ACF = \u2220DCF\n\nStep 10:\nTheorem: Same Angle\nPremises : F on CI, \u2220ICA\nConclusions: \u2220FCA = \u2220ICA\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220ICD\nConclusions: \u2220ICD = 2 * pi - \u2220DCI\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220FCA, D on AC\nConclusions: \u2220FCA = \u2220FCD\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220ACE, D on AC\nConclusions: \u2220ACE = \u2220DCE\n\nStep 14:\nTheorem: Straight Angle\nPremises : \u2220ACG, \u2220GCB\nConclusions: pi = \u2220ACG + \u2220GCB\n\nStep 15:\nTheorem: Same Angle\nPremises : D on AC, \u2220GCA\nConclusions: \u2220GCA = \u2220GCD\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220ECF, \u2220FCD, \u2220DCE\nConclusions: 2 * pi = \u2220DCE + \u2220ECF + \u2220FCD\n\nStep 17:\nTheorem: Same Angle\nPremises : F on CI, \u2220ICG\nConclusions: \u2220FCG = \u2220ICG\n\nStep 18:\nTheorem: Circumference splited\nPremises : \u2220GCD, \u2220DCI, \u2220ICG\nConclusions: 2 * pi = \u2220DCI + \u2220GCD + \u2220ICG\n\nStep 19:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(CG, \u2220FCB)\nConclusions: \u2220FCG = \u2220GCB\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220FCH, E on CH\nConclusions: \u2220FCE = \u2220FCH\n\nStep 21:\nTheorem: Same Angle\nPremises : \u2220ACH, E on CH\nConclusions: \u2220ACE = \u2220ACH\n\nStep 22:\nTheorem: Same Angle\nPremises : F on CI, \u2220ICH\nConclusions: \u2220FCH = \u2220ICH\n\nStep 23:\nTheorem: Circumference splited\nPremises : \u2220FCG, \u2220GCD, \u2220DCF\nConclusions: 2 * pi = \u2220DCF + \u2220FCG + \u2220GCD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCE = \u2220ECF, pi * ((15 + 4 * x) / 180) = \u2220DCE\nConclusions: pi * ((15 + 4 * x) / 180) = \u2220ECF\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACF = 2 * pi - \u2220FCA, \u2220ACF = \u2220DCF\nConclusions: \u2220DCF = 2 * pi - \u2220FCA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCA = \u2220FCD, \u2220FCA = \u2220ICA\nConclusions: \u2220FCD = \u2220ICA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACE = \u2220DCE, pi * ((15 + 4 * x) / 180) = \u2220DCE\nConclusions: pi * ((15 + 4 * x) / 180) = \u2220ACE\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GCA = 2 * pi - \u2220ACG, \u2220GCA = \u2220GCD\nConclusions: \u2220GCD = 2 * pi - \u2220ACG\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220DCI + \u2220GCD + \u2220ICG, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220DCI + \u2220GCD + \u2220ICG\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCG = \u2220GCB, \u2220FCG = \u2220ICG\nConclusions: \u2220GCB = \u2220ICG\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCE = \u2220FCH, \u2220FCH = \u2220ICH\nConclusions: \u2220FCE = \u2220ICH\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 5) / 180) = \u2220ECF, pi * ((15 + 4 * x) / 180) = \u2220ECF\nConclusions: pi * ((15 + 4 * x) / 180) = pi * ((6 * x - 5) / 180)\n\nStep 33:\nTheorem: Substitution\nPremises : \u2220DCF = 2 * pi - \u2220FCA, 3.14 = pi, \u2220FCA = \u2220FCD\nConclusions: \u2220DCF = 2 * 3.14 - \u2220FCD\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCD = \u2220ICA, \u2220ICA = \u2220ICD\nConclusions: \u2220FCD = \u2220ICD\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * x) / 180) = \u2220ACE, \u2220ACE = \u2220ACH, \u2220ACH = \u2220DCH\nConclusions: pi * ((15 + 4 * x) / 180) = \u2220DCH\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECD = \u2220FCE, \u2220FCE = \u2220ICH\nConclusions: \u2220ECD = \u2220ICH\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCD = \u2220ICD, \u2220ICD = 2 * pi - \u2220DCI\nConclusions: \u2220FCD = 2 * pi - \u2220DCI\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACH = \u2220DCH, pi * ((15 + 4 * x) / 180) = \u2220DCH\nConclusions: pi * ((15 + 4 * x) / 180) = \u2220ACH\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECD = 2 * pi - \u2220DCE, \u2220ECD = \u2220ICH\nConclusions: \u2220ICH = 2 * pi - \u2220DCE\n\nStep 40:\nTheorem: Substitution\nPremises : pi * ((15 + 4 * x) / 180) = \u2220ACH, 3.14 = pi\nConclusions: 3.14 * ((15 + 4 * x) / 180) = \u2220ACH\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * x) / 180) = \u2220ACH, 3.14 * ((15 + 4 * x) / 180) = \u2220ACH\nConclusions: 3.14 * ((15 + 4 * x) / 180) = pi * ((15 + 4 * x) / 180)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 4 * x) / 180) = pi * ((15 + 4 * x) / 180), pi * ((15 + 4 * x) / 180) = \u2220DCE\nConclusions: 3.14 * ((15 + 4 * x) / 180) = \u2220DCE\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 4 * x) / 180) = pi * ((15 + 4 * x) / 180), pi * ((15 + 4 * x) / 180) = \u2220ECF\nConclusions: 3.14 * ((15 + 4 * x) / 180) = \u2220ECF\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 4 * x) / 180) = pi * ((15 + 4 * x) / 180), pi * ((15 + 4 * x) / 180) = pi * ((6 * x - 5) / 180)\nConclusions: 3.14 * ((15 + 4 * x) / 180) = pi * ((6 * x - 5) / 180)\n\nStep 45:\nTheorem: Substitution\nPremises : \u2220ICH = 2 * pi - \u2220DCE, 3.14 = pi, 3.14 * ((15 + 4 * x) / 180) = \u2220DCE\nConclusions: 2 * 3.14 - 3.14 * ((15 + 4 * x) / 180) = \u2220ICH\n\nStep 46:\nTheorem: Substitution\nPremises : 3.14 * ((15 + 4 * x) / 180) = pi * ((6 * x - 5) / 180), 3.14 = pi\nConclusions: 3.14 * ((15 + 4 * x) / 180) = 3.14 * ((6 * x - 5) / 180)\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ICH = 2 * pi - \u2220DCE, 2 * 3.14 - 3.14 * ((15 + 4 * x) / 180) = \u2220ICH\nConclusions: 2 * 3.14 - 3.14 * ((15 + 4 * x) / 180) = 2 * pi - \u2220DCE\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : \u2220DCF = 2 * 3.14 - \u2220FCD, \u2220FCG = \u2220GCB, 2 * pi = \u2220DCF + \u2220FCG + \u2220GCD, 6.28 = \u2220DCI + \u2220GCD + \u2220ICG, \u2220FCD = 2 * pi - \u2220DCI, 3.14 * ((15 + 4 * x) / 180) = 3.14 * ((6 * x - 5) / 180), \u2220GCB = \u2220ICG, pi = \u2220ACG + \u2220GCB, 2 * pi = \u2220DCE + \u2220ECF + \u2220FCD, 2 * 3.14 - 3.14 * ((15 + 4 * x) / 180) = 2 * pi - \u2220DCE, \u2220GCD = 2 * pi - \u2220ACG, 3.14 * ((15 + 4 * x) / 180) = \u2220ECF\nConclusions: 0.61 = \u2220GCB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, K)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(D, K)",
+        "Line(C, B)",
+        "Line(C, K)",
+        "Line(B, K)",
+        "Line(H, E)",
+        "Line(H, C)",
+        "Line(E, C)",
+        "Line(I, F)",
+        "Line(I, C)",
+        "Line(F, C)",
+        "Line(C, G)",
+        "Line(C, J)",
+        "Line(G, J)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, K)",
+        "Line(B, K)",
+        "Line(C, B)",
+        "Line(C, G)",
+        "Line(C, J)",
+        "Line(C, K)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, K)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(G, J)",
+        "Line(H, C)",
+        "Line(H, E)",
+        "Line(I, C)",
+        "Line(I, F)",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(C, K))",
+        "PointLiesOnLine(B, Line(D, K))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(D, K))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, K))",
+        "PointLiesOnLine(E, Line(H, C))",
+        "PointLiesOnLine(F, Line(I, C))",
+        "PointLiesOnLine(G, Line(C, J))",
+        "BisectsAngle(Line(C, E), Angle(D, C, F))",
+        "BisectsAngle(Line(C, G), Angle(F, C, B))",
+        "Equals(MeasureOf(Angle(D, C, E)), Mul(pi, Div(Add(Mul(4.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, F)), Mul(pi, Div(Sub(Mul(6.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

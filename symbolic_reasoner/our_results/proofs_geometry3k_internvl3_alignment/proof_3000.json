@@ -1,0 +1,91 @@
+{
+    "problem_id": "3000",
+    "solved": true,
+    "problem_text": "A B C D is a rhombus. If P B = 12, A B = 15, and m \\angle A B D = 24. Find m \\angle B D A.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(D, B))",
+        "PointLiesOnLine(P, Line(A, C))",
+        "Rhombus(A,B,C,D)",
+        "Equals(LengthOf(Line(P,B)),12)",
+        "Equals(LengthOf(Line(A,B)),15)",
+        "Equals(MeasureOf(Angle(A,B,D)),24)",
+        "Find(MeasureOf(Angle(B,D,A)))"
+    ],
+    "point_instances": [
+        "P",
+        "C",
+        "D",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DP",
+        "DB",
+        "PB",
+        "AB",
+        "AD",
+        "DC",
+        "BC",
+        "AP",
+        "AC",
+        "PC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            141.04308390022675,
+            107.4829931972789
+        ],
+        "C": [
+            189.1156462585034,
+            162.58503401360542
+        ],
+        "D": [
+            49.65986394557823,
+            162.35827664399093
+        ],
+        "B": [
+            232.42630385487527,
+            51.92743764172335
+        ],
+        "A": [
+            92.51700680272108,
+            52.15419501133787
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "55",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        24.0,
+        55.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 63.039343,
+    "solution_predicate": "Equals(0.4188790205, MeasureOf(Angle(B, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (24 / 180) = \u2220ABD, Rhombus(A, B, C, D)\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220ABD = \u2220DBC\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (24 / 180) = \u2220ABD, \u2220ABD = \u2220DBC\nConclusions: pi * (24 / 180) = \u2220DBC\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBC, pi * (24 / 180) = \u2220DBC\nConclusions: pi * (24 / 180) = \u2220BDA\n\nStep 8:\nTheorem: Evaluate\nPremises : pi * (24 / 180) = \u2220BDA\nConclusions: 0.42 = \u2220BDA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, P)",
+        "Line(D, B)",
+        "Line(P, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, P)",
+        "Line(A, C)",
+        "Line(P, C)",
+        "PointLiesOnLine(P, Line(D, B))",
+        "PointLiesOnLine(P, Line(A, C))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(P, B)), 12.0)",
+        "Equals(LengthOf(Line(A, B)), 15.0)",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(24.0, 180.0)))"
+    ],
+    "correct": true
+}

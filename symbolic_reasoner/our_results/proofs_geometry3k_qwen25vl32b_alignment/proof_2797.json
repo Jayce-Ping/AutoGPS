@@ -1,0 +1,87 @@
+{
+    "problem_id": "2797",
+    "solved": true,
+    "problem_text": "If R L = 5, R T = 9, and W S = 6, find R W.",
+    "logic_forms": [
+        "PointLiesOnLine(W, Line(R, S))",
+        "PointLiesOnLine(L, Line(R, T))",
+        "Parallel(Line(L, W), Line(T, S))",
+        "Equals(LengthOf(Line(R,L)),5)",
+        "Equals(LengthOf(Line(R,T)),9)",
+        "Equals(LengthOf(Line(W,S)),6)",
+        "Find(LengthOf(Line(R,W)))"
+    ],
+    "point_instances": [
+        "S",
+        "W",
+        "L",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "RW",
+        "RS",
+        "WS",
+        "TS",
+        "RL",
+        "RT",
+        "LT",
+        "LW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            354.35435435435437,
+            126.16816816816817
+        ],
+        "W": [
+            249.24924924924923,
+            135.47747747747746
+        ],
+        "L": [
+            155.85585585585585,
+            83.22522522522522
+        ],
+        "T": [
+            207.2072072072072,
+            40.28228228228228
+        ],
+        "R": [
+            71.17117117117117,
+            152.8948948948949
+        ]
+    },
+    "problem_choices": [
+        "5.4",
+        "6",
+        "6.6",
+        "7.5"
+    ],
+    "choices_precise_value": [
+        5.4,
+        6.0,
+        6.6,
+        7.5
+    ],
+    "problem_answer": 7.5,
+    "total_time": 30.677269,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(R, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LRS, 3.14 = pi, W on RS, 6 = SW, \u2220STR, 5 = LR, L on RT, \u2220WLR, \u2220TRS, 9 = RT, LW || TS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : W on RS\nConclusions: RS = RW + SW\n\nStep 3:\nTheorem: Same Angle\nPremises : W on RS, \u2220LRS\nConclusions: \u2220LRS = \u2220LRW\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220STR\nConclusions: \u2220STR = 2 * pi - \u2220RTS\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220WLR\nConclusions: \u2220WLR = 2 * pi - \u2220RLW\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220TRS, L on RT\nConclusions: \u2220LRS = \u2220TRS\n\nStep 7:\nTheorem: Corresponding Angle Theorem\nPremises : LW || TS\nConclusions: \u2220RST = \u2220RWL, \u2220RLW = \u2220RTS\n\nStep 8:\nTheorem: Substitution\nPremises : RS = RW + SW, 6 = SW\nConclusions: RS = 6 + RW\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220STR = 2 * pi - \u2220RTS, 3.14 = pi\nConclusions: \u2220STR = 2 * 3.14 - \u2220RTS\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LRS = \u2220LRW, \u2220LRS = \u2220TRS\nConclusions: \u2220LRW = \u2220TRS\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220RLW = \u2220RTS, 3.14 = pi, \u2220WLR = 2 * pi - \u2220RLW\nConclusions: \u2220WLR = 2 * 3.14 - \u2220RTS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WLR = 2 * 3.14 - \u2220RTS, \u2220STR = 2 * 3.14 - \u2220RTS\nConclusions: \u2220STR = \u2220WLR\n\nStep 13:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220STR = \u2220WLR, \u2220LRW = \u2220TRS, \u2220RST = \u2220RWL\nConclusions: \u25b3LRW ~ \u25b3TRS\n\nStep 14:\nTheorem: Similar Definition\nPremises : \u25b3LRW ~ \u25b3TRS\nConclusions: \u2220RST = \u2220RWL, \u2220STR = \u2220WLR, \u2220RLW = \u2220RTS, LR / RT = RW / RS\n\nStep 15:\nTheorem: Substitution\nPremises : 5 = LR, 9 = RT, LR / RT = RW / RS\nConclusions: 5 / 9 = RW / RS\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : RS = 6 + RW, 5 / 9 = RW / RS\nConclusions: 7.5 = RW\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, W)",
+        "Line(R, S)",
+        "Line(W, S)",
+        "Line(T, S)",
+        "Line(R, L)",
+        "Line(R, T)",
+        "Line(L, T)",
+        "Line(L, W)",
+        "PointLiesOnLine(W, Line(R, S))",
+        "PointLiesOnLine(L, Line(R, T))",
+        "Parallel(Line(L, W), Line(T, S))",
+        "Equals(LengthOf(Line(R, L)), 5.0)",
+        "Equals(LengthOf(Line(R, T)), 9.0)",
+        "Equals(LengthOf(Line(W, S)), 6.0)"
+    ],
+    "correct": true
+}

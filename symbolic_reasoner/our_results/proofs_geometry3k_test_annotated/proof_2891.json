@@ -1,0 +1,109 @@
+{
+    "problem_id": "2891",
+    "solved": true,
+    "problem_text": "In \\odot B, C E = 13.5. Find B D. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, F))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), 8)",
+        "Equals(LengthOf(Line(C, E)), 13.5)",
+        "Find(LengthOf(Line(B, D)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "E",
+        "C",
+        "F"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "DE",
+        "AB",
+        "AD",
+        "AF",
+        "BD",
+        "BF",
+        "DF"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "B": [
+            249.1111111111111,
+            260.6666666666667
+        ],
+        "D": [
+            248.55555555555554,
+            352.88888888888886
+        ],
+        "A": [
+            249.66666666666669,
+            90.11111111111111
+        ],
+        "E": [
+            392.44444444444446,
+            352.88888888888886
+        ],
+        "C": [
+            106.33333333333331,
+            353.44444444444446
+        ],
+        "F": [
+            249.1111111111111,
+            431.77777777777777
+        ]
+    },
+    "problem_choices": [
+        "3.71",
+        "4.29",
+        "4.53",
+        "6.75"
+    ],
+    "choices_precise_value": [
+        3.71,
+        4.29,
+        4.53,
+        6.75
+    ],
+    "problem_answer": 4.29,
+    "total_time": 88.140233,
+    "solution_predicate": "Equals(4.2938910091, LengthOf(Line(B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 13.5 = CE, BC, A on \u2299(B, radius_0_0), D on CE, CD, E on \u2299(B, radius_0_0), BE, \u2220ECB, BD, \u2220DCB, 8 = AB, BD \u22a5 CD, CE, C on \u2299(B, radius_0_0)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = AB\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BE\n\nStep 4:\nTheorem: Same Angle\nPremises : D on CE, \u2220ECB\nConclusions: \u2220DCB = \u2220ECB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, BD, BC\nConclusions: \u25b3BCD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BE, CE, BC\nConclusions: \u25b3BCE\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AB, radius_0_0 = AB\nConclusions: 8 = radius_0_0\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : \u25b3BCD, BD \u22a5 CD, \u2220DCB\nConclusions: BD / BC = sin(\u2220DCB)\n\nStep 10:\nTheorem: Law of Cosines\nPremises : \u25b3BCE\nConclusions: (BC ** 2 + CE ** 2) - BE ** 2 = 2 * BC * CE * cos(\u2220ECB)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BE, 8 = radius_0_0\nConclusions: 8 = BE\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BC, 8 = radius_0_0\nConclusions: 8 = BC\n\nStep 13:\nTheorem: Substitution\nPremises : (BC ** 2 + CE ** 2) - BE ** 2 = 2 * BC * CE * cos(\u2220ECB), 8 = BC, 8 = BE, 13.5 = CE\nConclusions: (13.5 ** 2 + 8 ** 2) - 8 ** 2 = 13.5 * 2 * 8 * cos(\u2220ECB)\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : (13.5 ** 2 + 8 ** 2) - 8 ** 2 = 13.5 * 2 * 8 * cos(\u2220ECB)\nConclusions: 0.57 = \u2220ECB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCB = \u2220ECB, 0.57 = \u2220ECB\nConclusions: 0.57 = \u2220DCB\n\nStep 16:\nTheorem: Substitution\nPremises : 0.57 = \u2220DCB, 8 = BC, BD / BC = sin(\u2220DCB)\nConclusions: sin(0.57) = BD / 8\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : sin(0.57) = BD / 8\nConclusions: 4.29 = BD\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, F)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, F))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(C, E)), 13.5)"
+    ],
+    "correct": true
+}

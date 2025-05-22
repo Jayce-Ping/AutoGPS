@@ -1,0 +1,138 @@
+{
+    "problem_id": "4391",
+    "solved": true,
+    "problem_text": "AB = DE = 8, and CD = 5. Find CF.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, C)), 5)",
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(C, D)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(G, E)",
+        "Perpendicular(Line(D, E), Line(C, G))",
+        "Perpendicular(Line(F, D), Line(A, B))",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(F, D))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "Equals(LengthOf(Line(A,B)),8)",
+        "Equals(LengthOf(Line(D,E)),8)",
+        "Equals(LengthOf(Line(C,D)),5)",
+        "Find(LengthOf(Line(C,F)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "E",
+        "G",
+        "D",
+        "F"
+    ],
+    "line_instances": [
+        "EG",
+        "ED",
+        "GD",
+        "DC",
+        "DF",
+        "CF",
+        "GC",
+        "AF",
+        "AB",
+        "FB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            143.9911067193676,
+            47.928831168831174
+        ],
+        "B": [
+            316.55632411067194,
+            173.06597402597404
+        ],
+        "C": [
+            179.40104592148984,
+            179.6523266184051
+        ],
+        "E": [
+            306.25585284280936,
+            233.07384615384618
+        ],
+        "G": [
+            202.59030100334448,
+            261.3204395604396
+        ],
+        "D": [
+            99.97826086956522,
+            290.79
+        ],
+        "F": [
+            229.67608695652174,
+            110.77714285714286
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        2.5,
+        3.0,
+        4.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        2.5,
+        3.0,
+        4.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 304.754362,
+    "solution_predicate": "Equals(3.0, LengthOf(Line(C, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AF \u22a5 CF, AB, F on AB, AC, cos(\u2220FCA), 5 = CD, 8 = AB, B on \u2299(C, radius_C), D on \u2299(C, radius_C), \u2220CAB, \u2220CAF, BC, AF, \u2220FCA, CF, A on \u2299(C, radius_C)\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220FCA), AF \u22a5 CF\nConclusions: CF / AC = cos(\u2220FCA)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_C)\nConclusions: radius_C = BC\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, radius_C)\nConclusions: radius_C = CD\n\nStep 5:\nTheorem: Same Angle\nPremises : F on AB, \u2220CAB\nConclusions: \u2220CAB = \u2220CAF\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CF, AC, AF\nConclusions: \u25b3ACF\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CD, radius_C = CD\nConclusions: 5 = radius_C\n\nStep 10:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\n\nStep 11:\nTheorem: Cos Function Definition\nPremises : AF \u22a5 CF, \u2220FCA, \u25b3ACF\nConclusions: CF / AC = cos(\u2220FCA)\n\nStep 12:\nTheorem: Sin Function Definition\nPremises : AF \u22a5 CF, \u25b3ACF, \u2220CAF\nConclusions: CF / AC = sin(\u2220CAF)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = BC, 5 = radius_C\nConclusions: 5 = BC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = AC, 5 = radius_C\nConclusions: 5 = AC\n\nStep 15:\nTheorem: Substitution\nPremises : 5 = BC, 8 = AB, 5 = AC, \u2220CAB = \u2220CAF, (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\nConclusions: (5 ** 2 + 8 ** 2) - 5 ** 2 = 2 * 5 * 8 * cos(\u2220CAF)\n\nStep 16:\nTheorem: Substitution\nPremises : CF / AC = cos(\u2220FCA), 5 = AC\nConclusions: CF / 5 = cos(\u2220FCA)\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : (5 ** 2 + 8 ** 2) - 5 ** 2 = 2 * 5 * 8 * cos(\u2220CAF)\nConclusions: 0.64 = \u2220CAF\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : CF / 5 = cos(\u2220FCA), CF / AC = cos(\u2220FCA)\nConclusions: CF / 5 = CF / AC\n\nStep 19:\nTheorem: Evaluate\nPremises : 0.64 = \u2220CAF\nConclusions: 0.6 = sin(\u2220CAF)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : CF / AC = sin(\u2220CAF), CF / 5 = CF / AC\nConclusions: CF / 5 = sin(\u2220CAF)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : CF / 5 = sin(\u2220CAF), 0.6 = sin(\u2220CAF)\nConclusions: 0.6 = CF / 5\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 0.6 = CF / 5\nConclusions: 3 = CF\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, G)",
+        "Line(E, D)",
+        "Line(G, D)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(C, F)",
+        "Line(G, C)",
+        "Line(A, F)",
+        "Line(A, B)",
+        "Line(F, B)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(C, D)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(G, E)",
+        "Perpendicular(Line(D, E), Line(C, G))",
+        "Perpendicular(Line(F, D), Line(A, B))",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(F, D))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "Equals(LengthOf(Line(D, C)), 5.0)",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)",
+        "Equals(LengthOf(Line(C, D)), 5.0)"
+    ],
+    "correct": true
+}

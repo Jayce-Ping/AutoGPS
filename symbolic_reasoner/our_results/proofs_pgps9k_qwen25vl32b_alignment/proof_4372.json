@@ -1,0 +1,93 @@
+{
+    "problem_id": "4372",
+    "solved": true,
+    "problem_text": "m \\angle 11 = x-4, m \\angle 12 = 2x-5, find the measure of \\angle 11.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(11)))",
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(Angle(12)))",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(11)),x-4)",
+        "Equals(MeasureOf(Angle(12)),2x-5)",
+        "Find(MeasureOf(Angle(11)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AC",
+        "AE",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            108.15238095238095,
+            15.326984126984128
+        ],
+        "B": [
+            25.742857142857144,
+            76.25714285714285
+        ],
+        "C": [
+            146.36190476190475,
+            75.98730158730159
+        ],
+        "D": [
+            286.4831168831169,
+            76.47792207792209
+        ],
+        "E": [
+            188.84571428571428,
+            145.71428571428572
+        ]
+    },
+    "problem_choices": [
+        43.5,
+        59.0,
+        61.0,
+        121.0
+    ],
+    "choices_precise_value": [
+        43.5,
+        59.0,
+        61.0,
+        121.0
+    ],
+    "problem_answer": 59.0,
+    "total_time": 9.159753,
+    "solution_predicate": "Equals(1.0297442587, MeasureOf(Angle(A, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, pi * ((x - 4) / 180) = \u2220ACB, \u2220DCA, C on AE, \u2220ACB, 3.14 = pi, pi * ((2 * x - 5) / 180) = \u2220BCE\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220BCE = \u2220DCA\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220DCA\nConclusions: pi = \u2220ACB + \u2220DCA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((x - 4) / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 * ((x - 4) / 180) = \u2220ACB\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x - 5) / 180) = \u2220BCE\nConclusions: 3.14 * ((2 * x - 5) / 180) = \u2220BCE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 5) / 180) = \u2220BCE, \u2220BCE = \u2220DCA\nConclusions: pi * ((2 * x - 5) / 180) = \u2220DCA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220DCA\nConclusions: 3.14 = \u2220ACB + \u2220DCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x - 5) / 180) = \u2220BCE, pi * ((2 * x - 5) / 180) = \u2220BCE\nConclusions: 3.14 * ((2 * x - 5) / 180) = pi * ((2 * x - 5) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 5) / 180) = \u2220DCA, 3.14 * ((2 * x - 5) / 180) = pi * ((2 * x - 5) / 180)\nConclusions: 3.14 * ((2 * x - 5) / 180) = \u2220DCA\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((x - 4) / 180) = \u2220ACB, 3.14 * ((2 * x - 5) / 180) = \u2220DCA, 3.14 = \u2220ACB + \u2220DCA\nConclusions: 1.03 = \u2220ACB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Sub(x, 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, E)), Mul(pi, Div(Sub(Mul(2.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

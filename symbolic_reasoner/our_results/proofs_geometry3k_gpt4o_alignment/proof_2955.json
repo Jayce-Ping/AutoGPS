@@ -1,0 +1,78 @@
+{
+    "problem_id": "2955",
+    "solved": true,
+    "problem_text": "\\angle 6 and \\angle 8 are complementary, m \\angle 8 = 47. Find the measure of \\angle 7.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, C, E)), MeasureOf(angle 7))",
+        "Equals(SumOf(MeasureOf(Angle(6)),MeasureOf(Angle(6))),90)",
+        "Equals(MeasureOf(Angle(8)),47)",
+        "Find(MeasureOf(Angle(7)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            33.622559652928416,
+            122.65943600867678
+        ],
+        "B": [
+            18.43817787418655,
+            27.21475054229935
+        ],
+        "C": [
+            147.93926247288502,
+            27.431670281995657
+        ],
+        "D": [
+            267.2451193058568,
+            27.86550976138828
+        ],
+        "E": [
+            257.70065075921906,
+            158.0173535791757
+        ]
+    },
+    "problem_choices": [
+        "43",
+        "47",
+        "86",
+        "90"
+    ],
+    "choices_precise_value": [
+        43.0,
+        47.0,
+        86.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 5.121721,
+    "solution_predicate": "Equals(Minus(42.6787120948), MeasureOf(Angle(A, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACE, \u2220ACD, \u2220BCE, pi * (47 / 180) = \u2220ECD, \u2220BCE, \u2220DCA, \u2220ECD, 3.14 = pi, \u2220BCA, \u2220ACD, \u2220ECB, 90 = \u2220BCA + \u2220BCA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220DCA, \u2220ACE, \u2220ECD\nConclusions: 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220BCE, \u2220ECD\nConclusions: pi = \u2220BCE + \u2220ECD\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220ACD, \u2220BCA\nConclusions: pi = \u2220ACD + \u2220BCA\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220BCA, \u2220ACE, \u2220ECB\nConclusions: 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (47 / 180) = \u2220ECD, 2 * pi = \u2220ACE + \u2220DCA + \u2220ECD\nConclusions: 2 * 3.14 = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCE + \u2220ECD, pi * (47 / 180) = \u2220ECD\nConclusions: 3.14 = 3.14 * (47 / 180) + \u2220BCE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACD + \u2220BCA\nConclusions: 3.14 = \u2220ACD + \u2220BCA\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ACD = 2 * pi - \u2220DCA\nConclusions: \u2220ACD = 2 * 3.14 - \u2220DCA\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\nConclusions: 2 * 3.14 = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ACE + \u2220BCA + \u2220ECB, 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA\nConclusions: 2 * pi = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (47 / 180) + \u2220BCE, 3.14 = \u2220ACD + \u2220BCA, 2 * pi = 3.14 * (47 / 180) + \u2220ACE + \u2220DCA, \u2220BCE = 2 * pi - \u2220ECB, 2 * 3.14 = \u2220ACE + \u2220BCA + \u2220ECB, 90 = \u2220BCA + \u2220BCA, \u2220ACD = 2 * 3.14 - \u2220DCA\nConclusions: -42.68 = \u2220ACE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(Add(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(B, C, A))), 90.0)",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(47.0, 180.0)))"
+    ],
+    "correct": false
+}

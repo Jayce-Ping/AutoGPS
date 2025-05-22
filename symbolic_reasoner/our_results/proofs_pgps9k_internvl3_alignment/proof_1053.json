@@ -1,0 +1,116 @@
+{
+    "problem_id": "1053",
+    "solved": true,
+    "problem_text": "Find c.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(F, D)))",
+        "Equals(LengthOf(Line(B, A)), c^{2}+6)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(D, C)), 4c)",
+        "Equals(LengthOf(Line(E, F)), c^{2}+2)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Parallel(Line(A, B), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "Find(c)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "DC",
+        "FE",
+        "AD",
+        "AF",
+        "DF",
+        "BC",
+        "BE",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.483695652173914,
+            63.214285714285715
+        ],
+        "B": [
+            242.68115942028984,
+            63.214285714285715
+        ],
+        "C": [
+            242.88509316770185,
+            121.53061224489795
+        ],
+        "D": [
+            66.02355072463767,
+            121.78571428571429
+        ],
+        "E": [
+            242.50271739130434,
+            177.85714285714286
+        ],
+        "F": [
+            108.35,
+            179.57142857142856
+        ]
+    },
+    "problem_choices": [
+        0.258,
+        0.586,
+        2.0,
+        4.449
+    ],
+    "choices_precise_value": [
+        0.258,
+        0.586,
+        2.0,
+        4.449
+    ],
+    "problem_answer": 2.0,
+    "total_time": 24.174677,
+    "solution_predicate": "Equals(2.0, c)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BE, D on AF, BE, 2 + c ** 2 = EF, AF, BC = CE, 6 + c ** 2 = AB, 4 * c = CD, AB, AB || FE, EF, AD = DF\n\nStep 2:\nTheorem: Definition of Trapezoid\nPremises : AB, AF, AB || FE, EF, BE\nConclusions: Trapezoid(A, B, E, F)\n\nStep 3:\nTheorem: Median of Trapezoid\nPremises : Trapezoid(A, B, E, F), AD = DF, BC = CE\nConclusions: IsMedianOf(CD, Trapezoid(A, B, E, F))\n\nStep 4:\nTheorem: Median of a Trapezoid Properties\nPremises : C on BE, IsMedianOf(CD, Trapezoid(A, B, E, F)), D on AF\nConclusions: CD = (AB + EF) / 2\n\nStep 5:\nTheorem: Substitution\nPremises : 6 + c ** 2 = AB, 4 * c = CD, CD = (AB + EF) / 2, 2 + c ** 2 = EF\nConclusions: 4 * c = ((2 + c ** 2) + (6 + c ** 2)) / 2\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 4 * c = ((2 + c ** 2) + (6 + c ** 2)) / 2\nConclusions: 2 = c\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, C)",
+        "Line(F, E)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(D, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Parallel(Line(A, B), Line(F, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(F, D)))",
+        "Equals(LengthOf(Line(B, A)), Add(Pow(c, 2.0), 6.0))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(D, C)), Mul(4.0, c))",
+        "Equals(LengthOf(Line(E, F)), Add(Pow(c, 2.0), 2.0))"
+    ],
+    "correct": true
+}

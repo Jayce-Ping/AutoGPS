@@ -1,0 +1,102 @@
+{
+    "problem_id": "4463",
+    "solved": true,
+    "problem_text": "What is m \\widehat KJ?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, M)), 4)",
+        "Equals(LengthOf(Line(A, N)), 3)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Perpendicular(Line(J, K), Line(N, M))",
+        "PointLiesOnCircle(J, Circle(M))",
+        "PointLiesOnCircle(K, Circle(M))",
+        "PointLiesOnCircle(N, Circle(M))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(A, Line(N, M))",
+        "Find(MeasureOf(Arc(K,J)))"
+    ],
+    "point_instances": [
+        "J",
+        "N",
+        "A",
+        "M",
+        "K"
+    ],
+    "line_instances": [
+        "JA",
+        "JK",
+        "AK",
+        "NA",
+        "NM",
+        "AM"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "J": [
+            148.944,
+            54.617142857142866
+        ],
+        "N": [
+            60.31999999999999,
+            112.24285714285715
+        ],
+        "A": [
+            101.69333333333333,
+            136.92857142857144
+        ],
+        "M": [
+            161.8037514695302,
+            170.6951320898851
+        ],
+        "K": [
+            54.519999999999996,
+            217.54285714285717
+        ]
+    },
+    "problem_choices": [
+        110.3,
+        120.0,
+        129.246,
+        135.951
+    ],
+    "choices_precise_value": [
+        110.3,
+        120.0,
+        129.246,
+        135.951
+    ],
+    "problem_answer": 110.3,
+    "total_time": 92.728295,
+    "solution_predicate": "Equals(1.9251014958, MeasureOf(Arc(J, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AK \u22a5 AM, A on JK, \u2220MJK, \u2220AMK, 4 = AM, 3.14 = pi, N on \u2299(M, radius_M), K on \u2299(M, radius_M), \u2220NMK, JK, AJ \u22a5 AM, \u2220JKM, \u2220MJK, \u2220JMA, \u2220KMJ, A on MN, \u2220MKA, \u2220JMN, \u2220KJM, 3 = AN, \u2220AMK, Arc(JMK), \u2220JKM, Arc(KMJ), AK, JM, \u2299(M, radius_M), \u2220MKJ, AM, KM, \u2220MJA, \u2220KMJ\n\nStep 2:\nTheorem: Same Angle\nPremises : A on JK, \u2220MJK\nConclusions: \u2220MJA = \u2220MJK\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : N on \u2299(M, radius_M)\nConclusions: radius_M = MN\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : K on \u2299(M, radius_M)\nConclusions: radius_M = KM\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220JKM\nConclusions: \u2220JKM = 2 * pi - \u2220MKJ\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220MJK\nConclusions: \u2220MJK = 2 * pi - \u2220KJM\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220KMJ\nConclusions: \u2220KMJ = 2 * pi - \u2220JMK\n\nStep 9:\nTheorem: Line Segment Split\nPremises : A on MN\nConclusions: MN = AM + AN\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220NMK, A on MN\nConclusions: \u2220AMK = \u2220NMK\n\nStep 11:\nTheorem: Same Angle\nPremises : A on MN, \u2220JMN\nConclusions: \u2220JMA = \u2220JMN\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220KJM, A on JK\nConclusions: \u2220AJM = \u2220KJM\n\nStep 13:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JMK)\nConclusions: \u2220JMK = Arc(JMK)\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220JKM, A on JK\nConclusions: \u2220AKM = \u2220JKM\n\nStep 15:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KMJ)\nConclusions: \u2220KMJ = Arc(KMJ)\n\nStep 16:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(M, radius_M), A on JK, AJ \u22a5 AM\nConclusions: \u25b3AJM \u2245 \u25b3AKM\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220MKJ, A on JK\nConclusions: \u2220MKA = \u2220MKJ\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : AM, KM, AK\nConclusions: \u25b3AKM\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : JM, JK, KM\nConclusions: \u25b3JKM\n\nStep 20:\nTheorem: Reverse Angle Definition\nPremises : \u2220MJA\nConclusions: \u2220MJA = 2 * pi - \u2220AJM\n\nStep 21:\nTheorem: Circumference splited\nPremises : \u2220JMA, \u2220KMJ, \u2220AMK\nConclusions: 2 * pi = \u2220AMK + \u2220JMA + \u2220KMJ\n\nStep 22:\nTheorem: Substitution\nPremises : 4 = AM, MN = AM + AN, radius_M = MN, 3 = AN\nConclusions: 3 + 4 = radius_M\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = 2 * pi - \u2220JMK, \u2220KMJ = Arc(KMJ)\nConclusions: Arc(KMJ) = 2 * pi - \u2220JMK\n\nStep 24:\nTheorem: Congruent Definition\nPremises : \u25b3AJM \u2245 \u25b3AKM\nConclusions: \u2220AKM = \u2220MJA, \u2220AJM = \u2220MKA, \u2220AMK = \u2220JMA\n\nStep 25:\nTheorem: Cos Function Definition\nPremises : \u25b3AKM, AK \u22a5 AM, \u2220AMK\nConclusions: AM / KM = cos(\u2220AMK)\n\nStep 26:\nTheorem: Sin Function Definition\nPremises : \u25b3AKM, AK \u22a5 AM, \u2220MKA\nConclusions: AM / KM = sin(\u2220MKA)\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Triangle(M, K, J)\nPremises : \u25b3JKM\nConclusions: pi = \u2220JMK + \u2220KJM + \u2220MKJ\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MJA = \u2220MJK, \u2220MJA = 2 * pi - \u2220AJM\nConclusions: \u2220MJK = 2 * pi - \u2220AJM\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220AMK + \u2220JMA + \u2220KMJ\nConclusions: 6.28 = \u2220AMK + \u2220JMA + \u2220KMJ\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : radius_M = KM, 3 + 4 = radius_M\nConclusions: 7 = KM\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MJA = \u2220MJK, \u2220AKM = \u2220MJA, \u2220AKM = \u2220JKM\nConclusions: \u2220JKM = \u2220MJK\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKA = \u2220MKJ, \u2220AJM = \u2220KJM, \u2220AJM = \u2220MKA\nConclusions: \u2220KJM = \u2220MKJ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMK = \u2220JMA, \u2220AMK = \u2220NMK, \u2220JMA = \u2220JMN\nConclusions: \u2220JMN = \u2220NMK\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220JMK + \u2220KJM + \u2220MKJ\nConclusions: 3.14 = \u2220JMK + \u2220KJM + \u2220MKJ\n\nStep 35:\nTheorem: Substitution\nPremises : AM / KM = cos(\u2220AMK), 4 = AM, \u2220AMK = \u2220NMK, 7 = KM\nConclusions: 4 / 7 = cos(\u2220NMK)\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKM = \u2220MJK, \u2220MJK = 2 * pi - \u2220AJM\nConclusions: \u2220JKM = 2 * pi - \u2220AJM\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKM = \u2220MJK, \u2220MJK = 2 * pi - \u2220KJM\nConclusions: \u2220JKM = 2 * pi - \u2220KJM\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KJM = \u2220MKJ, \u2220MKA = \u2220MKJ\nConclusions: \u2220KJM = \u2220MKA\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JMN = \u2220NMK, \u2220JMA = \u2220JMN\nConclusions: \u2220JMA = \u2220NMK\n\nStep 40:\nTheorem: Solve Univariate Equation\nPremises : 4 / 7 = cos(\u2220NMK)\nConclusions: 0.96 = \u2220NMK\n\nStep 41:\nTheorem: Substitution\nPremises : \u2220KJM = \u2220MKA, 4 = AM, 7 = KM, AM / KM = sin(\u2220MKA)\nConclusions: 4 / 7 = sin(\u2220KJM)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMK = \u2220NMK, 0.96 = \u2220NMK\nConclusions: 0.96 = \u2220AMK\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JMA = \u2220NMK, 0.96 = \u2220NMK\nConclusions: 0.96 = \u2220JMA\n\nStep 44:\nTheorem: Solve Univariate Equation\nPremises : 4 / 7 = sin(\u2220KJM)\nConclusions: 0.61 = \u2220KJM\n\nStep 45:\nTheorem: Substitution\nPremises : 0.96 = \u2220JMA, 0.96 = \u2220AMK, 6.28 = \u2220AMK + \u2220JMA + \u2220KMJ, \u2220KMJ = Arc(KMJ)\nConclusions: 6.28 = 0.96 + 0.96 + Arc(KMJ)\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 0.61 = \u2220KJM, \u2220AJM = \u2220KJM\nConclusions: 0.61 = \u2220AJM\n\nStep 47:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JKM = 2 * pi - \u2220AJM, 0.61 = \u2220AJM\nConclusions: 2 * 3.14 - 0.61 = \u2220JKM\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 0.61 = \u2220JKM, \u2220JKM = 2 * pi - \u2220KJM\nConclusions: 2 * 3.14 - 0.61 = 2 * pi - \u2220KJM\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 0.61 = \u2220JKM, \u2220JKM = 2 * pi - \u2220MKJ\nConclusions: 2 * 3.14 - 0.61 = 2 * pi - \u2220MKJ\n\nStep 50:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220JMK + \u2220KJM + \u2220MKJ, 6.28 = 0.96 + 0.96 + Arc(KMJ), 2 * 3.14 - 0.61 = 2 * pi - \u2220MKJ, Arc(KMJ) = 2 * pi - \u2220JMK, 2 * 3.14 - 0.61 = 2 * pi - \u2220KJM\nConclusions: 1.93 = \u2220JMK\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : 1.93 = \u2220JMK, \u2220JMK = Arc(JMK)\nConclusions: 1.93 = Arc(JMK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(A, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Line(A, M)",
+        "Circle(M, radius_M)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, A)",
+        "Line(J, K)",
+        "Line(N, A)",
+        "Line(N, M)",
+        "Perpendicular(Line(J, K), Line(N, M))",
+        "PointLiesOnCircle(J, Circle(M, radius_M))",
+        "PointLiesOnCircle(K, Circle(M, radius_M))",
+        "PointLiesOnCircle(N, Circle(M, radius_M))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(A, Line(N, M))",
+        "Equals(LengthOf(Line(A, M)), 4.0)",
+        "Equals(LengthOf(Line(A, N)), 3.0)"
+    ],
+    "correct": true
+}

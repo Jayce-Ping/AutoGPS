@@ -1,0 +1,72 @@
+{
+    "problem_id": "8724",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat WN if \\triangle IWN is equilateral and WN = 5.",
+    "logic_forms": [
+        "Line(I, N)",
+        "Line(W, I)",
+        "Line(W, N)",
+        "PointLiesOnCircle(N, Circle(I))",
+        "PointLiesOnCircle(W, Circle(I))",
+        "Equilateral(Triangle(I,W,N))",
+        "Equals(LengthOf(Line(W,N)),5)",
+        "Find(LengthOf(Arc(W,N)))"
+    ],
+    "point_instances": [
+        "I",
+        "N",
+        "W"
+    ],
+    "line_instances": [
+        "IN",
+        "IW",
+        "WN"
+    ],
+    "circle_instances": [
+        "I"
+    ],
+    "point_positions": {
+        "I": [
+            143.33018867924528,
+            123.02830188679245
+        ],
+        "N": [
+            219.88811475409835,
+            123.85485714285714
+        ],
+        "W": [
+            175.98783712321523,
+            54.46672811059908
+        ]
+    },
+    "problem_choices": [
+        1.8849555921538759,
+        5.235987755982989,
+        15.707963267948966,
+        31.41592653589793
+    ],
+    "choices_precise_value": [
+        1.8849555921538759,
+        5.235987755982989,
+        15.707963267948966,
+        31.41592653589793
+    ],
+    "problem_answer": 5.235987755982989,
+    "total_time": 6.004496,
+    "solution_predicate": "Equals(5.235987756, LengthOf(Arc(N, I, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(NIW), \u2220WIN, Equilateral(\u25b3INW), 5 = NW, 3.14 = pi, N on \u2299(I, radius_I)\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(NIW)\nConclusions: Arc(NIW) = radius_I * \u2220NIW\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220WIN\nConclusions: \u2220WIN = 2 * pi - \u2220NIW\n\nStep 4:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3INW)\nConclusions: IN = NW, pi / 3 = \u2220NIW, 5 * (pi / 3) = \u2220WIN\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : N on \u2299(I, radius_I)\nConclusions: radius_I = IN\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220WIN = 2 * pi - \u2220NIW, 5 * (pi / 3) = \u2220WIN, pi / 3 = \u2220NIW, 3.14 = pi\nConclusions: 5 * (pi / 3) = 2 * 3.14 - pi / 3\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : IN = NW, 5 = NW, radius_I = IN\nConclusions: 5 = radius_I\n\nStep 8:\nTheorem: Substitution\nPremises : 5 = radius_I, Arc(NIW) = radius_I * \u2220NIW, pi / 3 = \u2220NIW\nConclusions: 5 * (pi / 3) = Arc(NIW)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 5 * (pi / 3) = Arc(NIW), 5 * (pi / 3) = 2 * 3.14 - pi / 3\nConclusions: 2 * 3.14 - pi / 3 = Arc(NIW)\n\nStep 10:\nTheorem: Evaluate\nPremises : 2 * 3.14 - pi / 3 = Arc(NIW)\nConclusions: 5.24 = Arc(NIW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(I, N)",
+        "Line(I, W)",
+        "Line(W, N)",
+        "Circle(I, radius_I)",
+        "Line(I, N)",
+        "Line(W, I)",
+        "Line(W, N)",
+        "PointLiesOnCircle(N, Circle(I, radius_I))",
+        "PointLiesOnCircle(W, Circle(I, radius_I))",
+        "Equilateral(Triangle(I, W, N))",
+        "Equals(LengthOf(Line(W, N)), 5.0)"
+    ],
+    "correct": true
+}

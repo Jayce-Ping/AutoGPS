@@ -1,0 +1,63 @@
+{
+    "problem_id": "2511",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(B, C)), 20)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            301.8301886792453,
+            328.86792452830184
+        ],
+        "B": [
+            551.3584905660377,
+            93.49056603773585
+        ],
+        "C": [
+            60.32075471698113,
+            76.0377358490566
+        ]
+    },
+    "problem_choices": [
+        "1.4",
+        "7.1",
+        "14.1",
+        "15.6"
+    ],
+    "choices_precise_value": [
+        1.4,
+        7.1,
+        14.1,
+        15.6
+    ],
+    "problem_answer": 14.1,
+    "total_time": 12.531079,
+    "solution_predicate": "Equals(14.1421356237, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAC, AB \u22a5 AC, 3.14 = pi, x = AB, x = AC, BC, 20 = BC, AC, AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: (3 * pi) / 2 = \u2220CAB, pi / 2 = \u2220BAC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CAB, pi / 2 = \u2220BAC, \u2220BAC = 2 * pi - \u2220CAB, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * 3.14) / 2\n\nStep 6:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220BAC)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BAC, pi / 2 = 2 * 3.14 - (3 * 3.14) / 2\nConclusions: 2 * 3.14 - (3 * 3.14) / 2 = \u2220BAC\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * 3.14) / 2 = \u2220BAC\nConclusions: 1.57 = \u2220BAC\n\nStep 9:\nTheorem: Substitution\nPremises : x = AC, 20 = BC, x = AB, 1.57 = \u2220BAC, (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220BAC)\nConclusions: (x ** 2 + x ** 2) - 20 ** 2 = 2 * cos(1.57) * x * x\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : (x ** 2 + x ** 2) - 20 ** 2 = 2 * cos(1.57) * x * x\nConclusions: 14.14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(B, C)), 20.0)"
+    ],
+    "correct": true
+}

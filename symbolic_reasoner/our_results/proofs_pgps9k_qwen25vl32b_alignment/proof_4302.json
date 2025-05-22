@@ -1,0 +1,117 @@
+{
+    "problem_id": "4302",
+    "solved": true,
+    "problem_text": "GD and FH are diameters of circle C. Solve for m \\widehat DH.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(F, C, E)), 35)",
+        "Equals(MeasureOf(Angle(H, C, D)), 80)",
+        "Line(C, D)",
+        "Line(C, H)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(F, H)",
+        "Line(G, C)",
+        "Line(G, D)",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnCircle(F, Circle(C))",
+        "PointLiesOnCircle(G, Circle(C))",
+        "PointLiesOnCircle(H, Circle(C))",
+        "PointLiesOnLine(C, Line(F, H))",
+        "PointLiesOnLine(C, Line(G, D))",
+        "IsDiameterOf(Line(G,D),Circle(C))",
+        "IsDiameterOf(Line(F,H),Circle(C))",
+        "Find(MeasureOf(Arc(D,H)))"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "C",
+        "H",
+        "E",
+        "D"
+    ],
+    "line_instances": [
+        "FC",
+        "FH",
+        "CH",
+        "EC",
+        "GC",
+        "GD",
+        "CD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "G": [
+            167.94535519125682,
+            55.64
+        ],
+        "F": [
+            64.16244411326377,
+            179.25818181818184
+        ],
+        "C": [
+            189.4054825361256,
+            179.05684126683514
+        ],
+        "H": [
+            314.79344262295075,
+            178.88
+        ],
+        "E": [
+            87.06408345752608,
+            251.3018181818182
+        ],
+        "D": [
+            211.0794451450189,
+            302.88
+        ]
+    },
+    "problem_choices": [
+        65.0,
+        80.0,
+        100.0,
+        145.0
+    ],
+    "choices_precise_value": [
+        65.0,
+        80.0,
+        100.0,
+        145.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 13.653628,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Arc(D, C, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(DCH), pi * (80 / 180) = \u2220DCH\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DCH)\nConclusions: \u2220DCH = Arc(DCH)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = \u2220DCH, \u2220DCH = Arc(DCH)\nConclusions: pi * (80 / 180) = Arc(DCH)\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (80 / 180) = Arc(DCH)\nConclusions: 1.4 = Arc(DCH)\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, C)",
+        "Line(F, H)",
+        "Line(C, H)",
+        "Line(E, C)",
+        "Line(G, C)",
+        "Line(G, D)",
+        "Line(C, D)",
+        "Circle(C, radius_C)",
+        "Line(C, D)",
+        "Line(C, H)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(F, H)",
+        "Line(G, C)",
+        "Line(G, D)",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnCircle(F, Circle(C, radius_C))",
+        "PointLiesOnCircle(G, Circle(C, radius_C))",
+        "PointLiesOnCircle(H, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(F, H))",
+        "PointLiesOnLine(C, Line(G, D))",
+        "IsDiameterOf(Line(G, D), Circle(C, radius_C))",
+        "IsDiameterOf(Line(F, H), Circle(C, radius_C))",
+        "Equals(MeasureOf(Angle(F, C, E)), Mul(pi, Div(35.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, H)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

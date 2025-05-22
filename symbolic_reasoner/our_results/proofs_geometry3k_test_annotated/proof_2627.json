@@ -1,0 +1,79 @@
+{
+    "problem_id": "2627",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(R, T))",
+        "PointLiesOnCircle(T, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, R, S)), x)",
+        "Equals(MeasureOf(Angle(A, T, S)), 2x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T",
+        "A"
+    ],
+    "line_instances": [
+        "RA",
+        "RT",
+        "AT",
+        "RS",
+        "ST"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "R": [
+            96.25114155251143,
+            226.4840182648402
+        ],
+        "S": [
+            316.7990867579909,
+            83.10502283105023
+        ],
+        "T": [
+            411.31963470319636,
+            225.11415525114157
+        ],
+        "A": [
+            253.32876712328766,
+            226.4840182648402
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "40",
+        "50",
+        "60"
+    ],
+    "choices_precise_value": [
+        30.0,
+        40.0,
+        50.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 30.35207,
+    "solution_predicate": "Equals(30.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: R on \u2299(A, radius_0_0), RS, T on \u2299(A, radius_0_0), \u2220TSR, \u2220RST, 3.14 = pi, RT, S on \u2299(A, radius_0_0), A on RT, pi * ((2 * x) / 180) = \u2220STA, pi * (x / 180) = \u2220ARS, \u2220TRS, \u2220STR, ST\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220TSR\nConclusions: \u2220TSR = 2 * pi - \u2220RST\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220RST\nConclusions: \u2220RST = 2 * pi - \u2220TSR\n\nStep 4:\nTheorem: Diameter Definition\nPremises : T on \u2299(A, radius_0_0), R on \u2299(A, radius_0_0), A on RT\nConclusions: IsDiameterOf(RT, \u2299(A, radius_0_0))\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220STA, 3.14 = pi\nConclusions: 3.14 * ((2 * x) / 180) = \u2220STA\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220ARS, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220ARS\n\nStep 7:\nTheorem: Same Angle\nPremises : A on RT, \u2220TRS\nConclusions: \u2220ARS = \u2220TRS\n\nStep 8:\nTheorem: Same Angle\nPremises : A on RT, \u2220STR\nConclusions: \u2220STA = \u2220STR\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : RT, ST, RS\nConclusions: \u25b3RST\n\nStep 10:\nTheorem: Thales Theorem\nPremises : S on \u2299(A, radius_0_0), IsDiameterOf(RT, \u2299(A, radius_0_0))\nConclusions: RS \u22a5 ST\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220STA, 3.14 * ((2 * x) / 180) = \u2220STA\nConclusions: 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220ARS, 3.14 * (x / 180) = \u2220ARS\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220ARS, \u2220ARS = \u2220TRS\nConclusions: pi * (x / 180) = \u2220TRS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220STA, \u2220STA = \u2220STR\nConclusions: pi * ((2 * x) / 180) = \u2220STR\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(R, S, T)\nPremises : \u25b3RST\nConclusions: pi = \u2220RST + \u2220STR + \u2220TRS\n\nStep 16:\nTheorem: Perpendicular to Right Angle\nPremises : RS \u22a5 ST\nConclusions: pi / 2 = \u2220RST, (3 * pi) / 2 = \u2220TSR\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220TRS, 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = \u2220TRS\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180), pi * ((2 * x) / 180) = \u2220STR\nConclusions: 3.14 * ((2 * x) / 180) = \u2220STR\n\nStep 19:\nTheorem: Substitution\nPremises : pi / 2 = \u2220RST, \u2220TSR = 2 * pi - \u2220RST, 3.14 = pi, (3 * pi) / 2 = \u2220TSR\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220RST = 2 * pi - \u2220TSR, 3.14 = pi, pi / 2 = \u2220RST, (3 * pi) / 2 = \u2220TSR\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 21:\nTheorem: Substitution\nPremises : pi = \u2220RST + \u2220STR + \u2220TRS, pi / 2 = \u2220RST, 3.14 * ((2 * x) / 180) = \u2220STR, 3.14 = pi, 3.14 * (x / 180) = \u2220TRS\nConclusions: 3.14 = pi / 2 + 3.14 * (x / 180) + 3.14 * ((2 * x) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220TSR, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220TSR\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220RST, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220RST\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220TSR, \u2220TSR = 2 * pi - \u2220RST\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220RST\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220RST, 3.14 = pi / 2 + 3.14 * (x / 180) + 3.14 * ((2 * x) / 180), 2 * 3.14 - pi / 2 = 2 * pi - \u2220RST\nConclusions: 30 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, A)",
+        "Line(R, T)",
+        "Line(A, T)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(A, Line(R, T))",
+        "PointLiesOnCircle(T, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(A, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, R, S)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(S, T, A)), Mul(pi, Div(Mul(2.0, x), 180.0)))"
+    ],
+    "correct": true
+}

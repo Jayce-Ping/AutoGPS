@@ -1,0 +1,65 @@
+{
+    "problem_id": "2879",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), 20)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(B, A)), 10)",
+        "Equals(MeasureOf(Angle(A, C, B)), y)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            146.42558746736293,
+            210.443864229765
+        ],
+        "B": [
+            35.19843342036555,
+            210.70496083550913
+        ],
+        "C": [
+            34.67624020887729,
+            19.321148825065272
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "10 \\sqrt { 3 }",
+        "20"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        17.32050807568877,
+        20.0
+    ],
+    "problem_answer": 17.32050807568877,
+    "total_time": 12.610678,
+    "solution_predicate": "Equals(17.3205080757, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = BC, 10 = AB, AC, AB, AB \u22a5 BC, 20 = AC, BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: BC = SqrtOf(AC ** 2 - AB ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 20 = AC, BC = SqrtOf(AC ** 2 - AB ** 2), x = BC, 10 = AB\nConclusions: SqrtOf(20 ** 2 - 10 ** 2) = x\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(20 ** 2 - 10 ** 2) = x\nConclusions: 17.32 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), 20.0)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(B, A)), 10.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

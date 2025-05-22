@@ -1,0 +1,83 @@
+{
+    "problem_id": "6321",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 3 in the rhombus.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(C, B, A)), 27)",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(Angle(5)))",
+        "Find(MeasureOf(Angle(3)))",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Rhombus(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "BA",
+        "AC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            145.1923076923077,
+            21.119999999999997
+        ],
+        "B": [
+            17.548076923076923,
+            86.64
+        ],
+        "C": [
+            275.21367521367523,
+            87.04
+        ],
+        "D": [
+            148.0769230769231,
+            152.64
+        ]
+    },
+    "problem_choices": [
+        27.0,
+        63.0,
+        76.5,
+        126.0
+    ],
+    "choices_precise_value": [
+        27.0,
+        63.0,
+        76.5,
+        126.0
+    ],
+    "problem_answer": 27.0,
+    "total_time": 10.421302,
+    "solution_predicate": "Equals(0.471238898, MeasureOf(Angle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (27 / 180) = \u2220CBA, Rhombus(A, B, D, C)\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BCD = \u2220CBA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (27 / 180) = \u2220CBA, \u2220BCD = \u2220CBA\nConclusions: pi * (27 / 180) = \u2220BCD\n\nStep 6:\nTheorem: Evaluate\nPremises : pi * (27 / 180) = \u2220BCD\nConclusions: 0.47 = \u2220BCD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Rhombus(A, B, D, C)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(27.0, 180.0)))"
+    ],
+    "correct": true
+}

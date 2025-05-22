@@ -1,0 +1,102 @@
+{
+    "problem_id": "7040",
+    "solved": true,
+    "problem_text": "In \\odot S, m \\angle TSR = 42. Find m \\widehat KE.",
+    "logic_forms": [
+        "Line(R, K)",
+        "Line(R, S)",
+        "Line(S, E)",
+        "Line(S, K)",
+        "Line(T, E)",
+        "Line(T, S)",
+        "PointLiesOnCircle(E, Circle(S))",
+        "PointLiesOnCircle(K, Circle(S))",
+        "PointLiesOnCircle(R, Circle(S))",
+        "PointLiesOnCircle(T, Circle(S))",
+        "PointLiesOnLine(S, Line(R, K))",
+        "PointLiesOnLine(S, Line(T, E))",
+        "Circle(S)",
+        "Equals(MeasureOf(Angle(T,S,R)),42)",
+        "Find(MeasureOf(Arc(K,E)))"
+    ],
+    "point_instances": [
+        "K",
+        "E",
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "KS",
+        "KR",
+        "SR",
+        "TS",
+        "TE",
+        "SE"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "K": [
+            97.13333333333333,
+            216.52905405405406
+        ],
+        "E": [
+            151.74285714285713,
+            217.08986486486486
+        ],
+        "S": [
+            123.71428571428572,
+            132.46753246753246
+        ],
+        "R": [
+            151.575,
+            48.902702702702705
+        ],
+        "T": [
+            96.91925465838509,
+            48.454054054054055
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        84.0,
+        90.0,
+        138.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        84.0,
+        90.0,
+        138.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 5.474401,
+    "solution_predicate": "Equals(0.7330382858, MeasureOf(Arc(K, S, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: S on KR, pi * (42 / 180) = \u2220RST, S on ET, Arc(KSE)\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : S on ET, S on KR\nConclusions: \u2220KSE = \u2220RST\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KSE)\nConclusions: \u2220KSE = Arc(KSE)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KSE = \u2220RST, pi * (42 / 180) = \u2220RST, \u2220KSE = Arc(KSE)\nConclusions: pi * (42 / 180) = Arc(KSE)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi * (42 / 180) = Arc(KSE)\nConclusions: 0.73 = Arc(KSE)\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, S)",
+        "Line(K, R)",
+        "Line(S, R)",
+        "Line(T, S)",
+        "Line(T, E)",
+        "Line(S, E)",
+        "Circle(S, radius_S)",
+        "Line(R, K)",
+        "Line(R, S)",
+        "Line(S, E)",
+        "Line(S, K)",
+        "Line(T, E)",
+        "Line(T, S)",
+        "PointLiesOnCircle(E, Circle(S, radius_S))",
+        "PointLiesOnCircle(K, Circle(S, radius_S))",
+        "PointLiesOnCircle(R, Circle(S, radius_S))",
+        "PointLiesOnCircle(T, Circle(S, radius_S))",
+        "PointLiesOnLine(S, Line(R, K))",
+        "PointLiesOnLine(S, Line(T, E))",
+        "Circle(S, radius_S)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

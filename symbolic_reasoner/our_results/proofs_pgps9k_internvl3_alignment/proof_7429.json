@@ -1,0 +1,109 @@
+{
+    "problem_id": "7429",
+    "solved": true,
+    "problem_text": "Quadrilateral JKLM is a rectangle. If m \\angle KJL = 2x+4 and m \\angle JLK = 7x+5, find m \\angle KML.",
+    "logic_forms": [
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, K)",
+        "Line(P, L)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "Rectangle(J,K,L,M)",
+        "Equals(MeasureOf(Angle(K,J,L)),2x+4)",
+        "Equals(MeasureOf(Angle(J,L,K)),7x+5)",
+        "Find(MeasureOf(Angle(K,M,L)))"
+    ],
+    "point_instances": [
+        "M",
+        "J",
+        "P",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "MP",
+        "MK",
+        "PK",
+        "JP",
+        "JL",
+        "PL",
+        "ML",
+        "LK",
+        "MJ",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            65.44538461538463,
+            245.26654740608228
+        ],
+        "J": [
+            65.44538461538463,
+            56.035778175313055
+        ],
+        "P": [
+            284.54833333333335,
+            150.65116279069767
+        ],
+        "L": [
+            503.1721212121212,
+            245.82663847780128
+        ],
+        "K": [
+            503.1144444444444,
+            55.81085271317829
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        44.0,
+        68.0,
+        136.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        44.0,
+        68.0,
+        136.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 194.942671,
+    "solution_predicate": "Equals(0.3839724354, MeasureOf(Angle(L, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: KM, 3.14 = pi, \u2220MLK, LM, Rectangle(J, K, L, M), \u2220LMK, pi * ((5 + 7 * x) / 180) = \u2220KLJ, \u2220KMJ, KL, P on KM, \u2220MKL, pi * ((4 + 2 * x) / 180) = \u2220LJK, \u2220JML\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220MLK\nConclusions: \u2220MLK = 2 * pi - \u2220KLM\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, L, M)\nConclusions: JM \u22a5 LM, KL \u22a5 LM, JK \u22a5 JM\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : KL, KM, LM\nConclusions: \u25b3KLM\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220LMK, P on KM\nConclusions: \u2220LMK = \u2220LMP\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220MKL, P on KM\nConclusions: \u2220MKL = \u2220PKL\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220LMK, \u2220JML, \u2220KMJ\nConclusions: 2 * pi = \u2220JML + \u2220KMJ + \u2220LMK\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : JM \u22a5 LM\nConclusions: (3 * pi) / 2 = \u2220JML, pi / 2 = \u2220LMJ\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 LM\nConclusions: pi / 2 = \u2220KLM\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 JM\nConclusions: (3 * pi) / 2 = \u2220KJM, pi / 2 = \u2220MJK\n\nStep 13:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML, JM || KL\n\nStep 14:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220KJM = \u2220MLK\n\nStep 15:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK = LM\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(K, L, M)\nPremises : \u25b3KLM\nConclusions: pi = \u2220KLM + \u2220LMK + \u2220MKL\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220JML + \u2220KMJ + \u2220LMK\nConclusions: 6.28 = \u2220JML + \u2220KMJ + \u2220LMK\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MJK, pi / 2 = \u2220LMJ\nConclusions: \u2220LMJ = \u2220MJK\n\nStep 19:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JKM = \u2220LMK, \u2220JLM = \u2220LJK\n\nStep 20:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KLJ = \u2220MJL, \u2220KMJ = \u2220MKL\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220KJM, \u2220KJM = \u2220MLK, (3 * pi) / 2 = \u2220JML\nConclusions: \u2220JML = \u2220MLK\n\nStep 22:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : JK = LM, \u2220LMJ = \u2220MJK\nConclusions: \u25b3JKM \u2245 \u25b3MLJ\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMK = \u2220LMP, \u2220JKM = \u2220LMK\nConclusions: \u2220JKM = \u2220LMP\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JLM = \u2220LJK, pi * ((4 + 2 * x) / 180) = \u2220LJK\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220JLM\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KLJ = \u2220MJL, pi * ((5 + 7 * x) / 180) = \u2220KLJ\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220MJL\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKL = \u2220PKL, \u2220KMJ = \u2220MKL\nConclusions: \u2220KMJ = \u2220PKL\n\nStep 27:\nTheorem: Congruent Definition\nPremises : \u25b3JKM \u2245 \u25b3MLJ\nConclusions: JK = LM, \u2220KMJ = \u2220MJL, \u2220JKM = \u2220JLM\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = \u2220PKL, pi * ((5 + 7 * x) / 180) = \u2220MJL, \u2220KMJ = \u2220MJL\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220PKL\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + 2 * x) / 180) = \u2220JLM, \u2220JKM = \u2220LMP, \u2220JKM = \u2220JLM\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220LMP\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 7 * x) / 180) = \u2220PKL, \u2220KMJ = \u2220PKL\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220KMJ\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKL = \u2220PKL, pi * ((5 + 7 * x) / 180) = \u2220PKL\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220MKL\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMK = \u2220LMP, pi * ((4 + 2 * x) / 180) = \u2220LMP\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220LMK\n\nStep 33:\nTheorem: Substitution\nPremises : pi * ((5 + 7 * x) / 180) = \u2220KMJ, 3.14 = pi\nConclusions: 3.14 * ((5 + 7 * x) / 180) = \u2220KMJ\n\nStep 34:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 7 * x) / 180) = \u2220MKL\nConclusions: 3.14 * ((5 + 7 * x) / 180) = \u2220MKL\n\nStep 35:\nTheorem: Substitution\nPremises : pi * ((4 + 2 * x) / 180) = \u2220LMK, 3.14 = pi\nConclusions: 3.14 * ((4 + 2 * x) / 180) = \u2220LMK\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((5 + 7 * x) / 180) = \u2220MKL, 6.28 = \u2220JML + \u2220KMJ + \u2220LMK, \u2220JML = \u2220MLK, \u2220MLK = 2 * pi - \u2220KLM, 3.14 * ((5 + 7 * x) / 180) = \u2220KMJ, pi / 2 = \u2220KLM, 3.14 * ((4 + 2 * x) / 180) = \u2220LMK, pi = \u2220KLM + \u2220LMK + \u2220MKL\nConclusions: 0.38 = \u2220LMK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, K)",
+        "Line(P, K)",
+        "Line(J, P)",
+        "Line(J, L)",
+        "Line(P, L)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, K)",
+        "Line(P, L)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "Rectangle(J, K, L, M)",
+        "Equals(MeasureOf(Angle(L, J, K)), Mul(pi, Div(Add(Mul(2.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(Add(Mul(7.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

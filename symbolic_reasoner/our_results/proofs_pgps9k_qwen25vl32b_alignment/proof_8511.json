@@ -1,0 +1,68 @@
+{
+    "problem_id": "8511",
+    "solved": true,
+    "problem_text": "Solve for the diameter of \\odot S.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(S, T)), 15)",
+        "Equals(MeasureOf(Angle(R, S, T)), 93)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(S))",
+        "PointLiesOnCircle(T, Circle(S))",
+        "Find(DiameterOf(Circle(S)))"
+    ],
+    "point_instances": [
+        "R",
+        "T",
+        "S"
+    ],
+    "line_instances": [
+        "RS",
+        "ST"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "R": [
+            69.05281385281386,
+            196.01551020408164
+        ],
+        "T": [
+            201.7891774891775,
+            161.12163265306123
+        ],
+        "S": [
+            118.34210526315789,
+            115.65789473684211
+        ]
+    },
+    "problem_choices": [
+        7.5,
+        30.0,
+        47.124,
+        133.5
+    ],
+    "choices_precise_value": [
+        7.5,
+        30.0,
+        47.124,
+        133.5
+    ],
+    "problem_answer": 30.0,
+    "total_time": 3.201927,
+    "solution_predicate": "Equals(30.0, Mul(2.0, radius_S))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = ST, T on \u2299(S, radius_S)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : T on \u2299(S, radius_S)\nConclusions: radius_S = ST\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 15 = ST, radius_S = ST\nConclusions: 15 = radius_S\n\nStep 4:\nTheorem: Evaluate\nPremises : 15 = radius_S\nConclusions: 30 = 2 * radius_S\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(S, T)",
+        "Circle(S, radius_S)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(S, radius_S))",
+        "PointLiesOnCircle(T, Circle(S, radius_S))",
+        "Equals(LengthOf(Line(S, T)), 15.0)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(93.0, 180.0)))"
+    ],
+    "correct": true
+}

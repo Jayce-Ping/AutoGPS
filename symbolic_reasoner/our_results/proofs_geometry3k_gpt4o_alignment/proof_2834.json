@@ -1,0 +1,82 @@
+{
+    "problem_id": "2834",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(C, A)), 14)",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(D, C)), 5)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DA",
+        "CD",
+        "CB",
+        "CA",
+        "BA",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            365.1139240506329,
+            220.25316455696202
+        ],
+        "B": [
+            293.27848101265823,
+            181.32911392405063
+        ],
+        "C": [
+            46.75949367088607,
+            50.0
+        ],
+        "D": [
+            364.79746835443035,
+            49.68354430379747
+        ]
+    },
+    "problem_choices": [
+        "\\sqrt { 19 }",
+        "5",
+        "3 \\sqrt { 19 }",
+        "14"
+    ],
+    "choices_precise_value": [
+        4.358898943540674,
+        5.0,
+        13.076696830622023,
+        14.0
+    ],
+    "problem_answer": 13.076696830622023,
+    "total_time": 40.074667,
+    "solution_predicate": "Equals(13.0766968306, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, AC, 14 = AC, 5 = CD, CD, AD \u22a5 CD, z = AD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AD \u22a5 CD\nConclusions: AD = SqrtOf(AC ** 2 - CD ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : AD = SqrtOf(AC ** 2 - CD ** 2), z = AD, 14 = AC, 5 = CD\nConclusions: SqrtOf(14 ** 2 - 5 ** 2) = z\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(14 ** 2 - 5 ** 2) = z\nConclusions: 13.08 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(D, B)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(B, D)), x)",
+        "Equals(LengthOf(Line(C, A)), 14.0)",
+        "Equals(LengthOf(Line(A, D)), z)",
+        "Equals(LengthOf(Line(D, C)), 5.0)"
+    ],
+    "correct": true
+}

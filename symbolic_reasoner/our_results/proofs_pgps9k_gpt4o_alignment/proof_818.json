@@ -1,0 +1,113 @@
+{
+    "problem_id": "818",
+    "solved": true,
+    "problem_text": "Solve for y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, E)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(D, E)))",
+        "Equals(MeasureOf(Angle(A, D, C)), x)",
+        "Equals(MeasureOf(Angle(C, B, E)), y)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, D), Line(D, E))",
+        "Perpendicular(Line(D, E), Line(B, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DA",
+        "AC",
+        "AE",
+        "CE",
+        "ED",
+        "DC",
+        "DB",
+        "CB",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            36.583730158730155,
+            29.830612244897956
+        ],
+        "B": [
+            277.5091503267974,
+            30.002352941176472
+        ],
+        "C": [
+            156.84166666666667,
+            150.54938775510203
+        ],
+        "D": [
+            37.72301587301587,
+            271.01428571428573
+        ],
+        "E": [
+            276.70296296296294,
+            270.9550476190476
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        45.0,
+        67.5,
+        90.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        67.5,
+        90.0
+    ],
+    "problem_answer": 45.0,
+    "total_time": 121.705026,
+    "solution_predicate": "Equals(45.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BDA, BE, pi * (x / 180) = \u2220CDA, DE, BE = DE, \u2220EDB, 3.14 = pi, BD, C on BD, \u2220EDC, BE \u22a5 DE, \u2220CDA, \u2220ADE, \u2220DBE, AD \u22a5 DE, pi * (y / 180) = \u2220CBE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BD, DE, BE\nConclusions: \u25b3BDE\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BDA, C on BD\nConclusions: \u2220BDA = \u2220CDA\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220EDB, C on BD\nConclusions: \u2220EDB = \u2220EDC\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220CDA, \u2220ADE, \u2220EDC\nConclusions: 2 * pi = \u2220ADE + \u2220CDA + \u2220EDC\n\nStep 6:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBE\nConclusions: \u2220CBE = \u2220DBE\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 DE\nConclusions: (3 * pi) / 2 = \u2220ADE\n\nStep 8:\nTheorem: Perpendicular to Parallel\nPremises : AD \u22a5 DE, BE \u22a5 DE\nConclusions: AD || BE\n\nStep 9:\nTheorem: Issoceles Triangle Property\nPremises : BE = DE, \u25b3BDE\nConclusions: \u2220DBE = \u2220EDB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220CDA, \u2220BDA = \u2220CDA\nConclusions: pi * (x / 180) = \u2220BDA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220DBE, pi * (y / 180) = \u2220CBE\nConclusions: pi * (y / 180) = \u2220DBE\n\nStep 12:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADE + \u2220CDA + \u2220EDC, 3.14 = pi, (3 * pi) / 2 = \u2220ADE\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CDA + \u2220EDC\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BE\nConclusions: \u2220BDA = \u2220DBE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220BDA, \u2220BDA = \u2220DBE, pi * (y / 180) = \u2220DBE\nConclusions: pi * (x / 180) = pi * (y / 180)\n\nStep 15:\nTheorem: Substitution\nPremises : pi * (x / 180) = pi * (y / 180), 3.14 = pi\nConclusions: 3.14 * (x / 180) = 3.14 * (y / 180)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = pi * (y / 180), pi * (y / 180) = \u2220CBE\nConclusions: pi * (x / 180) = \u2220CBE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = pi * (y / 180), pi * (y / 180) = \u2220DBE\nConclusions: pi * (x / 180) = \u2220DBE\n\nStep 18:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CBE, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CBE\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220CBE, 3.14 * (x / 180) = 3.14 * (y / 180), pi * (x / 180) = \u2220CBE\nConclusions: 3.14 * (y / 180) = pi * (x / 180)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220CDA, 3.14 * (y / 180) = pi * (x / 180)\nConclusions: 3.14 * (y / 180) = \u2220CDA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220DBE, 3.14 * (y / 180) = pi * (x / 180)\nConclusions: 3.14 * (y / 180) = \u2220DBE\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220DBE, \u2220DBE = \u2220EDB, \u2220EDB = \u2220EDC\nConclusions: 3.14 * (y / 180) = \u2220EDC\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220CDA + \u2220EDC, 3.14 * (y / 180) = \u2220EDC, 3.14 * (y / 180) = \u2220CDA\nConclusions: 45 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Perpendicular(Line(A, D), Line(D, E))",
+        "Perpendicular(Line(D, E), Line(B, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, E)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(D, E)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

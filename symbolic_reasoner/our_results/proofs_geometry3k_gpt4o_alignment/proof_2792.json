@@ -1,0 +1,122 @@
+{
+    "problem_id": "2792",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 3 if m \\angle 4 = m \\angle 5.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(F, Line(A, G))",
+        "PointLiesOnLine(F, Line(C, G))",
+        "Equals(MeasureOf(Angle(D, C, A)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(F, E, C)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(C, F, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(D, A, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(G, F, E)), 136)",
+        "Equals(MeasureOf(Angle(C, D, A)), 63)",
+        "Equals(MeasureOf(Angle(D, C, E)), 69)",
+        "Equals(MeasureOf(Angle(F, C, E)), 47)",
+        "Equals(MeasureOf(Angle(4)),MeasureOf(Angle(5)))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "DA",
+        "AB",
+        "AC",
+        "AF",
+        "AG",
+        "CF",
+        "CG",
+        "FG",
+        "EF",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.980769230769226,
+            162.94230769230768
+        ],
+        "B": [
+            261.0576923076923,
+            291.78846153846155
+        ],
+        "C": [
+            196.15384615384616,
+            161.5
+        ],
+        "D": [
+            131.73076923076923,
+            32.653846153846146
+        ],
+        "E": [
+            327.88461538461536,
+            24.961538461538453
+        ],
+        "F": [
+            473.07692307692304,
+            162.94230769230768
+        ],
+        "G": [
+            603.8461538461538,
+            161.98076923076923
+        ]
+    },
+    "problem_choices": [
+        "116",
+        "126",
+        "136",
+        "146"
+    ],
+    "choices_precise_value": [
+        116.0,
+        126.0,
+        136.0,
+        146.0
+    ],
+    "problem_answer": 116.0,
+    "total_time": 67.524156,
+    "solution_predicate": "Equals(2.0245819323, MeasureOf(Angle(A, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, pi * (69 / 180) = \u2220ECD, C on AF, 3.14 = pi, \u2220FCE, \u2220ECB, \u2220ECD, pi * (47 / 180) = \u2220FCE, \u2220BCE, \u2220DCA, \u2220ACB, C on AG, \u2220BCE, \u2220BCF, \u2220ECA\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AF\nConclusions: \u2220BCF = \u2220DCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCE\nConclusions: \u2220BCE = 2 * pi - \u2220ECB\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220DCA\nConclusions: pi = \u2220ACB + \u2220DCA\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AG\nConclusions: \u2220ACB = \u2220GCD\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220ECD, \u2220BCE\nConclusions: pi = \u2220BCE + \u2220ECD\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220ECB, \u2220BCF, \u2220FCE\nConclusions: 2 * pi = \u2220BCF + \u2220ECB + \u2220FCE\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220BCF\nConclusions: pi = \u2220ACB + \u2220BCF\n\nStep 9:\nTheorem: Circumference Split\nPremises : \u2220ACB, \u2220BCF, \u2220ECD, \u2220FCE, \u2220DCA\nConclusions: 2 * pi = \u2220ACB + \u2220BCF + \u2220DCA + \u2220ECD + \u2220FCE\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220ECA, \u2220ACB, \u2220BCE\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220ECA\n\nStep 11:\nTheorem: Straight Angle\nPremises : \u2220ECA, \u2220FCE\nConclusions: pi = \u2220ECA + \u2220FCE\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BCE = 2 * pi - \u2220ECB\nConclusions: \u2220BCE = 2 * 3.14 - \u2220ECB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220DCA\nConclusions: 3.14 = \u2220ACB + \u2220DCA\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (69 / 180) = \u2220ECD, pi = \u2220BCE + \u2220ECD\nConclusions: 3.14 = 3.14 * (69 / 180) + \u2220BCE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BCF\nConclusions: 3.14 = \u2220ACB + \u2220BCF\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220BCF = \u2220DCA, 2 * pi = \u2220ACB + \u2220BCF + \u2220DCA + \u2220ECD + \u2220FCE, \u2220ACB = \u2220GCD, 3.14 = pi, pi * (69 / 180) = \u2220ECD, pi * (47 / 180) = \u2220FCE\nConclusions: 2 * 3.14 = pi * (47 / 180) + pi * (69 / 180) + \u2220DCA + \u2220DCA + \u2220GCD\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACB + \u2220BCE + \u2220ECA, \u2220ACB = \u2220GCD\nConclusions: 2 * 3.14 = \u2220BCE + \u2220ECA + \u2220GCD\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (47 / 180) = \u2220FCE, pi = \u2220ECA + \u2220FCE\nConclusions: 3.14 = 3.14 * (47 / 180) + \u2220ECA\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : \u2220BCE = 2 * 3.14 - \u2220ECB, 2 * 3.14 = pi * (47 / 180) + pi * (69 / 180) + \u2220DCA + \u2220DCA + \u2220GCD, 2 * 3.14 = \u2220BCE + \u2220ECA + \u2220GCD, 3.14 = \u2220ACB + \u2220BCF, 3.14 = 3.14 * (69 / 180) + \u2220BCE, 2 * pi = \u2220BCF + \u2220ECB + \u2220FCE, 3.14 = \u2220ACB + \u2220DCA, pi * (47 / 180) = \u2220FCE, 3.14 = 3.14 * (47 / 180) + \u2220ECA\nConclusions: 2.02 = \u2220ACB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(C, F)",
+        "Line(C, G)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, C)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(F, Line(A, G))",
+        "PointLiesOnLine(F, Line(C, G))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(136.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(63.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(69.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, C, E)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(Angle(B, A, C)))"
+    ],
+    "correct": true
+}

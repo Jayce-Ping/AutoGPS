@@ -1,0 +1,78 @@
+{
+    "problem_id": "5422",
+    "solved": true,
+    "problem_text": "Find the value of x for given rectangle.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(D, C, A)), 5x-3)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))",
+        "Parallel(Line(A, C), Line(B, D))",
+        "Rectangle(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "AB",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            38.18269230769231,
+            34.670204081632654
+        ],
+        "B": [
+            299.4326923076923,
+            34.670204081632654
+        ],
+        "C": [
+            38.18269230769231,
+            165.4714285714286
+        ],
+        "D": [
+            299.4326923076923,
+            165.4714285714286
+        ]
+    },
+    "problem_choices": [
+        6.6,
+        18.6,
+        24.6,
+        90.0
+    ],
+    "choices_precise_value": [
+        6.6,
+        18.6,
+        24.6,
+        90.0
+    ],
+    "problem_answer": 18.6,
+    "total_time": 12.529344,
+    "solution_predicate": "Equals(18.6, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 * x - 3) / 180) = \u2220DCA, 3.14 = pi, Rectangle(A, B, D, C)\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, D, C)\nConclusions: AC \u22a5 CD\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: pi / 2 = \u2220DCA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((5 * x - 3) / 180) = \u2220DCA, 3.14 = pi, pi / 2 = \u2220DCA\nConclusions: 3.14 / 2 = 3.14 * ((5 * x - 3) / 180)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 / 2 = 3.14 * ((5 * x - 3) / 180)\nConclusions: 18.6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))",
+        "Parallel(Line(A, C), Line(B, D))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Sub(Mul(5.0, x), 3.0), 180.0)))"
+    ],
+    "correct": true
+}

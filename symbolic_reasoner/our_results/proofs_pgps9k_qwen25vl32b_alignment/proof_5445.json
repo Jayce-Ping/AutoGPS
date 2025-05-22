@@ -1,0 +1,113 @@
+{
+    "problem_id": "5445",
+    "solved": true,
+    "problem_text": "Find m \\angle AGE.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, G, A)), 60)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(G, B)",
+        "Line(G, D)",
+        "Line(G, E)",
+        "Perpendicular(Line(G, D), Line(A, B))",
+        "PointLiesOnCircle(A, Circle(G))",
+        "PointLiesOnCircle(B, Circle(G))",
+        "PointLiesOnCircle(C, Circle(G))",
+        "PointLiesOnCircle(D, Circle(G))",
+        "PointLiesOnCircle(E, Circle(G))",
+        "PointLiesOnLine(G, Line(A, B))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "Find(MeasureOf(Angle(A,G,E)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "G",
+        "D",
+        "E",
+        "B"
+    ],
+    "line_instances": [
+        "DG",
+        "AG",
+        "AB",
+        "GB",
+        "EG",
+        "EC",
+        "GC"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "A": [
+            47.259076923076925,
+            107.3462857142857
+        ],
+        "C": [
+            89.6897435897436,
+            35.06285714285714
+        ],
+        "G": [
+            130.28078817733987,
+            107.63546798029556
+        ],
+        "D": [
+            131.19347319347318,
+            191.74233766233766
+        ],
+        "E": [
+            173.80069930069934,
+            180.70857142857142
+        ],
+        "B": [
+            215.40149572649577,
+            107.88571428571429
+        ]
+    },
+    "problem_choices": [
+        60.0,
+        120.0,
+        210.0,
+        330.0
+    ],
+    "choices_precise_value": [
+        60.0,
+        120.0,
+        210.0,
+        330.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 21.466318,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(A, G, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EGB, G on AB, G on CE, \u2220CGA, pi * (60 / 180) = \u2220CGA, 3.14 = pi, \u2220AGE, \u2220CGA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EGB\nConclusions: \u2220EGB = 2 * pi - \u2220BGE\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : G on CE, G on AB\nConclusions: \u2220CGA = \u2220EGB, \u2220AGC = \u2220BGE\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220AGE, \u2220CGA\nConclusions: pi = \u2220AGE + \u2220CGA\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220CGA\nConclusions: \u2220CGA = 2 * pi - \u2220AGC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CGA = \u2220EGB, pi * (60 / 180) = \u2220CGA\nConclusions: pi * (60 / 180) = \u2220EGB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AGE + \u2220CGA\nConclusions: 3.14 = \u2220AGE + \u2220CGA\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220AGC = \u2220BGE, 3.14 = pi, \u2220CGA = 2 * pi - \u2220AGC, pi * (60 / 180) = \u2220CGA\nConclusions: 3.14 * (60 / 180) = 2 * 3.14 - \u2220BGE\n\nStep 9:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220EGB, 3.14 = pi, \u2220EGB = 2 * pi - \u2220BGE\nConclusions: pi * (60 / 180) = 2 * 3.14 - \u2220BGE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = 2 * 3.14 - \u2220BGE, pi * (60 / 180) = 2 * 3.14 - \u2220BGE\nConclusions: 3.14 * (60 / 180) = pi * (60 / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (60 / 180) = pi * (60 / 180), pi * (60 / 180) = \u2220CGA\nConclusions: 3.14 * (60 / 180) = \u2220CGA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (60 / 180) = \u2220CGA, 3.14 = \u2220AGE + \u2220CGA\nConclusions: 2.09 = \u2220AGE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, G)",
+        "Line(A, G)",
+        "Line(A, B)",
+        "Line(G, B)",
+        "Line(E, G)",
+        "Line(E, C)",
+        "Line(G, C)",
+        "Circle(G, radius_G)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(G, B)",
+        "Line(G, D)",
+        "Line(G, E)",
+        "Perpendicular(Line(G, D), Line(A, B))",
+        "PointLiesOnCircle(A, Circle(G, radius_G))",
+        "PointLiesOnCircle(B, Circle(G, radius_G))",
+        "PointLiesOnCircle(C, Circle(G, radius_G))",
+        "PointLiesOnCircle(D, Circle(G, radius_G))",
+        "PointLiesOnCircle(E, Circle(G, radius_G))",
+        "PointLiesOnLine(G, Line(A, B))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "Equals(MeasureOf(Angle(C, G, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,65 @@
+{
+    "problem_id": "2934",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 14\\sqrt{3})",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), 30)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            11.20375335120643,
+            236.46112600536193
+        ],
+        "B": [
+            174.7426273458445,
+            105.36193029490617
+        ],
+        "C": [
+            103.4289544235925,
+            11.26005361930295
+        ]
+    },
+    "problem_choices": [
+        "14",
+        "14 \\sqrt { 3 }",
+        "28",
+        "14 \\sqrt { 6 }"
+    ],
+    "choices_precise_value": [
+        14.0,
+        24.24871130596428,
+        28.0,
+        34.29285639896449
+    ],
+    "problem_answer": 28.0,
+    "total_time": 12.972903,
+    "solution_predicate": "Equals(28.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, BC, y = AC, pi * (30 / 180) = \u2220BAC, 14 * SqrtOf(3) = AB, AB, 3.14 = pi, AB \u22a5 BC, \u2220CBA\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : 14 * SqrtOf(3) = AB\nConclusions: 24.25 = AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 7:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 8:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, 3.14 = pi, \u2220CBA = 2 * pi - \u2220ABC, (3 * pi) / 2 = \u2220ABC\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 9:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (30 / 180) = \u2220BAC, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220ACB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220ACB\nConclusions: 1.05 = \u2220ACB\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = \u2220CBA, 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\nConclusions: 1.57 = \u2220CBA\n\nStep 13:\nTheorem: Substitution\nPremises : y = AC, 1.05 = \u2220ACB, 24.25 = AB, AB / sin(\u2220ACB) = AC / sin(\u2220CBA), 1.57 = \u2220CBA\nConclusions: 24.25 / sin(1.05) = y / sin(1.57)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : y = AC, 24.25 / sin(1.05) = y / sin(1.57)\nConclusions: 28 = AC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 28 = AC, y = AC\nConclusions: 28 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), Mul(14.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

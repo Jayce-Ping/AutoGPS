@@ -1,0 +1,71 @@
+{
+    "problem_id": "2502",
+    "solved": true,
+    "problem_text": "Find m \\angle 4.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(D, C, B)), 123)",
+        "Find(MeasureOf(Angle(4)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "DA",
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            253.57142857142856,
+            319.69642857142856
+        ],
+        "B": [
+            532.5892857142857,
+            137.55357142857142
+        ],
+        "C": [
+            134.82142857142856,
+            136.2142857142857
+        ],
+        "D": [
+            60.71428571428571,
+            23.714285714285708
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "43",
+        "57",
+        "123"
+    ],
+    "choices_precise_value": [
+        33.0,
+        43.0,
+        57.0,
+        123.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 6.472067,
+    "solution_predicate": "Equals(0.5759586532, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAB, \u2220ACB, \u2220BCD, AB \u22a5 AC, BC, AC, 3.14 = pi, AB, pi * (123 / 180) = \u2220BCD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220BCD\nConclusions: pi = \u2220ACB + \u2220BCD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: (3 * pi) / 2 = \u2220CAB, pi / 2 = \u2220BAC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BCD, 3.14 = pi, pi * (123 / 180) = \u2220BCD\nConclusions: 3.14 = pi * (123 / 180) + \u2220ACB\n\nStep 7:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CAB, pi / 2 = \u2220BAC, 3.14 = pi, \u2220CAB = 2 * pi - \u2220BAC\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CAB, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220CAB\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, pi / 2 = \u2220BAC\nConclusions: 3.14 = 3.14 / 2 + \u2220ACB + \u2220CBA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi\nConclusions: 3.14 = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220CAB, \u2220CAB = 2 * pi - \u2220BAC\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BAC\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + \u2220ACB + \u2220CBA, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BAC, 3.14 = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi * (123 / 180) + \u2220ACB\nConclusions: 0.58 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(123.0, 180.0)))"
+    ],
+    "correct": true
+}

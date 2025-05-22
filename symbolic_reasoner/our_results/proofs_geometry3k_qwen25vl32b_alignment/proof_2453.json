@@ -1,0 +1,95 @@
+{
+    "problem_id": "2453",
+    "solved": true,
+    "problem_text": "The diagonals of rhombus F G H J intersect at K. If G H = x + 9 and J H = 5 x - 2, find x.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(F, H))",
+        "PointLiesOnLine(K, Line(G, J))",
+        "Rhombus(F,G,H,J)",
+        "IsDiagonalOf(Line(F,H),Rhombus(F,G,H,J))",
+        "IsDiagonalOf(Line(G,J),Rhombus(F,G,H,J))",
+        "IntersectAt(Line(F,H),Line(G,J),Point(K))",
+        "Equals(LengthOf(Line(G,H)),x+9)",
+        "Equals(LengthOf(Line(J,H)),5x-2)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "K",
+        "G",
+        "J",
+        "H",
+        "F"
+    ],
+    "line_instances": [
+        "JH",
+        "FK",
+        "FH",
+        "KH",
+        "FG",
+        "GK",
+        "GJ",
+        "KJ",
+        "FJ",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            159.17105263157893,
+            144.73684210526315
+        ],
+        "G": [
+            191.07894736842104,
+            49.01315789473684
+        ],
+        "J": [
+            126.93421052631578,
+            239.4736842105263
+        ],
+        "H": [
+            225.61842105263156,
+            172.03947368421052
+        ],
+        "F": [
+            93.38157894736841,
+            116.77631578947368
+        ]
+    },
+    "problem_choices": [
+        "2.75",
+        "3",
+        "5.5",
+        "9"
+    ],
+    "choices_precise_value": [
+        2.75,
+        3.0,
+        5.5,
+        9.0
+    ],
+    "problem_answer": 2.75,
+    "total_time": 87.881099,
+    "solution_predicate": "Equals(2.75, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(F, G, H, J), 9 + x = GH, 5 * x - 2 = HJ\n\nStep 2:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(F, G, H, J)\nConclusions: GH = HJ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x - 2 = HJ, GH = HJ\nConclusions: 5 * x - 2 = GH\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x - 2 = GH, 9 + x = GH\nConclusions: 9 + x = 5 * x - 2\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 9 + x = 5 * x - 2\nConclusions: 2.75 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(F, K)",
+        "Line(F, H)",
+        "Line(K, H)",
+        "Line(F, G)",
+        "Line(G, K)",
+        "Line(G, J)",
+        "Line(K, J)",
+        "Line(F, J)",
+        "Line(G, H)",
+        "PointLiesOnLine(K, Line(F, H))",
+        "PointLiesOnLine(K, Line(G, J))",
+        "Rhombus(F, G, H, J)",
+        "Rhombus(F, G, H, J)",
+        "Rhombus(F, G, H, J)",
+        "IntersectAt(Line(F, H), Line(G, J), K)",
+        "Equals(LengthOf(Line(G, H)), Add(x, 9.0))",
+        "Equals(LengthOf(Line(J, H)), Sub(Mul(5.0, x), 2.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,64 @@
+{
+    "problem_id": "3001",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat J K. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(C, K)), 2)",
+        "Equals(MeasureOf(Angle(K, C, J)), 30)",
+        "Find(LengthOf(Arc(J,K)))"
+    ],
+    "point_instances": [
+        "K",
+        "C",
+        "J"
+    ],
+    "line_instances": [
+        "KC",
+        "JC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "K": [
+            101.42016806722691,
+            128.99159663865547
+        ],
+        "C": [
+            233.7731092436975,
+            205.46218487394958
+        ],
+        "J": [
+            80.83193277310926,
+            204.2016806722689
+        ]
+    },
+    "problem_choices": [
+        "0.52",
+        "0.79",
+        "1.05",
+        "1.57"
+    ],
+    "choices_precise_value": [
+        0.52,
+        0.79,
+        1.05,
+        1.57
+    ],
+    "problem_answer": 1.05,
+    "total_time": 2.828141,
+    "solution_predicate": "Equals(1.0471975512, LengthOf(Arc(K, C, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = CK, K on \u2299(C, radius_0_0), pi * (30 / 180) = \u2220KCJ, Arc(KCJ)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : K on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CK\n\nStep 3:\nTheorem: Arc Length Definition\nPremises : Arc(KCJ)\nConclusions: Arc(KCJ) = radius_0_0 * \u2220KCJ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CK, 2 = CK\nConclusions: 2 = radius_0_0\n\nStep 5:\nTheorem: Substitution\nPremises : Arc(KCJ) = radius_0_0 * \u2220KCJ, pi * (30 / 180) = \u2220KCJ, 2 = radius_0_0\nConclusions: 2 * pi * (30 / 180) = Arc(KCJ)\n\nStep 6:\nTheorem: Evaluate\nPremises : 2 * pi * (30 / 180) = Arc(KCJ)\nConclusions: 1.05 = Arc(KCJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, C)",
+        "Line(J, C)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(C, K)), 2.0)",
+        "Equals(MeasureOf(Angle(K, C, J)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

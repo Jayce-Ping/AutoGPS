@@ -1,0 +1,111 @@
+{
+    "problem_id": "942",
+    "solved": true,
+    "problem_text": "Use rhombus ABCD with AY = 6, DY = 3r+3, and BY = \\frac{10r-4}{2}. Find m \\angle CAB.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, Y)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, Y)",
+        "Line(Y, B)",
+        "Line(Y, C)",
+        "PointLiesOnLine(Y, Line(A, C))",
+        "PointLiesOnLine(Y, Line(D, B))",
+        "Rhombus(A,B,C,D)",
+        "Equals(LengthOf(Line(A,Y)),6)",
+        "Equals(LengthOf(Line(D,Y)),3r+3)",
+        "Equals(LengthOf(Line(B,Y)),\\frac{10r-4}{2})",
+        "Find(MeasureOf(Angle(C,A,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "Y",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DY",
+        "DB",
+        "YB",
+        "AD",
+        "AB",
+        "DC",
+        "BC",
+        "AY",
+        "AC",
+        "YC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            232.79999999999998,
+            55.386740331491715
+        ],
+        "A": [
+            84.52857142857142,
+            94.98825966850829
+        ],
+        "Y": [
+            138.09632653061223,
+            148.4364640883978
+        ],
+        "C": [
+            192.25795918367345,
+            201.60773480662982
+        ],
+        "D": [
+            44.34285714285714,
+            240.85319652722967
+        ]
+    },
+    "problem_choices": [
+        29.745,
+        60.255,
+        90.0,
+        120.51
+    ],
+    "choices_precise_value": [
+        29.745,
+        60.255,
+        90.0,
+        120.51
+    ],
+    "problem_answer": 60.255,
+    "total_time": 269.110941,
+    "solution_predicate": "Equals(1.0516502125, MeasureOf(Angle(C, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAC, Rhombus(A, B, C, D), Y on AC, tan(\u2220YCD), 6 = AY, 3 + 3 * r = DY, (10 * r - 4) / 2 = BY, Y on BD\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 3:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, C, D)\nConclusions: AD = CD\n\nStep 4:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(A, B, C, D)\nConclusions: CY \u22a5 DY\n\nStep 5:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CAB = \u2220DAC\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220DAC, Y on AC\nConclusions: \u2220DAC = \u2220DAY\n\nStep 7:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(A, B, C, D), Y on AC, Y on BD\nConclusions: BY = DY, AY = CY\n\nStep 8:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220YCD), CY \u22a5 DY\nConclusions: DY / CY = tan(\u2220YCD)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAY, \u2220CAB = \u2220DAC\nConclusions: \u2220CAB = \u2220DAY\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : BY = DY, (10 * r - 4) / 2 = BY\nConclusions: (10 * r - 4) / 2 = DY\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 6 = AY, AY = CY\nConclusions: 6 = CY\n\nStep 12:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AY = CY, AD = CD\nConclusions: \u25b3ADY \u2245 \u25b3CDY\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 3 * r = DY, (10 * r - 4) / 2 = DY\nConclusions: 3 + 3 * r = (10 * r - 4) / 2\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3ADY \u2245 \u25b3CDY\nConclusions: \u2220DAY = \u2220YCD, AY = CY\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3 + 3 * r = (10 * r - 4) / 2, 3 + 3 * r = DY\nConclusions: 10.5 = DY\n\nStep 16:\nTheorem: Evaluate\nPremises : 6 = CY, 10.5 = DY\nConclusions: 1.75 = DY / CY\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : DY / CY = tan(\u2220YCD), 1.75 = DY / CY\nConclusions: 1.75 = tan(\u2220YCD)\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : 1.75 = tan(\u2220YCD)\nConclusions: 1.05 = \u2220YCD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAY = \u2220YCD, 1.05 = \u2220YCD\nConclusions: 1.05 = \u2220DAY\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DAY, 1.05 = \u2220DAY\nConclusions: 1.05 = \u2220CAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, Y)",
+        "Line(D, B)",
+        "Line(Y, B)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, Y)",
+        "Line(A, C)",
+        "Line(Y, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, Y)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, Y)",
+        "Line(Y, B)",
+        "Line(Y, C)",
+        "PointLiesOnLine(Y, Line(A, C))",
+        "PointLiesOnLine(Y, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, Y)), 6.0)",
+        "Equals(LengthOf(Line(D, Y)), Add(Mul(3.0, r), 3.0))",
+        "Equals(LengthOf(Line(B, Y)), Div(Sub(Mul(10.0, r), 4.0), 2.0))"
+    ],
+    "correct": true
+}

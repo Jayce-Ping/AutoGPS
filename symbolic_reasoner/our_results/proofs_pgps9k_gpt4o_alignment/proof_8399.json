@@ -1,0 +1,80 @@
+{
+    "problem_id": "8399",
+    "solved": true,
+    "problem_text": "Find m \\angle D of quadrilateral ABCD.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, D, C)), x)",
+        "Equals(MeasureOf(Angle(D, A, B)), 3x)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Quadrilateral(A,B,C,D)",
+        "Find(MeasureOf(Angle(D)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            72.63157894736842,
+            261.4990476190476
+        ],
+        "A": [
+            201.18947368421053,
+            82.97333333333334
+        ],
+        "B": [
+            469.12736842105267,
+            83.38457142857142
+        ],
+        "C": [
+            469.20000000000005,
+            261.0152380952381
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        90.0,
+        135.0,
+        180.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        135.0,
+        180.0
+    ],
+    "problem_answer": 45.0,
+    "total_time": 5.928797,
+    "solution_predicate": "Equals(0.7853981634, MeasureOf(Angle(C, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((3 * x) / 180) = \u2220DAB, AB \u22a5 BC, pi * (x / 180) = \u2220CDA, BC \u22a5 CD, 3.14 = pi\n\nStep 2:\nTheorem: Perpendicular to Parallel\nPremises : BC \u22a5 CD, AB \u22a5 BC\nConclusions: AB || DC\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CDA, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CDA\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((3 * x) / 180) = \u2220DAB, 3.14 = pi\nConclusions: 3.14 * ((3 * x) / 180) = \u2220DAB\n\nStep 5:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220CDA + \u2220DAB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CDA + \u2220DAB, 3.14 = pi\nConclusions: 3.14 = \u2220CDA + \u2220DAB\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x) / 180) = \u2220DAB, 3.14 = \u2220CDA + \u2220DAB, 3.14 * (x / 180) = \u2220CDA\nConclusions: 0.79 = \u2220CDA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Quadrilateral(A, B, C, D)",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(Mul(3.0, x), 180.0)))"
+    ],
+    "correct": true
+}

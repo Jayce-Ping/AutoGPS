@@ -1,0 +1,107 @@
+{
+    "problem_id": "2524",
+    "solved": true,
+    "problem_text": "In \\odot Z, \\angle W Z X \\cong \\angle X Z Y, m \\angle V Z U = 4 x, m \\angle U Z Y = 2 x + 24, and V Y and W U are diameters. Find m \\widehat W U X.",
+    "logic_forms": [
+        "Circle(Z)",
+        "Equals(Angle(W,Z,X),Angle(X,Z,Y))",
+        "Equals(MeasureOf(Angle(U,Z,Y)),2x+24)",
+        "Equals(MeasureOf(Angle(V,Z,U)),4x)",
+        "Find(MeasureOf(Arc(W,U,X)))",
+        "IsDiameterOf(Line(V,Y),Circle(Z))",
+        "IsDiameterOf(Line(W,U),Circle(Z))",
+        "PointLiesOnCircle(U, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(Z, radius_0_0))",
+        "PointLiesOnLine(Z, Line(V, Y))",
+        "PointLiesOnLine(Z, Line(W, U))"
+    ],
+    "point_instances": [
+        "X",
+        "U",
+        "Z",
+        "W",
+        "V",
+        "Y"
+    ],
+    "line_instances": [
+        "WZ",
+        "WU",
+        "ZU",
+        "VZ",
+        "VY",
+        "ZY",
+        "ZX"
+    ],
+    "circle_instances": [
+        "Z"
+    ],
+    "point_positions": {
+        "X": [
+            155.0568181818182,
+            198.01136363636363
+        ],
+        "U": [
+            291.70454545454544,
+            131.5340909090909
+        ],
+        "Z": [
+            207.32954545454547,
+            131.25
+        ],
+        "W": [
+            123.23863636363637,
+            130.6818181818182
+        ],
+        "V": [
+            187.4431818181818,
+            49.43181818181818
+        ],
+        "Y": [
+            227.7840909090909,
+            213.63636363636363
+        ]
+    },
+    "problem_choices": [
+        "52",
+        "104",
+        "154",
+        "308"
+    ],
+    "choices_precise_value": [
+        52.0,
+        104.0,
+        154.0,
+        308.0
+    ],
+    "problem_answer": 308.0,
+    "total_time": 23.695203,
+    "solution_predicate": "Equals(5.3756140962, MeasureOf(Arc(X, Z, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on VY, Arc(XZW), \u2220WZV, \u2220YZU, Z on UW, \u2220UZY, \u2220WZX, \u2220WZX = \u2220XZY, \u2220UZV, pi * ((24 + 2 * x) / 180) = \u2220YZU, \u2220VZU, 3.14 = pi, \u2220UZV, \u2220VZW, \u2220WZX, \u2220VZW, pi * ((4 * x) / 180) = \u2220UZV, \u2220YZW, \u2220XZY, \u2220XZW\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(XZW)\nConclusions: \u2220XZW = Arc(XZW)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220WZV\nConclusions: \u2220WZV = 2 * pi - \u2220VZW\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : Z on VY, Z on UW\nConclusions: \u2220VZU = \u2220YZW, \u2220VZW = \u2220YZU, \u2220UZY = \u2220WZV\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220UZY\nConclusions: \u2220UZY = 2 * pi - \u2220YZU\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220WZX\nConclusions: \u2220WZX = 2 * pi - \u2220XZW\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220VZU\nConclusions: \u2220VZU = 2 * pi - \u2220UZV\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((24 + 2 * x) / 180) = \u2220YZU\nConclusions: 3.14 * ((24 + 2 * x) / 180) = \u2220YZU\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220UZV\nConclusions: \u2220UZV = 2 * pi - \u2220VZU\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220VZW\nConclusions: \u2220VZW = 2 * pi - \u2220WZV\n\nStep 11:\nTheorem: Substitution\nPremises : pi * ((4 * x) / 180) = \u2220UZV, 3.14 = pi\nConclusions: 3.14 * ((4 * x) / 180) = \u2220UZV\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220WZX, \u2220YZW, \u2220XZY\nConclusions: 2 * pi = \u2220WZX + \u2220XZY + \u2220YZW\n\nStep 13:\nTheorem: Circumference Split\nPremises : \u2220UZV, \u2220XZY, \u2220YZU, \u2220WZX, \u2220VZW\nConclusions: 2 * pi = \u2220UZV + \u2220VZW + \u2220WZX + \u2220XZY + \u2220YZU\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220XZW\nConclusions: \u2220XZW = 2 * pi - \u2220WZX\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220WZV = 2 * pi - \u2220VZW\nConclusions: \u2220WZV = 2 * 3.14 - \u2220VZW\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((24 + 2 * x) / 180) = \u2220YZU, \u2220VZW = \u2220YZU\nConclusions: pi * ((24 + 2 * x) / 180) = \u2220VZW\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220UZY = 2 * pi - \u2220YZU, \u2220UZY = \u2220WZV\nConclusions: \u2220WZV = 2 * 3.14 - \u2220YZU\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WZX = \u2220XZY, \u2220WZX = 2 * pi - \u2220XZW\nConclusions: \u2220XZY = 2 * pi - \u2220XZW\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220VZU = \u2220YZW, \u2220VZU = 2 * pi - \u2220UZV\nConclusions: \u2220YZW = 2 * 3.14 - \u2220UZV\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((24 + 2 * x) / 180) = \u2220YZU, pi * ((24 + 2 * x) / 180) = \u2220YZU\nConclusions: 3.14 * ((24 + 2 * x) / 180) = pi * ((24 + 2 * x) / 180)\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220UZV = 2 * pi - \u2220VZU, \u2220VZU = \u2220YZW, 3.14 = pi\nConclusions: \u2220UZV = 2 * 3.14 - \u2220YZW\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * x) / 180) = \u2220UZV, pi * ((4 * x) / 180) = \u2220UZV\nConclusions: 3.14 * ((4 * x) / 180) = pi * ((4 * x) / 180)\n\nStep 23:\nTheorem: Substitution\nPremises : \u2220WZX = \u2220XZY, \u2220XZW = Arc(XZW), \u2220XZW = 2 * pi - \u2220WZX, 3.14 = pi\nConclusions: Arc(XZW) = 2 * 3.14 - \u2220XZY\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((24 + 2 * x) / 180) = \u2220VZW, 3.14 * ((24 + 2 * x) / 180) = pi * ((24 + 2 * x) / 180)\nConclusions: 3.14 * ((24 + 2 * x) / 180) = \u2220VZW\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x) / 180) = \u2220UZV, \u2220UZV = 2 * 3.14 - \u2220YZW\nConclusions: pi * ((4 * x) / 180) = 2 * 3.14 - \u2220YZW\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VZW = 2 * pi - \u2220WZV, 3.14 * ((24 + 2 * x) / 180) = \u2220VZW\nConclusions: 3.14 * ((24 + 2 * x) / 180) = 2 * pi - \u2220WZV\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x) / 180) = 2 * 3.14 - \u2220YZW, 3.14 * ((4 * x) / 180) = pi * ((4 * x) / 180)\nConclusions: 3.14 * ((4 * x) / 180) = 2 * 3.14 - \u2220YZW\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x) / 180) = 2 * 3.14 - \u2220YZW, \u2220XZW = 2 * pi - \u2220WZX, 2 * pi = \u2220UZV + \u2220VZW + \u2220WZX + \u2220XZY + \u2220YZU, Arc(XZW) = 2 * 3.14 - \u2220XZY, \u2220WZV = 2 * 3.14 - \u2220VZW, \u2220XZY = 2 * pi - \u2220XZW, \u2220YZW = 2 * 3.14 - \u2220UZV, 3.14 * ((24 + 2 * x) / 180) = 2 * pi - \u2220WZV, \u2220WZV = 2 * 3.14 - \u2220YZU, 2 * pi = \u2220WZX + \u2220XZY + \u2220YZW, \u2220XZW = Arc(XZW)\nConclusions: 5.38 = \u2220XZW\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZW = Arc(XZW), 5.38 = \u2220XZW\nConclusions: 5.38 = Arc(XZW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(W, U)",
+        "Line(Z, U)",
+        "Line(V, Z)",
+        "Line(V, Y)",
+        "Line(Z, Y)",
+        "Line(Z, X)",
+        "Circle(Z, radius_0_0)",
+        "Circle(Z, radius_0_0)",
+        "IsDiameterOf(Line(V, Y), Circle(Z, radius_0_0))",
+        "IsDiameterOf(Line(W, U), Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(Z, radius_0_0))",
+        "PointLiesOnLine(Z, Line(V, Y))",
+        "PointLiesOnLine(Z, Line(W, U))",
+        "Equals(MeasureOf(Angle(W, Z, X)), MeasureOf(Angle(X, Z, Y)))",
+        "Equals(MeasureOf(Angle(Y, Z, U)), Mul(pi, Div(Add(Mul(2.0, x), 24.0), 180.0)))",
+        "Equals(MeasureOf(Angle(U, Z, V)), Mul(pi, Div(Mul(4.0, x), 180.0)))"
+    ],
+    "correct": true
+}

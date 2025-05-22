@@ -1,0 +1,79 @@
+{
+    "problem_id": "2698",
+    "solved": true,
+    "problem_text": "T X Y \\cong W X Y. Find x.",
+    "logic_forms": [
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "Equals(LengthOf(Line(Y, T)), 4x)",
+        "Equals(LengthOf(Line(Y, W)), 2x+10)",
+        "Congruent(Triangle(W,T,Y),Triangle(T,W,Y))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "T",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "WY",
+        "XW",
+        "XY",
+        "TY",
+        "TX"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "T": [
+            107.29955947136564,
+            94.7136563876652
+        ],
+        "Y": [
+            213.02643171806167,
+            335.6828193832599
+        ],
+        "X": [
+            213.02643171806167,
+            192.95154185022025
+        ],
+        "W": [
+            318.31277533039645,
+            94.7136563876652
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "4",
+        "5",
+        "10"
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        5.0,
+        10.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 24.816822,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * x = TY, \u25b3TWY \u2245 \u25b3WTY, 10 + 2 * x = WY\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3TWY \u2245 \u25b3WTY\nConclusions: TY = WY\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 10 + 2 * x = WY, TY = WY\nConclusions: 10 + 2 * x = TY\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x = TY, 10 + 2 * x = TY\nConclusions: 4 * x = 10 + 2 * x\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 4 * x = 10 + 2 * x\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Y)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(T, Y)",
+        "Line(T, X)",
+        "Circle(X, radius_0_0)",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "Congruent(Triangle(W, T, Y), Triangle(T, W, Y))",
+        "Equals(LengthOf(Line(Y, T)), Mul(4.0, x))",
+        "Equals(LengthOf(Line(Y, W)), Add(Mul(2.0, x), 10.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,86 @@
+{
+    "problem_id": "2905",
+    "solved": true,
+    "problem_text": "Find y. Round to the nearest tenth, if necessary.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(M, C))",
+        "PointLiesOnCircle(A, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(P, radius_0_0))",
+        "Equals(LengthOf(Line(M, A)), 10)",
+        "Equals(LengthOf(Line(M, B)), y)",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Tangent(Line(A, M), Circle(P))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "P",
+        "C",
+        "M",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AM",
+        "MB",
+        "MC",
+        "BC"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            225.0,
+            130.55555555555554
+        ],
+        "C": [
+            281.1111111111111,
+            216.94444444444443
+        ],
+        "M": [
+            35.833333333333336,
+            216.38888888888889
+        ],
+        "A": [
+            142.5,
+            70.27777777777777
+        ],
+        "B": [
+            169.72222222222223,
+            217.5
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "6",
+        "7.4",
+        "10"
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.0,
+        7.4,
+        10.0
+    ],
+    "problem_answer": 7.4,
+    "total_time": 19.417538,
+    "solution_predicate": "Equals(7.4403065089, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Tangent(AM, \u2299(P, radius_0_0)), 10 = AM, C on \u2299(P, radius_0_0), B on CM, B on \u2299(P, radius_0_0), BM, \u2299(P, radius_0_0), y = BM, CM, 6 = BC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on CM\nConclusions: CM = BC + BM\n\nStep 3:\nTheorem: Circle Secant Theorem\nPremises : B on \u2299(P, radius_0_0), Tangent(AM, \u2299(P, radius_0_0)), \u2299(P, radius_0_0), CM, BM, C on \u2299(P, radius_0_0)\nConclusions: AM ** 2 = BM * CM\n\nStep 4:\nTheorem: Substitution\nPremises : y = BM, CM = BC + BM, 6 = BC\nConclusions: 6 + y = CM\n\nStep 5:\nTheorem: Substitution\nPremises : AM ** 2 = BM * CM, y = BM, 6 + y = CM, 10 = AM\nConclusions: 10 ** 2 = y * (6 + y)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 10 ** 2 = y * (6 + y)\nConclusions: 7.44 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, M)",
+        "Line(M, B)",
+        "Line(M, C)",
+        "Line(B, C)",
+        "Circle(P, radius_0_0)",
+        "PointLiesOnLine(B, Line(M, C))",
+        "PointLiesOnCircle(A, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(P, radius_0_0))",
+        "Tangent(Line(A, M), Circle(P, radius_0_0))",
+        "Equals(LengthOf(Line(M, A)), 10.0)",
+        "Equals(LengthOf(Line(M, B)), y)",
+        "Equals(LengthOf(Line(C, B)), 6.0)"
+    ],
+    "correct": true
+}

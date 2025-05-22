@@ -1,0 +1,95 @@
+{
+    "problem_id": "7996",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), y-12)",
+        "Equals(MeasureOf(Angle(B, C, E)), 3y-8)",
+        "Equals(MeasureOf(Angle(D, C, A)), 6x-32)",
+        "Equals(MeasureOf(Angle(D, C, E)), 2x-20)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AC",
+        "AE",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            62.01,
+            44.29714285714286
+        ],
+        "B": [
+            21.3525,
+            170.4857142857143
+        ],
+        "C": [
+            223.47,
+            170.1942857142857
+        ],
+        "D": [
+            417.1885714285714,
+            170.1942857142857
+        ],
+        "E": [
+            372.35249999999996,
+            287.0571428571429
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        20.333,
+        29.0,
+        81.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        20.333,
+        29.0,
+        81.0
+    ],
+    "problem_answer": 29.0,
+    "total_time": 10.533441,
+    "solution_predicate": "Equals(29.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((y - 12) / 180) = \u2220ACB, pi * ((3 * y - 8) / 180) = \u2220BCE, 3.14 = pi, \u2220ECD, C on AE, \u2220DCA, C on BD, \u2220BCE, \u2220ACB, pi * ((6 * x - 32) / 180) = \u2220DCA, pi * ((2 * x - 20) / 180) = \u2220ECD\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((y - 12) / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 * ((y - 12) / 180) = \u2220ACB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * y - 8) / 180) = \u2220BCE\nConclusions: 3.14 * ((3 * y - 8) / 180) = \u2220BCE\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220BCE = \u2220DCA\n\nStep 5:\nTheorem: Circumference Split\nPremises : \u2220DCA, \u2220ECD, \u2220BCE, \u2220ACB\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x - 32) / 180) = \u2220DCA\nConclusions: 3.14 * ((6 * x - 32) / 180) = \u2220DCA\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x - 20) / 180) = \u2220ECD\nConclusions: 3.14 * ((2 * x - 20) / 180) = \u2220ECD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = \u2220DCA, pi * ((6 * x - 32) / 180) = \u2220DCA, pi * ((3 * y - 8) / 180) = \u2220BCE\nConclusions: pi * ((3 * y - 8) / 180) = pi * ((6 * x - 32) / 180)\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\nConclusions: 2 * 3.14 = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y - 8) / 180) = pi * ((6 * x - 32) / 180), pi * ((6 * x - 32) / 180) = \u2220DCA\nConclusions: pi * ((3 * y - 8) / 180) = \u2220DCA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y - 8) / 180) = \u2220DCA, 3.14 * ((6 * x - 32) / 180) = \u2220DCA\nConclusions: 3.14 * ((6 * x - 32) / 180) = pi * ((3 * y - 8) / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x - 32) / 180) = pi * ((3 * y - 8) / 180), pi * ((3 * y - 8) / 180) = \u2220BCE\nConclusions: 3.14 * ((6 * x - 32) / 180) = \u2220BCE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x - 32) / 180) = \u2220BCE, 3.14 * ((3 * y - 8) / 180) = \u2220BCE\nConclusions: 3.14 * ((3 * y - 8) / 180) = 3.14 * ((6 * x - 32) / 180)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((y - 12) / 180) = \u2220ACB, 3.14 * ((3 * y - 8) / 180) = 3.14 * ((6 * x - 32) / 180), 3.14 * ((2 * x - 20) / 180) = \u2220ECD, 3.14 * ((6 * x - 32) / 180) = \u2220BCE, 3.14 * ((6 * x - 32) / 180) = \u2220DCA, 2 * 3.14 = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\nConclusions: 29 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Sub(y, 12.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, E)), Mul(pi, Div(Sub(Mul(3.0, y), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(Sub(Mul(6.0, x), 32.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(Sub(Mul(2.0, x), 20.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,78 @@
+{
+    "problem_id": "5789",
+    "solved": true,
+    "problem_text": "Find the value of variable a in the parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), b)",
+        "Equals(MeasureOf(Angle(B, A, C)), a)",
+        "Equals(MeasureOf(Angle(D, C, A)), 101)",
+        "Find(a)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "AB",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            26.260726072607262,
+            28.364761904761906
+        ],
+        "B": [
+            308.6534653465347,
+            28.62122448979592
+        ],
+        "C": [
+            64.75247524752476,
+            223.43020408163264
+        ],
+        "D": [
+            345.34653465346537,
+            223.43020408163264
+        ]
+    },
+    "problem_choices": [
+        50.5,
+        79.0,
+        90.0,
+        101.0
+    ],
+    "choices_precise_value": [
+        50.5,
+        79.0,
+        90.0,
+        101.0
+    ],
+    "problem_answer": 79.0,
+    "total_time": 8.128802,
+    "solution_predicate": "Equals(79.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, D, C), \u2220CDB, \u2220BDC, pi * (101 / 180) = \u2220DCA, 3.14 = pi, pi * (b / 180) = \u2220ABD, pi * (a / 180) = \u2220CAB\n\nStep 2:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(A, B, D, C)\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220BDC = \u2220CAB, \u2220ABD = \u2220DCA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDB\nConclusions: \u2220CDB = 2 * pi - \u2220BDC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDC\nConclusions: \u2220BDC = 2 * pi - \u2220CDB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (a / 180) = \u2220CAB\nConclusions: 3.14 * (a / 180) = \u2220CAB\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CAB, pi * (a / 180) = \u2220CAB\nConclusions: pi * (a / 180) = \u2220BDC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (b / 180) = \u2220ABD, \u2220ABD = \u2220DCA, pi * (101 / 180) = \u2220DCA\nConclusions: pi * (101 / 180) = pi * (b / 180)\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220CDB = 2 * pi - \u2220BDC, 3.14 = pi\nConclusions: \u2220CDB = 2 * 3.14 - \u2220BDC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (a / 180) = \u2220CAB, pi * (a / 180) = \u2220CAB\nConclusions: 3.14 * (a / 180) = pi * (a / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (101 / 180) = pi * (b / 180), pi * (b / 180) = \u2220ABD\nConclusions: pi * (101 / 180) = \u2220ABD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (a / 180) = \u2220BDC, 3.14 * (a / 180) = pi * (a / 180)\nConclusions: 3.14 * (a / 180) = \u2220BDC\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (101 / 180) = \u2220DCA, 3.14 = pi, pi * (101 / 180) = \u2220ABD, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\nConclusions: 2 * 3.14 = pi * (101 / 180) + pi * (101 / 180) + \u2220BDC + \u2220CAB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (a / 180) = \u2220BDC, \u2220BDC = 2 * pi - \u2220CDB\nConclusions: 3.14 * (a / 180) = 2 * pi - \u2220CDB\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (a / 180) = \u2220CAB, 2 * 3.14 = pi * (101 / 180) + pi * (101 / 180) + \u2220BDC + \u2220CAB, 3.14 * (a / 180) = \u2220BDC, \u2220CDB = 2 * 3.14 - \u2220BDC, 3.14 * (a / 180) = 2 * pi - \u2220CDB\nConclusions: 79 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, D, C)",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(b, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(a, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(101.0, 180.0)))"
+    ],
+    "correct": true
+}

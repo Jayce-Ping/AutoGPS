@@ -1,0 +1,107 @@
+{
+    "problem_id": "2991",
+    "solved": true,
+    "problem_text": "m \\angle B A C = 38, B C = 5, and D C = 5, find m \\angle D A C.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(G, B), Line(C, B))",
+        "Equals(MeasureOf(Angle(B,A,C)),38)",
+        "Equals(LengthOf(Line(B,C)),5)",
+        "Equals(LengthOf(Line(D,C)),5)",
+        "Find(MeasureOf(Angle(D,A,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "C",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AD",
+        "AE",
+        "DE",
+        "AC",
+        "AF",
+        "CF",
+        "AB",
+        "AG",
+        "BG",
+        "BC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            273.80281690140845,
+            126.69953051643193
+        ],
+        "A": [
+            116.52582159624413,
+            73.17840375586854
+        ],
+        "D": [
+            168.63849765258217,
+            230.924882629108
+        ],
+        "C": [
+            245.63380281690144,
+            204.6338028169014
+        ],
+        "E": [
+            225.9154929577465,
+            403.69483568075117
+        ],
+        "F": [
+            340.46948356807513,
+            299.46948356807513
+        ],
+        "G": [
+            449.85915492957747,
+            186.79342723004694
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "38",
+        "40"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        38.0,
+        40.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 49.16053,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (38 / 180) = \u2220CAB, AD \u22a5 CD, 5 = CD, \u2220EAC, D on AE, 3.14 = pi, 5 = BC, AB \u22a5 BC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220CDA\n\nStep 3:\nTheorem: Same Angle\nPremises : D on AE, \u2220EAC\nConclusions: \u2220DAC = \u2220EAC\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.66 = pi * (38 / 180)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CD, 5 = BC\nConclusions: BC = CD\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 0.66 = pi * (38 / 180), pi * (38 / 180) = \u2220CAB\nConclusions: 0.66 = \u2220CAB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, pi / 2 = \u2220CDA\nConclusions: \u2220ABC = \u2220CDA\n\nStep 9:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : BC = CD, \u2220ABC = \u2220CDA\nConclusions: \u25b3ABC \u2245 \u25b3ADC\n\nStep 10:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3ADC\nConclusions: \u2220ABC = \u2220CDA, \u2220CAB = \u2220DAC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.66 = \u2220CAB, \u2220CAB = \u2220DAC, \u2220DAC = \u2220EAC\nConclusions: 0.66 = \u2220EAC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.66 = \u2220EAC, \u2220DAC = \u2220EAC\nConclusions: 0.66 = \u2220DAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, F)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(G, B), Line(C, B))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(38.0, 180.0)))",
+        "Equals(LengthOf(Line(B, C)), 5.0)",
+        "Equals(LengthOf(Line(D, C)), 5.0)"
+    ],
+    "correct": true
+}

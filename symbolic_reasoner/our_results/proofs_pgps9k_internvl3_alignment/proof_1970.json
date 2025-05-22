@@ -1,0 +1,136 @@
+{
+    "problem_id": "1970",
+    "solved": true,
+    "problem_text": "Triangle RST is circumscribed about the circle. What is x?",
+    "logic_forms": [
+        "CircumscribedTo(Triangle(R,S,T),Circle(D))",
+        "Equals(LengthOf(Line(R, B)), x+1)",
+        "Equals(LengthOf(Line(R, C)), 5)",
+        "Equals(LengthOf(Line(S, A)), x-1)",
+        "Equals(LengthOf(Line(S, C)), LengthOf(Line(S, A)))",
+        "Equals(LengthOf(Line(S, C)), x-1)",
+        "Equals(LengthOf(Line(T, A)), 10)",
+        "Equals(LengthOf(Line(T, B)), 3x-2)",
+        "Find(x)",
+        "Line(A, T)",
+        "Line(B, T)",
+        "Line(C, S)",
+        "Line(R, B)",
+        "Line(R, C)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, A)",
+        "Line(S, T)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "PointLiesOnLine(A, Line(S, T))",
+        "PointLiesOnLine(B, Line(R, T))",
+        "PointLiesOnLine(C, Line(R, S))"
+    ],
+    "point_instances": [
+        "S",
+        "A",
+        "T",
+        "B",
+        "C",
+        "R",
+        "D"
+    ],
+    "line_instances": [
+        "SA",
+        "ST",
+        "AT",
+        "TB",
+        "TR",
+        "BR",
+        "SC",
+        "SR",
+        "CR"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "S": [
+            100.97256637168141,
+            321.24857142857144
+        ],
+        "A": [
+            189.51567109144543,
+            321.6323809523809
+        ],
+        "T": [
+            481.80973451327435,
+            321.74204081632655
+        ],
+        "B": [
+            241.26258773268236,
+            155.32374384236454
+        ],
+        "C": [
+            99.62947287418238,
+            230.98658385093168
+        ],
+        "R": [
+            100.66519174041298,
+            57.82730158730159
+        ],
+        "D": [
+            190.2621359223301,
+            229.19417475728153
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        6.0,
+        9.0,
+        11.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        9.0,
+        11.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 229.097425,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CircumscribedTo(\u25b3RST, \u2299(D, radius_D)), 3 * x - 2 = BT, 10 = AT\n\nStep 2:\nTheorem: Properties of Triangle Circumscribed to Circle\nPremises : CircumscribedTo(\u25b3RST, \u2299(D, radius_D))\nConclusions: \u25b3ADT \u2245 \u25b3BDT\n\nStep 3:\nTheorem: Congruent Definition\nPremises : \u25b3ADT \u2245 \u25b3BDT\nConclusions: AT = BT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AT = BT, 3 * x - 2 = BT\nConclusions: 3 * x - 2 = AT\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AT, 3 * x - 2 = AT\nConclusions: 10 = 3 * x - 2\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 10 = 3 * x - 2\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, A)",
+        "Line(S, T)",
+        "Line(A, T)",
+        "Line(T, B)",
+        "Line(T, R)",
+        "Line(B, R)",
+        "Line(S, C)",
+        "Line(S, R)",
+        "Line(C, R)",
+        "Circle(D, radius_D)",
+        "CircumscribedTo(Triangle(R, S, T), Circle(D, radius_D))",
+        "Line(A, T)",
+        "Line(B, T)",
+        "Line(C, S)",
+        "Line(R, B)",
+        "Line(R, C)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, A)",
+        "Line(S, T)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "PointLiesOnLine(A, Line(S, T))",
+        "PointLiesOnLine(B, Line(R, T))",
+        "PointLiesOnLine(C, Line(R, S))",
+        "Equals(LengthOf(Line(R, B)), Add(x, 1.0))",
+        "Equals(LengthOf(Line(R, C)), 5.0)",
+        "Equals(LengthOf(Line(S, A)), Sub(x, 1.0))",
+        "Equals(LengthOf(Line(S, C)), LengthOf(Line(S, A)))",
+        "Equals(LengthOf(Line(S, C)), Sub(x, 1.0))",
+        "Equals(LengthOf(Line(T, A)), 10.0)",
+        "Equals(LengthOf(Line(T, B)), Sub(Mul(3.0, x), 2.0))"
+    ],
+    "correct": true
+}

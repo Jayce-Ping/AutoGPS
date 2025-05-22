@@ -1,0 +1,108 @@
+{
+    "problem_id": "2876",
+    "solved": true,
+    "problem_text": "Find the perimeter of \\triangle D E F, if \\triangle D E F \\sim \\triangle C B F, perimeter of \\triangle C B F = 27, D F = 6, and F C = 8.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Similar(Triangle(D,E,F),Triangle(C,B,F))",
+        "Equals(PerimeterOf(Triangle(C,B,F)),27)",
+        "Equals(LengthOf(Line(D,F)),6)",
+        "Equals(LengthOf(Line(F,C)),8)",
+        "Find(PerimeterOf(Triangle(D,E,F)))"
+    ],
+    "point_instances": [
+        "D",
+        "F",
+        "C",
+        "E",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "CB",
+        "AD",
+        "AB",
+        "DB",
+        "ED",
+        "DF",
+        "DC",
+        "FC",
+        "EF",
+        "EB",
+        "FB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            213.93188854489165,
+            138.8266253869969
+        ],
+        "F": [
+            252.0123839009288,
+            102.91331269349845
+        ],
+        "C": [
+            319.19504643962847,
+            38.82662538699691
+        ],
+        "E": [
+            213.62229102167183,
+            68.85758513931889
+        ],
+        "B": [
+            322.6006191950464,
+            161.42724458204336
+        ],
+        "A": [
+            71.51702786377709,
+            110.65325077399382
+        ]
+    },
+    "problem_choices": [
+        "20.25",
+        "21",
+        "27",
+        "36"
+    ],
+    "choices_precise_value": [
+        20.25,
+        21.0,
+        27.0,
+        36.0
+    ],
+    "problem_answer": 20.25,
+    "total_time": 191.908424,
+    "solution_predicate": "Equals(20.2500000005, PerimeterOf(Triangle(D, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 27 = Perimeter(\u25b3BCF), 8 = CF, 6 = DF, \u25b3BCF ~ \u25b3EDF\n\nStep 2:\nTheorem: Evaluate\nPremises : 6 = DF, 8 = CF\nConclusions: 1.33 = CF / DF\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3BCF ~ \u25b3EDF\nConclusions: sim_ratio_triangle_b_c_f_triangle_e_d_f = CF / DF, sim_ratio_triangle_b_c_f_triangle_e_d_f = Perimeter(\u25b3BCF) / Perimeter(\u25b3DEF)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_b_c_f_triangle_e_d_f = CF / DF, 1.33 = CF / DF\nConclusions: 1.33 = sim_ratio_triangle_b_c_f_triangle_e_d_f\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_b_c_f_triangle_e_d_f = Perimeter(\u25b3BCF) / Perimeter(\u25b3DEF), 1.33 = sim_ratio_triangle_b_c_f_triangle_e_d_f\nConclusions: 1.33 = Perimeter(\u25b3BCF) / Perimeter(\u25b3DEF)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 27 = Perimeter(\u25b3BCF), 1.33 = Perimeter(\u25b3BCF) / Perimeter(\u25b3DEF)\nConclusions: 20.25 = Perimeter(\u25b3DEF)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(C, B)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(E, D)",
+        "Line(D, F)",
+        "Line(D, C)",
+        "Line(F, C)",
+        "Line(E, F)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Similar(Triangle(D, E, F), Triangle(C, B, F))",
+        "Equals(PerimeterOf(Triangle(C, B, F)), 27.0)",
+        "Equals(LengthOf(Line(D, F)), 6.0)",
+        "Equals(LengthOf(Line(F, C)), 8.0)"
+    ],
+    "correct": true
+}

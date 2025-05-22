@@ -1,0 +1,65 @@
+{
+    "problem_id": "2696",
+    "solved": true,
+    "problem_text": "Find the length of A C in the isosceles triangle A B C.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, C)), 4x+1)",
+        "Equals(LengthOf(Line(A, B)), 9x-1)",
+        "Equals(LengthOf(Line(C, B)), 5x-0.5)",
+        "Isosceles(Triangle(A,B,C))",
+        "Find(LengthOf(Line(A,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            614.1361256544502,
+            78.58115183246073
+        ],
+        "C": [
+            351.30890052356017,
+            210.51832460732982
+        ],
+        "A": [
+            79.58115183246073,
+            77.01047120418846
+        ]
+    },
+    "problem_choices": [
+        "1.5",
+        "7",
+        "11",
+        "12.5"
+    ],
+    "choices_precise_value": [
+        1.5,
+        7.0,
+        11.0,
+        12.5
+    ],
+    "problem_answer": 7.0,
+    "total_time": 4.738147,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC = BC, 5 * x - 0.5 = BC, 1 + 4 * x = AC\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 5 * x - 0.5 = BC\nConclusions: 5 * x - 0.5 = AC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 1 + 4 * x = AC, 5 * x - 0.5 = AC\nConclusions: 1 + 4 * x = 5 * x - 0.5\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 1 + 4 * x = 5 * x - 0.5, 1 + 4 * x = AC\nConclusions: 7 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Isosceles(Triangle(A, B, C))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, C)), Add(Mul(4.0, x), 1.0))",
+        "Equals(LengthOf(Line(A, B)), Sub(Mul(9.0, x), 1.0))",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(5.0, x), 0.5))"
+    ],
+    "correct": true
+}

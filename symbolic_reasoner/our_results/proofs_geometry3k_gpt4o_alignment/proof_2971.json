@@ -1,0 +1,72 @@
+{
+    "problem_id": "2971",
+    "solved": true,
+    "problem_text": "Use parallelogram to find b.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, X)), b+11)",
+        "Equals(LengthOf(Line(W, Z)), 4a)",
+        "Equals(LengthOf(Line(X, Y)), 3a+7)",
+        "Equals(LengthOf(Line(Y, Z)), 2b)",
+        "Find(b)",
+        "Parallelogram(W, X, Y, Z)"
+    ],
+    "point_instances": [
+        "W",
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "WZ",
+        "XW",
+        "XY",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            151.5897435897436,
+            381.02564102564105
+        ],
+        "Z": [
+            433.12820512820514,
+            329.7435897435897
+        ],
+        "X": [
+            170.56410256410257,
+            152.30769230769232
+        ],
+        "Y": [
+            450.5641025641026,
+            98.97435897435898
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "11",
+        "21",
+        "33"
+    ],
+    "choices_precise_value": [
+        7.0,
+        11.0,
+        21.0,
+        33.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 8.276212,
+    "solution_predicate": "Equals(11.0, b)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(W, X, Y, Z), 2 * b = YZ, 11 + b = WX\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : WX = YZ, 2 * b = YZ, 11 + b = WX\nConclusions: 11 + b = 2 * b\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 11 + b = 2 * b\nConclusions: 11 = b\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Parallelogram(W, X, Y, Z)",
+        "Equals(LengthOf(Line(W, X)), Add(b, 11.0))",
+        "Equals(LengthOf(Line(W, Z)), Mul(4.0, a))",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(3.0, a), 7.0))",
+        "Equals(LengthOf(Line(Y, Z)), Mul(2.0, b))"
+    ],
+    "correct": true
+}

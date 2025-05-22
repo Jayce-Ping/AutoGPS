@@ -1,0 +1,74 @@
+{
+    "problem_id": "2802",
+    "solved": true,
+    "problem_text": "Find m \\angle C A D.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(MeasureOf(Angle(C, D, A)), 92)",
+        "Find(MeasureOf(Angle(C,A,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "AB",
+        "AC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            86.11340206185567,
+            41.89690721649485
+        ],
+        "C": [
+            279.41237113402065,
+            311.4845360824742
+        ],
+        "D": [
+            93.3298969072165,
+            309.42268041237116
+        ],
+        "B": [
+            590.7525773195877,
+            310.45360824742266
+        ]
+    },
+    "problem_choices": [
+        "22",
+        "44",
+        "66",
+        "92"
+    ],
+    "choices_precise_value": [
+        22.0,
+        44.0,
+        66.0,
+        92.0
+    ],
+    "problem_answer": 44.0,
+    "total_time": 27.483905,
+    "solution_predicate": "Equals(0.7679448709, MeasureOf(Angle(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, AC, AD = CD, 3.14 = pi, CD, pi * (92 / 180) = \u2220CDA\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.61 = pi * (92 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.61 = pi * (92 / 180), pi * (92 / 180) = \u2220CDA\nConclusions: 1.61 = \u2220CDA\n\nStep 5:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACD, AD = CD\nConclusions: \u2220ACD = \u2220DAC\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 7:\nTheorem: Substitution\nPremises : pi = \u2220ACD + \u2220CDA + \u2220DAC, \u2220ACD = \u2220DAC, 1.61 = \u2220CDA, 3.14 = pi\nConclusions: 3.14 = 1.61 + \u2220DAC + \u2220DAC\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.61 + \u2220DAC + \u2220DAC\nConclusions: 0.77 = \u2220DAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(92.0, 180.0)))"
+    ],
+    "correct": true
+}

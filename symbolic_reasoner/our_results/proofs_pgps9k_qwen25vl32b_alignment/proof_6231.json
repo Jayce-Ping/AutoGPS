@@ -1,0 +1,69 @@
+{
+    "problem_id": "6231",
+    "solved": true,
+    "problem_text": "In the diagram, JL = 120. What is KL?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, J)), 4x+6)",
+        "Equals(LengthOf(Line(K, L)), 7x+15)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "PointLiesOnLine(K, Line(J, L))",
+        "Equals(LengthOf(Line(J,L)),120)",
+        "Find(LengthOf(Line(K,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JK",
+        "JL",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            26.527162977867203,
+            52.36571428571428
+        ],
+        "K": [
+            183.88732394366198,
+            52.36571428571428
+        ],
+        "L": [
+            479.77464788732397,
+            52.13999999999999
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        66.0,
+        78.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        66.0,
+        78.0,
+        120.0
+    ],
+    "problem_answer": 78.0,
+    "total_time": 1.90694,
+    "solution_predicate": "Equals(78.0, LengthOf(Line(K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on JL, 6 + 4 * x = JK, 120 = JL, 15 + 7 * x = KL\n\nStep 2:\nTheorem: Line Segment Split\nPremises : K on JL\nConclusions: JL = JK + KL\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 120 = JL, JL = JK + KL\nConclusions: 120 = JK + KL\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 15 + 7 * x = KL, 6 + 4 * x = JK, 120 = JK + KL\nConclusions: 78 = KL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "PointLiesOnLine(K, Line(J, L))",
+        "Equals(LengthOf(Line(K, J)), Add(Mul(4.0, x), 6.0))",
+        "Equals(LengthOf(Line(K, L)), Add(Mul(7.0, x), 15.0))",
+        "Equals(LengthOf(Line(J, L)), 120.0)"
+    ],
+    "correct": true
+}

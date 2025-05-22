@@ -1,0 +1,111 @@
+{
+    "problem_id": "335",
+    "solved": true,
+    "problem_text": "Find PX, if XZ = 18 and PY = 3.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Y, Z)), LengthOf(Line(X, W)))",
+        "Line(P, W)",
+        "Line(P, Z)",
+        "Line(W, Z)",
+        "Line(X, P)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, P)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Parallel(Line(W, Z), Line(X, Y))",
+        "PointLiesOnLine(P, Line(X, Z))",
+        "PointLiesOnLine(P, Line(Y, W))",
+        "Equals(LengthOf(Line(X,Z)),18)",
+        "Equals(LengthOf(Line(P,Y)),3)",
+        "Find(LengthOf(Line(P,X)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "P",
+        "W",
+        "Z"
+    ],
+    "line_instances": [
+        "XP",
+        "XZ",
+        "PZ",
+        "WP",
+        "WY",
+        "PY",
+        "XY",
+        "XW",
+        "WZ",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            88.96742021276596,
+            136.07999999999998
+        ],
+        "Y": [
+            229.8581560283688,
+            59.519999999999996
+        ],
+        "P": [
+            193.7375886524823,
+            157.7142857142857
+        ],
+        "W": [
+            120.40189125295508,
+            356.29714285714283
+        ],
+        "Z": [
+            397.7367021276596,
+            197.97942857142857
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        15.0,
+        18.0,
+        21.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        15.0,
+        18.0,
+        21.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 123.513705,
+    "solution_predicate": "Equals(3.0, LengthOf(Line(P, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on XZ, PX, XY, YZ, 3 = PY, WX = YZ, WZ || XY, WX, \u2220ZXY, \u2220XYW, P on WY, PY, WZ\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : WZ || XY\nConclusions: \u2220XZW = \u2220ZXY, \u2220XYW = \u2220ZWY\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ZXY, P on XZ\nConclusions: \u2220PXY = \u2220ZXY\n\nStep 4:\nTheorem: Same Angle\nPremises : P on WY, \u2220XYW\nConclusions: \u2220XYP = \u2220XYW\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : XY, PX, PY\nConclusions: \u25b3PXY\n\nStep 6:\nTheorem: Definition of Trapezoid\nPremises : WX, WZ, WZ || XY, XY, YZ\nConclusions: Trapezoid(W, X, Y, Z)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYP = \u2220XYW, \u2220XYW = \u2220ZWY\nConclusions: \u2220XYP = \u2220ZWY\n\nStep 8:\nTheorem: Issoceles Trapezoid Property\nPremises : Trapezoid(W, X, Y, Z), WX = YZ\nConclusions: WY = XZ\n\nStep 9:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : WX = YZ, WY = XZ\nConclusions: \u25b3WXZ \u2245 \u25b3ZYW\n\nStep 10:\nTheorem: Congruent Definition\nPremises : \u25b3WXZ \u2245 \u25b3ZYW\nConclusions: \u2220XZW = \u2220ZWY\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZW = \u2220ZXY, \u2220XZW = \u2220ZWY\nConclusions: \u2220ZWY = \u2220ZXY\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ZWY = \u2220ZXY, \u2220PXY = \u2220ZXY, \u2220XYP = \u2220ZWY\nConclusions: \u2220PXY = \u2220XYP\n\nStep 13:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3PXY, \u2220PXY = \u2220XYP\nConclusions: PX = PY\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3 = PY, PX = PY\nConclusions: 3 = PX\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, P)",
+        "Line(X, Z)",
+        "Line(P, Z)",
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(P, Y)",
+        "Line(X, Y)",
+        "Line(X, W)",
+        "Line(W, Z)",
+        "Line(Y, Z)",
+        "Line(P, W)",
+        "Line(P, Z)",
+        "Line(W, Z)",
+        "Line(X, P)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, P)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Parallel(Line(W, Z), Line(X, Y))",
+        "PointLiesOnLine(P, Line(X, Z))",
+        "PointLiesOnLine(P, Line(Y, W))",
+        "Equals(LengthOf(Line(Y, Z)), LengthOf(Line(X, W)))",
+        "Equals(LengthOf(Line(X, Z)), 18.0)",
+        "Equals(LengthOf(Line(P, Y)), 3.0)"
+    ],
+    "correct": true
+}

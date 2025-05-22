@@ -1,0 +1,109 @@
+{
+    "problem_id": "7429",
+    "solved": true,
+    "problem_text": "Quadrilateral JKLM is a rectangle. If m \\angle KJL = 2x+4 and m \\angle JLK = 7x+5, find m \\angle KML.",
+    "logic_forms": [
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, K)",
+        "Line(P, L)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "Rectangle(J,K,L,M)",
+        "Equals(MeasureOf(Angle(K,J,L)),2x+4)",
+        "Equals(MeasureOf(Angle(J,L,K)),7x+5)",
+        "Find(MeasureOf(Angle(K,M,L)))"
+    ],
+    "point_instances": [
+        "M",
+        "J",
+        "P",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "MP",
+        "MK",
+        "PK",
+        "JP",
+        "JL",
+        "PL",
+        "ML",
+        "LK",
+        "MJ",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            65.44538461538463,
+            245.26654740608228
+        ],
+        "J": [
+            65.44538461538463,
+            56.035778175313055
+        ],
+        "P": [
+            284.54833333333335,
+            150.65116279069767
+        ],
+        "L": [
+            503.1721212121212,
+            245.82663847780128
+        ],
+        "K": [
+            503.1144444444444,
+            55.81085271317829
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        44.0,
+        68.0,
+        136.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        44.0,
+        68.0,
+        136.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 187.387706,
+    "solution_predicate": "Equals(0.3839724354, MeasureOf(Angle(L, M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220KLJ, \u2220LMK, P on KM, \u2220MKL, JK, 3.14 = pi, KM, pi * ((4 + 2 * x) / 180) = \u2220LJK, Rectangle(J, K, L, M), JM\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220LMK, P on KM\nConclusions: \u2220LMK = \u2220LMP\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220MKL, P on KM\nConclusions: \u2220MKL = \u2220PKL\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, L, M)\nConclusions: JK \u22a5 JM, JM \u22a5 LM\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : JM, KM, JK\nConclusions: \u25b3JKM\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 JM\nConclusions: pi / 2 = \u2220MJK\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : JM \u22a5 LM\nConclusions: pi / 2 = \u2220LMJ\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML, JM || KL\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: JM = KL\n\nStep 11:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220KLM = \u2220MJK\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, M)\nPremises : \u25b3JKM\nConclusions: pi = \u2220JKM + \u2220KMJ + \u2220MJK\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JKM = \u2220LMK, \u2220JLM = \u2220LJK\n\nStep 14:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KMJ = \u2220MKL, \u2220KLJ = \u2220MJL\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220LMJ, \u2220KLM = \u2220MJK, pi / 2 = \u2220MJK\nConclusions: \u2220KLM = \u2220LMJ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKM = \u2220LMK, \u2220LMK = \u2220LMP\nConclusions: \u2220JKM = \u2220LMP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JLM = \u2220LJK, pi * ((4 + 2 * x) / 180) = \u2220LJK\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220JLM\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKL = \u2220PKL, \u2220KMJ = \u2220MKL\nConclusions: \u2220KMJ = \u2220PKL\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 7 * x) / 180) = \u2220KLJ, \u2220KLJ = \u2220MJL\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220MJL\n\nStep 20:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220KLM = \u2220LMJ, JM = KL\nConclusions: \u25b3JLM \u2245 \u25b3KML\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JKM = \u2220LMP, \u2220KMJ = \u2220PKL, pi / 2 = \u2220MJK, pi = \u2220JKM + \u2220KMJ + \u2220MJK\nConclusions: 3.14 = 3.14 / 2 + \u2220LMP + \u2220PKL\n\nStep 22:\nTheorem: Congruent Definition\nPremises : \u25b3JLM \u2245 \u25b3KML\nConclusions: \u2220JLM = \u2220LMK, JM = KL, \u2220MJL = \u2220MKL\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JLM = \u2220LMK, pi * ((4 + 2 * x) / 180) = \u2220JLM, \u2220LMK = \u2220LMP\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220LMP\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MKL = \u2220PKL, pi * ((5 + 7 * x) / 180) = \u2220MJL, \u2220MJL = \u2220MKL\nConclusions: pi * ((5 + 7 * x) / 180) = \u2220PKL\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 + 2 * x) / 180) = \u2220LMP, \u2220LMK = \u2220LMP\nConclusions: pi * ((4 + 2 * x) / 180) = \u2220LMK\n\nStep 26:\nTheorem: Substitution\nPremises : pi * ((5 + 7 * x) / 180) = \u2220PKL, 3.14 = pi\nConclusions: 3.14 * ((5 + 7 * x) / 180) = \u2220PKL\n\nStep 27:\nTheorem: Substitution\nPremises : pi * ((4 + 2 * x) / 180) = \u2220LMK, 3.14 = pi\nConclusions: 3.14 * ((4 + 2 * x) / 180) = \u2220LMK\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 + 2 * x) / 180) = \u2220LMK, 3.14 = 3.14 / 2 + \u2220LMP + \u2220PKL, 3.14 * ((5 + 7 * x) / 180) = \u2220PKL, \u2220LMK = \u2220LMP\nConclusions: 0.38 = \u2220LMK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, K)",
+        "Line(P, K)",
+        "Line(J, P)",
+        "Line(J, L)",
+        "Line(P, L)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, K)",
+        "Line(P, L)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "Rectangle(J, K, L, M)",
+        "Equals(MeasureOf(Angle(L, J, K)), Mul(pi, Div(Add(Mul(2.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(Add(Mul(7.0, x), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

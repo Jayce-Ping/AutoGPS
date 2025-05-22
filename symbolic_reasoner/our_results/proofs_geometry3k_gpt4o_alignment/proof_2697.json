@@ -1,0 +1,70 @@
+{
+    "problem_id": "2697",
+    "solved": true,
+    "problem_text": "If A B \\parallel D C, find x.",
+    "logic_forms": [
+        "Parallel(Line(A, B), Line(D, C))",
+        "Equals(MeasureOf(Angle(B, A, D)), x)",
+        "Equals(MeasureOf(Angle(C, D, A)), 65)",
+        "Parallel(Line(A,B),Line(D,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            98.66071428571428,
+            330.10714285714283
+        ],
+        "B": [
+            512.9464285714286,
+            70.73214285714285
+        ],
+        "C": [
+            415.1785714285714,
+            314.0357142857143
+        ],
+        "A": [
+            197.32142857142856,
+            86.80357142857142
+        ]
+    },
+    "problem_choices": [
+        "32.5",
+        "65",
+        "105",
+        "115"
+    ],
+    "choices_precise_value": [
+        32.5,
+        65.0,
+        105.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 4.836626,
+    "solution_predicate": "Equals(115.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB || DC, pi * (x / 180) = \u2220DAB, 3.14 = pi, \u2220DAB, pi * (65 / 180) = \u2220CDA, \u2220BAD\n\nStep 2:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220CDA + \u2220DAB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220DAB\nConclusions: 3.14 * (x / 180) = \u2220DAB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAB\nConclusions: \u2220DAB = 2 * pi - \u2220BAD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAD\nConclusions: \u2220BAD = 2 * pi - \u2220DAB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220CDA + \u2220DAB, pi * (65 / 180) = \u2220CDA\nConclusions: 3.14 = pi * (65 / 180) + \u2220DAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAB = 2 * pi - \u2220BAD, 3.14 * (x / 180) = \u2220DAB\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220BAD\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BAD = 2 * pi - \u2220DAB\nConclusions: \u2220BAD = 2 * 3.14 - \u2220DAB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (65 / 180) + \u2220DAB, 3.14 * (x / 180) = \u2220DAB, 3.14 * (x / 180) = 2 * pi - \u2220BAD, \u2220BAD = 2 * 3.14 - \u2220DAB\nConclusions: 115 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

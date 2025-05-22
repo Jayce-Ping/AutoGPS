@@ -1,0 +1,102 @@
+{
+    "problem_id": "8501",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle DFB on \\odot F with diameter AC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, F, D)), 2a-5)",
+        "Equals(MeasureOf(Angle(B, F, C)), 72)",
+        "Equals(MeasureOf(Angle(C, F, D)), 4a-1)",
+        "Line(B, F)",
+        "Line(C, A)",
+        "Line(C, F)",
+        "Line(F, A)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(C, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnLine(F, Line(C, A))",
+        "Circle(F)",
+        "IsDiameterOf(Line(A,C),Circle(F))",
+        "Find(MeasureOf(Angle(D,F,B)))"
+    ],
+    "point_instances": [
+        "F",
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AF",
+        "AC",
+        "FC",
+        "FD",
+        "FB"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "F": [
+            155.580204778157,
+            150.8532423208191
+        ],
+        "B": [
+            82.51557093425606,
+            53.28719723183391
+        ],
+        "C": [
+            227.15224913494808,
+            51.21107266435986
+        ],
+        "A": [
+            83.2076124567474,
+            249.1349480968858
+        ],
+        "D": [
+            179.74740484429066,
+            271.280276816609
+        ]
+    },
+    "problem_choices": [
+        163.0,
+        165.0,
+        167.0,
+        169.0
+    ],
+    "choices_precise_value": [
+        163.0,
+        165.0,
+        167.0,
+        169.0
+    ],
+    "problem_answer": 165.0,
+    "total_time": 11.857771,
+    "solution_predicate": "Equals(2.8797932658, MeasureOf(Angle(B, F, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AFD, pi * ((2 * a - 5) / 180) = \u2220AFD, \u2220BFD, \u2220CFB, pi * ((4 * a - 1) / 180) = \u2220DFC, \u2220DFB, pi * (72 / 180) = \u2220CFB, \u2220BFA, \u2220DFC, 3.14 = pi\n\nStep 2:\nTheorem: Circumference splited\nPremises : \u2220DFB, \u2220AFD, \u2220BFA\nConclusions: 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220BFD, \u2220DFC, \u2220CFB\nConclusions: 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220DFC, \u2220AFD\nConclusions: pi = \u2220AFD + \u2220DFC\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((2 * a - 5) / 180) = \u2220AFD, 3.14 = pi\nConclusions: 3.14 * ((2 * a - 5) / 180) = \u2220AFD\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((4 * a - 1) / 180) = \u2220DFC, 3.14 = pi\nConclusions: 3.14 * ((4 * a - 1) / 180) = \u2220DFC\n\nStep 7:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AFD + \u2220BFA + \u2220DFB\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BFD + \u2220CFB + \u2220DFC, 3.14 = pi, pi * (72 / 180) = \u2220CFB\nConclusions: 2 * 3.14 = pi * (72 / 180) + \u2220BFD + \u2220DFC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220AFD + \u2220BFA + \u2220DFB, 2 * pi = \u2220AFD + \u2220BFA + \u2220DFB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (72 / 180) + \u2220BFD + \u2220DFC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (72 / 180) + \u2220BFD + \u2220DFC\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220AFD + \u2220DFC, 2 * 3.14 = pi * (72 / 180) + \u2220BFD + \u2220DFC, 3.14 * ((2 * a - 5) / 180) = \u2220AFD, 2 * pi = pi * (72 / 180) + \u2220BFD + \u2220DFC, 3.14 * ((4 * a - 1) / 180) = \u2220DFC\nConclusions: 2.88 = \u2220BFD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, B)",
+        "Circle(F, radius_F)",
+        "Line(B, F)",
+        "Line(C, A)",
+        "Line(C, F)",
+        "Line(F, A)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(C, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnLine(F, Line(C, A))",
+        "Circle(F, radius_F)",
+        "IsDiameterOf(Line(A, C), Circle(F, radius_F))",
+        "Equals(MeasureOf(Angle(A, F, D)), Mul(pi, Div(Sub(Mul(2.0, a), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(72.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, C)), Mul(pi, Div(Sub(Mul(4.0, a), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

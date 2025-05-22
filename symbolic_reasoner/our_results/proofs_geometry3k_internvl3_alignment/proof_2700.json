@@ -1,0 +1,74 @@
+{
+    "problem_id": "2700",
+    "solved": true,
+    "problem_text": "Find the area of the figure. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 15)",
+        "Equals(LengthOf(Line(D, A)), 15)",
+        "Equals(MeasureOf(Angle(D, A, C)), 30)",
+        "Find(AreaOf(Rectangle(A, B, C, D)))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(C, D), Line(A, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "DA",
+        "BA",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            263.3921568627451,
+            181.8627450980392
+        ],
+        "B": [
+            262.9019607843137,
+            38.48039215686274
+        ],
+        "C": [
+            15.107843137254903,
+            38.72549019607843
+        ],
+        "D": [
+            15.59803921568627,
+            181.61764705882354
+        ]
+    },
+    "problem_choices": [
+        "75",
+        "112.5",
+        "129.9",
+        "225"
+    ],
+    "choices_precise_value": [
+        75.0,
+        112.5,
+        129.9,
+        225.0
+    ],
+    "problem_answer": 129.9,
+    "total_time": 44.457228,
+    "solution_predicate": "Equals(129.9038105653, AreaOf(Rectangle(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAD, AD \u22a5 CD, tan(\u2220DCA), CD, \u2220DAB, \u2220BAC, AD, Area(Rectangle(A, B, C, D)), Rectangle(A, B, C, D), 15 = BC, 3.14 = pi, \u2220CAD, \u2220ACB, 15 = AD, AC, pi * (30 / 180) = \u2220CAD, \u2220CDA\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDA, pi / 2 = \u2220ADC\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : AD \u22a5 CD, tan(\u2220DCA)\nConclusions: AD / CD = tan(\u2220DCA)\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220CAD, \u2220BAC, \u2220DAB\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 5:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 7:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AD \u22a5 CD, AB \u22a5 AD\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAD\nConclusions: \u2220CAD = 2 * pi - \u2220DAC\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 12:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD\n\nStep 13:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC, AB || DC\n\nStep 14:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220DAB\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220CAD = 2 * pi - \u2220DAC, pi * (30 / 180) = \u2220CAD, 3.14 = pi\nConclusions: 3.14 * (30 / 180) = 2 * 3.14 - \u2220DAC\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220CDA = 2 * pi - \u2220ADC, (3 * pi) / 2 = \u2220CDA, pi / 2 = \u2220ADC, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 18:\nTheorem: Substitution\nPremises : Area(Rectangle(A, B, C, D)) = AB * BC, AB = CD, 15 = BC\nConclusions: Area(Rectangle(A, B, C, D)) = 15 * CD\n\nStep 19:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BCA = \u2220DAC, \u2220ACB = \u2220CAD\n\nStep 20:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220BAC = \u2220DCA\n\nStep 21:\nTheorem: Substitution\nPremises : pi = \u2220ADC + \u2220CAD + \u2220DCA, pi / 2 = \u2220ADC, pi * (30 / 180) = \u2220CAD, 3.14 = pi\nConclusions: 3.14 = pi / 2 + 3.14 * (30 / 180) + \u2220DCA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220DAB, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220DAB\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220CAD, pi * (30 / 180) = \u2220CAD\nConclusions: pi * (30 / 180) = \u2220ACB\n\nStep 24:\nTheorem: Substitution\nPremises : pi * (30 / 180) = \u2220ACB, \u2220ACB = 2 * pi - \u2220BCA, \u2220BCA = \u2220DAC, 3.14 = pi\nConclusions: pi * (30 / 180) = 2 * 3.14 - \u2220DAC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (30 / 180) = 2 * 3.14 - \u2220DAC, pi * (30 / 180) = 2 * 3.14 - \u2220DAC\nConclusions: 3.14 * (30 / 180) = pi * (30 / 180)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (30 / 180) = pi * (30 / 180), pi * (30 / 180) = \u2220CAD\nConclusions: 3.14 * (30 / 180) = \u2220CAD\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB, \u2220BAC = \u2220DCA, 3.14 * (30 / 180) = \u2220CAD, 2 * 3.14 - pi / 2 = \u2220DAB, 3.14 = pi / 2 + 3.14 * (30 / 180) + \u2220DCA\nConclusions: 1.05 = \u2220BAC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220BAC, \u2220BAC = \u2220DCA\nConclusions: 1.05 = \u2220DCA\n\nStep 29:\nTheorem: Substitution\nPremises : 1.05 = \u2220DCA, AD / CD = tan(\u2220DCA), 15 = AD\nConclusions: tan(1.05) = 15 / CD\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : Area(Rectangle(A, B, C, D)) = 15 * CD, tan(1.05) = 15 / CD\nConclusions: 129.9 = Area(Rectangle(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Equals(LengthOf(Line(C, B)), 15.0)",
+        "Equals(LengthOf(Line(D, A)), 15.0)",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

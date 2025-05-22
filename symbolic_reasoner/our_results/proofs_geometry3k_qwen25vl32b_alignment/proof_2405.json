@@ -1,0 +1,121 @@
+{
+    "problem_id": "2405",
+    "solved": true,
+    "problem_text": "In the figure below, \\angle A B C is intersected by parallel lines l and m. What is the measure of \\angle A B C? Express your answer in degrees.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, F))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(A, Line(B, I))",
+        "PointLiesOnLine(A, Line(G, H))",
+        "Parallel(Line(G, H), Line(D, F))",
+        "Equals(MeasureOf(Angle(D, C, B)), 33)",
+        "Equals(MeasureOf(Angle(B, A, G)), 38)",
+        "Angle(A,B,C)",
+        "Parallel(Line(l),Line(m))",
+        "IntersectAt(Line(l),Line(m),Point(B))",
+        "Find(MeasureOf(Angle(A,B,C)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "DC",
+        "DF",
+        "CF",
+        "BC",
+        "BE",
+        "CE",
+        "BA",
+        "BI",
+        "AI",
+        "GA",
+        "GH",
+        "AH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            289.4308943089431,
+            261.7317073170732
+        ],
+        "A": [
+            287.3983739837398,
+            110.91869918699187
+        ],
+        "B": [
+            170.3252032520325,
+            197.09756097560975
+        ],
+        "D": [
+            59.75609756097561,
+            262.9512195121951
+        ],
+        "E": [
+            444.7154471544716,
+            347.0975609756098
+        ],
+        "F": [
+            493.089430894309,
+            261.7317073170732
+        ],
+        "G": [
+            57.31707317073171,
+            110.91869918699187
+        ],
+        "H": [
+            492.6829268292683,
+            110.10569105691057
+        ],
+        "I": [
+            404.0650406504065,
+            23.520325203252035
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "38",
+        "61",
+        "71"
+    ],
+    "choices_precise_value": [
+        33.0,
+        38.0,
+        61.0,
+        71.0
+    ],
+    "problem_answer": 71.0,
+    "total_time": 47.75229,
+    "solution_predicate": "Equals(1.2391837689, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220BCD, pi * (38 / 180) = \u2220GAB, A on GH, DF || GH, BC, \u2220FCA, \u2220ACB, \u2220GAB, \u2220ECA, \u2220BAC, \u2220DCE, \u2220ECF, \u2220HAB, pi * (33 / 180) = \u2220BCD, \u2220HAI, C on BE, C on DF, \u2220GAC, AB, \u2220IAG, A on BI, AC, \u2220ACD, \u2220CAI, \u2220CAH\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : DF || GH\nConclusions: \u2220FCA = \u2220GAC, \u2220ACD = \u2220CAH\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220ECA\nConclusions: pi = \u2220ACB + \u2220ECA\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220BCD, \u2220FCA, \u2220DCE, \u2220ACB, \u2220ECF\nConclusions: 2 * pi = \u2220ACB + \u2220BCD + \u2220DCE + \u2220ECF + \u2220FCA\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : C on BE, C on DF\nConclusions: \u2220BCD = \u2220ECF, \u2220DCE = \u2220FCB\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : A on BI, A on GH\nConclusions: \u2220GAB = \u2220HAI\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220ACD, \u2220ECA, \u2220DCE\nConclusions: 2 * pi = \u2220ACD + \u2220DCE + \u2220ECA\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220CAI, \u2220IAG, \u2220GAC\nConclusions: 2 * pi = \u2220CAI + \u2220GAC + \u2220IAG\n\nStep 10:\nTheorem: Straight Angle\nPremises : \u2220CAI, \u2220BAC\nConclusions: pi = \u2220BAC + \u2220CAI\n\nStep 11:\nTheorem: Circumference Split\nPremises : \u2220HAI, \u2220BAC, \u2220CAH, \u2220IAG, \u2220GAB\nConclusions: 2 * pi = \u2220BAC + \u2220CAH + \u2220GAB + \u2220HAI + \u2220IAG\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220CAH, \u2220HAB, \u2220BAC\nConclusions: 2 * pi = \u2220BAC + \u2220CAH + \u2220HAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220ECA\nConclusions: 3.14 = \u2220ACB + \u2220ECA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (33 / 180) = \u2220BCD, \u2220BCD = \u2220ECF\nConclusions: pi * (33 / 180) = \u2220ECF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GAB = \u2220HAI, pi * (38 / 180) = \u2220GAB\nConclusions: pi * (38 / 180) = \u2220HAI\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 17:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACD + \u2220DCE + \u2220ECA, \u2220ACD = \u2220CAH, \u2220DCE = \u2220FCB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CAH + \u2220ECA + \u2220FCB\n\nStep 18:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CAI + \u2220GAC + \u2220IAG, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CAI + \u2220GAC + \u2220IAG\n\nStep 19:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAC + \u2220CAH + \u2220HAB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BAC + \u2220CAH + \u2220HAB\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (33 / 180) = \u2220BCD, 3.14 = pi, pi * (33 / 180) = \u2220ECF, 2 * pi = \u2220ACB + \u2220BCD + \u2220DCE + \u2220ECF + \u2220FCA, \u2220FCA = \u2220GAC, \u2220DCE = \u2220FCB\nConclusions: 2 * 3.14 = 3.14 * (33 / 180) + 3.14 * (33 / 180) + \u2220ACB + \u2220FCB + \u2220GAC\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (38 / 180) = \u2220HAI, 2 * pi = \u2220BAC + \u2220CAH + \u2220GAB + \u2220HAI + \u2220IAG, pi * (38 / 180) = \u2220GAB\nConclusions: 2 * 3.14 = 3.14 * (38 / 180) + pi * (38 / 180) + \u2220BAC + \u2220CAH + \u2220IAG\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BAC + \u2220CAH + \u2220HAB, 2 * 3.14 = \u2220BAC + \u2220CAH + \u2220HAB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (33 / 180) + 3.14 * (33 / 180) + \u2220ACB + \u2220FCB + \u2220GAC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (33 / 180) + 3.14 * (33 / 180) + \u2220ACB + \u2220FCB + \u2220GAC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (38 / 180) + pi * (38 / 180) + \u2220BAC + \u2220CAH + \u2220IAG\nConclusions: 2 * pi = 3.14 * (38 / 180) + pi * (38 / 180) + \u2220BAC + \u2220CAH + \u2220IAG\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220CAH + \u2220ECA + \u2220FCB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220CAH + \u2220ECA + \u2220FCB\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = 3.14 * (33 / 180) + 3.14 * (33 / 180) + \u2220ACB + \u2220FCB + \u2220GAC, pi = \u2220BAC + \u2220CAI, 2 * pi = \u2220CAH + \u2220ECA + \u2220FCB, 2 * 3.14 = \u2220CAI + \u2220GAC + \u2220IAG, 2 * pi = \u2220CAI + \u2220GAC + \u2220IAG, 2 * pi = 3.14 * (38 / 180) + pi * (38 / 180) + \u2220BAC + \u2220CAH + \u2220IAG, 3.14 = \u2220ACB + \u2220ECA, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 1.24 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(C, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(B, A)",
+        "Line(B, I)",
+        "Line(A, I)",
+        "Line(G, A)",
+        "Line(G, H)",
+        "Line(A, H)",
+        "PointLiesOnLine(C, Line(D, F))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(A, Line(B, I))",
+        "PointLiesOnLine(A, Line(G, H))",
+        "Parallel(Line(G, H), Line(D, F))",
+        "Angle(C, B, A)",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, A, B)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

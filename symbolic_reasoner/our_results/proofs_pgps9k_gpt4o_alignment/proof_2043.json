@@ -1,0 +1,82 @@
+{
+    "problem_id": "2043",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 1 in rhombus PQRS?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, R, Q)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(P, R, S)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(R, P, Q)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(R, P, S)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(R, Q, P)), 104)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Rhombus(P,Q,R,S)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "PR",
+        "QR",
+        "QP",
+        "RS",
+        "PS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            83.85989010989012,
+            53.48571428571429
+        ],
+        "R": [
+            256.5313971742543,
+            53.48571428571429
+        ],
+        "P": [
+            41.85007849293564,
+            220.62857142857143
+        ],
+        "S": [
+            214.6813186813187,
+            221.265306122449
+        ]
+    },
+    "problem_choices": [
+        38.0,
+        52.0,
+        76.0,
+        104.0
+    ],
+    "choices_precise_value": [
+        38.0,
+        52.0,
+        76.0,
+        104.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 18.914375,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(R, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (104 / 180) = \u2220PQR, PR, 3.14 = pi, Rhombus(P, Q, R, S), QR, PQ\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(P, Q, R, S)\nConclusions: \u2220PRS = \u2220QRP\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(P, Q, R, S)\nConclusions: Parallelogram(P, Q, R, S)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : PR, PQ, QR\nConclusions: \u25b3PQR\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(P, Q, R, S)\nConclusions: PQ || SR\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, R)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 7:\nTheorem: Alternate Interior Angle Theorem\nPremises : PQ || SR\nConclusions: \u2220PRS = \u2220RPQ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220PQR + \u2220QRP + \u2220RPQ, 3.14 = pi\nConclusions: 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRS = \u2220RPQ, \u2220PRS = \u2220QRP\nConclusions: \u2220QRP = \u2220RPQ\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : \u2220QRP = \u2220RPQ, 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ, pi * (104 / 180) = \u2220PQR, pi = \u2220PQR + \u2220QRP + \u2220RPQ\nConclusions: 0.66 = \u2220RPQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, R)",
+        "Line(Q, R)",
+        "Line(Q, P)",
+        "Line(R, S)",
+        "Line(P, S)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Rhombus(P, Q, R, S)",
+        "Equals(MeasureOf(Angle(P, Q, R)), Mul(pi, Div(104.0, 180.0)))"
+    ],
+    "correct": true
+}

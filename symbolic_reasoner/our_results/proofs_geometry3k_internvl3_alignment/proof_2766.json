@@ -1,0 +1,78 @@
+{
+    "problem_id": "2766",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(C, A)), 16)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(B, D)), 15)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "AD",
+        "CB",
+        "CA",
+        "BA",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            67.53935860058309,
+            252.18658892128278
+        ],
+        "B": [
+            67.53935860058309,
+            139.35860058309038
+        ],
+        "C": [
+            67.53935860058309,
+            26.239067055393583
+        ],
+        "D": [
+            287.6559766763848,
+            139.35860058309038
+        ]
+    },
+    "problem_choices": [
+        "16",
+        "17",
+        "18",
+        "19"
+    ],
+    "choices_precise_value": [
+        16.0,
+        17.0,
+        18.0,
+        19.0
+    ],
+    "problem_answer": 17.0,
+    "total_time": 34.532189,
+    "solution_predicate": "Equals(17.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 BD, B on AC, BD, BC \u22a5 BD, x = AD, CD, BC, AB = BC, 16 = AC, 15 = BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220ABD\n\nStep 3:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220DBC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 16 = AC, AC = AB + BC\nConclusions: 16 = AB + BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABD, pi / 2 = \u2220DBC\nConclusions: \u2220ABD = \u2220DBC\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : BC \u22a5 BD, \u25b3BCD\nConclusions: CD = SqrtOf(BC ** 2 + BD ** 2)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : AB = BC, 16 = AB + BC\nConclusions: 8 = AB\n\nStep 10:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AB = BC, \u2220ABD = \u2220DBC\nConclusions: \u25b3ABD \u2245 \u25b3CBD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : AB = BC, 8 = AB\nConclusions: 8 = BC\n\nStep 12:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: AD = CD, AB = BC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : x = AD, AD = CD\nConclusions: x = CD\n\nStep 14:\nTheorem: Substitution\nPremises : 8 = BC, CD = SqrtOf(BC ** 2 + BD ** 2), 15 = BD, x = CD\nConclusions: SqrtOf(15 ** 2 + 8 ** 2) = x\n\nStep 15:\nTheorem: Evaluate\nPremises : SqrtOf(15 ** 2 + 8 ** 2) = x\nConclusions: 17 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(C, A)), 16.0)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(B, D)), 15.0)"
+    ],
+    "correct": true
+}

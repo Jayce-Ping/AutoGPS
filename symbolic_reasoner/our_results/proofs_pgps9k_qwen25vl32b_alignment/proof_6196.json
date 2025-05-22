@@ -1,0 +1,68 @@
+{
+    "problem_id": "6196",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, S)), 8)",
+        "Equals(MeasureOf(Angle(R, S, T)), 72)",
+        "Find(AreaOf(Sector(S, R, T)))",
+        "Line(S, R)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(S))",
+        "PointLiesOnCircle(T, Circle(S))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "TS",
+        "SR"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "S": [
+            113.9787234042553,
+            114.89361702127658
+        ],
+        "T": [
+            101.97759999999998,
+            218.73333333333335
+        ],
+        "R": [
+            208.17828571428572,
+            160.15416666666667
+        ]
+    },
+    "problem_choices": [
+        40.2,
+        80.4,
+        160.8,
+        201.1
+    ],
+    "choices_precise_value": [
+        40.2,
+        80.4,
+        160.8,
+        201.1
+    ],
+    "problem_answer": 201.1,
+    "total_time": 1.804295,
+    "solution_predicate": "Equals(40.2123859661, AreaOf(Sector(T, S, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: T on \u2299(S, radius_S), Sector(T, S, R), pi * (72 / 180) = \u2220TSR, 8 = ST\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : T on \u2299(S, radius_S)\nConclusions: radius_S = ST\n\nStep 3:\nTheorem: Area formula of Sector(T, S, R)\nPremises : Sector(T, S, R)\nConclusions: Area(Sector(T, S, R)) = (radius_S ** 2 * \u2220TSR) / 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_S = ST, 8 = ST\nConclusions: 8 = radius_S\n\nStep 5:\nTheorem: Substitution\nPremises : 8 = radius_S, Area(Sector(T, S, R)) = (radius_S ** 2 * \u2220TSR) / 2, pi * (72 / 180) = \u2220TSR\nConclusions: (pi * (72 / 180) * 8 ** 2) / 2 = Area(Sector(T, S, R))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (72 / 180) * 8 ** 2) / 2 = Area(Sector(T, S, R))\nConclusions: 40.21 = Area(Sector(T, S, R))\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, S)",
+        "Line(S, R)",
+        "Circle(S, radius_S)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(S, radius_S))",
+        "PointLiesOnCircle(T, Circle(S, radius_S))",
+        "Equals(LengthOf(Line(T, S)), 8.0)",
+        "Equals(MeasureOf(Angle(T, S, R)), Mul(pi, Div(72.0, 180.0)))"
+    ],
+    "correct": false
+}

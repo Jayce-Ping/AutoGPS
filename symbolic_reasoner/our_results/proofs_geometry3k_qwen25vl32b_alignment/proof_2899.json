@@ -1,0 +1,108 @@
+{
+    "problem_id": "2899",
+    "solved": true,
+    "problem_text": "If C W = W F and E D = 30, what is D F?",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "PointLiesOnCircle(E, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(W, radius_0_0))",
+        "Perpendicular(Line(B, C), Line(W, C))",
+        "Perpendicular(Line(W, F), Line(D, F))",
+        "Equals(LengthOf(Line(C,W)),Line(W,F))",
+        "Equals(LengthOf(Line(E,D)),30)",
+        "Find(LengthOf(Line(D,F)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "F",
+        "E",
+        "W",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB",
+        "CW",
+        "WF",
+        "EF",
+        "ED",
+        "FD"
+    ],
+    "circle_instances": [
+        "W"
+    ],
+    "point_positions": {
+        "B": [
+            340.3023255813954,
+            114.88372093023256
+        ],
+        "C": [
+            250.53488372093022,
+            98.6046511627907
+        ],
+        "F": [
+            250.0697674418605,
+            321.3953488372093
+        ],
+        "E": [
+            158.90697674418607,
+            341.3953488372093
+        ],
+        "W": [
+            228.2093023255814,
+            210.69767441860466
+        ],
+        "A": [
+            157.51162790697674,
+            80.93023255813954
+        ],
+        "D": [
+            340.7674418604651,
+            306.9767441860465
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "30",
+        "45",
+        "60"
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        45.0,
+        60.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 132.031636,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(D, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2299(W, radius_0_0), F on DE, 30 = DE, DF \u22a5 FW\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on DE\nConclusions: DE = DF + EF\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : F on DE, \u2299(W, radius_0_0), DF \u22a5 FW\nConclusions: DF = EF\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : DE = DF + EF, 30 = DE\nConclusions: 30 = DF + EF\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 30 = DF + EF, DF = EF\nConclusions: 15 = DF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, W)",
+        "Line(W, F)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Circle(W, radius_0_0)",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "PointLiesOnCircle(E, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(W, radius_0_0))",
+        "Perpendicular(Line(B, C), Line(W, C))",
+        "Perpendicular(Line(W, F), Line(D, F))",
+        "Equals(LengthOf(Line(C, W)), LengthOf(Line(W, F)))",
+        "Equals(LengthOf(Line(E, D)), 30.0)"
+    ],
+    "correct": true
+}

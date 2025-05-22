@@ -1,0 +1,97 @@
+{
+    "problem_id": "2457",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 22)",
+        "Equals(LengthOf(Line(B, E)), 18)",
+        "Equals(MeasureOf(Angle(E, D, B)), 40)",
+        "Find(AreaOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(E, D))",
+        "PointLiesOnLine(B, Line(A, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "BE",
+        "ED",
+        "DC",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            50.31350114416475,
+            20.9609022556391
+        ],
+        "B": [
+            126.83606138107417,
+            139.4924369747899
+        ],
+        "C": [
+            250.94761904761904,
+            22.35374149659864
+        ],
+        "D": [
+            326.79816933638443,
+            140.43007518796992
+        ],
+        "E": [
+            186.08009153318076,
+            231.28721804511275
+        ]
+    },
+    "problem_choices": [
+        332.3,
+        396.0,
+        471.9,
+        616.1
+    ],
+    "choices_precise_value": [
+        332.3,
+        396.0,
+        471.9,
+        616.1
+    ],
+    "problem_answer": 471.9,
+    "total_time": 44.850217,
+    "solution_predicate": "Equals(471.9344226672, AreaOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, 18 = BE, 3.14 = pi, 22 = AB, B on AE, DE, \u2220CAE, pi * (40 / 180) = \u2220BDE, BE \u22a5 DE, AE \u22a5 DE, BE, Parallelogram(A, B, D, C), \u2220CAE\n\nStep 2:\nTheorem: Same Angle\nPremises : B on AE, \u2220CAE\nConclusions: \u2220CAB = \u2220CAE\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 DE\nConclusions: pi / 2 = \u2220DEB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BE, BD, DE\nConclusions: \u25b3BDE\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD, AC || BD\n\nStep 6:\nTheorem: Area formula of Parallelogram(A, B, D, C)\nPremises : AE \u22a5 DE, Parallelogram(A, B, D, C)\nConclusions: Area(Parallelogram(A, B, D, C)) = AB * DE\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220BDC = \u2220CAB\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAE\nConclusions: \u2220CAE = 2 * pi - \u2220EAC\n\nStep 9:\nTheorem: Law of Sines\nPremises : \u25b3BDE\nConclusions: BE / sin(\u2220BDE) = DE / sin(\u2220EBD)\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, E)\nPremises : \u25b3BDE\nConclusions: pi = \u2220BDE + \u2220DEB + \u2220EBD\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BDC = \u2220DBE\n\nStep 12:\nTheorem: Corresponding Angle Theorem\nPremises : AC || BD\nConclusions: \u2220EAC = \u2220EBD\n\nStep 13:\nTheorem: Substitution\nPremises : 22 = AB, Area(Parallelogram(A, B, D, C)) = AB * DE\nConclusions: Area(Parallelogram(A, B, D, C)) = 22 * DE\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220BDE, BE / sin(\u2220BDE) = DE / sin(\u2220EBD), 18 = BE\nConclusions: 18 / sin(pi * (40 / 180)) = DE / sin(\u2220EBD)\n\nStep 15:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DEB, pi * (40 / 180) = \u2220BDE, pi = \u2220BDE + \u2220DEB + \u2220EBD, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + pi * (40 / 180) + \u2220EBD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CAB, \u2220BDC = \u2220DBE\nConclusions: \u2220CAB = \u2220DBE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DBE, \u2220CAB = \u2220CAE\nConclusions: \u2220CAE = \u2220DBE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAE = 2 * pi - \u2220EAC, \u2220CAE = \u2220DBE\nConclusions: \u2220DBE = 2 * pi - \u2220EAC\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220EAC = \u2220EBD, \u2220CAE = 2 * pi - \u2220EAC, 3.14 = pi, \u2220CAE = \u2220DBE\nConclusions: \u2220DBE = 2 * 3.14 - \u2220EBD\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : \u2220EAC = \u2220EBD, \u2220DBE = 2 * pi - \u2220EAC, \u2220DBE = 2 * 3.14 - \u2220EBD, 3.14 = 3.14 / 2 + pi * (40 / 180) + \u2220EBD\nConclusions: 0.87 = \u2220EAC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAC = \u2220EBD, 0.87 = \u2220EAC\nConclusions: 0.87 = \u2220EBD\n\nStep 22:\nTheorem: Substitution\nPremises : 18 / sin(pi * (40 / 180)) = DE / sin(\u2220EBD), 0.87 = \u2220EBD, 3.14 = pi\nConclusions: 18 / sin(3.14 * (40 / 180)) = DE / sin(0.87)\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 18 / sin(3.14 * (40 / 180)) = DE / sin(0.87), Area(Parallelogram(A, B, D, C)) = 22 * DE\nConclusions: 471.93 = Area(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, E), Line(E, D))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), 22.0)",
+        "Equals(LengthOf(Line(B, E)), 18.0)",
+        "Equals(MeasureOf(Angle(B, D, E)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

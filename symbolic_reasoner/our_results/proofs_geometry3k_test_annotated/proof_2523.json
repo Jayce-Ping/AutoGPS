@@ -1,0 +1,103 @@
+{
+    "problem_id": "2523",
+    "solved": true,
+    "problem_text": "The pair of polygons is similar. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(B, Line(E, A))",
+        "Equals(LengthOf(Line(A, B)), x-2)",
+        "Equals(LengthOf(Line(E, B)), 5)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(G, D)), 7.5)",
+        "Similar(Polygon(A, B, C, D), Polygon(A, E, F, G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "C",
+        "B",
+        "D",
+        "E",
+        "A"
+    ],
+    "line_instances": [
+        "AD",
+        "AG",
+        "DG",
+        "EB",
+        "EA",
+        "BA",
+        "EF",
+        "FG",
+        "BC",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            307.4498567335243,
+            198.03438395415472
+        ],
+        "F": [
+            306.87679083094554,
+            44.739255014326645
+        ],
+        "C": [
+            176.79083094555872,
+            131.55873925501433
+        ],
+        "B": [
+            79.08309455587393,
+            131.55873925501433
+        ],
+        "D": [
+            177.65042979942692,
+            197.7478510028653
+        ],
+        "E": [
+            79.08309455587393,
+            43.87965616045845
+        ],
+        "A": [
+            79.94269340974212,
+            197.7478510028653
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "3",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 33.028741,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = BE, B on AE, D on AG, Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G), x - 2 = AB, 7.5 = DG, x = AD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AE\nConclusions: AE = AB + BE\n\nStep 3:\nTheorem: Line Segment Split\nPremises : D on AG\nConclusions: AG = AD + DG\n\nStep 4:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G)\nConclusions: AB / AE = AD / AG\n\nStep 5:\nTheorem: Substitution\nPremises : 5 = BE, AE = AB + BE, x - 2 = AB\nConclusions: 5 + (x - 2) = AE\n\nStep 6:\nTheorem: Substitution\nPremises : 7.5 = DG, x = AD, AG = AD + DG\nConclusions: 7.5 + x = AG\n\nStep 7:\nTheorem: Substitution\nPremises : x = AD, AB / AE = AD / AG, x - 2 = AB, 5 + (x - 2) = AE, 7.5 + x = AG\nConclusions: x / (7.5 + x) = (x - 2) / (5 + (x - 2))\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : x / (7.5 + x) = (x - 2) / (5 + (x - 2))\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(D, G)",
+        "Line(E, B)",
+        "Line(E, A)",
+        "Line(B, A)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(B, Line(E, A))",
+        "Similar(Quadrilateral(A, B, C, D), Quadrilateral(A, E, F, G))",
+        "Equals(LengthOf(Line(A, B)), Sub(x, 2.0))",
+        "Equals(LengthOf(Line(E, B)), 5.0)",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(G, D)), 7.5)"
+    ],
+    "correct": true
+}

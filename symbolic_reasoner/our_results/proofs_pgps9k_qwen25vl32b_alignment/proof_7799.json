@@ -1,0 +1,126 @@
+{
+    "problem_id": "7799",
+    "solved": true,
+    "problem_text": "Use rectangle LMNP, parallelogram LKMJ. If MK = 6x, KL = 3x+2y, and JN = 14-x, find y.",
+    "logic_forms": [
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(K, M)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(N, M)",
+        "Line(P, J)",
+        "Line(P, L)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnLine(J, Line(L, N))",
+        "PointLiesOnLine(J, Line(P, M))",
+        "Rectangle(L,M,N,P)",
+        "Parallelogram(L,K,M,J)",
+        "Equals(LengthOf(Line(M,K)),6x)",
+        "Equals(LengthOf(Line(K,L)),3x+2y)",
+        "Equals(LengthOf(Line(J,N)),14-x)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "N",
+        "P",
+        "J",
+        "L",
+        "M",
+        "K"
+    ],
+    "line_instances": [
+        "NM",
+        "MK",
+        "NP",
+        "PL",
+        "ML",
+        "KL",
+        "NJ",
+        "NL",
+        "JL",
+        "MJ",
+        "MP",
+        "JP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            57.77272727272727,
+            186.96
+        ],
+        "P": [
+            57.580578512396706,
+            34.69558441558442
+        ],
+        "J": [
+            118.36363636363637,
+            111.05142857142857
+        ],
+        "L": [
+            180.43409090909094,
+            35.00228571428571
+        ],
+        "M": [
+            180.36363636363637,
+            186.96
+        ],
+        "K": [
+            242.66996047430828,
+            110.92919254658386
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        6.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        6.0,
+        12.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 290.590634,
+    "solution_predicate": "Equals(3.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(L, M, N, P), 6 * x = KM, 2 * y + 3 * x = KL, J on LN, J on MP, 14 - x = JN, Parallelogram(J, L, K, M)\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(L, M, N, P)\nConclusions: MN \u22a5 NP, LM \u22a5 MN\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(L, M, N, P)\nConclusions: Parallelogram(L, M, N, P)\n\nStep 4:\nTheorem: Line Segment Split\nPremises : J on LN\nConclusions: LN = JL + JN\n\nStep 5:\nTheorem: Line Segment Split\nPremises : J on MP\nConclusions: MP = JM + JP\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, L, K, M)\nConclusions: JL = KM, JM = KL\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : MN \u22a5 NP\nConclusions: pi / 2 = \u2220MNP\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : LM \u22a5 MN\nConclusions: pi / 2 = \u2220LMN\n\nStep 9:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(L, M, N, P)\nConclusions: \u2220MNP = \u2220PLM\n\nStep 10:\nTheorem: Parallelogram Diagonals Bisect\nPremises : J on LN, Parallelogram(L, M, N, P), J on MP\nConclusions: JM = JP, JL = JN\n\nStep 11:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(L, M, N, P)\nConclusions: LP = MN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220LMN, pi / 2 = \u2220MNP, \u2220MNP = \u2220PLM\nConclusions: \u2220LMN = \u2220PLM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : JM = KL, 2 * y + 3 * x = KL, JM = JP\nConclusions: 2 * y + 3 * x = JP\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : JL = KM, JL = JN\nConclusions: JN = KM\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : JL = JN, 14 - x = JN\nConclusions: 14 - x = JL\n\nStep 16:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : LP = MN, \u2220LMN = \u2220PLM\nConclusions: \u25b3LMN \u2245 \u25b3MLP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 * y + 3 * x = KL, 2 * y + 3 * x = JP\nConclusions: JP = KL\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : JL = KM, 14 - x = JL, 6 * x = KM\nConclusions: 6 * x = 14 - x\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : LN = JL + JN, JN = KM, 6 * x = KM, 14 - x = JL, 14 - x = JN\nConclusions: 24 = LN\n\nStep 20:\nTheorem: Congruent Definition\nPremises : \u25b3LMN \u2245 \u25b3MLP\nConclusions: LP = MN, LN = MP\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : MP = JM + JP, JM = KL, JP = KL\nConclusions: KL = 0.5 * MP\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : LN = MP, 24 = LN\nConclusions: 24 = MP\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 2 * y + 3 * x = KL, KL = 0.5 * MP\nConclusions: 2 * y + 3 * x = 0.5 * MP\n\nStep 24:\nTheorem: Evaluate\nPremises : 24 = MP\nConclusions: 12 = 0.5 * MP\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * y + 3 * x = 0.5 * MP, 12 = 0.5 * MP\nConclusions: 12 = 2 * y + 3 * x\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 12 = 2 * y + 3 * x, 6 * x = 14 - x\nConclusions: 3 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(M, K)",
+        "Line(N, P)",
+        "Line(P, L)",
+        "Line(M, L)",
+        "Line(K, L)",
+        "Line(N, J)",
+        "Line(N, L)",
+        "Line(J, L)",
+        "Line(M, J)",
+        "Line(M, P)",
+        "Line(J, P)",
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(K, M)",
+        "Line(L, J)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(N, M)",
+        "Line(P, J)",
+        "Line(P, L)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnLine(J, Line(L, N))",
+        "PointLiesOnLine(J, Line(P, M))",
+        "Rectangle(L, M, N, P)",
+        "Parallelogram(L, K, M, J)",
+        "Equals(LengthOf(Line(M, K)), Mul(6.0, x))",
+        "Equals(LengthOf(Line(K, L)), Add(Mul(3.0, x), Mul(2.0, y)))",
+        "Equals(LengthOf(Line(J, N)), Sub(14.0, x))"
+    ],
+    "correct": true
+}

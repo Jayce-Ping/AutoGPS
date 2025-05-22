@@ -1,0 +1,109 @@
+{
+    "problem_id": "7309",
+    "solved": true,
+    "problem_text": "VWXY is a rhombus. Find YX.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), 9a-18)",
+        "Equals(LengthOf(Line(X, Y)), 3a+15)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(Z, Line(V, X))",
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "Rhombus(V,W,X,Y)",
+        "Find(LengthOf(Line(Y,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "V",
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "VZ",
+        "VX",
+        "ZX",
+        "VW",
+        "VY",
+        "WX",
+        "YX",
+        "WZ",
+        "WY",
+        "ZY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            177.53125,
+            55.28571428571428
+        ],
+        "V": [
+            51.762054507337524,
+            112.45714285714284
+        ],
+        "Z": [
+            177.27358490566039,
+            112.1142857142857
+        ],
+        "X": [
+            303.5294811320755,
+            112.62857142857142
+        ],
+        "Y": [
+            177.53125,
+            166.88571428571427
+        ]
+    },
+    "problem_choices": [
+        15.75,
+        25.2,
+        31.5,
+        63.0
+    ],
+    "choices_precise_value": [
+        15.75,
+        25.2,
+        31.5,
+        63.0
+    ],
+    "problem_answer": 31.5,
+    "total_time": 97.200367,
+    "solution_predicate": "Equals(31.5, LengthOf(Line(Y, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 + 3 * a = XY, Rhombus(V, W, X, Y), 9 * a - 18 = WX\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(V, W, X, Y)\nConclusions: Parallelogram(V, W, X, Y)\n\nStep 3:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(V, W, X, Y)\nConclusions: VW = VY\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(V, W, X, Y)\nConclusions: VW = XY, VY = WX\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : VW = XY, 15 + 3 * a = XY\nConclusions: 15 + 3 * a = VW\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 9 * a - 18 = WX, VY = WX\nConclusions: 9 * a - 18 = VY\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 15 + 3 * a = VW, 9 * a - 18 = VY, VW = VY\nConclusions: 15 + 3 * a = 9 * a - 18\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 15 + 3 * a = XY, 15 + 3 * a = 9 * a - 18\nConclusions: 31.5 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, Z)",
+        "Line(V, X)",
+        "Line(Z, X)",
+        "Line(V, W)",
+        "Line(V, Y)",
+        "Line(W, X)",
+        "Line(Y, X)",
+        "Line(W, Z)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Y)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(Z, Line(V, X))",
+        "PointLiesOnLine(Z, Line(W, Y))",
+        "Rhombus(V, W, X, Y)",
+        "Equals(LengthOf(Line(X, W)), Sub(Mul(9.0, a), 18.0))",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(3.0, a), 15.0))"
+    ],
+    "correct": true
+}

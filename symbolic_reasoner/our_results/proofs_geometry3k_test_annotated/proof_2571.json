@@ -1,0 +1,99 @@
+{
+    "problem_id": "2571",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(E, G))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(H, E, A)), 8x+6)",
+        "Equals(MeasureOf(Angle(A, F, G)), 10x-4)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "F",
+        "E",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "EH",
+        "FA",
+        "FH",
+        "AH",
+        "EA",
+        "EG",
+        "AG",
+        "FG"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "H": [
+            210.67415730337078,
+            398.438202247191
+        ],
+        "G": [
+            505.0561797752809,
+            427.08988764044943
+        ],
+        "F": [
+            460.6741573033708,
+            85.51685393258427
+        ],
+        "E": [
+            254.4943820224719,
+            102.93258426966293
+        ],
+        "A": [
+            350.0,
+            224.8426966292135
+        ],
+        "B": [
+            372.06179775280896,
+            273.0505617977528
+        ]
+    },
+    "problem_choices": [
+        "1.8",
+        "5",
+        "46",
+        "90"
+    ],
+    "choices_precise_value": [
+        1.8,
+        5.0,
+        46.0,
+        90.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 96.504408,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 * x - 4) / 180) = \u2220AFG, BE, EG, A on EG, \u2220GFH, E on \u2299(B, radius_0_0), \u2220HEG, BF, \u2220BFG, A on FH, F on \u2299(B, radius_0_0), EH, H on \u2299(B, radius_0_0), BH, FH, 3.14 = pi, \u2220GFH, \u2220AFG, FG, \u2220HFB, \u2220HEA, \u2220GEH, \u2220HEB, G on \u2299(B, radius_0_0), BG, pi * ((6 + 8 * x) / 180) = \u2220HEA, \u2220BEG\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220GFH\nConclusions: \u2220GFH = 2 * pi - \u2220HFG\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220HEG\nConclusions: \u2220HEG = 2 * pi - \u2220GEH\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : F on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BF\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : H on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BH\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : EH, BE, BH\nConclusions: \u25b3BEH\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : FH, BF, BH\nConclusions: \u25b3BFH\n\nStep 9:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220GFH, A on FH\nConclusions: \u2220GFA = \u2220GFH\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFG\nConclusions: \u2220AFG = 2 * pi - \u2220GFA\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220HFB, \u2220GFH, \u2220BFG\nConclusions: 2 * pi = \u2220BFG + \u2220GFH + \u2220HFB\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220HEA\nConclusions: \u2220HEA = 2 * pi - \u2220AEH\n\nStep 14:\nTheorem: Same Angle\nPremises : A on EG, \u2220GEH\nConclusions: \u2220AEH = \u2220GEH\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : G on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BG\n\nStep 16:\nTheorem: Definition of Quadrilateral\nPremises : FH, FG, BG, BH\nConclusions: Quadrilateral(B, G, F, H)\n\nStep 17:\nTheorem: Definition of Quadrilateral\nPremises : BG, EH, EG, BH\nConclusions: Quadrilateral(B, G, E, H)\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : BG, FG, BF\nConclusions: \u25b3BFG\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : BG, EG, BE\nConclusions: \u25b3BEG\n\nStep 20:\nTheorem: Circumference splited\nPremises : \u2220GEH, \u2220HEB, \u2220BEG\nConclusions: 2 * pi = \u2220BEG + \u2220GEH + \u2220HEB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BF, radius_0_0 = BH\nConclusions: BF = BH\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BE, radius_0_0 = BH\nConclusions: BE = BH\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFG = 2 * pi - \u2220GFA, pi * ((10 * x - 4) / 180) = \u2220AFG\nConclusions: pi * ((10 * x - 4) / 180) = 2 * pi - \u2220GFA\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BFG + \u2220GFH + \u2220HFB\nConclusions: 2 * 3.14 = \u2220BFG + \u2220GFH + \u2220HFB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HEA = 2 * pi - \u2220AEH, pi * ((6 + 8 * x) / 180) = \u2220HEA\nConclusions: pi * ((6 + 8 * x) / 180) = 2 * pi - \u2220AEH\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BF, radius_0_0 = BG\nConclusions: BF = BG\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BE, radius_0_0 = BG\nConclusions: BE = BG\n\nStep 28:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(H, F, G, B)\nPremises : Quadrilateral(B, G, F, H)\nConclusions: 2 * pi = \u2220BHF + \u2220FGB + \u2220GBH + \u2220HFG\n\nStep 29:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(H, E, G, B)\nPremises : Quadrilateral(B, G, E, H)\nConclusions: 2 * pi = \u2220BHE + \u2220EGB + \u2220GBH + \u2220HEG\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BEG + \u2220GEH + \u2220HEB, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220BEG + \u2220GEH + \u2220HEB\n\nStep 31:\nTheorem: Issoceles Triangle Property\nPremises : BF = BH, \u25b3BFH\nConclusions: \u2220BHF = \u2220HFB\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : BE = BH, \u25b3BEH\nConclusions: \u2220BHE = \u2220HEB\n\nStep 33:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((10 * x - 4) / 180) = 2 * pi - \u2220GFA, \u2220GFA = \u2220GFH\nConclusions: 3.14 * ((10 * x - 4) / 180) = 2 * 3.14 - \u2220GFH\n\nStep 34:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AEH = \u2220GEH, pi * ((6 + 8 * x) / 180) = 2 * pi - \u2220AEH\nConclusions: 3.14 * ((6 + 8 * x) / 180) = 2 * 3.14 - \u2220GEH\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BFG, BF = BG\nConclusions: \u2220BFG = \u2220FGB\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BEG, BE = BG\nConclusions: \u2220BEG = \u2220EGB\n\nStep 37:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220BHF + \u2220FGB + \u2220GBH + \u2220HFG, 2 * 3.14 = \u2220BFG + \u2220GFH + \u2220HFB, \u2220HEG = 2 * pi - \u2220GEH, \u2220GFH = 2 * pi - \u2220HFG, 3.14 * ((10 * x - 4) / 180) = 2 * 3.14 - \u2220GFH, \u2220BHF = \u2220HFB, \u2220BEG = \u2220EGB, \u2220BHE = \u2220HEB, 6.28 = \u2220BEG + \u2220GEH + \u2220HEB, \u2220BFG = \u2220FGB, 2 * pi = \u2220BHE + \u2220EGB + \u2220GBH + \u2220HEG, 3.14 * ((6 + 8 * x) / 180) = 2 * 3.14 - \u2220GEH\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, H)",
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(E, A)",
+        "Line(E, G)",
+        "Line(A, G)",
+        "Line(F, G)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(E, G))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(H, E, A)), Mul(pi, Div(Add(Mul(8.0, x), 6.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, F, G)), Mul(pi, Div(Sub(Mul(10.0, x), 4.0), 180.0)))"
+    ],
+    "correct": true
+}

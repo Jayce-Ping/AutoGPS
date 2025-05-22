@@ -1,0 +1,86 @@
+{
+    "problem_id": "2386",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 7)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, D)), 4)",
+        "Equals(LengthOf(Line(C, A)), 4)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(D, C)), 7)",
+        "Equals(MeasureOf(Angle(D, C, A)), 60)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "DC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            78.079561042524,
+            60.457142857142856
+        ],
+        "B": [
+            293.56500533455267,
+            60.700529100529096
+        ],
+        "C": [
+            18.120164609053496,
+            163.86514285714287
+        ],
+        "D": [
+            233.7448559670782,
+            164.28571428571428
+        ]
+    },
+    "problem_choices": [
+        17.083,
+        17.899,
+        21.083,
+        22.0
+    ],
+    "choices_precise_value": [
+        17.083,
+        17.899,
+        21.083,
+        22.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 7.045617,
+    "solution_predicate": "Equals(22.0, PerimeterOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = AC, 4 = BD, 7 = AB, 7 = CD, Parallelogram(A, B, D, C)\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, D, C)\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\n\nStep 3:\nTheorem: Substitution\nPremises : 7 = AB, 4 = AC, 7 = CD, 4 = BD, Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\nConclusions: 4 + 4 + 7 + 7 = Perimeter(Parallelogram(A, B, D, C))\n\nStep 4:\nTheorem: Evaluate\nPremises : 4 + 4 + 7 + 7 = Perimeter(Parallelogram(A, B, D, C))\nConclusions: 22 = Perimeter(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, D, C)",
+        "Equals(LengthOf(Line(A, B)), 7.0)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, D)), 4.0)",
+        "Equals(LengthOf(Line(C, A)), 4.0)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(D, C)), 7.0)",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

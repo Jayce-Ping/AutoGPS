@@ -1,0 +1,113 @@
+{
+    "problem_id": "2497",
+    "solved": true,
+    "problem_text": "In H, the diameter is 18, L M = 12, and m \\widehat L M = 84. Find H P. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(H, Line(J, P))",
+        "PointLiesOnLine(H, Line(J, K))",
+        "PointLiesOnLine(P, Line(J, K))",
+        "PointLiesOnLine(P, Line(H, K))",
+        "PointLiesOnLine(P, Line(L, M))",
+        "PointLiesOnCircle(J, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(H, radius_0_0))",
+        "Perpendicular(Line(H, P), Line(M, P))",
+        "Circle(H)",
+        "Equals(DiameterOf(Circle(H)),18)",
+        "Equals(LengthOf(Line(L,M)),12)",
+        "Equals(MeasureOf(Arc(L,M)),84)",
+        "Find(LengthOf(Line(H,P)))"
+    ],
+    "point_instances": [
+        "M",
+        "P",
+        "J",
+        "K",
+        "L",
+        "H"
+    ],
+    "line_instances": [
+        "JH",
+        "JP",
+        "JK",
+        "HP",
+        "HK",
+        "PK",
+        "LP",
+        "LM",
+        "PM"
+    ],
+    "circle_instances": [
+        "H"
+    ],
+    "point_positions": {
+        "M": [
+            307.5497835497835,
+            320.34632034632034
+        ],
+        "P": [
+            307.1168831168831,
+            205.6277056277056
+        ],
+        "J": [
+            78.11255411255411,
+            203.89610389610388
+        ],
+        "K": [
+            365.991341991342,
+            204.76190476190476
+        ],
+        "L": [
+            307.1168831168831,
+            88.74458874458874
+        ],
+        "H": [
+            222.26839826839824,
+            205.6277056277056
+        ]
+    },
+    "problem_choices": [
+        "2.29",
+        "3.35",
+        "5.65",
+        "6.71"
+    ],
+    "choices_precise_value": [
+        2.29,
+        3.35,
+        5.65,
+        6.71
+    ],
+    "problem_answer": 6.71,
+    "total_time": 108.95334,
+    "solution_predicate": "Equals(6.7082039325, LengthOf(Line(H, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: J on \u2299(H, radius_0_0), K on \u2299(H, radius_0_0), HP \u22a5 MP, HM, 12 = LM, HP, H on JK, \u2299(H, radius_0_0), M on \u2299(H, radius_0_0), P on LM, MP, HP \u22a5 LP, 18 = 2 * radius_0_0\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : J on \u2299(H, radius_0_0)\nConclusions: radius_0_0 = HJ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : K on \u2299(H, radius_0_0)\nConclusions: radius_0_0 = HK\n\nStep 4:\nTheorem: Diameter Definition\nPremises : J on \u2299(H, radius_0_0), H on JK, K on \u2299(H, radius_0_0)\nConclusions: IsDiameterOf(JK, \u2299(H, radius_0_0))\n\nStep 5:\nTheorem: Line Segment Split\nPremises : H on JK\nConclusions: JK = HJ + HK\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : M on \u2299(H, radius_0_0)\nConclusions: radius_0_0 = HM\n\nStep 7:\nTheorem: Line Segment Split\nPremises : P on LM\nConclusions: LM = LP + MP\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : HP, HM, MP\nConclusions: \u25b3HMP\n\nStep 9:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(H, radius_0_0), HP \u22a5 LP, P on LM\nConclusions: LP = MP\n\nStep 10:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(JK, \u2299(H, radius_0_0))\nConclusions: radius_0_0 = HK, K on \u2299(H, radius_0_0), J on \u2299(H, radius_0_0), 2 * radius_0_0 = JK, radius_0_0 = HJ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = HM, radius_0_0 = HJ\nConclusions: HJ = HM\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = HK, radius_0_0 = HM\nConclusions: HK = HM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : LM = LP + MP, 12 = LM\nConclusions: 12 = LP + MP\n\nStep 14:\nTheorem: Pythagorean Theorem\nPremises : HP \u22a5 MP, \u25b3HMP\nConclusions: HP = SqrtOf(HM ** 2 - MP ** 2)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_0_0 = JK, 18 = 2 * radius_0_0\nConclusions: 18 = JK\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 12 = LP + MP, LP = MP\nConclusions: 6 = LP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : JK = HJ + HK, 18 = JK\nConclusions: 18 = HJ + HK\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : LP = MP, 6 = LP\nConclusions: 6 = MP\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : HJ = HM, 18 = HJ + HK, HK = HM\nConclusions: 9 = HM\n\nStep 20:\nTheorem: Evaluate\nPremises : 9 = HM, 6 = MP\nConclusions: 6.71 = SqrtOf(HM ** 2 - MP ** 2)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : HP = SqrtOf(HM ** 2 - MP ** 2), 6.71 = SqrtOf(HM ** 2 - MP ** 2)\nConclusions: 6.71 = HP\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(J, P)",
+        "Line(J, K)",
+        "Line(H, P)",
+        "Line(H, K)",
+        "Line(P, K)",
+        "Line(L, P)",
+        "Line(L, M)",
+        "Line(P, M)",
+        "Circle(H, radius_0_0)",
+        "PointLiesOnLine(H, Line(J, P))",
+        "PointLiesOnLine(H, Line(J, K))",
+        "PointLiesOnLine(P, Line(J, K))",
+        "PointLiesOnLine(P, Line(H, K))",
+        "PointLiesOnLine(P, Line(L, M))",
+        "PointLiesOnCircle(J, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(H, radius_0_0))",
+        "Perpendicular(Line(H, P), Line(M, P))",
+        "Circle(H, radius_0_0)",
+        "Equals(Mul(2.0, radius_0_0), 18.0)",
+        "Equals(LengthOf(Line(L, M)), 12.0)",
+        "Equals(MeasureOf(Arc(M, H, L)), Mul(pi, Div(84.0, 180.0)))"
+    ],
+    "correct": true
+}

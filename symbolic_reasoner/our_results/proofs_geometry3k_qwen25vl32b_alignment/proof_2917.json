@@ -1,0 +1,89 @@
+{
+    "problem_id": "2917",
+    "solved": true,
+    "problem_text": "Find T Q.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(S, A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Perpendicular(Line(Q, S), Line(T, S))",
+        "Equals(LengthOf(Line(T, Q)), 2x-6)",
+        "Equals(LengthOf(Line(Q, R)), x+3)",
+        "Equals(LengthOf(Line(R, S)), 7)",
+        "Equals(LengthOf(Line(T, S)), 7)",
+        "Find(LengthOf(Line(T,Q)))"
+    ],
+    "point_instances": [
+        "Q",
+        "S",
+        "R",
+        "T",
+        "A"
+    ],
+    "line_instances": [
+        "SQ",
+        "SA",
+        "QA",
+        "RS",
+        "RT",
+        "ST",
+        "TQ",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            303.2692307692308,
+            301.9230769230769
+        ],
+        "S": [
+            304.71153846153845,
+            109.61538461538461
+        ],
+        "R": [
+            144.6153846153846,
+            109.13461538461539
+        ],
+        "T": [
+            462.88461538461536,
+            108.65384615384615
+        ],
+        "A": [
+            303.75,
+            398.07692307692304
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "7",
+        "12",
+        "18"
+    ],
+    "choices_precise_value": [
+        6.0,
+        7.0,
+        12.0,
+        18.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 49.589398,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(T, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AS \u22a5 ST, ST, cos(\u2220STQ), 2 * x - 6 = QT, 3 + x = QR, QS, \u2220AST, QR, QT, QS \u22a5 RS, \u2220TQS, RS, \u2220STQ, 7 = ST, \u2220SQR, Q on AS, 7 = RS, QS \u22a5 ST\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AS \u22a5 ST\nConclusions: pi / 2 = \u2220AST\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : QT, ST, QS\nConclusions: \u25b3QST\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : QS \u22a5 RS\nConclusions: pi / 2 = \u2220RSQ\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : QR, QS, RS\nConclusions: \u25b3QRS\n\nStep 6:\nTheorem: Same Angle\nPremises : Q on AS, \u2220AST\nConclusions: \u2220AST = \u2220QST\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 7 = RS, 7 = ST\nConclusions: RS = ST\n\nStep 8:\nTheorem: Angle Cos Definition\nPremises : QS \u22a5 ST, cos(\u2220STQ)\nConclusions: ST / QT = cos(\u2220STQ)\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : \u25b3QST, \u2220TQS, QS \u22a5 ST\nConclusions: ST / QT = sin(\u2220TQS)\n\nStep 10:\nTheorem: Cos Function Definition\nPremises : \u25b3QST, \u2220STQ, QS \u22a5 ST\nConclusions: ST / QT = cos(\u2220STQ)\n\nStep 11:\nTheorem: Sin Function Definition\nPremises : QS \u22a5 RS, \u25b3QRS, \u2220SQR\nConclusions: RS / QR = sin(\u2220SQR)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220AST, pi / 2 = \u2220RSQ, \u2220AST = \u2220QST\nConclusions: \u2220QST = \u2220RSQ\n\nStep 13:\nTheorem: Substitution\nPremises : ST / QT = cos(\u2220STQ), 7 = ST, 2 * x - 6 = QT\nConclusions: 7 / (2 * x - 6) = cos(\u2220STQ)\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220QST = \u2220RSQ, RS = ST\nConclusions: \u25b3QRS \u2245 \u25b3QTS\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 7 / (2 * x - 6) = cos(\u2220STQ), ST / QT = cos(\u2220STQ)\nConclusions: 7 / (2 * x - 6) = ST / QT\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3QRS \u2245 \u25b3QTS\nConclusions: RS = ST, QR = QT, \u2220SQR = \u2220TQS\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : ST / QT = sin(\u2220TQS), 7 / (2 * x - 6) = ST / QT\nConclusions: 7 / (2 * x - 6) = sin(\u2220TQS)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : QR = QT, 3 + x = QR, 2 * x - 6 = QT\nConclusions: 3 + x = 2 * x - 6\n\nStep 19:\nTheorem: Substitution\nPremises : 7 = RS, 3 + x = QR, \u2220SQR = \u2220TQS, RS / QR = sin(\u2220SQR)\nConclusions: 7 / (3 + x) = sin(\u2220TQS)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3 + x = 2 * x - 6, 2 * x - 6 = QT\nConclusions: 3 + x = QT\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 7 / (3 + x) = sin(\u2220TQS), 7 / (2 * x - 6) = sin(\u2220TQS)\nConclusions: 7 / (3 + x) = 7 / (2 * x - 6)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 7 / (3 + x) = 7 / (2 * x - 6), 3 + x = QT\nConclusions: 12 = QT\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, Q)",
+        "Line(S, A)",
+        "Line(Q, A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(T, Q)",
+        "Line(R, Q)",
+        "PointLiesOnLine(Q, Line(S, A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Perpendicular(Line(Q, S), Line(T, S))",
+        "Equals(LengthOf(Line(T, Q)), Sub(Mul(2.0, x), 6.0))",
+        "Equals(LengthOf(Line(Q, R)), Add(x, 3.0))",
+        "Equals(LengthOf(Line(R, S)), 7.0)",
+        "Equals(LengthOf(Line(T, S)), 7.0)"
+    ],
+    "correct": true
+}

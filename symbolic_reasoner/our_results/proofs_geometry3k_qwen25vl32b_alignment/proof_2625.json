@@ -1,0 +1,91 @@
+{
+    "problem_id": "2625",
+    "solved": true,
+    "problem_text": "Quadrilateral D E F G is a rectangle. If m \\angle E F D = 2 x - 3 and m \\angle D F G = x + 12, find m \\angle E F D.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(G, E))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "Perpendicular(Line(F, G), Line(D, G))",
+        "Rectangle(D,E,F,G)",
+        "Equals(MeasureOf(Angle(E,F,D)),2x-3)",
+        "Equals(MeasureOf(Angle(D,F,G)),x+12)",
+        "Find(MeasureOf(Angle(E,F,D)))"
+    ],
+    "point_instances": [
+        "F",
+        "D",
+        "G",
+        "E",
+        "A"
+    ],
+    "line_instances": [
+        "GA",
+        "GE",
+        "AE",
+        "DA",
+        "DF",
+        "AF",
+        "DE",
+        "GF",
+        "DG",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            366.45367412140575,
+            176.11182108626198
+        ],
+        "D": [
+            94.56869009584665,
+            52.46964856230032
+        ],
+        "G": [
+            93.9297124600639,
+            175.79233226837061
+        ],
+        "E": [
+            366.45367412140575,
+            52.46964856230032
+        ],
+        "A": [
+            230.03194888178913,
+            114.45047923322684
+        ]
+    },
+    "problem_choices": [
+        "51",
+        "55",
+        "67",
+        "102"
+    ],
+    "choices_precise_value": [
+        51.0,
+        55.0,
+        67.0,
+        102.0
+    ],
+    "problem_answer": 51.0,
+    "total_time": 168.949028,
+    "solution_predicate": "Equals(0.8901179185, MeasureOf(Angle(E, F, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE, DG, pi * ((12 + x) / 180) = \u2220DFG, Rectangle(D, E, F, G), pi * ((2 * x - 3) / 180) = \u2220EFD, EG, DG \u22a5 FG, 3.14 = pi\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(D, E, F, G)\nConclusions: Parallelogram(D, E, F, G)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(D, E, F, G)\nConclusions: DE \u22a5 DG, DG \u22a5 FG\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : DE, EG, DG\nConclusions: \u25b3DEG\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : DG \u22a5 FG\nConclusions: pi / 2 = \u2220FGD\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(D, E, F, G)\nConclusions: DE || GF, DG || EF\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(D, E, F, G)\nConclusions: DE = FG\n\nStep 8:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(D, E, F, G)\nConclusions: \u2220EFG = \u2220GDE, \u2220DEF = \u2220FGD\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : DE \u22a5 DG\nConclusions: pi / 2 = \u2220GDE\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, G)\nPremises : \u25b3DEG\nConclusions: pi = \u2220DEG + \u2220EGD + \u2220GDE\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : DE || GF\nConclusions: \u2220DEG = \u2220FGE\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : DG || EF\nConclusions: \u2220EFD = \u2220GDF, \u2220EGD = \u2220GEF\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220FGD, \u2220DEF = \u2220FGD\nConclusions: pi / 2 = \u2220DEF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220GDE, pi / 2 = \u2220FGD\nConclusions: \u2220FGD = \u2220GDE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFD = \u2220GDF, pi * ((2 * x - 3) / 180) = \u2220EFD\nConclusions: pi * ((2 * x - 3) / 180) = \u2220GDF\n\nStep 16:\nTheorem: Substitution\nPremises : pi / 2 = \u2220GDE, \u2220DEG = \u2220FGE, pi = \u2220DEG + \u2220EGD + \u2220GDE, \u2220EGD = \u2220GEF, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + \u2220FGE + \u2220GEF\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220GDE, \u2220EFG = \u2220GDE, pi / 2 = \u2220DEF\nConclusions: \u2220DEF = \u2220EFG\n\nStep 18:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : DE = FG, \u2220FGD = \u2220GDE\nConclusions: \u25b3DEG \u2245 \u25b3GFD\n\nStep 19:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : DE = FG, \u2220DEF = \u2220EFG\nConclusions: \u25b3DEF \u2245 \u25b3GFE\n\nStep 20:\nTheorem: Congruent Definition\nPremises : \u25b3DEG \u2245 \u25b3GFD\nConclusions: \u2220DEG = \u2220DFG, DE = FG, \u2220EGD = \u2220GDF\n\nStep 21:\nTheorem: Congruent Definition\nPremises : \u25b3DEF \u2245 \u25b3GFE\nConclusions: DE = FG, \u2220EFD = \u2220GEF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEG = \u2220FGE, \u2220DEG = \u2220DFG, pi * ((12 + x) / 180) = \u2220DFG\nConclusions: pi * ((12 + x) / 180) = \u2220FGE\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EGD = \u2220GEF, pi * ((2 * x - 3) / 180) = \u2220GDF, \u2220EGD = \u2220GDF\nConclusions: pi * ((2 * x - 3) / 180) = \u2220GEF\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((12 + x) / 180) = \u2220FGE\nConclusions: 3.14 * ((12 + x) / 180) = \u2220FGE\n\nStep 25:\nTheorem: Substitution\nPremises : pi * ((2 * x - 3) / 180) = \u2220GEF, 3.14 = pi\nConclusions: 3.14 * ((2 * x - 3) / 180) = \u2220GEF\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x - 3) / 180) = \u2220GEF, 3.14 * ((2 * x - 3) / 180) = \u2220GEF\nConclusions: 3.14 * ((2 * x - 3) / 180) = pi * ((2 * x - 3) / 180)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x - 3) / 180) = pi * ((2 * x - 3) / 180), pi * ((2 * x - 3) / 180) = \u2220EFD\nConclusions: 3.14 * ((2 * x - 3) / 180) = \u2220EFD\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((2 * x - 3) / 180) = \u2220EFD, 3.14 = 3.14 / 2 + \u2220FGE + \u2220GEF, 3.14 * ((12 + x) / 180) = \u2220FGE, \u2220EFD = \u2220GEF\nConclusions: 0.89 = \u2220EFD\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, E)",
+        "Line(A, E)",
+        "Line(D, A)",
+        "Line(D, F)",
+        "Line(A, F)",
+        "Line(D, E)",
+        "Line(G, F)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "PointLiesOnLine(A, Line(G, E))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "Perpendicular(Line(F, G), Line(D, G))",
+        "Rectangle(D, E, F, G)",
+        "Equals(MeasureOf(Angle(E, F, D)), Mul(pi, Div(Sub(Mul(2.0, x), 3.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, G)), Mul(pi, Div(Add(x, 12.0), 180.0)))"
+    ],
+    "correct": true
+}

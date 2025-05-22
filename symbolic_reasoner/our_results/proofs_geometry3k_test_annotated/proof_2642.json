@@ -1,0 +1,99 @@
+{
+    "problem_id": "2642",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth if necessary. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, B)), 4)",
+        "Equals(LengthOf(Line(E, B)), 5)",
+        "Equals(LengthOf(Line(A, B)), x+8)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "EB",
+        "ED",
+        "BD"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            31.17391304347825,
+            152.82608695652172
+        ],
+        "B": [
+            135.9565217391304,
+            52.39130434782608
+        ],
+        "C": [
+            152.91304347826085,
+            36.086956521739125
+        ],
+        "D": [
+            180.7391304347826,
+            82.39130434782608
+        ],
+        "E": [
+            83.99999999999999,
+            17.82608695652174
+        ],
+        "F": [
+            98.7608695652174,
+            100.80434782608695
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "4",
+        "5",
+        "9"
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        5.0,
+        9.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 54.188815,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = BE, B on DE, B on AC, C on \u2299(F, radius_0_0), D on \u2299(F, radius_0_0), 4 = BD, x = BC, A on \u2299(F, radius_0_0), 8 + x = AB, E on \u2299(F, radius_0_0)\n\nStep 2:\nTheorem: Intersecting Chord Theorem\nPremises : A on \u2299(F, radius_0_0), E on \u2299(F, radius_0_0), B on AC, C on \u2299(F, radius_0_0), B on DE, D on \u2299(F, radius_0_0)\nConclusions: AB * BC = BD * BE\n\nStep 3:\nTheorem: Substitution\nPremises : 4 = BD, AB * BC = BD * BE, 5 = BE, 8 + x = AB, x = BC\nConclusions: 4 * 5 = x * (8 + x)\n\nStep 4:\nTheorem: Solve Univariate Equation\nPremises : 4 * 5 = x * (8 + x)\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, B)), 4.0)",
+        "Equals(LengthOf(Line(E, B)), 5.0)",
+        "Equals(LengthOf(Line(A, B)), Add(x, 8.0))"
+    ],
+    "correct": true
+}

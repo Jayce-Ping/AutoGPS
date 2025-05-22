@@ -1,0 +1,105 @@
+{
+    "problem_id": "7748",
+    "solved": true,
+    "problem_text": "The two triangles in the diagram are similar. Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(LengthOf(Line(B, A)), 11)",
+        "Equals(LengthOf(Line(C, D)), 4)",
+        "Equals(LengthOf(Line(C, E)), x)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Similar(Triangle(A, B, C), Triangle(C, D, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "AE",
+        "CE",
+        "BD",
+        "BE",
+        "DE",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            21.944162436548226,
+            53.84571428571429
+        ],
+        "B": [
+            260.9360406091371,
+            53.84571428571429
+        ],
+        "C": [
+            132.99492385786803,
+            123.86730158730158
+        ],
+        "D": [
+            220.10659898477158,
+            123.86730158730158
+        ],
+        "E": [
+            196.5,
+            165.12685714285712
+        ]
+    },
+    "problem_choices": [
+        2.182,
+        3.429,
+        10.5,
+        16.5
+    ],
+    "choices_precise_value": [
+        2.182,
+        3.429,
+        10.5,
+        16.5
+    ],
+    "problem_answer": 3.429,
+    "total_time": 49.238148,
+    "solution_predicate": "Equals(2.1818181818, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = CE, 4 = CD, 11 = AB, C on AE, \u25b3ABC ~ \u25b3CDE, 6 = AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3CDE\nConclusions: sim_ratio_triangle_a_b_c_triangle_c_d_e = BC / DE, sim_ratio_triangle_a_b_c_triangle_c_d_e = AC / CE, AB / CD = AC / CE, AB / CD = BC / DE\n\nStep 4:\nTheorem: Substitution\nPremises : x = CE, 6 = AC, AE = AC + CE\nConclusions: 6 + x = AE\n\nStep 5:\nTheorem: Substitution\nPremises : x = CE, 11 = AB, 4 = CD, 6 = AC, AB / CD = AC / CE\nConclusions: 11 / 4 = 6 / x\n\nStep 6:\nTheorem: Substitution\nPremises : 4 = CD, AB / CD = BC / DE, 11 = AB\nConclusions: 11 / 4 = BC / DE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 6 + x = AE, AE = AC + CE\nConclusions: 6 + x = AC + CE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_c_d_e = BC / DE, 11 / 4 = BC / DE\nConclusions: 11 / 4 = sim_ratio_triangle_a_b_c_triangle_c_d_e\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 11 / 4 = sim_ratio_triangle_a_b_c_triangle_c_d_e, sim_ratio_triangle_a_b_c_triangle_c_d_e = AC / CE\nConclusions: 11 / 4 = AC / CE\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 11 / 4 = 6 / x, 6 + x = AC + CE, 11 / 4 = AC / CE\nConclusions: 2.18 = CE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : x = CE, 2.18 = CE\nConclusions: 2.18 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Similar(Triangle(A, B, C), Triangle(C, D, E))",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(LengthOf(Line(B, A)), 11.0)",
+        "Equals(LengthOf(Line(C, D)), 4.0)",
+        "Equals(LengthOf(Line(C, E)), x)"
+    ],
+    "correct": false
+}

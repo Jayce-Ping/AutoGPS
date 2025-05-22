@@ -1,0 +1,105 @@
+{
+    "problem_id": "5560",
+    "solved": true,
+    "problem_text": "Find VW.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(V, W)), 3x-6)",
+        "Equals(LengthOf(Line(X, W)), x+4)",
+        "Equals(LengthOf(Line(Y, W)), 5)",
+        "Equals(LengthOf(Line(Z, W)), 6)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Parallel(Line(Y, X), Line(V, Z))",
+        "PointLiesOnLine(W, Line(V, X))",
+        "PointLiesOnLine(W, Line(Z, Y))",
+        "Find(LengthOf(Line(V,W)))"
+    ],
+    "point_instances": [
+        "Z",
+        "V",
+        "W",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "ZV",
+        "VW",
+        "VX",
+        "WX",
+        "ZW",
+        "ZY",
+        "WY",
+        "YX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            152.22542372881358,
+            345.0514285714286
+        ],
+        "V": [
+            72.63653483992468,
+            82.11809523809524
+        ],
+        "W": [
+            293.010593220339,
+            221.4857142857143
+        ],
+        "X": [
+            476.2881355932204,
+            337.59085714285715
+        ],
+        "Y": [
+            412.0826271186441,
+            117.73714285714286
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 33.331798,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(V, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: W on YZ, \u2220YZV, W on VX, \u2220ZVX, 4 + x = WX, \u2220YXV, 3 * x - 6 = VW, 6 = WZ, VZ || YX, \u2220ZYX, 5 = WY\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220YZV, W on YZ\nConclusions: \u2220WZV = \u2220YZV\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : W on VX, W on YZ\nConclusions: \u2220VWZ = \u2220XWY\n\nStep 4:\nTheorem: Line Segment Split\nPremises : W on VX\nConclusions: VX = VW + WX\n\nStep 5:\nTheorem: Same Angle\nPremises : W on VX, \u2220ZVX\nConclusions: \u2220ZVW = \u2220ZVX\n\nStep 6:\nTheorem: Same Angle\nPremises : W on VX, \u2220YXV\nConclusions: \u2220YXV = \u2220YXW\n\nStep 7:\nTheorem: Alternate Interior Angle Theorem\nPremises : VZ || YX\nConclusions: \u2220YXV = \u2220ZVX, \u2220YZV = \u2220ZYX\n\nStep 8:\nTheorem: Same Angle\nPremises : W on YZ, \u2220ZYX\nConclusions: \u2220WYX = \u2220ZYX\n\nStep 9:\nTheorem: Substitution\nPremises : VX = VW + WX, 4 + x = WX, 3 * x - 6 = VW\nConclusions: (4 + x) + (3 * x - 6) = VX\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YXV = \u2220YXW, \u2220YXV = \u2220ZVX\nConclusions: \u2220YXW = \u2220ZVX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WZV = \u2220YZV, \u2220WYX = \u2220ZYX, \u2220YZV = \u2220ZYX\nConclusions: \u2220WYX = \u2220WZV\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : VX = VW + WX, (4 + x) + (3 * x - 6) = VX\nConclusions: (4 + x) + (3 * x - 6) = VW + WX\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ZVW = \u2220ZVX, \u2220YXW = \u2220ZVX\nConclusions: \u2220YXW = \u2220ZVW\n\nStep 14:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220YXW = \u2220ZVW, \u2220WYX = \u2220WZV, \u2220VWZ = \u2220XWY\nConclusions: \u25b3VWZ ~ \u25b3XWY\n\nStep 15:\nTheorem: Similar Definition\nPremises : \u25b3VWZ ~ \u25b3XWY\nConclusions: VW / WX = WZ / WY, sim_ratio_triangle_v_w_z_triangle_x_w_y = WZ / WY, \u2220YXW = \u2220ZVW, \u2220VWZ = \u2220XWY, sim_ratio_triangle_v_w_z_triangle_x_w_y = VW / WX\n\nStep 16:\nTheorem: Substitution\nPremises : 6 = WZ, VW / WX = WZ / WY, 4 + x = WX, 3 * x - 6 = VW, 5 = WY\nConclusions: 6 / 5 = (3 * x - 6) / (4 + x)\n\nStep 17:\nTheorem: Substitution\nPremises : 6 = WZ, sim_ratio_triangle_v_w_z_triangle_x_w_y = WZ / WY, 5 = WY\nConclusions: 6 / 5 = sim_ratio_triangle_v_w_z_triangle_x_w_y\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_v_w_z_triangle_x_w_y = VW / WX, 6 / 5 = sim_ratio_triangle_v_w_z_triangle_x_w_y\nConclusions: 6 / 5 = VW / WX\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 6 / 5 = VW / WX, 6 / 5 = (3 * x - 6) / (4 + x), (4 + x) + (3 * x - 6) = VW + WX\nConclusions: 12 = VW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, V)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(W, X)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(Y, X)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Parallel(Line(Y, X), Line(V, Z))",
+        "PointLiesOnLine(W, Line(V, X))",
+        "PointLiesOnLine(W, Line(Z, Y))",
+        "Equals(LengthOf(Line(V, W)), Sub(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(X, W)), Add(x, 4.0))",
+        "Equals(LengthOf(Line(Y, W)), 5.0)",
+        "Equals(LengthOf(Line(Z, W)), 6.0)"
+    ],
+    "correct": true
+}

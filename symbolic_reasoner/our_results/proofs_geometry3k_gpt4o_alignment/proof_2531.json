@@ -1,0 +1,61 @@
+{
+    "problem_id": "2531",
+    "solved": true,
+    "problem_text": "Find the perimeter of the triangle. Round to the nearest hundredth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3.5)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(C, A)))",
+        "Equals(MeasureOf(Angle(A, B, C)), 48)",
+        "Find(PerimeterOf(Triangle(A, B, C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            10.603907637655418,
+            127.70870337477798
+        ],
+        "B": [
+            205.8081705150977,
+            127.70870337477798
+        ],
+        "C": [
+            108.11722912966252,
+            19.538188277087034
+        ]
+    },
+    "problem_choices": [
+        "5.84",
+        "6.65",
+        "8.21",
+        "8.73"
+    ],
+    "choices_precise_value": [
+        5.84,
+        6.65,
+        8.21,
+        8.73
+    ],
+    "problem_answer": 8.73,
+    "total_time": 12.498006,
+    "solution_predicate": "Equals(8.7306679248, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.5 = AB, 3.14 = pi, \u25b3ABC, AC = BC, pi * (48 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.84 = pi * (48 / 180)\n\nStep 3:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\n\nStep 4:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (48 / 180) = \u2220CBA, 0.84 = pi * (48 / 180)\nConclusions: 0.84 = \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA), 3.5 = AB, 0.84 = \u2220CBA, AC = BC\nConclusions: (3.5 ** 2 + BC ** 2) - BC ** 2 = 2 * 3.5 * cos(0.84) * BC\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : (3.5 ** 2 + BC ** 2) - BC ** 2 = 2 * 3.5 * cos(0.84) * BC\nConclusions: 2.62 = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 2.62 = BC, AC = BC\nConclusions: 2.62 = AC\n\nStep 9:\nTheorem: Substitution\nPremises : Perimeter(\u25b3ABC) = AB + AC + BC, 3.5 = AB, 2.62 = AC, 2.62 = BC\nConclusions: 2.62 + 2.62 + 3.5 = Perimeter(\u25b3ABC)\n\nStep 10:\nTheorem: Evaluate\nPremises : 2.62 + 2.62 + 3.5 = Perimeter(\u25b3ABC)\nConclusions: 8.73 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Equals(LengthOf(Line(A, B)), 3.5)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(C, A)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(48.0, 180.0)))"
+    ],
+    "correct": true
+}

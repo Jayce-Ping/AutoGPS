@@ -1,0 +1,83 @@
+{
+    "problem_id": "1508",
+    "solved": true,
+    "problem_text": "Find the area of the figure. Perimeter = 90 centimeters.",
+    "logic_forms": [
+        "Equals(AreaOf(Hexagon(G, H, J, K, L, M)), Mul(Div(3, 2), SqrtOf(3), Pow(s, 2)))",
+        "Equals(PerimeterOf(Hexagon(G, H, J, K, L, M)), 90)",
+        "Equals(s, Div(PerimeterOf(Hexagon(G, H, J, K, L, M)), 6))",
+        "Find(AreaOf(Hexagon(G, H, J, K, L, M)))",
+        "Let(s, LengthOf(Line(G, H)))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "J",
+        "M",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "LK",
+        "ML",
+        "HJ",
+        "GM",
+        "JK",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            99.51373626373626,
+            53.62285714285714
+        ],
+        "H": [
+            207.97252747252747,
+            54.06971428571429
+        ],
+        "J": [
+            262.53736263736266,
+            147.9097142857143
+        ],
+        "M": [
+            45.61978021978022,
+            149.25028571428572
+        ],
+        "K": [
+            207.97252747252747,
+            242.79238095238097
+        ],
+        "L": [
+            99.51373626373626,
+            242.42000000000002
+        ]
+    },
+    "problem_choices": [
+        387.107,
+        540.0,
+        584.567,
+        21044.419
+    ],
+    "choices_precise_value": [
+        387.107,
+        540.0,
+        584.567,
+        21044.419
+    ],
+    "problem_answer": 584.567,
+    "total_time": 9.359039,
+    "solution_predicate": "Equals(584.5671475545, AreaOf(Hexagon(G, H, J, K, L, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 90 = Perimeter(Hexagon(G, H, J, K, L, M)), (3 / 2) * SqrtOf(3) * s ** 2 = Area(Hexagon(G, H, J, K, L, M)), s = Perimeter(Hexagon(G, H, J, K, L, M)) / 6\n\nStep 2:\nTheorem: Evaluate\nPremises : 90 = Perimeter(Hexagon(G, H, J, K, L, M))\nConclusions: 15 = Perimeter(Hexagon(G, H, J, K, L, M)) / 6\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : s = Perimeter(Hexagon(G, H, J, K, L, M)) / 6, 15 = Perimeter(Hexagon(G, H, J, K, L, M)) / 6\nConclusions: 15 = s\n\nStep 4:\nTheorem: Substitution\nPremises : (3 / 2) * SqrtOf(3) * s ** 2 = Area(Hexagon(G, H, J, K, L, M)), 15 = s\nConclusions: (3 / 2) * 15 ** 2 * SqrtOf(3) = (3 / 2) * SqrtOf(3) * s ** 2\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : (3 / 2) * SqrtOf(3) * s ** 2 = Area(Hexagon(G, H, J, K, L, M)), (3 / 2) * 15 ** 2 * SqrtOf(3) = (3 / 2) * SqrtOf(3) * s ** 2\nConclusions: (3 / 2) * 15 ** 2 * SqrtOf(3) = Area(Hexagon(G, H, J, K, L, M))\n\nStep 6:\nTheorem: Evaluate\nPremises : (3 / 2) * 15 ** 2 * SqrtOf(3) = Area(Hexagon(G, H, J, K, L, M))\nConclusions: 584.57 = Area(Hexagon(G, H, J, K, L, M))\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, K)",
+        "Line(M, L)",
+        "Line(H, J)",
+        "Line(G, M)",
+        "Line(J, K)",
+        "Line(G, H)",
+        "Equals(AreaOf(Hexagon(G, H, J, K, L, M)), Mul(Div(3.0, 2.0), SqrtOf(3.0), Pow(s, 2.0)))",
+        "Equals(PerimeterOf(Hexagon(G, H, J, K, L, M)), 90.0)",
+        "Equals(s, Div(PerimeterOf(Hexagon(G, H, J, K, L, M)), 6.0))"
+    ],
+    "correct": true
+}

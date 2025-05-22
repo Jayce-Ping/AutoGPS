@@ -1,0 +1,129 @@
+{
+    "problem_id": "2773",
+    "solved": true,
+    "problem_text": "P is the incenter of \\triangle A E C. Find m \\angle D E P.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "Perpendicular(Line(E, F), Line(P, F))",
+        "Perpendicular(Line(E, D), Line(P, D))",
+        "Perpendicular(Line(P, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, P)), 13)",
+        "Equals(LengthOf(Line(E, P)), 14.9)",
+        "Equals(LengthOf(Line(A, B)), 10.9)",
+        "Equals(MeasureOf(Angle(F, A, P)), 33)",
+        "Equals(MeasureOf(Angle(P, C, D)), 28.5)",
+        "IsIncenterOf(P, Triangle(A, E, C))",
+        "Find(MeasureOf(Angle(D, E, P)))"
+    ],
+    "point_instances": [
+        "P",
+        "D",
+        "B",
+        "A",
+        "C",
+        "F",
+        "E"
+    ],
+    "line_instances": [
+        "EP",
+        "EB",
+        "PB",
+        "AB",
+        "AC",
+        "BC",
+        "ED",
+        "EC",
+        "DC",
+        "AF",
+        "AE",
+        "FE",
+        "FP",
+        "FC",
+        "PC",
+        "AP",
+        "AD",
+        "PD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            358.6363636363636,
+            308.09090909090907
+        ],
+        "D": [
+            339.8484848484848,
+            428.09090909090907
+        ],
+        "B": [
+            475.0,
+            264.45454545454544
+        ],
+        "A": [
+            394.3939393939394,
+            88.09090909090908
+        ],
+        "C": [
+            563.4848484848484,
+            462.6363636363636
+        ],
+        "F": [
+            264.09090909090907,
+            236.57575757575756
+        ],
+        "E": [
+            125.30303030303028,
+            395.3636363636363
+        ]
+    },
+    "problem_choices": [
+        "28.5",
+        "30",
+        "31",
+        "33"
+    ],
+    "choices_precise_value": [
+        28.5,
+        30.0,
+        31.0,
+        33.0
+    ],
+    "problem_answer": 28.5,
+    "total_time": 358.073412,
+    "solution_predicate": "Equals(0.4974188368, MeasureOf(Angle(D, E, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DEP, pi * (28.5 / 180) = \u2220PCD, EF, CP, \u2220CEP, \u2220PEF, 3.14 = pi, IsIncenterOf(P, \u25b3ACE), \u2220PEA, \u2220APC, CE, pi * (33 / 180) = \u2220FAP, AC, \u2220AED, \u2220CEA, EP, CF, \u2220FED, \u2220PCE, D on CE, AP, \u2220AED, \u2220EAP, F on AE, AE\n\nStep 2:\nTheorem: Properties of Incenter P of Triangle\nPremises : IsIncenterOf(P, \u25b3ACE)\nConclusions: \u2220CEP = \u2220PEA, \u2220EAP = \u2220PAC, \u2220ACP = \u2220PCE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220APC\nConclusions: \u2220APC = 2 * pi - \u2220CPA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220AED\nConclusions: \u2220AED = 2 * pi - \u2220DEA\n\nStep 5:\nTheorem: Definition of Quadrilateral\nPremises : CP, EP, CF, EF\nConclusions: Quadrilateral(C, F, E, P)\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220DEP, \u2220FED, \u2220PEF\nConclusions: 2 * pi = \u2220DEP + \u2220FED + \u2220PEF\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220PCE, D on CE\nConclusions: \u2220PCD = \u2220PCE\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CEA, D on CE\nConclusions: \u2220CEA = \u2220DEA\n\nStep 9:\nTheorem: Same Angle\nPremises : D on CE, \u2220CEP\nConclusions: \u2220CEP = \u2220DEP\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : CP, AP, AC\nConclusions: \u25b3ACP\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220AED, F on AE\nConclusions: \u2220AED = \u2220FED\n\nStep 12:\nTheorem: Same Angle\nPremises : F on AE, \u2220EAP\nConclusions: \u2220EAP = \u2220FAP\n\nStep 13:\nTheorem: Same Angle\nPremises : F on AE, \u2220PEA\nConclusions: \u2220PEA = \u2220PEF\n\nStep 14:\nTheorem: Definition of Quadrilateral\nPremises : CP, AP, CE, AE\nConclusions: Quadrilateral(A, E, C, P)\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, E, F, C)\nPremises : Quadrilateral(C, F, E, P)\nConclusions: 2 * pi = \u2220CPE + \u2220EFC + \u2220FCP + \u2220PEF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (28.5 / 180) = \u2220PCD, \u2220PCD = \u2220PCE\nConclusions: pi * (28.5 / 180) = \u2220PCE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEP = \u2220DEP, \u2220CEP = \u2220PEA\nConclusions: \u2220DEP = \u2220PEA\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, P)\nPremises : \u25b3ACP\nConclusions: pi = \u2220ACP + \u2220CPA + \u2220PAC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = 2 * pi - \u2220DEA, \u2220AED = \u2220FED\nConclusions: \u2220FED = 2 * pi - \u2220DEA\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * (33 / 180) = \u2220FAP, \u2220EAP = \u2220FAP, \u2220EAP = \u2220PAC\nConclusions: pi * (33 / 180) = \u2220PAC\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, C, E, A)\nPremises : Quadrilateral(A, E, C, P)\nConclusions: 2 * pi = \u2220APC + \u2220CEA + \u2220EAP + \u2220PCE\n\nStep 22:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CPE + \u2220EFC + \u2220FCP + \u2220PEF, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CPE + \u2220EFC + \u2220FCP + \u2220PEF\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACP = \u2220PCE, pi * (28.5 / 180) = \u2220PCE\nConclusions: pi * (28.5 / 180) = \u2220ACP\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEP = \u2220PEA, \u2220PEA = \u2220PEF\nConclusions: \u2220DEP = \u2220PEF\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAP = \u2220PAC, pi * (33 / 180) = \u2220PAC\nConclusions: pi * (33 / 180) = \u2220EAP\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220CPE + \u2220EFC + \u2220FCP + \u2220PEF, 2 * 3.14 = \u2220CPE + \u2220EFC + \u2220FCP + \u2220PEF\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 27:\nTheorem: Substitution\nPremises : pi * (33 / 180) = \u2220PAC, pi = \u2220ACP + \u2220CPA + \u2220PAC, 3.14 = pi, pi * (28.5 / 180) = \u2220ACP\nConclusions: 3.14 = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220CPA\n\nStep 28:\nTheorem: Substitution\nPremises : \u2220CEA = \u2220DEA, 3.14 = pi, pi * (28.5 / 180) = \u2220PCE, pi * (33 / 180) = \u2220EAP, 2 * pi = \u2220APC + \u2220CEA + \u2220EAP + \u2220PCE\nConclusions: 2 * 3.14 = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220APC + \u2220DEA\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220APC + \u2220DEA\nConclusions: 2 * pi = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220APC + \u2220DEA\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : \u2220FED = 2 * pi - \u2220DEA, \u2220DEP = \u2220PEF, \u2220APC = 2 * pi - \u2220CPA, 3.14 = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220CPA, 2 * pi = \u2220DEP + \u2220FED + \u2220PEF, 2 * pi = 3.14 * (28.5 / 180) + 3.14 * (33 / 180) + \u2220APC + \u2220DEA\nConclusions: 0.5 = \u2220DEP\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, P)",
+        "Line(E, B)",
+        "Line(P, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(A, F)",
+        "Line(A, E)",
+        "Line(F, E)",
+        "Line(F, P)",
+        "Line(F, C)",
+        "Line(P, C)",
+        "Line(A, P)",
+        "Line(A, D)",
+        "Line(P, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "Perpendicular(Line(E, F), Line(P, F))",
+        "Perpendicular(Line(E, D), Line(P, D))",
+        "Perpendicular(Line(P, B), Line(A, B))",
+        "IsIncenterOf(P, Triangle(A, E, C))",
+        "Equals(LengthOf(Line(A, P)), 13.0)",
+        "Equals(LengthOf(Line(E, P)), 14.9)",
+        "Equals(LengthOf(Line(A, B)), 10.9)",
+        "Equals(MeasureOf(Angle(F, A, P)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, C, D)), Mul(pi, Div(28.5, 180.0)))"
+    ],
+    "correct": true
+}

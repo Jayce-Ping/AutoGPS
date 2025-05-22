@@ -1,0 +1,119 @@
+{
+    "problem_id": "300",
+    "solved": true,
+    "problem_text": "Use parallelogram ABCD to find m \\angle FBC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3y-8)",
+        "Equals(LengthOf(Line(C, B)), 2x+7)",
+        "Equals(LengthOf(Line(D, A)), 13)",
+        "Equals(LengthOf(Line(D, C)), 10)",
+        "Equals(MeasureOf(Angle(A, B, F)), 20)",
+        "Equals(MeasureOf(Angle(A, D, F)), 59)",
+        "Equals(MeasureOf(Angle(C, F, B)), 49)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, B))",
+        "Parallelogram(A,B,C,D)",
+        "Find(MeasureOf(Angle(F,B,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "F",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "DA",
+        "AB",
+        "DF",
+        "DB",
+        "FB",
+        "AF",
+        "AC",
+        "FC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            43.42654028436019,
+            338.96
+        ],
+        "C": [
+            337.1943127962085,
+            338.96
+        ],
+        "F": [
+            237.85255397577674,
+            220.8761904761905
+        ],
+        "B": [
+            431.71090047393363,
+            101.94285714285714
+        ],
+        "A": [
+            139.22037914691944,
+            101.94285714285714
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        49.0,
+        59.0,
+        111.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        49.0,
+        59.0,
+        111.0
+    ],
+    "problem_answer": 59.0,
+    "total_time": 44.116318,
+    "solution_predicate": "Equals(1.0297442587, MeasureOf(Angle(F, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, D), \u2220DBC, F on BD, pi * (59 / 180) = \u2220FDA, \u2220BDA\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 3:\nTheorem: Same Angle\nPremises : F on BD, \u2220DBC\nConclusions: \u2220DBC = \u2220FBC\n\nStep 4:\nTheorem: Same Angle\nPremises : F on BD, \u2220BDA\nConclusions: \u2220BDA = \u2220FDA\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBC, pi * (59 / 180) = \u2220FDA, \u2220BDA = \u2220FDA\nConclusions: pi * (59 / 180) = \u2220DBC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = \u2220FBC, pi * (59 / 180) = \u2220DBC\nConclusions: pi * (59 / 180) = \u2220FBC\n\nStep 8:\nTheorem: Evaluate\nPremises : pi * (59 / 180) = \u2220FBC\nConclusions: 1.03 = \u2220FBC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(D, F)",
+        "Line(D, B)",
+        "Line(F, B)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, B))",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Sub(Mul(3.0, y), 8.0))",
+        "Equals(LengthOf(Line(C, B)), Add(Mul(2.0, x), 7.0))",
+        "Equals(LengthOf(Line(D, A)), 13.0)",
+        "Equals(LengthOf(Line(D, C)), 10.0)",
+        "Equals(MeasureOf(Angle(A, B, F)), Mul(pi, Div(20.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, A)), Mul(pi, Div(59.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(49.0, 180.0)))"
+    ],
+    "correct": true
+}

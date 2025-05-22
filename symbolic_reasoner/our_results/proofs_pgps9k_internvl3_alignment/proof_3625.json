@@ -1,0 +1,103 @@
+{
+    "problem_id": "3625",
+    "solved": true,
+    "problem_text": "Find the length of YW.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(U, W)), 9)",
+        "Equals(LengthOf(Line(V, W)), 7)",
+        "Equals(LengthOf(Line(W, X)), 8.75)",
+        "Line(U, V)",
+        "Line(U, W)",
+        "Line(U, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, Y)",
+        "Parallel(Line(U, V), Line(X, Y))",
+        "PointLiesOnLine(W, Line(U, Y))",
+        "PointLiesOnLine(W, Line(V, X))",
+        "Find(LengthOf(Line(Y,W)))"
+    ],
+    "point_instances": [
+        "U",
+        "X",
+        "W",
+        "V",
+        "Y"
+    ],
+    "line_instances": [
+        "UW",
+        "UY",
+        "WY",
+        "VW",
+        "VX",
+        "WX",
+        "XY",
+        "UV"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "U": [
+            53.34158415841584,
+            53.42857142857142
+        ],
+        "X": [
+            287.77784653465346,
+            85.75285714285714
+        ],
+        "W": [
+            166.42574257425744,
+            118.1534693877551
+        ],
+        "V": [
+            69.13069306930693,
+            144.8982857142857
+        ],
+        "Y": [
+            307.2475247524753,
+            199.36489795918368
+        ]
+    },
+    "problem_choices": [
+        2.25,
+        6.806,
+        7.2,
+        11.25
+    ],
+    "choices_precise_value": [
+        2.25,
+        6.806,
+        7.2,
+        11.25
+    ],
+    "problem_answer": 11.25,
+    "total_time": 36.562782,
+    "solution_predicate": "Equals(11.25, LengthOf(Line(Y, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220VUY, 7 = VW, \u2220XYU, 8.75 = WX, W on UY, \u2220YXV, 9 = UW, W on VX, UV || XY, \u2220UVX\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220VUY, W on UY\nConclusions: \u2220VUW = \u2220VUY\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220XYU, W on UY\nConclusions: \u2220XYU = \u2220XYW\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : W on UY, W on VX\nConclusions: \u2220UWV = \u2220YWX\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220YXV, W on VX\nConclusions: \u2220YXV = \u2220YXW\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : UV || XY\nConclusions: \u2220UVX = \u2220YXV, \u2220VUY = \u2220XYU\n\nStep 7:\nTheorem: Same Angle\nPremises : W on VX, \u2220UVX\nConclusions: \u2220UVW = \u2220UVX\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VUW = \u2220VUY, \u2220VUY = \u2220XYU\nConclusions: \u2220VUW = \u2220XYU\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220UVW = \u2220UVX, \u2220UVX = \u2220YXV\nConclusions: \u2220UVW = \u2220YXV\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VUW = \u2220XYU, \u2220XYU = \u2220XYW\nConclusions: \u2220VUW = \u2220XYW\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YXV = \u2220YXW, \u2220UVW = \u2220YXV\nConclusions: \u2220UVW = \u2220YXW\n\nStep 12:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220UVW = \u2220YXW, \u2220VUW = \u2220XYW, \u2220UWV = \u2220YWX\nConclusions: \u25b3UVW ~ \u25b3YXW\n\nStep 13:\nTheorem: Similar Definition\nPremises : \u25b3UVW ~ \u25b3YXW\nConclusions: \u2220VUW = \u2220XYW, \u2220UVW = \u2220YXW, sim_ratio_triangle_u_v_w_triangle_y_x_w = UW / WY, sim_ratio_triangle_u_v_w_triangle_y_x_w = VW / WX\n\nStep 14:\nTheorem: Substitution\nPremises : 9 = UW, sim_ratio_triangle_u_v_w_triangle_y_x_w = UW / WY\nConclusions: sim_ratio_triangle_u_v_w_triangle_y_x_w = 9 / WY\n\nStep 15:\nTheorem: Substitution\nPremises : 7 = VW, 8.75 = WX, sim_ratio_triangle_u_v_w_triangle_y_x_w = VW / WX\nConclusions: 7 / 8.75 = sim_ratio_triangle_u_v_w_triangle_y_x_w\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_u_v_w_triangle_y_x_w = 9 / WY, 7 / 8.75 = sim_ratio_triangle_u_v_w_triangle_y_x_w\nConclusions: 7 / 8.75 = 9 / WY\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 7 / 8.75 = 9 / WY\nConclusions: 11.25 = WY\n\n",
+    "logic_fomrs_refined": [
+        "Line(U, W)",
+        "Line(U, Y)",
+        "Line(W, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(U, V)",
+        "Line(U, V)",
+        "Line(U, W)",
+        "Line(U, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, Y)",
+        "Parallel(Line(U, V), Line(X, Y))",
+        "PointLiesOnLine(W, Line(U, Y))",
+        "PointLiesOnLine(W, Line(V, X))",
+        "Equals(LengthOf(Line(U, W)), 9.0)",
+        "Equals(LengthOf(Line(V, W)), 7.0)",
+        "Equals(LengthOf(Line(W, X)), 8.75)"
+    ],
+    "correct": true
+}

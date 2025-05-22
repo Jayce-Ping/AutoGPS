@@ -1,0 +1,108 @@
+{
+    "problem_id": "2504",
+    "solved": true,
+    "problem_text": "In \\triangle QRS, T, U, and B are midpoints. Find the perimeter of \\triangle UTB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Q,R)), 30)",
+        "Equals(LengthOf(Line(Q,S)), 50)",
+        "Equals(LengthOf(Line(R,S)), 40)",
+        "Equals(LengthOf(Line(T,B)), 15)",
+        "Equals(LengthOf(Line(U,B)), 25)",
+        "Equals(LengthOf(Line(U,T)), 20)",
+        "Find(PerimeterOf(Triangle(U,T,B)))",
+        "IsMidpointOf(B,Line(R,S))",
+        "IsMidpointOf(T,Line(Q,S))",
+        "IsMidpointOf(U,Line(Q,R))",
+        "Triangle(Q,R,S)"
+    ],
+    "point_instances": [
+        "Q",
+        "U",
+        "R",
+        "T",
+        "B",
+        "S"
+    ],
+    "line_instances": [
+        "QU",
+        "QR",
+        "UR",
+        "RB",
+        "RS",
+        "BS",
+        "ST",
+        "SQ",
+        "TQ",
+        "UB",
+        "BT",
+        "TU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            84.89375,
+            60.621428571428574
+        ],
+        "U": [
+            253.8,
+            60.91428571428572
+        ],
+        "R": [
+            421.825,
+            60.91428571428572
+        ],
+        "T": [
+            204.74375,
+            196.50714285714287
+        ],
+        "B": [
+            371.59375,
+            196.50714285714287
+        ],
+        "S": [
+            323.83000000000004,
+            331.51428571428573
+        ]
+    },
+    "problem_choices": [
+        75.0,
+        190.0,
+        200.0,
+        240.0
+    ],
+    "choices_precise_value": [
+        75.0,
+        190.0,
+        200.0,
+        240.0
+    ],
+    "problem_answer": 75.0,
+    "total_time": 115.480612,
+    "solution_predicate": "Equals(60.0, PerimeterOf(Triangle(U, T, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = TU, 25 = BU, \u25b3BTU, 15 = BT\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3BTU\nConclusions: Perimeter(\u25b3BTU) = BT + BU + TU\n\nStep 3:\nTheorem: Evaluate\nPremises : 25 = BU, 15 = BT, 20 = TU\nConclusions: 60 = BT + BU + TU\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3BTU) = BT + BU + TU, 60 = BT + BU + TU\nConclusions: 60 = Perimeter(\u25b3BTU)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, U)",
+        "Line(Q, R)",
+        "Line(U, R)",
+        "Line(R, B)",
+        "Line(R, S)",
+        "Line(B, S)",
+        "Line(S, T)",
+        "Line(S, Q)",
+        "Line(T, Q)",
+        "Line(U, B)",
+        "Line(B, T)",
+        "Line(T, U)",
+        "IsMidpointOf(B, Line(R, S))",
+        "IsMidpointOf(T, Line(Q, S))",
+        "IsMidpointOf(U, Line(Q, R))",
+        "Triangle(Q, R, S)",
+        "Equals(LengthOf(Line(Q, R)), 30.0)",
+        "Equals(LengthOf(Line(Q, S)), 50.0)",
+        "Equals(LengthOf(Line(R, S)), 40.0)",
+        "Equals(LengthOf(Line(T, B)), 15.0)",
+        "Equals(LengthOf(Line(U, B)), 25.0)",
+        "Equals(LengthOf(Line(U, T)), 20.0)"
+    ],
+    "correct": false
+}

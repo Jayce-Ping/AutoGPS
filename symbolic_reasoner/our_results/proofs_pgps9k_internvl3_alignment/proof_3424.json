@@ -1,0 +1,76 @@
+{
+    "problem_id": "3424",
+    "solved": true,
+    "problem_text": "TUWY is a rhombus. What is the length of UW?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(U, W)), 3x)",
+        "Equals(LengthOf(Line(W, Y)), x+2)",
+        "Line(T, U)",
+        "Line(T, Y)",
+        "Line(U, W)",
+        "Line(Y, W)",
+        "Rhombus(T,U,W,Y)",
+        "Find(LengthOf(Line(U,W)))"
+    ],
+    "point_instances": [
+        "T",
+        "U",
+        "W",
+        "Y"
+    ],
+    "line_instances": [
+        "TU",
+        "TY",
+        "UW",
+        "YW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            54.47494390426328,
+            37.400000000000006
+        ],
+        "U": [
+            226.66404886561955,
+            37.76666666666667
+        ],
+        "W": [
+            268.9109947643979,
+            205.22857142857146
+        ],
+        "Y": [
+            95.88219895287958,
+            205.70000000000002
+        ]
+    },
+    "problem_choices": [
+        2.4,
+        3.0,
+        4.243,
+        6.0
+    ],
+    "choices_precise_value": [
+        2.4,
+        3.0,
+        4.243,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 7.896136,
+    "solution_predicate": "Equals(3.0, LengthOf(Line(U, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 + x = WY, Rhombus(T, U, W, Y), 3 * x = UW\n\nStep 2:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(T, U, W, Y)\nConclusions: TU = TY\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(T, U, W, Y)\nConclusions: Parallelogram(T, U, W, Y)\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(T, U, W, Y)\nConclusions: TU = WY, TY = UW\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : TU = WY, 2 + x = WY\nConclusions: 2 + x = TU\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : TY = UW, 3 * x = UW\nConclusions: 3 * x = TY\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : TU = TY, 3 * x = TY, 2 + x = TU\nConclusions: 2 + x = 3 * x\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 2 + x = 3 * x, 3 * x = UW\nConclusions: 2 + x = UW\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 + x = UW, 2 + x = 3 * x\nConclusions: 3 = UW\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, U)",
+        "Line(T, Y)",
+        "Line(U, W)",
+        "Line(Y, W)",
+        "Line(T, U)",
+        "Line(T, Y)",
+        "Line(U, W)",
+        "Line(Y, W)",
+        "Rhombus(T, U, W, Y)",
+        "Equals(LengthOf(Line(U, W)), Mul(3.0, x))",
+        "Equals(LengthOf(Line(W, Y)), Add(x, 2.0))"
+    ],
+    "correct": true
+}

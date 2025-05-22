@@ -1,0 +1,77 @@
+{
+    "problem_id": "2953",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 3.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, B, D)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, C, D)), 40)",
+        "Equals(MeasureOf(Angle(B, A, D)), 70)",
+        "Equals(MeasureOf(Angle(C, D, B)), 45)",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            25.568181818181817,
+            206.42045454545453
+        ],
+        "B": [
+            228.125,
+            206.42045454545453
+        ],
+        "C": [
+            369.3181818181818,
+            205.85227272727272
+        ],
+        "D": [
+            172.1590909090909,
+            12.386363636363633
+        ]
+    },
+    "problem_choices": [
+        "85",
+        "90",
+        "95",
+        "105"
+    ],
+    "choices_precise_value": [
+        85.0,
+        90.0,
+        95.0,
+        105.0
+    ],
+    "problem_answer": 95.0,
+    "total_time": 16.722661,
+    "solution_predicate": "Equals(1.6580627894, MeasureOf(Angle(C, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = \u2220DCB, CD, 3.14 = pi, pi * (45 / 180) = \u2220BDC, BC, BD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (40 / 180) = \u2220DCB, pi = \u2220BDC + \u2220CBD + \u2220DCB, pi * (45 / 180) = \u2220BDC\nConclusions: 3.14 = 3.14 * (40 / 180) + 3.14 * (45 / 180) + \u2220CBD\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (40 / 180) + 3.14 * (45 / 180) + \u2220CBD\nConclusions: 1.66 = \u2220CBD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(D, A)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(70.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

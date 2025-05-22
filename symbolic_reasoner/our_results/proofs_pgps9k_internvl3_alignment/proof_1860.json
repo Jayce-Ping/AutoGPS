@@ -1,0 +1,69 @@
+{
+    "problem_id": "1860",
+    "solved": true,
+    "problem_text": "Q is the midpoint of RP. What is PQ?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, Q)), 6x-7)",
+        "Equals(LengthOf(Line(Q, R)), 5x+1)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, R)",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "IsMidpointOf(Point(Q),Line(R,P))",
+        "Find(LengthOf(Line(P,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "R"
+    ],
+    "line_instances": [
+        "PQ",
+        "PR",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            25.05428571428572,
+            70.87248322147651
+        ],
+        "Q": [
+            330.78000000000003,
+            71.97986577181209
+        ],
+        "R": [
+            636.696,
+            71.75838926174497
+        ]
+    },
+    "problem_choices": [
+        6.833,
+        41.0,
+        82.0,
+        123.0
+    ],
+    "choices_precise_value": [
+        6.833,
+        41.0,
+        82.0,
+        123.0
+    ],
+    "problem_answer": 41.0,
+    "total_time": 1.544036,
+    "solution_predicate": "Equals(41.0, LengthOf(Line(P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1 + 5 * x = QR, 6 * x - 7 = PQ, IsMidpointOf(Q, PR)\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(Q, PR)\nConclusions: PQ = QR\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 1 + 5 * x = QR, PQ = QR\nConclusions: 1 + 5 * x = PQ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 * x - 7 = PQ, 1 + 5 * x = PQ\nConclusions: 1 + 5 * x = 6 * x - 7\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 1 + 5 * x = 6 * x - 7, 1 + 5 * x = PQ\nConclusions: 41 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, R)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, R)",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "IsMidpointOf(Q, Line(R, P))",
+        "Equals(LengthOf(Line(P, Q)), Sub(Mul(6.0, x), 7.0))",
+        "Equals(LengthOf(Line(Q, R)), Add(Mul(5.0, x), 1.0))"
+    ],
+    "correct": true
+}

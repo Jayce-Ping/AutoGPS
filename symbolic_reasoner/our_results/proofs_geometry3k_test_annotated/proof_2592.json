@@ -1,0 +1,66 @@
+{
+    "problem_id": "2592",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(MeasureOf(Arc(A, C)), 240)",
+        "Find(Sub(AreaOf(Sector(B, A, C)), AreaOf(Triangle(A, B, C))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "BA",
+        "CB"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            83.89578713968959,
+            193.569844789357
+        ],
+        "B": [
+            103.4079822616408,
+            109.53436807095345
+        ],
+        "C": [
+            39.328159645232816,
+            50.99778270509978
+        ]
+    },
+    "problem_choices": [
+        "6.5",
+        "15.6",
+        "22.1",
+        "37.7"
+    ],
+    "choices_precise_value": [
+        6.5,
+        15.6,
+        22.1,
+        37.7
+    ],
+    "problem_answer": 22.1,
+    "total_time": 27.698965,
+    "solution_predicate": "Equals(22.110654575, Sub(AreaOf(Sector(C, B, A)), AreaOf(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(B, radius_0_0), \u25b3ABC, Arc(CBA), \u2220CBA, A on \u2299(B, radius_0_0), Arc(ABC), Sector(C, B, A), 3.14 = pi, 6 = AB, pi * (240 / 180) = Arc(ABC)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 3:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CBA)\nConclusions: \u2220CBA = Arc(CBA)\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = AB\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ABC)\nConclusions: \u2220ABC = Arc(ABC)\n\nStep 9:\nTheorem: Area formula of Sector(C, B, A)\nPremises : Sector(C, B, A)\nConclusions: Area(Sector(C, B, A)) = (radius_0_0 ** 2 * \u2220CBA) / 2\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AB, 6 = AB\nConclusions: 6 = radius_0_0\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = Arc(ABC), pi * (240 / 180) = Arc(ABC)\nConclusions: pi * (240 / 180) = \u2220ABC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 6 = radius_0_0, radius_0_0 = BC\nConclusions: 6 = BC\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, pi * (240 / 180) = \u2220ABC, 3.14 = pi, \u2220CBA = Arc(CBA)\nConclusions: 2 * 3.14 - 3.14 * (240 / 180) = Arc(CBA)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (240 / 180) = Arc(CBA), \u2220CBA = Arc(CBA)\nConclusions: 2 * 3.14 - 3.14 * (240 / 180) = \u2220CBA\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 * (240 / 180) = \u2220CBA\nConclusions: 2.09 = \u2220CBA\n\nStep 16:\nTheorem: Substitution\nPremises : 6 = AB, 6 = BC, 2.09 = \u2220CBA, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220CBA)\nConclusions: 2 * 6 * 6 * cos(2.09) = (6 ** 2 + 6 ** 2) - AC ** 2\n\nStep 17:\nTheorem: Substitution\nPremises : 6 = radius_0_0, Area(Sector(C, B, A)) = (radius_0_0 ** 2 * \u2220CBA) / 2, 2.09 = \u2220CBA\nConclusions: (2.09 * 6 ** 2) / 2 = Area(Sector(C, B, A))\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : 2 * 6 * 6 * cos(2.09) = (6 ** 2 + 6 ** 2) - AC ** 2\nConclusions: 10.39 = AC\n\nStep 19:\nTheorem: Solve Univariate Equation\nPremises : (2.09 * 6 ** 2) / 2 = Area(Sector(C, B, A))\nConclusions: 37.7 = Area(Sector(C, B, A))\n\nStep 20:\nTheorem: Substitution\nPremises : 6 = AB, 6 = BC, Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 10.39 = AC\nConclusions: SqrtOf(((10.39 + 6 + 6) / 2) * ((10.39 + 6 + 6) / 2 - 10.39) * ((10.39 + 6 + 6) / 2 - 6) * ((10.39 + 6 + 6) / 2 - 6)) = Area(\u25b3ABC)\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : SqrtOf(((10.39 + 6 + 6) / 2) * ((10.39 + 6 + 6) / 2 - 10.39) * ((10.39 + 6 + 6) / 2 - 6) * ((10.39 + 6 + 6) / 2 - 6)) = Area(\u25b3ABC)\nConclusions: 15.59 = Area(\u25b3ABC)\n\nStep 22:\nTheorem: Evaluate\nPremises : 15.59 = Area(\u25b3ABC), 37.7 = Area(Sector(C, B, A))\nConclusions: 22.11 = Area(Sector(C, B, A)) - Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(MeasureOf(Arc(A, B, C)), Mul(pi, Div(240.0, 180.0)))"
+    ],
+    "correct": true
+}

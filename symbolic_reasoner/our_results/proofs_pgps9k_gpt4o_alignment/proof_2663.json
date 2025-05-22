@@ -1,0 +1,82 @@
+{
+    "problem_id": "2663",
+    "solved": true,
+    "problem_text": "m \\widehat AB = 176, and m \\widehat BC = 42. Solve for the measure of \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "Equals(MeasureOf(Arc(A,B)),176)",
+        "Equals(MeasureOf(Arc(B,C)),42)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "B": [
+            300.83009708737865,
+            105.76134453781512
+        ],
+        "A": [
+            55.18267756770567,
+            182.67428571428573
+        ],
+        "C": [
+            296.07102708226876,
+            201.2342857142857
+        ],
+        "D": [
+            179.13003815278378,
+            146.877073281502
+        ]
+    },
+    "problem_choices": [
+        21.0,
+        71.0,
+        88.0,
+        109.0
+    ],
+    "choices_precise_value": [
+        21.0,
+        71.0,
+        88.0,
+        109.0
+    ],
+    "problem_answer": 21.0,
+    "total_time": 44.868178,
+    "solution_predicate": "Equals(0.3665191429, MeasureOf(Angle(C, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, AC, C on \u2299(D, radius_D), \u2220BAC, \u2220BAC, BD, 3.14 = pi, A on \u2299(D, radius_D), Arc(BDC), \u2220BDC, \u2220CAD, \u2220DAB, CD, pi * (42 / 180) = Arc(CDB), Arc(CDB), AB, B on \u2299(D, radius_D)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 5.55 = 2 * 3.14 - pi * (42 / 180)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_D)\nConclusions: radius_D = AD\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BDC)\nConclusions: \u2220BDC = Arc(BDC)\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDC\nConclusions: \u2220BDC = 2 * pi - \u2220CDB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220CAD, \u2220DAB, \u2220BAC\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 10:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CDB)\nConclusions: \u2220CDB = Arc(CDB)\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : AB, BD, AC, CD\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : AB, BD, AD\nConclusions: \u25b3ABD\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = CD, radius_D = AD\nConclusions: AD = CD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = Arc(CDB), \u2220CDB = Arc(CDB)\nConclusions: pi * (42 / 180) = \u2220CDB\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = BD, radius_D = AD\nConclusions: AD = BD\n\nStep 18:\nTheorem: Issoceles Triangle Property\nPremises : AD = CD, \u25b3ACD\nConclusions: \u2220CAD = \u2220DCA\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220BDC = Arc(BDC), 3.14 = pi, pi * (42 / 180) = \u2220CDB, \u2220BDC = 2 * pi - \u2220CDB\nConclusions: 2 * 3.14 - pi * (42 / 180) = Arc(BDC)\n\nStep 20:\nTheorem: Issoceles Triangle Property\nPremises : AD = BD, \u25b3ABD\nConclusions: \u2220ABD = \u2220DAB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = Arc(BDC), 2 * 3.14 - pi * (42 / 180) = Arc(BDC)\nConclusions: 2 * 3.14 - pi * (42 / 180) = \u2220BDC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (42 / 180) = \u2220BDC, 5.55 = 2 * 3.14 - pi * (42 / 180)\nConclusions: 5.55 = \u2220BDC\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, 5.55 = \u2220BDC, \u2220ABD = \u2220DAB, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\nConclusions: 2 * 3.14 = 5.55 + \u2220CAB + \u2220DAB + \u2220DCA\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : \u2220BAC = 2 * pi - \u2220CAB, 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB, \u2220CAD = \u2220DCA, 2 * 3.14 = 5.55 + \u2220CAB + \u2220DAB + \u2220DCA\nConclusions: 0.37 = \u2220CAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Circle(D, radius_D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "Equals(MeasureOf(Arc(B, D, A)), Mul(pi, Div(176.0, 180.0)))",
+        "Equals(MeasureOf(Arc(C, D, B)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

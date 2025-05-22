@@ -1,0 +1,129 @@
+{
+    "problem_id": "2945",
+    "solved": true,
+    "problem_text": "Find m \\angle H.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnLine(G, Line(H, A))",
+        "PointLiesOnLine(F, Line(H, A))",
+        "PointLiesOnLine(F, Line(G, A))",
+        "PointLiesOnLine(J, Line(H, K))",
+        "PointLiesOnLine(J, Line(H, B))",
+        "PointLiesOnLine(K, Line(H, B))",
+        "PointLiesOnLine(K, Line(J, B))",
+        "PointLiesOnCircle(G, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Arc(J, G)), 26)",
+        "Equals(MeasureOf(Arc(F, K)), 88)",
+        "Find(MeasureOf(Angle(H)))"
+    ],
+    "point_instances": [
+        "K",
+        "G",
+        "F",
+        "J",
+        "H",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "HG",
+        "HF",
+        "HA",
+        "GF",
+        "GA",
+        "FA",
+        "HJ",
+        "HK",
+        "HB",
+        "JK",
+        "JB",
+        "KB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "K": [
+            404.3398058252427,
+            114.64077669902912
+        ],
+        "G": [
+            194.63106796116503,
+            236.48543689320388
+        ],
+        "F": [
+            452.88349514563106,
+            311.7281553398058
+        ],
+        "J": [
+            211.1359223300971,
+            170.95145631067962
+        ],
+        "H": [
+            91.23300970873787,
+            205.41747572815532
+        ],
+        "A": [
+            546.5728155339806,
+            339.88349514563106
+        ],
+        "B": [
+            547.0582524271845,
+            73.86407766990291
+        ],
+        "C": [
+            334.9854368932039,
+            236.95631067961165
+        ]
+    },
+    "problem_choices": [
+        "26",
+        "31",
+        "62",
+        "88"
+    ],
+    "choices_precise_value": [
+        26.0,
+        31.0,
+        62.0,
+        88.0
+    ],
+    "problem_answer": 31.0,
+    "total_time": 122.57753,
+    "solution_predicate": "Equals(0.5410520681, MeasureOf(Angle(A, H, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: GH, \u2220FHB, G on \u2299(C, radius_0_0), \u2220FCK, HJ, \u2220CFH, pi * (26 / 180) = Arc(JCG), \u2220HKC, G on FH, \u2220HJC, F on AH, pi * (88 / 180) = Arc(FCK), G on AH, \u2220FGC, Arc(KCF), Arc(JCG), FH, J on BH, K on BH, \u2220AHB, HK, \u2220GHB, Arc(FCK), F on \u2299(C, radius_0_0), K on \u2299(C, radius_0_0), JK, CK, J on HK, CF, CG, 3.14 = pi, J on \u2299(C, radius_0_0), \u2220CJK, FG, \u2220CGH, CJ\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : G on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CG\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220FCK\nConclusions: \u2220FCK = 2 * pi - \u2220KCF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CFH, G on FH\nConclusions: \u2220CFG = \u2220CFH\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KCF)\nConclusions: \u2220KCF = Arc(KCF)\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JCG)\nConclusions: \u2220JCG = Arc(JCG)\n\nStep 7:\nTheorem: Same Angle\nPremises : K on BH, \u2220FHB\nConclusions: \u2220FHB = \u2220FHK\n\nStep 8:\nTheorem: Same Angle\nPremises : F on AH, \u2220AHB\nConclusions: \u2220AHB = \u2220FHB\n\nStep 9:\nTheorem: Same Angle\nPremises : G on AH, \u2220AHB\nConclusions: \u2220AHB = \u2220GHB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220GHB, J on BH\nConclusions: \u2220GHB = \u2220GHJ\n\nStep 11:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FCK)\nConclusions: \u2220FCK = Arc(FCK)\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : F on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CF\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : K on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CK\n\nStep 14:\nTheorem: Same Angle\nPremises : J on HK, \u2220HKC\nConclusions: \u2220HKC = \u2220JKC\n\nStep 15:\nTheorem: Definition of Quadrilateral\nPremises : FH, HK, CK, CF\nConclusions: Quadrilateral(C, F, H, K)\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : J on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CJ\n\nStep 17:\nTheorem: Straight Angle\nPremises : \u2220HJC, \u2220CJK\nConclusions: pi = \u2220CJK + \u2220HJC\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : FG, CG, CF\nConclusions: \u25b3CFG\n\nStep 19:\nTheorem: Straight Angle\nPremises : \u2220FGC, \u2220CGH\nConclusions: pi = \u2220CGH + \u2220FGC\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : CJ, CK, JK\nConclusions: \u25b3CJK\n\nStep 21:\nTheorem: Definition of Quadrilateral\nPremises : CJ, GH, CG, HJ\nConclusions: Quadrilateral(C, G, H, J)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JCG = Arc(JCG), pi * (26 / 180) = Arc(JCG)\nConclusions: pi * (26 / 180) = \u2220JCG\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FHB = \u2220FHK, \u2220AHB = \u2220FHB\nConclusions: \u2220AHB = \u2220FHK\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AHB = \u2220GHB, \u2220AHB = \u2220FHB\nConclusions: \u2220FHB = \u2220GHB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (88 / 180) = Arc(FCK), \u2220FCK = Arc(FCK)\nConclusions: pi * (88 / 180) = \u2220FCK\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CG, radius_0_0 = CF\nConclusions: CF = CG\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(C, F, H, K)\nPremises : Quadrilateral(C, F, H, K)\nConclusions: 2 * pi = \u2220CFH + \u2220FHK + \u2220HKC + \u2220KCF\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CJ, radius_0_0 = CK\nConclusions: CJ = CK\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CJK + \u2220HJC\nConclusions: 3.14 = \u2220CJK + \u2220HJC\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CGH + \u2220FGC, 3.14 = pi\nConclusions: 3.14 = \u2220CGH + \u2220FGC\n\nStep 31:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(C, G, H, J)\nPremises : Quadrilateral(C, G, H, J)\nConclusions: 2 * pi = \u2220CGH + \u2220GHJ + \u2220HJC + \u2220JCG\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FHB = \u2220FHK, \u2220FHB = \u2220GHB\nConclusions: \u2220FHK = \u2220GHB\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : pi * (88 / 180) = \u2220FCK, \u2220FCK = 2 * pi - \u2220KCF\nConclusions: pi * (88 / 180) = 2 * pi - \u2220KCF\n\nStep 34:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CFG, CF = CG\nConclusions: \u2220CFG = \u2220FGC\n\nStep 35:\nTheorem: Substitution\nPremises : \u2220HKC = \u2220JKC, 3.14 = pi, 2 * pi = \u2220CFH + \u2220FHK + \u2220HKC + \u2220KCF, \u2220KCF = Arc(KCF)\nConclusions: 2 * 3.14 = \u2220CFH + \u2220FHK + \u2220JKC + Arc(KCF)\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CJK, CJ = CK\nConclusions: \u2220CJK = \u2220JKC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GHB = \u2220GHJ, \u2220FHK = \u2220GHB\nConclusions: \u2220FHK = \u2220GHJ\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (88 / 180) = 2 * pi - \u2220KCF\nConclusions: 4.75 = \u2220KCF\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CFG = \u2220CFH, \u2220CFG = \u2220FGC\nConclusions: \u2220CFH = \u2220FGC\n\nStep 40:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CGH + \u2220GHJ + \u2220HJC + \u2220JCG, \u2220FHK = \u2220GHJ, 3.14 = pi, pi * (26 / 180) = \u2220JCG\nConclusions: 2 * 3.14 = pi * (26 / 180) + \u2220CGH + \u2220FHK + \u2220HJC\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 4.75 = \u2220KCF, \u2220KCF = Arc(KCF)\nConclusions: 4.75 = Arc(KCF)\n\nStep 42:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * 3.14 = pi * (26 / 180) + \u2220CGH + \u2220FHK + \u2220HJC\nConclusions: 2 * 3.14 = 3.14 * (26 / 180) + \u2220CGH + \u2220FHK + \u2220HJC\n\nStep 43:\nTheorem: Substitution\nPremises : 2 * 3.14 = \u2220CFH + \u2220FHK + \u2220JKC + Arc(KCF), 4.75 = Arc(KCF)\nConclusions: 2 * 3.14 = 4.75 + \u2220CFH + \u2220FHK + \u2220JKC\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : \u2220AHB = \u2220FHK, 2 * 3.14 = 4.75 + \u2220CFH + \u2220FHK + \u2220JKC, 3.14 = \u2220CJK + \u2220HJC, \u2220CFH = \u2220FGC, 3.14 = \u2220CGH + \u2220FGC, 2 * 3.14 = 3.14 * (26 / 180) + \u2220CGH + \u2220FHK + \u2220HJC, \u2220CJK = \u2220JKC\nConclusions: 0.54 = \u2220AHB\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(H, A)",
+        "Line(G, F)",
+        "Line(G, A)",
+        "Line(F, A)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "Line(H, B)",
+        "Line(J, K)",
+        "Line(J, B)",
+        "Line(K, B)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnLine(G, Line(H, A))",
+        "PointLiesOnLine(F, Line(H, A))",
+        "PointLiesOnLine(F, Line(G, A))",
+        "PointLiesOnLine(J, Line(H, K))",
+        "PointLiesOnLine(J, Line(H, B))",
+        "PointLiesOnLine(K, Line(H, B))",
+        "PointLiesOnLine(K, Line(J, B))",
+        "PointLiesOnCircle(G, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Arc(J, C, G)), Mul(pi, Div(26.0, 180.0)))",
+        "Equals(MeasureOf(Arc(F, C, K)), Mul(pi, Div(88.0, 180.0)))"
+    ],
+    "correct": true
+}

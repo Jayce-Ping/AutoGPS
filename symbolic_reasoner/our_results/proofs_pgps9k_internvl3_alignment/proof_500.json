@@ -1,0 +1,115 @@
+{
+    "problem_id": "500",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Arc(B, E)), 68)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "ED"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            92.70234741784037,
+            33.81782857142857
+        ],
+        "B": [
+            208.43896713615024,
+            63.51428571428572
+        ],
+        "C": [
+            151.07810499359795,
+            102.90597402597403
+        ],
+        "D": [
+            42.5962441314554,
+            176.6974149659864
+        ],
+        "E": [
+            216.51847315778727,
+            179.12869565217392
+        ],
+        "F": [
+            129.69166783978585,
+            126.78315212555475
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        56.0,
+        68.0,
+        146.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        56.0,
+        68.0,
+        146.0
+    ],
+    "problem_answer": 34.0,
+    "total_time": 116.768782,
+    "solution_predicate": "Equals(0.5934119457, MeasureOf(Angle(C, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, \u2220CBF, \u2220FAE, CD, \u2220FDB, Arc(BFE), \u2220AED, 3.14 = pi, \u2220BAF, \u2220EAB, EF, \u2220FED, \u2220EDB, BC, \u2220DBF, E on \u2299(F, radius_F), CE, BF, \u2220ABD, \u2220CAB, \u2220EFB, A on \u2299(F, radius_F), Arc(EFB), \u2220EFB, DF, pi * (68 / 180) = Arc(EFB), \u2220FBA, D on \u2299(F, radius_F), \u2220AEF, \u2220FAC, \u2220DEA, C on AE, \u2220EFA, \u2220DFE, DE, \u2220AED, AB, BD, \u2220BFA, AF, AE, \u2220ACB, \u2220ABC, AC, B on \u2299(F, radius_F), \u2220AFD\n\nStep 2:\nTheorem: Same Angle\nPremises : C on BD, \u2220FDB\nConclusions: \u2220FDB = \u2220FDC\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BFE)\nConclusions: \u2220BFE = Arc(BFE)\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220BAF, \u2220FAE, \u2220EAB\nConclusions: 2 * pi = \u2220BAF + \u2220EAB + \u2220FAE\n\nStep 5:\nTheorem: Same Angle\nPremises : C on BD, \u2220EDB\nConclusions: \u2220EDB = \u2220EDC\n\nStep 6:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBF\nConclusions: \u2220CBF = \u2220DBF\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : E on \u2299(F, radius_F)\nConclusions: radius_F = EF\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : A on \u2299(F, radius_F)\nConclusions: radius_F = AF\n\nStep 10:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EFB)\nConclusions: \u2220EFB = Arc(EFB)\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220EFB\nConclusions: \u2220EFB = 2 * pi - \u2220BFE\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220ABD, \u2220DBF, \u2220FBA\nConclusions: 2 * pi = \u2220ABD + \u2220DBF + \u2220FBA\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : D on \u2299(F, radius_F)\nConclusions: radius_F = DF\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220BAF, \u2220CAB, \u2220FAC\nConclusions: 2 * pi = \u2220BAF + \u2220CAB + \u2220FAC\n\nStep 15:\nTheorem: Circumference splited\nPremises : \u2220AEF, \u2220DEA, \u2220FED\nConclusions: 2 * pi = \u2220AEF + \u2220DEA + \u2220FED\n\nStep 16:\nTheorem: Same Angle\nPremises : C on AE, \u2220FAE\nConclusions: \u2220FAC = \u2220FAE\n\nStep 17:\nTheorem: Same Angle\nPremises : C on AE, \u2220AED\nConclusions: \u2220AED = \u2220CED\n\nStep 18:\nTheorem: Same Angle\nPremises : C on AE, \u2220EAB\nConclusions: \u2220CAB = \u2220EAB\n\nStep 19:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220ACB = \u2220ECD, \u2220BCA = \u2220DCE\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : CD, CE, DE\nConclusions: \u25b3CDE\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220AED\nConclusions: \u2220AED = 2 * pi - \u2220DEA\n\nStep 22:\nTheorem: Definition of Triangle\nPremises : BF, DF, BD\nConclusions: \u25b3BDF\n\nStep 23:\nTheorem: Definition of Quadrilateral\nPremises : EF, BD, BF, DE\nConclusions: Quadrilateral(B, D, E, F)\n\nStep 24:\nTheorem: Definition of Triangle\nPremises : AB, AF, BF\nConclusions: \u25b3ABF\n\nStep 25:\nTheorem: Definition of Triangle\nPremises : AF, EF, AE\nConclusions: \u25b3AEF\n\nStep 26:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 27:\nTheorem: Circumference splited\nPremises : \u2220ABC, \u2220CBF, \u2220FBA\nConclusions: 2 * pi = \u2220ABC + \u2220CBF + \u2220FBA\n\nStep 28:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 29:\nTheorem: Definition of Quadrilateral\nPremises : AF, BF, AC, BC\nConclusions: Quadrilateral(A, C, B, F)\n\nStep 30:\nTheorem: Point On Circle Def\nPremises : B on \u2299(F, radius_F)\nConclusions: radius_F = BF\n\nStep 31:\nTheorem: Circumference splited\nPremises : \u2220EFA, \u2220AFD, \u2220DFE\nConclusions: 2 * pi = \u2220AFD + \u2220DFE + \u2220EFA\n\nStep 32:\nTheorem: Circumference Split\nPremises : \u2220BFA, \u2220EFB, \u2220AFD, \u2220DFE\nConclusions: 2 * pi = \u2220AFD + \u2220BFA + \u2220DFE + \u2220EFB\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = AF, radius_F = EF\nConclusions: AF = EF\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFB = Arc(EFB), pi * (68 / 180) = Arc(EFB)\nConclusions: pi * (68 / 180) = \u2220EFB\n\nStep 35:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAF + \u2220CAB + \u2220FAC, \u2220CAB = \u2220EAB, \u2220FAC = \u2220FAE, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BAF + \u2220EAB + \u2220FAE\n\nStep 36:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, C)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CED + \u2220DCE + \u2220EDC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220CED, \u2220AED = 2 * pi - \u2220DEA\nConclusions: \u2220CED = 2 * pi - \u2220DEA\n\nStep 38:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, E, D, B)\nPremises : Quadrilateral(B, D, E, F)\nConclusions: 2 * pi = \u2220BFE + \u2220DBF + \u2220EDB + \u2220FED\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Triangle(A, E, F)\nPremises : \u25b3AEF\nConclusions: pi = \u2220AEF + \u2220EFA + \u2220FAE\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220ECD, \u2220ACB = 2 * pi - \u2220BCA\nConclusions: \u2220ECD = 2 * pi - \u2220BCA\n\nStep 41:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 42:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, C, B, F)\nPremises : Quadrilateral(A, C, B, F)\nConclusions: 2 * pi = \u2220ACB + \u2220BFA + \u2220CBF + \u2220FAC\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = AF, radius_F = BF\nConclusions: AF = BF\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : radius_F = DF, radius_F = BF\nConclusions: BF = DF\n\nStep 45:\nTheorem: Issoceles Triangle Property\nPremises : AF = EF, \u25b3AEF\nConclusions: \u2220AEF = \u2220FAE\n\nStep 46:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AFD + \u2220BFA + \u2220DFE + \u2220EFB, pi * (68 / 180) = \u2220EFB, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (68 / 180) + \u2220AFD + \u2220BFA + \u2220DFE\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFB = 2 * pi - \u2220BFE, pi * (68 / 180) = \u2220EFB\nConclusions: pi * (68 / 180) = 2 * pi - \u2220BFE\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BAF + \u2220EAB + \u2220FAE, 2 * pi = \u2220BAF + \u2220EAB + \u2220FAE\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CED + \u2220DCE + \u2220EDC, 3.14 = pi\nConclusions: 3.14 = \u2220CED + \u2220DCE + \u2220EDC\n\nStep 50:\nTheorem: Substitution\nPremises : \u2220BFE = Arc(BFE), \u2220EDB = \u2220EDC, 2 * pi = \u2220BFE + \u2220DBF + \u2220EDB + \u2220FED, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220DBF + \u2220EDC + \u2220FED + Arc(BFE)\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AEF + \u2220EFA + \u2220FAE, 3.14 = pi\nConclusions: 3.14 = \u2220AEF + \u2220EFA + \u2220FAE\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 53:\nTheorem: Substitution\nPremises : \u2220ABC = \u2220ABD, \u2220CAB = \u2220EAB, 3.14 = pi, \u2220BCA = \u2220DCE, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = \u2220ABD + \u2220DCE + \u2220EAB\n\nStep 54:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACB + \u2220BFA + \u2220CBF + \u2220FAC, 3.14 = pi, \u2220CBF = \u2220DBF, \u2220FAC = \u2220FAE, \u2220ACB = \u2220ECD\nConclusions: 2 * 3.14 = \u2220BFA + \u2220DBF + \u2220ECD + \u2220FAE\n\nStep 55:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABF, AF = BF\nConclusions: \u2220BAF = \u2220FBA\n\nStep 56:\nTheorem: Issoceles Triangle Property\nPremises : BF = DF, \u25b3BDF\nConclusions: \u2220DBF = \u2220FDB\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEF = \u2220FAE, \u2220FAC = \u2220FAE\nConclusions: \u2220AEF = \u2220FAC\n\nStep 58:\nTheorem: Solve Linear Equation System\nPremises : pi * (68 / 180) = 2 * pi - \u2220BFE, 3.14 = pi\nConclusions: 5.1 = \u2220BFE\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (68 / 180) + \u2220AFD + \u2220BFA + \u2220DFE, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (68 / 180) + \u2220AFD + \u2220BFA + \u2220DFE\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220BFA + \u2220DBF + \u2220ECD + \u2220FAE\nConclusions: 2 * pi = \u2220BFA + \u2220DBF + \u2220ECD + \u2220FAE\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FDB = \u2220FDC, \u2220DBF = \u2220FDB\nConclusions: \u2220DBF = \u2220FDC\n\nStep 62:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFE = Arc(BFE), 5.1 = \u2220BFE\nConclusions: 5.1 = Arc(BFE)\n\nStep 63:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBF = \u2220DBF, \u2220DBF = \u2220FDC\nConclusions: \u2220CBF = \u2220FDC\n\nStep 64:\nTheorem: Substitution\nPremises : 5.1 = Arc(BFE), 2 * 3.14 = \u2220DBF + \u2220EDC + \u2220FED + Arc(BFE), \u2220DBF = \u2220FDC\nConclusions: 2 * 3.14 = 5.1 + \u2220EDC + \u2220FDC + \u2220FED\n\nStep 65:\nTheorem: Solve Linear Equation System\nPremises : \u2220BAF = \u2220FBA, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = \u2220AEF + \u2220EFA + \u2220FAE, 2 * pi = \u2220BAF + \u2220CAB + \u2220FAC, 3.14 = \u2220CED + \u2220DCE + \u2220EDC, 2 * pi = \u2220ABD + \u2220DBF + \u2220FBA, 2 * pi = \u2220AEF + \u2220DEA + \u2220FED, \u2220CED = 2 * pi - \u2220DEA, \u2220AEF = \u2220FAC, 2 * pi = pi * (68 / 180) + \u2220AFD + \u2220BFA + \u2220DFE, \u2220CAB = \u2220EAB, \u2220CBF = \u2220FDC, 2 * pi = \u2220ABC + \u2220CBF + \u2220FBA, 2 * pi = \u2220AFD + \u2220DFE + \u2220EFA, 2 * pi = \u2220BFA + \u2220DBF + \u2220ECD + \u2220FAE, pi = \u2220CED + \u2220DCE + \u2220EDC, \u2220ECD = 2 * pi - \u2220BCA, 3.14 = \u2220ABD + \u2220DCE + \u2220EAB, 2 * 3.14 = 5.1 + \u2220EDC + \u2220FDC + \u2220FED\nConclusions: 0.59 = \u2220CAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(MeasureOf(Arc(E, F, B)), Mul(pi, Div(68.0, 180.0)))"
+    ],
+    "correct": true
+}

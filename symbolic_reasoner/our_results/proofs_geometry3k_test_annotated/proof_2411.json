@@ -1,0 +1,85 @@
+{
+    "problem_id": "2411",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(E, radius_1_0))",
+        "PointLiesOnCircle(C, Circle(E, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_2_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_2_0))",
+        "Equals(DiameterOf(Circle(B)), 20)",
+        "Equals(DiameterOf(Circle(B)), Mul(2, DiameterOf(Circle(E))))",
+        "Equals(DiameterOf(Circle(B)), Mul(2, DiameterOf(Circle(D))))",
+        "Find(Sub(AreaOf(Circle(B)), Add(AreaOf(Circle(D)), AreaOf(Circle(E)))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        ""
+    ],
+    "circle_instances": [
+        "B",
+        "D",
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            112.25252525252526,
+            212.37373737373738
+        ],
+        "B": [
+            113.01010101010101,
+            112.87878787878788
+        ],
+        "C": [
+            113.51515151515152,
+            13.383838383838384
+        ],
+        "D": [
+            113.01515151515153,
+            162.5
+        ],
+        "E": [
+            112.51010101010101,
+            64.25757575757575
+        ]
+    },
+    "problem_choices": [
+        "104.7",
+        "157.1",
+        "235.6",
+        "314.2"
+    ],
+    "choices_precise_value": [
+        104.7,
+        157.1,
+        235.6,
+        314.2
+    ],
+    "problem_answer": 157.1,
+    "total_time": 51.976395,
+    "solution_predicate": "Equals(157.07963268, Sub(AreaOf(Circle(B, radius_2_0)), Add(AreaOf(Circle(D, radius_0_0)), AreaOf(Circle(E, radius_1_0)))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Area(\u2299(E, radius_1_0)), C on \u2299(E, radius_1_0), A on \u2299(D, radius_0_0), 2 * radius_2_0 = 2 * 2 * radius_1_0, Area(\u2299(B, radius_2_0)), Area(\u2299(D, radius_0_0)), A on \u2299(B, radius_2_0), 20 = 2 * radius_2_0, 2 * radius_2_0 = 2 * 2 * radius_0_0, 3.14 = pi\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(E, radius_1_0))\nConclusions: pi * radius_1_0 ** 2 = Area(\u2299(E, radius_1_0))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(E, radius_1_0)\nConclusions: radius_1_0 = CE\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 5:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, radius_2_0))\nConclusions: pi * radius_2_0 ** 2 = Area(\u2299(B, radius_2_0))\n\nStep 6:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(D, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_2_0)\nConclusions: radius_2_0 = AB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_2_0 = 2 * 2 * radius_1_0, 20 = 2 * radius_2_0\nConclusions: 20 = 2 * 2 * radius_1_0\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 20 = 2 * radius_2_0, 2 * radius_2_0 = 2 * 2 * radius_0_0\nConclusions: 20 = 2 * 2 * radius_0_0\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * radius_1_0 ** 2 = Area(\u2299(E, radius_1_0))\nConclusions: 3.14 * radius_1_0 ** 2 = Area(\u2299(E, radius_1_0))\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * radius_2_0 ** 2 = Area(\u2299(B, radius_2_0))\nConclusions: 3.14 * radius_2_0 ** 2 = Area(\u2299(B, radius_2_0))\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0))\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : radius_2_0 = AB, 20 = 2 * radius_2_0\nConclusions: 10 = AB\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : radius_1_0 = CE, 20 = 2 * 2 * radius_1_0\nConclusions: 5 = CE\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : radius_0_0 = AD, 20 = 2 * 2 * radius_0_0\nConclusions: 5 = AD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_2_0 = AB, 10 = AB\nConclusions: 10 = radius_2_0\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = CE, 5 = CE\nConclusions: 5 = radius_1_0\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AD, 5 = AD\nConclusions: 5 = radius_0_0\n\nStep 19:\nTheorem: Evaluate\nPremises : 10 = radius_2_0\nConclusions: 314.16 = 3.14 * radius_2_0 ** 2\n\nStep 20:\nTheorem: Evaluate\nPremises : 5 = radius_1_0\nConclusions: 78.54 = 3.14 * radius_1_0 ** 2\n\nStep 21:\nTheorem: Evaluate\nPremises : 5 = radius_0_0\nConclusions: 78.54 = 3.14 * radius_0_0 ** 2\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 314.16 = 3.14 * radius_2_0 ** 2, 3.14 * radius_2_0 ** 2 = Area(\u2299(B, radius_2_0))\nConclusions: 314.16 = Area(\u2299(B, radius_2_0))\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_1_0 ** 2 = Area(\u2299(E, radius_1_0)), 78.54 = 3.14 * radius_1_0 ** 2\nConclusions: 78.54 = Area(\u2299(E, radius_1_0))\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(D, radius_0_0)), 78.54 = 3.14 * radius_0_0 ** 2\nConclusions: 78.54 = Area(\u2299(D, radius_0_0))\n\nStep 25:\nTheorem: Evaluate\nPremises : 78.54 = Area(\u2299(E, radius_1_0)), 78.54 = Area(\u2299(D, radius_0_0)), 314.16 = Area(\u2299(B, radius_2_0))\nConclusions: 157.08 = Area(\u2299(B, radius_2_0)) - (Area(\u2299(D, radius_0_0)) + Area(\u2299(E, radius_1_0)))\n\n",
+    "logic_fomrs_refined": [
+        "Circle(B, radius_2_0)",
+        "Circle(E, radius_1_0)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(E, radius_1_0))",
+        "PointLiesOnCircle(C, Circle(E, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(B, radius_2_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_2_0))",
+        "Equals(Mul(2.0, radius_2_0), 20.0)",
+        "Equals(Mul(2.0, radius_2_0), Mul(2.0, Mul(2.0, radius_1_0)))",
+        "Equals(Mul(2.0, radius_2_0), Mul(2.0, Mul(2.0, radius_0_0)))"
+    ],
+    "correct": true
+}

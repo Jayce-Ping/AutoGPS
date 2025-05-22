@@ -1,0 +1,122 @@
+{
+    "problem_id": "2863",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 7 if m \\angle 4 = m \\angle 5.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(F, E, D)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(D, F, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(D, B, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(D, B, A)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(G, F, E)), 136)",
+        "Equals(MeasureOf(Angle(D, C, B)), 63)",
+        "Equals(MeasureOf(Angle(E, D, C)), 69)",
+        "Equals(MeasureOf(Angle(F, D, E)), 47)",
+        "Equals(MeasureOf(angle 4), MeasureOf(angle 5))",
+        "Find(MeasureOf(angle 7))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "BD",
+        "BF",
+        "BG",
+        "DF",
+        "DG",
+        "FG",
+        "EF",
+        "ED",
+        "CD",
+        "CA",
+        "DA",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            262.0192307692308,
+            292.2692307692308
+        ],
+        "B": [
+            37.980769230769226,
+            162.94230769230768
+        ],
+        "C": [
+            131.73076923076923,
+            32.653846153846146
+        ],
+        "D": [
+            197.1153846153846,
+            161.98076923076923
+        ],
+        "E": [
+            327.88461538461536,
+            25.442307692307693
+        ],
+        "F": [
+            470.6730769230769,
+            161.98076923076923
+        ],
+        "G": [
+            604.3269230769231,
+            162.94230769230768
+        ]
+    },
+    "problem_choices": [
+        "63",
+        "64",
+        "69",
+        "89"
+    ],
+    "choices_precise_value": [
+        63.0,
+        64.0,
+        69.0,
+        89.0
+    ],
+    "problem_answer": 89.0,
+    "total_time": 62.993712,
+    "solution_predicate": "Equals(1.5533430343, MeasureOf(Angle(D, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: EF, \u2220EFD, \u2220GFE, pi * (136 / 180) = \u2220GFE, pi * (47 / 180) = \u2220FDE, 3.14 = pi, DE, DF\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220EFD, \u2220GFE\nConclusions: pi = \u2220EFD + \u2220GFE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : DF, EF, DE\nConclusions: \u25b3DEF\n\nStep 4:\nTheorem: Substitution\nPremises : pi = \u2220EFD + \u2220GFE, pi * (136 / 180) = \u2220GFE, 3.14 = pi\nConclusions: 3.14 = pi * (136 / 180) + \u2220EFD\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, F)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220DEF + \u2220EFD + \u2220FDE, pi * (47 / 180) = \u2220FDE\nConclusions: 3.14 = 3.14 * (47 / 180) + \u2220DEF + \u2220EFD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220EFD + \u2220GFE, pi * (136 / 180) = \u2220GFE, 3.14 = 3.14 * (47 / 180) + \u2220DEF + \u2220EFD, 3.14 = pi * (136 / 180) + \u2220EFD\nConclusions: 1.55 = \u2220DEF\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(136.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(63.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(69.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, E)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(A, B, D)))"
+    ],
+    "correct": true
+}

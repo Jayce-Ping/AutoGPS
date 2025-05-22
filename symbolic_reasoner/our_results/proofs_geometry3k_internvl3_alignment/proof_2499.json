@@ -1,0 +1,65 @@
+{
+    "problem_id": "2499",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), 7)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), 30)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "CA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            24.61807580174927,
+            267.3469387755102
+        ],
+        "B": [
+            194.00583090379007,
+            58.600583090379004
+        ],
+        "C": [
+            61.35276967930028,
+            37.60932944606414
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "7 \\sqrt { 2 }",
+        "7 \\sqrt { 3 }",
+        "14"
+    ],
+    "choices_precise_value": [
+        7.0,
+        9.899494936611665,
+        12.12435565298214,
+        14.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 11.549351,
+    "solution_predicate": "Equals(14.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (30 / 180) = \u2220BAC, BC, x = AB, 7 = BC, 3.14 = pi, AC \u22a5 BC, y = AC, AC, AB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2, 0.52 = pi * (30 / 180)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220BAC, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220BAC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ACB\n\nStep 7:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC), AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 9:\nTheorem: Substitution\nPremises : pi * (30 / 180) = \u2220BAC, pi / 2 = \u2220ACB, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220CBA\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220CBA\nConclusions: 1.05 = \u2220CBA\n\nStep 11:\nTheorem: Substitution\nPremises : AC / sin(\u2220CBA) = BC / sin(\u2220BAC), 1.05 = \u2220CBA, y = AC, 0.52 = \u2220BAC, 7 = BC\nConclusions: 7 / sin(0.52) = y / sin(1.05)\n\nStep 12:\nTheorem: Substitution\nPremises : 1.05 = \u2220CBA, 1.57 = \u2220ACB, x = AB, y = AC, AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\nConclusions: x / sin(1.57) = y / sin(1.05)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : x / sin(1.57) = y / sin(1.05), 7 / sin(0.52) = y / sin(1.05)\nConclusions: 7 / sin(0.52) = x / sin(1.57)\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : x = AB, 7 / sin(0.52) = x / sin(1.57)\nConclusions: 14 = AB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, 14 = AB\nConclusions: 14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), 7.0)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

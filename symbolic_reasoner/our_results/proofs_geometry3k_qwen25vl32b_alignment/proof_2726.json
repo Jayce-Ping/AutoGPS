@@ -1,0 +1,86 @@
+{
+    "problem_id": "2726",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(X, Z, Y)), MeasureOf(Angle(N, L, M)))",
+        "Equals(MeasureOf(Angle(N, M, L)), MeasureOf(Angle(X, Y, Z)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), 4x)",
+        "Equals(MeasureOf(Angle(N, M, L)), 51)",
+        "Equals(MeasureOf(Angle(M, N, L)), 65)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Y",
+        "N",
+        "X",
+        "L",
+        "M",
+        "Z"
+    ],
+    "line_instances": [
+        "MN",
+        "LN",
+        "LM",
+        "XZ",
+        "XY",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            518.0616740088105,
+            92.6079295154185
+        ],
+        "N": [
+            246.2555066079295,
+            319.0396475770925
+        ],
+        "X": [
+            341.85022026431716,
+            90.40528634361233
+        ],
+        "L": [
+            179.29515418502203,
+            184.23788546255506
+        ],
+        "M": [
+            69.60352422907489,
+            317.7180616740088
+        ],
+        "Z": [
+            408.8105726872247,
+            227.40969162995594
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "16",
+        "51",
+        "65"
+    ],
+    "choices_precise_value": [
+        12.0,
+        16.0,
+        51.0,
+        65.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 11.169025,
+    "solution_predicate": "Equals(16.25, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XZ, \u2220MLN = \u2220YZX, 3.14 = pi, MN, pi * ((4 * x) / 180) = \u2220ZXY, LN, pi * (51 / 180) = \u2220NML, LM, XY, pi * (65 / 180) = \u2220LNM, YZ, \u2220NML = \u2220XYZ\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * x) / 180) = \u2220ZXY\nConclusions: 3.14 * ((4 * x) / 180) = \u2220ZXY\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : LN, MN, LM\nConclusions: \u25b3LMN\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : XY, YZ, XZ\nConclusions: \u25b3XYZ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = \u2220NML, \u2220NML = \u2220XYZ\nConclusions: pi * (51 / 180) = \u2220XYZ\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(N, M, L)\nPremises : \u25b3LMN\nConclusions: pi = \u2220LNM + \u2220MLN + \u2220NML\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220LNM + \u2220MLN + \u2220NML, pi * (51 / 180) = \u2220NML, \u2220MLN = \u2220YZX, 3.14 = pi, pi * (65 / 180) = \u2220LNM\nConclusions: 3.14 = 3.14 * (65 / 180) + pi * (51 / 180) + \u2220YZX\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (51 / 180) = \u2220XYZ, pi = \u2220XYZ + \u2220YZX + \u2220ZXY\nConclusions: 3.14 = pi * (51 / 180) + \u2220YZX + \u2220ZXY\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x) / 180) = \u2220ZXY, 3.14 = pi * (51 / 180) + \u2220YZX + \u2220ZXY, 3.14 = 3.14 * (65 / 180) + pi * (51 / 180) + \u2220YZX\nConclusions: 16.25 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(L, N)",
+        "Line(L, M)",
+        "Line(X, Z)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Equals(MeasureOf(Angle(Y, Z, X)), MeasureOf(Angle(M, L, N)))",
+        "Equals(MeasureOf(Angle(N, M, L)), MeasureOf(Angle(X, Y, Z)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), Mul(pi, Div(Mul(4.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(N, M, L)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(L, N, M)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

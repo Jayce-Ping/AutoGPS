@@ -1,0 +1,69 @@
+{
+    "problem_id": "7065",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 14.7)",
+        "Equals(LengthOf(Line(B, C)), 7)",
+        "Equals(MeasureOf(Angle(B, C, A)), 18)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            23.05333333333333,
+            107.6984126984127
+        ],
+        "B": [
+            275.436,
+            38.940000000000005
+        ],
+        "C": [
+            479.88705882352934,
+            107.88571428571429
+        ]
+    },
+    "problem_choices": [
+        4.2,
+        8.3,
+        16.7,
+        69.4
+    ],
+    "choices_precise_value": [
+        4.2,
+        8.3,
+        16.7,
+        69.4
+    ],
+    "problem_answer": 8.3,
+    "total_time": 12.268892,
+    "solution_predicate": "Equals(8.3284193548, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, 14.7 = AC, x = AB, 3.14 = pi, AB, 7 = BC, pi * (18 / 180) = \u2220BCA, AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.31 = pi * (18 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 0.31 = pi * (18 / 180), pi * (18 / 180) = \u2220BCA\nConclusions: 0.31 = \u2220BCA\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA)\n\nStep 6:\nTheorem: Substitution\nPremises : 7 = BC, 0.31 = \u2220BCA, (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA), 14.7 = AC, x = AB\nConclusions: 14.7 * 2 * 7 * cos(0.31) = (14.7 ** 2 + 7 ** 2) - x ** 2\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 14.7 * 2 * 7 * cos(0.31) = (14.7 ** 2 + 7 ** 2) - x ** 2\nConclusions: 8.33 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 14.7)",
+        "Equals(LengthOf(Line(B, C)), 7.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(18.0, 180.0)))"
+    ],
+    "correct": true
+}

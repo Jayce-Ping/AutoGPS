@@ -1,0 +1,161 @@
+{
+    "problem_id": "5003",
+    "solved": true,
+    "problem_text": "If AP = 1, find PD.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, F)), LengthOf(Line(F, C)))",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(E, A)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(A, P)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(B, F)",
+        "Line(B, P)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Line(E, P)",
+        "Line(F, C)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(P, F)",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(E, Line(B, A))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(P, Line(A, D))",
+        "PointLiesOnLine(P, Line(B, F))",
+        "PointLiesOnLine(P, Line(E, C))",
+        "Equals(LengthOf(Line(A,P)),1)",
+        "Find(LengthOf(Line(P,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "F",
+        "C",
+        "D",
+        "P",
+        "E",
+        "B"
+    ],
+    "line_instances": [
+        "AP",
+        "AD",
+        "PD",
+        "CD",
+        "CB",
+        "DB",
+        "BE",
+        "BA",
+        "EA",
+        "AF",
+        "AC",
+        "FC",
+        "CP",
+        "CE",
+        "PE",
+        "FP",
+        "FB",
+        "PB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            45.42056074766356,
+            328.9428571428572
+        ],
+        "F": [
+            249.81308411214954,
+            328.9428571428572
+        ],
+        "C": [
+            450.7990654205608,
+            328.4891428571429
+        ],
+        "D": [
+            321.7289719626168,
+            188.54349206349207
+        ],
+        "P": [
+            230.50934579439254,
+            234.79714285714286
+        ],
+        "E": [
+            119.60747663551402,
+            188.03936507936507
+        ],
+        "B": [
+            191.52336448598132,
+            50.16063492063492
+        ]
+    },
+    "problem_choices": [
+        0.333,
+        0.5,
+        0.667,
+        1.5
+    ],
+    "choices_precise_value": [
+        0.333,
+        0.5,
+        0.667,
+        1.5
+    ],
+    "problem_answer": 0.5,
+    "total_time": 262.156136,
+    "solution_predicate": "Equals(0.5, LengthOf(Line(P, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1 = AP, P on BF, P on AD, BC, AB, BD = CD, AF = CF, P on CE, AC, AE = BE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Centroid of Triangle\nPremises : P on AD, P on CE, \u25b3ABC, BD = CD, P on BF, AF = CF, AE = BE\nConclusions: IsCentroidOf(P, \u25b3ABC)\n\nStep 4:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(P, \u25b3ABC)\nConclusions: AP = 2 * DP, BD = CD, AE = BE\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AP = 2 * DP, 1 = AP\nConclusions: 1 = 2 * DP\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 1 = 2 * DP\nConclusions: 0.5 = DP\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(A, D)",
+        "Line(P, D)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(B, E)",
+        "Line(B, A)",
+        "Line(E, A)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(C, P)",
+        "Line(C, E)",
+        "Line(P, E)",
+        "Line(F, P)",
+        "Line(F, B)",
+        "Line(P, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(A, P)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(B, F)",
+        "Line(B, P)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Line(E, P)",
+        "Line(F, C)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(P, F)",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(E, Line(B, A))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(P, Line(A, D))",
+        "PointLiesOnLine(P, Line(B, F))",
+        "PointLiesOnLine(P, Line(E, C))",
+        "Equals(LengthOf(Line(A, F)), LengthOf(Line(F, C)))",
+        "Equals(LengthOf(Line(B, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(A, P)), 1.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,111 @@
+{
+    "problem_id": "971",
+    "solved": true,
+    "problem_text": "Find MK.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, B)), x)",
+        "Equals(LengthOf(Line(K, B)), x+2)",
+        "Equals(LengthOf(Line(L, B)), x+10)",
+        "Equals(LengthOf(Line(M, B)), x+7)",
+        "Line(B, L)",
+        "Line(B, M)",
+        "Line(J, B)",
+        "Line(J, L)",
+        "Line(K, B)",
+        "Line(K, M)",
+        "PointLiesOnCircle(J, Circle(A))",
+        "PointLiesOnCircle(K, Circle(A))",
+        "PointLiesOnCircle(L, Circle(A))",
+        "PointLiesOnCircle(M, Circle(A))",
+        "PointLiesOnLine(B, Line(J, L))",
+        "PointLiesOnLine(B, Line(K, M))",
+        "Find(LengthOf(Line(M,K)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "B",
+        "J",
+        "K",
+        "A"
+    ],
+    "line_instances": [
+        "MB",
+        "MK",
+        "BK",
+        "JB",
+        "JL",
+        "BL"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "M": [
+            46.757278911564626,
+            209.16615463389658
+        ],
+        "L": [
+            159.19771428571428,
+            218.36709677419356
+        ],
+        "B": [
+            90.47229813664597,
+            116.4249649368864
+        ],
+        "J": [
+            52.52816326530613,
+            59.67716333845367
+        ],
+        "K": [
+            125.32000000000001,
+            42.593034128097244
+        ],
+        "A": [
+            108.43967828418229,
+            135.92493297587131
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        4.0,
+        9.0,
+        37.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        9.0,
+        37.0
+    ],
+    "problem_answer": 37.0,
+    "total_time": 63.939041,
+    "solution_predicate": "Equals(37.0, LengthOf(Line(M, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 10 + x = BL, 2 + x = BK, B on JL, 7 + x = BM, L on \u2299(A, radius_A), B on KM, J on \u2299(A, radius_A), K on \u2299(A, radius_A), x = BJ, M on \u2299(A, radius_A)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on KM\nConclusions: KM = BK + BM\n\nStep 3:\nTheorem: Intersecting Chord Theorem\nPremises : K on \u2299(A, radius_A), L on \u2299(A, radius_A), B on JL, J on \u2299(A, radius_A), B on KM, M on \u2299(A, radius_A)\nConclusions: BJ * BL = BK * BM\n\nStep 4:\nTheorem: Substitution\nPremises : 7 + x = BM, KM = BK + BM, 2 + x = BK\nConclusions: (2 + x) + (7 + x) = KM\n\nStep 5:\nTheorem: Substitution\nPremises : 10 + x = BL, x = BJ, 2 + x = BK, 7 + x = BM, BJ * BL = BK * BM\nConclusions: x * (10 + x) = (2 + x) * (7 + x)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : KM = BK + BM, (2 + x) + (7 + x) = KM\nConclusions: (2 + x) + (7 + x) = BK + BM\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : x * (10 + x) = (2 + x) * (7 + x)\nConclusions: 14 = x\n\nStep 8:\nTheorem: Substitution\nPremises : 7 + x = BM, 14 = x, 2 + x = BK, (2 + x) + (7 + x) = BK + BM\nConclusions: (14 + 2) + (14 + 7) = (2 + x) + (7 + x)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : (2 + x) + (7 + x) = KM, (14 + 2) + (14 + 7) = (2 + x) + (7 + x)\nConclusions: (14 + 2) + (14 + 7) = KM\n\nStep 10:\nTheorem: Evaluate\nPremises : (14 + 2) + (14 + 7) = KM\nConclusions: 37 = KM\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, B)",
+        "Line(M, K)",
+        "Line(B, K)",
+        "Line(J, B)",
+        "Line(J, L)",
+        "Line(B, L)",
+        "Circle(A, radius_A)",
+        "Line(B, L)",
+        "Line(B, M)",
+        "Line(J, B)",
+        "Line(J, L)",
+        "Line(K, B)",
+        "Line(K, M)",
+        "PointLiesOnCircle(J, Circle(A, radius_A))",
+        "PointLiesOnCircle(K, Circle(A, radius_A))",
+        "PointLiesOnCircle(L, Circle(A, radius_A))",
+        "PointLiesOnCircle(M, Circle(A, radius_A))",
+        "PointLiesOnLine(B, Line(J, L))",
+        "PointLiesOnLine(B, Line(K, M))",
+        "Equals(LengthOf(Line(J, B)), x)",
+        "Equals(LengthOf(Line(K, B)), Add(x, 2.0))",
+        "Equals(LengthOf(Line(L, B)), Add(x, 10.0))",
+        "Equals(LengthOf(Line(M, B)), Add(x, 7.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,76 @@
+{
+    "problem_id": "817",
+    "solved": true,
+    "problem_text": "PQRS is a rhombus. Find the length of QR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, S)), 2y+3)",
+        "Equals(LengthOf(Line(S, R)), 5y-6)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Rhombus(P,Q,R,S)",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "PS",
+        "QR",
+        "SR",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            78.92142857142856,
+            48.83020408163265
+        ],
+        "Q": [
+            246.86249999999998,
+            48.98571428571428
+        ],
+        "S": [
+            148.335,
+            198.99085714285715
+        ],
+        "R": [
+            316.4625,
+            199.20857142857142
+        ]
+    },
+    "problem_choices": [
+        3.375,
+        6.75,
+        9.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        3.375,
+        6.75,
+        9.0,
+        18.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 6.615401,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(P, Q, R, S), 3 + 2 * y = PS, 5 * y - 6 = RS\n\nStep 2:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(P, Q, R, S)\nConclusions: PS = RS\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(P, Q, R, S)\nConclusions: Parallelogram(P, Q, R, S)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : PS = RS, 5 * y - 6 = RS\nConclusions: 5 * y - 6 = PS\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: PS = QR\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 5 * y - 6 = PS, 3 + 2 * y = PS\nConclusions: 3 + 2 * y = 5 * y - 6\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : PS = QR, 3 + 2 * y = 5 * y - 6, 3 + 2 * y = PS\nConclusions: 9 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Rhombus(P, Q, R, S)",
+        "Equals(LengthOf(Line(P, S)), Add(Mul(2.0, y), 3.0))",
+        "Equals(LengthOf(Line(S, R)), Sub(Mul(5.0, y), 6.0))"
+    ],
+    "correct": true
+}

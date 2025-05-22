@@ -1,0 +1,133 @@
+{
+    "problem_id": "2824",
+    "solved": true,
+    "problem_text": "M C = 7, R M = 4, and A T = 16. Find M S.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(A, T))",
+        "PointLiesOnLine(T, Line(C, B))",
+        "PointLiesOnLine(M, Line(R, B))",
+        "PointLiesOnLine(M, Line(C, S))",
+        "PointLiesOnLine(S, Line(A, B))",
+        "PointLiesOnLine(R, Line(A, C))",
+        "Equals(LengthOf(Line(A, S)), LengthOf(Line(S, B)))",
+        "Equals(LengthOf(Line(A, R)), LengthOf(Line(R, C)))",
+        "Equals(LengthOf(Line(T, B)), LengthOf(Line(C, T)))",
+        "Equals(LengthOf(Line(R, M)), 4)",
+        "Equals(LengthOf(Line(C, M)), 7)",
+        "Equals(LengthOf(Line(M,C)),7)",
+        "Equals(LengthOf(Line(R,M)),4)",
+        "Equals(LengthOf(Line(A,T)),16)",
+        "Find(LengthOf(Line(M,S)))"
+    ],
+    "point_instances": [
+        "M",
+        "R",
+        "A",
+        "B",
+        "S",
+        "C",
+        "T"
+    ],
+    "line_instances": [
+        "AM",
+        "AT",
+        "MT",
+        "CT",
+        "CB",
+        "TB",
+        "RM",
+        "RB",
+        "MB",
+        "CM",
+        "CS",
+        "MS",
+        "AS",
+        "AB",
+        "SB",
+        "AR",
+        "AC",
+        "RC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            356.67741935483866,
+            294.6236559139785
+        ],
+        "R": [
+            268.505376344086,
+            265.0537634408602
+        ],
+        "A": [
+            403.4516129032258,
+            88.70967741935483
+        ],
+        "B": [
+            519.0430107526881,
+            347.31182795698925
+        ],
+        "S": [
+            463.66666666666663,
+            222.5806451612903
+        ],
+        "C": [
+            128.72043010752688,
+            449.4623655913978
+        ],
+        "T": [
+            333.55913978494624,
+            396.7741935483871
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "3.5",
+        "4",
+        "7"
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.5,
+        4.0,
+        7.0
+    ],
+    "problem_answer": 3.5,
+    "total_time": 261.318756,
+    "solution_predicate": "Equals(3.5, LengthOf(Line(M, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, BT = CT, M on CS, M on BR, AR = CR, 7 = CM, AS = BS, BC, AC, M on AT\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Centroid of Triangle\nPremises : AR = CR, AS = BS, \u25b3ABC, M on AT, M on CS, M on BR, BT = CT\nConclusions: IsCentroidOf(M, \u25b3ABC)\n\nStep 4:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(M, \u25b3ABC)\nConclusions: AS = BS, CM = 2 * MS, BT = CT\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : CM = 2 * MS, 7 = CM\nConclusions: 7 = 2 * MS\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 7 = 2 * MS\nConclusions: 3.5 = MS\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, M)",
+        "Line(A, T)",
+        "Line(M, T)",
+        "Line(C, T)",
+        "Line(C, B)",
+        "Line(T, B)",
+        "Line(R, M)",
+        "Line(R, B)",
+        "Line(M, B)",
+        "Line(C, M)",
+        "Line(C, S)",
+        "Line(M, S)",
+        "Line(A, S)",
+        "Line(A, B)",
+        "Line(S, B)",
+        "Line(A, R)",
+        "Line(A, C)",
+        "Line(R, C)",
+        "PointLiesOnLine(M, Line(A, T))",
+        "PointLiesOnLine(T, Line(C, B))",
+        "PointLiesOnLine(M, Line(R, B))",
+        "PointLiesOnLine(M, Line(C, S))",
+        "PointLiesOnLine(S, Line(A, B))",
+        "PointLiesOnLine(R, Line(A, C))",
+        "Equals(LengthOf(Line(A, S)), LengthOf(Line(S, B)))",
+        "Equals(LengthOf(Line(A, R)), LengthOf(Line(R, C)))",
+        "Equals(LengthOf(Line(T, B)), LengthOf(Line(C, T)))",
+        "Equals(LengthOf(Line(R, M)), 4.0)",
+        "Equals(LengthOf(Line(C, M)), 7.0)",
+        "Equals(LengthOf(Line(M, C)), 7.0)",
+        "Equals(LengthOf(Line(R, M)), 4.0)",
+        "Equals(LengthOf(Line(A, T)), 16.0)"
+    ],
+    "correct": true
+}

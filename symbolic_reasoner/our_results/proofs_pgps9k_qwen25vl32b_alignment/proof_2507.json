@@ -1,0 +1,98 @@
+{
+    "problem_id": "2507",
+    "solved": true,
+    "problem_text": "\\triangle JKL \\sim \\triangle WYZ. Find y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(J, K, L)), y)",
+        "Equals(MeasureOf(Angle(L, J, K)), 4x-13)",
+        "Equals(MeasureOf(Angle(Y, Z, W)), 44)",
+        "Equals(MeasureOf(Angle(Z, W, Y)), 71)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(W, Y)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Similar(Triangle(J,K,L),Triangle(W,Y,Z))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "J",
+        "Z",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "KL",
+        "LJ",
+        "KJ",
+        "ZW",
+        "ZY",
+        "YW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            80.70761904761905,
+            352.52941176470586
+        ],
+        "L": [
+            473.48875,
+            352.953125
+        ],
+        "J": [
+            204.2,
+            91.5220588235294
+        ],
+        "Z": [
+            580.9976190476191,
+            237.27941176470588
+        ],
+        "Y": [
+            949.53,
+            378.6785714285714
+        ],
+        "W": [
+            929.11,
+            91.5220588235294
+        ]
+    },
+    "problem_choices": [
+        44.0,
+        56.0,
+        65.0,
+        71.0
+    ],
+    "choices_precise_value": [
+        44.0,
+        56.0,
+        65.0,
+        71.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 19.025016,
+    "solution_predicate": "Equals(65.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (44 / 180) = \u2220YZW, 3.14 = pi, pi * (71 / 180) = \u2220ZWY, \u2220WYZ, \u25b3JKL ~ \u25b3WYZ, \u2220ZYW, \u25b3WYZ, pi * (y / 180) = \u2220LKJ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220WYZ\nConclusions: \u2220WYZ = 2 * pi - \u2220ZYW\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3JKL ~ \u25b3WYZ\nConclusions: \u2220LKJ = \u2220WYZ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZYW\nConclusions: \u2220ZYW = 2 * pi - \u2220WYZ\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(W, Y, Z)\nPremises : \u25b3WYZ\nConclusions: pi = \u2220WYZ + \u2220YZW + \u2220ZWY\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220LKJ, \u2220LKJ = \u2220WYZ\nConclusions: pi * (y / 180) = \u2220WYZ\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220ZYW = 2 * pi - \u2220WYZ, 3.14 = pi\nConclusions: \u2220ZYW = 2 * 3.14 - \u2220WYZ\n\nStep 8:\nTheorem: Substitution\nPremises : pi * (71 / 180) = \u2220ZWY, pi * (44 / 180) = \u2220YZW, 3.14 = pi, pi = \u2220WYZ + \u2220YZW + \u2220ZWY\nConclusions: 3.14 = 3.14 * (71 / 180) + pi * (44 / 180) + \u2220WYZ\n\nStep 9:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220WYZ, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220WYZ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220WYZ, \u2220WYZ = 2 * pi - \u2220ZYW\nConclusions: 3.14 * (y / 180) = 2 * pi - \u2220ZYW\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (y / 180) = \u2220WYZ, 3.14 = 3.14 * (71 / 180) + pi * (44 / 180) + \u2220WYZ, \u2220ZYW = 2 * 3.14 - \u2220WYZ, 3.14 * (y / 180) = 2 * pi - \u2220ZYW\nConclusions: 65 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(L, J)",
+        "Line(K, J)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Line(Y, W)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(W, Y)",
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Similar(Triangle(J, K, L), Triangle(W, Y, Z))",
+        "Equals(MeasureOf(Angle(L, K, J)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(K, J, L)), Mul(pi, Div(Sub(Mul(4.0, x), 13.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, W)), Mul(pi, Div(44.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, Y)), Mul(pi, Div(71.0, 180.0)))"
+    ],
+    "correct": true
+}

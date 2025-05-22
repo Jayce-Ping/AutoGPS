@@ -1,0 +1,99 @@
+{
+    "problem_id": "2831",
+    "solved": true,
+    "problem_text": "Find x to the nearest tenth. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(E, D)), 15)",
+        "Equals(LengthOf(Line(A, B)), 12)",
+        "Equals(LengthOf(Line(C, B)), 8)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "ED",
+        "EC",
+        "DC",
+        "AB",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            80.49477351916376,
+            153.65853658536585
+        ],
+        "B": [
+            151.4006968641115,
+            96.16724738675958
+        ],
+        "C": [
+            194.78048780487805,
+            62.19512195121951
+        ],
+        "D": [
+            144.78048780487805,
+            57.66550522648083
+        ],
+        "E": [
+            33.97909407665505,
+            47.90940766550523
+        ],
+        "F": [
+            86.4616724738676,
+            87.76480836236934
+        ]
+    },
+    "problem_choices": [
+        "7.2",
+        "8",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        7.2,
+        8.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 7.2,
+    "total_time": 43.754214,
+    "solution_predicate": "Equals(7.2054411699, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on AC, BC, x = CD, CD, E on \u2299(F, radius_0_0), \u2299(F, radius_0_0), D on \u2299(F, radius_0_0), 8 = BC, AC, CE, B on \u2299(F, radius_0_0), D on CE, A on \u2299(F, radius_0_0), 15 = DE, 12 = AB\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Line Segment Split\nPremises : D on CE\nConclusions: CE = CD + DE\n\nStep 4:\nTheorem: Circle Secant Theorem\nPremises : B on \u2299(F, radius_0_0), A on \u2299(F, radius_0_0), E on \u2299(F, radius_0_0), BC, AC, CD, D on \u2299(F, radius_0_0), \u2299(F, radius_0_0), CE\nConclusions: AC * BC = CD * CE\n\nStep 5:\nTheorem: Substitution\nPremises : 8 = BC, 12 = AB, AC = AB + BC\nConclusions: 12 + 8 = AC\n\nStep 6:\nTheorem: Substitution\nPremises : CE = CD + DE, 15 = DE, x = CD\nConclusions: 15 + x = CE\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 12 + 8 = AC\nConclusions: 20 = AC\n\nStep 8:\nTheorem: Substitution\nPremises : 20 = AC, 8 = BC, x = CD, AC * BC = CD * CE, 15 + x = CE\nConclusions: 20 * 8 = x * (15 + x)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 20 * 8 = x * (15 + x)\nConclusions: 7.21 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(E, D)), 15.0)",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(C, B)), 8.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,82 @@
+{
+    "problem_id": "4651",
+    "solved": true,
+    "problem_text": "Determine x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 7)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(B, D)), 13)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "BD",
+        "AB",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            23.41857142857143,
+            52.52777777777778
+        ],
+        "B": [
+            104.08253968253968,
+            52.93121693121693
+        ],
+        "C": [
+            23.41857142857143,
+            201.1547619047619
+        ],
+        "D": [
+            103.74530612244898,
+            201.3968253968254
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        10.954,
+        13.0,
+        14.765
+    ],
+    "choices_precise_value": [
+        7.0,
+        10.954,
+        13.0,
+        14.765
+    ],
+    "problem_answer": 14.765,
+    "total_time": 34.848989,
+    "solution_predicate": "Equals(13.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, x = BC, CD, BD \u22a5 CD, BC, 13 = BD, BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220BDC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : \u25b3BCD, BD \u22a5 CD\nConclusions: CD = SqrtOf(BC ** 2 - BD ** 2)\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3BCD\nConclusions: (BD ** 2 + CD ** 2) - BC ** 2 = 2 * BD * CD * cos(\u2220BDC)\n\nStep 6:\nTheorem: Substitution\nPremises : x = BC, CD = SqrtOf(BC ** 2 - BD ** 2), 13 = BD\nConclusions: SqrtOf(x ** 2 - 13 ** 2) = CD\n\nStep 7:\nTheorem: Substitution\nPremises : (BD ** 2 + CD ** 2) - BC ** 2 = 2 * BD * CD * cos(\u2220BDC), pi / 2 = \u2220BDC, 13 = BD, x = BC\nConclusions: (13 ** 2 + CD ** 2) - x ** 2 = 13 * 2 * cos(pi / 2) * CD\n\nStep 8:\nTheorem: Substitution\nPremises : SqrtOf(x ** 2 - 13 ** 2) = CD, 3.14 = pi, (13 ** 2 + CD ** 2) - x ** 2 = 13 * 2 * cos(pi / 2) * CD\nConclusions: (13 ** 2 + SqrtOf(x ** 2 - 13 ** 2) ** 2) - x ** 2 = 13 * 2 * cos(3.14 / 2) * SqrtOf(x ** 2 - 13 ** 2)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : (13 ** 2 + SqrtOf(x ** 2 - 13 ** 2) ** 2) - x ** 2 = 13 * 2 * cos(3.14 / 2) * SqrtOf(x ** 2 - 13 ** 2)\nConclusions: 13 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Equals(LengthOf(Line(A, B)), 7.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(B, D)), 13.0)"
+    ],
+    "correct": false
+}

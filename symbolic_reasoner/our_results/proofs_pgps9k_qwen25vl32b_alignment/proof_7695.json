@@ -1,0 +1,82 @@
+{
+    "problem_id": "7695",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 16)",
+        "Equals(LengthOf(Line(D, C)), 9)",
+        "Find(PerimeterOf(Rectangle(A, B, C, D)))",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(B, A))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "Perpendicular(Line(C, D), Line(B, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.42865866069611,
+            171.79865546218488
+        ],
+        "B": [
+            18.17762399077278,
+            15.871322751322753
+        ],
+        "C": [
+            295.7785467128028,
+            15.686772486772488
+        ],
+        "D": [
+            295.8477508650519,
+            171.90857142857143
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        50.0,
+        100.0,
+        144.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        50.0,
+        100.0,
+        144.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 6.467802,
+    "solution_predicate": "Equals(50.0, PerimeterOf(Rectangle(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(A, B, C, D), 9 = CD, 16 = AD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Rectangle(A, B, C, D)\nConclusions: Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC, AB = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 16 = AD, AD = BC\nConclusions: 16 = BC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 9 = CD, AB = CD\nConclusions: 9 = AB\n\nStep 7:\nTheorem: Substitution\nPremises : Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD, 9 = CD, 16 = BC, 16 = AD, 9 = AB\nConclusions: 16 + 16 + 9 + 9 = Perimeter(Rectangle(A, B, C, D))\n\nStep 8:\nTheorem: Evaluate\nPremises : 16 + 16 + 9 + 9 = Perimeter(Rectangle(A, B, C, D))\nConclusions: 50 = Perimeter(Rectangle(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(B, A))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "Perpendicular(Line(C, D), Line(B, C))",
+        "Equals(LengthOf(Line(A, D)), 16.0)",
+        "Equals(LengthOf(Line(D, C)), 9.0)"
+    ],
+    "correct": true
+}

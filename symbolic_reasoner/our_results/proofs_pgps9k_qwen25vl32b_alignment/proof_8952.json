@@ -1,0 +1,105 @@
+{
+    "problem_id": "8952",
+    "solved": true,
+    "problem_text": "MN \\parallel BC. Solve for x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, M)), 4x-6)",
+        "Equals(LengthOf(Line(A, N)), 3x-2)",
+        "Equals(LengthOf(Line(B, M)), 24)",
+        "Equals(LengthOf(Line(C, N)), 20)",
+        "Line(A, C)",
+        "Line(A, N)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, M)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, C)",
+        "PointLiesOnLine(M, Line(B, A))",
+        "PointLiesOnLine(N, Line(A, C))",
+        "Parallel(Line(M,N),Line(B,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "N",
+        "M",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "BM",
+        "BA",
+        "MA",
+        "MN",
+        "AN",
+        "AC",
+        "NC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            139.17078916372202,
+            375.24666666666667
+        ],
+        "C": [
+            693.9024734982332,
+            466.312
+        ],
+        "N": [
+            661.959952885748,
+            282.84666666666664
+        ],
+        "M": [
+            367.1849234393404,
+            236.64666666666665
+        ],
+        "A": [
+            626.0117785630154,
+            80.59333333333333
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 37.84491,
+    "solution_predicate": "Equals(9.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, \u2220NMA, 4 * x - 6 = AM, \u2220CBA, BC || MN, 24 = BM, \u2220NAB, \u2220MNA, 3 * x - 2 = AN, 20 = CN, \u2220CAB, N on AC, M on AB, \u2220CBA, \u2220BCA, 3.14 = pi\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220NMA\nConclusions: \u2220NMA = 2 * pi - \u2220AMN\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : BC || MN\nConclusions: \u2220ACB = \u2220ANM, \u2220ABC = \u2220AMN\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220MNA\nConclusions: \u2220MNA = 2 * pi - \u2220ANM\n\nStep 7:\nTheorem: Line Segment Split\nPremises : N on AC\nConclusions: AC = AN + CN\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CAB, N on AC\nConclusions: \u2220CAB = \u2220NAB\n\nStep 9:\nTheorem: Line Segment Split\nPremises : M on AB\nConclusions: AB = AM + BM\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220NAB, M on AB\nConclusions: \u2220NAB = \u2220NAM\n\nStep 11:\nTheorem: Same Angle\nPremises : M on AB, \u2220CBA\nConclusions: \u2220CBA = \u2220CBM\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220BCA, N on AC\nConclusions: \u2220BCA = \u2220BCN\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220NMA = 2 * pi - \u2220AMN, 3.14 = pi\nConclusions: \u2220NMA = 2 * 3.14 - \u2220AMN\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220MNA = 2 * pi - \u2220ANM, 3.14 = pi\nConclusions: \u2220MNA = 2 * 3.14 - \u2220ANM\n\nStep 15:\nTheorem: Substitution\nPremises : 20 = CN, AC = AN + CN, 3 * x - 2 = AN\nConclusions: 20 + (3 * x - 2) = AC\n\nStep 16:\nTheorem: Substitution\nPremises : 24 = BM, AB = AM + BM, 4 * x - 6 = AM\nConclusions: 24 + (4 * x - 6) = AB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NAB = \u2220NAM, \u2220CAB = \u2220NAB\nConclusions: \u2220CAB = \u2220NAM\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220CBM, \u2220ABC = \u2220AMN, \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi\nConclusions: \u2220CBM = 2 * 3.14 - \u2220AMN\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220ANM, \u2220BCA = 2 * pi - \u2220ACB, \u2220BCA = \u2220BCN, 3.14 = pi\nConclusions: \u2220BCN = 2 * 3.14 - \u2220ANM\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMA = 2 * 3.14 - \u2220AMN, \u2220CBM = 2 * 3.14 - \u2220AMN\nConclusions: \u2220CBM = \u2220NMA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCN = 2 * 3.14 - \u2220ANM, \u2220MNA = 2 * 3.14 - \u2220ANM\nConclusions: \u2220BCN = \u2220MNA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220CBM, \u2220CBM = \u2220NMA\nConclusions: \u2220CBA = \u2220NMA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCN, \u2220BCN = \u2220MNA\nConclusions: \u2220BCA = \u2220MNA\n\nStep 24:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220NAM, \u2220BCA = \u2220MNA, \u2220CBA = \u2220NMA\nConclusions: \u25b3ABC ~ \u25b3AMN\n\nStep 25:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3AMN\nConclusions: \u2220CAB = \u2220NAM, AB / AM = AC / AN, \u2220CBA = \u2220NMA, \u2220ABC = \u2220AMN, \u2220ACB = \u2220ANM\n\nStep 26:\nTheorem: Substitution\nPremises : 24 + (4 * x - 6) = AB, 4 * x - 6 = AM, 3 * x - 2 = AN, 20 + (3 * x - 2) = AC, AB / AM = AC / AN\nConclusions: (20 + (3 * x - 2)) / (3 * x - 2) = (24 + (4 * x - 6)) / (4 * x - 6)\n\nStep 27:\nTheorem: Solve Univariate Equation\nPremises : (20 + (3 * x - 2)) / (3 * x - 2) = (24 + (4 * x - 6)) / (4 * x - 6)\nConclusions: 9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, M)",
+        "Line(B, A)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(A, N)",
+        "Line(A, C)",
+        "Line(N, C)",
+        "Line(A, C)",
+        "Line(A, N)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, M)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, C)",
+        "PointLiesOnLine(M, Line(B, A))",
+        "PointLiesOnLine(N, Line(A, C))",
+        "Parallel(Line(M, N), Line(B, C))",
+        "Equals(LengthOf(Line(A, M)), Sub(Mul(4.0, x), 6.0))",
+        "Equals(LengthOf(Line(A, N)), Sub(Mul(3.0, x), 2.0))",
+        "Equals(LengthOf(Line(B, M)), 24.0)",
+        "Equals(LengthOf(Line(C, N)), 20.0)"
+    ],
+    "correct": true
+}

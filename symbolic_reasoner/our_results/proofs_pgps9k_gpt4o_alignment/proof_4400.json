@@ -1,0 +1,78 @@
+{
+    "problem_id": "4400",
+    "solved": true,
+    "problem_text": "Use rhombus JKLM to find m \\angle L.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(L, K, M)), 28)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Rhombus(J,K,L,M)",
+        "Find(MeasureOf(Angle(L)))"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "J",
+        "M"
+    ],
+    "line_instances": [
+        "JM",
+        "ML",
+        "LK",
+        "KJ",
+        "KM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            28.74966532797858,
+            58.441904761904766
+        ],
+        "L": [
+            252.11244979919678,
+            58.82857142857143
+        ],
+        "J": [
+            154.25301204819277,
+            242.52773109243697
+        ],
+        "M": [
+            377.9843819723338,
+            242.40317460317462
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        62.0,
+        76.0,
+        124.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        62.0,
+        76.0,
+        124.0
+    ],
+    "problem_answer": 124.0,
+    "total_time": 22.176825,
+    "solution_predicate": "Equals(2.1642082725, MeasureOf(Angle(K, L, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: KM, LM, 3.14 = pi, \u2220MLK, \u2220KJM, Rhombus(J, K, L, M), KL, pi * (28 / 180) = \u2220MKL\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220MLK\nConclusions: \u2220MLK = 2 * pi - \u2220KLM\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220KJM\nConclusions: \u2220KJM = 2 * pi - \u2220MJK\n\nStep 4:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(J, K, L, M)\nConclusions: \u2220KMJ = \u2220LMK\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : KM, KL, LM\nConclusions: \u25b3KLM\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220KLM = \u2220MJK, \u2220KJM = \u2220MLK\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JM || KL\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(K, L, M)\nPremises : \u25b3KLM\nConclusions: pi = \u2220KLM + \u2220LMK + \u2220MKL\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220KJM = \u2220MLK, \u2220KJM = 2 * pi - \u2220MJK\nConclusions: \u2220MLK = 2 * 3.14 - \u2220MJK\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KMJ = \u2220MKL\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = \u2220LMK, \u2220KMJ = \u2220MKL\nConclusions: \u2220LMK = \u2220MKL\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMK = \u2220MKL, pi * (28 / 180) = \u2220MKL\nConclusions: pi * (28 / 180) = \u2220LMK\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (28 / 180) = \u2220LMK, pi = \u2220KLM + \u2220LMK + \u2220MKL, \u2220KLM = \u2220MJK, 3.14 = pi, pi * (28 / 180) = \u2220MKL\nConclusions: 3.14 = 3.14 * (28 / 180) + pi * (28 / 180) + \u2220MJK\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : \u2220MLK = 2 * 3.14 - \u2220MJK, 3.14 = 3.14 * (28 / 180) + pi * (28 / 180) + \u2220MJK, \u2220KLM = \u2220MJK, \u2220MLK = 2 * pi - \u2220KLM\nConclusions: 2.16 = \u2220KLM\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, M)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(K, J)",
+        "Line(K, M)",
+        "Line(J, M)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Rhombus(J, K, L, M)",
+        "Equals(MeasureOf(Angle(M, K, L)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,109 @@
+{
+    "problem_id": "2975",
+    "solved": true,
+    "problem_text": "Tangent M P is drawn to \\odot O. Find x if M O = 20.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(M, R))",
+        "PointLiesOnLine(B, Line(M, O))",
+        "PointLiesOnLine(A, Line(R, O))",
+        "PointLiesOnCircle(P, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Equals(LengthOf(Line(O, P)), x)",
+        "Equals(LengthOf(Line(M, P)), 16)",
+        "Equals(LengthOf(Line(R, P)), 5)",
+        "Tangent(Line(M,P),Circle(O))",
+        "Equals(LengthOf(Line(M,O)),20)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "P",
+        "O",
+        "R",
+        "M",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "MP",
+        "MR",
+        "PR",
+        "MB",
+        "MO",
+        "BO",
+        "RA",
+        "RO",
+        "AO",
+        "PO"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "P": [
+            187.25,
+            72.75
+        ],
+        "O": [
+            187.5,
+            142.25
+        ],
+        "R": [
+            233.25,
+            72.5
+        ],
+        "M": [
+            37.5,
+            72.75
+        ],
+        "A": [
+            225.0,
+            85.75
+        ],
+        "B": [
+            125.0,
+            113.5
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "sqrt { 80 }",
+        "12",
+        "16"
+    ],
+    "choices_precise_value": [
+        5.0,
+        8.94427190999916,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 55.608734,
+    "solution_predicate": "Equals(12.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MO, MP, x = OP, 16 = MP, 20 = MO, OP, Tangent(MP, \u2299(O, radius_0_0)), P on \u2299(O, radius_0_0)\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : MO, MP, OP\nConclusions: \u25b3MOP\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : P on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = OP\n\nStep 4:\nTheorem: Tangent Definition\nPremises : P on \u2299(O, radius_0_0), Tangent(MP, \u2299(O, radius_0_0))\nConclusions: MP \u22a5 OP\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = OP, x = OP\nConclusions: radius_0_0 = x\n\nStep 6:\nTheorem: Pythagorean Theorem\nPremises : MP \u22a5 OP, \u25b3MOP\nConclusions: OP = SqrtOf(MO ** 2 - MP ** 2)\n\nStep 7:\nTheorem: Substitution\nPremises : 20 = MO, 16 = MP, radius_0_0 = OP, OP = SqrtOf(MO ** 2 - MP ** 2)\nConclusions: SqrtOf(20 ** 2 - 16 ** 2) = radius_0_0\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = x, SqrtOf(20 ** 2 - 16 ** 2) = radius_0_0\nConclusions: SqrtOf(20 ** 2 - 16 ** 2) = x\n\nStep 9:\nTheorem: Evaluate\nPremises : SqrtOf(20 ** 2 - 16 ** 2) = x\nConclusions: 12 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(P, R)",
+        "Line(M, B)",
+        "Line(M, O)",
+        "Line(B, O)",
+        "Line(R, A)",
+        "Line(R, O)",
+        "Line(A, O)",
+        "Line(P, O)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(P, Line(M, R))",
+        "PointLiesOnLine(B, Line(M, O))",
+        "PointLiesOnLine(A, Line(R, O))",
+        "PointLiesOnCircle(P, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "Tangent(Line(M, P), Circle(O, radius_0_0))",
+        "Equals(LengthOf(Line(O, P)), x)",
+        "Equals(LengthOf(Line(M, P)), 16.0)",
+        "Equals(LengthOf(Line(R, P)), 5.0)",
+        "Equals(LengthOf(Line(M, O)), 20.0)"
+    ],
+    "correct": true
+}

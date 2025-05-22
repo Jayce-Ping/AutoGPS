@@ -1,0 +1,114 @@
+{
+    "problem_id": "2964",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(B, F), Line(C, F))",
+        "Equals(LengthOf(Line(E, D)), x)",
+        "Equals(LengthOf(Line(A, D)), 8)",
+        "Equals(LengthOf(Line(D, C)), z)",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(E, F)), 6)",
+        "Equals(MeasureOf(Angle(E, A, D)), 30)",
+        "Equals(MeasureOf(Angle(F, B, C)), 45)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "D",
+        "B",
+        "C",
+        "A",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AE",
+        "AF",
+        "AB",
+        "EF",
+        "EB",
+        "FB",
+        "CB",
+        "CF",
+        "DE",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            247.41379310344828,
+            70.29310344827587
+        ],
+        "B": [
+            521.1206896551724,
+            178.48275862068965
+        ],
+        "C": [
+            412.93103448275866,
+            69.86206896551724
+        ],
+        "A": [
+            59.05172413793104,
+            178.48275862068965
+        ],
+        "E": [
+            247.84482758620692,
+            179.34482758620692
+        ],
+        "F": [
+            414.22413793103453,
+            178.9137931034483
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "8",
+        "10",
+        "12"
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 40.33638,
+    "solution_predicate": "Equals(6.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CF \u22a5 EF, CF, DE, z = CD, CD, AB || DC, 6 = EF, EF, DE \u22a5 EF\n\nStep 2:\nTheorem: Perpendicular to Parallel\nPremises : DE \u22a5 EF, CF \u22a5 EF\nConclusions: CF || DE\n\nStep 3:\nTheorem: Definition of Rectangle\nPremises : CF, CD, DE, AB || DC, CF || DE, DE \u22a5 EF, CF \u22a5 EF, EF\nConclusions: Rectangle(C, D, E, F)\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(C, D, E, F)\nConclusions: Parallelogram(C, D, E, F)\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(C, D, E, F)\nConclusions: CD = EF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : z = CD, 6 = EF, CD = EF\nConclusions: 6 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, B)",
+        "Line(E, F)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "Line(C, B)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(B, F), Line(C, F))",
+        "Equals(LengthOf(Line(E, D)), x)",
+        "Equals(LengthOf(Line(A, D)), 8.0)",
+        "Equals(LengthOf(Line(D, C)), z)",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(E, F)), 6.0)",
+        "Equals(MeasureOf(Angle(E, A, D)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, F)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

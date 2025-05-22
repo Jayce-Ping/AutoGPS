@@ -1,0 +1,76 @@
+{
+    "problem_id": "2954",
+    "solved": true,
+    "problem_text": "Find m \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(C, B))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(angle 2))",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "CB",
+        "DB",
+        "CA"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            28.28542914171657,
+            135.92814371257487
+        ],
+        "B": [
+            159.4231536926148,
+            135.32934131736528
+        ],
+        "C": [
+            28.085828343313374,
+            59.2814371257485
+        ],
+        "D": [
+            93.95409181636727,
+            97.0059880239521
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "45",
+        "60",
+        "90"
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 16.404372,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(D, radius_0_0), D on BC, B on \u2299(D, radius_0_0), A on \u2299(D, radius_0_0)\n\nStep 2:\nTheorem: Diameter Definition\nPremises : D on BC, B on \u2299(D, radius_0_0), C on \u2299(D, radius_0_0)\nConclusions: IsDiameterOf(BC, \u2299(D, radius_0_0))\n\nStep 3:\nTheorem: Thales Theorem\nPremises : A on \u2299(D, radius_0_0), IsDiameterOf(BC, \u2299(D, radius_0_0))\nConclusions: AB \u22a5 AC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220BAC\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 2 = \u2220BAC\nConclusions: 1.57 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(C, A)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(D, Line(C, B))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))"
+    ],
+    "correct": true
+}

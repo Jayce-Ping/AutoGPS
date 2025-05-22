@@ -1,0 +1,101 @@
+{
+    "problem_id": "2875",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle A.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(G, N, E)), 46)",
+        "Equals(MeasureOf(Angle(N, G, E)), 53)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(E, G)",
+        "Line(E, N)",
+        "Line(G, A)",
+        "Line(G, N)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Parallel(Line(A, B), Line(E, G))",
+        "PointLiesOnLine(N, Line(E, B))",
+        "PointLiesOnLine(N, Line(G, A))",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "N",
+        "B",
+        "G"
+    ],
+    "line_instances": [
+        "GN",
+        "GA",
+        "NA",
+        "EN",
+        "EB",
+        "NB",
+        "EG",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            321.6330396475771,
+            44.89714285714285
+        ],
+        "E": [
+            52.45374449339207,
+            110.58
+        ],
+        "N": [
+            202.3215859030837,
+            134.2379220779221
+        ],
+        "B": [
+            321.6461859494552,
+            153.50796992481202
+        ],
+        "G": [
+            53.04845814977974,
+            246.65714285714287
+        ]
+    },
+    "problem_choices": [
+        46.0,
+        53.0,
+        81.0,
+        127.0
+    ],
+    "choices_precise_value": [
+        46.0,
+        53.0,
+        81.0,
+        127.0
+    ],
+    "problem_answer": 53.0,
+    "total_time": 14.325389,
+    "solution_predicate": "Equals(0.9250245036, MeasureOf(Angle(G, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB || EG, N on AG, pi * (53 / 180) = \u2220NGE, \u2220GAB, \u2220AGE\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || EG\nConclusions: \u2220AGE = \u2220GAB\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220GAB, N on AG\nConclusions: \u2220GAB = \u2220NAB\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220AGE, N on AG\nConclusions: \u2220AGE = \u2220NGE\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGE = \u2220GAB, \u2220GAB = \u2220NAB\nConclusions: \u2220AGE = \u2220NAB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGE = \u2220NAB, \u2220AGE = \u2220NGE, pi * (53 / 180) = \u2220NGE\nConclusions: pi * (53 / 180) = \u2220NAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (53 / 180) = \u2220NAB, \u2220GAB = \u2220NAB\nConclusions: pi * (53 / 180) = \u2220GAB\n\nStep 8:\nTheorem: Evaluate\nPremises : pi * (53 / 180) = \u2220GAB\nConclusions: 0.93 = \u2220GAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, N)",
+        "Line(G, A)",
+        "Line(N, A)",
+        "Line(E, N)",
+        "Line(E, B)",
+        "Line(N, B)",
+        "Line(E, G)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(E, G)",
+        "Line(E, N)",
+        "Line(G, A)",
+        "Line(G, N)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Parallel(Line(A, B), Line(E, G))",
+        "PointLiesOnLine(N, Line(E, B))",
+        "PointLiesOnLine(N, Line(G, A))",
+        "Equals(MeasureOf(Angle(E, N, G)), Mul(pi, Div(46.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, G, E)), Mul(pi, Div(53.0, 180.0)))"
+    ],
+    "correct": true
+}

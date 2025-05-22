@@ -1,0 +1,99 @@
+{
+    "problem_id": "2941",
+    "solved": true,
+    "problem_text": "In the figure, square A B D C is inscribed in \\odot F. Find the measure of a central angle.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(C, D))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "Perpendicular(Line(D, G), Line(F, G))",
+        "InscribedIn(Square(A, B, D, C), Circle(F))",
+        "Find(MeasureOf(Angle(C, F, D)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "A",
+        "G",
+        "B",
+        "F"
+    ],
+    "line_instances": [
+        "CG",
+        "CD",
+        "GD",
+        "BD",
+        "AB",
+        "AC",
+        "FG",
+        "FD",
+        "FC"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "C": [
+            67.22093023255815,
+            215.40697674418604
+        ],
+        "D": [
+            226.81395348837208,
+            215.40697674418604
+        ],
+        "A": [
+            66.34883720930233,
+            55.81395348837209
+        ],
+        "G": [
+            144.8372093023256,
+            213.37209302325581
+        ],
+        "B": [
+            226.52325581395348,
+            56.395348837209305
+        ],
+        "F": [
+            145.7093023255814,
+            135.75581395348837
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "60",
+        "90",
+        "180"
+    ],
+    "choices_precise_value": [
+        45.0,
+        60.0,
+        90.0,
+        180.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 206.209244,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(C, F, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: InscribedIn(Square(A, B, D, C), \u2299(F, radius_0_0)), BF, DF, \u2220CBD, CD, CG \u22a5 FG, \u2220DFB, \u2220CFD, CF, DG \u22a5 FG, Square(A, B, D, C), 3.14 = pi, BD\n\nStep 2:\nTheorem: Properties for Square inscribed in circle\nPremises : InscribedIn(Square(A, B, D, C), \u2299(F, radius_0_0))\nConclusions: \u2220DCF = \u2220FCA, \u2220BDF = \u2220FDC, F on BC\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220DFB, \u2220CFD\nConclusions: pi = \u2220CFD + \u2220DFB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, CF, DF\nConclusions: \u25b3CDF\n\nStep 5:\nTheorem: Square is Rectangle\nPremises : Square(A, B, D, C)\nConclusions: Rectangle(A, B, D, C)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : DF, BF, BD\nConclusions: \u25b3BDF\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220CBD, F on BC\nConclusions: \u2220CBD = \u2220FBD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CFD + \u2220DFB, 3.14 = pi\nConclusions: 3.14 = \u2220CFD + \u2220DFB\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(F, D, C)\nPremises : \u25b3CDF\nConclusions: pi = \u2220CFD + \u2220DCF + \u2220FDC\n\nStep 10:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, D, C)\nConclusions: AC \u22a5 CD, BD \u22a5 CD\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, F)\nPremises : \u25b3BDF\nConclusions: pi = \u2220BDF + \u2220DFB + \u2220FBD\n\nStep 12:\nTheorem: Perpendicular Extension\nPremises : AC \u22a5 CD\nConclusions: AC \u22a5 CG\n\nStep 13:\nTheorem: Perpendicular Extension\nPremises : BD \u22a5 CD\nConclusions: BD \u22a5 DG\n\nStep 14:\nTheorem: Perpendicular to Parallel\nPremises : AC \u22a5 CG, CG \u22a5 FG\nConclusions: AC || FG\n\nStep 15:\nTheorem: Perpendicular to Parallel\nPremises : DG \u22a5 FG, BD \u22a5 DG\nConclusions: BD || FG\n\nStep 16:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || FG\nConclusions: \u2220CFG = \u2220FCA\n\nStep 17:\nTheorem: Corresponding Angle Theorem\nPremises : BD || FG\nConclusions: \u2220CBD = \u2220CFG\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220CFG, \u2220CBD = \u2220FBD\nConclusions: \u2220CFG = \u2220FBD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CFG = \u2220FCA, \u2220CFG = \u2220FBD\nConclusions: \u2220FBD = \u2220FCA\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FBD = \u2220FCA, \u2220DCF = \u2220FCA\nConclusions: \u2220DCF = \u2220FBD\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220CFD + \u2220DFB, pi = \u2220BDF + \u2220DFB + \u2220FBD, \u2220DCF = \u2220FBD, \u2220BDF = \u2220FDC, pi = \u2220CFD + \u2220DCF + \u2220FDC\nConclusions: 1.57 = \u2220CFD\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, G)",
+        "Line(C, D)",
+        "Line(G, D)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(F, G)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(G, Line(C, D))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "Perpendicular(Line(D, G), Line(F, G))",
+        "InscribedIn(Square(A, B, D, C), Circle(F, radius_0_0))"
+    ],
+    "correct": true
+}

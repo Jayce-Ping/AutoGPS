@@ -1,0 +1,72 @@
+{
+    "problem_id": "2946",
+    "solved": true,
+    "problem_text": "If F G H J is a kite, find m \\angle G F J.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, H)), LengthOf(Line(F, G)))",
+        "Equals(LengthOf(Line(H, J)), LengthOf(Line(F, J)))",
+        "Equals(MeasureOf(Angle(H, G, F)), 128)",
+        "Equals(MeasureOf(Angle(H, J, F)), 72)",
+        "Kite(F, G, H, J)",
+        "Find(MeasureOf(Angle(G, F, J)))"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "F",
+        "J"
+    ],
+    "line_instances": [
+        "HJ",
+        "GH",
+        "FG",
+        "FJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            272.50720461095096,
+            85.87896253602305
+        ],
+        "G": [
+            168.1844380403458,
+            34.29394812680115
+        ],
+        "F": [
+            65.5907780979827,
+            85.30259365994236
+        ],
+        "J": [
+            169.04899135446684,
+            227.0893371757925
+        ]
+    },
+    "problem_choices": [
+        "72",
+        "80",
+        "128",
+        "190"
+    ],
+    "choices_precise_value": [
+        72.0,
+        80.0,
+        128.0,
+        190.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 52.855423,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Angle(J, F, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Kite(F, G, H, J), pi * (72 / 180) = \u2220HJF, 3.14 = pi, pi * (128 / 180) = \u2220FGH\n\nStep 2:\nTheorem: Kite angle equality\nPremises : Kite(F, G, H, J)\nConclusions: \u2220GHJ = \u2220JFG\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Kite(F, G, H, J)\nPremises : Kite(F, G, H, J)\nConclusions: 2 * pi = \u2220FGH + \u2220GHJ + \u2220HJF + \u2220JFG\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : pi * (72 / 180) = \u2220HJF, 3.14 = pi, pi * (128 / 180) = \u2220FGH, \u2220GHJ = \u2220JFG, 2 * pi = \u2220FGH + \u2220GHJ + \u2220HJF + \u2220JFG\nConclusions: 1.4 = \u2220GHJ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.4 = \u2220GHJ, \u2220GHJ = \u2220JFG\nConclusions: 1.4 = \u2220JFG\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, J)",
+        "Line(G, H)",
+        "Line(F, G)",
+        "Line(F, J)",
+        "Kite(F, G, H, J)",
+        "Equals(LengthOf(Line(G, H)), LengthOf(Line(F, G)))",
+        "Equals(LengthOf(Line(H, J)), LengthOf(Line(F, J)))",
+        "Equals(MeasureOf(Angle(F, G, H)), Mul(pi, Div(128.0, 180.0)))",
+        "Equals(MeasureOf(Angle(H, J, F)), Mul(pi, Div(72.0, 180.0)))"
+    ],
+    "correct": true
+}

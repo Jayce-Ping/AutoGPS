@@ -1,0 +1,116 @@
+{
+    "problem_id": "2647",
+    "solved": true,
+    "problem_text": "Find x so that m \\parallel n.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, E, F)), Sub(Mul(4, x), 23))",
+        "Equals(MeasureOf(Angle(G, D, C)), Add(Mul(2, x), 17))",
+        "Find(x)",
+        "Parallel(Line(A, G), Line(B, H))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(E, Line(F, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AD",
+        "AG",
+        "DG",
+        "BE",
+        "BH",
+        "EH",
+        "FE",
+        "FD",
+        "FC",
+        "ED",
+        "EC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            54.90196078431372,
+            218.9299719887955
+        ],
+        "B": [
+            30.252100840336134,
+            171.03081232492997
+        ],
+        "C": [
+            175.07002801120447,
+            216.40896358543415
+        ],
+        "D": [
+            166.38655462184872,
+            160.94677871148457
+        ],
+        "E": [
+            157.9831932773109,
+            105.484593837535
+        ],
+        "F": [
+            148.73949579831933,
+            46.661064425770306
+        ],
+        "G": [
+            306.7226890756302,
+            88.11764705882352
+        ],
+        "H": [
+            282.0728291316526,
+            41.89915966386554
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "20",
+        "31",
+        "40"
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        31.0,
+        40.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 31.428341,
+    "solution_predicate": "Equals(20.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on DF, D on CE, AG || BH, 17 + 2 * x = \u2220CDG, \u2220FDA, \u2220CEH, 4 * x - 23 = \u2220FEB\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220FDA = \u2220FEB, \u2220CDG = \u2220CEH\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220DEH = \u2220EDA\n\nStep 4:\nTheorem: Same Angle\nPremises : E on DF, \u2220FDA\nConclusions: \u2220EDA = \u2220FDA\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CEH, D on CE\nConclusions: \u2220CEH = \u2220DEH\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x - 23 = \u2220FEB, \u2220FDA = \u2220FEB\nConclusions: 4 * x - 23 = \u2220FDA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDG = \u2220CEH, 17 + 2 * x = \u2220CDG\nConclusions: 17 + 2 * x = \u2220CEH\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEH = \u2220DEH, \u2220DEH = \u2220EDA, 17 + 2 * x = \u2220CEH\nConclusions: 17 + 2 * x = \u2220EDA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 17 + 2 * x = \u2220EDA, 4 * x - 23 = \u2220FDA, \u2220EDA = \u2220FDA\nConclusions: 17 + 2 * x = 4 * x - 23\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 17 + 2 * x = 4 * x - 23\nConclusions: 20 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(D, G)",
+        "Line(B, E)",
+        "Line(B, H)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, G), Line(B, H))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(E, Line(B, H))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "Equals(MeasureOf(Angle(F, E, B)), Sub(Mul(4.0, x), 23.0))",
+        "Equals(MeasureOf(Angle(C, D, G)), Add(Mul(2.0, x), 17.0))"
+    ],
+    "correct": true
+}

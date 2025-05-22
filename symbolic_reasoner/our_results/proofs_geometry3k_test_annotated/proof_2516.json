@@ -1,0 +1,78 @@
+{
+    "problem_id": "2516",
+    "solved": true,
+    "problem_text": "\\triangle R S V \\cong \\triangle T V S. Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(R, S), Line(V, S))",
+        "Equals(LengthOf(Line(R, S)), 2y-1)",
+        "Equals(LengthOf(Line(V, T)), 24)",
+        "Equals(LengthOf(Line(S, T)), 24.5)",
+        "Equals(MeasureOf(Angle(R, V, S)), 78)",
+        "Equals(MeasureOf(Angle(V, T, S)), x)",
+        "Congruent(Triangle(R, S, V), Triangle(T, V, S))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "S",
+        "R",
+        "V",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "RV",
+        "VT",
+        "SV",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            442.3076923076923,
+            83.025641025641
+        ],
+        "R": [
+            79.48717948717949,
+            83.66666666666669
+        ],
+        "V": [
+            441.66666666666663,
+            160.5897435897436
+        ],
+        "T": [
+            805.1282051282051,
+            159.94871794871796
+        ]
+    },
+    "problem_choices": [
+        "11",
+        "11.5",
+        "12",
+        "12.5"
+    ],
+    "choices_precise_value": [
+        11.0,
+        11.5,
+        12.0,
+        12.5
+    ],
+    "problem_answer": 12.0,
+    "total_time": 22.391117,
+    "solution_predicate": "Equals(12.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS \u22a5 SV, pi * (x / 180) = \u2220STV, \u25b3RSV, 3.14 = pi, \u25b3RSV \u2245 \u25b3TVS, pi * (78 / 180) = \u2220SVR\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : RS \u22a5 SV\nConclusions: pi / 2 = \u2220RSV\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(R, S, V)\nPremises : \u25b3RSV\nConclusions: pi = \u2220RSV + \u2220SVR + \u2220VRS\n\nStep 4:\nTheorem: Congruent Definition\nPremises : \u25b3RSV \u2245 \u25b3TVS\nConclusions: \u2220STV = \u2220VRS\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220RSV, pi * (78 / 180) = \u2220SVR, pi = \u2220RSV + \u2220SVR + \u2220VRS\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (78 / 180) + \u2220VRS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STV = \u2220VRS, pi * (x / 180) = \u2220STV\nConclusions: pi * (x / 180) = \u2220VRS\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220VRS\nConclusions: 3.14 * (x / 180) = \u2220VRS\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (78 / 180) + \u2220VRS, 3.14 * (x / 180) = \u2220VRS\nConclusions: 12 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, V)",
+        "Line(V, T)",
+        "Line(S, V)",
+        "Line(S, T)",
+        "Perpendicular(Line(R, S), Line(V, S))",
+        "Congruent(Triangle(R, S, V), Triangle(T, V, S))",
+        "Equals(LengthOf(Line(R, S)), Sub(Mul(2.0, y), 1.0))",
+        "Equals(LengthOf(Line(V, T)), 24.0)",
+        "Equals(LengthOf(Line(S, T)), 24.5)",
+        "Equals(MeasureOf(Angle(S, V, R)), Mul(pi, Div(78.0, 180.0)))",
+        "Equals(MeasureOf(Angle(S, T, V)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

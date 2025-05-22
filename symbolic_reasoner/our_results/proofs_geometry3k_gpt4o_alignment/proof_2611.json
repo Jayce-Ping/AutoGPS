@@ -1,0 +1,147 @@
+{
+    "problem_id": "2611",
+    "solved": true,
+    "problem_text": "\\overrightarrow Q P and \\overrightarrow Q R are opposite rays, and \\overrightarrow Q T bisects \\angle S Q R. If m \\angle S Q R = 6 x + 8 and m \\angle T Q R = 4 x - 14, find m \\angle S Q T.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(A, Q))",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(Q, Line(A, R))",
+        "PointLiesOnLine(Q, Line(A, B))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(Q, Line(P, B))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(R, Line(P, B))",
+        "PointLiesOnLine(R, Line(Q, B))",
+        "PointLiesOnLine(S, Line(C, Q))",
+        "PointLiesOnLine(T, Line(D, Q))",
+        "Line(Q,P)",
+        "Line(Q,R)",
+        "PointLiesOnLine(Q,Line(P,R))",
+        "BisectsAngle(Line(Q,T),Angle(S,Q,R))",
+        "Equals(MeasureOf(Angle(S,Q,R)),6x+8)",
+        "Equals(MeasureOf(Angle(T,Q,R)),4x-14)",
+        "Find(MeasureOf(Angle(S,Q,T)))"
+    ],
+    "point_instances": [
+        "T",
+        "S",
+        "R",
+        "P",
+        "Q",
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AP",
+        "AQ",
+        "AR",
+        "AB",
+        "PQ",
+        "PR",
+        "PB",
+        "QR",
+        "QB",
+        "RB",
+        "CS",
+        "CQ",
+        "SQ",
+        "DT",
+        "DQ",
+        "TQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            336.65338645418325,
+            127.35458167330677
+        ],
+        "S": [
+            231.87250996015933,
+            98.66932270916334
+        ],
+        "R": [
+            375.69721115537845,
+            223.3705179282868
+        ],
+        "P": [
+            119.92031872509959,
+            222.97211155378483
+        ],
+        "Q": [
+            249.80079681274898,
+            223.3705179282868
+        ],
+        "A": [
+            47.01195219123505,
+            223.76892430278883
+        ],
+        "B": [
+            443.0278884462151,
+            223.3705179282868
+        ],
+        "C": [
+            222.70916334661354,
+            42.09561752988047
+        ],
+        "D": [
+            390.43824701195217,
+            69.58565737051792
+        ]
+    },
+    "problem_choices": [
+        "18",
+        "32",
+        "36",
+        "58"
+    ],
+    "choices_precise_value": [
+        18.0,
+        32.0,
+        36.0,
+        58.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 102.010282,
+    "solution_predicate": "Equals(1.0122909662, MeasureOf(Angle(T, Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((4 * x - 14) / 180) = \u2220RQT, BisectsAngle(QT, \u2220RQS), \u2220RQT, \u2220SQR, \u2220TQS, \u2220SQR, 3.14 = pi, \u2220RQD, \u2220CQB, T on DQ, pi * ((8 + 6 * x) / 180) = \u2220RQS, \u2220RQS, \u2220DQC, R on BQ, \u2220CQR, \u2220DQS, S on CQ\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(QT, \u2220RQS)\nConclusions: \u2220RQT = \u2220TQS\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220SQR, \u2220TQS, \u2220RQT\nConclusions: 2 * pi = \u2220RQT + \u2220SQR + \u2220TQS\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220SQR\nConclusions: \u2220SQR = 2 * pi - \u2220RQS\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220RQD, T on DQ\nConclusions: \u2220RQD = \u2220RQT\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220RQS\nConclusions: \u2220RQS = 2 * pi - \u2220SQR\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220DQC, T on DQ\nConclusions: \u2220DQC = \u2220TQC\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CQB, R on BQ\nConclusions: \u2220CQB = \u2220CQR\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220DQS, T on DQ\nConclusions: \u2220DQS = \u2220TQS\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220DQS, \u2220SQR, \u2220RQD\nConclusions: 2 * pi = \u2220DQS + \u2220RQD + \u2220SQR\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220DQC, S on CQ\nConclusions: \u2220DQC = \u2220DQS\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220CQB, S on CQ\nConclusions: \u2220CQB = \u2220SQB\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220CQR, S on CQ\nConclusions: \u2220CQR = \u2220SQR\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQT = \u2220TQS, pi * ((4 * x - 14) / 180) = \u2220RQT\nConclusions: pi * ((4 * x - 14) / 180) = \u2220TQS\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQD = \u2220RQT, pi * ((4 * x - 14) / 180) = \u2220RQT\nConclusions: pi * ((4 * x - 14) / 180) = \u2220RQD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 6 * x) / 180) = \u2220RQS, \u2220RQS = 2 * pi - \u2220SQR\nConclusions: pi * ((8 + 6 * x) / 180) = 2 * pi - \u2220SQR\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DQC = \u2220DQS, \u2220DQC = \u2220TQC\nConclusions: \u2220DQS = \u2220TQC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CQR = \u2220SQR, \u2220CQB = \u2220SQB, \u2220CQB = \u2220CQR\nConclusions: \u2220SQB = \u2220SQR\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DQS = \u2220TQC, \u2220DQS = \u2220TQS, pi * ((4 * x - 14) / 180) = \u2220TQS\nConclusions: pi * ((4 * x - 14) / 180) = \u2220TQC\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220SQB = \u2220SQR, 3.14 = pi, pi * ((8 + 6 * x) / 180) = 2 * pi - \u2220SQR\nConclusions: 3.14 * ((8 + 6 * x) / 180) = 2 * 3.14 - \u2220SQB\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220SQB = \u2220SQR, 2 * pi = \u2220RQT + \u2220SQR + \u2220TQS, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220RQT + \u2220SQB + \u2220TQS\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DQS = \u2220TQC, pi * ((4 * x - 14) / 180) = \u2220TQC\nConclusions: pi * ((4 * x - 14) / 180) = \u2220DQS\n\nStep 23:\nTheorem: Substitution\nPremises : pi * ((4 * x - 14) / 180) = \u2220DQS, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 14) / 180) = \u2220DQS\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 14) / 180) = \u2220DQS, pi * ((4 * x - 14) / 180) = \u2220RQD\nConclusions: \u2220DQS = \u2220RQD\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : \u2220DQS = \u2220RQD, 2 * pi = \u2220DQS + \u2220RQD + \u2220SQR, \u2220SQR = 2 * pi - \u2220RQS\nConclusions: \u2220RQS = 2 * \u2220DQS\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((8 + 6 * x) / 180) = \u2220RQS, \u2220RQS = 2 * \u2220DQS\nConclusions: pi * ((8 + 6 * x) / 180) = 2 * \u2220DQS\n\nStep 27:\nTheorem: Substitution\nPremises : pi * ((8 + 6 * x) / 180) = 2 * \u2220DQS, 3.14 * ((4 * x - 14) / 180) = \u2220DQS, 3.14 = pi\nConclusions: 3.14 * ((8 + 6 * x) / 180) = 2 * 3.14 * ((4 * x - 14) / 180)\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((8 + 6 * x) / 180) = 2 * 3.14 * ((4 * x - 14) / 180), 3.14 * ((8 + 6 * x) / 180) = 2 * 3.14 - \u2220SQB, 2 * 3.14 = \u2220RQT + \u2220SQB + \u2220TQS, \u2220RQT = \u2220TQS\nConclusions: 1.01 = \u2220TQS\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(A, B)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, B)",
+        "Line(Q, R)",
+        "Line(Q, B)",
+        "Line(R, B)",
+        "Line(C, S)",
+        "Line(C, Q)",
+        "Line(S, Q)",
+        "Line(D, T)",
+        "Line(D, Q)",
+        "Line(T, Q)",
+        "PointLiesOnLine(P, Line(A, Q))",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(Q, Line(A, R))",
+        "PointLiesOnLine(Q, Line(A, B))",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "PointLiesOnLine(Q, Line(P, B))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(R, Line(P, B))",
+        "PointLiesOnLine(R, Line(Q, B))",
+        "PointLiesOnLine(S, Line(C, Q))",
+        "PointLiesOnLine(T, Line(D, Q))",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "PointLiesOnLine(Q, Line(P, R))",
+        "BisectsAngle(Line(Q, T), Angle(R, Q, S))",
+        "Equals(MeasureOf(Angle(R, Q, S)), Mul(pi, Div(Add(Mul(6.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, Q, T)), Mul(pi, Div(Sub(Mul(4.0, x), 14.0), 180.0)))"
+    ],
+    "correct": true
+}

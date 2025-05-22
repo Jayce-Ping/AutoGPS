@@ -1,0 +1,98 @@
+{
+    "problem_id": "8948",
+    "solved": true,
+    "problem_text": "What is the length of \\widehat BD?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, D)), 9)",
+        "Equals(MeasureOf(Angle(B, P, A)), 81)",
+        "Equals(MeasureOf(Arc(C, D)), 65)",
+        "Line(A, P)",
+        "Line(C, B)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "Line(P, D)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "PointLiesOnLine(P, Line(C, B))",
+        "Find(LengthOf(Arc(B,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "P",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CP",
+        "CB",
+        "PB",
+        "AP",
+        "PD"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "A": [
+            113.45949579831934,
+            61.35325241207594
+        ],
+        "B": [
+            249.69673469387757,
+            93.3424036281179
+        ],
+        "P": [
+            162.36045797141236,
+            157.35923972781737
+        ],
+        "C": [
+            75.75,
+            221.55908289241623
+        ],
+        "D": [
+            184.10857142857142,
+            263.3255731922398
+        ]
+    },
+    "problem_choices": [
+        10.21,
+        15.551,
+        18.064,
+        22.934
+    ],
+    "choices_precise_value": [
+        10.21,
+        15.551,
+        18.064,
+        22.934
+    ],
+    "problem_answer": 18.064,
+    "total_time": 12.366094,
+    "solution_predicate": "Equals(18.0641577582, LengthOf(Arc(D, P, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (65 / 180) = Arc(CPD), Arc(CPD), \u2220CPD, \u2220DPB, Arc(DPC), D on \u2299(P, radius_P), 3.14 = pi, Arc(DPB), 9 = DP, \u2220CPD, \u2220DPC\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CPD)\nConclusions: \u2220CPD = Arc(CPD)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220CPD, \u2220DPB\nConclusions: pi = \u2220CPD + \u2220DPB\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DPC)\nConclusions: \u2220DPC = Arc(DPC)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : D on \u2299(P, radius_P)\nConclusions: radius_P = DP\n\nStep 6:\nTheorem: Arc Length Definition\nPremises : Arc(DPB)\nConclusions: Arc(DPB) = radius_P * \u2220DPB\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220CPD\nConclusions: \u2220CPD = 2 * pi - \u2220DPC\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220DPC\nConclusions: \u2220DPC = 2 * pi - \u2220CPD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CPD = Arc(CPD), pi * (65 / 180) = Arc(CPD)\nConclusions: pi * (65 / 180) = \u2220CPD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = DP, 9 = DP\nConclusions: 9 = radius_P\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CPD = 2 * pi - \u2220DPC, pi * (65 / 180) = \u2220CPD\nConclusions: pi * (65 / 180) = 2 * pi - \u2220DPC\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220CPD + \u2220DPB, pi * (65 / 180) = \u2220CPD, 3.14 = pi\nConclusions: 3.14 = pi * (65 / 180) + \u2220DPB\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220DPC = 2 * pi - \u2220CPD, \u2220DPC = Arc(DPC), pi * (65 / 180) = \u2220CPD, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (65 / 180) = Arc(DPC)\n\nStep 14:\nTheorem: Substitution\nPremises : 9 = radius_P, Arc(DPB) = radius_P * \u2220DPB\nConclusions: Arc(DPB) = 9 * \u2220DPB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DPC = Arc(DPC), 2 * 3.14 - pi * (65 / 180) = Arc(DPC)\nConclusions: 2 * 3.14 - pi * (65 / 180) = \u2220DPC\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : Arc(DPB) = 9 * \u2220DPB, pi * (65 / 180) = 2 * pi - \u2220DPC, 3.14 = pi * (65 / 180) + \u2220DPB, 2 * 3.14 - pi * (65 / 180) = \u2220DPC\nConclusions: 18.06 = Arc(DPB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, P)",
+        "Line(C, B)",
+        "Line(P, B)",
+        "Line(A, P)",
+        "Line(P, D)",
+        "Circle(P, radius_P)",
+        "Line(A, P)",
+        "Line(C, B)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "Line(P, D)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(C, B))",
+        "Equals(LengthOf(Line(P, D)), 9.0)",
+        "Equals(MeasureOf(Angle(B, P, A)), Mul(pi, Div(81.0, 180.0)))",
+        "Equals(MeasureOf(Arc(C, P, D)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

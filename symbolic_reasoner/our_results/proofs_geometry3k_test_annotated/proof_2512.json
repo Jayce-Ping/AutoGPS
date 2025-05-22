@@ -1,0 +1,82 @@
+{
+    "problem_id": "2512",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(D, B)), x)",
+        "Equals(LengthOf(Line(D, C)), 12)",
+        "Equals(LengthOf(Line(B, C)), 10)",
+        "Equals(LengthOf(Line(A, B)), z)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DA",
+        "DB",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            19.942196531791907,
+            184.79768786127167
+        ],
+        "B": [
+            129.47976878612718,
+            183.9306358381503
+        ],
+        "C": [
+            376.0115606936416,
+            184.21965317919074
+        ],
+        "D": [
+            129.76878612716763,
+            20.057803468208093
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "2 \\sqrt { 11 }",
+        "10",
+        "4 \\sqrt { 11 }"
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.6332495807108,
+        10.0,
+        13.2664991614216
+    ],
+    "problem_answer": 6.6332495807108,
+    "total_time": 36.803646,
+    "solution_predicate": "Equals(6.6332495807, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, BC, BC \u22a5 BD, 10 = BC, x = BD, 12 = CD, CD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : BC \u22a5 BD, \u25b3BCD\nConclusions: BD = SqrtOf(CD ** 2 - BC ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 10 = BC, x = BD, BD = SqrtOf(CD ** 2 - BC ** 2), 12 = CD\nConclusions: SqrtOf(12 ** 2 - 10 ** 2) = x\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 - 10 ** 2) = x\nConclusions: 6.63 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, D)), y)",
+        "Equals(LengthOf(Line(D, B)), x)",
+        "Equals(LengthOf(Line(D, C)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 10.0)",
+        "Equals(LengthOf(Line(A, B)), z)"
+    ],
+    "correct": true
+}

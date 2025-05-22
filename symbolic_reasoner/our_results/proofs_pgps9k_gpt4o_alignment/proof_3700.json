@@ -1,0 +1,104 @@
+{
+    "problem_id": "3700",
+    "solved": true,
+    "problem_text": "In \\odot R, find m \\widehat TUV.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 6)",
+        "Equals(LengthOf(Line(U, S)), 5)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(T, S)",
+        "Line(T, V)",
+        "Line(U, R)",
+        "Line(U, S)",
+        "Perpendicular(Line(T, V), Line(U, R))",
+        "PointLiesOnCircle(T, Circle(R))",
+        "PointLiesOnCircle(U, Circle(R))",
+        "PointLiesOnCircle(V, Circle(R))",
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "Circle(R)",
+        "Find(MeasureOf(Arc(T,U,V)))"
+    ],
+    "point_instances": [
+        "V",
+        "U",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "VS",
+        "VT",
+        "ST",
+        "US",
+        "UR",
+        "SR"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "V": [
+            172.61424731182797,
+            344.615
+        ],
+        "U": [
+            107.96236559139786,
+            227.56326530612242
+        ],
+        "T": [
+            172.92809139784947,
+            110.06357142857142
+        ],
+        "S": [
+            173.24193548387098,
+            227.56326530612242
+        ],
+        "R": [
+            247.63953488372096,
+            226.5
+        ]
+    },
+    "problem_choices": [
+        54.071,
+        113.889,
+        125.929,
+        130.751
+    ],
+    "choices_precise_value": [
+        54.071,
+        113.889,
+        125.929,
+        130.751
+    ],
+    "problem_answer": 113.889,
+    "total_time": 97.439329,
+    "solution_predicate": "Equals(1.9877299632, MeasureOf(Arc(T, R, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS \u22a5 ST, U on \u2299(R, radius_R), \u2220VRT, T on \u2299(R, radius_R), S on RU, ST, \u2220TRS, Arc(TRV), S on TV, RT, \u2220TRU, 5 = SU, \u2220URV, \u2220VRT, 6 = RS, \u2299(R, radius_R), RS\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : U on \u2299(R, radius_R)\nConclusions: radius_R = RU\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220VRT\nConclusions: \u2220VRT = 2 * pi - \u2220TRV\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : T on \u2299(R, radius_R)\nConclusions: radius_R = RT\n\nStep 5:\nTheorem: Line Segment Split\nPremises : S on RU\nConclusions: RU = RS + SU\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TRV)\nConclusions: \u2220TRV = Arc(TRV)\n\nStep 7:\nTheorem: Same Angle\nPremises : S on RU, \u2220TRU\nConclusions: \u2220TRS = \u2220TRU\n\nStep 8:\nTheorem: Same Angle\nPremises : S on RU, \u2220URV\nConclusions: \u2220SRV = \u2220URV\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220TRU, \u2220VRT, \u2220URV\nConclusions: 2 * pi = \u2220TRU + \u2220URV + \u2220VRT\n\nStep 10:\nTheorem: Circle Vertical Theorem\nPremises : RS \u22a5 ST, S on TV, \u2299(R, radius_R)\nConclusions: \u25b3RST \u2245 \u25b3RSV\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : RT, ST, RS\nConclusions: \u25b3RST\n\nStep 12:\nTheorem: Substitution\nPremises : radius_R = RU, RU = RS + SU, 6 = RS, 5 = SU\nConclusions: 5 + 6 = radius_R\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3RST \u2245 \u25b3RSV\nConclusions: \u2220SRV = \u2220TRS\n\nStep 14:\nTheorem: Cos Function Definition\nPremises : RS \u22a5 ST, \u25b3RST, \u2220TRS\nConclusions: RS / RT = cos(\u2220TRS)\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : radius_R = RT, 5 + 6 = radius_R\nConclusions: 11 = RT\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SRV = \u2220TRS, \u2220SRV = \u2220URV, \u2220TRS = \u2220TRU\nConclusions: \u2220TRU = \u2220URV\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220TRU + \u2220URV + \u2220VRT, \u2220VRT = 2 * pi - \u2220TRV, \u2220TRU = \u2220URV\nConclusions: \u2220TRV = 2 * \u2220URV\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRS = \u2220TRU, \u2220TRU = \u2220URV\nConclusions: \u2220TRS = \u2220URV\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRV = 2 * \u2220URV, \u2220TRV = Arc(TRV)\nConclusions: Arc(TRV) = 2 * \u2220URV\n\nStep 20:\nTheorem: Substitution\nPremises : 6 = RS, RS / RT = cos(\u2220TRS), \u2220TRS = \u2220URV, 11 = RT\nConclusions: 6 / 11 = cos(\u2220URV)\n\nStep 21:\nTheorem: Solve Univariate Equation\nPremises : 6 / 11 = cos(\u2220URV)\nConclusions: 0.99 = \u2220URV\n\nStep 22:\nTheorem: Evaluate\nPremises : 0.99 = \u2220URV\nConclusions: 1.99 = 2 * \u2220URV\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 1.99 = 2 * \u2220URV, Arc(TRV) = 2 * \u2220URV\nConclusions: 1.99 = Arc(TRV)\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, S)",
+        "Line(V, T)",
+        "Line(S, T)",
+        "Line(U, S)",
+        "Line(U, R)",
+        "Line(S, R)",
+        "Circle(R, radius_R)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(T, S)",
+        "Line(T, V)",
+        "Line(U, R)",
+        "Line(U, S)",
+        "Perpendicular(Line(T, V), Line(U, R))",
+        "PointLiesOnCircle(T, Circle(R, radius_R))",
+        "PointLiesOnCircle(U, Circle(R, radius_R))",
+        "PointLiesOnCircle(V, Circle(R, radius_R))",
+        "PointLiesOnLine(S, Line(T, V))",
+        "PointLiesOnLine(S, Line(U, R))",
+        "Circle(R, radius_R)",
+        "Equals(LengthOf(Line(R, S)), 6.0)",
+        "Equals(LengthOf(Line(U, S)), 5.0)"
+    ],
+    "correct": true
+}

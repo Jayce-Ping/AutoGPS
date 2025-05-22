@@ -1,0 +1,69 @@
+{
+    "problem_id": "8125",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 19)",
+        "Equals(LengthOf(Line(A, C)), 25)",
+        "Equals(LengthOf(Line(C, B)), 15)",
+        "Equals(MeasureOf(Angle(A, B, C)), x)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            28.167938931297712,
+            214.6642857142857
+        ],
+        "B": [
+            149.53501493528046,
+            17.47975155279503
+        ],
+        "C": [
+            346.58811815466316,
+            117.7744099378882
+        ]
+    },
+    "problem_choices": [
+        91.9,
+        93.9,
+        95.9,
+        97.9
+    ],
+    "choices_precise_value": [
+        91.9,
+        93.9,
+        95.9,
+        97.9
+    ],
+    "problem_answer": 91.9,
+    "total_time": 11.312137,
+    "solution_predicate": "Equals(93.9233027362, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * (x / 180) = \u2220ABC, 19 = AB, 15 = BC, 25 = AC, AB, AC, BC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220ABC\nConclusions: 3.14 * (x / 180) = \u2220ABC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC)\n\nStep 5:\nTheorem: Substitution\nPremises : 25 = AC, 19 = AB, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC), 15 = BC\nConclusions: (15 ** 2 + 19 ** 2) - 25 ** 2 = 15 * 19 * 2 * cos(\u2220ABC)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : (15 ** 2 + 19 ** 2) - 25 ** 2 = 15 * 19 * 2 * cos(\u2220ABC)\nConclusions: 1.64 = \u2220ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220ABC, 1.64 = \u2220ABC\nConclusions: 1.64 = 3.14 * (x / 180)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 1.64 = 3.14 * (x / 180)\nConclusions: 93.92 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, B)), 19.0)",
+        "Equals(LengthOf(Line(A, C)), 25.0)",
+        "Equals(LengthOf(Line(C, B)), 15.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,74 @@
+{
+    "problem_id": "2744",
+    "solved": true,
+    "problem_text": "Find m \\angle A B C if m \\angle C D A = 61.",
+    "logic_forms": [
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(MeasureOf(Angle(D, B, A)), x)",
+        "Equals(MeasureOf(Angle(B, A, D)), 69)",
+        "Equals(MeasureOf(Angle(D, B, C)), 55)",
+        "Equals(MeasureOf(Angle(C,D,A)),61)",
+        "Find(MeasureOf(Angle(A,B,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CD",
+        "BD",
+        "BC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            257.3863636363636,
+            224.7159090909091
+        ],
+        "A": [
+            154.54545454545453,
+            53.125
+        ],
+        "B": [
+            98.57954545454545,
+            122.72727272727273
+        ],
+        "C": [
+            99.14772727272727,
+            224.4318181818182
+        ]
+    },
+    "problem_choices": [
+        "55",
+        "69",
+        "85",
+        "140"
+    ],
+    "choices_precise_value": [
+        55.0,
+        69.0,
+        85.0,
+        140.0
+    ],
+    "problem_answer": 140.0,
+    "total_time": 15.532581,
+    "solution_predicate": "Equals(2.4434609528, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220BDC, BC, \u2220CDA, BC \u22a5 CD, \u2220ADB, CD, pi * (69 / 180) = \u2220BAD, pi * (61 / 180) = \u2220ADC, AD, AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220DCB\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220ADB, \u2220CDA, \u2220BDC\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : AD, BC, AB, CD\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\nConclusions: 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB, 3.14 = pi, pi * (69 / 180) = \u2220BAD, pi / 2 = \u2220DCB, pi * (61 / 180) = \u2220ADC\nConclusions: 2 * 3.14 = 3.14 / 2 + pi * (61 / 180) + pi * (69 / 180) + \u2220CBA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 / 2 + pi * (61 / 180) + pi * (69 / 180) + \u2220CBA, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 / 2 + pi * (61 / 180) + pi * (69 / 180) + \u2220CBA\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 / 2 + pi * (61 / 180) + pi * (69 / 180) + \u2220CBA, 2 * pi = 3.14 / 2 + pi * (61 / 180) + pi * (69 / 180) + \u2220CBA\nConclusions: 2.44 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Equals(MeasureOf(Angle(D, B, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(69.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(61.0, 180.0)))"
+    ],
+    "correct": true
+}

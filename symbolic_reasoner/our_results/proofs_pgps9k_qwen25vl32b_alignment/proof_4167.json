@@ -1,0 +1,67 @@
+{
+    "problem_id": "4167",
+    "solved": true,
+    "problem_text": "What is GH?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, I)), 14.1)",
+        "Equals(MeasureOf(Angle(G, H, I)), 80)",
+        "Equals(MeasureOf(Angle(G, I, H)), 46)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(H, I)",
+        "Find(LengthOf(Line(G,H)))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "GI",
+        "GH",
+        "HI"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            97.07142857142857,
+            45.98571428571429
+        ],
+        "H": [
+            47.29120879120879,
+            328.73571428571427
+        ],
+        "I": [
+            368.87142857142857,
+            329.10857142857145
+        ]
+    },
+    "problem_choices": [
+        10.299,
+        11.583,
+        15.858,
+        19.304
+    ],
+    "choices_precise_value": [
+        10.299,
+        11.583,
+        15.858,
+        19.304
+    ],
+    "problem_answer": 10.299,
+    "total_time": 10.387972,
+    "solution_predicate": "Equals(10.299158545, LengthOf(Line(G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, GH, 14.1 = GI, pi * (46 / 180) = \u2220GIH, pi * (80 / 180) = \u2220IHG, HI, GI\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.8 = pi * (46 / 180), 1.4 = pi * (80 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : GI, HI, GH\nConclusions: \u25b3GHI\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 0.8 = pi * (46 / 180), pi * (46 / 180) = \u2220GIH\nConclusions: 0.8 = \u2220GIH\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = \u2220IHG, 1.4 = pi * (80 / 180)\nConclusions: 1.4 = \u2220IHG\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3GHI\nConclusions: GH / sin(\u2220GIH) = GI / sin(\u2220IHG)\n\nStep 7:\nTheorem: Substitution\nPremises : GH / sin(\u2220GIH) = GI / sin(\u2220IHG), 0.8 = \u2220GIH, 1.4 = \u2220IHG, 14.1 = GI\nConclusions: 14.1 / sin(1.4) = GH / sin(0.8)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 14.1 / sin(1.4) = GH / sin(0.8)\nConclusions: 10.3 = GH\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, I)",
+        "Line(G, H)",
+        "Line(H, I)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(H, I)",
+        "Equals(LengthOf(Line(G, I)), 14.1)",
+        "Equals(MeasureOf(Angle(I, H, G)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, I, H)), Mul(pi, Div(46.0, 180.0)))"
+    ],
+    "correct": true
+}

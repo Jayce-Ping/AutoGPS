@@ -1,0 +1,117 @@
+{
+    "problem_id": "533",
+    "solved": true,
+    "problem_text": "The diagonals of rectangle MNPQ intersect at S. If MN = 4.1 meters, MS = 2.35 meters, and MQ = 2.3 meters, what is the length of NQ?",
+    "logic_forms": [
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, S)",
+        "Line(P, N)",
+        "Line(Q, M)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(S, N)",
+        "Line(S, P)",
+        "PointLiesOnLine(S, Line(M, P))",
+        "PointLiesOnLine(S, Line(Q, N))",
+        "Rectangle(M,N,P,Q)",
+        "IsDiagonalOf(Line(M,P),Rectangle(M,N,P,Q))",
+        "IsDiagonalOf(Line(N,Q),Rectangle(M,N,P,Q))",
+        "IntersectAt(Line(M,P),Line(N,Q),Point(S))",
+        "Equals(LengthOf(Line(M,N)),4.1)",
+        "Equals(LengthOf(Line(M,S)),2.35)",
+        "Equals(LengthOf(Line(M,Q)),2.3)",
+        "Find(LengthOf(Line(N,Q)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "S",
+        "M",
+        "N"
+    ],
+    "line_instances": [
+        "QS",
+        "QN",
+        "SN",
+        "MS",
+        "MP",
+        "SP",
+        "QP",
+        "MN",
+        "QM",
+        "PN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            61.22627314814815,
+            38.28928571428571
+        ],
+        "P": [
+            305.44179894179894,
+            38.542857142857144
+        ],
+        "S": [
+            182.91666666666666,
+            106.06530612244897
+        ],
+        "M": [
+            61.22627314814815,
+            174.7107142857143
+        ],
+        "N": [
+            305.44179894179894,
+            174.45714285714286
+        ]
+    },
+    "problem_choices": [
+        2.35,
+        4.1,
+        4.7,
+        8.2
+    ],
+    "choices_precise_value": [
+        2.35,
+        4.1,
+        4.7,
+        8.2
+    ],
+    "problem_answer": 4.7,
+    "total_time": 105.657125,
+    "solution_predicate": "Equals(4.7, LengthOf(Line(N, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: S on MP, S on NQ, 2.35 = MS, Rectangle(M, N, P, Q)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on MP\nConclusions: MP = MS + PS\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(M, N, P, Q)\nConclusions: Parallelogram(M, N, P, Q)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(M, N, P, Q)\nConclusions: MQ \u22a5 PQ, MN \u22a5 MQ\n\nStep 5:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(M, N, P, Q), S on NQ, S on MP\nConclusions: MS = PS\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(M, N, P, Q)\nConclusions: MN = PQ\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : MQ \u22a5 PQ\nConclusions: pi / 2 = \u2220MQP\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : MN \u22a5 MQ\nConclusions: pi / 2 = \u2220NMQ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : MS = PS, 2.35 = MS\nConclusions: 2.35 = PS\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MQP, pi / 2 = \u2220NMQ\nConclusions: \u2220MQP = \u2220NMQ\n\nStep 11:\nTheorem: Evaluate\nPremises : 2.35 = PS, 2.35 = MS\nConclusions: 4.7 = MS + PS\n\nStep 12:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : MN = PQ, \u2220MQP = \u2220NMQ\nConclusions: \u25b3MNQ \u2245 \u25b3QPM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : MP = MS + PS, 4.7 = MS + PS\nConclusions: 4.7 = MP\n\nStep 14:\nTheorem: Congruent Definition\nPremises : \u25b3MNQ \u2245 \u25b3QPM\nConclusions: MN = PQ, MP = NQ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : MP = NQ, 4.7 = MP\nConclusions: 4.7 = NQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, S)",
+        "Line(Q, N)",
+        "Line(S, N)",
+        "Line(M, S)",
+        "Line(M, P)",
+        "Line(S, P)",
+        "Line(Q, P)",
+        "Line(M, N)",
+        "Line(Q, M)",
+        "Line(P, N)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, S)",
+        "Line(P, N)",
+        "Line(Q, M)",
+        "Line(Q, N)",
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(S, N)",
+        "Line(S, P)",
+        "PointLiesOnLine(S, Line(M, P))",
+        "PointLiesOnLine(S, Line(Q, N))",
+        "Rectangle(M, N, P, Q)",
+        "Rectangle(M, N, P, Q)",
+        "Rectangle(M, N, P, Q)",
+        "IntersectAt(Line(M, P), Line(N, Q), S)",
+        "Equals(LengthOf(Line(M, N)), 4.1)",
+        "Equals(LengthOf(Line(M, S)), 2.35)",
+        "Equals(LengthOf(Line(M, Q)), 2.3)"
+    ],
+    "correct": true
+}

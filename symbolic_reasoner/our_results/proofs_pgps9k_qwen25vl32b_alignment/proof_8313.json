@@ -1,0 +1,65 @@
+{
+    "problem_id": "8313",
+    "solved": true,
+    "problem_text": "Find m \\angle K.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(J, L, K)), 82)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Find(MeasureOf(Angle(K)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JK",
+        "JL",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            53.652709359605915,
+            36.411428571428566
+        ],
+        "K": [
+            268.0610837438424,
+            36.00685714285714
+        ],
+        "L": [
+            160.95812807881774,
+            158.7942857142857
+        ]
+    },
+    "problem_choices": [
+        16.0,
+        49.0,
+        82.0,
+        98.0
+    ],
+    "choices_precise_value": [
+        16.0,
+        49.0,
+        82.0,
+        98.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 9.133532,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(J, K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LKJ, JK, KL, JL = KL, pi * (82 / 180) = \u2220KLJ, JL, 3.14 = pi\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220LKJ\nConclusions: \u2220LKJ = 2 * pi - \u2220JKL\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : JK, JL, KL\nConclusions: \u25b3JKL\n\nStep 4:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3JKL, JL = KL\nConclusions: \u2220JKL = \u2220LJK\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220LKJ = 2 * pi - \u2220JKL, \u2220JKL = \u2220LJK, 3.14 = pi\nConclusions: \u2220LKJ = 2 * 3.14 - \u2220LJK\n\nStep 7:\nTheorem: Substitution\nPremises : pi = \u2220JKL + \u2220KLJ + \u2220LJK, pi * (82 / 180) = \u2220KLJ, 3.14 = pi\nConclusions: 3.14 = pi * (82 / 180) + \u2220JKL + \u2220LJK\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : \u2220LKJ = 2 * 3.14 - \u2220LJK, 3.14 = pi * (82 / 180) + \u2220JKL + \u2220LJK, \u2220JKL = \u2220LJK, \u2220LKJ = 2 * pi - \u2220JKL\nConclusions: 0.86 = \u2220JKL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(K, L)))",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(82.0, 180.0)))"
+    ],
+    "correct": true
+}

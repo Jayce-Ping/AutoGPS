@@ -1,0 +1,99 @@
+{
+    "problem_id": "2791",
+    "solved": true,
+    "problem_text": "Find a, if F G = 18, G H = 42, and F K = 15.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(F, H))",
+        "PointLiesOnLine(K, Line(F, J))",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(J, K)), a)",
+        "Equals(LengthOf(Line(F, G)), 18)",
+        "Equals(LengthOf(Line(H, G)), 42)",
+        "Equals(LengthOf(Line(F, K)), 15)",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "G",
+        "J",
+        "K",
+        "H",
+        "F",
+        "A"
+    ],
+    "line_instances": [
+        "FG",
+        "FH",
+        "GH",
+        "FK",
+        "FJ",
+        "KJ"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "G": [
+            121.89189189189189,
+            91.24324324324324
+        ],
+        "J": [
+            257.56756756756755,
+            183.67567567567568
+        ],
+        "K": [
+            123.24324324324324,
+            136.64864864864865
+        ],
+        "H": [
+            282.97297297297297,
+            68.54054054054053
+        ],
+        "F": [
+            31.62162162162162,
+            104.48648648648648
+        ],
+        "A": [
+            206.95945945945948,
+            113.01351351351347
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "18",
+        "42",
+        "57"
+    ],
+    "choices_precise_value": [
+        15.0,
+        18.0,
+        42.0,
+        57.0
+    ],
+    "problem_answer": 57.0,
+    "total_time": 47.751076,
+    "solution_predicate": "Equals(57.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FJ, 18 = FG, G on FH, FH, H on \u2299(A, radius_0_0), K on FJ, G on \u2299(A, radius_0_0), FK, a = JK, J on \u2299(A, radius_0_0), K on \u2299(A, radius_0_0), 42 = GH, 15 = FK, \u2299(A, radius_0_0), FG\n\nStep 2:\nTheorem: Line Segment Split\nPremises : G on FH\nConclusions: FH = FG + GH\n\nStep 3:\nTheorem: Line Segment Split\nPremises : K on FJ\nConclusions: FJ = FK + JK\n\nStep 4:\nTheorem: Circle Secant Theorem\nPremises : \u2299(A, radius_0_0), FG, FJ, K on \u2299(A, radius_0_0), G on \u2299(A, radius_0_0), FK, FH, H on \u2299(A, radius_0_0), J on \u2299(A, radius_0_0)\nConclusions: FG * FH = FJ * FK\n\nStep 5:\nTheorem: Substitution\nPremises : 18 = FG, FH = FG + GH, 42 = GH\nConclusions: 18 + 42 = FH\n\nStep 6:\nTheorem: Substitution\nPremises : a = JK, 15 = FK, FJ = FK + JK\nConclusions: 15 + a = FJ\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 18 + 42 = FH\nConclusions: 60 = FH\n\nStep 8:\nTheorem: Substitution\nPremises : 18 = FG, 60 = FH, FG * FH = FJ * FK, 15 + a = FJ, 15 = FK\nConclusions: 18 * 60 = 15 * (15 + a)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : a = JK, 18 * 60 = 15 * (15 + a)\nConclusions: 57 = JK\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : a = JK, 57 = JK\nConclusions: 57 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(F, K)",
+        "Line(F, J)",
+        "Line(K, J)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(G, Line(F, H))",
+        "PointLiesOnLine(K, Line(F, J))",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(J, K)), a)",
+        "Equals(LengthOf(Line(F, G)), 18.0)",
+        "Equals(LengthOf(Line(H, G)), 42.0)",
+        "Equals(LengthOf(Line(F, K)), 15.0)"
+    ],
+    "correct": true
+}

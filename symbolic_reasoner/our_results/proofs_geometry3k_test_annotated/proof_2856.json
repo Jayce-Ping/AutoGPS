@@ -1,0 +1,81 @@
+{
+    "problem_id": "2856",
+    "solved": true,
+    "problem_text": "The segment is tangent to the circle. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnCircle(B, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, D)), 18)",
+        "Equals(LengthOf(Line(B, C)), 30)",
+        "Tangent(Line(B, C), Circle(A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "AD",
+        "AC",
+        "DC",
+        "BC"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "B": [
+            217.1806167400881,
+            87.89427312775331
+        ],
+        "D": [
+            307.9295154185022,
+            204.19383259911893
+        ],
+        "A": [
+            186.34361233480175,
+            204.63436123348018
+        ],
+        "C": [
+            477.09251101321587,
+            203.31277533039648
+        ]
+    },
+    "problem_choices": [
+        "16",
+        "18",
+        "30",
+        "34"
+    ],
+    "choices_precise_value": [
+        16.0,
+        18.0,
+        30.0,
+        34.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 13.916286,
+    "solution_predicate": "Equals(16.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = AB, AC, D on \u2299(A, radius_0_0), B on \u2299(A, radius_0_0), 18 = CD, BC, AB, Tangent(BC, \u2299(A, radius_0_0)), 30 = BC, 3.14 = pi, D on AC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : D on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(A, radius_0_0)\nConclusions: radius_0_0 = AB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Tangent Definition\nPremises : Tangent(BC, \u2299(A, radius_0_0)), B on \u2299(A, radius_0_0)\nConclusions: AB \u22a5 BC\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 7:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, radius_0_0 = AB\nConclusions: radius_0_0 = x\n\nStep 9:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC)\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 11:\nTheorem: Substitution\nPremises : AC = AD + CD, 18 = CD, radius_0_0 = AD\nConclusions: 18 + radius_0_0 = AC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ABC\n\nStep 13:\nTheorem: Substitution\nPremises : 1.57 = \u2220ABC, radius_0_0 = AB, 30 = BC, 18 + radius_0_0 = AC, (AB ** 2 + BC ** 2) - AC ** 2 = 2 * AB * BC * cos(\u2220ABC)\nConclusions: (30 ** 2 + radius_0_0 ** 2) - (18 + radius_0_0) ** 2 = 2 * 30 * cos(1.57) * radius_0_0\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : (30 ** 2 + radius_0_0 ** 2) - (18 + radius_0_0) ** 2 = 2 * 30 * cos(1.57) * radius_0_0\nConclusions: 16 = radius_0_0\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 16 = radius_0_0, radius_0_0 = x\nConclusions: 16 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnCircle(B, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_0_0))",
+        "Tangent(Line(B, C), Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, D)), 18.0)",
+        "Equals(LengthOf(Line(B, C)), 30.0)"
+    ],
+    "correct": true
+}

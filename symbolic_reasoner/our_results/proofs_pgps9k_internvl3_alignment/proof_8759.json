@@ -1,0 +1,84 @@
+{
+    "problem_id": "8759",
+    "solved": true,
+    "problem_text": "isosceles trapezoid TWYZ with m \\angle Z = m \\angle Y, m \\angle Z = 30x, m \\angle T = m \\angle W, and m \\angle T = 20x, find m \\angle T.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(W, T, Z)), MeasureOf(Angle(Y, W, T)))",
+        "Equals(MeasureOf(Angle(Z, Y, W)), MeasureOf(Angle(T, Z, Y)))",
+        "Line(T, W)",
+        "Line(T, Z)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Isosceles(Trapezoid(T,W,Y,Z))",
+        "Equals(MeasureOf(Angle(Z)),MeasureOf(Angle(Y)))",
+        "Equals(MeasureOf(Angle(Z)),30x)",
+        "Equals(MeasureOf(Angle(T)),MeasureOf(Angle(W)))",
+        "Equals(MeasureOf(Angle(T)),20x)",
+        "Find(MeasureOf(Angle(T)))"
+    ],
+    "point_instances": [
+        "T",
+        "Z",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "ZY",
+        "YW",
+        "ZT",
+        "TW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            36.202314049586775,
+            50.79549783549783
+        ],
+        "Z": [
+            71.83227272727272,
+            157.25892857142856
+        ],
+        "Y": [
+            248.42310160427806,
+            157.18319327731092
+        ],
+        "W": [
+            283.8681818181818,
+            50.98499999999999
+        ]
+    },
+    "problem_choices": [
+        62.0,
+        72.0,
+        108.0,
+        118.0
+    ],
+    "choices_precise_value": [
+        62.0,
+        72.0,
+        108.0,
+        118.0
+    ],
+    "problem_answer": 72.0,
+    "total_time": 9.773867,
+    "solution_predicate": "Equals(1.2566370614, MeasureOf(Angle(Z, T, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((30 * x) / 180) = \u2220YZT, Trapezoid(T, W, Y, Z), 3.14 = pi, pi * ((20 * x) / 180) = \u2220ZTW, \u2220WYZ = \u2220YZT, \u2220TWY = \u2220ZTW\n\nStep 2:\nTheorem: Interior Angle Sum Theorem for Trapezoid(T, W, Y, Z)\nPremises : Trapezoid(T, W, Y, Z)\nConclusions: 2 * pi = \u2220TWY + \u2220WYZ + \u2220YZT + \u2220ZTW\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((30 * x) / 180) = \u2220YZT\nConclusions: 3.14 * ((30 * x) / 180) = \u2220YZT\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((20 * x) / 180) = \u2220ZTW\nConclusions: 3.14 * ((20 * x) / 180) = \u2220ZTW\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYZ = \u2220YZT, pi * ((30 * x) / 180) = \u2220YZT\nConclusions: pi * ((30 * x) / 180) = \u2220WYZ\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220TWY + \u2220WYZ + \u2220YZT + \u2220ZTW\nConclusions: 2 * 3.14 = \u2220TWY + \u2220WYZ + \u2220YZT + \u2220ZTW\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((30 * x) / 180) = \u2220WYZ\nConclusions: 3.14 * ((30 * x) / 180) = \u2220WYZ\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((30 * x) / 180) = \u2220WYZ, 3.14 * ((30 * x) / 180) = \u2220YZT, 3.14 * ((20 * x) / 180) = \u2220ZTW, 2 * 3.14 = \u2220TWY + \u2220WYZ + \u2220YZT + \u2220ZTW, \u2220TWY = \u2220ZTW\nConclusions: 1.26 = \u2220ZTW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Y, W)",
+        "Line(Z, T)",
+        "Line(T, W)",
+        "Line(T, W)",
+        "Line(T, Z)",
+        "Line(W, Y)",
+        "Line(Z, Y)",
+        "Isosceles(Trapezoid(T, W, Y, Z))",
+        "Equals(MeasureOf(Angle(Z, T, W)), MeasureOf(Angle(T, W, Y)))",
+        "Equals(MeasureOf(Angle(W, Y, Z)), MeasureOf(Angle(Y, Z, T)))",
+        "Equals(MeasureOf(Angle(Y, Z, T)), MeasureOf(Angle(W, Y, Z)))",
+        "Equals(MeasureOf(Angle(Y, Z, T)), Mul(pi, Div(Mul(30.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(Z, T, W)), MeasureOf(Angle(T, W, Y)))",
+        "Equals(MeasureOf(Angle(Z, T, W)), Mul(pi, Div(Mul(20.0, x), 180.0)))"
+    ],
+    "correct": true
+}

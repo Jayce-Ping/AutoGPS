@@ -1,0 +1,80 @@
+{
+    "problem_id": "5773",
+    "solved": true,
+    "problem_text": "WXYZ is a parallelogram. Solve for YZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), b+6)",
+        "Equals(LengthOf(Line(Z, Y)), 5b-8)",
+        "Equals(MeasureOf(Angle(W, X, Y)), 14a)",
+        "Equals(MeasureOf(Angle(Z, W, X)), 6a)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Parallelogram(W,X,Y,Z)",
+        "Find(LengthOf(Line(Y,Z)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "W",
+        "Z"
+    ],
+    "line_instances": [
+        "WZ",
+        "WX",
+        "XY",
+        "ZY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            180.2926829268293,
+            52.95918367346939
+        ],
+        "Y": [
+            323.0243902439025,
+            105.0
+        ],
+        "W": [
+            57.23577235772358,
+            144.64285714285714
+        ],
+        "Z": [
+            200.3252032520325,
+            196.07142857142856
+        ]
+    },
+    "problem_choices": [
+        9.5,
+        19.0,
+        36.333,
+        143.667
+    ],
+    "choices_precise_value": [
+        9.5,
+        19.0,
+        36.333,
+        143.667
+    ],
+    "problem_answer": 9.5,
+    "total_time": 11.643981,
+    "solution_predicate": "Equals(9.5, LengthOf(Line(Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 * b - 8 = YZ, 6 + b = WX, Parallelogram(W, X, Y, Z)\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 6 + b = WX, WX = YZ, 5 * b - 8 = YZ\nConclusions: 6 + b = 5 * b - 8\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 + b = 5 * b - 8, 5 * b - 8 = YZ\nConclusions: 6 + b = YZ\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 6 + b = YZ, 6 + b = 5 * b - 8\nConclusions: 9.5 = YZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Parallelogram(W, X, Y, Z)",
+        "Equals(LengthOf(Line(X, W)), Add(b, 6.0))",
+        "Equals(LengthOf(Line(Z, Y)), Sub(Mul(5.0, b), 8.0))",
+        "Equals(MeasureOf(Angle(W, X, Y)), Mul(pi, Div(Mul(14.0, a), 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(Mul(6.0, a), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,69 @@
+{
+    "problem_id": "2968",
+    "solved": true,
+    "problem_text": "If c = 5, find a.",
+    "logic_forms": [
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(LengthOf(Line(A, B)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(MeasureOf(Angle(C, A, B)), 30)",
+        "Equals(MeasureOf(Angle(A, B, C)), 60)",
+        "Equals(c,5)",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "BA",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            68.73385012919897,
+            48.75710594315245
+        ],
+        "C": [
+            68.73385012919897,
+            161.93540051679585
+        ],
+        "A": [
+            264.59948320413434,
+            162.1937984496124
+        ]
+    },
+    "problem_choices": [
+        "2.5",
+        "5",
+        "7.5",
+        "10"
+    ],
+    "choices_precise_value": [
+        2.5,
+        5.0,
+        7.5,
+        10.0
+    ],
+    "problem_answer": 2.5,
+    "total_time": 16.713312,
+    "solution_predicate": "Equals(2.5, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: a = BC, \u2220CBA, \u2220BAC, BC, cos(\u2220CBA), AB, AC \u22a5 BC, pi * (30 / 180) = \u2220BAC, AC, c = AB, 3.14 = pi, 5 = c\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220CBA), AC \u22a5 BC\nConclusions: BC / AB = cos(\u2220CBA)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : c = AB, 5 = c\nConclusions: 5 = AB\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : \u25b3ABC, \u2220BAC, AC \u22a5 BC\nConclusions: BC / AB = sin(\u2220BAC)\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : \u2220CBA, \u25b3ABC, AC \u22a5 BC\nConclusions: BC / AB = cos(\u2220CBA)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220BAC, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220BAC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : BC / AB = cos(\u2220CBA), BC / AB = cos(\u2220CBA)\nConclusions: BC / AB = BC / AB\n\nStep 10:\nTheorem: Evaluate\nPremises : 0.52 = \u2220BAC\nConclusions: 0.5 = sin(\u2220BAC)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : BC / AB = BC / AB, BC / AB = sin(\u2220BAC)\nConclusions: BC / AB = sin(\u2220BAC)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : BC / AB = sin(\u2220BAC), 0.5 = sin(\u2220BAC)\nConclusions: 0.5 = BC / AB\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 5 = AB, 0.5 = BC / AB\nConclusions: 2.5 = BC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : a = BC, 2.5 = BC\nConclusions: 2.5 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(LengthOf(Line(A, B)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(c, 5.0)"
+    ],
+    "correct": true
+}

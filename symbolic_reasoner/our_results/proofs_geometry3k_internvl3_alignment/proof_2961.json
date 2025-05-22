@@ -1,0 +1,67 @@
+{
+    "problem_id": "2961",
+    "solved": true,
+    "problem_text": "Find J L.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(L, K)), 11x-8)",
+        "Equals(LengthOf(Line(J, L)), x+12)",
+        "Equals(LengthOf(Line(J, K)), 7x)",
+        "Find(LengthOf(Line(J,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "JL",
+        "KL",
+        "KJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            98.1060606060606,
+            260.3636363636364
+        ],
+        "L": [
+            367.8030303030303,
+            259.9848484848485
+        ],
+        "K": [
+            220.83333333333331,
+            79.3030303030303
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "11",
+        "12",
+        "14"
+    ],
+    "choices_precise_value": [
+        7.0,
+        11.0,
+        12.0,
+        14.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 6.032837,
+    "solution_predicate": "Equals(14.0, LengthOf(Line(J, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 11 * x - 8 = KL, JL = KL, 12 + x = JL\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 12 + x = JL, JL = KL\nConclusions: 12 + x = KL\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 11 * x - 8 = KL, 12 + x = KL\nConclusions: 12 + x = 11 * x - 8\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 12 + x = JL, 12 + x = 11 * x - 8\nConclusions: 14 = JL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(K, J)",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(J, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(L, K)), Sub(Mul(11.0, x), 8.0))",
+        "Equals(LengthOf(Line(J, L)), Add(x, 12.0))",
+        "Equals(LengthOf(Line(J, K)), Mul(7.0, x))"
+    ],
+    "correct": true
+}

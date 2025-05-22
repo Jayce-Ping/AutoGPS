@@ -1,0 +1,134 @@
+{
+    "problem_id": "951",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(H, N)), 2)",
+        "Equals(LengthOf(Line(K, H)), 5)",
+        "Equals(LengthOf(Line(K, L)), x)",
+        "Equals(LengthOf(Line(M, L)), 4)",
+        "Find(x)",
+        "Line(H, M)",
+        "Line(H, N)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "PointLiesOnCircle(J, Circle(O))",
+        "PointLiesOnCircle(L, Circle(O))",
+        "PointLiesOnCircle(N, Circle(O))",
+        "PointLiesOnLine(J, Line(K, H))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(H, M))",
+        "Tangent(Line(H, N), Circle(O))",
+        "Tangent(Line(J, H), Circle(O))",
+        "Tangent(Line(K, L), Circle(O))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "H",
+        "N",
+        "M",
+        "L",
+        "O"
+    ],
+    "line_instances": [
+        "HJ",
+        "HK",
+        "JK",
+        "KL",
+        "KM",
+        "LM",
+        "MN",
+        "MH",
+        "NH"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "K": [
+            61.12500000000001,
+            43.1575
+        ],
+        "J": [
+            61.78783592644979,
+            157.67142857142858
+        ],
+        "H": [
+            61.32673267326733,
+            228.8257142857143
+        ],
+        "N": [
+            137.1782178217822,
+            212.41647058823528
+        ],
+        "M": [
+            274.01667535174573,
+            183.75849624060152
+        ],
+        "L": [
+            154.5272277227723,
+            104.20464285714286
+        ],
+        "O": [
+            122.98820058997049,
+            154.2772861356932
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 3.0,
+    "total_time": 76.550449,
+    "solution_predicate": "Equals(3.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = HN, N on HM, KM, J on \u2299(O, radius_O), x = KL, HM, J on HK, HK, N on \u2299(O, radius_O), \u2299(O, radius_O), L on KM, 5 = HK, L on \u2299(O, radius_O)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : J on HK\nConclusions: HK = HJ + JK\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : KM, HK, HM\nConclusions: \u25b3HKM\n\nStep 4:\nTheorem: Incenter definition\nPremises : N on \u2299(O, radius_O), \u2299(O, radius_O), J on \u2299(O, radius_O), N on HM, L on \u2299(O, radius_O), J on HK, \u25b3HKM, L on KM\nConclusions: IsIncenterOf(O, \u25b3HKM)\n\nStep 5:\nTheorem: Properties of Incenter O of Triangle\nPremises : IsIncenterOf(O, \u25b3HKM)\nConclusions: JK = KL, HJ = HN\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : x = KL, JK = KL\nConclusions: x = JK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : HJ = HN, 2 = HN\nConclusions: 2 = HJ\n\nStep 8:\nTheorem: Substitution\nPremises : 2 = HJ, HK = HJ + JK, x = JK, 5 = HK\nConclusions: 5 = 2 + x\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : x = KL, 5 = 2 + x\nConclusions: 3 = KL\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : x = KL, 3 = KL\nConclusions: 3 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, J)",
+        "Line(H, K)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(M, N)",
+        "Line(M, H)",
+        "Line(N, H)",
+        "Circle(O, radius_O)",
+        "Line(H, M)",
+        "Line(H, N)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "PointLiesOnCircle(J, Circle(O, radius_O))",
+        "PointLiesOnCircle(L, Circle(O, radius_O))",
+        "PointLiesOnCircle(N, Circle(O, radius_O))",
+        "PointLiesOnLine(J, Line(K, H))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(H, M))",
+        "Tangent(Line(H, N), Circle(O, radius_O))",
+        "Tangent(Line(J, H), Circle(O, radius_O))",
+        "Tangent(Line(K, L), Circle(O, radius_O))",
+        "Equals(LengthOf(Line(H, N)), 2.0)",
+        "Equals(LengthOf(Line(K, H)), 5.0)",
+        "Equals(LengthOf(Line(K, L)), x)",
+        "Equals(LengthOf(Line(M, L)), 4.0)"
+    ],
+    "correct": true
+}

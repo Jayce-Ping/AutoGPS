@@ -1,0 +1,68 @@
+{
+    "problem_id": "2544",
+    "solved": true,
+    "problem_text": "Use parallelogram J K L M to find m \\angle K L M.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 6)",
+        "Equals(MeasureOf(Angle(J, K, L)), 109)",
+        "Parallelogram(J,K,L,M)",
+        "Find(MeasureOf(Angle(K,L,M)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "ML",
+        "JM",
+        "JK",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            57.23905723905724,
+            41.158249158249156
+        ],
+        "K": [
+            337.7104377104377,
+            68.76767676767676
+        ],
+        "L": [
+            410.77441077441074,
+            252.9427609427609
+        ],
+        "M": [
+            132.3232323232323,
+            226.00673400673398
+        ]
+    },
+    "problem_choices": [
+        "71",
+        "79",
+        "81",
+        "89"
+    ],
+    "choices_precise_value": [
+        71.0,
+        79.0,
+        81.0,
+        89.0
+    ],
+    "problem_answer": 71.0,
+    "total_time": 5.391372,
+    "solution_predicate": "Equals(1.2391837689, MeasureOf(Angle(K, L, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(J, K, L, M), 3.14 = pi, pi * (109 / 180) = \u2220JKL\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220JKL = \u2220LMJ, \u2220KLM = \u2220MJK\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKL = \u2220LMJ, pi * (109 / 180) = \u2220JKL\nConclusions: pi * (109 / 180) = \u2220LMJ\n\nStep 5:\nTheorem: Consecutive Interior Angle Theorem\nPremises : JK || ML\nConclusions: pi = \u2220LMJ + \u2220MJK\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220LMJ + \u2220MJK, 3.14 = pi, pi * (109 / 180) = \u2220LMJ\nConclusions: 3.14 = 3.14 * (109 / 180) + \u2220MJK\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (109 / 180) + \u2220MJK\nConclusions: 1.24 = \u2220MJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 1.24 = \u2220MJK, \u2220KLM = \u2220MJK\nConclusions: 1.24 = \u2220KLM\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, L)",
+        "Line(J, M)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Parallelogram(J, K, L, M)",
+        "Equals(LengthOf(Line(M, L)), 6.0)",
+        "Equals(MeasureOf(Angle(J, K, L)), Mul(pi, Div(109.0, 180.0)))"
+    ],
+    "correct": true
+}

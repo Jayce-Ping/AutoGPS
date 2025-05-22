@@ -1,0 +1,100 @@
+{
+    "problem_id": "2952",
+    "solved": true,
+    "problem_text": "For trapezoid Q R S T, A and B are midpoints of the legs. Find m \\angle S.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(T, Q))",
+        "PointLiesOnLine(B, Line(S, R))",
+        "Equals(LengthOf(Line(R, Q)), 20)",
+        "Equals(LengthOf(Line(T, S)), 12)",
+        "Equals(MeasureOf(Angle(A, T, S)), 120)",
+        "Equals(MeasureOf(Angle(R, B, A)), 45)",
+        "Trapezoid(Q,R,S,T)",
+        "IsMidpointOf(Point(A),LegOf(Trapezoid(Q,R,S,T)))",
+        "IsMidpointOf(Point(B),LegOf(Trapezoid(Q,R,S,T)))",
+        "Find(MeasureOf(Angle(S)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "T",
+        "S",
+        "Q",
+        "R"
+    ],
+    "line_instances": [
+        "TA",
+        "TQ",
+        "AQ",
+        "TS",
+        "SB",
+        "SR",
+        "BR",
+        "QR",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            268.7165775401069,
+            84.20320855614972
+        ],
+        "A": [
+            50.0,
+            84.20320855614972
+        ],
+        "T": [
+            70.05347593582887,
+            49.71122994652406
+        ],
+        "S": [
+            233.15508021390372,
+            49.44385026737967
+        ],
+        "Q": [
+            29.946524064171122,
+            118.6951871657754
+        ],
+        "R": [
+            302.40641711229944,
+            119.22994652406416
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "60",
+        "120",
+        "135"
+    ],
+    "choices_precise_value": [
+        45.0,
+        60.0,
+        120.0,
+        135.0
+    ],
+    "problem_answer": 135.0,
+    "total_time": 28.672023,
+    "solution_predicate": "Equals(0.7853981634, MeasureOf(Angle(T, S, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on RS, pi * (45 / 180) = \u2220ABR, A on QT, IsMidpointOf(B, RS), 3.14 = pi, \u2220ABR, IsMidpointOf(A, QT), \u2220TSR, Trapezoid(Q, R, S, T)\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(B, RS)\nConclusions: BR = BS\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABR\nConclusions: \u2220ABR = 2 * pi - \u2220RBA\n\nStep 4:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(A, QT)\nConclusions: AQ = AT\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220TSR\nConclusions: \u2220TSR = 2 * pi - \u2220RST\n\nStep 6:\nTheorem: Median of Trapezoid\nPremises : AQ = AT, Trapezoid(Q, R, S, T), BR = BS\nConclusions: IsMedianOf(AB, Trapezoid(Q, R, S, T))\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220TSR = 2 * pi - \u2220RST, 3.14 = pi\nConclusions: \u2220TSR = 2 * 3.14 - \u2220RST\n\nStep 8:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(AB, Trapezoid(Q, R, S, T)), B on RS, A on QT\nConclusions: AB || TS\n\nStep 9:\nTheorem: Corresponding Angle Theorem\nPremises : AB || TS\nConclusions: \u2220RBA = \u2220RST\n\nStep 10:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220ABR, \u2220RBA = \u2220RST, \u2220ABR = 2 * pi - \u2220RBA, 3.14 = pi\nConclusions: pi * (45 / 180) = 2 * 3.14 - \u2220RST\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TSR = 2 * 3.14 - \u2220RST, pi * (45 / 180) = 2 * 3.14 - \u2220RST\nConclusions: pi * (45 / 180) = \u2220TSR\n\nStep 12:\nTheorem: Evaluate\nPremises : pi * (45 / 180) = \u2220TSR\nConclusions: 0.79 = \u2220TSR\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, A)",
+        "Line(T, Q)",
+        "Line(A, Q)",
+        "Line(T, S)",
+        "Line(S, B)",
+        "Line(S, R)",
+        "Line(B, R)",
+        "Line(Q, R)",
+        "Line(A, B)",
+        "PointLiesOnLine(A, Line(T, Q))",
+        "PointLiesOnLine(B, Line(S, R))",
+        "Trapezoid(Q, R, S, T)",
+        "IsMidpointOf(A, Line(T, Q))",
+        "IsMidpointOf(B, Line(S, R))",
+        "Equals(LengthOf(Line(R, Q)), 20.0)",
+        "Equals(LengthOf(Line(T, S)), 12.0)",
+        "Equals(MeasureOf(Angle(A, T, S)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, R)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": false
+}

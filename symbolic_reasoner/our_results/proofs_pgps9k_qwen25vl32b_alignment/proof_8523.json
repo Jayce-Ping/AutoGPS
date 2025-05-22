@@ -1,0 +1,94 @@
+{
+    "problem_id": "8523",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(D, B)), x)",
+        "Equals(LengthOf(Line(D, C)), z)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(B, C))",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AD",
+        "BD",
+        "CD",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            53.1764705882353,
+            40.931428571428576
+        ],
+        "B": [
+            83.29411764705883,
+            51.51714285714286
+        ],
+        "C": [
+            53.117647058823536,
+            136.64392857142857
+        ],
+        "D": [
+            323.87543252595157,
+            136.74252100840334
+        ]
+    },
+    "problem_choices": [
+        8.0,
+        11.314,
+        12.649,
+        36.0
+    ],
+    "choices_precise_value": [
+        8.0,
+        11.314,
+        12.649,
+        36.0
+    ],
+    "problem_answer": 11.314,
+    "total_time": 49.371375,
+    "solution_predicate": "Equals(11.313708499, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = AB, BC, AB \u22a5 BC, 12 = AC, AC, y = BC, AB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AB \u22a5 BC\nConclusions: BC = SqrtOf(AC ** 2 - AB ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 4 = AB, y = BC, BC = SqrtOf(AC ** 2 - AB ** 2), 12 = AC\nConclusions: SqrtOf(12 ** 2 - 4 ** 2) = y\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 - 4 ** 2) = y\nConclusions: 11.31 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(B, C))",
+        "Perpendicular(Line(C, D), Line(A, C))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Equals(LengthOf(Line(A, B)), 4.0)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(D, B)), x)",
+        "Equals(LengthOf(Line(D, C)), z)"
+    ],
+    "correct": true
+}

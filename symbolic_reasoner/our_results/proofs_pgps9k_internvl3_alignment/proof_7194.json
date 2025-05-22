@@ -1,0 +1,83 @@
+{
+    "problem_id": "7194",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region. Assume that the triangle is equilateral.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, B)), 4)",
+        "Equilateral(Triangle(A, B, C))",
+        "Find(Sub(AreaOf(Circle(D)), AreaOf(Triangle(A, B, C))))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "DB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            49.58748778103617,
+            83.24987012987013
+        ],
+        "B": [
+            231.22580645161293,
+            82.52235294117648
+        ],
+        "C": [
+            139.65591397849462,
+            241.0463492063492
+        ],
+        "D": [
+            140.46666666666667,
+            134.66666666666666
+        ]
+    },
+    "problem_choices": [
+        20.8,
+        29.5,
+        50.3,
+        71.1
+    ],
+    "choices_precise_value": [
+        20.8,
+        29.5,
+        50.3,
+        71.1
+    ],
+    "problem_answer": 50.3,
+    "total_time": 130.259209,
+    "solution_predicate": "Equals(29.4808727667, Sub(AreaOf(Circle(D, radius_D)), AreaOf(Triangle(A, B, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BDA, 3.14 = pi, BD, AD, Area(\u2299(D, radius_D)), AB, C on \u2299(D, radius_D), \u2220ADC, A on \u2299(D, radius_D), Equilateral(\u25b3ABC), \u2220CDB, 4 = BD, B on \u2299(D, radius_D), \u25b3ABC\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(D, radius_D))\nConclusions: pi * radius_D ** 2 = Area(\u2299(D, radius_D))\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BD, AD, AB\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_D)\nConclusions: radius_D = AD\n\nStep 6:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3ABC)\nConclusions: AC = BC, AB = AC, AB = BC\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220CDB, \u2220ADC, \u2220BDA\nConclusions: 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 9:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 10:\nTheorem: Law of Cosines\nPremises : \u25b3ABD\nConclusions: (AD ** 2 + BD ** 2) - AB ** 2 = 2 * AD * BD * cos(\u2220BDA)\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB\nConclusions: 2 * 3.14 = \u2220ADC + \u2220BDA + \u2220CDB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BD, radius_D = BD\nConclusions: 4 = radius_D\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 4 = radius_D, radius_D = CD\nConclusions: 4 = CD\n\nStep 14:\nTheorem: Substitution\nPremises : 4 = radius_D, pi * radius_D ** 2 = Area(\u2299(D, radius_D)), 3.14 = pi\nConclusions: 3.14 * 4 ** 2 = Area(\u2299(D, radius_D))\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 4 = radius_D, radius_D = AD\nConclusions: 4 = AD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BD, 4 = CD\nConclusions: BD = CD\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : 3.14 * 4 ** 2 = Area(\u2299(D, radius_D))\nConclusions: 50.27 = Area(\u2299(D, radius_D))\n\nStep 18:\nTheorem: Substitution\nPremises : 4 = BD, 4 = AD, AB = BC, (AD ** 2 + BD ** 2) - AB ** 2 = 2 * AD * BD * cos(\u2220BDA)\nConclusions: (4 ** 2 + 4 ** 2) - BC ** 2 = 2 * 4 * 4 * cos(\u2220BDA)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AD, 4 = CD\nConclusions: AD = CD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 4 = BD, 4 = AD\nConclusions: AD = BD\n\nStep 21:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = AC, AD = CD, AD = BD\nConclusions: \u25b3ABD \u2245 \u25b3CAD\n\nStep 22:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AD = BD, AB = BC, BD = CD\nConclusions: \u25b3ABD \u2245 \u25b3BCD\n\nStep 23:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CAD\nConclusions: \u2220ADC = \u2220BDA, AB = AC, AD = BD\n\nStep 24:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3BCD\nConclusions: \u2220BDA = \u2220CDB, AB = BC, AD = BD\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : \u2220ADC = \u2220BDA, 2 * 3.14 = \u2220ADC + \u2220BDA + \u2220CDB, \u2220BDA = \u2220CDB\nConclusions: 2.09 = \u2220BDA\n\nStep 26:\nTheorem: Evaluate\nPremises : 2.09 = \u2220BDA\nConclusions: -16 = 2 * 4 * 4 * cos(\u2220BDA)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : (4 ** 2 + 4 ** 2) - BC ** 2 = 2 * 4 * 4 * cos(\u2220BDA), -16 = 2 * 4 * 4 * cos(\u2220BDA)\nConclusions: -16 = (4 ** 2 + 4 ** 2) - BC ** 2\n\nStep 28:\nTheorem: Solve Univariate Equation\nPremises : -16 = (4 ** 2 + 4 ** 2) - BC ** 2\nConclusions: 6.93 = BC\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 6.93 = BC, AB = BC\nConclusions: 6.93 = AB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 6.93 = BC\nConclusions: 6.93 = AC\n\nStep 31:\nTheorem: Evaluate\nPremises : 6.93 = BC, 6.93 = AB, 6.93 = AC\nConclusions: 20.78 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 20.78 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\nConclusions: 20.78 = Area(\u25b3ABC)\n\nStep 33:\nTheorem: Evaluate\nPremises : 50.27 = Area(\u2299(D, radius_D)), 20.78 = Area(\u25b3ABC)\nConclusions: 29.48 = Area(\u2299(D, radius_D)) - Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Circle(D, radius_D)",
+        "Equilateral(Triangle(A, B, C))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "Equals(LengthOf(Line(D, B)), 4.0)"
+    ],
+    "correct": false
+}

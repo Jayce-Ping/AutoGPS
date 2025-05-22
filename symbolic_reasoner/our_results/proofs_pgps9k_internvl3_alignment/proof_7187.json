@@ -1,0 +1,113 @@
+{
+    "problem_id": "7187",
+    "solved": true,
+    "problem_text": "In kite PQRS, m \\angle SRT = 24, and m \\angle TSP = 53. Find m \\angle QPS.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, Q)), LengthOf(Line(P, S)))",
+        "Equals(LengthOf(Line(R, Q)), LengthOf(Line(R, S)))",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Kite(P,Q,R,S)",
+        "Equals(MeasureOf(Angle(S,R,T)),24)",
+        "Equals(MeasureOf(Angle(T,S,P)),53)",
+        "Find(MeasureOf(Angle(Q,P,S)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "PT",
+        "PR",
+        "TR",
+        "SR",
+        "QR",
+        "QT",
+        "QS",
+        "TS",
+        "PS",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            50.136125654450254,
+            41.11836734693878
+        ],
+        "Q": [
+            167.717277486911,
+            41.714285714285715
+        ],
+        "T": [
+            124.2958115183246,
+            98.02857142857144
+        ],
+        "S": [
+            81.47120418848166,
+            153.7469387755102
+        ],
+        "R": [
+            250.0837696335078,
+            193.9714285714286
+        ]
+    },
+    "problem_choices": [
+        37.0,
+        66.0,
+        74.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        37.0,
+        66.0,
+        74.0,
+        90.0
+    ],
+    "problem_answer": 74.0,
+    "total_time": 131.3536,
+    "solution_predicate": "Equals(4.2062434973, MeasureOf(Angle(S, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QR, PS, \u2220PRS, QR = RS, Kite(P, Q, R, S), \u2220PRQ, PT, \u2220QRP, PQ, ST, RT, \u2220QPR, QS, PQ = PS, \u2220PRQ, pi * (24 / 180) = \u2220TRS, RS, 3.14 = pi, T on PR, PR, \u2220RPS, \u2220SPR, \u2220TSP, \u2220SPR, pi * (53 / 180) = \u2220TSP, \u2220RST\n\nStep 2:\nTheorem: Kite angle equality\nPremises : Kite(P, Q, R, S)\nConclusions: \u2220QRS = \u2220SPQ\n\nStep 3:\nTheorem: Kite side equality\nPremises : Kite(P, Q, R, S)\nConclusions: PR = RS, PQ = QR\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Kite(P, Q, R, S)\nPremises : Kite(P, Q, R, S)\nConclusions: 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 5:\nTheorem: Quadrilateral to is components\nPremises : Kite(P, Q, R, S)\nConclusions: \u2220PSR, QR, PQ, PS, RS\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : PS, ST, PT\nConclusions: \u25b3PST\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : PQ, QS, PS\nConclusions: \u25b3PQS\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220PRQ\nConclusions: \u2220PRQ = 2 * pi - \u2220QRP\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : RT, RS, ST\nConclusions: \u25b3RST\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : QS, QR, RS\nConclusions: \u25b3QRS\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (24 / 180) = \u2220TRS\nConclusions: 0.42 = \u2220TRS\n\nStep 12:\nTheorem: Same Angle\nPremises : T on PR, \u2220QPR\nConclusions: \u2220QPR = \u2220QPT\n\nStep 13:\nTheorem: Same Angle\nPremises : T on PR, \u2220PRQ\nConclusions: \u2220PRQ = \u2220TRQ\n\nStep 14:\nTheorem: Same Angle\nPremises : T on PR, \u2220PRS\nConclusions: \u2220PRS = \u2220TRS\n\nStep 15:\nTheorem: Same Angle\nPremises : T on PR, \u2220QRP\nConclusions: \u2220QRP = \u2220QRT\n\nStep 16:\nTheorem: Definition of Triangle\nPremises : PR, PS, RS\nConclusions: \u25b3PRS\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : PQ, PR, QR\nConclusions: \u25b3PQR\n\nStep 18:\nTheorem: Same Angle\nPremises : T on PR, \u2220RPS\nConclusions: \u2220RPS = \u2220TPS\n\nStep 19:\nTheorem: Same Angle\nPremises : T on PR, \u2220SPR\nConclusions: \u2220SPR = \u2220SPT\n\nStep 20:\nTheorem: Reverse Angle Definition\nPremises : \u2220SPR\nConclusions: \u2220SPR = 2 * pi - \u2220RPS\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : PR = RS, QR = RS\nConclusions: PR = QR\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : PR = RS, QR = RS, PQ = QR\nConclusions: PQ = PR\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : PQ = PS, PQ = QR\nConclusions: PS = QR\n\nStep 24:\nTheorem: Circumference splited\nPremises : \u2220RST, \u2220PSR, \u2220TSP\nConclusions: 2 * pi = \u2220PSR + \u2220RST + \u2220TSP\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Triangle(T, S, P)\nPremises : \u25b3PST\nConclusions: pi = \u2220PTS + \u2220SPT + \u2220TSP\n\nStep 26:\nTheorem: Issoceles Triangle Theorem\nPremises : PQ = PS, \u25b3PQS\nConclusions: \u2220QPT = \u2220TPS, PT \u22a5 ST\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Triangle(R, S, T)\nPremises : \u25b3RST\nConclusions: pi = \u2220RST + \u2220STR + \u2220TRS\n\nStep 28:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3QRS, QR = RS\nConclusions: RT \u22a5 ST, \u2220QRT = \u2220TRS\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRQ = \u2220TRQ, \u2220PRQ = 2 * pi - \u2220QRP\nConclusions: \u2220TRQ = 2 * pi - \u2220QRP\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRS = \u2220TRS, pi * (24 / 180) = \u2220TRS\nConclusions: pi * (24 / 180) = \u2220PRS\n\nStep 31:\nTheorem: Issoceles Triangle Property\nPremises : PR = RS, \u25b3PRS\nConclusions: \u2220PSR = \u2220RPS\n\nStep 32:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, R)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 33:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3PQR, PQ = QR\nConclusions: \u2220PRQ = \u2220QPR\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SPR = \u2220SPT, \u2220SPR = 2 * pi - \u2220RPS\nConclusions: \u2220SPT = 2 * pi - \u2220RPS\n\nStep 35:\nTheorem: Equilateral Triangle Property\nPremises : PQ = PR, PR = QR, \u25b3PQR, PQ = QR\nConclusions: PQ = PR, PR = QR, pi / 3 = \u2220RPQ, PQ = QR, pi / 3 = \u2220PQR\n\nStep 36:\nTheorem: Issoceles Triangle Property\nPremises : PQ = PR, \u25b3PQR\nConclusions: \u2220PQR = \u2220QRP\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : PR = RS, PS = QR, QR = RS\nConclusions: PR = PS\n\nStep 38:\nTheorem: Substitution\nPremises : pi * (53 / 180) = \u2220TSP, 2 * pi = \u2220PSR + \u2220RST + \u2220TSP, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (53 / 180) + \u2220PSR + \u2220RST\n\nStep 39:\nTheorem: Perpendicular to Right Angle\nPremises : PT \u22a5 ST\nConclusions: pi / 2 = \u2220PTS\n\nStep 40:\nTheorem: Perpendicular to Right Angle\nPremises : RT \u22a5 ST\nConclusions: pi / 2 = \u2220STR\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220PQR + \u2220QRP + \u2220RPQ\nConclusions: 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRQ = \u2220TRQ, \u2220QPR = \u2220QPT, \u2220PRQ = \u2220QPR\nConclusions: \u2220QPT = \u2220TRQ\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QRP = \u2220QRT, \u2220PQR = \u2220QRP\nConclusions: \u2220PQR = \u2220QRT\n\nStep 44:\nTheorem: Issoceles Triangle Property\nPremises : PR = PS, \u25b3PRS\nConclusions: \u2220PRS = \u2220RSP\n\nStep 45:\nTheorem: Substitution\nPremises : pi * (53 / 180) = \u2220TSP, pi / 2 = \u2220PTS, pi = \u2220PTS + \u2220SPT + \u2220TSP, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (53 / 180) + \u2220SPT\n\nStep 46:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220RST + \u2220STR + \u2220TRS, pi / 2 = \u2220STR, pi * (24 / 180) = \u2220TRS\nConclusions: 3.14 = pi / 2 + pi * (24 / 180) + \u2220RST\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQR = \u2220QRT, pi / 3 = \u2220PQR\nConclusions: pi / 3 = \u2220QRT\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : \u2220SPT = 2 * pi - \u2220RPS, 3.14 = pi / 2 + pi * (53 / 180) + \u2220SPT, 3.14 = pi\nConclusions: 5.64 = \u2220RPS\n\nStep 49:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + pi * (24 / 180) + \u2220RST, 2 * 3.14 = pi * (53 / 180) + \u2220PSR + \u2220RST, 3.14 = pi\nConclusions: 4.21 = \u2220PSR\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = \u2220TRS, pi / 3 = \u2220QRT, \u2220QRT = \u2220TRS\nConclusions: 0.42 = pi / 3\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : 5.64 = \u2220RPS, \u2220RPS = \u2220TPS\nConclusions: 5.64 = \u2220TPS\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : 5.64 = \u2220RPS, 4.21 = \u2220PSR, \u2220PSR = \u2220RPS\nConclusions: 4.21 = 5.64\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = pi / 3, pi / 3 = \u2220PQR\nConclusions: 0.42 = \u2220PQR\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = pi / 3, pi / 3 = \u2220RPQ\nConclusions: 0.42 = \u2220RPQ\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QPT = \u2220TPS, \u2220QPT = \u2220TRQ, 5.64 = \u2220TPS\nConclusions: 5.64 = \u2220TRQ\n\nStep 56:\nTheorem: Transtivity of Equivalence\nPremises : 5.64 = \u2220TRQ, 4.21 = 5.64\nConclusions: 4.21 = \u2220TRQ\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : 4.21 = \u2220TRQ, \u2220PRQ = \u2220TRQ\nConclusions: 4.21 = \u2220PRQ\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : 4.21 = \u2220TRQ, \u2220QPT = \u2220TRQ\nConclusions: 4.21 = \u2220QPT\n\nStep 59:\nTheorem: Solve linear equation system\nPremises : 4.21 = \u2220QPT, 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, \u2220TRQ = 2 * pi - \u2220QRP, 0.42 = \u2220PQR, \u2220PRS = \u2220RSP, 3.14 = \u2220PQR + \u2220QRP + \u2220RPQ, 5.64 = \u2220TRQ, \u2220QRS = \u2220SPQ, pi * (24 / 180) = \u2220PRS, 0.42 = \u2220RPQ, \u2220PRQ = \u2220TRQ, 4.21 = \u2220PRQ\nConclusions: \u2220QPT = \u2220SPQ\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QPT = \u2220SPQ, 4.21 = \u2220QPT\nConclusions: 4.21 = \u2220SPQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Line(S, R)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Line(P, S)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Kite(P, Q, R, S)",
+        "Equals(LengthOf(Line(P, Q)), LengthOf(Line(P, S)))",
+        "Equals(LengthOf(Line(R, Q)), LengthOf(Line(R, S)))",
+        "Equals(MeasureOf(Angle(T, R, S)), Mul(pi, Div(24.0, 180.0)))",
+        "Equals(MeasureOf(Angle(T, S, P)), Mul(pi, Div(53.0, 180.0)))"
+    ],
+    "correct": false
+}

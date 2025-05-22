@@ -1,0 +1,93 @@
+{
+    "problem_id": "2601",
+    "solved": true,
+    "problem_text": "Find A D.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, E), Line(C, D))",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(B, E)), x)",
+        "Equals(LengthOf(Line(D, E)), 3)",
+        "Equals(LengthOf(Line(C, D)), 3.5)",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "AD",
+        "ED",
+        "AB",
+        "AC",
+        "BC",
+        "BE",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            332.14606741573033,
+            205.97752808988764
+        ],
+        "D": [
+            668.1011235955056,
+            282.9438202247191
+        ],
+        "A": [
+            136.64044943820224,
+            322.2696629213483
+        ],
+        "C": [
+            450.685393258427,
+            135.75280898876403
+        ],
+        "E": [
+            465.85393258426967,
+            298.6741573033708
+        ]
+    },
+    "problem_choices": [
+        "5.5",
+        "6",
+        "7.5",
+        "9"
+    ],
+    "choices_precise_value": [
+        5.5,
+        6.0,
+        7.5,
+        9.0
+    ],
+    "problem_answer": 7.5,
+    "total_time": 37.348266,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BE || CD, 5 = AC, \u2220CAD, y = AE, \u2220CAE, E on AD, \u2220BAD, B on AC, 3 = AB, 3 = DE\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 3:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220BAD, E on AD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 5:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 6:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAE\nConclusions: \u2220BAE = \u2220CAE\n\nStep 7:\nTheorem: Substitution\nPremises : 3 = DE, y = AE, AD = AE + DE\nConclusions: 3 + y = AD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = \u2220CAE, \u2220BAD = \u2220BAE\nConclusions: \u2220BAD = \u2220CAE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAE, \u2220BAD = \u2220CAD\nConclusions: \u2220CAD = \u2220CAE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CAE, \u2220BAD = \u2220CAE, \u2220BAD = \u2220BAE\nConclusions: \u2220BAE = \u2220CAD\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BAE = \u2220CAD, \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220ABE = \u2220ACD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, \u2220BAE = \u2220CAD\n\nStep 13:\nTheorem: Substitution\nPremises : y = AE, 3 + y = AD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = y / (3 + y)\n\nStep 14:\nTheorem: Substitution\nPremises : 3 = AB, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, 5 = AC\nConclusions: 3 / 5 = sim_ratio_triangle_a_b_e_triangle_a_c_d\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3 / 5 = sim_ratio_triangle_a_b_e_triangle_a_c_d, sim_ratio_triangle_a_b_e_triangle_a_c_d = y / (3 + y)\nConclusions: 3 / 5 = y / (3 + y)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3 + y = AD, 3 / 5 = y / (3 + y)\nConclusions: 7.5 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, E), Line(C, D))",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(B, E)), x)",
+        "Equals(LengthOf(Line(D, E)), 3.0)",
+        "Equals(LengthOf(Line(C, D)), 3.5)"
+    ],
+    "correct": true
+}

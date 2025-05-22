@@ -1,0 +1,121 @@
+{
+    "problem_id": "2721",
+    "solved": true,
+    "problem_text": "If P R \\parallel K L, K N = 9, L N = 16, and P M = 2K P, find K M.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(K, N), Line(Q, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9)",
+        "Equals(LengthOf(Line(L, N)), 16)",
+        "Equals(LengthOf(Line(P, M)), Mul(2, LengthOf(Line(P, K))))",
+        "Find(LengthOf(Line(K, M)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "K",
+        "N",
+        "L",
+        "R",
+        "M"
+    ],
+    "line_instances": [
+        "KP",
+        "KM",
+        "PM",
+        "LN",
+        "LK",
+        "NK",
+        "LR",
+        "LM",
+        "RM",
+        "NQ",
+        "NM",
+        "QM",
+        "RQ",
+        "RP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            279.91266375545854,
+            155.7292576419214
+        ],
+        "P": [
+            418.3406113537118,
+            156.16593886462883
+        ],
+        "K": [
+            493.88646288209605,
+            81.93013100436681
+        ],
+        "N": [
+            279.47598253275106,
+            81.93013100436681
+        ],
+        "L": [
+            68.12227074235808,
+            81.4934497816594
+        ],
+        "R": [
+            141.48471615720524,
+            156.16593886462883
+        ],
+        "M": [
+            279.91266375545854,
+            296.3406113537118
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        5.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 324.48529,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(K, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Q on MN, \u2220KMN, 16 = LN, KM, \u2220RMK, \u2220KMR, \u2220LNM, KN, R on LM, 9 = KN, \u2220NMR, \u2220NML, KM \u22a5 MR, MN, \u2220MNK, \u2220LKM, LN \u22a5 NQ, N on KL, \u2220QML, KN \u22a5 MN\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220KMR\nConclusions: \u2220KMR = 2 * pi - \u2220RMK\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220LNM, Q on MN\nConclusions: \u2220LNM = \u2220LNQ\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220KMN, \u2220RMK, \u2220NMR\nConclusions: 2 * pi = \u2220KMN + \u2220NMR + \u2220RMK\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220NML, Q on MN\nConclusions: \u2220NML = \u2220QML\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220NML, R on LM\nConclusions: \u2220NML = \u2220NMR\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 MR\nConclusions: pi / 2 = \u2220KMR\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : MN, KM, KN\nConclusions: \u25b3KMN\n\nStep 9:\nTheorem: Straight Angle\nPremises : \u2220LNM, \u2220MNK\nConclusions: pi = \u2220LNM + \u2220MNK\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : LN \u22a5 NQ\nConclusions: pi / 2 = \u2220LNQ\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220LKM, N on KL\nConclusions: \u2220LKM = \u2220NKM\n\nStep 12:\nTheorem: Same Angle\nPremises : R on LM, \u2220QML\nConclusions: \u2220QML = \u2220QMR\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : KN \u22a5 MN\nConclusions: pi / 2 = \u2220MNK\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMR = 2 * pi - \u2220RMK, pi / 2 = \u2220KMR\nConclusions: pi / 2 = 2 * pi - \u2220RMK\n\nStep 15:\nTheorem: Pythagorean Theorem\nPremises : KN \u22a5 MN, \u25b3KMN\nConclusions: KM = SqrtOf(KN ** 2 + MN ** 2)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(K, M, N)\nPremises : \u25b3KMN\nConclusions: pi = \u2220KMN + \u2220MNK + \u2220NKM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220QML, \u2220QML = \u2220QMR\nConclusions: \u2220NML = \u2220QMR\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MNK, \u2220LNM = \u2220LNQ, pi / 2 = \u2220LNQ\nConclusions: \u2220LNM = \u2220MNK\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220NMR, \u2220NML = \u2220QMR\nConclusions: \u2220NMR = \u2220QMR\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220KMN + \u2220NMR + \u2220RMK, pi / 2 = 2 * pi - \u2220RMK, \u2220LNM = \u2220MNK, pi = \u2220KMN + \u2220MNK + \u2220NKM, pi = \u2220LNM + \u2220MNK, \u2220LKM = \u2220NKM\nConclusions: \u2220LKM = \u2220NMR\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LKM = \u2220NMR, \u2220LKM = \u2220NKM, \u2220NMR = \u2220QMR\nConclusions: \u2220NKM = \u2220QMR\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220QMR, \u2220NKM = \u2220QMR\nConclusions: \u2220NKM = \u2220NML\n\nStep 23:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220LNM = \u2220MNK, \u2220NKM = \u2220NML\nConclusions: \u25b3KMN ~ \u25b3MLN\n\nStep 24:\nTheorem: Similar Definition\nPremises : \u25b3KMN ~ \u25b3MLN\nConclusions: KN / MN = MN / LN, \u2220NKM = \u2220NML\n\nStep 25:\nTheorem: Substitution\nPremises : 9 = KN, 16 = LN, KN / MN = MN / LN\nConclusions: 9 / MN = MN / 16\n\nStep 26:\nTheorem: Solve Univariate Equation\nPremises : 9 / MN = MN / 16\nConclusions: 12 = MN\n\nStep 27:\nTheorem: Evaluate\nPremises : 9 = KN, 12 = MN\nConclusions: 15 = SqrtOf(KN ** 2 + MN ** 2)\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : KM = SqrtOf(KN ** 2 + MN ** 2), 15 = SqrtOf(KN ** 2 + MN ** 2)\nConclusions: 15 = KM\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Line(L, N)",
+        "Line(L, K)",
+        "Line(N, K)",
+        "Line(L, R)",
+        "Line(L, M)",
+        "Line(R, M)",
+        "Line(N, Q)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(R, Q)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(K, N), Line(Q, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9.0)",
+        "Equals(LengthOf(Line(L, N)), 16.0)",
+        "Equals(LengthOf(Line(P, M)), Mul(2.0, LengthOf(Line(P, K))))"
+    ],
+    "correct": true
+}

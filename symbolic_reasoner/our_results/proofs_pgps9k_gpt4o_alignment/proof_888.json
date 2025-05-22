@@ -1,0 +1,80 @@
+{
+    "problem_id": "888",
+    "solved": true,
+    "problem_text": "ABCD is a square. Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 18)",
+        "Equals(MeasureOf(Angle(A, B, C)), 5x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Square(A,B,C,D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "DC",
+        "AB",
+        "BC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.60000000000001,
+            40.400000000000006
+        ],
+        "D": [
+            272.20833333333337,
+            40.400000000000006
+        ],
+        "B": [
+            55.13666666666667,
+            257.17485714285715
+        ],
+        "C": [
+            272.90333333333336,
+            257.17485714285715
+        ]
+    },
+    "problem_choices": [
+        3.6,
+        9.0,
+        18.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        3.6,
+        9.0,
+        18.0,
+        90.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 23.389798,
+    "solution_predicate": "Equals(18.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Square(A, B, C, D), 3.14 = pi, pi * ((5 * x) / 180) = \u2220CBA\n\nStep 2:\nTheorem: Square is Rectangle\nPremises : Square(A, B, C, D)\nConclusions: Rectangle(A, B, C, D)\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AB \u22a5 BC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220CBA, pi * ((5 * x) / 180) = \u2220CBA\nConclusions: 3.14 / 2 = 3.14 * ((5 * x) / 180)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 / 2 = 3.14 * ((5 * x) / 180)\nConclusions: 18 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Square(A, B, C, D)",
+        "Equals(LengthOf(Line(A, C)), 18.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Mul(5.0, x), 180.0)))"
+    ],
+    "correct": true
+}

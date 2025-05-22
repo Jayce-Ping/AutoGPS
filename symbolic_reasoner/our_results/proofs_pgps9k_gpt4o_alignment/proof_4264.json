@@ -1,0 +1,95 @@
+{
+    "problem_id": "4264",
+    "solved": true,
+    "problem_text": "If ED = x+4 and DB = 3x-8, find ED.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(E, D)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, B))",
+        "Equals(LengthOf(Line(E,D)),x+4)",
+        "Equals(LengthOf(Line(D,B)),3x-8)",
+        "Find(LengthOf(Line(E,D)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "ED",
+        "EB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "E": [
+            96.51333333333334,
+            184.76644736842104
+        ],
+        "A": [
+            48.89764705882352,
+            57.50735294117647
+        ],
+        "D": [
+            229.0757894736842,
+            123.42382271468144
+        ],
+        "C": [
+            410.7142105263158,
+            190.46987534626038
+        ],
+        "B": [
+            361.925,
+            62.368421052631575
+        ]
+    },
+    "problem_choices": [
+        8.0,
+        10.0,
+        20.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        8.0,
+        10.0,
+        20.0,
+        40.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 7.620519,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(E, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * x - 8 = BD, BD = DE, 4 + x = DE\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 8 = BD, BD = DE\nConclusions: 3 * x - 8 = DE\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 8 = DE, 4 + x = DE\nConclusions: 4 + x = 3 * x - 8\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 4 + x = 3 * x - 8, 3 * x - 8 = BD\nConclusions: 4 + x = BD\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 4 + x = 3 * x - 8, 4 + x = BD\nConclusions: 10 = BD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 4 + x = BD, 10 = BD\nConclusions: 10 = 4 + x\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 10 = 4 + x, 4 + x = DE\nConclusions: 10 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "Line(D, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, B))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(E, D)))",
+        "Equals(LengthOf(Line(E, D)), Add(x, 4.0))",
+        "Equals(LengthOf(Line(D, B)), Sub(Mul(3.0, x), 8.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,76 @@
+{
+    "problem_id": "2614",
+    "solved": true,
+    "problem_text": "\\triangle E F G is equilateral, and E H bisects \\angle E. Find m \\angle 2.",
+    "logic_forms": [
+        "BisectsAngle(Line(E, H), Angle(F, E, G))",
+        "Equals(MeasureOf(Angle(F, E, H)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(F, H, E)), 15x)",
+        "Equals(MeasureOf(Angle(H, E, G)), MeasureOf(Angle(2)))",
+        "Equilateral(Triangle(E, F, G))",
+        "Find(MeasureOf(Angle(2)))",
+        "PointLiesOnLine(H, Line(F, G))"
+    ],
+    "point_instances": [
+        "H",
+        "E",
+        "G",
+        "F"
+    ],
+    "line_instances": [
+        "FH",
+        "FG",
+        "HG",
+        "EF",
+        "EH",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            161.61290322580643,
+            254.51612903225805
+        ],
+        "E": [
+            160.96774193548387,
+            43.225806451612904
+        ],
+        "G": [
+            283.22580645161287,
+            254.19354838709677
+        ],
+        "F": [
+            39.35483870967742,
+            254.51612903225805
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "30",
+        "45",
+        "60"
+    ],
+    "choices_precise_value": [
+        15.0,
+        30.0,
+        45.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 20.01652,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(H, E, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FEG, \u2220EFG, \u2220GFE, BisectsAngle(EH, \u2220FEG), \u2220HEG, 3.14 = pi, Equilateral(\u25b3EFG), \u2220FEH, \u2220GEF\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220FEG\nConclusions: \u2220FEG = 2 * pi - \u2220GEF\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220EFG\nConclusions: \u2220EFG = 2 * pi - \u2220GFE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220GFE\nConclusions: \u2220GFE = 2 * pi - \u2220EFG\n\nStep 5:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(EH, \u2220FEG)\nConclusions: \u2220FEH = \u2220HEG\n\nStep 6:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3EFG)\nConclusions: pi / 3 = \u2220GFE, 5 * (pi / 3) = \u2220GEF, pi / 3 = \u2220FEG, 5 * (pi / 3) = \u2220EFG\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220HEG, \u2220FEH, \u2220GEF\nConclusions: 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG\n\nStep 8:\nTheorem: Substitution\nPremises : 5 * (pi / 3) = \u2220EFG, 3.14 = pi, \u2220EFG = 2 * pi - \u2220GFE, pi / 3 = \u2220GFE\nConclusions: 5 * (pi / 3) = 2 * 3.14 - pi / 3\n\nStep 9:\nTheorem: Substitution\nPremises : 5 * (pi / 3) = \u2220EFG, 3.14 = pi, \u2220GFE = 2 * pi - \u2220EFG, pi / 3 = \u2220GFE\nConclusions: pi / 3 = 2 * 3.14 - 5 * (pi / 3)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 5 * (pi / 3) = \u2220GEF, 5 * (pi / 3) = 2 * 3.14 - pi / 3\nConclusions: 2 * 3.14 - pi / 3 = \u2220GEF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 3 = \u2220FEG, pi / 3 = 2 * 3.14 - 5 * (pi / 3)\nConclusions: 2 * 3.14 - 5 * (pi / 3) = \u2220FEG\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FEG = 2 * pi - \u2220GEF, 2 * 3.14 - 5 * (pi / 3) = \u2220FEG\nConclusions: 2 * 3.14 - 5 * (pi / 3) = 2 * pi - \u2220GEF\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG, 2 * 3.14 - 5 * (pi / 3) = 2 * pi - \u2220GEF, \u2220FEH = \u2220HEG, 2 * 3.14 - pi / 3 = \u2220GEF\nConclusions: 0.52 = \u2220FEH\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FEH = \u2220HEG, 0.52 = \u2220FEH\nConclusions: 0.52 = \u2220HEG\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, H)",
+        "Line(F, G)",
+        "Line(H, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(E, G)",
+        "BisectsAngle(Line(E, H), Angle(F, E, G))",
+        "Equilateral(Triangle(E, F, G))",
+        "PointLiesOnLine(H, Line(F, G))",
+        "Equals(MeasureOf(Angle(E, H, F)), Mul(pi, Div(Mul(15.0, x), 180.0)))"
+    ],
+    "correct": true
+}

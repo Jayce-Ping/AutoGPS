@@ -1,0 +1,72 @@
+{
+    "problem_id": "2926",
+    "solved": true,
+    "problem_text": "Find the area of the trapezoid.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(D, A)), 10)",
+        "Equals(LengthOf(Line(B, C)), 14)",
+        "Equals(LengthOf(Line(A, B)), 15)",
+        "Find(AreaOf(Trapezoid(A, B, C, D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            85.16624040920716,
+            149.63427109974424
+        ],
+        "B": [
+            241.4322250639386,
+            150.65728900255755
+        ],
+        "C": [
+            242.4552429667519,
+            26.36061381074169
+        ],
+        "D": [
+            85.42199488491049,
+            57.81841432225063
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "90",
+        "180",
+        "360"
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 180.0,
+    "total_time": 6.034498,
+    "solution_predicate": "Equals(180.0, AreaOf(Trapezoid(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 10 = AD, 15 = AB, 14 = BC, AB \u22a5 AD, Trapezoid(A, B, C, D)\n\nStep 2:\nTheorem: Area formula of Trapezoid(A, B, C, D)\nPremises : AB \u22a5 AD, Trapezoid(A, B, C, D)\nConclusions: Area(Trapezoid(A, B, C, D)) = AB * ((AD + BC) / 2)\n\nStep 3:\nTheorem: Substitution\nPremises : 15 = AB, 10 = AD, Area(Trapezoid(A, B, C, D)) = AB * ((AD + BC) / 2), 14 = BC\nConclusions: 15 * ((10 + 14) / 2) = Area(Trapezoid(A, B, C, D))\n\nStep 4:\nTheorem: Evaluate\nPremises : 15 * ((10 + 14) / 2) = Area(Trapezoid(A, B, C, D))\nConclusions: 180 = Area(Trapezoid(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(D, A)), 10.0)",
+        "Equals(LengthOf(Line(B, C)), 14.0)",
+        "Equals(LengthOf(Line(A, B)), 15.0)"
+    ],
+    "correct": true
+}

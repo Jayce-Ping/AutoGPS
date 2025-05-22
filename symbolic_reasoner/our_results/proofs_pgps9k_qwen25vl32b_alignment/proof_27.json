@@ -1,0 +1,71 @@
+{
+    "problem_id": "27",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 24)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(C, B, A)), 30)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(C, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            30.683018867924524,
+            126.0413142485361
+        ],
+        "B": [
+            267.64363636363635,
+            118.46029258098224
+        ],
+        "C": [
+            87.48266666666666,
+            20.08876117496807
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        33.941125496954285,
+        41.569219381653056,
+        48.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        33.941125496954285,
+        41.569219381653056,
+        48.0
+    ],
+    "problem_answer": 48.0,
+    "total_time": 14.041177,
+    "solution_predicate": "Equals(47.9999999999, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, 24 = AC, \u2220ACB, pi * (30 / 180) = \u2220CBA, AB, AC \u22a5 BC, 3.14 = pi, y = AB, AC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BCA, pi / 2 = \u2220ACB, 3.14 = pi, \u2220ACB = 2 * pi - \u2220BCA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220CBA, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220CBA\n\nStep 8:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = \u2220ACB, 2 * 3.14 - (3 * pi) / 2 = \u2220ACB\nConclusions: 1.57 = \u2220ACB\n\nStep 11:\nTheorem: Substitution\nPremises : 0.52 = \u2220CBA, AB / sin(\u2220ACB) = AC / sin(\u2220CBA), y = AB, 24 = AC, 1.57 = \u2220ACB\nConclusions: 24 / sin(0.52) = y / sin(1.57)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 24 / sin(0.52) = y / sin(1.57), y = AB\nConclusions: 48 = AB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 48 = AB, y = AB\nConclusions: 48 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 24.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

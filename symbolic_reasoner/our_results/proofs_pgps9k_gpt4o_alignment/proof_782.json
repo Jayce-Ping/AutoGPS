@@ -1,0 +1,109 @@
+{
+    "problem_id": "782",
+    "solved": true,
+    "problem_text": "Quadrilateral EFGH is a rectangle. If FK = 32 feet, find KG.",
+    "logic_forms": [
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, K)",
+        "Line(F, G)",
+        "Line(H, F)",
+        "Line(H, G)",
+        "Line(H, K)",
+        "Line(K, F)",
+        "Line(K, G)",
+        "Perpendicular(Line(H, G), Line(E, H))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "PointLiesOnLine(K, Line(H, F))",
+        "Rectangle(E,F,G,H)",
+        "Equals(LengthOf(Line(F,K)),32)",
+        "Find(LengthOf(Line(K,G)))"
+    ],
+    "point_instances": [
+        "H",
+        "K",
+        "F",
+        "G",
+        "E"
+    ],
+    "line_instances": [
+        "HK",
+        "HF",
+        "KF",
+        "EK",
+        "EG",
+        "KG",
+        "HG",
+        "GF",
+        "HE",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            133.836,
+            221.2875
+        ],
+        "K": [
+            304.0358974358975,
+            141.25053418803418
+        ],
+        "F": [
+            473.65309523809526,
+            61.18998015873016
+        ],
+        "G": [
+            474.26589743589744,
+            221.25747863247864
+        ],
+        "E": [
+            134.03166666666667,
+            61.050595238095234
+        ]
+    },
+    "problem_choices": [
+        16.0,
+        32.0,
+        45.255,
+        64.0
+    ],
+    "choices_precise_value": [
+        16.0,
+        32.0,
+        45.255,
+        64.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 144.96252,
+    "solution_predicate": "Equals(32.0, LengthOf(Line(K, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on EG, K on FH, Rectangle(E, F, G, H), 32 = FK, EH \u22a5 GH\n\nStep 2:\nTheorem: Line Segment Split\nPremises : K on EG\nConclusions: EG = EK + GK\n\nStep 3:\nTheorem: Line Segment Split\nPremises : K on FH\nConclusions: FH = FK + HK\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(E, F, G, H)\nConclusions: FG \u22a5 GH, EH \u22a5 GH\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(E, F, G, H)\nConclusions: Parallelogram(E, F, G, H)\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : EH \u22a5 GH\nConclusions: pi / 2 = \u2220GHE\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : FG \u22a5 GH\nConclusions: pi / 2 = \u2220FGH\n\nStep 8:\nTheorem: Parallelogram Diagonals Bisect\nPremises : K on EG, K on FH, Parallelogram(E, F, G, H)\nConclusions: FK = HK, EK = GK\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: EF = GH\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: \u2220EFG = \u2220GHE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 32 = FK, FK = HK\nConclusions: 32 = HK\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : EG = EK + GK, EK = GK\nConclusions: EK = 0.5 * EG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220GHE, \u2220EFG = \u2220GHE\nConclusions: pi / 2 = \u2220EFG\n\nStep 14:\nTheorem: Evaluate\nPremises : 32 = HK, 32 = FK\nConclusions: 64 = FK + HK\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : EK = 0.5 * EG, EK = GK\nConclusions: GK = 0.5 * EG\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EFG, pi / 2 = \u2220FGH\nConclusions: \u2220EFG = \u2220FGH\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : FH = FK + HK, 64 = FK + HK\nConclusions: 64 = FH\n\nStep 18:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220EFG = \u2220FGH, EF = GH\nConclusions: \u25b3EFG \u2245 \u25b3HGF\n\nStep 19:\nTheorem: Congruent Definition\nPremises : \u25b3EFG \u2245 \u25b3HGF\nConclusions: EG = FH, EF = GH\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 64 = FH, EG = FH\nConclusions: 64 = EG\n\nStep 21:\nTheorem: Evaluate\nPremises : 64 = EG\nConclusions: 32 = 0.5 * EG\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 32 = 0.5 * EG, GK = 0.5 * EG\nConclusions: 32 = GK\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, K)",
+        "Line(H, F)",
+        "Line(K, F)",
+        "Line(E, K)",
+        "Line(E, G)",
+        "Line(K, G)",
+        "Line(H, G)",
+        "Line(G, F)",
+        "Line(H, E)",
+        "Line(E, F)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(E, K)",
+        "Line(F, G)",
+        "Line(H, F)",
+        "Line(H, G)",
+        "Line(H, K)",
+        "Line(K, F)",
+        "Line(K, G)",
+        "Perpendicular(Line(H, G), Line(E, H))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "PointLiesOnLine(K, Line(H, F))",
+        "Rectangle(E, F, G, H)",
+        "Equals(LengthOf(Line(F, K)), 32.0)"
+    ],
+    "correct": true
+}

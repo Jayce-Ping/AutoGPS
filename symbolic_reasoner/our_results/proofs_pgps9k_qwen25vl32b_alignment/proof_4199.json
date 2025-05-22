@@ -1,0 +1,82 @@
+{
+    "problem_id": "4199",
+    "solved": true,
+    "problem_text": "Given \\triangle EFG \\cong \\triangle GHE. Find m \\angle FEG.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(E, F, G)), 110)",
+        "Equals(MeasureOf(Angle(G, E, H)), 36)",
+        "Equals(MeasureOf(Angle(G, H, E)), x+24)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Congruent(Triangle(E,F,G),Triangle(G,H,E))",
+        "Find(MeasureOf(Angle(F,E,G)))"
+    ],
+    "point_instances": [
+        "F",
+        "G",
+        "E",
+        "H"
+    ],
+    "line_instances": [
+        "EG",
+        "FE",
+        "GH",
+        "EH",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            131.3265306122449,
+            51.919999999999995
+        ],
+        "G": [
+            366.5357142857143,
+            52.70666666666666
+        ],
+        "E": [
+            47.142857142857146,
+            284.38
+        ],
+        "H": [
+            282.4642857142857,
+            285.16666666666663
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        36.0,
+        108.0,
+        110.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        36.0,
+        108.0,
+        110.0
+    ],
+    "problem_answer": 34.0,
+    "total_time": 25.406338,
+    "solution_predicate": "Equals(0.5934119457, MeasureOf(Angle(G, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3EFG \u2245 \u25b3GHE, 3.14 = pi, \u25b3EGH, pi * (110 / 180) = \u2220EFG, pi * (36 / 180) = \u2220HEG, pi * ((24 + x) / 180) = \u2220GHE\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3EFG \u2245 \u25b3GHE\nConclusions: \u2220EFG = \u2220GHE, \u2220EGH = \u2220GEF\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(E, G, H)\nPremises : \u25b3EGH\nConclusions: pi = \u2220EGH + \u2220GHE + \u2220HEG\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (110 / 180) = \u2220EFG, pi * ((24 + x) / 180) = \u2220GHE, \u2220EFG = \u2220GHE\nConclusions: pi * (110 / 180) = pi * ((24 + x) / 180)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (110 / 180) = pi * ((24 + x) / 180), pi * ((24 + x) / 180) = \u2220GHE\nConclusions: pi * (110 / 180) = \u2220GHE\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220EGH + \u2220GHE + \u2220HEG, 3.14 = pi, pi * (110 / 180) = \u2220GHE, \u2220EGH = \u2220GEF, pi * (36 / 180) = \u2220HEG\nConclusions: 3.14 = 3.14 * (110 / 180) + 3.14 * (36 / 180) + \u2220GEF\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (110 / 180) + 3.14 * (36 / 180) + \u2220GEF\nConclusions: 0.59 = \u2220GEF\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, G)",
+        "Line(F, E)",
+        "Line(G, H)",
+        "Line(E, H)",
+        "Line(F, G)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Congruent(Triangle(E, F, G), Triangle(G, H, E))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(H, E, G)), Mul(pi, Div(36.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, H, E)), Mul(pi, Div(Add(x, 24.0), 180.0)))"
+    ],
+    "correct": true
+}

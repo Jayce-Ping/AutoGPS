@@ -1,0 +1,96 @@
+{
+    "problem_id": "1256",
+    "solved": true,
+    "problem_text": "Find the value of variable a.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4\\sqrt{3})",
+        "Equals(LengthOf(Line(A, C)), a)",
+        "Equals(LengthOf(Line(A, D)), b)",
+        "Equals(LengthOf(Line(B, C)), c)",
+        "Equals(LengthOf(Line(D, C)), d)",
+        "Equals(MeasureOf(Angle(A, B, C)), 60)",
+        "Equals(MeasureOf(Angle(A, D, C)), 45)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            139.1023564064801,
+            23.634285714285713
+        ],
+        "B": [
+            37.76951399116348,
+            197.97551020408162
+        ],
+        "C": [
+            138.64175257731958,
+            197.66857142857143
+        ],
+        "D": [
+            313.82474226804123,
+            198.74285714285713
+        ]
+    },
+    "problem_choices": [
+        3.464,
+        4.899,
+        6.0,
+        8.0
+    ],
+    "choices_precise_value": [
+        3.464,
+        4.899,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 42.604425,
+    "solution_predicate": "Equals(6.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * SqrtOf(3) = AB, AC \u22a5 BC, \u2220ABD, a = AC, \u2220DBA, 3.14 = pi, C on BD, sin(\u2220CBA), \u2220CBA, \u2220DBA, pi * (60 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBA\nConclusions: \u2220DBA = 2 * pi - \u2220ABD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ABD, C on BD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220DBA, C on BD\nConclusions: \u2220CBA = \u2220DBA\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi, \u2220ABC = \u2220ABD, pi * (60 / 180) = \u2220CBA\nConclusions: 3.14 * (60 / 180) = 2 * 3.14 - \u2220ABD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DBA, pi * (60 / 180) = \u2220CBA\nConclusions: pi * (60 / 180) = \u2220DBA\n\nStep 9:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220DBA, 3.14 = pi, \u2220DBA = 2 * pi - \u2220ABD\nConclusions: pi * (60 / 180) = 2 * 3.14 - \u2220ABD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = 2 * 3.14 - \u2220ABD, 3.14 * (60 / 180) = 2 * 3.14 - \u2220ABD\nConclusions: 3.14 * (60 / 180) = pi * (60 / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220CBA, 3.14 * (60 / 180) = pi * (60 / 180)\nConclusions: 3.14 * (60 / 180) = \u2220CBA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (60 / 180) = \u2220CBA\nConclusions: 1.05 = \u2220CBA\n\nStep 13:\nTheorem: Evaluate\nPremises : 1.05 = \u2220CBA\nConclusions: 0.87 = sin(\u2220CBA)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = sin(\u2220CBA), 0.87 = sin(\u2220CBA)\nConclusions: 0.87 = AC / AB\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 4 * SqrtOf(3) = AB, 0.87 = AC / AB\nConclusions: 6 = AC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 6 = AC, a = AC\nConclusions: 6 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), Mul(4.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(A, C)), a)",
+        "Equals(LengthOf(Line(A, D)), b)",
+        "Equals(LengthOf(Line(B, C)), c)",
+        "Equals(LengthOf(Line(D, C)), d)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

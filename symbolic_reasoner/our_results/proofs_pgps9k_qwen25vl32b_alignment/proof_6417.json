@@ -1,0 +1,118 @@
+{
+    "problem_id": "6417",
+    "solved": true,
+    "problem_text": "For trapezoid LMNO, P and Q are midpoints of the legs. Find PQ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 21)",
+        "Equals(LengthOf(Line(O, N)), 17)",
+        "Equals(MeasureOf(Angle(M, L, P)), 36)",
+        "Equals(MeasureOf(Angle(O, N, Q)), 96)",
+        "Line(L, M)",
+        "Line(L, O)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(O, N)",
+        "Line(P, O)",
+        "Line(P, Q)",
+        "Line(Q, N)",
+        "PointLiesOnLine(P, Line(L, O))",
+        "PointLiesOnLine(Q, Line(M, N))",
+        "Trapezoid(L,M,N,O)",
+        "IsMidpointOf(Point(P),LegOf(Trapezoid(L,M,N,O)))",
+        "IsMidpointOf(Point(Q),LegOf(Trapezoid(L,M,N,O)))",
+        "Find(LengthOf(Line(P,Q)))"
+    ],
+    "point_instances": [
+        "L",
+        "M",
+        "P",
+        "Q",
+        "O",
+        "N"
+    ],
+    "line_instances": [
+        "PQ",
+        "LM",
+        "ON",
+        "LP",
+        "LO",
+        "PO",
+        "MQ",
+        "MN",
+        "QN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            37.12,
+            82.32377049180327
+        ],
+        "M": [
+            867.68,
+            83.87704918032787
+        ],
+        "P": [
+            97.44,
+            128.922131147541
+        ],
+        "Q": [
+            861.4933333333333,
+            127.3688524590164
+        ],
+        "O": [
+            159.30666666666667,
+            175.5204918032787
+        ],
+        "N": [
+            856.2346666666667,
+            175.20983606557377
+        ]
+    },
+    "problem_choices": [
+        13.0,
+        17.0,
+        19.0,
+        25.0
+    ],
+    "choices_precise_value": [
+        13.0,
+        17.0,
+        19.0,
+        25.0
+    ],
+    "problem_answer": 19.0,
+    "total_time": 21.174896,
+    "solution_predicate": "Equals(19.0, LengthOf(Line(P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Trapezoid(L, M, N, O), IsMidpointOf(Q, MN), P on LO, 17 = NO, 21 = LM, Q on MN, IsMidpointOf(P, LO)\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(Q, MN)\nConclusions: MQ = NQ\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(P, LO)\nConclusions: LP = OP\n\nStep 4:\nTheorem: Median of Trapezoid\nPremises : Trapezoid(L, M, N, O), LP = OP, MQ = NQ\nConclusions: IsMedianOf(PQ, Trapezoid(L, M, N, O))\n\nStep 5:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(PQ, Trapezoid(L, M, N, O)), P on LO, Q on MN\nConclusions: PQ = (LM + NO) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : 17 = NO, 21 = LM, PQ = (LM + NO) / 2\nConclusions: (17 + 21) / 2 = PQ\n\nStep 7:\nTheorem: Evaluate\nPremises : (17 + 21) / 2 = PQ\nConclusions: 19 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, Q)",
+        "Line(L, M)",
+        "Line(O, N)",
+        "Line(L, P)",
+        "Line(L, O)",
+        "Line(P, O)",
+        "Line(M, Q)",
+        "Line(M, N)",
+        "Line(Q, N)",
+        "Line(L, M)",
+        "Line(L, O)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(O, N)",
+        "Line(P, O)",
+        "Line(P, Q)",
+        "Line(Q, N)",
+        "PointLiesOnLine(P, Line(L, O))",
+        "PointLiesOnLine(Q, Line(M, N))",
+        "Trapezoid(L, M, N, O)",
+        "IsMidpointOf(P, Line(L, O))",
+        "IsMidpointOf(Q, Line(M, N))",
+        "Equals(LengthOf(Line(M, L)), 21.0)",
+        "Equals(LengthOf(Line(O, N)), 17.0)",
+        "Equals(MeasureOf(Angle(P, L, M)), Mul(pi, Div(36.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, N, O)), Mul(pi, Div(96.0, 180.0)))"
+    ],
+    "correct": true
+}

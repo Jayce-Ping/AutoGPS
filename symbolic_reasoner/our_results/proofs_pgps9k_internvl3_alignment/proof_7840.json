@@ -1,0 +1,102 @@
+{
+    "problem_id": "7840",
+    "solved": true,
+    "problem_text": "In \\odot S, m \\angle TSR = 42. Find m \\widehat KT.",
+    "logic_forms": [
+        "Line(R, K)",
+        "Line(R, S)",
+        "Line(S, E)",
+        "Line(S, K)",
+        "Line(T, E)",
+        "Line(T, S)",
+        "PointLiesOnCircle(E, Circle(S))",
+        "PointLiesOnCircle(K, Circle(S))",
+        "PointLiesOnCircle(R, Circle(S))",
+        "PointLiesOnCircle(T, Circle(S))",
+        "PointLiesOnLine(S, Line(R, K))",
+        "PointLiesOnLine(S, Line(T, E))",
+        "Circle(S)",
+        "Equals(MeasureOf(Angle(T,S,R)),42)",
+        "Find(MeasureOf(Arc(K,T)))"
+    ],
+    "point_instances": [
+        "K",
+        "E",
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "KS",
+        "KR",
+        "SR",
+        "TS",
+        "TE",
+        "SE"
+    ],
+    "circle_instances": [
+        "S"
+    ],
+    "point_positions": {
+        "K": [
+            97.13333333333333,
+            216.52905405405406
+        ],
+        "E": [
+            151.74285714285713,
+            217.08986486486486
+        ],
+        "S": [
+            123.71428571428572,
+            132.46753246753246
+        ],
+        "R": [
+            151.575,
+            48.902702702702705
+        ],
+        "T": [
+            96.91925465838509,
+            48.454054054054055
+        ]
+    },
+    "problem_choices": [
+        21.0,
+        42.0,
+        63.0,
+        138.0
+    ],
+    "choices_precise_value": [
+        21.0,
+        42.0,
+        63.0,
+        138.0
+    ],
+    "problem_answer": 138.0,
+    "total_time": 11.510222,
+    "solution_predicate": "Equals(2.4085543678, MeasureOf(Arc(T, S, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (42 / 180) = \u2220RST, \u2220RST, \u2220ESR, Arc(TSK), S on KR, \u2220KSE, \u2220TSK, 3.14 = pi, S on ET\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TSK)\nConclusions: \u2220TSK = Arc(TSK)\n\nStep 3:\nTheorem: Circumference Split\nPremises : \u2220RST, \u2220TSK, \u2220KSE, \u2220ESR\nConclusions: 2 * pi = \u2220ESR + \u2220KSE + \u2220RST + \u2220TSK\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : S on ET, S on KR\nConclusions: \u2220KSE = \u2220RST, \u2220ESR = \u2220TSK\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KSE = \u2220RST, pi * (42 / 180) = \u2220RST\nConclusions: pi * (42 / 180) = \u2220KSE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ESR = \u2220TSK, \u2220TSK = Arc(TSK)\nConclusions: \u2220ESR = Arc(TSK)\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (42 / 180) = \u2220RST, pi * (42 / 180) = \u2220KSE, \u2220TSK = Arc(TSK), \u2220ESR = Arc(TSK), 3.14 = pi, 2 * pi = \u2220ESR + \u2220KSE + \u2220RST + \u2220TSK\nConclusions: 2 * 3.14 = 3.14 * (42 / 180) + 3.14 * (42 / 180) + Arc(TSK) + Arc(TSK)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (42 / 180) + 3.14 * (42 / 180) + Arc(TSK) + Arc(TSK), \u2220TSK = Arc(TSK)\nConclusions: 2.41 = \u2220TSK\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2.41 = \u2220TSK, \u2220TSK = Arc(TSK)\nConclusions: 2.41 = Arc(TSK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, S)",
+        "Line(K, R)",
+        "Line(S, R)",
+        "Line(T, S)",
+        "Line(T, E)",
+        "Line(S, E)",
+        "Circle(S, radius_S)",
+        "Line(R, K)",
+        "Line(R, S)",
+        "Line(S, E)",
+        "Line(S, K)",
+        "Line(T, E)",
+        "Line(T, S)",
+        "PointLiesOnCircle(E, Circle(S, radius_S))",
+        "PointLiesOnCircle(K, Circle(S, radius_S))",
+        "PointLiesOnCircle(R, Circle(S, radius_S))",
+        "PointLiesOnCircle(T, Circle(S, radius_S))",
+        "PointLiesOnLine(S, Line(R, K))",
+        "PointLiesOnLine(S, Line(T, E))",
+        "Circle(S, radius_S)",
+        "Equals(MeasureOf(Angle(R, S, T)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

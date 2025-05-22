@@ -1,0 +1,87 @@
+{
+    "problem_id": "3940",
+    "solved": true,
+    "problem_text": "Find the area of the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(C, A)))",
+        "Equals(LengthOf(Line(D, B)), 6)",
+        "Find(AreaOf(Triangle(A, B, C)))",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DB"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            25.438372509247106,
+            117.42689655172414
+        ],
+        "B": [
+            147.4469095596716,
+            117.45333333333335
+        ],
+        "C": [
+            85.72704594833829,
+            5.562790697674419
+        ],
+        "D": [
+            86.14227642276423,
+            77.9390243902439
+        ]
+    },
+    "problem_choices": [
+        15.588,
+        46.765,
+        72.0,
+        144.0
+    ],
+    "choices_precise_value": [
+        15.588,
+        46.765,
+        72.0,
+        144.0
+    ],
+    "problem_answer": 46.765,
+    "total_time": 116.346777,
+    "solution_predicate": "Equals(46.7653718042, AreaOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ADB, A on \u2299(D, radius_D), C on \u2299(D, radius_D), BD, AB, \u2220CDA, \u25b3ABC, AB = AC, 6 = BD, 3.14 = pi, AC = BC, \u2220BDC, AD, B on \u2299(D, radius_D), AB = BC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_D)\nConclusions: radius_D = AD\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_D)\nConclusions: radius_D = CD\n\nStep 4:\nTheorem: Area formula of Triangle(A, B, C) by Heron's formula\nPremises : \u25b3ABC\nConclusions: Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ADB, \u2220CDA, \u2220BDC\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BD, AD, AB\nConclusions: \u25b3ABD\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : B on \u2299(D, radius_D)\nConclusions: radius_D = BD\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 9:\nTheorem: Law of Cosines\nPremises : \u25b3ABD\nConclusions: (AD ** 2 + BD ** 2) - AB ** 2 = 2 * AD * BD * cos(\u2220ADB)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 6 = BD, radius_D = BD\nConclusions: 6 = radius_D\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 6 = radius_D, radius_D = AD\nConclusions: 6 = AD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_D = CD, 6 = radius_D\nConclusions: 6 = CD\n\nStep 13:\nTheorem: Substitution\nPremises : 6 = BD, (AD ** 2 + BD ** 2) - AB ** 2 = 2 * AD * BD * cos(\u2220ADB), 6 = AD, AB = BC\nConclusions: (6 ** 2 + 6 ** 2) - BC ** 2 = 2 * 6 * 6 * cos(\u2220ADB)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 6 = BD, 6 = AD\nConclusions: AD = BD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 6 = CD, 6 = AD\nConclusions: AD = CD\n\nStep 16:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AD = BD, AB = AC, AD = CD\nConclusions: \u25b3ABD \u2245 \u25b3CAD\n\nStep 17:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = BC, AD = CD\nConclusions: \u25b3ABD \u2245 \u25b3CBD\n\nStep 18:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CAD\nConclusions: AD = CD, \u2220ADB = \u2220CDA, AB = AC\n\nStep 19:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: \u2220ADB = \u2220BDC, AB = BC\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA, \u2220ADB = \u2220BDC, \u2220ADB = \u2220CDA\nConclusions: 2.09 = \u2220ADB\n\nStep 21:\nTheorem: Evaluate\nPremises : 2.09 = \u2220ADB\nConclusions: -36 = 2 * 6 * 6 * cos(\u2220ADB)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : (6 ** 2 + 6 ** 2) - BC ** 2 = 2 * 6 * 6 * cos(\u2220ADB), -36 = 2 * 6 * 6 * cos(\u2220ADB)\nConclusions: -36 = (6 ** 2 + 6 ** 2) - BC ** 2\n\nStep 23:\nTheorem: Solve Univariate Equation\nPremises : -36 = (6 ** 2 + 6 ** 2) - BC ** 2\nConclusions: 10.39 = BC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 10.39 = BC\nConclusions: 10.39 = AC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 10.39 = BC, AB = BC\nConclusions: 10.39 = AB\n\nStep 26:\nTheorem: Evaluate\nPremises : 10.39 = AC, 10.39 = AB, 10.39 = BC\nConclusions: 46.77 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3ABC) = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC)), 46.77 = SqrtOf(((AB + AC + BC) / 2) * ((AB + AC + BC) / 2 - AB) * ((AB + AC + BC) / 2 - AC) * ((AB + AC + BC) / 2 - BC))\nConclusions: 46.77 = Area(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Circle(D, radius_D)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(C, A)))",
+        "Equals(LengthOf(Line(D, B)), 6.0)"
+    ],
+    "correct": true
+}

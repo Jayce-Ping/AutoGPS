@@ -1,0 +1,136 @@
+{
+    "problem_id": "2281",
+    "solved": true,
+    "problem_text": "In \\odot D, DE = EC, m \\widehat CF = 60, and DE \\perp EC. Find m \\angle 3.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, E)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(A, F, C)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(B, A, D)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, A, F)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(D, C, F)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnCircle(A, Circle(D))",
+        "PointLiesOnCircle(B, Circle(D))",
+        "PointLiesOnCircle(C, Circle(D))",
+        "PointLiesOnCircle(F, Circle(D))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Circle(D)",
+        "Equals(LengthOf(Line(D,E)),Line(E,C))",
+        "Equals(MeasureOf(Arc(C,F)),60)",
+        "Perpendicular(Line(D,E),Line(E,C))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "C",
+        "D",
+        "F"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "AB",
+        "BE",
+        "BC",
+        "EC",
+        "DE",
+        "AF",
+        "FC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "A": [
+            34.5616211745244,
+            123.86131868131868
+        ],
+        "B": [
+            116.39950372208436,
+            42.5789010989011
+        ],
+        "E": [
+            157.13417484805984,
+            83.63478260869564
+        ],
+        "C": [
+            198.43920595533498,
+            123.91164835164835
+        ],
+        "D": [
+            115.71837708830547,
+            124.10501193317421
+        ],
+        "F": [
+            157.37076861808043,
+            195.51026455026457
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 115.1477,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(A, B, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(D, radius_D), B on \u2299(D, radius_D), E on BC, C on \u2299(D, radius_D), \u2220ABC, D on AC, 3.14 = pi\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220ABC, E on BC\nConclusions: \u2220ABC = \u2220ABE\n\nStep 3:\nTheorem: Diameter Definition\nPremises : C on \u2299(D, radius_D), A on \u2299(D, radius_D), D on AC\nConclusions: IsDiameterOf(AC, \u2299(D, radius_D))\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 5:\nTheorem: Thales Theorem\nPremises : IsDiameterOf(AC, \u2299(D, radius_D)), B on \u2299(D, radius_D)\nConclusions: AB \u22a5 BC\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220ABE, 1.57 = pi / 2, pi / 2 = \u2220ABC\nConclusions: 1.57 = \u2220ABE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(D, E)",
+        "Line(A, F)",
+        "Line(F, C)",
+        "Circle(D, radius_D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, C), Line(D, E))",
+        "PointLiesOnCircle(A, Circle(D, radius_D))",
+        "PointLiesOnCircle(B, Circle(D, radius_D))",
+        "PointLiesOnCircle(C, Circle(D, radius_D))",
+        "PointLiesOnCircle(F, Circle(D, radius_D))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "Circle(D, radius_D)",
+        "Perpendicular(Line(D, E), Line(E, C))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(E, C)))",
+        "Equals(MeasureOf(Arc(F, D, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

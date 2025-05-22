@@ -1,0 +1,83 @@
+{
+    "problem_id": "537",
+    "solved": true,
+    "problem_text": "If QT = 11, what is QU?",
+    "logic_forms": [
+        "Line(Q, U)",
+        "Line(Q, V)",
+        "Line(T, Q)",
+        "Line(T, U)",
+        "PointLiesOnCircle(T, Circle(Q))",
+        "PointLiesOnCircle(U, Circle(Q))",
+        "PointLiesOnCircle(V, Circle(Q))",
+        "PointLiesOnLine(Q, Line(T, U))",
+        "Equals(LengthOf(Line(Q,T)),11)",
+        "Find(LengthOf(Line(Q,U)))"
+    ],
+    "point_instances": [
+        "U",
+        "Q",
+        "V",
+        "T"
+    ],
+    "line_instances": [
+        "TQ",
+        "TU",
+        "QU",
+        "QV"
+    ],
+    "circle_instances": [
+        "Q"
+    ],
+    "point_positions": {
+        "U": [
+            298.5,
+            474.66
+        ],
+        "Q": [
+            298.0928143712575,
+            280.29640718562877
+        ],
+        "V": [
+            483.4402173913043,
+            225.18
+        ],
+        "T": [
+            296.8777173913043,
+            89.10000000000001
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        8.0,
+        11.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        7.0,
+        8.0,
+        11.0,
+        16.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 3.157662,
+    "solution_predicate": "Equals(11.0, LengthOf(Line(Q, U)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: U on \u2299(Q, radius_Q), T on \u2299(Q, radius_Q), 11 = QT\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : U on \u2299(Q, radius_Q)\nConclusions: radius_Q = QU\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : T on \u2299(Q, radius_Q)\nConclusions: radius_Q = QT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_Q = QT, 11 = QT\nConclusions: 11 = radius_Q\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_Q = QU, 11 = radius_Q\nConclusions: 11 = QU\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, Q)",
+        "Line(T, U)",
+        "Line(Q, U)",
+        "Line(Q, V)",
+        "Circle(Q, radius_Q)",
+        "Line(Q, U)",
+        "Line(Q, V)",
+        "Line(T, Q)",
+        "Line(T, U)",
+        "PointLiesOnCircle(T, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(U, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(V, Circle(Q, radius_Q))",
+        "PointLiesOnLine(Q, Line(T, U))",
+        "Equals(LengthOf(Line(Q, T)), 11.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,139 @@
+{
+    "problem_id": "4574",
+    "solved": true,
+    "problem_text": "Polygon ABCD \\sim polygon AEFG, m \\angle AGF = 108, GF = 14, AD = 12, DG = 4.5, EF = 8, and AB = 26. Find DC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 26)",
+        "Equals(LengthOf(Line(A, D)), 12)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(LengthOf(Line(F, E)), 8)",
+        "Equals(LengthOf(Line(G, F)), 14)",
+        "Equals(MeasureOf(Angle(A, G, F)), 108)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, F)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "Similar(Quadrilateral(A,B,C,D),Quadrilateral(A,E,F,G))",
+        "Equals(MeasureOf(Angle(A,G,F)),108)",
+        "Equals(LengthOf(Line(G,F)),14)",
+        "Equals(LengthOf(Line(A,D)),12)",
+        "Equals(LengthOf(Line(D,G)),4.5)",
+        "Equals(LengthOf(Line(E,F)),8)",
+        "Equals(LengthOf(Line(A,B)),26)",
+        "Find(LengthOf(Line(D,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "G",
+        "D",
+        "C",
+        "B",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AE",
+        "AB",
+        "EB",
+        "AG",
+        "AD",
+        "GD",
+        "DC",
+        "CB",
+        "GF",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            83.04507710557533,
+            84.11428571428571
+        ],
+        "G": [
+            104.19522114895781,
+            148.65414965986395
+        ],
+        "D": [
+            118.47330960854093,
+            193.09714285714287
+        ],
+        "C": [
+            331.0817081850534,
+            192.74605714285713
+        ],
+        "B": [
+            331.1820030503304,
+            61.30068027210884
+        ],
+        "E": [
+            240.01814946619217,
+            69.77828571428572
+        ],
+        "F": [
+            239.44528469750892,
+            148.60190476190476
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        14.0,
+        22.4,
+        26.0
+    ],
+    "choices_precise_value": [
+        12.0,
+        14.0,
+        22.4,
+        26.0
+    ],
+    "problem_answer": 22.4,
+    "total_time": 49.785038,
+    "solution_predicate": "Equals(22.4, LengthOf(Line(D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 14 = FG, Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G), Quadrilateral(A, E, F, G), 8 = EF, 26 = AB, 12 = AD, 4.5 = DG, G on AD\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G)\nConclusions: AB / AE = AD / AG, AB / AE = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G)), CD / FG = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G))\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, E, F, G)\nConclusions: Perimeter(Quadrilateral(A, E, F, G)) = AE + AG + EF + FG\n\nStep 4:\nTheorem: Line Segment Split\nPremises : G on AD\nConclusions: AD = AG + DG\n\nStep 5:\nTheorem: Substitution\nPremises : AB / AE = AD / AG, 12 = AD, 26 = AB\nConclusions: 12 / AG = 26 / AE\n\nStep 6:\nTheorem: Substitution\nPremises : 26 = AB, AB / AE = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G))\nConclusions: 26 / AE = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G))\n\nStep 7:\nTheorem: Substitution\nPremises : CD / FG = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G)), 14 = FG\nConclusions: CD / 14 = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G))\n\nStep 8:\nTheorem: Substitution\nPremises : Perimeter(Quadrilateral(A, E, F, G)) = AE + AG + EF + FG, 8 = EF, 14 = FG\nConclusions: Perimeter(Quadrilateral(A, E, F, G)) = 14 + 8 + AE + AG\n\nStep 9:\nTheorem: Substitution\nPremises : 12 = AD, AD = AG + DG, 4.5 = DG\nConclusions: 12 = 4.5 + AG\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 12 = 4.5 + AG, Perimeter(Quadrilateral(A, E, F, G)) = 14 + 8 + AE + AG, 12 / AG = 26 / AE\nConclusions: 45.75 = Perimeter(Quadrilateral(A, E, F, G))\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 12 = 4.5 + AG, 12 / AG = 26 / AE\nConclusions: 16.25 = AE\n\nStep 12:\nTheorem: Substitution\nPremises : 45.75 = Perimeter(Quadrilateral(A, E, F, G)), CD / 14 = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G))\nConclusions: CD / 14 = Perimeter(Quadrilateral(A, B, C, D)) / 45.75\n\nStep 13:\nTheorem: Substitution\nPremises : 26 / AE = Perimeter(Quadrilateral(A, B, C, D)) / Perimeter(Quadrilateral(A, E, F, G)), 45.75 = Perimeter(Quadrilateral(A, E, F, G)), 16.25 = AE\nConclusions: 26 / 16.25 = Perimeter(Quadrilateral(A, B, C, D)) / 45.75\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : CD / 14 = Perimeter(Quadrilateral(A, B, C, D)) / 45.75, 26 / 16.25 = Perimeter(Quadrilateral(A, B, C, D)) / 45.75\nConclusions: 22.4 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(G, F)",
+        "Line(F, E)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, F)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "Similar(Quadrilateral(A, B, C, D), Quadrilateral(A, E, F, G))",
+        "Equals(LengthOf(Line(A, B)), 26.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(LengthOf(Line(F, E)), 8.0)",
+        "Equals(LengthOf(Line(G, F)), 14.0)",
+        "Equals(MeasureOf(Angle(F, G, A)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, G, A)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(LengthOf(Line(G, F)), 14.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(LengthOf(Line(E, F)), 8.0)",
+        "Equals(LengthOf(Line(A, B)), 26.0)"
+    ],
+    "correct": true
+}

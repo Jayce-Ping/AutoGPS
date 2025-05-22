@@ -1,0 +1,70 @@
+{
+    "problem_id": "2770",
+    "solved": true,
+    "problem_text": "Find m \\angle A.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, B, A)), 2x)",
+        "Equals(MeasureOf(Angle(D, C, B)), 2x)",
+        "Equals(MeasureOf(Angle(A, D, C)), x)",
+        "Equals(MeasureOf(Angle(D, A, B)), x)",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AD",
+        "CD",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            255.40517241379314,
+            130.8189655172414
+        ],
+        "C": [
+            209.0689655172414,
+            52.37068965517242
+        ],
+        "A": [
+            20.27586206896552,
+            130.38793103448276
+        ],
+        "B": [
+            66.61206896551725,
+            51.939655172413794
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "60",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 6.585529,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(D, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, pi * ((2 * x) / 180) = \u2220BCD, pi * ((2 * x) / 180) = \u2220ABC, BC, pi * (x / 180) = \u2220CDA, CD, pi * (x / 180) = \u2220DAB, AD, 3.14 = pi\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220DAB, pi * (x / 180) = \u2220CDA\nConclusions: \u2220CDA = \u2220DAB\n\nStep 3:\nTheorem: Definition of Quadrilateral\nPremises : AB, BC, AD, CD\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * ((2 * x) / 180) = \u2220ABC\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220DAB, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220DAB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220ABC, 3.14 * ((2 * x) / 180) = \u2220ABC\nConclusions: 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\nConclusions: 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180), pi * ((2 * x) / 180) = \u2220BCD\nConclusions: 3.14 * ((2 * x) / 180) = \u2220BCD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((2 * x) / 180) = \u2220BCD, \u2220CDA = \u2220DAB, 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, 3.14 * (x / 180) = \u2220DAB, 3.14 * ((2 * x) / 180) = \u2220ABC\nConclusions: 1.05 = \u2220DAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

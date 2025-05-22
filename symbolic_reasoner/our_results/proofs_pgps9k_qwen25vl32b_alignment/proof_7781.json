@@ -1,0 +1,92 @@
+{
+    "problem_id": "7781",
+    "solved": true,
+    "problem_text": "Find WU.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, Y)), 40)",
+        "Equals(LengthOf(Line(Y, U)), 32)",
+        "Equals(LengthOf(Line(Z, U)), x+6)",
+        "Equals(LengthOf(Line(Z, W)), 3x-6)",
+        "Equals(MeasureOf(Angle(Z, W, U)), MeasureOf(Angle(W, Y, U)))",
+        "Line(U, Y)",
+        "Line(W, U)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Z, U)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(W, U))",
+        "PointLiesOnLine(U, Line(Z, Y))",
+        "Find(LengthOf(Line(W,U)))"
+    ],
+    "point_instances": [
+        "Z",
+        "U",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "ZW",
+        "WY",
+        "YU",
+        "YZ",
+        "UZ",
+        "UW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            121.18725868725869,
+            363.7828571428571
+        ],
+        "U": [
+            322.3711993243243,
+            363.45571428571424
+        ],
+        "Y": [
+            692.5253378378379,
+            363.7828571428571
+        ],
+        "W": [
+            322.04391891891896,
+            90.85224489795918
+        ]
+    },
+    "problem_choices": [
+        8.727,
+        18.0,
+        24.0,
+        30.0
+    ],
+    "choices_precise_value": [
+        8.727,
+        18.0,
+        24.0,
+        30.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 43.646912,
+    "solution_predicate": "Equals(24.0, LengthOf(Line(W, U)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: UW \u22a5 UY, 32 = UY, 40 = WY, UW, UY, WY\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : UW, UY, WY\nConclusions: \u25b3UWY\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3UWY, UW \u22a5 UY\nConclusions: UW = SqrtOf(WY ** 2 - UY ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 40 = WY, UW = SqrtOf(WY ** 2 - UY ** 2), 32 = UY\nConclusions: SqrtOf(40 ** 2 - 32 ** 2) = UW\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(40 ** 2 - 32 ** 2) = UW\nConclusions: 24 = UW\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, W)",
+        "Line(W, Y)",
+        "Line(Y, U)",
+        "Line(Y, Z)",
+        "Line(U, Z)",
+        "Line(U, W)",
+        "Line(U, Y)",
+        "Line(W, U)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Z, U)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(W, U))",
+        "PointLiesOnLine(U, Line(Z, Y))",
+        "Equals(LengthOf(Line(W, Y)), 40.0)",
+        "Equals(LengthOf(Line(Y, U)), 32.0)",
+        "Equals(LengthOf(Line(Z, U)), Add(x, 6.0))",
+        "Equals(LengthOf(Line(Z, W)), Sub(Mul(3.0, x), 6.0))",
+        "Equals(MeasureOf(Angle(Z, W, U)), MeasureOf(Angle(W, Y, U)))"
+    ],
+    "correct": true
+}

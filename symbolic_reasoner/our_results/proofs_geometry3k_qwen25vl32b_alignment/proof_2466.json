@@ -1,0 +1,87 @@
+{
+    "problem_id": "2466",
+    "solved": true,
+    "problem_text": "If A B = 12, A C = 16, and E D = 5, find A E.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A,B)),12)",
+        "Equals(LengthOf(Line(A,C)),16)",
+        "Equals(LengthOf(Line(E,D)),5)",
+        "Find(LengthOf(Line(A,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "C",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA",
+        "AE",
+        "AD",
+        "ED",
+        "CD",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            275.1004016064257,
+            143.1847389558233
+        ],
+        "D": [
+            445.78313253012044,
+            299.4096385542168
+        ],
+        "C": [
+            329.718875502008,
+            84.95180722891565
+        ],
+        "A": [
+            126.50602409638553,
+            299.008032128514
+        ],
+        "E": [
+            358.2329317269076,
+            298.60642570281124
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "12",
+        "15",
+        "16"
+    ],
+    "choices_precise_value": [
+        10.0,
+        12.0,
+        15.0,
+        16.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 32.104271,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EBA, 5 = DE, 3.14 = pi, B on AC, \u2220DCA, \u2220DAB, BE || CD, \u2220EAC, \u2220ACD, \u2220DCA, 12 = AB, \u2220CDA, \u2220DAC, E on AD, 16 = AC, \u2220BEA, \u2220CDA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBA\nConclusions: \u2220EBA = 2 * pi - \u2220ABE\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220EAC, B on AC\nConclusions: \u2220EAB = \u2220EAC\n\nStep 6:\nTheorem: Same Angle\nPremises : B on AC, \u2220ACD\nConclusions: \u2220ACD = \u2220BCD\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220DAC, E on AD\nConclusions: \u2220DAC = \u2220EAC\n\nStep 9:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220DAB, E on AD\nConclusions: \u2220DAB = \u2220EAB\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220CDA, E on AD\nConclusions: \u2220CDA = \u2220CDE\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220BEA\nConclusions: \u2220BEA = 2 * pi - \u2220AEB\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = \u2220ACD, \u2220ACD = \u2220BCD\nConclusions: \u2220ABE = \u2220BCD\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220DCA = \u2220DCB, \u2220ACD = \u2220BCD, \u2220DCA = 2 * pi - \u2220ACD, 3.14 = pi\nConclusions: \u2220DCB = 2 * 3.14 - \u2220BCD\n\nStep 16:\nTheorem: Substitution\nPremises : AD = AE + DE, 5 = DE\nConclusions: AD = 5 + AE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAC, \u2220DAB = \u2220EAB\nConclusions: \u2220DAB = \u2220EAC\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220BEA = 2 * pi - \u2220AEB, 3.14 = pi\nConclusions: \u2220BEA = 2 * 3.14 - \u2220AEB\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220ADC = \u2220AEB, \u2220CDA = 2 * pi - \u2220ADC, \u2220CDA = \u2220CDE, 3.14 = pi\nConclusions: \u2220CDE = 2 * 3.14 - \u2220AEB\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220EBA = 2 * pi - \u2220ABE, \u2220ABE = \u2220BCD, 3.14 = pi\nConclusions: \u2220EBA = 2 * 3.14 - \u2220BCD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220EAC, \u2220DAB = \u2220EAB, \u2220DAB = \u2220EAC\nConclusions: \u2220DAC = \u2220EAB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = 2 * 3.14 - \u2220AEB, \u2220CDE = 2 * 3.14 - \u2220AEB\nConclusions: \u2220BEA = \u2220CDE\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCB = 2 * 3.14 - \u2220BCD, \u2220EBA = 2 * 3.14 - \u2220BCD\nConclusions: \u2220DCB = \u2220EBA\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220CDE, \u2220CDA = \u2220CDE\nConclusions: \u2220BEA = \u2220CDA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, \u2220DCB = \u2220EBA\nConclusions: \u2220DCA = \u2220EBA\n\nStep 26:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DCA = \u2220EBA, \u2220DAC = \u2220EAB, \u2220BEA = \u2220CDA\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 27:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220BEA = \u2220CDA, \u2220ADC = \u2220AEB, \u2220DCA = \u2220EBA, AB / AC = AE / AD, \u2220ABE = \u2220ACD\n\nStep 28:\nTheorem: Substitution\nPremises : 12 = AB, 16 = AC, AB / AC = AE / AD\nConclusions: 12 / 16 = AE / AD\n\nStep 29:\nTheorem: Solve Linear Equation System\nPremises : 12 / 16 = AE / AD, AD = 5 + AE\nConclusions: 15 = AE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(B, E)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(LengthOf(Line(E, D)), 5.0)"
+    ],
+    "correct": true
+}

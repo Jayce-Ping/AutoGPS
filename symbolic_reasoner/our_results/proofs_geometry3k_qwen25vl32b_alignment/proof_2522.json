@@ -1,0 +1,89 @@
+{
+    "problem_id": "2522",
+    "solved": true,
+    "problem_text": "Find x if A E = 3, A B = 2, B C = 6, and E D = 2 x - 3.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, A))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A,E)),3)",
+        "Equals(LengthOf(Line(A,B)),2)",
+        "Equals(LengthOf(Line(B,C)),6)",
+        "Equals(LengthOf(Line(E,D)),2x-3)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "CA",
+        "BA",
+        "DE",
+        "DA",
+        "EA",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            291.29213483146066,
+            161.85393258426967
+        ],
+        "A": [
+            324.1573033707865,
+            146.40449438202248
+        ],
+        "D": [
+            80.0561797752809,
+            46.12359550561798
+        ],
+        "C": [
+            199.7191011235955,
+            207.92134831460675
+        ],
+        "E": [
+            257.5842696629214,
+            118.87640449438202
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "6",
+        "8",
+        "9"
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.0,
+        8.0,
+        9.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 34.268117,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 = AB, 3 = AE, BE || CD, \u2220DAC, \u2220BEA, \u2220DAB, 2 * x - 3 = DE, E on AD, 6 = BC, \u2220CDA, B on AC, 3.14 = pi, \u2220CDA, \u2220EAC\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BEA\nConclusions: \u2220BEA = 2 * pi - \u2220AEB\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 5:\nTheorem: Same Angle\nPremises : E on AD, \u2220DAB\nConclusions: \u2220DAB = \u2220EAB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 7:\nTheorem: Same Angle\nPremises : B on AC, \u2220DAC\nConclusions: \u2220DAB = \u2220DAC\n\nStep 8:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 9:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220EAC, B on AC\nConclusions: \u2220EAB = \u2220EAC\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BEA = 2 * pi - \u2220AEB\nConclusions: \u2220BEA = 2 * 3.14 - \u2220AEB\n\nStep 12:\nTheorem: Substitution\nPremises : 2 * x - 3 = DE, 3 = AE, AD = AE + DE\nConclusions: 3 + (2 * x - 3) = AD\n\nStep 13:\nTheorem: Substitution\nPremises : 2 = AB, 6 = BC, AC = AB + BC\nConclusions: 2 + 6 = AC\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220CDA = \u2220CDE, 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC, \u2220ADC = \u2220AEB\nConclusions: \u2220CDE = 2 * 3.14 - \u2220AEB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAC, \u2220DAB = \u2220EAB\nConclusions: \u2220DAB = \u2220EAC\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 + 6 = AC\nConclusions: 8 = AC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = 2 * 3.14 - \u2220AEB, \u2220BEA = 2 * 3.14 - \u2220AEB\nConclusions: \u2220BEA = \u2220CDE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAB = \u2220EAC, \u2220DAB = \u2220DAC, \u2220EAB = \u2220EAC\nConclusions: \u2220DAC = \u2220EAB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDA = \u2220CDE, \u2220BEA = \u2220CDE\nConclusions: \u2220BEA = \u2220CDA\n\nStep 20:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BEA = \u2220CDA, \u2220ABE = \u2220ACD, \u2220DAC = \u2220EAB\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 21:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, \u2220ADC = \u2220AEB, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, \u2220ABE = \u2220ACD, \u2220BEA = \u2220CDA\n\nStep 22:\nTheorem: Substitution\nPremises : 2 = AB, 8 = AC, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC\nConclusions: 2 / 8 = sim_ratio_triangle_a_b_e_triangle_a_c_d\n\nStep 23:\nTheorem: Substitution\nPremises : 3 + (2 * x - 3) = AD, 3 = AE, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = 3 / (3 + (2 * x - 3))\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 / 8 = sim_ratio_triangle_a_b_e_triangle_a_c_d, sim_ratio_triangle_a_b_e_triangle_a_c_d = 3 / (3 + (2 * x - 3))\nConclusions: 2 / 8 = 3 / (3 + (2 * x - 3))\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 2 / 8 = 3 / (3 + (2 * x - 3))\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(D, E)",
+        "Line(D, A)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(D, A))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, E)), 3.0)",
+        "Equals(LengthOf(Line(A, B)), 2.0)",
+        "Equals(LengthOf(Line(B, C)), 6.0)",
+        "Equals(LengthOf(Line(E, D)), Sub(Mul(2.0, x), 3.0))"
+    ],
+    "correct": true
+}

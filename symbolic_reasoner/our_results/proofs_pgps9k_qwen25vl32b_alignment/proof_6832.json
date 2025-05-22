@@ -1,0 +1,90 @@
+{
+    "problem_id": "6832",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 9)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, A)), 24)",
+        "Equals(LengthOf(Line(D, C)), 18)",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(A, D, B)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.905124302384575,
+            154.30603174603172
+        ],
+        "B": [
+            105.22577371892439,
+            87.81714285714285
+        ],
+        "C": [
+            169.65499746321663,
+            38.684444444444445
+        ],
+        "D": [
+            295.75342465753425,
+            223.42857142857142
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        6.25,
+        6.5,
+        6.75
+    ],
+    "choices_precise_value": [
+        6.0,
+        6.25,
+        6.5,
+        6.75
+    ],
+    "problem_answer": 6.75,
+    "total_time": 26.94849,
+    "solution_predicate": "Equals(6.75, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ADB, 24 = AD, x = BC, 3.14 = pi, 9 = AB, CD, AC, \u2220BDA = \u2220CDB, 18 = CD, \u2220BDC, AD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADB\nConclusions: \u2220ADB = 2 * pi - \u2220BDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDC\nConclusions: \u2220BDC = 2 * pi - \u2220CDB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Substitution\nPremises : \u2220ADB = 2 * pi - \u2220BDA, \u2220BDA = \u2220CDB, 3.14 = pi\nConclusions: \u2220ADB = 2 * 3.14 - \u2220CDB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BDC = 2 * pi - \u2220CDB\nConclusions: \u2220BDC = 2 * 3.14 - \u2220CDB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = 2 * 3.14 - \u2220CDB, \u2220ADB = 2 * 3.14 - \u2220CDB\nConclusions: \u2220ADB = \u2220BDC\n\nStep 8:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220ADB = \u2220BDC, \u25b3ACD\nConclusions: AB / BC = AD / CD\n\nStep 9:\nTheorem: Substitution\nPremises : AB / BC = AD / CD, 24 = AD, x = BC, 9 = AB, 18 = CD\nConclusions: 24 / 18 = 9 / x\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 24 / 18 = 9 / x, x = BC\nConclusions: 6.75 = BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 6.75 = BC, x = BC\nConclusions: 6.75 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 9.0)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(D, A)), 24.0)",
+        "Equals(LengthOf(Line(D, C)), 18.0)",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(B, D, A)))"
+    ],
+    "correct": true
+}

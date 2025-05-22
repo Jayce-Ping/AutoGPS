@@ -1,0 +1,69 @@
+{
+    "problem_id": "7749",
+    "solved": true,
+    "problem_text": "Find the measure of RT for equilateral triangle SRT.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 3x-9)",
+        "Equals(LengthOf(Line(S, R)), x+9)",
+        "Equals(LengthOf(Line(T, S)), 2x)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Equilateral(Triangle(S,R,T))",
+        "Find(LengthOf(Line(R,T)))"
+    ],
+    "point_instances": [
+        "R",
+        "T",
+        "S"
+    ],
+    "line_instances": [
+        "RT",
+        "TS",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            54.75910931174089,
+            271.83384615384614
+        ],
+        "T": [
+            312.0263157894737,
+            271.97714285714284
+        ],
+        "S": [
+            183.82388663967612,
+            49.15076923076923
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        12.0,
+        15.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        9.0,
+        12.0,
+        15.0,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 10.687616,
+    "solution_predicate": "Equals(18.0, LengthOf(Line(R, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Equilateral(\u25b3RST), 9 + x = RS, 2 * x = ST\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3RST)\nConclusions: RS = ST, RS = RT\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : RS = ST, 2 * x = ST\nConclusions: 2 * x = RS\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 9 + x = RS, 2 * x = RS\nConclusions: 9 + x = 2 * x\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : RS = RT, 9 + x = RS, 9 + x = 2 * x\nConclusions: 18 = RT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(T, S)",
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Equilateral(Triangle(S, R, T))",
+        "Equals(LengthOf(Line(R, T)), Sub(Mul(3.0, x), 9.0))",
+        "Equals(LengthOf(Line(S, R)), Add(x, 9.0))",
+        "Equals(LengthOf(Line(T, S)), Mul(2.0, x))"
+    ],
+    "correct": true
+}

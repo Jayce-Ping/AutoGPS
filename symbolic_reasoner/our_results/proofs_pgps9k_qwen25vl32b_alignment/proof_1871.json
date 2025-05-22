@@ -1,0 +1,73 @@
+{
+    "problem_id": "1871",
+    "solved": true,
+    "problem_text": "Find x of isosceles \\triangle XYZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Y)), 2x+3)",
+        "Equals(LengthOf(Line(X, Y)), 4x-1)",
+        "Equals(LengthOf(Line(X, Z)), 8x-4)",
+        "Equals(LengthOf(Line(Z, Y)), 4x-1)",
+        "Equals(LengthOf(Line(Z, Y)), LengthOf(Line(X, Y)))",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Isosceles(Triangle(X,Y,Z))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "X",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "XZ",
+        "ZY",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            76.57482014388489,
+            193.20533333333333
+        ],
+        "Z": [
+            361.7316969953449,
+            192.97142857142856
+        ],
+        "Y": [
+            219.87410071942446,
+            85.08285714285714
+        ]
+    },
+    "problem_choices": [
+        0.75,
+        1.167,
+        2.0,
+        5.333
+    ],
+    "choices_precise_value": [
+        0.75,
+        1.167,
+        2.0,
+        5.333
+    ],
+    "problem_answer": 2.0,
+    "total_time": 6.059211,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * x - 1 = XY, 3 + 2 * x = XY\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x - 1 = XY, 3 + 2 * x = XY\nConclusions: 3 + 2 * x = 4 * x - 1\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * x = 4 * x - 1\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Isosceles(Triangle(X, Y, Z))",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(X, Y)), Sub(Mul(4.0, x), 1.0))",
+        "Equals(LengthOf(Line(X, Z)), Sub(Mul(8.0, x), 4.0))",
+        "Equals(LengthOf(Line(Z, Y)), Sub(Mul(4.0, x), 1.0))",
+        "Equals(LengthOf(Line(Z, Y)), LengthOf(Line(X, Y)))"
+    ],
+    "correct": true
+}

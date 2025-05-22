@@ -1,0 +1,104 @@
+{
+    "problem_id": "8994",
+    "solved": true,
+    "problem_text": "For the pair of similar figures, the area of the blue figure is 72 m^{2} and the green figure is 50 m^{2}, find x.",
+    "logic_forms": [
+        "Equals(AreaOf(Rectangle(A, B, C, D)), 72)",
+        "Equals(AreaOf(Rectangle(E, F, G, H)), 50)",
+        "Equals(LengthOf(Line(A, D)), 12)",
+        "Equals(LengthOf(Line(E, H)), x)",
+        "Find(x)",
+        "Rectangle(A, B, C, D)",
+        "Rectangle(E, F, G, H)",
+        "Similar(Rectangle(A, B, C, D), Rectangle(E, F, G, H))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "CB",
+        "BA",
+        "EF",
+        "FG",
+        "GH",
+        "EH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.516944444444448,
+            88.60119047619047
+        ],
+        "B": [
+            18.347352941176474,
+            19.947478991596636
+        ],
+        "C": [
+            143.55833333333334,
+            19.82142857142857
+        ],
+        "D": [
+            143.78911764705882,
+            88.51890756302521
+        ],
+        "E": [
+            194.7110810810811,
+            88.61003861003861
+        ],
+        "F": [
+            194.64272727272729,
+            41.52597402597402
+        ],
+        "G": [
+            280.24272727272734,
+            41.46103896103896
+        ],
+        "H": [
+            280.119705882353,
+            88.83403361344537
+        ]
+    },
+    "problem_choices": [
+        8.3,
+        10.0,
+        14.4,
+        17.3
+    ],
+    "choices_precise_value": [
+        8.3,
+        10.0,
+        14.4,
+        17.3
+    ],
+    "problem_answer": 10.0,
+    "total_time": 38.928256,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AD, 50 = Area(Rectangle(E, F, G, H)), x = EH, Area(Rectangle(A, B, C, D)), Rectangle(A, B, C, D), Rectangle(A, B, C, D) ~ Rectangle(E, F, G, H), Rectangle(E, F, G, H), 72 = Area(Rectangle(A, B, C, D))\n\nStep 2:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Perimeter Definition\nPremises : Rectangle(A, B, C, D)\nConclusions: Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD\n\nStep 5:\nTheorem: Similar Definition\nPremises : Rectangle(A, B, C, D) ~ Rectangle(E, F, G, H)\nConclusions: sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / FG, BC / FG = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H)), sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h ** 2 = Area(Rectangle(A, B, C, D)) / Area(Rectangle(E, F, G, H))\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(E, F, G, H)\nConclusions: Parallelogram(E, F, G, H)\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC, AB = CD\n\nStep 8:\nTheorem: Substitution\nPremises : sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h ** 2 = Area(Rectangle(A, B, C, D)) / Area(Rectangle(E, F, G, H)), 72 = Area(Rectangle(A, B, C, D)), 50 = Area(Rectangle(E, F, G, H))\nConclusions: 72 / 50 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h ** 2\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: EH = FG\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 12 = AD\nConclusions: 12 = BC\n\nStep 11:\nTheorem: Solve Univariate Equation\nPremises : 72 / 50 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h ** 2\nConclusions: 1.2 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : EH = FG, x = EH\nConclusions: x = FG\n\nStep 13:\nTheorem: Substitution\nPremises : Area(Rectangle(A, B, C, D)) = AB * BC, 72 = Area(Rectangle(A, B, C, D)), 12 = BC, AB = CD\nConclusions: 72 = 12 * CD\n\nStep 14:\nTheorem: Substitution\nPremises : AB = CD, Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD, 12 = BC, 12 = AD\nConclusions: Perimeter(Rectangle(A, B, C, D)) = 12 + 12 + CD + CD\n\nStep 15:\nTheorem: Substitution\nPremises : BC / FG = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H)), x = FG, 12 = BC\nConclusions: 12 / x = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H))\n\nStep 16:\nTheorem: Substitution\nPremises : sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / FG, x = FG, 12 = BC\nConclusions: sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = 12 / x\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 72 = 12 * CD, Perimeter(Rectangle(A, B, C, D)) = 12 + 12 + CD + CD\nConclusions: 36 = Perimeter(Rectangle(A, B, C, D))\n\nStep 18:\nTheorem: Substitution\nPremises : sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = 12 / x, 1.2 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h\nConclusions: 1.2 = 12 / x\n\nStep 19:\nTheorem: Substitution\nPremises : 12 / x = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H)), 36 = Perimeter(Rectangle(A, B, C, D))\nConclusions: 12 / x = 36 / Perimeter(Rectangle(E, F, G, H))\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 12 / x = 36 / Perimeter(Rectangle(E, F, G, H)), 1.2 = 12 / x\nConclusions: 1.2 = 36 / Perimeter(Rectangle(E, F, G, H))\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 12 / x = 36 / Perimeter(Rectangle(E, F, G, H)), x = EH, 1.2 = 36 / Perimeter(Rectangle(E, F, G, H))\nConclusions: 10 = EH\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 10 = EH, x = EH\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Line(E, H)",
+        "Rectangle(A, B, C, D)",
+        "Rectangle(E, F, G, H)",
+        "Similar(Rectangle(A, B, C, D), Rectangle(E, F, G, H))",
+        "Equals(AreaOf(Rectangle(A, B, C, D)), 72.0)",
+        "Equals(AreaOf(Rectangle(E, F, G, H)), 50.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(E, H)), x)"
+    ],
+    "correct": true
+}

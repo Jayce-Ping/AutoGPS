@@ -1,0 +1,67 @@
+{
+    "problem_id": "7134",
+    "solved": true,
+    "problem_text": "Find m \\angle C.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 83)",
+        "Equals(MeasureOf(Angle(A, C, B)), 9x-1)",
+        "Equals(MeasureOf(Angle(B, A, C)), 5x)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            52.952897322941375,
+            54.59120879120879
+        ],
+        "A": [
+            338.00734214390604,
+            88.89333333333333
+        ],
+        "C": [
+            52.78602894902454,
+            240.21428571428572
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        53.0,
+        62.0,
+        83.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        53.0,
+        62.0,
+        83.0
+    ],
+    "problem_answer": 62.0,
+    "total_time": 6.156919,
+    "solution_predicate": "Equals(1.0821041362, MeasureOf(Angle(A, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 * x) / 180) = \u2220BAC, AB, 3.14 = pi, pi * (83 / 180) = \u2220CBA, pi * ((9 * x - 1) / 180) = \u2220ACB, AC, BC\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((5 * x) / 180) = \u2220BAC, 3.14 = pi\nConclusions: 3.14 * ((5 * x) / 180) = \u2220BAC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((9 * x - 1) / 180) = \u2220ACB\nConclusions: 3.14 * ((9 * x - 1) / 180) = \u2220ACB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (83 / 180) = \u2220CBA\nConclusions: 3.14 = 3.14 * (83 / 180) + \u2220ACB + \u2220BAC\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (83 / 180) + \u2220ACB + \u2220BAC, 3.14 * ((9 * x - 1) / 180) = \u2220ACB, 3.14 * ((5 * x) / 180) = \u2220BAC\nConclusions: 1.08 = \u2220ACB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(83.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Sub(Mul(9.0, x), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(Mul(5.0, x), 180.0)))"
+    ],
+    "correct": true
+}

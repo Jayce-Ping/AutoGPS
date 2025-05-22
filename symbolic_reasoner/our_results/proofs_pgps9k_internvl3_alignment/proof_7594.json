@@ -1,0 +1,131 @@
+{
+    "problem_id": "7594",
+    "solved": true,
+    "problem_text": "Find YZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), 7)",
+        "Equals(MeasureOf(Angle(W, Z, X)), 41)",
+        "Equals(MeasureOf(Angle(Y, Z, X)), 41)",
+        "Equals(MeasureOf(Angle(Y, Z, X)), MeasureOf(Angle(W, Z, X)))",
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(B, X)",
+        "Line(B, Z)",
+        "Line(C, W)",
+        "Line(C, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(A, Z), Line(X, Y))",
+        "Perpendicular(Line(X, W), Line(C, Z))",
+        "PointLiesOnLine(W, Line(C, Z))",
+        "PointLiesOnLine(X, Line(B, Z))",
+        "PointLiesOnLine(Y, Line(A, Z))",
+        "Find(LengthOf(Line(Y,Z)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "W",
+        "X",
+        "Y",
+        "Z"
+    ],
+    "line_instances": [
+        "AY",
+        "AZ",
+        "YZ",
+        "YX",
+        "XW",
+        "CW",
+        "CZ",
+        "WZ",
+        "ZX",
+        "ZB",
+        "XB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            102.32894736842105,
+            359.24571428571426
+        ],
+        "B": [
+            96.5701754385965,
+            105.1047619047619
+        ],
+        "C": [
+            349.5131578947368,
+            74.39999999999999
+        ],
+        "W": [
+            370.7763157894737,
+            225.85714285714286
+        ],
+        "X": [
+            257.0563909774436,
+            244.45714285714286
+        ],
+        "Y": [
+            256.4868421052632,
+            358.7142857142857
+        ],
+        "Z": [
+            388.9385964912281,
+            359.0095238095238
+        ]
+    },
+    "problem_choices": [
+        4.592,
+        7.0,
+        8.053,
+        9.275
+    ],
+    "choices_precise_value": [
+        4.592,
+        7.0,
+        8.053,
+        9.275
+    ],
+    "problem_answer": 8.053,
+    "total_time": 124.497958,
+    "solution_predicate": "Equals(8.0525788509, LengthOf(Line(Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220XZA, Y on AZ, W on CZ, \u2220WXB, pi * (41 / 180) = \u2220WZX, \u2220WZX = \u2220XZY, pi * (41 / 180) = \u2220XZY, \u2220YXW, XY \u22a5 YZ, \u2220WZB, X on BZ, 7 = WX, \u2220BXY, WX \u22a5 WZ, \u2220BZA, XZ, \u2220CZX, 3.14 = pi, tan(\u2220YXZ), YZ, \u2220AZC, \u2220CZB, \u2220AZW, XY\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220XZA, Y on AZ\nConclusions: \u2220XZA = \u2220XZY\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : XY \u22a5 YZ\nConclusions: pi / 2 = \u2220ZYX\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220YXW, \u2220WXB, \u2220BXY\nConclusions: 2 * pi = \u2220BXY + \u2220WXB + \u2220YXW\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WZ\nConclusions: pi / 2 = \u2220XWZ\n\nStep 6:\nTheorem: Same Angle\nPremises : X on BZ, \u2220BZA\nConclusions: \u2220BZA = \u2220XZA\n\nStep 7:\nTheorem: Same Angle\nPremises : W on CZ, \u2220CZX\nConclusions: \u2220CZX = \u2220WZX\n\nStep 8:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220YXZ), XY \u22a5 YZ\nConclusions: YZ / XY = tan(\u2220YXZ)\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220AZC, Y on AZ\nConclusions: \u2220AZC = \u2220YZC\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220AZC, W on CZ\nConclusions: \u2220AZC = \u2220AZW\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220CZB, X on BZ\nConclusions: \u2220CZB = \u2220CZX\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220CZB, \u2220AZC, \u2220BZA\nConclusions: 2 * pi = \u2220AZC + \u2220BZA + \u2220CZB\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220CZB, W on CZ\nConclusions: \u2220CZB = \u2220WZB\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220WZB, \u2220AZW, \u2220BZA\nConclusions: 2 * pi = \u2220AZW + \u2220BZA + \u2220WZB\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : YZ, XY, XZ\nConclusions: \u25b3XYZ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XZA = \u2220XZY, pi * (41 / 180) = \u2220XZY\nConclusions: pi * (41 / 180) = \u2220XZA\n\nStep 17:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BXY + \u2220WXB + \u2220YXW\nConclusions: 2 * 3.14 = \u2220BXY + \u2220WXB + \u2220YXW\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220XWZ, pi / 2 = \u2220ZYX\nConclusions: \u2220XWZ = \u2220ZYX\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AZC = \u2220AZW, \u2220AZC = \u2220YZC\nConclusions: \u2220AZW = \u2220YZC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CZB = \u2220CZX, \u2220CZB = \u2220WZB\nConclusions: \u2220CZX = \u2220WZB\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, X)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XZY + \u2220YXZ + \u2220ZYX\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * (41 / 180) = \u2220XZA, \u2220BZA = \u2220XZA\nConclusions: pi * (41 / 180) = \u2220BZA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BXY + \u2220WXB + \u2220YXW, 2 * pi = \u2220BXY + \u2220WXB + \u2220YXW\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 24:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220WZX = \u2220XZY, \u2220XWZ = \u2220ZYX\nConclusions: \u25b3WXZ \u2245 \u25b3YXZ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CZX = \u2220WZB, \u2220CZX = \u2220WZX, pi * (41 / 180) = \u2220WZX\nConclusions: pi * (41 / 180) = \u2220WZB\n\nStep 26:\nTheorem: Substitution\nPremises : pi * (41 / 180) = \u2220XZY, pi = \u2220XZY + \u2220YXZ + \u2220ZYX, pi / 2 = \u2220ZYX, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + pi * (41 / 180) + \u2220YXZ\n\nStep 27:\nTheorem: Congruent Definition\nPremises : \u25b3WXZ \u2245 \u25b3YXZ\nConclusions: WX = XY, WZ = YZ, \u2220WZX = \u2220XZY\n\nStep 28:\nTheorem: Substitution\nPremises : \u2220AZW = \u2220YZC, 3.14 = pi, pi * (41 / 180) = \u2220WZB, pi * (41 / 180) = \u2220BZA, 2 * pi = \u2220AZW + \u2220BZA + \u2220WZB\nConclusions: 2 * 3.14 = pi * (41 / 180) + pi * (41 / 180) + \u2220YZC\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * (41 / 180) = \u2220WZB, \u2220CZB = \u2220WZB\nConclusions: pi * (41 / 180) = \u2220CZB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : WX = XY, 7 = WX\nConclusions: 7 = XY\n\nStep 31:\nTheorem: Substitution\nPremises : pi * (41 / 180) = \u2220CZB, 2 * pi = \u2220AZC + \u2220BZA + \u2220CZB, 3.14 = pi, pi * (41 / 180) = \u2220BZA, \u2220AZC = \u2220YZC\nConclusions: 2 * 3.14 = 3.14 * (41 / 180) + 3.14 * (41 / 180) + \u2220YZC\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (41 / 180) + 3.14 * (41 / 180) + \u2220YZC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (41 / 180) + 3.14 * (41 / 180) + \u2220YZC\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = 3.14 * (41 / 180) + 3.14 * (41 / 180) + \u2220YZC, 3.14 = 3.14 / 2 + pi * (41 / 180) + \u2220YXZ, 2 * 3.14 = pi * (41 / 180) + pi * (41 / 180) + \u2220YZC\nConclusions: 0.86 = \u2220YXZ\n\nStep 34:\nTheorem: Substitution\nPremises : YZ / XY = tan(\u2220YXZ), 7 = XY, 0.86 = \u2220YXZ\nConclusions: tan(0.86) = YZ / 7\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : tan(0.86) = YZ / 7, WZ = YZ\nConclusions: 8.05 = WZ\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 8.05 = WZ, WZ = YZ\nConclusions: 8.05 = YZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(Y, Z)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(C, W)",
+        "Line(C, Z)",
+        "Line(W, Z)",
+        "Line(Z, X)",
+        "Line(Z, B)",
+        "Line(X, B)",
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(B, X)",
+        "Line(B, Z)",
+        "Line(C, W)",
+        "Line(C, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(A, Z), Line(X, Y))",
+        "Perpendicular(Line(X, W), Line(C, Z))",
+        "PointLiesOnLine(W, Line(C, Z))",
+        "PointLiesOnLine(X, Line(B, Z))",
+        "PointLiesOnLine(Y, Line(A, Z))",
+        "Equals(LengthOf(Line(X, W)), 7.0)",
+        "Equals(MeasureOf(Angle(W, Z, X)), Mul(pi, Div(41.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Z, Y)), Mul(pi, Div(41.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Z, Y)), MeasureOf(Angle(W, Z, X)))"
+    ],
+    "correct": true
+}

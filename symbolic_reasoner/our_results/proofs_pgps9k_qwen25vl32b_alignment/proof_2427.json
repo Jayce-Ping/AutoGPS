@@ -1,0 +1,82 @@
+{
+    "problem_id": "2427",
+    "solved": true,
+    "problem_text": "Find m \\angle C.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 2x)",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(D, C, B)))",
+        "Equals(MeasureOf(Angle(B, A, D)), x)",
+        "Equals(MeasureOf(Angle(C, D, A)), MeasureOf(Angle(B, A, D)))",
+        "Equals(MeasureOf(Angle(C, D, A)), x)",
+        "Equals(MeasureOf(Angle(D, C, B)), 2x)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Find(MeasureOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "CD",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.713403880070544,
+            131.14285714285714
+        ],
+        "D": [
+            255.89272030651338,
+            131.2433497536946
+        ],
+        "C": [
+            209.74233373158103,
+            53.021198156682026
+        ],
+        "B": [
+            67.9355281207133,
+            53.04
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 6.815975,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC = \u2220BCD, pi * (x / 180) = \u2220CDA, AB, AD, pi * ((2 * x) / 180) = \u2220BCD, pi * (x / 180) = \u2220DAB, 3.14 = pi, BC, CD\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220BCD, 3.14 = pi\nConclusions: 3.14 * ((2 * x) / 180) = \u2220BCD\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CDA, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CDA\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : AD, CD, BC, AB\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220CDA, pi * (x / 180) = \u2220CDA\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220DAB, 3.14 * (x / 180) = pi * (x / 180)\nConclusions: 3.14 * (x / 180) = \u2220DAB\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABC = \u2220BCD, 3.14 * (x / 180) = \u2220CDA, 3.14 * ((2 * x) / 180) = \u2220BCD, 3.14 * (x / 180) = \u2220DAB, 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\nConclusions: 2.09 = \u2220BCD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(B, C, D)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, A)), MeasureOf(Angle(D, A, B)))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Mul(2.0, x), 180.0)))"
+    ],
+    "correct": true
+}

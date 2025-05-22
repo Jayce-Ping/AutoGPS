@@ -1,0 +1,105 @@
+{
+    "problem_id": "8928",
+    "solved": true,
+    "problem_text": "Find TY.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, T)), x)",
+        "Equals(LengthOf(Line(W, Y)), 20)",
+        "Equals(LengthOf(Line(X, Y)), 16)",
+        "Equals(LengthOf(Line(Z, T)), 10)",
+        "Line(T, Y)",
+        "Line(W, T)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, T)",
+        "Line(Z, X)",
+        "Parallel(Line(Z, T), Line(X, Y))",
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(Z, Line(W, X))",
+        "Find(LengthOf(Line(T,Y)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "T",
+        "Z",
+        "W"
+    ],
+    "line_instances": [
+        "XY",
+        "XZ",
+        "XW",
+        "ZW",
+        "WT",
+        "WY",
+        "TY",
+        "ZT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            97.00736377025038,
+            368.53142857142853
+        ],
+        "Y": [
+            376.39347079037805,
+            368.81777777777774
+        ],
+        "T": [
+            300.9432989690722,
+            261.0277551020408
+        ],
+        "Z": [
+            141.46907216494847,
+            261.0277551020408
+        ],
+        "W": [
+            200.62886597938146,
+            119.28489795918367
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        7.5,
+        10.0,
+        12.5
+    ],
+    "choices_precise_value": [
+        5.0,
+        7.5,
+        10.0,
+        12.5
+    ],
+    "problem_answer": 7.5,
+    "total_time": 31.178434,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(T, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on WX, T on WY, TZ || YX, 10 = TZ, \u2220YWZ, 20 = WY, \u2220YWX, 16 = XY\n\nStep 2:\nTheorem: Line Segment Split\nPremises : T on WY\nConclusions: WY = TW + TY\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : TZ || YX\nConclusions: \u2220WXY = \u2220WZT, \u2220WTZ = \u2220WYX\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220YWZ, T on WY\nConclusions: \u2220TWZ = \u2220YWZ\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220YWX, T on WY\nConclusions: \u2220TWX = \u2220YWX\n\nStep 6:\nTheorem: Same Angle\nPremises : Z on WX, \u2220YWX\nConclusions: \u2220YWX = \u2220YWZ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 20 = WY, WY = TW + TY\nConclusions: 20 = TW + TY\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TWX = \u2220YWX, \u2220YWX = \u2220YWZ\nConclusions: \u2220TWX = \u2220YWZ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TWX = \u2220YWX, \u2220TWX = \u2220YWZ, \u2220TWZ = \u2220YWZ\nConclusions: \u2220TWZ = \u2220YWX\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220TWZ = \u2220YWX, \u2220WXY = \u2220WZT, \u2220WTZ = \u2220WYX\nConclusions: \u25b3TWZ ~ \u25b3YWX\n\nStep 11:\nTheorem: Similar Definition\nPremises : \u25b3TWZ ~ \u25b3YWX\nConclusions: \u2220WXY = \u2220WZT, sim_ratio_triangle_t_w_z_triangle_y_w_x = TZ / XY, \u2220WTZ = \u2220WYX, sim_ratio_triangle_t_w_z_triangle_y_w_x = TW / WY\n\nStep 12:\nTheorem: Substitution\nPremises : 10 = TZ, sim_ratio_triangle_t_w_z_triangle_y_w_x = TZ / XY, 16 = XY\nConclusions: 10 / 16 = sim_ratio_triangle_t_w_z_triangle_y_w_x\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 10 / 16 = sim_ratio_triangle_t_w_z_triangle_y_w_x, sim_ratio_triangle_t_w_z_triangle_y_w_x = TW / WY\nConclusions: 10 / 16 = TW / WY\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 20 = TW + TY, WY = TW + TY, 10 / 16 = TW / WY\nConclusions: 7.5 = TY\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(X, W)",
+        "Line(Z, W)",
+        "Line(W, T)",
+        "Line(W, Y)",
+        "Line(T, Y)",
+        "Line(Z, T)",
+        "Line(T, Y)",
+        "Line(W, T)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, T)",
+        "Line(Z, X)",
+        "Parallel(Line(Z, T), Line(X, Y))",
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(Z, Line(W, X))",
+        "Equals(LengthOf(Line(W, T)), x)",
+        "Equals(LengthOf(Line(W, Y)), 20.0)",
+        "Equals(LengthOf(Line(X, Y)), 16.0)",
+        "Equals(LengthOf(Line(Z, T)), 10.0)"
+    ],
+    "correct": true
+}

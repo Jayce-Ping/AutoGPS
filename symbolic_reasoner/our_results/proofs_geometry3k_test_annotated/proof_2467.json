@@ -1,0 +1,88 @@
+{
+    "problem_id": "2467",
+    "solved": true,
+    "problem_text": "Find m \\angle N C L.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(M, L))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(R, C, L)), 3x+5)",
+        "Equals(MeasureOf(Angle(R, C, M)), x-1)",
+        "Equals(MeasureOf(Angle(M, C, N)), 60)",
+        "Find(MeasureOf(Angle(N, C, L)))"
+    ],
+    "point_instances": [
+        "M",
+        "R",
+        "N",
+        "L",
+        "C"
+    ],
+    "line_instances": [
+        "MC",
+        "ML",
+        "CL",
+        "RC",
+        "CN"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "M": [
+            230.4322766570605,
+            63.400576368876074
+        ],
+        "R": [
+            169.62536023054753,
+            73.77521613832853
+        ],
+        "N": [
+            292.9682997118155,
+            119.30835734870317
+        ],
+        "L": [
+            197.0028818443804,
+            227.66570605187317
+        ],
+        "C": [
+            213.4293948126801,
+            146.10951008645532
+        ]
+    },
+    "problem_choices": [
+        "60",
+        "120",
+        "240",
+        "360"
+    ],
+    "choices_precise_value": [
+        60.0,
+        120.0,
+        240.0,
+        360.0
+    ],
+    "problem_answer": 120.0,
+    "total_time": 8.598364,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(L, C, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (60 / 180) = \u2220NCM, \u2220NCM, 3.14 = pi, \u2220LCN\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220NCM, \u2220LCN\nConclusions: pi = \u2220LCN + \u2220NCM\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220NCM, 3.14 = pi, pi = \u2220LCN + \u2220NCM\nConclusions: 3.14 = 3.14 * (60 / 180) + \u2220LCN\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (60 / 180) + \u2220LCN\nConclusions: 2.09 = \u2220LCN\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, C)",
+        "Line(M, L)",
+        "Line(C, L)",
+        "Line(R, C)",
+        "Line(C, N)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(C, Line(M, L))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(R, C, L)), Mul(pi, Div(Add(Mul(3.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(M, C, R)), Mul(pi, Div(Sub(x, 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(N, C, M)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

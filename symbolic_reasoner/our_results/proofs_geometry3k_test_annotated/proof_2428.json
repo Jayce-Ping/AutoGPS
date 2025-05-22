@@ -1,0 +1,117 @@
+{
+    "problem_id": "2428",
+    "solved": true,
+    "problem_text": "In the figure, a regular polygon is inscribed in a circle. Find the measure of a central angle.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(K, L))",
+        "PointLiesOnCircle(N, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(R, radius_0_0))",
+        "Perpendicular(Line(R, S), Line(L, S))",
+        "InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), Circle(R))",
+        "Find(MeasureOf(Angle(K, R, L)))"
+    ],
+    "point_instances": [
+        "J",
+        "R",
+        "S",
+        "N",
+        "M",
+        "P",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "PN",
+        "NM",
+        "LM",
+        "RL",
+        "RS",
+        "KS",
+        "KL",
+        "SL",
+        "KR",
+        "JK",
+        "JP"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "J": [
+            90.25,
+            44.375
+        ],
+        "R": [
+            147.75,
+            143.125
+        ],
+        "S": [
+            233.375,
+            94.0625
+        ],
+        "N": [
+            91.1875,
+            240.3125
+        ],
+        "M": [
+            204.9375,
+            240.9375
+        ],
+        "P": [
+            34.9375,
+            141.875
+        ],
+        "K": [
+            204.625,
+            44.375
+        ],
+        "L": [
+            260.875,
+            142.1875
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "60",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 331.743054,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(L, R, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JK, \u2220NRL, Hexagon(J, K, L, M, N, P), NP, S on KL, \u2220LRK, \u2220KRP, Regular(Hexagon(J, K, L, M, N, P)), JP, MN, KR, LR, LM, NR, 3.14 = pi, InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), \u2299(R, radius_0_0)), KL, PR\n\nStep 2:\nTheorem: Interior Angle Sum Theorem for Hexagon(J, K, L, M, N, P)\nPremises : Hexagon(J, K, L, M, N, P)\nConclusions: 4 * pi = \u2220JKL + \u2220KLM + \u2220LMN + \u2220MNP + \u2220NPJ + \u2220PJK\n\nStep 3:\nTheorem: Hexagon to is components\nPremises : Hexagon(J, K, L, M, N, P)\nConclusions: JK, KL, \u2220JKL, NP, MN, LM, \u2220KLM, JP\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220LRK, \u2220NRL\nConclusions: pi = \u2220LRK + \u2220NRL\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220LRK, \u2220KRP\nConclusions: pi = \u2220KRP + \u2220LRK\n\nStep 6:\nTheorem: Regular Hexagon Definition\nPremises : Regular(Hexagon(J, K, L, M, N, P))\nConclusions: pi * (2 / 3) = \u2220MNP, pi * (2 / 3) = \u2220NPJ, pi * (2 / 3) = \u2220LMN, pi * (2 / 3) = \u2220PJK, pi * (2 / 3) = \u2220JKL, pi * (2 / 3) = \u2220KLM\n\nStep 7:\nTheorem: Definition of Quadrilateral\nPremises : MN, LM, LR, NR\nConclusions: Quadrilateral(L, M, N, R)\n\nStep 8:\nTheorem: Properties for Hexagon inscribed in circle\nPremises : InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), \u2299(R, radius_0_0))\nConclusions: R on LP, \u2220JKR = \u2220RKL, \u2220NPR = \u2220RPJ, \u2220MNR = \u2220RNP, \u2220KLR = \u2220RLM, R on KN\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : KL, LR, KR\nConclusions: \u25b3KLR\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : NR, NP, PR\nConclusions: \u25b3NPR\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : JP, JK, KR, PR\nConclusions: Quadrilateral(J, K, R, P)\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220JKL, S on KL\nConclusions: \u2220JKL = \u2220JKS\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220KLM, S on KL\nConclusions: \u2220KLM = \u2220SLM\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220LRK + \u2220NRL, 3.14 = pi\nConclusions: 3.14 = \u2220LRK + \u2220NRL\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220MNP, pi * (2 / 3) = \u2220PJK\nConclusions: \u2220MNP = \u2220PJK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220NPJ, pi * (2 / 3) = \u2220PJK\nConclusions: \u2220NPJ = \u2220PJK\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(L, M, N, R)\nPremises : Quadrilateral(L, M, N, R)\nConclusions: 2 * pi = \u2220LMN + \u2220MNR + \u2220NRL + \u2220RLM\n\nStep 18:\nTheorem: Vertical Angle Theorem\nPremises : R on KN, R on LP\nConclusions: \u2220LRK = \u2220PRN\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(K, L, R)\nPremises : \u25b3KLR\nConclusions: pi = \u2220KLR + \u2220LRK + \u2220RKL\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(N, P, R)\nPremises : \u25b3NPR\nConclusions: pi = \u2220NPR + \u2220PRN + \u2220RNP\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(J, K, R, P)\nPremises : Quadrilateral(J, K, R, P)\nConclusions: 2 * pi = \u2220JKR + \u2220KRP + \u2220PJK + \u2220RPJ\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220JKL, \u2220JKL = \u2220JKS\nConclusions: pi * (2 / 3) = \u2220JKS\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220KLM, \u2220KLM = \u2220SLM\nConclusions: pi * (2 / 3) = \u2220SLM\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220NPR + \u2220PRN + \u2220RNP\nConclusions: 3.14 = \u2220NPR + \u2220PRN + \u2220RNP\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220LMN, pi * (2 / 3) = \u2220JKS, \u2220JKL = \u2220JKS\nConclusions: \u2220JKL = \u2220LMN\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220LMN, pi * (2 / 3) = \u2220SLM, \u2220KLM = \u2220SLM\nConclusions: \u2220KLM = \u2220LMN\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : \u2220MNP = \u2220PJK, \u2220JKL = \u2220LMN, \u2220NPJ = \u2220PJK, 3.14 = \u2220NPR + \u2220PRN + \u2220RNP, 4 * pi = \u2220JKL + \u2220KLM + \u2220LMN + \u2220MNP + \u2220NPJ + \u2220PJK, 2 * pi = \u2220JKR + \u2220KRP + \u2220PJK + \u2220RPJ, pi = \u2220NPR + \u2220PRN + \u2220RNP, \u2220LRK = \u2220PRN, \u2220MNR = \u2220RNP, \u2220KLR = \u2220RLM, 2 * pi = \u2220LMN + \u2220MNR + \u2220NRL + \u2220RLM, pi = \u2220KLR + \u2220LRK + \u2220RKL, \u2220JKR = \u2220RKL, 3.14 = \u2220LRK + \u2220NRL, pi = \u2220KRP + \u2220LRK, \u2220KLM = \u2220LMN, \u2220NPR = \u2220RPJ\nConclusions: 1.05 = \u2220LRK\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, N)",
+        "Line(N, M)",
+        "Line(L, M)",
+        "Line(R, L)",
+        "Line(R, S)",
+        "Line(K, S)",
+        "Line(K, L)",
+        "Line(S, L)",
+        "Line(K, R)",
+        "Line(J, K)",
+        "Line(J, P)",
+        "Circle(R, radius_0_0)",
+        "PointLiesOnLine(S, Line(K, L))",
+        "PointLiesOnCircle(N, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(R, radius_0_0))",
+        "Perpendicular(Line(R, S), Line(L, S))",
+        "InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), Circle(R, radius_0_0))"
+    ],
+    "correct": true
+}

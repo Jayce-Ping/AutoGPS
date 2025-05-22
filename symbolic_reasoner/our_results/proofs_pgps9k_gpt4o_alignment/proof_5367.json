@@ -1,0 +1,116 @@
+{
+    "problem_id": "5367",
+    "solved": true,
+    "problem_text": "In the trapezoid, NP = 15. What is the length of KL?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, N)), LengthOf(Line(N, K)))",
+        "Equals(LengthOf(Line(K, L)), 3x+2)",
+        "Equals(LengthOf(Line(M, J)), 2x-2)",
+        "Equals(LengthOf(Line(M, P)), LengthOf(Line(P, L)))",
+        "Equals(LengthOf(Line(N, P)), 15)",
+        "Find(LengthOf(Line(K, L)))",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(N, K)",
+        "Line(N, P)",
+        "Line(P, L)",
+        "PointLiesOnLine(N, Line(J, K))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Trapezoid(J, K, L, M)"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "P",
+        "N",
+        "J",
+        "M"
+    ],
+    "line_instances": [
+        "KL",
+        "LP",
+        "LM",
+        "PM",
+        "MJ",
+        "JN",
+        "JK",
+        "NK",
+        "NP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            51.82666666666667,
+            271.8181818181818
+        ],
+        "L": [
+            526.9733333333334,
+            272.2058823529412
+        ],
+        "P": [
+            447.33333333333337,
+            163.6764705882353
+        ],
+        "N": [
+            91.04333333333334,
+            163.77450980392157
+        ],
+        "J": [
+            130.60666666666668,
+            55.98739495798319
+        ],
+        "M": [
+            368.72,
+            56.1764705882353
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        20.0,
+        40.0,
+        65.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        40.0,
+        65.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 23.453566,
+    "solution_predicate": "Equals(20.0, LengthOf(Line(K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: LP = MP, Trapezoid(J, K, L, M), 2 + 3 * x = KL, JN = KN, 15 = NP, N on JK, P on LM, 2 * x - 2 = JM\n\nStep 2:\nTheorem: Median of Trapezoid\nPremises : LP = MP, Trapezoid(J, K, L, M), JN = KN\nConclusions: IsMedianOf(NP, Trapezoid(J, K, L, M))\n\nStep 3:\nTheorem: Median of a Trapezoid Properties\nPremises : IsMedianOf(NP, Trapezoid(J, K, L, M)), P on LM, N on JK\nConclusions: NP = (JM + KL) / 2\n\nStep 4:\nTheorem: Substitution\nPremises : 15 = NP, 2 + 3 * x = KL, 2 * x - 2 = JM, NP = (JM + KL) / 2\nConclusions: 15 = ((2 + 3 * x) + (2 * x - 2)) / 2\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 2 + 3 * x = KL, 15 = ((2 + 3 * x) + (2 * x - 2)) / 2\nConclusions: 20 = KL\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(L, P)",
+        "Line(L, M)",
+        "Line(P, M)",
+        "Line(M, J)",
+        "Line(J, N)",
+        "Line(J, K)",
+        "Line(N, K)",
+        "Line(N, P)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(N, K)",
+        "Line(N, P)",
+        "Line(P, L)",
+        "PointLiesOnLine(N, Line(J, K))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Trapezoid(J, K, L, M)",
+        "Equals(LengthOf(Line(J, N)), LengthOf(Line(N, K)))",
+        "Equals(LengthOf(Line(K, L)), Add(Mul(3.0, x), 2.0))",
+        "Equals(LengthOf(Line(M, J)), Sub(Mul(2.0, x), 2.0))",
+        "Equals(LengthOf(Line(M, P)), LengthOf(Line(P, L)))",
+        "Equals(LengthOf(Line(N, P)), 15.0)"
+    ],
+    "correct": true
+}

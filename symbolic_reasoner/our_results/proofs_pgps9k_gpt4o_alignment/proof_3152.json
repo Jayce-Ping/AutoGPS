@@ -1,0 +1,111 @@
+{
+    "problem_id": "3152",
+    "solved": true,
+    "problem_text": "JKLM is a rhombus. If CK = 8, JK = 10 and \\angle JKM = 37. What is m \\angle MKL?",
+    "logic_forms": [
+        "Line(C, K)",
+        "Line(C, L)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, C)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "PointLiesOnLine(C, Line(J, L))",
+        "PointLiesOnLine(C, Line(M, K))",
+        "Rhombus(J,K,L,M)",
+        "Equals(LengthOf(Line(C,K)),8)",
+        "Equals(LengthOf(Line(J,K)),10)",
+        "Equals(Angle(J,K,M),37)",
+        "Find(MeasureOf(Angle(M,K,L)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "K",
+        "J",
+        "C"
+    ],
+    "line_instances": [
+        "MC",
+        "MK",
+        "CK",
+        "JC",
+        "JL",
+        "CL",
+        "LK",
+        "JK",
+        "MJ",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            44.88349514563107,
+            160.2514285714286
+        ],
+        "L": [
+            184.45504432249896,
+            160.13813664596276
+        ],
+        "K": [
+            228.3203883495146,
+            50.53224489795919
+        ],
+        "J": [
+            88.96639283047051,
+            50.71120879120879
+        ],
+        "C": [
+            136.7580582524272,
+            105.16662857142857
+        ]
+    },
+    "problem_choices": [
+        37.0,
+        53.0,
+        74.0,
+        106.0
+    ],
+    "choices_precise_value": [
+        37.0,
+        53.0,
+        74.0,
+        106.0
+    ],
+    "problem_answer": 37.0,
+    "total_time": 71.240985,
+    "solution_predicate": "Equals(0.6457718232, MeasureOf(Angle(M, K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(J, K, L, M), pi * (37 / 180) = \u2220JKM\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 3:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(J, K, L, M)\nConclusions: \u2220KMJ = \u2220LMK\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JM || KL, JK || ML\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : JM || KL\nConclusions: \u2220KMJ = \u2220MKL\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JKM = \u2220LMK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKM = \u2220LMK, pi * (37 / 180) = \u2220JKM\nConclusions: pi * (37 / 180) = \u2220LMK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMJ = \u2220MKL, pi * (37 / 180) = \u2220LMK, \u2220KMJ = \u2220LMK\nConclusions: pi * (37 / 180) = \u2220MKL\n\nStep 9:\nTheorem: Evaluate\nPremises : pi * (37 / 180) = \u2220MKL\nConclusions: 0.65 = \u2220MKL\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, C)",
+        "Line(M, K)",
+        "Line(C, K)",
+        "Line(J, C)",
+        "Line(J, L)",
+        "Line(C, L)",
+        "Line(L, K)",
+        "Line(J, K)",
+        "Line(M, J)",
+        "Line(M, L)",
+        "Line(C, K)",
+        "Line(C, L)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, C)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "PointLiesOnLine(C, Line(J, L))",
+        "PointLiesOnLine(C, Line(M, K))",
+        "Rhombus(J, K, L, M)",
+        "Equals(LengthOf(Line(C, K)), 8.0)",
+        "Equals(LengthOf(Line(J, K)), 10.0)",
+        "Equals(MeasureOf(Angle(J, K, M)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

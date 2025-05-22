@@ -1,0 +1,92 @@
+{
+    "problem_id": "2459",
+    "solved": true,
+    "problem_text": "J K L M is a rectangle. M L P R is a rhombus. \\angle J M K \\cong \\angle R M P, m \\angle J M K = 55, and m \\angle M R P = 70. Find m \\angle K L P.",
+    "logic_forms": [
+        "Rectangle(J,K,L,M)",
+        "Rhombus(M,L,P,R)",
+        "Equals(Angle(J,M,K),Angle(R,M,P))",
+        "Equals(MeasureOf(Angle(J,M,K)),55)",
+        "Equals(MeasureOf(Angle(M,R,P)),70)",
+        "Find(MeasureOf(Angle(K,L,P)))"
+    ],
+    "point_instances": [
+        "P",
+        "M",
+        "L",
+        "K",
+        "R",
+        "J"
+    ],
+    "line_instances": [
+        "RP",
+        "LP",
+        "MP",
+        "MR",
+        "ML",
+        "JM",
+        "JK",
+        "KL",
+        "MK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            140.66748166259168,
+            198.0440097799511
+        ],
+        "M": [
+            68.78484107579462,
+            90.46454767726162
+        ],
+        "L": [
+            176.119804400978,
+            90.70904645476773
+        ],
+        "K": [
+            175.8753056234719,
+            38.141809290953546
+        ],
+        "R": [
+            33.821515892420535,
+            198.53300733496334
+        ],
+        "J": [
+            68.2958435207824,
+            38.141809290953546
+        ]
+    },
+    "problem_choices": [
+        "20",
+        "110",
+        "140",
+        "160"
+    ],
+    "choices_precise_value": [
+        20.0,
+        110.0,
+        140.0,
+        160.0
+    ],
+    "problem_answer": 160.0,
+    "total_time": 68.635937,
+    "solution_predicate": "Equals(2.7925268032, MeasureOf(Angle(K, L, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220PLK, \u2220MLP, 3.14 = pi, \u2220KMR, pi * (70 / 180) = \u2220PRM, \u2220PLK, Rectangle(J, K, L, M), \u2220RML, \u2220KLM, Rhombus(L, M, R, P), \u2220LMK\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220PLK\nConclusions: \u2220PLK = 2 * pi - \u2220KLP\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, L, M)\nConclusions: KL \u22a5 LM\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220PLK, \u2220MLP, \u2220KLM\nConclusions: 2 * pi = \u2220KLM + \u2220MLP + \u2220PLK\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(L, M, R, P)\nConclusions: Parallelogram(L, M, R, P)\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220RML, \u2220KMR, \u2220LMK\nConclusions: 2 * pi = \u2220KMR + \u2220LMK + \u2220RML\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 LM\nConclusions: pi / 2 = \u2220KLM\n\nStep 8:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(L, M, R, P)\nConclusions: \u2220MLP = \u2220PRM\n\nStep 9:\nTheorem: Substitution\nPremises : 2 * pi = \u2220KMR + \u2220LMK + \u2220RML, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220KMR + \u2220LMK + \u2220RML\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = \u2220PRM, \u2220MLP = \u2220PRM\nConclusions: pi * (70 / 180) = \u2220MLP\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220KMR + \u2220LMK + \u2220RML, 2 * 3.14 = \u2220KMR + \u2220LMK + \u2220RML\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (70 / 180) = \u2220MLP, 3.14 = pi, pi / 2 = \u2220KLM, 2 * pi = \u2220KLM + \u2220MLP + \u2220PLK\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (70 / 180) + \u2220PLK\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 / 2 + 3.14 * (70 / 180) + \u2220PLK, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 / 2 + 3.14 * (70 / 180) + \u2220PLK\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = 3.14 / 2 + 3.14 * (70 / 180) + \u2220PLK, \u2220PLK = 2 * pi - \u2220KLP\nConclusions: 2.79 = \u2220KLP\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, P)",
+        "Line(L, P)",
+        "Line(M, P)",
+        "Line(M, R)",
+        "Line(M, L)",
+        "Line(J, M)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Rectangle(J, K, L, M)",
+        "Rhombus(M, L, P, R)",
+        "Equals(MeasureOf(Angle(K, M, J)), MeasureOf(Angle(R, M, P)))",
+        "Equals(MeasureOf(Angle(K, M, J)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, R, M)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

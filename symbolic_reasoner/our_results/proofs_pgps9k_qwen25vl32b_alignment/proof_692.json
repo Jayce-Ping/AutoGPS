@@ -1,0 +1,135 @@
+{
+    "problem_id": "692",
+    "solved": true,
+    "problem_text": "Solve for x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, B)), 6x+1)",
+        "Equals(LengthOf(Line(E, F)), 7x-4)",
+        "Equals(MeasureOf(Angle(A, B, E)), 90)",
+        "Equals(MeasureOf(Angle(A, F, E)), 90)",
+        "Equals(MeasureOf(Angle(A, F, E)), MeasureOf(Angle(A, B, E)))",
+        "Equals(MeasureOf(Angle(B, A, E)), 30)",
+        "Equals(MeasureOf(Angle(F, A, E)), 30)",
+        "Equals(MeasureOf(Angle(F, A, E)), MeasureOf(Angle(B, A, E)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(F, Line(A, G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AF",
+        "AG",
+        "FG",
+        "AE",
+        "AD",
+        "ED",
+        "EB",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            72.42,
+            228.75844155844155
+        ],
+        "B": [
+            593.915,
+            73.96428571428571
+        ],
+        "C": [
+            663.14,
+            53.79220779220779
+        ],
+        "D": [
+            782.8072727272727,
+            229.0672963400236
+        ],
+        "E": [
+            674.5,
+            229.3246753246753
+        ],
+        "F": [
+            593.56,
+            373.71428571428567
+        ],
+        "G": [
+            665.5927272727273,
+            393.7898465171192
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 117.888757,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 7 * x - 4 = EF, \u2220ABE = \u2220EFA, \u2220EAB = \u2220FAE, 1 + 6 * x = BE\n\nStep 2:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220ABE = \u2220EFA, \u2220EAB = \u2220FAE\nConclusions: \u25b3ABE \u2245 \u25b3AFE\n\nStep 3:\nTheorem: Congruent Definition\nPremises : \u25b3ABE \u2245 \u25b3AFE\nConclusions: BE = EF, \u2220ABE = \u2220EFA\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 7 * x - 4 = EF, BE = EF, 1 + 6 * x = BE\nConclusions: 1 + 6 * x = 7 * x - 4\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 1 + 6 * x = 7 * x - 4\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(F, G)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "Line(E, F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(F, Line(A, G))",
+        "Equals(LengthOf(Line(E, B)), Add(Mul(6.0, x), 1.0))",
+        "Equals(LengthOf(Line(E, F)), Sub(Mul(7.0, x), 4.0))",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(90.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, A)), Mul(pi, Div(90.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, A)), MeasureOf(Angle(A, B, E)))",
+        "Equals(MeasureOf(Angle(E, A, B)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, A, E)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, A, E)), MeasureOf(Angle(E, A, B)))"
+    ],
+    "correct": true
+}

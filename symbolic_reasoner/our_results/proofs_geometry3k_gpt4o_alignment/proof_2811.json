@@ -1,0 +1,63 @@
+{
+    "problem_id": "2811",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), 10)",
+        "Equals(LengthOf(Line(A, C)), 16)",
+        "Equals(MeasureOf(Angle(C, B, A)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            9.775967413441954,
+            121.78818737270876
+        ],
+        "B": [
+            244.80651731160896,
+            121.17718940936862
+        ],
+        "C": [
+            181.87372708757636,
+            16.90020366598778
+        ]
+    },
+    "problem_choices": [
+        "21",
+        "34",
+        "58",
+        "67"
+    ],
+    "choices_precise_value": [
+        21.0,
+        34.0,
+        58.0,
+        67.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 15.358144,
+    "solution_predicate": "Equals(57.9946167917, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = AC, pi * (x / 180) = \u2220CBA, tan(\u2220CBA), 3.14 = pi, AC \u22a5 BC, 10 = BC\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220CBA\nConclusions: 3.14 * (x / 180) = \u2220CBA\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBA), AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 4:\nTheorem: Substitution\nPremises : 16 = AC, 3.14 * (x / 180) = \u2220CBA, AC / BC = tan(\u2220CBA), 10 = BC\nConclusions: 16 / 10 = tan(3.14 * (x / 180))\n\nStep 5:\nTheorem: Solve Univariate Equation\nPremises : 16 / 10 = tan(3.14 * (x / 180))\nConclusions: 57.99 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(C, B)), 10.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

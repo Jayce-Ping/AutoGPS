@@ -1,0 +1,88 @@
+{
+    "problem_id": "2781",
+    "solved": true,
+    "problem_text": "If A B C D is a rhombus, and m \\angle A B C = 70, what is m \\angle 1?",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnLine(E, Line(C, A))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(angle 1))",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(A, B, C)), 70)",
+        "Find(MeasureOf(angle 1))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "B",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "DA",
+        "CD",
+        "BE",
+        "BD",
+        "ED",
+        "CE",
+        "CA",
+        "EA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            321.9512195121951,
+            52.46341463414633
+        ],
+        "C": [
+            121.64634146341463,
+            51.85365853658536
+        ],
+        "B": [
+            52.74390243902439,
+            218.92682926829266
+        ],
+        "A": [
+            253.96341463414632,
+            218.92682926829266
+        ],
+        "E": [
+            187.80487804878047,
+            135.390243902439
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "55",
+        "70",
+        "125"
+    ],
+    "choices_precise_value": [
+        45.0,
+        55.0,
+        70.0,
+        125.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 101.991783,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(E, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (70 / 180) = \u2220ABC, Rhombus(A, B, C, D), \u2220CAB, E on AC, AC, 3.14 = pi, CD, AD\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CAB = \u2220DAC\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Same Angle\nPremises : E on AC, \u2220CAB\nConclusions: \u2220CAB = \u2220EAB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220ABC = \u2220CDA\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220EAB, \u2220CAB = \u2220DAC\nConclusions: \u2220DAC = \u2220EAB\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = \u2220ABC, \u2220ABC = \u2220CDA\nConclusions: pi * (70 / 180) = \u2220CDA\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ACD + \u2220CDA + \u2220DAC, 3.14 = pi\nConclusions: 3.14 = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220EAB, \u2220ACD = \u2220CAB, \u2220CAB = \u2220DAC\nConclusions: \u2220ACD = \u2220EAB\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACD = \u2220EAB, pi = \u2220ACD + \u2220CDA + \u2220DAC, \u2220DAC = \u2220EAB, pi * (70 / 180) = \u2220CDA, 3.14 = \u2220ACD + \u2220CDA + \u2220DAC\nConclusions: 0.96 = \u2220EAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(C, D)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnLine(E, Line(C, A))",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

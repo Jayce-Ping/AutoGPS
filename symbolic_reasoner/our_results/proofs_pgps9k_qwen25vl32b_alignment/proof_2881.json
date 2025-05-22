@@ -1,0 +1,107 @@
+{
+    "problem_id": "2881",
+    "solved": true,
+    "problem_text": "\\triangle BTW \\sim \\triangle ETC. Find m \\angle TEC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, W)), 12)",
+        "Equals(LengthOf(Line(E, C)), 3)",
+        "Equals(LengthOf(Line(T, B)), 20)",
+        "Equals(MeasureOf(Angle(E, B, W)), 79)",
+        "Equals(MeasureOf(Angle(E, T, C)), 34)",
+        "Line(B, W)",
+        "Line(C, W)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(T, B)",
+        "Line(T, C)",
+        "Line(T, E)",
+        "Line(T, W)",
+        "PointLiesOnLine(C, Line(T, W))",
+        "PointLiesOnLine(E, Line(T, B))",
+        "Similar(Triangle(B,T,W),Triangle(E,T,C))",
+        "Find(MeasureOf(Angle(T,E,C)))"
+    ],
+    "point_instances": [
+        "T",
+        "E",
+        "C",
+        "B",
+        "W"
+    ],
+    "line_instances": [
+        "TE",
+        "TB",
+        "EB",
+        "BW",
+        "TC",
+        "TW",
+        "CW",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            128.58487394957984,
+            45.79185520361991
+        ],
+        "E": [
+            113.87755102040816,
+            122.96153846153845
+        ],
+        "C": [
+            162.0857142857143,
+            122.96153846153845
+        ],
+        "B": [
+            67.31428571428572,
+            358.1428571428571
+        ],
+        "W": [
+            261.97460317460315,
+            357.87606837606836
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        79.0,
+        101.0,
+        146.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        79.0,
+        101.0,
+        146.0
+    ],
+    "problem_answer": 79.0,
+    "total_time": 17.086997,
+    "solution_predicate": "Equals(1.3788101091, MeasureOf(Angle(C, E, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (79 / 180) = \u2220WBE, \u2220WBT, E on BT, \u25b3BTW ~ \u25b3ETC\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220WBT, E on BT\nConclusions: \u2220WBE = \u2220WBT\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3BTW ~ \u25b3ETC\nConclusions: \u2220CET = \u2220WBT\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WBE = \u2220WBT, pi * (79 / 180) = \u2220WBE\nConclusions: pi * (79 / 180) = \u2220WBT\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CET = \u2220WBT, pi * (79 / 180) = \u2220WBT\nConclusions: pi * (79 / 180) = \u2220CET\n\nStep 6:\nTheorem: Evaluate\nPremises : pi * (79 / 180) = \u2220CET\nConclusions: 1.38 = \u2220CET\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, E)",
+        "Line(T, B)",
+        "Line(E, B)",
+        "Line(B, W)",
+        "Line(T, C)",
+        "Line(T, W)",
+        "Line(C, W)",
+        "Line(E, C)",
+        "Line(B, W)",
+        "Line(C, W)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(T, B)",
+        "Line(T, C)",
+        "Line(T, E)",
+        "Line(T, W)",
+        "PointLiesOnLine(C, Line(T, W))",
+        "PointLiesOnLine(E, Line(T, B))",
+        "Similar(Triangle(B, T, W), Triangle(E, T, C))",
+        "Equals(LengthOf(Line(B, W)), 12.0)",
+        "Equals(LengthOf(Line(E, C)), 3.0)",
+        "Equals(LengthOf(Line(T, B)), 20.0)",
+        "Equals(MeasureOf(Angle(W, B, E)), Mul(pi, Div(79.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, T, C)), Mul(pi, Div(34.0, 180.0)))"
+    ],
+    "correct": true
+}

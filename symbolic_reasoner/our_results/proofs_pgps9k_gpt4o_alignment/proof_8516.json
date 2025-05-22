@@ -1,0 +1,113 @@
+{
+    "problem_id": "8516",
+    "solved": true,
+    "problem_text": "Find the area of the kite.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 3)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(B, C)), 2)",
+        "Equals(LengthOf(Line(D, C)), 4)",
+        "Equals(LengthOf(Line(E, C)), 3)",
+        "Find(AreaOf(Kite(A, B, E, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "DE",
+        "EB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            114.62662337662337,
+            23.451428571428572
+        ],
+        "B": [
+            34.51258116883117,
+            150.51102040816326
+        ],
+        "C": [
+            114.57990056818183,
+            150.9142857142857
+        ],
+        "D": [
+            281.99810606060606,
+            150.66819047619046
+        ],
+        "E": [
+            114.6598484848485,
+            278.52190476190475
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        17.5,
+        18.0,
+        21.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        17.5,
+        18.0,
+        21.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 150.306245,
+    "solution_predicate": "Equals(18.0, AreaOf(Kite(A, B, E, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, Kite(A, B, E, D), 4 = CD, 3 = CE, 3 = AC, 2 = BC, C on AE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Area formula of Kite(A, B, E, D)\nPremises : Kite(A, B, E, D)\nConclusions: Area(Kite(A, B, E, D)) = (AE * BD) / 2\n\nStep 4:\nTheorem: Kite side equality\nPremises : Kite(A, B, E, D)\nConclusions: AE = DE\n\nStep 5:\nTheorem: Evaluate\nPremises : 3 = AC, 3 = CE\nConclusions: 6 = AC + CE\n\nStep 6:\nTheorem: Evaluate\nPremises : 4 = CD, 2 = BC\nConclusions: 6 = BC + CD\n\nStep 7:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : BD = BC + CD, 6 = BC + CD\nConclusions: 6 = BD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AE = DE, AE = AC + CE\nConclusions: DE = AC + CE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 6 = AC + CE, DE = AC + CE\nConclusions: 6 = DE\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : AE = DE, 6 = DE\nConclusions: 6 = AE\n\nStep 12:\nTheorem: Evaluate\nPremises : 6 = BD, 6 = AE\nConclusions: 18 = (AE * BD) / 2\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 18 = (AE * BD) / 2, Area(Kite(A, B, E, D)) = (AE * BD) / 2\nConclusions: 18 = Area(Kite(A, B, E, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), 3.0)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(E, C)))",
+        "Equals(LengthOf(Line(B, C)), 2.0)",
+        "Equals(LengthOf(Line(D, C)), 4.0)",
+        "Equals(LengthOf(Line(E, C)), 3.0)"
+    ],
+    "correct": true
+}

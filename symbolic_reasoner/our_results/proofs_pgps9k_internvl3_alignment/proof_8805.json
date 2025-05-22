@@ -1,0 +1,78 @@
+{
+    "problem_id": "8805",
+    "solved": true,
+    "problem_text": "Quadrilateral ABCD is a rhombus. If m \\angle BCD = 120, find m \\angle DAC.",
+    "logic_forms": [
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Rhombus(A,B,C,D)",
+        "Equals(MeasureOf(Angle(B,C,D)),120)",
+        "Find(MeasureOf(Angle(D,A,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "BA",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            79.48351001177855,
+            53.72
+        ],
+        "A": [
+            181.95952457436556,
+            290.9781818181818
+        ],
+        "C": [
+            382.95053003533565,
+            54.06
+        ],
+        "D": [
+            485.30633324272895,
+            290.93538461538463
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 19.834765,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (120 / 180) = \u2220BCD, 3.14 = pi, \u2220BAD, \u2220CAB, \u2220DAC, Rhombus(A, B, C, D), \u2220BCD, \u2220DAB\n\nStep 2:\nTheorem: Circumference splited\nPremises : \u2220BAD, \u2220DAC, \u2220CAB\nConclusions: 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CAB = \u2220DAC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAB\nConclusions: \u2220DAB = 2 * pi - \u2220BAD\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BAD = \u2220DCB, \u2220BCD = \u2220DAB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = 2 * pi - \u2220DCB, pi * (120 / 180) = \u2220BCD\nConclusions: pi * (120 / 180) = 2 * pi - \u2220DCB\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220BAD = \u2220DCB, \u2220CAB = \u2220DAC, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC\nConclusions: 2 * 3.14 = \u2220DAC + \u2220DAC + \u2220DCB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220DAB, pi * (120 / 180) = \u2220BCD\nConclusions: pi * (120 / 180) = \u2220DAB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220DAB, \u2220DAB = 2 * pi - \u2220BAD\nConclusions: pi * (120 / 180) = 2 * pi - \u2220BAD\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : pi * (120 / 180) = 2 * pi - \u2220BAD, 2 * pi = \u2220BAD + \u2220CAB + \u2220DAC, \u2220CAB = \u2220DAC, 2 * 3.14 = \u2220DAC + \u2220DAC + \u2220DCB, pi * (120 / 180) = 2 * pi - \u2220DCB\nConclusions: 1.05 = \u2220CAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DAC, 1.05 = \u2220CAB\nConclusions: 1.05 = \u2220DAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

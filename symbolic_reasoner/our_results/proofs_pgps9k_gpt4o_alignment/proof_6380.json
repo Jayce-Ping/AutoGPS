@@ -1,0 +1,81 @@
+{
+    "problem_id": "6380",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat KL.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(N, M)), 4)",
+        "Equals(MeasureOf(Arc(K, M)), 130)",
+        "Equals(MeasureOf(Arc(L, M)), 85)",
+        "Line(K, N)",
+        "Line(N, L)",
+        "Line(N, M)",
+        "PointLiesOnCircle(K, Circle(N))",
+        "PointLiesOnCircle(L, Circle(N))",
+        "PointLiesOnCircle(M, Circle(N))",
+        "Find(LengthOf(Arc(K,L)))"
+    ],
+    "point_instances": [
+        "L",
+        "K",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "NM",
+        "KN",
+        "NL"
+    ],
+    "circle_instances": [
+        "N"
+    ],
+    "point_positions": {
+        "L": [
+            245.56762295081967,
+            91.32642857142858
+        ],
+        "K": [
+            55.87431693989071,
+            99.42571428571429
+        ],
+        "N": [
+            152.28296494351588,
+            125.50572004641131
+        ],
+        "M": [
+            193.8040593286495,
+            216.7257142857143
+        ]
+    },
+    "problem_choices": [
+        5.061,
+        9.076,
+        10.123,
+        15.01
+    ],
+    "choices_precise_value": [
+        5.061,
+        9.076,
+        10.123,
+        15.01
+    ],
+    "problem_answer": 10.123,
+    "total_time": 10.323529,
+    "solution_predicate": "Equals(10.1229096616, LengthOf(Arc(L, N, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(KNM), \u2220KNM, Arc(MNL), 4 = MN, M on \u2299(N, radius_N), 3.14 = pi, Arc(LNK), \u2220LNK, pi * (85 / 180) = Arc(MNL), \u2220MNL, pi * (130 / 180) = Arc(KNM)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KNM)\nConclusions: \u2220KNM = Arc(KNM)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(MNL)\nConclusions: \u2220MNL = Arc(MNL)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : M on \u2299(N, radius_N)\nConclusions: radius_N = MN\n\nStep 5:\nTheorem: Arc Length Definition\nPremises : Arc(LNK)\nConclusions: Arc(LNK) = radius_N * \u2220LNK\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220MNL, \u2220KNM, \u2220LNK\nConclusions: 2 * pi = \u2220KNM + \u2220LNK + \u2220MNL\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (130 / 180) = Arc(KNM), \u2220KNM = Arc(KNM)\nConclusions: pi * (130 / 180) = \u2220KNM\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNL = Arc(MNL), pi * (85 / 180) = Arc(MNL)\nConclusions: pi * (85 / 180) = \u2220MNL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 4 = MN, radius_N = MN\nConclusions: 4 = radius_N\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (85 / 180) = \u2220MNL, pi * (130 / 180) = \u2220KNM, 2 * pi = \u2220KNM + \u2220LNK + \u2220MNL\nConclusions: 2 * 3.14 = 3.14 * (130 / 180) + 3.14 * (85 / 180) + \u2220LNK\n\nStep 11:\nTheorem: Substitution\nPremises : 4 = radius_N, Arc(LNK) = radius_N * \u2220LNK\nConclusions: Arc(LNK) = 4 * \u2220LNK\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (130 / 180) + 3.14 * (85 / 180) + \u2220LNK, Arc(LNK) = 4 * \u2220LNK\nConclusions: 10.12 = Arc(LNK)\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(K, N)",
+        "Line(N, L)",
+        "Circle(N, radius_N)",
+        "Line(K, N)",
+        "Line(N, L)",
+        "Line(N, M)",
+        "PointLiesOnCircle(K, Circle(N, radius_N))",
+        "PointLiesOnCircle(L, Circle(N, radius_N))",
+        "PointLiesOnCircle(M, Circle(N, radius_N))",
+        "Equals(LengthOf(Line(N, M)), 4.0)",
+        "Equals(MeasureOf(Arc(K, N, M)), Mul(pi, Div(130.0, 180.0)))",
+        "Equals(MeasureOf(Arc(M, N, L)), Mul(pi, Div(85.0, 180.0)))"
+    ],
+    "correct": true
+}

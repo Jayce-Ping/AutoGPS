@@ -1,0 +1,105 @@
+{
+    "problem_id": "441",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, R)), 2x+6)",
+        "Equals(LengthOf(Line(V, T)), 10)",
+        "Equals(LengthOf(Line(W, R)), x+6)",
+        "Equals(LengthOf(Line(W, S)), 8)",
+        "Equals(MeasureOf(Angle(V, T, R)), MeasureOf(Angle(S, W, R)))",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "Line(W, R)",
+        "Line(W, S)",
+        "Line(W, T)",
+        "PointLiesOnLine(R, Line(S, V))",
+        "PointLiesOnLine(R, Line(W, T))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "W",
+        "S",
+        "R",
+        "V",
+        "T"
+    ],
+    "line_instances": [
+        "WS",
+        "SR",
+        "SV",
+        "RV",
+        "WR",
+        "WT",
+        "RT",
+        "VT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            117.20800000000001,
+            220.26277372262774
+        ],
+        "S": [
+            374.2483333333334,
+            101.25304136253042
+        ],
+        "R": [
+            421.59000000000003,
+            203.5036496350365
+        ],
+        "V": [
+            473.915,
+            314.2335766423358
+        ],
+        "T": [
+            788.5057142857144,
+            182.55474452554745
+        ]
+    },
+    "problem_choices": [
+        -1.0,
+        0.548,
+        0.646,
+        2.0
+    ],
+    "choices_precise_value": [
+        -1.0,
+        0.548,
+        0.646,
+        2.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 29.710257,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RTV = \u2220RWS, 8 = SW, R on TW, 6 + 2 * x = RT, R on SV, 10 = TV, 6 + x = RW\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : R on TW, R on SV\nConclusions: \u2220SRW = \u2220VRT\n\nStep 3:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220RTV = \u2220RWS, \u2220SRW = \u2220VRT\nConclusions: \u25b3RSW ~ \u25b3RVT\n\nStep 4:\nTheorem: Similar Definition\nPremises : \u25b3RSW ~ \u25b3RVT\nConclusions: sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, \u2220RTV = \u2220RWS, sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV\n\nStep 5:\nTheorem: Substitution\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = RW / RT, 6 + 2 * x = RT, 6 + x = RW\nConclusions: sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x)\n\nStep 6:\nTheorem: Substitution\nPremises : sim_ratio_triangle_r_s_w_triangle_r_v_t = SW / TV, 8 = SW, 10 = TV\nConclusions: 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 10 = sim_ratio_triangle_r_s_w_triangle_r_v_t, sim_ratio_triangle_r_s_w_triangle_r_v_t = (6 + x) / (6 + 2 * x)\nConclusions: 8 / 10 = (6 + x) / (6 + 2 * x)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 8 / 10 = (6 + x) / (6 + 2 * x)\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, S)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(R, V)",
+        "Line(W, R)",
+        "Line(W, T)",
+        "Line(R, T)",
+        "Line(V, T)",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(S, R)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "Line(W, R)",
+        "Line(W, S)",
+        "Line(W, T)",
+        "PointLiesOnLine(R, Line(S, V))",
+        "PointLiesOnLine(R, Line(W, T))",
+        "Equals(LengthOf(Line(T, R)), Add(Mul(2.0, x), 6.0))",
+        "Equals(LengthOf(Line(V, T)), 10.0)",
+        "Equals(LengthOf(Line(W, R)), Add(x, 6.0))",
+        "Equals(LengthOf(Line(W, S)), 8.0)",
+        "Equals(MeasureOf(Angle(R, T, V)), MeasureOf(Angle(R, W, S)))"
+    ],
+    "correct": true
+}

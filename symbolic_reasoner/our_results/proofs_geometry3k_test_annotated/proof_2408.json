@@ -1,0 +1,87 @@
+{
+    "problem_id": "2408",
+    "solved": true,
+    "problem_text": "If X N = 6, X M = 2, and X Y = 10, find N Z.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(M, N), Line(Y, Z))",
+        "Equals(LengthOf(Line(X, N)), 6)",
+        "Equals(LengthOf(Line(X, M)), 2)",
+        "Equals(LengthOf(Line(X, Y)), 10)",
+        "Find(LengthOf(Line(N, Z)))"
+    ],
+    "point_instances": [
+        "Y",
+        "Z",
+        "N",
+        "X",
+        "M"
+    ],
+    "line_instances": [
+        "XM",
+        "XY",
+        "MY",
+        "YZ",
+        "XN",
+        "XZ",
+        "NZ",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            350.58365758754866,
+            88.9455252918288
+        ],
+        "Z": [
+            409.33852140077823,
+            252.75875486381324
+        ],
+        "N": [
+            237.35408560311285,
+            253.9260700389105
+        ],
+        "X": [
+            143.96887159533074,
+            253.53696498054478
+        ],
+        "M": [
+            216.3424124513619,
+            195.17120622568095
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "16",
+        "24",
+        "32"
+    ],
+    "choices_precise_value": [
+        12.0,
+        16.0,
+        24.0,
+        32.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 31.416323,
+    "solution_predicate": "Equals(24.0, LengthOf(Line(N, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220MXZ, M on XY, \u2220YXZ, 6 = NX, 2 = MX, MN || YZ, 3.14 = pi, \u2220YZX, N on XZ, \u2220NMX, \u2220ZYX, 10 = XY, \u2220MNX\n\nStep 2:\nTheorem: Same Angle\nPremises : M on XY, \u2220YXZ\nConclusions: \u2220MXZ = \u2220YXZ\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : MN || YZ\nConclusions: \u2220XMN = \u2220XYZ, \u2220XNM = \u2220XZY\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220YZX\nConclusions: \u2220YZX = 2 * pi - \u2220XZY\n\nStep 5:\nTheorem: Line Segment Split\nPremises : N on XZ\nConclusions: XZ = NX + NZ\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220MXZ, N on XZ\nConclusions: \u2220MXN = \u2220MXZ\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220NMX\nConclusions: \u2220NMX = 2 * pi - \u2220XMN\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZYX\nConclusions: \u2220ZYX = 2 * pi - \u2220XYZ\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220MNX\nConclusions: \u2220MNX = 2 * pi - \u2220XNM\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220YZX = 2 * pi - \u2220XZY, 3.14 = pi\nConclusions: \u2220YZX = 2 * 3.14 - \u2220XZY\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MXZ = \u2220YXZ, \u2220MXN = \u2220MXZ\nConclusions: \u2220MXN = \u2220YXZ\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220NMX = 2 * pi - \u2220XMN, \u2220XMN = \u2220XYZ, 3.14 = pi\nConclusions: \u2220NMX = 2 * 3.14 - \u2220XYZ\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220ZYX = 2 * pi - \u2220XYZ, 3.14 = pi\nConclusions: \u2220ZYX = 2 * 3.14 - \u2220XYZ\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220MNX = 2 * pi - \u2220XNM, \u2220XNM = \u2220XZY, 3.14 = pi\nConclusions: \u2220MNX = 2 * 3.14 - \u2220XZY\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMX = 2 * 3.14 - \u2220XYZ, \u2220ZYX = 2 * 3.14 - \u2220XYZ\nConclusions: \u2220NMX = \u2220ZYX\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNX = 2 * 3.14 - \u2220XZY, \u2220YZX = 2 * 3.14 - \u2220XZY\nConclusions: \u2220MNX = \u2220YZX\n\nStep 17:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220NMX = \u2220ZYX, \u2220MNX = \u2220YZX, \u2220MXN = \u2220YXZ\nConclusions: \u25b3MNX ~ \u25b3YZX\n\nStep 18:\nTheorem: Similar Definition\nPremises : \u25b3MNX ~ \u25b3YZX\nConclusions: \u2220MNX = \u2220YZX, \u2220MXN = \u2220YXZ, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY, \u2220XNM = \u2220XZY, sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ\n\nStep 19:\nTheorem: Substitution\nPremises : 10 = XY, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY, 2 = MX\nConclusions: 2 / 10 = sim_ratio_triangle_m_n_x_triangle_y_z_x\n\nStep 20:\nTheorem: Substitution\nPremises : sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ, 6 = NX\nConclusions: sim_ratio_triangle_m_n_x_triangle_y_z_x = 6 / XZ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 2 / 10 = sim_ratio_triangle_m_n_x_triangle_y_z_x, sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ\nConclusions: 2 / 10 = NX / XZ\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 / 10 = sim_ratio_triangle_m_n_x_triangle_y_z_x, sim_ratio_triangle_m_n_x_triangle_y_z_x = 6 / XZ\nConclusions: 2 / 10 = 6 / XZ\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 2 / 10 = NX / XZ, 2 / 10 = 6 / XZ, XZ = NX + NZ\nConclusions: 24 = NZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, M)",
+        "Line(X, Y)",
+        "Line(M, Y)",
+        "Line(Y, Z)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(N, Z)",
+        "Line(M, N)",
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(M, N), Line(Y, Z))",
+        "Equals(LengthOf(Line(X, N)), 6.0)",
+        "Equals(LengthOf(Line(X, M)), 2.0)",
+        "Equals(LengthOf(Line(X, Y)), 10.0)"
+    ],
+    "correct": true
+}

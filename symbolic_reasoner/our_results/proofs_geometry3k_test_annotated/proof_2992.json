@@ -1,0 +1,180 @@
+{
+    "problem_id": "2992",
+    "solved": true,
+    "problem_text": "Find the measure of m \\angle 2. Assume that segments that appear tangent are tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(A, H))",
+        "PointLiesOnLine(E, Line(D, G))",
+        "PointLiesOnLine(E, Line(D, H))",
+        "PointLiesOnLine(G, Line(A, H))",
+        "PointLiesOnLine(G, Line(D, H))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(B, F))",
+        "PointLiesOnLine(C, Line(B, I))",
+        "PointLiesOnLine(E, Line(B, F))",
+        "PointLiesOnLine(E, Line(B, I))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, I))",
+        "PointLiesOnLine(F, Line(B, I))",
+        "PointLiesOnLine(F, Line(C, I))",
+        "PointLiesOnLine(F, Line(E, I))",
+        "PointLiesOnCircle(C, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_0_0))",
+        "Equals(MeasureOf(Angle(G, E, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Arc(F, D)), 230)",
+        "Equals(MeasureOf(Arc(C, G)), 85)",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+    ],
+    "line_instances": [
+        "AD",
+        "AE",
+        "AG",
+        "AH",
+        "DE",
+        "DG",
+        "DH",
+        "EG",
+        "EH",
+        "GH",
+        "BC",
+        "BE",
+        "BF",
+        "BI",
+        "CE",
+        "CF",
+        "CI",
+        "EF",
+        "EI",
+        "FI"
+    ],
+    "circle_instances": [
+        "J"
+    ],
+    "point_positions": {
+        "A": [
+            8.131313131313135,
+            100.75757575757576
+        ],
+        "B": [
+            15.454545454545453,
+            64.14141414141415
+        ],
+        "C": [
+            74.54545454545455,
+            87.12121212121212
+        ],
+        "D": [
+            69.24242424242425,
+            99.24242424242425
+        ],
+        "E": [
+            103.58585858585857,
+            98.98989898989899
+        ],
+        "F": [
+            204.59595959595958,
+            139.3939393939394
+        ],
+        "G": [
+            204.0909090909091,
+            96.96969696969697
+        ],
+        "H": [
+            252.82828282828285,
+            96.46464646464646
+        ],
+        "I": [
+            242.97979797979798,
+            154.54545454545456
+        ],
+        "J": [
+            137.00505050505052,
+            119.98484848484847
+        ]
+    },
+    "problem_choices": [
+        "85",
+        "157.5",
+        "230",
+        "315"
+    ],
+    "choices_precise_value": [
+        85.0,
+        157.5,
+        230.0,
+        315.0
+    ],
+    "problem_answer": 157.5,
+    "total_time": 191.860364,
+    "solution_predicate": "Equals(2.7488935719, MeasureOf(Angle(G, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on AG, F on \u2299(J, radius_0_0), E on AG, \u2220JDG, C on \u2299(J, radius_0_0), F on CI, E on BF, FJ, DJ, \u2220CEG, CF, \u2220AGJ, D on \u2299(J, radius_0_0), Arc(GJC), \u2220JCI, pi * (230 / 180) = Arc(DJF), pi * (85 / 180) = Arc(GJC), GJ, Arc(FJD), Arc(DJF), E on CF, DE, C on BF, EG, E on CI, DG, CE, E on DG, CJ, G on \u2299(J, radius_0_0), EF, \u2220BFJ, 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : F on \u2299(J, radius_0_0)\nConclusions: radius_0_0 = FJ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(J, radius_0_0)\nConclusions: radius_0_0 = CJ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CEG\nConclusions: \u2220CEG = 2 * pi - \u2220GEC\n\nStep 5:\nTheorem: Same Angle\nPremises : E on AG, \u2220AGJ\nConclusions: \u2220AGJ = \u2220EGJ\n\nStep 6:\nTheorem: Same Angle\nPremises : D on AG, \u2220AGJ\nConclusions: \u2220AGJ = \u2220DGJ\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : D on \u2299(J, radius_0_0)\nConclusions: radius_0_0 = DJ\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GJC)\nConclusions: \u2220GJC = Arc(GJC)\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220JCI, F on CI\nConclusions: \u2220JCF = \u2220JCI\n\nStep 10:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FJD)\nConclusions: \u2220FJD = Arc(FJD)\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : Arc(DJF)\nConclusions: Arc(DJF) = 2 * pi - Arc(FJD)\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220JCI, E on CI\nConclusions: \u2220JCE = \u2220JCI\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : DG, DJ, GJ\nConclusions: \u25b3DGJ\n\nStep 14:\nTheorem: Vertical Angle Theorem\nPremises : E on DG, E on CF\nConclusions: \u2220CEG = \u2220FED, \u2220DEF = \u2220GEC\n\nStep 15:\nTheorem: Same Angle\nPremises : E on DG, \u2220JDG\nConclusions: \u2220JDE = \u2220JDG\n\nStep 16:\nTheorem: Definition of Quadrilateral\nPremises : EG, CJ, GJ, CE\nConclusions: Quadrilateral(C, E, G, J)\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : CF, FJ, CJ\nConclusions: \u25b3CFJ\n\nStep 18:\nTheorem: Point On Circle Def\nPremises : G on \u2299(J, radius_0_0)\nConclusions: radius_0_0 = GJ\n\nStep 19:\nTheorem: Definition of Quadrilateral\nPremises : DJ, FJ, DE, EF\nConclusions: Quadrilateral(D, E, F, J)\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220BFJ, E on BF\nConclusions: \u2220BFJ = \u2220EFJ\n\nStep 21:\nTheorem: Same Angle\nPremises : \u2220BFJ, C on BF\nConclusions: \u2220BFJ = \u2220CFJ\n\nStep 22:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 4.01 = pi * (230 / 180)\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CJ, radius_0_0 = FJ\nConclusions: CJ = FJ\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGJ = \u2220DGJ, \u2220AGJ = \u2220EGJ\nConclusions: \u2220DGJ = \u2220EGJ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (85 / 180) = Arc(GJC), \u2220GJC = Arc(GJC)\nConclusions: pi * (85 / 180) = \u2220GJC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * (230 / 180) = Arc(DJF), Arc(DJF) = 2 * pi - Arc(FJD)\nConclusions: pi * (230 / 180) = 2 * pi - Arc(FJD)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEG = \u2220FED, \u2220CEG = 2 * pi - \u2220GEC\nConclusions: \u2220FED = 2 * pi - \u2220GEC\n\nStep 28:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(C, E, G, J)\nPremises : Quadrilateral(C, E, G, J)\nConclusions: 2 * pi = \u2220CEG + \u2220EGJ + \u2220GJC + \u2220JCE\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = GJ, radius_0_0 = DJ\nConclusions: DJ = GJ\n\nStep 30:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, E, F, J)\nPremises : Quadrilateral(D, E, F, J)\nConclusions: 2 * pi = \u2220DEF + \u2220EFJ + \u2220FJD + \u2220JDE\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFJ = \u2220EFJ, \u2220BFJ = \u2220CFJ\nConclusions: \u2220CFJ = \u2220EFJ\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CFJ, CJ = FJ\nConclusions: \u2220CFJ = \u2220JCF\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : pi * (230 / 180) = 2 * pi - Arc(FJD), 4.01 = pi * (230 / 180)\nConclusions: 4.01 = 2 * pi - Arc(FJD)\n\nStep 34:\nTheorem: Substitution\nPremises : \u2220CEG = \u2220FED, pi * (85 / 180) = \u2220GJC, \u2220DGJ = \u2220EGJ, 3.14 = pi, \u2220JCE = \u2220JCI, 2 * pi = \u2220CEG + \u2220EGJ + \u2220GJC + \u2220JCE\nConclusions: 2 * 3.14 = 3.14 * (85 / 180) + \u2220DGJ + \u2220FED + \u2220JCI\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : DJ = GJ, \u25b3DGJ\nConclusions: \u2220DGJ = \u2220JDG\n\nStep 36:\nTheorem: Substitution\nPremises : \u2220CFJ = \u2220EFJ, \u2220FJD = Arc(FJD), 2 * pi = \u2220DEF + \u2220EFJ + \u2220FJD + \u2220JDE, 3.14 = pi, \u2220DEF = \u2220GEC, \u2220JDE = \u2220JDG\nConclusions: 2 * 3.14 = \u2220CFJ + \u2220GEC + \u2220JDG + Arc(FJD)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CFJ = \u2220JCF, \u2220JCF = \u2220JCI\nConclusions: \u2220CFJ = \u2220JCI\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : \u2220DGJ = \u2220JDG, 2 * 3.14 = 3.14 * (85 / 180) + \u2220DGJ + \u2220FED + \u2220JCI, \u2220CFJ = \u2220JCI, 4.01 = 2 * pi - Arc(FJD), \u2220FED = 2 * pi - \u2220GEC, 2 * 3.14 = \u2220CFJ + \u2220GEC + \u2220JDG + Arc(FJD)\nConclusions: 2.75 = \u2220GEC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(A, H)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(D, H)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(B, F)",
+        "Line(B, I)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(C, I)",
+        "Line(E, F)",
+        "Line(E, I)",
+        "Line(F, I)",
+        "Circle(J, radius_0_0)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, G))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(A, H))",
+        "PointLiesOnLine(E, Line(D, G))",
+        "PointLiesOnLine(E, Line(D, H))",
+        "PointLiesOnLine(G, Line(A, H))",
+        "PointLiesOnLine(G, Line(D, H))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(B, F))",
+        "PointLiesOnLine(C, Line(B, I))",
+        "PointLiesOnLine(E, Line(B, F))",
+        "PointLiesOnLine(E, Line(B, I))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, I))",
+        "PointLiesOnLine(F, Line(B, I))",
+        "PointLiesOnLine(F, Line(C, I))",
+        "PointLiesOnLine(F, Line(E, I))",
+        "PointLiesOnCircle(C, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(J, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_0_0))",
+        "Equals(MeasureOf(Arc(D, J, F)), Mul(pi, Div(230.0, 180.0)))",
+        "Equals(MeasureOf(Arc(G, J, C)), Mul(pi, Div(85.0, 180.0)))"
+    ],
+    "correct": true
+}

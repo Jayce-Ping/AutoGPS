@@ -1,0 +1,63 @@
+{
+    "problem_id": "2425",
+    "solved": true,
+    "problem_text": "Find x. Round the side measure to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 73)",
+        "Equals(MeasureOf(Angle(A, B, C)), 55)",
+        "Equals(MeasureOf(Angle(B, C, A)), 60)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            80.12137203166226,
+            225.8575197889182
+        ],
+        "B": [
+            226.29551451187336,
+            79.94722955145119
+        ],
+        "C": [
+            13.102902374670187,
+            41.68865435356201
+        ]
+    },
+    "problem_choices": [
+        "69.0",
+        "69.8",
+        "76.4",
+        "77.2"
+    ],
+    "choices_precise_value": [
+        69.0,
+        69.8,
+        76.4,
+        77.2
+    ],
+    "problem_answer": 69.8,
+    "total_time": 9.389908,
+    "solution_predicate": "Equals(69.7553914691, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = AB, AC, 73 = BC, BC, AB, 3.14 = pi, pi * (60 / 180) = \u2220ACB, pi * (55 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.96 = pi * (55 / 180), 1.05 = pi * (60 / 180)\n\nStep 4:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA), AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (55 / 180) = \u2220CBA, 0.96 = pi * (55 / 180)\nConclusions: 0.96 = \u2220CBA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220ACB, 1.05 = pi * (60 / 180)\nConclusions: 1.05 = \u2220ACB\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, pi * (60 / 180) = \u2220ACB, pi * (55 / 180) = \u2220CBA\nConclusions: 3.14 = 3.14 * (55 / 180) + 3.14 * (60 / 180) + \u2220BAC\n\nStep 9:\nTheorem: Substitution\nPremises : 0.96 = \u2220CBA, AB / sin(\u2220ACB) = AC / sin(\u2220CBA), x = AB, 1.05 = \u2220ACB\nConclusions: x / sin(1.05) = AC / sin(0.96)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (55 / 180) + 3.14 * (60 / 180) + \u2220BAC\nConclusions: 1.13 = \u2220BAC\n\nStep 11:\nTheorem: Substitution\nPremises : 0.96 = \u2220CBA, 1.13 = \u2220BAC, 73 = BC, AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\nConclusions: 73 / sin(1.13) = AC / sin(0.96)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 73 / sin(1.13) = AC / sin(0.96), x / sin(1.05) = AC / sin(0.96)\nConclusions: 73 / sin(1.13) = x / sin(1.05)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : x = AB, 73 / sin(1.13) = x / sin(1.05)\nConclusions: 69.76 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, 69.76 = AB\nConclusions: 69.76 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 73.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(55.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

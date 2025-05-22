@@ -1,0 +1,92 @@
+{
+    "problem_id": "4508",
+    "solved": true,
+    "problem_text": "Solve for the measure of \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 72)",
+        "Equals(MeasureOf(Angle(A, D, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(B, C, D)), 111)",
+        "Equals(MeasureOf(Angle(D, A, B)), 70)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DA",
+        "AB",
+        "BC",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            317.7804878048781,
+            22.785714285714285
+        ],
+        "B": [
+            17.304878048780488,
+            38.5
+        ],
+        "C": [
+            96.21181001283696,
+            241.75187969924812
+        ],
+        "D": [
+            250.5711382113821,
+            242.17460317460316
+        ],
+        "E": [
+            357.459349593496,
+            242.08730158730157
+        ]
+    },
+    "problem_choices": [
+        31.0,
+        73.0,
+        107.0,
+        109.0
+    ],
+    "choices_precise_value": [
+        31.0,
+        73.0,
+        107.0,
+        109.0
+    ],
+    "problem_answer": 73.0,
+    "total_time": 8.391884,
+    "solution_predicate": "Equals(1.274090354, MeasureOf(Angle(E, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220EDA, \u2220CBA, AD, pi * (72 / 180) = \u2220CBA, BC, 3.14 = pi, AB, \u2220ADC, pi * (70 / 180) = \u2220BAD, pi * (111 / 180) = \u2220DCB, CD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220ADC, \u2220EDA\nConclusions: pi = \u2220ADC + \u2220EDA\n\nStep 4:\nTheorem: Definition of Quadrilateral\nPremises : AD, AB, CD, BC\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * pi - \u2220ABC, pi * (72 / 180) = \u2220CBA\nConclusions: pi * (72 / 180) = 2 * pi - \u2220ABC\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, pi * (72 / 180) = \u2220CBA, 3.14 = pi\nConclusions: pi * (72 / 180) = 2 * 3.14 - \u2220ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ADC + \u2220EDA, 3.14 = pi\nConclusions: 3.14 = \u2220ADC + \u2220EDA\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 9:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB, pi * (70 / 180) = \u2220BAD, pi * (111 / 180) = \u2220DCB, pi * (72 / 180) = \u2220CBA, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (111 / 180) + pi * (70 / 180) + pi * (72 / 180) + \u2220ADC\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : pi * (72 / 180) = 2 * 3.14 - \u2220ABC, 3.14 = \u2220ADC + \u2220EDA, 2 * 3.14 = pi * (111 / 180) + pi * (70 / 180) + pi * (72 / 180) + \u2220ADC, pi * (72 / 180) = 2 * pi - \u2220ABC\nConclusions: 1.27 = \u2220EDA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(72.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(111.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

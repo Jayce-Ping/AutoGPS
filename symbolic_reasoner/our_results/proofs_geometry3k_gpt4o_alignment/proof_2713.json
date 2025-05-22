@@ -1,0 +1,99 @@
+{
+    "problem_id": "2713",
+    "solved": true,
+    "problem_text": "Use parallelogram A B C D to find m \\angle C D F.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Equals(LengthOf(Line(B, A)), 5x)",
+        "Equals(LengthOf(Line(D, C)), 25)",
+        "Equals(LengthOf(Line(A, D)), 29)",
+        "Equals(LengthOf(Line(C, B)), 3y-4)",
+        "Equals(MeasureOf(Angle(A, D, F)), 34)",
+        "Equals(MeasureOf(Angle(D, C, F)), 54)",
+        "Equals(MeasureOf(Angle(D, A, F)), 49)",
+        "Parallelogram(A,B,C,D)",
+        "Find(MeasureOf(Angle(C,D,F)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B",
+        "D",
+        "F"
+    ],
+    "line_instances": [
+        "AD",
+        "CD",
+        "BC",
+        "BA",
+        "AF",
+        "AC",
+        "FC",
+        "BF",
+        "BD",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            92.13829787234042,
+            198.13829787234042
+        ],
+        "C": [
+            255.70212765957444,
+            53.191489361702125
+        ],
+        "B": [
+            53.04255319148936,
+            53.45744680851063
+        ],
+        "D": [
+            295.063829787234,
+            198.13829787234042
+        ],
+        "F": [
+            173.25531914893617,
+            126.06382978723404
+        ]
+    },
+    "problem_choices": [
+        "34",
+        "43",
+        "47",
+        "77"
+    ],
+    "choices_precise_value": [
+        34.0,
+        43.0,
+        47.0,
+        77.0
+    ],
+    "problem_answer": 43.0,
+    "total_time": 86.350842,
+    "solution_predicate": "Equals(0.7504915784, MeasureOf(Angle(C, D, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACD, pi * (49 / 180) = \u2220DAF, BC, pi * (54 / 180) = \u2220FCD, \u2220CDB, 3.14 = pi, \u2220AFD, \u2220ABD, \u2220DFC, F on AC, \u2220CFB, pi * (34 / 180) = \u2220FDA, \u2220DBC, BF, \u2220DAC, \u2220BFA, \u2220CAB, Parallelogram(A, B, C, D), F on BD, AB, AF, CF, \u2220BDA, \u2220BCA\n\nStep 2:\nTheorem: Same Angle\nPremises : F on AC, \u2220ACD\nConclusions: \u2220ACD = \u2220FCD\n\nStep 3:\nTheorem: Same Angle\nPremises : F on AC, \u2220DAC\nConclusions: \u2220DAC = \u2220DAF\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220AFD, \u2220CFB, \u2220DFC, \u2220BFA\nConclusions: 2 * pi = \u2220AFD + \u2220BFA + \u2220CFB + \u2220DFC\n\nStep 5:\nTheorem: Same Angle\nPremises : F on AC, \u2220CAB\nConclusions: \u2220CAB = \u2220FAB\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC, AB || DC\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : F on BD, F on AC\nConclusions: \u2220AFD = \u2220CFB, \u2220BFA = \u2220DFC\n\nStep 8:\nTheorem: Same Angle\nPremises : F on BD, \u2220DBC\nConclusions: \u2220DBC = \u2220FBC\n\nStep 9:\nTheorem: Same Angle\nPremises : F on BD, \u2220CDB\nConclusions: \u2220CDB = \u2220CDF\n\nStep 10:\nTheorem: Same Angle\nPremises : F on BD, \u2220ABD\nConclusions: \u2220ABD = \u2220ABF\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : AB, AF, BF\nConclusions: \u25b3ABF\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : BC, CF, BF\nConclusions: \u25b3BCF\n\nStep 13:\nTheorem: Same Angle\nPremises : F on BD, \u2220BDA\nConclusions: \u2220BDA = \u2220FDA\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220BCA, F on AC\nConclusions: \u2220BCA = \u2220BCF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAF, pi * (49 / 180) = \u2220DAF\nConclusions: pi * (49 / 180) = \u2220DAC\n\nStep 16:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC, \u2220BCA = \u2220DAC\n\nStep 17:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB, \u2220ABD = \u2220CDB\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AFD + \u2220BFA + \u2220CFB + \u2220DFC, \u2220AFD = \u2220CFB, \u2220BFA = \u2220DFC\nConclusions: 2 * 3.14 = \u2220CFB + \u2220CFB + \u2220DFC + \u2220DFC\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, F)\nPremises : \u25b3ABF\nConclusions: pi = \u2220ABF + \u2220BFA + \u2220FAB\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, F)\nPremises : \u25b3BCF\nConclusions: pi = \u2220BCF + \u2220CFB + \u2220FBC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBC, \u2220BDA = \u2220FDA, pi * (34 / 180) = \u2220FDA\nConclusions: pi * (34 / 180) = \u2220DBC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCF, \u2220BCA = \u2220DAC\nConclusions: \u2220BCF = \u2220DAC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220FAB, \u2220ACD = \u2220CAB\nConclusions: \u2220ACD = \u2220FAB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = \u2220CDB, \u2220CDB = \u2220CDF\nConclusions: \u2220ABD = \u2220CDF\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = \u2220CDB, \u2220ABD = \u2220ABF\nConclusions: \u2220ABF = \u2220CDB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = \u2220FBC, pi * (34 / 180) = \u2220DBC\nConclusions: pi * (34 / 180) = \u2220FBC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * (49 / 180) = \u2220DAC, \u2220BCF = \u2220DAC\nConclusions: pi * (49 / 180) = \u2220BCF\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220FAB, \u2220ACD = \u2220FCD, pi * (54 / 180) = \u2220FCD\nConclusions: pi * (54 / 180) = \u2220FAB\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABF = \u2220CDB, \u2220CDB = \u2220CDF\nConclusions: \u2220ABF = \u2220CDF\n\nStep 30:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (49 / 180) = \u2220BCF, pi * (34 / 180) = \u2220FBC, pi = \u2220BCF + \u2220CFB + \u2220FBC\nConclusions: 3.14 = 3.14 * (34 / 180) + 3.14 * (49 / 180) + \u2220CFB\n\nStep 31:\nTheorem: Substitution\nPremises : pi = \u2220ABF + \u2220BFA + \u2220FAB, \u2220ABF = \u2220CDF, 3.14 = pi, pi * (54 / 180) = \u2220FAB, \u2220BFA = \u2220DFC\nConclusions: 3.14 = 3.14 * (54 / 180) + \u2220CDF + \u2220DFC\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABD = \u2220CDF, 2 * 3.14 = \u2220CFB + \u2220CFB + \u2220DFC + \u2220DFC, 3.14 = 3.14 * (34 / 180) + 3.14 * (49 / 180) + \u2220CFB, 3.14 = 3.14 * (54 / 180) + \u2220CDF + \u2220DFC\nConclusions: 0.75 = \u2220ABD\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 0.75 = \u2220ABD, \u2220ABD = \u2220CDF\nConclusions: 0.75 = \u2220CDF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(B, F)",
+        "Line(B, D)",
+        "Line(F, D)",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Parallelogram(A, B, C, D)",
+        "Equals(LengthOf(Line(B, A)), Mul(5.0, x))",
+        "Equals(LengthOf(Line(D, C)), 25.0)",
+        "Equals(LengthOf(Line(A, D)), 29.0)",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(3.0, y), 4.0))",
+        "Equals(MeasureOf(Angle(F, D, A)), Mul(pi, Div(34.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, C, D)), Mul(pi, Div(54.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, F)), Mul(pi, Div(49.0, 180.0)))"
+    ],
+    "correct": true
+}

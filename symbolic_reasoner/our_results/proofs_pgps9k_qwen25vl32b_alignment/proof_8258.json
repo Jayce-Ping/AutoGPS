@@ -1,0 +1,124 @@
+{
+    "problem_id": "8258",
+    "solved": true,
+    "problem_text": "Find the value of variable x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 5)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(LengthOf(Line(D, E)), 7)",
+        "Equals(LengthOf(Line(E, F)), 15)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "PointLiesOnCircle(A, Circle(G))",
+        "PointLiesOnCircle(B, Circle(G))",
+        "PointLiesOnCircle(C, Circle(G))",
+        "PointLiesOnCircle(E, Circle(G))",
+        "PointLiesOnCircle(F, Circle(G))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "FE",
+        "FD",
+        "ED",
+        "AD"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "A": [
+            203.70967741935485,
+            57.55714285714286
+        ],
+        "B": [
+            27.161290322580648,
+            127.04489795918367
+        ],
+        "C": [
+            250.95900537634412,
+            126.68214285714285
+        ],
+        "D": [
+            307.82795698924735,
+            127.52857142857142
+        ],
+        "E": [
+            253.50537634408605,
+            165.41632653061225
+        ],
+        "F": [
+            110.90860215053765,
+            262.47346938775513
+        ],
+        "G": [
+            138.29117793081332,
+            151.09209680995292
+        ]
+    },
+    "problem_choices": [
+        2.333,
+        10.714,
+        25.8,
+        53.0
+    ],
+    "choices_precise_value": [
+        2.333,
+        10.714,
+        25.8,
+        53.0
+    ],
+    "problem_answer": 25.8,
+    "total_time": 95.539613,
+    "solution_predicate": "Equals(25.8, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DF, DE, \u2299(G, radius_G), E on \u2299(G, radius_G), 15 = EF, E on DF, C on BD, B on \u2299(G, radius_G), CD, x = BC, BD, 7 = DE, C on \u2299(G, radius_G), 5 = CD, F on \u2299(G, radius_G)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on DF\nConclusions: DF = DE + EF\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 4:\nTheorem: Circle Secant Theorem\nPremises : E on \u2299(G, radius_G), DE, F on \u2299(G, radius_G), BD, CD, B on \u2299(G, radius_G), \u2299(G, radius_G), C on \u2299(G, radius_G), DF\nConclusions: BD * CD = DE * DF\n\nStep 5:\nTheorem: Substitution\nPremises : DF = DE + EF, 7 = DE, 15 = EF\nConclusions: 15 + 7 = DF\n\nStep 6:\nTheorem: Substitution\nPremises : BD = BC + CD, x = BC, 5 = CD\nConclusions: 5 + x = BD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 15 + 7 = DF\nConclusions: 22 = DF\n\nStep 8:\nTheorem: Substitution\nPremises : BD * CD = DE * DF, 5 = CD, 7 = DE, 5 + x = BD, 22 = DF\nConclusions: 22 * 7 = 5 * (5 + x)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : x = BC, 22 * 7 = 5 * (5 + x)\nConclusions: 25.8 = BC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 25.8 = BC, x = BC\nConclusions: 25.8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(E, D)",
+        "Line(A, D)",
+        "Circle(G, radius_G)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "PointLiesOnCircle(A, Circle(G, radius_G))",
+        "PointLiesOnCircle(B, Circle(G, radius_G))",
+        "PointLiesOnCircle(C, Circle(G, radius_G))",
+        "PointLiesOnCircle(E, Circle(G, radius_G))",
+        "PointLiesOnCircle(F, Circle(G, radius_G))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 5.0)",
+        "Equals(LengthOf(Line(D, C)), y)",
+        "Equals(LengthOf(Line(D, E)), 7.0)",
+        "Equals(LengthOf(Line(E, F)), 15.0)"
+    ],
+    "correct": true
+}

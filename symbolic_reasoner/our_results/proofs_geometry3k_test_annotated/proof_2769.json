@@ -1,0 +1,74 @@
+{
+    "problem_id": "2769",
+    "solved": true,
+    "problem_text": "Find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, D)), 25x)",
+        "Equals(MeasureOf(Angle(C, A, B)), 100)",
+        "Equals(MeasureOf(Angle(C, A, D)), 10y)",
+        "Equals(MeasureOf(Angle(A, C, B)), 40)",
+        "Parallelogram(A, B, C, D)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "CD",
+        "DA",
+        "BA",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            129.17439293598233,
+            176.37969094922735
+        ],
+        "B": [
+            17.474613686534212,
+            176.8211920529801
+        ],
+        "C": [
+            97.60706401766004,
+            26.26931567328918
+        ],
+        "D": [
+            209.9690949227373,
+            24.944812362030905
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 13.298024,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (100 / 180) = \u2220CAB, pi * ((25 * x) / 180) = \u2220ACD, Parallelogram(A, B, C, D), 3.14 = pi\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (100 / 180) = \u2220CAB, \u2220ACD = \u2220CAB\nConclusions: pi * (100 / 180) = \u2220ACD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (100 / 180) = \u2220ACD, pi * ((25 * x) / 180) = \u2220ACD\nConclusions: pi * (100 / 180) = pi * ((25 * x) / 180)\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (100 / 180) = pi * ((25 * x) / 180), 3.14 = pi\nConclusions: 3.14 * (100 / 180) = 3.14 * ((25 * x) / 180)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (100 / 180) = 3.14 * ((25 * x) / 180)\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(B, A)",
+        "Line(C, B)",
+        "Parallelogram(A, B, C, D)",
+        "Equals(MeasureOf(Angle(A, C, D)), Mul(pi, Div(Mul(25.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, C)), Mul(pi, Div(Mul(10.0, y), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,162 @@
+{
+    "problem_id": "6618",
+    "solved": true,
+    "problem_text": "In \\odot X, AB = CD = 30, and m \\widehat CZ = 40. Find m \\widehat AB.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, M)",
+        "Line(C, D)",
+        "Line(C, N)",
+        "Line(M, B)",
+        "Line(M, X)",
+        "Line(N, D)",
+        "Line(N, Z)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(Y, M)",
+        "Line(Y, X)",
+        "Perpendicular(Line(A, B), Line(Y, X))",
+        "Perpendicular(Line(C, D), Line(X, Z))",
+        "PointLiesOnCircle(A, Circle(X))",
+        "PointLiesOnCircle(B, Circle(X))",
+        "PointLiesOnCircle(C, Circle(X))",
+        "PointLiesOnCircle(D, Circle(X))",
+        "PointLiesOnCircle(Y, Circle(X))",
+        "PointLiesOnCircle(Z, Circle(X))",
+        "PointLiesOnLine(M, Line(A, B))",
+        "PointLiesOnLine(M, Line(Y, X))",
+        "PointLiesOnLine(N, Line(C, D))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Circle(X)",
+        "Equals(LengthOf(Line(A,B)),30)",
+        "Equals(LengthOf(Line(C,D)),30)",
+        "Equals(MeasureOf(Arc(C,Z)),40)",
+        "Find(MeasureOf(Arc(A,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "Y",
+        "B",
+        "D",
+        "Z",
+        "C",
+        "N",
+        "X",
+        "M"
+    ],
+    "line_instances": [
+        "AM",
+        "AB",
+        "MB",
+        "YM",
+        "YX",
+        "MX",
+        "CN",
+        "CD",
+        "ND",
+        "XN",
+        "XZ",
+        "NZ"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "A": [
+            73.16770186335404,
+            54.0691699604743
+        ],
+        "Y": [
+            137.53246753246754,
+            36.36647727272727
+        ],
+        "B": [
+            195.41353383458647,
+            67.55382775119617
+        ],
+        "D": [
+            214.57142857142856,
+            135.1406818181818
+        ],
+        "Z": [
+            181.42857142857144,
+            193.45120320855614
+        ],
+        "C": [
+            118.77551020408163,
+            211.33982683982686
+        ],
+        "N": [
+            166.583850931677,
+            173.24456521739128
+        ],
+        "X": [
+            126.5916230366492,
+            123.56020942408377
+        ],
+        "M": [
+            134.28571428571428,
+            61.32386363636363
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        40.0,
+        60.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        40.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 365.50494,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Arc(B, X, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AM \u22a5 MX, \u2299(X, radius_X), C on \u2299(X, radius_X), \u2220XBA, N on XZ, CN \u22a5 NX, pi * (40 / 180) = Arc(CXZ), \u2220XAB, AX, N on CD, \u2220DNX, \u2220DCX, BX, AB, 30 = CD, \u2220XBA, Arc(CXZ), \u2220ABX, M on AB, NX, \u2220DCX, CN, \u2220CDX, D on \u2299(X, radius_X), B on \u2299(X, radius_X), \u2220XNC, \u2220XDC, 3.14 = pi, \u2220CXZ, 30 = AB, A on \u2299(X, radius_X), \u2220XCD, CX, Arc(BXA)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(X, radius_X)\nConclusions: radius_X = CX\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220XBA\nConclusions: \u2220XBA = 2 * pi - \u2220ABX\n\nStep 4:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(X, radius_X), CN \u22a5 NX, N on CD\nConclusions: \u25b3CNX \u2245 \u25b3DNX\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCX\nConclusions: \u2220DCX = 2 * pi - \u2220XCD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AX, BX, AB\nConclusions: \u25b3ABX\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CXZ)\nConclusions: \u2220CXZ = Arc(CXZ)\n\nStep 8:\nTheorem: Circle Vertical Theorem\nPremises : M on AB, AM \u22a5 MX, \u2299(X, radius_X)\nConclusions: \u25b3AMX \u2245 \u25b3BMX\n\nStep 9:\nTheorem: Same Angle\nPremises : M on AB, \u2220ABX\nConclusions: \u2220ABX = \u2220MBX\n\nStep 10:\nTheorem: Same Angle\nPremises : M on AB, \u2220XBA\nConclusions: \u2220XBA = \u2220XBM\n\nStep 11:\nTheorem: Same Angle\nPremises : M on AB, \u2220XAB\nConclusions: \u2220XAB = \u2220XAM\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220DCX, N on CD\nConclusions: \u2220DCX = \u2220NCX\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220CDX, N on CD\nConclusions: \u2220CDX = \u2220NDX\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : D on \u2299(X, radius_X)\nConclusions: radius_X = DX\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : B on \u2299(X, radius_X)\nConclusions: radius_X = BX\n\nStep 16:\nTheorem: Straight Angle\nPremises : \u2220DNX, \u2220XNC\nConclusions: pi = \u2220DNX + \u2220XNC\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220XDC, N on CD\nConclusions: \u2220XDC = \u2220XDN\n\nStep 18:\nTheorem: Same Angle\nPremises : \u2220CXZ, N on XZ\nConclusions: \u2220CXN = \u2220CXZ\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 30 = CD, 30 = AB\nConclusions: AB = CD\n\nStep 20:\nTheorem: Point On Circle Def\nPremises : A on \u2299(X, radius_X)\nConclusions: radius_X = AX\n\nStep 21:\nTheorem: Same Angle\nPremises : \u2220XCD, N on CD\nConclusions: \u2220XCD = \u2220XCN\n\nStep 22:\nTheorem: Definition of Triangle\nPremises : CX, CN, NX\nConclusions: \u25b3CNX\n\nStep 23:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BXA)\nConclusions: \u2220BXA = Arc(BXA)\n\nStep 24:\nTheorem: Congruent Definition\nPremises : \u25b3CNX \u2245 \u25b3DNX\nConclusions: \u2220NDX = \u2220XCN, \u2220NCX = \u2220XDN, \u2220DNX = \u2220XNC\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, X)\nPremises : \u25b3ABX\nConclusions: pi = \u2220ABX + \u2220BXA + \u2220XAB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = Arc(CXZ), \u2220CXZ = Arc(CXZ)\nConclusions: pi * (40 / 180) = \u2220CXZ\n\nStep 27:\nTheorem: Congruent Definition\nPremises : \u25b3AMX \u2245 \u25b3BMX\nConclusions: \u2220MBX = \u2220XAM\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XBA = 2 * pi - \u2220ABX, \u2220XBA = \u2220XBM\nConclusions: \u2220XBM = 2 * pi - \u2220ABX\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCX = 2 * pi - \u2220XCD, \u2220DCX = \u2220NCX\nConclusions: \u2220NCX = 2 * pi - \u2220XCD\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : radius_X = BX, radius_X = DX\nConclusions: BX = DX\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220DNX + \u2220XNC\nConclusions: 3.14 = \u2220DNX + \u2220XNC\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : radius_X = AX, radius_X = CX\nConclusions: AX = CX\n\nStep 33:\nTheorem: Interior Angle Sum Theorem for Triangle(X, N, C)\nPremises : \u25b3CNX\nConclusions: pi = \u2220CXN + \u2220NCX + \u2220XNC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220CXZ, \u2220CXN = \u2220CXZ\nConclusions: pi * (40 / 180) = \u2220CXN\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABX = \u2220MBX, \u2220MBX = \u2220XAM\nConclusions: \u2220ABX = \u2220XAM\n\nStep 36:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : BX = DX, AX = CX, AB = CD\nConclusions: \u25b3ABX \u2245 \u25b3CDX\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CXN + \u2220NCX + \u2220XNC\nConclusions: 3.14 = \u2220CXN + \u2220NCX + \u2220XNC\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DNX + \u2220XNC, \u2220DNX = \u2220XNC, \u2220NCX = 2 * pi - \u2220XCD, pi = \u2220CXN + \u2220NCX + \u2220XNC, 3.14 = pi, pi * (40 / 180) = \u2220CXN\nConclusions: 5.41 = \u2220XCD\n\nStep 39:\nTheorem: Congruent Definition\nPremises : \u25b3ABX \u2245 \u25b3CDX\nConclusions: \u2220ABX = \u2220XDC, BX = DX, AX = CX, \u2220CDX = \u2220XBA\n\nStep 40:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220CXN + \u2220NCX + \u2220XNC, pi = \u2220DNX + \u2220XNC, \u2220DNX = \u2220XNC, pi * (40 / 180) = \u2220CXN, pi = \u2220CXN + \u2220NCX + \u2220XNC, \u2220DCX = \u2220NCX\nConclusions: 0.87 = \u2220DCX\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XCD = \u2220XCN, 5.41 = \u2220XCD\nConclusions: 5.41 = \u2220XCN\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 0.87 = \u2220DCX, \u2220DCX = \u2220NCX\nConclusions: 0.87 = \u2220NCX\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NDX = \u2220XCN, 5.41 = \u2220XCN\nConclusions: 5.41 = \u2220NDX\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NCX = \u2220XDN, 0.87 = \u2220NCX\nConclusions: 0.87 = \u2220XDN\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDX = \u2220NDX, 5.41 = \u2220NDX\nConclusions: 5.41 = \u2220CDX\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XDC = \u2220XDN, 0.87 = \u2220XDN\nConclusions: 0.87 = \u2220XDC\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 5.41 = \u2220CDX, \u2220XBA = \u2220XBM, \u2220CDX = \u2220XBA\nConclusions: 5.41 = \u2220XBM\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABX = \u2220XDC, 0.87 = \u2220XDC, \u2220ABX = \u2220XAM\nConclusions: 0.87 = \u2220XAM\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 5.41 = \u2220XBM, \u2220XBM = 2 * pi - \u2220ABX\nConclusions: 5.41 = 2 * pi - \u2220ABX\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 0.87 = \u2220XAM, \u2220ABX = \u2220XAM\nConclusions: 0.87 = \u2220ABX\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XAB = \u2220XAM, 0.87 = \u2220XAM\nConclusions: 0.87 = \u2220XAB\n\nStep 52:\nTheorem: Solve Linear Equation System\nPremises : 0.87 = \u2220ABX, 0.87 = \u2220XAB, pi = \u2220ABX + \u2220BXA + \u2220XAB, 5.41 = 2 * pi - \u2220ABX\nConclusions: 1.4 = \u2220BXA\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BXA = Arc(BXA), 1.4 = \u2220BXA\nConclusions: 1.4 = Arc(BXA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, M)",
+        "Line(A, B)",
+        "Line(M, B)",
+        "Line(Y, M)",
+        "Line(Y, X)",
+        "Line(M, X)",
+        "Line(C, N)",
+        "Line(C, D)",
+        "Line(N, D)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(N, Z)",
+        "Circle(X, radius_X)",
+        "Line(A, B)",
+        "Line(A, M)",
+        "Line(C, D)",
+        "Line(C, N)",
+        "Line(M, B)",
+        "Line(M, X)",
+        "Line(N, D)",
+        "Line(N, Z)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(Y, M)",
+        "Line(Y, X)",
+        "Perpendicular(Line(A, B), Line(Y, X))",
+        "Perpendicular(Line(C, D), Line(X, Z))",
+        "PointLiesOnCircle(A, Circle(X, radius_X))",
+        "PointLiesOnCircle(B, Circle(X, radius_X))",
+        "PointLiesOnCircle(C, Circle(X, radius_X))",
+        "PointLiesOnCircle(D, Circle(X, radius_X))",
+        "PointLiesOnCircle(Y, Circle(X, radius_X))",
+        "PointLiesOnCircle(Z, Circle(X, radius_X))",
+        "PointLiesOnLine(M, Line(A, B))",
+        "PointLiesOnLine(M, Line(Y, X))",
+        "PointLiesOnLine(N, Line(C, D))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Circle(X, radius_X)",
+        "Equals(LengthOf(Line(A, B)), 30.0)",
+        "Equals(LengthOf(Line(C, D)), 30.0)",
+        "Equals(MeasureOf(Arc(C, X, Z)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

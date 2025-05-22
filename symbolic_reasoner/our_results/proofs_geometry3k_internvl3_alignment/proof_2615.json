@@ -1,0 +1,65 @@
+{
+    "problem_id": "2615",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(C, A)), 16\\sqrt{3})",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(MeasureOf(Angle(C, A, B)), 60)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            231.34199134199133,
+            170.77922077922076
+        ],
+        "B": [
+            233.7229437229437,
+            37.66233766233766
+        ],
+        "C": [
+            9.264069264069263,
+            36.14718614718615
+        ]
+    },
+    "problem_choices": [
+        "8 \\sqrt { 2 }",
+        "8 \\sqrt { 3 }",
+        "16",
+        "24"
+    ],
+    "choices_precise_value": [
+        11.313708498984761,
+        13.856406460551018,
+        16.0,
+        24.0
+    ],
+    "problem_answer": 13.856406460551018,
+    "total_time": 18.886756,
+    "solution_predicate": "Equals(13.8564064603, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (60 / 180) = \u2220BAC, \u2220ACB, BC, cos(\u2220BAC), AC, AB \u22a5 BC, 3.14 = pi, \u2220ABC, AB, \u2220CBA, y = AB, \u2220BAC, 16 * SqrtOf(3) = AC\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 BC, cos(\u2220BAC)\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 7:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 8:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 BC, \u25b3ABC, \u2220ACB\nConclusions: AB / AC = sin(\u2220ACB)\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 10:\nTheorem: Cos Function Definition\nPremises : \u2220BAC, \u25b3ABC, AB \u22a5 BC\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 11:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, \u2220CBA = 2 * pi - \u2220ABC, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ABC, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 13:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (60 / 180) = \u2220BAC, pi / 2 = \u2220CBA, 3.14 = pi\nConclusions: 3.14 = pi / 2 + 3.14 * (60 / 180) + \u2220ACB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AB / AC = cos(\u2220BAC), AB / AC = cos(\u2220BAC)\nConclusions: AB / AC = AB / AC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220CBA\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = 2 * pi - \u2220CBA, 2 * 3.14 - pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AB / AC = AB / AC, AB / AC = sin(\u2220ACB)\nConclusions: AB / AC = sin(\u2220ACB)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA, 2 * 3.14 - (3 * pi) / 2 = \u2220CBA, 3.14 = pi / 2 + 3.14 * (60 / 180) + \u2220ACB\nConclusions: 0.52 = \u2220ACB\n\nStep 19:\nTheorem: Evaluate\nPremises : 0.52 = \u2220ACB\nConclusions: 0.5 = sin(\u2220ACB)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 0.5 = sin(\u2220ACB), AB / AC = sin(\u2220ACB)\nConclusions: 0.5 = AB / AC\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 0.5 = AB / AC, 16 * SqrtOf(3) = AC\nConclusions: 13.86 = AB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 13.86 = AB, y = AB\nConclusions: 13.86 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(C, A)), Mul(16.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

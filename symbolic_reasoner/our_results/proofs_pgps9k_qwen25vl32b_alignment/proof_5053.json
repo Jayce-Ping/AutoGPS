@@ -1,0 +1,109 @@
+{
+    "problem_id": "5053",
+    "solved": true,
+    "problem_text": "Refer to rectangle QRTS. If QS = 3x+40 and RT = 16-3x, find QS.",
+    "logic_forms": [
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, U)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(U, R)",
+        "Line(U, T)",
+        "PointLiesOnLine(U, Line(Q, T))",
+        "PointLiesOnLine(U, Line(S, R))",
+        "Rectangle(Q,R,T,S)",
+        "Equals(LengthOf(Line(Q,S)),3x+40)",
+        "Equals(LengthOf(Line(R,T)),16-3x)",
+        "Find(LengthOf(Line(Q,S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "U",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "QU",
+        "QT",
+        "UT",
+        "SU",
+        "SR",
+        "UR",
+        "QR",
+        "ST",
+        "RT",
+        "QS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            42.1502209131075,
+            52.388571428571424
+        ],
+        "R": [
+            297.6013745704467,
+            52.75238095238095
+        ],
+        "U": [
+            169.59999999999997,
+            129.22514285714286
+        ],
+        "S": [
+            42.618556701030926,
+            205.18857142857144
+        ],
+        "T": [
+            298.3298969072165,
+            205.18857142857144
+        ]
+    },
+    "problem_choices": [
+        14.0,
+        28.0,
+        32.666,
+        56.0
+    ],
+    "choices_precise_value": [
+        14.0,
+        28.0,
+        32.666,
+        56.0
+    ],
+    "problem_answer": 28.0,
+    "total_time": 79.288349,
+    "solution_predicate": "Equals(28.0, LengthOf(Line(Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 40 + 3 * x = QS, 16 - 3 * x = RT, Rectangle(Q, R, T, S)\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(Q, R, T, S)\nConclusions: Parallelogram(Q, R, T, S)\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(Q, R, T, S)\nConclusions: QS = RT\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 40 + 3 * x = QS, 16 - 3 * x = RT, QS = RT\nConclusions: 28 = QS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, U)",
+        "Line(Q, T)",
+        "Line(U, T)",
+        "Line(S, U)",
+        "Line(S, R)",
+        "Line(U, R)",
+        "Line(Q, R)",
+        "Line(S, T)",
+        "Line(R, T)",
+        "Line(Q, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, U)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(U, R)",
+        "Line(U, T)",
+        "PointLiesOnLine(U, Line(Q, T))",
+        "PointLiesOnLine(U, Line(S, R))",
+        "Rectangle(Q, R, T, S)",
+        "Equals(LengthOf(Line(Q, S)), Add(Mul(3.0, x), 40.0))",
+        "Equals(LengthOf(Line(R, T)), Sub(16.0, Mul(3.0, x)))"
+    ],
+    "correct": true
+}

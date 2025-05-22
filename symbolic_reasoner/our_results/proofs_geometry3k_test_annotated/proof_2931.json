@@ -1,0 +1,93 @@
+{
+    "problem_id": "2931",
+    "solved": true,
+    "problem_text": "Find w in the given parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(J, G))",
+        "PointLiesOnLine(A, Line(F, H))",
+        "Equals(LengthOf(Line(J, A)), 3b+1)",
+        "Equals(LengthOf(Line(A, G)), 2b+5)",
+        "Equals(LengthOf(Line(H, A)), 2w+3)",
+        "Equals(LengthOf(Line(F, A)), 4w-7)",
+        "Parallelogram(J, H, G, F)",
+        "Find(w)"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "H",
+        "J",
+        "A"
+    ],
+    "line_instances": [
+        "JH",
+        "GH",
+        "JA",
+        "JG",
+        "AG",
+        "FJ",
+        "FA",
+        "FH",
+        "AH",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            456.3306772908366,
+            57.76892430278884
+        ],
+        "F": [
+            142.78486055776892,
+            92.82868525896413
+        ],
+        "H": [
+            377.84462151394416,
+            274.90039840637445
+        ],
+        "J": [
+            63.501992031872504,
+            311.1553784860557
+        ],
+        "A": [
+            260.71314741035854,
+            183.6653386454183
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "13"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        13.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 57.914883,
+    "solution_predicate": "Equals(5.0, w)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 + 2 * w = AH, A on GJ, A on FH, 4 * w - 7 = AF, Parallelogram(F, G, H, J)\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : A on GJ, Parallelogram(F, G, H, J), A on FH\nConclusions: AF = AH\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : AF = AH, 3 + 2 * w = AH\nConclusions: 3 + 2 * w = AF\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 4 * w - 7 = AF, 3 + 2 * w = AF\nConclusions: 3 + 2 * w = 4 * w - 7\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * w = 4 * w - 7\nConclusions: 5 = w\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(G, H)",
+        "Line(J, A)",
+        "Line(J, G)",
+        "Line(A, G)",
+        "Line(F, J)",
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(F, G)",
+        "PointLiesOnLine(A, Line(J, G))",
+        "PointLiesOnLine(A, Line(F, H))",
+        "Parallelogram(J, H, G, F)",
+        "Equals(LengthOf(Line(J, A)), Add(Mul(3.0, b), 1.0))",
+        "Equals(LengthOf(Line(A, G)), Add(Mul(2.0, b), 5.0))",
+        "Equals(LengthOf(Line(H, A)), Add(Mul(2.0, w), 3.0))",
+        "Equals(LengthOf(Line(F, A)), Sub(Mul(4.0, w), 7.0))"
+    ],
+    "correct": true
+}

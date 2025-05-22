@@ -1,0 +1,109 @@
+{
+    "problem_id": "6882",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Z, T, W)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(Z, T, Y)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(Z, W, T)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), 52)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 38)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, X)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Perpendicular(Line(W, X), Line(T, W))",
+        "Perpendicular(Line(Y, W), Line(T, Z))",
+        "Perpendicular(Line(Y, X), Line(T, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "W",
+        "Z",
+        "T"
+    ],
+    "line_instances": [
+        "YZ",
+        "YW",
+        "ZW",
+        "YX",
+        "XW",
+        "YT",
+        "TW",
+        "TZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            88.30530612244897,
+            376.58399999999995
+        ],
+        "X": [
+            496.5315192743764,
+            376.5028571428571
+        ],
+        "W": [
+            496.2612244897959,
+            57.20571428571428
+        ],
+        "Z": [
+            245.69795918367345,
+            253.16571428571427
+        ],
+        "T": [
+            87.84580498866214,
+            57.61142857142857
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        38.0,
+        52.0,
+        62.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        38.0,
+        52.0,
+        62.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 56.743606,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(Y, T, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on WY, TZ, TY, \u2220TWY, YZ, \u2220ZTW, pi * (52 / 180) = \u2220ZYT, TY \u22a5 XY, \u2220WTY, XY, 3.14 = pi, \u2220YTZ, TZ \u22a5 WZ, \u2220XYW, TZ \u22a5 YZ, WX, TW, WX \u22a5 XY, pi * (38 / 180) = \u2220XYZ, TW \u22a5 WX, WZ\n\nStep 2:\nTheorem: Same Angle\nPremises : Z on WY, \u2220TWY\nConclusions: \u2220TWY = \u2220TWZ\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : TY, YZ, TZ\nConclusions: \u25b3TYZ\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220WTY, \u2220ZTW, \u2220YTZ\nConclusions: 2 * pi = \u2220WTY + \u2220YTZ + \u2220ZTW\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : TZ \u22a5 WZ\nConclusions: pi / 2 = \u2220WZT\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220XYW, Z on WY\nConclusions: \u2220XYW = \u2220XYZ\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : TZ \u22a5 YZ\nConclusions: pi / 2 = \u2220TZY\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 XY\nConclusions: (3 * pi) / 2 = \u2220YXW\n\nStep 9:\nTheorem: Perpendicular to Parallel\nPremises : WX \u22a5 XY, TY \u22a5 XY\nConclusions: TY || WX\n\nStep 10:\nTheorem: Perpendicular to Parallel\nPremises : WX \u22a5 XY, TW \u22a5 WX\nConclusions: TW || YX\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : TW, TZ, WZ\nConclusions: \u25b3TWZ\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, T)\nPremises : \u25b3TYZ\nConclusions: pi = \u2220TZY + \u2220YTZ + \u2220ZYT\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYW = \u2220XYZ, pi * (38 / 180) = \u2220XYZ\nConclusions: pi * (38 / 180) = \u2220XYW\n\nStep 14:\nTheorem: Alternate Interior Angle Theorem\nPremises : TW || YX\nConclusions: \u2220TWY = \u2220XYW\n\nStep 15:\nTheorem: Definition of Rectangle\nPremises : WX, TW, XY, WX \u22a5 XY, TY, TY || WX, TY \u22a5 XY, TW \u22a5 WX, TW || YX\nConclusions: Rectangle(T, W, X, Y)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(T, W, Z)\nPremises : \u25b3TWZ\nConclusions: pi = \u2220TWZ + \u2220WZT + \u2220ZTW\n\nStep 17:\nTheorem: Substitution\nPremises : pi / 2 = \u2220TZY, pi * (52 / 180) = \u2220ZYT, pi = \u2220TZY + \u2220YTZ + \u2220ZYT, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (52 / 180) + \u2220YTZ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TWY = \u2220TWZ, \u2220TWY = \u2220XYW, pi * (38 / 180) = \u2220XYW\nConclusions: pi * (38 / 180) = \u2220TWZ\n\nStep 19:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(T, W, X, Y)\nConclusions: Parallelogram(T, W, X, Y)\n\nStep 20:\nTheorem: Substitution\nPremises : pi / 2 = \u2220WZT, pi = \u2220TWZ + \u2220WZT + \u2220ZTW, pi * (38 / 180) = \u2220TWZ, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (38 / 180) + \u2220ZTW\n\nStep 21:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(T, W, X, Y)\nConclusions: \u2220WTY = \u2220YXW\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220YXW, \u2220WTY = \u2220YXW\nConclusions: (3 * pi) / 2 = \u2220WTY\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220WTY + \u2220YTZ + \u2220ZTW, (3 * pi) / 2 = \u2220WTY, 3.14 = pi / 2 + pi * (52 / 180) + \u2220YTZ, 3.14 = pi / 2 + pi * (38 / 180) + \u2220ZTW\nConclusions: 0.66 = \u2220YTZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, Z)",
+        "Line(Y, W)",
+        "Line(Z, W)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(Y, T)",
+        "Line(T, W)",
+        "Line(T, Z)",
+        "Line(T, W)",
+        "Line(T, Y)",
+        "Line(T, Z)",
+        "Line(W, X)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Perpendicular(Line(W, X), Line(T, W))",
+        "Perpendicular(Line(Y, W), Line(T, Z))",
+        "Perpendicular(Line(Y, X), Line(T, Y))",
+        "Perpendicular(Line(Y, X), Line(W, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Equals(MeasureOf(Angle(Z, Y, T)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,72 @@
+{
+    "problem_id": "2474",
+    "solved": true,
+    "problem_text": "parallelogram M N P Q with m \\angle M = 10 x and m \\angle N = 20 x, find \\angle M.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, P, N)), MeasureOf(Angle(N, M, Q)))",
+        "Equals(MeasureOf(Angle(M, N, P)), MeasureOf(Angle(M, Q, P)))",
+        "Parallelogram(M,N,P,Q)",
+        "Equals(MeasureOf(Angle(M)),10x)",
+        "Equals(MeasureOf(Angle(N)),20x)",
+        "Find(MeasureOf(Angle(M)))"
+    ],
+    "point_instances": [
+        "Q",
+        "N",
+        "P",
+        "M"
+    ],
+    "line_instances": [
+        "MN",
+        "MQ",
+        "QP",
+        "NP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            113.46633416458853,
+            173.28179551122196
+        ],
+        "N": [
+            248.6284289276808,
+            70.03990024937656
+        ],
+        "P": [
+            307.73067331670825,
+            173.03241895261846
+        ],
+        "M": [
+            54.61346633416459,
+            69.54114713216958
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "45",
+        "60",
+        "120"
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 6.876824,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(Q, M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 * x) / 180) = \u2220QMN, Parallelogram(M, N, P, Q), 3.14 = pi, pi * ((20 * x) / 180) = \u2220MNP\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(M, N, P, Q)\nConclusions: MQ || NP\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((10 * x) / 180) = \u2220QMN, 3.14 = pi\nConclusions: 3.14 * ((10 * x) / 180) = \u2220QMN\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((20 * x) / 180) = \u2220MNP\nConclusions: 3.14 * ((20 * x) / 180) = \u2220MNP\n\nStep 5:\nTheorem: Consecutive Interior Angle Theorem\nPremises : MQ || NP\nConclusions: pi = \u2220MNP + \u2220QMN\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220MNP + \u2220QMN\nConclusions: 3.14 = \u2220MNP + \u2220QMN\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((10 * x) / 180) = \u2220QMN, 3.14 = \u2220MNP + \u2220QMN, 3.14 * ((20 * x) / 180) = \u2220MNP\nConclusions: 1.05 = \u2220QMN\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(Q, P)",
+        "Line(N, P)",
+        "Parallelogram(M, N, P, Q)",
+        "Equals(MeasureOf(Angle(N, P, Q)), MeasureOf(Angle(Q, M, N)))",
+        "Equals(MeasureOf(Angle(M, N, P)), MeasureOf(Angle(P, Q, M)))",
+        "Equals(MeasureOf(Angle(Q, M, N)), Mul(pi, Div(Mul(10.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(M, N, P)), Mul(pi, Div(Mul(20.0, x), 180.0)))"
+    ],
+    "correct": true
+}

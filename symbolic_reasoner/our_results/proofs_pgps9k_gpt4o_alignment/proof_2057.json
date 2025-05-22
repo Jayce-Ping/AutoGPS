@@ -1,0 +1,160 @@
+{
+    "problem_id": "2057",
+    "solved": true,
+    "problem_text": "AB, BC, CD, and AD are tangent to a circle. If AB = 19, DC = 14, and AD = 27, find BC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A,B)),19)",
+        "Equals(LengthOf(Line(A,D)),27)",
+        "Equals(LengthOf(Line(D,C)),14)",
+        "Find(LengthOf(Line(B,C)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(G, D)",
+        "Line(H, B)",
+        "PointLiesOnCircle(E, Circle(I))",
+        "PointLiesOnCircle(F, Circle(I))",
+        "PointLiesOnCircle(G, Circle(I))",
+        "PointLiesOnCircle(H, Circle(I))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(H, Line(A, B))",
+        "Tangent(Line(A,B),Circle(I))",
+        "Tangent(Line(A,D),Circle(I))",
+        "Tangent(Line(B,C),Circle(I))",
+        "Tangent(Line(C,D),Circle(I))"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "C",
+        "F",
+        "D",
+        "G",
+        "A",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "BH",
+        "BA",
+        "HA",
+        "AG",
+        "AD",
+        "GD",
+        "DF",
+        "DC",
+        "FC",
+        "CE",
+        "CB",
+        "EB"
+    ],
+    "circle_instances": [
+        "I"
+    ],
+    "point_positions": {
+        "B": [
+            61.95479939055358,
+            164.41714285714286
+        ],
+        "E": [
+            107.46724225495174,
+            182.88285714285715
+        ],
+        "C": [
+            153.72156424581004,
+            204.30834285714286
+        ],
+        "F": [
+            183.75977653631284,
+            163.3657142857143
+        ],
+        "D": [
+            229.19329608938548,
+            107.38765714285715
+        ],
+        "G": [
+            162.55914500850133,
+            76.30857142857143
+        ],
+        "A": [
+            99.71216905513724,
+            48.65142857142857
+        ],
+        "H": [
+            80.71338353169783,
+            107.42285714285714
+        ],
+        "I": [
+            134.82620320855614,
+            129.0347593582888
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        22.0,
+        27.0,
+        32.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        22.0,
+        27.0,
+        32.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 141.012468,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: H on \u2299(I, radius_I), 27 = AD, Tangent(BC, \u2299(I, radius_I)), G on \u2299(I, radius_I), E on BC, G on AD, F on CD, F on \u2299(I, radius_I), 19 = AB, 14 = CD, Tangent(CD, \u2299(I, radius_I)), Tangent(AD, \u2299(I, radius_I)), Tangent(AB, \u2299(I, radius_I)), H on AB, E on \u2299(I, radius_I)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on BC\nConclusions: BC = BE + CE\n\nStep 3:\nTheorem: Line Segment Split\nPremises : G on AD\nConclusions: AD = AG + DG\n\nStep 4:\nTheorem: Line Segment Split\nPremises : F on CD\nConclusions: CD = CF + DF\n\nStep 5:\nTheorem: Tangent Definition\nPremises : F on CD, F on \u2299(I, radius_I), Tangent(CD, \u2299(I, radius_I))\nConclusions: Tangent(DF, \u2299(I, radius_I)), Tangent(CF, \u2299(I, radius_I))\n\nStep 6:\nTheorem: Tangent Definition\nPremises : G on \u2299(I, radius_I), Tangent(AD, \u2299(I, radius_I)), G on AD\nConclusions: Tangent(DG, \u2299(I, radius_I)), Tangent(AG, \u2299(I, radius_I))\n\nStep 7:\nTheorem: Tangent Definition\nPremises : H on \u2299(I, radius_I), Tangent(AB, \u2299(I, radius_I)), H on AB\nConclusions: Tangent(BH, \u2299(I, radius_I)), Tangent(AH, \u2299(I, radius_I))\n\nStep 8:\nTheorem: Line Segment Split\nPremises : H on AB\nConclusions: AB = AH + BH\n\nStep 9:\nTheorem: Tangent Definition\nPremises : E on \u2299(I, radius_I), E on BC, Tangent(BC, \u2299(I, radius_I))\nConclusions: Tangent(CE, \u2299(I, radius_I)), Tangent(BE, \u2299(I, radius_I))\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 27 = AD, AD = AG + DG\nConclusions: 27 = AG + DG\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : CD = CF + DF, 14 = CD\nConclusions: 14 = CF + DF\n\nStep 12:\nTheorem: Tangent Line Theorem\nPremises : G on \u2299(I, radius_I), F on \u2299(I, radius_I), Tangent(DF, \u2299(I, radius_I)), Tangent(DG, \u2299(I, radius_I))\nConclusions: DF = DG\n\nStep 13:\nTheorem: Tangent Line Theorem\nPremises : G on \u2299(I, radius_I), H on \u2299(I, radius_I), Tangent(AH, \u2299(I, radius_I)), Tangent(AG, \u2299(I, radius_I))\nConclusions: AG = AH\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 19 = AB, AB = AH + BH\nConclusions: 19 = AH + BH\n\nStep 15:\nTheorem: Tangent Line Theorem\nPremises : F on \u2299(I, radius_I), Tangent(CF, \u2299(I, radius_I)), E on \u2299(I, radius_I), Tangent(CE, \u2299(I, radius_I))\nConclusions: CE = CF\n\nStep 16:\nTheorem: Tangent Line Theorem\nPremises : H on \u2299(I, radius_I), Tangent(BH, \u2299(I, radius_I)), E on \u2299(I, radius_I), Tangent(BE, \u2299(I, radius_I))\nConclusions: BE = BH\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : BC = BE + CE, CE = CF, DF = DG, 19 = AH + BH, 27 = AG + DG, AG = AH, BE = BH, 14 = CF + DF\nConclusions: 6 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, H)",
+        "Line(B, A)",
+        "Line(H, A)",
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(D, F)",
+        "Line(D, C)",
+        "Line(F, C)",
+        "Line(C, E)",
+        "Line(C, B)",
+        "Line(E, B)",
+        "Circle(I, radius_I)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, G)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(E, C)",
+        "Line(F, C)",
+        "Line(G, D)",
+        "Line(H, B)",
+        "PointLiesOnCircle(E, Circle(I, radius_I))",
+        "PointLiesOnCircle(F, Circle(I, radius_I))",
+        "PointLiesOnCircle(G, Circle(I, radius_I))",
+        "PointLiesOnCircle(H, Circle(I, radius_I))",
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(H, Line(A, B))",
+        "Tangent(Line(A, B), Circle(I, radius_I))",
+        "Tangent(Line(A, D), Circle(I, radius_I))",
+        "Tangent(Line(B, C), Circle(I, radius_I))",
+        "Tangent(Line(C, D), Circle(I, radius_I))",
+        "Equals(LengthOf(Line(A, B)), 19.0)",
+        "Equals(LengthOf(Line(A, D)), 27.0)",
+        "Equals(LengthOf(Line(D, C)), 14.0)"
+    ],
+    "correct": true
+}

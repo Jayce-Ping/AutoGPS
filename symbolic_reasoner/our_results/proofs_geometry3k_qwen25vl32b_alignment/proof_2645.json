@@ -1,0 +1,65 @@
+{
+    "problem_id": "2645",
+    "solved": true,
+    "problem_text": "Find h in the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), h)",
+        "Equals(LengthOf(Line(B, C)), 22)",
+        "Equals(MeasureOf(Angle(B, C, A)), 30)",
+        "Find(h)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            35.74561403508771,
+            143.72807017543857
+        ],
+        "B": [
+            35.52631578947368,
+            19.824561403508767
+        ],
+        "C": [
+            248.68421052631575,
+            143.9473684210526
+        ]
+    },
+    "problem_choices": [
+        "11",
+        "11 \\sqrt 2",
+        "11 \\sqrt 3",
+        "22"
+    ],
+    "choices_precise_value": [
+        11.0,
+        15.556349186104047,
+        19.05255888325765,
+        22.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 16.548676,
+    "solution_predicate": "Equals(10.9999999998, h)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: tan(\u2220ABC), sin(\u2220ABC), 22 = BC, h = AB, \u2220CBA, pi * (30 / 180) = \u2220BCA, 3.14 = pi, AB \u22a5 AC, \u25b3ABC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220ABC), AB \u22a5 AC\nConclusions: AC / AB = tan(\u2220ABC)\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220ABC), AB \u22a5 AC\nConclusions: AC / BC = sin(\u2220ABC)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220CAB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi\nConclusions: \u2220CBA = 2 * 3.14 - \u2220ABC\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (30 / 180) = \u2220BCA, pi / 2 = \u2220CAB, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + pi * (30 / 180) + \u2220ABC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = 3.14 / 2 + pi * (30 / 180) + \u2220ABC, \u2220CBA = 2 * 3.14 - \u2220ABC\nConclusions: 1.05 = \u2220ABC\n\nStep 10:\nTheorem: Evaluate\nPremises : 1.05 = \u2220ABC\nConclusions: 1.73 = tan(\u2220ABC)\n\nStep 11:\nTheorem: Substitution\nPremises : 1.05 = \u2220ABC, 22 = BC, AC / BC = sin(\u2220ABC)\nConclusions: sin(1.05) = AC / 22\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = tan(\u2220ABC), 1.73 = tan(\u2220ABC)\nConclusions: 1.73 = AC / AB\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : sin(1.05) = AC / 22, 1.73 = AC / AB\nConclusions: 11 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 11 = AB, h = AB\nConclusions: 11 = h\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(A, B)), h)",
+        "Equals(LengthOf(Line(B, C)), 22.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

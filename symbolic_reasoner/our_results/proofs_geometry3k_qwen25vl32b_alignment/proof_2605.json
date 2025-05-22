@@ -1,0 +1,80 @@
+{
+    "problem_id": "2605",
+    "solved": true,
+    "problem_text": "m \\widehat A C = 160 and m \\angle B E C = 38. What is m \\angle A E B?",
+    "logic_forms": [
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "Equals(MeasureOf(Arc(A,C)),160)",
+        "Equals(MeasureOf(Angle(B,E,C)),38)",
+        "Find(MeasureOf(Angle(A,E,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B",
+        "E",
+        "D"
+    ],
+    "line_instances": [
+        "AE",
+        "EB",
+        "EC"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "C": [
+            376.2843601895735,
+            322.2748815165877
+        ],
+        "A": [
+            214.67298578199052,
+            79.14691943127963
+        ],
+        "B": [
+            401.8767772511849,
+            236.0189573459716
+        ],
+        "E": [
+            86.71090047393366,
+            244.07582938388626
+        ],
+        "D": [
+            243.60426540284357,
+            234.3957345971564
+        ]
+    },
+    "problem_choices": [
+        "42",
+        "61",
+        "80",
+        "84"
+    ],
+    "choices_precise_value": [
+        42.0,
+        61.0,
+        80.0,
+        84.0
+    ],
+    "problem_answer": 42.0,
+    "total_time": 47.905746,
+    "solution_predicate": "Equals(0.7330382858, MeasureOf(Angle(B, E, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(D, radius_0_0), CE, pi * (38 / 180) = \u2220CEB, \u2220BED, \u2220AEC, A on \u2299(D, radius_0_0), DE, \u2220BEA, 3.14 = pi, E on \u2299(D, radius_0_0), \u2220DEA, AE, \u2220AEB, \u2220CEB, \u2220CED, pi * (160 / 180) = Arc(CDA), CD, \u2220CEA, \u2220ADC, Arc(CDA), Arc(ADC), AD\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = CD\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = AD\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 3.49 = 2 * 3.14 - pi * (160 / 180)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : E on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DE\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220BED, \u2220AEB, \u2220DEA\nConclusions: 2 * pi = \u2220AEB + \u2220BED + \u2220DEA\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220AEC, \u2220BEA, \u2220CEB\nConclusions: 2 * pi = \u2220AEC + \u2220BEA + \u2220CEB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220AEC, \u2220DEA, \u2220CED\nConclusions: 2 * pi = \u2220AEC + \u2220CED + \u2220DEA\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : DE, CD, CE\nConclusions: \u25b3CDE\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220CEA\nConclusions: \u2220CEA = 2 * pi - \u2220AEC\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADC\nConclusions: \u2220ADC = 2 * pi - \u2220CDA\n\nStep 12:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CDA)\nConclusions: \u2220CDA = Arc(CDA)\n\nStep 13:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ADC)\nConclusions: \u2220ADC = Arc(ADC)\n\nStep 14:\nTheorem: Definition of Quadrilateral\nPremises : CE, CD, AD, AE\nConclusions: Quadrilateral(A, D, C, E)\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : DE, AE, AD\nConclusions: \u25b3ADE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AD, radius_0_0 = DE\nConclusions: AD = DE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CD, radius_0_0 = DE\nConclusions: CD = DE\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AEB + \u2220BED + \u2220DEA\nConclusions: 2 * 3.14 = \u2220AEB + \u2220BED + \u2220DEA\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (38 / 180) = \u2220CEB, 2 * pi = \u2220AEC + \u2220BEA + \u2220CEB\nConclusions: 2 * 3.14 = 3.14 * (38 / 180) + \u2220AEC + \u2220BEA\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDA = Arc(CDA), pi * (160 / 180) = Arc(CDA)\nConclusions: pi * (160 / 180) = \u2220CDA\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, D, C, E)\nPremises : Quadrilateral(A, D, C, E)\nConclusions: 2 * pi = \u2220ADC + \u2220CEA + \u2220DCE + \u2220EAD\n\nStep 22:\nTheorem: Issoceles Triangle Property\nPremises : AD = DE, \u25b3ADE\nConclusions: \u2220DEA = \u2220EAD\n\nStep 23:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CDE, CD = DE\nConclusions: \u2220CED = \u2220DCE\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220AEB + \u2220BED + \u2220DEA, 2 * pi = \u2220AEB + \u2220BED + \u2220DEA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 25:\nTheorem: Substitution\nPremises : \u2220ADC = 2 * pi - \u2220CDA, 3.14 = pi, \u2220ADC = Arc(ADC), pi * (160 / 180) = \u2220CDA\nConclusions: 2 * 3.14 - pi * (160 / 180) = Arc(ADC)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (38 / 180) + \u2220AEC + \u2220BEA\nConclusions: 2 * pi = 3.14 * (38 / 180) + \u2220AEC + \u2220BEA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (160 / 180) = Arc(ADC), \u2220ADC = Arc(ADC)\nConclusions: 2 * 3.14 - pi * (160 / 180) = \u2220ADC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 3.49 = 2 * 3.14 - pi * (160 / 180), 2 * 3.14 - pi * (160 / 180) = \u2220ADC\nConclusions: 3.49 = \u2220ADC\n\nStep 29:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ADC + \u2220CEA + \u2220DCE + \u2220EAD, 3.49 = \u2220ADC\nConclusions: 2 * 3.14 = 3.49 + \u2220CEA + \u2220DCE + \u2220EAD\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : \u2220CEA = 2 * pi - \u2220AEC, 2 * pi = 3.14 * (38 / 180) + \u2220AEC + \u2220BEA, 2 * pi = \u2220AEC + \u2220CED + \u2220DEA, \u2220DEA = \u2220EAD, 2 * 3.14 = 3.49 + \u2220CEA + \u2220DCE + \u2220EAD, \u2220CED = \u2220DCE\nConclusions: 0.73 = \u2220BEA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "Equals(MeasureOf(Arc(C, D, A)), Mul(pi, Div(160.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, E, B)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

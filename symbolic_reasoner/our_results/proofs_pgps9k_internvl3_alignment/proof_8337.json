@@ -1,0 +1,98 @@
+{
+    "problem_id": "8337",
+    "solved": true,
+    "problem_text": "Solve for m \\angle FGH.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, H, J)), 25)",
+        "Line(A, H)",
+        "Line(F, A)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(H, G)",
+        "Line(J, H)",
+        "PointLiesOnCircle(F, Circle(A))",
+        "PointLiesOnCircle(G, Circle(A))",
+        "PointLiesOnCircle(H, Circle(A))",
+        "PointLiesOnCircle(J, Circle(A))",
+        "PointLiesOnLine(A, Line(F, H))",
+        "Find(MeasureOf(Angle(F,G,H)))"
+    ],
+    "point_instances": [
+        "F",
+        "J",
+        "A",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "FA",
+        "FH",
+        "AH",
+        "JH",
+        "FG",
+        "HG"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "F": [
+            131.85551020408164,
+            60.527472527472526
+        ],
+        "J": [
+            55.693714285714286,
+            95.4989010989011
+        ],
+        "A": [
+            131.94073358648572,
+            159.43402473354587
+        ],
+        "G": [
+            224.94571428571427,
+            193.16483516483518
+        ],
+        "H": [
+            132.12285714285713,
+            259.67032967032964
+        ]
+    },
+    "problem_choices": [
+        12.5,
+        25.0,
+        90.0,
+        155.0
+    ],
+    "choices_precise_value": [
+        12.5,
+        25.0,
+        90.0,
+        155.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 40.668249,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(F, G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on \u2299(A, radius_A), G on \u2299(A, radius_A), H on \u2299(A, radius_A), A on FH\n\nStep 2:\nTheorem: Diameter Definition\nPremises : F on \u2299(A, radius_A), H on \u2299(A, radius_A), A on FH\nConclusions: IsDiameterOf(FH, \u2299(A, radius_A))\n\nStep 3:\nTheorem: Thales Theorem\nPremises : G on \u2299(A, radius_A), IsDiameterOf(FH, \u2299(A, radius_A))\nConclusions: FG \u22a5 GH\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : FG \u22a5 GH\nConclusions: pi / 2 = \u2220FGH\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 2 = \u2220FGH\nConclusions: 1.57 = \u2220FGH\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(J, H)",
+        "Line(F, G)",
+        "Line(H, G)",
+        "Circle(A, radius_A)",
+        "Line(A, H)",
+        "Line(F, A)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(H, G)",
+        "Line(J, H)",
+        "PointLiesOnCircle(F, Circle(A, radius_A))",
+        "PointLiesOnCircle(G, Circle(A, radius_A))",
+        "PointLiesOnCircle(H, Circle(A, radius_A))",
+        "PointLiesOnCircle(J, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(F, H))",
+        "Equals(MeasureOf(Angle(A, H, J)), Mul(pi, Div(25.0, 180.0)))"
+    ],
+    "correct": true
+}

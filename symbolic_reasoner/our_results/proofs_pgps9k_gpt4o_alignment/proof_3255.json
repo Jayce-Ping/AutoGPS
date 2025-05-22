@@ -1,0 +1,128 @@
+{
+    "problem_id": "3255",
+    "solved": true,
+    "problem_text": "Find the exact area of the circle.",
+    "logic_forms": [
+        "Circle(C)",
+        "Equals(DiameterOf(Circle(C)), 10)",
+        "Equals(LengthOf(Line(A, B)), 10)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, E)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, E)), 10)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(B, D)), 10)",
+        "Equals(LengthOf(Line(E, D)), 10)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, E)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(B, D)))",
+        "Equals(RadiusOf(Circle(C)), 5)",
+        "Find(AreaOf(Circle(C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(E, D), Line(A, E))",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(A, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "ED",
+        "DB",
+        "AB",
+        "AE",
+        "AC",
+        "AD",
+        "CD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            45.74411764705882,
+            42.54271428571428
+        ],
+        "B": [
+            160.80445151033385,
+            42.35567567567567
+        ],
+        "C": [
+            103.04828973843058,
+            99.39637826961771
+        ],
+        "D": [
+            160.67301421677317,
+            157.1167944250871
+        ],
+        "E": [
+            46.02556410590844,
+            157.38578397212544
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        44.429,
+        157.08,
+        628.319
+    ],
+    "choices_precise_value": [
+        20.0,
+        44.429,
+        157.08,
+        628.319
+    ],
+    "problem_answer": 157.08,
+    "total_time": 67.551447,
+    "solution_predicate": "Equals(78.53981634, AreaOf(Circle(C, radius_C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = radius_C, Area(\u2299(C, radius_C)), 3.14 = pi\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, radius_C))\nConclusions: pi * radius_C ** 2 = Area(\u2299(C, radius_C))\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi, 5 = radius_C\nConclusions: 78.54 = pi * radius_C ** 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_C ** 2 = Area(\u2299(C, radius_C)), 78.54 = pi * radius_C ** 2\nConclusions: 78.54 = Area(\u2299(C, radius_C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Circle(C, radius_C)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(E, D), Line(A, E))",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Equals(Mul(2.0, radius_C), 10.0)",
+        "Equals(LengthOf(Line(A, B)), 10.0)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, E)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(A, E)), 10.0)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(B, D)))",
+        "Equals(LengthOf(Line(B, D)), 10.0)",
+        "Equals(LengthOf(Line(E, D)), 10.0)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, E)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(B, D)))",
+        "Equals(radius_C, 5.0)"
+    ],
+    "correct": false
+}

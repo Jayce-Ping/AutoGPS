@@ -1,0 +1,66 @@
+{
+    "problem_id": "2455",
+    "solved": true,
+    "problem_text": "Find the circumference of the figure. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Find(CircumferenceOf(Circle(B, radius_0_0)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            153.55223880597012,
+            154.58422174840084
+        ],
+        "B": [
+            92.99786780383795,
+            95.0959488272921
+        ],
+        "C": [
+            33.5095948827292,
+            33.47547974413646
+        ]
+    },
+    "problem_choices": [
+        "18.6",
+        "19.5",
+        "37.7",
+        "39.0"
+    ],
+    "choices_precise_value": [
+        18.6,
+        19.5,
+        37.7,
+        39.0
+    ],
+    "problem_answer": 19.5,
+    "total_time": 1.978038,
+    "solution_predicate": "Equals(19.4778744523, CircumferenceOf(Circle(B, radius_0_0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(B, radius_0_0), 6.2 = AC, B on AC, Circumference(\u2299(B, radius_0_0)), 3.14 = pi, C on \u2299(B, radius_0_0)\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(B, radius_0_0))\nConclusions: pi * 2 * radius_0_0 = Circumference(\u2299(B, radius_0_0))\n\nStep 3:\nTheorem: Diameter Definition\nPremises : C on \u2299(B, radius_0_0), A on \u2299(B, radius_0_0), B on AC\nConclusions: IsDiameterOf(AC, \u2299(B, radius_0_0))\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * 2 * radius_0_0 = Circumference(\u2299(B, radius_0_0))\nConclusions: 3.14 * 2 * radius_0_0 = Circumference(\u2299(B, radius_0_0))\n\nStep 5:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AC, \u2299(B, radius_0_0))\nConclusions: 2 * radius_0_0 = AC, A on \u2299(B, radius_0_0), C on \u2299(B, radius_0_0)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_0_0 = AC, 6.2 = AC\nConclusions: 6.2 = 2 * radius_0_0\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * 2 * radius_0_0 = Circumference(\u2299(B, radius_0_0)), 6.2 = 2 * radius_0_0\nConclusions: 19.48 = Circumference(\u2299(B, radius_0_0))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "Equals(LengthOf(Line(C, A)), 6.2)"
+    ],
+    "correct": true
+}

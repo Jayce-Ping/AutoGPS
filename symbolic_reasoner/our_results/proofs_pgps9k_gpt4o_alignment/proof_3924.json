@@ -1,0 +1,69 @@
+{
+    "problem_id": "3924",
+    "solved": true,
+    "problem_text": "Determine the length of XY.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Z)), 20)",
+        "Equals(LengthOf(Line(Z, Y)), 11)",
+        "Equals(MeasureOf(Angle(Z, X, Y)), x)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 115)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Find(LengthOf(Line(X,Y)))"
+    ],
+    "point_instances": [
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "XZ",
+        "ZY",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            385.9179632248939,
+            58.33142857142857
+        ],
+        "X": [
+            40.54455445544554,
+            257.52
+        ],
+        "Y": [
+            292.38415841584157,
+            258.912
+        ]
+    },
+    "problem_choices": [
+        11.0,
+        12.689,
+        24.62,
+        26.589
+    ],
+    "choices_precise_value": [
+        11.0,
+        12.689,
+        24.62,
+        26.589
+    ],
+    "problem_answer": 12.689,
+    "total_time": 13.56539,
+    "solution_predicate": "Equals(12.6893463579, LengthOf(Line(X, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XZ, 11 = YZ, XY, YZ, 3.14 = pi, 20 = XZ, pi * (115 / 180) = \u2220ZYX\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : XZ, YZ, XY\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : pi * (115 / 180) = \u2220ZYX, 3.14 = pi\nConclusions: 2.01 = \u2220ZYX\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3XYZ\nConclusions: (XY ** 2 + YZ ** 2) - XZ ** 2 = 2 * XY * YZ * cos(\u2220ZYX)\n\nStep 5:\nTheorem: Substitution\nPremises : (XY ** 2 + YZ ** 2) - XZ ** 2 = 2 * XY * YZ * cos(\u2220ZYX), 11 = YZ, 20 = XZ, 2.01 = \u2220ZYX\nConclusions: (11 ** 2 + XY ** 2) - 20 ** 2 = 11 * 2 * cos(2.01) * XY\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : (11 ** 2 + XY ** 2) - 20 ** 2 = 11 * 2 * cos(2.01) * XY\nConclusions: 12.69 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Equals(LengthOf(Line(X, Z)), 20.0)",
+        "Equals(LengthOf(Line(Z, Y)), 11.0)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), Mul(pi, Div(115.0, 180.0)))"
+    ],
+    "correct": true
+}

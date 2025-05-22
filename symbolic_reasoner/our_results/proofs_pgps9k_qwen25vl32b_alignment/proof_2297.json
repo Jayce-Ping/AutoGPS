@@ -1,0 +1,104 @@
+{
+    "problem_id": "2297",
+    "solved": true,
+    "problem_text": "Find the diameter of \\odot P.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, P)), 10)",
+        "Equals(LengthOf(Line(T, P)), LengthOf(Line(T, S)))",
+        "Equals(LengthOf(Line(T, S)), 10)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "Perpendicular(Line(Q, R), Line(P, S))",
+        "PointLiesOnCircle(Q, Circle(P))",
+        "PointLiesOnCircle(R, Circle(P))",
+        "PointLiesOnCircle(S, Circle(P))",
+        "PointLiesOnLine(T, Line(P, S))",
+        "PointLiesOnLine(T, Line(Q, R))",
+        "Find(DiameterOf(Circle(P)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "QT",
+        "QR",
+        "TR",
+        "PT",
+        "PS",
+        "TS"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "Q": [
+            201.4857142857143,
+            52.75423728813559
+        ],
+        "P": [
+            140.62227754069727,
+            159.00161701042535
+        ],
+        "T": [
+            202.65714285714287,
+            159.43502824858757
+        ],
+        "S": [
+            264.35238095238094,
+            159.04425612052728
+        ],
+        "R": [
+            201.4857142857143,
+            267.2881355932203
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        20.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        20.0,
+        40.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 64.909246,
+    "solution_predicate": "Equals(40.0, Mul(2.0, radius_P))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: T on PS, S on \u2299(P, radius_P), 10 = ST, 10 = PT\n\nStep 2:\nTheorem: Line Segment Split\nPremises : T on PS\nConclusions: PS = PT + ST\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : S on \u2299(P, radius_P)\nConclusions: radius_P = PS\n\nStep 4:\nTheorem: Evaluate\nPremises : 10 = ST, 10 = PT\nConclusions: 20 = PT + ST\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = PS, PS = PT + ST\nConclusions: radius_P = PT + ST\n\nStep 6:\nTheorem: Substitution\nPremises : 10 = ST, 10 = PT, PS = PT + ST, radius_P = PS\nConclusions: 10 + 10 = radius_P\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 10 + 10 = radius_P, radius_P = PT + ST\nConclusions: 10 + 10 = PT + ST\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 10 + 10 = PT + ST, 20 = PT + ST\nConclusions: 20 = 10 + 10\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 10 + 10 = radius_P, 20 = 10 + 10\nConclusions: 20 = radius_P\n\nStep 10:\nTheorem: Evaluate\nPremises : 20 = radius_P\nConclusions: 40 = 2 * radius_P\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(Q, R)",
+        "Line(T, R)",
+        "Line(P, T)",
+        "Line(P, S)",
+        "Line(T, S)",
+        "Circle(P, radius_P)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "Perpendicular(Line(Q, R), Line(P, S))",
+        "PointLiesOnCircle(Q, Circle(P, radius_P))",
+        "PointLiesOnCircle(R, Circle(P, radius_P))",
+        "PointLiesOnCircle(S, Circle(P, radius_P))",
+        "PointLiesOnLine(T, Line(P, S))",
+        "PointLiesOnLine(T, Line(Q, R))",
+        "Equals(LengthOf(Line(T, P)), 10.0)",
+        "Equals(LengthOf(Line(T, P)), LengthOf(Line(T, S)))",
+        "Equals(LengthOf(Line(T, S)), 10.0)"
+    ],
+    "correct": true
+}

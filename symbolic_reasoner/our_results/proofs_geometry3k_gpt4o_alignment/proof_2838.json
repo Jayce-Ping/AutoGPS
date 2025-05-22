@@ -1,0 +1,121 @@
+{
+    "problem_id": "2838",
+    "solved": true,
+    "problem_text": "If P R \\parallel K L, K N = 9, L N = 16, P M = 2 K P, find P R.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P,R),Line(K,L))",
+        "Equals(LengthOf(Line(K,N)),9)",
+        "Equals(LengthOf(Line(L,N)),16)",
+        "Equals(LengthOf(Line(P,M)),Mul(Line(K,P),2))",
+        "Find(LengthOf(Line(P,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "N",
+        "M",
+        "K",
+        "P",
+        "R",
+        "L"
+    ],
+    "line_instances": [
+        "NQ",
+        "NM",
+        "QM",
+        "LN",
+        "LK",
+        "NK",
+        "MP",
+        "MK",
+        "PK",
+        "LR",
+        "LM",
+        "RM",
+        "RQ",
+        "RP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            288.2608695652174,
+            155.7391304347826
+        ],
+        "N": [
+            287.8260869565217,
+            70.95652173913042
+        ],
+        "M": [
+            288.2608695652174,
+            318.78260869565213
+        ],
+        "K": [
+            536.5217391304348,
+            71.39130434782608
+        ],
+        "P": [
+            451.3043478260869,
+            155.7391304347826
+        ],
+        "R": [
+            127.39130434782608,
+            156.6086956521739
+        ],
+        "L": [
+            43.47826086956521,
+            70.95652173913042
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "32 / 2",
+        "\\frac { 50 } { 3 }",
+        "17"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        16.666666666666668,
+        17.0
+    ],
+    "problem_answer": 16.666666666666668,
+    "total_time": 485.328413,
+    "solution_predicate": "Equals(16.6666666668, LengthOf(Line(P, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on KL, LN \u22a5 NQ, MP = 2 * KP, \u2220KMN, \u2220NML, \u2220LKM, sin(\u2220MLK), \u2220QML, KL, 9 = KN, \u2220MRP, KN \u22a5 MN, \u2220MLK, LM, PR, QR, cos(\u2220NKM), \u2220RPM, \u2220KMR, \u2220NMR, \u2220MRP, 16 = LN, \u2220RMK, \u2220LKM, KL || PR, P on KM, 3.14 = pi, MN, KM, MP \u22a5 MR, MR, R on LM, Q on PR, sin(\u2220MRP), KN \u22a5 NQ, \u2220KNM, Q on MN, KM \u22a5 MR, KN, KM \u22a5 LM, \u2220KMR, MP, MQ, LN \u22a5 MN, \u2220KMN\n\nStep 2:\nTheorem: Line Segment Split\nPremises : N on KL\nConclusions: KL = KN + LN\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : LN \u22a5 NQ\nConclusions: pi / 2 = \u2220LNQ\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : KN \u22a5 MN\nConclusions: pi / 2 = \u2220MNK\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220NKM), KN \u22a5 MN\nConclusions: KN / KM = cos(\u2220NKM)\n\nStep 6:\nTheorem: Evaluate\nPremises : 16 = LN, 9 = KN\nConclusions: 25 = KN + LN\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220KMN, \u2220NMR, \u2220RMK\nConclusions: 2 * pi = \u2220KMN + \u2220NMR + \u2220RMK\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220LKM, N on KL\nConclusions: \u2220LKM = \u2220NKM\n\nStep 9:\nTheorem: Alternate Interior Angle Theorem\nPremises : KL || PR\nConclusions: \u2220LNQ = \u2220PQN\n\nStep 10:\nTheorem: Corresponding Angle Theorem\nPremises : KL || PR\nConclusions: \u2220MLK = \u2220MRP, \u2220MNK = \u2220MQP, \u2220MNL = \u2220MQR\n\nStep 11:\nTheorem: Line Segment Split\nPremises : P on KM\nConclusions: KM = KP + MP\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220KMR, P on KM\nConclusions: \u2220KMR = \u2220PMR\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : KL, KM, LM\nConclusions: \u25b3KLM\n\nStep 14:\nTheorem: Same Angle\nPremises : R on LM, \u2220NML\nConclusions: \u2220NML = \u2220NMR\n\nStep 15:\nTheorem: Same Angle\nPremises : R on LM, \u2220QML\nConclusions: \u2220QML = \u2220QMR\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220RPM, Q on PR\nConclusions: \u2220QPM = \u2220RPM\n\nStep 17:\nTheorem: Same Angle\nPremises : Q on PR, \u2220MRP\nConclusions: \u2220MRP = \u2220MRQ\n\nStep 18:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220MRP), MP \u22a5 MR\nConclusions: MP / PR = sin(\u2220MRP)\n\nStep 19:\nTheorem: Perpendicular to Right Angle\nPremises : KN \u22a5 NQ\nConclusions: (3 * pi) / 2 = \u2220KNQ\n\nStep 20:\nTheorem: Vertical Angle Theorem\nPremises : Q on PR, Q on MN\nConclusions: \u2220PQN = \u2220RQM\n\nStep 21:\nTheorem: Same Angle\nPremises : \u2220NML, Q on MN\nConclusions: \u2220NML = \u2220QML\n\nStep 22:\nTheorem: Same Angle\nPremises : \u2220KNM, Q on MN\nConclusions: \u2220KNM = \u2220KNQ\n\nStep 23:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 MR\nConclusions: pi / 2 = \u2220KMR\n\nStep 24:\nTheorem: Definition of Triangle\nPremises : KM, KN, MN\nConclusions: \u25b3KMN\n\nStep 25:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220MLK), KM \u22a5 LM\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 26:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 LM\nConclusions: pi / 2 = \u2220KML\n\nStep 27:\nTheorem: Reverse Angle Definition\nPremises : \u2220KMR\nConclusions: \u2220KMR = 2 * pi - \u2220RMK\n\nStep 28:\nTheorem: Definition of Triangle\nPremises : MR, PR, MP\nConclusions: \u25b3MPR\n\nStep 29:\nTheorem: Definition of Triangle\nPremises : MR, MQ, QR\nConclusions: \u25b3MQR\n\nStep 30:\nTheorem: Perpendicular to Right Angle\nPremises : LN \u22a5 MN\nConclusions: (3 * pi) / 2 = \u2220MNL, pi / 2 = \u2220LNM\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 25 = KN + LN, KL = KN + LN\nConclusions: 25 = KL\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220LNQ, \u2220LNQ = \u2220PQN\nConclusions: pi / 2 = \u2220PQN\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220MNK, \u2220MNK = \u2220MQP\nConclusions: pi / 2 = \u2220MQP\n\nStep 34:\nTheorem: Cos Function Definition\nPremises : KM \u22a5 LM, \u2220LKM, \u25b3KLM\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 35:\nTheorem: Interior Angle Sum Theorem for Triangle(M, L, K)\nPremises : \u25b3KLM\nConclusions: pi = \u2220KML + \u2220LKM + \u2220MLK\n\nStep 36:\nTheorem: Sin Function Definition\nPremises : \u2220MLK, KM \u22a5 LM, \u25b3KLM\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MRP = \u2220MRQ, \u2220MLK = \u2220MRP\nConclusions: \u2220MLK = \u2220MRQ\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220QML, \u2220QML = \u2220QMR\nConclusions: \u2220NML = \u2220QMR\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Triangle(K, M, N)\nPremises : \u25b3KMN\nConclusions: pi = \u2220KMN + \u2220MNK + \u2220NKM\n\nStep 40:\nTheorem: Tan Function Definition\nPremises : KN \u22a5 MN, \u25b3KMN, \u2220KMN\nConclusions: KN / MN = tan(\u2220KMN)\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220KMR, \u2220KMR = 2 * pi - \u2220RMK\nConclusions: pi / 2 = 2 * pi - \u2220RMK\n\nStep 42:\nTheorem: Sin Function Definition\nPremises : \u2220MRP, \u25b3MPR, MP \u22a5 MR\nConclusions: MP / PR = sin(\u2220MRP)\n\nStep 43:\nTheorem: Interior Angle Sum Theorem for Triangle(R, Q, M)\nPremises : \u25b3MQR\nConclusions: pi = \u2220MRQ + \u2220QMR + \u2220RQM\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220MNL, \u2220MNL = \u2220MQR\nConclusions: (3 * pi) / 2 = \u2220MQR\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220PQN, pi / 2 = \u2220MNK, \u2220PQN = \u2220RQM\nConclusions: \u2220MNK = \u2220RQM\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMR = \u2220PMR, pi / 2 = \u2220KMR, pi / 2 = \u2220MQP\nConclusions: \u2220MQP = \u2220PMR\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220LNM, pi / 2 = \u2220MQP, \u2220MNK = \u2220MQP\nConclusions: \u2220LNM = \u2220MNK\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220KML + \u2220LKM + \u2220MLK, 3.14 = pi\nConclusions: 3.14 = \u2220KML + \u2220LKM + \u2220MLK\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = sin(\u2220MLK), KM / KL = sin(\u2220MLK)\nConclusions: KM / KL = KM / KL\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220QMR, \u2220NML = \u2220NMR\nConclusions: \u2220NMR = \u2220QMR\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : MP / PR = sin(\u2220MRP), MP / PR = sin(\u2220MRP)\nConclusions: MP / PR = MP / PR\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220MRQ + \u2220QMR + \u2220RQM, 3.14 = pi\nConclusions: 3.14 = \u2220MRQ + \u2220QMR + \u2220RQM\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220MQR, (3 * pi) / 2 = \u2220KNQ, \u2220KNM = \u2220KNQ\nConclusions: \u2220KNM = \u2220MQR\n\nStep 54:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220QPM = \u2220RPM, \u2220MQP = \u2220PMR\nConclusions: \u25b3MPQ ~ \u25b3RPM\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = cos(\u2220LKM), KM / KL = KM / KL\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 56:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = 2 * pi - \u2220RMK, pi = \u2220KMN + \u2220MNK + \u2220NKM, \u2220LKM = \u2220NKM, 3.14 = \u2220MRQ + \u2220QMR + \u2220RQM, 2 * pi = \u2220KMN + \u2220NMR + \u2220RMK, pi / 2 = \u2220KML, \u2220MNK = \u2220RQM, \u2220NMR = \u2220QMR, \u2220MLK = \u2220MRQ, 3.14 = \u2220KML + \u2220LKM + \u2220MLK\nConclusions: \u2220LKM = \u2220NMR\n\nStep 57:\nTheorem: Similar Definition\nPremises : \u25b3MPQ ~ \u25b3RPM\nConclusions: sim_ratio_triangle_m_p_q_triangle_r_p_m = MP / PR, \u2220QPM = \u2220RPM\n\nStep 58:\nTheorem: Substitution\nPremises : \u2220LKM = \u2220NKM, KM / KL = cos(\u2220LKM), 25 = KL\nConclusions: KM / 25 = cos(\u2220NKM)\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LKM = \u2220NKM, \u2220NMR = \u2220QMR, \u2220LKM = \u2220NMR\nConclusions: \u2220NKM = \u2220QMR\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_p_q_triangle_r_p_m = MP / PR, MP / PR = MP / PR\nConclusions: sim_ratio_triangle_m_p_q_triangle_r_p_m = MP / PR\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : KN / KM = cos(\u2220NKM), KM / 25 = cos(\u2220NKM)\nConclusions: KM / 25 = KN / KM\n\nStep 62:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220QMR, \u2220NKM = \u2220QMR\nConclusions: \u2220NKM = \u2220NML\n\nStep 63:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220KNM = \u2220MQR, \u2220NKM = \u2220QMR\nConclusions: \u25b3KMN ~ \u25b3MRQ\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_p_q_triangle_r_p_m = MP / PR, MP / PR = sin(\u2220MRP)\nConclusions: sim_ratio_triangle_m_p_q_triangle_r_p_m = sin(\u2220MRP)\n\nStep 65:\nTheorem: Substitution\nPremises : KM / 25 = KN / KM, 9 = KN\nConclusions: 9 / KM = KM / 25\n\nStep 66:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220LNM = \u2220MNK, \u2220NKM = \u2220NML\nConclusions: \u25b3KMN ~ \u25b3MLN\n\nStep 67:\nTheorem: Similar Definition\nPremises : \u25b3KMN ~ \u25b3MRQ\nConclusions: \u2220MNK = \u2220RQM, \u2220KMN = \u2220MRQ, \u2220KNM = \u2220MQR\n\nStep 68:\nTheorem: Solve Univariate Equation\nPremises : 9 / KM = KM / 25\nConclusions: 15 = KM\n\nStep 69:\nTheorem: Similar Definition\nPremises : \u25b3KMN ~ \u25b3MLN\nConclusions: MN / LN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), KN / MN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), sim_ratio_triangle_k_m_n_triangle_m_l_n = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), sim_ratio_triangle_k_m_n_triangle_m_l_n = KN / MN, \u2220LNM = \u2220MNK\n\nStep 70:\nTheorem: Transtivity of Equivalence\nPremises : 15 = KM, KM = KP + MP\nConclusions: 15 = KP + MP\n\nStep 71:\nTheorem: Substitution\nPremises : MN / LN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), 16 = LN\nConclusions: MN / 16 = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN)\n\nStep 72:\nTheorem: Substitution\nPremises : KN / MN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), 9 = KN\nConclusions: 9 / MN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN)\n\nStep 73:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_k_m_n_triangle_m_l_n = KN / MN, KN / MN = tan(\u2220KMN)\nConclusions: sim_ratio_triangle_k_m_n_triangle_m_l_n = tan(\u2220KMN)\n\nStep 74:\nTheorem: Transtivity of Equivalence\nPremises : MN / 16 = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), sim_ratio_triangle_k_m_n_triangle_m_l_n = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN)\nConclusions: sim_ratio_triangle_k_m_n_triangle_m_l_n = MN / 16\n\nStep 75:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_k_m_n_triangle_m_l_n = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN), 9 / MN = Perimeter(\u25b3KMN) / Perimeter(\u25b3LMN)\nConclusions: sim_ratio_triangle_k_m_n_triangle_m_l_n = 9 / MN\n\nStep 76:\nTheorem: Solve Linear Equation System\nPremises : sim_ratio_triangle_k_m_n_triangle_m_l_n = MN / 16\nConclusions: 16 * sim_ratio_triangle_k_m_n_triangle_m_l_n = MN\n\nStep 77:\nTheorem: Substitution\nPremises : 16 * sim_ratio_triangle_k_m_n_triangle_m_l_n = MN, sim_ratio_triangle_k_m_n_triangle_m_l_n = 9 / MN\nConclusions: sim_ratio_triangle_k_m_n_triangle_m_l_n = 9 / (16 * sim_ratio_triangle_k_m_n_triangle_m_l_n)\n\nStep 78:\nTheorem: Solve Univariate Equation\nPremises : sim_ratio_triangle_k_m_n_triangle_m_l_n = 9 / (16 * sim_ratio_triangle_k_m_n_triangle_m_l_n)\nConclusions: 0.75 = sim_ratio_triangle_k_m_n_triangle_m_l_n\n\nStep 79:\nTheorem: Substitution\nPremises : \u2220KMN = \u2220MRQ, sim_ratio_triangle_k_m_n_triangle_m_l_n = tan(\u2220KMN), 0.75 = sim_ratio_triangle_k_m_n_triangle_m_l_n\nConclusions: 0.75 = tan(\u2220MRQ)\n\nStep 80:\nTheorem: Solve Univariate Equation\nPremises : 0.75 = tan(\u2220MRQ)\nConclusions: 0.64 = \u2220MRQ\n\nStep 81:\nTheorem: Transtivity of Equivalence\nPremises : 0.64 = \u2220MRQ, \u2220MRP = \u2220MRQ\nConclusions: 0.64 = \u2220MRP\n\nStep 82:\nTheorem: Substitution\nPremises : 0.64 = \u2220MRP, sim_ratio_triangle_m_p_q_triangle_r_p_m = sin(\u2220MRP)\nConclusions: sin(0.64) = sim_ratio_triangle_m_p_q_triangle_r_p_m\n\nStep 83:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_m_p_q_triangle_r_p_m = MP / PR, sin(0.64) = sim_ratio_triangle_m_p_q_triangle_r_p_m\nConclusions: sin(0.64) = MP / PR\n\nStep 84:\nTheorem: Solve Linear Equation System\nPremises : 15 = KP + MP, sin(0.64) = MP / PR, MP = 2 * KP\nConclusions: 16.67 = PR\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, Q)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(L, N)",
+        "Line(L, K)",
+        "Line(N, K)",
+        "Line(M, P)",
+        "Line(M, K)",
+        "Line(P, K)",
+        "Line(L, R)",
+        "Line(L, M)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9.0)",
+        "Equals(LengthOf(Line(L, N)), 16.0)",
+        "Equals(LengthOf(Line(P, M)), Mul(LengthOf(Line(K, P)), 2.0))"
+    ],
+    "correct": true
+}

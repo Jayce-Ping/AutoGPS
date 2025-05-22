@@ -1,0 +1,115 @@
+{
+    "problem_id": "2808",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle TSR?",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(P, S)), 84)",
+        "Equals(MeasureOf(Arc(Q, R)), 112)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnCircle(Q, Circle(A))",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Find(MeasureOf(Angle(T,S,R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "T",
+        "S",
+        "R",
+        "A"
+    ],
+    "line_instances": [
+        "QT",
+        "QS",
+        "TS",
+        "PT",
+        "PR",
+        "TR",
+        "PQ",
+        "SR"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "Q": [
+            206.995670995671,
+            44.28
+        ],
+        "P": [
+            89.15656565656566,
+            65.6
+        ],
+        "T": [
+            146.37121212121212,
+            124.40571428571428
+        ],
+        "S": [
+            104.25,
+            179.22857142857143
+        ],
+        "R": [
+            203.23484848484847,
+            185.5542857142857
+        ],
+        "A": [
+            158.48206886055644,
+            113.91946340988267
+        ]
+    },
+    "problem_choices": [
+        34.0,
+        42.0,
+        56.0,
+        82.0
+    ],
+    "choices_precise_value": [
+        34.0,
+        42.0,
+        56.0,
+        82.0
+    ],
+    "problem_answer": 56.0,
+    "total_time": 137.775385,
+    "solution_predicate": "Equals(0.9773843811, MeasureOf(Angle(R, S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(QAR), QS, pi * (84 / 180) = Arc(PAS), \u2220TSR, \u2220PAS, \u2220SQA, \u2220RSA, Q on \u2299(A, radius_A), 3.14 = pi, T on QS, \u2220RAQ, S on \u2299(A, radius_A), AR, AQ, \u2220RSQ, Arc(RAQ), \u2220RAQ, RS, R on \u2299(A, radius_A), \u2220TSR, pi * (112 / 180) = Arc(RAQ), \u2220AST, \u2220QAP, \u2220SAR, Arc(PAS), \u2220ASQ, AS\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QAR)\nConclusions: \u2220QAR = Arc(QAR)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220TSR\nConclusions: \u2220TSR = 2 * pi - \u2220RST\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(A, radius_A)\nConclusions: radius_A = AQ\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220SQA, T on QS\nConclusions: \u2220SQA = \u2220TQA\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : S on \u2299(A, radius_A)\nConclusions: radius_A = AS\n\nStep 7:\nTheorem: Same Angle\nPremises : T on QS, \u2220RSQ\nConclusions: \u2220RSQ = \u2220RST\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RAQ)\nConclusions: \u2220RAQ = Arc(RAQ)\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220RAQ\nConclusions: \u2220RAQ = 2 * pi - \u2220QAR\n\nStep 10:\nTheorem: Definition of Quadrilateral\nPremises : AR, AQ, RS, QS\nConclusions: Quadrilateral(A, Q, S, R)\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : R on \u2299(A, radius_A)\nConclusions: radius_A = AR\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220AST, \u2220TSR, \u2220RSA\nConclusions: 2 * pi = \u2220AST + \u2220RSA + \u2220TSR\n\nStep 13:\nTheorem: Circumference Split\nPremises : \u2220QAP, \u2220PAS, \u2220RAQ, \u2220SAR\nConclusions: 2 * pi = \u2220PAS + \u2220QAP + \u2220RAQ + \u2220SAR\n\nStep 14:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PAS)\nConclusions: \u2220PAS = Arc(PAS)\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220ASQ, T on QS\nConclusions: \u2220ASQ = \u2220AST\n\nStep 16:\nTheorem: Definition of Triangle\nPremises : AS, AQ, QS\nConclusions: \u25b3AQS\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : AR, RS, AS\nConclusions: \u25b3ARS\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AQ, radius_A = AS\nConclusions: AQ = AS\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RAQ = Arc(RAQ), pi * (112 / 180) = Arc(RAQ)\nConclusions: pi * (112 / 180) = \u2220RAQ\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(R, S, Q, A)\nPremises : Quadrilateral(A, Q, S, R)\nConclusions: 2 * pi = \u2220ARS + \u2220QAR + \u2220RSQ + \u2220SQA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AR, radius_A = AS\nConclusions: AR = AS\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AST + \u2220RSA + \u2220TSR\nConclusions: 2 * 3.14 = \u2220AST + \u2220RSA + \u2220TSR\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (84 / 180) = Arc(PAS), \u2220PAS = Arc(PAS)\nConclusions: pi * (84 / 180) = \u2220PAS\n\nStep 24:\nTheorem: Issoceles Triangle Property\nPremises : AQ = AS, \u25b3AQS\nConclusions: \u2220ASQ = \u2220SQA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RAQ = 2 * pi - \u2220QAR, pi * (112 / 180) = \u2220RAQ\nConclusions: pi * (112 / 180) = 2 * pi - \u2220QAR\n\nStep 26:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ARS + \u2220QAR + \u2220RSQ + \u2220SQA, \u2220SQA = \u2220TQA, \u2220RSQ = \u2220RST, \u2220QAR = Arc(QAR), 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ARS + \u2220RST + \u2220TQA + Arc(QAR)\n\nStep 27:\nTheorem: Issoceles Triangle Property\nPremises : AR = AS, \u25b3ARS\nConclusions: \u2220ARS = \u2220RSA\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220AST + \u2220RSA + \u2220TSR, 2 * 3.14 = \u2220AST + \u2220RSA + \u2220TSR\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 29:\nTheorem: Substitution\nPremises : 2 * pi = \u2220PAS + \u2220QAP + \u2220RAQ + \u2220SAR, 3.14 = pi, pi * (112 / 180) = \u2220RAQ, pi * (84 / 180) = \u2220PAS\nConclusions: 2 * 3.14 = 3.14 * (84 / 180) + pi * (112 / 180) + \u2220QAP + \u2220SAR\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ASQ = \u2220SQA, \u2220ASQ = \u2220AST, \u2220SQA = \u2220TQA\nConclusions: \u2220AST = \u2220TQA\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 * (84 / 180) + pi * (112 / 180) + \u2220QAP + \u2220SAR\nConclusions: 2 * pi = 3.14 * (84 / 180) + pi * (112 / 180) + \u2220QAP + \u2220SAR\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : pi * (112 / 180) = 2 * pi - \u2220QAR, 2 * pi = 3.14 * (84 / 180) + pi * (112 / 180) + \u2220QAP + \u2220SAR, 2 * 3.14 = 3.14 * (84 / 180) + pi * (112 / 180) + \u2220QAP + \u2220SAR\nConclusions: 4.33 = \u2220QAR\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 4.33 = \u2220QAR, \u2220QAR = Arc(QAR)\nConclusions: 4.33 = Arc(QAR)\n\nStep 34:\nTheorem: Substitution\nPremises : 4.33 = Arc(QAR), \u2220AST = \u2220TQA, \u2220ARS = \u2220RSA, 2 * 3.14 = \u2220ARS + \u2220RST + \u2220TQA + Arc(QAR)\nConclusions: 2 * 3.14 = 4.33 + \u2220AST + \u2220RSA + \u2220RST\n\nStep 35:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 4.33 + \u2220AST + \u2220RSA + \u2220RST, 2 * pi = \u2220AST + \u2220RSA + \u2220TSR, \u2220TSR = 2 * pi - \u2220RST\nConclusions: 0.98 = \u2220RST\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Line(P, Q)",
+        "Line(S, R)",
+        "Circle(A, radius_A)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnCircle(Q, Circle(A, radius_A))",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Equals(MeasureOf(Arc(P, A, S)), Mul(pi, Div(84.0, 180.0)))",
+        "Equals(MeasureOf(Arc(R, A, Q)), Mul(pi, Div(112.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,63 @@
+{
+    "problem_id": "2621",
+    "solved": true,
+    "problem_text": "Find S T.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, R)), LengthOf(Line(S, R)))",
+        "Equals(LengthOf(Line(R, T)), 3x+3)",
+        "Equals(LengthOf(Line(S, R)), 4x-4)",
+        "Equals(LengthOf(Line(S, T)), 12+x)",
+        "Find(LengthOf(Line(S, T)))"
+    ],
+    "point_instances": [
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "SR",
+        "TR",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            132.5575221238938,
+            109.73451327433627
+        ],
+        "R": [
+            229.0176991150442,
+            325.6637168141593
+        ],
+        "T": [
+            326.36283185840705,
+            110.17699115044246
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "12",
+        "19",
+        "24"
+    ],
+    "choices_precise_value": [
+        7.0,
+        12.0,
+        19.0,
+        24.0
+    ],
+    "problem_answer": 19.0,
+    "total_time": 4.657206,
+    "solution_predicate": "Equals(19.0, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS = RT, 3 + 3 * x = RT, 12 + x = ST, 4 * x - 4 = RS\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 3 * x = RT, RS = RT\nConclusions: 3 + 3 * x = RS\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 3 * x = RS, 4 * x - 4 = RS\nConclusions: 3 + 3 * x = 4 * x - 4\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 12 + x = ST, 3 + 3 * x = 4 * x - 4\nConclusions: 19 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(S, T)",
+        "Equals(LengthOf(Line(T, R)), LengthOf(Line(S, R)))",
+        "Equals(LengthOf(Line(R, T)), Add(Mul(3.0, x), 3.0))",
+        "Equals(LengthOf(Line(S, R)), Sub(Mul(4.0, x), 4.0))",
+        "Equals(LengthOf(Line(S, T)), Add(12.0, x))"
+    ],
+    "correct": true
+}

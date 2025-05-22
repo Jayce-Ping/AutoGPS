@@ -1,0 +1,113 @@
+{
+    "problem_id": "5380",
+    "solved": true,
+    "problem_text": "Find b in the given parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, A)), 10)",
+        "Equals(LengthOf(Line(X, A)), a-7)",
+        "Equals(LengthOf(Line(Y, A)), 2)",
+        "Equals(LengthOf(Line(Z, A)), 2b-6)",
+        "Find(b)",
+        "Line(A, X)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Z)",
+        "Line(Y, A)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Parallelogram(W, X, Y, Z)",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "PointLiesOnLine(A, Line(Y, X))"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "A",
+        "X",
+        "Z"
+    ],
+    "line_instances": [
+        "YA",
+        "YX",
+        "AX",
+        "WA",
+        "WZ",
+        "AZ",
+        "YZ",
+        "ZX",
+        "YW",
+        "WX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            61.92063492063492,
+            63.22097378277153
+        ],
+        "Y": [
+            87.44642857142857,
+            281.8272471910112
+        ],
+        "A": [
+            171.00634920634923,
+            198.3558052434457
+        ],
+        "X": [
+            256.3777777777778,
+            115.37827715355803
+        ],
+        "Z": [
+            279.8285714285714,
+            333.8067415730337
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        8.0,
+        9.0,
+        10.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        8.0,
+        9.0,
+        10.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 66.512547,
+    "solution_predicate": "Equals(8.0, b)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 * b - 6 = AZ, A on WZ, A on XY, 10 = AW, Parallelogram(W, X, Z, Y)\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : A on WZ, A on XY, Parallelogram(W, X, Z, Y)\nConclusions: AW = AZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AW, AW = AZ\nConclusions: 10 = AZ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AZ, 2 * b - 6 = AZ\nConclusions: 10 = 2 * b - 6\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 10 = 2 * b - 6\nConclusions: 8 = b\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, A)",
+        "Line(Y, X)",
+        "Line(A, X)",
+        "Line(W, A)",
+        "Line(W, Z)",
+        "Line(A, Z)",
+        "Line(Y, Z)",
+        "Line(Z, X)",
+        "Line(Y, W)",
+        "Line(W, X)",
+        "Line(A, X)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Z)",
+        "Line(Y, A)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Parallelogram(W, X, Z, Y)",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "PointLiesOnLine(A, Line(Y, X))",
+        "Equals(LengthOf(Line(W, A)), 10.0)",
+        "Equals(LengthOf(Line(X, A)), Sub(a, 7.0))",
+        "Equals(LengthOf(Line(Y, A)), 2.0)",
+        "Equals(LengthOf(Line(Z, A)), Sub(Mul(2.0, b), 6.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,74 @@
+{
+    "problem_id": "4414",
+    "solved": true,
+    "problem_text": "If XY = WX, YZ = WX, find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Y)), 4x+3)",
+        "Equals(LengthOf(Line(Y, Z)), 9x-12)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Equals(LengthOf(Line(X,Y)),Line(W,X))",
+        "Equals(LengthOf(Line(Y,Z)),Line(W,X))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+    ],
+    "line_instances": [
+        "WX",
+        "XY",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            36.403333333333336,
+            165.11634615384617
+        ],
+        "X": [
+            227.8,
+            68.33173076923077
+        ],
+        "Y": [
+            442.2,
+            68.8118131868132
+        ],
+        "Z": [
+            633.9875000000001,
+            165.50841346153845
+        ]
+    },
+    "problem_choices": [
+        1.929,
+        3.0,
+        9.136,
+        10.941
+    ],
+    "choices_precise_value": [
+        1.929,
+        3.0,
+        9.136,
+        10.941
+    ],
+    "problem_answer": 3.0,
+    "total_time": 1.392479,
+    "solution_predicate": "Equals(3.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WX = XY, 9 * x - 12 = YZ, 3 + 4 * x = XY, WX = YZ\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : WX = XY, WX = YZ\nConclusions: XY = YZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 9 * x - 12 = YZ, XY = YZ\nConclusions: 9 * x - 12 = XY\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 9 * x - 12 = XY, 3 + 4 * x = XY\nConclusions: 3 + 4 * x = 9 * x - 12\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3 + 4 * x = 9 * x - 12\nConclusions: 3 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(4.0, x), 3.0))",
+        "Equals(LengthOf(Line(Y, Z)), Sub(Mul(9.0, x), 12.0))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(W, X)))",
+        "Equals(LengthOf(Line(Y, Z)), LengthOf(Line(W, X)))"
+    ],
+    "correct": true
+}

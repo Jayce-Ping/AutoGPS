@@ -1,0 +1,139 @@
+{
+    "problem_id": "445",
+    "solved": true,
+    "problem_text": "A regular polygon is inscribed in a circle. What is the measure of \\angle SRL?",
+    "logic_forms": [
+        "Find(MeasureOf(Angle(S, R, L)))",
+        "InscribedIn(Regular(Polygon(J, K, L, M, N, P)), Circle(R))",
+        "Line(J, K)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(K, R)",
+        "Line(K, S)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "Line(P, N)",
+        "Line(R, L)",
+        "Line(R, S)",
+        "Line(S, L)",
+        "Perpendicular(Line(R, S), Line(K, L))",
+        "PointLiesOnCircle(J, Circle(R))",
+        "PointLiesOnCircle(K, Circle(R))",
+        "PointLiesOnCircle(L, Circle(R))",
+        "PointLiesOnCircle(M, Circle(R))",
+        "PointLiesOnCircle(N, Circle(R))",
+        "PointLiesOnCircle(P, Circle(R))",
+        "PointLiesOnLine(S, Line(K, L))"
+    ],
+    "point_instances": [
+        "N",
+        "M",
+        "L",
+        "S",
+        "R",
+        "K",
+        "J",
+        "P"
+    ],
+    "line_instances": [
+        "PN",
+        "NM",
+        "ML",
+        "RL",
+        "RS",
+        "LS",
+        "LK",
+        "SK",
+        "RK",
+        "KJ",
+        "JP"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "N": [
+            91.86328125,
+            241.45142857142858
+        ],
+        "M": [
+            204.36513157894737,
+            241.16210526315788
+        ],
+        "L": [
+            261.375,
+            143.30158730158732
+        ],
+        "S": [
+            233.27205882352945,
+            95.4164705882353
+        ],
+        "R": [
+            147.75,
+            142.3125
+        ],
+        "K": [
+            204.1875,
+            44.822857142857146
+        ],
+        "J": [
+            91.6875,
+            45.21752380952381
+        ],
+        "P": [
+            34.59375,
+            143.39555555555555
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        36.0,
+        60.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        36.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 375.831844,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(L, R, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), \u2299(R, radius_R)), Hexagon(J, K, L, M, N, P), KS \u22a5 RS, \u2220KSR, \u2220SLM, 3.14 = pi, \u2220RSL, \u2220MLS, S on KL, RS, LR, LS \u22a5 RS, \u2220SLR, Regular(Hexagon(J, K, L, M, N, P)), LS, \u2220KLR, \u2220RLM\n\nStep 2:\nTheorem: Properties for Hexagon inscribed in circle\nPremises : InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), \u2299(R, radius_R))\nConclusions: \u2220KLR = \u2220RLM\n\nStep 3:\nTheorem: Hexagon to is components\nPremises : Hexagon(J, K, L, M, N, P)\nConclusions: \u2220KLM\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : KS \u22a5 RS\nConclusions: pi / 2 = \u2220KSR\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220SLM\nConclusions: \u2220SLM = 2 * pi - \u2220MLS\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220KSR, \u2220RSL\nConclusions: pi = \u2220KSR + \u2220RSL\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : LS \u22a5 RS\nConclusions: pi / 2 = \u2220RSL\n\nStep 8:\nTheorem: Regular Hexagon Definition\nPremises : Regular(Hexagon(J, K, L, M, N, P))\nConclusions: pi * (2 / 3) = \u2220KLM\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : LS, LR, RS\nConclusions: \u25b3LRS\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220KLR, S on KL\nConclusions: \u2220KLR = \u2220SLR\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220SLR, \u2220MLS, \u2220RLM\nConclusions: 2 * pi = \u2220MLS + \u2220RLM + \u2220SLR\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220KLM, S on KL\nConclusions: \u2220KLM = \u2220SLM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220RSL, pi / 2 = \u2220KSR\nConclusions: \u2220KSR = \u2220RSL\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(L, R, S)\nPremises : \u25b3LRS\nConclusions: pi = \u2220LRS + \u2220RSL + \u2220SLR\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KLR = \u2220SLR, \u2220KLR = \u2220RLM\nConclusions: \u2220RLM = \u2220SLR\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (2 / 3) = \u2220KLM, \u2220KLM = \u2220SLM\nConclusions: pi * (2 / 3) = \u2220SLM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220LRS + \u2220RSL + \u2220SLR\nConclusions: 3.14 = \u2220LRS + \u2220RSL + \u2220SLR\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SLM = 2 * pi - \u2220MLS, pi * (2 / 3) = \u2220SLM\nConclusions: pi * (2 / 3) = 2 * pi - \u2220MLS\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220MLS + \u2220RLM + \u2220SLR, pi * (2 / 3) = 2 * pi - \u2220MLS, pi = \u2220LRS + \u2220RSL + \u2220SLR, 3.14 = \u2220LRS + \u2220RSL + \u2220SLR, \u2220KSR = \u2220RSL, pi = \u2220KSR + \u2220RSL, \u2220RLM = \u2220SLR\nConclusions: 0.52 = \u2220LRS\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, N)",
+        "Line(N, M)",
+        "Line(M, L)",
+        "Line(R, L)",
+        "Line(R, S)",
+        "Line(L, S)",
+        "Line(L, K)",
+        "Line(S, K)",
+        "Line(R, K)",
+        "Line(K, J)",
+        "Line(J, P)",
+        "Circle(R, radius_R)",
+        "InscribedIn(Regular(Hexagon(J, K, L, M, N, P)), Circle(R, radius_R))",
+        "Line(J, K)",
+        "Line(J, P)",
+        "Line(K, L)",
+        "Line(K, R)",
+        "Line(K, S)",
+        "Line(L, M)",
+        "Line(N, M)",
+        "Line(P, N)",
+        "Line(R, L)",
+        "Line(R, S)",
+        "Line(S, L)",
+        "Perpendicular(Line(R, S), Line(K, L))",
+        "PointLiesOnCircle(J, Circle(R, radius_R))",
+        "PointLiesOnCircle(K, Circle(R, radius_R))",
+        "PointLiesOnCircle(L, Circle(R, radius_R))",
+        "PointLiesOnCircle(M, Circle(R, radius_R))",
+        "PointLiesOnCircle(N, Circle(R, radius_R))",
+        "PointLiesOnCircle(P, Circle(R, radius_R))",
+        "PointLiesOnLine(S, Line(K, L))"
+    ],
+    "correct": true
+}

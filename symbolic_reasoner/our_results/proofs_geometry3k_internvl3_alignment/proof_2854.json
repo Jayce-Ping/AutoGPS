@@ -1,0 +1,65 @@
+{
+    "problem_id": "2854",
+    "solved": true,
+    "problem_text": "Find h in the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), h)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(MeasureOf(Angle(B, C, A)), 60)",
+        "Find(h)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.016806722689076,
+            138.98319327731093
+        ],
+        "B": [
+            224.36974789915968,
+            139.61344537815125
+        ],
+        "C": [
+            225.0,
+            19.865546218487395
+        ]
+    },
+    "problem_choices": [
+        "4.62",
+        "5.66",
+        "6.93",
+        "8"
+    ],
+    "choices_precise_value": [
+        4.62,
+        5.66,
+        6.93,
+        8.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 11.248096,
+    "solution_predicate": "Equals(8.0, h)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * (60 / 180) = \u2220ACB, \u25b3ABC, h = AC, AB \u22a5 BC, 4 = BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 4:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, 1.57 = pi / 2\nConclusions: 1.57 = \u2220CBA\n\nStep 7:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (60 / 180) = \u2220ACB\nConclusions: 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220BAC\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220BAC, 3.14 = pi\nConclusions: 0.52 = \u2220BAC\n\nStep 9:\nTheorem: Substitution\nPremises : 0.52 = \u2220BAC, h = AC, 4 = BC, 1.57 = \u2220CBA, AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\nConclusions: 4 / sin(0.52) = h / sin(1.57)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 4 / sin(0.52) = h / sin(1.57), h = AC\nConclusions: 8 = AC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AC, h = AC\nConclusions: 8 = h\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(A, C)), h)",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

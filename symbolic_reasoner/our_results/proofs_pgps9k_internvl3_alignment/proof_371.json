@@ -1,0 +1,71 @@
+{
+    "problem_id": "371",
+    "solved": true,
+    "problem_text": "If AC = 12 and AB = 25, what is the measure of \\angle B?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 25)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "Equals(LengthOf(Line(A,C)),12)",
+        "Equals(LengthOf(Line(A,B)),25)",
+        "Find(MeasureOf(Angle(B)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            51.15245098039215,
+            39.563725490196084
+        ],
+        "C": [
+            108.3103448275862,
+            149.132183908046
+        ],
+        "B": [
+            300.49252525252524,
+            48.89393939393939
+        ]
+    },
+    "problem_choices": [
+        25.6,
+        28.7,
+        61.3,
+        64.4
+    ],
+    "choices_precise_value": [
+        25.6,
+        28.7,
+        61.3,
+        64.4
+    ],
+    "problem_answer": 64.4,
+    "total_time": 16.69363,
+    "solution_predicate": "Equals(0.5006547124, MeasureOf(Angle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AC, AC \u22a5 BC, \u2220BCA, 25 = AB, 3.14 = pi, cos(\u2220CAB), BC, AC, AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ACB, pi / 2 = \u2220BCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : AC \u22a5 BC, cos(\u2220CAB)\nConclusions: AC / AB = cos(\u2220CAB)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, (3 * pi) / 2 = \u2220ACB, \u2220BCA = 2 * pi - \u2220ACB, pi / 2 = \u2220BCA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 7:\nTheorem: Substitution\nPremises : 12 = AC, 25 = AB, AC / AB = cos(\u2220CAB)\nConclusions: 12 / 25 = cos(\u2220CAB)\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220BCA\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220BCA\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 12 / 25 = cos(\u2220CAB)\nConclusions: 1.07 = \u2220CAB\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220BCA, pi / 2 = \u2220BCA\nConclusions: 1.57 = \u2220BCA\n\nStep 12:\nTheorem: Substitution\nPremises : 1.07 = \u2220CAB, pi = \u2220ABC + \u2220BCA + \u2220CAB, 1.57 = \u2220BCA, 3.14 = pi\nConclusions: 3.14 = 1.07 + 1.57 + \u2220ABC\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.07 + 1.57 + \u2220ABC\nConclusions: 0.5 = \u2220ABC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, C), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 25.0)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(A, B)), 25.0)"
+    ],
+    "correct": false
+}

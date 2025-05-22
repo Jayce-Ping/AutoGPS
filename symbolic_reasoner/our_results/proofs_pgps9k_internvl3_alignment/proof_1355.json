@@ -1,0 +1,130 @@
+{
+    "problem_id": "1355",
+    "solved": true,
+    "problem_text": "CB is a tangent segment. Find the measure of \\angle BAC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 4)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(B, A)), 4)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(C, D)), 4)",
+        "Equals(LengthOf(Line(E, A)), 4)",
+        "Equals(LengthOf(Line(E, A)), LengthOf(Line(C, D)))",
+        "Find(MeasureOf(Angle(B, A, C)))",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(E, Circle(A))",
+        "PointLiesOnLine(A, Line(C, E))",
+        "PointLiesOnLine(A, Line(D, E))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Tangent(Line(C, B), Circle(A))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "E",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CD",
+        "CA",
+        "CE",
+        "DA",
+        "DE",
+        "AE",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "B": [
+            195.51485148514854,
+            54.78857142857143
+        ],
+        "D": [
+            150.39603960396042,
+            129.98857142857142
+        ],
+        "E": [
+            320.74257425742576,
+            128.9142857142857
+        ],
+        "C": [
+            64.45544554455446,
+            130.44897959183675
+        ],
+        "A": [
+            235.96923338271097,
+            129.98581242422435
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        720.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        720.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 31.040646,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = CD, B on \u2299(A, radius_A), 4 = AB, 4 = AD, cos(\u2220BAC), \u2220BAC, Tangent(BC, \u2299(A, radius_A)), D on AC\n\nStep 2:\nTheorem: Tangent Definition\nPremises : B on \u2299(A, radius_A), Tangent(BC, \u2299(A, radius_A))\nConclusions: AB \u22a5 BC\n\nStep 3:\nTheorem: Same Angle\nPremises : D on AC, \u2220BAC\nConclusions: \u2220BAC = \u2220BAD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BAC), AB \u22a5 BC\nConclusions: AB / AC = cos(\u2220BAC)\n\nStep 6:\nTheorem: Substitution\nPremises : 4 = CD, AC = AD + CD, 4 = AD\nConclusions: 4 + 4 = AC\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 4 + 4 = AC\nConclusions: 8 = AC\n\nStep 8:\nTheorem: Substitution\nPremises : AB / AC = cos(\u2220BAC), 4 = AB, \u2220BAC = \u2220BAD, 8 = AC\nConclusions: 4 / 8 = cos(\u2220BAD)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 4 / 8 = cos(\u2220BAD)\nConclusions: 1.05 = \u2220BAD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220BAD, \u2220BAC = \u2220BAD\nConclusions: 1.05 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(A, E)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Circle(A, radius_A)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(E, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(C, E))",
+        "PointLiesOnLine(A, Line(D, E))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Tangent(Line(C, B), Circle(A, radius_A))",
+        "Equals(LengthOf(Line(A, D)), 4.0)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(B, A)), 4.0)",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(E, A)))",
+        "Equals(LengthOf(Line(C, D)), 4.0)",
+        "Equals(LengthOf(Line(E, A)), 4.0)",
+        "Equals(LengthOf(Line(E, A)), LengthOf(Line(C, D)))"
+    ],
+    "correct": true
+}

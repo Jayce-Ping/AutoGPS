@@ -1,0 +1,105 @@
+{
+    "problem_id": "3831",
+    "solved": true,
+    "problem_text": "Find ST.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, T)), 16)",
+        "Equals(LengthOf(Line(Q, S)), x)",
+        "Equals(LengthOf(Line(Q, T)), 20)",
+        "Equals(LengthOf(Line(R, S)), 12)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Parallel(Line(R, S), Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "Find(LengthOf(Line(S,T)))"
+    ],
+    "point_instances": [
+        "P",
+        "T",
+        "S",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "PT",
+        "TS",
+        "TQ",
+        "SQ",
+        "PR",
+        "PQ",
+        "RQ",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            104.99360341151385,
+            387.97714285714284
+        ],
+        "T": [
+            420.9800995024875,
+            387.97714285714284
+        ],
+        "S": [
+            331.8092868988391,
+            266.6171428571428
+        ],
+        "R": [
+            153.1860696517413,
+            266.52342857142855
+        ],
+        "Q": [
+            214.4792703150912,
+            109.17714285714287
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        12.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 39.717369,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = QT, \u2220PQS, 12 = RS, 16 = PT, S on QT, R on PQ, PT || RS, \u2220PQT, x = QS\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on QT\nConclusions: QT = QS + ST\n\nStep 3:\nTheorem: Same Angle\nPremises : R on PQ, \u2220PQS\nConclusions: \u2220PQS = \u2220RQS\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : PT || RS\nConclusions: \u2220QSR = \u2220QTP, \u2220QPT = \u2220QRS\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220PQT, S on QT\nConclusions: \u2220PQS = \u2220PQT\n\nStep 6:\nTheorem: Same Angle\nPremises : R on PQ, \u2220PQT\nConclusions: \u2220PQT = \u2220RQT\n\nStep 7:\nTheorem: Substitution\nPremises : x = QS, 20 = QT, QT = QS + ST\nConclusions: 20 = x + ST\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQS = \u2220RQS, \u2220PQT = \u2220RQT, \u2220PQS = \u2220PQT\nConclusions: \u2220RQS = \u2220RQT\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQT = \u2220RQT, \u2220RQS = \u2220RQT\nConclusions: \u2220PQT = \u2220RQS\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220PQT = \u2220RQS, \u2220QSR = \u2220QTP, \u2220QPT = \u2220QRS\nConclusions: \u25b3PQT ~ \u25b3RQS\n\nStep 11:\nTheorem: Similar Definition\nPremises : \u25b3PQT ~ \u25b3RQS\nConclusions: \u2220QSR = \u2220QTP, sim_ratio_triangle_p_q_t_triangle_r_q_s = QT / QS, \u2220PQT = \u2220RQS, sim_ratio_triangle_p_q_t_triangle_r_q_s = PT / RS\n\nStep 12:\nTheorem: Substitution\nPremises : x = QS, 20 = QT, sim_ratio_triangle_p_q_t_triangle_r_q_s = QT / QS\nConclusions: sim_ratio_triangle_p_q_t_triangle_r_q_s = 20 / x\n\nStep 13:\nTheorem: Substitution\nPremises : 16 = PT, sim_ratio_triangle_p_q_t_triangle_r_q_s = PT / RS, 12 = RS\nConclusions: 16 / 12 = sim_ratio_triangle_p_q_t_triangle_r_q_s\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_p_q_t_triangle_r_q_s = 20 / x, 16 / 12 = sim_ratio_triangle_p_q_t_triangle_r_q_s\nConclusions: 16 / 12 = 20 / x\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 16 / 12 = 20 / x, 20 = x + ST\nConclusions: 5 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, T)",
+        "Line(T, S)",
+        "Line(T, Q)",
+        "Line(S, Q)",
+        "Line(P, R)",
+        "Line(P, Q)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(P, T)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(R, P)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Parallel(Line(R, S), Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, P))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "Equals(LengthOf(Line(P, T)), 16.0)",
+        "Equals(LengthOf(Line(Q, S)), x)",
+        "Equals(LengthOf(Line(Q, T)), 20.0)",
+        "Equals(LengthOf(Line(R, S)), 12.0)"
+    ],
+    "correct": true
+}

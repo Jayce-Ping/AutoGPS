@@ -1,0 +1,101 @@
+{
+    "problem_id": "6183",
+    "solved": true,
+    "problem_text": "Find KL.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(M, L)))",
+        "Equals(LengthOf(Line(L, J)), 12)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Perpendicular(Line(A, K), Line(J, L))",
+        "PointLiesOnLine(K, Line(J, L))",
+        "PointLiesOnLine(M, Line(A, K))",
+        "Find(LengthOf(Line(K,L)))"
+    ],
+    "point_instances": [
+        "A",
+        "M",
+        "L",
+        "K",
+        "J"
+    ],
+    "line_instances": [
+        "AM",
+        "AK",
+        "MK",
+        "MJ",
+        "ML",
+        "LK",
+        "LJ",
+        "KJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            58.3011583011583,
+            295.2471042471043
+        ],
+        "M": [
+            108.88030888030889,
+            270.92277992277997
+        ],
+        "L": [
+            384.5559845559846,
+            226.90733590733592
+        ],
+        "K": [
+            343.6293436293436,
+            148.91505791505793
+        ],
+        "J": [
+            303.0888030888031,
+            69.76447876447877
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        6.0,
+        12.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        12.0,
+        18.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 50.677417,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: LM, JM, K on JL, JM = LM, 12 = JL, JL\n\nStep 2:\nTheorem: Line Segment Split\nPremises : K on JL\nConclusions: JL = JK + KL\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : LM, JM, JL\nConclusions: \u25b3JLM\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : JL = JK + KL, 12 = JL\nConclusions: 12 = JK + KL\n\nStep 5:\nTheorem: Issoceles Triangle Theorem\nPremises : JM = LM, \u25b3JLM\nConclusions: JK = KL\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 12 = JK + KL, JK = KL\nConclusions: 6 = JK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 6 = JK, JK = KL\nConclusions: 6 = KL\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, M)",
+        "Line(A, K)",
+        "Line(M, K)",
+        "Line(M, J)",
+        "Line(M, L)",
+        "Line(L, K)",
+        "Line(L, J)",
+        "Line(K, J)",
+        "Line(A, K)",
+        "Line(A, M)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Perpendicular(Line(A, K), Line(J, L))",
+        "PointLiesOnLine(K, Line(J, L))",
+        "PointLiesOnLine(M, Line(A, K))",
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(M, L)))",
+        "Equals(LengthOf(Line(L, J)), 12.0)"
+    ],
+    "correct": true
+}

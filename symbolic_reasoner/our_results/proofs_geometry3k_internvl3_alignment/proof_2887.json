@@ -1,0 +1,118 @@
+{
+    "problem_id": "2887",
+    "solved": true,
+    "problem_text": "In \\odot F, F H \\cong F L and F K = 17. Find J G.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(H, Line(J, G))",
+        "PointLiesOnLine(F, Line(H, L))",
+        "PointLiesOnCircle(G, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(F, radius_0_0))",
+        "Perpendicular(Line(K, L), Line(F, L))",
+        "Perpendicular(Line(J, H), Line(F, H))",
+        "Equals(LengthOf(Line(H, F)), 8)",
+        "Circle(F)",
+        "Equals(LengthOf(Line(F,H)),Line(F,L))",
+        "Equals(LengthOf(Line(F,K)),17)",
+        "Find(LengthOf(Line(J,G)))"
+    ],
+    "point_instances": [
+        "L",
+        "H",
+        "F",
+        "J",
+        "G",
+        "K",
+        "M"
+    ],
+    "line_instances": [
+        "KL",
+        "KM",
+        "LM",
+        "KF",
+        "JH",
+        "JG",
+        "HG",
+        "HF",
+        "HL",
+        "FL"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "L": [
+            179.7191011235955,
+            109.21348314606742
+        ],
+        "H": [
+            55.2247191011236,
+            109.6629213483146
+        ],
+        "F": [
+            118.37078651685394,
+            109.438202247191
+        ],
+        "J": [
+            55.2247191011236,
+            47.41573033707865
+        ],
+        "G": [
+            54.7752808988764,
+            170.78651685393257
+        ],
+        "K": [
+            180.1685393258427,
+            47.19101123595505
+        ],
+        "M": [
+            180.39325842696627,
+            172.13483146067415
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "16",
+        "17",
+        "30"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        17.0,
+        30.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 223.350902,
+    "solution_predicate": "Equals(29.9999999968, LengthOf(Line(J, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FL, K on \u2299(F, radius_0_0), \u2299(F, radius_0_0), M on \u2299(F, radius_0_0), 8 = FH, FM, H on GJ, FL \u22a5 LM, cos(\u2220HFG), LM, FH \u22a5 GH, FH = FL, G on \u2299(F, radius_0_0), sin(\u2220HFG), 17 = FK\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : K on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FK\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : M on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FM\n\nStep 4:\nTheorem: Line Segment Split\nPremises : H on GJ\nConclusions: GJ = GH + HJ\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : FL \u22a5 LM\nConclusions: pi / 2 = \u2220FLM\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : LM, FL, FM\nConclusions: \u25b3FLM\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : FH \u22a5 GH\nConclusions: pi / 2 = \u2220GHF\n\nStep 8:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220HFG), FH \u22a5 GH\nConclusions: FH / FG = cos(\u2220HFG)\n\nStep 9:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(F, radius_0_0), H on GJ, FH \u22a5 GH\nConclusions: GH = HJ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : FH = FL, 8 = FH\nConclusions: 8 = FL\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : G on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FG\n\nStep 12:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220HFG), FH \u22a5 GH\nConclusions: GH / FG = sin(\u2220HFG)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 17 = FK, radius_0_0 = FK\nConclusions: 17 = radius_0_0\n\nStep 14:\nTheorem: Pythagorean Theorem\nPremises : \u25b3FLM, FL \u22a5 LM\nConclusions: LM = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220FLM, pi / 2 = \u2220GHF\nConclusions: \u2220FLM = \u2220GHF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FM, 17 = radius_0_0\nConclusions: 17 = FM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FG, 17 = radius_0_0\nConclusions: 17 = FG\n\nStep 18:\nTheorem: Evaluate\nPremises : 8 = FL, 17 = FM\nConclusions: 15 = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 19:\nTheorem: Substitution\nPremises : FH / FG = cos(\u2220HFG), 17 = FG, 8 = FH\nConclusions: 8 / 17 = cos(\u2220HFG)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FM, 17 = FG, 17 = radius_0_0\nConclusions: FG = FM\n\nStep 21:\nTheorem: Substitution\nPremises : GH / FG = sin(\u2220HFG), 17 = FG\nConclusions: GH / 17 = sin(\u2220HFG)\n\nStep 22:\nTheorem: Solve Univariate Equation\nPremises : 8 / 17 = cos(\u2220HFG)\nConclusions: 1.08 = \u2220HFG\n\nStep 23:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220FLM = \u2220GHF, FG = FM, FH = FL\nConclusions: \u25b3FGH \u2245 \u25b3FML\n\nStep 24:\nTheorem: Evaluate\nPremises : 1.08 = \u2220HFG\nConclusions: 0.88 = sin(\u2220HFG)\n\nStep 25:\nTheorem: Congruent Definition\nPremises : \u25b3FGH \u2245 \u25b3FML\nConclusions: \u2220FLM = \u2220GHF, GH = LM, FH = FL\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 0.88 = sin(\u2220HFG), GH / 17 = sin(\u2220HFG)\nConclusions: 0.88 = GH / 17\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : GH = HJ, GH = LM\nConclusions: HJ = LM\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : LM = SqrtOf(FM ** 2 - FL ** 2), HJ = LM\nConclusions: HJ = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : HJ = SqrtOf(FM ** 2 - FL ** 2), 15 = SqrtOf(FM ** 2 - FL ** 2)\nConclusions: 15 = HJ\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : 15 = HJ, GJ = GH + HJ, 0.88 = GH / 17\nConclusions: 30 = GJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(K, F)",
+        "Line(J, H)",
+        "Line(J, G)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(H, L)",
+        "Line(F, L)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(H, Line(J, G))",
+        "PointLiesOnLine(F, Line(H, L))",
+        "PointLiesOnCircle(G, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(F, radius_0_0))",
+        "Perpendicular(Line(K, L), Line(F, L))",
+        "Perpendicular(Line(J, H), Line(F, H))",
+        "Circle(F, radius_0_0)",
+        "Equals(LengthOf(Line(H, F)), 8.0)",
+        "Equals(LengthOf(Line(F, H)), LengthOf(Line(F, L)))",
+        "Equals(LengthOf(Line(F, K)), 17.0)"
+    ],
+    "correct": true
+}

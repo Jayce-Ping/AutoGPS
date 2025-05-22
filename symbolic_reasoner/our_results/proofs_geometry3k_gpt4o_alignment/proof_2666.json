@@ -1,0 +1,91 @@
+{
+    "problem_id": "2666",
+    "solved": true,
+    "problem_text": "E B \\parallel D C. Find A B.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), x-2)",
+        "Equals(LengthOf(Line(D, E)), 4)",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Equals(LengthOf(Line(D, A)), 10)",
+        "Parallel(Line(E,B),Line(D,C))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "EB",
+        "AE",
+        "AD",
+        "ED",
+        "AB",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            416.89371980676333,
+            282.60869565217394
+        ],
+        "A": [
+            286.45893719806764,
+            103.3816425120773
+        ],
+        "C": [
+            481.62801932367154,
+            371.98067632850245
+        ],
+        "D": [
+            124.62318840579712,
+            372.46376811594206
+        ],
+        "E": [
+            178.24637681159422,
+            282.60869565217394
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "7.5",
+        "9.5",
+        "10"
+    ],
+    "choices_precise_value": [
+        5.0,
+        7.5,
+        9.5,
+        10.0
+    ],
+    "problem_answer": 7.5,
+    "total_time": 35.933105,
+    "solution_predicate": "Equals(7.5, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = BC, 10 = AD, B on AC, \u2220CAD, BE || CD, x - 2 = AB, \u2220BAD, E on AD, 4 = DE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 5:\nTheorem: Same Angle\nPremises : E on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 6:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 7:\nTheorem: Substitution\nPremises : AC = AB + BC, 5 = BC, x - 2 = AB\nConclusions: 5 + (x - 2) = AC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220BAE, \u2220BAD = \u2220CAD\nConclusions: \u2220BAE = \u2220CAD\n\nStep 9:\nTheorem: Substitution\nPremises : 4 = DE, AD = AE + DE, 10 = AD\nConclusions: 10 = 4 + AE\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB, \u2220BAE = \u2220CAD\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 10 = 4 + AE\nConclusions: 6 = AE\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC\n\nStep 13:\nTheorem: Substitution\nPremises : 10 = AD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, 6 = AE\nConclusions: 6 / 10 = sim_ratio_triangle_a_b_e_triangle_a_c_d\n\nStep 14:\nTheorem: Substitution\nPremises : 5 + (x - 2) = AC, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, x - 2 = AB\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = (x - 2) / (5 + (x - 2))\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 6 / 10 = sim_ratio_triangle_a_b_e_triangle_a_c_d, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC\nConclusions: 6 / 10 = AB / AC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 6 / 10 = sim_ratio_triangle_a_b_e_triangle_a_c_d, sim_ratio_triangle_a_b_e_triangle_a_c_d = (x - 2) / (5 + (x - 2))\nConclusions: 6 / 10 = (x - 2) / (5 + (x - 2))\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 6 / 10 = AB / AC, 5 + (x - 2) = AC, 6 / 10 = (x - 2) / (5 + (x - 2))\nConclusions: 7.5 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "PointLiesOnLine(E, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Parallel(Line(E, B), Line(D, C))",
+        "Equals(LengthOf(Line(A, B)), Sub(x, 2.0))",
+        "Equals(LengthOf(Line(D, E)), 4.0)",
+        "Equals(LengthOf(Line(C, B)), 5.0)",
+        "Equals(LengthOf(Line(D, A)), 10.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,113 @@
+{
+    "problem_id": "5438",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 5 if PQ \\perp QR.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, Q, P)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(A, Q, R)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(A, R, Q)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(A, T, P)), 43)",
+        "Equals(MeasureOf(Angle(Q, A, P)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(Q, A, R)), 78)",
+        "Equals(MeasureOf(Angle(Q, P, A)), 56)",
+        "Equals(MeasureOf(Angle(T, A, R)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(T, P, A)), MeasureOf(Angle(1)))",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(T, A)",
+        "Line(T, Q)",
+        "PointLiesOnLine(A, Line(P, R))",
+        "PointLiesOnLine(A, Line(T, Q))",
+        "Perpendicular(Line(P,Q),Line(Q,R))",
+        "Find(MeasureOf(Angle(5)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "A",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "TA",
+        "TQ",
+        "AQ",
+        "PT",
+        "PQ",
+        "PA",
+        "PR",
+        "AR",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            39.17788461538462,
+            51.99824175824176
+        ],
+        "Q": [
+            263.2008928571429,
+            57.499591836734695
+        ],
+        "A": [
+            136.84375,
+            139.01142857142858
+        ],
+        "T": [
+            84.66964285714286,
+            171.72
+        ],
+        "R": [
+            285.2875,
+            270.0274285714286
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        22.0,
+        34.0,
+        68.0
+    ],
+    "choices_precise_value": [
+        12.0,
+        22.0,
+        34.0,
+        68.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 51.949591,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(A, Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on PR, \u2220PQT, AP, \u2220RAQ, pi * (78 / 180) = \u2220RAQ, \u2220AQR, \u2220RPQ, \u2220RQP, AR, 3.14 = pi, \u2220QAP, \u2220TQR, AQ, A on QT, PQ, PR, QR, \u2220QRP, \u2220PAT, \u2220PQA, \u2220TAR, PQ \u22a5 QR, pi * (56 / 180) = \u2220APQ\n\nStep 2:\nTheorem: Same Angle\nPremises : A on PR, \u2220RPQ\nConclusions: \u2220APQ = \u2220RPQ\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220PQT, A on QT\nConclusions: \u2220PQA = \u2220PQT\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220TQR, A on QT\nConclusions: \u2220AQR = \u2220TQR\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : A on PR, A on QT\nConclusions: \u2220QAP = \u2220TAR, \u2220PAT = \u2220RAQ\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : PQ, AP, AQ\nConclusions: \u25b3APQ\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : PQ, QR, PR\nConclusions: \u25b3PQR\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AR, QR, AQ\nConclusions: \u25b3AQR\n\nStep 9:\nTheorem: Same Angle\nPremises : A on PR, \u2220QRP\nConclusions: \u2220QRA = \u2220QRP\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220AQR, \u2220PQA, \u2220RQP\nConclusions: 2 * pi = \u2220AQR + \u2220PQA + \u2220RQP\n\nStep 11:\nTheorem: Circumference Split\nPremises : \u2220QAP, \u2220PAT, \u2220TAR, \u2220RAQ\nConclusions: 2 * pi = \u2220PAT + \u2220QAP + \u2220RAQ + \u2220TAR\n\nStep 12:\nTheorem: Perpendicular to Right Angle\nPremises : PQ \u22a5 QR\nConclusions: (3 * pi) / 2 = \u2220RQP, pi / 2 = \u2220PQR\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220APQ = \u2220RPQ, pi * (56 / 180) = \u2220APQ\nConclusions: pi * (56 / 180) = \u2220RPQ\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (78 / 180) = \u2220RAQ, \u2220PAT = \u2220RAQ\nConclusions: pi * (78 / 180) = \u2220PAT\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(A, P, Q)\nPremises : \u25b3APQ\nConclusions: pi = \u2220APQ + \u2220PQA + \u2220QAP\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, R)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(A, Q, R)\nPremises : \u25b3AQR\nConclusions: pi = \u2220AQR + \u2220QRA + \u2220RAQ\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220AQR = \u2220TQR, (3 * pi) / 2 = \u2220RQP, 3.14 = pi, \u2220PQA = \u2220PQT, 2 * pi = \u2220AQR + \u2220PQA + \u2220RQP\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220PQT + \u2220TQR\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220QAP = \u2220TAR, 2 * pi = \u2220PAT + \u2220QAP + \u2220RAQ + \u2220TAR, pi * (78 / 180) = \u2220PAT, pi * (78 / 180) = \u2220RAQ\nConclusions: 2 * 3.14 = 3.14 * (78 / 180) + pi * (78 / 180) + \u2220TAR + \u2220TAR\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220QAP = \u2220TAR, \u2220PQA = \u2220PQT, pi = \u2220APQ + \u2220PQA + \u2220QAP, pi * (56 / 180) = \u2220APQ\nConclusions: 3.14 = pi * (56 / 180) + \u2220PQT + \u2220TAR\n\nStep 21:\nTheorem: Substitution\nPremises : pi = \u2220PQR + \u2220QRP + \u2220RPQ, 3.14 = pi, pi * (56 / 180) = \u2220RPQ, pi / 2 = \u2220PQR\nConclusions: 3.14 = pi / 2 + pi * (56 / 180) + \u2220QRP\n\nStep 22:\nTheorem: Substitution\nPremises : \u2220AQR = \u2220TQR, 3.14 = pi, pi = \u2220AQR + \u2220QRA + \u2220RAQ, \u2220QRA = \u2220QRP, pi * (78 / 180) = \u2220RAQ\nConclusions: 3.14 = pi * (78 / 180) + \u2220QRP + \u2220TQR\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (78 / 180) + pi * (78 / 180) + \u2220TAR + \u2220TAR, 3.14 = pi * (78 / 180) + \u2220QRP + \u2220TQR, \u2220AQR = \u2220TQR, 3.14 = pi * (56 / 180) + \u2220PQT + \u2220TAR, 3.14 = pi / 2 + pi * (56 / 180) + \u2220QRP, 2 * 3.14 = (3 * pi) / 2 + \u2220PQT + \u2220TQR\nConclusions: 1.19 = \u2220AQR\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, A)",
+        "Line(T, Q)",
+        "Line(A, Q)",
+        "Line(P, T)",
+        "Line(P, Q)",
+        "Line(P, A)",
+        "Line(P, R)",
+        "Line(A, R)",
+        "Line(R, Q)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(P, A)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(T, A)",
+        "Line(T, Q)",
+        "PointLiesOnLine(A, Line(P, R))",
+        "PointLiesOnLine(A, Line(T, Q))",
+        "Perpendicular(Line(P, Q), Line(Q, R))",
+        "Equals(MeasureOf(Angle(A, T, P)), Mul(pi, Div(43.0, 180.0)))",
+        "Equals(MeasureOf(Angle(R, A, Q)), Mul(pi, Div(78.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, P, Q)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

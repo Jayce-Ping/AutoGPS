@@ -1,0 +1,76 @@
+{
+    "problem_id": "8963",
+    "solved": true,
+    "problem_text": "Use \\triangle MAN with right angle N to express ratio of \\tan M if m = 21, a = 28, n = 35.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, N)), m)",
+        "Equals(LengthOf(Line(M, A)), n)",
+        "Equals(LengthOf(Line(M, N)), a)",
+        "Equals(a, 28)",
+        "Equals(m, 21)",
+        "Equals(n, 35)",
+        "Find(RatioOf(TanOf(Angle(M))))",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, A)",
+        "RightAngle(N)",
+        "Triangle(M, A, N)"
+    ],
+    "point_instances": [
+        "M",
+        "N",
+        "A"
+    ],
+    "line_instances": [
+        "NA",
+        "MA",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            41.20812182741117,
+            44.08163265306122
+        ],
+        "N": [
+            41.58967851099831,
+            233.52380952380952
+        ],
+        "A": [
+            355.99238578680206,
+            234.28571428571428
+        ]
+    },
+    "problem_choices": [
+        0.6,
+        0.75,
+        1.0,
+        1.333
+    ],
+    "choices_precise_value": [
+        0.6,
+        0.75,
+        1.0,
+        1.333
+    ],
+    "problem_answer": 0.75,
+    "total_time": 13.096727,
+    "solution_predicate": "Equals(0.75, TanOf(MeasureOf(Angle(N, M, A))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 35 = n, \u25b3AMN, m = AN, 21 = m, n = AM, 28 = a, a = MN\n\nStep 2:\nTheorem: Law of Cosines\nPremises : \u25b3AMN\nConclusions: (AM ** 2 + MN ** 2) - AN ** 2 = 2 * AM * MN * cos(\u2220NMA)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : m = AN, 21 = m\nConclusions: 21 = AN\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 35 = n, n = AM\nConclusions: 35 = AM\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 28 = a, a = MN\nConclusions: 28 = MN\n\nStep 6:\nTheorem: Substitution\nPremises : (AM ** 2 + MN ** 2) - AN ** 2 = 2 * AM * MN * cos(\u2220NMA), 35 = AM, 21 = AN, 28 = MN\nConclusions: (28 ** 2 + 35 ** 2) - 21 ** 2 = 2 * 28 * 35 * cos(\u2220NMA)\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : (28 ** 2 + 35 ** 2) - 21 ** 2 = 2 * 28 * 35 * cos(\u2220NMA)\nConclusions: 0.64 = \u2220NMA\n\nStep 8:\nTheorem: Evaluate\nPremises : 0.64 = \u2220NMA\nConclusions: 0.75 = tan(\u2220NMA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, A)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, A)",
+        "Triangle(M, A, N)",
+        "Equals(LengthOf(Line(A, N)), m)",
+        "Equals(LengthOf(Line(M, A)), n)",
+        "Equals(LengthOf(Line(M, N)), a)",
+        "Equals(a, 28.0)",
+        "Equals(m, 21.0)",
+        "Equals(n, 35.0)"
+    ],
+    "correct": true
+}

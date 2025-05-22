@@ -1,0 +1,76 @@
+{
+    "problem_id": "817",
+    "solved": true,
+    "problem_text": "PQRS is a rhombus. Find the length of QR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, S)), 2y+3)",
+        "Equals(LengthOf(Line(S, R)), 5y-6)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Rhombus(P,Q,R,S)",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "PS",
+        "QR",
+        "SR",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            78.92142857142856,
+            48.83020408163265
+        ],
+        "Q": [
+            246.86249999999998,
+            48.98571428571428
+        ],
+        "S": [
+            148.335,
+            198.99085714285715
+        ],
+        "R": [
+            316.4625,
+            199.20857142857142
+        ]
+    },
+    "problem_choices": [
+        3.375,
+        6.75,
+        9.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        3.375,
+        6.75,
+        9.0,
+        18.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 8.549588,
+    "solution_predicate": "Equals(9.0, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 + 2 * y = PS, 5 * y - 6 = RS, Rhombus(P, Q, R, S)\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(P, Q, R, S)\nConclusions: Parallelogram(P, Q, R, S)\n\nStep 3:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(P, Q, R, S)\nConclusions: PQ = PS\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: PS = QR, PQ = RS\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : PS = QR, 3 + 2 * y = PS\nConclusions: 3 + 2 * y = QR\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 5 * y - 6 = RS, PQ = RS\nConclusions: 5 * y - 6 = PQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 5 * y - 6 = PQ, PQ = PS, 3 + 2 * y = PS\nConclusions: 3 + 2 * y = 5 * y - 6\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * y = QR, 3 + 2 * y = 5 * y - 6\nConclusions: 9 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Rhombus(P, Q, R, S)",
+        "Equals(LengthOf(Line(P, S)), Add(Mul(2.0, y), 3.0))",
+        "Equals(LengthOf(Line(S, R)), Sub(Mul(5.0, y), 6.0))"
+    ],
+    "correct": true
+}

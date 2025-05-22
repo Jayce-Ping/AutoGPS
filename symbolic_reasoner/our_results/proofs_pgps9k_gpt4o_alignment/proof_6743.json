@@ -1,0 +1,96 @@
+{
+    "problem_id": "6743",
+    "solved": true,
+    "problem_text": "Find the measure of \\widehat TCD.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(T, P, C)), 128)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(T, D)",
+        "Line(T, P)",
+        "Perpendicular(Line(T, D), Line(P, B))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(C, Circle(P))",
+        "PointLiesOnCircle(D, Circle(P))",
+        "PointLiesOnCircle(T, Circle(P))",
+        "PointLiesOnLine(P, Line(T, D))",
+        "Find(MeasureOf(Arc(T,C,D)))"
+    ],
+    "point_instances": [
+        "C",
+        "T",
+        "P",
+        "D",
+        "B"
+    ],
+    "line_instances": [
+        "TP",
+        "TD",
+        "PD",
+        "CP",
+        "PB"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "C": [
+            225.89473684210526,
+            73.58887218045112
+        ],
+        "T": [
+            55.13725490196078,
+            92.46857142857144
+        ],
+        "P": [
+            145.04341157655927,
+            124.63306051212267
+        ],
+        "D": [
+            235.33965844402275,
+            157.17781512605043
+        ],
+        "B": [
+            112.90967741935484,
+            215.388
+        ]
+    },
+    "problem_choices": [
+        180.0,
+        218.0,
+        270.0,
+        308.0
+    ],
+    "choices_precise_value": [
+        180.0,
+        218.0,
+        270.0,
+        308.0
+    ],
+    "problem_answer": 180.0,
+    "total_time": 13.181374,
+    "solution_predicate": "Equals(3.1415926536, MeasureOf(Arc(D, P, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, Arc(DPT), \u2220TPB, BP \u22a5 DP, BP \u22a5 PT, \u2220DPT, \u2220BPD\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DPT)\nConclusions: \u2220DPT = Arc(DPT)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BP \u22a5 DP\nConclusions: pi / 2 = \u2220BPD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BP \u22a5 PT\nConclusions: pi / 2 = \u2220TPB\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220BPD, \u2220TPB\nConclusions: pi = \u2220BPD + \u2220TPB\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220BPD, \u2220DPT, \u2220TPB\nConclusions: 2 * pi = \u2220BPD + \u2220DPT + \u2220TPB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BPD + \u2220TPB, 3.14 = pi\nConclusions: 3.14 = \u2220BPD + \u2220TPB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220TPB, pi / 2 = \u2220BPD, 2 * pi = \u2220BPD + \u2220DPT + \u2220TPB, \u2220DPT = Arc(DPT)\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + Arc(DPT)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220BPD + \u2220TPB, 2 * 3.14 = pi / 2 + pi / 2 + Arc(DPT), 2 * pi = \u2220BPD + \u2220DPT + \u2220TPB, \u2220DPT = Arc(DPT)\nConclusions: 3.14 = \u2220DPT\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = \u2220DPT, \u2220DPT = Arc(DPT)\nConclusions: 3.14 = Arc(DPT)\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, P)",
+        "Line(T, D)",
+        "Line(P, D)",
+        "Line(C, P)",
+        "Line(P, B)",
+        "Circle(P, radius_P)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Line(P, D)",
+        "Line(T, D)",
+        "Line(T, P)",
+        "Perpendicular(Line(T, D), Line(P, B))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(C, Circle(P, radius_P))",
+        "PointLiesOnCircle(D, Circle(P, radius_P))",
+        "PointLiesOnCircle(T, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(T, D))",
+        "Equals(MeasureOf(Angle(C, P, T)), Mul(pi, Div(128.0, 180.0)))"
+    ],
+    "correct": true
+}

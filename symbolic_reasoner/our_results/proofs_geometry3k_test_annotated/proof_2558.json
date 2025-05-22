@@ -1,0 +1,63 @@
+{
+    "problem_id": "2558",
+    "solved": true,
+    "problem_text": "Find R S if \\triangle Q R S is an equilateral triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 2x+1)",
+        "Equals(LengthOf(Line(Q, S)), 6x-1)",
+        "Equals(LengthOf(Line(Q, R)), 4x)",
+        "Equilateral(Triangle(Q, R, S))",
+        "Find(LengthOf(Line(R, S)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "Q"
+    ],
+    "line_instances": [
+        "QS",
+        "RQ",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            135.18072289156626,
+            51.50602409638554
+        ],
+        "S": [
+            232.77108433734935,
+            221.9879518072289
+        ],
+        "Q": [
+            36.68674698795179,
+            222.59036144578312
+        ]
+    },
+    "problem_choices": [
+        "0.5",
+        "1",
+        "1.5",
+        "2"
+    ],
+    "choices_precise_value": [
+        0.5,
+        1.0,
+        1.5,
+        2.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 6.317385,
+    "solution_predicate": "Equals(2.0, LengthOf(Line(R, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * x = QR, 1 + 2 * x = RS, Equilateral(\u25b3QRS)\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3QRS)\nConclusions: QR = RS\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : QR = RS, 1 + 2 * x = RS, 4 * x = QR\nConclusions: 4 * x = 1 + 2 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 4 * x = 1 + 2 * x, 1 + 2 * x = RS\nConclusions: 2 = RS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, S)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Equilateral(Triangle(Q, R, S))",
+        "Equals(LengthOf(Line(R, S)), Add(Mul(2.0, x), 1.0))",
+        "Equals(LengthOf(Line(Q, S)), Sub(Mul(6.0, x), 1.0))",
+        "Equals(LengthOf(Line(Q, R)), Mul(4.0, x))"
+    ],
+    "correct": true
+}

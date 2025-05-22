@@ -1,0 +1,114 @@
+{
+    "problem_id": "2520",
+    "solved": true,
+    "problem_text": "A B \\perp D C and G H \\perp F E. If \\triangle A C D \\sim \\triangle G E F, find A B.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(H, Line(F, E))",
+        "Equals(LengthOf(Line(H, G)), 3.15)",
+        "Equals(LengthOf(Line(G, E)), 6.3)",
+        "Equals(LengthOf(Line(A, C)), 4.4)",
+        "Perpendicular(Line(A,B),Line(D,C))",
+        "Perpendicular(Line(G,H),Line(F,E))",
+        "Similar(Triangle(A,C,D),Triangle(G,E,F))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "E",
+        "C",
+        "F",
+        "H",
+        "G"
+    ],
+    "line_instances": [
+        "DB",
+        "DC",
+        "BC",
+        "AB",
+        "AD",
+        "AC",
+        "GF",
+        "FH",
+        "FE",
+        "HE",
+        "GH",
+        "GE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            158.92857142857144,
+            127.40476190476193
+        ],
+        "D": [
+            95.23809523809524,
+            217.28571428571428
+        ],
+        "B": [
+            158.92857142857144,
+            215.5
+        ],
+        "E": [
+            700.5952380952381,
+            216.09523809523813
+        ],
+        "C": [
+            285.11904761904765,
+            217.28571428571428
+        ],
+        "F": [
+            392.26190476190476,
+            217.8809523809524
+        ],
+        "H": [
+            497.61904761904765,
+            216.6904761904762
+        ],
+        "G": [
+            497.0238095238095,
+            70.26190476190476
+        ]
+    },
+    "problem_choices": [
+        "2.2",
+        "3.6",
+        "4.4",
+        "6.3"
+    ],
+    "choices_precise_value": [
+        2.2,
+        3.6,
+        4.4,
+        6.3
+    ],
+    "problem_answer": 2.2,
+    "total_time": 98.791045,
+    "solution_predicate": "Equals(2.2, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220GEH, cos(\u2220HGE), B on CD, 4.4 = AC, AB \u22a5 BC, 6.3 = EG, 3.15 = GH, \u2220GEF, H on EF, EG, EH, \u2220ACB, GH, \u25b3ACD ~ \u25b3GEF, AC, \u2220ACD, BC, AB, EH \u22a5 GH, \u2220HGE\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.15 = GH, 6.3 = EG\nConclusions: 0.5 = GH / EG\n\nStep 3:\nTheorem: Same Angle\nPremises : H on EF, \u2220GEF\nConclusions: \u2220GEF = \u2220GEH\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : GH, EG, EH\nConclusions: \u25b3EGH\n\nStep 5:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3GEF\nConclusions: \u2220ACD = \u2220GEF\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ACD, B on CD\nConclusions: \u2220ACB = \u2220ACD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220HGE), EH \u22a5 GH\nConclusions: GH / EG = cos(\u2220HGE)\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : \u2220GEH, \u25b3EGH, EH \u22a5 GH\nConclusions: GH / EG = sin(\u2220GEH)\n\nStep 10:\nTheorem: Cos Function Definition\nPremises : \u25b3EGH, \u2220HGE, EH \u22a5 GH\nConclusions: GH / EG = cos(\u2220HGE)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220ACD, \u2220ACD = \u2220GEF\nConclusions: \u2220ACB = \u2220GEF\n\nStep 12:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 BC, \u2220ACB, \u25b3ABC\nConclusions: AB / AC = sin(\u2220ACB)\n\nStep 13:\nTheorem: Substitution\nPremises : 3.15 = GH, GH / EG = cos(\u2220HGE), 6.3 = EG\nConclusions: 3.15 / 6.3 = cos(\u2220HGE)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220GEF, \u2220GEF = \u2220GEH\nConclusions: \u2220ACB = \u2220GEH\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : GH / EG = cos(\u2220HGE), 3.15 / 6.3 = cos(\u2220HGE)\nConclusions: 3.15 / 6.3 = GH / EG\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220GEH, AB / AC = sin(\u2220ACB), 4.4 = AC\nConclusions: AB / 4.4 = sin(\u2220GEH)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 0.5 = GH / EG, 3.15 / 6.3 = GH / EG\nConclusions: 0.5 = 3.15 / 6.3\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 0.5 = 3.15 / 6.3, 3.15 / 6.3 = cos(\u2220HGE)\nConclusions: 0.5 = cos(\u2220HGE)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : GH / EG = cos(\u2220HGE), 0.5 = cos(\u2220HGE)\nConclusions: 0.5 = GH / EG\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 0.5 = GH / EG, GH / EG = sin(\u2220GEH)\nConclusions: 0.5 = sin(\u2220GEH)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : AB / 4.4 = sin(\u2220GEH), 0.5 = sin(\u2220GEH)\nConclusions: 0.5 = AB / 4.4\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 0.5 = AB / 4.4\nConclusions: 2.2 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(G, F)",
+        "Line(F, H)",
+        "Line(F, E)",
+        "Line(H, E)",
+        "Line(G, H)",
+        "Line(G, E)",
+        "PointLiesOnLine(B, Line(D, C))",
+        "PointLiesOnLine(H, Line(F, E))",
+        "Perpendicular(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(G, H), Line(F, E))",
+        "Similar(Triangle(A, C, D), Triangle(G, E, F))",
+        "Equals(LengthOf(Line(H, G)), 3.15)",
+        "Equals(LengthOf(Line(G, E)), 6.3)",
+        "Equals(LengthOf(Line(A, C)), 4.4)"
+    ],
+    "correct": true
+}

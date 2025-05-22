@@ -1,0 +1,62 @@
+{
+    "problem_id": "2904",
+    "solved": true,
+    "problem_text": "Use the Pythagorean Theorem to find the length of the hypotenuse of the right triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 5)",
+        "Equals(LengthOf(Line(C, A)), 12)",
+        "Find(LengthOf(Line(C, B)))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "UseTheorem(Pythagorean_Theorem)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            57.69911504424778,
+            12.769911504424776
+        ],
+        "B": [
+            32.743362831858406,
+            72.76991150442477
+        ],
+        "C": [
+            201.76991150442475,
+            72.23893805309734
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "\\sqrt { 119 }",
+        "12",
+        "13"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.908712114635714,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 10.507689,
+    "solution_predicate": "Equals(13.0, LengthOf(Line(C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AC, BC, 5 = AB, AC, AB, AB \u22a5 AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 AC, \u25b3ABC\nConclusions: BC = SqrtOf(AB ** 2 + AC ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 12 = AC, 5 = AB, BC = SqrtOf(AB ** 2 + AC ** 2)\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = BC\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = BC\nConclusions: 13 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(LengthOf(Line(B, A)), 5.0)",
+        "Equals(LengthOf(Line(C, A)), 12.0)"
+    ],
+    "correct": true
+}

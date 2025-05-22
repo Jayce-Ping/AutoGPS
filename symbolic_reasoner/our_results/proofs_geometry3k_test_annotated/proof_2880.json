@@ -1,0 +1,101 @@
+{
+    "problem_id": "2880",
+    "solved": true,
+    "problem_text": "In \\odot P, m \\angle M P L = 65 and N P \\perp P L. Find m \\widehat N J K.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "Perpendicular(Line(J, P), Line(N, P))",
+        "Equals(MeasureOf(Angle(M, P, L)), 65)",
+        "Perpendicular(Line(N, P), Line(P, L))",
+        "Find(MeasureOf(Arc(N, J, K)))"
+    ],
+    "point_instances": [
+        "P",
+        "J",
+        "N",
+        "K",
+        "M",
+        "L"
+    ],
+    "line_instances": [
+        "JP",
+        "JL",
+        "PL",
+        "PN",
+        "KP",
+        "KM",
+        "PM"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            158.68249258160236,
+            135.90504451038575
+        ],
+        "J": [
+            72.33234421364985,
+            103.85756676557862
+        ],
+        "N": [
+            128.4154302670623,
+            220.77151335311572
+        ],
+        "K": [
+            150.37388724035608,
+            44.80712166172107
+        ],
+        "M": [
+            167.28783382789317,
+            225.5192878338279
+        ],
+        "L": [
+            243.25222551928783,
+            165.8753709198813
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "75",
+        "90",
+        "155"
+    ],
+    "choices_precise_value": [
+        25.0,
+        75.0,
+        90.0,
+        155.0
+    ],
+    "problem_answer": 155.0,
+    "total_time": 17.595021,
+    "solution_predicate": "Equals(2.7052603406, MeasureOf(Arc(K, P, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (65 / 180) = \u2220MPL, \u2220MPL, Arc(KPN), \u2220LPN, \u2220KPN, \u2220NPM, LP \u22a5 NP, 3.14 = pi\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KPN)\nConclusions: \u2220KPN = Arc(KPN)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220NPM, \u2220KPN\nConclusions: pi = \u2220KPN + \u2220NPM\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220NPM, \u2220LPN, \u2220MPL\nConclusions: 2 * pi = \u2220LPN + \u2220MPL + \u2220NPM\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : LP \u22a5 NP\nConclusions: (3 * pi) / 2 = \u2220LPN\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220KPN + \u2220NPM, 3.14 = pi\nConclusions: 3.14 = \u2220KPN + \u2220NPM\n\nStep 7:\nTheorem: Substitution\nPremises : 2 * pi = \u2220LPN + \u2220MPL + \u2220NPM, (3 * pi) / 2 = \u2220LPN, pi * (65 / 180) = \u2220MPL, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (65 / 180) + \u2220NPM\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220KPN + \u2220NPM, 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (65 / 180) + \u2220NPM\nConclusions: 2.71 = \u2220KPN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KPN = Arc(KPN), 2.71 = \u2220KPN\nConclusions: 2.71 = Arc(KPN)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, P)",
+        "Line(J, L)",
+        "Line(P, L)",
+        "Line(P, N)",
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Circle(P, radius_0_0)",
+        "PointLiesOnLine(P, Line(J, L))",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnCircle(J, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(N, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(P, radius_0_0))",
+        "Perpendicular(Line(J, P), Line(N, P))",
+        "Perpendicular(Line(N, P), Line(P, L))",
+        "Equals(MeasureOf(Angle(M, P, L)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

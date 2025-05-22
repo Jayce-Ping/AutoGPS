@@ -1,0 +1,69 @@
+{
+    "problem_id": "8749",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 60)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(C, B, A)), 62)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            4.447336561743342,
+            105.61394673123488
+        ],
+        "B": [
+            196.88722098214285,
+            105.67464285714286
+        ],
+        "C": [
+            148.85857142857142,
+            21.86171428571429
+        ]
+    },
+    "problem_choices": [
+        22.1,
+        23.4,
+        26.3,
+        28.2
+    ],
+    "choices_precise_value": [
+        22.1,
+        23.4,
+        26.3,
+        28.2
+    ],
+    "problem_answer": 23.4,
+    "total_time": 16.448098,
+    "solution_predicate": "Equals(28.1682937688, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC \u22a5 BC, 3.14 = pi, x = BC, pi * (62 / 180) = \u2220CBA, tan(\u2220CBA), sin(\u2220CBA), 60 = AB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.08 = pi * (62 / 180)\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : AC \u22a5 BC, tan(\u2220CBA)\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.08 = pi * (62 / 180), pi * (62 / 180) = \u2220CBA\nConclusions: 1.08 = \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : 60 = AB, AC / AB = sin(\u2220CBA), 1.08 = \u2220CBA\nConclusions: sin(1.08) = AC / 60\n\nStep 7:\nTheorem: Evaluate\nPremises : 1.08 = \u2220CBA\nConclusions: 1.88 = tan(\u2220CBA)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 1.88 = tan(\u2220CBA), AC / BC = tan(\u2220CBA)\nConclusions: 1.88 = AC / BC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 1.88 = AC / BC, sin(1.08) = AC / 60\nConclusions: 28.17 = BC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 28.17 = BC, x = BC\nConclusions: 28.17 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 60.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(62.0, 180.0)))"
+    ],
+    "correct": false
+}

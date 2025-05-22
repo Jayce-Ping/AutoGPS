@@ -1,0 +1,81 @@
+{
+    "problem_id": "2462",
+    "solved": true,
+    "problem_text": "A B is a diameter, A C = 8 inches, and B C = 15 inches. Find the radius of the circle.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "IsDiameterOf(Line(A, B), Circle(D))",
+        "Equals(LengthOf(Line(A, C)), 8)",
+        "Equals(LengthOf(Line(B, C)), 15)",
+        "Find(RadiusOf(Circle(D)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "CB",
+        "AC",
+        "AD",
+        "AB",
+        "DB"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "C": [
+            136.55555555555554,
+            317.3333333333333
+        ],
+        "B": [
+            406.3333333333333,
+            207.55555555555554
+        ],
+        "A": [
+            92.11111111111111,
+            206.66666666666666
+        ],
+        "D": [
+            248.55555555555554,
+            207.55555555555554
+        ]
+    },
+    "problem_choices": [
+        "7.5",
+        "8",
+        "8.5",
+        "17"
+    ],
+    "choices_precise_value": [
+        7.5,
+        8.0,
+        8.5,
+        17.0
+    ],
+    "problem_answer": 8.5,
+    "total_time": 35.162266,
+    "solution_predicate": "Equals(8.5, radius_0_0)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IsDiameterOf(AB, \u2299(D, radius_0_0)), AB, 3.14 = pi, C on \u2299(D, radius_0_0), 15 = BC, AC, BC, 8 = AC\n\nStep 2:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AB, \u2299(D, radius_0_0))\nConclusions: 2 * radius_0_0 = AB\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 4:\nTheorem: Thales Theorem\nPremises : IsDiameterOf(AB, \u2299(D, radius_0_0)), C on \u2299(D, radius_0_0)\nConclusions: AC \u22a5 BC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 7:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BCA, 1.57 = pi / 2\nConclusions: 1.57 = \u2220BCA\n\nStep 9:\nTheorem: Substitution\nPremises : 15 = BC, (AC ** 2 + BC ** 2) - AB ** 2 = 2 * AC * BC * cos(\u2220BCA), 2 * radius_0_0 = AB, 8 = AC\nConclusions: (15 ** 2 + 8 ** 2) - (2 * radius_0_0) ** 2 = 15 * 2 * 8 * cos(\u2220BCA)\n\nStep 10:\nTheorem: Substitution\nPremises : 1.57 = \u2220BCA, (15 ** 2 + 8 ** 2) - (2 * radius_0_0) ** 2 = 15 * 2 * 8 * cos(\u2220BCA)\nConclusions: 15 * 2 * 8 * cos(1.57) = (15 ** 2 + 8 ** 2) - (2 * radius_0_0) ** 2\n\nStep 11:\nTheorem: Solve Univariate Equation\nPremises : 15 * 2 * 8 * cos(1.57) = (15 ** 2 + 8 ** 2) - (2 * radius_0_0) ** 2\nConclusions: 8.5 = radius_0_0\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnCircle(C, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(D, radius_0_0))",
+        "IsDiameterOf(Line(A, B), Circle(D, radius_0_0))",
+        "Equals(LengthOf(Line(A, C)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), 15.0)"
+    ],
+    "correct": true
+}

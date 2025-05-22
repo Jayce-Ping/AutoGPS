@@ -1,0 +1,128 @@
+{
+    "problem_id": "8222",
+    "solved": true,
+    "problem_text": "Find RQ if AU = 15, QU = 25, AD = 3x+6, DR = 8x-2, and UD = 15.",
+    "logic_forms": [
+        "Line(A, D)",
+        "Line(A, R)",
+        "Line(D, R)",
+        "Line(L, D)",
+        "Line(L, R)",
+        "Line(Q, A)",
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(Q, U)",
+        "Line(U, A)",
+        "Line(U, D)",
+        "Parallel(Line(Q, A), Line(L, D))",
+        "Parallel(Line(U, D), Line(Q, R))",
+        "PointLiesOnLine(D, Line(A, R))",
+        "PointLiesOnLine(L, Line(Q, R))",
+        "PointLiesOnLine(U, Line(Q, A))",
+        "Equals(LengthOf(Line(A,U)),15)",
+        "Equals(LengthOf(Line(Q,U)),25)",
+        "Equals(LengthOf(Line(A,D)),3x+6)",
+        "Equals(LengthOf(Line(D,R)),8x-2)",
+        "Equals(LengthOf(Line(U,D)),15)",
+        "Find(LengthOf(Line(R,Q)))"
+    ],
+    "point_instances": [
+        "Q",
+        "U",
+        "A",
+        "L",
+        "D",
+        "R"
+    ],
+    "line_instances": [
+        "QL",
+        "QR",
+        "LR",
+        "RD",
+        "RA",
+        "DA",
+        "DU",
+        "DL",
+        "QU",
+        "QA",
+        "UA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            50.357142857142854,
+            72.02499999999999
+        ],
+        "U": [
+            206.78571428571428,
+            72.02499999999999
+        ],
+        "A": [
+            335.2597402597403,
+            71.73181818181818
+        ],
+        "L": [
+            94.28571428571428,
+            178.45
+        ],
+        "D": [
+            256.42857142857144,
+            178.2111111111111
+        ],
+        "R": [
+            152.14285714285714,
+            320.34999999999997
+        ]
+    },
+    "problem_choices": [
+        6.75,
+        18.0,
+        30.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        6.75,
+        18.0,
+        30.0,
+        40.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 113.787425,
+    "solution_predicate": "Equals(40.0, LengthOf(Line(R, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAQ, AQ || DL, L on QR, QU, \u2220ARL, D on AR, DU || RQ, \u2220RAQ, 25 = QU, 15 = DU, DL, DU, U on AQ, 15 = AU, \u2220ARQ, LQ\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AQ || DL\nConclusions: \u2220DUA = \u2220UDL\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AQ || DL\nConclusions: \u2220RAQ = \u2220RDL\n\nStep 4:\nTheorem: Line Segment Split\nPremises : L on QR\nConclusions: QR = LQ + LR\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220ARL, D on AR\nConclusions: \u2220ARL = \u2220DRL\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : DU || RQ\nConclusions: \u2220ADU = \u2220ARQ\n\nStep 7:\nTheorem: Alternate Interior Angle Theorem\nPremises : DU || RQ\nConclusions: \u2220RLD = \u2220UDL\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220RAQ, D on AR\nConclusions: \u2220DAQ = \u2220RAQ\n\nStep 9:\nTheorem: Same Angle\nPremises : U on AQ, \u2220DAQ\nConclusions: \u2220DAQ = \u2220DAU\n\nStep 10:\nTheorem: Same Angle\nPremises : L on QR, \u2220ARQ\nConclusions: \u2220ARL = \u2220ARQ\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220ARQ, D on AR\nConclusions: \u2220ARQ = \u2220DRQ\n\nStep 12:\nTheorem: Definition of Parallelogram\nPremises : DU || RQ, DL, DU, QU, AQ || DL, LQ\nConclusions: Parallelogram(D, L, Q, U)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RLD = \u2220UDL, \u2220DUA = \u2220UDL\nConclusions: \u2220DUA = \u2220RLD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAQ = \u2220RAQ, \u2220RAQ = \u2220RDL\nConclusions: \u2220DAQ = \u2220RDL\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ARQ = \u2220DRQ, \u2220ARL = \u2220ARQ\nConclusions: \u2220ARL = \u2220DRQ\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADU = \u2220ARQ, \u2220ARQ = \u2220DRQ\nConclusions: \u2220ADU = \u2220DRQ\n\nStep 17:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(D, L, Q, U)\nConclusions: DL = QU, DU = LQ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAQ = \u2220RDL, \u2220DAQ = \u2220DAU\nConclusions: \u2220DAU = \u2220RDL\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ARL = \u2220DRQ, \u2220ADU = \u2220DRQ, \u2220ARL = \u2220DRL\nConclusions: \u2220ADU = \u2220DRL\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 25 = QU, DL = QU\nConclusions: 25 = DL\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 15 = DU, DU = LQ\nConclusions: 15 = LQ\n\nStep 22:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DAU = \u2220RDL, \u2220DUA = \u2220RLD, \u2220ADU = \u2220DRL\nConclusions: \u25b3ADU ~ \u25b3DRL\n\nStep 23:\nTheorem: Substitution\nPremises : QR = LQ + LR, 15 = LQ\nConclusions: QR = 15 + LR\n\nStep 24:\nTheorem: Similar Definition\nPremises : \u25b3ADU ~ \u25b3DRL\nConclusions: sim_ratio_triangle_a_d_u_triangle_d_r_l = DU / LR, \u2220DUA = \u2220RLD, \u2220DAU = \u2220RDL, sim_ratio_triangle_a_d_u_triangle_d_r_l = AU / DL\n\nStep 25:\nTheorem: Substitution\nPremises : 15 = DU, sim_ratio_triangle_a_d_u_triangle_d_r_l = DU / LR\nConclusions: sim_ratio_triangle_a_d_u_triangle_d_r_l = 15 / LR\n\nStep 26:\nTheorem: Substitution\nPremises : 15 = AU, sim_ratio_triangle_a_d_u_triangle_d_r_l = AU / DL, 25 = DL\nConclusions: 15 / 25 = sim_ratio_triangle_a_d_u_triangle_d_r_l\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_d_u_triangle_d_r_l = 15 / LR, 15 / 25 = sim_ratio_triangle_a_d_u_triangle_d_r_l\nConclusions: 15 / 25 = 15 / LR\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 15 / 25 = 15 / LR, QR = 15 + LR\nConclusions: 40 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(L, R)",
+        "Line(R, D)",
+        "Line(R, A)",
+        "Line(D, A)",
+        "Line(D, U)",
+        "Line(D, L)",
+        "Line(Q, U)",
+        "Line(Q, A)",
+        "Line(U, A)",
+        "Line(A, D)",
+        "Line(A, R)",
+        "Line(D, R)",
+        "Line(L, D)",
+        "Line(L, R)",
+        "Line(Q, A)",
+        "Line(Q, L)",
+        "Line(Q, R)",
+        "Line(Q, U)",
+        "Line(U, A)",
+        "Line(U, D)",
+        "Parallel(Line(Q, A), Line(L, D))",
+        "Parallel(Line(U, D), Line(Q, R))",
+        "PointLiesOnLine(D, Line(A, R))",
+        "PointLiesOnLine(L, Line(Q, R))",
+        "PointLiesOnLine(U, Line(Q, A))",
+        "Equals(LengthOf(Line(A, U)), 15.0)",
+        "Equals(LengthOf(Line(Q, U)), 25.0)",
+        "Equals(LengthOf(Line(A, D)), Add(Mul(3.0, x), 6.0))",
+        "Equals(LengthOf(Line(D, R)), Sub(Mul(8.0, x), 2.0))",
+        "Equals(LengthOf(Line(U, D)), 15.0)"
+    ],
+    "correct": true
+}

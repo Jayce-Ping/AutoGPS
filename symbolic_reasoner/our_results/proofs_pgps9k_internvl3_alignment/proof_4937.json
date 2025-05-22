@@ -1,0 +1,126 @@
+{
+    "problem_id": "4937",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, E)), 8)",
+        "Equals(LengthOf(Line(A, F)), 12)",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(D, E)), 5)",
+        "Find(Add(AreaOf(Triangle(A, B, E)), AreaOf(Triangle(A, E, F))))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, F)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Perpendicular(Line(A, E), Line(B, C))",
+        "Perpendicular(Line(A, F), Line(E, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, F))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AD",
+        "AF",
+        "DF",
+        "AB",
+        "BE",
+        "EF",
+        "DE",
+        "AC",
+        "AE",
+        "CE",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.08395061728395,
+            216.6804478897502
+        ],
+        "B": [
+            40.21333333333334,
+            15.624515503875969
+        ],
+        "C": [
+            131.87929824561405,
+            107.34761321909426
+        ],
+        "D": [
+            249.86,
+            160.51162790697674
+        ],
+        "E": [
+            217.37386666666666,
+            21.752093023255814
+        ],
+        "F": [
+            404.9066666666667,
+            122.45930232558139
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 116.017465,
+    "solution_predicate": "Equals(50.0, Add(AreaOf(Triangle(A, B, E)), AreaOf(Triangle(A, E, F))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AF, 5 = DE, BC \u22a5 CE, AF \u22a5 DE, \u25b3AEF, 8 = AE, 5 = BC, \u25b3ABE\n\nStep 2:\nTheorem: Evaluate\nPremises : 5 = DE, 12 = AF\nConclusions: 30 = (AF * DE) / 2\n\nStep 3:\nTheorem: Area formula of Triangle(A, E, F)\nPremises : \u25b3AEF, AF \u22a5 DE\nConclusions: Area(\u25b3AEF) = (AF * DE) / 2\n\nStep 4:\nTheorem: Evaluate\nPremises : 8 = AE, 5 = BC\nConclusions: 20 = (AE * BC) / 2\n\nStep 5:\nTheorem: Area formula of Triangle(A, B, E)\nPremises : BC \u22a5 CE, \u25b3ABE\nConclusions: Area(\u25b3ABE) = (AE * BC) / 2\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3AEF) = (AF * DE) / 2, 30 = (AF * DE) / 2\nConclusions: 30 = Area(\u25b3AEF)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : Area(\u25b3ABE) = (AE * BC) / 2, 20 = (AE * BC) / 2\nConclusions: 20 = Area(\u25b3ABE)\n\nStep 8:\nTheorem: Evaluate\nPremises : 20 = Area(\u25b3ABE), 30 = Area(\u25b3AEF)\nConclusions: 50 = Area(\u25b3ABE) + Area(\u25b3AEF)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(D, F)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(E, F)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(D, F)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Perpendicular(Line(A, E), Line(B, C))",
+        "Perpendicular(Line(A, F), Line(E, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "Equals(LengthOf(Line(A, E)), 8.0)",
+        "Equals(LengthOf(Line(A, F)), 12.0)",
+        "Equals(LengthOf(Line(C, B)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(D, E)), 5.0)"
+    ],
+    "correct": true
+}

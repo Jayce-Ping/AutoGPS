@@ -1,0 +1,65 @@
+{
+    "problem_id": "2916",
+    "solved": true,
+    "problem_text": "Find K L.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(J, L)), 4x-8)",
+        "Equals(LengthOf(Line(J, K)), x+7)",
+        "Find(LengthOf(Line(K,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JL",
+        "KJ",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            95.66990291262135,
+            358.7378640776699
+        ],
+        "K": [
+            251.49514563106794,
+            85.4368932038835
+        ],
+        "L": [
+            407.32038834951453,
+            359.22330097087377
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "8",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        7.0,
+        8.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 4.103796,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 7 + x = JK, 4 * x - 8 = JL, JK = KL, JL = KL\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : JL = KL, 4 * x - 8 = JL\nConclusions: 4 * x - 8 = KL\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 4 * x - 8 = KL, JK = KL\nConclusions: 4 * x - 8 = JK\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 7 + x = JK, 4 * x - 8 = JK\nConclusions: 7 + x = 4 * x - 8\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 7 + x = 4 * x - 8, 4 * x - 8 = KL\nConclusions: 7 + x = KL\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 7 + x = KL, 7 + x = 4 * x - 8\nConclusions: 12 = KL\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(J, L)), Sub(Mul(4.0, x), 8.0))",
+        "Equals(LengthOf(Line(J, K)), Add(x, 7.0))"
+    ],
+    "correct": true
+}

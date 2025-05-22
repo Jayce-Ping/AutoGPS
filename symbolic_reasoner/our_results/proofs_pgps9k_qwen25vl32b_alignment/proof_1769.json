@@ -1,0 +1,109 @@
+{
+    "problem_id": "1769",
+    "solved": true,
+    "problem_text": "Quadrilateral ABCD is a rhombus. If m \\angle BCD = 120, find m \\angle CDP.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, P)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, P)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Perpendicular(Line(D, B), Line(A, C))",
+        "PointLiesOnLine(P, Line(A, C))",
+        "PointLiesOnLine(P, Line(D, B))",
+        "Rhombus(A,B,C,D)",
+        "Equals(MeasureOf(Angle(B,C,D)),120)",
+        "Find(MeasureOf(Angle(C,D,P)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "B",
+        "A",
+        "P"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AD",
+        "DP",
+        "DB",
+        "PB",
+        "AP",
+        "AC",
+        "PC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            33.48062463851937,
+            218.97383458646615
+        ],
+        "C": [
+            200.40853264382673,
+            219.22285714285715
+        ],
+        "B": [
+            253.51995373048004,
+            58.354285714285716
+        ],
+        "A": [
+            87.36610757663388,
+            58.354285714285716
+        ],
+        "P": [
+            144.0,
+            138.78857142857143
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 110.961864,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(C, D, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(A, B, C, D), pi * (120 / 180) = \u2220BCD, BD, \u2220DBC, \u2220CDB, 3.14 = pi, AB, AD, P on BD\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220ABD = \u2220DBC, \u2220BDA = \u2220CDB\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 5:\nTheorem: Same Angle\nPremises : P on BD, \u2220CDB\nConclusions: \u2220CDB = \u2220CDP\n\nStep 6:\nTheorem: Same Angle\nPremises : P on BD, \u2220DBC\nConclusions: \u2220DBC = \u2220PBC\n\nStep 7:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BCD = \u2220DAB\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = \u2220PBC, \u2220ABD = \u2220DBC\nConclusions: \u2220ABD = \u2220PBC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220BCD, \u2220BCD = \u2220DAB\nConclusions: pi * (120 / 180) = \u2220DAB\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BDA = \u2220DBC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CDB, \u2220BDA = \u2220DBC\nConclusions: \u2220CDB = \u2220DBC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = \u2220PBC, \u2220BDA = \u2220DBC\nConclusions: \u2220BDA = \u2220PBC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDB = \u2220CDP, \u2220CDB = \u2220DBC\nConclusions: \u2220CDP = \u2220DBC\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABD = \u2220PBC, \u2220BDA = \u2220PBC, pi * (120 / 180) = \u2220DAB, pi = \u2220ABD + \u2220BDA + \u2220DAB\nConclusions: 3.14 = 3.14 * (120 / 180) + \u2220PBC + \u2220PBC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = \u2220PBC, \u2220CDP = \u2220DBC\nConclusions: \u2220CDP = \u2220PBC\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : \u2220CDP = \u2220PBC, 3.14 = 3.14 * (120 / 180) + \u2220PBC + \u2220PBC\nConclusions: 0.52 = \u2220CDP\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, P)",
+        "Line(D, B)",
+        "Line(P, B)",
+        "Line(A, P)",
+        "Line(A, C)",
+        "Line(P, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, P)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, P)",
+        "Line(P, B)",
+        "Line(P, C)",
+        "Perpendicular(Line(D, B), Line(A, C))",
+        "PointLiesOnLine(P, Line(A, C))",
+        "PointLiesOnLine(P, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

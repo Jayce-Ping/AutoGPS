@@ -1,0 +1,88 @@
+{
+    "problem_id": "2973",
+    "solved": true,
+    "problem_text": "Find A B.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, D)), x-4)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(F, E)), 3)",
+        "Equals(LengthOf(Line(B, C)), 5)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(F, D, E)))",
+        "Equals(MeasureOf(Angle(F, E, D)), MeasureOf(Angle(C, B, A)))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "F",
+        "D",
+        "E",
+        "B"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AB",
+        "FD",
+        "EF",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            162.5730994152047,
+            206.69590643274853
+        ],
+        "A": [
+            94.15204678362574,
+            51.432748538011694
+        ],
+        "F": [
+            363.15789473684214,
+            73.0701754385965
+        ],
+        "D": [
+            328.3625730994152,
+            206.40350877192984
+        ],
+        "E": [
+            293.5672514619883,
+            73.3625730994152
+        ],
+        "B": [
+            26.023391812865498,
+            206.40350877192984
+        ]
+    },
+    "problem_choices": [
+        "5.5",
+        "7",
+        "8",
+        "10"
+    ],
+    "choices_precise_value": [
+        5.5,
+        7.0,
+        8.0,
+        10.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 16.954902,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = BC, x - 4 = DE, \u2220FED, DE, 3 = EF, BC, \u2220CBA = \u2220DEF, \u2220ABC, x = AB, \u2220CAB, AC, \u2220EDF, \u2220BAC = \u2220FDE, AB, DF, 3.14 = pi, EF\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220FED\nConclusions: \u2220FED = 2 * pi - \u2220DEF\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDF\nConclusions: \u2220EDF = 2 * pi - \u2220FDE\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : DE, DF, EF\nConclusions: \u25b3DEF\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220FED = 2 * pi - \u2220DEF\nConclusions: \u2220FED = 2 * 3.14 - \u2220DEF\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220DEF, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: \u2220ABC = 2 * 3.14 - \u2220DEF\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220BAC = \u2220FDE, \u2220CAB = 2 * pi - \u2220BAC, 3.14 = pi\nConclusions: \u2220CAB = 2 * 3.14 - \u2220FDE\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220EDF = 2 * pi - \u2220FDE, 3.14 = pi\nConclusions: \u2220EDF = 2 * 3.14 - \u2220FDE\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, F)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FED = 2 * 3.14 - \u2220DEF, \u2220ABC = 2 * 3.14 - \u2220DEF\nConclusions: \u2220ABC = \u2220FED\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = 2 * 3.14 - \u2220FDE, \u2220EDF = 2 * 3.14 - \u2220FDE\nConclusions: \u2220CAB = \u2220EDF\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220DEF, \u2220BAC = \u2220FDE, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi\nConclusions: 3.14 = \u2220ACB + \u2220DEF + \u2220FDE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220DEF + \u2220EFD + \u2220FDE, 3.14 = pi\nConclusions: 3.14 = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ACB + \u2220DEF + \u2220FDE, 3.14 = \u2220DEF + \u2220EFD + \u2220FDE\nConclusions: \u2220ACB = \u2220EFD\n\nStep 19:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACB = \u2220EFD, \u2220CAB = \u2220EDF, \u2220ABC = \u2220FED\nConclusions: \u25b3ABC ~ \u25b3DEF\n\nStep 20:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DEF\nConclusions: AB / DE = BC / EF, \u2220CAB = \u2220EDF, \u2220ABC = \u2220FED, \u2220BAC = \u2220FDE\n\nStep 21:\nTheorem: Substitution\nPremises : 5 = BC, AB / DE = BC / EF, x - 4 = DE, x = AB, 3 = EF\nConclusions: 5 / 3 = x / (x - 4)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : x = AB, 5 / 3 = x / (x - 4)\nConclusions: 10 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(F, D)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Equals(LengthOf(Line(E, D)), Sub(x, 4.0))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(F, E)), 3.0)",
+        "Equals(LengthOf(Line(B, C)), 5.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(F, D, E)))",
+        "Equals(MeasureOf(Angle(D, E, F)), MeasureOf(Angle(C, B, A)))"
+    ],
+    "correct": true
+}

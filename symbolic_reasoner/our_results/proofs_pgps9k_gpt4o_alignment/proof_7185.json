@@ -1,0 +1,111 @@
+{
+    "problem_id": "7185",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(C, D)), 3.5)",
+        "Equals(LengthOf(Line(D, E)), 3)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, B)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Parallel(Line(C, D), Line(B, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "AE",
+        "AD",
+        "ED",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            137.2133333333333,
+            323.81344307270234
+        ],
+        "E": [
+            466.02333333333326,
+            299.24828532235944
+        ],
+        "D": [
+            668.915,
+            283.8950617283951
+        ],
+        "C": [
+            452.5171428571428,
+            135.66666666666666
+        ],
+        "B": [
+            332.68909090909085,
+            207.61111111111111
+        ]
+    },
+    "problem_choices": [
+        1.714,
+        2.0,
+        4.5,
+        6.0
+    ],
+    "choices_precise_value": [
+        1.714,
+        2.0,
+        4.5,
+        6.0
+    ],
+    "problem_answer": 4.5,
+    "total_time": 37.888505,
+    "solution_predicate": "Equals(4.5, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CAE, \u2220CAD, 5 = AC, E on AD, \u2220BAD, BE || CD, y = AE, 3 = AB, B on AC, 3 = DE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BAD, E on AD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CAD, B on AC\nConclusions: \u2220BAD = \u2220CAD\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220CAE, B on AC\nConclusions: \u2220BAE = \u2220CAE\n\nStep 7:\nTheorem: Substitution\nPremises : 3 = DE, y = AE, AD = AE + DE\nConclusions: 3 + y = AD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = \u2220CAE, \u2220BAD = \u2220BAE\nConclusions: \u2220BAD = \u2220CAE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAE, \u2220BAD = \u2220CAD\nConclusions: \u2220CAD = \u2220CAE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAD = \u2220CAE, \u2220BAD = \u2220CAE, \u2220BAD = \u2220BAE\nConclusions: \u2220BAE = \u2220CAD\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB, \u2220BAE = \u2220CAD\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: \u2220ABE = \u2220ACD, \u2220BAE = \u2220CAD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD\n\nStep 13:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_e_triangle_a_c_d = AB / AC, 5 = AC, 3 = AB\nConclusions: 3 / 5 = sim_ratio_triangle_a_b_e_triangle_a_c_d\n\nStep 14:\nTheorem: Substitution\nPremises : 3 + y = AD, sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, y = AE\nConclusions: sim_ratio_triangle_a_b_e_triangle_a_c_d = y / (3 + y)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_e_triangle_a_c_d = AE / AD, 3 / 5 = sim_ratio_triangle_a_b_e_triangle_a_c_d\nConclusions: 3 / 5 = AE / AD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_e_triangle_a_c_d = y / (3 + y), 3 / 5 = sim_ratio_triangle_a_b_e_triangle_a_c_d\nConclusions: 3 / 5 = y / (3 + y)\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3 + y = AD, 3 / 5 = AE / AD, 3 / 5 = y / (3 + y)\nConclusions: 4.5 = AE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 4.5 = AE, y = AE\nConclusions: 4.5 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Parallel(Line(C, D), Line(B, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(C, D)), 3.5)",
+        "Equals(LengthOf(Line(D, E)), 3.0)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(E, B)), x)"
+    ],
+    "correct": true
+}

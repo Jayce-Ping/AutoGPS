@@ -1,0 +1,84 @@
+{
+    "problem_id": "2419",
+    "solved": true,
+    "problem_text": "The rectangle is inscribed into the circle. Find the exact circumference of the circle.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(E, B)), 6)",
+        "Equals(LengthOf(Line(D, E)), 8)",
+        "InscribedIn(Rectangle(A, B, E, D), Circle(C))",
+        "Find(CircumferenceOf(Circle(C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DE",
+        "EB",
+        "AB",
+        "DA"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            144.5,
+            349.58333333333337
+        ],
+        "B": [
+            355.33333333333337,
+            235.41666666666669
+        ],
+        "C": [
+            207.83333333333334,
+            213.33333333333334
+        ],
+        "D": [
+            58.25,
+            191.25
+        ],
+        "E": [
+            269.5,
+            77.91666666666667
+        ]
+    },
+    "problem_choices": [
+        "8 \\pi",
+        "10 \\pi",
+        "16 \\pi",
+        "20 \\pi"
+    ],
+    "choices_precise_value": [
+        25.132741228718345,
+        31.41592653589793,
+        50.26548245743669,
+        62.83185307179586
+    ],
+    "problem_answer": 31.41592653589793,
+    "total_time": 242.941283,
+    "solution_predicate": "Equals(31.415926536, CircumferenceOf(Circle(C, radius_0_0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: InscribedIn(Rectangle(A, B, E, D), \u2299(C, radius_0_0)), E on \u2299(C, radius_0_0), DE, 8 = DE, A on \u2299(C, radius_0_0), AE, AD, Rectangle(A, B, E, D), 6 = BE, Circumference(\u2299(C, radius_0_0)), 3.14 = pi\n\nStep 2:\nTheorem: Properties for Rectangle inscribed in circle\nPremises : InscribedIn(Rectangle(A, B, E, D), \u2299(C, radius_0_0))\nConclusions: A on \u2299(C, radius_0_0), C on AE, E on \u2299(C, radius_0_0)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CE\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = AC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : DE, AE, AD\nConclusions: \u25b3ADE\n\nStep 6:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, E, D)\nConclusions: AD \u22a5 DE\n\nStep 7:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, E, D)\nConclusions: Parallelogram(A, B, E, D)\n\nStep 8:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(C, radius_0_0))\nConclusions: pi * 2 * radius_0_0 = Circumference(\u2299(C, radius_0_0))\n\nStep 9:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 10:\nTheorem: Diameter Definition\nPremises : A on \u2299(C, radius_0_0), C on AE, E on \u2299(C, radius_0_0)\nConclusions: IsDiameterOf(AE, \u2299(C, radius_0_0))\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CE, radius_0_0 = AC\nConclusions: AC = CE\n\nStep 12:\nTheorem: Pythagorean Theorem\nPremises : AD \u22a5 DE, \u25b3ADE\nConclusions: AE = SqrtOf(AD ** 2 + DE ** 2)\n\nStep 13:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD = BE\n\nStep 14:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AE, \u2299(C, radius_0_0))\nConclusions: radius_0_0 = CE, A on \u2299(C, radius_0_0), E on \u2299(C, radius_0_0), 2 * radius_0_0 = AE, radius_0_0 = AC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 6 = BE, AD = BE\nConclusions: 6 = AD\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : AE = SqrtOf(AD ** 2 + DE ** 2), 2 * radius_0_0 = AE\nConclusions: 2 * radius_0_0 = SqrtOf(AD ** 2 + DE ** 2)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AE = AC + CE, 2 * radius_0_0 = AE\nConclusions: 2 * radius_0_0 = AC + CE\n\nStep 18:\nTheorem: Evaluate\nPremises : 8 = DE, 6 = AD\nConclusions: 10 = SqrtOf(AD ** 2 + DE ** 2)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_0_0 = SqrtOf(AD ** 2 + DE ** 2), 10 = SqrtOf(AD ** 2 + DE ** 2)\nConclusions: 10 = 2 * radius_0_0\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 2 * radius_0_0 = AC + CE, 10 = 2 * radius_0_0, AC = CE\nConclusions: 5 = CE\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CE, 5 = CE\nConclusions: 5 = radius_0_0\n\nStep 22:\nTheorem: Evaluate\nPremises : 5 = radius_0_0, 3.14 = pi\nConclusions: 31.42 = pi * 2 * radius_0_0\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 31.42 = pi * 2 * radius_0_0, pi * 2 * radius_0_0 = Circumference(\u2299(C, radius_0_0))\nConclusions: 31.42 = Circumference(\u2299(C, radius_0_0))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "InscribedIn(Rectangle(A, B, E, D), Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(E, B)), 6.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)"
+    ],
+    "correct": true
+}

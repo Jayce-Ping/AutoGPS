@@ -1,0 +1,80 @@
+{
+    "problem_id": "2445",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(A, D)), 8)",
+        "Equals(MeasureOf(Angle(C, B, A)), 30)",
+        "Equals(MeasureOf(Angle(C, D, A)), 45)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "DC",
+        "DB",
+        "CB",
+        "AB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            80.73878627968338,
+            210.31662269129288
+        ],
+        "B": [
+            342.21635883905014,
+            210.58047493403694
+        ],
+        "C": [
+            149.07651715039577,
+            93.95778364116094
+        ],
+        "D": [
+            31.926121372031663,
+            22.189973614775724
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "4 \\sqrt { 2 }",
+        "4 \\sqrt { 3 }",
+        "8"
+    ],
+    "choices_precise_value": [
+        4.0,
+        5.656854249492381,
+        6.928203230275509,
+        8.0
+    ],
+    "problem_answer": 5.656854249492381,
+    "total_time": 35.633918,
+    "solution_predicate": "Equals(5.6568542494, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ADB, 3.14 = pi, pi * (45 / 180) = \u2220ADC, \u2220ADB, \u2220BDA, C on BD, \u2220ADC, BD, 8 = AD, sin(\u2220CBA), AC \u22a5 BC, \u2220DBA, x = AC, AB, pi * (30 / 180) = \u2220CBA, AD\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADB\nConclusions: \u2220ADB = 2 * pi - \u2220BDA\n\nStep 4:\nTheorem: Same Angle\nPremises : C on BD, \u2220BDA\nConclusions: \u2220BDA = \u2220CDA\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220ADB, C on BD\nConclusions: \u2220ADB = \u2220ADC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADC\nConclusions: \u2220ADC = 2 * pi - \u2220CDA\n\nStep 7:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 8:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.52 = pi * (30 / 180), pi * (30 / 180) = \u2220CBA\nConclusions: 0.52 = \u2220CBA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220ADC, \u2220ADB = \u2220ADC\nConclusions: pi * (45 / 180) = \u2220ADB\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220ADC, 3.14 = pi, \u2220ADC = 2 * pi - \u2220CDA\nConclusions: 3.14 * (45 / 180) = 2 * 3.14 - \u2220CDA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DBA, pi * (30 / 180) = \u2220CBA\nConclusions: pi * (30 / 180) = \u2220DBA\n\nStep 14:\nTheorem: Law of Sines\nPremises : \u25b3ABD\nConclusions: AD / sin(\u2220DBA) = BD / sin(\u2220BAD), AB / sin(\u2220ADB) = BD / sin(\u2220BAD)\n\nStep 15:\nTheorem: Evaluate\nPremises : 0.52 = \u2220CBA\nConclusions: 0.5 = sin(\u2220CBA)\n\nStep 16:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220ADB, 3.14 = pi, \u2220ADB = 2 * pi - \u2220BDA, \u2220BDA = \u2220CDA\nConclusions: pi * (45 / 180) = 2 * 3.14 - \u2220CDA\n\nStep 17:\nTheorem: Substitution\nPremises : AD / sin(\u2220DBA) = BD / sin(\u2220BAD), 8 = AD, pi * (30 / 180) = \u2220DBA\nConclusions: 8 / sin(pi * (30 / 180)) = BD / sin(\u2220BAD)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = sin(\u2220CBA), 0.5 = sin(\u2220CBA)\nConclusions: 0.5 = AC / AB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = 2 * 3.14 - \u2220CDA, 3.14 * (45 / 180) = 2 * 3.14 - \u2220CDA\nConclusions: 3.14 * (45 / 180) = pi * (45 / 180)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : AB / sin(\u2220ADB) = BD / sin(\u2220BAD), 8 / sin(pi * (30 / 180)) = BD / sin(\u2220BAD)\nConclusions: 8 / sin(pi * (30 / 180)) = AB / sin(\u2220ADB)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220ADB, 3.14 * (45 / 180) = pi * (45 / 180)\nConclusions: 3.14 * (45 / 180) = \u2220ADB\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (45 / 180) = \u2220ADB\nConclusions: 0.79 = \u2220ADB\n\nStep 23:\nTheorem: Substitution\nPremises : 0.79 = \u2220ADB, 3.14 = pi, 8 / sin(pi * (30 / 180)) = AB / sin(\u2220ADB)\nConclusions: 8 / sin(3.14 * (30 / 180)) = AB / sin(0.79)\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 0.5 = AC / AB, 8 / sin(3.14 * (30 / 180)) = AB / sin(0.79)\nConclusions: 5.66 = AC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 5.66 = AC\nConclusions: 5.66 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(A, D)), 8.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

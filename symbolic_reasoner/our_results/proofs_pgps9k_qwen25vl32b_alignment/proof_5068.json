@@ -1,0 +1,127 @@
+{
+    "problem_id": "5068",
+    "solved": true,
+    "problem_text": "M is the midpoint of PQ. The diameter of \\odot O is 13 in, and RM = 4 in. Find PQ.",
+    "logic_forms": [
+        "Line(M, O)",
+        "Line(M, Q)",
+        "Line(M, S)",
+        "Line(O, S)",
+        "Line(P, M)",
+        "Line(P, Q)",
+        "Line(R, M)",
+        "Line(R, O)",
+        "Line(R, S)",
+        "PointLiesOnCircle(P, Circle(O))",
+        "PointLiesOnCircle(Q, Circle(O))",
+        "PointLiesOnCircle(R, Circle(O))",
+        "PointLiesOnCircle(S, Circle(O))",
+        "PointLiesOnLine(M, Line(P, Q))",
+        "PointLiesOnLine(M, Line(R, O))",
+        "PointLiesOnLine(M, Line(R, S))",
+        "PointLiesOnLine(O, Line(M, S))",
+        "PointLiesOnLine(O, Line(R, S))",
+        "IsMidpointOf(Point(M),Line(P,Q))",
+        "Equals(DiameterOf(Circle(O)),13)",
+        "Equals(LengthOf(Line(R,M)),4)",
+        "Find(LengthOf(Line(P,Q)))"
+    ],
+    "point_instances": [
+        "R",
+        "P",
+        "M",
+        "O",
+        "Q",
+        "S"
+    ],
+    "line_instances": [
+        "PM",
+        "PQ",
+        "MQ",
+        "RM",
+        "RO",
+        "RS",
+        "MO",
+        "MS",
+        "OS"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "R": [
+            194.01428571428573,
+            60.40761904761906
+        ],
+        "P": [
+            58.51836734693878,
+            83.10857142857144
+        ],
+        "M": [
+            150.8914285714286,
+            135.28228571428573
+        ],
+        "O": [
+            141.1037942861544,
+            152.47782325732703
+        ],
+        "Q": [
+            241.84285714285716,
+            188.14857142857144
+        ],
+        "S": [
+            86.78571428571429,
+            245.47809523809525
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 106.885729,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: M on RS, 13 = 2 * radius_O, IsMidpointOf(M, PQ), Q on \u2299(O, radius_O), M on PQ, R on \u2299(O, radius_O), P on \u2299(O, radius_O), O on RS, S on \u2299(O, radius_O), 4 = MR\n\nStep 2:\nTheorem: Line Segment Split\nPremises : M on RS\nConclusions: RS = MR + MS\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(M, PQ)\nConclusions: MP = MQ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : M on PQ\nConclusions: PQ = MP + MQ\n\nStep 5:\nTheorem: Intersecting Chord Theorem\nPremises : P on \u2299(O, radius_O), Q on \u2299(O, radius_O), M on PQ, S on \u2299(O, radius_O), R on \u2299(O, radius_O), M on RS\nConclusions: MP * MQ = MR * MS\n\nStep 6:\nTheorem: Diameter Definition\nPremises : R on \u2299(O, radius_O), O on RS, S on \u2299(O, radius_O)\nConclusions: IsDiameterOf(RS, \u2299(O, radius_O))\n\nStep 7:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(RS, \u2299(O, radius_O))\nConclusions: R on \u2299(O, radius_O), 2 * radius_O = RS, S on \u2299(O, radius_O)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 13 = 2 * radius_O, 2 * radius_O = RS\nConclusions: 13 = RS\n\nStep 9:\nTheorem: Substitution\nPremises : 4 = MR, RS = MR + MS, 13 = RS\nConclusions: 13 = 4 + MS\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 13 = 4 + MS\nConclusions: 9 = MS\n\nStep 11:\nTheorem: Substitution\nPremises : 9 = MS, 4 = MR, MP * MQ = MR * MS, MP = MQ\nConclusions: 4 * 9 = MQ * MQ\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 4 * 9 = MQ * MQ\nConclusions: 6 = MQ\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 6 = MQ, MP = MQ\nConclusions: 6 = MP\n\nStep 14:\nTheorem: Evaluate\nPremises : 6 = MQ, 6 = MP\nConclusions: 12 = MP + MQ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : PQ = MP + MQ, 12 = MP + MQ\nConclusions: 12 = PQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, M)",
+        "Line(P, Q)",
+        "Line(M, Q)",
+        "Line(R, M)",
+        "Line(R, O)",
+        "Line(R, S)",
+        "Line(M, O)",
+        "Line(M, S)",
+        "Line(O, S)",
+        "Circle(O, radius_O)",
+        "Line(M, O)",
+        "Line(M, Q)",
+        "Line(M, S)",
+        "Line(O, S)",
+        "Line(P, M)",
+        "Line(P, Q)",
+        "Line(R, M)",
+        "Line(R, O)",
+        "Line(R, S)",
+        "PointLiesOnCircle(P, Circle(O, radius_O))",
+        "PointLiesOnCircle(Q, Circle(O, radius_O))",
+        "PointLiesOnCircle(R, Circle(O, radius_O))",
+        "PointLiesOnCircle(S, Circle(O, radius_O))",
+        "PointLiesOnLine(M, Line(P, Q))",
+        "PointLiesOnLine(M, Line(R, O))",
+        "PointLiesOnLine(M, Line(R, S))",
+        "PointLiesOnLine(O, Line(M, S))",
+        "PointLiesOnLine(O, Line(R, S))",
+        "IsMidpointOf(M, Line(P, Q))",
+        "Equals(Mul(2.0, radius_O), 13.0)",
+        "Equals(LengthOf(Line(R, M)), 4.0)"
+    ],
+    "correct": true
+}

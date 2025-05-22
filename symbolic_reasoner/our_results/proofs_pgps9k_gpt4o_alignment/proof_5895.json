@@ -1,0 +1,117 @@
+{
+    "problem_id": "5895",
+    "solved": true,
+    "problem_text": "Find m \\angle 4.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(8)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(8)), MeasureOf(Angle(W, Z, X)))",
+        "Equals(MeasureOf(Angle(V, W, X)), 67)",
+        "Equals(MeasureOf(Angle(W, V, X)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(W, X, V)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(W, X, Z)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(W, Z, X)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), 58)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(Y, Z, X)), 65)",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(9)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(W, Z, X)))",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Z)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(V, Z))",
+        "PointLiesOnLine(X, Line(Y, W))",
+        "Find(MeasureOf(Angle(4)))"
+    ],
+    "point_instances": [
+        "V",
+        "W",
+        "X",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "VX",
+        "VZ",
+        "XZ",
+        "WX",
+        "WY",
+        "XY",
+        "VW",
+        "WZ",
+        "ZY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "V": [
+            71.28247422680413,
+            280.41599999999994
+        ],
+        "W": [
+            156.10309278350516,
+            407.09999999999997
+        ],
+        "X": [
+            241.16053019145804,
+            278.76
+        ],
+        "Z": [
+            466.92783505154637,
+            277.38
+        ],
+        "Y": [
+            373.7790868924889,
+            74.52
+        ]
+    },
+    "problem_choices": [
+        28.5,
+        56.0,
+        57.0,
+        123.0
+    ],
+    "choices_precise_value": [
+        28.5,
+        56.0,
+        57.0,
+        123.0
+    ],
+    "problem_answer": 56.0,
+    "total_time": 41.91183,
+    "solution_predicate": "Equals(0.9773843811, MeasureOf(Angle(W, V, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: VW, X on VZ, \u2220YWV, VX, pi * (67 / 180) = \u2220XWV, 3.14 = pi, \u2220VWY, pi * (58 / 180) = \u2220XYZ, pi * (65 / 180) = \u2220YZX, XZ, \u2220WVZ, \u2220WXV, \u2220VWY, \u2220VWX, WX, XY, YZ, X on WY\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220VWY\nConclusions: \u2220VWY = 2 * pi - \u2220YWV\n\nStep 3:\nTheorem: Same Angle\nPremises : X on VZ, \u2220WVZ\nConclusions: \u2220WVX = \u2220WVZ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220WXV\nConclusions: \u2220WXV = 2 * pi - \u2220VXW\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220VWX\nConclusions: \u2220VWX = 2 * pi - \u2220XWV\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : VX, WX, VW\nConclusions: \u25b3VWX\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : XZ, XY, YZ\nConclusions: \u25b3XYZ\n\nStep 8:\nTheorem: Same Angle\nPremises : X on WY, \u2220VWY\nConclusions: \u2220VWX = \u2220VWY\n\nStep 9:\nTheorem: Vertical Angle Theorem\nPremises : X on VZ, X on WY\nConclusions: \u2220VXW = \u2220ZXY, \u2220WXV = \u2220YXZ\n\nStep 10:\nTheorem: Same Angle\nPremises : X on WY, \u2220YWV\nConclusions: \u2220XWV = \u2220YWV\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(X, W, V)\nPremises : \u25b3VWX\nConclusions: pi = \u2220VXW + \u2220WVX + \u2220XWV\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXV = \u2220YXZ, \u2220WXV = 2 * pi - \u2220VXW\nConclusions: \u2220YXZ = 2 * pi - \u2220VXW\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220VXW = \u2220ZXY, \u2220WXV = \u2220YXZ, \u2220WXV = 2 * pi - \u2220VXW\nConclusions: \u2220YXZ = 2 * 3.14 - \u2220ZXY\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (67 / 180) = \u2220XWV, \u2220XWV = \u2220YWV\nConclusions: pi * (67 / 180) = \u2220YWV\n\nStep 16:\nTheorem: Substitution\nPremises : pi = \u2220VXW + \u2220WVX + \u2220XWV, \u2220WVX = \u2220WVZ, pi * (67 / 180) = \u2220XWV, 3.14 = pi, \u2220VXW = \u2220ZXY\nConclusions: 3.14 = 3.14 * (67 / 180) + \u2220WVZ + \u2220ZXY\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220VXW + \u2220WVX + \u2220XWV\nConclusions: 3.14 = \u2220VXW + \u2220WVX + \u2220XWV\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (65 / 180) = \u2220YZX, pi = \u2220XYZ + \u2220YZX + \u2220ZXY, pi * (58 / 180) = \u2220XYZ\nConclusions: 3.14 = pi * (58 / 180) + pi * (65 / 180) + \u2220ZXY\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (67 / 180) = \u2220YWV, 3.14 = pi, \u2220VWY = 2 * pi - \u2220YWV\nConclusions: 2 * 3.14 - 3.14 * (67 / 180) = \u2220VWY\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VWX = \u2220VWY, 2 * 3.14 - 3.14 * (67 / 180) = \u2220VWY\nConclusions: 2 * 3.14 - 3.14 * (67 / 180) = \u2220VWX\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (67 / 180) = \u2220VWX, \u2220VWX = 2 * pi - \u2220XWV\nConclusions: 2 * 3.14 - 3.14 * (67 / 180) = 2 * pi - \u2220XWV\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : \u2220YXZ = 2 * pi - \u2220VXW, \u2220YXZ = 2 * 3.14 - \u2220ZXY, 3.14 = pi * (58 / 180) + pi * (65 / 180) + \u2220ZXY, \u2220WVX = \u2220WVZ, 3.14 = \u2220VXW + \u2220WVX + \u2220XWV, 3.14 = 3.14 * (67 / 180) + \u2220WVZ + \u2220ZXY, 2 * 3.14 - 3.14 * (67 / 180) = 2 * pi - \u2220XWV\nConclusions: 0.98 = \u2220WVX\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(X, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(X, Y)",
+        "Line(V, W)",
+        "Line(W, Z)",
+        "Line(Z, Y)",
+        "Line(V, W)",
+        "Line(V, X)",
+        "Line(V, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Z)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(V, Z))",
+        "PointLiesOnLine(X, Line(Y, W))",
+        "Equals(MeasureOf(Angle(X, Z, W)), MeasureOf(Angle(X, Z, W)))",
+        "Equals(MeasureOf(Angle(X, W, V)), Mul(pi, Div(67.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(pi, Div(58.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, X)), Mul(pi, Div(65.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), MeasureOf(Angle(X, Z, W)))"
+    ],
+    "correct": true
+}

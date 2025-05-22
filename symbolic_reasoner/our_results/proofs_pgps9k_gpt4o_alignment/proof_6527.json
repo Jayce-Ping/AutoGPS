@@ -1,0 +1,94 @@
+{
+    "problem_id": "6527",
+    "solved": true,
+    "problem_text": "\\triangle WXY and \\triangle XYZ are isosceles and m \\angle XYZ = 128. Find the measure of \\angle YZX.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(X, W)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), 128)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(Y, Line(W, Z))",
+        "Isosceles(Triangle(W,X,Y))",
+        "Isosceles(Triangle(X,Y,Z))",
+        "Equals(MeasureOf(Angle(X,Y,Z)),128)",
+        "Find(MeasureOf(Angle(Y,Z,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "Z",
+        "X"
+    ],
+    "line_instances": [
+        "WY",
+        "WZ",
+        "YZ",
+        "ZX",
+        "WX",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            38.0,
+            187.4935842600513
+        ],
+        "Y": [
+            232.46363636363634,
+            187.37833424060966
+        ],
+        "Z": [
+            386.8666666666666,
+            186.53443113772454
+        ],
+        "X": [
+            134.33913043478262,
+            59.39859411611559
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        24.0,
+        26.0,
+        28.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        24.0,
+        26.0,
+        28.0
+    ],
+    "problem_answer": 26.0,
+    "total_time": 30.736417,
+    "solution_predicate": "Equals(0.4537856055, MeasureOf(Angle(X, Z, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (128 / 180) = \u2220ZYX, \u25b3XYZ, XY = YZ, 3.14 = pi\n\nStep 2:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, X)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XZY + \u2220YXZ + \u2220ZYX\n\nStep 3:\nTheorem: Issoceles Triangle Property\nPremises : XY = YZ, \u25b3XYZ\nConclusions: \u2220XZY = \u2220YXZ\n\nStep 4:\nTheorem: Substitution\nPremises : pi * (128 / 180) = \u2220ZYX, pi = \u2220XZY + \u2220YXZ + \u2220ZYX, 3.14 = pi\nConclusions: 3.14 = 3.14 * (128 / 180) + \u2220XZY + \u2220YXZ\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (128 / 180) + \u2220XZY + \u2220YXZ, \u2220XZY = \u2220YXZ\nConclusions: 0.45 = \u2220XZY\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Y, Z)",
+        "Line(Z, X)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(Y, Line(W, Z))",
+        "Isosceles(Triangle(W, X, Y))",
+        "Isosceles(Triangle(X, Y, Z))",
+        "Equals(LengthOf(Line(X, W)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(X, W)))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), Mul(pi, Div(128.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), Mul(pi, Div(128.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "2485",
+    "solved": true,
+    "problem_text": "In rhombus A B C D, A B = 2 x + 3 and B C = 5 x. Find m \\angle A E B.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Rhombus(A,B,C,D)",
+        "Equals(LengthOf(Line(A,B)),2x+3)",
+        "Equals(LengthOf(Line(B,C)),5x)",
+        "Find(MeasureOf(Angle(A,E,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "E",
+        "D",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DE",
+        "DB",
+        "EB",
+        "AE",
+        "AC",
+        "EC",
+        "DC",
+        "BC",
+        "AD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            158.2570806100218,
+            178.4313725490196
+        ],
+        "E": [
+            113.81263616557735,
+            112.85403050108933
+        ],
+        "D": [
+            16.86274509803922,
+            178.86710239651416
+        ],
+        "B": [
+            209.89106753812638,
+            47.05882352941177
+        ],
+        "A": [
+            68.71459694989107,
+            47.49455337690632
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "60",
+        "90",
+        "180"
+    ],
+    "choices_precise_value": [
+        45.0,
+        60.0,
+        90.0,
+        180.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 69.214878,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(B, E, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(A, B, C, D)\n\nStep 2:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(A, B, C, D)\nConclusions: AE \u22a5 BE\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AE \u22a5 BE\nConclusions: pi / 2 = \u2220BEA\n\nStep 4:\nTheorem: Evaluate\nPremises : pi / 2 = \u2220BEA\nConclusions: 1.57 = \u2220BEA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(B, C)), Mul(5.0, x))"
+    ],
+    "correct": true
+}

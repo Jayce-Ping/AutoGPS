@@ -1,0 +1,69 @@
+{
+    "problem_id": "716",
+    "solved": true,
+    "problem_text": "What is \\tan A?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 26)",
+        "Equals(LengthOf(Line(B, C)), 10)",
+        "Equals(LengthOf(Line(C, A)), 24)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Find(TanOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            43.140277777777776,
+            172.42
+        ],
+        "C": [
+            343.58684210526314,
+            44.711578947368416
+        ],
+        "B": [
+            397.9041666666667,
+            172.79
+        ]
+    },
+    "problem_choices": [
+        0.38,
+        0.42,
+        0.92,
+        2.4
+    ],
+    "choices_precise_value": [
+        0.38,
+        0.42,
+        0.92,
+        2.4
+    ],
+    "problem_answer": 0.42,
+    "total_time": 13.254208,
+    "solution_predicate": "Equals(0.4166666667, TanOf(MeasureOf(Angle(B, A, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 10 = BC, BC, AB, AC \u22a5 BC, \u2220BAC, 24 = AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 24 = AC, 10 = BC\nConclusions: 0.42 = BC / AC\n\nStep 4:\nTheorem: Tan Function Definition\nPremises : \u2220BAC, AC \u22a5 BC, \u25b3ABC\nConclusions: BC / AC = tan(\u2220BAC)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = BC / AC, BC / AC = tan(\u2220BAC)\nConclusions: 0.42 = tan(\u2220BAC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 26.0)",
+        "Equals(LengthOf(Line(B, C)), 10.0)",
+        "Equals(LengthOf(Line(C, A)), 24.0)"
+    ],
+    "correct": true
+}

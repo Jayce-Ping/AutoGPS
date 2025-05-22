@@ -1,0 +1,92 @@
+{
+    "problem_id": "4566",
+    "solved": true,
+    "problem_text": "Determine the value of y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), y)",
+        "Equals(MeasureOf(Angle(B, C, D)), 52)",
+        "Equals(MeasureOf(Angle(C, B, D)), x)",
+        "Equals(MeasureOf(Angle(C, D, B)), z)",
+        "Equals(MeasureOf(Angle(D, A, B)), 54)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "BC",
+        "CD",
+        "CA",
+        "DA",
+        "AB",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.325471698113205,
+            268.348051948052
+        ],
+        "D": [
+            200.00943396226415,
+            268.348051948052
+        ],
+        "C": [
+            361.6629172714078,
+            268.73626373626377
+        ],
+        "B": [
+            199.31132075471697,
+            63.51948051948052
+        ]
+    },
+    "problem_choices": [
+        36.0,
+        38.0,
+        52.0,
+        54.0
+    ],
+    "choices_precise_value": [
+        36.0,
+        38.0,
+        52.0,
+        54.0
+    ],
+    "problem_answer": 36.0,
+    "total_time": 26.448765,
+    "solution_predicate": "Equals(36.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD \u22a5 BD, pi * (54 / 180) = \u2220DAB, BD, pi * (y / 180) = \u2220ABD, 3.14 = pi, AD, AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: pi / 2 = \u2220BDA\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (y / 180) = \u2220ABD\nConclusions: 3.14 * (y / 180) = \u2220ABD\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220ABD + \u2220BDA + \u2220DAB, pi * (54 / 180) = \u2220DAB, 3.14 = pi, pi / 2 = \u2220BDA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (54 / 180) + \u2220ABD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (54 / 180) + \u2220ABD, 3.14 * (y / 180) = \u2220ABD\nConclusions: 36 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, C)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, B)), Mul(pi, Div(z, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(54.0, 180.0)))"
+    ],
+    "correct": true
+}

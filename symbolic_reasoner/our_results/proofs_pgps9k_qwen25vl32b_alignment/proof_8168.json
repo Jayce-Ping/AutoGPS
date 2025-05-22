@@ -1,0 +1,91 @@
+{
+    "problem_id": "8168",
+    "solved": true,
+    "problem_text": "What is the circumference of \\odot T?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, T)",
+        "Line(T, C)",
+        "Perpendicular(Line(A, C), Line(B, A))",
+        "PointLiesOnCircle(A, Circle(T))",
+        "PointLiesOnCircle(B, Circle(T))",
+        "PointLiesOnCircle(C, Circle(T))",
+        "PointLiesOnLine(T, Line(B, C))",
+        "Find(CircumferenceOf(Circle(T)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "T"
+    ],
+    "line_instances": [
+        "AC",
+        "CT",
+        "CB",
+        "TB",
+        "AB"
+    ],
+    "circle_instances": [
+        "T"
+    ],
+    "point_positions": {
+        "A": [
+            97.2549889135255,
+            273.5018181818182
+        ],
+        "B": [
+            97.18373983739838,
+            143.52380952380955
+        ],
+        "C": [
+            411.20216802168017,
+            274.00000000000006
+        ],
+        "T": [
+            253.81165919282512,
+            208.48878923766816
+        ]
+    },
+    "problem_choices": [
+        37.2,
+        39.6,
+        40.8,
+        42.4
+    ],
+    "choices_precise_value": [
+        37.2,
+        39.6,
+        40.8,
+        42.4
+    ],
+    "problem_answer": 39.6,
+    "total_time": 53.780872,
+    "solution_predicate": "Equals(40.8407044968, CircumferenceOf(Circle(T, radius_T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, B on \u2299(T, radius_T), AC, AB, C on \u2299(T, radius_T), 12 = AC, Circumference(\u2299(T, radius_T)), 5 = AB, T on BC, AB \u22a5 AC, BC\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(T, radius_T))\nConclusions: pi * 2 * radius_T = Circumference(\u2299(T, radius_T))\n\nStep 3:\nTheorem: Diameter Definition\nPremises : B on \u2299(T, radius_T), C on \u2299(T, radius_T), T on BC\nConclusions: IsDiameterOf(BC, \u2299(T, radius_T))\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220CAB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * 2 * radius_T = Circumference(\u2299(T, radius_T))\nConclusions: 3.14 * 2 * radius_T = Circumference(\u2299(T, radius_T))\n\nStep 7:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(BC, \u2299(T, radius_T))\nConclusions: 2 * radius_T = BC, B on \u2299(T, radius_T), C on \u2299(T, radius_T)\n\nStep 8:\nTheorem: Law of Cosines\nPremises : \u25b3ABC\nConclusions: (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * 2 * radius_T = Circumference(\u2299(T, radius_T)), 3.14 * 2 * radius_T = Circumference(\u2299(T, radius_T))\nConclusions: 3.14 * 2 * radius_T = pi * 2 * radius_T\n\nStep 10:\nTheorem: Substitution\nPremises : (AB ** 2 + AC ** 2) - BC ** 2 = 2 * AB * AC * cos(\u2220CAB), 5 = AB, pi / 2 = \u2220CAB, 12 = AC, 2 * radius_T = BC\nConclusions: 12 * 2 * 5 * cos(pi / 2) = (12 ** 2 + 5 ** 2) - (2 * radius_T) ** 2\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 12 * 2 * 5 * cos(pi / 2) = (12 ** 2 + 5 ** 2) - (2 * radius_T) ** 2\nConclusions: 12 * 2 * 5 * cos(3.14 / 2) = (12 ** 2 + 5 ** 2) - (2 * radius_T) ** 2\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 12 * 2 * 5 * cos(3.14 / 2) = (12 ** 2 + 5 ** 2) - (2 * radius_T) ** 2\nConclusions: 6.5 = radius_T\n\nStep 13:\nTheorem: Evaluate\nPremises : 3.14 = pi, 6.5 = radius_T\nConclusions: 40.84 = pi * 2 * radius_T\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * 2 * radius_T = pi * 2 * radius_T, 40.84 = pi * 2 * radius_T\nConclusions: 40.84 = 3.14 * 2 * radius_T\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * 2 * radius_T = Circumference(\u2299(T, radius_T)), 40.84 = 3.14 * 2 * radius_T\nConclusions: 40.84 = Circumference(\u2299(T, radius_T))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, T)",
+        "Line(C, B)",
+        "Line(T, B)",
+        "Line(A, B)",
+        "Circle(T, radius_T)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, T)",
+        "Line(T, C)",
+        "Perpendicular(Line(A, C), Line(B, A))",
+        "PointLiesOnCircle(A, Circle(T, radius_T))",
+        "PointLiesOnCircle(B, Circle(T, radius_T))",
+        "PointLiesOnCircle(C, Circle(T, radius_T))",
+        "PointLiesOnLine(T, Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), 5.0)",
+        "Equals(LengthOf(Line(A, C)), 12.0)"
+    ],
+    "correct": true
+}

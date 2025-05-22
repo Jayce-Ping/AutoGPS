@@ -1,0 +1,107 @@
+{
+    "problem_id": "2994",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(D, B))",
+        "PointLiesOnLine(F, Line(C, B))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(D, A)), 72-3x)",
+        "Equals(LengthOf(Line(B, C)), 41)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(D, E)), 5x-8)",
+        "Equals(LengthOf(Line(B, A)), 39)",
+        "Tangent(Line(D, B), Circle(C))",
+        "Tangent(Line(D, E), Circle(C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DA",
+        "DB",
+        "AB",
+        "CF",
+        "CB",
+        "FB",
+        "CA",
+        "DE"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            265.625,
+            221.1875
+        ],
+        "B": [
+            497.265625,
+            220.015625
+        ],
+        "C": [
+            266.40625,
+            123.140625
+        ],
+        "D": [
+            16.796875,
+            221.578125
+        ],
+        "E": [
+            194.140625,
+            55.5625
+        ],
+        "F": [
+            355.859375,
+            161.03125
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "20",
+        "30",
+        "42"
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        30.0,
+        42.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 46.033861,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on \u2299(C, radius_0_0), 72 - 3 * x = AD, A on BD, Tangent(BD, \u2299(C, radius_0_0)), A on \u2299(C, radius_0_0), 5 * x - 8 = DE, Tangent(DE, \u2299(C, radius_0_0))\n\nStep 2:\nTheorem: Tangent Definition\nPremises : A on \u2299(C, radius_0_0), Tangent(BD, \u2299(C, radius_0_0)), A on BD\nConclusions: Tangent(AD, \u2299(C, radius_0_0))\n\nStep 3:\nTheorem: Tangent Line Theorem\nPremises : E on \u2299(C, radius_0_0), A on \u2299(C, radius_0_0), Tangent(AD, \u2299(C, radius_0_0)), Tangent(DE, \u2299(C, radius_0_0))\nConclusions: AD = DE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 72 - 3 * x = AD, 5 * x - 8 = DE, AD = DE\nConclusions: 72 - 3 * x = 5 * x - 8\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 72 - 3 * x = 5 * x - 8\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(C, F)",
+        "Line(C, B)",
+        "Line(F, B)",
+        "Line(C, A)",
+        "Line(D, E)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(A, Line(D, B))",
+        "PointLiesOnLine(F, Line(C, B))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "Tangent(Line(D, B), Circle(C, radius_0_0))",
+        "Tangent(Line(D, E), Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(D, A)), Sub(72.0, Mul(3.0, x)))",
+        "Equals(LengthOf(Line(B, C)), 41.0)",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(D, E)), Sub(Mul(5.0, x), 8.0))",
+        "Equals(LengthOf(Line(B, A)), 39.0)"
+    ],
+    "correct": true
+}

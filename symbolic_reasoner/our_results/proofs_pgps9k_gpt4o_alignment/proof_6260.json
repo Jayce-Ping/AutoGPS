@@ -1,0 +1,76 @@
+{
+    "problem_id": "6260",
+    "solved": true,
+    "problem_text": "Find the area of the rectangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, D)), 1.7)",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(D, B)))",
+        "Equals(LengthOf(Line(D, B)), 1.7)",
+        "Find(AreaOf(Rectangle(A, B, D, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "CD",
+        "DB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.9453125,
+            40.962857142857146
+        ],
+        "B": [
+            164.15421195652175,
+            40.811925465838506
+        ],
+        "C": [
+            22.655598958333336,
+            181.90285714285713
+        ],
+        "D": [
+            163.919921875,
+            182.1342857142857
+        ]
+    },
+    "problem_choices": [
+        1.251,
+        2.89,
+        5.78,
+        9.079
+    ],
+    "choices_precise_value": [
+        1.251,
+        2.89,
+        5.78,
+        9.079
+    ],
+    "problem_answer": 2.89,
+    "total_time": 10.590469,
+    "solution_predicate": "Equals(2.89, AreaOf(Rectangle(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rectangle(A, B, D, C), Area(Rectangle(A, B, D, C)), 1.7 = BD, 1.7 = CD\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 3:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, D, C))\nConclusions: Area(Rectangle(A, B, D, C)) = AB * BD\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 1.7 = CD\nConclusions: 1.7 = AB\n\nStep 6:\nTheorem: Substitution\nPremises : 1.7 = BD, 1.7 = AB, Area(Rectangle(A, B, D, C)) = AB * BD\nConclusions: 1.7 * 1.7 = Area(Rectangle(A, B, D, C))\n\nStep 7:\nTheorem: Evaluate\nPremises : 1.7 * 1.7 = Area(Rectangle(A, B, D, C))\nConclusions: 2.89 = Area(Rectangle(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Equals(LengthOf(Line(C, D)), 1.7)",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(D, B)))",
+        "Equals(LengthOf(Line(D, B)), 1.7)"
+    ],
+    "correct": true
+}

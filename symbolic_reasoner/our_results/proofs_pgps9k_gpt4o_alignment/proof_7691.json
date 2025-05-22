@@ -1,0 +1,88 @@
+{
+    "problem_id": "7691",
+    "solved": true,
+    "problem_text": "Find the value of n.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(A, C, D)), m)",
+        "Equals(MeasureOf(Angle(C, A, D)), n)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, A), Line(A, D))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Find(n)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "AB",
+        "CA",
+        "DC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            250.07384488448844,
+            28.92
+        ],
+        "B": [
+            28.302625914765386,
+            29.159503105590066
+        ],
+        "C": [
+            139.34405940594058,
+            221.3757142857143
+        ],
+        "D": [
+            250.17606543263022,
+            221.600248447205
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 35.179838,
+    "solution_predicate": "Equals(30.0, n)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB = BC, pi * (n / 180) = \u2220CAD, AB, \u2220CAD, 3.14 = pi, AB \u22a5 AD, AC = BC, \u2220BAC, AC, BC, AB = AC, \u2220DAB\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (n / 180) = \u2220CAD, 3.14 = pi\nConclusions: 3.14 * (n / 180) = \u2220CAD\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220DAB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220BAC, \u2220DAB, \u2220CAD\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 6:\nTheorem: Equilateral Triangle Property\nPremises : \u25b3ABC, AB = AC, AC = BC, AB = BC\nConclusions: pi / 3 = \u2220BAC, AB = BC, AB = AC, AC = BC\n\nStep 7:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB, (3 * pi) / 2 = \u2220DAB, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220BAC + \u2220CAD\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 * (n / 180) = \u2220CAD, pi / 3 = \u2220BAC, 2 * 3.14 = (3 * pi) / 2 + \u2220BAC + \u2220CAD, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 3 + (3 * 3.14) / 2 + 3.14 * (n / 180)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 / 3 + (3 * 3.14) / 2 + 3.14 * (n / 180)\nConclusions: 30 = n\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, A), Line(A, D))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, C)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(m, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, D)), Mul(pi, Div(n, 180.0)))"
+    ],
+    "correct": true
+}

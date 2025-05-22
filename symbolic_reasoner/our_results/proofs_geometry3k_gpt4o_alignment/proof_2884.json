@@ -1,0 +1,108 @@
+{
+    "problem_id": "2884",
+    "solved": true,
+    "problem_text": "Find B C if A B = 6, A F = 8, B C = x, C D = y, D E = 2 y - 3, and F E = x + \\frac { 10 } { 3 }.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, F), Line(C, E))",
+        "Parallel(Line(F, D), Line(A, C))",
+        "Equals(LengthOf(Line(A,B)),6)",
+        "Equals(LengthOf(Line(A,F)),8)",
+        "Equals(LengthOf(Line(B,C)),x)",
+        "Equals(LengthOf(Line(C,D)),y)",
+        "Equals(LengthOf(Line(D,E)),2y-3)",
+        "Equals(LengthOf(Line(F,E)),x+\\frac{10}{3})",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "E",
+        "C",
+        "F"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "DE",
+        "AF",
+        "AE",
+        "FE",
+        "BF",
+        "AB",
+        "AC",
+        "BC",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            130.01136363636363,
+            51.13636363636363
+        ],
+        "B": [
+            101.88636363636364,
+            116.47727272727273
+        ],
+        "D": [
+            153.02272727272728,
+            215.0568181818182
+        ],
+        "E": [
+            285.6931818181818,
+            214.48863636363637
+        ],
+        "C": [
+            59.84090909090909,
+            214.77272727272728
+        ],
+        "F": [
+            191.6590909090909,
+            116.19318181818181
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "10",
+        "13.3",
+        "15"
+    ],
+    "choices_precise_value": [
+        9.0,
+        10.0,
+        13.3,
+        15.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 82.205091,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FAC, DF, B on AC, AC || FD, \u2220EAC, 10 / 3 + x = EF, CD, D on CE, 8 = AF, BF || CE, BC, \u2220AEC, x = BC, 6 = AB, \u2220FEC, F on AE, BF\n\nStep 2:\nTheorem: Same Angle\nPremises : B on AC, \u2220FAC\nConclusions: \u2220FAB = \u2220FAC\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AC || FD\nConclusions: \u2220EAC = \u2220EFD\n\nStep 4:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || FD\nConclusions: \u2220BFD = \u2220FBA\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : BF || CE\nConclusions: \u2220BFD = \u2220EDF\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : BF || CE\nConclusions: \u2220AEC = \u2220AFB\n\nStep 7:\nTheorem: Same Angle\nPremises : D on CE, \u2220FEC\nConclusions: \u2220FEC = \u2220FED\n\nStep 8:\nTheorem: Same Angle\nPremises : F on AE, \u2220EAC\nConclusions: \u2220EAC = \u2220FAC\n\nStep 9:\nTheorem: Same Angle\nPremises : F on AE, \u2220AEC\nConclusions: \u2220AEC = \u2220FEC\n\nStep 10:\nTheorem: Definition of Parallelogram\nPremises : AC || FD, DF, CD, BF, BC, BF || CE\nConclusions: Parallelogram(B, C, D, F)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFD = \u2220FBA, \u2220BFD = \u2220EDF\nConclusions: \u2220EDF = \u2220FBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAC = \u2220EFD, \u2220EAC = \u2220FAC\nConclusions: \u2220EFD = \u2220FAC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220FEC, \u2220AEC = \u2220AFB\nConclusions: \u2220AFB = \u2220FEC\n\nStep 14:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(B, C, D, F)\nConclusions: BC = DF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FAB = \u2220FAC, \u2220EFD = \u2220FAC\nConclusions: \u2220EFD = \u2220FAB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFB = \u2220FEC, \u2220FEC = \u2220FED\nConclusions: \u2220AFB = \u2220FED\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : x = BC, BC = DF\nConclusions: x = DF\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220EDF = \u2220FBA, \u2220AFB = \u2220FED, \u2220EFD = \u2220FAB\nConclusions: \u25b3ABF ~ \u25b3FDE\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3ABF ~ \u25b3FDE\nConclusions: \u2220EFD = \u2220FAB, AB / DF = AF / EF, \u2220AFB = \u2220FED\n\nStep 20:\nTheorem: Substitution\nPremises : 8 = AF, 6 = AB, x = DF, 10 / 3 + x = EF, AB / DF = AF / EF\nConclusions: 6 / x = 8 / (10 / 3 + x)\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 6 / x = 8 / (10 / 3 + x), x = BC\nConclusions: 10 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, F)",
+        "Line(A, E)",
+        "Line(F, E)",
+        "Line(B, F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(F, D)",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Parallel(Line(B, F), Line(C, E))",
+        "Parallel(Line(F, D), Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(A, F)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), y)",
+        "Equals(LengthOf(Line(D, E)), Sub(Mul(2.0, y), 3.0))",
+        "Equals(LengthOf(Line(F, E)), Add(x, Div(10.0, 3.0)))"
+    ],
+    "correct": true
+}

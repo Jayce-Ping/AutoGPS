@@ -1,0 +1,101 @@
+{
+    "problem_id": "2944",
+    "solved": true,
+    "problem_text": "Quadrilateral W X Y Z is a rectangle. Find the measure of \\angle 2 if m \\angle 1 = 30.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(Y, X))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Perpendicular(Line(Z, Y), Line(W, Y))",
+        "Equals(MeasureOf(Angle(Y, A, W)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Angle(X, W, A)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, X, Z)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(Y, A, Z)), MeasureOf(angle 12))",
+        "Equals(MeasureOf(Angle(X, A, W)), MeasureOf(angle 11))",
+        "Equals(MeasureOf(Angle(A, Y, Z)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(X, A, Z)), MeasureOf(angle 10))",
+        "Equals(MeasureOf(Angle(Y, W, A)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(Y, Z, A)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(X, Z, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, Y, W)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(A, X, W)), MeasureOf(angle 1))",
+        "Rectangle(W,X,Y,Z)",
+        "Equals(MeasureOf(Angle(1)),30)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "Z",
+        "W",
+        "A"
+    ],
+    "line_instances": [
+        "YA",
+        "YX",
+        "AX",
+        "XZ",
+        "YZ",
+        "WY",
+        "WX",
+        "WA",
+        "WZ",
+        "AZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            48.78048780487804,
+            228.28048780487802
+        ],
+        "X": [
+            360.36585365853654,
+            68.52439024390243
+        ],
+        "Z": [
+            360.06097560975604,
+            227.97560975609755
+        ],
+        "W": [
+            50.30487804878048,
+            68.52439024390243
+        ],
+        "A": [
+            205.79268292682926,
+            148.09756097560975
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "60",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 64.314419,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(A, X, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XY, 3.14 = pi, YZ, XZ, \u2220YXZ, Rectangle(W, X, Z, Y), \u2220WXY, pi * (30 / 180) = \u2220WXA, A on XY\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : XZ, XY, YZ\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(W, X, Z, Y)\nConclusions: XZ \u22a5 YZ\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(W, X, Z, Y)\nConclusions: Parallelogram(W, X, Z, Y)\n\nStep 5:\nTheorem: Same Angle\nPremises : A on XY, \u2220WXY\nConclusions: \u2220WXA = \u2220WXY\n\nStep 6:\nTheorem: Same Angle\nPremises : A on XY, \u2220YXZ\nConclusions: \u2220AXZ = \u2220YXZ\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, X)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XZY + \u2220YXZ + \u2220ZYX\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : XZ \u22a5 YZ\nConclusions: pi / 2 = \u2220XZY\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(W, X, Z, Y)\nConclusions: WX || YZ\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : WX || YZ\nConclusions: \u2220WXY = \u2220ZYX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXA = \u2220WXY, \u2220WXY = \u2220ZYX, pi * (30 / 180) = \u2220WXA\nConclusions: pi * (30 / 180) = \u2220ZYX\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220XZY, pi * (30 / 180) = \u2220ZYX, pi = \u2220XZY + \u2220YXZ + \u2220ZYX\nConclusions: 3.14 = pi / 2 + pi * (30 / 180) + \u2220YXZ\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = pi / 2 + pi * (30 / 180) + \u2220YXZ, \u2220AXZ = \u2220YXZ\nConclusions: 1.05 = \u2220AXZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, A)",
+        "Line(Y, X)",
+        "Line(A, X)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Line(W, Y)",
+        "Line(W, X)",
+        "Line(W, A)",
+        "Line(W, Z)",
+        "Line(A, Z)",
+        "PointLiesOnLine(A, Line(Y, X))",
+        "PointLiesOnLine(A, Line(W, Z))",
+        "Perpendicular(Line(Z, Y), Line(W, Y))",
+        "Rectangle(W, X, Z, Y)",
+        "Equals(MeasureOf(Angle(W, X, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

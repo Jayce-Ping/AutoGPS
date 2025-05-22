@@ -1,0 +1,96 @@
+{
+    "problem_id": "1256",
+    "solved": true,
+    "problem_text": "Find the value of variable a.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4\\sqrt{3})",
+        "Equals(LengthOf(Line(A, C)), a)",
+        "Equals(LengthOf(Line(A, D)), b)",
+        "Equals(LengthOf(Line(B, C)), c)",
+        "Equals(LengthOf(Line(D, C)), d)",
+        "Equals(MeasureOf(Angle(A, B, C)), 60)",
+        "Equals(MeasureOf(Angle(A, D, C)), 45)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "AC",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            139.1023564064801,
+            23.634285714285713
+        ],
+        "B": [
+            37.76951399116348,
+            197.97551020408162
+        ],
+        "C": [
+            138.64175257731958,
+            197.66857142857143
+        ],
+        "D": [
+            313.82474226804123,
+            198.74285714285713
+        ]
+    },
+    "problem_choices": [
+        3.464,
+        4.899,
+        6.0,
+        8.0
+    ],
+    "choices_precise_value": [
+        3.464,
+        4.899,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 42.538729,
+    "solution_predicate": "Equals(6.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DBA, pi * (60 / 180) = \u2220CBA, AB, CD, AC \u22a5 CD, \u2220ABC, \u2220ADB, d = CD, AD, 6.93 = 4 * SqrtOf(3), \u2220BDA, AC \u22a5 BC, BC, BD, 3.14 = pi, pi * (45 / 180) = \u2220ADC, a = AC, 4 * SqrtOf(3) = AB, \u2220ABD, \u2220CDA, AC, \u2220BDA, \u2220BAC, \u2220ABD, C on BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: pi / 2 = \u2220DCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AD, AB, BD\nConclusions: \u25b3ABD\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 4 * SqrtOf(3) = AB, 6.93 = 4 * SqrtOf(3)\nConclusions: 6.93 = AB\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABD\nConclusions: \u2220ABD = 2 * pi - \u2220DBA\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDA\nConclusions: \u2220BDA = 2 * pi - \u2220ADB\n\nStep 13:\nTheorem: Same Angle\nPremises : C on BD, \u2220ABD\nConclusions: \u2220ABC = \u2220ABD\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220DBA, C on BD\nConclusions: \u2220CBA = \u2220DBA\n\nStep 15:\nTheorem: Same Angle\nPremises : C on BD, \u2220BDA\nConclusions: \u2220BDA = \u2220CDA\n\nStep 16:\nTheorem: Same Angle\nPremises : C on BD, \u2220ADB\nConclusions: \u2220ADB = \u2220ADC\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220ADC, 0.79 = pi * (45 / 180)\nConclusions: 0.79 = \u2220ADC\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220ADC, 3.14 = pi, \u2220CDA = 2 * pi - \u2220ADC\nConclusions: 2 * 3.14 - 3.14 * (45 / 180) = \u2220CDA\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 21:\nTheorem: Cos Function Definition\nPremises : \u2220BAC, AC \u22a5 BC, \u25b3ABC\nConclusions: AC / AB = cos(\u2220BAC)\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABC = \u2220ABD, \u2220ABC = 2 * pi - \u2220CBA, pi * (60 / 180) = \u2220CBA\nConclusions: 2 * 3.14 - pi * (60 / 180) = \u2220ABD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DBA, pi * (60 / 180) = \u2220CBA\nConclusions: pi * (60 / 180) = \u2220DBA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220ADC, \u2220ADB = \u2220ADC\nConclusions: pi * (45 / 180) = \u2220ADB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (45 / 180) = \u2220CDA, \u2220BDA = \u2220CDA\nConclusions: 2 * 3.14 - 3.14 * (45 / 180) = \u2220BDA\n\nStep 28:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ACB, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, pi * (60 / 180) = \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220BAC\n\nStep 29:\nTheorem: Substitution\nPremises : pi * (45 / 180) = \u2220ADC, pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 = pi, pi / 2 = \u2220DCA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220CAD\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = 2 * pi - \u2220DBA, 2 * 3.14 - pi * (60 / 180) = \u2220ABD\nConclusions: 2 * 3.14 - pi * (60 / 180) = 2 * pi - \u2220DBA\n\nStep 31:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (60 / 180) = \u2220DBA, pi * (45 / 180) = \u2220ADB, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = 3.14 * (45 / 180) + 3.14 * (60 / 180) + \u2220BAD\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = 2 * pi - \u2220ADB, 2 * 3.14 - 3.14 * (45 / 180) = \u2220BDA\nConclusions: 2 * 3.14 - 3.14 * (45 / 180) = 2 * pi - \u2220ADB\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (45 / 180) + \u2220CAD\nConclusions: 0.79 = \u2220CAD\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ADB + \u2220BAD + \u2220DBA, 2 * 3.14 - pi * (60 / 180) = 2 * pi - \u2220DBA, 3.14 = 3.14 * (45 / 180) + 3.14 * (60 / 180) + \u2220BAD, 2 * 3.14 - 3.14 * (45 / 180) = 2 * pi - \u2220ADB, 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220BAC\nConclusions: 0.52 = \u2220BAC\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220ADC, 0.79 = \u2220CAD\nConclusions: \u2220ADC = \u2220CAD\n\nStep 36:\nTheorem: Substitution\nPremises : 0.52 = \u2220BAC, AC / AB = cos(\u2220BAC), 6.93 = AB, a = AC\nConclusions: cos(0.52) = a / 6.93\n\nStep 37:\nTheorem: Issoceles Triangle Property\nPremises : \u2220ADC = \u2220CAD, \u25b3ACD\nConclusions: AC = CD\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : d = CD, AC = CD, a = AC\nConclusions: a = d\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : a = d, d = CD\nConclusions: a = CD\n\nStep 40:\nTheorem: Solve Linear Equation System\nPremises : cos(0.52) = a / 6.93, a = CD\nConclusions: 6 = CD\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 6 = CD, a = CD\nConclusions: 6 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), Mul(4.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(A, C)), a)",
+        "Equals(LengthOf(Line(A, D)), b)",
+        "Equals(LengthOf(Line(B, C)), c)",
+        "Equals(LengthOf(Line(D, C)), d)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

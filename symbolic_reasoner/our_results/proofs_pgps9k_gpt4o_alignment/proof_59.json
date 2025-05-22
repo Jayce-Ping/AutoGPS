@@ -1,0 +1,76 @@
+{
+    "problem_id": "59",
+    "solved": true,
+    "problem_text": "Find the value of x in the parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), 80)",
+        "Equals(MeasureOf(Angle(B, A, C)), x)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "BD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            43.46341463414634,
+            43.497142857142855
+        ],
+        "B": [
+            281.5243902439024,
+            43.497142857142855
+        ],
+        "C": [
+            23.70731707317073,
+            157.18285714285713
+        ],
+        "D": [
+            260.780487804878,
+            157.18285714285713
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        80.0,
+        100.0,
+        160.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        80.0,
+        100.0,
+        160.0
+    ],
+    "problem_answer": 100.0,
+    "total_time": 7.519268,
+    "solution_predicate": "Equals(100.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (80 / 180) = \u2220ABD, Parallelogram(A, B, D, C), 3.14 = pi, pi * (x / 180) = \u2220CAB\n\nStep 2:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(A, B, D, C)\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220ABD = \u2220DCA, \u2220BDC = \u2220CAB\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220CAB\nConclusions: 3.14 * (x / 180) = \u2220CAB\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = \u2220ABD, \u2220ABD = \u2220DCA\nConclusions: pi * (80 / 180) = \u2220DCA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CAB, pi * (x / 180) = \u2220CAB\nConclusions: pi * (x / 180) = \u2220BDC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220CAB, pi * (x / 180) = \u2220CAB\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA, pi * (80 / 180) = \u2220DCA, pi * (80 / 180) = \u2220ABD\nConclusions: 2 * 3.14 = 3.14 * (80 / 180) + 3.14 * (80 / 180) + \u2220BDC + \u2220CAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = pi * (x / 180), pi * (x / 180) = \u2220BDC\nConclusions: 3.14 * (x / 180) = \u2220BDC\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220BDC, 3.14 * (x / 180) = \u2220CAB, 2 * 3.14 = 3.14 * (80 / 180) + 3.14 * (80 / 180) + \u2220BDC + \u2220CAB\nConclusions: 100 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallelogram(A, B, D, C)",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(80.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

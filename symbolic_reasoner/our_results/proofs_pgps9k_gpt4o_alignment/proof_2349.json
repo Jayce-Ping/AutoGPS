@@ -1,0 +1,152 @@
+{
+    "problem_id": "2349",
+    "solved": true,
+    "problem_text": "Find the value of variable d. Lines that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, F, E)), b)",
+        "Equals(MeasureOf(Angle(B, F, A)), c)",
+        "Equals(MeasureOf(Angle(G, F, E)), a)",
+        "Equals(MeasureOf(Arc(A, D)), 120)",
+        "Equals(MeasureOf(Arc(A, F)), d)",
+        "Equals(MeasureOf(Arc(G, D)), e)",
+        "Equals(MeasureOf(Arc(G, F)), 56)",
+        "Find(d)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(B, F)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(F, Circle(C))",
+        "PointLiesOnCircle(G, Circle(C))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(E, Line(D, F))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "BF",
+        "FG",
+        "AF",
+        "FE",
+        "FD",
+        "ED",
+        "GC",
+        "GE",
+        "GA",
+        "CE",
+        "CA",
+        "EA"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            185.21367521367523,
+            32.59047619047619
+        ],
+        "B": [
+            374.57199211045366,
+            106.43340659340657
+        ],
+        "C": [
+            184.73533767432556,
+            163.1278936433407
+        ],
+        "D": [
+            71.49506903353057,
+            231.38373626373624
+        ],
+        "E": [
+            184.96876456876456,
+            231.34129870129868
+        ],
+        "F": [
+            298.2587771203156,
+            231.38373626373624
+        ],
+        "G": [
+            184.87692307692308,
+            296.3485714285714
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        60.0,
+        124.0,
+        184.0
+    ],
+    "choices_precise_value": [
+        28.0,
+        60.0,
+        124.0,
+        184.0
+    ],
+    "problem_answer": 124.0,
+    "total_time": 103.545126,
+    "solution_predicate": "Equals(124.0, d)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, Arc(GCF), \u2220FCA, E on CG, pi * (d / 180) = Arc(FCA), \u2220ECF, pi * (56 / 180) = Arc(GCF), \u2220GCF, Arc(FCA)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GCF)\nConclusions: \u2220GCF = Arc(GCF)\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220FCA, \u2220ECF\nConclusions: pi = \u2220ECF + \u2220FCA\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220FCA, \u2220GCF\nConclusions: pi = \u2220FCA + \u2220GCF\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220GCF, E on CG\nConclusions: \u2220ECF = \u2220GCF\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FCA)\nConclusions: \u2220FCA = Arc(FCA)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GCF = Arc(GCF), pi * (56 / 180) = Arc(GCF)\nConclusions: pi * (56 / 180) = \u2220GCF\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCA = Arc(FCA), pi * (d / 180) = Arc(FCA)\nConclusions: pi * (d / 180) = \u2220FCA\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220FCA + \u2220GCF, pi * (56 / 180) = \u2220GCF\nConclusions: 3.14 = pi * (56 / 180) + \u2220FCA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECF = \u2220GCF, pi * (56 / 180) = \u2220GCF\nConclusions: pi * (56 / 180) = \u2220ECF\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (d / 180) = \u2220FCA\nConclusions: 3.14 * (d / 180) = \u2220FCA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (56 / 180) + \u2220FCA, pi * (56 / 180) = \u2220ECF, pi = \u2220ECF + \u2220FCA, 3.14 * (d / 180) = \u2220FCA\nConclusions: 124 = d\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, F)",
+        "Line(F, G)",
+        "Line(A, F)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(E, D)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(G, A)",
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Circle(C, radius_C)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(B, F)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(G, F)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(F, Circle(C, radius_C))",
+        "PointLiesOnCircle(G, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, G))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(C, G))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(A, F, E)), Mul(pi, Div(b, 180.0)))",
+        "Equals(MeasureOf(Angle(B, F, A)), Mul(pi, Div(c, 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(a, 180.0)))",
+        "Equals(MeasureOf(Arc(A, C, D)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Arc(F, C, A)), Mul(pi, Div(d, 180.0)))",
+        "Equals(MeasureOf(Arc(D, C, G)), Mul(pi, Div(e, 180.0)))",
+        "Equals(MeasureOf(Arc(G, C, F)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

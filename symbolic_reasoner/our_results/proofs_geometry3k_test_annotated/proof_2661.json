@@ -1,0 +1,76 @@
+{
+    "problem_id": "2661",
+    "solved": true,
+    "problem_text": "Find the measure of the altitude drawn to the hypotenuse.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, B))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(A, D)), 24)",
+        "Equals(LengthOf(Line(B, D)), 14)",
+        "Find(LengthOf(Line(C, D)))"
+    ],
+    "point_instances": [
+        "A",
+        "C",
+        "B",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "DC",
+        "AD",
+        "AB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.56435643564356,
+            252.80528052805278
+        ],
+        "C": [
+            241.2244224422442,
+            252.80528052805278
+        ],
+        "B": [
+            241.2244224422442,
+            57.42574257425742
+        ],
+        "D": [
+            142.54455445544554,
+            154.12541254125412
+        ]
+    },
+    "problem_choices": [
+        "14",
+        "\\sqrt { 336 }",
+        "24",
+        "336"
+    ],
+    "choices_precise_value": [
+        14.0,
+        18.33030277982336,
+        24.0,
+        336.0
+    ],
+    "problem_answer": 18.33030277982336,
+    "total_time": 45.094913,
+    "solution_predicate": "Equals(18.3303027798, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, 24 = AD, AD \u22a5 CD, AC, 14 = BD, CD, BD, \u2220BCD, AD, \u2220CAB, AC \u22a5 BC, \u2220CAD, \u2220ABC, BD \u22a5 CD, D on AB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220CDB\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220ABC, D on AB\nConclusions: \u2220ABC = \u2220DBC\n\nStep 7:\nTheorem: Same Angle\nPremises : D on AB, \u2220CAB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 8:\nTheorem: Tan Function Definition\nPremises : \u2220BCD, \u25b3BCD, BD \u22a5 CD\nConclusions: BD / CD = tan(\u2220BCD)\n\nStep 9:\nTheorem: Tan Function Definition\nPremises : \u2220CAD, \u25b3ACD, AD \u22a5 CD\nConclusions: CD / AD = tan(\u2220CAD)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CDB, pi / 2 = \u2220BCA\nConclusions: \u2220BCA = \u2220CDB\n\nStep 11:\nTheorem: Substitution\nPremises : 24 = AD, CD / AD = tan(\u2220CAD)\nConclusions: CD / 24 = tan(\u2220CAD)\n\nStep 12:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220DBC, \u2220BCA = \u2220CDB\nConclusions: \u25b3ABC ~ \u25b3CBD\n\nStep 13:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3CBD\nConclusions: \u2220ABC = \u2220DBC, \u2220BCD = \u2220CAB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220CAD, \u2220BCD = \u2220CAB\nConclusions: \u2220BCD = \u2220CAD\n\nStep 15:\nTheorem: Substitution\nPremises : BD / CD = tan(\u2220BCD), 14 = BD, \u2220BCD = \u2220CAD\nConclusions: 14 / CD = tan(\u2220CAD)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 14 / CD = tan(\u2220CAD), CD / 24 = tan(\u2220CAD)\nConclusions: 14 / CD = CD / 24\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : 14 / CD = CD / 24\nConclusions: 18.33 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Equals(LengthOf(Line(A, D)), 24.0)",
+        "Equals(LengthOf(Line(B, D)), 14.0)"
+    ],
+    "correct": true
+}

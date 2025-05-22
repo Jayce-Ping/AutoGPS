@@ -1,0 +1,86 @@
+{
+    "problem_id": "1350",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 3)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(MeasureOf(Angle(A, C, D)), 62)",
+        "Find(AreaOf(Rectangle(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(A, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "CD",
+        "BA",
+        "AD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            36.98119686069326,
+            51.400000000000006
+        ],
+        "B": [
+            36.33920863309352,
+            232.18114285714287
+        ],
+        "C": [
+            377.1935594381638,
+            232.03428571428572
+        ],
+        "D": [
+            377.1751230594471,
+            51.090827067669174
+        ]
+    },
+    "problem_choices": [
+        4.2,
+        4.8,
+        7.9,
+        16.9
+    ],
+    "choices_precise_value": [
+        4.2,
+        4.8,
+        7.9,
+        16.9
+    ],
+    "problem_answer": 4.8,
+    "total_time": 50.000558,
+    "solution_predicate": "Equals(4.7853848853, AreaOf(Rectangle(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 = AD, AD = BC, AD \u22a5 CD, \u2220DCA, \u2220BAC, 3.14 = pi, tan(\u2220DCA), Area(Rectangle(A, B, C, D)), AB = CD, pi * (62 / 180) = \u2220DCA, Rectangle(A, B, C, D)\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 3 = AD\nConclusions: 3 = BC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 5:\nTheorem: Angle Tan Definition\nPremises : AD \u22a5 CD, tan(\u2220DCA)\nConclusions: AD / CD = tan(\u2220DCA)\n\nStep 6:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 7:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 8:\nTheorem: Substitution\nPremises : 3 = BC, AB = CD, Area(Rectangle(A, B, C, D)) = AB * BC\nConclusions: Area(Rectangle(A, B, C, D)) = 3 * CD\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB, \u2220BAC = \u2220DCA\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (62 / 180) = \u2220DCA, \u2220ACD = \u2220CAB, 3.14 = pi, \u2220DCA = 2 * pi - \u2220ACD\nConclusions: 3.14 * (62 / 180) = 2 * 3.14 - \u2220CAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (62 / 180) = \u2220DCA, \u2220BAC = \u2220DCA\nConclusions: pi * (62 / 180) = \u2220BAC\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220BAC = 2 * pi - \u2220CAB, pi * (62 / 180) = \u2220BAC, 3.14 = pi\nConclusions: pi * (62 / 180) = 2 * 3.14 - \u2220CAB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (62 / 180) = 2 * 3.14 - \u2220CAB, pi * (62 / 180) = 2 * 3.14 - \u2220CAB\nConclusions: 3.14 * (62 / 180) = pi * (62 / 180)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (62 / 180) = \u2220DCA, 3.14 * (62 / 180) = pi * (62 / 180)\nConclusions: 3.14 * (62 / 180) = \u2220DCA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (62 / 180) = \u2220DCA\nConclusions: 1.08 = \u2220DCA\n\nStep 17:\nTheorem: Substitution\nPremises : AD / CD = tan(\u2220DCA), 1.08 = \u2220DCA, 3 = AD\nConclusions: tan(1.08) = 3 / CD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : tan(1.08) = 3 / CD, Area(Rectangle(A, B, C, D)) = 3 * CD\nConclusions: 4.79 = Area(Rectangle(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Perpendicular(Line(D, C), Line(A, D))",
+        "Equals(LengthOf(Line(A, D)), 3.0)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(62.0, 180.0)))"
+    ],
+    "correct": true
+}

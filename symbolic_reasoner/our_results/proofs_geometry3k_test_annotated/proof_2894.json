@@ -1,0 +1,83 @@
+{
+    "problem_id": "2894",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(D, C), Line(E, C))",
+        "Equals(LengthOf(Line(D, A)), 23)",
+        "Equals(LengthOf(Line(A, B)), 16)",
+        "Equals(MeasureOf(Angle(D, C, E)), 60)",
+        "Find(PerimeterOf(Parallelogram(A, D, E, B)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "DA",
+        "CA",
+        "BA",
+        "EB",
+        "EC",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            230.1047120418848,
+            136.94240837696333
+        ],
+        "B": [
+            304.4502617801047,
+            13.643979057591622
+        ],
+        "C": [
+            90.31413612565444,
+            136.94240837696333
+        ],
+        "D": [
+            15.968586387434554,
+            136.94240837696333
+        ],
+        "E": [
+            90.0523560209424,
+            13.643979057591622
+        ]
+    },
+    "problem_choices": [
+        "32",
+        "39",
+        "46",
+        "78"
+    ],
+    "choices_precise_value": [
+        32.0,
+        39.0,
+        46.0,
+        78.0
+    ],
+    "problem_answer": 78.0,
+    "total_time": 17.556816,
+    "solution_predicate": "Equals(78.0, PerimeterOf(Parallelogram(A, D, E, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, E, D), 23 = AD, 16 = AB\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, E, D)\nConclusions: Perimeter(Parallelogram(A, B, E, D)) = AB + AD + BE + DE\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD = BE, AB = DE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AD = BE, 23 = AD\nConclusions: 23 = BE\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = DE, 16 = AB\nConclusions: 16 = DE\n\nStep 6:\nTheorem: Substitution\nPremises : 16 = DE, Perimeter(Parallelogram(A, B, E, D)) = AB + AD + BE + DE, 23 = AD, 16 = AB, 23 = BE\nConclusions: 16 + 16 + 23 + 23 = Perimeter(Parallelogram(A, B, E, D))\n\nStep 7:\nTheorem: Evaluate\nPremises : 16 + 16 + 23 + 23 = Perimeter(Parallelogram(A, B, E, D))\nConclusions: 78 = Perimeter(Parallelogram(A, B, E, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(D, C), Line(E, C))",
+        "Equals(LengthOf(Line(D, A)), 23.0)",
+        "Equals(LengthOf(Line(A, B)), 16.0)",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

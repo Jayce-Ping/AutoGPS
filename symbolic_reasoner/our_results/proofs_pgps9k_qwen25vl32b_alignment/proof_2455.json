@@ -1,0 +1,75 @@
+{
+    "problem_id": "2455",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle Q.",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(M, Q)), 118)",
+        "Equals(MeasureOf(Arc(P, Q)), 113)",
+        "Line(P, Q)",
+        "Line(Q, M)",
+        "PointLiesOnCircle(M, Circle(A))",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnCircle(Q, Circle(A))",
+        "Find(MeasureOf(Angle(Q)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "M",
+        "A"
+    ],
+    "line_instances": [
+        "QM",
+        "PQ"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "Q": [
+            210.2150537634409,
+            65.63265306122449
+        ],
+        "P": [
+            59.40860215053764,
+            140.0816326530612
+        ],
+        "M": [
+            233.06451612903228,
+            234.7755102040816
+        ],
+        "A": [
+            161.98440705860116,
+            157.68742113246032
+        ]
+    },
+    "problem_choices": [
+        2.5,
+        59.831,
+        64.5,
+        123.5
+    ],
+    "choices_precise_value": [
+        2.5,
+        59.831,
+        64.5,
+        123.5
+    ],
+    "problem_answer": 64.5,
+    "total_time": 30.967566,
+    "solution_predicate": "Equals(1.1257373675, MeasureOf(Angle(P, Q, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(MAQ), \u2220QAP, \u2220AQM, PQ, Arc(QAP), P on \u2299(A, radius_A), AM, Q on \u2299(A, radius_A), M on \u2299(A, radius_A), \u2220MQP, \u2220MAP, \u2220MQP, 3.14 = pi, pi * (118 / 180) = Arc(MAQ), \u2220PAM, \u2220PQA, AQ, AP, pi * (113 / 180) = Arc(QAP), \u2220MAQ, MQ\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(MAQ)\nConclusions: \u2220MAQ = Arc(MAQ)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QAP)\nConclusions: \u2220QAP = Arc(QAP)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : P on \u2299(A, radius_A)\nConclusions: radius_A = AP\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(A, radius_A)\nConclusions: radius_A = AQ\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : M on \u2299(A, radius_A)\nConclusions: radius_A = AM\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220MAP\nConclusions: \u2220MAP = 2 * pi - \u2220PAM\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220MQP\nConclusions: \u2220MQP = 2 * pi - \u2220PQM\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220PQA, \u2220AQM, \u2220MQP\nConclusions: 2 * pi = \u2220AQM + \u2220MQP + \u2220PQA\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : AQ, PQ, AP\nConclusions: \u25b3APQ\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220PAM, \u2220MAQ, \u2220QAP\nConclusions: 2 * pi = \u2220MAQ + \u2220PAM + \u2220QAP\n\nStep 12:\nTheorem: Definition of Quadrilateral\nPremises : MQ, PQ, AP, AM\nConclusions: Quadrilateral(A, M, Q, P)\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AQ, MQ, AM\nConclusions: \u25b3AMQ\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MAQ = Arc(MAQ), pi * (118 / 180) = Arc(MAQ)\nConclusions: pi * (118 / 180) = \u2220MAQ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QAP = Arc(QAP), pi * (113 / 180) = Arc(QAP)\nConclusions: pi * (113 / 180) = \u2220QAP\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AP, radius_A = AQ\nConclusions: AP = AQ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AQ, radius_A = AM\nConclusions: AM = AQ\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220MAP = 2 * pi - \u2220PAM, 3.14 = pi\nConclusions: \u2220MAP = 2 * 3.14 - \u2220PAM\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220MQP = 2 * pi - \u2220PQM, 3.14 = pi\nConclusions: \u2220MQP = 2 * 3.14 - \u2220PQM\n\nStep 20:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AQM + \u2220MQP + \u2220PQA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AQM + \u2220MQP + \u2220PQA\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, Q, M, A)\nPremises : Quadrilateral(A, M, Q, P)\nConclusions: 2 * pi = \u2220APQ + \u2220MAP + \u2220PQM + \u2220QMA\n\nStep 22:\nTheorem: Substitution\nPremises : pi * (118 / 180) = \u2220MAQ, pi * (113 / 180) = \u2220QAP, 3.14 = pi, 2 * pi = \u2220MAQ + \u2220PAM + \u2220QAP\nConclusions: 2 * 3.14 = 3.14 * (113 / 180) + 3.14 * (118 / 180) + \u2220PAM\n\nStep 23:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3APQ, AP = AQ\nConclusions: \u2220APQ = \u2220PQA\n\nStep 24:\nTheorem: Issoceles Triangle Property\nPremises : AM = AQ, \u25b3AMQ\nConclusions: \u2220AQM = \u2220QMA\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : \u2220MAP = 2 * 3.14 - \u2220PAM, 2 * 3.14 = 3.14 * (113 / 180) + 3.14 * (118 / 180) + \u2220PAM\nConclusions: 4.03 = \u2220MAP\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220APQ = \u2220PQA, 2 * pi = \u2220APQ + \u2220MAP + \u2220PQM + \u2220QMA, 4.03 = \u2220MAP\nConclusions: 2 * 3.14 = 4.03 + \u2220PQA + \u2220PQM + \u2220QMA\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220AQM + \u2220MQP + \u2220PQA, \u2220AQM = \u2220QMA, 2 * 3.14 = 4.03 + \u2220PQA + \u2220PQM + \u2220QMA, \u2220MQP = 2 * 3.14 - \u2220PQM\nConclusions: 1.13 = \u2220PQM\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, M)",
+        "Line(P, Q)",
+        "Circle(A, radius_A)",
+        "Line(P, Q)",
+        "Line(Q, M)",
+        "PointLiesOnCircle(M, Circle(A, radius_A))",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnCircle(Q, Circle(A, radius_A))",
+        "Equals(MeasureOf(Arc(M, A, Q)), Mul(pi, Div(118.0, 180.0)))",
+        "Equals(MeasureOf(Arc(Q, A, P)), Mul(pi, Div(113.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "6281",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(1)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(1)), MeasureOf(Angle(X, Z, Y)))",
+        "Equals(MeasureOf(Angle(W, Z, X)), 24)",
+        "Equals(MeasureOf(Angle(X, W, Z)), 23)",
+        "Equals(MeasureOf(Angle(X, Z, Y)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Z, X, W)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), 105)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), MeasureOf(Angle(X, Z, Y)))",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Z)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "W",
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "WX",
+        "WZ",
+        "ZX",
+        "ZY",
+        "YX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            123.38441558441559,
+            458.20342857142856
+        ],
+        "Z": [
+            623.060606060606,
+            456.36571428571426
+        ],
+        "X": [
+            379.0541125541125,
+            349.1657142857143
+        ],
+        "Y": [
+            417.4199134199134,
+            101.07428571428571
+        ]
+    },
+    "problem_choices": [
+        37.5,
+        47.0,
+        52.5,
+        133.0
+    ],
+    "choices_precise_value": [
+        37.5,
+        47.0,
+        52.5,
+        133.0
+    ],
+    "problem_answer": 37.5,
+    "total_time": 15.732421,
+    "solution_predicate": "Equals(0.6544984695, MeasureOf(Angle(Y, Z, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: XZ, pi * (105 / 180) = \u2220ZXY, 3.14 = pi, YZ, XY, \u2220XYZ = \u2220YZX\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : YZ, XY, XZ\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220XYZ + \u2220YZX + \u2220ZXY\nConclusions: 3.14 = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : pi * (105 / 180) = \u2220ZXY, pi = \u2220XYZ + \u2220YZX + \u2220ZXY, \u2220XYZ = \u2220YZX, 3.14 = \u2220XYZ + \u2220YZX + \u2220ZXY\nConclusions: 0.65 = \u2220XYZ\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 0.65 = \u2220XYZ, \u2220XYZ = \u2220YZX\nConclusions: 0.65 = \u2220YZX\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Z)",
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Equals(MeasureOf(Angle(Y, Z, X)), MeasureOf(Angle(Y, Z, X)))",
+        "Equals(MeasureOf(Angle(X, Z, W)), Mul(pi, Div(24.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(23.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), Mul(pi, Div(105.0, 180.0)))",
+        "Equals(MeasureOf(Angle(X, Y, Z)), MeasureOf(Angle(Y, Z, X)))"
+    ],
+    "correct": true
+}

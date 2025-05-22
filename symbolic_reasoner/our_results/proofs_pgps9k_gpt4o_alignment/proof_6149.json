@@ -1,0 +1,82 @@
+{
+    "problem_id": "6149",
+    "solved": true,
+    "problem_text": "Find the value of a.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 18.5)",
+        "Equals(LengthOf(Line(B, A)), 2a-20.4)",
+        "Equals(LengthOf(Line(B, C)), a-3.5)",
+        "Equals(LengthOf(Line(C, D)), a+1.6)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(B, C), Line(A, D))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "BA",
+        "BC",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            196.35000000000002,
+            68.75
+        ],
+        "C": [
+            315.33333333333337,
+            68.44444444444444
+        ],
+        "A": [
+            131.45000000000002,
+            206.25000000000003
+        ],
+        "D": [
+            250.8,
+            206.17142857142858
+        ]
+    },
+    "problem_choices": [
+        0.95,
+        16.9,
+        19.45,
+        22.0
+    ],
+    "choices_precise_value": [
+        0.95,
+        16.9,
+        19.45,
+        22.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 7.263085,
+    "solution_predicate": "Equals(22.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD || BC, CD, AB || DC, 2 * a - 20.4 = AB, AB, 1.6 + a = CD, AD, BC\n\nStep 2:\nTheorem: Definition of Parallelogram\nPremises : AB, AD, AD || BC, CD, AB || DC, BC\nConclusions: Parallelogram(A, B, C, D)\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 1.6 + a = CD, 2 * a - 20.4 = AB\nConclusions: 1.6 + a = 2 * a - 20.4\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 1.6 + a = 2 * a - 20.4\nConclusions: 22 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(B, C), Line(A, D))",
+        "Equals(LengthOf(Line(A, D)), 18.5)",
+        "Equals(LengthOf(Line(B, A)), Sub(Mul(2.0, a), 20.4))",
+        "Equals(LengthOf(Line(B, C)), Sub(a, 3.5))",
+        "Equals(LengthOf(Line(C, D)), Add(a, 1.6))"
+    ],
+    "correct": true
+}

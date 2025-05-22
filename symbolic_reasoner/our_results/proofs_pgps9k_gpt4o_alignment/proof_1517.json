@@ -1,0 +1,110 @@
+{
+    "problem_id": "1517",
+    "solved": true,
+    "problem_text": "Find m \\angle 2 in the rhombus.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, B, E)), 32)",
+        "Equals(MeasureOf(Angle(C, E, B)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(Angle(3)))",
+        "Find(MeasureOf(Angle(2)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Rhombus(A, B, D, E)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DC",
+        "DB",
+        "CB",
+        "AD",
+        "BE",
+        "AC",
+        "AE",
+        "CE",
+        "AB",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            86.73,
+            26.633714285714284
+        ],
+        "B": [
+            259.98,
+            26.21428571428571
+        ],
+        "C": [
+            135.975,
+            103.54642857142856
+        ],
+        "D": [
+            10.920000000000002,
+            181.6125714285714
+        ],
+        "E": [
+            183.54000000000002,
+            182.03199999999998
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        58.0,
+        74.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        58.0,
+        74.0,
+        90.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 104.236267,
+    "solution_predicate": "Equals(1.0122909662, MeasureOf(Angle(B, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (32 / 180) = \u2220CBE, BE, CE, C on AE, Rhombus(A, B, E, D), BC, \u2220BEA, 3.14 = pi\n\nStep 2:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(A, B, E, D)\nConclusions: BC \u22a5 CE\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, E, D)\nConclusions: Parallelogram(A, B, E, D)\n\nStep 4:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, E, D)\nConclusions: \u2220DAE = \u2220EAB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, CE, BE\nConclusions: \u25b3BCE\n\nStep 6:\nTheorem: Same Angle\nPremises : C on AE, \u2220BEA\nConclusions: \u2220BEA = \u2220BEC\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CE\nConclusions: pi / 2 = \u2220ECB\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD || BE\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(E, C, B)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BEC + \u2220CBE + \u2220ECB\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BE\nConclusions: \u2220BEA = \u2220DAE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAE = \u2220EAB, \u2220BEA = \u2220DAE\nConclusions: \u2220BEA = \u2220EAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEA = \u2220EAB, \u2220BEA = \u2220BEC\nConclusions: \u2220BEC = \u2220EAB\n\nStep 13:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ECB, 3.14 = pi, pi * (32 / 180) = \u2220CBE, \u2220BEC = \u2220EAB, pi = \u2220BEC + \u2220CBE + \u2220ECB\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (32 / 180) + \u2220EAB\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (32 / 180) + \u2220EAB, \u2220BEC = \u2220EAB\nConclusions: 1.01 = \u2220BEC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, B)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Rhombus(A, B, E, D)",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": true
+}

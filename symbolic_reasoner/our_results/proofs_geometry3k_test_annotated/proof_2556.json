@@ -1,0 +1,109 @@
+{
+    "problem_id": "2556",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(A, F)), 8)",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Equals(LengthOf(Line(E, F)), 8)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Tangent(Line(A, F), Circle(C))",
+        "Tangent(Line(E, F), Circle(C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AF",
+        "AE",
+        "FE",
+        "CD",
+        "CE",
+        "DE",
+        "AB",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "C": [
+            104.28205128205127,
+            76.06837606837607
+        ],
+        "A": [
+            8.213675213675213,
+            138.97435897435895
+        ],
+        "B": [
+            51.97435897435897,
+            110.08547008547008
+        ],
+        "D": [
+            155.73504273504273,
+            109.91452991452991
+        ],
+        "E": [
+            199.15384615384613,
+            138.29059829059827
+        ],
+        "F": [
+            105.13675213675212,
+            138.46153846153845
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "6",
+        "8",
+        "16"
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        8.0,
+        16.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 71.497801,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, x = AB, B on \u2299(C, radius_0_0), Tangent(AF, \u2299(C, radius_0_0)), AF, CF, 8 = AF, F on \u2299(C, radius_0_0), B on AC, 6 = BC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AF, CF\nConclusions: \u25b3ACF\n\nStep 4:\nTheorem: Tangent Definition\nPremises : Tangent(AF, \u2299(C, radius_0_0)), F on \u2299(C, radius_0_0)\nConclusions: AF \u22a5 CF\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : F on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CF\n\nStep 6:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BC, 6 = BC\nConclusions: 6 = radius_0_0\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACF, AF \u22a5 CF\nConclusions: AC ** 2 = AF ** 2 + CF ** 2\n\nStep 9:\nTheorem: Substitution\nPremises : AC = AB + BC, 6 = BC, x = AB\nConclusions: 6 + x = AC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CF, 6 = radius_0_0\nConclusions: 6 = CF\n\nStep 11:\nTheorem: Substitution\nPremises : AC ** 2 = AF ** 2 + CF ** 2, 8 = AF, 6 + x = AC, 6 = CF\nConclusions: 6 ** 2 + 8 ** 2 = (6 + x) ** 2\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 6 ** 2 + 8 ** 2 = (6 + x) ** 2\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, E)",
+        "Line(F, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(C, radius_0_0))",
+        "Tangent(Line(A, F), Circle(C, radius_0_0))",
+        "Tangent(Line(E, F), Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(A, F)), 8.0)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(LengthOf(Line(E, F)), 8.0)",
+        "Equals(LengthOf(Line(A, B)), x)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,97 @@
+{
+    "problem_id": "4052",
+    "solved": true,
+    "problem_text": "Determine m \\angle U.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, T, S)), 32)",
+        "Equals(MeasureOf(Angle(T, S, P)), 101)",
+        "Line(P, S)",
+        "Line(P, U)",
+        "Line(S, U)",
+        "Line(T, P)",
+        "Line(T, S)",
+        "Line(V, S)",
+        "Line(V, U)",
+        "Parallel(Line(T, P), Line(V, S))",
+        "Parallel(Line(T, S), Line(V, U))",
+        "PointLiesOnLine(S, Line(P, U))",
+        "Find(MeasureOf(Angle(U)))"
+    ],
+    "point_instances": [
+        "T",
+        "V",
+        "P",
+        "S",
+        "U"
+    ],
+    "line_instances": [
+        "TP",
+        "TS",
+        "VU",
+        "VS",
+        "PS",
+        "PU",
+        "SU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            212.87903225806454,
+            34.89714285714285
+        ],
+        "V": [
+            302.98655913978496,
+            90.05714285714285
+        ],
+        "P": [
+            27.482795698924733,
+            232.79771428571428
+        ],
+        "S": [
+            169.40215053763444,
+            232.79771428571428
+        ],
+        "U": [
+            272.1247311827957,
+            232.79771428571428
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        47.0,
+        79.0,
+        101.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        47.0,
+        79.0,
+        101.0
+    ],
+    "problem_answer": 101.0,
+    "total_time": 20.507487,
+    "solution_predicate": "Equals(1.7627825445, MeasureOf(Angle(V, U, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220TSP, \u2220VUP, 3.14 = pi, pi * (101 / 180) = \u2220TSP, ST || UV, S on PU, \u2220VUP, \u2220PUV\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220TSP\nConclusions: \u2220TSP = 2 * pi - \u2220PST\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220VUP\nConclusions: \u2220VUP = 2 * pi - \u2220PUV\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : ST || UV\nConclusions: \u2220PST = \u2220PUV\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220VUP, S on PU\nConclusions: \u2220VUP = \u2220VUS\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220PUV, S on PU\nConclusions: \u2220PUV = \u2220SUV\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220VUP = \u2220VUS, \u2220VUP = 2 * pi - \u2220PUV, 3.14 = pi, \u2220PUV = \u2220SUV\nConclusions: \u2220VUS = 2 * 3.14 - \u2220SUV\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PST = \u2220PUV, \u2220PUV = \u2220SUV\nConclusions: \u2220PST = \u2220SUV\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220TSP = 2 * pi - \u2220PST, \u2220PST = \u2220SUV, 3.14 = pi, pi * (101 / 180) = \u2220TSP\nConclusions: 3.14 * (101 / 180) = 2 * 3.14 - \u2220SUV\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (101 / 180) = 2 * 3.14 - \u2220SUV, \u2220VUS = 2 * 3.14 - \u2220SUV\nConclusions: 3.14 * (101 / 180) = \u2220VUS\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VUP = \u2220VUS, 3.14 * (101 / 180) = \u2220VUS\nConclusions: 3.14 * (101 / 180) = \u2220VUP\n\nStep 12:\nTheorem: Evaluate\nPremises : 3.14 * (101 / 180) = \u2220VUP\nConclusions: 1.76 = \u2220VUP\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, P)",
+        "Line(T, S)",
+        "Line(V, U)",
+        "Line(V, S)",
+        "Line(P, S)",
+        "Line(P, U)",
+        "Line(S, U)",
+        "Line(P, S)",
+        "Line(P, U)",
+        "Line(S, U)",
+        "Line(T, P)",
+        "Line(T, S)",
+        "Line(V, S)",
+        "Line(V, U)",
+        "Parallel(Line(T, P), Line(V, S))",
+        "Parallel(Line(T, S), Line(V, U))",
+        "PointLiesOnLine(S, Line(P, U))",
+        "Equals(MeasureOf(Angle(P, T, S)), Mul(pi, Div(32.0, 180.0)))",
+        "Equals(MeasureOf(Angle(T, S, P)), Mul(pi, Div(101.0, 180.0)))"
+    ],
+    "correct": true
+}

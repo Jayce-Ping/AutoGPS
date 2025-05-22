@@ -1,0 +1,78 @@
+{
+    "problem_id": "2608",
+    "solved": true,
+    "problem_text": "Triangle L M N is equilateral, and M P bisects L N. Find y.",
+    "logic_forms": [
+        "BisectsAngle(Line(M,P),Angle(L,P,N))",
+        "Equals(LengthOf(Line(L, M)), 3x+1)",
+        "Equals(LengthOf(Line(M, N)), 4x-2)",
+        "Equals(MeasureOf(Angle(L, P, M)), 5y)",
+        "Equilateral(Triangle(L,M,N))",
+        "Find(y)",
+        "PointLiesOnLine(P, Line(L, N))"
+    ],
+    "point_instances": [
+        "P",
+        "L",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "LP",
+        "LN",
+        "PN",
+        "ML",
+        "MN",
+        "MP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            144.0,
+            184.5
+        ],
+        "L": [
+            54.75,
+            184.25
+        ],
+        "N": [
+            232.25,
+            184.25
+        ],
+        "M": [
+            143.5,
+            43.75
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "16",
+        "17",
+        "18"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        17.0,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 27.433733,
+    "solution_predicate": "Equals(18.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220NPM, 3.14 = pi, BisectsAngle(MP, \u2220NPL), pi * ((5 * y) / 180) = \u2220MPL, \u2220MPL\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(MP, \u2220NPL)\nConclusions: \u2220MPL = \u2220NPM\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 * y) / 180) = \u2220MPL\nConclusions: 3.14 * ((5 * y) / 180) = \u2220MPL\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220MPL, \u2220NPM\nConclusions: pi = \u2220MPL + \u2220NPM\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MPL = \u2220NPM, pi * ((5 * y) / 180) = \u2220MPL\nConclusions: pi * ((5 * y) / 180) = \u2220NPM\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * y) / 180) = \u2220MPL, 3.14 * ((5 * y) / 180) = \u2220MPL\nConclusions: 3.14 * ((5 * y) / 180) = pi * ((5 * y) / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220MPL + \u2220NPM\nConclusions: 3.14 = \u2220MPL + \u2220NPM\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * y) / 180) = pi * ((5 * y) / 180), pi * ((5 * y) / 180) = \u2220NPM\nConclusions: 3.14 * ((5 * y) / 180) = \u2220NPM\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((5 * y) / 180) = \u2220NPM, 3.14 = \u2220MPL + \u2220NPM, 3.14 * ((5 * y) / 180) = \u2220MPL\nConclusions: 18 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, P)",
+        "Line(L, N)",
+        "Line(P, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "BisectsAngle(Line(M, P), Angle(N, P, L))",
+        "Equilateral(Triangle(L, M, N))",
+        "PointLiesOnLine(P, Line(L, N))",
+        "Equals(LengthOf(Line(L, M)), Add(Mul(3.0, x), 1.0))",
+        "Equals(LengthOf(Line(M, N)), Sub(Mul(4.0, x), 2.0))",
+        "Equals(MeasureOf(Angle(M, P, L)), Mul(pi, Div(Mul(5.0, y), 180.0)))"
+    ],
+    "correct": true
+}

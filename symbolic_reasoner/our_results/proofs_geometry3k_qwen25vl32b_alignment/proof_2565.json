@@ -1,0 +1,61 @@
+{
+    "problem_id": "2565",
+    "solved": true,
+    "problem_text": "Find \\tan X.",
+    "logic_forms": [
+        "Perpendicular(Line(X, A), Line(B, A))",
+        "Equals(LengthOf(Line(B, X)), 13)",
+        "Equals(LengthOf(Line(A, X)), 5)",
+        "Find(TanOf(Angle(X)))"
+    ],
+    "point_instances": [
+        "X",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "XA",
+        "AB",
+        "XB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            51.92743764172335,
+            37.841269841269835
+        ],
+        "A": [
+            51.70068027210884,
+            128.77097505668934
+        ],
+        "B": [
+            268.48072562358277,
+            128.3174603174603
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 5 } { 12 }",
+        "\\frac { 12 } { 13 }",
+        "\\frac { 17 } { 12 }",
+        "\\frac { 12 } { 5 }"
+    ],
+    "choices_precise_value": [
+        0.4166666666666667,
+        0.9230769230769231,
+        1.4166666666666667,
+        2.4
+    ],
+    "problem_answer": 2.4,
+    "total_time": 13.387351,
+    "solution_predicate": "Equals(2.4, TanOf(MeasureOf(Angle(A, X, B))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: cos(\u2220AXB), 13 = BX, AB \u22a5 AX, 5 = AX, tan(\u2220AXB)\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 AX, cos(\u2220AXB)\nConclusions: AX / BX = cos(\u2220AXB)\n\nStep 3:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220AXB), AB \u22a5 AX\nConclusions: AB / AX = tan(\u2220AXB)\n\nStep 4:\nTheorem: Substitution\nPremises : AX / BX = cos(\u2220AXB), 5 = AX, 13 = BX\nConclusions: 5 / 13 = cos(\u2220AXB)\n\nStep 5:\nTheorem: Substitution\nPremises : 5 = AX, AB / AX = tan(\u2220AXB)\nConclusions: AB / 5 = tan(\u2220AXB)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 5 / 13 = cos(\u2220AXB)\nConclusions: 1.18 = \u2220AXB\n\nStep 7:\nTheorem: Substitution\nPremises : 1.18 = \u2220AXB, 5 = AX, AB / AX = tan(\u2220AXB)\nConclusions: tan(1.18) = AB / 5\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AB / 5 = tan(\u2220AXB), tan(1.18) = AB / 5\nConclusions: tan(1.18) = tan(\u2220AXB)\n\nStep 9:\nTheorem: Evaluate\nPremises : tan(1.18) = tan(\u2220AXB)\nConclusions: 2.4 = tan(\u2220AXB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, A)",
+        "Line(A, B)",
+        "Line(X, B)",
+        "Perpendicular(Line(X, A), Line(B, A))",
+        "Equals(LengthOf(Line(B, X)), 13.0)",
+        "Equals(LengthOf(Line(A, X)), 5.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,112 @@
+{
+    "problem_id": "8228",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 1 for the parallelogram.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, E)), 85)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, E, D)), 48)",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(Angle(1)))",
+        "Find(MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Parallelogram(A, B, D, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "AB",
+        "BC",
+        "BE",
+        "CE",
+        "ED",
+        "BD",
+        "AE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.535807291666664,
+            37.80357142857143
+        ],
+        "B": [
+            213.37934027777777,
+            37.89047619047619
+        ],
+        "C": [
+            148.28645833333331,
+            121.56734693877551
+        ],
+        "D": [
+            277.77604166666663,
+            204.99591836734697
+        ],
+        "E": [
+            83.12395833333332,
+            205.65142857142857
+        ]
+    },
+    "problem_choices": [
+        37.0,
+        48.0,
+        85.0,
+        95.0
+    ],
+    "choices_precise_value": [
+        37.0,
+        48.0,
+        85.0,
+        95.0
+    ],
+    "problem_answer": 95.0,
+    "total_time": 77.311084,
+    "solution_predicate": "Equals(1.6580627894, MeasureOf(Angle(E, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220ACB, C on AD, \u2220ECD, \u2220BCA, C on BE, \u2220DCB, \u2220ACE, pi * (85 / 180) = \u2220ACE, \u2220DCE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : C on BE, C on AD\nConclusions: \u2220BCA = \u2220ECD, \u2220ACB = \u2220DCE, \u2220ACE = \u2220DCB\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220ACE, \u2220ECD, \u2220BCA, \u2220DCB\nConclusions: 2 * pi = \u2220ACE + \u2220BCA + \u2220DCB + \u2220ECD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCE\nConclusions: \u2220DCE = 2 * pi - \u2220ECD\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220BCA = \u2220ECD, 3.14 = pi, \u2220ACB = 2 * pi - \u2220BCA, \u2220ACB = \u2220DCE\nConclusions: \u2220DCE = 2 * 3.14 - \u2220ECD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (85 / 180) = \u2220ACE, \u2220ACE = \u2220DCB\nConclusions: pi * (85 / 180) = \u2220DCB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (85 / 180) = \u2220DCB, pi * (85 / 180) = \u2220ACE, \u2220BCA = \u2220ECD, 2 * pi = \u2220ACE + \u2220BCA + \u2220DCB + \u2220ECD\nConclusions: 2 * 3.14 = pi * (85 / 180) + pi * (85 / 180) + \u2220ECD + \u2220ECD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = pi * (85 / 180) + pi * (85 / 180) + \u2220ECD + \u2220ECD, \u2220DCE = 2 * 3.14 - \u2220ECD, \u2220DCE = 2 * pi - \u2220ECD\nConclusions: 1.66 = \u2220ECD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Parallelogram(A, B, D, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(MeasureOf(Angle(A, C, E)), Mul(pi, Div(85.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(48.0, 180.0)))"
+    ],
+    "correct": true
+}

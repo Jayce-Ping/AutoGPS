@@ -1,0 +1,73 @@
+{
+    "problem_id": "8163",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, A)), 18\\sqrt{3})",
+        "Equals(LengthOf(Line(C, B)), 18\\sqrt{3})",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(B, A)))",
+        "Equals(MeasureOf(Angle(A, C, B)), 45)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            87.51196172248804,
+            238.59157894736842
+        ],
+        "B": [
+            96.41148325358851,
+            54.44842105263158
+        ],
+        "C": [
+            278.61747670611936,
+            63.873684210526314
+        ]
+    },
+    "problem_choices": [
+        22.045407685048602,
+        44.090815370097204,
+        54.0,
+        62.35382907247958
+    ],
+    "choices_precise_value": [
+        22.045407685048602,
+        44.090815370097204,
+        54.0,
+        62.35382907247958
+    ],
+    "problem_answer": 22.045407685048602,
+    "total_time": 16.475415,
+    "solution_predicate": "Equals(44.09081537, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = AC, AB, AB \u22a5 BC, BC, 18 * SqrtOf(3) = AB, AC, 18 * SqrtOf(3) = BC\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : 18 * SqrtOf(3) = AB\nConclusions: 31.18 = AB\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 18 * SqrtOf(3) = BC\nConclusions: 31.18 = BC\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: AC = SqrtOf(AB ** 2 + BC ** 2)\n\nStep 6:\nTheorem: Substitution\nPremises : 31.18 = BC, 31.18 = AB, x = AC, AC = SqrtOf(AB ** 2 + BC ** 2)\nConclusions: SqrtOf(31.18 ** 2 + 31.18 ** 2) = x\n\nStep 7:\nTheorem: Evaluate\nPremises : SqrtOf(31.18 ** 2 + 31.18 ** 2) = x\nConclusions: 44.09 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, A)), Mul(18.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, B)), Mul(18.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(B, A)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": false
+}

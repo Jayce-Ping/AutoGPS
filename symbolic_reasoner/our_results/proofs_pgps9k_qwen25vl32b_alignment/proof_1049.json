@@ -1,0 +1,109 @@
+{
+    "problem_id": "1049",
+    "solved": true,
+    "problem_text": "PQRS is a rhombus. Find m \\angle TQR, given that m \\angle QTR = 6y+6 and m \\angle SPR = 3y.",
+    "logic_forms": [
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Rhombus(P,Q,R,S)",
+        "Equals(MeasureOf(Angle(Q,T,R)),6y+6)",
+        "Equals(MeasureOf(Angle(S,P,R)),3y)",
+        "Find(MeasureOf(Angle(T,Q,R)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "PT",
+        "PR",
+        "TR",
+        "QT",
+        "QS",
+        "TS",
+        "PS",
+        "QR",
+        "SR",
+        "PQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            52.69736842105263,
+            34.20457142857143
+        ],
+        "Q": [
+            179.21052631578945,
+            34.6
+        ],
+        "T": [
+            122.36842105263158,
+            96.88
+        ],
+        "S": [
+            66.11842105263158,
+            160.14857142857142
+        ],
+        "R": [
+            192.1052631578947,
+            159.92888888888888
+        ]
+    },
+    "problem_choices": [
+        42.0,
+        48.0,
+        84.0,
+        96.0
+    ],
+    "choices_precise_value": [
+        42.0,
+        48.0,
+        84.0,
+        96.0
+    ],
+    "problem_answer": 48.0,
+    "total_time": 310.111006,
+    "solution_predicate": "Equals(0.837758041, MeasureOf(Angle(T, Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220SPR, \u2220QPS, PS, \u2220SPT, \u2220RPQ, pi * ((3 * y) / 180) = \u2220SPR, \u2220TPQ, T on QS, QS, RS, 3.14 = pi, Rhombus(P, Q, R, S), T on PR, pi * ((6 + 6 * y) / 180) = \u2220RTQ, PQ, PR, \u2220SQR, \u2220QPS\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220QPS\nConclusions: \u2220QPS = 2 * pi - \u2220SPQ\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2, 6.28 = 2 * pi\n\nStep 4:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(P, Q, R, S)\nConclusions: \u2220RPQ = \u2220SPR, \u2220PQS = \u2220SQR\n\nStep 5:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(P, Q, R, S)\nConclusions: Parallelogram(P, Q, R, S)\n\nStep 6:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(P, Q, R, S)\nConclusions: QT \u22a5 RT\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220SPR, T on PR\nConclusions: \u2220SPR = \u2220SPT\n\nStep 8:\nTheorem: Same Angle\nPremises : T on PR, \u2220RPQ\nConclusions: \u2220RPQ = \u2220TPQ\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : PQ, QS, PS\nConclusions: \u25b3PQS\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : RS, PS, PR\nConclusions: \u25b3PRS\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220SQR, T on QS\nConclusions: \u2220SQR = \u2220TQR\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220SPT, \u2220TPQ, \u2220QPS\nConclusions: 2 * pi = \u2220QPS + \u2220SPT + \u2220TPQ\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RPQ = \u2220SPR, pi * ((3 * y) / 180) = \u2220SPR\nConclusions: pi * ((3 * y) / 180) = \u2220RPQ\n\nStep 14:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(P, Q, R, S)\nConclusions: \u2220QRS = \u2220SPQ, \u2220QPS = \u2220SRQ, \u2220PQR = \u2220RSP\n\nStep 15:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(P, Q, R, S)\nConclusions: PQ || SR, PS || QR\n\nStep 16:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(P, Q, R, S)\nConclusions: Quadrilateral(P, Q, R, S)\n\nStep 17:\nTheorem: Perpendicular to Right Angle\nPremises : QT \u22a5 RT\nConclusions: pi / 2 = \u2220RTQ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y) / 180) = \u2220SPR, \u2220SPR = \u2220SPT\nConclusions: pi * ((3 * y) / 180) = \u2220SPT\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, S)\nPremises : \u25b3PQS\nConclusions: pi = \u2220PQS + \u2220QSP + \u2220SPQ\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(P, R, S)\nPremises : \u25b3PRS\nConclusions: pi = \u2220PRS + \u2220RSP + \u2220SPR\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQS = \u2220SQR, \u2220SQR = \u2220TQR\nConclusions: \u2220PQS = \u2220TQR\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220QPS + \u2220SPT + \u2220TPQ, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220QPS + \u2220SPT + \u2220TPQ\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y) / 180) = \u2220RPQ, \u2220RPQ = \u2220TPQ\nConclusions: pi * ((3 * y) / 180) = \u2220TPQ\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QPS = \u2220SRQ, \u2220QPS = 2 * pi - \u2220SPQ\nConclusions: \u2220SRQ = 2 * pi - \u2220SPQ\n\nStep 25:\nTheorem: Alternate Interior Angle Theorem\nPremises : PQ || SR\nConclusions: \u2220PRS = \u2220RPQ\n\nStep 26:\nTheorem: Alternate Interior Angle Theorem\nPremises : PS || QR\nConclusions: \u2220QSP = \u2220SQR\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, Q, R, S)\nPremises : Quadrilateral(P, Q, R, S)\nConclusions: 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220RTQ, pi * ((6 + 6 * y) / 180) = \u2220RTQ\nConclusions: pi / 2 = pi * ((6 + 6 * y) / 180)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RPQ = \u2220SPR, \u2220PRS = \u2220RPQ\nConclusions: \u2220PRS = \u2220SPR\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QSP = \u2220SQR, \u2220PQS = \u2220TQR, \u2220SQR = \u2220TQR\nConclusions: \u2220PQS = \u2220QSP\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = pi * ((6 + 6 * y) / 180)\nConclusions: 1.57 = pi * ((6 + 6 * y) / 180)\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRS = \u2220SPR, pi * ((3 * y) / 180) = \u2220SPR\nConclusions: pi * ((3 * y) / 180) = \u2220PRS\n\nStep 34:\nTheorem: Substitution\nPremises : \u2220QRS = \u2220SPQ, 6.28 = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, \u2220PQR = \u2220RSP\nConclusions: 6.28 = \u2220RSP + \u2220RSP + \u2220SPQ + \u2220SPQ\n\nStep 35:\nTheorem: Substitution\nPremises : 3.14 = pi, 1.57 = pi * ((6 + 6 * y) / 180)\nConclusions: 1.57 = 3.14 * ((6 + 6 * y) / 180)\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 1.57 = 3.14 * ((6 + 6 * y) / 180)\nConclusions: 14 = y\n\nStep 37:\nTheorem: Evaluate\nPremises : 3.14 = pi, 14 = y\nConclusions: 0.73 = pi * ((3 * y) / 180)\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 0.73 = pi * ((3 * y) / 180), pi * ((3 * y) / 180) = \u2220PRS\nConclusions: 0.73 = \u2220PRS\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y) / 180) = \u2220TPQ, 0.73 = pi * ((3 * y) / 180)\nConclusions: 0.73 = \u2220TPQ\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * y) / 180) = \u2220SPT, 0.73 = pi * ((3 * y) / 180)\nConclusions: 0.73 = \u2220SPT\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 0.73 = pi * ((3 * y) / 180), pi * ((3 * y) / 180) = \u2220SPR\nConclusions: 0.73 = \u2220SPR\n\nStep 42:\nTheorem: Substitution\nPremises : 0.73 = \u2220SPT, 0.73 = \u2220TPQ, \u2220QPS = \u2220SRQ, 6.28 = \u2220QPS + \u2220SPT + \u2220TPQ\nConclusions: 6.28 = 0.73 + 0.73 + \u2220SRQ\n\nStep 43:\nTheorem: Solve Linear Equation System\nPremises : 0.73 = \u2220PRS, 6.28 = 0.73 + 0.73 + \u2220SRQ, 0.73 = \u2220SPR, pi = \u2220PRS + \u2220RSP + \u2220SPR, \u2220SRQ = 2 * pi - \u2220SPQ, pi = \u2220PQS + \u2220QSP + \u2220SPQ, 6.28 = \u2220RSP + \u2220RSP + \u2220SPQ + \u2220SPQ, \u2220PQS = \u2220QSP\nConclusions: 0.84 = \u2220PQS\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQS = \u2220TQR, 0.84 = \u2220PQS\nConclusions: 0.84 = \u2220TQR\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, T)",
+        "Line(P, R)",
+        "Line(T, R)",
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Line(P, S)",
+        "Line(Q, R)",
+        "Line(S, R)",
+        "Line(P, Q)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(T, R)",
+        "Line(T, S)",
+        "PointLiesOnLine(T, Line(P, R))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "Rhombus(P, Q, R, S)",
+        "Equals(MeasureOf(Angle(R, T, Q)), Mul(pi, Div(Add(Mul(6.0, y), 6.0), 180.0)))",
+        "Equals(MeasureOf(Angle(S, P, R)), Mul(pi, Div(Mul(3.0, y), 180.0)))"
+    ],
+    "correct": true
+}

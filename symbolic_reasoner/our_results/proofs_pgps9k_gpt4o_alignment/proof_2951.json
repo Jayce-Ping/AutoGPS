@@ -1,0 +1,70 @@
+{
+    "problem_id": "2951",
+    "solved": true,
+    "problem_text": "Find the area of sector LKJ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), 16)",
+        "Equals(MeasureOf(Arc(J, L)), 36)",
+        "Find(AreaOf(Sector(K, L, J)))",
+        "Line(K, J)",
+        "Line(K, L)",
+        "PointLiesOnCircle(J, Circle(K))",
+        "PointLiesOnCircle(L, Circle(K))",
+        "Triangle(L, K, J)"
+    ],
+    "point_instances": [
+        "J",
+        "L",
+        "K"
+    ],
+    "line_instances": [
+        "KL",
+        "KJ"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "J": [
+            174.55280748663102,
+            54.51785714285714
+        ],
+        "L": [
+            191.52673796791444,
+            104.47142857142856
+        ],
+        "K": [
+            106.28178165225575,
+            104.34404990822858
+        ]
+    },
+    "problem_choices": [
+        5.188,
+        10.053,
+        80.425,
+        723.823
+    ],
+    "choices_precise_value": [
+        5.188,
+        10.053,
+        80.425,
+        723.823
+    ],
+    "problem_answer": 80.425,
+    "total_time": 7.046341,
+    "solution_predicate": "Equals(80.4247719322, AreaOf(Sector(L, K, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = KL, pi * (36 / 180) = Arc(LKJ), Arc(LKJ), Sector(L, K, J), L on \u2299(K, radius_K)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(LKJ)\nConclusions: \u2220LKJ = Arc(LKJ)\n\nStep 3:\nTheorem: Area formula of Sector(L, K, J)\nPremises : Sector(L, K, J)\nConclusions: Area(Sector(L, K, J)) = (radius_K ** 2 * \u2220LKJ) / 2\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : L on \u2299(K, radius_K)\nConclusions: radius_K = KL\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (36 / 180) = Arc(LKJ), \u2220LKJ = Arc(LKJ)\nConclusions: pi * (36 / 180) = \u2220LKJ\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 16 = KL, radius_K = KL\nConclusions: 16 = radius_K\n\nStep 7:\nTheorem: Substitution\nPremises : 16 = radius_K, Area(Sector(L, K, J)) = (radius_K ** 2 * \u2220LKJ) / 2, pi * (36 / 180) = \u2220LKJ\nConclusions: (pi * (36 / 180) * 16 ** 2) / 2 = Area(Sector(L, K, J))\n\nStep 8:\nTheorem: Evaluate\nPremises : (pi * (36 / 180) * 16 ** 2) / 2 = Area(Sector(L, K, J))\nConclusions: 80.42 = Area(Sector(L, K, J))\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(K, J)",
+        "Circle(K, radius_K)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "PointLiesOnCircle(J, Circle(K, radius_K))",
+        "PointLiesOnCircle(L, Circle(K, radius_K))",
+        "Triangle(L, K, J)",
+        "Equals(LengthOf(Line(K, L)), 16.0)",
+        "Equals(MeasureOf(Arc(L, K, J)), Mul(pi, Div(36.0, 180.0)))"
+    ],
+    "correct": true
+}

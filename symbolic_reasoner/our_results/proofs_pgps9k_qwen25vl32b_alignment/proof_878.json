@@ -1,0 +1,69 @@
+{
+    "problem_id": "878",
+    "solved": true,
+    "problem_text": "S is between R and T. Find RT.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 2x+7)",
+        "Equals(LengthOf(Line(R, T)), 4x)",
+        "Equals(LengthOf(Line(T, S)), 28)",
+        "Find(LengthOf(Line(R, T)))",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(S, Line(R, T))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "RT",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            24.77409638554217,
+            78.96428571428571
+        ],
+        "S": [
+            252.93172690763052,
+            78.66122448979591
+        ],
+        "T": [
+            404.87951807228916,
+            79.2
+        ]
+    },
+    "problem_choices": [
+        14.0,
+        28.0,
+        42.0,
+        70.0
+    ],
+    "choices_precise_value": [
+        14.0,
+        28.0,
+        42.0,
+        70.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 1.77305,
+    "solution_predicate": "Equals(70.0, LengthOf(Line(R, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 7 + 2 * x = RS, 4 * x = RT, 28 = ST, S on RT\n\nStep 2:\nTheorem: Line Segment Split\nPremises : S on RT\nConclusions: RT = RS + ST\n\nStep 3:\nTheorem: Substitution\nPremises : RT = RS + ST, 7 + 2 * x = RS, 4 * x = RT, 28 = ST\nConclusions: 4 * x = 28 + (7 + 2 * x)\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 4 * x = 28 + (7 + 2 * x), 4 * x = RT\nConclusions: 70 = RT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(S, Line(R, T))",
+        "Equals(LengthOf(Line(R, S)), Add(Mul(2.0, x), 7.0))",
+        "Equals(LengthOf(Line(R, T)), Mul(4.0, x))",
+        "Equals(LengthOf(Line(T, S)), 28.0)"
+    ],
+    "correct": true
+}

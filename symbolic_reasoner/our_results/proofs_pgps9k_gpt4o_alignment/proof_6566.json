@@ -1,0 +1,112 @@
+{
+    "problem_id": "6566",
+    "solved": true,
+    "problem_text": "Triangles FGH and FHJ are inscribed in \\odot K with m \\widehat FG = m \\widehat FJ. Find m \\angle FHG if m \\angle 1 = 6x-5, and m \\angle 2 = 7x+4.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(K, F, J)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(K, H, J)), MeasureOf(Angle(2)))",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(F, K)",
+        "Line(G, H)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "PointLiesOnCircle(F, Circle(K))",
+        "PointLiesOnCircle(G, Circle(K))",
+        "PointLiesOnCircle(H, Circle(K))",
+        "PointLiesOnCircle(J, Circle(K))",
+        "PointLiesOnLine(K, Line(F, H))",
+        "InscribedIn(Triangle(F,G,H),Circle(K))",
+        "InscribedIn(Triangle(F,H,J),Circle(K))",
+        "Equals(MeasureOf(Arc(F,G)),MeasureOf(Arc(F,J)))",
+        "Equals(MeasureOf(Angle(1)),6x-5)",
+        "Equals(MeasureOf(Angle(2)),7x+4)",
+        "Find(MeasureOf(Angle(F,H,G)))"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "K",
+        "H",
+        "J"
+    ],
+    "line_instances": [
+        "FK",
+        "FH",
+        "KH",
+        "FJ",
+        "FG",
+        "JH",
+        "GH"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "G": [
+            240.14606741573036,
+            66.28571428571428
+        ],
+        "F": [
+            58.92322097378277,
+            80.38095238095237
+        ],
+        "K": [
+            155.02913338215436,
+            138.434113528872
+        ],
+        "H": [
+            250.8988764044944,
+            195.42857142857142
+        ],
+        "J": [
+            133.20449438202246,
+            249.6
+        ]
+    },
+    "problem_choices": [
+        37.0,
+        53.0,
+        90.0,
+        106.0
+    ],
+    "choices_precise_value": [
+        37.0,
+        53.0,
+        90.0,
+        106.0
+    ],
+    "problem_answer": 53.0,
+    "total_time": 144.337132,
+    "solution_predicate": "Equals(0.9250245036, MeasureOf(Angle(G, H, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220HKG, J on \u2299(K, radius_K), GK, \u2220FKJ, \u2220GHF, Arc(GKF), K on FH, GH, Arc(FKJ) = Arc(GKF), pi * ((6 * x - 5) / 180) = \u2220JFK, pi * ((4 + 7 * x) / 180) = \u2220KHJ, 3.14 = pi, F on \u2299(K, radius_K), \u2220HFG, HK, \u2220GKF, FK, Arc(FKJ), G on \u2299(K, radius_K), FG, \u2220JKH, H on \u2299(K, radius_K), \u25b3FGH\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : J on \u2299(K, radius_K)\nConclusions: radius_K = JK\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(GKF)\nConclusions: \u2220GKF = Arc(GKF)\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220GHF, K on FH\nConclusions: \u2220GHF = \u2220GHK\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x - 5) / 180) = \u2220JFK\nConclusions: 3.14 * ((6 * x - 5) / 180) = \u2220JFK\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 + 7 * x) / 180) = \u2220KHJ\nConclusions: 3.14 * ((4 + 7 * x) / 180) = \u2220KHJ\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : F on \u2299(K, radius_K)\nConclusions: radius_K = FK\n\nStep 8:\nTheorem: Same Angle\nPremises : K on FH, \u2220HFG\nConclusions: \u2220HFG = \u2220KFG\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : HK, GH, GK\nConclusions: \u25b3GHK\n\nStep 10:\nTheorem: Straight Angle\nPremises : \u2220HKG, \u2220GKF\nConclusions: pi = \u2220GKF + \u2220HKG\n\nStep 11:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FKJ)\nConclusions: \u2220FKJ = Arc(FKJ)\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : G on \u2299(K, radius_K)\nConclusions: radius_K = GK\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : FK, GK, FG\nConclusions: \u25b3FGK\n\nStep 14:\nTheorem: Straight Angle\nPremises : \u2220JKH, \u2220FKJ\nConclusions: pi = \u2220FKJ + \u2220JKH\n\nStep 15:\nTheorem: Diameter Definition\nPremises : F on \u2299(K, radius_K), K on FH, H on \u2299(K, radius_K)\nConclusions: IsDiameterOf(FH, \u2299(K, radius_K))\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : H on \u2299(K, radius_K)\nConclusions: radius_K = HK\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(F, G, H)\nPremises : \u25b3FGH\nConclusions: pi = \u2220FGH + \u2220GHF + \u2220HFG\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = JK, radius_K = FK\nConclusions: FK = JK\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220GKF = Arc(GKF), 3.14 = pi, pi = \u2220GKF + \u2220HKG\nConclusions: 3.14 = \u2220HKG + Arc(GKF)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : Arc(FKJ) = Arc(GKF), \u2220FKJ = Arc(FKJ)\nConclusions: \u2220FKJ = Arc(GKF)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = GK, radius_K = FK\nConclusions: FK = GK\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = JK, radius_K = GK\nConclusions: GK = JK\n\nStep 23:\nTheorem: Thales Theorem\nPremises : IsDiameterOf(FH, \u2299(K, radius_K)), G on \u2299(K, radius_K)\nConclusions: FG \u22a5 GH\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = HK, radius_K = GK\nConclusions: GK = HK\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220FGH + \u2220GHF + \u2220HFG, 3.14 = pi\nConclusions: 3.14 = \u2220FGH + \u2220GHF + \u2220HFG\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GKF = Arc(GKF), \u2220FKJ = Arc(GKF)\nConclusions: \u2220FKJ = \u2220GKF\n\nStep 27:\nTheorem: Substitution\nPremises : pi = \u2220FKJ + \u2220JKH, 3.14 = pi, \u2220FKJ = Arc(GKF)\nConclusions: 3.14 = \u2220JKH + Arc(GKF)\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3FGK, FK = GK\nConclusions: \u2220FGK = \u2220KFG\n\nStep 29:\nTheorem: Perpendicular to Right Angle\nPremises : FG \u22a5 GH\nConclusions: pi / 2 = \u2220FGH\n\nStep 30:\nTheorem: Issoceles Triangle Property\nPremises : GK = HK, \u25b3GHK\nConclusions: \u2220GHK = \u2220KGH\n\nStep 31:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220FKJ = \u2220GKF, FK = GK, FK = JK\nConclusions: \u25b3FGK \u2245 \u25b3JFK\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220JKH + Arc(GKF), 3.14 = \u2220HKG + Arc(GKF)\nConclusions: \u2220HKG = \u2220JKH\n\nStep 33:\nTheorem: Congruent Definition\nPremises : \u25b3FGK \u2245 \u25b3JFK\nConclusions: \u2220FGK = \u2220JFK, FK = JK, \u2220FKJ = \u2220GKF\n\nStep 34:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : GK = JK, \u2220HKG = \u2220JKH\nConclusions: \u25b3GHK \u2245 \u25b3JHK\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((6 * x - 5) / 180) = \u2220JFK, \u2220FGK = \u2220KFG, \u2220FGK = \u2220JFK\nConclusions: 3.14 * ((6 * x - 5) / 180) = \u2220KFG\n\nStep 36:\nTheorem: Congruent Definition\nPremises : \u25b3GHK \u2245 \u25b3JHK\nConclusions: GK = JK, \u2220GHK = \u2220KHJ\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HFG = \u2220KFG, 3.14 * ((6 * x - 5) / 180) = \u2220KFG\nConclusions: 3.14 * ((6 * x - 5) / 180) = \u2220HFG\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 + 7 * x) / 180) = \u2220KHJ, \u2220GHK = \u2220KHJ, \u2220GHK = \u2220KGH\nConclusions: 3.14 * ((4 + 7 * x) / 180) = \u2220KGH\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 + 7 * x) / 180) = \u2220KGH, \u2220GHK = \u2220KGH\nConclusions: 3.14 * ((4 + 7 * x) / 180) = \u2220GHK\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GHF = \u2220GHK, 3.14 * ((4 + 7 * x) / 180) = \u2220GHK\nConclusions: 3.14 * ((4 + 7 * x) / 180) = \u2220GHF\n\nStep 41:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((6 * x - 5) / 180) = \u2220HFG, 3.14 * ((4 + 7 * x) / 180) = \u2220GHF, pi / 2 = \u2220FGH, 3.14 = \u2220FGH + \u2220GHF + \u2220HFG, pi = \u2220FGH + \u2220GHF + \u2220HFG\nConclusions: 0.93 = \u2220GHF\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, K)",
+        "Line(F, H)",
+        "Line(K, H)",
+        "Line(F, J)",
+        "Line(F, G)",
+        "Line(J, H)",
+        "Line(G, H)",
+        "Circle(K, radius_K)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(F, K)",
+        "Line(G, H)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "PointLiesOnCircle(F, Circle(K, radius_K))",
+        "PointLiesOnCircle(G, Circle(K, radius_K))",
+        "PointLiesOnCircle(H, Circle(K, radius_K))",
+        "PointLiesOnCircle(J, Circle(K, radius_K))",
+        "PointLiesOnLine(K, Line(F, H))",
+        "InscribedIn(Triangle(F, G, H), Circle(K, radius_K))",
+        "InscribedIn(Triangle(F, H, J), Circle(K, radius_K))",
+        "Equals(MeasureOf(Arc(G, K, F)), MeasureOf(Arc(F, K, J)))",
+        "Equals(MeasureOf(Angle(J, F, K)), Mul(pi, Div(Sub(Mul(6.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(K, H, J)), Mul(pi, Div(Add(Mul(7.0, x), 4.0), 180.0)))"
+    ],
+    "correct": true
+}

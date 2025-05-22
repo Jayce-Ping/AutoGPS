@@ -1,0 +1,61 @@
+{
+    "problem_id": "2435",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, B, A)), 40)",
+        "Equals(MeasureOf(Angle(A, C, B)), 25)",
+        "Equals(MeasureOf(Angle(C, A, B)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            77.52525252525253,
+            148.76767676767676
+        ],
+        "B": [
+            12.121212121212121,
+            13.161616161616159
+        ],
+        "C": [
+            305.3030303030303,
+            148.51515151515153
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "40",
+        "65",
+        "115"
+    ],
+    "choices_precise_value": [
+        25.0,
+        40.0,
+        65.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 5.393775,
+    "solution_predicate": "Equals(115.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220CAB, \u2220BAC, \u2220CAB, 3.14 = pi, AC, BC, pi * (40 / 180) = \u2220ABC, pi * (25 / 180) = \u2220BCA, AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220CAB\nConclusions: 3.14 * (x / 180) = \u2220CAB\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220BAC = 2 * pi - \u2220CAB, 3.14 = pi\nConclusions: \u2220BAC = 2 * 3.14 - \u2220CAB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = 2 * pi - \u2220BAC, 3.14 * (x / 180) = \u2220CAB\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220BAC\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (40 / 180) = \u2220ABC, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (25 / 180) = \u2220BCA\nConclusions: 3.14 = pi * (25 / 180) + pi * (40 / 180) + \u2220CAB\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : \u2220BAC = 2 * 3.14 - \u2220CAB, 3.14 = pi * (25 / 180) + pi * (40 / 180) + \u2220CAB, 3.14 * (x / 180) = \u2220CAB, 3.14 * (x / 180) = 2 * pi - \u2220BAC\nConclusions: 115 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

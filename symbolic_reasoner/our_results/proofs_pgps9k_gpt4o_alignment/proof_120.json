@@ -1,0 +1,117 @@
+{
+    "problem_id": "120",
+    "solved": true,
+    "problem_text": "What is m \\angle W?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, X, Y)), 22)",
+        "Equals(MeasureOf(Angle(A, Y, X)), 2x+2)",
+        "Equals(MeasureOf(Angle(A, Z, W)), 3x-23)",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(Y, A)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "PointLiesOnCircle(W, Circle(B))",
+        "PointLiesOnCircle(X, Circle(B))",
+        "PointLiesOnCircle(Y, Circle(B))",
+        "PointLiesOnCircle(Z, Circle(B))",
+        "PointLiesOnLine(A, Line(Y, W))",
+        "PointLiesOnLine(A, Line(Z, X))",
+        "Find(MeasureOf(Angle(W)))"
+    ],
+    "point_instances": [
+        "Y",
+        "Z",
+        "A",
+        "B",
+        "W",
+        "X"
+    ],
+    "line_instances": [
+        "ZA",
+        "ZX",
+        "AX",
+        "YA",
+        "YW",
+        "AW",
+        "YX",
+        "ZW"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "Y": [
+            194.85459638400812,
+            43.652205882352945
+        ],
+        "Z": [
+            137.10415075120957,
+            49.342279411764714
+        ],
+        "A": [
+            162.13217893217893,
+            84.50750000000001
+        ],
+        "B": [
+            172.08241179328522,
+            115.69477719920883
+        ],
+        "W": [
+            106.65546218487394,
+            155.58529411764707
+        ],
+        "X": [
+            225.39778739778737,
+            172.84895833333334
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        52.0,
+        73.6,
+        90.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        52.0,
+        73.6,
+        90.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 105.01511,
+    "solution_predicate": "Equals(0.3839724354, MeasureOf(Angle(Y, W, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: W on \u2299(B, radius_B), \u2220BZW, \u2220BWY, \u2220WYB, A on XZ, \u2220AWZ, \u2220YWZ, \u2220AZW, \u2220XYB, X on \u2299(B, radius_B), Y on \u2299(B, radius_B), BX, AW, 3.14 = pi, \u2220BZX, \u2220BWA, \u2220ZXB, AY, XZ, \u2220XZW, BY, \u2220ZWB, \u2220WZB, pi * (22 / 180) = \u2220YXA, \u2220XYA, BW, \u2220BXY, \u2220BYX, BZ, AX, WY, \u2220YXZ, AZ, Z on \u2299(B, radius_B), \u2220XYW, XY, WZ, A on WY\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : W on \u2299(B, radius_B)\nConclusions: radius_B = BW\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BZW\nConclusions: \u2220BZW = 2 * pi - \u2220WZB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220AZW\nConclusions: \u2220AZW = 2 * pi - \u2220WZA\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220XYB\nConclusions: \u2220XYB = 2 * pi - \u2220BYX\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : X on \u2299(B, radius_B)\nConclusions: radius_B = BX\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(B, radius_B)\nConclusions: radius_B = BY\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220XZW, A on XZ\nConclusions: \u2220AZW = \u2220XZW\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220BWA, \u2220ZWB, \u2220AWZ\nConclusions: 2 * pi = \u2220AWZ + \u2220BWA + \u2220ZWB\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220XZW, \u2220WZB, \u2220BZX\nConclusions: 2 * pi = \u2220BZX + \u2220WZB + \u2220XZW\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220XYA\nConclusions: \u2220XYA = 2 * pi - \u2220AYX\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : XZ, BX, BZ\nConclusions: \u25b3BXZ\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : WY, BW, BY\nConclusions: \u25b3BWY\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220BXY, \u2220YXZ, \u2220ZXB\nConclusions: 2 * pi = \u2220BXY + \u2220YXZ + \u2220ZXB\n\nStep 15:\nTheorem: Same Angle\nPremises : A on XZ, \u2220YXZ\nConclusions: \u2220YXA = \u2220YXZ\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : Z on \u2299(B, radius_B)\nConclusions: radius_B = BZ\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220XYW, \u2220WYB, \u2220BYX\nConclusions: 2 * pi = \u2220BYX + \u2220WYB + \u2220XYW\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : AX, AY, XY\nConclusions: \u25b3AXY\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : BX, XY, BY\nConclusions: \u25b3BXY\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : AW, WZ, AZ\nConclusions: \u25b3AWZ\n\nStep 21:\nTheorem: Definition of Triangle\nPremises : BW, BZ, WZ\nConclusions: \u25b3BWZ\n\nStep 22:\nTheorem: Same Angle\nPremises : A on WY, \u2220BWY\nConclusions: \u2220BWA = \u2220BWY\n\nStep 23:\nTheorem: Same Angle\nPremises : \u2220XYW, A on WY\nConclusions: \u2220XYA = \u2220XYW\n\nStep 24:\nTheorem: Vertical Angle Theorem\nPremises : A on XZ, A on WY\nConclusions: \u2220XAY = \u2220ZAW\n\nStep 25:\nTheorem: Same Angle\nPremises : A on WY, \u2220YWZ\nConclusions: \u2220AWZ = \u2220YWZ\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BY, radius_B = BW\nConclusions: BW = BY\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BY, radius_B = BX\nConclusions: BX = BY\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AZW = 2 * pi - \u2220WZA, \u2220AZW = \u2220XZW\nConclusions: \u2220XZW = 2 * pi - \u2220WZA\n\nStep 29:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BZX + \u2220WZB + \u2220XZW, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BZX + \u2220WZB + \u2220XZW\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi * (22 / 180) = \u2220YXA, \u2220YXA = \u2220YXZ\nConclusions: pi * (22 / 180) = \u2220YXZ\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BZ, radius_B = BX\nConclusions: BX = BZ\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BW, radius_B = BZ\nConclusions: BW = BZ\n\nStep 33:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BYX + \u2220WYB + \u2220XYW, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BYX + \u2220WYB + \u2220XYW\n\nStep 34:\nTheorem: Interior Angle Sum Theorem for Triangle(Y, X, A)\nPremises : \u25b3AXY\nConclusions: pi = \u2220AYX + \u2220XAY + \u2220YXA\n\nStep 35:\nTheorem: Interior Angle Sum Theorem for Triangle(A, W, Z)\nPremises : \u25b3AWZ\nConclusions: pi = \u2220AWZ + \u2220WZA + \u2220ZAW\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYA = \u2220XYW, \u2220XYA = 2 * pi - \u2220AYX\nConclusions: \u2220XYW = 2 * pi - \u2220AYX\n\nStep 37:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AWZ = \u2220YWZ, \u2220BWA = \u2220BWY, 2 * pi = \u2220AWZ + \u2220BWA + \u2220ZWB\nConclusions: 2 * 3.14 = \u2220BWY + \u2220YWZ + \u2220ZWB\n\nStep 38:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BWY, BW = BY\nConclusions: \u2220BWY = \u2220WYB\n\nStep 39:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BXY, BX = BY\nConclusions: \u2220BXY = \u2220XYB\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BZX + \u2220WZB + \u2220XZW, 2 * 3.14 = \u2220BZX + \u2220WZB + \u2220XZW\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 41:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BXY + \u2220YXZ + \u2220ZXB, 3.14 = pi, pi * (22 / 180) = \u2220YXZ\nConclusions: 2 * 3.14 = 3.14 * (22 / 180) + \u2220BXY + \u2220ZXB\n\nStep 42:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BXZ, BX = BZ\nConclusions: \u2220BZX = \u2220ZXB\n\nStep 43:\nTheorem: Issoceles Triangle Property\nPremises : BW = BZ, \u25b3BWZ\nConclusions: \u2220BZW = \u2220ZWB\n\nStep 44:\nTheorem: Substitution\nPremises : \u2220XAY = \u2220ZAW, pi * (22 / 180) = \u2220YXA, pi = \u2220AYX + \u2220XAY + \u2220YXA, 3.14 = pi\nConclusions: 3.14 = 3.14 * (22 / 180) + \u2220AYX + \u2220ZAW\n\nStep 45:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AWZ = \u2220YWZ, pi = \u2220AWZ + \u2220WZA + \u2220ZAW\nConclusions: 3.14 = \u2220WZA + \u2220YWZ + \u2220ZAW\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (22 / 180) + \u2220BXY + \u2220ZXB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (22 / 180) + \u2220BXY + \u2220ZXB\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BZW = \u2220ZWB, \u2220BZW = 2 * pi - \u2220WZB\nConclusions: \u2220ZWB = 2 * pi - \u2220WZB\n\nStep 48:\nTheorem: Substitution\nPremises : 2 * pi = 3.14 * (22 / 180) + \u2220BXY + \u2220ZXB, \u2220BXY = \u2220XYB, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (22 / 180) + \u2220XYB + \u2220ZXB\n\nStep 49:\nTheorem: Solve Linear Equation System\nPremises : \u2220ZWB = 2 * pi - \u2220WZB, \u2220XZW = 2 * pi - \u2220WZA, 2 * 3.14 = \u2220BZX + \u2220WZB + \u2220XZW, 2 * 3.14 = 3.14 * (22 / 180) + \u2220XYB + \u2220ZXB, \u2220XYB = 2 * pi - \u2220BYX, 2 * 3.14 = \u2220BWY + \u2220YWZ + \u2220ZWB, 2 * 3.14 = \u2220BYX + \u2220WYB + \u2220XYW, \u2220XYW = 2 * pi - \u2220AYX, 3.14 = 3.14 * (22 / 180) + \u2220AYX + \u2220ZAW, 3.14 = \u2220WZA + \u2220YWZ + \u2220ZAW, \u2220BZX = \u2220ZXB, \u2220BWY = \u2220WYB\nConclusions: 0.38 = \u2220YWZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, A)",
+        "Line(Z, X)",
+        "Line(A, X)",
+        "Line(Y, A)",
+        "Line(Y, W)",
+        "Line(A, W)",
+        "Line(Y, X)",
+        "Line(Z, W)",
+        "Circle(B, radius_B)",
+        "Line(A, W)",
+        "Line(A, X)",
+        "Line(Y, A)",
+        "Line(Y, W)",
+        "Line(Y, X)",
+        "Line(Z, A)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "PointLiesOnCircle(W, Circle(B, radius_B))",
+        "PointLiesOnCircle(X, Circle(B, radius_B))",
+        "PointLiesOnCircle(Y, Circle(B, radius_B))",
+        "PointLiesOnCircle(Z, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(Y, W))",
+        "PointLiesOnLine(A, Line(Z, X))",
+        "Equals(MeasureOf(Angle(Y, X, A)), Mul(pi, Div(22.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, Y, X)), Mul(pi, Div(Add(Mul(2.0, x), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(W, Z, A)), Mul(pi, Div(Sub(Mul(3.0, x), 23.0), 180.0)))"
+    ],
+    "correct": true
+}

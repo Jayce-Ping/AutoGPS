@@ -1,0 +1,111 @@
+{
+    "problem_id": "1234",
+    "solved": true,
+    "problem_text": "Find the value of variable x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(C, D)), 3)",
+        "Equals(LengthOf(Line(C, E)), 7)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            154.37768240343348,
+            49.91755102040816
+        ],
+        "B": [
+            255.73676680972818,
+            122.45371428571428
+        ],
+        "C": [
+            392.08812589413446,
+            218.37371428571427
+        ],
+        "D": [
+            247.72400132056785,
+            232.85274725274724
+        ],
+        "E": [
+            57.6343347639485,
+            251.8834285714286
+        ],
+        "F": [
+            144.52642456340587,
+            169.429335279433
+        ]
+    },
+    "problem_choices": [
+        2.571,
+        3.5,
+        14.0,
+        27.333
+    ],
+    "choices_precise_value": [
+        2.571,
+        3.5,
+        14.0,
+        27.333
+    ],
+    "problem_answer": 3.5,
+    "total_time": 49.245832,
+    "solution_predicate": "Equals(3.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = AC, CE, B on \u2299(F, radius_F), CD, E on \u2299(F, radius_F), 3 = CD, D on \u2299(F, radius_F), x = BC, 7 = CE, BC, A on \u2299(F, radius_F), \u2299(F, radius_F), AC\n\nStep 2:\nTheorem: Circle Secant Theorem\nPremises : D on \u2299(F, radius_F), CD, E on \u2299(F, radius_F), A on \u2299(F, radius_F), \u2299(F, radius_F), BC, CE, B on \u2299(F, radius_F), AC\nConclusions: AC * BC = CD * CE\n\nStep 3:\nTheorem: Substitution\nPremises : 7 = CE, 6 = AC, x = BC, 3 = CD, AC * BC = CD * CE\nConclusions: 3 * 7 = 6 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3 * 7 = 6 * x, x = BC\nConclusions: 3.5 = BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.5 = BC, x = BC\nConclusions: 3.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(F, radius_F))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(C, D)), 3.0)",
+        "Equals(LengthOf(Line(C, E)), 7.0)"
+    ],
+    "correct": true
+}

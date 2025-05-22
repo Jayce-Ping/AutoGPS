@@ -1,0 +1,82 @@
+{
+    "problem_id": "667",
+    "solved": true,
+    "problem_text": "What is x?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(T, U, V)), 3x-4)",
+        "Equals(MeasureOf(Angle(U, T, W)), x)",
+        "Equals(MeasureOf(Angle(U, V, W)), MeasureOf(Angle(U, T, W)))",
+        "Equals(MeasureOf(Angle(U, V, W)), x)",
+        "Equals(MeasureOf(Angle(V, W, T)), 3x-4)",
+        "Equals(MeasureOf(Angle(V, W, T)), MeasureOf(Angle(T, U, V)))",
+        "Line(T, W)",
+        "Line(U, T)",
+        "Line(U, V)",
+        "Line(V, W)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "T",
+        "W",
+        "V",
+        "U"
+    ],
+    "line_instances": [
+        "TW",
+        "WV",
+        "VU",
+        "TU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "T": [
+            63.065625000000004,
+            161.05665467625897
+        ],
+        "W": [
+            307.53823529411767,
+            161.0452814219213
+        ],
+        "V": [
+            417.2944444444445,
+            50.269784172661865
+        ],
+        "U": [
+            172.82500000000002,
+            50.269784172661865
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        36.8,
+        46.0,
+        72.8
+    ],
+    "choices_precise_value": [
+        2.0,
+        36.8,
+        46.0,
+        72.8
+    ],
+    "problem_answer": 46.0,
+    "total_time": 6.826382,
+    "solution_predicate": "Equals(46.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220UVW, 3.14 = pi, TW, pi * ((3 * x - 4) / 180) = \u2220VWT, UV, VW, TU, pi * (x / 180) = \u2220WTU, pi * ((3 * x - 4) / 180) = \u2220TUV\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x - 4) / 180) = \u2220VWT\nConclusions: 3.14 * ((3 * x - 4) / 180) = \u2220VWT\n\nStep 3:\nTheorem: Definition of Quadrilateral\nPremises : TU, TW, UV, VW\nConclusions: Quadrilateral(T, U, V, W)\n\nStep 4:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220WTU, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220WTU\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((3 * x - 4) / 180) = \u2220TUV, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 4) / 180) = \u2220TUV\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(T, U, V, W)\nPremises : Quadrilateral(T, U, V, W)\nConclusions: 2 * pi = \u2220TUV + \u2220UVW + \u2220VWT + \u2220WTU\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220WTU, 3.14 * (x / 180) = \u2220WTU\nConclusions: 3.14 * (x / 180) = pi * (x / 180)\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220TUV + \u2220UVW + \u2220VWT + \u2220WTU\nConclusions: 2 * 3.14 = \u2220TUV + \u2220UVW + \u2220VWT + \u2220WTU\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = pi * (x / 180), pi * (x / 180) = \u2220UVW\nConclusions: 3.14 * (x / 180) = \u2220UVW\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x - 4) / 180) = \u2220VWT, 3.14 * (x / 180) = \u2220WTU, 2 * 3.14 = \u2220TUV + \u2220UVW + \u2220VWT + \u2220WTU, 3.14 * ((3 * x - 4) / 180) = \u2220TUV, 3.14 * (x / 180) = \u2220UVW\nConclusions: 46 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, W)",
+        "Line(W, V)",
+        "Line(V, U)",
+        "Line(T, U)",
+        "Line(T, W)",
+        "Line(U, T)",
+        "Line(U, V)",
+        "Line(V, W)",
+        "Equals(MeasureOf(Angle(T, U, V)), Mul(pi, Div(Sub(Mul(3.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(W, T, U)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(U, V, W)), MeasureOf(Angle(W, T, U)))",
+        "Equals(MeasureOf(Angle(U, V, W)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(V, W, T)), Mul(pi, Div(Sub(Mul(3.0, x), 4.0), 180.0)))",
+        "Equals(MeasureOf(Angle(V, W, T)), MeasureOf(Angle(T, U, V)))"
+    ],
+    "correct": true
+}

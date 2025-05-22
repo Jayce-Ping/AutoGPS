@@ -1,0 +1,77 @@
+{
+    "problem_id": "2422",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat A B. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(O, Line(C, A))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "Equals(LengthOf(Line(C, A)), 14)",
+        "Equals(MeasureOf(Angle(A, O, B)), 80)",
+        "Find(LengthOf(Arc(A,B)))"
+    ],
+    "point_instances": [
+        "A",
+        "O",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CO",
+        "CA",
+        "OA",
+        "OB"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "A": [
+            319.8253968253968,
+            108.33333333333333
+        ],
+        "O": [
+            197.20634920634922,
+            184.9206349206349
+        ],
+        "B": [
+            293.23809523809524,
+            292.46031746031747
+        ],
+        "C": [
+            74.98412698412699,
+            260.7142857142857
+        ]
+    },
+    "problem_choices": [
+        "7.63",
+        "9.77",
+        "11.13",
+        "14.83"
+    ],
+    "choices_precise_value": [
+        7.63,
+        9.77,
+        11.13,
+        14.83
+    ],
+    "problem_answer": 9.77,
+    "total_time": 4.825934,
+    "solution_predicate": "Equals(9.7738438112, LengthOf(Arc(B, O, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: O on AC, C on \u2299(O, radius_0_0), A on \u2299(O, radius_0_0), 3.14 = pi, pi * (80 / 180) = \u2220BOA, Arc(BOA), 14 = AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : O on AC\nConclusions: AC = AO + CO\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = CO\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(O, radius_0_0)\nConclusions: radius_0_0 = AO\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : pi * (80 / 180) = \u2220BOA, 3.14 = pi\nConclusions: 1.4 = \u2220BOA\n\nStep 6:\nTheorem: Arc Length Definition\nPremises : Arc(BOA)\nConclusions: Arc(BOA) = radius_0_0 * \u2220BOA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 14 = AC, AC = AO + CO\nConclusions: 14 = AO + CO\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AO, radius_0_0 = CO\nConclusions: AO = CO\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : AO = CO, 14 = AO + CO\nConclusions: 7 = CO\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 7 = CO, radius_0_0 = CO\nConclusions: 7 = radius_0_0\n\nStep 11:\nTheorem: Substitution\nPremises : Arc(BOA) = radius_0_0 * \u2220BOA, 7 = radius_0_0, 1.4 = \u2220BOA\nConclusions: 1.4 * 7 = Arc(BOA)\n\nStep 12:\nTheorem: Evaluate\nPremises : 1.4 * 7 = Arc(BOA)\nConclusions: 9.77 = Arc(BOA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, O)",
+        "Line(C, A)",
+        "Line(O, A)",
+        "Line(O, B)",
+        "Circle(O, radius_0_0)",
+        "PointLiesOnLine(O, Line(C, A))",
+        "PointLiesOnCircle(C, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(O, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(O, radius_0_0))",
+        "Equals(LengthOf(Line(C, A)), 14.0)",
+        "Equals(MeasureOf(Angle(B, O, A)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

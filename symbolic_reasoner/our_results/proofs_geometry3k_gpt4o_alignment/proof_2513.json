@@ -1,0 +1,63 @@
+{
+    "problem_id": "2513",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, C)), 16)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), 21)",
+        "Equals(MeasureOf(Angle(B, A, C)), 97)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            271.4827586206896,
+            413.7931034482758
+        ],
+        "B": [
+            136.50738916256154,
+            59.11330049261083
+        ],
+        "A": [
+            46.852216748768456,
+            162.06896551724137
+        ]
+    },
+    "problem_choices": [
+        "5.8",
+        "6.5",
+        "14.2",
+        "44.3"
+    ],
+    "choices_precise_value": [
+        5.8,
+        6.5,
+        14.2,
+        44.3
+    ],
+    "problem_answer": 5.8,
+    "total_time": 11.726905,
+    "solution_predicate": "Equals(5.7769476844, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, 16 = BC, pi * (97 / 180) = \u2220CAB, 3.14 = pi, pi * (21 / 180) = \u2220BCA, AC, x = AB, AB\n\nStep 2:\nTheorem: Solve Linear Equation System\nPremises : pi * (97 / 180) = \u2220CAB, 3.14 = pi\nConclusions: 1.69 = \u2220CAB\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.37 = pi * (21 / 180)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (21 / 180) = \u2220BCA, 0.37 = pi * (21 / 180)\nConclusions: 0.37 = \u2220BCA\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220BCA) = AC / sin(\u2220ABC), AC / sin(\u2220ABC) = BC / sin(\u2220CAB)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (21 / 180) = \u2220BCA, pi * (97 / 180) = \u2220CAB\nConclusions: 3.14 = pi * (21 / 180) + pi * (97 / 180) + \u2220ABC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (21 / 180) + pi * (97 / 180) + \u2220ABC, 3.14 = pi\nConclusions: 1.08 = \u2220ABC\n\nStep 10:\nTheorem: Substitution\nPremises : AC / sin(\u2220ABC) = BC / sin(\u2220CAB), 16 = BC, 1.08 = \u2220ABC, 1.69 = \u2220CAB\nConclusions: 16 / sin(1.69) = AC / sin(1.08)\n\nStep 11:\nTheorem: Substitution\nPremises : AB / sin(\u2220BCA) = AC / sin(\u2220ABC), 0.37 = \u2220BCA, 1.08 = \u2220ABC, x = AB\nConclusions: x / sin(0.37) = AC / sin(1.08)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : x / sin(0.37) = AC / sin(1.08), 16 / sin(1.69) = AC / sin(1.08)\nConclusions: 16 / sin(1.69) = x / sin(0.37)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 16 / sin(1.69) = x / sin(0.37), x = AB\nConclusions: 5.78 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 5.78 = AB, x = AB\nConclusions: 5.78 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Equals(LengthOf(Line(B, C)), 16.0)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(21.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(97.0, 180.0)))"
+    ],
+    "correct": true
+}

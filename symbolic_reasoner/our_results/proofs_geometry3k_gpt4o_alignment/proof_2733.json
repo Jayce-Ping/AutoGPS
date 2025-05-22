@@ -1,0 +1,78 @@
+{
+    "problem_id": "2733",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 12)",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(C, D)), 12)",
+        "Equals(LengthOf(Line(D, A)), 12)",
+        "Equals(MeasureOf(Angle(C, D, B)), x)",
+        "Find(y)",
+        "Perpendicular(Line(A, B), Line(C, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "DA",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            25.951807228915655,
+            190.1204819277108
+        ],
+        "B": [
+            169.56626506024094,
+            190.36144578313252
+        ],
+        "C": [
+            169.56626506024094,
+            43.373493975903614
+        ],
+        "D": [
+            26.433734939759034,
+            43.614457831325296
+        ]
+    },
+    "problem_choices": [
+        "6 \\sqrt { 2 }",
+        "12 \\sqrt { 2 }",
+        "12 \\sqrt { 3 }",
+        "24"
+    ],
+    "choices_precise_value": [
+        8.485281374238571,
+        16.970562748477143,
+        20.784609690826528,
+        24.0
+    ],
+    "problem_answer": 16.970562748477143,
+    "total_time": 43.551217,
+    "solution_predicate": "Equals(16.9705627484, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC, CD, BD, y = BD, 12 = AB, 12 = CD, \u2220DBA, 12 = BC, 3.14 = pi, pi * (x / 180) = \u2220BDC, 12 = AD, \u2220CDA, \u2220ADB, AB, AB \u22a5 BC, \u2220BDC, BC, AD, \u2220CBD, \u2220ADC\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 12 = AB, 12 = BC\nConclusions: AB = BC\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 12 = CD, 12 = BC\nConclusions: BC = CD\n\nStep 4:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220BDC, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220BDC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 12 = AD, 12 = CD\nConclusions: AD = CD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 12 = AD, 12 = AB\nConclusions: AB = AD\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220BDC, \u2220ADB, \u2220CDA\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : BC, AB, CD, AD\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220CBD, \u2220DBA, \u2220ABC\nConclusions: 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADC\nConclusions: \u2220ADC = 2 * pi - \u2220CDA\n\nStep 14:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = BC, AD = CD\nConclusions: \u25b3ABD \u2245 \u25b3CBD\n\nStep 15:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 16:\nTheorem: Law of Sines\nPremises : \u25b3BCD\nConclusions: BD / sin(\u2220DCB) = CD / sin(\u2220CBD)\n\nStep 17:\nTheorem: Issoceles Triangle Property\nPremises : BC = CD, \u25b3BCD\nConclusions: \u2220BDC = \u2220CBD\n\nStep 18:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABD, AB = AD\nConclusions: \u2220ADB = \u2220DBA\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, C, B, A)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB\n\nStep 20:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, 3.14 = pi, 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220CBD + \u2220DBA\n\nStep 21:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: \u2220CBD = \u2220DBA, AB = BC, \u2220BAD = \u2220DCB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CBD, 3.14 * (x / 180) = \u2220BDC\nConclusions: 3.14 * (x / 180) = \u2220CBD\n\nStep 24:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, 2 * pi = \u2220ADC + \u2220BAD + \u2220CBA + \u2220DCB, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220ADC + \u2220BAD + \u2220DCB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220CBD + \u2220DBA, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = (3 * 3.14) / 2 + \u2220CBD + \u2220DBA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220CBD, \u2220CBD = \u2220DBA\nConclusions: 3.14 * (x / 180) = \u2220DBA\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220CBD, y = BD, 12 = CD, BD / sin(\u2220DCB) = CD / sin(\u2220CBD)\nConclusions: 12 / sin(3.14 * (x / 180)) = y / sin(\u2220DCB)\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 / 2 + \u2220ADC + \u2220BAD + \u2220DCB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 / 2 + \u2220ADC + \u2220BAD + \u2220DCB\n\nStep 29:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220DBA, 2 * pi = (3 * 3.14) / 2 + \u2220CBD + \u2220DBA, 3.14 * (x / 180) = \u2220CBD, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (x / 180) + 3.14 * (x / 180)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220DBA, \u2220ADB = \u2220DBA\nConclusions: 3.14 * (x / 180) = \u2220ADB\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (x / 180) + 3.14 * (x / 180)\nConclusions: 45 = x\n\nStep 32:\nTheorem: Substitution\nPremises : 2 * 3.14 = \u2220ADB + \u2220BDC + \u2220CDA, 3.14 * (x / 180) = \u2220BDC, 3.14 * (x / 180) = \u2220ADB\nConclusions: 2 * 3.14 = 3.14 * (x / 180) + 3.14 * (x / 180) + \u2220CDA\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (x / 180) + 3.14 * (x / 180) + \u2220CDA, \u2220ADC = 2 * pi - \u2220CDA, 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (x / 180) + 3.14 * (x / 180), \u2220BAD = \u2220DCB, 2 * pi = 3.14 / 2 + \u2220ADC + \u2220BAD + \u2220DCB\nConclusions: 1.57 = \u2220BAD\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220DCB, 1.57 = \u2220BAD\nConclusions: 1.57 = \u2220DCB\n\nStep 35:\nTheorem: Substitution\nPremises : 1.57 = \u2220DCB, 12 / sin(3.14 * (x / 180)) = y / sin(\u2220DCB), 45 = x\nConclusions: 12 / sin(3.14 * (45 / 180)) = y / sin(1.57)\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : y = BD, 12 / sin(3.14 * (45 / 180)) = y / sin(1.57)\nConclusions: 16.97 = BD\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : y = BD, 16.97 = BD\nConclusions: 16.97 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(D, A)), 12.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

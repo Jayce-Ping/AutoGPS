@@ -1,0 +1,91 @@
+{
+    "problem_id": "2501",
+    "solved": true,
+    "problem_text": "In \\triangle P Q R, S T \\parallel R Q. If P S = 12.5, S R = 5, and P T = 15, find T Q.",
+    "logic_forms": [
+        "PointLiesOnLine(S, Line(P, R))",
+        "PointLiesOnLine(T, Line(P, Q))",
+        "Parallel(Line(S, T), Line(R, Q))",
+        "Triangle(P,Q,R)",
+        "Parallel(Line(S,T),Line(R,Q))",
+        "Equals(LengthOf(Line(P,S)),12.5)",
+        "Equals(LengthOf(Line(S,R)),5)",
+        "Equals(LengthOf(Line(P,T)),15)",
+        "Find(LengthOf(Line(T,Q)))"
+    ],
+    "point_instances": [
+        "R",
+        "Q",
+        "S",
+        "T",
+        "P"
+    ],
+    "line_instances": [
+        "RQ",
+        "ST",
+        "PS",
+        "PR",
+        "SR",
+        "PT",
+        "PQ",
+        "TQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            133.97619047619048,
+            427.3809523809524
+        ],
+        "Q": [
+            535.7619047619048,
+            350.0
+        ],
+        "S": [
+            161.95238095238096,
+            340.4761904761905
+        ],
+        "T": [
+            452.42857142857144,
+            286.3095238095238
+        ],
+        "P": [
+            235.16666666666669,
+            119.04761904761905
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "6",
+        "6.5",
+        "12.5"
+    ],
+    "choices_precise_value": [
+        5.0,
+        6.0,
+        6.5,
+        12.5
+    ],
+    "problem_answer": 6.0,
+    "total_time": 27.097782,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(T, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QR || TS, \u2220RPT, 15 = PT, S on PR, \u2220RQP, T on PQ, 5 = RS, \u2220RQP, 3.14 = pi, \u2220RPQ, 12.5 = PS, \u2220STP\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : QR || TS\nConclusions: \u2220PQR = \u2220PTS, \u2220PRQ = \u2220PST\n\nStep 3:\nTheorem: Same Angle\nPremises : S on PR, \u2220RPT\nConclusions: \u2220RPT = \u2220SPT\n\nStep 4:\nTheorem: Line Segment Split\nPremises : S on PR\nConclusions: PR = PS + RS\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220RQP\nConclusions: \u2220RQP = 2 * pi - \u2220PQR\n\nStep 6:\nTheorem: Line Segment Split\nPremises : T on PQ\nConclusions: PQ = PT + QT\n\nStep 7:\nTheorem: Same Angle\nPremises : T on PQ, \u2220RQP\nConclusions: \u2220RQP = \u2220RQT\n\nStep 8:\nTheorem: Same Angle\nPremises : T on PQ, \u2220RPQ\nConclusions: \u2220RPQ = \u2220RPT\n\nStep 9:\nTheorem: Same Angle\nPremises : S on PR, \u2220RPQ\nConclusions: \u2220RPQ = \u2220SPQ\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220STP\nConclusions: \u2220STP = 2 * pi - \u2220PTS\n\nStep 11:\nTheorem: Substitution\nPremises : 12.5 = PS, PR = PS + RS, 5 = RS\nConclusions: 12.5 + 5 = PR\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220RQP = 2 * pi - \u2220PQR, \u2220PQR = \u2220PTS, \u2220RQP = \u2220RQT\nConclusions: \u2220RQT = 2 * 3.14 - \u2220PTS\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RPQ = \u2220RPT, \u2220RPQ = \u2220SPQ\nConclusions: \u2220RPT = \u2220SPQ\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220STP = 2 * pi - \u2220PTS\nConclusions: \u2220STP = 2 * 3.14 - \u2220PTS\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 12.5 + 5 = PR\nConclusions: 17.5 = PR\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RPT = \u2220SPQ, \u2220RPQ = \u2220SPQ, \u2220RPT = \u2220SPT\nConclusions: \u2220RPQ = \u2220SPT\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STP = 2 * 3.14 - \u2220PTS, \u2220RQT = 2 * 3.14 - \u2220PTS\nConclusions: \u2220RQT = \u2220STP\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQP = \u2220RQT, \u2220RQT = \u2220STP\nConclusions: \u2220RQP = \u2220STP\n\nStep 19:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220RPQ = \u2220SPT, \u2220PRQ = \u2220PST, \u2220RQP = \u2220STP\nConclusions: \u25b3PQR ~ \u25b3PTS\n\nStep 20:\nTheorem: Similar Definition\nPremises : \u25b3PQR ~ \u25b3PTS\nConclusions: \u2220PRQ = \u2220PST, sim_ratio_triangle_p_q_r_triangle_p_t_s = PR / PS, \u2220RQP = \u2220STP, \u2220PQR = \u2220PTS, sim_ratio_triangle_p_q_r_triangle_p_t_s = PQ / PT\n\nStep 21:\nTheorem: Substitution\nPremises : 12.5 = PS, sim_ratio_triangle_p_q_r_triangle_p_t_s = PR / PS, 17.5 = PR\nConclusions: 17.5 / 12.5 = sim_ratio_triangle_p_q_r_triangle_p_t_s\n\nStep 22:\nTheorem: Substitution\nPremises : sim_ratio_triangle_p_q_r_triangle_p_t_s = PQ / PT, 15 = PT\nConclusions: sim_ratio_triangle_p_q_r_triangle_p_t_s = PQ / 15\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_p_q_r_triangle_p_t_s = PQ / PT, 17.5 / 12.5 = sim_ratio_triangle_p_q_r_triangle_p_t_s\nConclusions: 17.5 / 12.5 = PQ / PT\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 17.5 / 12.5 = sim_ratio_triangle_p_q_r_triangle_p_t_s, sim_ratio_triangle_p_q_r_triangle_p_t_s = PQ / 15\nConclusions: 17.5 / 12.5 = PQ / 15\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 17.5 / 12.5 = PQ / PT, PQ = PT + QT, 17.5 / 12.5 = PQ / 15\nConclusions: 6 = QT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Q)",
+        "Line(S, T)",
+        "Line(P, S)",
+        "Line(P, R)",
+        "Line(S, R)",
+        "Line(P, T)",
+        "Line(P, Q)",
+        "Line(T, Q)",
+        "PointLiesOnLine(S, Line(P, R))",
+        "PointLiesOnLine(T, Line(P, Q))",
+        "Parallel(Line(S, T), Line(R, Q))",
+        "Triangle(P, Q, R)",
+        "Parallel(Line(S, T), Line(R, Q))",
+        "Equals(LengthOf(Line(P, S)), 12.5)",
+        "Equals(LengthOf(Line(S, R)), 5.0)",
+        "Equals(LengthOf(Line(P, T)), 15.0)"
+    ],
+    "correct": true
+}

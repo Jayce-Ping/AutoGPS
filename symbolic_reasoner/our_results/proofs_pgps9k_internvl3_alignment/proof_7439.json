@@ -1,0 +1,108 @@
+{
+    "problem_id": "7439",
+    "solved": true,
+    "problem_text": "The figures in the pair are similar. Solve for x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, D)), 4)",
+        "Equals(LengthOf(Line(C, D)), 8)",
+        "Equals(LengthOf(Line(E, F)), 16)",
+        "Equals(LengthOf(Line(F, A)), y)",
+        "Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(A, E, F)))",
+        "Equals(MeasureOf(Angle(C, B, D)), x)",
+        "Equals(MeasureOf(Angle(E, A, F)), 63)",
+        "Find(x)",
+        "Line(A, F)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, A)",
+        "Line(E, F)",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(E, F), Line(A, F))",
+        "Shape(Triangle(C, B, D))",
+        "Shape(Triangle(E, A, F))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "EA",
+        "EF",
+        "AF",
+        "CB",
+        "CD",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            556.748299319728,
+            17.926530612244896
+        ],
+        "B": [
+            166.40816326530611,
+            93.6
+        ],
+        "C": [
+            16.435374149659864,
+            168.68571428571425
+        ],
+        "D": [
+            166.40816326530611,
+            168.68571428571425
+        ],
+        "E": [
+            254.7482993197279,
+            168.68571428571425
+        ],
+        "F": [
+            557.0051020408164,
+            168.94285714285712
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        27.0,
+        32.0,
+        63.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        27.0,
+        32.0,
+        63.0
+    ],
+    "problem_answer": 63.0,
+    "total_time": 13.92082,
+    "solution_predicate": "Equals(63.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AF, BD \u22a5 CD, 3.14 = pi, BC, AE, pi * (63 / 180) = \u2220EAF, CD, BD, AF \u22a5 EF, pi * (x / 180) = \u2220CBD, EF, \u2220DCB = \u2220FEA\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220BDC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : CD, BD, BC\nConclusions: \u25b3BCD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AF \u22a5 EF\nConclusions: pi / 2 = \u2220AFE\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CBD, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CBD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AE, EF, AF\nConclusions: \u25b3AEF\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(F, E, A)\nPremises : \u25b3AEF\nConclusions: pi = \u2220AFE + \u2220EAF + \u2220FEA\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220DCB = \u2220FEA, 3.14 = pi, pi / 2 = \u2220BDC, pi = \u2220BDC + \u2220CBD + \u2220DCB\nConclusions: 3.14 = pi / 2 + \u2220CBD + \u2220FEA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AFE + \u2220EAF + \u2220FEA, 3.14 = pi\nConclusions: 3.14 = \u2220AFE + \u2220EAF + \u2220FEA\n\nStep 11:\nTheorem: Substitution\nPremises : pi / 2 = \u2220AFE, pi = \u2220AFE + \u2220EAF + \u2220FEA, 3.14 = pi, pi * (63 / 180) = \u2220EAF\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (63 / 180) + \u2220FEA\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220AFE, pi * (63 / 180) = \u2220EAF, 3.14 = \u2220AFE + \u2220EAF + \u2220FEA\nConclusions: 3.14 = pi / 2 + pi * (63 / 180) + \u2220FEA\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220CBD, 3.14 = pi / 2 + pi * (63 / 180) + \u2220FEA, 3.14 = 3.14 / 2 + 3.14 * (63 / 180) + \u2220FEA, 3.14 = pi / 2 + \u2220CBD + \u2220FEA\nConclusions: 63 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(E, F)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(B, D)",
+        "Line(A, F)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, A)",
+        "Line(E, F)",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(E, F), Line(A, F))",
+        "Equals(LengthOf(Line(B, D)), 4.0)",
+        "Equals(LengthOf(Line(C, D)), 8.0)",
+        "Equals(LengthOf(Line(E, F)), 16.0)",
+        "Equals(LengthOf(Line(F, A)), y)",
+        "Equals(MeasureOf(Angle(D, C, B)), MeasureOf(Angle(F, E, A)))",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(E, A, F)), Mul(pi, Div(63.0, 180.0)))"
+    ],
+    "correct": true
+}

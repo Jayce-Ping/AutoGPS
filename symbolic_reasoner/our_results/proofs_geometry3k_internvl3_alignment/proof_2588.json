@@ -1,0 +1,124 @@
+{
+    "problem_id": "2588",
+    "solved": true,
+    "problem_text": "m \\angle 3 = x - 12 and m \\angle 6 = 72. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(E, Line(G, A))",
+        "Parallel(Line(H, B), Line(G, A))",
+        "Equals(MeasureOf(Angle(H, D, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(F, E, A)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(D, E, A)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(F, E, G)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(H, D, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(D, E, G)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(3)),x-12)",
+        "Equals(MeasureOf(Angle(6)),72)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "HD",
+        "HB",
+        "DB",
+        "CD",
+        "CE",
+        "CF",
+        "DE",
+        "DF",
+        "EF",
+        "GE",
+        "GA",
+        "EA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            261.4942528735632,
+            259.48275862068965
+        ],
+        "B": [
+            105.17241379310344,
+            258.9080459770115
+        ],
+        "C": [
+            26.149425287356323,
+            198.27586206896552
+        ],
+        "D": [
+            105.45977011494253,
+            178.16091954022988
+        ],
+        "E": [
+            261.4942528735632,
+            139.94252873563218
+        ],
+        "F": [
+            339.08045977011494,
+            121.26436781609195
+        ],
+        "G": [
+            261.4942528735632,
+            19.82758620689655
+        ],
+        "H": [
+            105.17241379310344,
+            20.114942528735632
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "18",
+        "72",
+        "84"
+    ],
+    "choices_precise_value": [
+        6.0,
+        18.0,
+        72.0,
+        84.0
+    ],
+    "problem_answer": 84.0,
+    "total_time": 32.196347,
+    "solution_predicate": "Equals(84.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AG || BH, pi * (72 / 180) = \u2220FEG, D on CE, pi * ((x - 12) / 180) = \u2220CDB, 3.14 = pi, E on DF, \u2220FDH, \u2220CEA\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220DEA = \u2220EDH\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220FDH = \u2220FEG, \u2220CDB = \u2220CEA\n\nStep 4:\nTheorem: Same Angle\nPremises : E on DF, \u2220FDH\nConclusions: \u2220EDH = \u2220FDH\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CEA, D on CE\nConclusions: \u2220CEA = \u2220DEA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FDH = \u2220FEG, pi * (72 / 180) = \u2220FEG\nConclusions: pi * (72 / 180) = \u2220FDH\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((x - 12) / 180) = \u2220CDB, \u2220CDB = \u2220CEA\nConclusions: pi * ((x - 12) / 180) = \u2220CEA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDH = \u2220FDH, pi * (72 / 180) = \u2220FDH\nConclusions: pi * (72 / 180) = \u2220EDH\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEA = \u2220EDH, pi * (72 / 180) = \u2220EDH\nConclusions: pi * (72 / 180) = \u2220DEA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (72 / 180) = \u2220DEA, \u2220CEA = \u2220DEA, pi * ((x - 12) / 180) = \u2220CEA\nConclusions: pi * (72 / 180) = pi * ((x - 12) / 180)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (72 / 180) = pi * ((x - 12) / 180), pi * ((x - 12) / 180) = \u2220CDB\nConclusions: pi * (72 / 180) = \u2220CDB\n\nStep 12:\nTheorem: Substitution\nPremises : pi * ((x - 12) / 180) = \u2220CDB, 3.14 = pi, pi * (72 / 180) = \u2220CDB\nConclusions: 3.14 * (72 / 180) = 3.14 * ((x - 12) / 180)\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (72 / 180) = 3.14 * ((x - 12) / 180)\nConclusions: 84 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, D)",
+        "Line(H, B)",
+        "Line(D, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(G, E)",
+        "Line(G, A)",
+        "Line(E, A)",
+        "PointLiesOnLine(D, Line(H, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(E, Line(G, A))",
+        "Parallel(Line(H, B), Line(G, A))",
+        "Equals(MeasureOf(Angle(C, D, B)), Mul(pi, Div(Sub(x, 12.0), 180.0)))",
+        "Equals(MeasureOf(Angle(F, E, G)), Mul(pi, Div(72.0, 180.0)))"
+    ],
+    "correct": true
+}

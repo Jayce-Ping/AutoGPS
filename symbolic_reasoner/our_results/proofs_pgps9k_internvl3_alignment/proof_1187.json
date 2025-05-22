@@ -1,0 +1,117 @@
+{
+    "problem_id": "1187",
+    "solved": true,
+    "problem_text": "Use parallelogram JKLM to find m \\angle KJL.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, K)), 2b+3)",
+        "Equals(LengthOf(Line(K, L)), 21)",
+        "Equals(LengthOf(Line(M, J)), 3a)",
+        "Equals(LengthOf(Line(M, L)), 45)",
+        "Equals(MeasureOf(Angle(M, L, R)), 30)",
+        "Equals(MeasureOf(Angle(R, L, K)), 70)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, R)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, R)",
+        "Line(R, K)",
+        "Line(R, L)",
+        "PointLiesOnLine(R, Line(J, L))",
+        "PointLiesOnLine(R, Line(M, K))",
+        "Parallelogram(J,K,L,M)",
+        "Find(MeasureOf(Angle(K,J,L)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "K",
+        "J",
+        "R"
+    ],
+    "line_instances": [
+        "MR",
+        "MK",
+        "RK",
+        "JR",
+        "JL",
+        "RL",
+        "MJ",
+        "JK",
+        "KL",
+        "ML"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            108.24489795918367,
+            293.4685714285714
+        ],
+        "L": [
+            482.6122448979592,
+            293.37538461538463
+        ],
+        "K": [
+            520.8163265306123,
+            92.46461538461539
+        ],
+        "J": [
+            146.44897959183675,
+            93.28
+        ],
+        "R": [
+            314.8942486085344,
+            193.11272727272728
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        40.0,
+        50.0,
+        60.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        40.0,
+        50.0,
+        60.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 47.261436,
+    "solution_predicate": "Equals(0.5235987756, MeasureOf(Angle(L, J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (30 / 180) = \u2220RLM, \u2220LJK, R on JL, Parallelogram(J, K, L, M), \u2220JLM\n\nStep 2:\nTheorem: Same Angle\nPremises : R on JL, \u2220LJK\nConclusions: \u2220LJK = \u2220RJK\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK || ML\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220JLM, R on JL\nConclusions: \u2220JLM = \u2220RLM\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : JK || ML\nConclusions: \u2220JLM = \u2220LJK\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LJK = \u2220RJK, \u2220JLM = \u2220LJK\nConclusions: \u2220JLM = \u2220RJK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JLM = \u2220RJK, pi * (30 / 180) = \u2220RLM, \u2220JLM = \u2220RLM\nConclusions: pi * (30 / 180) = \u2220RJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220RJK, \u2220LJK = \u2220RJK\nConclusions: pi * (30 / 180) = \u2220LJK\n\nStep 9:\nTheorem: Evaluate\nPremises : pi * (30 / 180) = \u2220LJK\nConclusions: 0.52 = \u2220LJK\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, R)",
+        "Line(M, K)",
+        "Line(R, K)",
+        "Line(J, R)",
+        "Line(J, L)",
+        "Line(R, L)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(J, M)",
+        "Line(J, R)",
+        "Line(K, L)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, R)",
+        "Line(R, K)",
+        "Line(R, L)",
+        "PointLiesOnLine(R, Line(J, L))",
+        "PointLiesOnLine(R, Line(M, K))",
+        "Parallelogram(J, K, L, M)",
+        "Equals(LengthOf(Line(J, K)), Add(Mul(2.0, b), 3.0))",
+        "Equals(LengthOf(Line(K, L)), 21.0)",
+        "Equals(LengthOf(Line(M, J)), Mul(3.0, a))",
+        "Equals(LengthOf(Line(M, L)), 45.0)",
+        "Equals(MeasureOf(Angle(R, L, M)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(K, L, R)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

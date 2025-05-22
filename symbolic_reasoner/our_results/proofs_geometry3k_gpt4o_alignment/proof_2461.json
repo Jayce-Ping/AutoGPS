@@ -1,0 +1,121 @@
+{
+    "problem_id": "2461",
+    "solved": true,
+    "problem_text": "Q is the centroid and B E = 9. Find B Q.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, E)), 9)",
+        "Find(LengthOf(Line(B, Q)))",
+        "IsCentroidOf(Point(Q), Triangle(A, B, C))",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, A))",
+        "PointLiesOnLine(Q, Line(A, D))",
+        "PointLiesOnLine(Q, Line(B, E))",
+        "PointLiesOnLine(Q, Line(F, C))"
+    ],
+    "point_instances": [
+        "Q",
+        "B",
+        "C",
+        "D",
+        "E",
+        "A",
+        "F"
+    ],
+    "line_instances": [
+        "AQ",
+        "AD",
+        "QD",
+        "BD",
+        "BC",
+        "DC",
+        "BF",
+        "BA",
+        "FA",
+        "BQ",
+        "BE",
+        "QE",
+        "FQ",
+        "FC",
+        "QC",
+        "AE",
+        "AC",
+        "EC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            341.85714285714283,
+            239.53968253968253
+        ],
+        "B": [
+            275.7195767195767,
+            84.5132275132275
+        ],
+        "C": [
+            626.5132275132274,
+            325.78306878306876
+        ],
+        "D": [
+            442.38624338624334,
+            198.79894179894177
+        ],
+        "E": [
+            377.83597883597884,
+            324.7248677248677
+        ],
+        "A": [
+            129.15873015873015,
+            326.31216931216926
+        ],
+        "F": [
+            205.34920634920633,
+            200.38624338624336
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "6",
+        "9",
+        "12"
+    ],
+    "choices_precise_value": [
+        3.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 250.18171,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(B, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IsCentroidOf(Q, \u25b3ABC), 9 = BE, Q on BE\n\nStep 2:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(Q, \u25b3ABC)\nConclusions: BQ = 2 * EQ\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Q on BE\nConclusions: BE = BQ + EQ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : BE = BQ + EQ, 9 = BE\nConclusions: 9 = BQ + EQ\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : BQ = 2 * EQ, 9 = BQ + EQ\nConclusions: 6 = BQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, Q)",
+        "Line(A, D)",
+        "Line(Q, D)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(B, F)",
+        "Line(B, A)",
+        "Line(F, A)",
+        "Line(B, Q)",
+        "Line(B, E)",
+        "Line(Q, E)",
+        "Line(F, Q)",
+        "Line(F, C)",
+        "Line(Q, C)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "IsCentroidOf(Q, Triangle(A, B, C))",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, A))",
+        "PointLiesOnLine(Q, Line(A, D))",
+        "PointLiesOnLine(Q, Line(B, E))",
+        "PointLiesOnLine(Q, Line(F, C))",
+        "Equals(LengthOf(Line(B, E)), 9.0)"
+    ],
+    "correct": true
+}

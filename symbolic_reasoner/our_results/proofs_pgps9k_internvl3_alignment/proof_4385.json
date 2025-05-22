@@ -1,0 +1,104 @@
+{
+    "problem_id": "4385",
+    "solved": true,
+    "problem_text": "What is AB?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 11)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(F, C)))",
+        "Equals(LengthOf(Line(B, E)), 15)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(F, C)), 11)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(C, F)",
+        "Line(E, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(E, Circle(B))",
+        "PointLiesOnCircle(F, Circle(B))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "Find(LengthOf(Line(A,B)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "B",
+        "C",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "AC",
+        "AF",
+        "CF",
+        "CB"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "E": [
+            184.31238095238095,
+            57.29629629629629
+        ],
+        "A": [
+            53.2043956043956,
+            105.44871794871796
+        ],
+        "B": [
+            161.42013851063547,
+            199.43164155999128
+        ],
+        "C": [
+            65.02095238095238,
+            210.25925925925927
+        ],
+        "F": [
+            76.74285714285715,
+            315.0
+        ]
+    },
+    "problem_choices": [
+        11.0,
+        15.0,
+        18.601,
+        23.558
+    ],
+    "choices_precise_value": [
+        11.0,
+        15.0,
+        18.601,
+        23.558
+    ],
+    "problem_answer": 15.0,
+    "total_time": 14.332308,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = BE, A on \u2299(B, radius_B), E on \u2299(B, radius_B)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_B)\nConclusions: radius_B = AB\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(B, radius_B)\nConclusions: radius_B = BE\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BE, 15 = BE\nConclusions: 15 = radius_B\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 15 = radius_B, radius_B = AB\nConclusions: 15 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, F)",
+        "Line(C, B)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(C, F)",
+        "Line(E, B)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(E, Circle(B, radius_B))",
+        "PointLiesOnCircle(F, Circle(B, radius_B))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "Equals(LengthOf(Line(A, C)), 11.0)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(F, C)))",
+        "Equals(LengthOf(Line(B, E)), 15.0)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(LengthOf(Line(F, C)), 11.0)"
+    ],
+    "correct": true
+}

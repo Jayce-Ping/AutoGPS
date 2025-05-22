@@ -1,0 +1,88 @@
+{
+    "problem_id": "3945",
+    "solved": true,
+    "problem_text": "Find the perimeter of triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 20)",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(LengthOf(Line(D, C)), 16)",
+        "Find(PerimeterOf(Triangle(A, B, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC",
+        "BD",
+        "CD",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            166.3677130044843,
+            11.950672645739914
+        ],
+        "B": [
+            15.441176470588236,
+            263.78431372549016
+        ],
+        "C": [
+            166.22222222222223,
+            263.83958333333334
+        ],
+        "D": [
+            366.3333333333333,
+            262.84270833333335
+        ]
+    },
+    "problem_choices": [
+        48.0,
+        51.324,
+        52.0,
+        55.324
+    ],
+    "choices_precise_value": [
+        48.0,
+        51.324,
+        52.0,
+        55.324
+    ],
+    "problem_answer": 55.324,
+    "total_time": 55.95417,
+    "solution_predicate": "Equals(55.3238075793, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = BC, 20 = AC, \u25b3ABC, AC \u22a5 BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 20 = AC, 12 = BC\nConclusions: 544 = AC ** 2 + BC ** 2\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AC \u22a5 BC\nConclusions: AB ** 2 = AC ** 2 + BC ** 2\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 544 = AC ** 2 + BC ** 2, AB ** 2 = AC ** 2 + BC ** 2\nConclusions: 544 = AB ** 2\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 544 = AB ** 2\nConclusions: 23.32 = AB\n\nStep 7:\nTheorem: Evaluate\nPremises : 20 = AC, 12 = BC, 23.32 = AB\nConclusions: 55.32 = AB + AC + BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 55.32 = AB + AC + BC, Perimeter(\u25b3ABC) = AB + AC + BC\nConclusions: 55.32 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), 20.0)",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(LengthOf(Line(D, C)), 16.0)"
+    ],
+    "correct": true
+}

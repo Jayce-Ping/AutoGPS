@@ -1,0 +1,87 @@
+{
+    "problem_id": "5017",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 3x)",
+        "Equals(MeasureOf(Angle(A, C, E)), 6x)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(C, D), Line(E, B))",
+        "PointLiesOnLine(C, Line(E, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "CD",
+        "EC",
+        "EB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            42.15300546448087,
+            287.12
+        ],
+        "B": [
+            195.03328365623446,
+            347.28519480519475
+        ],
+        "C": [
+            195.2349726775956,
+            195.10857142857142
+        ],
+        "D": [
+            347.51018380526574,
+            194.90701298701296
+        ],
+        "E": [
+            194.98846387370975,
+            41.38666666666667
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        20.0,
+        30.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        20.0,
+        30.0,
+        40.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 8.979849,
+    "solution_predicate": "Equals(20.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ACB, 3.14 = pi, pi * ((3 * x) / 180) = \u2220ACB, pi * ((6 * x) / 180) = \u2220ECA, \u2220ECA\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = \u2220ACB\nConclusions: 3.14 * ((3 * x) / 180) = \u2220ACB\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x) / 180) = \u2220ECA\nConclusions: 3.14 * ((6 * x) / 180) = \u2220ECA\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ACB, \u2220ECA\nConclusions: pi = \u2220ACB + \u2220ECA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220ECA\nConclusions: 3.14 = \u2220ACB + \u2220ECA\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * x) / 180) = \u2220ACB, 3.14 * ((6 * x) / 180) = \u2220ECA, 3.14 = \u2220ACB + \u2220ECA\nConclusions: 20 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(C, D), Line(E, B))",
+        "PointLiesOnLine(C, Line(E, B))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, A)), Mul(pi, Div(Mul(6.0, x), 180.0)))"
+    ],
+    "correct": true
+}

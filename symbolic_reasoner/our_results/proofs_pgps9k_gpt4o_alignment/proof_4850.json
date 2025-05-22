@@ -1,0 +1,146 @@
+{
+    "problem_id": "4850",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 6.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(B, A, D)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, F, E)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(F, D, C)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Arc(C, B)), 120)",
+        "Equals(MeasureOf(Arc(C, B)), MeasureOf(Arc(C, E)))",
+        "Equals(MeasureOf(Arc(C, E)), 120)",
+        "Equals(MeasureOf(Arc(E, D)), 60)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Perpendicular(Line(C, A), Line(B, D))",
+        "PointLiesOnCircle(B, Circle(G))",
+        "PointLiesOnCircle(C, Circle(G))",
+        "PointLiesOnCircle(D, Circle(G))",
+        "PointLiesOnCircle(E, Circle(G))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "Find(MeasureOf(Angle(6)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA",
+        "AD",
+        "AF",
+        "DF",
+        "FE",
+        "FC",
+        "EC",
+        "CD",
+        "DB"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "A": [
+            373.0604081632653,
+            32.608938547486034
+        ],
+        "B": [
+            289.32190476190476,
+            80.54686530105525
+        ],
+        "C": [
+            43.076923076923066,
+            224.03846153846152
+        ],
+        "D": [
+            372.5228571428571,
+            223.24581005586592
+        ],
+        "E": [
+            289.9191836734694,
+            368.0151636073424
+        ],
+        "F": [
+            373.77714285714285,
+            415.1368715083799
+        ],
+        "G": [
+            207.56434692132098,
+            223.91514425249568
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 342.390006,
+    "solution_predicate": "Equals(2.0943951024, MeasureOf(Angle(D, F, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, AB \u22a5 BD, E on CF, BG, Arc(BGC), \u2220FCB, CG, \u2220CGE, \u2220BCF, BC, AD, Arc(EGD), pi * (60 / 180) = Arc(EGD), \u2220BGC, AF, EF, \u2220BGE, AC, \u2220ADB, CF, D on AF, pi * (120 / 180) = Arc(CGE), \u2220BCG, \u2220GCE, \u2220DFC, \u2220BDF, \u2220AFE, DG, Arc(CGE), \u2220FCA, E on \u2299(G, radius_G), AB, \u2220FCG, \u2220DGB, \u2220GCB, \u2220ACG, \u2299(G, radius_G), \u2220CAF, BC \u22a5 BD, D on \u2299(G, radius_G), B on \u2299(G, radius_G), \u2220ECA, B on AC, 3.14 = pi, EG, CE, C on \u2299(G, radius_G), \u2220GCF, \u2220EGD, \u2220BGC, DF, pi * (120 / 180) = Arc(BGC)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BGC)\nConclusions: \u2220BGC = Arc(BGC)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220FCB\nConclusions: \u2220FCB = 2 * pi - \u2220BCF\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, BG, CG\nConclusions: \u25b3BCG\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EGD)\nConclusions: \u2220EGD = Arc(EGD)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AF, CF, AC\nConclusions: \u25b3ACF\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCG\nConclusions: \u2220BCG = 2 * pi - \u2220GCB\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220GCE\nConclusions: \u2220GCE = 2 * pi - \u2220ECG\n\nStep 10:\nTheorem: Same Angle\nPremises : E on CF, \u2220DFC\nConclusions: \u2220DFC = \u2220DFE\n\nStep 11:\nTheorem: Straight Angle\nPremises : \u2220ADB, \u2220BDF\nConclusions: pi = \u2220ADB + \u2220BDF\n\nStep 12:\nTheorem: Same Angle\nPremises : D on AF, \u2220AFE\nConclusions: \u2220AFE = \u2220DFE\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : BG, BD, DG\nConclusions: \u25b3BDG\n\nStep 14:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CGE)\nConclusions: \u2220CGE = Arc(CGE)\n\nStep 15:\nTheorem: Same Angle\nPremises : E on CF, \u2220FCA\nConclusions: \u2220ECA = \u2220FCA\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : E on \u2299(G, radius_G)\nConclusions: radius_G = EG\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 18:\nTheorem: Same Angle\nPremises : E on CF, \u2220FCG\nConclusions: \u2220ECG = \u2220FCG\n\nStep 19:\nTheorem: Circumference splited\nPremises : \u2220GCB, \u2220BCF, \u2220FCG\nConclusions: 2 * pi = \u2220BCF + \u2220FCG + \u2220GCB\n\nStep 20:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD\n\nStep 21:\nTheorem: Point On Circle Def\nPremises : D on \u2299(G, radius_G)\nConclusions: radius_G = DG\n\nStep 22:\nTheorem: Point On Circle Def\nPremises : B on \u2299(G, radius_G)\nConclusions: radius_G = BG\n\nStep 23:\nTheorem: Same Angle\nPremises : B on AC, \u2220ACG\nConclusions: \u2220ACG = \u2220BCG\n\nStep 24:\nTheorem: Same Angle\nPremises : \u2220FCA, B on AC\nConclusions: \u2220FCA = \u2220FCB\n\nStep 25:\nTheorem: Same Angle\nPremises : \u2220ECA, B on AC\nConclusions: \u2220ECA = \u2220ECB\n\nStep 26:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAF\nConclusions: \u2220BAF = \u2220CAF\n\nStep 27:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 9.42 = 3 * pi, 1.57 = pi / 2, 6.28 = 2 * pi, 1.05 = pi * (60 / 180)\n\nStep 28:\nTheorem: Definition of Pentagon\nPremises : AF, EF, AB, EG, BG\nConclusions: Pentagon(A, B, G, E, F)\n\nStep 29:\nTheorem: Definition of Quadrilateral\nPremises : EG, BG, BC, CE\nConclusions: Quadrilateral(B, C, E, G)\n\nStep 30:\nTheorem: Definition of Triangle\nPremises : EG, CG, CE\nConclusions: \u25b3CEG\n\nStep 31:\nTheorem: Point On Circle Def\nPremises : C on \u2299(G, radius_G)\nConclusions: radius_G = CG\n\nStep 32:\nTheorem: Same Angle\nPremises : \u2220GCF, E on CF\nConclusions: \u2220GCE = \u2220GCF\n\nStep 33:\nTheorem: Circumference Split\nPremises : \u2220EGD, \u2220BGC, \u2220CGE, \u2220DGB\nConclusions: 2 * pi = \u2220BGC + \u2220CGE + \u2220DGB + \u2220EGD\n\nStep 34:\nTheorem: Circumference splited\nPremises : \u2220EGD, \u2220BGE, \u2220DGB\nConclusions: 2 * pi = \u2220BGE + \u2220DGB + \u2220EGD\n\nStep 35:\nTheorem: Reverse Angle Definition\nPremises : \u2220BGC\nConclusions: \u2220BGC = 2 * pi - \u2220CGB\n\nStep 36:\nTheorem: Definition of Quadrilateral\nPremises : CF, BD, BC, DF\nConclusions: Quadrilateral(B, C, F, D)\n\nStep 37:\nTheorem: Definition of Pentagon\nPremises : BD, CG, DF, CF, BG\nConclusions: Pentagon(B, D, F, C, G)\n\nStep 38:\nTheorem: Definition of Quadrilateral\nPremises : EG, EF, DG, DF\nConclusions: Quadrilateral(D, F, E, G)\n\nStep 39:\nTheorem: Definition of Pentagon\nPremises : BD, EF, EG, DF, BG\nConclusions: Pentagon(B, D, F, E, G)\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = Arc(BGC), \u2220BGC = Arc(BGC)\nConclusions: pi * (120 / 180) = \u2220BGC\n\nStep 41:\nTheorem: Interior Angle Sum Theorem for Triangle(G, C, B)\nPremises : \u25b3BCG\nConclusions: pi = \u2220BGC + \u2220CBG + \u2220GCB\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EGD = Arc(EGD), pi * (60 / 180) = Arc(EGD)\nConclusions: pi * (60 / 180) = \u2220EGD\n\nStep 43:\nTheorem: Incenter definition\nPremises : D on AF, E on CF, \u25b3ACF, D on \u2299(G, radius_G), \u2299(G, radius_G), B on \u2299(G, radius_G), E on \u2299(G, radius_G), B on AC\nConclusions: IsIncenterOf(G, \u25b3ACF)\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BDF\nConclusions: 3.14 = \u2220ADB + \u2220BDF\n\nStep 45:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, G)\nPremises : \u25b3BDG\nConclusions: pi = \u2220BDG + \u2220DGB + \u2220GBD\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CGE = Arc(CGE), pi * (120 / 180) = Arc(CGE)\nConclusions: pi * (120 / 180) = \u2220CGE\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : radius_G = DG, radius_G = BG\nConclusions: BG = DG\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECA = \u2220FCA, \u2220ECA = \u2220ECB\nConclusions: \u2220ECB = \u2220FCA\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DBA, 1.57 = pi / 2\nConclusions: 1.57 = \u2220DBA\n\nStep 50:\nTheorem: Interior Angle Sum Theorem for Pentagon(F, E, G, B, A)\nPremises : Pentagon(A, B, G, E, F)\nConclusions: 3 * pi = \u2220AFE + \u2220BAF + \u2220EGB + \u2220FEG + \u2220GBA\n\nStep 51:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(G, E, C, B)\nPremises : Quadrilateral(B, C, E, G)\nConclusions: 2 * pi = \u2220BGE + \u2220CBG + \u2220ECB + \u2220GEC\n\nStep 52:\nTheorem: Interior Angle Sum Theorem for Triangle(G, E, C)\nPremises : \u25b3CEG\nConclusions: pi = \u2220CGE + \u2220ECG + \u2220GEC\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : radius_G = EG, radius_G = CG\nConclusions: CG = EG\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : radius_G = BG, radius_G = CG\nConclusions: BG = CG\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220BGE + \u2220DGB + \u2220EGD\nConclusions: 6.28 = \u2220BGE + \u2220DGB + \u2220EGD\n\nStep 56:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, F, C, B)\nPremises : Quadrilateral(B, C, F, D)\nConclusions: 2 * pi = \u2220BDF + \u2220CBD + \u2220DFC + \u2220FCB\n\nStep 57:\nTheorem: Interior Angle Sum Theorem for Pentagon(B, D, F, C, G)\nPremises : Pentagon(B, D, F, C, G)\nConclusions: 3 * pi = \u2220BDF + \u2220CGB + \u2220DFC + \u2220FCG + \u2220GBD\n\nStep 58:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(D, F, E, G)\nPremises : Quadrilateral(D, F, E, G)\nConclusions: 2 * pi = \u2220DFE + \u2220EGD + \u2220FEG + \u2220GDF\n\nStep 59:\nTheorem: Interior Angle Sum Theorem for Pentagon(B, D, F, E, G)\nPremises : Pentagon(B, D, F, E, G)\nConclusions: 3 * pi = \u2220BDF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBD\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220BGC, \u2220BGC = 2 * pi - \u2220CGB\nConclusions: pi * (120 / 180) = 2 * pi - \u2220CGB\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220BGC, pi * (120 / 180) = Arc(CGE), \u2220CGE = Arc(CGE)\nConclusions: \u2220BGC = \u2220CGE\n\nStep 62:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220EGD\nConclusions: 1.05 = \u2220EGD\n\nStep 63:\nTheorem: Properties of Incenter G of Triangle\nPremises : IsIncenterOf(G, \u25b3ACF)\nConclusions: radius_G = EG, \u2220ACG = \u2220GCF, radius_G = DG, AB = AD, radius_G = BG\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BDG + \u2220DGB + \u2220GBD, 3.14 = pi\nConclusions: 3.14 = \u2220BDG + \u2220DGB + \u2220GBD\n\nStep 65:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BDG, BG = DG\nConclusions: \u2220BDG = \u2220GBD\n\nStep 66:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCA = \u2220FCB, \u2220ECB = \u2220FCA\nConclusions: \u2220ECB = \u2220FCB\n\nStep 67:\nTheorem: Substitution\nPremises : \u2220AFE = \u2220DFE, 3 * pi = \u2220AFE + \u2220BAF + \u2220EGB + \u2220FEG + \u2220GBA, \u2220BAF = \u2220CAF, 3.14 = pi\nConclusions: 3 * 3.14 = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA\n\nStep 68:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BGE + \u2220CBG + \u2220ECB + \u2220GEC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220BGE + \u2220CBG + \u2220ECB + \u2220GEC\n\nStep 69:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CEG, CG = EG\nConclusions: \u2220ECG = \u2220GEC\n\nStep 70:\nTheorem: Issoceles Triangle Property\nPremises : BG = CG, \u25b3BCG\nConclusions: \u2220CBG = \u2220GCB\n\nStep 71:\nTheorem: Transtivity of Equivalence\nPremises : 3 * pi = \u2220BDF + \u2220CGB + \u2220DFC + \u2220FCG + \u2220GBD, 9.42 = 3 * pi\nConclusions: 9.42 = \u2220BDF + \u2220CGB + \u2220DFC + \u2220FCG + \u2220GBD\n\nStep 72:\nTheorem: Substitution\nPremises : 2 * pi = \u2220DFE + \u2220EGD + \u2220FEG + \u2220GDF, pi * (60 / 180) = \u2220EGD, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (60 / 180) + \u2220DFE + \u2220FEG + \u2220GDF\n\nStep 73:\nTheorem: Substitution\nPremises : 3 * pi = \u2220BDF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBD, 3.14 = pi\nConclusions: 3 * 3.14 = \u2220BDF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBD\n\nStep 74:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACG = \u2220GCF, \u2220ACG = \u2220BCG\nConclusions: \u2220BCG = \u2220GCF\n\nStep 75:\nTheorem: Issoceles Triangle Property\nPremises : AB = AD, \u25b3ABD\nConclusions: \u2220ADB = \u2220DBA\n\nStep 76:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCB = 2 * pi - \u2220BCF, \u2220ECB = \u2220FCB\nConclusions: \u2220ECB = 2 * pi - \u2220BCF\n\nStep 77:\nTheorem: Substitution\nPremises : \u2220DFC = \u2220DFE, 2 * pi = \u2220BDF + \u2220CBD + \u2220DFC + \u2220FCB, \u2220ECB = \u2220FCB, pi / 2 = \u2220CBD, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + \u2220BDF + \u2220DFE + \u2220ECB\n\nStep 78:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ECG = \u2220FCG, \u2220ECG = \u2220GEC\nConclusions: \u2220FCG = \u2220GEC\n\nStep 79:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220BGC + \u2220CGE + \u2220DGB + \u2220EGD, 2 * pi = \u2220DFE + \u2220EGD + \u2220FEG + \u2220GDF, pi * (60 / 180) = \u2220EGD, pi * (120 / 180) = \u2220BGC, pi * (120 / 180) = \u2220CGE, 2 * 3.14 = 3.14 * (60 / 180) + \u2220DFE + \u2220FEG + \u2220GDF\nConclusions: 1.05 = \u2220DGB\n\nStep 80:\nTheorem: Transtivity of Equivalence\nPremises : 3 * pi = \u2220BDF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBD, 3 * 3.14 = \u2220BDF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBD\nConclusions: 3 * 3.14 = 3 * pi\n\nStep 81:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GCE = \u2220GCF, \u2220BCG = \u2220GCF\nConclusions: \u2220BCG = \u2220GCE\n\nStep 82:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = \u2220DBA, \u2220ADB = \u2220DBA\nConclusions: 1.57 = \u2220ADB\n\nStep 83:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220DGB, 1.05 = \u2220EGD\nConclusions: \u2220DGB = \u2220EGD\n\nStep 84:\nTheorem: Transtivity of Equivalence\nPremises : 3 * 3.14 = 3 * pi, 3 * 3.14 = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA\nConclusions: 3 * pi = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA\n\nStep 85:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GCE = 2 * pi - \u2220ECG, \u2220BCG = \u2220GCE\nConclusions: \u2220BCG = 2 * pi - \u2220ECG\n\nStep 86:\nTheorem: Solve Linear Equation System\nPremises : 3 * pi = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA, 2 * pi = \u2220BGC + \u2220CGE + \u2220DGB + \u2220EGD, 3 * 3.14 = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA, pi * (120 / 180) = \u2220BGC, pi * (120 / 180) = \u2220CGE, 2 * pi = \u2220BGE + \u2220DGB + \u2220EGD\nConclusions: 4.19 = \u2220BGE\n\nStep 87:\nTheorem: Solve Linear Equation System\nPremises : 3 * pi = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA, pi * (120 / 180) = 2 * pi - \u2220CGB, 3 * 3.14 = \u2220CAF + \u2220DFE + \u2220EGB + \u2220FEG + \u2220GBA\nConclusions: 4.19 = \u2220CGB\n\nStep 88:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220BGC + \u2220CBG + \u2220GCB, \u2220BGC = \u2220CGE, pi = \u2220CGE + \u2220ECG + \u2220GEC, \u2220BCG = 2 * pi - \u2220GCB, \u2220BCG = 2 * pi - \u2220ECG\nConclusions: \u2220CBG = \u2220GEC\n\nStep 89:\nTheorem: Transtivity of Equivalence\nPremises : 4.19 = \u2220CGB, 4.19 = \u2220BGE\nConclusions: \u2220BGE = \u2220CGB\n\nStep 90:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCG = \u2220GEC, \u2220CBG = \u2220GEC\nConclusions: \u2220CBG = \u2220FCG\n\nStep 91:\nTheorem: Solve Linear Equation System\nPremises : \u2220CBG = \u2220FCG, 6.28 = \u2220BGE + \u2220DGB + \u2220EGD, 1.57 = \u2220ADB, \u2220DFC = \u2220DFE, 9.42 = \u2220BDF + \u2220CGB + \u2220DFC + \u2220FCG + \u2220GBD, 3.14 = \u2220ADB + \u2220BDF, \u2220BGE = \u2220CGB, \u2220FCG = \u2220GEC, \u2220ECB = 2 * pi - \u2220BCF, 3.14 = \u2220BDG + \u2220DGB + \u2220GBD, \u2220BDG = \u2220GBD, \u2220CBG = \u2220GCB, 2 * 3.14 = \u2220BGE + \u2220CBG + \u2220ECB + \u2220GEC, 2 * pi = \u2220BCF + \u2220FCG + \u2220GCB, \u2220DGB = \u2220EGD, 2 * 3.14 = 3.14 / 2 + \u2220BDF + \u2220DFE + \u2220ECB\nConclusions: 2.09 = \u2220DFE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Line(F, C)",
+        "Line(E, C)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Circle(G, radius_G)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Perpendicular(Line(C, A), Line(B, D))",
+        "PointLiesOnCircle(B, Circle(G, radius_G))",
+        "PointLiesOnCircle(C, Circle(G, radius_G))",
+        "PointLiesOnCircle(D, Circle(G, radius_G))",
+        "PointLiesOnCircle(E, Circle(G, radius_G))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "Equals(MeasureOf(Arc(B, G, C)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Arc(B, G, C)), MeasureOf(Arc(C, G, E)))",
+        "Equals(MeasureOf(Arc(C, G, E)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Arc(E, G, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": false
+}

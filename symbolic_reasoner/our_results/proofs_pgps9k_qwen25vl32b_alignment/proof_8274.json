@@ -1,0 +1,82 @@
+{
+    "problem_id": "8274",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 38)",
+        "Equals(MeasureOf(Angle(C, A, B)), 7x+1)",
+        "Equals(MeasureOf(Angle(C, B, D)), 10x+9)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "AB",
+        "AD",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.737556561085974,
+            255.30857142857144
+        ],
+        "B": [
+            186.6578489383919,
+            255.51824175824177
+        ],
+        "C": [
+            104.38287504350853,
+            17.053186813186816
+        ],
+        "D": [
+            376.8371040723982,
+            256.06571428571425
+        ]
+    },
+    "problem_choices": [
+        1.647,
+        7.765,
+        10.0,
+        16.118
+    ],
+    "choices_precise_value": [
+        1.647,
+        7.765,
+        10.0,
+        16.118
+    ],
+    "problem_answer": 10.0,
+    "total_time": 8.416023,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, 3.14 = pi, \u2220CBA, \u2220CAD, pi * (38 / 180) = \u2220ACB, BC, \u2220CAB, B on AD, pi * ((9 + 10 * x) / 180) = \u2220DBC, pi * ((1 + 7 * x) / 180) = \u2220BAC, AC, \u2220DAC, \u2220DBC, \u2220DAC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220CAD, B on AD\nConclusions: \u2220CAB = \u2220CAD\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((9 + 10 * x) / 180) = \u2220DBC, 3.14 = pi\nConclusions: 3.14 * ((9 + 10 * x) / 180) = \u2220DBC\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((1 + 7 * x) / 180) = \u2220BAC, 3.14 = pi\nConclusions: 3.14 * ((1 + 7 * x) / 180) = \u2220BAC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAC\nConclusions: \u2220DAC = 2 * pi - \u2220CAD\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220CBA, \u2220DBC\nConclusions: pi = \u2220CBA + \u2220DBC\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220DAC, B on AD\nConclusions: \u2220BAC = \u2220DAC\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220CAB = 2 * pi - \u2220BAC, \u2220CAB = \u2220CAD, 3.14 = pi\nConclusions: \u2220CAD = 2 * 3.14 - \u2220BAC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((1 + 7 * x) / 180) = \u2220BAC, 3.14 * ((1 + 7 * x) / 180) = \u2220BAC\nConclusions: 3.14 * ((1 + 7 * x) / 180) = pi * ((1 + 7 * x) / 180)\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220CBA + \u2220DBC, 3.14 = pi\nConclusions: 3.14 = \u2220CBA + \u2220DBC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DAC, pi * ((1 + 7 * x) / 180) = \u2220BAC\nConclusions: pi * ((1 + 7 * x) / 180) = \u2220DAC\n\nStep 15:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (38 / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 = pi * (38 / 180) + \u2220BAC + \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((1 + 7 * x) / 180) = pi * ((1 + 7 * x) / 180), pi * ((1 + 7 * x) / 180) = \u2220DAC\nConclusions: 3.14 * ((1 + 7 * x) / 180) = \u2220DAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = 2 * pi - \u2220CAD, 3.14 * ((1 + 7 * x) / 180) = \u2220DAC\nConclusions: 3.14 * ((1 + 7 * x) / 180) = 2 * pi - \u2220CAD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : \u2220CAD = 2 * 3.14 - \u2220BAC, 3.14 = \u2220CBA + \u2220DBC, 3.14 * ((9 + 10 * x) / 180) = \u2220DBC, 3.14 = pi * (38 / 180) + \u2220BAC + \u2220CBA, 3.14 * ((1 + 7 * x) / 180) = 2 * pi - \u2220CAD, 3.14 * ((1 + 7 * x) / 180) = \u2220BAC\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(38.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(Add(Mul(7.0, x), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, C)), Mul(pi, Div(Add(Mul(10.0, x), 9.0), 180.0)))"
+    ],
+    "correct": true
+}

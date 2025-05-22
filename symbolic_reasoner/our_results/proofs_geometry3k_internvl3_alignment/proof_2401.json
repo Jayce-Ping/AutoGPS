@@ -1,0 +1,76 @@
+{
+    "problem_id": "2401",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 10)",
+        "Equals(LengthOf(Line(A, D)), 13)",
+        "Equals(LengthOf(Line(C, D)), 13)",
+        "Find(AreaOf(Triangle(A, C, D)))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.772727272727266,
+            201.42045454545453
+        ],
+        "B": [
+            109.9659090909091,
+            200.5681818181818
+        ],
+        "C": [
+            201.72727272727275,
+            201.13636363636363
+        ],
+        "D": [
+            110.25,
+            16.761363636363637
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "60",
+        "120",
+        "240"
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        120.0,
+        240.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 13.693229,
+    "solution_predicate": "Equals(60.0, AreaOf(Triangle(A, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ACD, 13 = CD, 10 = AC, 13 = AD\n\nStep 2:\nTheorem: Area formula of Triangle(A, C, D) by Heron's formula\nPremises : \u25b3ACD\nConclusions: Area(\u25b3ACD) = SqrtOf(((AC + AD + CD) / 2) * ((AC + AD + CD) / 2 - AC) * ((AC + AD + CD) / 2 - AD) * ((AC + AD + CD) / 2 - CD))\n\nStep 3:\nTheorem: Substitution\nPremises : Area(\u25b3ACD) = SqrtOf(((AC + AD + CD) / 2) * ((AC + AD + CD) / 2 - AC) * ((AC + AD + CD) / 2 - AD) * ((AC + AD + CD) / 2 - CD)), 13 = AD, 10 = AC, 13 = CD\nConclusions: SqrtOf(((10 + 13 + 13) / 2) * ((10 + 13 + 13) / 2 - 10) * ((10 + 13 + 13) / 2 - 13) * ((10 + 13 + 13) / 2 - 13)) = Area(\u25b3ACD)\n\nStep 4:\nTheorem: Evaluate\nPremises : SqrtOf(((10 + 13 + 13) / 2) * ((10 + 13 + 13) / 2 - 10) * ((10 + 13 + 13) / 2 - 13) * ((10 + 13 + 13) / 2 - 13)) = Area(\u25b3ACD)\nConclusions: 60 = Area(\u25b3ACD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(D, A)",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 10.0)",
+        "Equals(LengthOf(Line(A, D)), 13.0)",
+        "Equals(LengthOf(Line(C, D)), 13.0)"
+    ],
+    "correct": true
+}

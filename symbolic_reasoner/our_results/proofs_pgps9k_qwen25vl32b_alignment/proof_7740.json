@@ -1,0 +1,92 @@
+{
+    "problem_id": "7740",
+    "solved": true,
+    "problem_text": "Find WZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, Y)), 40)",
+        "Equals(LengthOf(Line(Y, U)), 32)",
+        "Equals(LengthOf(Line(Z, U)), x+6)",
+        "Equals(LengthOf(Line(Z, W)), 3x-6)",
+        "Equals(MeasureOf(Angle(Z, W, U)), MeasureOf(Angle(W, Y, U)))",
+        "Line(U, Y)",
+        "Line(W, U)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Z, U)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(W, U))",
+        "PointLiesOnLine(U, Line(Z, Y))",
+        "Find(LengthOf(Line(W,Z)))"
+    ],
+    "point_instances": [
+        "Z",
+        "U",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "ZW",
+        "WY",
+        "YU",
+        "YZ",
+        "UZ",
+        "UW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            121.18725868725869,
+            363.7828571428571
+        ],
+        "U": [
+            322.3711993243243,
+            363.45571428571424
+        ],
+        "Y": [
+            692.5253378378379,
+            363.7828571428571
+        ],
+        "W": [
+            322.04391891891896,
+            90.85224489795918
+        ]
+    },
+    "problem_choices": [
+        18.0,
+        24.0,
+        30.0,
+        32.0
+    ],
+    "choices_precise_value": [
+        18.0,
+        24.0,
+        30.0,
+        32.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 52.838001,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(W, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220WYU = \u2220ZWU, sin(\u2220UWY), UW, 3 * x - 6 = WZ, UZ, \u2220YUW, \u2220WYU, \u2220ZWU, 6 + x = UZ, WZ, \u2220UWY, \u2220WZY, UW \u22a5 UY, UY, \u2220UWY, 40 = WY, YZ, 32 = UY, UW \u22a5 UZ, WY, \u2220YWZ, \u2220ZWU, \u2220WYZ, 3.14 = pi, \u2220ZUW, \u2220WUY, U on YZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220YUW\nConclusions: \u2220YUW = 2 * pi - \u2220WUY\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : UZ, UW, WZ\nConclusions: \u25b3UWZ\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : UW \u22a5 UY\nConclusions: (3 * pi) / 2 = \u2220WUY, pi / 2 = \u2220YUW\n\nStep 5:\nTheorem: Angle Sin Definition\nPremises : UW \u22a5 UY, sin(\u2220UWY)\nConclusions: UY / WY = sin(\u2220UWY)\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : UW \u22a5 UZ\nConclusions: pi / 2 = \u2220WUZ, (3 * pi) / 2 = \u2220ZUW\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : UW, UY, WY\nConclusions: \u25b3UWY\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : YZ, WY, WZ\nConclusions: \u25b3WYZ\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220ZWU, \u2220UWY, \u2220YWZ\nConclusions: 2 * pi = \u2220UWY + \u2220YWZ + \u2220ZWU\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZUW\nConclusions: \u2220ZUW = 2 * pi - \u2220WUZ\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220WUY\nConclusions: \u2220WUY = 2 * pi - \u2220YUW\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220WZY, U on YZ\nConclusions: \u2220WZU = \u2220WZY\n\nStep 13:\nTheorem: Same Angle\nPremises : U on YZ, \u2220WYZ\nConclusions: \u2220WYU = \u2220WYZ\n\nStep 14:\nTheorem: Line Segment Split\nPremises : U on YZ\nConclusions: YZ = UY + UZ\n\nStep 15:\nTheorem: Sin Function Definition\nPremises : UW \u22a5 UZ, \u2220ZWU, \u25b3UWZ\nConclusions: UZ / WZ = sin(\u2220ZWU)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, W, U)\nPremises : \u25b3UWZ\nConclusions: pi = \u2220UZW + \u2220WUZ + \u2220ZWU\n\nStep 17:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220WUY, pi / 2 = \u2220YUW, 3.14 = pi, \u2220YUW = 2 * pi - \u2220WUY\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 18:\nTheorem: Substitution\nPremises : 40 = WY, 32 = UY, UY / WY = sin(\u2220UWY)\nConclusions: 32 / 40 = sin(\u2220UWY)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220YUW, pi / 2 = \u2220WUZ\nConclusions: \u2220WUZ = \u2220YUW\n\nStep 20:\nTheorem: Cos Function Definition\nPremises : UW \u22a5 UY, \u2220UWY, \u25b3UWY\nConclusions: UW / WY = cos(\u2220UWY)\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Triangle(U, W, Y)\nPremises : \u25b3UWY\nConclusions: pi = \u2220UWY + \u2220WYU + \u2220YUW\n\nStep 22:\nTheorem: Tan Function Definition\nPremises : UW \u22a5 UY, \u2220UWY, \u25b3UWY\nConclusions: UY / UW = tan(\u2220UWY)\n\nStep 23:\nTheorem: Sin Function Definition\nPremises : UW \u22a5 UY, \u2220WYU, \u25b3UWY\nConclusions: UW / WY = sin(\u2220WYU)\n\nStep 24:\nTheorem: Perimeter Definition\nPremises : \u25b3WYZ\nConclusions: Perimeter(\u25b3WYZ) = WY + WZ + YZ\n\nStep 25:\nTheorem: Substitution\nPremises : 2 * pi = \u2220UWY + \u2220YWZ + \u2220ZWU, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220UWY + \u2220YWZ + \u2220ZWU\n\nStep 26:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220WUY, pi / 2 = \u2220YUW, 3.14 = pi, \u2220WUY = 2 * pi - \u2220YUW\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYU = \u2220ZWU, \u2220WYU = \u2220WYZ\nConclusions: \u2220WYZ = \u2220ZWU\n\nStep 28:\nTheorem: Substitution\nPremises : YZ = UY + UZ, 32 = UY, 6 + x = UZ\nConclusions: 32 + (6 + x) = YZ\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220UZW + \u2220WUZ + \u2220ZWU\nConclusions: 3.14 = \u2220UZW + \u2220WUZ + \u2220ZWU\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220WUZ\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220WUZ\n\nStep 31:\nTheorem: Solve Univariate Equation\nPremises : 32 / 40 = sin(\u2220UWY)\nConclusions: 0.93 = \u2220UWY\n\nStep 32:\nTheorem: Substitution\nPremises : pi = \u2220UWY + \u2220WYU + \u2220YUW, pi / 2 = \u2220YUW, 3.14 = pi, \u2220WYU = \u2220ZWU\nConclusions: 3.14 = pi / 2 + \u2220UWY + \u2220ZWU\n\nStep 33:\nTheorem: Substitution\nPremises : UW / WY = sin(\u2220WYU), 40 = WY, \u2220WYU = \u2220ZWU\nConclusions: UW / 40 = sin(\u2220ZWU)\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = 2 * 3.14 - pi / 2, (3 * pi) / 2 = \u2220ZUW\nConclusions: 2 * 3.14 - pi / 2 = \u2220ZUW\n\nStep 35:\nTheorem: Substitution\nPremises : 40 = WY, Perimeter(\u25b3WYZ) = WY + WZ + YZ, 32 + (6 + x) = YZ, 3 * x - 6 = WZ\nConclusions: 40 + (32 + (6 + x)) + (3 * x - 6) = Perimeter(\u25b3WYZ)\n\nStep 36:\nTheorem: Substitution\nPremises : 40 = WY, UW / WY = cos(\u2220UWY), 0.93 = \u2220UWY\nConclusions: cos(0.93) = UW / 40\n\nStep 37:\nTheorem: Substitution\nPremises : UY / UW = tan(\u2220UWY), 32 = UY, 0.93 = \u2220UWY\nConclusions: tan(0.93) = 32 / UW\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = \u2220WUZ, 3.14 = pi / 2 + \u2220UWY + \u2220ZWU, 3.14 = \u2220UZW + \u2220WUZ + \u2220ZWU\nConclusions: \u2220UWY = \u2220UZW\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = \u2220ZUW, (3 * pi) / 2 = \u2220ZUW\nConclusions: 4.71 = \u2220ZUW\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220ZUW, \u2220ZUW = 2 * pi - \u2220WUZ\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220WUZ\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3WYZ) = WY + WZ + YZ, 40 + (32 + (6 + x)) + (3 * x - 6) = Perimeter(\u25b3WYZ)\nConclusions: 40 + (32 + (6 + x)) + (3 * x - 6) = WY + WZ + YZ\n\nStep 42:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220UWY = \u2220UZW, \u2220WUZ = \u2220YUW, \u2220WYU = \u2220ZWU\nConclusions: \u25b3UWY ~ \u25b3UZW\n\nStep 43:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220UWY + \u2220YWZ + \u2220ZWU, 2 * 3.14 - pi / 2 = 2 * pi - \u2220WUZ, 2 * 3.14 - (3 * pi) / 2 = \u2220WUZ, 3.14 = pi / 2 + \u2220UWY + \u2220ZWU\nConclusions: 4.71 = \u2220YWZ\n\nStep 44:\nTheorem: Similar Definition\nPremises : \u25b3UWY ~ \u25b3UZW\nConclusions: \u2220WYU = \u2220ZWU, \u2220UWY = \u2220UZW, sim_ratio_triangle_u_w_y_triangle_u_z_w = WY / WZ, sim_ratio_triangle_u_w_y_triangle_u_z_w = UY / UW\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : 4.71 = \u2220YWZ, 4.71 = \u2220ZUW\nConclusions: \u2220YWZ = \u2220ZUW\n\nStep 46:\nTheorem: Substitution\nPremises : 40 = WY, sim_ratio_triangle_u_w_y_triangle_u_z_w = WY / WZ, 3 * x - 6 = WZ\nConclusions: sim_ratio_triangle_u_w_y_triangle_u_z_w = 40 / (3 * x - 6)\n\nStep 47:\nTheorem: Substitution\nPremises : sim_ratio_triangle_u_w_y_triangle_u_z_w = UY / UW, 32 = UY\nConclusions: sim_ratio_triangle_u_w_y_triangle_u_z_w = 32 / UW\n\nStep 48:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220WZU = \u2220WZY, \u2220YWZ = \u2220ZUW, \u2220WYZ = \u2220ZWU\nConclusions: \u25b3UWZ ~ \u25b3WYZ\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_u_w_y_triangle_u_z_w = 32 / UW, tan(0.93) = 32 / UW\nConclusions: tan(0.93) = sim_ratio_triangle_u_w_y_triangle_u_z_w\n\nStep 50:\nTheorem: Similar Definition\nPremises : \u25b3UWZ ~ \u25b3WYZ\nConclusions: \u2220WYZ = \u2220ZWU, sim_ratio_triangle_u_w_z_triangle_w_y_z = UZ / WZ, sim_ratio_triangle_u_w_z_triangle_w_y_z = WZ / YZ, \u2220WZU = \u2220WZY\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : tan(0.93) = sim_ratio_triangle_u_w_y_triangle_u_z_w, sim_ratio_triangle_u_w_y_triangle_u_z_w = 40 / (3 * x - 6)\nConclusions: tan(0.93) = 40 / (3 * x - 6)\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : tan(0.93) = sim_ratio_triangle_u_w_y_triangle_u_z_w, sim_ratio_triangle_u_w_y_triangle_u_z_w = WY / WZ\nConclusions: tan(0.93) = WY / WZ\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : UZ / WZ = sin(\u2220ZWU), sim_ratio_triangle_u_w_z_triangle_w_y_z = UZ / WZ\nConclusions: sim_ratio_triangle_u_w_z_triangle_w_y_z = sin(\u2220ZWU)\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : UW / 40 = sin(\u2220ZWU), sim_ratio_triangle_u_w_z_triangle_w_y_z = sin(\u2220ZWU)\nConclusions: sim_ratio_triangle_u_w_z_triangle_w_y_z = UW / 40\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : cos(0.93) = UW / 40, sim_ratio_triangle_u_w_z_triangle_w_y_z = UW / 40\nConclusions: cos(0.93) = sim_ratio_triangle_u_w_z_triangle_w_y_z\n\nStep 56:\nTheorem: Transtivity of Equivalence\nPremises : cos(0.93) = sim_ratio_triangle_u_w_z_triangle_w_y_z, sim_ratio_triangle_u_w_z_triangle_w_y_z = WZ / YZ\nConclusions: cos(0.93) = WZ / YZ\n\nStep 57:\nTheorem: Solve Linear Equation System\nPremises : tan(0.93) = WY / WZ, tan(0.93) = 40 / (3 * x - 6), cos(0.93) = WZ / YZ, 40 + (32 + (6 + x)) + (3 * x - 6) = WY + WZ + YZ\nConclusions: 30 = WZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, W)",
+        "Line(W, Y)",
+        "Line(Y, U)",
+        "Line(Y, Z)",
+        "Line(U, Z)",
+        "Line(U, W)",
+        "Line(U, Y)",
+        "Line(W, U)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(Z, U)",
+        "Line(Z, Y)",
+        "Perpendicular(Line(Z, Y), Line(W, U))",
+        "PointLiesOnLine(U, Line(Z, Y))",
+        "Equals(LengthOf(Line(W, Y)), 40.0)",
+        "Equals(LengthOf(Line(Y, U)), 32.0)",
+        "Equals(LengthOf(Line(Z, U)), Add(x, 6.0))",
+        "Equals(LengthOf(Line(Z, W)), Sub(Mul(3.0, x), 6.0))",
+        "Equals(MeasureOf(Angle(Z, W, U)), MeasureOf(Angle(W, Y, U)))"
+    ],
+    "correct": true
+}

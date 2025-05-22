@@ -1,0 +1,80 @@
+{
+    "problem_id": "2403",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(D, A)), 32)",
+        "Equals(MeasureOf(Angle(B, C, D)), 54)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            13.702970297029704,
+            153.26732673267327
+        ],
+        "B": [
+            111.92079207920793,
+            153.06930693069307
+        ],
+        "C": [
+            211.72277227722773,
+            153.46534653465346
+        ],
+        "D": [
+            112.31683168316832,
+            18.01980198019802
+        ]
+    },
+    "problem_choices": [
+        "18.8",
+        "23.2",
+        "25.9",
+        "44.0"
+    ],
+    "choices_precise_value": [
+        18.8,
+        23.2,
+        25.9,
+        44.0
+    ],
+    "problem_answer": 18.8,
+    "total_time": 39.316378,
+    "solution_predicate": "Equals(18.8091280732, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD = CD, 32 = AD, BC, \u2220ADB, AB \u22a5 BD, AB, AD, BC \u22a5 BD, x = AB, \u2220DCA, \u2220BAD, 3.14 = pi, BD, B on AC, AC, CD, pi * (54 / 180) = \u2220DCB, \u2220CAD, tan(\u2220BAD), y = BD, cos(\u2220BAD)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220CBD\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.94 = pi * (54 / 180)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BD, AD\nConclusions: \u25b3ABD\n\nStep 5:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CD, BC, BD\nConclusions: \u25b3BCD\n\nStep 8:\nTheorem: Same Angle\nPremises : B on AC, \u2220CAD\nConclusions: \u2220BAD = \u2220CAD\n\nStep 9:\nTheorem: Angle Tan Definition\nPremises : AB \u22a5 BD, tan(\u2220BAD)\nConclusions: BD / AB = tan(\u2220BAD)\n\nStep 10:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BAD), AB \u22a5 BD\nConclusions: AB / AD = cos(\u2220BAD)\n\nStep 11:\nTheorem: Cos Function Definition\nPremises : \u2220ADB, \u25b3ABD, AB \u22a5 BD\nConclusions: BD / AD = cos(\u2220ADB)\n\nStep 12:\nTheorem: Cos Function Definition\nPremises : \u25b3ABD, AB \u22a5 BD, \u2220BAD\nConclusions: AB / AD = cos(\u2220BAD)\n\nStep 13:\nTheorem: Sin Function Definition\nPremises : \u2220ADB, \u25b3ABD, AB \u22a5 BD\nConclusions: AB / AD = sin(\u2220ADB)\n\nStep 14:\nTheorem: Perimeter Definition\nPremises : \u25b3ABD\nConclusions: Perimeter(\u25b3ABD) = AB + AD + BD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, pi * (54 / 180) = \u2220DCB\nConclusions: pi * (54 / 180) = \u2220DCA\n\nStep 16:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3ACD, AD = CD\nConclusions: BC \u22a5 BD, \u2220ADB = \u2220BDC, AB \u22a5 BD, AB = BC\n\nStep 17:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACD, AD = CD\nConclusions: \u2220CAD = \u2220DCA\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : AB / AD = cos(\u2220BAD), AB / AD = cos(\u2220BAD)\nConclusions: AB / AD = AB / AD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * (54 / 180) = \u2220DCA, 0.94 = pi * (54 / 180)\nConclusions: 0.94 = \u2220DCA\n\nStep 21:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AD = CD, AB = BC\nConclusions: \u25b3ABD \u2245 \u25b3CBD\n\nStep 22:\nTheorem: Substitution\nPremises : pi = \u2220BDC + \u2220CBD + \u2220DCB, pi / 2 = \u2220CBD, 3.14 = pi, pi * (54 / 180) = \u2220DCB\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (54 / 180) + \u2220BDC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : AB / AD = AB / AD, AB / AD = sin(\u2220ADB)\nConclusions: AB / AD = sin(\u2220ADB)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 0.94 = \u2220DCA, \u2220CAD = \u2220DCA\nConclusions: 0.94 = \u2220CAD\n\nStep 25:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CBD\nConclusions: Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), \u2220ADB = \u2220BDC\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (54 / 180) + \u2220BDC\nConclusions: 0.63 = \u2220BDC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CAD, 0.94 = \u2220CAD\nConclusions: 0.94 = \u2220BAD\n\nStep 28:\nTheorem: Substitution\nPremises : Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD), 32 = AD, Perimeter(\u25b3ABD) = AB + AD + BD, y = BD, x = AB\nConclusions: 32 + x + y = Perimeter(\u25b3BCD)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220BDC, 0.63 = \u2220BDC\nConclusions: 0.63 = \u2220ADB\n\nStep 30:\nTheorem: Evaluate\nPremises : 0.94 = \u2220BAD\nConclusions: 1.38 = tan(\u2220BAD)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 32 + x + y = Perimeter(\u25b3BCD), Perimeter(\u25b3ABD) = Perimeter(\u25b3BCD)\nConclusions: 32 + x + y = Perimeter(\u25b3ABD)\n\nStep 32:\nTheorem: Substitution\nPremises : y = BD, 0.63 = \u2220ADB, BD / AD = cos(\u2220ADB), 32 = AD\nConclusions: cos(0.63) = y / 32\n\nStep 33:\nTheorem: Substitution\nPremises : 32 = AD, x = AB, 0.63 = \u2220ADB, AB / AD = sin(\u2220ADB)\nConclusions: sin(0.63) = x / 32\n\nStep 34:\nTheorem: Evaluate\nPremises : 0.63 = \u2220ADB\nConclusions: 0.59 = sin(\u2220ADB)\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : BD / AB = tan(\u2220BAD), 1.38 = tan(\u2220BAD)\nConclusions: 1.38 = BD / AB\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 32 + x + y = Perimeter(\u25b3ABD), Perimeter(\u25b3ABD) = AB + AD + BD\nConclusions: 32 + x + y = AB + AD + BD\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 0.59 = sin(\u2220ADB), AB / AD = sin(\u2220ADB)\nConclusions: 0.59 = AB / AD\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : cos(0.63) = y / 32, sin(0.63) = x / 32, 32 + x + y = AB + AD + BD, 1.38 = BD / AB, 0.59 = AB / AD\nConclusions: 18.81 = AB\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 18.81 = AB, x = AB\nConclusions: 18.81 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(D, A)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, D)), y)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(D, A)), 32.0)",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(54.0, 180.0)))"
+    ],
+    "correct": true
+}

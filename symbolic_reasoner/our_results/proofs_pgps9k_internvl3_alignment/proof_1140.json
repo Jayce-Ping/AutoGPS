@@ -1,0 +1,122 @@
+{
+    "problem_id": "1140",
+    "solved": true,
+    "problem_text": "If PQ = UQ and m \\angle P = 32, find m \\angle PUQ.",
+    "logic_forms": [
+        "Line(P, T)",
+        "Line(P, U)",
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(Q, U)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(U, T)",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(U, Line(P, T))",
+        "Equals(LengthOf(Line(P,Q)),Line(U,Q))",
+        "Equals(MeasureOf(Angle(P)),32)",
+        "Find(MeasureOf(Angle(P,U,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "R",
+        "U",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "PU",
+        "PT",
+        "UT",
+        "QS",
+        "PQ",
+        "PR",
+        "QR",
+        "RS",
+        "RT",
+        "ST",
+        "QU",
+        "US"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            23.26607142857143,
+            268.3125
+        ],
+        "Q": [
+            103.88571428571429,
+            130.4836956521739
+        ],
+        "R": [
+            153.40457142857142,
+            43.89782608695651
+        ],
+        "U": [
+            153.38420168067228,
+            267.6771099744245
+        ],
+        "S": [
+            202.78084033613447,
+            130.3312020460358
+        ],
+        "T": [
+            283.5468907563025,
+            268.287084398977
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        74.0,
+        79.0,
+        116.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        74.0,
+        79.0,
+        116.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 73.259913,
+    "solution_predicate": "Equals(0.5585053606, MeasureOf(Angle(Q, U, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: QU, Q on PR, PQ = QU, PQ, U on PT, PU, 3.14 = pi, pi * (32 / 180) = \u2220TPR, \u2220TPQ, \u2220TPR\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : QU, PQ, PU\nConclusions: \u25b3PQU\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.56 = pi * (32 / 180)\n\nStep 4:\nTheorem: Same Angle\nPremises : U on PT, \u2220TPQ\nConclusions: \u2220TPQ = \u2220UPQ\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220TPR, Q on PR\nConclusions: \u2220TPQ = \u2220TPR\n\nStep 6:\nTheorem: Issoceles Triangle Property\nPremises : PQ = QU, \u25b3PQU\nConclusions: \u2220QUP = \u2220UPQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (32 / 180) = \u2220TPR, \u2220TPQ = \u2220TPR\nConclusions: pi * (32 / 180) = \u2220TPQ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (32 / 180) = \u2220TPQ, \u2220TPQ = \u2220UPQ\nConclusions: pi * (32 / 180) = \u2220UPQ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.56 = pi * (32 / 180), pi * (32 / 180) = \u2220UPQ\nConclusions: 0.56 = \u2220UPQ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.56 = \u2220UPQ, \u2220QUP = \u2220UPQ\nConclusions: 0.56 = \u2220QUP\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, U)",
+        "Line(P, T)",
+        "Line(U, T)",
+        "Line(Q, S)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, R)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(Q, U)",
+        "Line(U, S)",
+        "Line(P, T)",
+        "Line(P, U)",
+        "Line(Q, P)",
+        "Line(Q, S)",
+        "Line(Q, U)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(S, U)",
+        "Line(U, T)",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(U, Line(P, T))",
+        "Equals(LengthOf(Line(P, Q)), LengthOf(Line(U, Q)))",
+        "Equals(MeasureOf(Angle(T, P, R)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,70 @@
+{
+    "problem_id": "2572",
+    "solved": true,
+    "problem_text": "Find m \\angle M P Q.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(Q, N))",
+        "Equals(MeasureOf(Angle(P, N, M)), 45)",
+        "Equals(MeasureOf(Angle(P, M, N)), 56)",
+        "Find(MeasureOf(Angle(M,P,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "N",
+        "Q",
+        "M"
+    ],
+    "line_instances": [
+        "QP",
+        "QN",
+        "PN",
+        "MP",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            377.319587628866,
+            245.1958762886598
+        ],
+        "N": [
+            569.0721649484536,
+            245.1958762886598
+        ],
+        "Q": [
+            82.98969072164948,
+            245.1958762886598
+        ],
+        "M": [
+            409.7938144329897,
+            84.88659793814435
+        ]
+    },
+    "problem_choices": [
+        "45",
+        "56",
+        "79",
+        "101"
+    ],
+    "choices_precise_value": [
+        45.0,
+        56.0,
+        79.0,
+        101.0
+    ],
+    "problem_answer": 101.0,
+    "total_time": 9.468261,
+    "solution_predicate": "Equals(1.7627825445, MeasureOf(Angle(M, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (56 / 180) = \u2220PMN, \u2220PNM, P on NQ, pi * (45 / 180) = \u2220MNP, \u2220NPM, \u2220QNM, \u2220MPQ, NP, 3.14 = pi, MP, MN\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220PNM\nConclusions: \u2220PNM = 2 * pi - \u2220MNP\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220QNM, P on NQ\nConclusions: \u2220PNM = \u2220QNM\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220NPM, \u2220MPQ\nConclusions: pi = \u2220MPQ + \u2220NPM\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : MN, NP, MP\nConclusions: \u25b3MNP\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220PNM = 2 * pi - \u2220MNP, pi * (45 / 180) = \u2220MNP, \u2220PNM = \u2220QNM, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (45 / 180) = \u2220QNM\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220MPQ + \u2220NPM, 3.14 = pi\nConclusions: 3.14 = \u2220MPQ + \u2220NPM\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(M, N, P)\nPremises : \u25b3MNP\nConclusions: pi = \u2220MNP + \u2220NPM + \u2220PMN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (45 / 180) = \u2220QNM, \u2220PNM = \u2220QNM\nConclusions: 2 * 3.14 - pi * (45 / 180) = \u2220PNM\n\nStep 10:\nTheorem: Substitution\nPremises : pi * (56 / 180) = \u2220PMN, pi = \u2220MNP + \u2220NPM + \u2220PMN, pi * (45 / 180) = \u2220MNP, 3.14 = pi\nConclusions: 3.14 = 3.14 * (56 / 180) + pi * (45 / 180) + \u2220NPM\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PNM = 2 * pi - \u2220MNP, 2 * 3.14 - pi * (45 / 180) = \u2220PNM\nConclusions: 2 * 3.14 - pi * (45 / 180) = 2 * pi - \u2220MNP\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (56 / 180) + pi * (45 / 180) + \u2220NPM, 2 * 3.14 - pi * (45 / 180) = 2 * pi - \u2220MNP, 3.14 = \u2220MPQ + \u2220NPM, pi * (45 / 180) = \u2220MNP\nConclusions: 1.76 = \u2220MPQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(Q, N)",
+        "Line(P, N)",
+        "Line(M, P)",
+        "Line(M, N)",
+        "PointLiesOnLine(P, Line(Q, N))",
+        "Equals(MeasureOf(Angle(M, N, P)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, M, N)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

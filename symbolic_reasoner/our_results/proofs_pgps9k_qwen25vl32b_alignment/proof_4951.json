@@ -1,0 +1,102 @@
+{
+    "problem_id": "4951",
+    "solved": true,
+    "problem_text": "UV = 8. Find XY.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, U)), LengthOf(Line(A, V)))",
+        "Line(A, V)",
+        "Line(A, Y)",
+        "Line(U, A)",
+        "Line(U, V)",
+        "Line(X, A)",
+        "Line(X, Y)",
+        "Perpendicular(Line(X, Y), Line(U, V))",
+        "PointLiesOnCircle(V, Circle(U))",
+        "PointLiesOnCircle(X, Circle(U))",
+        "PointLiesOnCircle(Y, Circle(U))",
+        "PointLiesOnLine(A, Line(U, V))",
+        "PointLiesOnLine(A, Line(X, Y))",
+        "Equals(LengthOf(Line(U,V)),8)",
+        "Find(LengthOf(Line(X,Y)))"
+    ],
+    "point_instances": [
+        "U",
+        "X",
+        "A",
+        "Y",
+        "V"
+    ],
+    "line_instances": [
+        "XA",
+        "XY",
+        "AY",
+        "UA",
+        "UV",
+        "AV"
+    ],
+    "circle_instances": [
+        "U"
+    ],
+    "point_positions": {
+        "U": [
+            159.53188467589985,
+            136.8628365973228
+        ],
+        "X": [
+            61.75210674157303,
+            193.24714285714285
+        ],
+        "A": [
+            158.92790262172286,
+            193.34285714285716
+        ],
+        "Y": [
+            256.9653558052434,
+            193.34285714285716
+        ],
+        "V": [
+            159.46404494382023,
+            249.92914285714286
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        6.928,
+        13.856,
+        16.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.928,
+        13.856,
+        16.0
+    ],
+    "problem_answer": 13.856,
+    "total_time": 77.110027,
+    "solution_predicate": "Equals(13.8564064606, LengthOf(Line(X, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220VUY, A on UV, \u2299(U, radius_U), AU \u22a5 AY, cos(\u2220AXU), \u2220AXU, sin(\u2220AUY), AU, \u2220XUA, UX, AY, AU \u22a5 AX, V on \u2299(U, radius_U), AU = AV, Y on \u2299(U, radius_U), 8 = UV, \u2220XUV, \u2220YXU, X on \u2299(U, radius_U), A on XY, UY, AX\n\nStep 2:\nTheorem: Same Angle\nPremises : A on UV, \u2220VUY\nConclusions: \u2220AUY = \u2220VUY\n\nStep 3:\nTheorem: Line Segment Split\nPremises : A on UV\nConclusions: UV = AU + AV\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : AU \u22a5 AY, sin(\u2220AUY)\nConclusions: AY / UY = sin(\u2220AUY)\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220AXU), AU \u22a5 AX\nConclusions: AX / UX = cos(\u2220AXU)\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : V on \u2299(U, radius_U)\nConclusions: radius_U = UV\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(U, radius_U)\nConclusions: radius_U = UY\n\nStep 8:\nTheorem: Same Angle\nPremises : A on UV, \u2220XUV\nConclusions: \u2220XUA = \u2220XUV\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : X on \u2299(U, radius_U)\nConclusions: radius_U = UX\n\nStep 10:\nTheorem: Line Segment Split\nPremises : A on XY\nConclusions: XY = AX + AY\n\nStep 11:\nTheorem: Circle Vertical Theorem\nPremises : AU \u22a5 AX, \u2299(U, radius_U), A on XY\nConclusions: \u25b3AUX \u2245 \u25b3AUY, AX = AY\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220YXU, A on XY\nConclusions: \u2220AXU = \u2220YXU\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AY, AU, UY\nConclusions: \u25b3AUY\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : AU, AX, UX\nConclusions: \u25b3AUX\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 8 = UV, UV = AU + AV\nConclusions: 8 = AU + AV\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 8 = UV, radius_U = UV\nConclusions: 8 = radius_U\n\nStep 17:\nTheorem: Congruent Definition\nPremises : \u25b3AUX \u2245 \u25b3AUY\nConclusions: AX = AY, Area(\u25b3AUX) = Area(\u25b3AUY), \u2220AUY = \u2220XUA\n\nStep 18:\nTheorem: Pythagorean Theorem\nPremises : AU \u22a5 AY, \u25b3AUY\nConclusions: AY = SqrtOf(UY ** 2 - AU ** 2)\n\nStep 19:\nTheorem: Cos Function Definition\nPremises : AU \u22a5 AX, \u2220AXU, \u25b3AUX\nConclusions: AX / UX = cos(\u2220AXU)\n\nStep 20:\nTheorem: Sin Function Definition\nPremises : AU \u22a5 AX, \u25b3AUX, \u2220XUA\nConclusions: AX / UX = sin(\u2220XUA)\n\nStep 21:\nTheorem: Area formula of Triangle(A, U, X) by Heron's formula\nPremises : \u25b3AUX\nConclusions: Area(\u25b3AUX) = SqrtOf(((AU + AX + UX) / 2) * ((AU + AX + UX) / 2 - AU) * ((AU + AX + UX) / 2 - AX) * ((AU + AX + UX) / 2 - UX))\n\nStep 22:\nTheorem: Area formula of Triangle(A, U, X)\nPremises : AU \u22a5 AX, \u25b3AUX\nConclusions: Area(\u25b3AUX) = (AU * AX) / 2\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : AU = AV, 8 = AU + AV\nConclusions: 4 = AU\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 8 = radius_U, radius_U = UY\nConclusions: 8 = UY\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 8 = radius_U, radius_U = UX\nConclusions: 8 = UX\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AUY = \u2220VUY, \u2220AUY = \u2220XUA, \u2220XUA = \u2220XUV\nConclusions: \u2220VUY = \u2220XUV\n\nStep 27:\nTheorem: Substitution\nPremises : Area(\u25b3AUX) = Area(\u25b3AUY), 4 = AU, Area(\u25b3AUX) = (AU * AX) / 2, AX = AY\nConclusions: Area(\u25b3AUY) = (4 * AY) / 2\n\nStep 28:\nTheorem: Evaluate\nPremises : 4 = AU, 8 = UY\nConclusions: 6.93 = SqrtOf(UY ** 2 - AU ** 2)\n\nStep 29:\nTheorem: Substitution\nPremises : \u2220AUY = \u2220VUY, 8 = UY, AY / UY = sin(\u2220AUY)\nConclusions: AY / 8 = sin(\u2220VUY)\n\nStep 30:\nTheorem: Substitution\nPremises : 4 = AU, 8 = UY, AY = SqrtOf(UY ** 2 - AU ** 2)\nConclusions: SqrtOf(8 ** 2 - 4 ** 2) = AY\n\nStep 31:\nTheorem: Substitution\nPremises : AX / UX = cos(\u2220AXU), 8 = UX, \u2220AXU = \u2220YXU\nConclusions: AX / 8 = cos(\u2220YXU)\n\nStep 32:\nTheorem: Substitution\nPremises : \u2220AXU = \u2220YXU, 8 = UX, AX / UX = cos(\u2220AXU), AX = AY\nConclusions: AY / 8 = cos(\u2220YXU)\n\nStep 33:\nTheorem: Substitution\nPremises : AX = AY, 4 = AU, Area(\u25b3AUX) = SqrtOf(((AU + AX + UX) / 2) * ((AU + AX + UX) / 2 - AU) * ((AU + AX + UX) / 2 - AX) * ((AU + AX + UX) / 2 - UX)), Area(\u25b3AUX) = Area(\u25b3AUY), 8 = UX\nConclusions: Area(\u25b3AUY) = SqrtOf(((4 + 8 + AY) / 2) * ((4 + 8 + AY) / 2 - 4) * ((4 + 8 + AY) / 2 - 8) * ((4 + 8 + AY) / 2 - AY))\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XUA = \u2220XUV, \u2220VUY = \u2220XUV\nConclusions: \u2220VUY = \u2220XUA\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(8 ** 2 - 4 ** 2) = AY, AY = SqrtOf(UY ** 2 - AU ** 2)\nConclusions: SqrtOf(8 ** 2 - 4 ** 2) = SqrtOf(UY ** 2 - AU ** 2)\n\nStep 36:\nTheorem: Substitution\nPremises : 8 = UX, AX / UX = sin(\u2220XUA), AX = AY, \u2220VUY = \u2220XUA\nConclusions: AY / 8 = sin(\u2220VUY)\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 6.93 = SqrtOf(UY ** 2 - AU ** 2), SqrtOf(8 ** 2 - 4 ** 2) = SqrtOf(UY ** 2 - AU ** 2)\nConclusions: 6.93 = SqrtOf(8 ** 2 - 4 ** 2)\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : AY / 8 = sin(\u2220VUY), AY / 8 = sin(\u2220VUY)\nConclusions: AY / 8 = AY / 8\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(8 ** 2 - 4 ** 2) = AY, 6.93 = SqrtOf(8 ** 2 - 4 ** 2)\nConclusions: 6.93 = AY\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : AX / 8 = cos(\u2220YXU), AY / 8 = AY / 8, AY / 8 = cos(\u2220YXU)\nConclusions: AX / 8 = AY / 8\n\nStep 41:\nTheorem: Solve Linear Equation System\nPremises : XY = AX + AY, Area(\u25b3AUY) = (4 * AY) / 2, AX / 8 = AY / 8\nConclusions: Area(\u25b3AUY) = XY\n\nStep 42:\nTheorem: Substitution\nPremises : Area(\u25b3AUY) = SqrtOf(((4 + 8 + AY) / 2) * ((4 + 8 + AY) / 2 - 4) * ((4 + 8 + AY) / 2 - 8) * ((4 + 8 + AY) / 2 - AY)), 6.93 = AY, Area(\u25b3AUY) = XY\nConclusions: SqrtOf(((4 + 6.93 + 8) / 2) * ((4 + 6.93 + 8) / 2 - 4) * ((4 + 6.93 + 8) / 2 - 6.93) * ((4 + 6.93 + 8) / 2 - 8)) = XY\n\nStep 43:\nTheorem: Evaluate\nPremises : SqrtOf(((4 + 6.93 + 8) / 2) * ((4 + 6.93 + 8) / 2 - 4) * ((4 + 6.93 + 8) / 2 - 6.93) * ((4 + 6.93 + 8) / 2 - 8)) = XY\nConclusions: 13.86 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, A)",
+        "Line(X, Y)",
+        "Line(A, Y)",
+        "Line(U, A)",
+        "Line(U, V)",
+        "Line(A, V)",
+        "Circle(U, radius_U)",
+        "Line(A, V)",
+        "Line(A, Y)",
+        "Line(U, A)",
+        "Line(U, V)",
+        "Line(X, A)",
+        "Line(X, Y)",
+        "Perpendicular(Line(X, Y), Line(U, V))",
+        "PointLiesOnCircle(V, Circle(U, radius_U))",
+        "PointLiesOnCircle(X, Circle(U, radius_U))",
+        "PointLiesOnCircle(Y, Circle(U, radius_U))",
+        "PointLiesOnLine(A, Line(U, V))",
+        "PointLiesOnLine(A, Line(X, Y))",
+        "Equals(LengthOf(Line(A, U)), LengthOf(Line(A, V)))",
+        "Equals(LengthOf(Line(U, V)), 8.0)"
+    ],
+    "correct": true
+}

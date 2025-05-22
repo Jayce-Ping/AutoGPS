@@ -1,0 +1,76 @@
+{
+    "problem_id": "3992",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Circle(B, r)",
+        "Equals(DiameterOf(Circle(B)), 6.2)",
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Find(AreaOf(Circle(B)))",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnLine(B, Line(C, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            154.2276933245208,
+            154.9798319327731
+        ],
+        "B": [
+            93.36780383795309,
+            93.77931769722814
+        ],
+        "C": [
+            33.85112359550562,
+            34.40412698412699
+        ]
+    },
+    "problem_choices": [
+        19.5,
+        30.2,
+        60.4,
+        120.8
+    ],
+    "choices_precise_value": [
+        19.5,
+        30.2,
+        60.4,
+        120.8
+    ],
+    "problem_answer": 19.5,
+    "total_time": 2.019972,
+    "solution_predicate": "Equals(30.1907054011, AreaOf(Circle(B, r)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(B, r), B on AC, 3.14 = pi, C on \u2299(B, r), Area(\u2299(B, r)), 6.2 = AC\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, r)\nConclusions: r = AB\n\nStep 3:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, r)\nConclusions: r = BC\n\nStep 5:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, r))\nConclusions: pi * r ** 2 = Area(\u2299(B, r))\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AC = AB + BC, 6.2 = AC\nConclusions: 6.2 = AB + BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : r = BC, r = AB\nConclusions: AB = BC\n\nStep 8:\nTheorem: Substitution\nPremises : pi * r ** 2 = Area(\u2299(B, r)), 3.14 = pi\nConclusions: 3.14 * r ** 2 = Area(\u2299(B, r))\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 6.2 = AB + BC, AB = BC\nConclusions: 3.1 = AB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * r ** 2 = Area(\u2299(B, r)), pi * r ** 2 = Area(\u2299(B, r))\nConclusions: 3.14 * r ** 2 = pi * r ** 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.1 = AB, r = AB\nConclusions: 3.1 = r\n\nStep 12:\nTheorem: Evaluate\nPremises : 3.14 = pi, 3.1 = r\nConclusions: 30.19 = pi * r ** 2\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * r ** 2 = pi * r ** 2, 30.19 = pi * r ** 2\nConclusions: 30.19 = 3.14 * r ** 2\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * r ** 2 = Area(\u2299(B, r)), 30.19 = 3.14 * r ** 2\nConclusions: 30.19 = Area(\u2299(B, r))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Circle(B, r)",
+        "Circle(B, r)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(B, r))",
+        "PointLiesOnCircle(C, Circle(B, r))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Equals(Mul(2.0, r), 6.2)",
+        "Equals(LengthOf(Line(C, A)), 6.2)"
+    ],
+    "correct": false
+}

@@ -1,0 +1,65 @@
+{
+    "problem_id": "2469",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(C, B)), 4y-5)",
+        "Equals(LengthOf(Line(B, A)), 3)",
+        "Equals(MeasureOf(Angle(C, B, A)), 2x)",
+        "Equals(MeasureOf(Angle(B, A, C)), 2x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "BC",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            346.9791666666667,
+            402.6041666666667
+        ],
+        "A": [
+            110.0,
+            213.02083333333334
+        ],
+        "B": [
+            393.8541666666667,
+            101.04166666666667
+        ]
+    },
+    "problem_choices": [
+        "20",
+        "30",
+        "40",
+        "50"
+    ],
+    "choices_precise_value": [
+        20.0,
+        30.0,
+        40.0,
+        50.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 10.969408,
+    "solution_predicate": "Equals(30.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB = AC, BC, AB, 3.14 = pi, AC, pi * ((2 * x) / 180) = \u2220ABC, pi * ((2 * x) / 180) = \u2220CAB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((2 * x) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * ((2 * x) / 180) = \u2220ABC\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 5:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABC, AB = AC\nConclusions: \u2220ABC = \u2220BCA\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x) / 180) = \u2220ABC, pi * ((2 * x) / 180) = \u2220ABC\nConclusions: 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 * x) / 180) = \u2220ABC, \u2220ABC = \u2220BCA\nConclusions: 3.14 * ((2 * x) / 180) = \u2220BCA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220CAB, 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\nConclusions: 3.14 * ((2 * x) / 180) = \u2220CAB\n\nStep 9:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 * ((2 * x) / 180) = \u2220BCA, 3.14 * ((2 * x) / 180) = \u2220CAB, 3.14 * ((2 * x) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 = 3.14 * ((2 * x) / 180) + 3.14 * ((2 * x) / 180) + 3.14 * ((2 * x) / 180)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * ((2 * x) / 180) + 3.14 * ((2 * x) / 180) + 3.14 * ((2 * x) / 180)\nConclusions: 30 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, C)))",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(4.0, y), 5.0))",
+        "Equals(LengthOf(Line(B, A)), 3.0)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(Mul(2.0, x), 180.0)))"
+    ],
+    "correct": true
+}

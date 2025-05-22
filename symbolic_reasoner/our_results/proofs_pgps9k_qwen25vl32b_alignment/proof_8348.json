@@ -1,0 +1,98 @@
+{
+    "problem_id": "8348",
+    "solved": true,
+    "problem_text": "\\triangle RST \\cong \\triangle XYZ. Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), x+21)",
+        "Equals(LengthOf(Line(X, Z)), 2x-14)",
+        "Equals(MeasureOf(Angle(T, R, S)), 4y-10)",
+        "Equals(MeasureOf(Angle(Z, X, Y)), 3y+5)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Congruent(Triangle(R,S,T),Triangle(X,Y,Z))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "R",
+        "T",
+        "S",
+        "Z",
+        "Y",
+        "X"
+    ],
+    "line_instances": [
+        "RT",
+        "TS",
+        "SR",
+        "ZY",
+        "YX",
+        "XZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            126.72,
+            183.12582781456953
+        ],
+        "T": [
+            446.4,
+            127.28476821192052
+        ],
+        "S": [
+            180.0,
+            344.9006622516556
+        ],
+        "Z": [
+            443.88,
+            302.1473509933775
+        ],
+        "Y": [
+            711.36,
+            85.40397350993378
+        ],
+        "X": [
+            764.0228571428571,
+            247.17880794701986
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        14.0,
+        15.0,
+        35.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        14.0,
+        15.0,
+        35.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 15.135593,
+    "solution_predicate": "Equals(15.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((5 + 3 * y) / 180) = \u2220YXZ, 3.14 = pi, \u25b3RST \u2245 \u25b3XYZ, pi * ((4 * y - 10) / 180) = \u2220SRT\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 3 * y) / 180) = \u2220YXZ\nConclusions: 3.14 * ((5 + 3 * y) / 180) = \u2220YXZ\n\nStep 3:\nTheorem: Congruent Definition\nPremises : \u25b3RST \u2245 \u25b3XYZ\nConclusions: \u2220SRT = \u2220YXZ\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * y - 10) / 180) = \u2220SRT\nConclusions: 3.14 * ((4 * y - 10) / 180) = \u2220SRT\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 3 * y) / 180) = \u2220YXZ, \u2220SRT = \u2220YXZ, pi * ((4 * y - 10) / 180) = \u2220SRT\nConclusions: pi * ((5 + 3 * y) / 180) = pi * ((4 * y - 10) / 180)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 3 * y) / 180) = pi * ((4 * y - 10) / 180), pi * ((5 + 3 * y) / 180) = \u2220YXZ\nConclusions: pi * ((4 * y - 10) / 180) = \u2220YXZ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * y) / 180) = \u2220YXZ, pi * ((4 * y - 10) / 180) = \u2220YXZ\nConclusions: 3.14 * ((5 + 3 * y) / 180) = pi * ((4 * y - 10) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * y) / 180) = pi * ((4 * y - 10) / 180), pi * ((4 * y - 10) / 180) = \u2220SRT\nConclusions: 3.14 * ((5 + 3 * y) / 180) = \u2220SRT\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * y - 10) / 180) = \u2220SRT, 3.14 * ((5 + 3 * y) / 180) = \u2220SRT\nConclusions: 3.14 * ((5 + 3 * y) / 180) = 3.14 * ((4 * y - 10) / 180)\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((5 + 3 * y) / 180) = 3.14 * ((4 * y - 10) / 180)\nConclusions: 15 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(T, S)",
+        "Line(S, R)",
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(X, Z)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(Y, X)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "Congruent(Triangle(R, S, T), Triangle(X, Y, Z))",
+        "Equals(LengthOf(Line(R, T)), Add(x, 21.0))",
+        "Equals(LengthOf(Line(X, Z)), Sub(Mul(2.0, x), 14.0))",
+        "Equals(MeasureOf(Angle(S, R, T)), Mul(pi, Div(Sub(Mul(4.0, y), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Y, X, Z)), Mul(pi, Div(Add(Mul(3.0, y), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

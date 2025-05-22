@@ -1,0 +1,180 @@
+{
+    "problem_id": "2680",
+    "solved": true,
+    "problem_text": "Find m \\angle 4.",
+    "logic_forms": [
+        "PointLiesOnLine(U, Line(A, C))",
+        "PointLiesOnLine(U, Line(A, S))",
+        "PointLiesOnLine(U, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, S))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(U, S))",
+        "PointLiesOnLine(C, Line(U, E))",
+        "PointLiesOnLine(S, Line(A, E))",
+        "PointLiesOnLine(S, Line(U, E))",
+        "PointLiesOnLine(S, Line(C, E))",
+        "PointLiesOnLine(R, Line(B, C))",
+        "PointLiesOnLine(R, Line(B, T))",
+        "PointLiesOnLine(R, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, T))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(R, T))",
+        "PointLiesOnLine(C, Line(R, D))",
+        "PointLiesOnLine(T, Line(B, D))",
+        "PointLiesOnLine(T, Line(R, D))",
+        "PointLiesOnLine(T, Line(C, D))",
+        "PointLiesOnCircle(R, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(U, C, R)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Arc(U, R)), 92)",
+        "Equals(MeasureOf(Arc(T, S)), 51)",
+        "Find(MeasureOf(Angle(4)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T",
+        "U",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AU",
+        "AC",
+        "AS",
+        "AE",
+        "UC",
+        "US",
+        "UE",
+        "CS",
+        "CE",
+        "SE",
+        "BR",
+        "BC",
+        "BT",
+        "BD",
+        "RC",
+        "RT",
+        "RD",
+        "CT",
+        "CD",
+        "TD"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "R": [
+            166.5158371040724,
+            141.6289592760181
+        ],
+        "S": [
+            405.42986425339365,
+            123.07692307692308
+        ],
+        "T": [
+            426.6968325791855,
+            242.98642533936652
+        ],
+        "U": [
+            205.88235294117646,
+            314.4796380090498
+        ],
+        "A": [
+            131.67420814479638,
+            389.14027149321265
+        ],
+        "B": [
+            68.77828054298642,
+            104.97737556561086
+        ],
+        "C": [
+            323.9819004524887,
+            203.16742081447964
+        ],
+        "D": [
+            515.8371040723982,
+            277.82805429864254
+        ],
+        "E": [
+            470.5882352941177,
+            60.18099547511312
+        ],
+        "F": [
+            291.6674208144796,
+            204.9524886877828
+        ]
+    },
+    "problem_choices": [
+        "51",
+        "67.5",
+        "71.5",
+        "92"
+    ],
+    "choices_precise_value": [
+        51.0,
+        67.5,
+        71.5,
+        92.0
+    ],
+    "problem_answer": 71.5,
+    "total_time": 210.796054,
+    "solution_predicate": "Equals(1.2479104152, MeasureOf(Angle(R, C, U)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FS, \u2220BTF, S on \u2299(F, radius_0_0), pi * (51 / 180) = Arc(TFS), C on SU, FT, C on BT, SU, Arc(TFS), CU, \u2220RFU, CS, RT, U on \u2299(F, radius_0_0), FU, C on AS, R on BT, pi * (92 / 180) = Arc(RFU), 3.14 = pi, C on RT, CT, CR, \u2220SUF, \u2220FRT, R on \u2299(F, radius_0_0), U on AS, \u2220FSA, FR, Arc(RFU), T on \u2299(F, radius_0_0), \u2220UCR\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : S on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FS\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BTF, C on BT\nConclusions: \u2220BTF = \u2220CTF\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TFS)\nConclusions: \u2220TFS = Arc(TFS)\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220RFU\nConclusions: \u2220RFU = 2 * pi - \u2220UFR\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : U on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FU\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : SU, FU, FS\nConclusions: \u25b3FSU\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220BTF, R on BT\nConclusions: \u2220BTF = \u2220RTF\n\nStep 9:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi, 1.61 = pi * (92 / 180)\n\nStep 10:\nTheorem: Vertical Angle Theorem\nPremises : C on SU, C on RT\nConclusions: \u2220SCT = \u2220UCR\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : FT, CT, CS, FS\nConclusions: Quadrilateral(C, S, F, T)\n\nStep 12:\nTheorem: Same Angle\nPremises : C on SU, \u2220SUF\nConclusions: \u2220CUF = \u2220SUF\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220FRT, C on RT\nConclusions: \u2220FRC = \u2220FRT\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : R on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FR\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220FSA, C on AS\nConclusions: \u2220FSA = \u2220FSC\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220FSA, U on AS\nConclusions: \u2220FSA = \u2220FSU\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : FT, FR, RT\nConclusions: \u25b3FRT\n\nStep 18:\nTheorem: Definition of Quadrilateral\nPremises : FU, CR, CU, FR\nConclusions: Quadrilateral(C, R, F, U)\n\nStep 19:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RFU)\nConclusions: \u2220RFU = Arc(RFU)\n\nStep 20:\nTheorem: Point On Circle Def\nPremises : T on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FT\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220UCR\nConclusions: \u2220UCR = 2 * pi - \u2220RCU\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = Arc(TFS), \u2220TFS = Arc(TFS)\nConclusions: pi * (51 / 180) = \u2220TFS\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FU, radius_0_0 = FS\nConclusions: FS = FU\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BTF = \u2220CTF, \u2220BTF = \u2220RTF\nConclusions: \u2220CTF = \u2220RTF\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(T, F, S, C)\nPremises : Quadrilateral(C, S, F, T)\nConclusions: 2 * pi = \u2220CTF + \u2220FSC + \u2220SCT + \u2220TFS\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FSA = \u2220FSC, \u2220FSA = \u2220FSU\nConclusions: \u2220FSC = \u2220FSU\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(U, F, R, C)\nPremises : Quadrilateral(C, R, F, U)\nConclusions: 2 * pi = \u2220CUF + \u2220FRC + \u2220RCU + \u2220UFR\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RFU = Arc(RFU), pi * (92 / 180) = Arc(RFU)\nConclusions: pi * (92 / 180) = \u2220RFU\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FR, radius_0_0 = FT\nConclusions: FR = FT\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SCT = \u2220UCR, \u2220UCR = 2 * pi - \u2220RCU\nConclusions: \u2220SCT = 2 * pi - \u2220RCU\n\nStep 31:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3FSU, FS = FU\nConclusions: \u2220FSU = \u2220SUF\n\nStep 32:\nTheorem: Substitution\nPremises : \u2220FSC = \u2220FSU, 3.14 = pi, pi * (51 / 180) = \u2220TFS, 2 * pi = \u2220CTF + \u2220FSC + \u2220SCT + \u2220TFS, \u2220CTF = \u2220RTF\nConclusions: 2 * 3.14 = 3.14 * (51 / 180) + \u2220FSU + \u2220RTF + \u2220SCT\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220CUF + \u2220FRC + \u2220RCU + \u2220UFR, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220CUF + \u2220FRC + \u2220RCU + \u2220UFR\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : pi * (92 / 180) = \u2220RFU, \u2220RFU = 2 * pi - \u2220UFR\nConclusions: pi * (92 / 180) = 2 * pi - \u2220UFR\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3FRT, FR = FT\nConclusions: \u2220FRT = \u2220RTF\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FSU = \u2220SUF, \u2220FSC = \u2220FSU\nConclusions: \u2220FSC = \u2220SUF\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : pi * (92 / 180) = 2 * pi - \u2220UFR, 1.61 = pi * (92 / 180)\nConclusions: 1.61 = 2 * pi - \u2220UFR\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FRT = \u2220RTF, \u2220FRC = \u2220FRT\nConclusions: \u2220FRC = \u2220RTF\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FSC = \u2220FSU, \u2220CUF = \u2220SUF, \u2220FSC = \u2220SUF\nConclusions: \u2220CUF = \u2220FSU\n\nStep 40:\nTheorem: Solve Linear Equation System\nPremises : 1.61 = 2 * pi - \u2220UFR, \u2220FRC = \u2220RTF, \u2220CUF = \u2220FSU, \u2220SCT = 2 * pi - \u2220RCU, 6.28 = \u2220CUF + \u2220FRC + \u2220RCU + \u2220UFR, 2 * 3.14 = 3.14 * (51 / 180) + \u2220FSU + \u2220RTF + \u2220SCT\nConclusions: 1.25 = \u2220RCU\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, U)",
+        "Line(A, C)",
+        "Line(A, S)",
+        "Line(A, E)",
+        "Line(U, C)",
+        "Line(U, S)",
+        "Line(U, E)",
+        "Line(C, S)",
+        "Line(C, E)",
+        "Line(S, E)",
+        "Line(B, R)",
+        "Line(B, C)",
+        "Line(B, T)",
+        "Line(B, D)",
+        "Line(R, C)",
+        "Line(R, T)",
+        "Line(R, D)",
+        "Line(C, T)",
+        "Line(C, D)",
+        "Line(T, D)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(U, Line(A, C))",
+        "PointLiesOnLine(U, Line(A, S))",
+        "PointLiesOnLine(U, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, S))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(U, S))",
+        "PointLiesOnLine(C, Line(U, E))",
+        "PointLiesOnLine(S, Line(A, E))",
+        "PointLiesOnLine(S, Line(U, E))",
+        "PointLiesOnLine(S, Line(C, E))",
+        "PointLiesOnLine(R, Line(B, C))",
+        "PointLiesOnLine(R, Line(B, T))",
+        "PointLiesOnLine(R, Line(B, D))",
+        "PointLiesOnLine(C, Line(B, T))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(R, T))",
+        "PointLiesOnLine(C, Line(R, D))",
+        "PointLiesOnLine(T, Line(B, D))",
+        "PointLiesOnLine(T, Line(R, D))",
+        "PointLiesOnLine(T, Line(C, D))",
+        "PointLiesOnCircle(R, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Arc(R, F, U)), Mul(pi, Div(92.0, 180.0)))",
+        "Equals(MeasureOf(Arc(T, F, S)), Mul(pi, Div(51.0, 180.0)))"
+    ],
+    "correct": true
+}

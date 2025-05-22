@@ -1,0 +1,66 @@
+{
+    "problem_id": "2528",
+    "solved": true,
+    "problem_text": "Find the area of the figure. Round to the nearest tenth.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, A)), 6.2)",
+        "Find(AreaOf(Circle(B)))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnLine(B, Line(C, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            153.70833333333334,
+            153.54166666666669
+        ],
+        "B": [
+            92.875,
+            95.0
+        ],
+        "C": [
+            33.5,
+            33.333333333333336
+        ]
+    },
+    "problem_choices": [
+        "19.5",
+        "30.2",
+        "60.4",
+        "120.8"
+    ],
+    "choices_precise_value": [
+        19.5,
+        30.2,
+        60.4,
+        120.8
+    ],
+    "problem_answer": 30.2,
+    "total_time": 2.487562,
+    "solution_predicate": "Equals(30.1907054011, AreaOf(Circle(B, radius_0_0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6.2 = AC, C on \u2299(B, radius_0_0), Area(\u2299(B, radius_0_0)), B on AC, A on \u2299(B, radius_0_0), 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 3:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\n\nStep 4:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = AB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 6.2 = AC, AC = AB + BC\nConclusions: 6.2 = AB + BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AB, radius_0_0 = BC\nConclusions: AB = BC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 6.2 = AB + BC, AB = BC\nConclusions: 3.1 = BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 3.1 = BC, radius_0_0 = BC\nConclusions: 3.1 = radius_0_0\n\nStep 12:\nTheorem: Evaluate\nPremises : 3.14 = pi, 3.1 = radius_0_0\nConclusions: 30.19 = pi * radius_0_0 ** 2\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 30.19 = pi * radius_0_0 ** 2, 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\nConclusions: 30.19 = 3.14 * radius_0_0 ** 2\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), 30.19 = 3.14 * radius_0_0 ** 2\nConclusions: 30.19 = Area(\u2299(B, radius_0_0))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Equals(LengthOf(Line(C, A)), 6.2)"
+    ],
+    "correct": true
+}

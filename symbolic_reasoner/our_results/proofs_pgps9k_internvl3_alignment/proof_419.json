@@ -1,0 +1,68 @@
+{
+    "problem_id": "419",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F, G)), 12)",
+        "Equals(MeasureOf(Angle(F, G, H)), 133)",
+        "Find(AreaOf(Sector(G, F, H)))",
+        "Line(F, G)",
+        "Line(G, H)",
+        "PointLiesOnCircle(F, Circle(G))",
+        "PointLiesOnCircle(H, Circle(G))"
+    ],
+    "point_instances": [
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "FG",
+        "GH"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "F": [
+            82.74881987577639,
+            38.98913043478261
+        ],
+        "G": [
+            115.11725067385444,
+            137.07412398921835
+        ],
+        "H": [
+            210.44571428571427,
+            180.94696969696972
+        ]
+    },
+    "problem_choices": [
+        47.5,
+        167.1,
+        285.3,
+        452.4
+    ],
+    "choices_precise_value": [
+        47.5,
+        167.1,
+        285.3,
+        452.4
+    ],
+    "problem_answer": 285.3,
+    "total_time": 1.873416,
+    "solution_predicate": "Equals(167.1327291715, AreaOf(Sector(H, G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on \u2299(G, radius_G), 12 = FG, pi * (133 / 180) = \u2220HGF, Sector(H, G, F)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : F on \u2299(G, radius_G)\nConclusions: radius_G = FG\n\nStep 3:\nTheorem: Area formula of Sector(H, G, F)\nPremises : Sector(H, G, F)\nConclusions: Area(Sector(H, G, F)) = (radius_G ** 2 * \u2220HGF) / 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_G = FG, 12 = FG\nConclusions: 12 = radius_G\n\nStep 5:\nTheorem: Substitution\nPremises : 12 = radius_G, Area(Sector(H, G, F)) = (radius_G ** 2 * \u2220HGF) / 2, pi * (133 / 180) = \u2220HGF\nConclusions: (pi * (133 / 180) * 12 ** 2) / 2 = Area(Sector(H, G, F))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (133 / 180) * 12 ** 2) / 2 = Area(Sector(H, G, F))\nConclusions: 167.13 = Area(Sector(H, G, F))\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, G)",
+        "Line(G, H)",
+        "Circle(G, radius_G)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "PointLiesOnCircle(F, Circle(G, radius_G))",
+        "PointLiesOnCircle(H, Circle(G, radius_G))",
+        "Equals(LengthOf(Line(F, G)), 12.0)",
+        "Equals(MeasureOf(Angle(H, G, F)), Mul(pi, Div(133.0, 180.0)))"
+    ],
+    "correct": false
+}

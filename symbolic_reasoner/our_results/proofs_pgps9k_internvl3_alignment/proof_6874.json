@@ -1,0 +1,82 @@
+{
+    "problem_id": "6874",
+    "solved": true,
+    "problem_text": "What is the perimeter of \\parallelogram ABCD?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 10)",
+        "Equals(LengthOf(Line(D, B)), 6)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, A), Line(B, D))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Find(PerimeterOf(Parallelogram(A,B,C,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "CB",
+        "AB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.49052631578948,
+            136.51232126559174
+        ],
+        "B": [
+            119.92722222222223,
+            52.478805394990374
+        ],
+        "D": [
+            200.50307692307695,
+            136.37527790128948
+        ],
+        "C": [
+            282.7968421052632,
+            51.999391542439916
+        ]
+    },
+    "problem_choices": [
+        28.0,
+        32.0,
+        36.0,
+        43.324
+    ],
+    "choices_precise_value": [
+        28.0,
+        32.0,
+        36.0,
+        43.324
+    ],
+    "problem_answer": 36.0,
+    "total_time": 42.509363,
+    "solution_predicate": "Equals(36.0, PerimeterOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD \u22a5 CD, 10 = AD, 6 = BD, cos(\u2220DBC), Parallelogram(A, B, C, D), tan(\u2220DBC)\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : BD \u22a5 CD, cos(\u2220DBC)\nConclusions: BD / BC = cos(\u2220DBC)\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, C, D)\nConclusions: Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB = CD, AD = BC\n\nStep 5:\nTheorem: Angle Tan Definition\nPremises : BD \u22a5 CD, tan(\u2220DBC)\nConclusions: CD / BD = tan(\u2220DBC)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AD, AD = BC\nConclusions: 10 = BC\n\nStep 7:\nTheorem: Substitution\nPremises : AB = CD, Perimeter(Parallelogram(A, B, C, D)) = AB + AD + BC + CD, 10 = AD, 10 = BC\nConclusions: Perimeter(Parallelogram(A, B, C, D)) = 10 + 10 + CD + CD\n\nStep 8:\nTheorem: Substitution\nPremises : 6 = BD, BD / BC = cos(\u2220DBC), 10 = BC\nConclusions: 6 / 10 = cos(\u2220DBC)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 6 / 10 = cos(\u2220DBC)\nConclusions: 0.93 = \u2220DBC\n\nStep 10:\nTheorem: Substitution\nPremises : CD / BD = tan(\u2220DBC), 0.93 = \u2220DBC, 6 = BD\nConclusions: tan(0.93) = CD / 6\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(Parallelogram(A, B, C, D)) = 10 + 10 + CD + CD, tan(0.93) = CD / 6\nConclusions: 36 = Perimeter(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, A), Line(B, D))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Equals(LengthOf(Line(A, D)), 10.0)",
+        "Equals(LengthOf(Line(D, B)), 6.0)"
+    ],
+    "correct": true
+}

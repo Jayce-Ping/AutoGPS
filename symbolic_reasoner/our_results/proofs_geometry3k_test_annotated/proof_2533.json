@@ -1,0 +1,117 @@
+{
+    "problem_id": "2533",
+    "solved": true,
+    "problem_text": "Find J Q if Q is the incenter of \\triangle J L N. Rounded to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(L, N))",
+        "PointLiesOnLine(P, Line(J, N))",
+        "PointLiesOnLine(Q, Line(J, L))",
+        "Perpendicular(Line(L, Q), Line(K, Q))",
+        "Perpendicular(Line(L, M), Line(K, M))",
+        "Perpendicular(Line(K, P), Line(N, P))",
+        "Equals(LengthOf(Line(J, P)), 16.5)",
+        "Equals(LengthOf(Line(K, M)), 9)",
+        "IsIncenterOf(K, Triangle(J, L, N))",
+        "Find(LengthOf(Line(J, K)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "M",
+        "J",
+        "K",
+        "N",
+        "L"
+    ],
+    "line_instances": [
+        "PK",
+        "KL",
+        "LM",
+        "LN",
+        "MN",
+        "JP",
+        "JN",
+        "PN",
+        "JQ",
+        "JL",
+        "QL",
+        "QK",
+        "JK",
+        "KN",
+        "KM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            220.7207207207207,
+            270.1711711711711
+        ],
+        "Q": [
+            265.76576576576576,
+            124.22522522522522
+        ],
+        "M": [
+            352.70270270270265,
+            257.55855855855856
+        ],
+        "J": [
+            107.65765765765765,
+            155.75675675675674
+        ],
+        "K": [
+            282.4324324324324,
+            208.90990990990989
+        ],
+        "N": [
+            293.2432432432432,
+            343.1441441441441
+        ],
+        "L": [
+            476.1261261261261,
+            80.98198198198197
+        ]
+    },
+    "problem_choices": [
+        "16.50",
+        "18.79",
+        "20.32",
+        "25.50"
+    ],
+    "choices_precise_value": [
+        16.5,
+        18.79,
+        20.32,
+        25.5
+    ],
+    "problem_answer": 18.79,
+    "total_time": 190.954843,
+    "solution_predicate": "Equals(18.7949461292, LengthOf(Line(J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JK, JP \u22a5 KP, JP, IsIncenterOf(K, \u25b3JLN), 16.5 = JP, 9 = KM, KP\n\nStep 2:\nTheorem: Properties of Incenter K of Triangle\nPremises : IsIncenterOf(K, \u25b3JLN)\nConclusions: r_inc_JLN = KP, r_inc_JLN = KM\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : JP, KP, JK\nConclusions: \u25b3JKP\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 9 = KM, r_inc_JLN = KM\nConclusions: 9 = r_inc_JLN\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : \u25b3JKP, JP \u22a5 KP\nConclusions: JK = SqrtOf(JP ** 2 + KP ** 2)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 9 = r_inc_JLN, r_inc_JLN = KP\nConclusions: 9 = KP\n\nStep 7:\nTheorem: Substitution\nPremises : 16.5 = JP, JK = SqrtOf(JP ** 2 + KP ** 2), 9 = KP\nConclusions: SqrtOf(16.5 ** 2 + 9 ** 2) = JK\n\nStep 8:\nTheorem: Evaluate\nPremises : SqrtOf(16.5 ** 2 + 9 ** 2) = JK\nConclusions: 18.79 = JK\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, K)",
+        "Line(K, L)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(M, N)",
+        "Line(J, P)",
+        "Line(J, N)",
+        "Line(P, N)",
+        "Line(J, Q)",
+        "Line(J, L)",
+        "Line(Q, L)",
+        "Line(Q, K)",
+        "Line(J, K)",
+        "Line(K, N)",
+        "Line(K, M)",
+        "PointLiesOnLine(M, Line(L, N))",
+        "PointLiesOnLine(P, Line(J, N))",
+        "PointLiesOnLine(Q, Line(J, L))",
+        "Perpendicular(Line(L, Q), Line(K, Q))",
+        "Perpendicular(Line(L, M), Line(K, M))",
+        "Perpendicular(Line(K, P), Line(N, P))",
+        "IsIncenterOf(K, Triangle(J, L, N))",
+        "Equals(LengthOf(Line(J, P)), 16.5)",
+        "Equals(LengthOf(Line(K, M)), 9.0)"
+    ],
+    "correct": true
+}

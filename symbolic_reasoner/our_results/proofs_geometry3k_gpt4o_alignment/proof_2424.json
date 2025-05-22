@@ -1,0 +1,99 @@
+{
+    "problem_id": "2424",
+    "solved": true,
+    "problem_text": "Find m \\angle B G E.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(A, B))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(G, radius_0_0))",
+        "Perpendicular(Line(D, G), Line(A, G))",
+        "Equals(MeasureOf(Angle(A, G, C)), 60)",
+        "Find(MeasureOf(Angle(B,G,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "E",
+        "C",
+        "G"
+    ],
+    "line_instances": [
+        "GD",
+        "AG",
+        "AB",
+        "GB",
+        "CG",
+        "CE",
+        "GE"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "B": [
+            214.50121654501214,
+            107.54257907542578
+        ],
+        "A": [
+            46.37469586374695,
+            107.0559610705596
+        ],
+        "D": [
+            130.80291970802918,
+            191.72749391727493
+        ],
+        "E": [
+            172.40875912408757,
+            180.2919708029197
+        ],
+        "C": [
+            89.19708029197079,
+            34.30656934306569
+        ],
+        "G": [
+            131.0462287104623,
+            107.54257907542578
+        ]
+    },
+    "problem_choices": [
+        "60",
+        "120",
+        "240",
+        "360"
+    ],
+    "choices_precise_value": [
+        60.0,
+        120.0,
+        240.0,
+        360.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 10.877306,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(E, G, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: G on AB, G on CE, pi * (60 / 180) = \u2220CGA\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : G on AB, G on CE\nConclusions: \u2220CGA = \u2220EGB\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220CGA, \u2220CGA = \u2220EGB\nConclusions: pi * (60 / 180) = \u2220EGB\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (60 / 180) = \u2220EGB\nConclusions: 1.05 = \u2220EGB\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, D)",
+        "Line(A, G)",
+        "Line(A, B)",
+        "Line(G, B)",
+        "Line(C, G)",
+        "Line(C, E)",
+        "Line(G, E)",
+        "Circle(G, radius_0_0)",
+        "PointLiesOnLine(G, Line(A, B))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(G, radius_0_0))",
+        "Perpendicular(Line(D, G), Line(A, G))",
+        "Equals(MeasureOf(Angle(C, G, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,63 @@
+{
+    "problem_id": "2893",
+    "solved": true,
+    "problem_text": "Express the ratio of \\cos P as a decimal to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(P, R), Line(Q, R))",
+        "Equals(LengthOf(Line(R, P)), 8)",
+        "Equals(LengthOf(Line(P, Q)), 17)",
+        "Equals(LengthOf(Line(Q, R)), 15)",
+        "Find(RatioOf(CosOf(Angle(P))))"
+    ],
+    "point_instances": [
+        "P",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "RP",
+        "QP",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            181.43478260869563,
+            359.5652173913043
+        ],
+        "R": [
+            50.13043478260866,
+            288.2608695652174
+        ],
+        "Q": [
+            181.86956521739125,
+            44.347826086956516
+        ]
+    },
+    "problem_choices": [
+        "0.47",
+        "0.53",
+        "0.88",
+        "1.88"
+    ],
+    "choices_precise_value": [
+        0.47,
+        0.53,
+        0.88,
+        1.88
+    ],
+    "problem_answer": 0.47,
+    "total_time": 7.045376,
+    "solution_predicate": "Equals(0.4705882353, CosOf(MeasureOf(Angle(Q, P, R))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RQP, sin(\u2220RQP), PR \u22a5 QR, PQ, 8 = PR, 17 = PQ, QR, \u2220QPR, PR\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : PR \u22a5 QR, sin(\u2220RQP)\nConclusions: PR / PQ = sin(\u2220RQP)\n\nStep 3:\nTheorem: Evaluate\nPremises : 8 = PR, 17 = PQ\nConclusions: 0.47 = PR / PQ\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : PR, QR, PQ\nConclusions: \u25b3PQR\n\nStep 5:\nTheorem: Substitution\nPremises : 8 = PR, 17 = PQ, PR / PQ = sin(\u2220RQP)\nConclusions: 8 / 17 = sin(\u2220RQP)\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : \u2220RQP, \u25b3PQR, PR \u22a5 QR\nConclusions: PR / PQ = sin(\u2220RQP)\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : PR \u22a5 QR, \u25b3PQR, \u2220QPR\nConclusions: PR / PQ = cos(\u2220QPR)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 17 = sin(\u2220RQP), PR / PQ = sin(\u2220RQP)\nConclusions: 8 / 17 = PR / PQ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.47 = PR / PQ, 8 / 17 = PR / PQ\nConclusions: 0.47 = 8 / 17\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 8 / 17 = sin(\u2220RQP), 0.47 = 8 / 17\nConclusions: 0.47 = sin(\u2220RQP)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : PR / PQ = sin(\u2220RQP), 0.47 = sin(\u2220RQP)\nConclusions: 0.47 = PR / PQ\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : PR / PQ = cos(\u2220QPR), 0.47 = PR / PQ\nConclusions: 0.47 = cos(\u2220QPR)\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, P)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Perpendicular(Line(P, R), Line(Q, R))",
+        "Equals(LengthOf(Line(R, P)), 8.0)",
+        "Equals(LengthOf(Line(P, Q)), 17.0)",
+        "Equals(LengthOf(Line(Q, R)), 15.0)"
+    ],
+    "correct": true
+}

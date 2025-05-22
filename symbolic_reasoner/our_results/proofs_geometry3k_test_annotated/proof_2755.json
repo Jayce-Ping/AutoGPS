@@ -1,0 +1,79 @@
+{
+    "problem_id": "2755",
+    "solved": true,
+    "problem_text": "Find m \\angle H.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(H, J, E)), x+10)",
+        "Equals(MeasureOf(Angle(G, F, E)), x+20)",
+        "Equals(MeasureOf(Angle(F, E, J)), x)",
+        "Equals(MeasureOf(Angle(G, H, J)), x-5)",
+        "Equals(MeasureOf(Angle(H, G, F)), x+5)",
+        "Find(MeasureOf(Angle(H)))"
+    ],
+    "point_instances": [
+        "G",
+        "E",
+        "J",
+        "H",
+        "F"
+    ],
+    "line_instances": [
+        "JH",
+        "GH",
+        "FG",
+        "FE",
+        "EJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            234.15025906735752,
+            38.86010362694301
+        ],
+        "E": [
+            31.818652849740936,
+            91.96891191709845
+        ],
+        "J": [
+            164.720207253886,
+            202.33160621761658
+        ],
+        "H": [
+            263.6839378238342,
+            148.18652849740934
+        ],
+        "F": [
+            61.09326424870467,
+            39.11917098445596
+        ]
+    },
+    "problem_choices": [
+        "97",
+        "102",
+        "107",
+        "122"
+    ],
+    "choices_precise_value": [
+        97.0,
+        102.0,
+        107.0,
+        122.0
+    ],
+    "problem_answer": 97.0,
+    "total_time": 15.684724,
+    "solution_predicate": "Equals(1.6929693744, MeasureOf(Angle(G, H, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((20 + x) / 180) = \u2220EFG, pi * ((5 + x) / 180) = \u2220FGH, pi * ((10 + x) / 180) = \u2220HJE, EF, 3.14 = pi, HJ, pi * ((x - 5) / 180) = \u2220GHJ, EJ, FG, GH, pi * (x / 180) = \u2220JEF\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((5 + x) / 180) = \u2220FGH, 3.14 = pi\nConclusions: 3.14 * ((5 + x) / 180) = \u2220FGH\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((20 + x) / 180) = \u2220EFG, 3.14 = pi\nConclusions: 3.14 * ((20 + x) / 180) = \u2220EFG\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((10 + x) / 180) = \u2220HJE, 3.14 = pi\nConclusions: 3.14 * ((10 + x) / 180) = \u2220HJE\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((x - 5) / 180) = \u2220GHJ, 3.14 = pi\nConclusions: 3.14 * ((x - 5) / 180) = \u2220GHJ\n\nStep 6:\nTheorem: Definition of Pentagon\nPremises : HJ, EJ, FG, GH, EF\nConclusions: Pentagon(E, F, G, H, J)\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220JEF, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220JEF\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Pentagon(E, F, G, H, J)\nPremises : Pentagon(E, F, G, H, J)\nConclusions: 3 * pi = \u2220EFG + \u2220FGH + \u2220GHJ + \u2220HJE + \u2220JEF\n\nStep 9:\nTheorem: Substitution\nPremises : 3 * pi = \u2220EFG + \u2220FGH + \u2220GHJ + \u2220HJE + \u2220JEF, 3.14 = pi\nConclusions: 3 * 3.14 = \u2220EFG + \u2220FGH + \u2220GHJ + \u2220HJE + \u2220JEF\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((x - 5) / 180) = \u2220GHJ, 3.14 * (x / 180) = \u2220JEF, 3.14 * ((5 + x) / 180) = \u2220FGH, 3.14 * ((20 + x) / 180) = \u2220EFG, 3 * 3.14 = \u2220EFG + \u2220FGH + \u2220GHJ + \u2220HJE + \u2220JEF, 3.14 * ((10 + x) / 180) = \u2220HJE\nConclusions: 1.69 = \u2220GHJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(G, H)",
+        "Line(F, G)",
+        "Line(F, E)",
+        "Line(E, J)",
+        "Equals(MeasureOf(Angle(H, J, E)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(Add(x, 20.0), 180.0)))",
+        "Equals(MeasureOf(Angle(J, E, F)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(G, H, J)), Mul(pi, Div(Sub(x, 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(F, G, H)), Mul(pi, Div(Add(x, 5.0), 180.0)))"
+    ],
+    "correct": true
+}

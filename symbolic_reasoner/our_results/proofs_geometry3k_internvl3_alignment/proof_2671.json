@@ -1,0 +1,90 @@
+{
+    "problem_id": "2671",
+    "solved": true,
+    "problem_text": "Find K L.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, K)), 4)",
+        "Equals(LengthOf(Line(K, L)), x)",
+        "Equals(LengthOf(Line(Y, Z)), 15)",
+        "Equals(LengthOf(Line(Y, X)), 5)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), MeasureOf(Angle(K, J, L)))",
+        "Equals(MeasureOf(Angle(J, K, L)), 51)",
+        "Equals(MeasureOf(Angle(Z, Y, X)), 51)",
+        "Find(LengthOf(Line(K,L)))"
+    ],
+    "point_instances": [
+        "K",
+        "X",
+        "Z",
+        "J",
+        "Y",
+        "L"
+    ],
+    "line_instances": [
+        "YZ",
+        "XY",
+        "XZ",
+        "JK",
+        "KL",
+        "JL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            677.8235294117648,
+            128.76470588235296
+        ],
+        "X": [
+            282.5294117647059,
+            129.94117647058823
+        ],
+        "Z": [
+            462.5294117647059,
+            351.70588235294116
+        ],
+        "J": [
+            553.7058823529412,
+            229.94117647058823
+        ],
+        "Y": [
+            102.52941176470588,
+            351.70588235294116
+        ],
+        "L": [
+            679.0,
+            340.5294117647059
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "5",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        4.0,
+        5.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 21.481356,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = JK, pi * (51 / 180) = \u2220ZYX, XY, \u2220LJK = \u2220YXZ, YZ, \u2220KJL, \u2220ZXY, pi * (51 / 180) = \u2220JKL, KL, \u2220JKL, JK, \u2220LKJ, \u2220XYZ, 5 = XY, 3.14 = pi, JL, 15 = YZ, XZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220KJL\nConclusions: \u2220KJL = 2 * pi - \u2220LJK\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZXY\nConclusions: \u2220ZXY = 2 * pi - \u2220YXZ\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220JKL\nConclusions: \u2220JKL = 2 * pi - \u2220LKJ\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220LKJ\nConclusions: \u2220LKJ = 2 * pi - \u2220JKL\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220XYZ\nConclusions: \u2220XYZ = 2 * pi - \u2220ZYX\n\nStep 7:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 5.39 = 2 * 3.14 - pi * (51 / 180)\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : JK, JL, KL\nConclusions: \u25b3JKL\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : XY, XZ, YZ\nConclusions: \u25b3XYZ\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220LJK = \u2220YXZ, \u2220KJL = 2 * pi - \u2220LJK, 3.14 = pi\nConclusions: \u2220KJL = 2 * 3.14 - \u2220YXZ\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ZXY = 2 * pi - \u2220YXZ\nConclusions: \u2220ZXY = 2 * 3.14 - \u2220YXZ\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220JKL = 2 * pi - \u2220LKJ, pi * (51 / 180) = \u2220JKL\nConclusions: 3.14 * (51 / 180) = 2 * 3.14 - \u2220LKJ\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220LKJ = 2 * pi - \u2220JKL, pi * (51 / 180) = \u2220JKL\nConclusions: 2 * 3.14 - 3.14 * (51 / 180) = \u2220LKJ\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220XYZ = 2 * pi - \u2220ZYX, pi * (51 / 180) = \u2220ZYX, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (51 / 180) = \u2220XYZ\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, X)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XZY + \u2220YXZ + \u2220ZYX\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KJL = 2 * 3.14 - \u2220YXZ, \u2220ZXY = 2 * 3.14 - \u2220YXZ\nConclusions: \u2220KJL = \u2220ZXY\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (51 / 180) = 2 * 3.14 - \u2220LKJ\nConclusions: 5.39 = \u2220LKJ\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LKJ = 2 * pi - \u2220JKL, 2 * 3.14 - 3.14 * (51 / 180) = \u2220LKJ\nConclusions: 2 * 3.14 - 3.14 * (51 / 180) = 2 * pi - \u2220JKL\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (51 / 180) = \u2220XYZ, 5.39 = 2 * 3.14 - pi * (51 / 180)\nConclusions: 5.39 = \u2220XYZ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220JKL + \u2220KLJ + \u2220LJK\nConclusions: 3.14 = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 22:\nTheorem: Substitution\nPremises : \u2220LJK = \u2220YXZ, pi = \u2220JKL + \u2220KLJ + \u2220LJK, 3.14 = pi, pi * (51 / 180) = \u2220JKL\nConclusions: 3.14 = 3.14 * (51 / 180) + \u2220KLJ + \u2220YXZ\n\nStep 23:\nTheorem: Substitution\nPremises : pi * (51 / 180) = \u2220ZYX, 3.14 = pi, pi = \u2220XZY + \u2220YXZ + \u2220ZYX\nConclusions: 3.14 = pi * (51 / 180) + \u2220XZY + \u2220YXZ\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KJL = \u2220ZXY, \u2220KJL = 2 * pi - \u2220LJK\nConclusions: \u2220ZXY = 2 * pi - \u2220LJK\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 5.39 = \u2220XYZ, 5.39 = \u2220LKJ\nConclusions: \u2220LKJ = \u2220XYZ\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - 3.14 * (51 / 180) = 2 * pi - \u2220JKL, 3.14 = pi * (51 / 180) + \u2220XZY + \u2220YXZ, \u2220ZXY = 2 * pi - \u2220LJK, 3.14 = 3.14 * (51 / 180) + \u2220KLJ + \u2220YXZ, \u2220ZXY = 2 * 3.14 - \u2220YXZ, 3.14 = \u2220JKL + \u2220KLJ + \u2220LJK\nConclusions: \u2220KLJ = \u2220XZY\n\nStep 27:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220KLJ = \u2220XZY, \u2220KJL = \u2220ZXY, \u2220LKJ = \u2220XYZ\nConclusions: \u25b3JKL ~ \u25b3XYZ\n\nStep 28:\nTheorem: Similar Definition\nPremises : \u25b3JKL ~ \u25b3XYZ\nConclusions: \u2220KJL = \u2220ZXY, sim_ratio_triangle_j_k_l_triangle_x_y_z = KL / YZ, \u2220LKJ = \u2220XYZ, sim_ratio_triangle_j_k_l_triangle_x_y_z = JK / XY, \u2220LJK = \u2220YXZ\n\nStep 29:\nTheorem: Substitution\nPremises : 4 = JK, 5 = XY, sim_ratio_triangle_j_k_l_triangle_x_y_z = JK / XY\nConclusions: 4 / 5 = sim_ratio_triangle_j_k_l_triangle_x_y_z\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 4 / 5 = sim_ratio_triangle_j_k_l_triangle_x_y_z, sim_ratio_triangle_j_k_l_triangle_x_y_z = KL / YZ\nConclusions: 4 / 5 = KL / YZ\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 4 / 5 = KL / YZ, 15 = YZ\nConclusions: 12 = KL\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, Z)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(J, K)",
+        "Line(K, L)",
+        "Line(J, L)",
+        "Equals(LengthOf(Line(J, K)), 4.0)",
+        "Equals(LengthOf(Line(K, L)), x)",
+        "Equals(LengthOf(Line(Y, Z)), 15.0)",
+        "Equals(LengthOf(Line(Y, X)), 5.0)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), MeasureOf(Angle(L, J, K)))",
+        "Equals(MeasureOf(Angle(J, K, L)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Z, Y, X)), Mul(pi, Div(51.0, 180.0)))"
+    ],
+    "correct": true
+}

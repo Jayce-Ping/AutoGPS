@@ -1,0 +1,78 @@
+{
+    "problem_id": "2708",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(D, A)))",
+        "Find(AreaOf(Parallelogram(A, B, C, D)))",
+        "Perpendicular(Line(B, A), Line(D, A))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "DC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            31.02247191011236,
+            157.30337078651684
+        ],
+        "B": [
+            151.47191011235955,
+            157.30337078651684
+        ],
+        "C": [
+            151.47191011235955,
+            37.97752808988764
+        ],
+        "D": [
+            30.79775280898876,
+            37.97752808988764
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "9.6",
+        "10.2",
+        "10.8"
+    ],
+    "choices_precise_value": [
+        9.0,
+        9.6,
+        10.2,
+        10.8
+    ],
+    "problem_answer": 10.2,
+    "total_time": 9.498007,
+    "solution_predicate": "Equals(10.24, AreaOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 AD, AB = CD, Parallelogram(A, B, C, D), 3.2 = AB, AD = CD\n\nStep 2:\nTheorem: Area formula of Parallelogram(A, B, C, D)\nPremises : AB \u22a5 AD, Parallelogram(A, B, C, D)\nConclusions: Area(Parallelogram(A, B, C, D)) = AB * AD\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3.2 = AB, AB = CD\nConclusions: 3.2 = CD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AD = CD, 3.2 = CD\nConclusions: 3.2 = AD\n\nStep 5:\nTheorem: Substitution\nPremises : 3.2 = AD, 3.2 = AB, Area(Parallelogram(A, B, C, D)) = AB * AD\nConclusions: 3.2 * 3.2 = Area(Parallelogram(A, B, C, D))\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.2 * 3.2 = Area(Parallelogram(A, B, C, D))\nConclusions: 10.24 = Area(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(D, A)))"
+    ],
+    "correct": true
+}

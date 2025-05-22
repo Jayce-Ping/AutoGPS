@@ -1,0 +1,86 @@
+{
+    "problem_id": "6382",
+    "solved": true,
+    "problem_text": "Find the measure of DB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, C)), 12)",
+        "Equals(LengthOf(Line(D, A)), 12)",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(B, C)))",
+        "Equals(MeasureOf(Angle(A, D, B)), 40)",
+        "Equals(MeasureOf(Angle(D, B, A)), 28)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Find(LengthOf(Line(D,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DB",
+        "BC",
+        "CD",
+        "DA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            37.864336246358725,
+            154.15714285714287
+        ],
+        "C": [
+            208.4384103204328,
+            154.31428571428572
+        ],
+        "B": [
+            257.9177164907502,
+            45.80571428571429
+        ],
+        "A": [
+            85.54704346839179,
+            45.87428571428572
+        ]
+    },
+    "problem_choices": [
+        8.764,
+        16.43,
+        17.309,
+        23.699
+    ],
+    "choices_precise_value": [
+        8.764,
+        16.43,
+        17.309,
+        23.699
+    ],
+    "problem_answer": 23.699,
+    "total_time": 30.462661,
+    "solution_predicate": "Equals(23.6994253455, LengthOf(Line(D, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBA, \u2220ABC, 3.14 = pi, pi * (40 / 180) = \u2220BDA, BC, AB, BD, \u2220DBC, \u2220ADC, 12 = BC, AD = BC, \u2220ABD, pi * (28 / 180) = \u2220ABD, \u2220BDA, \u2220CDB, AD, \u2220CDA, AB = CD, CD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.49 = pi * (28 / 180)\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220ABD, \u2220DBC, \u2220CBA\nConclusions: 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220ADC, \u2220CDB, \u2220BDA\nConclusions: 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, BD, AD\nConclusions: \u25b3ABD\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 8:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = CD, AD = BC\nConclusions: \u25b3ABD \u2245 \u25b3CDB\n\nStep 9:\nTheorem: Definition of Quadrilateral\nPremises : AB, CD, AD, BC\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220ABC = 2 * pi - \u2220CBA, 3.14 = pi\nConclusions: \u2220ABC = 2 * 3.14 - \u2220CBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.49 = pi * (28 / 180), pi * (28 / 180) = \u2220ABD\nConclusions: 0.49 = \u2220ABD\n\nStep 13:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABD + \u2220CBA + \u2220DBC, pi * (28 / 180) = \u2220ABD, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (28 / 180) + \u2220CBA + \u2220DBC\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220BDA, 2 * pi = \u2220ADC + \u2220BDA + \u2220CDB, 3.14 = pi\nConclusions: 2 * 3.14 = pi * (40 / 180) + \u2220ADC + \u2220CDB\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220CDA = 2 * pi - \u2220ADC, 3.14 = pi\nConclusions: \u2220CDA = 2 * 3.14 - \u2220ADC\n\nStep 17:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3CDB\nConclusions: \u2220ABD = \u2220CDB, AB = CD, \u2220BCD = \u2220DAB\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 19:\nTheorem: Law of Sines\nPremises : \u25b3BCD\nConclusions: BC / sin(\u2220CDB) = BD / sin(\u2220BCD)\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 21:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220BDA, pi = \u2220ABD + \u2220BDA + \u2220DAB, pi * (28 / 180) = \u2220ABD, 3.14 = pi\nConclusions: 3.14 = pi * (28 / 180) + pi * (40 / 180) + \u2220DAB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 0.49 = \u2220ABD, \u2220ABD = \u2220CDB\nConclusions: 0.49 = \u2220CDB\n\nStep 23:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BCD + \u2220CDB + \u2220DBC, 3.14 = pi\nConclusions: 3.14 = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (28 / 180) + \u2220CBA + \u2220DBC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (28 / 180) + \u2220CBA + \u2220DBC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (40 / 180) + \u2220ADC + \u2220CDB, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (40 / 180) + \u2220ADC + \u2220CDB\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABC = 2 * 3.14 - \u2220CBA, 3.14 = pi * (28 / 180) + pi * (40 / 180) + \u2220DAB, 2 * pi = pi * (28 / 180) + \u2220CBA + \u2220DBC, 2 * pi = pi * (40 / 180) + \u2220ADC + \u2220CDB, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, 3.14 = \u2220BCD + \u2220CDB + \u2220DBC, \u2220CDA = 2 * 3.14 - \u2220ADC\nConclusions: 1.95 = \u2220DAB\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220DAB, 1.95 = \u2220DAB\nConclusions: 1.95 = \u2220BCD\n\nStep 30:\nTheorem: Substitution\nPremises : BC / sin(\u2220CDB) = BD / sin(\u2220BCD), 0.49 = \u2220CDB, 1.95 = \u2220BCD, 12 = BC\nConclusions: 12 / sin(0.49) = BD / sin(1.95)\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 12 / sin(0.49) = BD / sin(1.95)\nConclusions: 23.7 = BD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, B)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(B, C)), 12.0)",
+        "Equals(LengthOf(Line(D, A)), 12.0)",
+        "Equals(LengthOf(Line(D, A)), LengthOf(Line(B, C)))",
+        "Equals(MeasureOf(Angle(B, D, A)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

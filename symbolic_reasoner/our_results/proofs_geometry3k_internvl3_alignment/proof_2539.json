@@ -1,0 +1,138 @@
+{
+    "problem_id": "2539",
+    "solved": true,
+    "problem_text": "In \\odot M, F L = 24, H J = 48, and m \\widehat H P = 65. Find m \\widehat P J.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Circle(M)",
+        "Equals(LengthOf(Line(F,L)),24)",
+        "Equals(LengthOf(Line(H,J)),48)",
+        "Equals(MeasureOf(Arc(H,P)),65)",
+        "Find(MeasureOf(Arc(P,J)))"
+    ],
+    "point_instances": [
+        "G",
+        "N",
+        "H",
+        "K",
+        "P",
+        "M",
+        "F",
+        "J",
+        "L"
+    ],
+    "line_instances": [
+        "FL",
+        "FG",
+        "LG",
+        "KL",
+        "KM",
+        "LM",
+        "MN",
+        "MP",
+        "NP",
+        "HN",
+        "HJ",
+        "NJ"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "G": [
+            389.2946859903382,
+            140.57971014492756
+        ],
+        "N": [
+            240.0193236714976,
+            303.86473429951695
+        ],
+        "H": [
+            108.1352657004831,
+            256.5217391304348
+        ],
+        "K": [
+            238.5700483091788,
+            80.67632850241546
+        ],
+        "P": [
+            211.5169082125604,
+            384.0579710144928
+        ],
+        "M": [
+            264.6570048309179,
+            236.71497584541063
+        ],
+        "F": [
+            115.38164251207732,
+            186.47342995169083
+        ],
+        "J": [
+            369.9710144927537,
+            351.6908212560387
+        ],
+        "L": [
+            252.57971014492756,
+            163.768115942029
+        ]
+    },
+    "problem_choices": [
+        "37.5",
+        "65",
+        "85",
+        "130"
+    ],
+    "choices_precise_value": [
+        37.5,
+        65.0,
+        85.0,
+        130.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 176.115043,
+    "solution_predicate": "Equals(1.1344640138, MeasureOf(Arc(P, M, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on MP, 3.14 = pi, HN \u22a5 MN, pi * (65 / 180) = Arc(HMP), N on HJ, \u2220PMJ, \u2299(M, radius_0_0), Arc(PMJ), Arc(HMP), \u2220HMP\n\nStep 2:\nTheorem: Same Angle\nPremises : N on MP, \u2220PMJ\nConclusions: \u2220NMJ = \u2220PMJ\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(M, radius_0_0), N on HJ, HN \u22a5 MN\nConclusions: \u25b3HMN \u2245 \u25b3JMN\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PMJ)\nConclusions: \u2220PMJ = Arc(PMJ)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(HMP)\nConclusions: \u2220HMP = Arc(HMP)\n\nStep 6:\nTheorem: Same Angle\nPremises : N on MP, \u2220HMP\nConclusions: \u2220HMN = \u2220HMP\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3HMN \u2245 \u25b3JMN\nConclusions: \u2220HMN = \u2220NMJ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMJ = \u2220PMJ, \u2220PMJ = Arc(PMJ)\nConclusions: \u2220NMJ = Arc(PMJ)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HMP = Arc(HMP), pi * (65 / 180) = Arc(HMP)\nConclusions: pi * (65 / 180) = \u2220HMP\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HMN = \u2220HMP, pi * (65 / 180) = \u2220HMP\nConclusions: pi * (65 / 180) = \u2220HMN\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : pi * (65 / 180) = \u2220HMN, 3.14 = pi\nConclusions: 1.13 = \u2220HMN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMJ = Arc(PMJ), 1.13 = \u2220HMN, \u2220HMN = \u2220NMJ\nConclusions: 1.13 = Arc(PMJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, L)",
+        "Line(F, G)",
+        "Line(L, G)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Line(H, N)",
+        "Line(H, J)",
+        "Line(N, J)",
+        "Circle(M, radius_0_0)",
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Circle(M, radius_0_0)",
+        "Equals(LengthOf(Line(F, L)), 24.0)",
+        "Equals(LengthOf(Line(H, J)), 48.0)",
+        "Equals(MeasureOf(Arc(H, M, P)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,88 @@
+{
+    "problem_id": "2253",
+    "solved": true,
+    "problem_text": "Find AD.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 15)",
+        "Equals(LengthOf(Line(C, D)), 9)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "BA",
+        "AD",
+        "AC",
+        "DC",
+        "CB",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            347.68553459119494,
+            47.696666666666665
+        ],
+        "D": [
+            239.63352685050796,
+            130.3956043956044
+        ],
+        "A": [
+            44.36118598382749,
+            276.2085714285714
+        ],
+        "B": [
+            348.0172955974843,
+            275.21142857142854
+        ]
+    },
+    "problem_choices": [
+        5.4,
+        11.619,
+        16.0,
+        25.0
+    ],
+    "choices_precise_value": [
+        5.4,
+        11.619,
+        16.0,
+        25.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 47.5777,
+    "solution_predicate": "Equals(16.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BDA, BD, BD \u22a5 CD, \u2220ACB, 3.14 = pi, AB, AC, BC, cos(\u2220DCB), AB \u22a5 BC, 15 = BC, AD \u22a5 BD, 9 = CD, D on AC, AD, \u2220CDB, \u2220BAC, \u2220DBA, \u2220ACB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDA\nConclusions: \u2220BDA = 2 * pi - \u2220ADB\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDB, pi / 2 = \u2220BDC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : BD \u22a5 CD, cos(\u2220DCB)\nConclusions: CD / BC = cos(\u2220DCB)\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: (3 * pi) / 2 = \u2220BDA, pi / 2 = \u2220ADB\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220ACB, D on AC\nConclusions: \u2220ACB = \u2220DCB\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDB\nConclusions: \u2220CDB = 2 * pi - \u2220BDC\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220BAC, D on AC\nConclusions: \u2220BAC = \u2220BAD\n\nStep 12:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, \u2220ACB, AB \u22a5 BC\nConclusions: AB / BC = tan(\u2220ACB)\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 14:\nTheorem: Substitution\nPremises : 15 = BC, 9 = CD, CD / BC = cos(\u2220DCB)\nConclusions: 9 / 15 = cos(\u2220DCB)\n\nStep 15:\nTheorem: Sin Function Definition\nPremises : \u25b3ABD, AD \u22a5 BD, \u2220DBA\nConclusions: AD / AB = sin(\u2220DBA)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220CDB = 2 * pi - \u2220BDC, 3.14 = pi, pi / 2 = \u2220BDC, (3 * pi) / 2 = \u2220CDB\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220BAC = \u2220BAD, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, \u2220ACB = \u2220DCB, pi / 2 = \u2220CBA\nConclusions: 3.14 = pi / 2 + \u2220BAD + \u2220DCB\n\nStep 19:\nTheorem: Solve Univariate Equation\nPremises : 9 / 15 = cos(\u2220DCB)\nConclusions: 0.93 = \u2220DCB\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA, pi / 2 = \u2220ADB\nConclusions: 3.14 = 3.14 / 2 + \u2220BAD + \u2220DBA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BDA, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220BDA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220DCB, 0.93 = \u2220DCB\nConclusions: 0.93 = \u2220ACB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 / 2 = \u2220BDA, \u2220BDA = 2 * pi - \u2220ADB\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ADB\n\nStep 25:\nTheorem: Substitution\nPremises : AB / BC = tan(\u2220ACB), 15 = BC, 0.93 = \u2220ACB\nConclusions: tan(0.93) = AB / 15\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ADB + \u2220BAD + \u2220DBA, 3.14 = 3.14 / 2 + \u2220BAD + \u2220DBA, 3.14 = pi / 2 + \u2220BAD + \u2220DCB, \u2220ACB = \u2220DCB, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220ADB\nConclusions: \u2220ACB = \u2220DBA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220DCB, \u2220ACB = \u2220DBA\nConclusions: \u2220DBA = \u2220DCB\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220DCB, 0.93 = \u2220DCB\nConclusions: 0.93 = \u2220DBA\n\nStep 29:\nTheorem: Substitution\nPremises : 0.93 = \u2220DBA, AD / AB = sin(\u2220DBA)\nConclusions: sin(0.93) = AD / AB\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : tan(0.93) = AB / 15, sin(0.93) = AD / AB\nConclusions: 16 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), 15.0)",
+        "Equals(LengthOf(Line(C, D)), 9.0)"
+    ],
+    "correct": true
+}

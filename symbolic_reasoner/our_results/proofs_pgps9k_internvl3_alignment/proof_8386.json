@@ -1,0 +1,71 @@
+{
+    "problem_id": "8386",
+    "solved": true,
+    "problem_text": "Find x if \\triangle JMN is an isosceles triangle with JM = MN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, N)), x-2)",
+        "Equals(LengthOf(Line(M, J)), 2x-5)",
+        "Equals(LengthOf(Line(M, N)), 3x-9)",
+        "Line(J, N)",
+        "Line(M, J)",
+        "Line(M, N)",
+        "Isosceles(Triangle(J,M,N))",
+        "Equals(LengthOf(Line(J,M)),Line(M,N))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "J",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "MJ",
+        "JN",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            57.032653061224494,
+            225.74735449735448
+        ],
+        "N": [
+            193.38428571428574,
+            225.72916666666666
+        ],
+        "M": [
+            124.86766917293234,
+            46.07456140350877
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        3.0,
+        4.0,
+        4.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        3.0,
+        4.0,
+        4.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 6.142076,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * x - 9 = MN, 2 * x - 5 = JM, JM = MN\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 2 * x - 5 = JM, JM = MN\nConclusions: 2 * x - 5 = MN\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 2 * x - 5 = MN, 3 * x - 9 = MN\nConclusions: 2 * x - 5 = 3 * x - 9\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 2 * x - 5 = 3 * x - 9\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, J)",
+        "Line(J, N)",
+        "Line(M, N)",
+        "Line(J, N)",
+        "Line(M, J)",
+        "Line(M, N)",
+        "Isosceles(Triangle(J, M, N))",
+        "Equals(LengthOf(Line(J, N)), Sub(x, 2.0))",
+        "Equals(LengthOf(Line(M, J)), Sub(Mul(2.0, x), 5.0))",
+        "Equals(LengthOf(Line(M, N)), Sub(Mul(3.0, x), 9.0))",
+        "Equals(LengthOf(Line(J, M)), LengthOf(Line(M, N)))"
+    ],
+    "correct": true
+}

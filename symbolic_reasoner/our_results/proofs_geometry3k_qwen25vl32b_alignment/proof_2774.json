@@ -1,0 +1,63 @@
+{
+    "problem_id": "2774",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(N, O), Line(P, O))",
+        "Equals(LengthOf(Line(N, P)), 20\\sqrt{2})",
+        "Equals(LengthOf(Line(N, O)), x)",
+        "Equals(MeasureOf(Angle(O, P, N)), 38)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "P",
+        "N",
+        "O"
+    ],
+    "line_instances": [
+        "NO",
+        "OP",
+        "NP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            328.1756756756757,
+            272.2972972972973
+        ],
+        "N": [
+            45.74324324324324,
+            123.3108108108108
+        ],
+        "O": [
+            224.1216216216216,
+            43.24324324324324
+        ]
+    },
+    "problem_choices": [
+        "17.4",
+        "22.1",
+        "22.3",
+        "45.9"
+    ],
+    "choices_precise_value": [
+        17.4,
+        22.1,
+        22.3,
+        45.9
+    ],
+    "problem_answer": 17.4,
+    "total_time": 15.991382,
+    "solution_predicate": "Equals(17.4135361654, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 28.28 = 20 * SqrtOf(2), 3.14 = pi, x = NO, NO, pi * (38 / 180) = \u2220OPN, OP, \u2220NPO, \u2220PNO, NP, 20 * SqrtOf(2) = NP, NO \u22a5 OP, cos(\u2220OPN)\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.66 = pi * (38 / 180)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220NPO\nConclusions: \u2220NPO = 2 * pi - \u2220OPN\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : NO, NP, OP\nConclusions: \u25b3NOP\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 20 * SqrtOf(2) = NP, 28.28 = 20 * SqrtOf(2)\nConclusions: 28.28 = NP\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : NO \u22a5 OP\nConclusions: pi / 2 = \u2220NOP\n\nStep 7:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220OPN), NO \u22a5 OP\nConclusions: OP / NP = cos(\u2220OPN)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220OPN, 0.66 = pi * (38 / 180)\nConclusions: 0.66 = \u2220OPN\n\nStep 9:\nTheorem: Substitution\nPremises : pi * (38 / 180) = \u2220OPN, 3.14 = pi, \u2220NPO = 2 * pi - \u2220OPN\nConclusions: 2 * 3.14 - pi * (38 / 180) = \u2220NPO\n\nStep 10:\nTheorem: Tan Function Definition\nPremises : NO \u22a5 OP, \u2220PNO, \u25b3NOP\nConclusions: OP / NO = tan(\u2220PNO)\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(N, O, P)\nPremises : \u25b3NOP\nConclusions: pi = \u2220NOP + \u2220OPN + \u2220PNO\n\nStep 12:\nTheorem: Substitution\nPremises : 0.66 = \u2220OPN, 28.28 = NP, OP / NP = cos(\u2220OPN)\nConclusions: cos(0.66) = OP / 28.28\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (38 / 180) = \u2220NPO, \u2220NPO = 2 * pi - \u2220OPN\nConclusions: 2 * 3.14 - pi * (38 / 180) = 2 * pi - \u2220OPN\n\nStep 14:\nTheorem: Substitution\nPremises : pi = \u2220NOP + \u2220OPN + \u2220PNO, pi * (38 / 180) = \u2220OPN, 3.14 = pi, pi / 2 = \u2220NOP\nConclusions: 3.14 = 3.14 / 2 + pi * (38 / 180) + \u2220PNO\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : pi * (38 / 180) = \u2220OPN, 3.14 = 3.14 / 2 + pi * (38 / 180) + \u2220PNO, 2 * 3.14 - pi * (38 / 180) = 2 * pi - \u2220OPN\nConclusions: 0.91 = \u2220PNO\n\nStep 16:\nTheorem: Evaluate\nPremises : 0.91 = \u2220PNO\nConclusions: 1.28 = tan(\u2220PNO)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 1.28 = tan(\u2220PNO), OP / NO = tan(\u2220PNO)\nConclusions: 1.28 = OP / NO\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 1.28 = OP / NO, cos(0.66) = OP / 28.28\nConclusions: 17.41 = NO\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 17.41 = NO, x = NO\nConclusions: 17.41 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, O)",
+        "Line(O, P)",
+        "Line(N, P)",
+        "Perpendicular(Line(N, O), Line(P, O))",
+        "Equals(LengthOf(Line(N, P)), Mul(20.0, SqrtOf(2.0)))",
+        "Equals(LengthOf(Line(N, O)), x)",
+        "Equals(MeasureOf(Angle(O, P, N)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

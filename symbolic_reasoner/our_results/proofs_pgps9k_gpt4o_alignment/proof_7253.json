@@ -1,0 +1,101 @@
+{
+    "problem_id": "7253",
+    "solved": true,
+    "problem_text": "Find m \\angle T.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, R)), LengthOf(Line(Q, R)))",
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(S, T)))",
+        "Equals(MeasureOf(Angle(R, P, Q)), 56)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(R, Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Find(MeasureOf(Angle(T)))"
+    ],
+    "point_instances": [
+        "S",
+        "P",
+        "R",
+        "T",
+        "Q"
+    ],
+    "line_instances": [
+        "QR",
+        "QS",
+        "RS",
+        "PR",
+        "PT",
+        "RT",
+        "PQ",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            343.6453201970443,
+            46.31999999999999
+        ],
+        "P": [
+            64.63054187192118,
+            50.731428571428566
+        ],
+        "R": [
+            200.82758620689654,
+            142.74122448979588
+        ],
+        "T": [
+            307.3891625615763,
+            213.9542857142857
+        ],
+        "Q": [
+            65.10344827586206,
+            233.80571428571426
+        ]
+    },
+    "problem_choices": [
+        44.0,
+        56.0,
+        62.0,
+        68.0
+    ],
+    "choices_precise_value": [
+        44.0,
+        56.0,
+        62.0,
+        68.0
+    ],
+    "problem_answer": 68.0,
+    "total_time": 33.867006,
+    "solution_predicate": "Equals(1.1868238914, MeasureOf(Angle(S, T, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: PR, RS, 3.14 = pi, PR = QR, R on PT, RT, PQ, QR, RS = ST, pi * (56 / 180) = \u2220QPR, ST, R on QS, \u2220SQP, \u2220STP\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.98 = pi * (56 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : PQ, QR, PR\nConclusions: \u25b3PQR\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : RT, ST, RS\nConclusions: \u25b3RST\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : R on QS, R on PT\nConclusions: \u2220PRQ = \u2220TRS\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220SQP, R on QS\nConclusions: \u2220RQP = \u2220SQP\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220STP, R on PT\nConclusions: \u2220STP = \u2220STR\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 0.98 = pi * (56 / 180), pi * (56 / 180) = \u2220QPR\nConclusions: 0.98 = \u2220QPR\n\nStep 9:\nTheorem: Issoceles Triangle Property\nPremises : PR = QR, \u25b3PQR\nConclusions: \u2220QPR = \u2220RQP\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(R, Q, P)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PRQ + \u2220QPR + \u2220RQP\n\nStep 11:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3RST, RS = ST\nConclusions: \u2220STR = \u2220TRS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQP = \u2220SQP, 0.98 = \u2220QPR, \u2220QPR = \u2220RQP\nConclusions: 0.98 = \u2220SQP\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STP = \u2220STR, \u2220STR = \u2220TRS\nConclusions: \u2220STP = \u2220TRS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 0.98 = \u2220SQP, \u2220RQP = \u2220SQP\nConclusions: 0.98 = \u2220RQP\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220PRQ = \u2220TRS, 0.98 = \u2220QPR, 3.14 = pi, 0.98 = \u2220RQP, pi = \u2220PRQ + \u2220QPR + \u2220RQP\nConclusions: 3.14 = 0.98 + 0.98 + \u2220TRS\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.98 + 0.98 + \u2220TRS, \u2220STP = \u2220TRS\nConclusions: 1.19 = \u2220STP\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(R, T)",
+        "Line(P, Q)",
+        "Line(S, T)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(P, T)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnLine(R, Line(P, T))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Equals(LengthOf(Line(P, R)), LengthOf(Line(Q, R)))",
+        "Equals(LengthOf(Line(R, S)), LengthOf(Line(S, T)))",
+        "Equals(MeasureOf(Angle(Q, P, R)), Mul(pi, Div(56.0, 180.0)))"
+    ],
+    "correct": true
+}

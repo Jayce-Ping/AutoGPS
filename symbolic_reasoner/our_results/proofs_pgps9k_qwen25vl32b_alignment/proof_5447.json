@@ -1,0 +1,94 @@
+{
+    "problem_id": "5447",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(A, C)), 2)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, D)))",
+        "Find(AreaOf(Square(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Perpendicular(Line(D, C), Line(A, D))",
+        "Square(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "DA",
+        "AB",
+        "CB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            24.413055109684326,
+            21.746938775510205
+        ],
+        "B": [
+            211.55805243445695,
+            21.771428571428572
+        ],
+        "C": [
+            211.37528089887638,
+            209.49942857142855
+        ],
+        "D": [
+            23.98876404494382,
+            209.82857142857142
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        8.0,
+        16.0,
+        32.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        8.0,
+        16.0,
+        32.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 68.113157,
+    "solution_predicate": "Equals(2.0, AreaOf(Square(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, \u2220DCB, cos(\u2220BCA), AB \u22a5 BC, sin(\u2220BCA), Square(A, B, C, D), \u2220BCA, \u2220ACD, 2 = AC, AB, 3.14 = pi, AC, BC, \u2220CAB\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BCA), AB \u22a5 BC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : AB \u22a5 BC, sin(\u2220BCA)\nConclusions: AB / AC = sin(\u2220BCA)\n\nStep 4:\nTheorem: Area formula of Square(A, B, C, D)\nPremises : AB \u22a5 BC, Square(A, B, C, D)\nConclusions: Area(Square(A, B, C, D)) = AB * BC\n\nStep 5:\nTheorem: Square is Rhombus\nPremises : Square(A, B, C, D)\nConclusions: Rhombus(A, B, C, D)\n\nStep 6:\nTheorem: Square is Rectangle\nPremises : Square(A, B, C, D)\nConclusions: Rectangle(A, B, C, D)\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220ACD, \u2220DCB, \u2220BCA\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 9:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CAB = \u2220DAC\n\nStep 10:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 11:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, B, C, D)\nConclusions: AB \u22a5 BC, BC \u22a5 CD\n\nStep 12:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 BC, \u25b3ABC, \u2220CAB\nConclusions: BC / AC = sin(\u2220CAB)\n\nStep 13:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 BC, \u2220BCA, \u25b3ABC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 14:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD || BC, AB || DC\n\nStep 15:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220DCB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : BC / AC = cos(\u2220BCA), BC / AC = cos(\u2220BCA)\nConclusions: BC / AC = BC / AC\n\nStep 17:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BCA = \u2220DAC\n\nStep 18:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : BC / AC = sin(\u2220CAB), BC / AC = BC / AC\nConclusions: BC / AC = sin(\u2220CAB)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220CAB, \u2220CAB = \u2220DAC\nConclusions: \u2220ACD = \u2220DAC\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220ACD = \u2220DAC, (3 * pi) / 2 = \u2220DCB, \u2220BCA = \u2220DAC, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220DAC + \u2220DAC\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + \u2220DAC + \u2220DAC, \u2220BCA = \u2220DAC\nConclusions: 0.79 = \u2220BCA\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : \u2220CAB = \u2220DAC, 2 * 3.14 = (3 * 3.14) / 2 + \u2220DAC + \u2220DAC\nConclusions: 0.79 = \u2220CAB\n\nStep 24:\nTheorem: Evaluate\nPremises : 0.79 = \u2220BCA\nConclusions: 0.71 = sin(\u2220BCA)\n\nStep 25:\nTheorem: Evaluate\nPremises : 0.79 = \u2220CAB\nConclusions: 0.71 = sin(\u2220CAB)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : AB / AC = sin(\u2220BCA), 0.71 = sin(\u2220BCA)\nConclusions: 0.71 = AB / AC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : BC / AC = sin(\u2220CAB), 0.71 = sin(\u2220CAB)\nConclusions: 0.71 = BC / AC\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 0.71 = AB / AC, 2 = AC\nConclusions: 1.41 = AB\n\nStep 29:\nTheorem: Solve Linear Equation System\nPremises : 2 = AC, 0.71 = BC / AC\nConclusions: 1.41 = BC\n\nStep 30:\nTheorem: Evaluate\nPremises : 1.41 = AB, 1.41 = BC\nConclusions: 2 = AB * BC\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 2 = AB * BC, Area(Square(A, B, C, D)) = AB * BC\nConclusions: 2 = Area(Square(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Perpendicular(Line(D, C), Line(A, D))",
+        "Square(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(A, C)), 2.0)",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, C)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, D)))"
+    ],
+    "correct": false
+}

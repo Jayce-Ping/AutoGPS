@@ -1,0 +1,88 @@
+{
+    "problem_id": "8946",
+    "solved": true,
+    "problem_text": "Find the perimeter of the polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 4)",
+        "Equals(LengthOf(Line(C, A)), 7)",
+        "Equals(LengthOf(Line(C, B)), 5)",
+        "Find(PerimeterOf(Quadrilateral(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, A))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "DB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.01913875598086,
+            220.18857142857144
+        ],
+        "B": [
+            136.0,
+            219.70142857142858
+        ],
+        "C": [
+            375.3711551606288,
+            219.21428571428572
+        ],
+        "D": [
+            40.995215311004785,
+            29.228571428571428
+        ]
+    },
+    "problem_choices": [
+        16.0,
+        17.534,
+        17.602,
+        19.602
+    ],
+    "choices_precise_value": [
+        16.0,
+        17.534,
+        17.602,
+        19.602
+    ],
+    "problem_answer": 17.534,
+    "total_time": 49.712753,
+    "solution_predicate": "Equals(19.0622577483, PerimeterOf(Quadrilateral(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 5 = BC, 7 = AC, Quadrilateral(A, B, C, D), 4 = AD, AC \u22a5 AD, AD, B on AC, CD\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, B, C, D)\nConclusions: Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\n\nStep 3:\nTheorem: Evaluate\nPremises : 4 = AD, 7 = AC\nConclusions: 65 = AC ** 2 + AD ** 2\n\nStep 4:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Substitution\nPremises : AC = AB + BC, 5 = BC, 7 = AC\nConclusions: 7 = 5 + AB\n\nStep 7:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AC \u22a5 AD\nConclusions: CD ** 2 = AC ** 2 + AD ** 2\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 7 = 5 + AB\nConclusions: 2 = AB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 65 = AC ** 2 + AD ** 2, CD ** 2 = AC ** 2 + AD ** 2\nConclusions: 65 = CD ** 2\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 65 = CD ** 2\nConclusions: 8.06 = CD\n\nStep 11:\nTheorem: Evaluate\nPremises : 4 = AD, 2 = AB, 5 = BC, 8.06 = CD\nConclusions: 19.06 = AB + AD + BC + CD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD, 19.06 = AB + AD + BC + CD\nConclusions: 19.06 = Perimeter(Quadrilateral(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, A))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, D)), 4.0)",
+        "Equals(LengthOf(Line(C, A)), 7.0)",
+        "Equals(LengthOf(Line(C, B)), 5.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,111 @@
+{
+    "problem_id": "2635",
+    "solved": true,
+    "problem_text": "Find T X if E X = 24 and D E = 7.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(X, D))",
+        "PointLiesOnLine(Q, Line(X, T))",
+        "PointLiesOnLine(D, Line(X, T))",
+        "PointLiesOnLine(D, Line(Q, T))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(D, radius_0_0))",
+        "Perpendicular(Line(X, A), Line(D, A))",
+        "Perpendicular(Line(X, E), Line(D, E))",
+        "Equals(LengthOf(Line(E,X)),24)",
+        "Equals(LengthOf(Line(D,E)),7)",
+        "Find(LengthOf(Line(T,X)))"
+    ],
+    "point_instances": [
+        "D",
+        "E",
+        "A",
+        "Q",
+        "X",
+        "T"
+    ],
+    "line_instances": [
+        "XA",
+        "XQ",
+        "XD",
+        "XT",
+        "QD",
+        "QT",
+        "DT",
+        "XE",
+        "DE",
+        "AD"
+    ],
+    "circle_instances": [
+        "D"
+    ],
+    "point_positions": {
+        "D": [
+            390.7563025210084,
+            100.65546218487395
+        ],
+        "E": [
+            378.9915966386555,
+            156.53781512605042
+        ],
+        "A": [
+            378.5714285714286,
+            45.613445378151255
+        ],
+        "Q": [
+            334.0336134453782,
+            101.07563025210084
+        ],
+        "X": [
+            46.21848739495798,
+            101.07563025210084
+        ],
+        "T": [
+            447.47899159663865,
+            101.07563025210084
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "24",
+        "25",
+        "32"
+    ],
+    "choices_precise_value": [
+        7.0,
+        24.0,
+        25.0,
+        32.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 98.180706,
+    "solution_predicate": "Equals(32.0, LengthOf(Line(T, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE \u22a5 EX, EX, T on \u2299(D, radius_0_0), 7 = DE, 24 = EX, D on TX, DE, E on \u2299(D, radius_0_0), DX\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : T on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DT\n\nStep 3:\nTheorem: Evaluate\nPremises : 7 = DE, 24 = EX\nConclusions: 625 = DE ** 2 + EX ** 2\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on TX\nConclusions: TX = DT + DX\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : E on \u2299(D, radius_0_0)\nConclusions: radius_0_0 = DE\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : DE, DX, EX\nConclusions: \u25b3DEX\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 7 = DE, radius_0_0 = DE\nConclusions: 7 = radius_0_0\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : DE \u22a5 EX, \u25b3DEX\nConclusions: DX ** 2 = DE ** 2 + EX ** 2\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = DT, 7 = radius_0_0\nConclusions: 7 = DT\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : DX ** 2 = DE ** 2 + EX ** 2, 625 = DE ** 2 + EX ** 2\nConclusions: 625 = DX ** 2\n\nStep 11:\nTheorem: Solve Univariate Equation\nPremises : 625 = DX ** 2\nConclusions: 25 = DX\n\nStep 12:\nTheorem: Evaluate\nPremises : 25 = DX, 7 = DT\nConclusions: 32 = DT + DX\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 32 = DT + DX, TX = DT + DX\nConclusions: 32 = TX\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, A)",
+        "Line(X, Q)",
+        "Line(X, D)",
+        "Line(X, T)",
+        "Line(Q, D)",
+        "Line(Q, T)",
+        "Line(D, T)",
+        "Line(X, E)",
+        "Line(D, E)",
+        "Line(A, D)",
+        "Circle(D, radius_0_0)",
+        "PointLiesOnLine(Q, Line(X, D))",
+        "PointLiesOnLine(Q, Line(X, T))",
+        "PointLiesOnLine(D, Line(X, T))",
+        "PointLiesOnLine(D, Line(Q, T))",
+        "PointLiesOnCircle(E, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(D, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(D, radius_0_0))",
+        "Perpendicular(Line(X, A), Line(D, A))",
+        "Perpendicular(Line(X, E), Line(D, E))",
+        "Equals(LengthOf(Line(E, X)), 24.0)",
+        "Equals(LengthOf(Line(D, E)), 7.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,109 @@
+{
+    "problem_id": "4278",
+    "solved": true,
+    "problem_text": "In rhombus RSTV, m \\angle TZV = 8n+18, and m \\angle SRV = 9n+1. Find the measure of \\angle TVS.",
+    "logic_forms": [
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(R, Z)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(S, Z)",
+        "Line(T, V)",
+        "Line(Z, T)",
+        "Line(Z, V)",
+        "PointLiesOnLine(Z, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, V))",
+        "Rhombus(R,S,T,V)",
+        "Equals(MeasureOf(Angle(T,Z,V)),8n+18)",
+        "Equals(MeasureOf(Angle(S,R,V)),9n+1)",
+        "Find(MeasureOf(Angle(T,V,S)))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "Z",
+        "R",
+        "V"
+    ],
+    "line_instances": [
+        "RZ",
+        "RT",
+        "ZT",
+        "SZ",
+        "SV",
+        "ZV",
+        "SR",
+        "ST",
+        "TV",
+        "RV"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            71.69254658385093,
+            47.31428571428571
+        ],
+        "T": [
+            200.55555555555554,
+            47.99999999999999
+        ],
+        "Z": [
+            126.23641304347825,
+            112.88571428571427
+        ],
+        "R": [
+            51.85990338164251,
+            177.59999999999997
+        ],
+        "V": [
+            181.50966183574877,
+            177.59999999999997
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        49.0,
+        82.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        49.0,
+        82.0,
+        90.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 273.459101,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(T, V, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: TV, Rhombus(R, S, T, V), 3.14 = pi, pi * ((18 + 8 * n) / 180) = \u2220VZT, ST, SV, pi * ((1 + 9 * n) / 180) = \u2220VRS\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(R, S, T, V)\nConclusions: \u2220SVR = \u2220TVS\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(R, S, T, V)\nConclusions: Parallelogram(R, S, T, V)\n\nStep 4:\nTheorem: Rhombus diagonals perpendicular\nPremises : Rhombus(R, S, T, V)\nConclusions: TZ \u22a5 VZ\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : ST, TV, SV\nConclusions: \u25b3STV\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(R, S, T, V)\nConclusions: RV || ST\n\nStep 8:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(R, S, T, V)\nConclusions: \u2220STV = \u2220VRS\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : TZ \u22a5 VZ\nConclusions: pi / 2 = \u2220VZT\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(S, T, V)\nPremises : \u25b3STV\nConclusions: pi = \u2220STV + \u2220TVS + \u2220VST\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : RV || ST\nConclusions: \u2220SVR = \u2220VST\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STV = \u2220VRS, pi * ((1 + 9 * n) / 180) = \u2220VRS\nConclusions: pi * ((1 + 9 * n) / 180) = \u2220STV\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220VZT, pi * ((18 + 8 * n) / 180) = \u2220VZT\nConclusions: pi / 2 = pi * ((18 + 8 * n) / 180)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220STV + \u2220TVS + \u2220VST, 3.14 = pi\nConclusions: 3.14 = \u2220STV + \u2220TVS + \u2220VST\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SVR = \u2220TVS, \u2220SVR = \u2220VST\nConclusions: \u2220TVS = \u2220VST\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = pi * ((18 + 8 * n) / 180), 1.57 = pi / 2\nConclusions: 1.57 = pi * ((18 + 8 * n) / 180)\n\nStep 17:\nTheorem: Substitution\nPremises : 1.57 = pi * ((18 + 8 * n) / 180), 3.14 = pi\nConclusions: 1.57 = 3.14 * ((18 + 8 * n) / 180)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 1.57 = 3.14 * ((18 + 8 * n) / 180)\nConclusions: 9 = n\n\nStep 19:\nTheorem: Evaluate\nPremises : 9 = n, 3.14 = pi\nConclusions: 1.43 = pi * ((1 + 9 * n) / 180)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 1.43 = pi * ((1 + 9 * n) / 180), pi * ((1 + 9 * n) / 180) = \u2220STV\nConclusions: 1.43 = \u2220STV\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : \u2220TVS = \u2220VST, 1.43 = \u2220STV, 3.14 = \u2220STV + \u2220TVS + \u2220VST\nConclusions: 0.86 = \u2220TVS\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Z)",
+        "Line(R, T)",
+        "Line(Z, T)",
+        "Line(S, Z)",
+        "Line(S, V)",
+        "Line(Z, V)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(T, V)",
+        "Line(R, V)",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(R, Z)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(S, Z)",
+        "Line(T, V)",
+        "Line(Z, T)",
+        "Line(Z, V)",
+        "PointLiesOnLine(Z, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, V))",
+        "Rhombus(R, S, T, V)",
+        "Equals(MeasureOf(Angle(V, Z, T)), Mul(pi, Div(Add(Mul(8.0, n), 18.0), 180.0)))",
+        "Equals(MeasureOf(Angle(V, R, S)), Mul(pi, Div(Add(Mul(9.0, n), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,90 @@
+{
+    "problem_id": "5037",
+    "solved": true,
+    "problem_text": "Find DC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, C)), 97)",
+        "Equals(LengthOf(Line(E, F)), 65)",
+        "Equals(LengthOf(Line(F, C)), 72)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Perpendicular(Line(E, C), Line(F, D))",
+        "Perpendicular(Line(F, C), Line(F, E))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Find(LengthOf(Line(D,C)))"
+    ],
+    "point_instances": [
+        "F",
+        "E",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "FC",
+        "CD",
+        "CE",
+        "DE",
+        "EF",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            170.07590467784644,
+            59.72727272727273
+        ],
+        "E": [
+            53.271844660194176,
+            188.48571428571427
+        ],
+        "D": [
+            170.07590467784644,
+            188.67272727272726
+        ],
+        "C": [
+            313.1023151605676,
+            188.30769230769232
+        ]
+    },
+    "problem_choices": [
+        43.557,
+        48.247,
+        53.443,
+        107.446
+    ],
+    "choices_precise_value": [
+        43.557,
+        48.247,
+        53.443,
+        107.446
+    ],
+    "problem_answer": 53.443,
+    "total_time": 63.522739,
+    "solution_predicate": "Equals(53.4432989691, LengthOf(Line(D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE \u22a5 DF, 65 = EF, CF \u22a5 EF, 72 = CF, \u2220FCE, D on CE, CE, CF, CD \u22a5 DF, EF, 97 = CE\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CF \u22a5 EF\nConclusions: (3 * pi) / 2 = \u2220CFE\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220FCE, D on CE\nConclusions: \u2220FCD = \u2220FCE\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DF\nConclusions: (3 * pi) / 2 = \u2220FDC\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CF, CE, EF\nConclusions: \u25b3CEF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220FDC, (3 * pi) / 2 = \u2220CFE\nConclusions: \u2220CFE = \u2220FDC\n\nStep 7:\nTheorem: Area formula of Triangle(C, E, F)\nPremises : CF \u22a5 EF, \u25b3CEF\nConclusions: Area(\u25b3CEF) = (CF * EF) / 2\n\nStep 8:\nTheorem: Area formula of Triangle(C, E, F)\nPremises : \u25b3CEF, DE \u22a5 DF\nConclusions: Area(\u25b3CEF) = (CE * DF) / 2\n\nStep 9:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220FCD = \u2220FCE, \u2220CFE = \u2220FDC\nConclusions: \u25b3CDF ~ \u25b3CFE\n\nStep 10:\nTheorem: Substitution\nPremises : 65 = EF, Area(\u25b3CEF) = (CF * EF) / 2, 72 = CF\nConclusions: (65 * 72) / 2 = Area(\u25b3CEF)\n\nStep 11:\nTheorem: Substitution\nPremises : 97 = CE, Area(\u25b3CEF) = (CE * DF) / 2\nConclusions: Area(\u25b3CEF) = (97 * DF) / 2\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3CDF ~ \u25b3CFE\nConclusions: \u2220CFE = \u2220FDC, CD / CF = DF / EF\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (65 * 72) / 2 = Area(\u25b3CEF), Area(\u25b3CEF) = (97 * DF) / 2\nConclusions: (65 * 72) / 2 = (97 * DF) / 2\n\nStep 14:\nTheorem: Substitution\nPremises : CD / CF = DF / EF, 65 = EF, 72 = CF\nConclusions: CD / 72 = DF / 65\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : CD / 72 = DF / 65, (65 * 72) / 2 = (97 * DF) / 2\nConclusions: 53.44 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Perpendicular(Line(E, C), Line(F, D))",
+        "Perpendicular(Line(F, C), Line(F, E))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(E, C)), 97.0)",
+        "Equals(LengthOf(Line(E, F)), 65.0)",
+        "Equals(LengthOf(Line(F, C)), 72.0)"
+    ],
+    "correct": true
+}

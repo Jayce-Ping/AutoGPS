@@ -1,0 +1,75 @@
+{
+    "problem_id": "2706",
+    "solved": true,
+    "problem_text": "a = 8, b = 15, and c = 17, find \\cos A.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "Equals(a,8)",
+        "Equals(b,15)",
+        "Equals(c,17)",
+        "Find(CosOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            39.70668348045397,
+            34.17330210772833
+        ],
+        "C": [
+            40.276923076923076,
+            121.79248120300753
+        ],
+        "A": [
+            199.82846153846154,
+            121.78285714285713
+        ]
+    },
+    "problem_choices": [
+        0.12,
+        0.22,
+        0.44,
+        0.88
+    ],
+    "choices_precise_value": [
+        0.12,
+        0.22,
+        0.44,
+        0.88
+    ],
+    "problem_answer": 0.44,
+    "total_time": 7.93768,
+    "solution_predicate": "Equals(0.8823529412, CosOf(MeasureOf(Angle(B, A, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBA, \u2220BAC, BC, AC, 17 = c, AC \u22a5 BC, 15 = b, sin(\u2220CBA), AB, c = AB, b = AC\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CBA), AC \u22a5 BC\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : c = AB, 17 = c\nConclusions: 17 = AB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 15 = b, b = AC\nConclusions: 15 = AC\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : \u25b3ABC, AC \u22a5 BC, \u2220BAC\nConclusions: AC / AB = cos(\u2220BAC)\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : \u25b3ABC, \u2220CBA, AC \u22a5 BC\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 8:\nTheorem: Evaluate\nPremises : 15 = AC, 17 = AB\nConclusions: 0.88 = AC / AB\n\nStep 9:\nTheorem: Substitution\nPremises : 15 = AC, AC / AB = sin(\u2220CBA), 17 = AB\nConclusions: 15 / 17 = sin(\u2220CBA)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 15 / 17 = sin(\u2220CBA), AC / AB = sin(\u2220CBA)\nConclusions: 15 / 17 = AC / AB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 15 / 17 = AC / AB, 0.88 = AC / AB\nConclusions: 0.88 = 15 / 17\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 15 / 17 = sin(\u2220CBA), 0.88 = 15 / 17\nConclusions: 0.88 = sin(\u2220CBA)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = sin(\u2220CBA), 0.88 = sin(\u2220CBA)\nConclusions: 0.88 = AC / AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : AC / AB = cos(\u2220BAC), 0.88 = AC / AB\nConclusions: 0.88 = cos(\u2220BAC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(a, 8.0)",
+        "Equals(b, 15.0)",
+        "Equals(c, 17.0)"
+    ],
+    "correct": false
+}

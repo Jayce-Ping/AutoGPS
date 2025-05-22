@@ -1,0 +1,131 @@
+{
+    "problem_id": "3634",
+    "solved": true,
+    "problem_text": "If AB = 60 and DE = 48, find FE.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, B), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(A,B)),60)",
+        "Equals(LengthOf(Line(D,E)),48)",
+        "Find(LengthOf(Line(F,E)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "D",
+        "F",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AF",
+        "AC",
+        "AB",
+        "FC",
+        "FB",
+        "CB",
+        "EF",
+        "ED",
+        "FD",
+        "CD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "E": [
+            34.462683982683984,
+            110.01259788900238
+        ],
+        "A": [
+            62.46089795918367,
+            51.69181380417336
+        ],
+        "D": [
+            130.7475457875458,
+            43.23220973782771
+        ],
+        "F": [
+            82.31483870967742,
+            76.88981515041682
+        ],
+        "C": [
+            103.68032786885246,
+            106.6311475409836
+        ],
+        "B": [
+            148.43428571428572,
+            161.30337078651687
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        30.0,
+        54.991,
+        56.604
+    ],
+    "choices_precise_value": [
+        24.0,
+        30.0,
+        54.991,
+        56.604
+    ],
+    "problem_answer": 24.0,
+    "total_time": 76.34348,
+    "solution_predicate": "Equals(24.0, LengthOf(Line(F, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2299(C, radius_C), 48 = DE, CF \u22a5 DF, F on DE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on DE\nConclusions: DE = DF + EF\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : CF \u22a5 DF, F on DE, \u2299(C, radius_C)\nConclusions: DF = EF\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 48 = DE, DE = DF + EF\nConclusions: 48 = DF + EF\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : DF = EF, 48 = DF + EF\nConclusions: 24 = DF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : DF = EF, 24 = DF\nConclusions: 24 = EF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(F, C)",
+        "Line(F, B)",
+        "Line(C, B)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Line(C, D)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, B), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(A, B)), 60.0)",
+        "Equals(LengthOf(Line(D, E)), 48.0)"
+    ],
+    "correct": true
+}

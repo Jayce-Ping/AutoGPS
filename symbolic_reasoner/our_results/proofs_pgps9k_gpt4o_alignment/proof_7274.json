@@ -1,0 +1,114 @@
+{
+    "problem_id": "7274",
+    "solved": true,
+    "problem_text": "For trapezoid ABDC, E and F are midpoints of the legs. Find CD.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 8)",
+        "Equals(LengthOf(Line(F, E)), 13)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Trapezoid(A,B,D,C)",
+        "IsMidpointOf(Point(E),LegOf(Trapezoid(A,B,D,C)))",
+        "IsMidpointOf(Point(F),LegOf(Trapezoid(A,B,D,C)))",
+        "Find(LengthOf(Line(C,D)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CD",
+        "DF",
+        "DB",
+        "FB",
+        "CE",
+        "CA",
+        "EA",
+        "AB",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            116.09888888888891,
+            50.35918937805731
+        ],
+        "B": [
+            305.90000000000003,
+            50.48020717721051
+        ],
+        "E": [
+            72.0475,
+            124.8805031446541
+        ],
+        "F": [
+            378.9431578947369,
+            124.82224428997021
+        ],
+        "C": [
+            30.779411764705884,
+            193.87051424343323
+        ],
+        "D": [
+            447.7694117647059,
+            194.1546429892712
+        ]
+    },
+    "problem_choices": [
+        3.0,
+        8.0,
+        10.5,
+        18.0
+    ],
+    "choices_precise_value": [
+        3.0,
+        8.0,
+        10.5,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 25.89618,
+    "solution_predicate": "Equals(18.0, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Trapezoid(A, B, D, C), 8 = AB, IsMidpointOf(F, BD), E on AC, 13 = EF, F on BD, IsMidpointOf(E, AC)\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(F, BD)\nConclusions: BF = DF\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(E, AC)\nConclusions: AE = CE\n\nStep 4:\nTheorem: Median of Trapezoid\nPremises : BF = DF, AE = CE, Trapezoid(A, B, D, C)\nConclusions: IsMedianOf(EF, Trapezoid(A, B, D, C))\n\nStep 5:\nTheorem: Median of a Trapezoid Properties\nPremises : E on AC, IsMedianOf(EF, Trapezoid(A, B, D, C)), F on BD\nConclusions: EF = (AB + CD) / 2\n\nStep 6:\nTheorem: Substitution\nPremises : 13 = EF, EF = (AB + CD) / 2, 8 = AB\nConclusions: 13 = (8 + CD) / 2\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 13 = (8 + CD) / 2\nConclusions: 18 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(D, F)",
+        "Line(D, B)",
+        "Line(F, B)",
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(A, B)",
+        "Line(F, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, F)",
+        "Line(F, D)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(F, Line(B, D))",
+        "Trapezoid(A, B, D, C)",
+        "IsMidpointOf(E, Line(A, C))",
+        "IsMidpointOf(F, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(F, E)), 13.0)"
+    ],
+    "correct": true
+}

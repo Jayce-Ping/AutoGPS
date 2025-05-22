@@ -1,0 +1,107 @@
+{
+    "problem_id": "2729",
+    "solved": true,
+    "problem_text": "Use parallelogram M N P R to find x.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(R, N))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Equals(LengthOf(Line(R, M)), 17.9)",
+        "Equals(LengthOf(Line(M, N)), 3x-4)",
+        "Equals(LengthOf(Line(P, R)), 20)",
+        "Equals(LengthOf(Line(R, N)), 3z-3)",
+        "Equals(LengthOf(Line(N, P)), 2y+5)",
+        "Equals(LengthOf(Line(P, Q)), 11.1)",
+        "Equals(LengthOf(Line(N, Q)), 15.4)",
+        "Equals(LengthOf(Line(M, Q)), 4w-3)",
+        "Equals(MeasureOf(Angle(N, Q, P)), 83)",
+        "Equals(MeasureOf(Angle(Q, N, M)), 33)",
+        "Equals(MeasureOf(Angle(Q, R, M)), 38)",
+        "Parallelogram(M,N,P,R)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "P",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "RQ",
+        "RN",
+        "QN",
+        "NP",
+        "RP",
+        "MR",
+        "MN",
+        "MQ",
+        "MP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            157.1311475409836,
+            123.77049180327869
+        ],
+        "R": [
+            28.715846994535518,
+            206.01092896174862
+        ],
+        "P": [
+            223.79781420765028,
+            206.28415300546447
+        ],
+        "N": [
+            286.91256830601094,
+            42.62295081967213
+        ],
+        "M": [
+            91.28415300546447,
+            42.076502732240435
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "20",
+        "24",
+        "32"
+    ],
+    "choices_precise_value": [
+        8.0,
+        20.0,
+        24.0,
+        32.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 86.844491,
+    "solution_predicate": "Equals(8.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = PR, Parallelogram(M, N, P, R), 3 * x - 4 = MN\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(M, N, P, R)\nConclusions: MN = PR\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : MN = PR, 20 = PR\nConclusions: 20 = MN\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 20 = MN, 3 * x - 4 = MN\nConclusions: 20 = 3 * x - 4\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 20 = 3 * x - 4\nConclusions: 8 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, Q)",
+        "Line(R, N)",
+        "Line(Q, N)",
+        "Line(N, P)",
+        "Line(R, P)",
+        "Line(M, R)",
+        "Line(M, N)",
+        "Line(M, Q)",
+        "Line(M, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(Q, Line(R, N))",
+        "PointLiesOnLine(Q, Line(M, P))",
+        "Parallelogram(M, N, P, R)",
+        "Equals(LengthOf(Line(R, M)), 17.9)",
+        "Equals(LengthOf(Line(M, N)), Sub(Mul(3.0, x), 4.0))",
+        "Equals(LengthOf(Line(P, R)), 20.0)",
+        "Equals(LengthOf(Line(R, N)), Sub(Mul(3.0, z), 3.0))",
+        "Equals(LengthOf(Line(N, P)), Add(Mul(2.0, y), 5.0))",
+        "Equals(LengthOf(Line(P, Q)), 11.1)",
+        "Equals(LengthOf(Line(N, Q)), 15.4)",
+        "Equals(LengthOf(Line(M, Q)), Sub(Mul(4.0, w), 3.0))",
+        "Equals(MeasureOf(Angle(P, Q, N)), Mul(pi, Div(83.0, 180.0)))",
+        "Equals(MeasureOf(Angle(M, N, Q)), Mul(pi, Div(33.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, R, M)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

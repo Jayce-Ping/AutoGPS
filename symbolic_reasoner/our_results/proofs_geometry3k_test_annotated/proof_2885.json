@@ -1,0 +1,114 @@
+{
+    "problem_id": "2885",
+    "solved": true,
+    "problem_text": "If pentagons A B C D E and P Q R S T are similar, find S R.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, A)), 11)",
+        "Equals(LengthOf(Line(T, P)), 6)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(LengthOf(Line(E, D)), 14)",
+        "Similar(Pentagon(A, B, C, D, E), Pentagon(P, Q, R, S, T))",
+        "Find(LengthOf(Line(S, R)))"
+    ],
+    "point_instances": [
+        "Q",
+        "T",
+        "A",
+        "E",
+        "B",
+        "S",
+        "C",
+        "P",
+        "D",
+        "R"
+    ],
+    "line_instances": [
+        "AE",
+        "AB",
+        "ED",
+        "DC",
+        "BC",
+        "SR",
+        "TS",
+        "PT",
+        "PQ",
+        "QR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            314.3302180685358,
+            144.86292834890966
+        ],
+        "T": [
+            248.2866043613707,
+            144.5514018691589
+        ],
+        "A": [
+            140.80996884735202,
+            44.55140186915888
+        ],
+        "E": [
+            87.53894080996885,
+            109.03738317757009
+        ],
+        "B": [
+            194.39252336448598,
+            110.28348909657322
+        ],
+        "S": [
+            261.05919003115264,
+            214.33333333333334
+        ],
+        "C": [
+            171.33956386292834,
+            214.6448598130841
+        ],
+        "P": [
+            280.6853582554517,
+            101.5607476635514
+        ],
+        "D": [
+            110.2803738317757,
+            214.9563862928349
+        ],
+        "R": [
+            303.7383177570093,
+            214.02180685358255
+        ]
+    },
+    "problem_choices": [
+        "1 \\frac { 5 } { 6 }",
+        "4 \\frac { 4 } { 11 }",
+        "3",
+        "14 \\frac { 2 } { 3 }"
+    ],
+    "choices_precise_value": [
+        2.2,
+        4.3636363636,
+        3.0,
+        4.6666666667
+    ],
+    "problem_answer": 4.3636363636,
+    "total_time": 16.964606,
+    "solution_predicate": "Equals(4.3636363636, LengthOf(Line(S, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = CD, 14 = DE, 6 = PT, Pentagon(A, B, C, D, E) ~ Pentagon(P, Q, R, S, T), 11 = AE\n\nStep 2:\nTheorem: Similar Definition\nPremises : Pentagon(A, B, C, D, E) ~ Pentagon(P, Q, R, S, T)\nConclusions: sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = DE / ST, sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = AE / PT, CD / RS = DE / ST\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = DE / ST, 14 = DE\nConclusions: sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = 14 / ST\n\nStep 4:\nTheorem: Substitution\nPremises : 11 = AE, 6 = PT, sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = AE / PT\nConclusions: 11 / 6 = sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t\n\nStep 5:\nTheorem: Substitution\nPremises : 8 = CD, 14 = DE, CD / RS = DE / ST\nConclusions: 14 / ST = 8 / RS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t = 14 / ST, 11 / 6 = sim_ratio_pentagon_a_b_c_d_e_pentagon_p_q_r_s_t\nConclusions: 11 / 6 = 14 / ST\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 11 / 6 = 14 / ST, 14 / ST = 8 / RS\nConclusions: 4.36 = RS\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(E, D)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(S, R)",
+        "Line(T, S)",
+        "Line(P, T)",
+        "Line(P, Q)",
+        "Line(Q, R)",
+        "Similar(Pentagon(A, B, C, D, E), Pentagon(P, Q, R, S, T))",
+        "Equals(LengthOf(Line(E, A)), 11.0)",
+        "Equals(LengthOf(Line(T, P)), 6.0)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(LengthOf(Line(E, D)), 14.0)"
+    ],
+    "correct": true
+}

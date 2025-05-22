@@ -1,0 +1,97 @@
+{
+    "problem_id": "5014",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 30)",
+        "Equals(LengthOf(Line(E, B)), 28)",
+        "Equals(MeasureOf(Angle(A, B, C)), 30)",
+        "Find(AreaOf(Parallelogram(A, D, E, B)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(C, B), Line(B, E))",
+        "PointLiesOnLine(C, Line(A, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "AC",
+        "AD",
+        "CD",
+        "DE",
+        "EB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.30973451327434,
+            17.605714285714285
+        ],
+        "B": [
+            115.38938053097347,
+            177.4114285714286
+        ],
+        "C": [
+            115.08849557522124,
+            18.282857142857143
+        ],
+        "D": [
+            192.71681415929206,
+            17.775000000000002
+        ],
+        "E": [
+            287.32632743362836,
+            177.69357142857143
+        ]
+    },
+    "problem_choices": [
+        420.0,
+        594.0,
+        727.5,
+        840.0
+    ],
+    "choices_precise_value": [
+        420.0,
+        594.0,
+        727.5,
+        840.0
+    ],
+    "problem_answer": 594.0,
+    "total_time": 41.423926,
+    "solution_predicate": "Equals(727.4613391804, AreaOf(Parallelogram(A, D, E, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 28 = BE, Parallelogram(A, B, E, D), \u2220BAD, AC, C on AD, BC \u22a5 BE, 30 = AB, AB, BC, 3.14 = pi, pi * (30 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: \u2220BAD = \u2220DEB\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD || BE\n\nStep 4:\nTheorem: Same Angle\nPremises : C on AD, \u2220BAD\nConclusions: \u2220BAC = \u2220BAD\n\nStep 5:\nTheorem: Area formula of Parallelogram(A, B, E, D)\nPremises : Parallelogram(A, B, E, D), BC \u22a5 BE\nConclusions: Area(Parallelogram(A, B, E, D)) = BC * BE\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BE\nConclusions: pi / 2 = \u2220EBC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (30 / 180) = \u2220CBA\nConclusions: 0.52 = \u2220CBA\n\nStep 10:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BE\nConclusions: \u2220ACB = \u2220EBC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220DEB, \u2220BAC = \u2220BAD\nConclusions: \u2220BAC = \u2220DEB\n\nStep 12:\nTheorem: Substitution\nPremises : 28 = BE, Area(Parallelogram(A, B, E, D)) = BC * BE\nConclusions: Area(Parallelogram(A, B, E, D)) = 28 * BC\n\nStep 13:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC), AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220EBC, pi / 2 = \u2220EBC\nConclusions: pi / 2 = \u2220ACB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ACB\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220BAC = \u2220DEB, 3.14 = pi, pi / 2 = \u2220ACB, pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (30 / 180) = \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220DEB\n\nStep 18:\nTheorem: Substitution\nPremises : 30 = AB, 1.57 = \u2220ACB, 0.52 = \u2220CBA, AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\nConclusions: 30 / sin(1.57) = AC / sin(0.52)\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220DEB, \u2220BAC = \u2220DEB\nConclusions: 1.05 = \u2220BAC\n\nStep 20:\nTheorem: Substitution\nPremises : AC / sin(\u2220CBA) = BC / sin(\u2220BAC), 1.05 = \u2220BAC, 0.52 = \u2220CBA\nConclusions: AC / sin(0.52) = BC / sin(1.05)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : AC / sin(0.52) = BC / sin(1.05), 30 / sin(1.57) = AC / sin(0.52)\nConclusions: 30 / sin(1.57) = BC / sin(1.05)\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : Area(Parallelogram(A, B, E, D)) = 28 * BC, 30 / sin(1.57) = BC / sin(1.05)\nConclusions: 727.46 = Area(Parallelogram(A, B, E, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Perpendicular(Line(C, B), Line(B, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Equals(LengthOf(Line(B, A)), 30.0)",
+        "Equals(LengthOf(Line(E, B)), 28.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": false
+}

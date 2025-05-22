@@ -1,0 +1,94 @@
+{
+    "problem_id": "5077",
+    "solved": true,
+    "problem_text": "Find the perimeter of the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5.7)",
+        "Equals(LengthOf(Line(A, C)), 4)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), 5)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(LengthOf(Line(D, C)), 3)",
+        "Find(PerimeterOf(Triangle(A, B, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AB",
+        "AD",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            189.14141414141415,
+            23.697142857142858
+        ],
+        "B": [
+            30.262626262626263,
+            188.5
+        ],
+        "C": [
+            189.14141414141415,
+            188.5
+        ],
+        "D": [
+            311.2727272727273,
+            188.5
+        ]
+    },
+    "problem_choices": [
+        12.7,
+        13.7,
+        16.7,
+        17.7
+    ],
+    "choices_precise_value": [
+        12.7,
+        13.7,
+        16.7,
+        17.7
+    ],
+    "problem_answer": 17.7,
+    "total_time": 27.449257,
+    "solution_predicate": "Equals(17.7, PerimeterOf(Triangle(A, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 = CD, 4 = BC, \u25b3ABD, C on BD, 5 = AD, 5.7 = AB\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3ABD\nConclusions: Perimeter(\u25b3ABD) = AB + AD + BD\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 4:\nTheorem: Substitution\nPremises : 5.7 = AB, Perimeter(\u25b3ABD) = AB + AD + BD, 5 = AD\nConclusions: Perimeter(\u25b3ABD) = 5 + 5.7 + BD\n\nStep 5:\nTheorem: Substitution\nPremises : 3 = CD, 4 = BC, BD = BC + CD\nConclusions: 3 + 4 = BD\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(\u25b3ABD) = 5 + 5.7 + BD, 3 + 4 = BD\nConclusions: 17.7 = Perimeter(\u25b3ABD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), 5.7)",
+        "Equals(LengthOf(Line(A, C)), 4.0)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(LengthOf(Line(D, C)), 3.0)"
+    ],
+    "correct": true
+}

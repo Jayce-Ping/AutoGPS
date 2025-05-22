@@ -1,0 +1,133 @@
+{
+    "problem_id": "2726",
+    "solved": true,
+    "problem_text": "Find m \\angle PQM.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, Q)), 18)",
+        "Equals(LengthOf(Line(M, Q)), LengthOf(Line(Q, P)))",
+        "Equals(LengthOf(Line(Q, P)), 18)",
+        "Equals(MeasureOf(Angle(M, N, Q)), 3x+5)",
+        "Equals(MeasureOf(Angle(P, N, Q)), 4x-8)",
+        "Line(M, A)",
+        "Line(M, Q)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Line(N, C)",
+        "Line(N, M)",
+        "Line(N, P)",
+        "Line(N, Q)",
+        "Line(P, C)",
+        "Line(Q, B)",
+        "Line(Q, P)",
+        "Perpendicular(Line(N, A), Line(M, Q))",
+        "Perpendicular(Line(N, C), Line(Q, P))",
+        "PointLiesOnLine(M, Line(N, A))",
+        "PointLiesOnLine(P, Line(N, C))",
+        "PointLiesOnLine(Q, Line(N, B))",
+        "Find(MeasureOf(Angle(P,Q,M)))"
+    ],
+    "point_instances": [
+        "A",
+        "M",
+        "N",
+        "Q",
+        "B",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "NM",
+        "NA",
+        "MA",
+        "NQ",
+        "NB",
+        "QB",
+        "NP",
+        "NC",
+        "PC",
+        "MQ",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            48.137373737373736,
+            324.07619047619045
+        ],
+        "M": [
+            142.95454545454547,
+            225.93571428571425
+        ],
+        "N": [
+            290.6181818181818,
+            71.7469387755102
+        ],
+        "Q": [
+            290.3191919191919,
+            374.20952380952383
+        ],
+        "B": [
+            290.6181818181818,
+            421.65714285714284
+        ],
+        "P": [
+            443.6636363636364,
+            225.93571428571425
+        ],
+        "C": [
+            534.1454545454545,
+            316.9142857142857
+        ]
+    },
+    "problem_choices": [
+        44.0,
+        46.0,
+        88.0,
+        92.0
+    ],
+    "choices_precise_value": [
+        44.0,
+        46.0,
+        88.0,
+        92.0
+    ],
+    "problem_answer": 92.0,
+    "total_time": 114.634831,
+    "solution_predicate": "Equals(1.6057029118, MeasureOf(Angle(P, Q, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MN, \u2220CNM, pi * ((4 * x - 8) / 180) = \u2220QNP, \u2220CNA, pi * ((5 + 3 * x) / 180) = \u2220MNQ, \u2220ANP, MQ = PQ, \u2220ANQ, \u2220QNP, MQ, P on CN, MN \u22a5 MQ, \u2220BNC, PQ, M on AN, \u2220PNA, NP \u22a5 PQ, \u2220ANP, Q on BN, \u2220MNP, \u2220MNB, NP, \u2220QNC, 3.14 = pi, \u2220ANB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ANP\nConclusions: \u2220ANP = 2 * pi - \u2220PNA\n\nStep 3:\nTheorem: Same Angle\nPremises : P on CN, \u2220CNM\nConclusions: \u2220CNM = \u2220PNM\n\nStep 4:\nTheorem: Same Angle\nPremises : P on CN, \u2220CNA\nConclusions: \u2220CNA = \u2220PNA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : MN \u22a5 MQ\nConclusions: pi / 2 = \u2220QMN\n\nStep 6:\nTheorem: Same Angle\nPremises : M on AN, \u2220CNA\nConclusions: \u2220CNA = \u2220CNM\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220PNA, \u2220ANQ, \u2220QNP\nConclusions: 2 * pi = \u2220ANQ + \u2220PNA + \u2220QNP\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : NP \u22a5 PQ\nConclusions: pi / 2 = \u2220NPQ\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220ANP, M on AN\nConclusions: \u2220ANP = \u2220MNP\n\nStep 10:\nTheorem: Same Angle\nPremises : Q on BN, \u2220BNC\nConclusions: \u2220BNC = \u2220QNC\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220MNP\nConclusions: \u2220MNP = 2 * pi - \u2220PNM\n\nStep 12:\nTheorem: Same Angle\nPremises : Q on BN, \u2220MNB\nConclusions: \u2220MNB = \u2220MNQ\n\nStep 13:\nTheorem: Definition of Quadrilateral\nPremises : PQ, NP, MN, MQ\nConclusions: Quadrilateral(M, N, P, Q)\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220QNC, P on CN\nConclusions: \u2220QNC = \u2220QNP\n\nStep 15:\nTheorem: Circumference splited\nPremises : \u2220QNC, \u2220ANQ, \u2220CNA\nConclusions: 2 * pi = \u2220ANQ + \u2220CNA + \u2220QNC\n\nStep 16:\nTheorem: Same Angle\nPremises : Q on BN, \u2220ANB\nConclusions: \u2220ANB = \u2220ANQ\n\nStep 17:\nTheorem: Same Angle\nPremises : M on AN, \u2220ANB\nConclusions: \u2220ANB = \u2220MNB\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CNA = \u2220CNM, \u2220CNA = \u2220PNA\nConclusions: \u2220CNM = \u2220PNA\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ANQ + \u2220PNA + \u2220QNP\nConclusions: 2 * 3.14 = \u2220ANQ + \u2220PNA + \u2220QNP\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220NPQ, pi / 2 = \u2220QMN\nConclusions: \u2220NPQ = \u2220QMN\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ANP = 2 * pi - \u2220PNA, \u2220ANP = \u2220MNP\nConclusions: \u2220MNP = 2 * pi - \u2220PNA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 3 * x) / 180) = \u2220MNQ, \u2220MNB = \u2220MNQ\nConclusions: pi * ((5 + 3 * x) / 180) = \u2220MNB\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(M, N, P, Q)\nPremises : Quadrilateral(M, N, P, Q)\nConclusions: 2 * pi = \u2220MNP + \u2220NPQ + \u2220PQM + \u2220QMN\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QNC = \u2220QNP, pi * ((4 * x - 8) / 180) = \u2220QNP\nConclusions: pi * ((4 * x - 8) / 180) = \u2220QNC\n\nStep 25:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ANQ + \u2220CNA + \u2220QNC, \u2220CNA = \u2220PNA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220ANQ + \u2220PNA + \u2220QNC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ANB = \u2220MNB, \u2220ANB = \u2220ANQ\nConclusions: \u2220ANQ = \u2220MNB\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CNM = \u2220PNM, \u2220CNM = \u2220PNA\nConclusions: \u2220PNA = \u2220PNM\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ANQ + \u2220PNA + \u2220QNP, 2 * pi = \u2220ANQ + \u2220PNA + \u2220QNP\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 29:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : \u2220NPQ = \u2220QMN, MQ = PQ\nConclusions: \u25b3MNQ \u2245 \u25b3PNQ\n\nStep 30:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 3 * x) / 180) = \u2220MNB\nConclusions: 3.14 * ((5 + 3 * x) / 180) = \u2220MNB\n\nStep 31:\nTheorem: Substitution\nPremises : pi / 2 = \u2220NPQ, 2 * pi = \u2220MNP + \u2220NPQ + \u2220PQM + \u2220QMN, 3.14 = pi, pi / 2 = \u2220QMN\nConclusions: 2 * 3.14 = 3.14 / 2 + pi / 2 + \u2220MNP + \u2220PQM\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BNC = \u2220QNC, pi * ((4 * x - 8) / 180) = \u2220QNC\nConclusions: pi * ((4 * x - 8) / 180) = \u2220BNC\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ANQ = \u2220MNB, pi * ((5 + 3 * x) / 180) = \u2220MNB\nConclusions: pi * ((5 + 3 * x) / 180) = \u2220ANQ\n\nStep 34:\nTheorem: Substitution\nPremises : \u2220MNP = 2 * pi - \u2220PNM, \u2220PNA = \u2220PNM, 3.14 = pi\nConclusions: \u2220MNP = 2 * 3.14 - \u2220PNA\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ANQ + \u2220PNA + \u2220QNC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220ANQ + \u2220PNA + \u2220QNC\n\nStep 36:\nTheorem: Congruent Definition\nPremises : \u25b3MNQ \u2245 \u25b3PNQ\nConclusions: \u2220NPQ = \u2220QMN, \u2220MNQ = \u2220QNP\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * x) / 180) = \u2220MNB, pi * ((5 + 3 * x) / 180) = \u2220MNB\nConclusions: 3.14 * ((5 + 3 * x) / 180) = pi * ((5 + 3 * x) / 180)\n\nStep 38:\nTheorem: Substitution\nPremises : pi * ((4 * x - 8) / 180) = \u2220BNC, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 8) / 180) = \u2220BNC\n\nStep 39:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 3 * x) / 180) = \u2220ANQ\nConclusions: 3.14 * ((5 + 3 * x) / 180) = \u2220ANQ\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * x) / 180) = pi * ((5 + 3 * x) / 180), pi * ((5 + 3 * x) / 180) = \u2220MNQ\nConclusions: 3.14 * ((5 + 3 * x) / 180) = \u2220MNQ\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 8) / 180) = \u2220BNC, 3.14 * ((4 * x - 8) / 180) = \u2220BNC\nConclusions: 3.14 * ((4 * x - 8) / 180) = pi * ((4 * x - 8) / 180)\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * x - 8) / 180) = pi * ((4 * x - 8) / 180), pi * ((4 * x - 8) / 180) = \u2220QNC\nConclusions: 3.14 * ((4 * x - 8) / 180) = \u2220QNC\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 8) / 180) = \u2220QNP, 3.14 * ((4 * x - 8) / 180) = pi * ((4 * x - 8) / 180)\nConclusions: 3.14 * ((4 * x - 8) / 180) = \u2220QNP\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * x) / 180) = \u2220MNQ, 3.14 * ((4 * x - 8) / 180) = \u2220QNP, \u2220MNQ = \u2220QNP\nConclusions: 3.14 * ((5 + 3 * x) / 180) = 3.14 * ((4 * x - 8) / 180)\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 3 * x) / 180) = 3.14 * ((4 * x - 8) / 180), 3.14 * ((4 * x - 8) / 180) = \u2220QNC\nConclusions: 3.14 * ((5 + 3 * x) / 180) = \u2220QNC\n\nStep 46:\nTheorem: Solve Linear Equation System\nPremises : \u2220MNP = 2 * 3.14 - \u2220PNA, \u2220MNP = 2 * pi - \u2220PNA, 2 * pi = \u2220ANQ + \u2220PNA + \u2220QNC, 2 * 3.14 = 3.14 / 2 + pi / 2 + \u2220MNP + \u2220PQM, 3.14 * ((5 + 3 * x) / 180) = \u2220ANQ, 3.14 * ((5 + 3 * x) / 180) = 3.14 * ((4 * x - 8) / 180), 3.14 * ((5 + 3 * x) / 180) = \u2220QNC\nConclusions: 1.61 = \u2220PQM\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(N, A)",
+        "Line(M, A)",
+        "Line(N, Q)",
+        "Line(N, B)",
+        "Line(Q, B)",
+        "Line(N, P)",
+        "Line(N, C)",
+        "Line(P, C)",
+        "Line(M, Q)",
+        "Line(Q, P)",
+        "Line(M, A)",
+        "Line(M, Q)",
+        "Line(N, A)",
+        "Line(N, B)",
+        "Line(N, C)",
+        "Line(N, M)",
+        "Line(N, P)",
+        "Line(N, Q)",
+        "Line(P, C)",
+        "Line(Q, B)",
+        "Line(Q, P)",
+        "Perpendicular(Line(N, A), Line(M, Q))",
+        "Perpendicular(Line(N, C), Line(Q, P))",
+        "PointLiesOnLine(M, Line(N, A))",
+        "PointLiesOnLine(P, Line(N, C))",
+        "PointLiesOnLine(Q, Line(N, B))",
+        "Equals(LengthOf(Line(M, Q)), 18.0)",
+        "Equals(LengthOf(Line(M, Q)), LengthOf(Line(Q, P)))",
+        "Equals(LengthOf(Line(Q, P)), 18.0)",
+        "Equals(MeasureOf(Angle(M, N, Q)), Mul(pi, Div(Add(Mul(3.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, N, P)), Mul(pi, Div(Sub(Mul(4.0, x), 8.0), 180.0)))"
+    ],
+    "correct": true
+}

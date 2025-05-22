@@ -1,0 +1,118 @@
+{
+    "problem_id": "2573",
+    "solved": true,
+    "problem_text": "Find m \\angle 1 in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(G, Line(I, F))",
+        "Parallel(Line(I, F), Line(C, A))",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(H, G, F)), 157)",
+        "Equals(MeasureOf(Angle(D, E, G)), 90)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "CD",
+        "CA",
+        "DA",
+        "BD",
+        "BE",
+        "DE",
+        "EG",
+        "EH",
+        "GH",
+        "IG",
+        "IF",
+        "GF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            14.885496183206106,
+            257.2748091603053
+        ],
+        "B": [
+            56.10687022900763,
+            37.80916030534351
+        ],
+        "C": [
+            172.13740458015266,
+            37.42748091603053
+        ],
+        "D": [
+            109.9236641221374,
+            124.83206106870227
+        ],
+        "E": [
+            192.36641221374046,
+            258.80152671755724
+        ],
+        "F": [
+            274.4274809160305,
+            256.1297709923664
+        ],
+        "G": [
+            333.206106870229,
+            172.9236641221374
+        ],
+        "H": [
+            472.13740458015263,
+            88.57251908396947
+        ],
+        "I": [
+            429.7709923664122,
+            37.80916030534351
+        ]
+    },
+    "problem_choices": [
+        "90",
+        "113",
+        "123",
+        "157"
+    ],
+    "choices_precise_value": [
+        90.0,
+        113.0,
+        123.0,
+        157.0
+    ],
+    "problem_answer": 113.0,
+    "total_time": 48.283917,
+    "solution_predicate": "Equals(1.9722220548, MeasureOf(Angle(B, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FGH, \u2220HGI, \u2220EDG, D on BE, \u2220CDE, AC || FI, pi * (157 / 180) = \u2220FGH, \u2220DGF, \u2220ADB, DE, D on AC, DG, pi * (90 / 180) = \u2220GED, \u2220IGD, 3.14 = pi, \u2220DGE, \u2220DGH, \u2220HGD, EG, \u2220GDC\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || FI\nConclusions: \u2220DGF = \u2220GDC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADB\nConclusions: \u2220ADB = 2 * pi - \u2220BDA\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : D on AC, D on BE\nConclusions: \u2220ADB = \u2220CDE\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220IGD, \u2220HGI, \u2220DGH\nConclusions: 2 * pi = \u2220DGH + \u2220HGI + \u2220IGD\n\nStep 6:\nTheorem: Straight Angle\nPremises : \u2220HGD, \u2220DGE\nConclusions: pi = \u2220DGE + \u2220HGD\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220HGD, \u2220FGH, \u2220DGF\nConclusions: 2 * pi = \u2220DGF + \u2220FGH + \u2220HGD\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : DE, EG, DG\nConclusions: \u25b3DEG\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220CDE, \u2220GDC, \u2220EDG\nConclusions: 2 * pi = \u2220CDE + \u2220EDG + \u2220GDC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = 2 * pi - \u2220BDA, \u2220ADB = \u2220CDE\nConclusions: \u2220CDE = 2 * pi - \u2220BDA\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220DGH + \u2220HGI + \u2220IGD\nConclusions: 2 * 3.14 = \u2220DGH + \u2220HGI + \u2220IGD\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (157 / 180) = \u2220FGH, \u2220DGF = \u2220GDC, 2 * pi = \u2220DGF + \u2220FGH + \u2220HGD\nConclusions: 2 * 3.14 = pi * (157 / 180) + \u2220GDC + \u2220HGD\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(G, E, D)\nPremises : \u25b3DEG\nConclusions: pi = \u2220DGE + \u2220EDG + \u2220GED\n\nStep 14:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CDE + \u2220EDG + \u2220GDC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CDE + \u2220EDG + \u2220GDC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220DGH + \u2220HGI + \u2220IGD, 2 * 3.14 = \u2220DGH + \u2220HGI + \u2220IGD\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220DGE + \u2220EDG + \u2220GED, pi * (90 / 180) = \u2220GED\nConclusions: 3.14 = pi * (90 / 180) + \u2220DGE + \u2220EDG\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = pi * (157 / 180) + \u2220GDC + \u2220HGD\nConclusions: 2 * pi = pi * (157 / 180) + \u2220GDC + \u2220HGD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220CDE + \u2220EDG + \u2220GDC, \u2220CDE = 2 * pi - \u2220BDA, 2 * pi = pi * (157 / 180) + \u2220GDC + \u2220HGD, 2 * 3.14 = \u2220CDE + \u2220EDG + \u2220GDC, 3.14 = pi * (90 / 180) + \u2220DGE + \u2220EDG, pi = \u2220DGE + \u2220HGD\nConclusions: 1.97 = \u2220BDA\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(E, G)",
+        "Line(E, H)",
+        "Line(G, H)",
+        "Line(I, G)",
+        "Line(I, F)",
+        "Line(G, F)",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(G, Line(E, H))",
+        "PointLiesOnLine(G, Line(I, F))",
+        "Parallel(Line(I, F), Line(C, A))",
+        "Equals(MeasureOf(Angle(F, G, H)), Mul(pi, Div(157.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, E, D)), Mul(pi, Div(90.0, 180.0)))"
+    ],
+    "correct": true
+}

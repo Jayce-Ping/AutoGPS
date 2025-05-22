@@ -1,0 +1,105 @@
+{
+    "problem_id": "2674",
+    "solved": true,
+    "problem_text": "In \\odot F, m \\angle D F A = 50 and C F \\perp F B. Find m \\widehat A C E.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(D, E))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "Perpendicular(Line(B, F), Line(C, F))",
+        "Equals(MeasureOf(Angle(A, F, D)), 50)",
+        "Circle(F)",
+        "Equals(MeasureOf(Angle(D,F,A)),50)",
+        "Perpendicular(Line(C,F),Line(F,B))",
+        "Find(MeasureOf(Arc(A,C,E)))"
+    ],
+    "point_instances": [
+        "A",
+        "E",
+        "D",
+        "F",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AF",
+        "AB",
+        "FB",
+        "DF",
+        "DE",
+        "FE",
+        "CF"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            42.55172413793103,
+            146.55172413793105
+        ],
+        "E": [
+            191.11494252873564,
+            216.09195402298852
+        ],
+        "D": [
+            75.31034482758622,
+            78.16091954022988
+        ],
+        "F": [
+            133.35632183908046,
+            146.83908045977012
+        ],
+        "C": [
+            133.06896551724137,
+            56.32183908045977
+        ],
+        "B": [
+            223.29885057471262,
+            146.83908045977012
+        ]
+    },
+    "problem_choices": [
+        "75",
+        "115",
+        "150",
+        "230"
+    ],
+    "choices_precise_value": [
+        75.0,
+        115.0,
+        150.0,
+        230.0
+    ],
+    "problem_answer": 230.0,
+    "total_time": 20.121759,
+    "solution_predicate": "Equals(4.0142572796, MeasureOf(Arc(E, F, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BFC, BF \u22a5 CF, \u2220DFA, \u2220AFE, F on DE, \u2220EFB, pi * (50 / 180) = \u2220DFA, 3.14 = pi, Arc(EFA), Arc(AFE), \u2220CFD, F on AB, \u2220AFE, \u2220DFB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BF \u22a5 CF\nConclusions: pi / 2 = \u2220BFC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFE\nConclusions: \u2220AFE = 2 * pi - \u2220EFA\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EFA)\nConclusions: \u2220EFA = Arc(EFA)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AFE)\nConclusions: \u2220AFE = Arc(AFE)\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : F on AB, F on DE\nConclusions: \u2220DFA = \u2220EFB, \u2220DFB = \u2220EFA\n\nStep 7:\nTheorem: Circumference Split\nPremises : \u2220EFB, \u2220BFC, \u2220CFD, \u2220DFA, \u2220AFE\nConclusions: 2 * pi = \u2220AFE + \u2220BFC + \u2220CFD + \u2220DFA + \u2220EFB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220CFD, \u2220DFB, \u2220BFC\nConclusions: 2 * pi = \u2220BFC + \u2220CFD + \u2220DFB\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220AFE = 2 * pi - \u2220EFA, \u2220EFA = Arc(EFA), \u2220AFE = Arc(AFE), 3.14 = pi\nConclusions: Arc(AFE) = 2 * 3.14 - Arc(EFA)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFE = 2 * pi - \u2220EFA, \u2220AFE = Arc(AFE)\nConclusions: Arc(AFE) = 2 * pi - \u2220EFA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (50 / 180) = \u2220DFA, \u2220DFA = \u2220EFB\nConclusions: pi * (50 / 180) = \u2220EFB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFB = \u2220EFA, \u2220EFA = Arc(EFA)\nConclusions: \u2220DFB = Arc(EFA)\n\nStep 13:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220DFA, \u2220AFE = Arc(AFE), 3.14 = pi, 2 * pi = \u2220AFE + \u2220BFC + \u2220CFD + \u2220DFA + \u2220EFB, pi / 2 = \u2220BFC, pi * (50 / 180) = \u2220EFB\nConclusions: 2 * 3.14 = 3.14 / 2 + 3.14 * (50 / 180) + 3.14 * (50 / 180) + \u2220CFD + Arc(AFE)\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220DFB = Arc(EFA), 2 * pi = \u2220BFC + \u2220CFD + \u2220DFB, pi / 2 = \u2220BFC, 3.14 = pi\nConclusions: 2 * 3.14 = pi / 2 + \u2220CFD + Arc(EFA)\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 / 2 + 3.14 * (50 / 180) + 3.14 * (50 / 180) + \u2220CFD + Arc(AFE), 2 * 3.14 = pi / 2 + \u2220CFD + Arc(EFA), \u2220EFA = Arc(EFA), Arc(AFE) = 2 * pi - \u2220EFA, Arc(AFE) = 2 * 3.14 - Arc(EFA)\nConclusions: 4.01 = \u2220EFA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 4.01 = \u2220EFA, \u2220EFA = Arc(EFA)\nConclusions: 4.01 = Arc(EFA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, B)",
+        "Line(F, B)",
+        "Line(D, F)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(C, F)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(D, E))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "Perpendicular(Line(B, F), Line(C, F))",
+        "Circle(F, radius_0_0)",
+        "Perpendicular(Line(C, F), Line(F, B))",
+        "Equals(MeasureOf(Angle(D, F, A)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, A)), Mul(pi, Div(50.0, 180.0)))"
+    ],
+    "correct": true
+}

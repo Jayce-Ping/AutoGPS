@@ -1,0 +1,91 @@
+{
+    "problem_id": "6430",
+    "solved": true,
+    "problem_text": "What is the value of y?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, B, A)), 40)",
+        "Equals(MeasureOf(Arc(B, A)), y)",
+        "Equals(MeasureOf(Arc(D, A)), x)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            180.6703910614525,
+            30.531428571428574
+        ],
+        "B": [
+            21.11731843575419,
+            163.72897959183672
+        ],
+        "C": [
+            155.9812856548402,
+            163.46900518087045
+        ],
+        "D": [
+            292.122905027933,
+            163.2257142857143
+        ]
+    },
+    "problem_choices": [
+        80.0,
+        90.0,
+        100.0,
+        140.0
+    ],
+    "choices_precise_value": [
+        80.0,
+        90.0,
+        100.0,
+        140.0
+    ],
+    "problem_answer": 100.0,
+    "total_time": 39.757259,
+    "solution_predicate": "Equals(100.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (y / 180) = Arc(ACB), pi * (40 / 180) = \u2220CBA, 3.14 = pi, AB, BC, A on \u2299(C, radius_C), Arc(ACB), B on \u2299(C, radius_C), AC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.7 = pi * (40 / 180)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(ACB)\nConclusions: \u2220ACB = Arc(ACB)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_C)\nConclusions: radius_C = BC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220CBA, 0.7 = pi * (40 / 180)\nConclusions: 0.7 = \u2220CBA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = Arc(ACB), \u2220ACB = Arc(ACB)\nConclusions: pi * (y / 180) = \u2220ACB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = BC, radius_C = AC\nConclusions: AC = BC\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220ACB\n\nStep 12:\nTheorem: Issoceles Triangle Property\nPremises : AC = BC, \u25b3ABC\nConclusions: \u2220BAC = \u2220CBA\n\nStep 13:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, pi * (40 / 180) = \u2220CBA, 3.14 = pi\nConclusions: 3.14 = pi * (40 / 180) + \u2220ACB + \u2220BAC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 0.7 = \u2220CBA, \u2220BAC = \u2220CBA\nConclusions: 0.7 = \u2220BAC\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 * (y / 180) = \u2220ACB, 0.7 = \u2220BAC, 3.14 = pi, 3.14 = pi * (40 / 180) + \u2220ACB + \u2220BAC\nConclusions: 3.14 = 0.7 + 3.14 * (40 / 180) + 3.14 * (y / 180)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.7 + 3.14 * (40 / 180) + 3.14 * (y / 180)\nConclusions: 100 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Circle(C, radius_C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Arc(A, C, B)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Arc(D, C, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

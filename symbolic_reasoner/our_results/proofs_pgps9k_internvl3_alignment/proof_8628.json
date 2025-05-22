@@ -1,0 +1,71 @@
+{
+    "problem_id": "8628",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, B)), 10)",
+        "Equals(MeasureOf(Angle(C, B, A)), 45)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            36.34837438423646,
+            180.0551724137931
+        ],
+        "B": [
+            195.14433179723503,
+            180.00903225806454
+        ],
+        "C": [
+            36.074285714285715,
+            21.349999999999998
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        7.0710678118654755,
+        10.0,
+        14.142135623730951
+    ],
+    "choices_precise_value": [
+        5.0,
+        7.0710678118654755,
+        10.0,
+        14.142135623730951
+    ],
+    "problem_answer": 14.142135623730951,
+    "total_time": 12.934727,
+    "solution_predicate": "Equals(7.0710678118, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 AC, x = AC, AB, cos(\u2220ACB), pi * (45 / 180) = \u2220CBA, 3.14 = pi, \u2220CBA, BC, AC, \u2220ACB, 10 = BC\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 AC, cos(\u2220ACB)\nConclusions: AC / BC = cos(\u2220ACB)\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Substitution\nPremises : 10 = BC, x = AC, AC / BC = cos(\u2220ACB)\nConclusions: x / 10 = cos(\u2220ACB)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220CBA, 0.79 = pi * (45 / 180)\nConclusions: 0.79 = \u2220CBA\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : \u2220CBA, AB \u22a5 AC, \u25b3ABC\nConclusions: AC / BC = sin(\u2220CBA)\n\nStep 8:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 AC, \u2220ACB, \u25b3ABC\nConclusions: AC / BC = cos(\u2220ACB)\n\nStep 9:\nTheorem: Evaluate\nPremises : 0.79 = \u2220CBA\nConclusions: 0.71 = sin(\u2220CBA)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = cos(\u2220ACB), x / 10 = cos(\u2220ACB)\nConclusions: x / 10 = AC / BC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : x / 10 = AC / BC, AC / BC = sin(\u2220CBA)\nConclusions: x / 10 = sin(\u2220CBA)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : x / 10 = sin(\u2220CBA), 0.71 = sin(\u2220CBA)\nConclusions: 0.71 = x / 10\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 0.71 = x / 10\nConclusions: 7.07 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(C, B)), 10.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": false
+}

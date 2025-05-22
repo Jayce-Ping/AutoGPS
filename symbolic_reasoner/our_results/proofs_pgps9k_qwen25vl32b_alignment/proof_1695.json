@@ -1,0 +1,99 @@
+{
+    "problem_id": "1695",
+    "solved": true,
+    "problem_text": "Find the value of y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), y)",
+        "Equals(MeasureOf(Angle(D, E, C)), 30)",
+        "Equals(MeasureOf(Angle(E, C, D)), x)",
+        "Equals(MeasureOf(Angle(E, D, C)), 70)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DE",
+        "EC",
+        "EB",
+        "CB",
+        "DC",
+        "DA",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            105.23261786828104,
+            219.75155279503105
+        ],
+        "B": [
+            20.425632911392405,
+            189.15809523809523
+        ],
+        "C": [
+            81.70253164556962,
+            154.06857142857143
+        ],
+        "D": [
+            33.51898734177215,
+            23.702857142857145
+        ],
+        "E": [
+            309.0183452577509,
+            23.157267080745346
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        80.0,
+        110.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        80.0,
+        110.0,
+        150.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 20.29523,
+    "solution_predicate": "Equals(80.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CE, pi * (30 / 180) = \u2220DEC, \u2220ADE, \u2220EDA, DE, \u2220CDE, \u2220ADE, 3.14 = pi, C on AD, pi * (x / 180) = \u2220ECD, pi * (y / 180) = \u2220BCA, pi * (70 / 180) = \u2220CDE, \u2220EDA, C on BE, CD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220EDA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDE\nConclusions: \u2220CDE = 2 * pi - \u2220EDC\n\nStep 4:\nTheorem: Same Angle\nPremises : C on AD, \u2220ADE\nConclusions: \u2220ADE = \u2220CDE\n\nStep 5:\nTheorem: Same Angle\nPremises : C on AD, \u2220EDA\nConclusions: \u2220EDA = \u2220EDC\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDA\nConclusions: \u2220EDA = 2 * pi - \u2220ADE\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : C on BE, C on AD\nConclusions: \u2220BCA = \u2220ECD\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : DE, CE, CD\nConclusions: \u25b3CDE\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220CDE = 2 * pi - \u2220EDC, pi * (70 / 180) = \u2220CDE, 3.14 = pi\nConclusions: 3.14 * (70 / 180) = 2 * 3.14 - \u2220EDC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = \u2220CDE, \u2220ADE = \u2220CDE\nConclusions: pi * (70 / 180) = \u2220ADE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220ECD, \u2220BCA = \u2220ECD, pi * (y / 180) = \u2220BCA\nConclusions: pi * (x / 180) = pi * (y / 180)\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 13:\nTheorem: Substitution\nPremises : pi * (70 / 180) = \u2220ADE, 3.14 = pi, \u2220ADE = 2 * pi - \u2220EDA, \u2220EDA = \u2220EDC\nConclusions: pi * (70 / 180) = 2 * 3.14 - \u2220EDC\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (70 / 180) = \u2220ADE, \u2220EDA = 2 * pi - \u2220ADE, 3.14 = pi, \u2220EDA = \u2220EDC\nConclusions: 2 * 3.14 - pi * (70 / 180) = \u2220EDC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220ECD, pi * (x / 180) = pi * (y / 180)\nConclusions: pi * (y / 180) = \u2220ECD\n\nStep 16:\nTheorem: Substitution\nPremises : pi * (30 / 180) = \u2220DEC, pi * (70 / 180) = \u2220CDE, 3.14 = pi, pi = \u2220CDE + \u2220DEC + \u2220ECD\nConclusions: 3.14 = pi * (30 / 180) + pi * (70 / 180) + \u2220ECD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = 2 * 3.14 - \u2220EDC, 3.14 * (70 / 180) = 2 * 3.14 - \u2220EDC\nConclusions: 3.14 * (70 / 180) = pi * (70 / 180)\n\nStep 18:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220ECD, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220ECD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (70 / 180) = pi * (70 / 180), pi * (70 / 180) = \u2220CDE\nConclusions: 3.14 * (70 / 180) = \u2220CDE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = 2 * pi - \u2220EDC, 3.14 * (70 / 180) = \u2220CDE\nConclusions: 3.14 * (70 / 180) = 2 * pi - \u2220EDC\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (30 / 180) + pi * (70 / 180) + \u2220ECD, 3.14 * (y / 180) = \u2220ECD, 3.14 * (70 / 180) = 2 * pi - \u2220EDC, 2 * 3.14 - pi * (70 / 180) = \u2220EDC\nConclusions: 80 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(B, E))",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, C, D)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, E)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

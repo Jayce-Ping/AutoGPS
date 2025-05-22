@@ -1,0 +1,143 @@
+{
+    "problem_id": "8166",
+    "solved": true,
+    "problem_text": "m \\angle BDJ = 7y+2, m \\angle JDR = 2y+7, find the value of y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, D, K)), MeasureOf(Angle(R, D, J)))",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, J)",
+        "Line(D, R)",
+        "Line(E, D)",
+        "Line(E, K)",
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(J, C)",
+        "Line(K, D)",
+        "Line(R, A)",
+        "Perpendicular(Line(F, D), Line(D, A))",
+        "PointLiesOnLine(B, Line(F, D))",
+        "PointLiesOnLine(J, Line(D, C))",
+        "PointLiesOnLine(K, Line(E, D))",
+        "PointLiesOnLine(R, Line(D, A))",
+        "Equals(MeasureOf(Angle(B,D,J)),7y+2)",
+        "Equals(MeasureOf(Angle(J,D,R)),2y+7)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "D",
+        "R",
+        "A",
+        "C",
+        "J",
+        "K",
+        "E",
+        "F",
+        "B"
+    ],
+    "line_instances": [
+        "FB",
+        "FD",
+        "BD",
+        "DR",
+        "DA",
+        "RA",
+        "DK",
+        "DE",
+        "KE",
+        "DJ",
+        "DC",
+        "JC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            61.55396825396825,
+            243.12857142857143
+        ],
+        "R": [
+            223.2888888888889,
+            243.12857142857143
+        ],
+        "A": [
+            276.4273504273504,
+            243.7318681318681
+        ],
+        "C": [
+            263.4111111111111,
+            169.92857142857144
+        ],
+        "J": [
+            212.28547008547008,
+            188.36263736263737
+        ],
+        "K": [
+            117.14615384615387,
+            89.82417582417582
+        ],
+        "E": [
+            134.9931623931624,
+            41.15824175824176
+        ],
+        "F": [
+            60.8063492063492,
+            28.383673469387755
+        ],
+        "B": [
+            61.05555555555556,
+            81.04285714285714
+        ]
+    },
+    "problem_choices": [
+        1.0,
+        9.0,
+        19.0,
+        41.5
+    ],
+    "choices_precise_value": [
+        1.0,
+        9.0,
+        19.0,
+        41.5
+    ],
+    "problem_answer": 9.0,
+    "total_time": 111.327439,
+    "solution_predicate": "Equals(9.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, DF \u22a5 DR, BD \u22a5 DR, pi * ((7 + 2 * y) / 180) = \u2220RDJ, B on DF, R on AD, \u2220CDF, \u2220EDF, \u2220FDR, \u2220JDB, \u2220ADJ, \u2220RDJ, pi * ((2 + 7 * y) / 180) = \u2220JDB, \u2220ADC, J on CD, \u2220JDE, \u2220FDC, \u2220JDF, \u2220FDJ, \u2220CDE, \u2220BDR\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : DF \u22a5 DR\nConclusions: (3 * pi) / 2 = \u2220FDR\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 DR\nConclusions: (3 * pi) / 2 = \u2220BDR\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220ADJ, R on AD\nConclusions: \u2220ADJ = \u2220RDJ\n\nStep 5:\nTheorem: Same Angle\nPremises : R on AD, \u2220ADC\nConclusions: \u2220ADC = \u2220RDC\n\nStep 6:\nTheorem: Same Angle\nPremises : J on CD, \u2220ADC\nConclusions: \u2220ADC = \u2220ADJ\n\nStep 7:\nTheorem: Same Angle\nPremises : J on CD, \u2220CDF\nConclusions: \u2220CDF = \u2220JDF\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220FDC, J on CD\nConclusions: \u2220FDC = \u2220FDJ\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220JDF, \u2220RDJ, \u2220FDR\nConclusions: 2 * pi = \u2220FDR + \u2220JDF + \u2220RDJ\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220JDF, B on DF\nConclusions: \u2220JDB = \u2220JDF\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220EDF, \u2220JDE, \u2220FDJ\nConclusions: 2 * pi = \u2220EDF + \u2220FDJ + \u2220JDE\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220EDF, \u2220CDE, \u2220FDC\nConclusions: 2 * pi = \u2220CDE + \u2220EDF + \u2220FDC\n\nStep 13:\nTheorem: Same Angle\nPremises : J on CD, \u2220CDE\nConclusions: \u2220CDE = \u2220JDE\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220RDJ, \u2220BDR, \u2220JDB\nConclusions: 2 * pi = \u2220BDR + \u2220JDB + \u2220RDJ\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADC = \u2220ADJ, \u2220ADC = \u2220RDC\nConclusions: \u2220ADJ = \u2220RDC\n\nStep 16:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220FDR, 3.14 = pi, 2 * pi = \u2220FDR + \u2220JDF + \u2220RDJ\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220JDF + \u2220RDJ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JDB = \u2220JDF, pi * ((2 + 7 * y) / 180) = \u2220JDB\nConclusions: pi * ((2 + 7 * y) / 180) = \u2220JDF\n\nStep 18:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CDE + \u2220EDF + \u2220FDC, 3.14 = pi, \u2220FDC = \u2220FDJ, \u2220CDE = \u2220JDE\nConclusions: 2 * 3.14 = \u2220EDF + \u2220FDJ + \u2220JDE\n\nStep 19:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDR + \u2220JDB + \u2220RDJ, 3.14 = pi, (3 * pi) / 2 = \u2220BDR\nConclusions: 2 * 3.14 = (3 * pi) / 2 + \u2220JDB + \u2220RDJ\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 + 2 * y) / 180) = \u2220RDJ, \u2220ADJ = \u2220RDJ, \u2220ADJ = \u2220RDC\nConclusions: pi * ((7 + 2 * y) / 180) = \u2220RDC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDF = \u2220JDF, pi * ((2 + 7 * y) / 180) = \u2220JDF\nConclusions: pi * ((2 + 7 * y) / 180) = \u2220CDF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220EDF + \u2220FDJ + \u2220JDE, 2 * pi = \u2220EDF + \u2220FDJ + \u2220JDE\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 + 2 * y) / 180) = \u2220RDC, \u2220ADC = \u2220RDC\nConclusions: pi * ((7 + 2 * y) / 180) = \u2220ADC\n\nStep 24:\nTheorem: Substitution\nPremises : pi * ((2 + 7 * y) / 180) = \u2220CDF, 3.14 = pi\nConclusions: 3.14 * ((2 + 7 * y) / 180) = \u2220CDF\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = (3 * pi) / 2 + \u2220JDB + \u2220RDJ, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = (3 * pi) / 2 + \u2220JDB + \u2220RDJ\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((7 + 2 * y) / 180) = \u2220ADC\nConclusions: 3.14 * ((7 + 2 * y) / 180) = \u2220ADC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 + 7 * y) / 180) = \u2220CDF, 3.14 * ((2 + 7 * y) / 180) = \u2220CDF\nConclusions: 3.14 * ((2 + 7 * y) / 180) = pi * ((2 + 7 * y) / 180)\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((7 + 2 * y) / 180) = \u2220ADC, pi * ((7 + 2 * y) / 180) = \u2220ADC\nConclusions: 3.14 * ((7 + 2 * y) / 180) = pi * ((7 + 2 * y) / 180)\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 + 7 * y) / 180) = pi * ((2 + 7 * y) / 180), pi * ((2 + 7 * y) / 180) = \u2220JDB\nConclusions: 3.14 * ((2 + 7 * y) / 180) = \u2220JDB\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((2 + 7 * y) / 180) = pi * ((2 + 7 * y) / 180), pi * ((2 + 7 * y) / 180) = \u2220JDF\nConclusions: 3.14 * ((2 + 7 * y) / 180) = \u2220JDF\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 + 2 * y) / 180) = \u2220RDJ, 3.14 * ((7 + 2 * y) / 180) = pi * ((7 + 2 * y) / 180)\nConclusions: 3.14 * ((7 + 2 * y) / 180) = \u2220RDJ\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((7 + 2 * y) / 180) = \u2220RDJ, 3.14 * ((2 + 7 * y) / 180) = \u2220JDB, 2 * pi = (3 * pi) / 2 + \u2220JDB + \u2220RDJ, 2 * 3.14 = (3 * pi) / 2 + \u2220JDF + \u2220RDJ, 3.14 * ((2 + 7 * y) / 180) = \u2220JDF\nConclusions: 9 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(B, D)",
+        "Line(D, R)",
+        "Line(D, A)",
+        "Line(R, A)",
+        "Line(D, K)",
+        "Line(D, E)",
+        "Line(K, E)",
+        "Line(D, J)",
+        "Line(D, C)",
+        "Line(J, C)",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, J)",
+        "Line(D, R)",
+        "Line(E, D)",
+        "Line(E, K)",
+        "Line(F, B)",
+        "Line(F, D)",
+        "Line(J, C)",
+        "Line(K, D)",
+        "Line(R, A)",
+        "Perpendicular(Line(F, D), Line(D, A))",
+        "PointLiesOnLine(B, Line(F, D))",
+        "PointLiesOnLine(J, Line(D, C))",
+        "PointLiesOnLine(K, Line(E, D))",
+        "PointLiesOnLine(R, Line(D, A))",
+        "Equals(MeasureOf(Angle(K, D, B)), MeasureOf(Angle(R, D, J)))",
+        "Equals(MeasureOf(Angle(J, D, B)), Mul(pi, Div(Add(Mul(7.0, y), 2.0), 180.0)))",
+        "Equals(MeasureOf(Angle(R, D, J)), Mul(pi, Div(Add(Mul(2.0, y), 7.0), 180.0)))"
+    ],
+    "correct": true
+}

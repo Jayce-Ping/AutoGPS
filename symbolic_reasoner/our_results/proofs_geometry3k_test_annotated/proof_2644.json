@@ -1,0 +1,93 @@
+{
+    "problem_id": "2644",
+    "solved": true,
+    "problem_text": "Find B C.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Perpendicular(Line(D, E), Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(E, C)), 12)",
+        "Equals(LengthOf(Line(D, E)), 5)",
+        "Find(LengthOf(Line(B, C)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BE",
+        "BD",
+        "ED",
+        "AE",
+        "AC",
+        "EC",
+        "DC",
+        "BC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            140.6730769230769,
+            82.21153846153845
+        ],
+        "B": [
+            100.28846153846152,
+            248.5576923076923
+        ],
+        "C": [
+            365.1923076923077,
+            366.3461538461538
+        ],
+        "D": [
+            312.78846153846155,
+            81.73076923076923
+        ],
+        "E": [
+            207.5,
+            165.3846153846154
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "9",
+        "12",
+        "13"
+    ],
+    "choices_precise_value": [
+        5.0,
+        9.0,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 103.653652,
+    "solution_predicate": "Equals(13.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = CE, CE \u22a5 DE, CD, CE, BC = CD, DE, 5 = DE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CE, CD, DE\nConclusions: \u25b3CDE\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : CE \u22a5 DE, \u25b3CDE\nConclusions: CD = SqrtOf(CE ** 2 + DE ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 12 = CE, 5 = DE, CD = SqrtOf(CE ** 2 + DE ** 2)\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : BC = CD, SqrtOf(12 ** 2 + 5 ** 2) = CD\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = BC\n\nStep 6:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = BC\nConclusions: 13 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Perpendicular(Line(D, E), Line(A, E))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(E, C)), 12.0)",
+        "Equals(LengthOf(Line(D, E)), 5.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,134 @@
+{
+    "problem_id": "6986",
+    "solved": true,
+    "problem_text": "In \\odot O, EC and AB are diameters, and m \\angle BOD = m \\angle DOE = m \\angle EOF = m \\angle FOA. Find m \\widehat AE.",
+    "logic_forms": [
+        "Line(B, A)",
+        "Line(B, O)",
+        "Line(D, O)",
+        "Line(E, C)",
+        "Line(E, O)",
+        "Line(F, O)",
+        "Line(O, A)",
+        "Line(O, C)",
+        "Perpendicular(Line(E, C), Line(B, A))",
+        "PointLiesOnCircle(A, Circle(O))",
+        "PointLiesOnCircle(B, Circle(O))",
+        "PointLiesOnCircle(C, Circle(O))",
+        "PointLiesOnCircle(D, Circle(O))",
+        "PointLiesOnCircle(E, Circle(O))",
+        "PointLiesOnCircle(F, Circle(O))",
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "Circle(O)",
+        "IsDiameterOf(Line(E,C),Circle(O))",
+        "IsDiameterOf(Line(A,B),Circle(O))",
+        "Equals(MeasureOf(Angle(B,O,D)),MeasureOf(Angle(D,O,E)))",
+        "Equals(MeasureOf(Angle(D,O,E)),MeasureOf(Angle(E,O,F)))",
+        "Equals(MeasureOf(Angle(E,O,F)),MeasureOf(Angle(F,O,A)))",
+        "Find(MeasureOf(Arc(A,E)))"
+    ],
+    "point_instances": [
+        "A",
+        "F",
+        "E",
+        "D",
+        "B",
+        "C",
+        "O"
+    ],
+    "line_instances": [
+        "CO",
+        "CE",
+        "OE",
+        "AO",
+        "AB",
+        "OB",
+        "OD",
+        "OF"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "A": [
+            101.52508030639981,
+            196.35248120300753
+        ],
+        "F": [
+            75.02989869038794,
+            137.59759398496243
+        ],
+        "E": [
+            98.09494001043296,
+            77.35619047619048
+        ],
+        "D": [
+            156.46478873239437,
+            51.291428571428575
+        ],
+        "B": [
+            216.32957746478874,
+            73.99542857142858
+        ],
+        "C": [
+            220.29368805425145,
+            192.92952380952383
+        ],
+        "O": [
+            158.66434540389972,
+            134.2715877437326
+        ]
+    },
+    "problem_choices": [
+        45.0,
+        90.0,
+        180.0,
+        360.0
+    ],
+    "choices_precise_value": [
+        45.0,
+        90.0,
+        180.0,
+        360.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 25.210862,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Arc(E, O, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(EOA), AO \u22a5 EO\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EOA)\nConclusions: \u2220EOA = Arc(EOA)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AO \u22a5 EO\nConclusions: pi / 2 = \u2220EOA\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EOA, \u2220EOA = Arc(EOA)\nConclusions: pi / 2 = Arc(EOA)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 2 = Arc(EOA)\nConclusions: 1.57 = Arc(EOA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, O)",
+        "Line(C, E)",
+        "Line(O, E)",
+        "Line(A, O)",
+        "Line(A, B)",
+        "Line(O, B)",
+        "Line(O, D)",
+        "Line(O, F)",
+        "Circle(O, radius_O)",
+        "Line(B, A)",
+        "Line(B, O)",
+        "Line(D, O)",
+        "Line(E, C)",
+        "Line(E, O)",
+        "Line(F, O)",
+        "Line(O, A)",
+        "Line(O, C)",
+        "Perpendicular(Line(E, C), Line(B, A))",
+        "PointLiesOnCircle(A, Circle(O, radius_O))",
+        "PointLiesOnCircle(B, Circle(O, radius_O))",
+        "PointLiesOnCircle(C, Circle(O, radius_O))",
+        "PointLiesOnCircle(D, Circle(O, radius_O))",
+        "PointLiesOnCircle(E, Circle(O, radius_O))",
+        "PointLiesOnCircle(F, Circle(O, radius_O))",
+        "PointLiesOnLine(O, Line(B, A))",
+        "PointLiesOnLine(O, Line(E, C))",
+        "Circle(O, radius_O)",
+        "IsDiameterOf(Line(E, C), Circle(O, radius_O))",
+        "IsDiameterOf(Line(A, B), Circle(O, radius_O))",
+        "Equals(MeasureOf(Angle(B, O, D)), MeasureOf(Angle(D, O, E)))",
+        "Equals(MeasureOf(Angle(D, O, E)), MeasureOf(Angle(E, O, F)))",
+        "Equals(MeasureOf(Angle(E, O, F)), MeasureOf(Angle(F, O, A)))"
+    ],
+    "correct": true
+}

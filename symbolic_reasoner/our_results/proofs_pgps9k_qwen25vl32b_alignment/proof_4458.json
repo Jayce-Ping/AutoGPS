@@ -1,0 +1,92 @@
+{
+    "problem_id": "4458",
+    "solved": true,
+    "problem_text": "What is x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(LengthOf(Line(D, C)), 5)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(C, Circle(E))",
+        "PointLiesOnCircle(D, Circle(E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            238.46437136005483,
+            28.783673469387757
+        ],
+        "B": [
+            23.807810894141827,
+            110.85224489795918
+        ],
+        "C": [
+            173.37330135891287,
+            154.19936507936507
+        ],
+        "D": [
+            348.794964028777,
+            204.92571428571426
+        ],
+        "E": [
+            275.75741304216524,
+            127.35717723052463
+        ]
+    },
+    "problem_choices": [
+        2.217,
+        3.385,
+        6.0,
+        6.708
+    ],
+    "choices_precise_value": [
+        2.217,
+        3.385,
+        6.0,
+        6.708
+    ],
+    "problem_answer": 6.0,
+    "total_time": 27.211247,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, BC, C on BD, A on \u2299(E, radius_E), C on \u2299(E, radius_E), \u2299(E, radius_E), 5 = CD, x = AB, 4 = BC, D on \u2299(E, radius_E)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 3:\nTheorem: Find Tangent Line by geometry\nPremises : A on \u2299(E, radius_E)\nConclusions: Tangent(AB, \u2299(E, radius_E))\n\nStep 4:\nTheorem: Substitution\nPremises : BD = BC + CD, 4 = BC, 5 = CD\nConclusions: 4 + 5 = BD\n\nStep 5:\nTheorem: Circle Secant Theorem\nPremises : BD, C on \u2299(E, radius_E), \u2299(E, radius_E), Tangent(AB, \u2299(E, radius_E)), D on \u2299(E, radius_E), BC\nConclusions: AB ** 2 = BC * BD\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 4 + 5 = BD\nConclusions: 9 = BD\n\nStep 7:\nTheorem: Substitution\nPremises : x = AB, AB ** 2 = BC * BD, 4 = BC, 9 = BD\nConclusions: 4 * 9 = x ** 2\n\nStep 8:\nTheorem: Solve Univariate Equation\nPremises : 4 * 9 = x ** 2\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Circle(E, radius_E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(C, Circle(E, radius_E))",
+        "PointLiesOnCircle(D, Circle(E, radius_E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(LengthOf(Line(D, C)), 5.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,134 @@
+{
+    "problem_id": "2595",
+    "solved": true,
+    "problem_text": "The diameter of \\odot S is 30 units, the diameter of \\odot R is 20 units, and D S = 9 units. Find R C.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(R, D))",
+        "PointLiesOnLine(C, Line(R, S))",
+        "PointLiesOnLine(C, Line(R, A))",
+        "PointLiesOnLine(D, Line(R, S))",
+        "PointLiesOnLine(D, Line(R, A))",
+        "PointLiesOnLine(D, Line(C, S))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(S, Line(R, A))",
+        "PointLiesOnLine(S, Line(C, A))",
+        "PointLiesOnLine(S, Line(D, A))",
+        "PointLiesOnCircle(D, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(B, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(S, radius_1_0))",
+        "Equals(DiameterOf(Circle(S)),30)",
+        "Equals(DiameterOf(Circle(R)),20)",
+        "Equals(LengthOf(Line(D,S)),9)",
+        "Find(LengthOf(Line(R,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "R",
+        "S",
+        "A",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "RC",
+        "RD",
+        "RS",
+        "RA",
+        "CD",
+        "CS",
+        "CA",
+        "DS",
+        "DA",
+        "SA"
+    ],
+    "circle_instances": [
+        "R",
+        "S"
+    ],
+    "point_positions": {
+        "D": [
+            315.6748768472906,
+            271.4285714285714
+        ],
+        "C": [
+            236.3645320197044,
+            294.0886699507389
+        ],
+        "R": [
+            196.95566502463052,
+            305.91133004926104
+        ],
+        "S": [
+            421.5862068965517,
+            237.9310344827586
+        ],
+        "A": [
+            606.8078817733989,
+            181.28078817733987
+        ],
+        "B": [
+            293.01477832512313,
+            382.2660098522167
+        ],
+        "E": [
+            234.39408866995072,
+            190.14778325123152
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "6",
+        "9",
+        "12"
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        9.0,
+        12.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 48.284027,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(R, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on \u2299(S, radius_1_0), S on AC, C on RS, 20 = 2 * radius_0_0, D on RS, D on \u2299(R, radius_0_0), A on \u2299(S, radius_1_0), 30 = 2 * radius_1_0, 9 = DS\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : C on \u2299(S, radius_1_0)\nConclusions: radius_1_0 = CS\n\nStep 3:\nTheorem: Line Segment Split\nPremises : S on AC\nConclusions: AC = AS + CS\n\nStep 4:\nTheorem: Line Segment Split\nPremises : C on RS\nConclusions: RS = CR + CS\n\nStep 5:\nTheorem: Line Segment Split\nPremises : D on RS\nConclusions: RS = DR + DS\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : D on \u2299(R, radius_0_0)\nConclusions: radius_0_0 = DR\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : A on \u2299(S, radius_1_0)\nConclusions: radius_1_0 = AS\n\nStep 8:\nTheorem: Diameter Definition\nPremises : C on \u2299(S, radius_1_0), A on \u2299(S, radius_1_0), S on AC\nConclusions: IsDiameterOf(AC, \u2299(S, radius_1_0))\n\nStep 9:\nTheorem: Substitution\nPremises : radius_0_0 = DR, RS = DR + DS, 9 = DS\nConclusions: 9 + radius_0_0 = RS\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = AS, radius_1_0 = CS\nConclusions: AS = CS\n\nStep 11:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AC, \u2299(S, radius_1_0))\nConclusions: C on \u2299(S, radius_1_0), radius_1_0 = CS, A on \u2299(S, radius_1_0), 2 * radius_1_0 = AC, radius_1_0 = AS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 9 + radius_0_0 = RS, RS = CR + CS\nConclusions: 9 + radius_0_0 = CR + CS\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 30 = 2 * radius_1_0, 2 * radius_1_0 = AC\nConclusions: 30 = AC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 30 = AC, AC = AS + CS\nConclusions: 30 = AS + CS\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 20 = 2 * radius_0_0, 30 = AS + CS, AS = CS, 9 + radius_0_0 = CR + CS\nConclusions: 4 = CR\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, C)",
+        "Line(R, D)",
+        "Line(R, S)",
+        "Line(R, A)",
+        "Line(C, D)",
+        "Line(C, S)",
+        "Line(C, A)",
+        "Line(D, S)",
+        "Line(D, A)",
+        "Line(S, A)",
+        "Circle(R, radius_0_0)",
+        "Circle(S, radius_1_0)",
+        "PointLiesOnLine(C, Line(R, D))",
+        "PointLiesOnLine(C, Line(R, S))",
+        "PointLiesOnLine(C, Line(R, A))",
+        "PointLiesOnLine(D, Line(R, S))",
+        "PointLiesOnLine(D, Line(R, A))",
+        "PointLiesOnLine(D, Line(C, S))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "PointLiesOnLine(S, Line(R, A))",
+        "PointLiesOnLine(S, Line(C, A))",
+        "PointLiesOnLine(S, Line(D, A))",
+        "PointLiesOnCircle(D, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(R, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(B, Circle(S, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(S, radius_1_0))",
+        "Equals(Mul(2.0, radius_1_0), 30.0)",
+        "Equals(Mul(2.0, radius_0_0), 20.0)",
+        "Equals(LengthOf(Line(D, S)), 9.0)"
+    ],
+    "correct": true
+}

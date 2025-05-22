@@ -1,0 +1,122 @@
+{
+    "problem_id": "2863",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 7 if m \\angle 4 = m \\angle 5.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(F, E, D)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(D, F, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(D, B, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(D, B, A)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(G, F, E)), 136)",
+        "Equals(MeasureOf(Angle(D, C, B)), 63)",
+        "Equals(MeasureOf(Angle(E, D, C)), 69)",
+        "Equals(MeasureOf(Angle(F, D, E)), 47)",
+        "Equals(MeasureOf(Angle(4)),MeasureOf(Angle(5)))",
+        "Find(MeasureOf(Angle(7)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "BD",
+        "BF",
+        "BG",
+        "DF",
+        "DG",
+        "FG",
+        "EF",
+        "ED",
+        "CD",
+        "CA",
+        "DA",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            262.0192307692308,
+            292.2692307692308
+        ],
+        "B": [
+            37.980769230769226,
+            162.94230769230768
+        ],
+        "C": [
+            131.73076923076923,
+            32.653846153846146
+        ],
+        "D": [
+            197.1153846153846,
+            161.98076923076923
+        ],
+        "E": [
+            327.88461538461536,
+            25.442307692307693
+        ],
+        "F": [
+            470.6730769230769,
+            161.98076923076923
+        ],
+        "G": [
+            604.3269230769231,
+            162.94230769230768
+        ]
+    },
+    "problem_choices": [
+        "63",
+        "64",
+        "69",
+        "89"
+    ],
+    "choices_precise_value": [
+        63.0,
+        64.0,
+        69.0,
+        89.0
+    ],
+    "problem_answer": 89.0,
+    "total_time": 65.771501,
+    "solution_predicate": "Equals(1.5533430343, MeasureOf(Angle(D, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (47 / 180) = \u2220FDE, EF, pi * (136 / 180) = \u2220GFE, \u2220BDC, \u2220GFE, 3.14 = pi, D on BF, \u2220EFB, D on AC, DE, DF, D on BG, \u2220ADG\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDC\nConclusions: \u2220BDC = 2 * pi - \u2220CDB\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220EFB, D on BF\nConclusions: \u2220EFB = \u2220EFD\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220EFB, \u2220GFE\nConclusions: pi = \u2220EFB + \u2220GFE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : DF, DE, EF\nConclusions: \u25b3DEF\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : D on AC, D on BG\nConclusions: \u2220ADG = \u2220CDB, \u2220BDC = \u2220GDA\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADG\nConclusions: \u2220ADG = 2 * pi - \u2220GDA\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (136 / 180) = \u2220GFE, \u2220EFB = \u2220EFD, pi = \u2220EFB + \u2220GFE\nConclusions: 3.14 = 3.14 * (136 / 180) + \u2220EFD\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(D, E, F)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DEF + \u2220EFD + \u2220FDE\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220BDC = \u2220GDA, \u2220BDC = 2 * pi - \u2220CDB, 3.14 = pi\nConclusions: \u2220GDA = 2 * 3.14 - \u2220CDB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADG = \u2220CDB, \u2220ADG = 2 * pi - \u2220GDA\nConclusions: \u2220CDB = 2 * pi - \u2220GDA\n\nStep 12:\nTheorem: Substitution\nPremises : pi = \u2220DEF + \u2220EFD + \u2220FDE, 3.14 = pi, pi * (47 / 180) = \u2220FDE\nConclusions: 3.14 = pi * (47 / 180) + \u2220DEF + \u2220EFD\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : \u2220GDA = 2 * 3.14 - \u2220CDB, 3.14 = 3.14 * (136 / 180) + \u2220EFD, 3.14 = pi * (47 / 180) + \u2220DEF + \u2220EFD, \u2220CDB = 2 * pi - \u2220GDA\nConclusions: 1.55 = \u2220DEF\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(F, G)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(F, Line(B, G))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(136.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(63.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(69.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, D, E)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(A, B, D)))"
+    ],
+    "correct": true
+}

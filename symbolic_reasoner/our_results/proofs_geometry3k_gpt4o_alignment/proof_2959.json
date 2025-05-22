@@ -1,0 +1,97 @@
+{
+    "problem_id": "2959",
+    "solved": true,
+    "problem_text": "Find the area of the rhombus.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 24)",
+        "Equals(LengthOf(Line(A, D)), 11)",
+        "Equals(LengthOf(Line(A, E)), 12)",
+        "Equals(LengthOf(Line(D, B)), 22)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(E, B)))",
+        "Equals(LengthOf(Line(E, C)), LengthOf(Line(A, E)))",
+        "Find(AreaOf(Rhombus(A, B, C, D)))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "CB",
+        "AB",
+        "DA",
+        "DC",
+        "DE",
+        "DB",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            63.70757180156658,
+            200.96605744125327
+        ],
+        "B": [
+            243.86422976501305,
+            200.443864229765
+        ],
+        "C": [
+            310.70496083550916,
+            29.164490861618795
+        ],
+        "D": [
+            131.07049608355092,
+            29.686684073107045
+        ],
+        "E": [
+            187.98955613577024,
+            115.58746736292429
+        ]
+    },
+    "problem_choices": [
+        "132",
+        "264",
+        "265",
+        "528"
+    ],
+    "choices_precise_value": [
+        132.0,
+        264.0,
+        265.0,
+        528.0
+    ],
+    "problem_answer": 264.0,
+    "total_time": 97.916068,
+    "solution_predicate": "Equals(264.0, AreaOf(Rhombus(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(A, B, C, D), 22 = BD, 24 = AC\n\nStep 2:\nTheorem: Area formula of Rhombus(A, B, C, D)\nPremises : Rhombus(A, B, C, D)\nConclusions: Area(Rhombus(A, B, C, D)) = (AC * BD) / 2\n\nStep 3:\nTheorem: Evaluate\nPremises : 24 = AC, 22 = BD\nConclusions: 264 = (AC * BD) / 2\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : Area(Rhombus(A, B, C, D)) = (AC * BD) / 2, 264 = (AC * BD) / 2\nConclusions: 264 = Area(Rhombus(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, C)), 24.0)",
+        "Equals(LengthOf(Line(A, D)), 11.0)",
+        "Equals(LengthOf(Line(A, E)), 12.0)",
+        "Equals(LengthOf(Line(D, B)), 22.0)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(E, B)))",
+        "Equals(LengthOf(Line(E, C)), LengthOf(Line(A, E)))"
+    ],
+    "correct": true
+}

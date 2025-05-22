@@ -1,0 +1,67 @@
+{
+    "problem_id": "6318",
+    "solved": true,
+    "problem_text": "Find m \\angle A.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, B)), 41)",
+        "Equals(MeasureOf(Angle(C, A, B)), x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            54.51935081148564,
+            58.53523809523809
+        ],
+        "B": [
+            54.48394863563402,
+            217.52244897959184
+        ],
+        "C": [
+            237.90262172284642,
+            217.59301587301587
+        ]
+    },
+    "problem_choices": [
+        41.0,
+        49.0,
+        90.0,
+        188.0
+    ],
+    "choices_precise_value": [
+        41.0,
+        49.0,
+        90.0,
+        188.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 6.344558,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 BC, \u2220CBA, AC, 3.14 = pi, AB, BC, \u2220ABC, pi * (41 / 180) = \u2220ACB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA, pi / 2 = \u2220CBA, (3 * pi) / 2 = \u2220ABC\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CBA, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 10:\nTheorem: Substitution\nPremises : pi * (41 / 180) = \u2220ACB, 3.14 = pi, pi / 2 = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = pi / 2 + 3.14 * (41 / 180) + \u2220BAC\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ABC, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = 2 * pi - \u2220CBA, 2 * 3.14 - pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + 3.14 * (41 / 180) + \u2220BAC, 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA, 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\nConclusions: 0.86 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(A, B), Line(B, C))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(41.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

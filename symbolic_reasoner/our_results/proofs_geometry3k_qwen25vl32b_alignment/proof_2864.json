@@ -1,0 +1,63 @@
+{
+    "problem_id": "2864",
+    "solved": true,
+    "problem_text": "Express the ratio of \\cos N as a decimal to the nearest hundredth.",
+    "logic_forms": [
+        "Perpendicular(Line(M, P), Line(N, P))",
+        "Equals(LengthOf(Line(M, P)), 36)",
+        "Equals(LengthOf(Line(N, M)), 39)",
+        "Equals(LengthOf(Line(N, P)), 15)",
+        "Find(RatioOf(CosOf(Angle(N))))"
+    ],
+    "point_instances": [
+        "M",
+        "P",
+        "N"
+    ],
+    "line_instances": [
+        "NM",
+        "PM",
+        "PN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            289.058524173028,
+            53.211195928753185
+        ],
+        "P": [
+            44.783715012722645,
+            52.95674300254453
+        ],
+        "N": [
+            44.27480916030534,
+            156.77353689567428
+        ]
+    },
+    "problem_choices": [
+        "0.38",
+        "0.42",
+        "0.92",
+        "2.40"
+    ],
+    "choices_precise_value": [
+        0.38,
+        0.42,
+        0.92,
+        2.4
+    ],
+    "problem_answer": 0.38,
+    "total_time": 5.704703,
+    "solution_predicate": "Equals(0.3846153846, CosOf(MeasureOf(Angle(M, N, P))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = NP, sin(\u2220PMN), MN, NP, MP \u22a5 NP, \u2220PMN, \u2220MNP, 39 = MN, MP\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : MP \u22a5 NP, sin(\u2220PMN)\nConclusions: NP / MN = sin(\u2220PMN)\n\nStep 3:\nTheorem: Evaluate\nPremises : 15 = NP, 39 = MN\nConclusions: 0.38 = NP / MN\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : MP, MN, NP\nConclusions: \u25b3MNP\n\nStep 5:\nTheorem: Substitution\nPremises : NP / MN = sin(\u2220PMN), 15 = NP, 39 = MN\nConclusions: 15 / 39 = sin(\u2220PMN)\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : \u2220MNP, MP \u22a5 NP, \u25b3MNP\nConclusions: NP / MN = cos(\u2220MNP)\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : \u2220PMN, MP \u22a5 NP, \u25b3MNP\nConclusions: NP / MN = sin(\u2220PMN)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : NP / MN = sin(\u2220PMN), 15 / 39 = sin(\u2220PMN)\nConclusions: 15 / 39 = NP / MN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.38 = NP / MN, 15 / 39 = NP / MN\nConclusions: 0.38 = 15 / 39\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.38 = 15 / 39, 15 / 39 = sin(\u2220PMN)\nConclusions: 0.38 = sin(\u2220PMN)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.38 = sin(\u2220PMN), NP / MN = sin(\u2220PMN)\nConclusions: 0.38 = NP / MN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : NP / MN = cos(\u2220MNP), 0.38 = NP / MN\nConclusions: 0.38 = cos(\u2220MNP)\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, M)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "Perpendicular(Line(M, P), Line(N, P))",
+        "Equals(LengthOf(Line(M, P)), 36.0)",
+        "Equals(LengthOf(Line(N, M)), 39.0)",
+        "Equals(LengthOf(Line(N, P)), 15.0)"
+    ],
+    "correct": true
+}

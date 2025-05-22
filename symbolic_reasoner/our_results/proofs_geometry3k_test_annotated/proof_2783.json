@@ -1,0 +1,77 @@
+{
+    "problem_id": "2783",
+    "solved": true,
+    "problem_text": "Find the length of \\widehat J K. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, J))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(A, J)), 15)",
+        "Equals(MeasureOf(Angle(J, C, K)), 105)",
+        "Find(LengthOf(Arc(J, K)))"
+    ],
+    "point_instances": [
+        "C",
+        "J",
+        "K",
+        "A"
+    ],
+    "line_instances": [
+        "AC",
+        "AJ",
+        "CJ",
+        "CK"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "C": [
+            208.38738738738738,
+            198.19819819819818
+        ],
+        "J": [
+            359.28828828828824,
+            197.74774774774772
+        ],
+        "K": [
+            169.19819819819818,
+            343.69369369369366
+        ],
+        "A": [
+            56.58558558558556,
+            198.19819819819818
+        ]
+    },
+    "problem_choices": [
+        "6.87",
+        "13.74",
+        "20.62",
+        "27.49"
+    ],
+    "choices_precise_value": [
+        6.87,
+        13.74,
+        20.62,
+        27.49
+    ],
+    "problem_answer": 13.74,
+    "total_time": 4.752541,
+    "solution_predicate": "Equals(13.7444678595, LengthOf(Arc(K, C, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = AJ, pi * (105 / 180) = \u2220KCJ, C on AJ, Arc(KCJ), 3.14 = pi, A on \u2299(C, radius_0_0), J on \u2299(C, radius_0_0)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on AJ\nConclusions: AJ = AC + CJ\n\nStep 3:\nTheorem: Arc Length Definition\nPremises : Arc(KCJ)\nConclusions: Arc(KCJ) = radius_0_0 * \u2220KCJ\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.83 = pi * (105 / 180)\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = AC\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : J on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CJ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : AJ = AC + CJ, 15 = AJ\nConclusions: 15 = AC + CJ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (105 / 180) = \u2220KCJ, 1.83 = pi * (105 / 180)\nConclusions: 1.83 = \u2220KCJ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CJ, radius_0_0 = AC\nConclusions: AC = CJ\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : AC = CJ, 15 = AC + CJ\nConclusions: 7.5 = CJ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 7.5 = CJ, radius_0_0 = CJ\nConclusions: 7.5 = radius_0_0\n\nStep 12:\nTheorem: Substitution\nPremises : 7.5 = radius_0_0, 1.83 = \u2220KCJ, Arc(KCJ) = radius_0_0 * \u2220KCJ\nConclusions: 1.83 * 7.5 = Arc(KCJ)\n\nStep 13:\nTheorem: Evaluate\nPremises : 1.83 * 7.5 = Arc(KCJ)\nConclusions: 13.74 = Arc(KCJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, J)",
+        "Line(C, J)",
+        "Line(C, K)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(C, Line(A, J))",
+        "PointLiesOnCircle(A, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(A, J)), 15.0)",
+        "Equals(MeasureOf(Angle(K, C, J)), Mul(pi, Div(105.0, 180.0)))"
+    ],
+    "correct": true
+}

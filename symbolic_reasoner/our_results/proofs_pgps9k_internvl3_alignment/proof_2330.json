@@ -1,0 +1,103 @@
+{
+    "problem_id": "2330",
+    "solved": true,
+    "problem_text": "Find RT.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 10)",
+        "Equals(LengthOf(Line(S, V)), 8)",
+        "Equals(LengthOf(Line(T, U)), 12)",
+        "Equals(MeasureOf(Angle(R, S, V)), MeasureOf(Angle(S, T, U)))",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(T, U)",
+        "Line(V, U)",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(V, Line(R, U))",
+        "Find(LengthOf(Line(R,T)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T",
+        "V",
+        "U"
+    ],
+    "line_instances": [
+        "RS",
+        "RT",
+        "ST",
+        "RV",
+        "RU",
+        "VU",
+        "TU",
+        "SV"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            45.058510638297875,
+            50.33142857142857
+        ],
+        "S": [
+            173.9468085106383,
+            50.93061224489795
+        ],
+        "T": [
+            238.6529255319149,
+            50.59357142857142
+        ],
+        "V": [
+            120.05623100303951,
+            138.41142857142856
+        ],
+        "U": [
+            157.77963525835867,
+            182.45142857142855
+        ]
+    },
+    "problem_choices": [
+        6.667,
+        9.6,
+        14.667,
+        15.0
+    ],
+    "choices_precise_value": [
+        6.667,
+        9.6,
+        14.667,
+        15.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 31.114896,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(R, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RTU, 8 = SV, \u2220VSR, 3.14 = pi, 12 = TU, \u2220UTS, 10 = RS, \u2220URS, S on RT, \u2220URT, \u2220RSV = \u2220STU, \u2220UTR, V on RU\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220VSR\nConclusions: \u2220VSR = 2 * pi - \u2220RSV\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220UTS\nConclusions: \u2220UTS = 2 * pi - \u2220STU\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220RTU, S on RT\nConclusions: \u2220RTU = \u2220STU\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220URT, S on RT\nConclusions: \u2220URS = \u2220URT\n\nStep 6:\nTheorem: Same Angle\nPremises : S on RT, \u2220UTR\nConclusions: \u2220UTR = \u2220UTS\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220URS, V on RU\nConclusions: \u2220URS = \u2220VRS\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220RSV = \u2220STU, 3.14 = pi, \u2220VSR = 2 * pi - \u2220RSV\nConclusions: \u2220VSR = 2 * 3.14 - \u2220STU\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220UTS = 2 * pi - \u2220STU\nConclusions: \u2220UTS = 2 * 3.14 - \u2220STU\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSV = \u2220STU, \u2220RTU = \u2220STU\nConclusions: \u2220RSV = \u2220RTU\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220URS = \u2220VRS, \u2220URS = \u2220URT\nConclusions: \u2220URT = \u2220VRS\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220UTS = 2 * 3.14 - \u2220STU, \u2220VSR = 2 * 3.14 - \u2220STU\nConclusions: \u2220UTS = \u2220VSR\n\nStep 13:\nTheorem: Parallel Lines Criteria by Corresponding Angles\nPremises : \u2220RSV = \u2220RTU\nConclusions: SV || TU\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220UTS = \u2220VSR, \u2220UTR = \u2220UTS\nConclusions: \u2220UTR = \u2220VSR\n\nStep 15:\nTheorem: Corresponding Angle Theorem\nPremises : SV || TU\nConclusions: \u2220RUT = \u2220RVS\n\nStep 16:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220UTR = \u2220VSR, \u2220RUT = \u2220RVS, \u2220URT = \u2220VRS\nConclusions: \u25b3RSV ~ \u25b3RTU\n\nStep 17:\nTheorem: Similar Definition\nPremises : \u25b3RSV ~ \u25b3RTU\nConclusions: RS / RT = SV / TU, \u2220UTR = \u2220VSR, \u2220URT = \u2220VRS\n\nStep 18:\nTheorem: Substitution\nPremises : 10 = RS, 12 = TU, 8 = SV, RS / RT = SV / TU\nConclusions: 8 / 12 = 10 / RT\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 8 / 12 = 10 / RT\nConclusions: 15 = RT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Line(R, V)",
+        "Line(R, U)",
+        "Line(V, U)",
+        "Line(T, U)",
+        "Line(S, V)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(T, U)",
+        "Line(V, U)",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(V, Line(R, U))",
+        "Equals(LengthOf(Line(R, S)), 10.0)",
+        "Equals(LengthOf(Line(S, V)), 8.0)",
+        "Equals(LengthOf(Line(T, U)), 12.0)",
+        "Equals(MeasureOf(Angle(R, S, V)), MeasureOf(Angle(S, T, U)))"
+    ],
+    "correct": true
+}

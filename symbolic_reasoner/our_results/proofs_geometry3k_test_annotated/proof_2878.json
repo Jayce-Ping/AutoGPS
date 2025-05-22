@@ -1,0 +1,68 @@
+{
+    "problem_id": "2878",
+    "solved": true,
+    "problem_text": "\\angle 1 and \\angle 2 form a linear pair and m \\angle 2 = 67. Find the measure of \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, D))",
+        "Equals(MeasureOf(Angle(D, B, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(angle 2), 67)",
+        "Find(MeasureOf(angle 1))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AD",
+        "BD",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            25.75,
+            126.0
+        ],
+        "B": [
+            152.0,
+            125.25
+        ],
+        "C": [
+            200.0,
+            12.25
+        ],
+        "D": [
+            283.75,
+            126.0
+        ]
+    },
+    "problem_choices": [
+        "67",
+        "113",
+        "123",
+        "133"
+    ],
+    "choices_precise_value": [
+        67.0,
+        113.0,
+        123.0,
+        133.0
+    ],
+    "problem_answer": 113.0,
+    "total_time": 2.929322,
+    "solution_predicate": "Equals(1.9722220548, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DBC, \u2220CBA, pi * (67 / 180) = \u2220DBC, 3.14 = pi\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220DBC, \u2220CBA\nConclusions: pi = \u2220CBA + \u2220DBC\n\nStep 3:\nTheorem: Substitution\nPremises : pi = \u2220CBA + \u2220DBC, 3.14 = pi, pi * (67 / 180) = \u2220DBC\nConclusions: 3.14 = pi * (67 / 180) + \u2220CBA\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (67 / 180) + \u2220CBA, pi = \u2220CBA + \u2220DBC, pi * (67 / 180) = \u2220DBC\nConclusions: 1.97 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(A, D))",
+        "Equals(MeasureOf(Angle(D, B, C)), Mul(pi, Div(67.0, 180.0)))"
+    ],
+    "correct": true
+}

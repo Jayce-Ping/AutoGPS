@@ -1,0 +1,113 @@
+{
+    "problem_id": "8746",
+    "solved": true,
+    "problem_text": "JKMN is a rectangle. If NQ = 2x+3 and QK = 5x-9, find QM.",
+    "logic_forms": [
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(J, Q)",
+        "Line(K, M)",
+        "Line(N, K)",
+        "Line(N, M)",
+        "Line(N, Q)",
+        "Line(Q, K)",
+        "Line(Q, M)",
+        "Perpendicular(Line(J, N), Line(J, K))",
+        "Perpendicular(Line(N, M), Line(K, M))",
+        "PointLiesOnLine(Q, Line(J, M))",
+        "PointLiesOnLine(Q, Line(N, K))",
+        "Rectangle(J,K,M,N)",
+        "Equals(LengthOf(Line(N,Q)),2x+3)",
+        "Equals(LengthOf(Line(Q,K)),5x-9)",
+        "Find(LengthOf(Line(Q,M)))"
+    ],
+    "point_instances": [
+        "J",
+        "N",
+        "M",
+        "K",
+        "Q"
+    ],
+    "line_instances": [
+        "NQ",
+        "NK",
+        "QK",
+        "JN",
+        "NM",
+        "MK",
+        "MQ",
+        "MJ",
+        "QJ",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            99.13696969696969,
+            63.89610389610389
+        ],
+        "N": [
+            99.176,
+            291.42857142857144
+        ],
+        "M": [
+            544.824,
+            291.42857142857144
+        ],
+        "K": [
+            544.6093333333332,
+            63.64285714285714
+        ],
+        "Q": [
+            322.0,
+            177.85714285714286
+        ]
+    },
+    "problem_choices": [
+        5.5,
+        11.0,
+        15.556,
+        22.0
+    ],
+    "choices_precise_value": [
+        5.5,
+        11.0,
+        15.556,
+        22.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 149.542062,
+    "solution_predicate": "Equals(11.0, LengthOf(Line(Q, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 + 2 * x = NQ, JK \u22a5 JN, Q on JM, Q on KN, 5 * x - 9 = KQ, Rectangle(J, K, M, N)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 JN\nConclusions: pi / 2 = \u2220NJK\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Q on JM\nConclusions: JM = JQ + MQ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : Q on KN\nConclusions: KN = KQ + NQ\n\nStep 5:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(J, K, M, N)\nConclusions: JK \u22a5 JN, JK \u22a5 KM\n\nStep 6:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, M, N)\nConclusions: Parallelogram(J, K, M, N)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : JK \u22a5 KM\nConclusions: pi / 2 = \u2220JKM\n\nStep 8:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Q on JM, Q on KN, Parallelogram(J, K, M, N)\nConclusions: KQ = NQ, JQ = MQ\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, K, M, N)\nConclusions: JK = MN\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, M, N)\nConclusions: \u2220KMN = \u2220NJK\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x - 9 = KQ, KQ = NQ\nConclusions: 5 * x - 9 = NQ\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : JM = JQ + MQ, JQ = MQ\nConclusions: JQ = 0.5 * JM\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220JKM, pi / 2 = \u2220NJK, \u2220KMN = \u2220NJK\nConclusions: \u2220JKM = \u2220KMN\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x - 9 = NQ, 3 + 2 * x = NQ\nConclusions: 3 + 2 * x = 5 * x - 9\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : JQ = 0.5 * JM, JQ = MQ\nConclusions: MQ = 0.5 * JM\n\nStep 16:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : JK = MN, \u2220JKM = \u2220KMN\nConclusions: \u25b3JKM \u2245 \u25b3NMK\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * x = 5 * x - 9, 3 + 2 * x = NQ, KN = KQ + NQ, KQ = NQ\nConclusions: 22 = KN\n\nStep 18:\nTheorem: Congruent Definition\nPremises : \u25b3JKM \u2245 \u25b3NMK\nConclusions: JM = KN, JK = MN\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 22 = KN, JM = KN\nConclusions: 22 = JM\n\nStep 20:\nTheorem: Evaluate\nPremises : 22 = JM\nConclusions: 11 = 0.5 * JM\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 11 = 0.5 * JM, MQ = 0.5 * JM\nConclusions: 11 = MQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, Q)",
+        "Line(N, K)",
+        "Line(Q, K)",
+        "Line(J, N)",
+        "Line(N, M)",
+        "Line(M, K)",
+        "Line(M, Q)",
+        "Line(M, J)",
+        "Line(Q, J)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(J, N)",
+        "Line(J, Q)",
+        "Line(K, M)",
+        "Line(N, K)",
+        "Line(N, M)",
+        "Line(N, Q)",
+        "Line(Q, K)",
+        "Line(Q, M)",
+        "Perpendicular(Line(J, N), Line(J, K))",
+        "Perpendicular(Line(N, M), Line(K, M))",
+        "PointLiesOnLine(Q, Line(J, M))",
+        "PointLiesOnLine(Q, Line(N, K))",
+        "Rectangle(J, K, M, N)",
+        "Equals(LengthOf(Line(N, Q)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(Q, K)), Sub(Mul(5.0, x), 9.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,69 @@
+{
+    "problem_id": "129",
+    "solved": true,
+    "problem_text": "Find YZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, Y)), 8)",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(X, Z)))",
+        "Equals(LengthOf(Line(X, Z)), 8)",
+        "Equals(MeasureOf(Angle(Y, X, Z)), 60)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Find(LengthOf(Line(Y,Z)))"
+    ],
+    "point_instances": [
+        "Z",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "XZ",
+        "ZY",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            233.4340659340659,
+            410.76000000000005
+        ],
+        "X": [
+            142.21153846153845,
+            71.8530612244898
+        ],
+        "Y": [
+            481.60714285714283,
+            162.06857142857143
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        7.0,
+        8.0,
+        9.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        7.0,
+        8.0,
+        9.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 11.331878,
+    "solution_predicate": "Equals(8.0, LengthOf(Line(Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: YZ, XY, XZ, 8 = XZ, 8 = XY, 3.14 = pi, pi * (60 / 180) = \u2220ZXY\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : XZ, YZ, XY\nConclusions: \u25b3XYZ\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (60 / 180) = \u2220ZXY\nConclusions: 1.05 = \u2220ZXY\n\nStep 4:\nTheorem: Law of Cosines\nPremises : \u25b3XYZ\nConclusions: (XY ** 2 + XZ ** 2) - YZ ** 2 = 2 * XY * XZ * cos(\u2220ZXY)\n\nStep 5:\nTheorem: Substitution\nPremises : (XY ** 2 + XZ ** 2) - YZ ** 2 = 2 * XY * XZ * cos(\u2220ZXY), 8 = XY, 8 = XZ, 1.05 = \u2220ZXY\nConclusions: 2 * 8 * 8 * cos(1.05) = (8 ** 2 + 8 ** 2) - YZ ** 2\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 2 * 8 * 8 * cos(1.05) = (8 ** 2 + 8 ** 2) - YZ ** 2\nConclusions: 8 = YZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "Line(X, Y)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Equals(LengthOf(Line(X, Y)), 8.0)",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(X, Z)))",
+        "Equals(LengthOf(Line(X, Z)), 8.0)",
+        "Equals(MeasureOf(Angle(Z, X, Y)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

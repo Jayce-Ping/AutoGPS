@@ -1,0 +1,163 @@
+{
+    "problem_id": "8887",
+    "solved": true,
+    "problem_text": "RP = 3.5 and JP = 9. Find PL.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, R)), LengthOf(Line(R, J)))",
+        "Equals(LengthOf(Line(K, S)), LengthOf(Line(S, L)))",
+        "Equals(LengthOf(Line(T, L)), LengthOf(Line(J, T)))",
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(J, S)",
+        "Line(J, T)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, P)",
+        "Line(K, R)",
+        "Line(K, S)",
+        "Line(K, T)",
+        "Line(P, L)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(R, J)",
+        "Line(R, L)",
+        "Line(R, P)",
+        "Line(S, L)",
+        "Line(T, L)",
+        "PointLiesOnLine(P, Line(J, S))",
+        "PointLiesOnLine(P, Line(K, T))",
+        "PointLiesOnLine(P, Line(R, L))",
+        "PointLiesOnLine(R, Line(K, J))",
+        "PointLiesOnLine(S, Line(K, L))",
+        "PointLiesOnLine(T, Line(J, L))",
+        "Equals(LengthOf(Line(R,P)),3.5)",
+        "Equals(LengthOf(Line(J,P)),9)",
+        "Find(LengthOf(Line(P,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "T",
+        "L",
+        "K",
+        "R",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "JT",
+        "JL",
+        "TL",
+        "JP",
+        "JS",
+        "PS",
+        "RP",
+        "RL",
+        "PL",
+        "KP",
+        "KT",
+        "PT",
+        "JR",
+        "JK",
+        "RK",
+        "KS",
+        "KL",
+        "SL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            93.61943319838056,
+            431.3504761904762
+        ],
+        "T": [
+            359.73765182186236,
+            277.3394285714285
+        ],
+        "L": [
+            627.4493927125507,
+            124.02571428571429
+        ],
+        "K": [
+            292.31174089068827,
+            66.24666666666667
+        ],
+        "R": [
+            195.70445344129556,
+            240.57999999999998
+        ],
+        "P": [
+            335.8348178137652,
+            202.62514285714283
+        ],
+        "S": [
+            451.165991902834,
+            94.14
+        ]
+    },
+    "problem_choices": [
+        3.5,
+        4.5,
+        7.0,
+        9.0
+    ],
+    "choices_precise_value": [
+        3.5,
+        4.5,
+        7.0,
+        9.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 185.302691,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(P, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JT = LT, 3.5 = PR, JL, JR = KR, P on LR, P on JS, P on KT, JK, KL, KS = LS\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.5 = PR\nConclusions: 7 = 2 * PR\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : JK, KL, JL\nConclusions: \u25b3JKL\n\nStep 4:\nTheorem: Centroid of Triangle\nPremises : JR = KR, JT = LT, P on LR, KS = LS, P on KT, P on JS, \u25b3JKL\nConclusions: IsCentroidOf(P, \u25b3JKL)\n\nStep 5:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(P, \u25b3JKL)\nConclusions: LP = 2 * PR, JR = KR, KS = LS\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : LP = 2 * PR, 7 = 2 * PR\nConclusions: 7 = LP\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, T)",
+        "Line(J, L)",
+        "Line(T, L)",
+        "Line(J, P)",
+        "Line(J, S)",
+        "Line(P, S)",
+        "Line(R, P)",
+        "Line(R, L)",
+        "Line(P, L)",
+        "Line(K, P)",
+        "Line(K, T)",
+        "Line(P, T)",
+        "Line(J, R)",
+        "Line(J, K)",
+        "Line(R, K)",
+        "Line(K, S)",
+        "Line(K, L)",
+        "Line(S, L)",
+        "Line(J, L)",
+        "Line(J, P)",
+        "Line(J, S)",
+        "Line(J, T)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Line(K, P)",
+        "Line(K, R)",
+        "Line(K, S)",
+        "Line(K, T)",
+        "Line(P, L)",
+        "Line(P, S)",
+        "Line(P, T)",
+        "Line(R, J)",
+        "Line(R, L)",
+        "Line(R, P)",
+        "Line(S, L)",
+        "Line(T, L)",
+        "PointLiesOnLine(P, Line(J, S))",
+        "PointLiesOnLine(P, Line(K, T))",
+        "PointLiesOnLine(P, Line(R, L))",
+        "PointLiesOnLine(R, Line(K, J))",
+        "PointLiesOnLine(S, Line(K, L))",
+        "PointLiesOnLine(T, Line(J, L))",
+        "Equals(LengthOf(Line(K, R)), LengthOf(Line(R, J)))",
+        "Equals(LengthOf(Line(K, S)), LengthOf(Line(S, L)))",
+        "Equals(LengthOf(Line(T, L)), LengthOf(Line(J, T)))",
+        "Equals(LengthOf(Line(R, P)), 3.5)",
+        "Equals(LengthOf(Line(J, P)), 9.0)"
+    ],
+    "correct": true
+}

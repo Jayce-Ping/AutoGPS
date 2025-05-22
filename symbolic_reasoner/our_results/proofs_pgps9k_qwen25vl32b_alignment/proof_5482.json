@@ -1,0 +1,71 @@
+{
+    "problem_id": "5482",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(B, A, C)), 60)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.916943521594686,
+            93.20398671096346
+        ],
+        "B": [
+            88.23990208078335,
+            12.045182724252493
+        ],
+        "C": [
+            234.31109022556393,
+            135.72952380952384
+        ]
+    },
+    "problem_choices": [
+        3.4641016151377544,
+        5.196152422706632,
+        8.660254037844386,
+        10.392304845413264
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        5.196152422706632,
+        8.660254037844386,
+        10.392304845413264
+    ],
+    "problem_answer": 8.660254037844386,
+    "total_time": 18.335947,
+    "solution_predicate": "Equals(10.3923048454, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, 12 = AC, BC, cos(\u2220BCA), pi * (60 / 180) = \u2220CAB, x = BC, \u2220CAB, 3.14 = pi, \u2220BCA, AC, AB \u22a5 BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BCA), AB \u22a5 BC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220CAB\nConclusions: 1.05 = \u2220CAB\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : \u2220BCA, AB \u22a5 BC, \u25b3ABC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 8:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 BC, \u25b3ABC, \u2220CAB\nConclusions: BC / AC = sin(\u2220CAB)\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Substitution\nPremises : x = BC, 12 = AC, BC / AC = cos(\u2220BCA)\nConclusions: x / 12 = cos(\u2220BCA)\n\nStep 11:\nTheorem: Substitution\nPremises : 1.05 = \u2220CAB, BC / AC = sin(\u2220CAB), 12 = AC, x = BC\nConclusions: sin(1.05) = x / 12\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (60 / 180) = \u2220CAB, pi / 2 = \u2220ABC\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220BCA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : x / 12 = cos(\u2220BCA), BC / AC = cos(\u2220BCA)\nConclusions: x / 12 = BC / AC\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220BCA\nConclusions: 0.52 = \u2220BCA\n\nStep 15:\nTheorem: Substitution\nPremises : 0.52 = \u2220BCA, x = BC, 12 = AC, BC / AC = cos(\u2220BCA)\nConclusions: cos(0.52) = x / 12\n\nStep 16:\nTheorem: Substitution\nPremises : BC / AC = cos(\u2220BCA), 0.52 = \u2220BCA, 12 = AC, x = BC\nConclusions: cos(0.52) = x / 12\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : cos(0.52) = x / 12, sin(1.05) = x / 12\nConclusions: cos(0.52) = sin(1.05)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : cos(0.52) = x / 12, cos(0.52) = sin(1.05)\nConclusions: sin(1.05) = x / 12\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : sin(1.05) = x / 12, x / 12 = BC / AC\nConclusions: sin(1.05) = BC / AC\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 12 = AC, sin(1.05) = BC / AC\nConclusions: 10.39 = BC\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 10.39 = BC, x = BC\nConclusions: 10.39 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, A), Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": false
+}

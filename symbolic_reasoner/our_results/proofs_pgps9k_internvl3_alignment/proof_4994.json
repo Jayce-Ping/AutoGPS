@@ -1,0 +1,67 @@
+{
+    "problem_id": "4994",
+    "solved": true,
+    "problem_text": "Find ST.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 12.5)",
+        "Equals(LengthOf(Line(T, R)), 6)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "Perpendicular(Line(T, S), Line(R, T))",
+        "Find(LengthOf(Line(S,T)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "ST",
+        "TR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            40.61156723225689,
+            66.30857142857143
+        ],
+        "S": [
+            327.33233383308345,
+            65.80173913043478
+        ],
+        "T": [
+            106.60536398467433,
+            185.76
+        ]
+    },
+    "problem_choices": [
+        8.485,
+        10.966,
+        12.5,
+        13.865
+    ],
+    "choices_precise_value": [
+        8.485,
+        10.966,
+        12.5,
+        13.865
+    ],
+    "problem_answer": 10.966,
+    "total_time": 11.920915,
+    "solution_predicate": "Equals(10.9658560997, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RT \u22a5 ST, 12.5 = RS, 6 = RT, RT, ST, RS\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : RS, RT, ST\nConclusions: \u25b3RST\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3RST, RT \u22a5 ST\nConclusions: ST = SqrtOf(RS ** 2 - RT ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : 12.5 = RS, 6 = RT, ST = SqrtOf(RS ** 2 - RT ** 2)\nConclusions: SqrtOf(12.5 ** 2 - 6 ** 2) = ST\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(12.5 ** 2 - 6 ** 2) = ST\nConclusions: 10.97 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(S, T)",
+        "Line(T, R)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(T, S)",
+        "Perpendicular(Line(T, S), Line(R, T))",
+        "Equals(LengthOf(Line(R, S)), 12.5)",
+        "Equals(LengthOf(Line(T, R)), 6.0)"
+    ],
+    "correct": true
+}

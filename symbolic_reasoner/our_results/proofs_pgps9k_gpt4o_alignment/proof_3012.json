@@ -1,0 +1,108 @@
+{
+    "problem_id": "3012",
+    "solved": true,
+    "problem_text": "Use \\odot P to find the value of x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(A, M)), MeasureOf(Arc(N, B)))",
+        "Equals(MeasureOf(Arc(A, M)), x)",
+        "Equals(MeasureOf(Arc(B, M)), 4x)",
+        "Equals(MeasureOf(Arc(N, B)), x)",
+        "Line(A, B)",
+        "Line(A, P)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(P, B)",
+        "Line(P, N)",
+        "PointLiesOnCircle(A, Circle(P))",
+        "PointLiesOnCircle(B, Circle(P))",
+        "PointLiesOnCircle(M, Circle(P))",
+        "PointLiesOnCircle(N, Circle(P))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(P, Line(M, N))",
+        "Circle(P)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "N",
+        "P",
+        "M",
+        "B"
+    ],
+    "line_instances": [
+        "AP",
+        "AB",
+        "PB",
+        "MP",
+        "MN",
+        "PN"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "A": [
+            72.66117216117216,
+            78.1511111111111
+        ],
+        "N": [
+            249.8945054945055,
+            115.58400000000002
+        ],
+        "P": [
+            155.6363096857623,
+            125.66267756674326
+        ],
+        "M": [
+            59.5521978021978,
+            135.89333333333335
+        ],
+        "B": [
+            239.33241758241758,
+            173.60000000000002
+        ]
+    },
+    "problem_choices": [
+        18.0,
+        22.5,
+        30.0,
+        36.0
+    ],
+    "choices_precise_value": [
+        18.0,
+        22.5,
+        30.0,
+        36.0
+    ],
+    "problem_answer": 36.0,
+    "total_time": 18.70046,
+    "solution_predicate": "Equals(36.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220NPA, P on AB, Arc(BPN), P on MN, pi * (x / 180) = Arc(BPN), pi * ((4 * x) / 180) = Arc(MPB), \u2220MPB, Arc(MPB), Arc(APM), \u2220APM, \u2220BPN, pi * (x / 180) = Arc(APM), 3.14 = pi\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BPN)\nConclusions: \u2220BPN = Arc(BPN)\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : P on AB, P on MN\nConclusions: \u2220MPB = \u2220NPA\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(MPB)\nConclusions: \u2220MPB = Arc(MPB)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(APM)\nConclusions: \u2220APM = Arc(APM)\n\nStep 6:\nTheorem: Circumference Split\nPremises : \u2220MPB, \u2220BPN, \u2220NPA, \u2220APM\nConclusions: 2 * pi = \u2220APM + \u2220BPN + \u2220MPB + \u2220NPA\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * x) / 180) = Arc(MPB)\nConclusions: 3.14 * ((4 * x) / 180) = Arc(MPB)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = Arc(BPN), \u2220BPN = Arc(BPN)\nConclusions: pi * (x / 180) = \u2220BPN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x) / 180) = Arc(MPB), \u2220MPB = Arc(MPB)\nConclusions: pi * ((4 * x) / 180) = \u2220MPB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = Arc(APM), \u2220APM = Arc(APM)\nConclusions: pi * (x / 180) = \u2220APM\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220APM + \u2220BPN + \u2220MPB + \u2220NPA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220APM + \u2220BPN + \u2220MPB + \u2220NPA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * x) / 180) = Arc(MPB), pi * ((4 * x) / 180) = Arc(MPB)\nConclusions: 3.14 * ((4 * x) / 180) = pi * ((4 * x) / 180)\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220BPN\nConclusions: 3.14 * (x / 180) = \u2220BPN\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x) / 180) = \u2220MPB, \u2220MPB = \u2220NPA\nConclusions: pi * ((4 * x) / 180) = \u2220NPA\n\nStep 15:\nTheorem: Substitution\nPremises : pi * ((4 * x) / 180) = \u2220MPB, 3.14 = pi\nConclusions: 3.14 * ((4 * x) / 180) = \u2220MPB\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220APM\nConclusions: 3.14 * (x / 180) = \u2220APM\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * x) / 180) = pi * ((4 * x) / 180), pi * ((4 * x) / 180) = \u2220NPA\nConclusions: 3.14 * ((4 * x) / 180) = \u2220NPA\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x) / 180) = \u2220NPA, 2 * 3.14 = \u2220APM + \u2220BPN + \u2220MPB + \u2220NPA, 3.14 * (x / 180) = \u2220BPN, 3.14 * ((4 * x) / 180) = \u2220MPB, 3.14 * (x / 180) = \u2220APM\nConclusions: 36 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, P)",
+        "Line(A, B)",
+        "Line(P, B)",
+        "Line(M, P)",
+        "Line(M, N)",
+        "Line(P, N)",
+        "Circle(P, radius_P)",
+        "Line(A, B)",
+        "Line(A, P)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(P, B)",
+        "Line(P, N)",
+        "PointLiesOnCircle(A, Circle(P, radius_P))",
+        "PointLiesOnCircle(B, Circle(P, radius_P))",
+        "PointLiesOnCircle(M, Circle(P, radius_P))",
+        "PointLiesOnCircle(N, Circle(P, radius_P))",
+        "PointLiesOnLine(P, Line(A, B))",
+        "PointLiesOnLine(P, Line(M, N))",
+        "Circle(P, radius_P)",
+        "Equals(MeasureOf(Arc(A, P, M)), MeasureOf(Arc(B, P, N)))",
+        "Equals(MeasureOf(Arc(A, P, M)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(M, P, B)), Mul(pi, Div(Mul(4.0, x), 180.0)))",
+        "Equals(MeasureOf(Arc(B, P, N)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

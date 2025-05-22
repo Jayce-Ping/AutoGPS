@@ -1,0 +1,171 @@
+{
+    "problem_id": "2709",
+    "solved": true,
+    "problem_text": "Circle J has a radius of 10 units, \\odot K has a radius of 8 units, and B C = 5.4 units. Find C K.",
+    "logic_forms": [
+        "PointLiesOnLine(J, Line(A, B))",
+        "PointLiesOnLine(J, Line(A, C))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(B, Line(J, C))",
+        "PointLiesOnLine(B, Line(J, K))",
+        "PointLiesOnLine(B, Line(J, D))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(J, K))",
+        "PointLiesOnLine(C, Line(J, D))",
+        "PointLiesOnLine(C, Line(B, K))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(K, Line(A, D))",
+        "PointLiesOnLine(K, Line(J, D))",
+        "PointLiesOnLine(K, Line(B, D))",
+        "PointLiesOnLine(K, Line(C, D))",
+        "PointLiesOnCircle(D, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(F, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(J, radius_1_0))",
+        "Equals(RadiusOf(Circle(J)), 10)",
+        "Equals(RadiusOf(Circle(K)), 8)",
+        "Equals(LengthOf(Line(B, C)), 5.4)",
+        "Find(LengthOf(Line(C, K)))"
+    ],
+    "point_instances": [
+        "B",
+        "K",
+        "D",
+        "C",
+        "A",
+        "J",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AJ",
+        "AB",
+        "AC",
+        "AK",
+        "AD",
+        "JB",
+        "JC",
+        "JK",
+        "JD",
+        "BC",
+        "BK",
+        "BD",
+        "CK",
+        "CD",
+        "KD"
+    ],
+    "circle_instances": [
+        "K",
+        "J"
+    ],
+    "point_positions": {
+        "B": [
+            392.6507936507936,
+            264.8306878306878
+        ],
+        "K": [
+            497.94179894179894,
+            306.10052910052906
+        ],
+        "D": [
+            602.1746031746031,
+            348.95767195767195
+        ],
+        "C": [
+            445.031746031746,
+            285.99470899470896
+        ],
+        "A": [
+            104.82010582010581,
+            150.015873015873
+        ],
+        "J": [
+            274.13227513227514,
+            218.26984126984127
+        ],
+        "E": [
+            396.3544973544973,
+            354.2486772486772
+        ],
+        "F": [
+            457.2010582010582,
+            203.45502645502643
+        ]
+    },
+    "problem_choices": [
+        "2.4",
+        "2.6",
+        "2.8",
+        "4"
+    ],
+    "choices_precise_value": [
+        2.4,
+        2.6,
+        2.8,
+        4.0
+    ],
+    "problem_answer": 2.6,
+    "total_time": 81.079361,
+    "solution_predicate": "Equals(2.6, LengthOf(Line(C, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BK, 8 = radius_0_0, B on \u2299(K, radius_0_0), 5.4 = BC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on BK\nConclusions: BK = BC + CK\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(K, radius_0_0)\nConclusions: radius_0_0 = BK\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 8 = radius_0_0, radius_0_0 = BK\nConclusions: 8 = BK\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 8 = BK, BK = BC + CK\nConclusions: 8 = BC + CK\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 8 = BC + CK, 5.4 = BC\nConclusions: 2.6 = CK\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, J)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, K)",
+        "Line(A, D)",
+        "Line(J, B)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "Line(J, D)",
+        "Line(B, C)",
+        "Line(B, K)",
+        "Line(B, D)",
+        "Line(C, K)",
+        "Line(C, D)",
+        "Line(K, D)",
+        "Circle(J, radius_1_0)",
+        "Circle(K, radius_0_0)",
+        "PointLiesOnLine(J, Line(A, B))",
+        "PointLiesOnLine(J, Line(A, C))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, D))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(A, D))",
+        "PointLiesOnLine(B, Line(J, C))",
+        "PointLiesOnLine(B, Line(J, K))",
+        "PointLiesOnLine(B, Line(J, D))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(J, K))",
+        "PointLiesOnLine(C, Line(J, D))",
+        "PointLiesOnLine(C, Line(B, K))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(K, Line(A, D))",
+        "PointLiesOnLine(K, Line(J, D))",
+        "PointLiesOnLine(K, Line(B, D))",
+        "PointLiesOnLine(K, Line(C, D))",
+        "PointLiesOnCircle(D, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(F, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(A, Circle(J, radius_1_0))",
+        "Equals(radius_1_0, 10.0)",
+        "Equals(radius_0_0, 8.0)",
+        "Equals(LengthOf(Line(B, C)), 5.4)"
+    ],
+    "correct": true
+}

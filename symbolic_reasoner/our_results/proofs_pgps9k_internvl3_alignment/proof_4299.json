@@ -1,0 +1,76 @@
+{
+    "problem_id": "4299",
+    "solved": true,
+    "problem_text": "What is the area of the shaded region?",
+    "logic_forms": [
+        "Equals(DiameterOf(Circle(C, 2)), 4)",
+        "Equals(DiameterOf(Circle(C, 3)), 6)",
+        "Equals(LengthOf(Line(A, B)), 4)",
+        "Find(Sub(AreaOf(Circle(C, 3)), AreaOf(Circle(C, 2))))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C, 2))",
+        "PointLiesOnCircle(B, Circle(C, 2))",
+        "PointLiesOnLine(C, Line(A, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [
+        "C",
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            62.81176470588235,
+            134.29294117647058
+        ],
+        "B": [
+            206.3342857142857,
+            134.435
+        ],
+        "C": [
+            133.68701124996616,
+            133.5198075366655
+        ]
+    },
+    "problem_choices": [
+        5.498,
+        9.425,
+        15.708,
+        25.133
+    ],
+    "choices_precise_value": [
+        5.498,
+        9.425,
+        15.708,
+        25.133
+    ],
+    "problem_answer": 15.708,
+    "total_time": 2.154671,
+    "solution_predicate": "Equals(15.707963268, Sub(AreaOf(Circle(C, 3.0)), AreaOf(Circle(C, 2.0))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Area(\u2299(C, 3)), Area(\u2299(C, 2)), 3.14 = pi\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, 3))\nConclusions: pi * 3 ** 2 = Area(\u2299(C, 3))\n\nStep 3:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(C, 2))\nConclusions: pi * 2 ** 2 = Area(\u2299(C, 2))\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 12.57 = pi * 2 ** 2, 28.27 = pi * 3 ** 2\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 12.57 = pi * 2 ** 2, pi * 2 ** 2 = Area(\u2299(C, 2))\nConclusions: 12.57 = Area(\u2299(C, 2))\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * 3 ** 2 = Area(\u2299(C, 3)), 28.27 = pi * 3 ** 2\nConclusions: 28.27 = Area(\u2299(C, 3))\n\nStep 7:\nTheorem: Evaluate\nPremises : 12.57 = Area(\u2299(C, 2)), 28.27 = Area(\u2299(C, 3))\nConclusions: 15.71 = Area(\u2299(C, 3)) - Area(\u2299(C, 2))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "PointLiesOnCircle(A, Circle(C, 2))",
+        "PointLiesOnCircle(B, Circle(C, 2))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "Equals(DiameterOf(Circle(C, 2.0)), 4.0)",
+        "Equals(DiameterOf(Circle(C, 3.0)), 6.0)",
+        "Equals(LengthOf(Line(A, B)), 4.0)"
+    ],
+    "correct": true
+}

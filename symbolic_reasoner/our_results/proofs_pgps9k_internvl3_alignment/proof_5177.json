@@ -1,0 +1,68 @@
+{
+    "problem_id": "5177",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 5)",
+        "Equals(MeasureOf(Angle(C, B, A)), 46)",
+        "Find(AreaOf(Sector(B, A, C)))",
+        "Line(A, B)",
+        "Line(B, C)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "BA",
+        "BC"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "B": [
+            125.39682539682539,
+            133.9206349206349
+        ],
+        "C": [
+            228.0,
+            117.14285714285714
+        ],
+        "A": [
+            183.6825,
+            48.50000000000001
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        27.4,
+        65.5,
+        78.5
+    ],
+    "choices_precise_value": [
+        10.0,
+        27.4,
+        65.5,
+        78.5
+    ],
+    "problem_answer": 27.4,
+    "total_time": 1.666907,
+    "solution_predicate": "Equals(10.035643199, AreaOf(Sector(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (46 / 180) = \u2220CBA, Sector(C, B, A), 5 = AB, A on \u2299(B, radius_B)\n\nStep 2:\nTheorem: Area formula of Sector(C, B, A)\nPremises : Sector(C, B, A)\nConclusions: Area(Sector(C, B, A)) = (radius_B ** 2 * \u2220CBA) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_B)\nConclusions: radius_B = AB\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 5 = AB, radius_B = AB\nConclusions: 5 = radius_B\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (46 / 180) = \u2220CBA, 5 = radius_B, Area(Sector(C, B, A)) = (radius_B ** 2 * \u2220CBA) / 2\nConclusions: (pi * (46 / 180) * 5 ** 2) / 2 = Area(Sector(C, B, A))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (46 / 180) * 5 ** 2) / 2 = Area(Sector(C, B, A))\nConclusions: 10.04 = Area(Sector(C, B, A))\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "Equals(LengthOf(Line(B, A)), 5.0)",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(46.0, 180.0)))"
+    ],
+    "correct": false
+}

@@ -1,0 +1,119 @@
+{
+    "problem_id": "6467",
+    "solved": true,
+    "problem_text": "AC and EB are diameters of \\odot R. What is m \\widehat CB?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, R, C)), 50)",
+        "Equals(MeasureOf(Angle(C, R, D)), 100)",
+        "Equals(MeasureOf(Angle(E, R, D)), 30)",
+        "Line(C, A)",
+        "Line(C, R)",
+        "Line(D, R)",
+        "Line(E, B)",
+        "Line(E, R)",
+        "Line(R, A)",
+        "Line(R, B)",
+        "PointLiesOnCircle(A, Circle(R))",
+        "PointLiesOnCircle(B, Circle(R))",
+        "PointLiesOnCircle(C, Circle(R))",
+        "PointLiesOnCircle(D, Circle(R))",
+        "PointLiesOnCircle(E, Circle(R))",
+        "PointLiesOnLine(R, Line(C, A))",
+        "PointLiesOnLine(R, Line(E, B))",
+        "IsDiameterOf(Line(A,C),Circle(R))",
+        "IsDiameterOf(Line(E,B),Circle(R))",
+        "Find(MeasureOf(Arc(C,B)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "E",
+        "R",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "ER",
+        "EB",
+        "RB",
+        "CR",
+        "CA",
+        "RA",
+        "DR"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "C": [
+            252.65792349726775,
+            52.36875
+        ],
+        "D": [
+            61.23087431693989,
+            68.6
+        ],
+        "E": [
+            38.002483854942874,
+            140.65227272727273
+        ],
+        "R": [
+            163.528673912786,
+            140.6309150492834
+        ],
+        "B": [
+            290.0409836065574,
+            141.11999999999998
+        ],
+        "A": [
+            75.50273224043715,
+            229.6875
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        50.0,
+        100.0,
+        130.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        50.0,
+        100.0,
+        130.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 10.627406,
+    "solution_predicate": "Equals(0.872664626, MeasureOf(Arc(B, R, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(BRC), pi * (50 / 180) = \u2220BRC\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BRC)\nConclusions: \u2220BRC = Arc(BRC)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BRC = Arc(BRC), pi * (50 / 180) = \u2220BRC\nConclusions: pi * (50 / 180) = Arc(BRC)\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (50 / 180) = Arc(BRC)\nConclusions: 0.87 = Arc(BRC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, R)",
+        "Line(E, B)",
+        "Line(R, B)",
+        "Line(C, R)",
+        "Line(C, A)",
+        "Line(R, A)",
+        "Line(D, R)",
+        "Circle(R, radius_R)",
+        "Line(C, A)",
+        "Line(C, R)",
+        "Line(D, R)",
+        "Line(E, B)",
+        "Line(E, R)",
+        "Line(R, A)",
+        "Line(R, B)",
+        "PointLiesOnCircle(A, Circle(R, radius_R))",
+        "PointLiesOnCircle(B, Circle(R, radius_R))",
+        "PointLiesOnCircle(C, Circle(R, radius_R))",
+        "PointLiesOnCircle(D, Circle(R, radius_R))",
+        "PointLiesOnCircle(E, Circle(R, radius_R))",
+        "PointLiesOnLine(R, Line(C, A))",
+        "PointLiesOnLine(R, Line(E, B))",
+        "IsDiameterOf(Line(A, C), Circle(R, radius_R))",
+        "IsDiameterOf(Line(E, B), Circle(R, radius_R))",
+        "Equals(MeasureOf(Angle(B, R, C)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, R, D)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, R, E)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

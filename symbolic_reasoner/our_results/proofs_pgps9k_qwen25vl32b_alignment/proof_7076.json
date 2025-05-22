@@ -1,0 +1,155 @@
+{
+    "problem_id": "7076",
+    "solved": true,
+    "problem_text": "Find m \\angle FEA.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 10\\sqrt{3})",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(F, C)))",
+        "Equals(MeasureOf(Angle(B, A, D)), 60)",
+        "Equals(MeasureOf(Angle(D, A, E)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(F, C, G)), 45)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, C), Line(G, E))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "Find(MeasureOf(Angle(F,E,A)))"
+    ],
+    "point_instances": [
+        "B",
+        "G",
+        "A",
+        "D",
+        "F",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BG",
+        "BC",
+        "GC",
+        "CD",
+        "CF",
+        "CA",
+        "DF",
+        "DA",
+        "FA",
+        "AE",
+        "EF",
+        "EG",
+        "FG",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            209.1260504201681,
+            37.84
+        ],
+        "G": [
+            331.47058823529414,
+            159.46857142857144
+        ],
+        "A": [
+            67.64705882352942,
+            284.5722448979592
+        ],
+        "D": [
+            208.8039215686275,
+            284.2504761904762
+        ],
+        "F": [
+            331.47058823529414,
+            283.8
+        ],
+        "C": [
+            457.29411764705884,
+            284.5722448979592
+        ],
+        "E": [
+            331.47058823529414,
+            437.86285714285714
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        45.0,
+        60.0,
+        150.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        150.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 174.155411,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(F, E, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, \u2220ABD = \u2220EAD, \u2220AFE, EF, \u2220EAF, BD, CF \u22a5 EF, 3.14 = pi, AE, D on AF, F on AC, pi * (60 / 180) = \u2220DAB, AD \u22a5 BD, AB, AF, F on EG, \u2220GFA, AF \u22a5 EF\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CF \u22a5 EF\nConclusions: pi / 2 = \u2220EFC\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220EAF, D on AF\nConclusions: \u2220EAD = \u2220EAF\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: pi / 2 = \u2220BDA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AD, BD, AB\nConclusions: \u25b3ABD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AE, AF, EF\nConclusions: \u25b3AEF\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : F on EG, F on AC\nConclusions: \u2220EFC = \u2220GFA\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220GFA, \u2220AFE\nConclusions: pi = \u2220AFE + \u2220GFA\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : AF \u22a5 EF\nConclusions: pi / 2 = \u2220AFE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = \u2220EAD, \u2220EAD = \u2220EAF\nConclusions: \u2220ABD = \u2220EAF\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, D)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ABD + \u2220BDA + \u2220DAB\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(F, E, A)\nPremises : \u25b3AEF\nConclusions: pi = \u2220AFE + \u2220EAF + \u2220FEA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AFE + \u2220GFA, 3.14 = pi\nConclusions: 3.14 = \u2220AFE + \u2220GFA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFC = \u2220GFA, pi / 2 = \u2220AFE, pi / 2 = \u2220EFC\nConclusions: \u2220AFE = \u2220GFA\n\nStep 15:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BDA, pi = \u2220ABD + \u2220BDA + \u2220DAB, 3.14 = pi, pi * (60 / 180) = \u2220DAB, \u2220ABD = \u2220EAF\nConclusions: 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220EAF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AFE + \u2220EAF + \u2220FEA\nConclusions: 3.14 = \u2220AFE + \u2220EAF + \u2220FEA\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : \u2220AFE = \u2220GFA, pi / 2 = \u2220AFE, 3.14 = \u2220AFE + \u2220EAF + \u2220FEA, 3.14 = 3.14 / 2 + pi * (60 / 180) + \u2220EAF, 3.14 = \u2220AFE + \u2220GFA\nConclusions: 1.05 = \u2220FEA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(G, C)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, A)",
+        "Line(D, F)",
+        "Line(D, A)",
+        "Line(F, A)",
+        "Line(A, E)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(B, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(F, C)",
+        "Line(F, E)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, C), Line(G, E))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(D, C))",
+        "PointLiesOnLine(F, Line(G, E))",
+        "PointLiesOnLine(G, Line(B, C))",
+        "Equals(LengthOf(Line(A, D)), Mul(10.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(F, C)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, A, D)), MeasureOf(Angle(A, B, D)))",
+        "Equals(MeasureOf(Angle(G, C, F)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,142 @@
+{
+    "problem_id": "7066",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(D, C, A)), 50)",
+        "Equals(MeasureOf(Angle(G, E, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(H, G, E)), 100)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, G)",
+        "Line(E, I)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Parallel(Line(B, D), Line(F, H))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(G, Line(E, I))",
+        "PointLiesOnLine(G, Line(F, H))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "FG",
+        "FH",
+        "GH",
+        "EG",
+        "EI",
+        "GI",
+        "AC",
+        "AE",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            270.5021645021645,
+            21.394285714285715
+        ],
+        "B": [
+            21.40909090909091,
+            103.91510204081634
+        ],
+        "C": [
+            200.21464646464648,
+            104.19809523809525
+        ],
+        "D": [
+            413.61174242424244,
+            104.29714285714286
+        ],
+        "E": [
+            157.0,
+            156.21224489795918
+        ],
+        "F": [
+            19.709956709956714,
+            247.22285714285715
+        ],
+        "G": [
+            172.97186147186147,
+            247.22285714285715
+        ],
+        "H": [
+            413.2294372294373,
+            247.22285714285715
+        ],
+        "I": [
+            183.16666666666669,
+            308.34938775510204
+        ]
+    },
+    "problem_choices": [
+        50.0,
+        80.0,
+        100.0,
+        130.0
+    ],
+    "choices_precise_value": [
+        50.0,
+        80.0,
+        100.0,
+        130.0
+    ],
+    "problem_answer": 130.0,
+    "total_time": 57.54635,
+    "solution_predicate": "Equals(2.2689280276, MeasureOf(Angle(G, E, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on AE, CE, \u2220DCA, \u2220FGI, CG, BD || FH, G on FH, pi * (100 / 180) = \u2220HGE, \u2220CGF, pi * (50 / 180) = \u2220DCA, \u2220BCG, \u2220CGE, \u2220IGH, \u2220GCA, G on EI, \u2220FGI, \u2220IGC, \u2220CGI, \u2220BCE, EG, C on BD, \u2220EGH, \u2220HGC, 3.14 = pi, \u2220ECG, \u2220ACB, \u2220GCD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220FGI\nConclusions: \u2220FGI = 2 * pi - \u2220IGF\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : BD || FH\nConclusions: \u2220BCG = \u2220HGC, \u2220CGF = \u2220GCD\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : G on FH, G on EI\nConclusions: \u2220FGI = \u2220HGE, \u2220EGH = \u2220IGF\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220CGE, \u2220IGC\nConclusions: pi = \u2220CGE + \u2220IGC\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220IGC, \u2220FGI, \u2220CGF\nConclusions: 2 * pi = \u2220CGF + \u2220FGI + \u2220IGC\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CE, CG, EG\nConclusions: \u25b3CEG\n\nStep 8:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220ACB = \u2220ECD, \u2220BCE = \u2220DCA\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220EGH, \u2220CGE, \u2220HGC\nConclusions: 2 * pi = \u2220CGE + \u2220EGH + \u2220HGC\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220IGH, \u2220CGI, \u2220HGC\nConclusions: 2 * pi = \u2220CGI + \u2220HGC + \u2220IGH\n\nStep 11:\nTheorem: Straight Angle\nPremises : \u2220GCA, \u2220ECG\nConclusions: pi = \u2220ECG + \u2220GCA\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220BCG, \u2220GCA, \u2220ACB\nConclusions: 2 * pi = \u2220ACB + \u2220BCG + \u2220GCA\n\nStep 13:\nTheorem: Circumference Split\nPremises : \u2220DCA, \u2220BCE, \u2220ECG, \u2220ACB, \u2220GCD\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECG + \u2220GCD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FGI = \u2220HGE, pi * (100 / 180) = \u2220HGE\nConclusions: pi * (100 / 180) = \u2220FGI\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CGE + \u2220IGC\nConclusions: 3.14 = \u2220CGE + \u2220IGC\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(G, E, C)\nPremises : \u25b3CEG\nConclusions: pi = \u2220CGE + \u2220ECG + \u2220GEC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCE = \u2220DCA, pi * (50 / 180) = \u2220DCA\nConclusions: pi * (50 / 180) = \u2220BCE\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220CGE + \u2220EGH + \u2220HGC, \u2220EGH = \u2220IGF\nConclusions: 2 * 3.14 = \u2220CGE + \u2220HGC + \u2220IGF\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220CGI + \u2220HGC + \u2220IGH\nConclusions: 2 * 3.14 = \u2220CGI + \u2220HGC + \u2220IGH\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ECG + \u2220GCA\nConclusions: 3.14 = \u2220ECG + \u2220GCA\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ACB = \u2220ECD, \u2220BCG = \u2220HGC, 2 * pi = \u2220ACB + \u2220BCG + \u2220GCA\nConclusions: 2 * 3.14 = \u2220ECD + \u2220GCA + \u2220HGC\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (100 / 180) = \u2220FGI, 2 * pi = \u2220CGF + \u2220FGI + \u2220IGC, \u2220CGF = \u2220GCD\nConclusions: 2 * 3.14 = pi * (100 / 180) + \u2220GCD + \u2220IGC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (100 / 180) = \u2220FGI, \u2220FGI = 2 * pi - \u2220IGF\nConclusions: pi * (100 / 180) = 2 * pi - \u2220IGF\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CGE + \u2220ECG + \u2220GEC\nConclusions: 3.14 = \u2220CGE + \u2220ECG + \u2220GEC\n\nStep 25:\nTheorem: Substitution\nPremises : pi * (50 / 180) = \u2220BCE, 3.14 = pi, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECG + \u2220GCD, \u2220ACB = \u2220ECD, pi * (50 / 180) = \u2220DCA\nConclusions: 2 * 3.14 = 3.14 * (50 / 180) + pi * (50 / 180) + \u2220ECD + \u2220ECG + \u2220GCD\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220CGI + \u2220HGC + \u2220IGH, 2 * pi = \u2220CGI + \u2220HGC + \u2220IGH\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ECD + \u2220GCA + \u2220HGC, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220ECD + \u2220GCA + \u2220HGC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220CGE + \u2220HGC + \u2220IGF, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220CGE + \u2220HGC + \u2220IGF\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 3.14 * (50 / 180) + pi * (50 / 180) + \u2220ECD + \u2220ECG + \u2220GCD, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = 3.14 * (50 / 180) + pi * (50 / 180) + \u2220ECD + \u2220ECG + \u2220GCD\n\nStep 30:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220CGE + \u2220HGC + \u2220IGF, 2 * 3.14 = pi * (100 / 180) + \u2220GCD + \u2220IGC, 2 * pi = \u2220ECD + \u2220GCA + \u2220HGC, 3.14 = \u2220CGE + \u2220IGC, 2 * 3.14 = 3.14 * (50 / 180) + pi * (50 / 180) + \u2220ECD + \u2220ECG + \u2220GCD, 2 * pi = 3.14 * (50 / 180) + pi * (50 / 180) + \u2220ECD + \u2220ECG + \u2220GCD, 3.14 = \u2220CGE + \u2220ECG + \u2220GEC, 3.14 = \u2220ECG + \u2220GCA, pi * (100 / 180) = 2 * pi - \u2220IGF\nConclusions: 2.27 = \u2220GEC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(E, G)",
+        "Line(E, I)",
+        "Line(G, I)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, G)",
+        "Line(E, I)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Parallel(Line(B, D), Line(F, H))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(G, Line(E, I))",
+        "PointLiesOnLine(G, Line(F, H))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(50.0, 180.0)))",
+        "Equals(MeasureOf(Angle(H, G, E)), Mul(pi, Div(100.0, 180.0)))"
+    ],
+    "correct": true
+}

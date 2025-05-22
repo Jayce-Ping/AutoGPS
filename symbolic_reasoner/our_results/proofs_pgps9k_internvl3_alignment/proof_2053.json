@@ -1,0 +1,104 @@
+{
+    "problem_id": "2053",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, B)), 3)",
+        "Equals(MeasureOf(Angle(A, B, D)), 130)",
+        "Equals(MeasureOf(Angle(A, B, E)), MeasureOf(Angle(C, B, D)))",
+        "Find(Sub(AreaOf(Circle(B)), AreaOf(Sector(B, A, D))))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnCircle(D, Circle(B))",
+        "PointLiesOnCircle(E, Circle(B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "EB",
+        "ED",
+        "BD"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            24.94372881355932,
+            140.70857142857142
+        ],
+        "B": [
+            105.44144144144143,
+            103.60360360360359
+        ],
+        "C": [
+            186.83050847457628,
+            66.49714285714285
+        ],
+        "D": [
+            186.17062146892656,
+            142.39542857142857
+        ],
+        "E": [
+            25.364406779661017,
+            66.3869387755102
+        ]
+    },
+    "problem_choices": [
+        3.9,
+        5.2,
+        7.9,
+        20.4
+    ],
+    "choices_precise_value": [
+        3.9,
+        5.2,
+        7.9,
+        20.4
+    ],
+    "problem_answer": 3.9,
+    "total_time": 19.651924,
+    "solution_predicate": "Equals(18.0641577582, Sub(AreaOf(Circle(B, radius_B)), AreaOf(Sector(A, B, D))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: E on \u2299(B, radius_B), Area(\u2299(B, radius_B)), pi * (130 / 180) = \u2220ABD, 3.14 = pi, 3 = BE, Sector(A, B, D)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(B, radius_B)\nConclusions: radius_B = BE\n\nStep 3:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, radius_B))\nConclusions: pi * radius_B ** 2 = Area(\u2299(B, radius_B))\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 10.21 = (pi * (130 / 180) * 3 ** 2) / 2\n\nStep 5:\nTheorem: Area formula of Sector(A, B, D)\nPremises : Sector(A, B, D)\nConclusions: Area(Sector(A, B, D)) = (radius_B ** 2 * \u2220ABD) / 2\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3 = BE, radius_B = BE\nConclusions: 3 = radius_B\n\nStep 7:\nTheorem: Substitution\nPremises : Area(Sector(A, B, D)) = (radius_B ** 2 * \u2220ABD) / 2, 3 = radius_B, pi * (130 / 180) = \u2220ABD\nConclusions: (pi * (130 / 180) * 3 ** 2) / 2 = Area(Sector(A, B, D))\n\nStep 8:\nTheorem: Substitution\nPremises : 3 = radius_B, pi * radius_B ** 2 = Area(\u2299(B, radius_B)), 3.14 = pi\nConclusions: 3.14 * 3 ** 2 = Area(\u2299(B, radius_B))\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 10.21 = (pi * (130 / 180) * 3 ** 2) / 2, (pi * (130 / 180) * 3 ** 2) / 2 = Area(Sector(A, B, D))\nConclusions: 10.21 = Area(Sector(A, B, D))\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 3.14 * 3 ** 2 = Area(\u2299(B, radius_B))\nConclusions: 28.27 = Area(\u2299(B, radius_B))\n\nStep 11:\nTheorem: Evaluate\nPremises : 10.21 = Area(Sector(A, B, D)), 28.27 = Area(\u2299(B, radius_B))\nConclusions: 18.06 = Area(\u2299(B, radius_B)) - Area(Sector(A, B, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnCircle(D, Circle(B, radius_B))",
+        "PointLiesOnCircle(E, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "Equals(LengthOf(Line(E, B)), 3.0)",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(130.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, B, A)), MeasureOf(Angle(D, B, C)))"
+    ],
+    "correct": false
+}

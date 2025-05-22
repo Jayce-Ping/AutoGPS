@@ -1,0 +1,78 @@
+{
+    "problem_id": "6405",
+    "solved": true,
+    "problem_text": "Find m \\angle M.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(J, K, L)), x+10)",
+        "Equals(MeasureOf(Angle(K, J, M)), 3x-6)",
+        "Equals(MeasureOf(Angle(L, M, J)), 2x-8)",
+        "Equals(MeasureOf(Angle(M, L, K)), x)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Find(MeasureOf(Angle(M)))"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "M",
+        "J"
+    ],
+    "line_instances": [
+        "KL",
+        "LM",
+        "MJ",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            61.74186046511628,
+            287.12
+        ],
+        "L": [
+            471.2813953488372,
+            287.12
+        ],
+        "M": [
+            347.5755813953488,
+            82.47771428571428
+        ],
+        "J": [
+            183.22674418604652,
+            123.05142857142857
+        ]
+    },
+    "problem_choices": [
+        62.0,
+        71.0,
+        96.0,
+        106.0
+    ],
+    "choices_precise_value": [
+        62.0,
+        71.0,
+        96.0,
+        106.0
+    ],
+    "problem_answer": 96.0,
+    "total_time": 6.515235,
+    "solution_predicate": "Equals(1.6755160819, MeasureOf(Angle(J, M, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: KL, pi * (x / 180) = \u2220MLK, JK, pi * ((2 * x - 8) / 180) = \u2220JML, pi * ((3 * x - 6) / 180) = \u2220KJM, pi * ((10 + x) / 180) = \u2220LKJ, JM, 3.14 = pi, LM\n\nStep 2:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220MLK, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220MLK\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((10 + x) / 180) = \u2220LKJ, 3.14 = pi\nConclusions: 3.14 * ((10 + x) / 180) = \u2220LKJ\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((3 * x - 6) / 180) = \u2220KJM, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 6) / 180) = \u2220KJM\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((2 * x - 8) / 180) = \u2220JML, 3.14 = pi\nConclusions: 3.14 * ((2 * x - 8) / 180) = \u2220JML\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : KL, JM, JK, LM\nConclusions: Quadrilateral(J, K, L, M)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(M, L, K, J)\nPremises : Quadrilateral(J, K, L, M)\nConclusions: 2 * pi = \u2220JML + \u2220KJM + \u2220LKJ + \u2220MLK\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220JML + \u2220KJM + \u2220LKJ + \u2220MLK, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220JML + \u2220KJM + \u2220LKJ + \u2220MLK\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220JML + \u2220KJM + \u2220LKJ + \u2220MLK, 3.14 * ((3 * x - 6) / 180) = \u2220KJM, 3.14 * (x / 180) = \u2220MLK, 3.14 * ((10 + x) / 180) = \u2220LKJ, 3.14 * ((2 * x - 8) / 180) = \u2220JML\nConclusions: 1.68 = \u2220JML\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(L, M)",
+        "Line(M, J)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Line(K, L)",
+        "Line(M, L)",
+        "Equals(MeasureOf(Angle(L, K, J)), Mul(pi, Div(Add(x, 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(K, J, M)), Mul(pi, Div(Sub(Mul(3.0, x), 6.0), 180.0)))",
+        "Equals(MeasureOf(Angle(J, M, L)), Mul(pi, Div(Sub(Mul(2.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(M, L, K)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

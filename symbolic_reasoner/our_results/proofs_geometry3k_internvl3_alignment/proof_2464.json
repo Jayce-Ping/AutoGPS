@@ -1,0 +1,103 @@
+{
+    "problem_id": "2464",
+    "solved": true,
+    "problem_text": "m is the perpendicular bisector of X Z, W Z = 14.9. Find W X.",
+    "logic_forms": [
+        "PointLiesOnLine(W, Line(A, Y))",
+        "PointLiesOnLine(W, Line(A, B))",
+        "PointLiesOnLine(Y, Line(A, B))",
+        "PointLiesOnLine(Y, Line(W, B))",
+        "PointLiesOnLine(Y, Line(X, Z))",
+        "Perpendicular(Line(W, Y), Line(X, Y))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "IsPerpendicularBisectorOf(Line(m),Line(X,Z))",
+        "Equals(LengthOf(Line(W,Z)),14.9)",
+        "Find(LengthOf(Line(W,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "Y",
+        "Z",
+        "X",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "AW",
+        "AY",
+        "AB",
+        "WY",
+        "WB",
+        "YB",
+        "XY",
+        "XZ",
+        "YZ",
+        "XW",
+        "WZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            189.4835164835165,
+            281.86813186813185
+        ],
+        "Y": [
+            316.4065934065934,
+            282.4175824175824
+        ],
+        "Z": [
+            316.9560439560439,
+            460.4395604395604
+        ],
+        "X": [
+            316.4065934065934,
+            104.94505494505493
+        ],
+        "A": [
+            68.60439560439559,
+            282.4175824175824
+        ],
+        "B": [
+            407.065934065934,
+            282.4175824175824
+        ]
+    },
+    "problem_choices": [
+        "7.45",
+        "14.9",
+        "22.4",
+        "25.3"
+    ],
+    "choices_precise_value": [
+        7.45,
+        14.9,
+        22.4,
+        25.3
+    ],
+    "problem_answer": 14.9,
+    "total_time": 47.850576,
+    "solution_predicate": "Equals(14.9, LengthOf(Line(W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WY \u22a5 YZ, XY = YZ, 14.9 = WZ, W on AY, \u2220XYA, AY \u22a5 XY\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : WY \u22a5 YZ\nConclusions: pi / 2 = \u2220WYZ\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220XYA, W on AY\nConclusions: \u2220XYA = \u2220XYW\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AY \u22a5 XY\nConclusions: pi / 2 = \u2220XYA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220WYZ, pi / 2 = \u2220XYA, \u2220XYA = \u2220XYW\nConclusions: \u2220WYZ = \u2220XYW\n\nStep 6:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220WYZ = \u2220XYW, XY = YZ\nConclusions: \u25b3WXY \u2245 \u25b3WZY\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3WZY\nConclusions: WX = WZ, XY = YZ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : WX = WZ, 14.9 = WZ\nConclusions: 14.9 = WX\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, W)",
+        "Line(A, Y)",
+        "Line(A, B)",
+        "Line(W, Y)",
+        "Line(W, B)",
+        "Line(Y, B)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Line(X, W)",
+        "Line(W, Z)",
+        "PointLiesOnLine(W, Line(A, Y))",
+        "PointLiesOnLine(W, Line(A, B))",
+        "PointLiesOnLine(Y, Line(A, B))",
+        "PointLiesOnLine(Y, Line(W, B))",
+        "PointLiesOnLine(Y, Line(X, Z))",
+        "Perpendicular(Line(W, Y), Line(X, Y))",
+        "Equals(LengthOf(Line(X, Y)), LengthOf(Line(Y, Z)))",
+        "Equals(LengthOf(Line(W, Z)), 14.9)"
+    ],
+    "correct": true
+}

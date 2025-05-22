@@ -1,0 +1,91 @@
+{
+    "problem_id": "2470",
+    "solved": true,
+    "problem_text": "In rhombus L M P Q, m \\angle Q L M = 2 x^ { 2 } - 10, m \\angle Q P M = 8 x, and M P = 10. Find the perimeter of L M P Q.",
+    "logic_forms": [
+        "PointLiesOnLine(R, Line(L, P))",
+        "PointLiesOnLine(R, Line(Q, M))",
+        "Rhombus(L, M, P, Q)",
+        "Equals(MeasureOf(Angle(Q, L, M)), 2x^{2}-10)",
+        "Equals(MeasureOf(Angle(Q, P, M)), 8x)",
+        "Equals(LengthOf(Line(M, P)), 10)",
+        "Find(PerimeterOf(Rhombus(L, M, P, Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "R",
+        "L",
+        "Q",
+        "M"
+    ],
+    "line_instances": [
+        "LM",
+        "MP",
+        "LR",
+        "LP",
+        "RP",
+        "LQ",
+        "QR",
+        "QM",
+        "RM",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            295.95238095238096,
+            32.33333333333333
+        ],
+        "R": [
+            159.76190476190476,
+            81.14285714285714
+        ],
+        "L": [
+            22.38095238095238,
+            129.95238095238093
+        ],
+        "Q": [
+            142.38095238095238,
+            32.80952380952381
+        ],
+        "M": [
+            176.9047619047619,
+            130.9047619047619
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "40",
+        "70",
+        "140"
+    ],
+    "choices_precise_value": [
+        10.0,
+        40.0,
+        70.0,
+        140.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 80.564347,
+    "solution_predicate": "Equals(40.0, PerimeterOf(Rhombus(L, M, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(L, M, P, Q), 10 = MP\n\nStep 2:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(L, M, P, Q)\nConclusions: MP = PQ\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Rhombus(L, M, P, Q)\nConclusions: Perimeter(Rhombus(L, M, P, Q)) = 4 * LM\n\nStep 4:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(L, M, P, Q)\nConclusions: Parallelogram(L, M, P, Q)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 10 = MP, MP = PQ\nConclusions: 10 = PQ\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(L, M, P, Q)\nConclusions: LM = PQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 10 = PQ, LM = PQ\nConclusions: 10 = LM\n\nStep 8:\nTheorem: Evaluate\nPremises : 10 = LM\nConclusions: 40 = 4 * LM\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 40 = 4 * LM, Perimeter(Rhombus(L, M, P, Q)) = 4 * LM\nConclusions: 40 = Perimeter(Rhombus(L, M, P, Q))\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, M)",
+        "Line(M, P)",
+        "Line(L, R)",
+        "Line(L, P)",
+        "Line(R, P)",
+        "Line(L, Q)",
+        "Line(Q, R)",
+        "Line(Q, M)",
+        "Line(R, M)",
+        "Line(Q, P)",
+        "PointLiesOnLine(R, Line(L, P))",
+        "PointLiesOnLine(R, Line(Q, M))",
+        "Rhombus(L, M, P, Q)",
+        "Equals(MeasureOf(Angle(M, L, Q)), Mul(pi, Div(Sub(Mul(2.0, Pow(x, 2.0)), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, P, M)), Mul(pi, Div(Mul(8.0, x), 180.0)))",
+        "Equals(LengthOf(Line(M, P)), 10.0)"
+    ],
+    "correct": true
+}

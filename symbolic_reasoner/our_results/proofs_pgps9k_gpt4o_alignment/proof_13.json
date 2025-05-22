@@ -1,0 +1,132 @@
+{
+    "problem_id": "13",
+    "solved": true,
+    "problem_text": "In \\triangle QRS, T, U, and B are midpoints. What is the length of UB?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, T)), 30)",
+        "Equals(LengthOf(Line(R, S)), 40)",
+        "Equals(LengthOf(Line(S, Q)), 50)",
+        "Find(LengthOf(Line(U, B)))",
+        "IsMidpointOf(B, Line(R, S))",
+        "IsMidpointOf(T, Line(Q, S))",
+        "IsMidpointOf(U, Line(Q, R))",
+        "Line(B, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, U)",
+        "Line(R, B)",
+        "Line(R, S)",
+        "Line(T, B)",
+        "Line(T, S)",
+        "Line(U, B)",
+        "Line(U, R)",
+        "Line(U, T)",
+        "PointLiesOnLine(B, Line(R, S))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(U, Line(Q, R))",
+        "Triangle(Q, R, S)"
+    ],
+    "point_instances": [
+        "Q",
+        "U",
+        "R",
+        "T",
+        "B",
+        "S"
+    ],
+    "line_instances": [
+        "QU",
+        "QR",
+        "UR",
+        "RB",
+        "RS",
+        "BS",
+        "ST",
+        "SQ",
+        "TQ",
+        "UB",
+        "BT",
+        "TU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            84.89375,
+            60.621428571428574
+        ],
+        "U": [
+            253.8,
+            60.91428571428572
+        ],
+        "R": [
+            421.825,
+            60.91428571428572
+        ],
+        "T": [
+            204.74375,
+            196.50714285714287
+        ],
+        "B": [
+            371.59375,
+            196.50714285714287
+        ],
+        "S": [
+            323.83000000000004,
+            331.51428571428573
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        30.0,
+        40.0,
+        80.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        30.0,
+        40.0,
+        80.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 164.31005,
+    "solution_predicate": "Equals(25.0, LengthOf(Line(U, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IsMidpointOf(U, QR), 30 = BT, ST, 40 = RS, \u2220BSQ, \u2220RSQ, IsMidpointOf(T, QS), B on RS, T on QS, BT, \u2220TQR, \u2220SQR, BS, U on QR, IsMidpointOf(B, RS), 50 = QS, \u25b3QRS\n\nStep 2:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(U, QR)\nConclusions: QU = RU\n\nStep 3:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(T, QS)\nConclusions: QT = ST\n\nStep 4:\nTheorem: Same Angle\nPremises : B on RS, \u2220RSQ\nConclusions: \u2220BSQ = \u2220RSQ\n\nStep 5:\nTheorem: Line Segment Split\nPremises : B on RS\nConclusions: RS = BR + BS\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220RSQ, T on QS\nConclusions: \u2220RSQ = \u2220RST\n\nStep 7:\nTheorem: Same Angle\nPremises : T on QS, \u2220BSQ\nConclusions: \u2220BSQ = \u2220BST\n\nStep 8:\nTheorem: Line Segment Split\nPremises : T on QS\nConclusions: QS = QT + ST\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220SQR, T on QS\nConclusions: \u2220SQR = \u2220TQR\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BS, ST, BT\nConclusions: \u25b3BST\n\nStep 11:\nTheorem: Line Segment Split\nPremises : U on QR\nConclusions: QR = QU + RU\n\nStep 12:\nTheorem: Same Angle\nPremises : U on QR, \u2220TQR\nConclusions: \u2220TQR = \u2220TQU\n\nStep 13:\nTheorem: Point is middle point of line\nPremises : IsMidpointOf(B, RS)\nConclusions: BR = BS\n\nStep 14:\nTheorem: Law of Cosines\nPremises : \u25b3QRS\nConclusions: (QS ** 2 + RS ** 2) - QR ** 2 = 2 * QS * RS * cos(\u2220RSQ)\n\nStep 15:\nTheorem: Law of Sines\nPremises : \u25b3QRS\nConclusions: QR / sin(\u2220RSQ) = RS / sin(\u2220SQR)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 40 = RS, RS = BR + BS\nConclusions: 40 = BR + BS\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220RST, \u2220BSQ = \u2220RSQ\nConclusions: \u2220BSQ = \u2220RST\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : QS = QT + ST, 50 = QS\nConclusions: 50 = QT + ST\n\nStep 19:\nTheorem: Law of Cosines\nPremises : \u25b3BST\nConclusions: (BT ** 2 + ST ** 2) - BS ** 2 = 2 * BT * ST * cos(\u2220STB), (BS ** 2 + ST ** 2) - BT ** 2 = 2 * BS * ST * cos(\u2220BST)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TQR = \u2220TQU, \u2220SQR = \u2220TQR\nConclusions: \u2220SQR = \u2220TQU\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 40 = BR + BS, BR = BS\nConclusions: 20 = BR\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BSQ = \u2220BST, \u2220BSQ = \u2220RST\nConclusions: \u2220BST = \u2220RST\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 50 = QT + ST, QT = ST\nConclusions: 25 = QT\n\nStep 24:\nTheorem: Substitution\nPremises : (BT ** 2 + ST ** 2) - BS ** 2 = 2 * BT * ST * cos(\u2220STB), 30 = BT\nConclusions: (30 ** 2 + ST ** 2) - BS ** 2 = 2 * 30 * ST * cos(\u2220STB)\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 20 = BR, BR = BS\nConclusions: 20 = BS\n\nStep 26:\nTheorem: Substitution\nPremises : \u2220BST = \u2220RST, 30 = BT, (BS ** 2 + ST ** 2) - BT ** 2 = 2 * BS * ST * cos(\u2220BST)\nConclusions: (BS ** 2 + ST ** 2) - 30 ** 2 = 2 * BS * ST * cos(\u2220RST)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 25 = QT, QT = ST\nConclusions: 25 = ST\n\nStep 28:\nTheorem: Substitution\nPremises : (BS ** 2 + ST ** 2) - 30 ** 2 = 2 * BS * ST * cos(\u2220RST), 25 = ST, 20 = BS\nConclusions: (20 ** 2 + 25 ** 2) - 30 ** 2 = 2 * 20 * 25 * cos(\u2220RST)\n\nStep 29:\nTheorem: Substitution\nPremises : (30 ** 2 + ST ** 2) - BS ** 2 = 2 * 30 * ST * cos(\u2220STB), 25 = ST, 20 = BS\nConclusions: (25 ** 2 + 30 ** 2) - 20 ** 2 = 2 * 25 * 30 * cos(\u2220STB)\n\nStep 30:\nTheorem: Solve Univariate Equation\nPremises : (20 ** 2 + 25 ** 2) - 30 ** 2 = 2 * 20 * 25 * cos(\u2220RST)\nConclusions: 1.45 = \u2220RST\n\nStep 31:\nTheorem: Solve Univariate Equation\nPremises : (25 ** 2 + 30 ** 2) - 20 ** 2 = 2 * 25 * 30 * cos(\u2220STB)\nConclusions: 0.72 = \u2220STB\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSQ = \u2220RST, 1.45 = \u2220RST\nConclusions: 1.45 = \u2220RSQ\n\nStep 33:\nTheorem: Evaluate\nPremises : 50 = QS, 40 = RS, 1.45 = \u2220RSQ\nConclusions: 500 = 2 * QS * RS * cos(\u2220RSQ)\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 500 = 2 * QS * RS * cos(\u2220RSQ), (QS ** 2 + RS ** 2) - QR ** 2 = 2 * QS * RS * cos(\u2220RSQ)\nConclusions: 500 = (QS ** 2 + RS ** 2) - QR ** 2\n\nStep 35:\nTheorem: Substitution\nPremises : 50 = QS, 500 = (QS ** 2 + RS ** 2) - QR ** 2, 40 = RS\nConclusions: 500 = (40 ** 2 + 50 ** 2) - QR ** 2\n\nStep 36:\nTheorem: Solve Univariate Equation\nPremises : 500 = (40 ** 2 + 50 ** 2) - QR ** 2\nConclusions: 60 = QR\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : QR = QU + RU, 60 = QR\nConclusions: 60 = QU + RU\n\nStep 38:\nTheorem: Evaluate\nPremises : 60 = QR, 1.45 = \u2220RSQ\nConclusions: 60.47 = QR / sin(\u2220RSQ)\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 60 = QU + RU, QU = RU\nConclusions: 30 = QU\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 60.47 = QR / sin(\u2220RSQ), QR / sin(\u2220RSQ) = RS / sin(\u2220SQR)\nConclusions: 60.47 = RS / sin(\u2220SQR)\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : QU = RU, 30 = QU\nConclusions: 30 = RU\n\nStep 42:\nTheorem: Substitution\nPremises : 60.47 = RS / sin(\u2220SQR), \u2220SQR = \u2220TQU, 40 = RS\nConclusions: 60.47 = 40 / sin(\u2220TQU)\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 30 = RU, 30 = BT, QU = RU\nConclusions: BT = QU\n\nStep 44:\nTheorem: Solve Univariate Equation\nPremises : 60.47 = 40 / sin(\u2220TQU)\nConclusions: 0.72 = \u2220TQU\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SQR = \u2220TQU, 0.72 = \u2220TQU\nConclusions: 0.72 = \u2220SQR\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 0.72 = \u2220STB, 0.72 = \u2220SQR\nConclusions: \u2220SQR = \u2220STB\n\nStep 47:\nTheorem: Parallel Lines Criteria by Corresponding Angles\nPremises : \u2220SQR = \u2220STB\nConclusions: BT || RQ\n\nStep 48:\nTheorem: Alternate Interior Angle Theorem\nPremises : BT || RQ\nConclusions: \u2220BTU = \u2220QUT\n\nStep 49:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : BT = QU, \u2220BTU = \u2220QUT\nConclusions: \u25b3BTU \u2245 \u25b3QUT\n\nStep 50:\nTheorem: Congruent Definition\nPremises : \u25b3BTU \u2245 \u25b3QUT\nConclusions: BT = QU, BU = QT\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : 25 = QT, BU = QT\nConclusions: 25 = BU\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, U)",
+        "Line(Q, R)",
+        "Line(U, R)",
+        "Line(R, B)",
+        "Line(R, S)",
+        "Line(B, S)",
+        "Line(S, T)",
+        "Line(S, Q)",
+        "Line(T, Q)",
+        "Line(U, B)",
+        "Line(B, T)",
+        "Line(T, U)",
+        "IsMidpointOf(B, Line(R, S))",
+        "IsMidpointOf(T, Line(Q, S))",
+        "IsMidpointOf(U, Line(Q, R))",
+        "Line(B, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, U)",
+        "Line(R, B)",
+        "Line(R, S)",
+        "Line(T, B)",
+        "Line(T, S)",
+        "Line(U, B)",
+        "Line(U, R)",
+        "Line(U, T)",
+        "PointLiesOnLine(B, Line(R, S))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnLine(U, Line(Q, R))",
+        "Triangle(Q, R, S)",
+        "Equals(LengthOf(Line(B, T)), 30.0)",
+        "Equals(LengthOf(Line(R, S)), 40.0)",
+        "Equals(LengthOf(Line(S, Q)), 50.0)"
+    ],
+    "correct": true
+}

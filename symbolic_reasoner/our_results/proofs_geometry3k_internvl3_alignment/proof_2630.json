@@ -1,0 +1,108 @@
+{
+    "problem_id": "2630",
+    "solved": true,
+    "problem_text": "Find B D if B F bisects \\angle A B C and A C \\parallel E D, B A = 6, B C = 7.5, A C = 9, and D E = 9.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Parallel(Line(E, D), Line(A, C))",
+        "Equals(MeasureOf(Angle(A, B, F)), MeasureOf(Angle(C, B, F)))",
+        "BisectsAngle(Line(B,F),Angle(A,B,C))",
+        "Parallel(Line(A,C),Line(E,D))",
+        "Equals(LengthOf(Line(B,A)),6)",
+        "Equals(LengthOf(Line(B,C)),7.5)",
+        "Equals(LengthOf(Line(A,C)),9)",
+        "Equals(LengthOf(Line(D,E)),9)",
+        "Find(LengthOf(Line(B,D)))"
+    ],
+    "point_instances": [
+        "F",
+        "C",
+        "D",
+        "B",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "ED",
+        "AF",
+        "AC",
+        "FC",
+        "AB",
+        "EF",
+        "EB",
+        "FB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            122.92263610315186,
+            99.78796561604584
+        ],
+        "C": [
+            192.26361031518624,
+            159.95988538681948
+        ],
+        "D": [
+            304.5845272206304,
+            159.1002865329513
+        ],
+        "B": [
+            63.89684813753581,
+            161.96561604584525
+        ],
+        "A": [
+            63.03724928366762,
+            47.63896848137536
+        ],
+        "E": [
+            173.35243553008596,
+            47.63896848137536
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "13.5",
+        "15",
+        "18"
+    ],
+    "choices_precise_value": [
+        12.0,
+        13.5,
+        15.0,
+        18.0
+    ],
+    "problem_answer": 13.5,
+    "total_time": 150.719766,
+    "solution_predicate": "Equals(13.4999999989, LengthOf(Line(B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCA, AC || ED, 9 = DE, 7.5 = BC, F on BE, \u2220DEB, C on BD, BC, AC, \u2220CBE, AB, 9 = AC, \u2220CBF = \u2220FBA, \u2220DBE, 6 = AB, F on AC\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : AC || ED\nConclusions: \u2220BCA = \u2220BDE\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || ED\nConclusions: \u2220AFE = \u2220DEF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220DEB, F on BE\nConclusions: \u2220DEB = \u2220DEF\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220CBE, F on BE\nConclusions: \u2220CBE = \u2220CBF\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBE\nConclusions: \u2220CBE = \u2220DBE\n\nStep 8:\nTheorem: Line Segment Split\nPremises : F on AC\nConclusions: AC = AF + CF\n\nStep 9:\nTheorem: Vertical Angle Theorem\nPremises : F on AC, F on BE\nConclusions: \u2220AFE = \u2220CFB\n\nStep 10:\nTheorem: Same Angle\nPremises : F on AC, \u2220BCA\nConclusions: \u2220BCA = \u2220BCF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBF = \u2220FBA, \u2220CBE = \u2220CBF\nConclusions: \u2220CBE = \u2220FBA\n\nStep 12:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u25b3ABC, \u2220CBF = \u2220FBA\nConclusions: BC / AB = CF / AF\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 9 = AC, AC = AF + CF\nConclusions: 9 = AF + CF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFE = \u2220DEF, \u2220AFE = \u2220CFB, \u2220DEB = \u2220DEF\nConclusions: \u2220CFB = \u2220DEB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220BCF, \u2220BCA = \u2220BDE\nConclusions: \u2220BCF = \u2220BDE\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220FBA, \u2220CBE = \u2220DBE\nConclusions: \u2220DBE = \u2220FBA\n\nStep 17:\nTheorem: Substitution\nPremises : 7.5 = BC, BC / AB = CF / AF, 6 = AB\nConclusions: 7.5 / 6 = CF / AF\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = \u2220FBA, \u2220DBE = \u2220FBA, \u2220CBE = \u2220CBF\nConclusions: \u2220CBF = \u2220DBE\n\nStep 19:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CBF = \u2220DBE, \u2220CFB = \u2220DEB, \u2220BCF = \u2220BDE\nConclusions: \u25b3BCF ~ \u25b3BDE\n\nStep 20:\nTheorem: Similar Definition\nPremises : \u25b3BCF ~ \u25b3BDE\nConclusions: sim_ratio_triangle_b_c_f_triangle_b_d_e = BC / BD, \u2220CFB = \u2220DEB, sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / DE, \u2220CBF = \u2220DBE\n\nStep 21:\nTheorem: Substitution\nPremises : sim_ratio_triangle_b_c_f_triangle_b_d_e = BC / BD, 7.5 = BC\nConclusions: sim_ratio_triangle_b_c_f_triangle_b_d_e = 7.5 / BD\n\nStep 22:\nTheorem: Substitution\nPremises : 9 = DE, sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / DE\nConclusions: sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / 9\n\nStep 23:\nTheorem: Solve Linear Equation System\nPremises : 9 = AF + CF, 7.5 / 6 = CF / AF, sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / 9\nConclusions: 0.56 = sim_ratio_triangle_b_c_f_triangle_b_d_e\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_b_c_f_triangle_b_d_e = 7.5 / BD, 0.56 = sim_ratio_triangle_b_c_f_triangle_b_d_e\nConclusions: 0.56 = 7.5 / BD\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 0.56 = 7.5 / BD\nConclusions: 13.5 = BD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(A, B)",
+        "Line(E, F)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "Parallel(Line(E, D), Line(A, C))",
+        "BisectsAngle(Line(B, F), Angle(C, B, A))",
+        "Parallel(Line(A, C), Line(E, D))",
+        "Equals(MeasureOf(Angle(F, B, A)), MeasureOf(Angle(C, B, F)))",
+        "Equals(LengthOf(Line(B, A)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), 7.5)",
+        "Equals(LengthOf(Line(A, C)), 9.0)",
+        "Equals(LengthOf(Line(D, E)), 9.0)"
+    ],
+    "correct": true
+}

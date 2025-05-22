@@ -1,0 +1,93 @@
+{
+    "problem_id": "2985",
+    "solved": true,
+    "problem_text": "Each pair of polygons is similar. Find A C.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), x+7)",
+        "Equals(LengthOf(Line(E, C)), 12-x)",
+        "Equals(LengthOf(Line(D, C)), 6)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Similar(Triangle(A, B, C), Triangle(E, D, C))",
+        "Find(LengthOf(Line(A, C)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DE",
+        "DC",
+        "DB",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            208.16326530612244,
+            159.85714285714286
+        ],
+        "B": [
+            208.16326530612244,
+            235.02721088435374
+        ],
+        "A": [
+            88.77551020408164,
+            235.02721088435374
+        ],
+        "D": [
+            208.50340136054422,
+            47.27210884353741
+        ],
+        "E": [
+            386.3945578231293,
+            47.61224489795919
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "7.6",
+        "12",
+        "19"
+    ],
+    "choices_precise_value": [
+        7.0,
+        7.6,
+        12.0,
+        19.0
+    ],
+    "problem_answer": 7.6,
+    "total_time": 40.507335,
+    "solution_predicate": "Equals(7.6, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = BC, \u25b3ABC ~ \u25b3EDC, 7 + x = AC, 12 - x = CE, C on AE, 6 = CD\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3EDC\nConclusions: sim_ratio_triangle_a_b_c_triangle_e_d_c = AC / CE, sim_ratio_triangle_a_b_c_triangle_e_d_c = BC / CD\n\nStep 3:\nTheorem: Line Segment Split\nPremises : C on AE\nConclusions: AE = AC + CE\n\nStep 4:\nTheorem: Substitution\nPremises : 6 = CD, 4 = BC, sim_ratio_triangle_a_b_c_triangle_e_d_c = BC / CD\nConclusions: 4 / 6 = sim_ratio_triangle_a_b_c_triangle_e_d_c\n\nStep 5:\nTheorem: Substitution\nPremises : 7 + x = AC, AE = AC + CE, 12 - x = CE\nConclusions: (7 + x) + (12 - x) = AE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 4 / 6 = sim_ratio_triangle_a_b_c_triangle_e_d_c, sim_ratio_triangle_a_b_c_triangle_e_d_c = AC / CE\nConclusions: 4 / 6 = AC / CE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : (7 + x) + (12 - x) = AE, AE = AC + CE\nConclusions: (7 + x) + (12 - x) = AC + CE\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 4 / 6 = AC / CE, (7 + x) + (12 - x) = AC + CE\nConclusions: 7.6 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, B))",
+        "Similar(Triangle(A, B, C), Triangle(E, D, C))",
+        "Equals(LengthOf(Line(A, C)), Add(x, 7.0))",
+        "Equals(LengthOf(Line(E, C)), Sub(12.0, x))",
+        "Equals(LengthOf(Line(D, C)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), 4.0)"
+    ],
+    "correct": true
+}

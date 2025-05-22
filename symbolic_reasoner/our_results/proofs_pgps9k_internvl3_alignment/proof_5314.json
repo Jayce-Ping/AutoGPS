@@ -1,0 +1,140 @@
+{
+    "problem_id": "5314",
+    "solved": true,
+    "problem_text": "Find the value of y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(D, E, G)), 120)",
+        "Equals(MeasureOf(Angle(E, D, H)), 6y)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, D)",
+        "Line(B, H)",
+        "Line(D, C)",
+        "Line(D, H)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(E, G)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Parallel(Line(A, G), Line(B, H))",
+        "PointLiesOnLine(D, Line(B, H))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "FE",
+        "FD",
+        "FC",
+        "ED",
+        "EC",
+        "DC",
+        "BD",
+        "BH",
+        "DH",
+        "AE",
+        "AG",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            88.24468085106382,
+            29.120000000000005
+        ],
+        "B": [
+            247.69946808510636,
+            28.840000000000003
+        ],
+        "C": [
+            323.93617021276594,
+            40.32000000000001
+        ],
+        "D": [
+            247.9787234042553,
+            86.72000000000001
+        ],
+        "E": [
+            87.57446808510637,
+            187.264
+        ],
+        "F": [
+            13.404255319148934,
+            233.60000000000002
+        ],
+        "G": [
+            88.24468085106382,
+            264.32000000000005
+        ],
+        "H": [
+            247.9787234042553,
+            264.96000000000004
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        15.0,
+        20.0,
+        40.0
+    ],
+    "choices_precise_value": [
+        10.0,
+        15.0,
+        20.0,
+        40.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 41.01189,
+    "solution_predicate": "Equals(10.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FDH, \u2220GED, \u2220DEA, pi * (120 / 180) = \u2220GED, E on AG, AG || BH, 3.14 = pi, \u2220FEG, pi * ((6 * y) / 180) = \u2220EDH, \u2220AEF, E on DF\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : AG || BH\nConclusions: \u2220FDH = \u2220FEG\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AG || BH\nConclusions: \u2220DEA = \u2220EDH\n\nStep 4:\nTheorem: Circumference Split\nPremises : \u2220GED, \u2220FEG, \u2220AEF, \u2220DEA\nConclusions: 2 * pi = \u2220AEF + \u2220DEA + \u2220FEG + \u2220GED\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : E on DF, E on AG\nConclusions: \u2220AEF = \u2220GED\n\nStep 6:\nTheorem: Same Angle\nPremises : E on DF, \u2220FDH\nConclusions: \u2220EDH = \u2220FDH\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * y) / 180) = \u2220EDH, \u2220DEA = \u2220EDH\nConclusions: pi * ((6 * y) / 180) = \u2220DEA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEF = \u2220GED, pi * (120 / 180) = \u2220GED\nConclusions: pi * (120 / 180) = \u2220AEF\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDH = \u2220FDH, \u2220FDH = \u2220FEG, pi * ((6 * y) / 180) = \u2220EDH\nConclusions: pi * ((6 * y) / 180) = \u2220FEG\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * y) / 180) = \u2220DEA\nConclusions: 3.14 * ((6 * y) / 180) = \u2220DEA\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (120 / 180) = \u2220AEF, 2 * pi = \u2220AEF + \u2220DEA + \u2220FEG + \u2220GED, pi * (120 / 180) = \u2220GED\nConclusions: 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (120 / 180) + \u2220DEA + \u2220FEG\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * y) / 180) = \u2220FEG\nConclusions: 3.14 * ((6 * y) / 180) = \u2220FEG\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((6 * y) / 180) = \u2220DEA, 3.14 * ((6 * y) / 180) = \u2220FEG, 2 * 3.14 = 3.14 * (120 / 180) + 3.14 * (120 / 180) + \u2220DEA + \u2220FEG\nConclusions: 10 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(F, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(B, H)",
+        "Line(D, H)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(E, G)",
+        "Line(A, E)",
+        "Line(A, G)",
+        "Line(B, D)",
+        "Line(B, H)",
+        "Line(D, C)",
+        "Line(D, H)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Line(E, G)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, E)",
+        "Parallel(Line(A, G), Line(B, H))",
+        "PointLiesOnLine(D, Line(B, H))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(D, Line(F, C))",
+        "PointLiesOnLine(E, Line(A, G))",
+        "PointLiesOnLine(E, Line(F, C))",
+        "PointLiesOnLine(E, Line(F, D))",
+        "Equals(MeasureOf(Angle(G, E, D)), Mul(pi, Div(120.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, H)), Mul(pi, Div(Mul(6.0, y), 180.0)))"
+    ],
+    "correct": true
+}

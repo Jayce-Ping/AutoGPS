@@ -1,0 +1,83 @@
+{
+    "problem_id": "2471",
+    "solved": true,
+    "problem_text": "Find the area of the trapezoid.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 37)",
+        "Equals(LengthOf(Line(B, D)), 23)",
+        "Equals(LengthOf(Line(E, D)), 22)",
+        "Find(AreaOf(Trapezoid(A, E, D, C)))",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DB",
+        "DC",
+        "EA",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            18.89010989010989,
+            152.52747252747253
+        ],
+        "B": [
+            180.42857142857144,
+            152.52747252747253
+        ],
+        "C": [
+            234.05494505494505,
+            152.30769230769232
+        ],
+        "D": [
+            181.0879120879121,
+            36.92307692307693
+        ],
+        "E": [
+            56.69230769230769,
+            36.26373626373626
+        ]
+    },
+    "problem_choices": [
+        "506",
+        "667",
+        "678.5",
+        "851"
+    ],
+    "choices_precise_value": [
+        506.0,
+        667.0,
+        678.5,
+        851.0
+    ],
+    "problem_answer": 678.5,
+    "total_time": 17.338615,
+    "solution_predicate": "Equals(678.5, AreaOf(Trapezoid(A, E, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 22 = DE, 37 = AC, 23 = BD, BC \u22a5 BD, Trapezoid(A, C, D, E)\n\nStep 2:\nTheorem: Area formula of Trapezoid(A, C, D, E)\nPremises : BC \u22a5 BD, Trapezoid(A, C, D, E)\nConclusions: Area(Trapezoid(A, C, D, E)) = BD * ((AC + DE) / 2)\n\nStep 3:\nTheorem: Substitution\nPremises : Area(Trapezoid(A, C, D, E)) = BD * ((AC + DE) / 2), 37 = AC, 23 = BD, 22 = DE\nConclusions: 23 * ((22 + 37) / 2) = Area(Trapezoid(A, C, D, E))\n\nStep 4:\nTheorem: Evaluate\nPremises : 23 * ((22 + 37) / 2) = Area(Trapezoid(A, C, D, E))\nConclusions: 678.5 = Area(Trapezoid(A, C, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Perpendicular(Line(C, B), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 37.0)",
+        "Equals(LengthOf(Line(B, D)), 23.0)",
+        "Equals(LengthOf(Line(E, D)), 22.0)"
+    ],
+    "correct": true
+}

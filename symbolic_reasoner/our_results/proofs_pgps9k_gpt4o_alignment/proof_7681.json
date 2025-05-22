@@ -1,0 +1,78 @@
+{
+    "problem_id": "7681",
+    "solved": true,
+    "problem_text": "EFGH is a parallelogram. Find w.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(E, H, G)), 11z-3)",
+        "Equals(MeasureOf(Angle(F, G, H)), 14w-1)",
+        "Equals(MeasureOf(Angle(G, F, E)), 9z+19)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Parallelogram(E,F,G,H)",
+        "Find(w)"
+    ],
+    "point_instances": [
+        "F",
+        "G",
+        "E",
+        "H"
+    ],
+    "line_instances": [
+        "EH",
+        "FG",
+        "FE",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            133.36082474226805,
+            47.118367346938776
+        ],
+        "G": [
+            559.9037800687286,
+            47.57142857142857
+        ],
+        "E": [
+            51.333333333333336,
+            201.3857142857143
+        ],
+        "H": [
+            478.40549828178695,
+            201.9142857142857
+        ]
+    },
+    "problem_choices": [
+        4.5,
+        6.3,
+        6.5,
+        6.7
+    ],
+    "choices_precise_value": [
+        4.5,
+        6.3,
+        6.5,
+        6.7
+    ],
+    "problem_answer": 4.5,
+    "total_time": 9.67704,
+    "solution_predicate": "Equals(4.5, w)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((19 + 9 * z) / 180) = \u2220EFG, Parallelogram(E, F, G, H), pi * ((14 * w - 1) / 180) = \u2220FGH, pi * ((11 * z - 3) / 180) = \u2220GHE\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((19 + 9 * z) / 180) = \u2220EFG\nConclusions: 3.14 * ((19 + 9 * z) / 180) = \u2220EFG\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: \u2220EFG = \u2220GHE, \u2220FGH = \u2220HEF\n\nStep 4:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(E, F, G, H)\nConclusions: Quadrilateral(E, F, G, H)\n\nStep 5:\nTheorem: Substitution\nPremises : pi * ((14 * w - 1) / 180) = \u2220FGH, 3.14 = pi\nConclusions: 3.14 * ((14 * w - 1) / 180) = \u2220FGH\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((11 * z - 3) / 180) = \u2220GHE, 3.14 = pi\nConclusions: 3.14 * ((11 * z - 3) / 180) = \u2220GHE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((19 + 9 * z) / 180) = \u2220EFG, pi * ((19 + 9 * z) / 180) = \u2220EFG\nConclusions: 3.14 * ((19 + 9 * z) / 180) = pi * ((19 + 9 * z) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFG = \u2220GHE, pi * ((19 + 9 * z) / 180) = \u2220EFG\nConclusions: pi * ((19 + 9 * z) / 180) = \u2220GHE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FGH = \u2220HEF, pi * ((14 * w - 1) / 180) = \u2220FGH\nConclusions: pi * ((14 * w - 1) / 180) = \u2220HEF\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, F, G, H)\nPremises : Quadrilateral(E, F, G, H)\nConclusions: 2 * pi = \u2220EFG + \u2220FGH + \u2220GHE + \u2220HEF\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((14 * w - 1) / 180) = \u2220FGH, 3.14 * ((14 * w - 1) / 180) = \u2220FGH\nConclusions: 3.14 * ((14 * w - 1) / 180) = pi * ((14 * w - 1) / 180)\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((19 + 9 * z) / 180) = \u2220GHE, 3.14 * ((19 + 9 * z) / 180) = pi * ((19 + 9 * z) / 180)\nConclusions: 3.14 * ((19 + 9 * z) / 180) = \u2220GHE\n\nStep 13:\nTheorem: Substitution\nPremises : 2 * pi = \u2220EFG + \u2220FGH + \u2220GHE + \u2220HEF, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220EFG + \u2220FGH + \u2220GHE + \u2220HEF\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((14 * w - 1) / 180) = \u2220HEF, 3.14 * ((14 * w - 1) / 180) = pi * ((14 * w - 1) / 180)\nConclusions: 3.14 * ((14 * w - 1) / 180) = \u2220HEF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((11 * z - 3) / 180) = \u2220GHE, 3.14 * ((19 + 9 * z) / 180) = \u2220GHE\nConclusions: 3.14 * ((19 + 9 * z) / 180) = 3.14 * ((11 * z - 3) / 180)\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((19 + 9 * z) / 180) = \u2220EFG, 3.14 * ((19 + 9 * z) / 180) = \u2220GHE, 3.14 * ((19 + 9 * z) / 180) = 3.14 * ((11 * z - 3) / 180), 3.14 * ((14 * w - 1) / 180) = \u2220HEF, 3.14 * ((14 * w - 1) / 180) = \u2220FGH, 2 * 3.14 = \u2220EFG + \u2220FGH + \u2220GHE + \u2220HEF\nConclusions: 4.5 = w\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, H)",
+        "Line(F, G)",
+        "Line(F, E)",
+        "Line(G, H)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Parallelogram(E, F, G, H)",
+        "Equals(MeasureOf(Angle(G, H, E)), Mul(pi, Div(Sub(Mul(11.0, z), 3.0), 180.0)))",
+        "Equals(MeasureOf(Angle(F, G, H)), Mul(pi, Div(Sub(Mul(14.0, w), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(Add(Mul(9.0, z), 19.0), 180.0)))"
+    ],
+    "correct": true
+}

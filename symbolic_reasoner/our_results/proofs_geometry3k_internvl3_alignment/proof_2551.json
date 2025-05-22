@@ -1,0 +1,87 @@
+{
+    "problem_id": "2551",
+    "solved": true,
+    "problem_text": "If X M = 4, X N = 6, and N Z = 9, find X Y.",
+    "logic_forms": [
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(Y, Z), Line(M, N))",
+        "Equals(LengthOf(Line(X,M)),4)",
+        "Equals(LengthOf(Line(X,N)),6)",
+        "Equals(LengthOf(Line(N,Z)),9)",
+        "Find(LengthOf(Line(X,Y)))"
+    ],
+    "point_instances": [
+        "Y",
+        "Z",
+        "N",
+        "X",
+        "M"
+    ],
+    "line_instances": [
+        "XM",
+        "XY",
+        "MY",
+        "XN",
+        "XZ",
+        "NZ",
+        "MN",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            351.07913669064743,
+            88.72661870503596
+        ],
+        "Z": [
+            409.7122302158273,
+            253.47482014388487
+        ],
+        "N": [
+            237.41007194244602,
+            253.47482014388487
+        ],
+        "X": [
+            143.16546762589925,
+            252.7553956834532
+        ],
+        "M": [
+            216.90647482014387,
+            194.84172661870502
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "6",
+        "9",
+        "10"
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        9.0,
+        10.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 28.945491,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(X, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: N on XZ, \u2220YXZ, 4 = MX, 9 = NZ, \u2220ZYX, 3.14 = pi, M on XY, MN || YZ, \u2220MXZ, \u2220NMX, 6 = NX\n\nStep 2:\nTheorem: Line Segment Split\nPremises : N on XZ\nConclusions: XZ = NX + NZ\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZYX\nConclusions: \u2220ZYX = 2 * pi - \u2220XYZ\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220YXZ, M on XY\nConclusions: \u2220MXZ = \u2220YXZ\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : MN || YZ\nConclusions: \u2220XNM = \u2220XZY, \u2220XMN = \u2220XYZ\n\nStep 6:\nTheorem: Same Angle\nPremises : N on XZ, \u2220MXZ\nConclusions: \u2220MXN = \u2220MXZ\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220NMX\nConclusions: \u2220NMX = 2 * pi - \u2220XMN\n\nStep 8:\nTheorem: Substitution\nPremises : 6 = NX, XZ = NX + NZ, 9 = NZ\nConclusions: 6 + 9 = XZ\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ZYX = 2 * pi - \u2220XYZ\nConclusions: \u2220ZYX = 2 * 3.14 - \u2220XYZ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MXN = \u2220MXZ, \u2220MXZ = \u2220YXZ\nConclusions: \u2220MXN = \u2220YXZ\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220NMX = 2 * pi - \u2220XMN, \u2220XMN = \u2220XYZ\nConclusions: \u2220NMX = 2 * 3.14 - \u2220XYZ\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 6 + 9 = XZ\nConclusions: 15 = XZ\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMX = 2 * 3.14 - \u2220XYZ, \u2220ZYX = 2 * 3.14 - \u2220XYZ\nConclusions: \u2220NMX = \u2220ZYX\n\nStep 14:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220XNM = \u2220XZY, \u2220NMX = \u2220ZYX, \u2220MXN = \u2220YXZ\nConclusions: \u25b3MNX ~ \u25b3YZX\n\nStep 15:\nTheorem: Similar Definition\nPremises : \u25b3MNX ~ \u25b3YZX\nConclusions: \u2220NMX = \u2220ZYX, \u2220MXN = \u2220YXZ, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY, sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ, \u2220XMN = \u2220XYZ\n\nStep 16:\nTheorem: Substitution\nPremises : 4 = MX, sim_ratio_triangle_m_n_x_triangle_y_z_x = MX / XY\nConclusions: sim_ratio_triangle_m_n_x_triangle_y_z_x = 4 / XY\n\nStep 17:\nTheorem: Substitution\nPremises : 6 = NX, sim_ratio_triangle_m_n_x_triangle_y_z_x = NX / XZ, 15 = XZ\nConclusions: 6 / 15 = sim_ratio_triangle_m_n_x_triangle_y_z_x\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 6 / 15 = sim_ratio_triangle_m_n_x_triangle_y_z_x, sim_ratio_triangle_m_n_x_triangle_y_z_x = 4 / XY\nConclusions: 6 / 15 = 4 / XY\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 6 / 15 = 4 / XY\nConclusions: 10 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, M)",
+        "Line(X, Y)",
+        "Line(M, Y)",
+        "Line(X, N)",
+        "Line(X, Z)",
+        "Line(N, Z)",
+        "Line(M, N)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(M, Line(X, Y))",
+        "PointLiesOnLine(N, Line(X, Z))",
+        "Parallel(Line(Y, Z), Line(M, N))",
+        "Equals(LengthOf(Line(X, M)), 4.0)",
+        "Equals(LengthOf(Line(X, N)), 6.0)",
+        "Equals(LengthOf(Line(N, Z)), 9.0)"
+    ],
+    "correct": true
+}

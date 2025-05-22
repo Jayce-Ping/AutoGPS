@@ -1,0 +1,89 @@
+{
+    "problem_id": "2966",
+    "solved": true,
+    "problem_text": "Find z in the given parallelogram.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Equals(LengthOf(Line(A, C)), 3z-4)",
+        "Equals(LengthOf(Line(E, C)), z+5)",
+        "Parallelogram(A, B, E, D)",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "AD",
+        "AC",
+        "AE",
+        "CE",
+        "DE",
+        "BE",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            31.70731707317073,
+            37.650406504065046
+        ],
+        "B": [
+            149.59349593495935,
+            207.16260162601628
+        ],
+        "C": [
+            259.7560975609756,
+            122.20325203252034
+        ],
+        "D": [
+            371.1382113821138,
+            38.056910569105696
+        ],
+        "E": [
+            488.2113821138212,
+            207.16260162601628
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "4.5",
+        "5",
+        "9.5"
+    ],
+    "choices_precise_value": [
+        4.0,
+        4.5,
+        5.0,
+        9.5
+    ],
+    "problem_answer": 4.5,
+    "total_time": 54.435789,
+    "solution_predicate": "Equals(4.5, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * z - 4 = AC, Parallelogram(A, B, E, D), C on AE, C on BD, 5 + z = CE\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(A, B, E, D), C on AE, C on BD\nConclusions: AC = CE\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * z - 4 = AC, 5 + z = CE, AC = CE\nConclusions: 5 + z = 3 * z - 4\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 5 + z = 3 * z - 4\nConclusions: 4.5 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, E)",
+        "Line(A, B)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "Parallelogram(A, B, E, D)",
+        "Equals(LengthOf(Line(A, C)), Sub(Mul(3.0, z), 4.0))",
+        "Equals(LengthOf(Line(E, C)), Add(z, 5.0))"
+    ],
+    "correct": true
+}

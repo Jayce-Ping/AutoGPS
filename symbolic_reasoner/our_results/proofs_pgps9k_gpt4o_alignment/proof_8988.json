@@ -1,0 +1,112 @@
+{
+    "problem_id": "8988",
+    "solved": true,
+    "problem_text": "Circle O has a radius of 13 inches. Radius OB is perpendicular to chord CD which is 24 inches long. Find XB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, D)), 24)",
+        "Equals(LengthOf(Line(O, B)), 13)",
+        "Equals(RadiusOf(Circle(O)), 13)",
+        "Find(LengthOf(Line(X, B)))",
+        "IsChordOf(Line(C, D), Circle(O))",
+        "Line(B, O)",
+        "Line(B, X)",
+        "Line(C, D)",
+        "Line(C, O)",
+        "Line(C, X)",
+        "Line(X, D)",
+        "Line(X, O)",
+        "Perpendicular(Line(B, O), Line(C, D))",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "PointLiesOnCircle(B, Circle(O))",
+        "PointLiesOnCircle(C, Circle(O))",
+        "PointLiesOnCircle(D, Circle(O))",
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "D",
+        "X",
+        "O"
+    ],
+    "line_instances": [
+        "OX",
+        "OB",
+        "XB",
+        "CO",
+        "CX",
+        "CD",
+        "XD"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "C": [
+            109.25304292120435,
+            65.19482993197279
+        ],
+        "B": [
+            196.98654708520178,
+            60.72
+        ],
+        "D": [
+            244.7847533632287,
+            134.45142857142858
+        ],
+        "X": [
+            177.72242152466367,
+            99.97114285714287
+        ],
+        "O": [
+            156.63903743315507,
+            138.55882352941177
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        8.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 59.442049,
+    "solution_predicate": "Equals(8.0, LengthOf(Line(X, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: X on BO, D on \u2299(O, radius_O), \u2220OCX, 13 = BO, X on CD, \u2220OCD, CX, CO, OX, CX \u22a5 OX, DO, 13 = radius_O, C on \u2299(O, radius_O), 24 = CD, CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : X on BO\nConclusions: BO = BX + OX\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(O, radius_O)\nConclusions: radius_O = DO\n\nStep 4:\nTheorem: Same Angle\nPremises : X on CD, \u2220OCD\nConclusions: \u2220OCD = \u2220OCX\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CO, CX, OX\nConclusions: \u25b3COX\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_O)\nConclusions: radius_O = CO\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : CO, DO, CD\nConclusions: \u25b3CDO\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : BO = BX + OX, 13 = BO\nConclusions: 13 = BX + OX\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_O, radius_O = DO\nConclusions: 13 = DO\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : CX \u22a5 OX, \u25b3COX, \u2220OCX\nConclusions: OX / CO = sin(\u2220OCX)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = CO, 13 = radius_O\nConclusions: 13 = CO\n\nStep 12:\nTheorem: Law of Cosines\nPremises : \u25b3CDO\nConclusions: (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(\u2220OCD)\n\nStep 13:\nTheorem: Substitution\nPremises : (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(\u2220OCD), 13 = DO, \u2220OCD = \u2220OCX, 24 = CD, 13 = CO\nConclusions: (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(\u2220OCX)\n\nStep 14:\nTheorem: Solve Univariate Equation\nPremises : (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(\u2220OCX)\nConclusions: 0.39 = \u2220OCX\n\nStep 15:\nTheorem: Substitution\nPremises : 0.39 = \u2220OCX, 13 = CO, OX / CO = sin(\u2220OCX)\nConclusions: sin(0.39) = OX / 13\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : sin(0.39) = OX / 13, 13 = BX + OX\nConclusions: 8 = BX\n\n",
+    "logic_fomrs_refined": [
+        "Line(O, X)",
+        "Line(O, B)",
+        "Line(X, B)",
+        "Line(C, O)",
+        "Line(C, X)",
+        "Line(C, D)",
+        "Line(X, D)",
+        "Circle(O, radius_O)",
+        "IsChordOf(Line(C, D), Circle(O, radius_O))",
+        "Line(B, O)",
+        "Line(B, X)",
+        "Line(C, D)",
+        "Line(C, O)",
+        "Line(C, X)",
+        "Line(X, D)",
+        "Line(X, O)",
+        "Perpendicular(Line(B, O), Line(C, D))",
+        "Perpendicular(Line(O, B), Line(C, D))",
+        "PointLiesOnCircle(B, Circle(O, radius_O))",
+        "PointLiesOnCircle(C, Circle(O, radius_O))",
+        "PointLiesOnCircle(D, Circle(O, radius_O))",
+        "PointLiesOnLine(X, Line(B, O))",
+        "PointLiesOnLine(X, Line(C, D))",
+        "Equals(LengthOf(Line(C, D)), 24.0)",
+        "Equals(LengthOf(Line(O, B)), 13.0)",
+        "Equals(radius_O, 13.0)"
+    ],
+    "correct": true
+}

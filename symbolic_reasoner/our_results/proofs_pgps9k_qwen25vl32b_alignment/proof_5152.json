@@ -1,0 +1,71 @@
+{
+    "problem_id": "5152",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 18)",
+        "Equals(LengthOf(Line(B, A)), y)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(MeasureOf(Angle(B, A, C)), 30)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.74,
+            104.18
+        ],
+        "B": [
+            209.8095238095238,
+            23.071428571428573
+        ],
+        "C": [
+            255.3913043478261,
+            132.0
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        9.0,
+        10.4,
+        12.7
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        10.4,
+        12.7
+    ],
+    "problem_answer": 9.0,
+    "total_time": 15.148579,
+    "solution_predicate": "Equals(8.9999999999, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 18 = AC, \u2220BCA, \u2220ABC, x = BC, BC, \u2220CAB, \u2220CBA, pi * (30 / 180) = \u2220CAB, AB, 3.14 = pi, cos(\u2220BCA), AC, AB \u22a5 BC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220BCA), AB \u22a5 BC\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220CBA, pi / 2 = \u2220ABC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 0.52 = pi * (30 / 180), pi * (30 / 180) = \u2220CAB\nConclusions: 0.52 = \u2220CAB\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u2220CAB, AB \u22a5 BC, \u25b3ABC\nConclusions: BC / AC = sin(\u2220CAB)\n\nStep 11:\nTheorem: Cos Function Definition\nPremises : AB \u22a5 BC, \u25b3ABC, \u2220BCA\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 12:\nTheorem: Substitution\nPremises : x = BC, BC / AC = cos(\u2220BCA), 18 = AC\nConclusions: x / 18 = cos(\u2220BCA)\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, (3 * pi) / 2 = \u2220CBA, pi / 2 = \u2220ABC, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 14:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220CBA, \u2220ABC = 2 * pi - \u2220CBA, pi / 2 = \u2220ABC, 3.14 = pi\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 15:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, pi / 2 = \u2220ABC, 3.14 = pi, pi * (30 / 180) = \u2220CAB\nConclusions: 3.14 = pi / 2 + 3.14 * (30 / 180) + \u2220BCA\n\nStep 16:\nTheorem: Substitution\nPremises : 0.52 = \u2220CAB, BC / AC = sin(\u2220CAB), x = BC, 18 = AC\nConclusions: sin(0.52) = x / 18\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : x / 18 = cos(\u2220BCA), BC / AC = cos(\u2220BCA)\nConclusions: x / 18 = BC / AC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CBA, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220CBA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ABC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220CBA, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220ABC\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = 2 * pi - \u2220ABC, 3.14 = pi / 2 + 3.14 * (30 / 180) + \u2220BCA, 2 * 3.14 - (3 * pi) / 2 = \u2220ABC\nConclusions: 1.05 = \u2220BCA\n\nStep 22:\nTheorem: Substitution\nPremises : BC / AC = cos(\u2220BCA), x = BC, 1.05 = \u2220BCA, 18 = AC\nConclusions: cos(1.05) = x / 18\n\nStep 23:\nTheorem: Substitution\nPremises : x = BC, 18 = AC, 1.05 = \u2220BCA, BC / AC = cos(\u2220BCA)\nConclusions: cos(1.05) = x / 18\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : cos(1.05) = x / 18, sin(0.52) = x / 18\nConclusions: cos(1.05) = sin(0.52)\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : cos(1.05) = x / 18, cos(1.05) = sin(0.52)\nConclusions: sin(0.52) = x / 18\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : x / 18 = BC / AC, sin(0.52) = x / 18\nConclusions: sin(0.52) = BC / AC\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : sin(0.52) = BC / AC, 18 = AC\nConclusions: 9 = BC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 9 = BC, x = BC\nConclusions: 9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 18.0)",
+        "Equals(LengthOf(Line(B, A)), y)",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

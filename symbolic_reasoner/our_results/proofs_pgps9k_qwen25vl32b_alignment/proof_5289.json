@@ -1,0 +1,105 @@
+{
+    "problem_id": "5289",
+    "solved": true,
+    "problem_text": "Find the length of XZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(U, X)), 30)",
+        "Equals(LengthOf(Line(V, Z)), 30)",
+        "Equals(LengthOf(Line(V, Z)), LengthOf(Line(U, X)))",
+        "Equals(LengthOf(Line(Y, U)), 18)",
+        "Line(U, V)",
+        "Line(X, U)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, U)",
+        "Line(Y, Z)",
+        "Line(Z, V)",
+        "Parallel(Line(Y, Z), Line(U, V))",
+        "PointLiesOnLine(Y, Line(X, U))",
+        "PointLiesOnLine(Z, Line(X, V))",
+        "Find(LengthOf(Line(X,Z)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "Z",
+        "U",
+        "V"
+    ],
+    "line_instances": [
+        "XZ",
+        "XV",
+        "ZV",
+        "UV",
+        "XY",
+        "XU",
+        "YU",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            125.71428571428571,
+            50.938775510204074
+        ],
+        "Y": [
+            125.06122448979592,
+            130.28571428571428
+        ],
+        "Z": [
+            233.52380952380952,
+            130.66666666666666
+        ],
+        "U": [
+            125.33333333333333,
+            251.8095238095238
+        ],
+        "V": [
+            395.80952380952374,
+            251.04761904761904
+        ]
+    },
+    "problem_choices": [
+        18.0,
+        20.0,
+        24.0,
+        50.0
+    ],
+    "choices_precise_value": [
+        18.0,
+        20.0,
+        24.0,
+        50.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 37.805935,
+    "solution_predicate": "Equals(20.0, LengthOf(Line(X, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 30 = UX, 30 = VZ, \u2220UXV, \u2220UXZ, UV || YZ, 18 = UY, Y on UX, Z on VX\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : UV || YZ\nConclusions: \u2220XUV = \u2220XYZ, \u2220XVU = \u2220XZY\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220UXZ, Y on UX\nConclusions: \u2220UXZ = \u2220YXZ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : Y on UX\nConclusions: UX = UY + XY\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220UXV, Z on VX\nConclusions: \u2220UXV = \u2220UXZ\n\nStep 6:\nTheorem: Line Segment Split\nPremises : Z on VX\nConclusions: VX = VZ + XZ\n\nStep 7:\nTheorem: Substitution\nPremises : UX = UY + XY, 30 = UX, 18 = UY\nConclusions: 30 = 18 + XY\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220UXV = \u2220UXZ, \u2220UXZ = \u2220YXZ\nConclusions: \u2220UXV = \u2220YXZ\n\nStep 9:\nTheorem: Substitution\nPremises : VX = VZ + XZ, 30 = VZ\nConclusions: VX = 30 + XZ\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 30 = 18 + XY\nConclusions: 12 = XY\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220XUV = \u2220XYZ, \u2220UXV = \u2220YXZ, \u2220XVU = \u2220XZY\nConclusions: \u25b3UVX ~ \u25b3YZX\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3UVX ~ \u25b3YZX\nConclusions: \u2220UXV = \u2220YXZ, UX / XY = VX / XZ, \u2220XVU = \u2220XZY\n\nStep 13:\nTheorem: Substitution\nPremises : 30 = UX, UX / XY = VX / XZ, 12 = XY\nConclusions: 30 / 12 = VX / XZ\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : VX = 30 + XZ, 30 / 12 = VX / XZ\nConclusions: 20 = XZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(X, V)",
+        "Line(Z, V)",
+        "Line(U, V)",
+        "Line(X, Y)",
+        "Line(X, U)",
+        "Line(Y, U)",
+        "Line(Y, Z)",
+        "Line(U, V)",
+        "Line(X, U)",
+        "Line(X, V)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, U)",
+        "Line(Y, Z)",
+        "Line(Z, V)",
+        "Parallel(Line(Y, Z), Line(U, V))",
+        "PointLiesOnLine(Y, Line(X, U))",
+        "PointLiesOnLine(Z, Line(X, V))",
+        "Equals(LengthOf(Line(U, X)), 30.0)",
+        "Equals(LengthOf(Line(V, Z)), 30.0)",
+        "Equals(LengthOf(Line(V, Z)), LengthOf(Line(U, X)))",
+        "Equals(LengthOf(Line(Y, U)), 18.0)"
+    ],
+    "correct": true
+}

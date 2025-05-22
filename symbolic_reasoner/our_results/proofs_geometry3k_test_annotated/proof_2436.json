@@ -1,0 +1,104 @@
+{
+    "problem_id": "2436",
+    "solved": true,
+    "problem_text": "Find m \\angle 2 if m \\widehat B C = 30 and m \\widehat A D = 20.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(G, radius_0_0))",
+        "Equals(MeasureOf(Angle(B, F, C)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, F, A)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Arc(D, A)), 20)",
+        "Equals(MeasureOf(Arc(C, B)), 30)",
+        "Find(MeasureOf(Angle(B, F, A)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "E",
+        "C",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "DF",
+        "DB",
+        "FB",
+        "AF",
+        "AC",
+        "FC"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "B": [
+            226.58227848101265,
+            78.48101265822784
+        ],
+        "D": [
+            61.0759493670886,
+            139.2405063291139
+        ],
+        "A": [
+            65.18987341772151,
+            106.32911392405063
+        ],
+        "E": [
+            147.1518987341772,
+            224.0506329113924
+        ],
+        "C": [
+            243.0379746835443,
+            118.9873417721519
+        ],
+        "F": [
+            137.9746835443038,
+            110.75949367088607
+        ],
+        "G": [
+            152.96835443037975,
+            133.13291139240508
+        ]
+    },
+    "problem_choices": [
+        "20",
+        "25",
+        "30",
+        "155"
+    ],
+    "choices_precise_value": [
+        20.0,
+        25.0,
+        30.0,
+        155.0
+    ],
+    "problem_answer": 155.0,
+    "total_time": 84.185785,
+    "solution_predicate": "Equals(2.7052603406, MeasureOf(Angle(B, F, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on AC, AG, AC, BD, \u2220DGE, \u2220AGD, DG, AF, 3.14 = pi, CF, \u2220CGB, Arc(CGB), F on BD, \u2220ACG, \u2220CGD, \u2220DBG, pi * (20 / 180) = Arc(AGD), \u2220GDB, D on \u2299(G, radius_0_0), \u2220BGA, BG, pi * (30 / 180) = Arc(CGB), \u2220AFB, \u2220GAC, \u2220AGE, \u2220CGA, C on \u2299(G, radius_0_0), DF, BF, Arc(AGD), B on \u2299(G, radius_0_0), A on \u2299(G, radius_0_0), \u2220EGC, CG\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CGB)\nConclusions: \u2220CGB = Arc(CGB)\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : F on BD, F on AC\nConclusions: \u2220AFB = \u2220CFD, \u2220BFA = \u2220DFC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220ACG, F on AC\nConclusions: \u2220ACG = \u2220FCG\n\nStep 5:\nTheorem: Same Angle\nPremises : F on BD, \u2220DBG\nConclusions: \u2220DBG = \u2220FBG\n\nStep 6:\nTheorem: Same Angle\nPremises : F on BD, \u2220GDB\nConclusions: \u2220GDB = \u2220GDF\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : D on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = DG\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : BD, DG, BG\nConclusions: \u25b3BDG\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFB\nConclusions: \u2220AFB = 2 * pi - \u2220BFA\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220GAC, F on AC\nConclusions: \u2220GAC = \u2220GAF\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : C on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = CG\n\nStep 12:\nTheorem: Definition of Quadrilateral\nPremises : BF, AF, AG, BG\nConclusions: Quadrilateral(A, F, B, G)\n\nStep 13:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AGD)\nConclusions: \u2220AGD = Arc(AGD)\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : B on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = BG\n\nStep 15:\nTheorem: Point On Circle Def\nPremises : A on \u2299(G, radius_0_0)\nConclusions: radius_0_0 = AG\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220DGE, \u2220CGD, \u2220EGC\nConclusions: 2 * pi = \u2220CGD + \u2220DGE + \u2220EGC\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220CGA, \u2220AGE, \u2220EGC\nConclusions: 2 * pi = \u2220AGE + \u2220CGA + \u2220EGC\n\nStep 18:\nTheorem: Circumference Split\nPremises : \u2220CGB, \u2220EGC, \u2220DGE, \u2220AGD, \u2220BGA\nConclusions: 2 * pi = \u2220AGD + \u2220BGA + \u2220CGB + \u2220DGE + \u2220EGC\n\nStep 19:\nTheorem: Definition of Quadrilateral\nPremises : DG, CG, DF, CF\nConclusions: Quadrilateral(C, F, D, G)\n\nStep 20:\nTheorem: Definition of Triangle\nPremises : AC, CG, AG\nConclusions: \u25b3ACG\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = Arc(CGB), \u2220CGB = Arc(CGB)\nConclusions: pi * (30 / 180) = \u2220CGB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFB = 2 * pi - \u2220BFA, \u2220AFB = \u2220CFD\nConclusions: \u2220CFD = 2 * pi - \u2220BFA\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, F, B, G)\nPremises : Quadrilateral(A, F, B, G)\nConclusions: 2 * pi = \u2220AFB + \u2220BGA + \u2220FBG + \u2220GAF\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGD = Arc(AGD), pi * (20 / 180) = Arc(AGD)\nConclusions: pi * (20 / 180) = \u2220AGD\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = DG, radius_0_0 = BG\nConclusions: BG = DG\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AG, radius_0_0 = CG\nConclusions: AG = CG\n\nStep 27:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CGD + \u2220DGE + \u2220EGC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CGD + \u2220DGE + \u2220EGC\n\nStep 28:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AGE + \u2220CGA + \u2220EGC, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AGE + \u2220CGA + \u2220EGC\n\nStep 29:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(G, D, F, C)\nPremises : Quadrilateral(C, F, D, G)\nConclusions: 2 * pi = \u2220CGD + \u2220DFC + \u2220FCG + \u2220GDF\n\nStep 30:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AFB + \u2220BGA + \u2220FBG + \u2220GAF, 3.14 = pi, \u2220AFB = \u2220CFD\nConclusions: 2 * 3.14 = \u2220BGA + \u2220CFD + \u2220FBG + \u2220GAF\n\nStep 31:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AGD + \u2220BGA + \u2220CGB + \u2220DGE + \u2220EGC, pi * (20 / 180) = \u2220AGD, 3.14 = pi, pi * (30 / 180) = \u2220CGB\nConclusions: 2 * 3.14 = 3.14 * (30 / 180) + pi * (20 / 180) + \u2220BGA + \u2220DGE + \u2220EGC\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BDG, BG = DG\nConclusions: \u2220DBG = \u2220GDB\n\nStep 33:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACG, AG = CG\nConclusions: \u2220ACG = \u2220GAC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220AGE + \u2220CGA + \u2220EGC, 2 * 3.14 = \u2220AGE + \u2220CGA + \u2220EGC\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 35:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220CGD + \u2220DFC + \u2220FCG + \u2220GDF\nConclusions: 2 * 3.14 = \u2220CGD + \u2220DFC + \u2220FCG + \u2220GDF\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBG = \u2220FBG, \u2220DBG = \u2220GDB, \u2220GDB = \u2220GDF\nConclusions: \u2220FBG = \u2220GDF\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACG = \u2220GAC, \u2220ACG = \u2220FCG, \u2220GAC = \u2220GAF\nConclusions: \u2220FCG = \u2220GAF\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220BGA + \u2220CFD + \u2220FBG + \u2220GAF, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220BGA + \u2220CFD + \u2220FBG + \u2220GAF\n\nStep 39:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BGA + \u2220CFD + \u2220FBG + \u2220GAF, 3.14 = pi, \u2220FCG = \u2220GAF\nConclusions: 2 * 3.14 = \u2220BGA + \u2220CFD + \u2220FBG + \u2220FCG\n\nStep 40:\nTheorem: Solve Linear Equation System\nPremises : \u2220CFD = 2 * pi - \u2220BFA, 2 * pi = \u2220CGD + \u2220DGE + \u2220EGC, \u2220BFA = \u2220DFC, 2 * 3.14 = \u2220BGA + \u2220CFD + \u2220FBG + \u2220FCG, \u2220FBG = \u2220GDF, 2 * 3.14 = 3.14 * (30 / 180) + pi * (20 / 180) + \u2220BGA + \u2220DGE + \u2220EGC, 2 * 3.14 = \u2220CGD + \u2220DGE + \u2220EGC, 2 * 3.14 = \u2220CGD + \u2220DFC + \u2220FCG + \u2220GDF\nConclusions: 2.71 = \u2220BFA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(D, B)",
+        "Line(F, B)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Circle(G, radius_0_0)",
+        "PointLiesOnLine(F, Line(D, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnCircle(D, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(G, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(G, radius_0_0))",
+        "Equals(MeasureOf(Arc(A, G, D)), Mul(pi, Div(20.0, 180.0)))",
+        "Equals(MeasureOf(Arc(C, G, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

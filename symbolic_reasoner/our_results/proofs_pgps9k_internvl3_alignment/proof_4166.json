@@ -1,0 +1,95 @@
+{
+    "problem_id": "4166",
+    "solved": true,
+    "problem_text": "JH is tangent to \\odot G at J. Find the length of GH.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, K)), x)",
+        "Equals(LengthOf(Line(H, J)), 12)",
+        "Equals(LengthOf(Line(H, K)), 8)",
+        "Equals(LengthOf(Line(J, G)), LengthOf(Line(G, K)))",
+        "Equals(LengthOf(Line(J, G)), x)",
+        "Find(LengthOf(Line(G, H)))",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "PointLiesOnCircle(J, Circle(G))",
+        "PointLiesOnCircle(K, Circle(G))",
+        "PointLiesOnLine(K, Line(G, H))",
+        "Tangent(Line(J, H), Circle(G))"
+    ],
+    "point_instances": [
+        "G",
+        "J",
+        "K",
+        "H"
+    ],
+    "line_instances": [
+        "JG",
+        "GK",
+        "GH",
+        "KH",
+        "HJ"
+    ],
+    "circle_instances": [
+        "G"
+    ],
+    "point_positions": {
+        "G": [
+            222.2222222222222,
+            202.77777777777777
+        ],
+        "J": [
+            223.08956916099774,
+            357.9428571428571
+        ],
+        "K": [
+            362.61507936507934,
+            269.12
+        ],
+        "H": [
+            547.8928571428571,
+            357.185306122449
+        ]
+    },
+    "problem_choices": [
+        8.0,
+        8.667,
+        12.0,
+        13.0
+    ],
+    "choices_precise_value": [
+        8.0,
+        8.667,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 13.0,
+    "total_time": 25.99304,
+    "solution_predicate": "Equals(13.0, LengthOf(Line(G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = HK, 12 = HJ, 3.14 = pi, GJ, GH, K on GH, HJ, J on \u2299(G, radius_G), K on \u2299(G, radius_G), Tangent(HJ, \u2299(G, radius_G))\n\nStep 2:\nTheorem: Line Segment Split\nPremises : K on GH\nConclusions: GH = GK + HK\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : GJ, HJ, GH\nConclusions: \u25b3GHJ\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : J on \u2299(G, radius_G)\nConclusions: radius_G = GJ\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : K on \u2299(G, radius_G)\nConclusions: radius_G = GK\n\nStep 6:\nTheorem: Tangent Definition\nPremises : J on \u2299(G, radius_G), Tangent(HJ, \u2299(G, radius_G))\nConclusions: GJ \u22a5 HJ\n\nStep 7:\nTheorem: Law of Cosines\nPremises : \u25b3GHJ\nConclusions: (GJ ** 2 + HJ ** 2) - GH ** 2 = 2 * GJ * HJ * cos(\u2220HJG)\n\nStep 8:\nTheorem: Substitution\nPremises : GH = GK + HK, radius_G = GK, 8 = HK\nConclusions: 8 + radius_G = GH\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : GJ \u22a5 HJ\nConclusions: pi / 2 = \u2220HJG\n\nStep 10:\nTheorem: Pythagorean Theorem\nPremises : GJ \u22a5 HJ, \u25b3GHJ\nConclusions: GH = SqrtOf(GJ ** 2 + HJ ** 2)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi / 2 = \u2220HJG\nConclusions: 1.57 = \u2220HJG\n\nStep 12:\nTheorem: Substitution\nPremises : 12 = HJ, 8 + radius_G = GH, (GJ ** 2 + HJ ** 2) - GH ** 2 = 2 * GJ * HJ * cos(\u2220HJG), 1.57 = \u2220HJG, radius_G = GJ\nConclusions: (12 ** 2 + radius_G ** 2) - (8 + radius_G) ** 2 = 12 * 2 * cos(1.57) * radius_G\n\nStep 13:\nTheorem: Solve Univariate Equation\nPremises : (12 ** 2 + radius_G ** 2) - (8 + radius_G) ** 2 = 12 * 2 * cos(1.57) * radius_G\nConclusions: 5 = radius_G\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : radius_G = GJ, 5 = radius_G\nConclusions: 5 = GJ\n\nStep 15:\nTheorem: Substitution\nPremises : 12 = HJ, 5 = GJ, GH = SqrtOf(GJ ** 2 + HJ ** 2), 8 + radius_G = GH\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = 8 + radius_G\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = 8 + radius_G, 8 + radius_G = GH\nConclusions: SqrtOf(12 ** 2 + 5 ** 2) = GH\n\nStep 17:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 + 5 ** 2) = GH\nConclusions: 13 = GH\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, G)",
+        "Line(G, K)",
+        "Line(G, H)",
+        "Line(K, H)",
+        "Line(H, J)",
+        "Circle(G, radius_G)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(J, H)",
+        "Line(K, H)",
+        "PointLiesOnCircle(J, Circle(G, radius_G))",
+        "PointLiesOnCircle(K, Circle(G, radius_G))",
+        "PointLiesOnLine(K, Line(G, H))",
+        "Tangent(Line(J, H), Circle(G, radius_G))",
+        "Equals(LengthOf(Line(G, K)), x)",
+        "Equals(LengthOf(Line(H, J)), 12.0)",
+        "Equals(LengthOf(Line(H, K)), 8.0)",
+        "Equals(LengthOf(Line(J, G)), LengthOf(Line(G, K)))",
+        "Equals(LengthOf(Line(J, G)), x)"
+    ],
+    "correct": true
+}

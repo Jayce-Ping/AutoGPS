@@ -1,0 +1,67 @@
+{
+    "problem_id": "5640",
+    "solved": true,
+    "problem_text": "Find MN.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, N)), 29)",
+        "Equals(LengthOf(Line(M, L)), 48)",
+        "Equals(MeasureOf(Angle(M, L, N)), 104)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Find(LengthOf(Line(M,N)))"
+    ],
+    "point_instances": [
+        "M",
+        "N",
+        "L"
+    ],
+    "line_instances": [
+        "MN",
+        "ML",
+        "LN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            64.66284403669724,
+            47.42428571428571
+        ],
+        "N": [
+            382.6330275229358,
+            87.38857142857142
+        ],
+        "L": [
+            275.9898063200815,
+            187.80253968253967
+        ]
+    },
+    "problem_choices": [
+        31.872,
+        45.705,
+        53.364,
+        61.794
+    ],
+    "choices_precise_value": [
+        31.872,
+        45.705,
+        53.364,
+        61.794
+    ],
+    "problem_answer": 61.794,
+    "total_time": 9.621138,
+    "solution_predicate": "Equals(61.7940980792, LengthOf(Line(M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 29 = LN, 48 = LM, LN, 3.14 = pi, MN, pi * (104 / 180) = \u2220NLM, LM\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.82 = pi * (104 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : MN, LM, LN\nConclusions: \u25b3LMN\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.82 = pi * (104 / 180), pi * (104 / 180) = \u2220NLM\nConclusions: 1.82 = \u2220NLM\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3LMN\nConclusions: (LM ** 2 + LN ** 2) - MN ** 2 = 2 * LM * LN * cos(\u2220NLM)\n\nStep 6:\nTheorem: Substitution\nPremises : 48 = LM, 1.82 = \u2220NLM, 29 = LN, (LM ** 2 + LN ** 2) - MN ** 2 = 2 * LM * LN * cos(\u2220NLM)\nConclusions: 2 * 29 * 48 * cos(1.82) = (29 ** 2 + 48 ** 2) - MN ** 2\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 2 * 29 * 48 * cos(1.82) = (29 ** 2 + 48 ** 2) - MN ** 2\nConclusions: 61.79 = MN\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(M, L)",
+        "Line(L, N)",
+        "Line(L, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Equals(LengthOf(Line(L, N)), 29.0)",
+        "Equals(LengthOf(Line(M, L)), 48.0)",
+        "Equals(MeasureOf(Angle(N, L, M)), Mul(pi, Div(104.0, 180.0)))"
+    ],
+    "correct": true
+}

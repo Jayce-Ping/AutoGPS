@@ -1,0 +1,117 @@
+{
+    "problem_id": "1876",
+    "solved": true,
+    "problem_text": "In \\odot B, m \\angle LBM = 3x and m \\angle LBQ = 4x+61. What is the measure of \\angle PBQ?",
+    "logic_forms": [
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(L, P)",
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Perpendicular(Line(M, Q), Line(K, B))",
+        "PointLiesOnCircle(K, Circle(B))",
+        "PointLiesOnCircle(L, Circle(B))",
+        "PointLiesOnCircle(M, Circle(B))",
+        "PointLiesOnCircle(P, Circle(B))",
+        "PointLiesOnCircle(Q, Circle(B))",
+        "PointLiesOnLine(B, Line(L, P))",
+        "PointLiesOnLine(B, Line(M, Q))",
+        "Circle(B)",
+        "Equals(MeasureOf(Angle(L,B,M)),3x)",
+        "Equals(MeasureOf(Angle(L,B,Q)),4x+61)",
+        "Find(MeasureOf(Angle(P,B,Q)))"
+    ],
+    "point_instances": [
+        "M",
+        "L",
+        "K",
+        "B",
+        "Q",
+        "P"
+    ],
+    "line_instances": [
+        "MB",
+        "MQ",
+        "BQ",
+        "PB",
+        "PL",
+        "BL",
+        "BK"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "M": [
+            89.60000000000001,
+            231.97968253968253
+        ],
+        "L": [
+            136.0,
+            124.23682539682538
+        ],
+        "K": [
+            241.2,
+            81.40571428571428
+        ],
+        "B": [
+            240.38495575221236,
+            232.05752212389382
+        ],
+        "Q": [
+            392.79999999999995,
+            232.51174603174601
+        ],
+        "P": [
+            346.8,
+            341.18571428571425
+        ]
+    },
+    "problem_choices": [
+        17.0,
+        34.0,
+        51.0,
+        61.0
+    ],
+    "choices_precise_value": [
+        17.0,
+        34.0,
+        51.0,
+        61.0
+    ],
+    "problem_answer": 51.0,
+    "total_time": 23.708495,
+    "solution_predicate": "Equals(0.8901179185, MeasureOf(Angle(P, B, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((3 * x) / 180) = \u2220LBM, pi * ((61 + 4 * x) / 180) = \u2220QBL, B on LP, B on MQ, 3.14 = pi, \u2220PBQ, \u2220QBL\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : B on MQ, B on LP\nConclusions: \u2220LBM = \u2220PBQ\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((61 + 4 * x) / 180) = \u2220QBL, 3.14 = pi\nConclusions: 3.14 * ((61 + 4 * x) / 180) = \u2220QBL\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((3 * x) / 180) = \u2220LBM, 3.14 = pi\nConclusions: 3.14 * ((3 * x) / 180) = \u2220LBM\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220PBQ, \u2220QBL\nConclusions: pi = \u2220PBQ + \u2220QBL\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220LBM, \u2220LBM = \u2220PBQ\nConclusions: pi * ((3 * x) / 180) = \u2220PBQ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220LBM, 3.14 * ((3 * x) / 180) = \u2220LBM\nConclusions: 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220PBQ + \u2220QBL\nConclusions: 3.14 = \u2220PBQ + \u2220QBL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220PBQ, 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\nConclusions: 3.14 * ((3 * x) / 180) = \u2220PBQ\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220PBQ + \u2220QBL, 3.14 * ((61 + 4 * x) / 180) = \u2220QBL, 3.14 * ((3 * x) / 180) = \u2220PBQ\nConclusions: 0.89 = \u2220PBQ\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Line(B, Q)",
+        "Line(P, B)",
+        "Line(P, L)",
+        "Line(B, L)",
+        "Line(B, K)",
+        "Circle(B, radius_B)",
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(K, B)",
+        "Line(L, B)",
+        "Line(L, P)",
+        "Line(M, B)",
+        "Line(M, Q)",
+        "Perpendicular(Line(M, Q), Line(K, B))",
+        "PointLiesOnCircle(K, Circle(B, radius_B))",
+        "PointLiesOnCircle(L, Circle(B, radius_B))",
+        "PointLiesOnCircle(M, Circle(B, radius_B))",
+        "PointLiesOnCircle(P, Circle(B, radius_B))",
+        "PointLiesOnCircle(Q, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(L, P))",
+        "PointLiesOnLine(B, Line(M, Q))",
+        "Circle(B, radius_B)",
+        "Equals(MeasureOf(Angle(L, B, M)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(Q, B, L)), Mul(pi, Div(Add(Mul(4.0, x), 61.0), 180.0)))"
+    ],
+    "correct": true
+}

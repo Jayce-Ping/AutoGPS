@@ -1,0 +1,66 @@
+{
+    "problem_id": "2659",
+    "solved": true,
+    "problem_text": "Find \\widehat W N if \\triangle I W N is equilateral and W N = 5.",
+    "logic_forms": [
+        "PointLiesOnCircle(N, Circle(I, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(I, radius_0_0))",
+        "Equilateral(Triangle(I,W,N))",
+        "Equals(LengthOf(Line(W,N)),5)",
+        "Find(Arc(W,N))"
+    ],
+    "point_instances": [
+        "N",
+        "I",
+        "W"
+    ],
+    "line_instances": [
+        "IN",
+        "WI",
+        "WN"
+    ],
+    "circle_instances": [
+        "I"
+    ],
+    "point_positions": {
+        "N": [
+            219.81132075471697,
+            123.11320754716981
+        ],
+        "I": [
+            143.86792452830187,
+            123.11320754716981
+        ],
+        "W": [
+            175.7075471698113,
+            53.30188679245283
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 3 } { 5 } \\pi",
+        "\\frac { 1 } { 3 } \\pi",
+        "5 \\pi",
+        "10 \\pi"
+    ],
+    "choices_precise_value": [
+        1.8849555921538759,
+        1.0471975512000002,
+        15.707963267948966,
+        31.41592653589793
+    ],
+    "problem_answer": 1.0471975512000002,
+    "total_time": 6.404706,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Arc(N, I, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Equilateral(\u25b3INW), Arc(NIW)\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3INW)\nConclusions: pi / 3 = \u2220NIW\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NIW)\nConclusions: \u2220NIW = Arc(NIW)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi / 3 = \u2220NIW, \u2220NIW = Arc(NIW)\nConclusions: pi / 3 = Arc(NIW)\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 3 = Arc(NIW)\nConclusions: 1.05 = Arc(NIW)\n\n",
+    "logic_fomrs_refined": [
+        "Line(I, N)",
+        "Line(W, I)",
+        "Line(W, N)",
+        "Circle(I, radius_0_0)",
+        "PointLiesOnCircle(N, Circle(I, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(I, radius_0_0))",
+        "Equilateral(Triangle(I, W, N))",
+        "Equals(LengthOf(Line(W, N)), 5.0)"
+    ],
+    "correct": true
+}

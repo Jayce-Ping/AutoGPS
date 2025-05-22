@@ -1,0 +1,105 @@
+{
+    "problem_id": "4097",
+    "solved": true,
+    "problem_text": "Find f.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), f)",
+        "Equals(LengthOf(Line(B, A)), 6)",
+        "Equals(LengthOf(Line(D, B)), 21)",
+        "Equals(LengthOf(Line(E, B)), 15)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(E, B, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(f)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "AE",
+        "BE",
+        "CD",
+        "CE",
+        "DE",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            390.4114285714286,
+            37.831460674157306
+        ],
+        "B": [
+            389.28761904761905,
+            146.82209737827716
+        ],
+        "C": [
+            25.622857142857143,
+            414.7949438202247
+        ],
+        "D": [
+            129.46285714285713,
+            414.7949438202247
+        ],
+        "E": [
+            384.34285714285716,
+            414.7949438202247
+        ]
+    },
+    "problem_choices": [
+        4.286,
+        8.4,
+        29.4,
+        52.5
+    ],
+    "choices_precise_value": [
+        4.286,
+        8.4,
+        29.4,
+        52.5
+    ],
+    "problem_answer": 29.4,
+    "total_time": 38.412711,
+    "solution_predicate": "Equals(29.4, f)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE, 21 = BD, 6 = AB, 3.14 = pi, AE, AC, BE, \u2220CAE, \u2220AED, \u2220CAB = \u2220DBE, CE, D on CE, \u2220AEC, f = AC, BD, \u2220ECA, B on AE, 15 = BE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, CE, AE\nConclusions: \u25b3ACE\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220AEC, D on CE\nConclusions: \u2220AEC = \u2220AED\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BE, DE, BD\nConclusions: \u25b3BDE\n\nStep 5:\nTheorem: Same Angle\nPremises : D on CE, \u2220ECA\nConclusions: \u2220DCA = \u2220ECA\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220CAE, B on AE\nConclusions: \u2220CAB = \u2220CAE\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AED, B on AE\nConclusions: \u2220AED = \u2220BED\n\nStep 8:\nTheorem: Line Segment Split\nPremises : B on AE\nConclusions: AE = AB + BE\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220AEC, B on AE\nConclusions: \u2220AEC = \u2220BEC\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(E, C, A)\nPremises : \u25b3ACE\nConclusions: pi = \u2220AEC + \u2220CAE + \u2220ECA\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, B)\nPremises : \u25b3BDE\nConclusions: pi = \u2220BED + \u2220DBE + \u2220EDB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220CAE, \u2220CAB = \u2220DBE\nConclusions: \u2220CAE = \u2220DBE\n\nStep 13:\nTheorem: Substitution\nPremises : 6 = AB, 15 = BE, AE = AB + BE\nConclusions: 15 + 6 = AE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220AED, \u2220AEC = \u2220BEC\nConclusions: \u2220AED = \u2220BEC\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220AEC = \u2220BEC, \u2220CAE = \u2220DBE, pi = \u2220AEC + \u2220CAE + \u2220ECA\nConclusions: 3.14 = \u2220BEC + \u2220DBE + \u2220ECA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 15 + 6 = AE\nConclusions: 21 = AE\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220BEC, \u2220AED = \u2220BED\nConclusions: \u2220BEC = \u2220BED\n\nStep 18:\nTheorem: Substitution\nPremises : pi = \u2220BED + \u2220DBE + \u2220EDB, 3.14 = pi, \u2220BEC = \u2220BED\nConclusions: 3.14 = \u2220BEC + \u2220DBE + \u2220EDB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BEC = \u2220BED, \u2220AEC = \u2220BEC\nConclusions: \u2220AEC = \u2220BED\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220BEC + \u2220DBE + \u2220ECA, \u2220DCA = \u2220ECA, 3.14 = \u2220BEC + \u2220DBE + \u2220EDB\nConclusions: \u2220DCA = \u2220EDB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220EDB, \u2220DCA = \u2220ECA\nConclusions: \u2220ECA = \u2220EDB\n\nStep 22:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ECA = \u2220EDB, \u2220AEC = \u2220BED, \u2220CAE = \u2220DBE\nConclusions: \u25b3ACE ~ \u25b3BDE\n\nStep 23:\nTheorem: Similar Definition\nPremises : \u25b3ACE ~ \u25b3BDE\nConclusions: sim_ratio_triangle_a_c_e_triangle_b_d_e = AC / BD, sim_ratio_triangle_a_c_e_triangle_b_d_e = AE / BE, \u2220CAE = \u2220DBE, \u2220ECA = \u2220EDB\n\nStep 24:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_c_e_triangle_b_d_e = AC / BD, 21 = BD, f = AC\nConclusions: sim_ratio_triangle_a_c_e_triangle_b_d_e = f / 21\n\nStep 25:\nTheorem: Substitution\nPremises : 21 = AE, sim_ratio_triangle_a_c_e_triangle_b_d_e = AE / BE, 15 = BE\nConclusions: 21 / 15 = sim_ratio_triangle_a_c_e_triangle_b_d_e\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 21 / 15 = sim_ratio_triangle_a_c_e_triangle_b_d_e, sim_ratio_triangle_a_c_e_triangle_b_d_e = f / 21\nConclusions: 21 / 15 = f / 21\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 21 / 15 = f / 21, f = AC\nConclusions: 29.4 = AC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 29.4 = AC, f = AC\nConclusions: 29.4 = f\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(LengthOf(Line(A, C)), f)",
+        "Equals(LengthOf(Line(B, A)), 6.0)",
+        "Equals(LengthOf(Line(D, B)), 21.0)",
+        "Equals(LengthOf(Line(E, B)), 15.0)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(D, B, E)))"
+    ],
+    "correct": true
+}

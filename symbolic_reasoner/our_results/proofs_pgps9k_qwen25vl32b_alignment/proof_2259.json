@@ -1,0 +1,100 @@
+{
+    "problem_id": "2259",
+    "solved": true,
+    "problem_text": "If a = 10\\sqrt{3}, find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(B, C)), a)",
+        "Equals(LengthOf(Line(B, E)), x)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(MeasureOf(Angle(E, A, C)), 30)",
+        "Equals(MeasureOf(Angle(E, B, C)), 60)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, A), Line(E, C))",
+        "Perpendicular(Line(B, C), Line(C, A))",
+        "PointLiesOnLine(E, Line(B, A))",
+        "Equals(a,10\\sqrt{3})",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "E",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "AE",
+        "AB",
+        "EB",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            49.46280991735538,
+            68.24675324675324
+        ],
+        "C": [
+            49.85330578512397,
+            206.75324675324674
+        ],
+        "E": [
+            107.38636363636364,
+            101.42857142857143
+        ],
+        "A": [
+            291.07670454545456,
+            207.14285714285714
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        15.0,
+        17.32050807568877,
+        25.980762113533157
+    ],
+    "choices_precise_value": [
+        10.0,
+        15.0,
+        17.32050807568877,
+        25.980762113533157
+    ],
+    "problem_answer": 17.32050807568877,
+    "total_time": 63.605575,
+    "solution_predicate": "Equals(25.9807621134, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: a = BC, pi * (30 / 180) = \u2220EAC, pi * (60 / 180) = \u2220CBE, BE \u22a5 CE, \u2220CBA, AC, \u2220ECB, cos(\u2220EAC), b = AC, tan(\u2220CBA), \u2220CBA, \u2220BCA, AE, BC, \u2220EAC, E on AB, \u2220BCA, 3.14 = pi, BE, \u2220ACE, y = AE, \u2220BAC, c = AB, CE, 17.32 = 10 * SqrtOf(3), 10 * SqrtOf(3) = a, AE \u22a5 CE, \u2220BAC, AB, \u2220ACE, AC \u22a5 BC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 CE\nConclusions: pi / 2 = \u2220BEC\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220CBA, E on AB\nConclusions: \u2220CBA = \u2220CBE\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on AB\nConclusions: AB = AE + BE\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180), 0.52 = pi * (30 / 180)\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220BAC, E on AB\nConclusions: \u2220BAC = \u2220EAC\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : CE, AE, AC\nConclusions: \u25b3ACE\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : CE, BC, BE\nConclusions: \u25b3BCE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : a = BC, 10 * SqrtOf(3) = a\nConclusions: 10 * SqrtOf(3) = BC\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : AE \u22a5 CE\nConclusions: pi / 2 = \u2220CEA\n\nStep 12:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220EAC), AE \u22a5 CE\nConclusions: AE / AC = cos(\u2220EAC)\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220BCA, \u2220ECB, \u2220ACE\nConclusions: 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\n\nStep 15:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 16:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBA), AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220CBE, \u2220CBA = \u2220CBE\nConclusions: pi * (60 / 180) = \u2220CBA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220CBE, 1.05 = pi * (60 / 180)\nConclusions: 1.05 = \u2220CBE\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220EAC, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220EAC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220EAC, pi * (30 / 180) = \u2220EAC\nConclusions: pi * (30 / 180) = \u2220BAC\n\nStep 21:\nTheorem: Cos Function Definition\nPremises : AE \u22a5 CE, \u2220EAC, \u25b3ACE\nConclusions: AE / AC = cos(\u2220EAC)\n\nStep 22:\nTheorem: Sin Function Definition\nPremises : AE \u22a5 CE, \u2220ACE, \u25b3ACE\nConclusions: AE / AC = sin(\u2220ACE)\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, E)\nPremises : \u25b3ACE\nConclusions: pi = \u2220ACE + \u2220CEA + \u2220EAC\n\nStep 24:\nTheorem: Interior Angle Sum Theorem for Triangle(E, C, B)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BEC + \u2220CBE + \u2220ECB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 10 * SqrtOf(3) = BC, 17.32 = 10 * SqrtOf(3)\nConclusions: 17.32 = BC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CEA, pi / 2 = \u2220BEC\nConclusions: \u2220BEC = \u2220CEA\n\nStep 27:\nTheorem: Sin Function Definition\nPremises : \u25b3ABC, \u2220BAC, AC \u22a5 BC\nConclusions: BC / AB = sin(\u2220BAC)\n\nStep 28:\nTheorem: Tan Function Definition\nPremises : \u25b3ABC, \u2220CBA, AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 29:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 30:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220CBA\nConclusions: 1.05 = \u2220CBA\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220BAC, 0.52 = pi * (30 / 180)\nConclusions: 0.52 = \u2220BAC\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : AE / AC = cos(\u2220EAC), AE / AC = cos(\u2220EAC)\nConclusions: AE / AC = AE / AC\n\nStep 34:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CEA, pi = \u2220ACE + \u2220CEA + \u2220EAC, pi * (30 / 180) = \u2220EAC, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (30 / 180) + \u2220ACE\n\nStep 35:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220CBE, pi = \u2220BEC + \u2220CBE + \u2220ECB, pi / 2 = \u2220BEC, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220ECB\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220BEC + \u2220CBE + \u2220ECB, 3.14 = pi\nConclusions: 3.14 = \u2220BEC + \u2220CBE + \u2220ECB\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = tan(\u2220CBA), AC / BC = tan(\u2220CBA)\nConclusions: AC / BC = AC / BC\n\nStep 38:\nTheorem: Substitution\nPremises : 17.32 = BC, c = AB, Perimeter(\u25b3ABC) = AB + AC + BC, b = AC\nConclusions: 17.32 + b + c = Perimeter(\u25b3ABC)\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BCA, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220BCA\n\nStep 40:\nTheorem: Substitution\nPremises : 17.32 = BC, AC / BC = tan(\u2220CBA), 1.05 = \u2220CBA, b = AC\nConclusions: tan(1.05) = b / 17.32\n\nStep 41:\nTheorem: Substitution\nPremises : 17.32 = BC, b = AC, 1.05 = \u2220CBA, AC / BC = tan(\u2220CBA)\nConclusions: tan(1.05) = b / 17.32\n\nStep 42:\nTheorem: Substitution\nPremises : 17.32 = BC, c = AB, BC / AB = sin(\u2220BAC), 0.52 = \u2220BAC\nConclusions: sin(0.52) = 17.32 / c\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : AE / AC = sin(\u2220ACE), AE / AC = AE / AC\nConclusions: AE / AC = sin(\u2220ACE)\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220ECB\nConclusions: 0.52 = \u2220ECB\n\nStep 45:\nTheorem: Substitution\nPremises : pi * (60 / 180) = \u2220CBE, pi / 2 = \u2220BEC, 3.14 = \u2220BEC + \u2220CBE + \u2220ECB\nConclusions: 3.14 = pi / 2 + pi * (60 / 180) + \u2220ECB\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 17.32 + b + c = Perimeter(\u25b3ABC), Perimeter(\u25b3ABC) = AB + AC + BC\nConclusions: 17.32 + b + c = AB + AC + BC\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 0.52 = \u2220ECB, 0.52 = \u2220EAC\nConclusions: \u2220EAC = \u2220ECB\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = \u2220BCA, 3.14 = pi / 2 + pi * (60 / 180) + \u2220ECB, 3.14 = pi / 2 + pi * (30 / 180) + \u2220ACE, 2 * pi = \u2220ACE + \u2220BCA + \u2220ECB\nConclusions: 1.05 = \u2220ACE\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = \u2220CBE, 1.05 = \u2220ACE\nConclusions: \u2220ACE = \u2220CBE\n\nStep 50:\nTheorem: Evaluate\nPremises : 1.05 = \u2220ACE\nConclusions: 0.87 = sin(\u2220ACE)\n\nStep 51:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220EAC = \u2220ECB, \u2220ACE = \u2220CBE, \u2220BEC = \u2220CEA\nConclusions: \u25b3ACE ~ \u25b3CBE\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : AE / AC = sin(\u2220ACE), 0.87 = sin(\u2220ACE)\nConclusions: 0.87 = AE / AC\n\nStep 53:\nTheorem: Similar Definition\nPremises : \u25b3ACE ~ \u25b3CBE\nConclusions: sim_ratio_triangle_a_c_e_triangle_c_b_e = AC / BC, \u2220EAC = \u2220ECB, \u2220ACE = \u2220CBE, sim_ratio_triangle_a_c_e_triangle_c_b_e = AE / CE, sim_ratio_triangle_a_c_e_triangle_c_b_e = CE / BE\n\nStep 54:\nTheorem: Substitution\nPremises : 17.32 = BC, b = AC, sim_ratio_triangle_a_c_e_triangle_c_b_e = AC / BC\nConclusions: sim_ratio_triangle_a_c_e_triangle_c_b_e = b / 17.32\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = AC / BC, sim_ratio_triangle_a_c_e_triangle_c_b_e = AC / BC\nConclusions: sim_ratio_triangle_a_c_e_triangle_c_b_e = AC / BC\n\nStep 56:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_c_e_triangle_c_b_e = b / 17.32, tan(1.05) = b / 17.32\nConclusions: tan(1.05) = sim_ratio_triangle_a_c_e_triangle_c_b_e\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : tan(1.05) = sim_ratio_triangle_a_c_e_triangle_c_b_e, sim_ratio_triangle_a_c_e_triangle_c_b_e = AE / CE\nConclusions: tan(1.05) = AE / CE\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : tan(1.05) = sim_ratio_triangle_a_c_e_triangle_c_b_e, sim_ratio_triangle_a_c_e_triangle_c_b_e = AC / BC\nConclusions: tan(1.05) = AC / BC\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : tan(1.05) = sim_ratio_triangle_a_c_e_triangle_c_b_e, sim_ratio_triangle_a_c_e_triangle_c_b_e = CE / BE\nConclusions: tan(1.05) = CE / BE\n\nStep 60:\nTheorem: Solve Linear Equation System\nPremises : 17.32 + b + c = AB + AC + BC, sin(0.52) = 17.32 / c, tan(1.05) = CE / BE, tan(1.05) = AC / BC, tan(1.05) = b / 17.32, AB = AE + BE, 0.87 = AE / AC, tan(1.05) = AE / CE\nConclusions: 25.98 = AE\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : 25.98 = AE, y = AE\nConclusions: 25.98 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(C, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Perpendicular(Line(B, A), Line(E, C))",
+        "Perpendicular(Line(B, C), Line(C, A))",
+        "PointLiesOnLine(E, Line(B, A))",
+        "Equals(LengthOf(Line(A, E)), y)",
+        "Equals(LengthOf(Line(B, A)), c)",
+        "Equals(LengthOf(Line(B, C)), a)",
+        "Equals(LengthOf(Line(B, E)), x)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(MeasureOf(Angle(E, A, C)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(a, Mul(10.0, SqrtOf(3.0)))"
+    ],
+    "correct": false
+}

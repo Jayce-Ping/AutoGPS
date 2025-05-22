@@ -1,0 +1,157 @@
+{
+    "problem_id": "4900",
+    "solved": true,
+    "problem_text": "P is the centroid of \\triangle ABC. If SC = 6, find CP.",
+    "logic_forms": [
+        "Line(A, C)",
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(B, R)",
+        "Line(B, S)",
+        "Line(P, C)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, C)",
+        "Line(R, C)",
+        "Line(S, A)",
+        "Line(S, C)",
+        "Line(S, P)",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(P, Line(B, Q))",
+        "PointLiesOnLine(P, Line(S, C))",
+        "PointLiesOnLine(Q, Line(A, C))",
+        "PointLiesOnLine(R, Line(B, C))",
+        "PointLiesOnLine(S, Line(B, A))",
+        "IsCentroidOf(Point(P),Triangle(A,B,C))",
+        "Equals(LengthOf(Line(S,C)),6)",
+        "Find(LengthOf(Line(C,P)))"
+    ],
+    "point_instances": [
+        "B",
+        "S",
+        "R",
+        "P",
+        "Q",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "AQ",
+        "AC",
+        "QC",
+        "BS",
+        "BA",
+        "SA",
+        "BR",
+        "BC",
+        "RC",
+        "SP",
+        "SC",
+        "PC",
+        "BP",
+        "BQ",
+        "PQ",
+        "AP",
+        "AR",
+        "PR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            126.88333333333331,
+            62.40571428571429
+        ],
+        "S": [
+            91.34285714285714,
+            149.31428571428572
+        ],
+        "R": [
+            199.44285714285712,
+            149.31428571428572
+        ],
+        "P": [
+            151.79999999999998,
+            178.5208163265306
+        ],
+        "Q": [
+            163.29999999999998,
+            235.45714285714286
+        ],
+        "A": [
+            55.199999999999996,
+            235.94938775510204
+        ],
+        "C": [
+            271.4,
+            235.94938775510204
+        ]
+    },
+    "problem_choices": [
+        2.0,
+        4.0,
+        9.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        9.0,
+        18.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 262.577195,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(C, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: IsCentroidOf(P, \u25b3ABC), P on CS, 6 = CS\n\nStep 2:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(P, \u25b3ABC)\nConclusions: CP = 2 * PS\n\nStep 3:\nTheorem: Line Segment Split\nPremises : P on CS\nConclusions: CS = CP + PS\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 6 = CS, CS = CP + PS\nConclusions: 6 = CP + PS\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 6 = CP + PS, CP = 2 * PS\nConclusions: 4 = CP\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, Q)",
+        "Line(A, C)",
+        "Line(Q, C)",
+        "Line(B, S)",
+        "Line(B, A)",
+        "Line(S, A)",
+        "Line(B, R)",
+        "Line(B, C)",
+        "Line(R, C)",
+        "Line(S, P)",
+        "Line(S, C)",
+        "Line(P, C)",
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(P, Q)",
+        "Line(A, P)",
+        "Line(A, R)",
+        "Line(P, R)",
+        "Line(A, C)",
+        "Line(A, P)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, P)",
+        "Line(B, Q)",
+        "Line(B, R)",
+        "Line(B, S)",
+        "Line(P, C)",
+        "Line(P, Q)",
+        "Line(P, R)",
+        "Line(Q, C)",
+        "Line(R, C)",
+        "Line(S, A)",
+        "Line(S, C)",
+        "Line(S, P)",
+        "PointLiesOnLine(P, Line(A, R))",
+        "PointLiesOnLine(P, Line(B, Q))",
+        "PointLiesOnLine(P, Line(S, C))",
+        "PointLiesOnLine(Q, Line(A, C))",
+        "PointLiesOnLine(R, Line(B, C))",
+        "PointLiesOnLine(S, Line(B, A))",
+        "IsCentroidOf(P, Triangle(A, B, C))",
+        "Equals(LengthOf(Line(S, C)), 6.0)"
+    ],
+    "correct": true
+}

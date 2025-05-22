@@ -1,0 +1,102 @@
+{
+    "problem_id": "2634",
+    "solved": true,
+    "problem_text": "X Y and X Z are midsegments of \\triangle R S T. Find S T.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(R, S))",
+        "PointLiesOnLine(Y, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, T))",
+        "Equals(LengthOf(Line(X, Y)), 7)",
+        "Equals(LengthOf(Line(R, T)), 13)",
+        "Equals(MeasureOf(Angle(R, X, Z)), 124)",
+        "IsMidsegmentOf(Line(X,Y),Triangle(R,S,T))",
+        "IsMidsegmentOf(Line(X,Z),Triangle(R,S,T))",
+        "Find(LengthOf(Line(S,T)))"
+    ],
+    "point_instances": [
+        "Z",
+        "R",
+        "X",
+        "T",
+        "Y",
+        "S"
+    ],
+    "line_instances": [
+        "RX",
+        "RS",
+        "XS",
+        "RY",
+        "RT",
+        "YT",
+        "SZ",
+        "ST",
+        "ZT",
+        "XY",
+        "XZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            559.8612716763006,
+            245.08670520231215
+        ],
+        "R": [
+            105.52601156069363,
+            407.514450867052
+        ],
+        "X": [
+            373.15606936416185,
+            245.08670520231215
+        ],
+        "T": [
+            486.4508670520231,
+            407.514450867052
+        ],
+        "Y": [
+            262.7514450867052,
+            408.09248554913296
+        ],
+        "S": [
+            636.7398843930636,
+            84.39306358381504
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "13",
+        "14",
+        "20"
+    ],
+    "choices_precise_value": [
+        7.0,
+        13.0,
+        14.0,
+        20.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 46.891708,
+    "solution_predicate": "Equals(14.0, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Y on RT, 7 = XY, IsMidsegmentOf(XY, \u25b3RST), X on RS\n\nStep 2:\nTheorem: Evaluate\nPremises : 7 = XY\nConclusions: 14 = 2 * XY\n\nStep 3:\nTheorem: Midsegment of a Triangle Properties\nPremises : X on RS, IsMidsegmentOf(XY, \u25b3RST), Y on RT\nConclusions: ST = 2 * XY\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : ST = 2 * XY, 14 = 2 * XY\nConclusions: 14 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, X)",
+        "Line(R, S)",
+        "Line(X, S)",
+        "Line(R, Y)",
+        "Line(R, T)",
+        "Line(Y, T)",
+        "Line(S, Z)",
+        "Line(S, T)",
+        "Line(Z, T)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "PointLiesOnLine(X, Line(R, S))",
+        "PointLiesOnLine(Y, Line(R, T))",
+        "PointLiesOnLine(Z, Line(S, T))",
+        "IsMidsegmentOf(Line(X, Y), Triangle(R, S, T))",
+        "IsMidsegmentOf(Line(X, Z), Triangle(R, S, T))",
+        "Equals(LengthOf(Line(X, Y)), 7.0)",
+        "Equals(LengthOf(Line(R, T)), 13.0)",
+        "Equals(MeasureOf(Angle(R, X, Z)), Mul(pi, Div(124.0, 180.0)))"
+    ],
+    "correct": true
+}

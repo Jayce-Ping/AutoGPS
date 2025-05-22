@@ -1,0 +1,102 @@
+{
+    "problem_id": "2622",
+    "solved": true,
+    "problem_text": "For the pair of similar figures, find the area of the green figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 8)",
+        "Equals(LengthOf(Line(F, H)), 4)",
+        "Similar(Polygon(A, B, C, D), Polygon(H, E, F, G))",
+        "Equals(AreaOf(Polygon(A, B, C, D)), 36)",
+        "Find(AreaOf(Polygon(E, F, G, H)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "CB",
+        "CD",
+        "AD",
+        "BA",
+        "CA",
+        "FH",
+        "EH",
+        "FE",
+        "FG",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            102.40414507772022,
+            180.5699481865285
+        ],
+        "B": [
+            16.911917098445596,
+            95.33678756476684
+        ],
+        "C": [
+            103.18134715025907,
+            8.808290155440416
+        ],
+        "D": [
+            188.41450777202073,
+            95.07772020725389
+        ],
+        "E": [
+            207.58549222797927,
+            95.85492227979275
+        ],
+        "F": [
+            249.55440414507774,
+            52.84974093264249
+        ],
+        "G": [
+            293.33678756476684,
+            95.5958549222798
+        ],
+        "H": [
+            250.59067357512953,
+            138.60103626943007
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "18",
+        "72",
+        "144"
+    ],
+    "choices_precise_value": [
+        9.0,
+        18.0,
+        72.0,
+        144.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 74.802479,
+    "solution_predicate": "Equals(9.0, AreaOf(Quadrilateral(E, F, G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8 = AC, 4 = FH, Quadrilateral(A, B, C, D) ~ Quadrilateral(H, E, F, G), 36 = Area(Quadrilateral(A, B, C, D))\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, C, D) ~ Quadrilateral(H, E, F, G)\nConclusions: sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2 = Area(Quadrilateral(A, B, C, D)) / Area(Quadrilateral(E, F, G, H)), sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g = AB / EH, AB / EH = BC / EF, \u2220ABC = \u2220HEF\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2 = Area(Quadrilateral(A, B, C, D)) / Area(Quadrilateral(E, F, G, H)), 36 = Area(Quadrilateral(A, B, C, D))\nConclusions: sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2 = 36 / Area(Quadrilateral(E, F, G, H))\n\nStep 4:\nTheorem: Side-Angle-Side Similarity Theorem\nPremises : AB / EH = BC / EF, \u2220ABC = \u2220HEF\nConclusions: \u25b3ABC ~ \u25b3HEF\n\nStep 5:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3HEF\nConclusions: sim_ratio_triangle_a_b_c_triangle_h_e_f = AB / EH, sim_ratio_triangle_a_b_c_triangle_h_e_f = AC / FH, \u2220ABC = \u2220HEF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g = AB / EH, sim_ratio_triangle_a_b_c_triangle_h_e_f = AB / EH\nConclusions: sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g = sim_ratio_triangle_a_b_c_triangle_h_e_f\n\nStep 7:\nTheorem: Substitution\nPremises : sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g = sim_ratio_triangle_a_b_c_triangle_h_e_f, 4 = FH, sim_ratio_triangle_a_b_c_triangle_h_e_f = AC / FH, 8 = AC\nConclusions: 8 / 4 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 8 / 4 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g\nConclusions: 2 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g\n\nStep 9:\nTheorem: Evaluate\nPremises : 2 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g\nConclusions: 4 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2 = 36 / Area(Quadrilateral(E, F, G, H)), 4 = sim_ratio_quadrilateral_a_b_c_d_quadrilateral_h_e_f_g ** 2\nConclusions: 4 = 36 / Area(Quadrilateral(E, F, G, H))\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 4 = 36 / Area(Quadrilateral(E, F, G, H))\nConclusions: 9 = Area(Quadrilateral(E, F, G, H))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(F, H)",
+        "Line(E, H)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, H)",
+        "Similar(Quadrilateral(A, B, C, D), Quadrilateral(H, E, F, G))",
+        "Equals(LengthOf(Line(A, C)), 8.0)",
+        "Equals(LengthOf(Line(F, H)), 4.0)",
+        "Equals(AreaOf(Quadrilateral(A, B, C, D)), 36.0)"
+    ],
+    "correct": true
+}

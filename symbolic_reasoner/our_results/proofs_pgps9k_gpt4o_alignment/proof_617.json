@@ -1,0 +1,71 @@
+{
+    "problem_id": "617",
+    "solved": true,
+    "problem_text": "Use the Law of Sines to find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(MeasureOf(Angle(B, C, A)), 22)",
+        "Equals(MeasureOf(Angle(C, B, A)), 119)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            30.625555555555557,
+            33.223514211886304
+        ],
+        "B": [
+            107.48464285714286,
+            171.24792358803987
+        ],
+        "C": [
+            368.6055555555556,
+            170.8979328165375
+        ]
+    },
+    "problem_choices": [
+        2.142,
+        2.976,
+        3.598,
+        6.949
+    ],
+    "choices_precise_value": [
+        2.142,
+        2.976,
+        3.598,
+        6.949
+    ],
+    "problem_answer": 2.142,
+    "total_time": 10.984572,
+    "solution_predicate": "Equals(2.141539862, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 5 = AC, BC, AB, 3.14 = pi, pi * (22 / 180) = \u2220ACB, pi * (119 / 180) = \u2220CBA, x = AB\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.38 = pi * (22 / 180), 2.08 = pi * (119 / 180)\n\nStep 4:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 0.38 = pi * (22 / 180), pi * (22 / 180) = \u2220ACB\nConclusions: 0.38 = \u2220ACB\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (119 / 180) = \u2220CBA, 2.08 = pi * (119 / 180)\nConclusions: 2.08 = \u2220CBA\n\nStep 7:\nTheorem: Substitution\nPremises : x = AB, 0.38 = \u2220ACB, 2.08 = \u2220CBA, 5 = AC, AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\nConclusions: 5 / sin(2.08) = x / sin(0.38)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 5 / sin(2.08) = x / sin(0.38), x = AB\nConclusions: 2.14 = AB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : x = AB, 2.14 = AB\nConclusions: 2.14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(C, B)), y)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(22.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(119.0, 180.0)))"
+    ],
+    "correct": true
+}

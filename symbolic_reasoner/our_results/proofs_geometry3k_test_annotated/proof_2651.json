@@ -1,0 +1,110 @@
+{
+    "problem_id": "2651",
+    "solved": true,
+    "problem_text": "Quadrilateral A B C D is inscribed in \\odot Z such that m \\angle B Z A = 104, m \\widehat C B = 94, and A B \\parallel D C. Find m \\angle Z A C.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnCircle(A, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(Z, radius_0_0))",
+        "Inscribed(Quadrilateral(A, B, C, D), Circle(Z))",
+        "Equals(MeasureOf(Angle(B, Z, A)), 104)",
+        "Equals(MeasureOf(Arc(C, B)), 94)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Find(MeasureOf(Angle(Z, A, C)))"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "Z",
+        "D",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CE",
+        "CA",
+        "EA",
+        "AD",
+        "BA",
+        "BC",
+        "CD",
+        "ZA",
+        "BZ",
+        "BE",
+        "BD",
+        "ED"
+    ],
+    "circle_instances": [
+        "Z"
+    ],
+    "point_positions": {
+        "B": [
+            87.13235294117646,
+            74.63235294117646
+        ],
+        "E": [
+            196.69117647058823,
+            168.75
+        ],
+        "Z": [
+            165.80882352941174,
+            170.95588235294116
+        ],
+        "D": [
+            272.05882352941177,
+            231.98529411764704
+        ],
+        "C": [
+            264.70588235294116,
+            98.16176470588235
+        ],
+        "A": [
+            95.22058823529412,
+            273.8970588235294
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "36",
+        "94",
+        "144"
+    ],
+    "choices_precise_value": [
+        9.0,
+        36.0,
+        94.0,
+        144.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 267.526565,
+    "solution_predicate": "Equals(0.1570796327, MeasureOf(Angle(C, A, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CZB, \u2220AZB, AZ, Arc(CZB), \u2220CZB, \u2220BZA, Arc(BZC), pi * (94 / 180) = Arc(CZB), \u2220CZA, AD, C on \u2299(Z, radius_0_0), \u2220BZA, BC, DZ, CD, CZ, BZ, \u2220AZD, AB, \u2220BZC, \u2220CZA, \u2220AZC, AC, A on \u2299(Z, radius_0_0), pi * (104 / 180) = \u2220BZA, 3.14 = pi, \u2220DZC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220AZB\nConclusions: \u2220AZB = 2 * pi - \u2220BZA\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(CZB)\nConclusions: \u2220CZB = Arc(CZB)\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CZB\nConclusions: \u2220CZB = 2 * pi - \u2220BZC\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BZC)\nConclusions: \u2220BZC = Arc(BZC)\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : C on \u2299(Z, radius_0_0)\nConclusions: radius_0_0 = CZ\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BZA\nConclusions: \u2220BZA = 2 * pi - \u2220AZB\n\nStep 8:\nTheorem: Definition of Pentagon\nPremises : AB, CZ, CD, BZ, AD\nConclusions: Pentagon(A, B, Z, C, D)\n\nStep 9:\nTheorem: Definition of Pentagon\nPremises : DZ, BC, AZ, AB, CD\nConclusions: Pentagon(A, B, C, D, Z)\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220BZC\nConclusions: \u2220BZC = 2 * pi - \u2220CZB\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220CZA\nConclusions: \u2220CZA = 2 * pi - \u2220AZC\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220BZA, \u2220AZC, \u2220CZB\nConclusions: 2 * pi = \u2220AZC + \u2220BZA + \u2220CZB\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AZ, AC, CZ\nConclusions: \u25b3ACZ\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : A on \u2299(Z, radius_0_0)\nConclusions: radius_0_0 = AZ\n\nStep 15:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220AZD, \u2220CZA, \u2220DZC\nConclusions: 2 * pi = \u2220AZD + \u2220CZA + \u2220DZC\n\nStep 17:\nTheorem: Circumference Split\nPremises : \u2220AZD, \u2220BZA, \u2220DZC, \u2220CZB\nConclusions: 2 * pi = \u2220AZD + \u2220BZA + \u2220CZB + \u2220DZC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (94 / 180) = Arc(CZB), \u2220CZB = Arc(CZB)\nConclusions: pi * (94 / 180) = \u2220CZB\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BZA = 2 * pi - \u2220AZB, pi * (104 / 180) = \u2220BZA\nConclusions: pi * (104 / 180) = 2 * pi - \u2220AZB\n\nStep 20:\nTheorem: Interior Angle Sum Theorem for Pentagon(A, B, Z, C, D)\nPremises : Pentagon(A, B, Z, C, D)\nConclusions: 3 * pi = \u2220ABZ + \u2220BZC + \u2220CDA + \u2220DAB + \u2220ZCD\n\nStep 21:\nTheorem: Interior Angle Sum Theorem for Pentagon(A, B, C, D, Z)\nPremises : Pentagon(A, B, C, D, Z)\nConclusions: 3 * pi = \u2220ABC + \u2220BCD + \u2220CDZ + \u2220DZA + \u2220ZAB\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BZC = 2 * pi - \u2220CZB, \u2220BZC = Arc(BZC)\nConclusions: Arc(BZC) = 2 * pi - \u2220CZB\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, C, A)\nPremises : \u25b3ACZ\nConclusions: pi = \u2220AZC + \u2220CAZ + \u2220ZCA\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AZ, radius_0_0 = CZ\nConclusions: AZ = CZ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220AZC + \u2220BZA + \u2220CZB\nConclusions: 6.28 = \u2220AZC + \u2220BZA + \u2220CZB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CZB = 2 * pi - \u2220BZC, pi * (94 / 180) = \u2220CZB\nConclusions: pi * (94 / 180) = 2 * pi - \u2220BZC\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, 3 * pi = \u2220ABZ + \u2220BZC + \u2220CDA + \u2220DAB + \u2220ZCD, \u2220BZC = Arc(BZC)\nConclusions: 3 * 3.14 = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC)\n\nStep 28:\nTheorem: Substitution\nPremises : 3.14 = pi, 3 * pi = \u2220ABC + \u2220BCD + \u2220CDZ + \u2220DZA + \u2220ZAB\nConclusions: 3 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDZ + \u2220DZA + \u2220ZAB\n\nStep 29:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACZ, AZ = CZ\nConclusions: \u2220CAZ = \u2220ZCA\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : 3 * pi = \u2220ABC + \u2220BCD + \u2220CDZ + \u2220DZA + \u2220ZAB, 3 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDZ + \u2220DZA + \u2220ZAB\nConclusions: 3 * 3.14 = 3 * pi\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3 * 3.14 = 3 * pi, 3 * 3.14 = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC)\nConclusions: 3 * pi = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC)\n\nStep 32:\nTheorem: Solve Linear Equation System\nPremises : 3 * pi = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), 3 * 3.14 = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), pi * (94 / 180) = 2 * pi - \u2220BZC\nConclusions: 4.64 = \u2220BZC\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = \u2220AZD + \u2220CZA + \u2220DZC, 3 * 3.14 = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), pi * (94 / 180) = \u2220CZB, pi * (104 / 180) = \u2220BZA, 3 * pi = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), 2 * pi = \u2220AZD + \u2220BZA + \u2220CZB + \u2220DZC\nConclusions: 3.46 = \u2220CZA\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 3 * pi = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), 3 * 3.14 = \u2220ABZ + \u2220CDA + \u2220DAB + \u2220ZCD + Arc(BZC), pi * (104 / 180) = 2 * pi - \u2220AZB\nConclusions: 4.47 = \u2220AZB\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 4.64 = \u2220BZC, \u2220BZC = Arc(BZC)\nConclusions: 4.64 = Arc(BZC)\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CZA = 2 * pi - \u2220AZC, 3.46 = \u2220CZA\nConclusions: 3.46 = 2 * pi - \u2220AZC\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 4.47 = \u2220AZB, \u2220AZB = 2 * pi - \u2220BZA\nConclusions: 4.47 = 2 * pi - \u2220BZA\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : Arc(BZC) = 2 * pi - \u2220CZB, 4.64 = Arc(BZC)\nConclusions: 4.64 = 2 * pi - \u2220CZB\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 4.64 = 2 * pi - \u2220CZB, pi = \u2220AZC + \u2220CAZ + \u2220ZCA, 3.46 = 2 * pi - \u2220AZC, \u2220CAZ = \u2220ZCA, 4.47 = 2 * pi - \u2220BZA, 6.28 = \u2220AZC + \u2220BZA + \u2220CZB\nConclusions: 0.16 = \u2220CAZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, E)",
+        "Line(C, A)",
+        "Line(E, A)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(Z, A)",
+        "Line(B, Z)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Circle(Z, radius_0_0)",
+        "PointLiesOnLine(E, Line(C, A))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "PointLiesOnCircle(A, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(Z, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(Z, radius_0_0))",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Equals(MeasureOf(Angle(B, Z, A)), Mul(pi, Div(104.0, 180.0)))",
+        "Equals(MeasureOf(Arc(C, Z, B)), Mul(pi, Div(94.0, 180.0)))"
+    ],
+    "correct": true
+}

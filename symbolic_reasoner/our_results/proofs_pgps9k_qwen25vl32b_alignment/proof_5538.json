@@ -1,0 +1,80 @@
+{
+    "problem_id": "5538",
+    "solved": true,
+    "problem_text": "Find m \\angle Q.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, R, S)), x)",
+        "Equals(MeasureOf(Angle(S, T, Q)), MeasureOf(Angle(Q, R, S)))",
+        "Equals(MeasureOf(Angle(S, T, Q)), x)",
+        "Equals(MeasureOf(Angle(T, Q, R)), 2x+5)",
+        "Equals(MeasureOf(Angle(T, S, R)), 2x+7)",
+        "Line(Q, T)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Find(MeasureOf(Angle(Q)))"
+    ],
+    "point_instances": [
+        "R",
+        "Q",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "RS",
+        "ST",
+        "RQ",
+        "QT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            56.04951958610495,
+            208.5132467532468
+        ],
+        "Q": [
+            230.0349593495935,
+            65.89714285714287
+        ],
+        "S": [
+            266.9116777531412,
+            304.7501298701299
+        ],
+        "T": [
+            434.770325203252,
+            211.50857142857146
+        ]
+    },
+    "problem_choices": [
+        50.0,
+        58.0,
+        60.0,
+        121.0
+    ],
+    "choices_precise_value": [
+        50.0,
+        58.0,
+        60.0,
+        121.0
+    ],
+    "problem_answer": 121.0,
+    "total_time": 8.360275,
+    "solution_predicate": "Equals(2.1118483949, MeasureOf(Angle(R, Q, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220SRQ, 3.14 = pi, pi * (x / 180) = \u2220QTS, pi * ((5 + 2 * x) / 180) = \u2220RQT, QT, pi * ((7 + 2 * x) / 180) = \u2220TSR, QR, RS, ST\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220SRQ\nConclusions: 3.14 * (x / 180) = \u2220SRQ\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220QTS\nConclusions: 3.14 * (x / 180) = \u2220QTS\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 2 * x) / 180) = \u2220RQT\nConclusions: 3.14 * ((5 + 2 * x) / 180) = \u2220RQT\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((7 + 2 * x) / 180) = \u2220TSR\nConclusions: 3.14 * ((7 + 2 * x) / 180) = \u2220TSR\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : QT, RS, QR, ST\nConclusions: Quadrilateral(Q, R, S, T)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(T, S, R, Q)\nPremises : Quadrilateral(Q, R, S, T)\nConclusions: 2 * pi = \u2220QTS + \u2220RQT + \u2220SRQ + \u2220TSR\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220QTS + \u2220RQT + \u2220SRQ + \u2220TSR\nConclusions: 2 * 3.14 = \u2220QTS + \u2220RQT + \u2220SRQ + \u2220TSR\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((7 + 2 * x) / 180) = \u2220TSR, 2 * 3.14 = \u2220QTS + \u2220RQT + \u2220SRQ + \u2220TSR, 3.14 * (x / 180) = \u2220SRQ, 3.14 * ((5 + 2 * x) / 180) = \u2220RQT, 3.14 * (x / 180) = \u2220QTS\nConclusions: 2.11 = \u2220RQT\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, S)",
+        "Line(S, T)",
+        "Line(R, Q)",
+        "Line(Q, T)",
+        "Line(Q, T)",
+        "Line(R, Q)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Equals(MeasureOf(Angle(S, R, Q)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, T, S)), MeasureOf(Angle(S, R, Q)))",
+        "Equals(MeasureOf(Angle(Q, T, S)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(R, Q, T)), Mul(pi, Div(Add(Mul(2.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(T, S, R)), Mul(pi, Div(Add(Mul(2.0, x), 7.0), 180.0)))"
+    ],
+    "correct": true
+}

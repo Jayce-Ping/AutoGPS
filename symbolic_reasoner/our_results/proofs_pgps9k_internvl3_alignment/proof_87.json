@@ -1,0 +1,78 @@
+{
+    "problem_id": "87",
+    "solved": true,
+    "problem_text": "If AB \\parallel DC, find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, D, C)), 65)",
+        "Equals(MeasureOf(Angle(D, A, B)), x)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Parallel(Line(A,B),Line(D,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            99.16981132075472,
+            330.44
+        ],
+        "A": [
+            197.67849056603774,
+            87.34000000000002
+        ],
+        "B": [
+            514.6813036020583,
+            71.20000000000002
+        ],
+        "C": [
+            416.5132075471698,
+            314.6
+        ]
+    },
+    "problem_choices": [
+        32.5,
+        65.0,
+        105.0,
+        115.0
+    ],
+    "choices_precise_value": [
+        32.5,
+        65.0,
+        105.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 5.660013,
+    "solution_predicate": "Equals(115.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (x / 180) = \u2220DAB, AB || DC, pi * (65 / 180) = \u2220CDA, 3.14 = pi\n\nStep 2:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220CDA + \u2220DAB\n\nStep 3:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220DAB, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220DAB\n\nStep 4:\nTheorem: Substitution\nPremises : pi = \u2220CDA + \u2220DAB, 3.14 = pi, pi * (65 / 180) = \u2220CDA\nConclusions: 3.14 = 3.14 * (65 / 180) + \u2220DAB\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220DAB, 3.14 = 3.14 * (65 / 180) + \u2220DAB\nConclusions: 115 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Equals(MeasureOf(Angle(C, D, A)), Mul(pi, Div(65.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

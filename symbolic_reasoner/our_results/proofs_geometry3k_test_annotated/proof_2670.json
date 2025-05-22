@@ -1,0 +1,97 @@
+{
+    "problem_id": "2670",
+    "solved": true,
+    "problem_text": "Quadrilateral A B D C is a rectangle. m \\angle 2 = 40. Find m \\angle 3.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Equals(MeasureOf(Angle(E, B, D)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(E, D, C)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(B, E, D)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(E, A, B)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(E, A, C)), MeasureOf(angle 1))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(angle 2), 40)",
+        "Find(MeasureOf(angle 3)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "BE",
+        "BC",
+        "EC",
+        "AE",
+        "AD",
+        "ED",
+        "BD",
+        "CD",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            57.909604519774014,
+            56.55367231638418
+        ],
+        "D": [
+            292.3728813559322,
+            175.19774011299435
+        ],
+        "B": [
+            56.77966101694915,
+            175.19774011299435
+        ],
+        "C": [
+            292.090395480226,
+            56.836158192090394
+        ],
+        "E": [
+            174.85875706214688,
+            115.31073446327684
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "40",
+        "50",
+        "90"
+    ],
+    "choices_precise_value": [
+        10.0,
+        40.0,
+        50.0,
+        90.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 47.48117,
+    "solution_predicate": "Equals(0.6981317008, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = \u2220BAE, \u2220CDA, E on AD, \u2220BAD, Rectangle(A, B, D, C)\n\nStep 2:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BAD, E on AD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BAD = \u2220CDA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CDA, \u2220BAD = \u2220BAE, pi * (40 / 180) = \u2220BAE\nConclusions: pi * (40 / 180) = \u2220CDA\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220CDA, \u2220CDA = \u2220CDE\nConclusions: pi * (40 / 180) = \u2220CDE\n\nStep 9:\nTheorem: Evaluate\nPremises : pi * (40 / 180) = \u2220CDE\nConclusions: 0.7 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(Angle(B, A, E)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,117 @@
+{
+    "problem_id": "4138",
+    "solved": true,
+    "problem_text": "BD bisects \\angle ABC. Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, D)), 10x-51)",
+        "Equals(MeasureOf(Angle(C, B, D)), 6x-11)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(C, G)",
+        "Line(D, F)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(A, Line(E, B))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "BisectsAngle(Line(B,D),Angle(A,B,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "B",
+        "D",
+        "C",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "EA",
+        "EB",
+        "AB",
+        "BC",
+        "BG",
+        "CG",
+        "BD",
+        "BF",
+        "DF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "E": [
+            9.175384615384615,
+            58.93714285714286
+        ],
+        "A": [
+            77.55384615384615,
+            58.93714285714286
+        ],
+        "B": [
+            292.0102564102564,
+            58.694603174603174
+        ],
+        "D": [
+            220.64615384615382,
+            142.97714285714287
+        ],
+        "C": [
+            307.4846153846154,
+            165.35142857142856
+        ],
+        "F": [
+            181.94725274725275,
+            186.47836734693877
+        ],
+        "G": [
+            317.7401709401709,
+            239.38666666666668
+        ]
+    },
+    "problem_choices": [
+        6.5,
+        10.0,
+        11.5,
+        15.125
+    ],
+    "choices_precise_value": [
+        6.5,
+        10.0,
+        11.5,
+        15.125
+    ],
+    "problem_answer": 10.0,
+    "total_time": 51.206307,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((10 * x - 51) / 180) = \u2220ABD, D on BF, 3.14 = pi, pi * ((6 * x - 11) / 180) = \u2220DBC, \u2220FBC, BisectsAngle(BD, \u2220ABC)\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220FBC, D on BF\nConclusions: \u2220DBC = \u2220FBC\n\nStep 3:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(BD, \u2220ABC)\nConclusions: \u2220ABD = \u2220DBC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 11) / 180) = \u2220DBC, \u2220DBC = \u2220FBC\nConclusions: pi * ((6 * x - 11) / 180) = \u2220FBC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 11) / 180) = \u2220DBC, \u2220ABD = \u2220DBC\nConclusions: pi * ((6 * x - 11) / 180) = \u2220ABD\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * x - 11) / 180) = \u2220FBC\nConclusions: 3.14 * ((6 * x - 11) / 180) = \u2220FBC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 11) / 180) = \u2220ABD, pi * ((10 * x - 51) / 180) = \u2220ABD\nConclusions: pi * ((10 * x - 51) / 180) = pi * ((6 * x - 11) / 180)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * x - 11) / 180) = \u2220FBC, 3.14 * ((6 * x - 11) / 180) = \u2220FBC\nConclusions: 3.14 * ((6 * x - 11) / 180) = pi * ((6 * x - 11) / 180)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((10 * x - 51) / 180) = pi * ((6 * x - 11) / 180), 3.14 * ((6 * x - 11) / 180) = pi * ((6 * x - 11) / 180)\nConclusions: 3.14 * ((6 * x - 11) / 180) = pi * ((10 * x - 51) / 180)\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, 3.14 * ((6 * x - 11) / 180) = pi * ((10 * x - 51) / 180)\nConclusions: 3.14 * ((10 * x - 51) / 180) = 3.14 * ((6 * x - 11) / 180)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((10 * x - 51) / 180) = 3.14 * ((6 * x - 11) / 180)\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, G)",
+        "Line(C, G)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, F)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(C, G)",
+        "Line(D, F)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnLine(A, Line(E, B))",
+        "PointLiesOnLine(C, Line(B, G))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "BisectsAngle(Line(B, D), Angle(A, B, C))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(Sub(Mul(10.0, x), 51.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, C)), Mul(pi, Div(Sub(Mul(6.0, x), 11.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,78 @@
+{
+    "problem_id": "8270",
+    "solved": true,
+    "problem_text": "Use parallelogram WXYZ to find m \\angle XYZ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(Y, X)), 24)",
+        "Equals(LengthOf(Line(Z, Y)), 28)",
+        "Equals(MeasureOf(Angle(Z, W, X)), 105)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Parallelogram(W,X,Y,Z)",
+        "Find(MeasureOf(Angle(X,Y,Z)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "ZY",
+        "YX",
+        "XW",
+        "ZW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            61.403081914030814,
+            224.64
+        ],
+        "Y": [
+            310.7912408759124,
+            224.80457142857142
+        ],
+        "X": [
+            393.38296836982965,
+            50.797714285714285
+        ],
+        "W": [
+            144.1004723057106,
+            51.01714285714286
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        75.0,
+        105.0,
+        180.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        75.0,
+        105.0,
+        180.0
+    ],
+    "problem_answer": 105.0,
+    "total_time": 5.9294,
+    "solution_predicate": "Equals(1.8325957146, MeasureOf(Angle(X, Y, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (105 / 180) = \u2220ZWX, Parallelogram(W, X, Y, Z)\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220XYZ = \u2220ZWX\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYZ = \u2220ZWX, pi * (105 / 180) = \u2220ZWX\nConclusions: pi * (105 / 180) = \u2220XYZ\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (105 / 180) = \u2220XYZ\nConclusions: 1.83 = \u2220XYZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(Z, W)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Parallelogram(W, X, Y, Z)",
+        "Equals(LengthOf(Line(Y, X)), 24.0)",
+        "Equals(LengthOf(Line(Z, Y)), 28.0)",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(105.0, 180.0)))"
+    ],
+    "correct": true
+}

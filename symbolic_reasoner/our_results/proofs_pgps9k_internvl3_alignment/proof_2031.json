@@ -1,0 +1,72 @@
+{
+    "problem_id": "2031",
+    "solved": true,
+    "problem_text": "What is the area of \\odot K?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 16)",
+        "Line(A, B)",
+        "Line(A, K)",
+        "Line(K, B)",
+        "PointLiesOnCircle(A, Circle(K))",
+        "PointLiesOnCircle(B, Circle(K))",
+        "PointLiesOnLine(K, Line(A, B))",
+        "Find(AreaOf(Circle(K)))"
+    ],
+    "point_instances": [
+        "A",
+        "K",
+        "B"
+    ],
+    "line_instances": [
+        "AK",
+        "AB",
+        "KB"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "A": [
+            28.756018518518516,
+            188.63619047619048
+        ],
+        "K": [
+            171.74673094143964,
+            164.3009870355273
+        ],
+        "B": [
+            314.61333333333334,
+            139.06285714285715
+        ]
+    },
+    "problem_choices": [
+        50.265,
+        110.851,
+        201.062,
+        804.248
+    ],
+    "choices_precise_value": [
+        50.265,
+        110.851,
+        201.062,
+        804.248
+    ],
+    "problem_answer": 201.062,
+    "total_time": 2.391711,
+    "solution_predicate": "Equals(201.0619298304, AreaOf(Circle(K, radius_K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = AB, K on AB, B on \u2299(K, radius_K), Area(\u2299(K, radius_K)), A on \u2299(K, radius_K), 3.14 = pi\n\nStep 2:\nTheorem: Line Segment Split\nPremises : K on AB\nConclusions: AB = AK + BK\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(K, radius_K)\nConclusions: radius_K = BK\n\nStep 4:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(K, radius_K))\nConclusions: pi * radius_K ** 2 = Area(\u2299(K, radius_K))\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : A on \u2299(K, radius_K)\nConclusions: radius_K = AK\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = AK + BK, 16 = AB\nConclusions: 16 = AK + BK\n\nStep 7:\nTheorem: Substitution\nPremises : pi * radius_K ** 2 = Area(\u2299(K, radius_K)), 3.14 = pi\nConclusions: 3.14 * radius_K ** 2 = Area(\u2299(K, radius_K))\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = AK, radius_K = BK\nConclusions: AK = BK\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_K ** 2 = Area(\u2299(K, radius_K)), 3.14 * radius_K ** 2 = Area(\u2299(K, radius_K))\nConclusions: 3.14 * radius_K ** 2 = pi * radius_K ** 2\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : AK = BK, 16 = AK + BK\nConclusions: 8 = BK\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 8 = BK, radius_K = BK\nConclusions: 8 = radius_K\n\nStep 12:\nTheorem: Evaluate\nPremises : 8 = radius_K, 3.14 = pi\nConclusions: 201.06 = pi * radius_K ** 2\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_K ** 2 = pi * radius_K ** 2, 201.06 = pi * radius_K ** 2\nConclusions: 201.06 = 3.14 * radius_K ** 2\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_K ** 2 = Area(\u2299(K, radius_K)), 201.06 = 3.14 * radius_K ** 2\nConclusions: 201.06 = Area(\u2299(K, radius_K))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, K)",
+        "Line(A, B)",
+        "Line(K, B)",
+        "Circle(K, radius_K)",
+        "Line(A, B)",
+        "Line(A, K)",
+        "Line(K, B)",
+        "PointLiesOnCircle(A, Circle(K, radius_K))",
+        "PointLiesOnCircle(B, Circle(K, radius_K))",
+        "PointLiesOnLine(K, Line(A, B))",
+        "Equals(LengthOf(Line(A, B)), 16.0)"
+    ],
+    "correct": true
+}

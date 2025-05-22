@@ -1,0 +1,89 @@
+{
+    "problem_id": "2607",
+    "solved": true,
+    "problem_text": "Find B C.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "Parallel(Line(D, C), Line(A, E))",
+        "Equals(LengthOf(Line(C, B)), 2x-8)",
+        "Equals(LengthOf(Line(A, B)), x+3)",
+        "Equals(LengthOf(Line(E, B)), 5)",
+        "Equals(LengthOf(Line(D, B)), 3)",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "E",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "EB",
+        "ED",
+        "BD",
+        "DC",
+        "AE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            224.2138364779874,
+            126.57861635220124
+        ],
+        "D": [
+            333.0188679245283,
+            83.49685534591194
+        ],
+        "E": [
+            54.088050314465406,
+            194.81761006289307
+        ],
+        "A": [
+            51.57232704402515,
+            29.723270440251568
+        ],
+        "C": [
+            342.1383647798742,
+            193.87421383647796
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "6",
+        "7",
+        "8"
+    ],
+    "choices_precise_value": [
+        4.0,
+        6.0,
+        7.0,
+        8.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 31.235077,
+    "solution_predicate": "Equals(6.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AED, 5 = BE, 3 + x = AB, 2 * x - 8 = BC, B on AC, B on DE, \u2220CDE, AE || DC, \u2220DCA, \u2220EAC, 3 = BD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : B on AC, B on DE\nConclusions: \u2220ABE = \u2220CBD\n\nStep 4:\nTheorem: Same Angle\nPremises : B on DE, \u2220AED\nConclusions: \u2220AEB = \u2220AED\n\nStep 5:\nTheorem: Same Angle\nPremises : B on DE, \u2220CDE\nConclusions: \u2220CDB = \u2220CDE\n\nStep 6:\nTheorem: Alternate Interior Angle Theorem\nPremises : AE || DC\nConclusions: \u2220DCA = \u2220EAC, \u2220AED = \u2220CDE\n\nStep 7:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220EAC, B on AC\nConclusions: \u2220EAB = \u2220EAC\n\nStep 9:\nTheorem: Substitution\nPremises : 2 * x - 8 = BC, 3 + x = AB, AC = AB + BC\nConclusions: (3 + x) + (2 * x - 8) = AC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEB = \u2220AED, \u2220AED = \u2220CDE, \u2220CDB = \u2220CDE\nConclusions: \u2220AEB = \u2220CDB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAB = \u2220EAC, \u2220DCA = \u2220EAC, \u2220DCA = \u2220DCB\nConclusions: \u2220DCB = \u2220EAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 + x) + (2 * x - 8) = AC, AC = AB + BC\nConclusions: (3 + x) + (2 * x - 8) = AB + BC\n\nStep 13:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220AEB = \u2220CDB, \u2220DCB = \u2220EAB, \u2220ABE = \u2220CBD\nConclusions: \u25b3ABE ~ \u25b3CBD\n\nStep 14:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3CBD\nConclusions: \u2220DCB = \u2220EAB, sim_ratio_triangle_a_b_e_triangle_c_b_d = BE / BD, \u2220ABE = \u2220CBD, sim_ratio_triangle_a_b_e_triangle_c_b_d = AB / BC, AB / BC = BE / BD\n\nStep 15:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_e_triangle_c_b_d = BE / BD, 3 = BD, 5 = BE\nConclusions: 5 / 3 = sim_ratio_triangle_a_b_e_triangle_c_b_d\n\nStep 16:\nTheorem: Substitution\nPremises : 3 + x = AB, 2 * x - 8 = BC, 3 = BD, AB / BC = BE / BD, 5 = BE\nConclusions: 5 / 3 = (3 + x) / (2 * x - 8)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_e_triangle_c_b_d = AB / BC, 5 / 3 = sim_ratio_triangle_a_b_e_triangle_c_b_d\nConclusions: 5 / 3 = AB / BC\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 5 / 3 = (3 + x) / (2 * x - 8), 5 / 3 = AB / BC, (3 + x) + (2 * x - 8) = AB + BC\nConclusions: 6 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, B)",
+        "Line(E, D)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(A, E)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(E, D))",
+        "Parallel(Line(D, C), Line(A, E))",
+        "Equals(LengthOf(Line(C, B)), Sub(Mul(2.0, x), 8.0))",
+        "Equals(LengthOf(Line(A, B)), Add(x, 3.0))",
+        "Equals(LengthOf(Line(E, B)), 5.0)",
+        "Equals(LengthOf(Line(D, B)), 3.0)"
+    ],
+    "correct": true
+}

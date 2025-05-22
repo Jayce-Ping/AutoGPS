@@ -1,0 +1,95 @@
+{
+    "problem_id": "4314",
+    "solved": true,
+    "problem_text": "The radius of \\odot P is 5 and PR = 3. Find the measure of \\widehat SQ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, R)), 3)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Perpendicular(Line(P, R), Line(Q, S))",
+        "PointLiesOnCircle(Q, Circle(P))",
+        "PointLiesOnCircle(S, Circle(P))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Equals(RadiusOf(Circle(P)),5)",
+        "Equals(LengthOf(Line(P,R)),3)",
+        "Find(MeasureOf(Arc(S,Q)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "R",
+        "S"
+    ],
+    "line_instances": [
+        "PR",
+        "SR",
+        "SQ",
+        "RQ",
+        "PQ",
+        "PS"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            128.34615384615384,
+            109.1787330316742
+        ],
+        "Q": [
+            183.46923076923076,
+            41.38901098901099
+        ],
+        "R": [
+            183.24399999999997,
+            109.64952380952381
+        ],
+        "S": [
+            182.91866666666667,
+            179.35238095238094
+        ]
+    },
+    "problem_choices": [
+        53.13,
+        61.928,
+        73.74,
+        106.26
+    ],
+    "choices_precise_value": [
+        53.13,
+        61.928,
+        73.74,
+        106.26
+    ],
+    "problem_answer": 106.26,
+    "total_time": 62.51717,
+    "solution_predicate": "Equals(1.854590436, MeasureOf(Arc(S, P, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = radius_P, 3 = PR, PS, PQ, PR \u22a5 QR, \u2299(P, radius_P), S on \u2299(P, radius_P), \u2220PQS, R on QS, PR \u22a5 RS, 3.14 = pi, Arc(SPQ), QS, sin(\u2220RSP), \u2220QSP\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : S on \u2299(P, radius_P)\nConclusions: radius_P = PS\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(P, radius_P), R on QS, PR \u22a5 QR\nConclusions: \u25b3PQR \u2245 \u25b3PSR\n\nStep 4:\nTheorem: Same Angle\nPremises : R on QS, \u2220PQS\nConclusions: \u2220PQR = \u2220PQS\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(SPQ)\nConclusions: \u2220SPQ = Arc(SPQ)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : PQ, PS, QS\nConclusions: \u25b3PQS\n\nStep 7:\nTheorem: Angle Sin Definition\nPremises : PR \u22a5 RS, sin(\u2220RSP)\nConclusions: PR / PS = sin(\u2220RSP)\n\nStep 8:\nTheorem: Same Angle\nPremises : R on QS, \u2220QSP\nConclusions: \u2220QSP = \u2220RSP\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_P = PS, 5 = radius_P\nConclusions: 5 = PS\n\nStep 10:\nTheorem: Congruent Definition\nPremises : \u25b3PQR \u2245 \u25b3PSR\nConclusions: \u2220PQR = \u2220RSP\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, S)\nPremises : \u25b3PQS\nConclusions: pi = \u2220PQS + \u2220QSP + \u2220SPQ\n\nStep 12:\nTheorem: Substitution\nPremises : 3 = PR, 5 = PS, PR / PS = sin(\u2220RSP)\nConclusions: 3 / 5 = sin(\u2220RSP)\n\nStep 13:\nTheorem: Solve Univariate Equation\nPremises : 3 / 5 = sin(\u2220RSP)\nConclusions: 0.64 = \u2220RSP\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 0.64 = \u2220RSP, \u2220QSP = \u2220RSP\nConclusions: 0.64 = \u2220QSP\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PQR = \u2220PQS, 0.64 = \u2220RSP, \u2220PQR = \u2220RSP\nConclusions: 0.64 = \u2220PQS\n\nStep 16:\nTheorem: Evaluate\nPremises : 0.64 = \u2220PQS, 3.14 = pi\nConclusions: 5.64 = 2 * pi - \u2220PQS\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220PQS + \u2220QSP + \u2220SPQ, 5.64 = 2 * pi - \u2220PQS, 0.64 = \u2220PQS, 0.64 = \u2220QSP\nConclusions: 1.85 = \u2220SPQ\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 1.85 = \u2220SPQ, \u2220SPQ = Arc(SPQ)\nConclusions: 1.85 = Arc(SPQ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, R)",
+        "Line(S, R)",
+        "Line(S, Q)",
+        "Line(R, Q)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Circle(P, radius_P)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, S)",
+        "Perpendicular(Line(P, R), Line(Q, S))",
+        "PointLiesOnCircle(Q, Circle(P, radius_P))",
+        "PointLiesOnCircle(S, Circle(P, radius_P))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "Equals(LengthOf(Line(P, R)), 3.0)",
+        "Equals(radius_P, 5.0)",
+        "Equals(LengthOf(Line(P, R)), 3.0)"
+    ],
+    "correct": true
+}

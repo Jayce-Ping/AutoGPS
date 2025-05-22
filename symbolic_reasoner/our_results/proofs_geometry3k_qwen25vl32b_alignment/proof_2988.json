@@ -1,0 +1,63 @@
+{
+    "problem_id": "2988",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), 11)",
+        "Equals(MeasureOf(Angle(A, C, B)), 21)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            339.7014925373134,
+            146.44776119402985
+        ],
+        "C": [
+            50.14925373134328,
+            146.44776119402985
+        ],
+        "A": [
+            338.8059701492537,
+            36.29850746268656
+        ]
+    },
+    "problem_choices": [
+        "3.9",
+        "11.8",
+        "28.7",
+        "30.7"
+    ],
+    "choices_precise_value": [
+        3.9,
+        11.8,
+        28.7,
+        30.7
+    ],
+    "problem_answer": 30.7,
+    "total_time": 14.048581,
+    "solution_predicate": "Equals(30.6947092058, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (21 / 180) = \u2220BCA, AB \u22a5 BC, x = AC, AC, 3.14 = pi, \u2220ABC, AB, 11 = AB, BC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220CBA, pi / 2 = \u2220ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.37 = pi * (21 / 180), 1.57 = 2 * 3.14 - (3 * pi) / 2\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 0.37 = pi * (21 / 180), pi * (21 / 180) = \u2220BCA\nConclusions: 0.37 = \u2220BCA\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220ABC = 2 * pi - \u2220CBA, (3 * pi) / 2 = \u2220CBA, 3.14 = pi, pi / 2 = \u2220ABC\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 8:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220BCA) = AC / sin(\u2220ABC)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220ABC\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220ABC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - (3 * pi) / 2 = \u2220ABC, 1.57 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 1.57 = \u2220ABC\n\nStep 11:\nTheorem: Substitution\nPremises : 0.37 = \u2220BCA, 1.57 = \u2220ABC, x = AC, 11 = AB, AB / sin(\u2220BCA) = AC / sin(\u2220ABC)\nConclusions: 11 / sin(0.37) = x / sin(1.57)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : x = AC, 11 / sin(0.37) = x / sin(1.57)\nConclusions: 30.69 = AC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : x = AC, 30.69 = AC\nConclusions: 30.69 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), 11.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(21.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,89 @@
+{
+    "problem_id": "2918",
+    "solved": true,
+    "problem_text": "Find x so that G J \\parallel F K. G H = x + 3.5, H J = x - 8.5, F H = 21, H K = 7.",
+    "logic_forms": [
+        "PointLiesOnLine(J, Line(H, K))",
+        "PointLiesOnLine(G, Line(F, H))",
+        "Parallel(Line(G,J),Line(F,K))",
+        "Equals(LengthOf(Line(G,H)),x+3.5)",
+        "Equals(LengthOf(Line(H,J)),x-8.5)",
+        "Equals(LengthOf(Line(F,H)),21)",
+        "Equals(LengthOf(Line(H,K)),7)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "H",
+        "G",
+        "F"
+    ],
+    "line_instances": [
+        "FK",
+        "HJ",
+        "HK",
+        "JK",
+        "FG",
+        "FH",
+        "GH",
+        "GJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            250.35933147632312,
+            148.46796657381617
+        ],
+        "K": [
+            288.79944289693594,
+            212.25626740947075
+        ],
+        "H": [
+            193.5348189415042,
+            56.26740947075209
+        ],
+        "G": [
+            96.59888579387187,
+            148.7465181058496
+        ],
+        "F": [
+            30.30362116991644,
+            212.25626740947075
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "12.5",
+        "14.5",
+        "17.5"
+    ],
+    "choices_precise_value": [
+        12.0,
+        12.5,
+        14.5,
+        17.5
+    ],
+    "problem_answer": 14.5,
+    "total_time": 33.031247,
+    "solution_predicate": "Equals(14.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220FKH, FK || GJ, \u2220FKH, \u2220JHF, 3.5 + x = GH, J on HK, 7 = HK, 21 = FH, x - 8.5 = HJ, G on FH, 3.14 = pi, \u2220KHF, \u2220GJH, \u2220HKF\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220FKH\nConclusions: \u2220FKH = 2 * pi - \u2220HKF\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : FK || GJ\nConclusions: \u2220HFK = \u2220HGJ, \u2220HJG = \u2220HKF\n\nStep 4:\nTheorem: Same Angle\nPremises : J on HK, \u2220FKH\nConclusions: \u2220FKH = \u2220FKJ\n\nStep 5:\nTheorem: Same Angle\nPremises : G on FH, \u2220JHF\nConclusions: \u2220JHF = \u2220JHG\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220KHF, J on HK\nConclusions: \u2220JHF = \u2220KHF\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220GJH\nConclusions: \u2220GJH = 2 * pi - \u2220HJG\n\nStep 8:\nTheorem: Same Angle\nPremises : J on HK, \u2220HKF\nConclusions: \u2220HKF = \u2220JKF\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JHF = \u2220KHF, \u2220JHF = \u2220JHG\nConclusions: \u2220JHG = \u2220KHF\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HKF = \u2220JKF, \u2220HJG = \u2220HKF\nConclusions: \u2220HJG = \u2220JKF\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220HKF = \u2220JKF, \u2220FKH = 2 * pi - \u2220HKF, \u2220FKH = \u2220FKJ, 3.14 = pi\nConclusions: \u2220FKJ = 2 * 3.14 - \u2220JKF\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220HJG = \u2220JKF, 3.14 = pi, \u2220GJH = 2 * pi - \u2220HJG\nConclusions: \u2220GJH = 2 * 3.14 - \u2220JKF\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FKJ = 2 * 3.14 - \u2220JKF, \u2220GJH = 2 * 3.14 - \u2220JKF\nConclusions: \u2220FKJ = \u2220GJH\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FKH = \u2220FKJ, \u2220FKJ = \u2220GJH\nConclusions: \u2220FKH = \u2220GJH\n\nStep 15:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220FKH = \u2220GJH, \u2220HFK = \u2220HGJ, \u2220JHG = \u2220KHF\nConclusions: \u25b3FHK ~ \u25b3GHJ\n\nStep 16:\nTheorem: Similar Definition\nPremises : \u25b3FHK ~ \u25b3GHJ\nConclusions: \u2220JHG = \u2220KHF, \u2220FKH = \u2220GJH, \u2220HJG = \u2220HKF, FH / GH = HK / HJ\n\nStep 17:\nTheorem: Substitution\nPremises : 7 = HK, FH / GH = HK / HJ, 3.5 + x = GH, 21 = FH, x - 8.5 = HJ\nConclusions: 21 / (3.5 + x) = 7 / (x - 8.5)\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 21 / (3.5 + x) = 7 / (x - 8.5)\nConclusions: 14.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, K)",
+        "Line(H, J)",
+        "Line(H, K)",
+        "Line(J, K)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "PointLiesOnLine(J, Line(H, K))",
+        "PointLiesOnLine(G, Line(F, H))",
+        "Parallel(Line(G, J), Line(F, K))",
+        "Equals(LengthOf(Line(G, H)), Add(x, 3.5))",
+        "Equals(LengthOf(Line(H, J)), Sub(x, 8.5))",
+        "Equals(LengthOf(Line(F, H)), 21.0)",
+        "Equals(LengthOf(Line(H, K)), 7.0)"
+    ],
+    "correct": true
+}

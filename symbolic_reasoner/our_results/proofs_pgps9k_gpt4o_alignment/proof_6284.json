@@ -1,0 +1,107 @@
+{
+    "problem_id": "6284",
+    "solved": true,
+    "problem_text": "The diameter of \\odot C is 32 units long. Find the length of \\widehat HDF if m \\angle HCF = 125.",
+    "logic_forms": [
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(H, C)",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnCircle(F, Circle(C))",
+        "PointLiesOnCircle(G, Circle(C))",
+        "PointLiesOnCircle(H, Circle(C))",
+        "PointLiesOnLine(C, Line(G, E))",
+        "Equals(DiameterOf(Circle(C)),32)",
+        "Equals(MeasureOf(Angle(H,C,F)),125)",
+        "Find(LengthOf(Arc(H,D,F)))"
+    ],
+    "point_instances": [
+        "D",
+        "H",
+        "G",
+        "C",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "FC",
+        "GC",
+        "GE",
+        "CE",
+        "CD",
+        "HC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "D": [
+            184.34153846153848,
+            68.47013321873656
+        ],
+        "H": [
+            104.97428571428571,
+            96.58659217877094
+        ],
+        "G": [
+            71.24380952380952,
+            152.92877094972067
+        ],
+        "C": [
+            177.88718667781407,
+            177.6580374531004
+        ],
+        "E": [
+            286.0110204081633,
+            201.96608140462888
+        ],
+        "F": [
+            155.34933333333336,
+            285.0882681564246
+        ]
+    },
+    "problem_choices": [
+        15.359,
+        34.907,
+        65.624,
+        69.813
+    ],
+    "choices_precise_value": [
+        15.359,
+        34.907,
+        65.624,
+        69.813
+    ],
+    "problem_answer": 65.624,
+    "total_time": 19.496626,
+    "solution_predicate": "Equals(65.6243798752, LengthOf(Arc(F, C, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: F on \u2299(C, radius_C), \u2220FCH, pi * (125 / 180) = \u2220HCF, Arc(FCH), 32 = 2 * radius_C, 3.14 = pi\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : F on \u2299(C, radius_C)\nConclusions: radius_C = CF\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220FCH\nConclusions: \u2220FCH = 2 * pi - \u2220HCF\n\nStep 4:\nTheorem: Arc Length Definition\nPremises : Arc(FCH)\nConclusions: Arc(FCH) = radius_C * \u2220FCH\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 4.1 = 2 * 3.14 - pi * (125 / 180)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 32 = 2 * radius_C, radius_C = CF\nConclusions: 16 = CF\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220FCH = 2 * pi - \u2220HCF, pi * (125 / 180) = \u2220HCF, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (125 / 180) = \u2220FCH\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 16 = CF, radius_C = CF\nConclusions: 16 = radius_C\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 4.1 = 2 * 3.14 - pi * (125 / 180), 2 * 3.14 - pi * (125 / 180) = \u2220FCH\nConclusions: 4.1 = \u2220FCH\n\nStep 10:\nTheorem: Substitution\nPremises : 16 = radius_C, Arc(FCH) = radius_C * \u2220FCH, 4.1 = \u2220FCH\nConclusions: 16 * 4.1 = Arc(FCH)\n\nStep 11:\nTheorem: Evaluate\nPremises : 16 * 4.1 = Arc(FCH)\nConclusions: 65.62 = Arc(FCH)\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(C, E)",
+        "Line(C, D)",
+        "Line(H, C)",
+        "Circle(C, radius_C)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, C)",
+        "Line(G, C)",
+        "Line(G, E)",
+        "Line(H, C)",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnCircle(F, Circle(C, radius_C))",
+        "PointLiesOnCircle(G, Circle(C, radius_C))",
+        "PointLiesOnCircle(H, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(G, E))",
+        "Equals(Mul(2.0, radius_C), 32.0)",
+        "Equals(MeasureOf(Angle(H, C, F)), Mul(pi, Div(125.0, 180.0)))"
+    ],
+    "correct": true
+}

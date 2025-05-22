@@ -1,0 +1,87 @@
+{
+    "problem_id": "2414",
+    "solved": true,
+    "problem_text": "Find A E if A B = 12, A C = 16, and E D = 5.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, A))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A,B)),12)",
+        "Equals(LengthOf(Line(A,C)),16)",
+        "Equals(LengthOf(Line(E,D)),5)",
+        "Find(LengthOf(Line(A,E)))"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "D",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "DE",
+        "DA",
+        "EA",
+        "CD",
+        "CB",
+        "CA",
+        "BA",
+        "BE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            66.99453551912569,
+            103.82513661202185
+        ],
+        "E": [
+            146.50273224043715,
+            112.8415300546448
+        ],
+        "D": [
+            200.87431693989072,
+            56.01092896174863
+        ],
+        "C": [
+            76.01092896174862,
+            41.803278688524586
+        ],
+        "A": [
+            51.69398907103826,
+            207.37704918032787
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "15",
+        "16",
+        "20"
+    ],
+    "choices_precise_value": [
+        12.0,
+        15.0,
+        16.0,
+        20.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 28.195766,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 16 = AC, BE || CD, \u2220BAD, \u2220CAD, B on AC, 5 = DE, 12 = AB, E on AD\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BE || CD\nConclusions: \u2220ABE = \u2220ACD, \u2220ADC = \u2220AEB\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220CAD, B on AC\nConclusions: \u2220BAD = \u2220CAD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on AD\nConclusions: AD = AE + DE\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220BAD, E on AD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 6:\nTheorem: Substitution\nPremises : 5 = DE, AD = AE + DE\nConclusions: AD = 5 + AE\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220BAE, \u2220BAD = \u2220CAD\nConclusions: \u2220BAE = \u2220CAD\n\nStep 8:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABE = \u2220ACD, \u2220BAE = \u2220CAD, \u2220ADC = \u2220AEB\nConclusions: \u25b3ABE ~ \u25b3ACD\n\nStep 9:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3ACD\nConclusions: AB / AC = AE / AD, \u2220BAE = \u2220CAD, \u2220ADC = \u2220AEB\n\nStep 10:\nTheorem: Substitution\nPremises : 16 = AC, 12 = AB, AB / AC = AE / AD\nConclusions: 12 / 16 = AE / AD\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 12 / 16 = AE / AD, AD = 5 + AE\nConclusions: 15 = AE\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, A)",
+        "Line(E, A)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(B, E)",
+        "PointLiesOnLine(E, Line(D, A))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(C, D), Line(B, E))",
+        "Equals(LengthOf(Line(A, B)), 12.0)",
+        "Equals(LengthOf(Line(A, C)), 16.0)",
+        "Equals(LengthOf(Line(E, D)), 5.0)"
+    ],
+    "correct": true
+}

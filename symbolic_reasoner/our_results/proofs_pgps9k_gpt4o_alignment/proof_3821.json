@@ -1,0 +1,102 @@
+{
+    "problem_id": "3821",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle CFD on \\odot F with diameter AC.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, F, D)), 2a-5)",
+        "Equals(MeasureOf(Angle(B, F, C)), 72)",
+        "Equals(MeasureOf(Angle(C, F, D)), 4a-1)",
+        "Line(B, F)",
+        "Line(C, A)",
+        "Line(C, F)",
+        "Line(F, A)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(F))",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(C, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnLine(F, Line(C, A))",
+        "Circle(F)",
+        "IsDiameterOf(Line(A,C),Circle(F))",
+        "Find(MeasureOf(Angle(C,F,D)))"
+    ],
+    "point_instances": [
+        "F",
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AF",
+        "AC",
+        "FC",
+        "FD",
+        "FB"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "F": [
+            155.580204778157,
+            150.8532423208191
+        ],
+        "B": [
+            82.51557093425606,
+            53.28719723183391
+        ],
+        "C": [
+            227.15224913494808,
+            51.21107266435986
+        ],
+        "A": [
+            83.2076124567474,
+            249.1349480968858
+        ],
+        "D": [
+            179.74740484429066,
+            271.280276816609
+        ]
+    },
+    "problem_choices": [
+        115.0,
+        119.0,
+        120.0,
+        123.0
+    ],
+    "choices_precise_value": [
+        115.0,
+        119.0,
+        120.0,
+        123.0
+    ],
+    "problem_answer": 123.0,
+    "total_time": 7.620056,
+    "solution_predicate": "Equals(2.14675498, MeasureOf(Angle(D, F, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AFD, 3.14 = pi, \u2220DFC, pi * ((2 * a - 5) / 180) = \u2220AFD, pi * ((4 * a - 1) / 180) = \u2220DFC\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220DFC, \u2220AFD\nConclusions: pi = \u2220AFD + \u2220DFC\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((2 * a - 5) / 180) = \u2220AFD, 3.14 = pi\nConclusions: 3.14 * ((2 * a - 5) / 180) = \u2220AFD\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((4 * a - 1) / 180) = \u2220DFC, 3.14 = pi\nConclusions: 3.14 * ((4 * a - 1) / 180) = \u2220DFC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AFD + \u2220DFC, 3.14 = pi\nConclusions: 3.14 = \u2220AFD + \u2220DFC\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * a - 1) / 180) = \u2220DFC, 3.14 * ((2 * a - 5) / 180) = \u2220AFD, 3.14 = \u2220AFD + \u2220DFC\nConclusions: 2.15 = \u2220DFC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Line(F, B)",
+        "Circle(F, radius_F)",
+        "Line(B, F)",
+        "Line(C, A)",
+        "Line(C, F)",
+        "Line(F, A)",
+        "Line(F, D)",
+        "PointLiesOnCircle(A, Circle(F, radius_F))",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(C, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnLine(F, Line(C, A))",
+        "Circle(F, radius_F)",
+        "IsDiameterOf(Line(A, C), Circle(F, radius_F))",
+        "Equals(MeasureOf(Angle(A, F, D)), Mul(pi, Div(Sub(Mul(2.0, a), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, B)), Mul(pi, Div(72.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, F, C)), Mul(pi, Div(Sub(Mul(4.0, a), 1.0), 180.0)))"
+    ],
+    "correct": true
+}

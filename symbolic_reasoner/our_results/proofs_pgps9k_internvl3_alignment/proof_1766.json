@@ -1,0 +1,81 @@
+{
+    "problem_id": "1766",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 1 in the isosceles trapezoid.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(MeasureOf(Angle(A, B, D)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(D, C, A)), 77)",
+        "Find(MeasureOf(Angle(1)))",
+        "Isosceles(Trapezoid(A, B, C, D))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "DC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.18222222222223,
+            18.65353961556493
+        ],
+        "B": [
+            319.66814814814813,
+            18.74871073605251
+        ],
+        "C": [
+            20.853333333333335,
+            168.31012658227849
+        ],
+        "D": [
+            356.48,
+            168.31012658227849
+        ]
+    },
+    "problem_choices": [
+        26.0,
+        60.0,
+        77.0,
+        103.0
+    ],
+    "choices_precise_value": [
+        26.0,
+        60.0,
+        77.0,
+        103.0
+    ],
+    "problem_answer": 77.0,
+    "total_time": 5.48601,
+    "solution_predicate": "Equals(1.343903524, MeasureOf(Angle(B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC = BD, pi * (77 / 180) = \u2220DCA, Trapezoid(A, B, D, C), 3.14 = pi\n\nStep 2:\nTheorem: Issoceles Trapezoid Property\nPremises : Trapezoid(A, B, D, C), AC = BD\nConclusions: \u2220BDC = \u2220DCA\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.34 = pi * (77 / 180)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (77 / 180) = \u2220DCA, 1.34 = pi * (77 / 180)\nConclusions: 1.34 = \u2220DCA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 1.34 = \u2220DCA, \u2220BDC = \u2220DCA\nConclusions: 1.34 = \u2220BDC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Isosceles(Trapezoid(A, B, D, C))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Parallel(Line(A, B), Line(C, D))",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(B, D)))",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(77.0, 180.0)))"
+    ],
+    "correct": true
+}

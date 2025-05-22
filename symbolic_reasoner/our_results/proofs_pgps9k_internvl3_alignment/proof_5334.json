@@ -1,0 +1,88 @@
+{
+    "problem_id": "5334",
+    "solved": true,
+    "problem_text": "Find CB.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(C, D, B)), 64)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(LengthOf(Line(C,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "DA",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            155.4534632034632,
+            49.387142857142855
+        ],
+        "A": [
+            46.903318903318905,
+            169.39301587301586
+        ],
+        "B": [
+            155.78602350030923,
+            169.62285714285713
+        ],
+        "C": [
+            402.8167388167388,
+            169.8526984126984
+        ]
+    },
+    "problem_choices": [
+        1.403,
+        2.876,
+        3.507,
+        7.19
+    ],
+    "choices_precise_value": [
+        1.403,
+        2.876,
+        3.507,
+        7.19
+    ],
+    "problem_answer": 7.19,
+    "total_time": 34.973016,
+    "solution_predicate": "Equals(7.1903523704, LengthOf(Line(C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: sin(\u2220BDC), BC \u22a5 BD, 3.14 = pi, 8 = CD, pi * (64 / 180) = \u2220BDC\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BDC), BC \u22a5 BD\nConclusions: BC / CD = sin(\u2220BDC)\n\nStep 3:\nTheorem: Substitution\nPremises : 8 = CD, BC / CD = sin(\u2220BDC), pi * (64 / 180) = \u2220BDC\nConclusions: sin(pi * (64 / 180)) = BC / 8\n\nStep 4:\nTheorem: Substitution\nPremises : sin(pi * (64 / 180)) = BC / 8, 3.14 = pi\nConclusions: sin(3.14 * (64 / 180)) = BC / 8\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : sin(3.14 * (64 / 180)) = BC / 8\nConclusions: 7.19 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 3.2)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(64.0, 180.0)))"
+    ],
+    "correct": true
+}

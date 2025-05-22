@@ -1,0 +1,112 @@
+{
+    "problem_id": "6051",
+    "solved": true,
+    "problem_text": "What is m \\angle 3?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, E)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, D)))",
+        "Equals(MeasureOf(Angle(A, B, C)), 40)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(B, E, C)), MeasureOf(Angle(2)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "DE",
+        "EB",
+        "BA",
+        "AC",
+        "AE",
+        "CE",
+        "BC",
+        "BD",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            180.97641509433961,
+            20.120816326530615
+        ],
+        "B": [
+            29.037735849056602,
+            147.0857142857143
+        ],
+        "C": [
+            180.97641509433961,
+            147.0857142857143
+        ],
+        "D": [
+            343.05283018867925,
+            147.26399999999998
+        ],
+        "E": [
+            181.03584905660375,
+            274.3222857142857
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        50.0,
+        70.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        50.0,
+        70.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 117.071537,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(D, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on BD, \u2220BCE, BC, \u2220DCA, AE, \u2220DBA, 3.14 = pi, BE, AC, \u2220BAE, C on AE, AB, \u2220AEB, \u2220EBD, \u2220ACB, pi * (40 / 180) = \u2220CBA, \u2220ECD, AB = BE, CE, AD = DE\n\nStep 2:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220ACB = \u2220ECD, \u2220BCE = \u2220DCA\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220BAE, C on AE\nConclusions: \u2220BAC = \u2220BAE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AE, AB, BE\nConclusions: \u25b3ABE\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AEB, C on AE\nConclusions: \u2220AEB = \u2220CEB\n\nStep 8:\nTheorem: Same Angle\nPremises : C on BD, \u2220EBD\nConclusions: \u2220EBC = \u2220EBD\n\nStep 9:\nTheorem: Circumference Split\nPremises : \u2220ACB, \u2220DCA, \u2220BCE, \u2220ECD\nConclusions: 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BC, CE, BE\nConclusions: \u25b3BCE\n\nStep 11:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : AB = BE, AD = DE\nConclusions: \u25b3ABD \u2245 \u25b3EBD\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DBA, pi * (40 / 180) = \u2220CBA\nConclusions: pi * (40 / 180) = \u2220DBA\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 14:\nTheorem: Issoceles Triangle Property\nPremises : AB = BE, \u25b3ABE\nConclusions: \u2220AEB = \u2220BAE\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220ECD, 3.14 = pi, \u2220BCE = \u2220DCA, 2 * pi = \u2220ACB + \u2220BCE + \u2220DCA + \u2220ECD\nConclusions: 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, E)\nPremises : \u25b3BCE\nConclusions: pi = \u2220BCE + \u2220CEB + \u2220EBC\n\nStep 17:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3EBD\nConclusions: AD = DE, \u2220DBA = \u2220EBD\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (40 / 180) = \u2220DBA\nConclusions: 0.7 = \u2220DBA\n\nStep 19:\nTheorem: Substitution\nPremises : \u2220ACB = \u2220ECD, \u2220BAC = \u2220BAE, 3.14 = pi, pi * (40 / 180) = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = pi * (40 / 180) + \u2220BAE + \u2220ECD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEB = \u2220CEB, \u2220AEB = \u2220BAE\nConclusions: \u2220BAE = \u2220CEB\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCE + \u2220CEB + \u2220EBC, \u2220BCE = \u2220DCA, \u2220EBC = \u2220EBD\nConclusions: 3.14 = \u2220CEB + \u2220DCA + \u2220EBD\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBA = \u2220EBD, 0.7 = \u2220DBA\nConclusions: 0.7 = \u2220EBD\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi * (40 / 180) + \u2220BAE + \u2220ECD, \u2220BAE = \u2220CEB, 3.14 = pi\nConclusions: 3.14 = 3.14 * (40 / 180) + \u2220CEB + \u2220ECD\n\nStep 24:\nTheorem: Substitution\nPremises : 0.7 = \u2220EBD, 3.14 = \u2220CEB + \u2220DCA + \u2220EBD\nConclusions: 3.14 = 0.7 + \u2220CEB + \u2220DCA\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.7 + \u2220CEB + \u2220DCA, 2 * 3.14 = \u2220DCA + \u2220DCA + \u2220ECD + \u2220ECD, 3.14 = 3.14 * (40 / 180) + \u2220CEB + \u2220ECD\nConclusions: 1.57 = \u2220DCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, E)))",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(A, D)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

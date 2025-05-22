@@ -1,0 +1,117 @@
+{
+    "problem_id": "8282",
+    "solved": true,
+    "problem_text": "Find the area of the rhombus.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 5)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, B)), 6)",
+        "Equals(LengthOf(Line(D, C)), 5)",
+        "Equals(LengthOf(Line(E, D)), 6)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, B)))",
+        "Find(AreaOf(Rhombus(A, B, C, E)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, B))",
+        "Rhombus(A, B, C, E)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "BD",
+        "BE",
+        "DE",
+        "AE",
+        "EC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.635344827586206,
+            94.08771428571427
+        ],
+        "B": [
+            108.79983179142135,
+            154.7604181184669
+        ],
+        "C": [
+            197.75862068965515,
+            94.29491289198606
+        ],
+        "D": [
+            108.34559386973179,
+            94.39047619047618
+        ],
+        "E": [
+            108.35934664246822,
+            27.86721804511278
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        30.0,
+        60.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        30.0,
+        60.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 181.784208,
+    "solution_predicate": "Equals(60.0, AreaOf(Rhombus(A, B, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = DE, Rhombus(A, B, C, E), 6 = BD, 5 = AD, D on BE, 5 = CD, D on AC\n\nStep 2:\nTheorem: Area formula of Rhombus(A, B, C, E)\nPremises : Rhombus(A, B, C, E)\nConclusions: Area(Rhombus(A, B, C, E)) = (AC * BE) / 2\n\nStep 3:\nTheorem: Evaluate\nPremises : 6 = BD, 6 = DE\nConclusions: 12 = BD + DE\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on BE\nConclusions: BE = BD + DE\n\nStep 5:\nTheorem: Evaluate\nPremises : 5 = CD, 5 = AD\nConclusions: 10 = AD + CD\n\nStep 6:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : BE = BD + DE, 12 = BD + DE\nConclusions: 12 = BE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AC = AD + CD, 10 = AD + CD\nConclusions: 10 = AC\n\nStep 9:\nTheorem: Evaluate\nPremises : 10 = AC, 12 = BE\nConclusions: 60 = (AC * BE) / 2\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 60 = (AC * BE) / 2, Area(Rhombus(A, B, C, E)) = (AC * BE) / 2\nConclusions: 60 = Area(Rhombus(A, B, C, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(A, E)",
+        "Line(E, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnLine(D, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, B))",
+        "Rhombus(A, B, C, E)",
+        "Equals(LengthOf(Line(A, D)), 5.0)",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(D, B)), 6.0)",
+        "Equals(LengthOf(Line(D, C)), 5.0)",
+        "Equals(LengthOf(Line(E, D)), 6.0)",
+        "Equals(LengthOf(Line(E, D)), LengthOf(Line(D, B)))"
+    ],
+    "correct": true
+}

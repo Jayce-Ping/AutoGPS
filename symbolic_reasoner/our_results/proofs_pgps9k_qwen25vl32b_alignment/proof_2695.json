@@ -1,0 +1,174 @@
+{
+    "problem_id": "2695",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(G, C, B)), 53)",
+        "Equals(MeasureOf(Angle(I, F, A)), x)",
+        "Equals(MeasureOf(Arc(B, G)), y)",
+        "Equals(MeasureOf(Arc(D, A)), 60)",
+        "Equals(MeasureOf(Arc(I, H)), 70)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(A, I)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, G)",
+        "Line(C, I)",
+        "Line(E, I)",
+        "Line(F, D)",
+        "Line(F, H)",
+        "Line(G, I)",
+        "Line(I, D)",
+        "Line(I, F)",
+        "PointLiesOnCircle(A, Circle(E))",
+        "PointLiesOnCircle(B, Circle(E))",
+        "PointLiesOnCircle(D, Circle(E))",
+        "PointLiesOnCircle(G, Circle(E))",
+        "PointLiesOnCircle(H, Circle(E))",
+        "PointLiesOnCircle(I, Circle(E))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, I))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(I, D))",
+        "PointLiesOnLine(G, Line(C, I))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "DF",
+        "DI",
+        "FI",
+        "IG",
+        "IC",
+        "GC",
+        "CB",
+        "CA",
+        "BA",
+        "AE",
+        "AI",
+        "EI",
+        "AF",
+        "AH",
+        "FH"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            251.91289198606273,
+            42.03142857142857
+        ],
+        "B": [
+            156.64634146341464,
+            47.78040816326531
+        ],
+        "C": [
+            16.231544715447153,
+            54.372571428571426
+        ],
+        "D": [
+            317.8279674796748,
+            127.22704761904762
+        ],
+        "E": [
+            210.58477475711024,
+            140.34477808993833
+        ],
+        "F": [
+            278.3829268292683,
+            157.3942857142857
+        ],
+        "G": [
+            104.78894308943089,
+            162.16380952380953
+        ],
+        "H": [
+            290.8549593495935,
+            214.03238095238095
+        ],
+        "I": [
+            168.97148217636024,
+            240.3564835164835
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        36.0,
+        74.0,
+        115.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        36.0,
+        74.0,
+        115.0
+    ],
+    "problem_answer": 115.0,
+    "total_time": 403.823425,
+    "solution_predicate": "Equals(115.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on \u2299(E, radius_E), EH, 3.14 = pi, E on AI, \u2220IEH, DE, \u2220BEG, \u2220DEA, \u2220AEB, Arc(DEA), I on \u2299(E, radius_E), D on \u2299(E, radius_E), FI, EI, \u2220AEG, \u2220AHE, AI, H on \u2299(E, radius_E), F on AH, \u2220EDI, \u2220FIA, AE, pi * (x / 180) = \u2220AFI, F on DI, \u2220GEI, Arc(IEH), pi * (60 / 180) = Arc(DEA), \u2220DFH, \u2220AEG, AH, \u2220HFD, DI, pi * (70 / 180) = Arc(IEH), \u2220DEH, AF, \u2220DIE, DF, \u2220IFA, \u2220EAH, \u2220IAF, FH, \u2220HED, \u2220GEA\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : A on \u2299(E, radius_E)\nConclusions: radius_E = AE\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DEA)\nConclusions: \u2220DEA = Arc(DEA)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : I on \u2299(E, radius_E)\nConclusions: radius_E = EI\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : D on \u2299(E, radius_E)\nConclusions: radius_E = DE\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220AEG\nConclusions: \u2220AEG = 2 * pi - \u2220GEA\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : H on \u2299(E, radius_E)\nConclusions: radius_E = EH\n\nStep 8:\nTheorem: Same Angle\nPremises : F on AH, \u2220AHE\nConclusions: \u2220AHE = \u2220FHE\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220FIA, E on AI\nConclusions: \u2220FIA = \u2220FIE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220EDI, F on DI\nConclusions: \u2220EDF = \u2220EDI\n\nStep 11:\nTheorem: Vertical Angle Theorem\nPremises : F on AH, F on DI\nConclusions: \u2220DFH = \u2220IFA, \u2220AFI = \u2220HFD\n\nStep 12:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(IEH)\nConclusions: \u2220IEH = Arc(IEH)\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220DFH\nConclusions: \u2220DFH = 2 * pi - \u2220HFD\n\nStep 14:\nTheorem: Straight Angle\nPremises : \u2220GEI, \u2220AEG\nConclusions: pi = \u2220AEG + \u2220GEI\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : EH, AE, AH\nConclusions: \u25b3AEH\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220HFD\nConclusions: \u2220HFD = 2 * pi - \u2220DFH\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : EI, DI, DE\nConclusions: \u25b3DEI\n\nStep 18:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEH\nConclusions: \u2220DEH = 2 * pi - \u2220HED\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : AF, AI, FI\nConclusions: \u25b3AFI\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220DIE, F on DI\nConclusions: \u2220DIE = \u2220FIE\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220IFA\nConclusions: \u2220IFA = 2 * pi - \u2220AFI\n\nStep 22:\nTheorem: Same Angle\nPremises : \u2220EAH, F on AH\nConclusions: \u2220EAF = \u2220EAH\n\nStep 23:\nTheorem: Same Angle\nPremises : \u2220IAF, E on AI\nConclusions: \u2220EAF = \u2220IAF\n\nStep 24:\nTheorem: Definition of Quadrilateral\nPremises : DF, EH, FH, DE\nConclusions: Quadrilateral(D, E, H, F)\n\nStep 25:\nTheorem: Circumference Split\nPremises : \u2220AEB, \u2220HED, \u2220BEG, \u2220GEI, \u2220DEA, \u2220IEH\nConclusions: 2 * pi = \u2220AEB + \u2220BEG + \u2220DEA + \u2220GEI + \u2220HED + \u2220IEH\n\nStep 26:\nTheorem: Circumference splited\nPremises : \u2220AEB, \u2220BEG, \u2220GEA\nConclusions: 2 * pi = \u2220AEB + \u2220BEG + \u2220GEA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = Arc(DEA), \u2220DEA = Arc(DEA)\nConclusions: pi * (60 / 180) = \u2220DEA\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = DE, radius_E = EI\nConclusions: DE = EI\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : radius_E = EH, radius_E = AE\nConclusions: AE = EH\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFI = \u2220HFD, pi * (x / 180) = \u2220AFI\nConclusions: pi * (x / 180) = \u2220HFD\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi * (70 / 180) = Arc(IEH), \u2220IEH = Arc(IEH)\nConclusions: pi * (70 / 180) = \u2220IEH\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DFH = 2 * pi - \u2220HFD, \u2220DFH = \u2220IFA\nConclusions: \u2220IFA = 2 * pi - \u2220HFD\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AEG + \u2220GEI, 3.14 = pi\nConclusions: 3.14 = \u2220AEG + \u2220GEI\n\nStep 34:\nTheorem: Interior Angle Sum Theorem for Triangle(A, F, I)\nPremises : \u25b3AFI\nConclusions: pi = \u2220AFI + \u2220FIA + \u2220IAF\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAF = \u2220EAH, \u2220EAF = \u2220IAF\nConclusions: \u2220EAH = \u2220IAF\n\nStep 36:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, H, E, D)\nPremises : Quadrilateral(D, E, H, F)\nConclusions: 2 * pi = \u2220DFH + \u2220EDF + \u2220FHE + \u2220HED\n\nStep 37:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3DEI, DE = EI\nConclusions: \u2220DIE = \u2220EDI\n\nStep 38:\nTheorem: Issoceles Triangle Property\nPremises : AE = EH, \u25b3AEH\nConclusions: \u2220AHE = \u2220EAH\n\nStep 39:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220HFD, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220HFD\n\nStep 40:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AEB + \u2220BEG + \u2220DEA + \u2220GEI + \u2220HED + \u2220IEH, pi * (70 / 180) = \u2220IEH, 3.14 = pi, pi * (60 / 180) = \u2220DEA\nConclusions: 2 * 3.14 = 3.14 * (70 / 180) + pi * (60 / 180) + \u2220AEB + \u2220BEG + \u2220GEI + \u2220HED\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AFI + \u2220FIA + \u2220IAF, 3.14 = pi\nConclusions: 3.14 = \u2220AFI + \u2220FIA + \u2220IAF\n\nStep 42:\nTheorem: Substitution\nPremises : \u2220EDF = \u2220EDI, \u2220DFH = \u2220IFA, 3.14 = pi, 2 * pi = \u2220DFH + \u2220EDF + \u2220FHE + \u2220HED\nConclusions: 2 * 3.14 = \u2220EDI + \u2220FHE + \u2220HED + \u2220IFA\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FIA = \u2220FIE, \u2220DIE = \u2220FIE, \u2220DIE = \u2220EDI\nConclusions: \u2220EDI = \u2220FIA\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AHE = \u2220FHE, \u2220AHE = \u2220EAH, \u2220EAH = \u2220IAF\nConclusions: \u2220FHE = \u2220IAF\n\nStep 45:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220HFD, 3.14 = pi, \u2220IFA = 2 * pi - \u2220HFD\nConclusions: 2 * 3.14 - 3.14 * (x / 180) = \u2220IFA\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HFD = 2 * pi - \u2220DFH, 3.14 * (x / 180) = \u2220HFD\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220DFH\n\nStep 47:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 3.14 * (70 / 180) + pi * (60 / 180) + \u2220AEB + \u2220BEG + \u2220GEI + \u2220HED, 3.14 = pi, 3.14 = \u2220AEG + \u2220GEI, 2 * pi = \u2220AEB + \u2220BEG + \u2220GEA, \u2220DEH = 2 * pi - \u2220HED, \u2220AEG = 2 * pi - \u2220GEA\nConclusions: 5.41 = \u2220DEH\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - 3.14 * (x / 180) = \u2220IFA, \u2220IFA = 2 * pi - \u2220AFI\nConclusions: 2 * 3.14 - 3.14 * (x / 180) = 2 * pi - \u2220AFI\n\nStep 49:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DFH = \u2220IFA, 3.14 * (x / 180) = 2 * pi - \u2220DFH\nConclusions: 3.14 * (x / 180) = 2 * 3.14 - \u2220IFA\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DEH = 2 * pi - \u2220HED, 5.41 = \u2220DEH\nConclusions: 5.41 = 2 * pi - \u2220HED\n\nStep 51:\nTheorem: Solve Linear Equation System\nPremises : 5.41 = 2 * pi - \u2220HED, 3.14 = \u2220AFI + \u2220FIA + \u2220IAF, 2 * 3.14 = \u2220EDI + \u2220FHE + \u2220HED + \u2220IFA, 2 * 3.14 - 3.14 * (x / 180) = 2 * pi - \u2220AFI, \u2220EDI = \u2220FIA, 3.14 * (x / 180) = 2 * 3.14 - \u2220IFA, \u2220FHE = \u2220IAF\nConclusions: 115 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(D, I)",
+        "Line(F, I)",
+        "Line(I, G)",
+        "Line(I, C)",
+        "Line(G, C)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(A, I)",
+        "Line(E, I)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(F, H)",
+        "Circle(E, radius_E)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(A, I)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, G)",
+        "Line(C, I)",
+        "Line(E, I)",
+        "Line(F, D)",
+        "Line(F, H)",
+        "Line(G, I)",
+        "Line(I, D)",
+        "Line(I, F)",
+        "PointLiesOnCircle(A, Circle(E, radius_E))",
+        "PointLiesOnCircle(B, Circle(E, radius_E))",
+        "PointLiesOnCircle(D, Circle(E, radius_E))",
+        "PointLiesOnCircle(G, Circle(E, radius_E))",
+        "PointLiesOnCircle(H, Circle(E, radius_E))",
+        "PointLiesOnCircle(I, Circle(E, radius_E))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(E, Line(A, I))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(I, D))",
+        "PointLiesOnLine(G, Line(C, I))",
+        "Equals(MeasureOf(Angle(G, C, B)), Mul(pi, Div(53.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, F, I)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(B, E, G)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Arc(D, E, A)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Arc(I, E, H)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

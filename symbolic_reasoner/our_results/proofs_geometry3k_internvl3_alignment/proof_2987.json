@@ -1,0 +1,81 @@
+{
+    "problem_id": "2987",
+    "solved": true,
+    "problem_text": "Find B C.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(K, A))",
+        "PointLiesOnCircle(A, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(K, radius_0_0))",
+        "Perpendicular(Line(K, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, B)), 2)",
+        "Equals(LengthOf(Line(K, C)), 5)",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "K",
+        "A"
+    ],
+    "line_instances": [
+        "KB",
+        "KA",
+        "BA",
+        "KC",
+        "BC"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "B": [
+            171.59036144578312,
+            105.78313253012047
+        ],
+        "C": [
+            171.59036144578312,
+            172.289156626506
+        ],
+        "K": [
+            116.16867469879517,
+            105.78313253012047
+        ],
+        "A": [
+            202.433734939759,
+            105.3012048192771
+        ]
+    },
+    "problem_choices": [
+        "4",
+        "8",
+        "12",
+        "16"
+    ],
+    "choices_precise_value": [
+        4.0,
+        8.0,
+        12.0,
+        16.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 15.626013,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC \u22a5 BK, B on AK, 2 = AB, A on \u2299(K, radius_0_0), CK, BK, 5 = CK, C on \u2299(K, radius_0_0), x = BC, BC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AK\nConclusions: AK = AB + BK\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : A on \u2299(K, radius_0_0)\nConclusions: radius_0_0 = AK\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(K, radius_0_0)\nConclusions: radius_0_0 = CK\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, CK, BK\nConclusions: \u25b3BCK\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CK, 5 = CK\nConclusions: 5 = radius_0_0\n\nStep 7:\nTheorem: Pythagorean Theorem\nPremises : \u25b3BCK, BC \u22a5 BK\nConclusions: BC = SqrtOf(CK ** 2 - BK ** 2)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AK, 5 = radius_0_0\nConclusions: 5 = AK\n\nStep 9:\nTheorem: Substitution\nPremises : 2 = AB, AK = AB + BK, 5 = AK\nConclusions: 5 = 2 + BK\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 5 = 2 + BK\nConclusions: 3 = BK\n\nStep 11:\nTheorem: Substitution\nPremises : x = BC, 5 = CK, BC = SqrtOf(CK ** 2 - BK ** 2), 3 = BK\nConclusions: SqrtOf(5 ** 2 - 3 ** 2) = x\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : x = BC, SqrtOf(5 ** 2 - 3 ** 2) = x\nConclusions: SqrtOf(5 ** 2 - 3 ** 2) = BC\n\nStep 13:\nTheorem: Evaluate\nPremises : SqrtOf(5 ** 2 - 3 ** 2) = BC\nConclusions: 4 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, B)",
+        "Line(K, A)",
+        "Line(B, A)",
+        "Line(K, C)",
+        "Line(B, C)",
+        "Circle(K, radius_0_0)",
+        "PointLiesOnLine(B, Line(K, A))",
+        "PointLiesOnCircle(A, Circle(K, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(K, radius_0_0))",
+        "Perpendicular(Line(K, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, B)), 2.0)",
+        "Equals(LengthOf(Line(K, C)), 5.0)"
+    ],
+    "correct": true
+}

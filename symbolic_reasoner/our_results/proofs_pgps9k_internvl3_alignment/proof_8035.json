@@ -1,0 +1,90 @@
+{
+    "problem_id": "8035",
+    "solved": true,
+    "problem_text": "Find RV.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, S)), 10)",
+        "Equals(LengthOf(Line(R, V)), x+2)",
+        "Equals(LengthOf(Line(S, T)), 14)",
+        "Equals(LengthOf(Line(T, V)), 2x+1)",
+        "Equals(MeasureOf(Angle(V, S, R)), MeasureOf(Angle(T, S, V)))",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "PointLiesOnLine(V, Line(R, T))",
+        "Find(LengthOf(Line(R,V)))"
+    ],
+    "point_instances": [
+        "R",
+        "V",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "ST",
+        "RV",
+        "RT",
+        "VT",
+        "SV",
+        "RS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            150.375,
+            55.76857142857142
+        ],
+        "V": [
+            224.35714285714283,
+            128.00571428571428
+        ],
+        "S": [
+            37.125,
+            230.18571428571425
+        ],
+        "T": [
+            328.5,
+            230.18571428571425
+        ]
+    },
+    "problem_choices": [
+        1.667,
+        2.333,
+        5.0,
+        7.0
+    ],
+    "choices_precise_value": [
+        1.667,
+        2.333,
+        5.0,
+        7.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 26.12504,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(R, V)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: ST, RS, 1 + 2 * x = TV, 2 + x = RV, RT, 14 = ST, 10 = RS, \u2220TSV = \u2220VSR\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : RT, RS, ST\nConclusions: \u25b3RST\n\nStep 3:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u25b3RST, \u2220TSV = \u2220VSR\nConclusions: ST / RS = TV / RV\n\nStep 4:\nTheorem: Substitution\nPremises : 10 = RS, 1 + 2 * x = TV, ST / RS = TV / RV, 2 + x = RV, 14 = ST\nConclusions: 14 / 10 = (1 + 2 * x) / (2 + x)\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 14 / 10 = (1 + 2 * x) / (2 + x), 2 + x = RV\nConclusions: 5 = RV\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, T)",
+        "Line(R, V)",
+        "Line(R, T)",
+        "Line(V, T)",
+        "Line(S, V)",
+        "Line(R, S)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "PointLiesOnLine(V, Line(R, T))",
+        "Equals(LengthOf(Line(R, S)), 10.0)",
+        "Equals(LengthOf(Line(R, V)), Add(x, 2.0))",
+        "Equals(LengthOf(Line(S, T)), 14.0)",
+        "Equals(LengthOf(Line(T, V)), Add(Mul(2.0, x), 1.0))",
+        "Equals(MeasureOf(Angle(V, S, R)), MeasureOf(Angle(T, S, V)))"
+    ],
+    "correct": true
+}

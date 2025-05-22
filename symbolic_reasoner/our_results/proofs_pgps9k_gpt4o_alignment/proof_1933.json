@@ -1,0 +1,88 @@
+{
+    "problem_id": "1933",
+    "solved": true,
+    "problem_text": "What is f?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, D)), f)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(D, B, C)), MeasureOf(Angle(A, C, B)))",
+        "Equals(MeasureOf(Angle(D, C, B)), 30)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Find(f)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "BD",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            24.833898305084748,
+            37.27542857142858
+        ],
+        "B": [
+            362.8243155149935,
+            37.30197802197802
+        ],
+        "C": [
+            24.80736636245111,
+            233.63516483516486
+        ],
+        "D": [
+            363.1957627118644,
+            233.6617142857143
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        4.619,
+        6.928,
+        9.238
+    ],
+    "choices_precise_value": [
+        4.0,
+        4.619,
+        6.928,
+        9.238
+    ],
+    "problem_answer": 4.619,
+    "total_time": 39.570095,
+    "solution_predicate": "Equals(4.6188021535, f)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: f = BD, BC, \u2220ABD, \u2220BCA = \u2220CBD, \u2220CBD, \u2220BCA, \u2220CBD, BD, \u2220DCB, \u2220ABC, \u2220DBA, 3.14 = pi, \u2220DCA, BD \u22a5 CD, CD, AB, 8 = CD, pi * (30 / 180) = \u2220DCB, AB \u22a5 AC, \u2220ACD, AC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABD\nConclusions: \u2220ABD = 2 * pi - \u2220DBA\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220ABC, \u2220DBA, \u2220CBD\nConclusions: 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCA\nConclusions: \u2220DCA = 2 * pi - \u2220ACD\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220BDC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : CD, BD, BC\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220CAB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220DCB, \u2220ACD, \u2220BCA\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 10:\nTheorem: Definition of Quadrilateral\nPremises : AC, BD, CD, AB\nConclusions: Quadrilateral(A, B, D, C)\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABD = 2 * pi - \u2220DBA\nConclusions: \u2220ABD = 2 * 3.14 - \u2220DBA\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\nConclusions: 2 * 3.14 = \u2220ABC + \u2220CBD + \u2220DBA\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220DCA = 2 * pi - \u2220ACD, 3.14 = pi\nConclusions: \u2220DCA = 2 * 3.14 - \u2220ACD\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 15:\nTheorem: Tan Function Definition\nPremises : BD \u22a5 CD, \u2220CBD, \u25b3BCD\nConclusions: CD / BD = tan(\u2220CBD)\n\nStep 16:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB, \u2220BCA = \u2220CBD, pi * (30 / 180) = \u2220DCB\nConclusions: 2 * 3.14 = pi * (30 / 180) + \u2220ACD + \u2220CBD\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, C)\nPremises : Quadrilateral(A, B, D, C)\nConclusions: 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220ABC + \u2220CBD + \u2220DBA, 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 20:\nTheorem: Substitution\nPremises : pi = \u2220BDC + \u2220CBD + \u2220DCB, 3.14 = pi, pi / 2 = \u2220BDC, pi * (30 / 180) = \u2220DCB\nConclusions: 3.14 = pi / 2 + pi * (30 / 180) + \u2220CBD\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220CAB, pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220BCA = \u2220CBD\nConclusions: 3.14 = pi / 2 + \u2220ABC + \u2220CBD\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220CAB, 2 * pi = \u2220ABD + \u2220BDC + \u2220CAB + \u2220DCA, pi / 2 = \u2220BDC\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + \u2220ABD + \u2220DCA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (30 / 180) + \u2220ACD + \u2220CBD, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (30 / 180) + \u2220ACD + \u2220CBD\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = pi / 2 + pi / 2 + \u2220ABD + \u2220DCA\nConclusions: 2 * pi = pi / 2 + pi / 2 + \u2220ABD + \u2220DCA\n\nStep 25:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = pi * (30 / 180) + \u2220ACD + \u2220CBD, 3.14 = pi / 2 + pi * (30 / 180) + \u2220CBD, \u2220ABD = 2 * 3.14 - \u2220DBA, \u2220DCA = 2 * 3.14 - \u2220ACD, 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA, 3.14 = pi / 2 + \u2220ABC + \u2220CBD, 2 * pi = pi / 2 + pi / 2 + \u2220ABD + \u2220DCA\nConclusions: 1.05 = \u2220CBD\n\nStep 26:\nTheorem: Evaluate\nPremises : 1.05 = \u2220CBD\nConclusions: 1.73 = tan(\u2220CBD)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 1.73 = tan(\u2220CBD), CD / BD = tan(\u2220CBD)\nConclusions: 1.73 = CD / BD\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 8 = CD, 1.73 = CD / BD\nConclusions: 4.62 = BD\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 4.62 = BD, f = BD\nConclusions: 4.62 = f\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Equals(LengthOf(Line(B, D)), f)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(Angle(B, C, A)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

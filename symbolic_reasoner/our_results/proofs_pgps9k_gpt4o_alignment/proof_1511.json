@@ -1,0 +1,133 @@
+{
+    "problem_id": "1511",
+    "solved": true,
+    "problem_text": "Assume the segments that appear to be tangent are tangent. Find the length of AC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 23)",
+        "Equals(LengthOf(Line(C, B)), x-5)",
+        "Equals(LengthOf(Line(D, A)), x)",
+        "Find(LengthOf(Line(A, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(C, Circle(H))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnCircle(E, Circle(H))",
+        "PointLiesOnCircle(G, Circle(F))",
+        "PointLiesOnCircle(G, Circle(H))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "Tangent(Line(A, B), Circle(F))",
+        "Tangent(Line(A, C), Circle(H))",
+        "Tangent(Line(A, D), Circle(F))",
+        "Tangent(Line(A, E), Circle(H))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "F",
+        "G",
+        "H",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AD",
+        "AE",
+        "DE"
+    ],
+    "circle_instances": [
+        "H",
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            44.937860345932094,
+            46.44
+        ],
+        "B": [
+            222.6322869955157,
+            47.54571428571428
+        ],
+        "C": [
+            365.83215887251765,
+            48.01959183673469
+        ],
+        "F": [
+            224.12443802792055,
+            101.16178401905512
+        ],
+        "G": [
+            273.29147982062784,
+            114.06315789473685
+        ],
+        "H": [
+            366.1793460370925,
+            144.35686726502027
+        ],
+        "D": [
+            193.28026905829597,
+            146.50714285714284
+        ],
+        "E": [
+            307.36547085201795,
+            223.07785714285714
+        ]
+    },
+    "problem_choices": [
+        18.0,
+        23.0,
+        41.0,
+        46.0
+    ],
+    "choices_precise_value": [
+        18.0,
+        23.0,
+        41.0,
+        46.0
+    ],
+    "problem_answer": 41.0,
+    "total_time": 61.389309,
+    "solution_predicate": "Equals(41.0, LengthOf(Line(A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: B on AC, B on \u2299(F, radius_F), x - 5 = BC, Tangent(AD, \u2299(F, radius_F)), Tangent(AB, \u2299(F, radius_F)), 23 = AB, D on \u2299(F, radius_F), x = AD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Tangent Line Theorem\nPremises : B on \u2299(F, radius_F), Tangent(AD, \u2299(F, radius_F)), D on \u2299(F, radius_F), Tangent(AB, \u2299(F, radius_F))\nConclusions: AB = AD\n\nStep 4:\nTheorem: Substitution\nPremises : AC = AB + BC, x - 5 = BC, 23 = AB\nConclusions: 23 + (x - 5) = AC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = AD, x = AD, 23 = AB\nConclusions: 23 = x\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 23 + (x - 5) = AC, AC = AB + BC\nConclusions: 23 + (x - 5) = AB + BC\n\nStep 7:\nTheorem: Substitution\nPremises : x - 5 = BC, 23 = x, 23 = AB, 23 + (x - 5) = AB + BC\nConclusions: 23 + (23 - 5) = 23 + (x - 5)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 23 + (23 - 5) = 23 + (x - 5), 23 + (x - 5) = AC\nConclusions: 23 + (23 - 5) = AC\n\nStep 9:\nTheorem: Evaluate\nPremises : 23 + (23 - 5) = AC\nConclusions: 41 = AC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Circle(F, radius_F)",
+        "Circle(H, radius_H)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, E)",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(C, Circle(H, radius_H))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnCircle(E, Circle(H, radius_H))",
+        "PointLiesOnCircle(G, Circle(F, radius_F))",
+        "PointLiesOnCircle(G, Circle(H, radius_H))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, E))",
+        "Tangent(Line(A, B), Circle(F, radius_F))",
+        "Tangent(Line(A, C), Circle(H, radius_H))",
+        "Tangent(Line(A, D), Circle(F, radius_F))",
+        "Tangent(Line(A, E), Circle(H, radius_H))",
+        "Equals(LengthOf(Line(A, B)), 23.0)",
+        "Equals(LengthOf(Line(C, B)), Sub(x, 5.0))",
+        "Equals(LengthOf(Line(D, A)), x)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,86 @@
+{
+    "problem_id": "2616",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, H)), x)",
+        "Equals(LengthOf(Line(J, H)), 4)",
+        "Equals(LengthOf(Line(K, J)), 6)",
+        "Find(x)",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnLine(H, Line(G, J))",
+        "Tangent(Line(K, J), Circle(A, radius_0_0))"
+    ],
+    "point_instances": [
+        "K",
+        "G",
+        "H",
+        "J",
+        "A"
+    ],
+    "line_instances": [
+        "KJ",
+        "GH",
+        "GJ",
+        "HJ"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "K": [
+            100.9941348973607,
+            232.55131964809382
+        ],
+        "G": [
+            87.50439882697947,
+            42.81524926686217
+        ],
+        "H": [
+            199.82111436950146,
+            146.6275659824047
+        ],
+        "J": [
+            291.316715542522,
+            232.84457478005865
+        ],
+        "A": [
+            104.37976539589442,
+            137.03372434017595
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 24.615092,
+    "solution_predicate": "Equals(5.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: H on GJ, x = GH, HJ, 6 = JK, 4 = HJ, \u2299(A, radius_0_0), GJ, G on \u2299(A, radius_0_0), H on \u2299(A, radius_0_0), Tangent(JK, \u2299(A, radius_0_0))\n\nStep 2:\nTheorem: Line Segment Split\nPremises : H on GJ\nConclusions: GJ = GH + HJ\n\nStep 3:\nTheorem: Circle Secant Theorem\nPremises : H on \u2299(A, radius_0_0), Tangent(JK, \u2299(A, radius_0_0)), G on \u2299(A, radius_0_0), GJ, \u2299(A, radius_0_0), HJ\nConclusions: JK ** 2 = GJ * HJ\n\nStep 4:\nTheorem: Substitution\nPremises : 4 = HJ, GJ = GH + HJ, x = GH\nConclusions: 4 + x = GJ\n\nStep 5:\nTheorem: Substitution\nPremises : 4 = HJ, 4 + x = GJ, JK ** 2 = GJ * HJ, 6 = JK\nConclusions: 6 ** 2 = 4 * (4 + x)\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 6 ** 2 = 4 * (4 + x)\nConclusions: 5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, J)",
+        "Line(G, H)",
+        "Line(G, J)",
+        "Line(H, J)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnCircle(G, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(A, radius_0_0))",
+        "PointLiesOnLine(H, Line(G, J))",
+        "Tangent(Line(K, J), Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(G, H)), x)",
+        "Equals(LengthOf(Line(J, H)), 4.0)",
+        "Equals(LengthOf(Line(K, J)), 6.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,197 @@
+{
+    "problem_id": "3743",
+    "solved": true,
+    "problem_text": "BD bisects \\angle EBC. If m \\angle EBD = 4x-8 and m \\angle EBC = 5x+20, find m \\angle EBC.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, K)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, I)",
+        "Line(B, K)",
+        "Line(C, K)",
+        "Line(D, I)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "Line(G, B)",
+        "Line(G, E)",
+        "Line(H, B)",
+        "Line(H, F)",
+        "Line(J, A)",
+        "Line(J, B)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "PointLiesOnLine(A, Line(J, B))",
+        "PointLiesOnLine(A, Line(J, C))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(J, C))",
+        "PointLiesOnLine(B, Line(J, K))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(B, K))",
+        "PointLiesOnLine(C, Line(J, K))",
+        "PointLiesOnLine(D, Line(B, I))",
+        "PointLiesOnLine(E, Line(G, B))",
+        "PointLiesOnLine(F, Line(H, B))",
+        "BisectsAngle(Line(B,D),Angle(E,B,C))",
+        "Equals(MeasureOf(Angle(E,B,D)),4x-8)",
+        "Equals(MeasureOf(Angle(E,B,C)),5x+20)",
+        "Find(MeasureOf(Angle(E,B,C)))"
+    ],
+    "point_instances": [
+        "G",
+        "H",
+        "E",
+        "I",
+        "F",
+        "D",
+        "J",
+        "A",
+        "B",
+        "C",
+        "K"
+    ],
+    "line_instances": [
+        "JA",
+        "JB",
+        "JC",
+        "JK",
+        "AB",
+        "AC",
+        "AK",
+        "BC",
+        "BK",
+        "CK",
+        "GE",
+        "GB",
+        "EB",
+        "BD",
+        "BI",
+        "DI",
+        "HF",
+        "HB",
+        "FB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            223.20514285714287,
+            19.596774193548384
+        ],
+        "H": [
+            83.72613333333334,
+            55.08
+        ],
+        "E": [
+            216.614,
+            59.57419354838709
+        ],
+        "I": [
+            327.43362831858406,
+            79.73451327433628
+        ],
+        "F": [
+            110.262,
+            87.00967741935483
+        ],
+        "D": [
+            296.0176991150442,
+            104.95575221238937
+        ],
+        "J": [
+            19.128329297820823,
+            189.6997578692494
+        ],
+        "A": [
+            60.54914285714286,
+            190.4806451612903
+        ],
+        "B": [
+            193.33446153846154,
+            190.66153846153844
+        ],
+        "C": [
+            326.10619469026545,
+            189.46902654867256
+        ],
+        "K": [
+            366.75800000000004,
+            190.4806451612903
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        80.0,
+        140.0,
+        300.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        80.0,
+        140.0,
+        300.0
+    ],
+    "problem_answer": 80.0,
+    "total_time": 232.243581,
+    "solution_predicate": "Equals(1.3962634016, MeasureOf(Angle(C, B, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CBD, BisectsAngle(BD, \u2220CBE), \u2220EBC, \u2220CBD, \u2220DBG, pi * ((20 + 5 * x) / 180) = \u2220CBE, E on BG, \u2220DBC, \u2220GBC, \u2220GBD, pi * ((4 * x - 8) / 180) = \u2220DBE, \u2220GBD, 3.14 = pi, \u2220CBE\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(BD, \u2220CBE)\nConclusions: \u2220CBD = \u2220DBE, \u2220DBC = \u2220EBD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBC\nConclusions: \u2220EBC = 2 * pi - \u2220CBE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBD\nConclusions: \u2220CBD = 2 * pi - \u2220DBC\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBC\nConclusions: \u2220DBC = 2 * pi - \u2220CBD\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220DBG, \u2220GBC, \u2220CBD\nConclusions: 2 * pi = \u2220CBD + \u2220DBG + \u2220GBC\n\nStep 7:\nTheorem: Same Angle\nPremises : E on BG, \u2220GBC\nConclusions: \u2220EBC = \u2220GBC\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220GBD, E on BG\nConclusions: \u2220EBD = \u2220GBD\n\nStep 9:\nTheorem: Reverse Angle Definition\nPremises : \u2220GBD\nConclusions: \u2220GBD = 2 * pi - \u2220DBG\n\nStep 10:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBE\nConclusions: \u2220CBE = 2 * pi - \u2220EBC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((4 * x - 8) / 180) = \u2220DBE, \u2220CBD = \u2220DBE\nConclusions: pi * ((4 * x - 8) / 180) = \u2220CBD\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBC = \u2220GBC, \u2220EBC = 2 * pi - \u2220CBE\nConclusions: \u2220GBC = 2 * pi - \u2220CBE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBD = \u2220GBD, \u2220DBC = \u2220EBD\nConclusions: \u2220DBC = \u2220GBD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220CBD + \u2220DBG + \u2220GBC\nConclusions: 6.28 = \u2220CBD + \u2220DBG + \u2220GBC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBE = 2 * pi - \u2220EBC, pi * ((20 + 5 * x) / 180) = \u2220CBE\nConclusions: pi * ((20 + 5 * x) / 180) = 2 * pi - \u2220EBC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = 2 * pi - \u2220DBC, pi * ((4 * x - 8) / 180) = \u2220CBD\nConclusions: pi * ((4 * x - 8) / 180) = 2 * pi - \u2220DBC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = 2 * pi - \u2220CBD, \u2220DBC = \u2220GBD\nConclusions: \u2220GBD = 2 * pi - \u2220CBD\n\nStep 19:\nTheorem: Substitution\nPremises : pi * ((20 + 5 * x) / 180) = 2 * pi - \u2220EBC, \u2220EBC = \u2220GBC, 3.14 = pi\nConclusions: 3.14 * ((20 + 5 * x) / 180) = 2 * 3.14 - \u2220GBC\n\nStep 20:\nTheorem: Substitution\nPremises : pi * ((4 * x - 8) / 180) = 2 * pi - \u2220DBC, \u2220DBC = \u2220GBD, 3.14 = pi\nConclusions: 3.14 * ((4 * x - 8) / 180) = 2 * 3.14 - \u2220GBD\n\nStep 21:\nTheorem: Substitution\nPremises : \u2220GBD = 2 * pi - \u2220CBD, 3.14 = pi\nConclusions: \u2220GBD = 2 * 3.14 - \u2220CBD\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 6.28 = \u2220CBD + \u2220DBG + \u2220GBC, 3.14 * ((20 + 5 * x) / 180) = 2 * 3.14 - \u2220GBC, \u2220GBC = 2 * pi - \u2220CBE, 2 * pi = \u2220CBD + \u2220DBG + \u2220GBC, 3.14 * ((4 * x - 8) / 180) = 2 * 3.14 - \u2220GBD, \u2220GBD = 2 * pi - \u2220DBG, \u2220GBD = 2 * 3.14 - \u2220CBD\nConclusions: 1.4 = \u2220CBE\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, A)",
+        "Line(J, B)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, K)",
+        "Line(B, C)",
+        "Line(B, K)",
+        "Line(C, K)",
+        "Line(G, E)",
+        "Line(G, B)",
+        "Line(E, B)",
+        "Line(B, D)",
+        "Line(B, I)",
+        "Line(D, I)",
+        "Line(H, F)",
+        "Line(H, B)",
+        "Line(F, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, K)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, I)",
+        "Line(B, K)",
+        "Line(C, K)",
+        "Line(D, I)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "Line(G, B)",
+        "Line(G, E)",
+        "Line(H, B)",
+        "Line(H, F)",
+        "Line(J, A)",
+        "Line(J, B)",
+        "Line(J, C)",
+        "Line(J, K)",
+        "PointLiesOnLine(A, Line(J, B))",
+        "PointLiesOnLine(A, Line(J, C))",
+        "PointLiesOnLine(A, Line(J, K))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, K))",
+        "PointLiesOnLine(B, Line(J, C))",
+        "PointLiesOnLine(B, Line(J, K))",
+        "PointLiesOnLine(C, Line(A, K))",
+        "PointLiesOnLine(C, Line(B, K))",
+        "PointLiesOnLine(C, Line(J, K))",
+        "PointLiesOnLine(D, Line(B, I))",
+        "PointLiesOnLine(E, Line(G, B))",
+        "PointLiesOnLine(F, Line(H, B))",
+        "BisectsAngle(Line(B, D), Angle(C, B, E))",
+        "Equals(MeasureOf(Angle(D, B, E)), Mul(pi, Div(Sub(Mul(4.0, x), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, E)), Mul(pi, Div(Add(Mul(5.0, x), 20.0), 180.0)))"
+    ],
+    "correct": true
+}

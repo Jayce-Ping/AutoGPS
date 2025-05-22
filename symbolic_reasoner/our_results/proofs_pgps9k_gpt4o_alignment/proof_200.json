@@ -1,0 +1,103 @@
+{
+    "problem_id": "200",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 3?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, D, A)), 38)",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(C, D, F)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(E, D, F)), MeasureOf(Angle(3)))",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Perpendicular(Line(C, E), Line(A, D))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "DE",
+        "BD",
+        "BF",
+        "DF",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            167.3448275862069,
+            5.2
+        ],
+        "B": [
+            81.07389162561576,
+            32.24
+        ],
+        "C": [
+            16.89039408866995,
+            154.18
+        ],
+        "D": [
+            166.89936664320902,
+            153.92000000000002
+        ],
+        "E": [
+            316.32676518883414,
+            154.26666666666668
+        ],
+        "F": [
+            205.80295566502463,
+            211.56571428571428
+        ]
+    },
+    "problem_choices": [
+        38.0,
+        52.0,
+        90.0,
+        128.0
+    ],
+    "choices_precise_value": [
+        38.0,
+        52.0,
+        90.0,
+        128.0
+    ],
+    "problem_answer": 52.0,
+    "total_time": 13.517038,
+    "solution_predicate": "Equals(0.907571211, MeasureOf(Angle(F, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD \u22a5 CD, pi * (38 / 180) = \u2220ADB, \u2220CDA, D on BF, 3.14 = pi, \u2220ADB, D on CE, \u2220BDC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDA\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : D on CE, D on BF\nConclusions: \u2220BDC = \u2220FDE\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220BDC, \u2220ADB, \u2220CDA\nConclusions: 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (38 / 180) = \u2220ADB, (3 * pi) / 2 = \u2220CDA, 2 * pi = \u2220ADB + \u2220BDC + \u2220CDA, 3.14 = pi, \u2220BDC = \u2220FDE\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (38 / 180) + \u2220FDE\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = (3 * 3.14) / 2 + 3.14 * (38 / 180) + \u2220FDE\nConclusions: 0.91 = \u2220FDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(D, F)",
+        "Line(A, D)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Perpendicular(Line(C, E), Line(A, D))",
+        "PointLiesOnLine(D, Line(B, F))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(MeasureOf(Angle(A, D, B)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

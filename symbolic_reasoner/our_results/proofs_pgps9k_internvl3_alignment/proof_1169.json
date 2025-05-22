@@ -1,0 +1,104 @@
+{
+    "problem_id": "1169",
+    "solved": true,
+    "problem_text": "\\triangle JKL \\sim \\triangle MNP. Find PM.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(J, K)), 4)",
+        "Equals(LengthOf(Line(J, L)), 5)",
+        "Equals(LengthOf(Line(L, K)), 3)",
+        "Equals(LengthOf(Line(N, M)), 8)",
+        "Equals(MeasureOf(Angle(J, L, K)), 53)",
+        "Equals(MeasureOf(Angle(N, M, P)), 37)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Perpendicular(Line(K, L), Line(J, K))",
+        "Similar(Triangle(J,K,L),Triangle(M,N,P))",
+        "Find(LengthOf(Line(P,M)))"
+    ],
+    "point_instances": [
+        "N",
+        "J",
+        "K",
+        "L",
+        "M",
+        "P"
+    ],
+    "line_instances": [
+        "MN",
+        "MP",
+        "NP",
+        "JL",
+        "KL",
+        "JK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            291.8096296296296,
+            62.139428571428574
+        ],
+        "J": [
+            402.4185185185185,
+            61.91428571428571
+        ],
+        "K": [
+            554.9179012345679,
+            62.664761904761896
+        ],
+        "L": [
+            554.6502645502645,
+            175.61142857142858
+        ],
+        "M": [
+            47.96049382716049,
+            245.15555555555554
+        ],
+        "P": [
+            429.39629629629627,
+            244.28
+        ]
+    },
+    "problem_choices": [
+        3.75,
+        6.0,
+        10.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        3.75,
+        6.0,
+        10.0,
+        16.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 24.721449,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(P, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = JK, 8 = MN, \u25b3JKL ~ \u25b3MNP, 5 = JL\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3JKL ~ \u25b3MNP\nConclusions: sim_ratio_triangle_j_k_l_triangle_m_n_p = JL / MP, sim_ratio_triangle_j_k_l_triangle_m_n_p = JK / MN\n\nStep 3:\nTheorem: Substitution\nPremises : sim_ratio_triangle_j_k_l_triangle_m_n_p = JL / MP, 5 = JL\nConclusions: sim_ratio_triangle_j_k_l_triangle_m_n_p = 5 / MP\n\nStep 4:\nTheorem: Substitution\nPremises : 8 = MN, sim_ratio_triangle_j_k_l_triangle_m_n_p = JK / MN, 4 = JK\nConclusions: 4 / 8 = sim_ratio_triangle_j_k_l_triangle_m_n_p\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 4 / 8 = sim_ratio_triangle_j_k_l_triangle_m_n_p, sim_ratio_triangle_j_k_l_triangle_m_n_p = 5 / MP\nConclusions: 4 / 8 = 5 / MP\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 4 / 8 = 5 / MP\nConclusions: 10 = MP\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(J, K)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Perpendicular(Line(K, L), Line(J, K))",
+        "Similar(Triangle(J, K, L), Triangle(M, N, P))",
+        "Equals(LengthOf(Line(J, K)), 4.0)",
+        "Equals(LengthOf(Line(J, L)), 5.0)",
+        "Equals(LengthOf(Line(L, K)), 3.0)",
+        "Equals(LengthOf(Line(N, M)), 8.0)",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(53.0, 180.0)))",
+        "Equals(MeasureOf(Angle(P, M, N)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,82 @@
+{
+    "problem_id": "55",
+    "solved": true,
+    "problem_text": "Solve for m \\angle 2 in the rhombus.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, D, C)), 113)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, B, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(Angle(4)))",
+        "Find(MeasureOf(Angle(2)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Rhombus(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CB",
+        "AC",
+        "BD",
+        "AB",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            109.46938775510202,
+            31.044444444444448
+        ],
+        "B": [
+            337.49999999999994,
+            31.075000000000003
+        ],
+        "C": [
+            20.466472303206995,
+            239.8
+        ],
+        "D": [
+            249.0612244897959,
+            240.9
+        ]
+    },
+    "problem_choices": [
+        33.5,
+        56.5,
+        67.0,
+        113.0
+    ],
+    "choices_precise_value": [
+        33.5,
+        56.5,
+        67.0,
+        113.0
+    ],
+    "problem_answer": 33.5,
+    "total_time": 16.864735,
+    "solution_predicate": "Equals(0.5846852994, MeasureOf(Angle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, 3.14 = pi, AB, pi * (113 / 180) = \u2220BDC, Rhombus(A, B, D, C), BC\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 3:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, D, C)\nConclusions: \u2220BCA = \u2220DCB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: \u2220BDC = \u2220CAB\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 8:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220ABC = \u2220DCB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220CAB, pi * (113 / 180) = \u2220BDC\nConclusions: pi * (113 / 180) = \u2220CAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DCB, \u2220BCA = \u2220DCB\nConclusions: \u2220ABC = \u2220BCA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : pi * (113 / 180) = \u2220CAB, pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220ABC = \u2220BCA, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 0.58 = \u2220ABC\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Rhombus(A, B, D, C)",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(113.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,121 @@
+{
+    "problem_id": "6218",
+    "solved": true,
+    "problem_text": "Find the perimeter of the rhombus.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(C, E)), 20)",
+        "Equals(LengthOf(Line(D, E)), 24)",
+        "Find(PerimeterOf(Rhombus(A, B, C, D)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "C",
+        "E",
+        "B"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "AE",
+        "AC",
+        "EC",
+        "BE",
+        "BD",
+        "ED",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            42.77777777777778,
+            129.22453703703704
+        ],
+        "D": [
+            103.82307692307694,
+            225.62407544378698
+        ],
+        "C": [
+            164.5757142857143,
+            129.14234203296704
+        ],
+        "E": [
+            103.74222222222222,
+            129.22453703703704
+        ],
+        "B": [
+            103.84000000000002,
+            43.46454326923077
+        ]
+    },
+    "problem_choices": [
+        80.0,
+        88.0,
+        96.0,
+        124.964
+    ],
+    "choices_precise_value": [
+        80.0,
+        88.0,
+        96.0,
+        124.964
+    ],
+    "problem_answer": 124.964,
+    "total_time": 212.096613,
+    "solution_predicate": "Equals(124.9639948144, PerimeterOf(Rhombus(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE, CE \u22a5 DE, CD, AD = CD, AB = AD, CE, Rhombus(A, B, C, D), 24 = DE, 20 = CE\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CE, DE, CD\nConclusions: \u25b3CDE\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Rhombus(A, B, C, D)\nConclusions: Perimeter(Rhombus(A, B, C, D)) = 4 * AB\n\nStep 4:\nTheorem: Evaluate\nPremises : 20 = CE, 24 = DE\nConclusions: 31.24 = SqrtOf(CE ** 2 + DE ** 2)\n\nStep 5:\nTheorem: Pythagorean Theorem\nPremises : \u25b3CDE, CE \u22a5 DE\nConclusions: CD = SqrtOf(CE ** 2 + DE ** 2)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(Rhombus(A, B, C, D)) = 4 * AB\nConclusions: AB = 0.25 * Perimeter(Rhombus(A, B, C, D))\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : CD = SqrtOf(CE ** 2 + DE ** 2), AD = CD\nConclusions: AD = SqrtOf(CE ** 2 + DE ** 2)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AB = AD, AB = 0.25 * Perimeter(Rhombus(A, B, C, D))\nConclusions: AD = 0.25 * Perimeter(Rhombus(A, B, C, D))\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AD = SqrtOf(CE ** 2 + DE ** 2), 31.24 = SqrtOf(CE ** 2 + DE ** 2)\nConclusions: 31.24 = AD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : AD = 0.25 * Perimeter(Rhombus(A, B, C, D)), 31.24 = AD\nConclusions: 124.96 = Perimeter(Rhombus(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(B, E)",
+        "Line(B, D)",
+        "Line(E, D)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(C, D)))",
+        "Equals(LengthOf(Line(B, A)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(B, A)))",
+        "Equals(LengthOf(Line(C, D)), LengthOf(Line(B, C)))",
+        "Equals(LengthOf(Line(C, E)), 20.0)",
+        "Equals(LengthOf(Line(D, E)), 24.0)"
+    ],
+    "correct": true
+}

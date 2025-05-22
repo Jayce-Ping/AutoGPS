@@ -1,0 +1,83 @@
+{
+    "problem_id": "2804",
+    "solved": true,
+    "problem_text": "Find the perimeter of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 21)",
+        "Equals(LengthOf(Line(B, D)), 17)",
+        "Equals(LengthOf(Line(D, E)), 8)",
+        "Find(PerimeterOf(Parallelogram(A, B, C, D)))",
+        "Perpendicular(Line(A, B), Line(E, B))",
+        "PointLiesOnLine(E, Line(C, D))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "CA",
+        "CE",
+        "CD",
+        "ED",
+        "EB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            16.583850931677013,
+            242.23602484472048
+        ],
+        "B": [
+            220.62111801242236,
+            241.61490683229812
+        ],
+        "C": [
+            89.25465838509317,
+            69.56521739130434
+        ],
+        "D": [
+            292.9813664596273,
+            69.25465838509317
+        ],
+        "E": [
+            219.99999999999997,
+            69.25465838509317
+        ]
+    },
+    "problem_choices": [
+        "66",
+        "68",
+        "74",
+        "76"
+    ],
+    "choices_precise_value": [
+        66.0,
+        68.0,
+        74.0,
+        76.0
+    ],
+    "problem_answer": 76.0,
+    "total_time": 19.715826,
+    "solution_predicate": "Equals(76.0, PerimeterOf(Parallelogram(A, B, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, D, C), 21 = AB, 17 = BD\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB = CD, AC = BD\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : Parallelogram(A, B, D, C)\nConclusions: Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AB = CD, 21 = AB\nConclusions: 21 = CD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AC = BD, 17 = BD\nConclusions: 17 = AC\n\nStep 6:\nTheorem: Substitution\nPremises : 17 = AC, 17 = BD, Perimeter(Parallelogram(A, B, D, C)) = AB + AC + BD + CD, 21 = AB, 21 = CD\nConclusions: 17 + 17 + 21 + 21 = Perimeter(Parallelogram(A, B, D, C))\n\nStep 7:\nTheorem: Evaluate\nPremises : 17 + 17 + 21 + 21 = Perimeter(Parallelogram(A, B, D, C))\nConclusions: 76 = Perimeter(Parallelogram(A, B, D, C))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, E)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(E, B))",
+        "PointLiesOnLine(E, Line(C, D))",
+        "Equals(LengthOf(Line(A, B)), 21.0)",
+        "Equals(LengthOf(Line(B, D)), 17.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)"
+    ],
+    "correct": true
+}

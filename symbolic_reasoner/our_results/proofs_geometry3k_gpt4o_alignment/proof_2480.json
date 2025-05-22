@@ -1,0 +1,129 @@
+{
+    "problem_id": "2480",
+    "solved": true,
+    "problem_text": "Find m \\angle 6.",
+    "logic_forms": [
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Perpendicular(Line(D, F), Line(E, F))",
+        "Perpendicular(Line(G, E), Line(D, E))",
+        "Perpendicular(Line(E, C), Line(D, C))",
+        "Equals(MeasureOf(Angle(F, G, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(G, E, F)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(D, E, F)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, E, D)), 28)",
+        "Equals(MeasureOf(Angle(C, B, D)), 51)",
+        "Equals(MeasureOf(Angle(D, A, B)), 25)",
+        "Equals(MeasureOf(Angle(F, D, E)), 35)",
+        "Find(MeasureOf(Angle(6)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AD",
+        "DF",
+        "DG",
+        "FG",
+        "AB",
+        "AC",
+        "AE",
+        "BC",
+        "BE",
+        "CE",
+        "GE",
+        "DB",
+        "DC",
+        "DE",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            76.47058823529412,
+            335.85294117647055
+        ],
+        "B": [
+            329.4117647058823,
+            336.5882352941176
+        ],
+        "C": [
+            484.5588235294117,
+            337.3235294117647
+        ],
+        "D": [
+            483.8235294117647,
+            145.41176470588232
+        ],
+        "E": [
+            844.8529411764705,
+            337.3235294117647
+        ],
+        "F": [
+            816.9117647058823,
+            104.23529411764702
+        ],
+        "G": [
+            977.9411764705882,
+            85.11764705882351
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "28",
+        "35",
+        "55"
+    ],
+    "choices_precise_value": [
+        25.0,
+        28.0,
+        35.0,
+        55.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 145.342664,
+    "solution_predicate": "Equals(0.6108652382, MeasureOf(Angle(G, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: EF, DE, pi * (35 / 180) = \u2220EDF, EF \u22a5 FG, DE \u22a5 EG, EG, DG, 3.14 = pi, \u2220DGE, F on DG, \u2220EDG, FG\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : EF \u22a5 FG\nConclusions: pi / 2 = \u2220EFG\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : DE \u22a5 EG\nConclusions: pi / 2 = \u2220GED\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : DE, EG, DG\nConclusions: \u25b3DEG\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220DGE, F on DG\nConclusions: \u2220DGE = \u2220FGE\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220EDG, F on DG\nConclusions: \u2220EDF = \u2220EDG\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : EF, EG, FG\nConclusions: \u25b3EFG\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(G, E, D)\nPremises : \u25b3DEG\nConclusions: pi = \u2220DGE + \u2220EDG + \u2220GED\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDF = \u2220EDG, pi * (35 / 180) = \u2220EDF\nConclusions: pi * (35 / 180) = \u2220EDG\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(E, F, G)\nPremises : \u25b3EFG\nConclusions: pi = \u2220EFG + \u2220FGE + \u2220GEF\n\nStep 11:\nTheorem: Substitution\nPremises : pi = \u2220DGE + \u2220EDG + \u2220GED, 3.14 = pi, \u2220DGE = \u2220FGE, pi * (35 / 180) = \u2220EDG, pi / 2 = \u2220GED\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (35 / 180) + \u2220FGE\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220EFG, pi = \u2220EFG + \u2220FGE + \u2220GEF\nConclusions: 3.14 = 3.14 / 2 + \u2220FGE + \u2220GEF\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (35 / 180) + \u2220FGE, 3.14 = 3.14 / 2 + \u2220FGE + \u2220GEF\nConclusions: 0.61 = \u2220GEF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(F, G)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(G, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Perpendicular(Line(D, F), Line(E, F))",
+        "Perpendicular(Line(G, E), Line(D, E))",
+        "Perpendicular(Line(E, C), Line(D, C))",
+        "Equals(MeasureOf(Angle(D, E, C)), Mul(pi, Div(28.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(B, A, D)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, F)), Mul(pi, Div(35.0, 180.0)))"
+    ],
+    "correct": true
+}

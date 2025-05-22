@@ -1,0 +1,88 @@
+{
+    "problem_id": "1479",
+    "solved": true,
+    "problem_text": "Find m \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, S, R)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(S, Q, P)), 51)",
+        "Equals(MeasureOf(Angle(S, Q, R)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(S, R, Q)), 33)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "Perpendicular(Line(Q, R), Line(Q, P))",
+        "PointLiesOnLine(S, Line(P, R))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "P",
+        "S",
+        "R",
+        "Q"
+    ],
+    "line_instances": [
+        "PS",
+        "PR",
+        "SR",
+        "RQ",
+        "PQ",
+        "QS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            82.33198380566802,
+            392.49795918367346
+        ],
+        "S": [
+            296.1295546558705,
+            255.0857142857143
+        ],
+        "R": [
+            563.0445344129555,
+            80.4734693877551
+        ],
+        "Q": [
+            82.33198380566802,
+            80.4734693877551
+        ]
+    },
+    "problem_choices": [
+        33.0,
+        39.0,
+        51.0,
+        108.0
+    ],
+    "choices_precise_value": [
+        33.0,
+        39.0,
+        51.0,
+        108.0
+    ],
+    "problem_answer": 39.0,
+    "total_time": 16.985817,
+    "solution_predicate": "Equals(0.6806784083, MeasureOf(Angle(S, Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220PQS, PQ \u22a5 QR, 3.14 = pi, pi * (51 / 180) = \u2220PQS, \u2220SQR, \u2220RQP\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : PQ \u22a5 QR\nConclusions: (3 * pi) / 2 = \u2220RQP\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220PQS, \u2220SQR, \u2220RQP\nConclusions: 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR\n\nStep 4:\nTheorem: Substitution\nPremises : 2 * pi = \u2220PQS + \u2220RQP + \u2220SQR, 3.14 = pi, pi * (51 / 180) = \u2220PQS, (3 * pi) / 2 = \u2220RQP\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + pi * (51 / 180) + \u2220SQR\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 2 * 3.14 = (3 * 3.14) / 2 + pi * (51 / 180) + \u2220SQR\nConclusions: 0.68 = \u2220SQR\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, S)",
+        "Line(P, R)",
+        "Line(S, R)",
+        "Line(R, Q)",
+        "Line(P, Q)",
+        "Line(Q, S)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "Perpendicular(Line(Q, R), Line(Q, P))",
+        "PointLiesOnLine(S, Line(P, R))",
+        "Equals(MeasureOf(Angle(P, Q, S)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, R, S)), Mul(pi, Div(33.0, 180.0)))"
+    ],
+    "correct": true
+}

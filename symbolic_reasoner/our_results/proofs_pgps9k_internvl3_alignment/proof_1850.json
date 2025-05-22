@@ -1,0 +1,67 @@
+{
+    "problem_id": "1850",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, A)))",
+        "Equals(MeasureOf(Angle(B, C, A)), 2x+3)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CB",
+        "AB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            131.04575163398692,
+            8.823529411764703
+        ],
+        "B": [
+            239.05228758169935,
+            116.66666666666666
+        ],
+        "C": [
+            22.875816993464053,
+            116.5032679738562
+        ]
+    },
+    "problem_choices": [
+        13.5,
+        21.0,
+        28.5,
+        43.5
+    ],
+    "choices_precise_value": [
+        13.5,
+        21.0,
+        28.5,
+        43.5
+    ],
+    "problem_answer": 21.0,
+    "total_time": 13.039109,
+    "solution_predicate": "Equals(21.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((3 + 2 * x) / 180) = \u2220BCA, BC, AB = AC, AB, AC, 3.14 = pi, AB \u22a5 AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 + 2 * x) / 180) = \u2220BCA\nConclusions: 3.14 * ((3 + 2 * x) / 180) = \u2220BCA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220CAB\n\nStep 6:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABC, AB = AC\nConclusions: \u2220ABC = \u2220BCA\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220CAB\nConclusions: 1.57 = \u2220CAB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((3 + 2 * x) / 180) = \u2220BCA, \u2220ABC = \u2220BCA\nConclusions: 3.14 * ((3 + 2 * x) / 180) = \u2220ABC\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 * ((3 + 2 * x) / 180) = \u2220ABC, 3.14 = pi, 1.57 = \u2220CAB, 3.14 * ((3 + 2 * x) / 180) = \u2220BCA, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = 1.57 + 3.14 * ((3 + 2 * x) / 180) + 3.14 * ((3 + 2 * x) / 180)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.57 + 3.14 * ((3 + 2 * x) / 180) + 3.14 * ((3 + 2 * x) / 180)\nConclusions: 21 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, A)))",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(Add(Mul(2.0, x), 3.0), 180.0)))"
+    ],
+    "correct": true
+}

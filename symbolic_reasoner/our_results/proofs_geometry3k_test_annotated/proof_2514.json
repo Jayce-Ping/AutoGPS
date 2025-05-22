@@ -1,0 +1,88 @@
+{
+    "problem_id": "2514",
+    "solved": true,
+    "problem_text": "Find K J if G J = 8, G H = 12, and H I = 4.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G, J)), 8)",
+        "Equals(LengthOf(Line(G, H)), 12)",
+        "Equals(LengthOf(Line(H, I)), 4)",
+        "Find(LengthOf(Line(K, J)))",
+        ""
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "JI",
+        "KH",
+        "GK",
+        "GJ",
+        "KJ",
+        "GH",
+        "GI",
+        "HI"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            57.95475113122172,
+            163.80090497737558
+        ],
+        "K": [
+            66.55203619909503,
+            127.14932126696833
+        ],
+        "G": [
+            88.04524886877829,
+            36.87782805429865
+        ],
+        "H": [
+            159.08597285067873,
+            127.14932126696833
+        ],
+        "I": [
+            188.0452488687783,
+            164.02714932126696
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "4",
+        "6",
+        "8"
+    ],
+    "choices_precise_value": [
+        2.0,
+        4.0,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 35.139354,
+    "solution_predicate": "Equals(2.0, LengthOf(Line(K, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = GH, H on GI, 8 = GJ, \u2220IGJ, K on GJ, \u2220IGK, HK || IJ, \u2220HGJ, 4 = HI\n\nStep 2:\nTheorem: Line Segment Split\nPremises : H on GI\nConclusions: GI = GH + HI\n\nStep 3:\nTheorem: Same Angle\nPremises : H on GI, \u2220IGJ\nConclusions: \u2220HGJ = \u2220IGJ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : K on GJ\nConclusions: GJ = GK + JK\n\nStep 5:\nTheorem: Same Angle\nPremises : H on GI, \u2220IGK\nConclusions: \u2220HGK = \u2220IGK\n\nStep 6:\nTheorem: Corresponding Angle Theorem\nPremises : HK || IJ\nConclusions: \u2220GHK = \u2220GIJ, \u2220GJI = \u2220GKH\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220HGJ, K on GJ\nConclusions: \u2220HGJ = \u2220HGK\n\nStep 8:\nTheorem: Substitution\nPremises : 12 = GH, 4 = HI, GI = GH + HI\nConclusions: 12 + 4 = GI\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 8 = GJ, GJ = GK + JK\nConclusions: 8 = GK + JK\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGK = \u2220IGK, \u2220HGJ = \u2220HGK\nConclusions: \u2220HGJ = \u2220IGK\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 12 + 4 = GI\nConclusions: 16 = GI\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGJ = \u2220IGJ, \u2220HGJ = \u2220IGK\nConclusions: \u2220IGJ = \u2220IGK\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HGK = \u2220IGK, \u2220IGJ = \u2220IGK\nConclusions: \u2220HGK = \u2220IGJ\n\nStep 14:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220HGK = \u2220IGJ, \u2220GHK = \u2220GIJ, \u2220GJI = \u2220GKH\nConclusions: \u25b3GHK ~ \u25b3GIJ\n\nStep 15:\nTheorem: Similar Definition\nPremises : \u25b3GHK ~ \u25b3GIJ\nConclusions: sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ, sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI, \u2220HGK = \u2220IGJ, \u2220GHK = \u2220GIJ\n\nStep 16:\nTheorem: Substitution\nPremises : 12 = GH, 16 = GI, sim_ratio_triangle_g_h_k_triangle_g_i_j = GH / GI\nConclusions: 12 / 16 = sim_ratio_triangle_g_h_k_triangle_g_i_j\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_g_h_k_triangle_g_i_j = GK / GJ, 12 / 16 = sim_ratio_triangle_g_h_k_triangle_g_i_j\nConclusions: 12 / 16 = GK / GJ\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : GJ = GK + JK, 8 = GK + JK, 12 / 16 = GK / GJ\nConclusions: 2 = JK\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, I)",
+        "Line(K, H)",
+        "Line(G, K)",
+        "Line(G, J)",
+        "Line(K, J)",
+        "Line(G, H)",
+        "Line(G, I)",
+        "Line(H, I)",
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "Parallel(Line(K, H), Line(J, I))",
+        "Equals(LengthOf(Line(G, J)), 8.0)",
+        "Equals(LengthOf(Line(G, H)), 12.0)",
+        "Equals(LengthOf(Line(H, I)), 4.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,93 @@
+{
+    "problem_id": "8582",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle E?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 4z)",
+        "Equals(MeasureOf(Angle(A, E, D)), 5z)",
+        "Equals(MeasureOf(Angle(B, C, D)), 5z)",
+        "Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(A, E, D)))",
+        "Equals(MeasureOf(Angle(C, D, E)), 3z)",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(E, A, B)))",
+        "Equals(MeasureOf(Angle(E, A, B)), 3z)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Find(MeasureOf(Angle(E)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "D",
+        "E",
+        "A"
+    ],
+    "line_instances": [
+        "AE",
+        "BA",
+        "BC",
+        "CD",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            250.52631578947367,
+            54.068571428571424
+        ],
+        "B": [
+            67.18660287081339,
+            100.32
+        ],
+        "D": [
+            392.87081339712915,
+            140.6
+        ],
+        "E": [
+            316.11866028708135,
+            233.47199999999998
+        ],
+        "A": [
+            56.9377990430622,
+            256.01142857142855
+        ]
+    },
+    "problem_choices": [
+        81.0,
+        108.0,
+        113.684,
+        135.0
+    ],
+    "choices_precise_value": [
+        81.0,
+        108.0,
+        113.684,
+        135.0
+    ],
+    "problem_answer": 135.0,
+    "total_time": 9.430582,
+    "solution_predicate": "Equals(2.3561944902, MeasureOf(Angle(D, E, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CD, DE, pi * ((3 * z) / 180) = \u2220CDE, \u2220BCD = \u2220DEA, pi * ((3 * z) / 180) = \u2220EAB, AE, BC, pi * ((4 * z) / 180) = \u2220ABC, pi * ((5 * z) / 180) = \u2220DEA, 3.14 = pi, AB, pi * ((5 * z) / 180) = \u2220BCD\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((4 * z) / 180) = \u2220ABC, 3.14 = pi\nConclusions: 3.14 * ((4 * z) / 180) = \u2220ABC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * z) / 180) = \u2220CDE\nConclusions: 3.14 * ((3 * z) / 180) = \u2220CDE\n\nStep 4:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * z) / 180) = \u2220EAB\nConclusions: 3.14 * ((3 * z) / 180) = \u2220EAB\n\nStep 5:\nTheorem: Definition of Pentagon\nPremises : AE, BC, CD, DE, AB\nConclusions: Pentagon(A, B, C, D, E)\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 * z) / 180) = \u2220BCD\nConclusions: 3.14 * ((5 * z) / 180) = \u2220BCD\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Pentagon(A, B, C, D, E)\nPremises : Pentagon(A, B, C, D, E)\nConclusions: 3 * pi = \u2220ABC + \u2220BCD + \u2220CDE + \u2220DEA + \u2220EAB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * z) / 180) = \u2220BCD, pi * ((5 * z) / 180) = \u2220BCD\nConclusions: 3.14 * ((5 * z) / 180) = pi * ((5 * z) / 180)\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, 3 * pi = \u2220ABC + \u2220BCD + \u2220CDE + \u2220DEA + \u2220EAB\nConclusions: 3 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDE + \u2220DEA + \u2220EAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * z) / 180) = \u2220DEA, 3.14 * ((5 * z) / 180) = pi * ((5 * z) / 180)\nConclusions: 3.14 * ((5 * z) / 180) = \u2220DEA\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((3 * z) / 180) = \u2220EAB, 3.14 * ((5 * z) / 180) = \u2220DEA, 3.14 * ((3 * z) / 180) = \u2220CDE, 3.14 * ((4 * z) / 180) = \u2220ABC, 3 * 3.14 = \u2220ABC + \u2220BCD + \u2220CDE + \u2220DEA + \u2220EAB, \u2220BCD = \u2220DEA\nConclusions: 2.36 = \u2220DEA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(Mul(4.0, z), 180.0)))",
+        "Equals(MeasureOf(Angle(D, E, A)), Mul(pi, Div(Mul(5.0, z), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Mul(5.0, z), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), MeasureOf(Angle(D, E, A)))",
+        "Equals(MeasureOf(Angle(C, D, E)), Mul(pi, Div(Mul(3.0, z), 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(E, A, B)))",
+        "Equals(MeasureOf(Angle(E, A, B)), Mul(pi, Div(Mul(3.0, z), 180.0)))"
+    ],
+    "correct": true
+}

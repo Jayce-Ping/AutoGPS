@@ -1,0 +1,160 @@
+{
+    "problem_id": "2492",
+    "solved": true,
+    "problem_text": "A B \\cong D F. Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(G, H))",
+        "PointLiesOnLine(C, Line(G, E))",
+        "PointLiesOnLine(C, Line(G, I))",
+        "PointLiesOnLine(H, Line(G, E))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "PointLiesOnLine(H, Line(C, E))",
+        "PointLiesOnLine(H, Line(C, I))",
+        "PointLiesOnLine(E, Line(G, I))",
+        "PointLiesOnLine(E, Line(C, I))",
+        "PointLiesOnLine(E, Line(H, I))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnCircle(G, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(I, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(H, radius_0_0))",
+        "Perpendicular(Line(H, E), Line(F, E))",
+        "Perpendicular(Line(H, C), Line(B, C))",
+        "Equals(LengthOf(Line(B, C)), 9x)",
+        "Equals(LengthOf(Line(D, E)), 2x+14)",
+        "Equals(LengthOf(Line(A,B)),Line(D,F))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "F",
+        "C",
+        "E",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "GC",
+        "GH",
+        "GE",
+        "GI",
+        "CH",
+        "CE",
+        "CI",
+        "HE",
+        "HI",
+        "EI",
+        "DE",
+        "DF",
+        "EF",
+        "AC",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [
+        "H"
+    ],
+    "point_positions": {
+        "B": [
+            127.89099526066352,
+            338.3886255924171
+        ],
+        "A": [
+            127.89099526066352,
+            86.72985781990522
+        ],
+        "D": [
+            270.0710900473934,
+            89.57345971563981
+        ],
+        "F": [
+            269.5971563981043,
+            336.49289099526067
+        ],
+        "C": [
+            128.36492890995262,
+            213.2701421800948
+        ],
+        "E": [
+            268.6492890995261,
+            212.3222748815166
+        ],
+        "G": [
+            53.00947867298579,
+            212.7962085308057
+        ],
+        "H": [
+            197.08530805687207,
+            213.2701421800948
+        ],
+        "I": [
+            341.1611374407583,
+            211.8483412322275
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 331.534164,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE \u22a5 EH, \u2299(H, radius_0_0), C on AB, 14 + 2 * x = DE, 9 * x = BC, E on DF, AC \u22a5 CH, AB = DF\n\nStep 2:\nTheorem: Line Segment Split\nPremises : C on AB\nConclusions: AB = AC + BC\n\nStep 3:\nTheorem: Circle Vertical Theorem\nPremises : E on DF, \u2299(H, radius_0_0), DE \u22a5 EH\nConclusions: DE = EF\n\nStep 4:\nTheorem: Line Segment Split\nPremises : E on DF\nConclusions: DF = DE + EF\n\nStep 5:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(H, radius_0_0), AC \u22a5 CH, C on AB\nConclusions: AC = BC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = AC + BC, AB = DF\nConclusions: DF = AC + BC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 14 + 2 * x = DE, DE = EF\nConclusions: 14 + 2 * x = EF\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 9 * x = BC, AC = BC\nConclusions: 9 * x = AC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 9 * x = BC, 14 + 2 * x = EF, DF = DE + EF, DF = AC + BC, 9 * x = AC, 14 + 2 * x = DE\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, C)",
+        "Line(G, H)",
+        "Line(G, E)",
+        "Line(G, I)",
+        "Line(C, H)",
+        "Line(C, E)",
+        "Line(C, I)",
+        "Line(H, E)",
+        "Line(H, I)",
+        "Line(E, I)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Circle(H, radius_0_0)",
+        "PointLiesOnLine(C, Line(G, H))",
+        "PointLiesOnLine(C, Line(G, E))",
+        "PointLiesOnLine(C, Line(G, I))",
+        "PointLiesOnLine(H, Line(G, E))",
+        "PointLiesOnLine(H, Line(G, I))",
+        "PointLiesOnLine(H, Line(C, E))",
+        "PointLiesOnLine(H, Line(C, I))",
+        "PointLiesOnLine(E, Line(G, I))",
+        "PointLiesOnLine(E, Line(C, I))",
+        "PointLiesOnLine(E, Line(H, I))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnCircle(G, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(I, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(H, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(H, radius_0_0))",
+        "Perpendicular(Line(H, E), Line(F, E))",
+        "Perpendicular(Line(H, C), Line(B, C))",
+        "Equals(LengthOf(Line(B, C)), Mul(9.0, x))",
+        "Equals(LengthOf(Line(D, E)), Add(Mul(2.0, x), 14.0))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, F)))"
+    ],
+    "correct": true
+}

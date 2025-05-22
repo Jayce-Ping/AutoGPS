@@ -1,0 +1,192 @@
+{
+    "problem_id": "2564",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(E, Line(K, F))",
+        "PointLiesOnLine(E, Line(K, L))",
+        "PointLiesOnLine(F, Line(K, L))",
+        "PointLiesOnLine(F, Line(E, L))",
+        "PointLiesOnLine(G, Line(L, M))",
+        "PointLiesOnLine(I, Line(J, H))",
+        "PointLiesOnLine(I, Line(J, M))",
+        "PointLiesOnLine(H, Line(J, M))",
+        "PointLiesOnLine(H, Line(I, M))",
+        "PointLiesOnLine(D, Line(K, J))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(I, Circle(A, radius_1_0))",
+        "Equals(LengthOf(Line(J, M)), 10)",
+        "Equals(LengthOf(Line(L, M)), 5)",
+        "Equals(DiameterOf(Circle(A)), 5)",
+        "Equals(DiameterOf(Circle(B)), 5)",
+        "Find(Sub(AreaOf(Rectangle(K, L, M, J)), Add(AreaOf(Circle(B)), AreaOf(Circle(A))))) "
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "CB",
+        "KE",
+        "KF",
+        "KL",
+        "EF",
+        "EL",
+        "FL",
+        "LG",
+        "LM",
+        "GM",
+        "JI",
+        "JH",
+        "JM",
+        "IH",
+        "IM",
+        "HM",
+        "KD",
+        "KJ",
+        "DJ"
+    ],
+    "circle_instances": [
+        "B",
+        "A"
+    ],
+    "point_positions": {
+        "A": [
+            62.29838709677419,
+            67.45967741935483
+        ],
+        "B": [
+            152.6209677419355,
+            67.25806451612904
+        ],
+        "C": [
+            106.85483870967742,
+            67.25806451612904
+        ],
+        "D": [
+            16.935483870967744,
+            67.25806451612904
+        ],
+        "E": [
+            62.29838709677419,
+            22.701612903225808
+        ],
+        "F": [
+            152.21774193548387,
+            22.5
+        ],
+        "G": [
+            196.7741935483871,
+            66.65322580645162
+        ],
+        "H": [
+            154.03225806451613,
+            112.62096774193549
+        ],
+        "I": [
+            61.29032258064516,
+            112.01612903225806
+        ],
+        "J": [
+            16.935483870967744,
+            111.81451612903226
+        ],
+        "K": [
+            17.54032258064516,
+            22.5
+        ],
+        "L": [
+            196.3709677419355,
+            22.096774193548384
+        ],
+        "M": [
+            197.17741935483872,
+            112.01612903225806
+        ]
+    },
+    "problem_choices": [
+        "10.7",
+        "19.6",
+        "30.4",
+        "50.0"
+    ],
+    "choices_precise_value": [
+        10.7,
+        19.6,
+        30.4,
+        50.0
+    ],
+    "problem_answer": 10.7,
+    "total_time": 423.179312,
+    "solution_predicate": "Equals(10.73009183, Sub(AreaOf(Rectangle(K, L, M, J)), Add(AreaOf(Circle(B, radius_0_0)), AreaOf(Circle(A, radius_1_0)))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Area(Rectangle(J, K, L, M)), D on \u2299(A, radius_1_0), Area(\u2299(B, radius_0_0)), Area(\u2299(A, radius_1_0)), F on \u2299(B, radius_0_0), 5 = 2 * radius_1_0, 3.14 = pi, Rectangle(J, K, L, M), 5 = LM, 10 = JM, 5 = 2 * radius_0_0\n\nStep 2:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(J, K, L, M))\nConclusions: Area(Rectangle(J, K, L, M)) = JK * KL\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(A, radius_1_0)\nConclusions: radius_1_0 = AD\n\nStep 4:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\n\nStep 5:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(A, radius_1_0))\nConclusions: pi * radius_1_0 ** 2 = Area(\u2299(A, radius_1_0))\n\nStep 6:\nTheorem: Point On Circle Def\nPremises : F on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BF\n\nStep 7:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(J, K, L, M)\nConclusions: Parallelogram(J, K, L, M)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : radius_1_0 = AD, 5 = 2 * radius_1_0\nConclusions: 2.5 = AD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : radius_0_0 = BF, 5 = 2 * radius_0_0\nConclusions: 2.5 = BF\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: JK = LM, JM = KL\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = AD, 2.5 = AD\nConclusions: 2.5 = radius_1_0\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BF, 2.5 = BF\nConclusions: 2.5 = radius_0_0\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : JK = LM, 5 = LM\nConclusions: 5 = JK\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : JM = KL, 10 = JM\nConclusions: 10 = KL\n\nStep 15:\nTheorem: Evaluate\nPremises : 3.14 = pi, 2.5 = radius_1_0\nConclusions: 19.63 = pi * radius_1_0 ** 2\n\nStep 16:\nTheorem: Evaluate\nPremises : 3.14 = pi, 2.5 = radius_0_0\nConclusions: 19.63 = pi * radius_0_0 ** 2\n\nStep 17:\nTheorem: Evaluate\nPremises : 5 = JK, 10 = KL\nConclusions: 50 = JK * KL\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_1_0 ** 2 = Area(\u2299(A, radius_1_0)), 19.63 = pi * radius_1_0 ** 2\nConclusions: 19.63 = Area(\u2299(A, radius_1_0))\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), 19.63 = pi * radius_0_0 ** 2\nConclusions: 19.63 = Area(\u2299(B, radius_0_0))\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : Area(Rectangle(J, K, L, M)) = JK * KL, 50 = JK * KL\nConclusions: 50 = Area(Rectangle(J, K, L, M))\n\nStep 21:\nTheorem: Evaluate\nPremises : 19.63 = Area(\u2299(A, radius_1_0)), 19.63 = Area(\u2299(B, radius_0_0)), 50 = Area(Rectangle(J, K, L, M))\nConclusions: 10.73 = Area(Rectangle(J, K, L, M)) - (Area(\u2299(A, radius_1_0)) + Area(\u2299(B, radius_0_0)))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(K, E)",
+        "Line(K, F)",
+        "Line(K, L)",
+        "Line(E, F)",
+        "Line(E, L)",
+        "Line(F, L)",
+        "Line(L, G)",
+        "Line(L, M)",
+        "Line(G, M)",
+        "Line(J, I)",
+        "Line(J, H)",
+        "Line(J, M)",
+        "Line(I, H)",
+        "Line(I, M)",
+        "Line(H, M)",
+        "Line(K, D)",
+        "Line(K, J)",
+        "Line(D, J)",
+        "Circle(A, radius_1_0)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(E, Line(K, F))",
+        "PointLiesOnLine(E, Line(K, L))",
+        "PointLiesOnLine(F, Line(K, L))",
+        "PointLiesOnLine(F, Line(E, L))",
+        "PointLiesOnLine(G, Line(L, M))",
+        "PointLiesOnLine(I, Line(J, H))",
+        "PointLiesOnLine(I, Line(J, M))",
+        "PointLiesOnLine(H, Line(J, M))",
+        "PointLiesOnLine(H, Line(I, M))",
+        "PointLiesOnLine(D, Line(K, J))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(D, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(E, Circle(A, radius_1_0))",
+        "PointLiesOnCircle(I, Circle(A, radius_1_0))",
+        "Equals(LengthOf(Line(J, M)), 10.0)",
+        "Equals(LengthOf(Line(L, M)), 5.0)",
+        "Equals(Mul(2.0, radius_1_0), 5.0)",
+        "Equals(Mul(2.0, radius_0_0), 5.0)"
+    ],
+    "correct": true
+}

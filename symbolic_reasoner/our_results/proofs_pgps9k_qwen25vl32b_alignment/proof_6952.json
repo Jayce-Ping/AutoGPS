@@ -1,0 +1,67 @@
+{
+    "problem_id": "6952",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 5)",
+        "Equals(LengthOf(Line(B, A)), 14)",
+        "Find(PerimeterOf(Triangle(A, B, C)))",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            294.29999999999995,
+            38.857142857142854
+        ],
+        "B": [
+            29.585714285714285,
+            139.88571428571427
+        ],
+        "C": [
+            293.9107142857143,
+            140.27428571428572
+        ]
+    },
+    "problem_choices": [
+        32.077,
+        33.866,
+        38.0,
+        45.509
+    ],
+    "choices_precise_value": [
+        32.077,
+        33.866,
+        38.0,
+        45.509
+    ],
+    "problem_answer": 32.077,
+    "total_time": 16.342168,
+    "solution_predicate": "Equals(32.0766968306, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: sin(\u2220CBA), \u25b3ABC, 5 = AC, 14 = AB, cos(\u2220CBA), AC \u22a5 BC\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 3:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220CBA), AC \u22a5 BC\nConclusions: BC / AB = cos(\u2220CBA)\n\nStep 5:\nTheorem: Substitution\nPremises : 14 = AB, Perimeter(\u25b3ABC) = AB + AC + BC, 5 = AC\nConclusions: Perimeter(\u25b3ABC) = 14 + 5 + BC\n\nStep 6:\nTheorem: Substitution\nPremises : 14 = AB, AC / AB = sin(\u2220CBA), 5 = AC\nConclusions: 5 / 14 = sin(\u2220CBA)\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : 5 / 14 = sin(\u2220CBA)\nConclusions: 0.37 = \u2220CBA\n\nStep 8:\nTheorem: Substitution\nPremises : 0.37 = \u2220CBA, BC / AB = cos(\u2220CBA), 14 = AB\nConclusions: cos(0.37) = BC / 14\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : cos(0.37) = BC / 14, Perimeter(\u25b3ABC) = 14 + 5 + BC\nConclusions: 32.08 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 5.0)",
+        "Equals(LengthOf(Line(B, A)), 14.0)"
+    ],
+    "correct": true
+}

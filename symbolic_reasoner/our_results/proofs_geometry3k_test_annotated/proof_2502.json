@@ -1,0 +1,71 @@
+{
+    "problem_id": "2502",
+    "solved": true,
+    "problem_text": "Find m \\angle 4.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(D, C, B)), 123)",
+        "Find(MeasureOf(angle 4))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "DA",
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            253.57142857142856,
+            319.69642857142856
+        ],
+        "B": [
+            532.5892857142857,
+            137.55357142857142
+        ],
+        "C": [
+            134.82142857142856,
+            136.2142857142857
+        ],
+        "D": [
+            60.71428571428571,
+            23.714285714285708
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "43",
+        "57",
+        "123"
+    ],
+    "choices_precise_value": [
+        33.0,
+        43.0,
+        57.0,
+        123.0
+    ],
+    "problem_answer": 33.0,
+    "total_time": 7.540384,
+    "solution_predicate": "Equals(0.5759586532, MeasureOf(Angle(C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCD, \u2220ACB, pi * (123 / 180) = \u2220BCD, \u2220DAB, AC, AB \u22a5 AC, AB, AB \u22a5 AD, \u2220BAC, 3.14 = pi, BC\n\nStep 2:\nTheorem: Straight Angle\nPremises : \u2220BCD, \u2220ACB\nConclusions: pi = \u2220ACB + \u2220BCD\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DAB\nConclusions: \u2220DAB = 2 * pi - \u2220BAD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220BAC, (3 * pi) / 2 = \u2220CAB\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220DAB, pi / 2 = \u2220BAD\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BCD, pi * (123 / 180) = \u2220BCD, 3.14 = pi\nConclusions: 3.14 = pi * (123 / 180) + \u2220ACB\n\nStep 9:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220DAB, pi / 2 = \u2220BAD, \u2220DAB = 2 * pi - \u2220BAD, 3.14 = pi\nConclusions: (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BAC, (3 * pi) / 2 = \u2220CAB, 3.14 = pi, \u2220BAC = 2 * pi - \u2220CAB\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220DAB, (3 * pi) / 2 = 2 * 3.14 - 3.14 / 2\nConclusions: 2 * 3.14 - 3.14 / 2 = \u2220DAB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BAD, pi / 2 = 2 * 3.14 - (3 * pi) / 2\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220BAD\n\nStep 14:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BAC, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi\nConclusions: 3.14 = pi / 2 + \u2220ACB + \u2220CBA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAB = 2 * pi - \u2220BAD, 2 * 3.14 - 3.14 / 2 = \u2220DAB\nConclusions: 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BAD\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + \u2220ACB + \u2220CBA, 2 * 3.14 - 3.14 / 2 = 2 * pi - \u2220BAD, 2 * 3.14 - (3 * pi) / 2 = \u2220BAD, 3.14 = pi * (123 / 180) + \u2220ACB\nConclusions: 0.58 = \u2220CBA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, A)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "PointLiesOnLine(C, Line(D, A))",
+        "Perpendicular(Line(C, A), Line(B, A))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(123.0, 180.0)))"
+    ],
+    "correct": true
+}

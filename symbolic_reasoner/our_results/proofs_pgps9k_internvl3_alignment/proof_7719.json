@@ -1,0 +1,67 @@
+{
+    "problem_id": "7719",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle A.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 15)",
+        "Equals(LengthOf(Line(C, A)), 3)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Find(MeasureOf(Angle(A)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "CA",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            43.6919696969697,
+            56.447272727272725
+        ],
+        "C": [
+            400.99936507936513,
+            142.3009523809524
+        ],
+        "A": [
+            421.67317460317463,
+            56.312380952380956
+        ]
+    },
+    "problem_choices": [
+        11.3,
+        11.5,
+        78.5,
+        78.7
+    ],
+    "choices_precise_value": [
+        11.3,
+        11.5,
+        78.5,
+        78.7
+    ],
+    "problem_answer": 11.5,
+    "total_time": 13.989425,
+    "solution_predicate": "Equals(1.369438406, MeasureOf(Angle(B, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 15 = AB, AB, 3.14 = pi, 3 = AC, sin(\u2220CBA), AC, AC \u22a5 BC, BC\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CBA), AC \u22a5 BC\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACB, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ACB\n\nStep 7:\nTheorem: Substitution\nPremises : AC / AB = sin(\u2220CBA), 3 = AC, 15 = AB\nConclusions: 3 / 15 = sin(\u2220CBA)\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 3 / 15 = sin(\u2220CBA)\nConclusions: 0.2 = \u2220CBA\n\nStep 10:\nTheorem: Substitution\nPremises : 1.57 = \u2220ACB, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA, 0.2 = \u2220CBA\nConclusions: 3.14 = 0.2 + 1.57 + \u2220BAC\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 0.2 + 1.57 + \u2220BAC\nConclusions: 1.37 = \u2220BAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(B, A)), 15.0)",
+        "Equals(LengthOf(Line(C, A)), 3.0)"
+    ],
+    "correct": false
+}

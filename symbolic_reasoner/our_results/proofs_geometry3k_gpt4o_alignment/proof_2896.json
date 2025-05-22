@@ -1,0 +1,68 @@
+{
+    "problem_id": "2896",
+    "solved": true,
+    "problem_text": "Use parallelogram J K L M to find m \\angle J M L.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 6)",
+        "Equals(MeasureOf(Angle(L, K, J)), 109)",
+        "Parallelogram(J,K,L,M)",
+        "Find(MeasureOf(Angle(J,M,L)))"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L",
+        "M"
+    ],
+    "line_instances": [
+        "ML",
+        "KL",
+        "JK",
+        "JM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            58.15602836879433,
+            41.60992907801419
+        ],
+        "K": [
+            338.6524822695036,
+            69.2695035460993
+        ],
+        "L": [
+            410.2836879432624,
+            252.24822695035465
+        ],
+        "M": [
+            133.33333333333334,
+            226.36170212765958
+        ]
+    },
+    "problem_choices": [
+        "50",
+        "71",
+        "109",
+        "144"
+    ],
+    "choices_precise_value": [
+        50.0,
+        71.0,
+        109.0,
+        144.0
+    ],
+    "problem_answer": 109.0,
+    "total_time": 4.047028,
+    "solution_predicate": "Equals(1.9024088847, MeasureOf(Angle(L, M, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (109 / 180) = \u2220JKL, Parallelogram(J, K, L, M)\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(J, K, L, M)\nConclusions: \u2220JKL = \u2220LMJ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (109 / 180) = \u2220JKL, \u2220JKL = \u2220LMJ\nConclusions: pi * (109 / 180) = \u2220LMJ\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (109 / 180) = \u2220LMJ\nConclusions: 1.9 = \u2220LMJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, L)",
+        "Line(K, L)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Parallelogram(J, K, L, M)",
+        "Equals(LengthOf(Line(M, L)), 6.0)",
+        "Equals(MeasureOf(Angle(J, K, L)), Mul(pi, Div(109.0, 180.0)))"
+    ],
+    "correct": true
+}

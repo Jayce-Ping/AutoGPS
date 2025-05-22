@@ -1,0 +1,159 @@
+{
+    "problem_id": "3384",
+    "solved": true,
+    "problem_text": "If QR = 2, XW = 12, QW = 15, and ST = 5, find QS.",
+    "logic_forms": [
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, V)",
+        "Line(Q, W)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(S, T)",
+        "Line(S, W)",
+        "Line(T, V)",
+        "Line(W, V)",
+        "Line(X, V)",
+        "Line(X, W)",
+        "Parallel(Line(S, W), Line(R, X))",
+        "Parallel(Line(T, V), Line(R, X))",
+        "Parallel(Line(T, V), Line(S, W))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "PointLiesOnLine(R, Line(Q, T))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(W, Line(Q, V))",
+        "PointLiesOnLine(W, Line(X, V))",
+        "PointLiesOnLine(X, Line(Q, V))",
+        "PointLiesOnLine(X, Line(Q, W))",
+        "Equals(LengthOf(Line(Q,R)),2)",
+        "Equals(LengthOf(Line(X,W)),12)",
+        "Equals(LengthOf(Line(Q,W)),15)",
+        "Equals(LengthOf(Line(S,T)),5)",
+        "Find(LengthOf(Line(Q,S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "X",
+        "W",
+        "V",
+        "T",
+        "S",
+        "R"
+    ],
+    "line_instances": [
+        "QS",
+        "QR",
+        "QT",
+        "SR",
+        "ST",
+        "RT",
+        "TV",
+        "VX",
+        "VW",
+        "VQ",
+        "XW",
+        "XQ",
+        "WQ",
+        "XR",
+        "WS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            118.5214814814815,
+            320.4698795180723
+        ],
+        "X": [
+            241.33333333333334,
+            320.8734939759036
+        ],
+        "W": [
+            456.12000000000006,
+            320.8734939759036
+        ],
+        "V": [
+            608.1600000000001,
+            320.354561101549
+        ],
+        "T": [
+            508.4088888888889,
+            99.5582329317269
+        ],
+        "S": [
+            400.3116666666667,
+            160.13403614457832
+        ],
+        "R": [
+            218.80888888888893,
+            263.69477911646584
+        ]
+    },
+    "problem_choices": [
+        4.167,
+        7.5,
+        8.0,
+        10.0
+    ],
+    "choices_precise_value": [
+        4.167,
+        7.5,
+        8.0,
+        10.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 130.696466,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: X on QW, S on QT, RX || SW, R on QT, \u2220WQS, 15 = QW, \u2220XQT, \u2220WQR, \u2220VQR, 2 = QR, 12 = WX, X on QV, W on QV\n\nStep 2:\nTheorem: Line Segment Split\nPremises : X on QW\nConclusions: QW = QX + WX\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : RX || SW\nConclusions: \u2220QRX = \u2220QSW, \u2220QWS = \u2220QXR\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220WQS, X on QW\nConclusions: \u2220WQS = \u2220XQS\n\nStep 5:\nTheorem: Same Angle\nPremises : R on QT, \u2220XQT\nConclusions: \u2220XQR = \u2220XQT\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220XQT, S on QT\nConclusions: \u2220XQS = \u2220XQT\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220WQR, X on QW\nConclusions: \u2220WQR = \u2220XQR\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220VQR, X on QV\nConclusions: \u2220VQR = \u2220XQR\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220VQR, W on QV\nConclusions: \u2220VQR = \u2220WQR\n\nStep 10:\nTheorem: Substitution\nPremises : 12 = WX, 15 = QW, QW = QX + WX\nConclusions: 15 = 12 + QX\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XQS = \u2220XQT, \u2220WQS = \u2220XQS\nConclusions: \u2220WQS = \u2220XQT\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WQR = \u2220XQR, \u2220XQR = \u2220XQT\nConclusions: \u2220WQR = \u2220XQT\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 15 = 12 + QX\nConclusions: 3 = QX\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VQR = \u2220WQR, \u2220WQR = \u2220XQT\nConclusions: \u2220VQR = \u2220XQT\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VQR = \u2220XQT, \u2220WQS = \u2220XQT, \u2220VQR = \u2220XQR\nConclusions: \u2220WQS = \u2220XQR\n\nStep 16:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220QRX = \u2220QSW, \u2220WQS = \u2220XQR, \u2220QWS = \u2220QXR\nConclusions: \u25b3QRX ~ \u25b3QSW\n\nStep 17:\nTheorem: Similar Definition\nPremises : \u25b3QRX ~ \u25b3QSW\nConclusions: \u2220QRX = \u2220QSW, sim_ratio_triangle_q_r_x_triangle_q_s_w = QR / QS, sim_ratio_triangle_q_r_x_triangle_q_s_w = QX / QW, \u2220WQS = \u2220XQR\n\nStep 18:\nTheorem: Substitution\nPremises : sim_ratio_triangle_q_r_x_triangle_q_s_w = QR / QS, 2 = QR\nConclusions: sim_ratio_triangle_q_r_x_triangle_q_s_w = 2 / QS\n\nStep 19:\nTheorem: Substitution\nPremises : sim_ratio_triangle_q_r_x_triangle_q_s_w = QX / QW, 3 = QX, 15 = QW\nConclusions: 3 / 15 = sim_ratio_triangle_q_r_x_triangle_q_s_w\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_q_r_x_triangle_q_s_w = 2 / QS, 3 / 15 = sim_ratio_triangle_q_r_x_triangle_q_s_w\nConclusions: 3 / 15 = 2 / QS\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 3 / 15 = 2 / QS\nConclusions: 10 = QS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, S)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(R, T)",
+        "Line(T, V)",
+        "Line(V, X)",
+        "Line(V, W)",
+        "Line(V, Q)",
+        "Line(X, W)",
+        "Line(X, Q)",
+        "Line(W, Q)",
+        "Line(X, R)",
+        "Line(W, S)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(Q, T)",
+        "Line(Q, V)",
+        "Line(Q, W)",
+        "Line(Q, X)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(S, T)",
+        "Line(S, W)",
+        "Line(T, V)",
+        "Line(W, V)",
+        "Line(X, V)",
+        "Line(X, W)",
+        "Parallel(Line(S, W), Line(R, X))",
+        "Parallel(Line(T, V), Line(R, X))",
+        "Parallel(Line(T, V), Line(S, W))",
+        "PointLiesOnLine(R, Line(Q, S))",
+        "PointLiesOnLine(R, Line(Q, T))",
+        "PointLiesOnLine(S, Line(Q, T))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(W, Line(Q, V))",
+        "PointLiesOnLine(W, Line(X, V))",
+        "PointLiesOnLine(X, Line(Q, V))",
+        "PointLiesOnLine(X, Line(Q, W))",
+        "Equals(LengthOf(Line(Q, R)), 2.0)",
+        "Equals(LengthOf(Line(X, W)), 12.0)",
+        "Equals(LengthOf(Line(Q, W)), 15.0)",
+        "Equals(LengthOf(Line(S, T)), 5.0)"
+    ],
+    "correct": true
+}

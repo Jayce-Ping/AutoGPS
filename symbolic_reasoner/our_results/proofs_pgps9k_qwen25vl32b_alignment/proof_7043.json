@@ -1,0 +1,142 @@
+{
+    "problem_id": "7043",
+    "solved": true,
+    "problem_text": "Find the value of y.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, A)), y)",
+        "Equals(MeasureOf(Angle(B, C, F)), 3x-5)",
+        "Equals(MeasureOf(Angle(E, F, C)), 5x-7)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Parallel(Line(B, D), Line(E, G))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "EF",
+        "EG",
+        "FG",
+        "BC",
+        "BD",
+        "CD",
+        "AC",
+        "AF",
+        "AH",
+        "CF",
+        "CH",
+        "FH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            290.089552238806,
+            21.388571428571428
+        ],
+        "B": [
+            17.99004975124378,
+            103.56571428571428
+        ],
+        "C": [
+            255.71570717839373,
+            103.56571428571428
+        ],
+        "D": [
+            379.5900497512438,
+            103.56571428571428
+        ],
+        "E": [
+            17.99004975124378,
+            229.64571428571426
+        ],
+        "F": [
+            202.38805970149252,
+            229.0024489795918
+        ],
+        "G": [
+            379.290215588723,
+            229.39555555555555
+        ],
+        "H": [
+            182.43034825870646,
+            274.9557142857143
+        ]
+    },
+    "problem_choices": [
+        67.0,
+        90.0,
+        113.0,
+        182.0
+    ],
+    "choices_precise_value": [
+        67.0,
+        90.0,
+        113.0,
+        182.0
+    ],
+    "problem_answer": 113.0,
+    "total_time": 48.719706,
+    "solution_predicate": "Equals(113.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (y / 180) = \u2220ACB, F on CH, \u2220HCD, C on AF, pi * ((3 * x - 5) / 180) = \u2220BCF, BD || EG, \u2220HFG, \u2220GFC, \u2220EFH, pi * ((5 * x - 7) / 180) = \u2220CFE, F on EG, \u2220CFE, 3.14 = pi, \u2220AFE\n\nStep 2:\nTheorem: Same Angle\nPremises : F on CH, \u2220HCD\nConclusions: \u2220FCD = \u2220HCD\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : BD || EG\nConclusions: \u2220CFE = \u2220FCD, \u2220BCF = \u2220GFC\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : BD || EG\nConclusions: \u2220ACB = \u2220AFE, \u2220HCD = \u2220HFG\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : F on CH, F on EG\nConclusions: \u2220EFH = \u2220GFC\n\nStep 6:\nTheorem: Circumference Split\nPremises : \u2220EFH, \u2220GFC, \u2220CFE, \u2220HFG\nConclusions: 2 * pi = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AFE, C on AF\nConclusions: \u2220AFE = \u2220CFE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 7) / 180) = \u2220CFE, \u2220CFE = \u2220FCD\nConclusions: pi * ((5 * x - 7) / 180) = \u2220FCD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x - 5) / 180) = \u2220BCF, \u2220BCF = \u2220GFC\nConclusions: pi * ((3 * x - 5) / 180) = \u2220GFC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220ACB, \u2220ACB = \u2220AFE\nConclusions: pi * (y / 180) = \u2220AFE\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x - 5) / 180) = \u2220GFC, \u2220EFH = \u2220GFC\nConclusions: pi * ((3 * x - 5) / 180) = \u2220EFH\n\nStep 13:\nTheorem: Substitution\nPremises : pi * ((3 * x - 5) / 180) = \u2220GFC, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 5) / 180) = \u2220GFC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 7) / 180) = \u2220CFE, pi * (y / 180) = \u2220AFE, \u2220AFE = \u2220CFE\nConclusions: pi * (y / 180) = pi * ((5 * x - 7) / 180)\n\nStep 15:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x - 5) / 180) = \u2220EFH\nConclusions: 3.14 * ((3 * x - 5) / 180) = \u2220EFH\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 7) / 180) = \u2220CFE, pi * (y / 180) = pi * ((5 * x - 7) / 180)\nConclusions: pi * (y / 180) = \u2220CFE\n\nStep 17:\nTheorem: Substitution\nPremises : pi * (y / 180) = pi * ((5 * x - 7) / 180), 3.14 = pi\nConclusions: 3.14 * (y / 180) = 3.14 * ((5 * x - 7) / 180)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * x - 7) / 180) = \u2220FCD, pi * (y / 180) = pi * ((5 * x - 7) / 180)\nConclusions: pi * (y / 180) = \u2220FCD\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220CFE, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220CFE\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FCD = \u2220HCD, \u2220HCD = \u2220HFG, pi * (y / 180) = \u2220FCD\nConclusions: pi * (y / 180) = \u2220HFG\n\nStep 21:\nTheorem: Substitution\nPremises : pi * (y / 180) = \u2220HFG, 3.14 = pi\nConclusions: 3.14 * (y / 180) = \u2220HFG\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (y / 180) = 3.14 * ((5 * x - 7) / 180), 3.14 * (y / 180) = \u2220HFG, 3.14 * ((3 * x - 5) / 180) = \u2220GFC, 3.14 * ((3 * x - 5) / 180) = \u2220EFH, 3.14 * (y / 180) = \u2220CFE, 2 * 3.14 = \u2220CFE + \u2220EFH + \u2220GFC + \u2220HFG\nConclusions: 113 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(F, H)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(A, H)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(C, H)",
+        "Line(E, F)",
+        "Line(E, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Parallel(Line(B, D), Line(E, G))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(C, Line(A, H))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(A, H))",
+        "PointLiesOnLine(F, Line(C, H))",
+        "PointLiesOnLine(F, Line(E, G))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, F)), Mul(pi, Div(Sub(Mul(3.0, x), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, F, E)), Mul(pi, Div(Sub(Mul(5.0, x), 7.0), 180.0)))"
+    ],
+    "correct": true
+}

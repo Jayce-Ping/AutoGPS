@@ -1,0 +1,164 @@
+{
+    "problem_id": "6031",
+    "solved": true,
+    "problem_text": "QR \\parallel TS, QT \\parallel RS, and m \\angle 1 = 131. Find the measure of \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, R, C)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(Q, R, S)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(R, Q, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(R, Q, T)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(S, T, A)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(S, T, Q)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(T, S, D)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(T, S, R)), MeasureOf(Angle(7)))",
+        "Line(B, A)",
+        "Line(B, Q)",
+        "Line(B, T)",
+        "Line(C, D)",
+        "Line(C, R)",
+        "Line(C, S)",
+        "Line(Q, A)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(R, D)",
+        "Line(R, S)",
+        "Line(S, D)",
+        "Line(T, A)",
+        "Line(T, S)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(Q, R), Line(T, S))",
+        "PointLiesOnLine(Q, Line(B, A))",
+        "PointLiesOnLine(Q, Line(B, T))",
+        "PointLiesOnLine(R, Line(C, D))",
+        "PointLiesOnLine(R, Line(C, S))",
+        "PointLiesOnLine(S, Line(C, D))",
+        "PointLiesOnLine(S, Line(R, D))",
+        "PointLiesOnLine(T, Line(B, A))",
+        "PointLiesOnLine(T, Line(Q, A))",
+        "Parallel(Line(Q,R),Line(T,S))",
+        "Parallel(Line(Q,T),Line(R,S))",
+        "Equals(MeasureOf(Angle(1)),131)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "T",
+        "Q",
+        "B",
+        "C",
+        "R",
+        "S",
+        "D"
+    ],
+    "line_instances": [
+        "AT",
+        "AQ",
+        "AB",
+        "TQ",
+        "TB",
+        "QB",
+        "DR",
+        "DS",
+        "DC",
+        "RS",
+        "RC",
+        "SC",
+        "ST",
+        "RQ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            48.07314285714286,
+            283.7462962962963
+        ],
+        "T": [
+            48.48285714285714,
+            157.0601851851852
+        ],
+        "Q": [
+            48.32027210884353,
+            77.84722222222221
+        ],
+        "B": [
+            48.11516483516484,
+            23.375178062678064
+        ],
+        "C": [
+            186.8297142857143,
+            23.545370370370367
+        ],
+        "R": [
+            187.10285714285715,
+            154.56622383252818
+        ],
+        "S": [
+            187.10285714285715,
+            233.3554292929293
+        ],
+        "D": [
+            187.0016931216931,
+            283.51766117969817
+        ]
+    },
+    "problem_choices": [
+        49.0,
+        59.0,
+        69.0,
+        131.0
+    ],
+    "choices_precise_value": [
+        49.0,
+        59.0,
+        69.0,
+        131.0
+    ],
+    "problem_answer": 49.0,
+    "total_time": 37.67588,
+    "solution_predicate": "Equals(0.8552113335, MeasureOf(Angle(T, Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: T on AQ, Q on BT, QT, \u2220AQR, S on DR, AB || DC, QR || TS, RS, \u2220QRD, \u2220CST, R on CS, 3.14 = pi, \u2220STB, ST, pi * (131 / 180) = \u2220RQB, QR\n\nStep 2:\nTheorem: Same Angle\nPremises : T on AQ, \u2220AQR\nConclusions: \u2220AQR = \u2220TQR\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ATS = \u2220CST, \u2220QRD = \u2220RQB, \u2220STB = \u2220TSD, \u2220AQR = \u2220CRQ\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : QR || TS\nConclusions: \u2220AQR = \u2220ATS\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220QRD, S on DR\nConclusions: \u2220QRD = \u2220QRS\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220CST, R on CS\nConclusions: \u2220CST = \u2220RST\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220STB, Q on BT\nConclusions: \u2220STB = \u2220STQ\n\nStep 8:\nTheorem: Definition of Parallelogram\nPremises : AB || DC, QR || TS, ST, QT, RS, QR\nConclusions: Parallelogram(Q, R, S, T)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (131 / 180) = \u2220RQB, \u2220QRD = \u2220RQB\nConclusions: pi * (131 / 180) = \u2220QRD\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQR = \u2220TQR, \u2220AQR = \u2220CRQ\nConclusions: \u2220CRQ = \u2220TQR\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ATS = \u2220CST, \u2220AQR = \u2220ATS, \u2220AQR = \u2220CRQ\nConclusions: \u2220CRQ = \u2220CST\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220STB = \u2220TSD, \u2220STB = \u2220STQ\nConclusions: \u2220STQ = \u2220TSD\n\nStep 13:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(Q, R, S, T)\nConclusions: \u2220QRS = \u2220STQ\n\nStep 14:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(Q, R, S, T)\nConclusions: Quadrilateral(Q, R, S, T)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : pi * (131 / 180) = \u2220QRD, \u2220QRD = \u2220QRS\nConclusions: pi * (131 / 180) = \u2220QRS\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CRQ = \u2220CST, \u2220CST = \u2220RST\nConclusions: \u2220CRQ = \u2220RST\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(Q, R, S, T)\nPremises : Quadrilateral(Q, R, S, T)\nConclusions: 2 * pi = \u2220QRS + \u2220RST + \u2220STQ + \u2220TQR\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (131 / 180) = \u2220QRS, \u2220STQ = \u2220TSD, \u2220QRS = \u2220STQ\nConclusions: pi * (131 / 180) = \u2220TSD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (131 / 180) = \u2220TSD, \u2220STQ = \u2220TSD\nConclusions: pi * (131 / 180) = \u2220STQ\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (131 / 180) = \u2220QRS, \u2220CRQ = \u2220TQR, \u2220CRQ = \u2220RST, pi * (131 / 180) = \u2220STQ, 3.14 = pi, 2 * pi = \u2220QRS + \u2220RST + \u2220STQ + \u2220TQR\nConclusions: 2 * 3.14 = 3.14 * (131 / 180) + 3.14 * (131 / 180) + \u2220CRQ + \u2220CRQ\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : \u2220CRQ = \u2220TQR, 2 * 3.14 = 3.14 * (131 / 180) + 3.14 * (131 / 180) + \u2220CRQ + \u2220CRQ\nConclusions: 0.86 = \u2220TQR\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, T)",
+        "Line(A, Q)",
+        "Line(A, B)",
+        "Line(T, Q)",
+        "Line(T, B)",
+        "Line(Q, B)",
+        "Line(D, R)",
+        "Line(D, S)",
+        "Line(D, C)",
+        "Line(R, S)",
+        "Line(R, C)",
+        "Line(S, C)",
+        "Line(S, T)",
+        "Line(R, Q)",
+        "Line(B, A)",
+        "Line(B, Q)",
+        "Line(B, T)",
+        "Line(C, D)",
+        "Line(C, R)",
+        "Line(C, S)",
+        "Line(Q, A)",
+        "Line(Q, R)",
+        "Line(Q, T)",
+        "Line(R, D)",
+        "Line(R, S)",
+        "Line(S, D)",
+        "Line(T, A)",
+        "Line(T, S)",
+        "Parallel(Line(B, A), Line(C, D))",
+        "Parallel(Line(Q, R), Line(T, S))",
+        "PointLiesOnLine(Q, Line(B, A))",
+        "PointLiesOnLine(Q, Line(B, T))",
+        "PointLiesOnLine(R, Line(C, D))",
+        "PointLiesOnLine(R, Line(C, S))",
+        "PointLiesOnLine(S, Line(C, D))",
+        "PointLiesOnLine(S, Line(R, D))",
+        "PointLiesOnLine(T, Line(B, A))",
+        "PointLiesOnLine(T, Line(Q, A))",
+        "Parallel(Line(Q, R), Line(T, S))",
+        "Parallel(Line(Q, T), Line(R, S))",
+        "Equals(MeasureOf(Angle(R, Q, B)), Mul(pi, Div(131.0, 180.0)))"
+    ],
+    "correct": true
+}

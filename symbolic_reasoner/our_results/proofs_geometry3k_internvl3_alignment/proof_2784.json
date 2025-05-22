@@ -1,0 +1,81 @@
+{
+    "problem_id": "2784",
+    "solved": true,
+    "problem_text": "Find x. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(LengthOf(Line(D, A)), x)",
+        "Equals(LengthOf(Line(D, C)), 9)",
+        "Find(x)",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Tangent(Line(A, D), Circle(C, radius_0_0))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DA",
+        "AB",
+        "AC",
+        "BC",
+        "DC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            13.853932584269664,
+            130.33707865168537
+        ],
+        "B": [
+            42.393258426966284,
+            124.49438202247191
+        ],
+        "C": [
+            129.58426966292134,
+            109.8876404494382
+        ],
+        "D": [
+            57.2247191011236,
+            60.44943820224719
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 12.915724,
+    "solution_predicate": "Equals(12.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, 9 = CD, Tangent(AD, \u2299(C, radius_0_0)), B on AC, 6 = AB, D on \u2299(C, radius_0_0), x = AD, B on \u2299(C, radius_0_0), CD, AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Tangent Definition\nPremises : D on \u2299(C, radius_0_0), Tangent(AD, \u2299(C, radius_0_0))\nConclusions: AD \u22a5 CD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CD\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : B on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 9 = CD, radius_0_0 = CD\nConclusions: 9 = radius_0_0\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : AD \u22a5 CD, \u25b3ACD\nConclusions: AD = SqrtOf(AC ** 2 - CD ** 2)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 9 = radius_0_0, radius_0_0 = BC\nConclusions: 9 = BC\n\nStep 10:\nTheorem: Substitution\nPremises : 6 = AB, AC = AB + BC, 9 = BC\nConclusions: 6 + 9 = AC\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 6 + 9 = AC\nConclusions: 15 = AC\n\nStep 12:\nTheorem: Substitution\nPremises : 9 = CD, AD = SqrtOf(AC ** 2 - CD ** 2), 15 = AC, x = AD\nConclusions: SqrtOf(15 ** 2 - 9 ** 2) = x\n\nStep 13:\nTheorem: Evaluate\nPremises : SqrtOf(15 ** 2 - 9 ** 2) = x\nConclusions: 12 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnCircle(B, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(C, radius_0_0))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Tangent(Line(A, D), Circle(C, radius_0_0))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(D, A)), x)",
+        "Equals(LengthOf(Line(D, C)), 9.0)"
+    ],
+    "correct": true
+}

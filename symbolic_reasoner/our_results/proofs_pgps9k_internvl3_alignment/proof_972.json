@@ -1,0 +1,68 @@
+{
+    "problem_id": "972",
+    "solved": true,
+    "problem_text": "What is the length of \\widehat JL?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), 6)",
+        "Equals(MeasureOf(Angle(L, K, J)), 148)",
+        "Line(J, K)",
+        "Line(L, K)",
+        "PointLiesOnCircle(J, Circle(K))",
+        "PointLiesOnCircle(L, Circle(K))",
+        "Find(LengthOf(Arc(J,L)))"
+    ],
+    "point_instances": [
+        "K",
+        "L",
+        "J"
+    ],
+    "line_instances": [
+        "JK",
+        "KL"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "K": [
+            130.91931540342298,
+            126.65036674816626
+        ],
+        "L": [
+            188.08609656777196,
+            39.363174603174606
+        ],
+        "J": [
+            37.29842931937173,
+            172.11428571428573
+        ]
+    },
+    "problem_choices": [
+        11.1,
+        15.499,
+        22.201,
+        46.496
+    ],
+    "choices_precise_value": [
+        11.1,
+        15.499,
+        22.201,
+        46.496
+    ],
+    "problem_answer": 15.499,
+    "total_time": 2.202315,
+    "solution_predicate": "Equals(15.4985237578, LengthOf(Arc(L, K, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (148 / 180) = \u2220LKJ, Arc(LKJ), 6 = KL, L on \u2299(K, radius_K)\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(LKJ)\nConclusions: Arc(LKJ) = radius_K * \u2220LKJ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : L on \u2299(K, radius_K)\nConclusions: radius_K = KL\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_K = KL, 6 = KL\nConclusions: 6 = radius_K\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (148 / 180) = \u2220LKJ, 6 = radius_K, Arc(LKJ) = radius_K * \u2220LKJ\nConclusions: 6 * pi * (148 / 180) = Arc(LKJ)\n\nStep 6:\nTheorem: Evaluate\nPremises : 6 * pi * (148 / 180) = Arc(LKJ)\nConclusions: 15.5 = Arc(LKJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, K)",
+        "Line(K, L)",
+        "Circle(K, radius_K)",
+        "Line(J, K)",
+        "Line(L, K)",
+        "PointLiesOnCircle(J, Circle(K, radius_K))",
+        "PointLiesOnCircle(L, Circle(K, radius_K))",
+        "Equals(LengthOf(Line(K, L)), 6.0)",
+        "Equals(MeasureOf(Angle(L, K, J)), Mul(pi, Div(148.0, 180.0)))"
+    ],
+    "correct": true
+}

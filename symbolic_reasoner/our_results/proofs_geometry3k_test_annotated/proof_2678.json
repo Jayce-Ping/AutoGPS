@@ -1,0 +1,110 @@
+{
+    "problem_id": "2678",
+    "solved": true,
+    "problem_text": "m \\angle 2 = 2 x, m \\angle 3 = x. Find m \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(G, J))",
+        "PointLiesOnLine(B, Line(G, J))",
+        "PointLiesOnLine(B, Line(A, J))",
+        "PointLiesOnCircle(J, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "Perpendicular(Line(J, H), Line(G, H))",
+        "Perpendicular(Line(H, A), Line(G, A))",
+        "Equals(MeasureOf(Angle(A, J, H)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(A, G, H)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, H, G)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(angle 2), 2x)",
+        "Equals(MeasureOf(angle 3), x)",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "H",
+        "J",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "FA",
+        "FH",
+        "AH",
+        "GA",
+        "GJ",
+        "AJ",
+        "HJ",
+        "GH"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "G": [
+            178.75399361022366,
+            59.42492012779553
+        ],
+        "F": [
+            79.71246006389777,
+            140.89456869009584
+        ],
+        "H": [
+            278.4345047923323,
+            140.57507987220447
+        ],
+        "J": [
+            179.71246006389777,
+            263.258785942492
+        ],
+        "A": [
+            179.3929712460064,
+            140.57507987220447
+        ],
+        "B": [
+            179.26791277258567,
+            161.68224299065423
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "45",
+        "60",
+        "90"
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 183.534061,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(A, G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((2 * x) / 180) = \u2220AGH, \u2220HJG, AG \u22a5 AH, \u2220HJA, 3.14 = pi, AH, B on AJ, \u2220GHF, pi * (x / 180) = \u2220HJA, \u2220JGH, AG, GH, B on GJ, A on GJ, GH \u22a5 HJ, A on FH\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AG \u22a5 AH\nConclusions: pi / 2 = \u2220HAG\n\nStep 3:\nTheorem: Same Angle\nPremises : B on AJ, \u2220HJA\nConclusions: \u2220HJA = \u2220HJB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AH, GH, AG\nConclusions: \u25b3AGH\n\nStep 5:\nTheorem: Same Angle\nPremises : B on GJ, \u2220JGH\nConclusions: \u2220BGH = \u2220JGH\n\nStep 6:\nTheorem: Same Angle\nPremises : B on GJ, \u2220HJG\nConclusions: \u2220HJB = \u2220HJG\n\nStep 7:\nTheorem: Same Angle\nPremises : A on GJ, \u2220JGH\nConclusions: \u2220AGH = \u2220JGH\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : GH \u22a5 HJ\nConclusions: pi / 2 = \u2220GHJ\n\nStep 9:\nTheorem: Same Angle\nPremises : A on FH, \u2220GHF\nConclusions: \u2220GHA = \u2220GHF\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220HJA, \u2220HJA = \u2220HJB\nConclusions: pi * (x / 180) = \u2220HJB\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, G, H)\nPremises : \u25b3AGH\nConclusions: pi = \u2220AGH + \u2220GHA + \u2220HAG\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AGH = \u2220JGH, pi * ((2 * x) / 180) = \u2220AGH\nConclusions: pi * ((2 * x) / 180) = \u2220JGH\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220HAG, pi / 2 = \u2220GHJ\nConclusions: \u2220GHJ = \u2220HAG\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220HJB, \u2220HJB = \u2220HJG\nConclusions: pi * (x / 180) = \u2220HJG\n\nStep 15:\nTheorem: Substitution\nPremises : pi = \u2220AGH + \u2220GHA + \u2220HAG, pi / 2 = \u2220HAG, \u2220GHA = \u2220GHF, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + \u2220AGH + \u2220GHF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220JGH, \u2220BGH = \u2220JGH\nConclusions: pi * ((2 * x) / 180) = \u2220BGH\n\nStep 17:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220GHJ = \u2220HAG, \u2220AGH = \u2220JGH\nConclusions: \u25b3AGH ~ \u25b3HGJ\n\nStep 18:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((2 * x) / 180) = \u2220BGH\nConclusions: 3.14 * ((2 * x) / 180) = \u2220BGH\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3AGH ~ \u25b3HGJ\nConclusions: \u2220GHA = \u2220HJG, \u2220GHJ = \u2220HAG\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220BGH, 3.14 * ((2 * x) / 180) = \u2220BGH\nConclusions: 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = \u2220HJG, \u2220GHA = \u2220GHF, \u2220GHA = \u2220HJG\nConclusions: pi * (x / 180) = \u2220GHF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((2 * x) / 180) = \u2220AGH, 3.14 * ((2 * x) / 180) = pi * ((2 * x) / 180)\nConclusions: 3.14 * ((2 * x) / 180) = \u2220AGH\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220GHF\nConclusions: 3.14 * (x / 180) = \u2220GHF\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((2 * x) / 180) = \u2220AGH, 3.14 * (x / 180) = \u2220GHF, 3.14 = 3.14 / 2 + \u2220AGH + \u2220GHF\nConclusions: 1.05 = \u2220AGH\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(G, A)",
+        "Line(G, J)",
+        "Line(A, J)",
+        "Line(H, J)",
+        "Line(G, H)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(G, J))",
+        "PointLiesOnLine(B, Line(G, J))",
+        "PointLiesOnLine(B, Line(A, J))",
+        "PointLiesOnCircle(J, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(B, radius_0_0))",
+        "Perpendicular(Line(J, H), Line(G, H))",
+        "Perpendicular(Line(H, A), Line(G, A))",
+        "Equals(MeasureOf(Angle(A, G, H)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(H, J, A)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

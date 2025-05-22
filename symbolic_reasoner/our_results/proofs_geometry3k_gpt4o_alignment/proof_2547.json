@@ -1,0 +1,110 @@
+{
+    "problem_id": "2547",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(U, Line(R, Q))",
+        "PointLiesOnLine(V, Line(R, S))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnCircle(T, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(W, radius_0_0))",
+        "Equals(LengthOf(Line(Q, T)), 2x)",
+        "Equals(LengthOf(Line(Q, U)), 14)",
+        "Equals(LengthOf(Line(S, T)), 17)",
+        "Equals(LengthOf(Line(R, S)), 27)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "T",
+        "W",
+        "U",
+        "R",
+        "V",
+        "Q",
+        "S"
+    ],
+    "line_instances": [
+        "RU",
+        "RQ",
+        "UQ",
+        "RV",
+        "RS",
+        "VS",
+        "QT",
+        "QS",
+        "TS"
+    ],
+    "circle_instances": [
+        "W"
+    ],
+    "point_positions": {
+        "T": [
+            324.13793103448273,
+            422.35632183908046
+        ],
+        "W": [
+            328.1609195402299,
+            297.64367816091954
+        ],
+        "U": [
+            218.39080459770116,
+            234.42528735632183
+        ],
+        "R": [
+            302.8735632183908,
+            86.72413793103448
+        ],
+        "V": [
+            420.6896551724138,
+            212.58620689655172
+        ],
+        "Q": [
+            110.91954022988506,
+            421.7816091954023
+        ],
+        "S": [
+            613.2183908045977,
+            421.7816091954023
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "7",
+        "13",
+        "14"
+    ],
+    "choices_precise_value": [
+        5.0,
+        7.0,
+        13.0,
+        14.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 55.849792,
+    "solution_predicate": "Equals(7.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 2 * x = QT, QS, V on \u2299(W, radius_0_0), QR, U on \u2299(W, radius_0_0), \u2299(W, radius_0_0), RS, 14 = QU, T on \u2299(W, radius_0_0), V on RS, U on QR, T on QS\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : QR, RS, QS\nConclusions: \u25b3QRS\n\nStep 3:\nTheorem: Incenter definition\nPremises : \u2299(W, radius_0_0), T on \u2299(W, radius_0_0), U on \u2299(W, radius_0_0), V on \u2299(W, radius_0_0), V on RS, U on QR, T on QS, \u25b3QRS\nConclusions: IsIncenterOf(W, \u25b3QRS)\n\nStep 4:\nTheorem: Properties of Incenter W of Triangle\nPremises : IsIncenterOf(W, \u25b3QRS)\nConclusions: QT = QU\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 14 = QU, QT = QU, 2 * x = QT\nConclusions: 14 = 2 * x\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 14 = 2 * x\nConclusions: 7 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, U)",
+        "Line(R, Q)",
+        "Line(U, Q)",
+        "Line(R, V)",
+        "Line(R, S)",
+        "Line(V, S)",
+        "Line(Q, T)",
+        "Line(Q, S)",
+        "Line(T, S)",
+        "Circle(W, radius_0_0)",
+        "PointLiesOnLine(U, Line(R, Q))",
+        "PointLiesOnLine(V, Line(R, S))",
+        "PointLiesOnLine(T, Line(Q, S))",
+        "PointLiesOnCircle(T, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(W, radius_0_0))",
+        "PointLiesOnCircle(U, Circle(W, radius_0_0))",
+        "Equals(LengthOf(Line(Q, T)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(Q, U)), 14.0)",
+        "Equals(LengthOf(Line(S, T)), 17.0)",
+        "Equals(LengthOf(Line(R, S)), 27.0)"
+    ],
+    "correct": true
+}

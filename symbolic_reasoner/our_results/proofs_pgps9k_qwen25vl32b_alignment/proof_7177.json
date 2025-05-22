@@ -1,0 +1,102 @@
+{
+    "problem_id": "7177",
+    "solved": true,
+    "problem_text": "Find m \\widehat BCA of \\odot Q.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(D, Q, C)), 47)",
+        "Line(A, C)",
+        "Line(A, Q)",
+        "Line(B, D)",
+        "Line(B, Q)",
+        "Line(Q, C)",
+        "Line(Q, D)",
+        "PointLiesOnCircle(A, Circle(Q))",
+        "PointLiesOnCircle(B, Circle(Q))",
+        "PointLiesOnCircle(C, Circle(Q))",
+        "PointLiesOnCircle(D, Circle(Q))",
+        "PointLiesOnLine(Q, Line(A, C))",
+        "PointLiesOnLine(Q, Line(B, D))",
+        "Circle(Q)",
+        "Find(MeasureOf(Arc(B,C,A)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "Q",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "BQ",
+        "BD",
+        "QD",
+        "AQ",
+        "AC",
+        "QC"
+    ],
+    "circle_instances": [
+        "Q"
+    ],
+    "point_positions": {
+        "B": [
+            69.81666666666666,
+            113.67999999999999
+        ],
+        "C": [
+            334.63589743589745,
+            114.13230769230769
+        ],
+        "Q": [
+            201.29677632593777,
+            171.32107878693122
+        ],
+        "A": [
+            70.04358974358973,
+            228.56615384615384
+        ],
+        "D": [
+            335.0897435897436,
+            228.56615384615384
+        ]
+    },
+    "problem_choices": [
+        47.0,
+        227.0,
+        266.0,
+        313.0
+    ],
+    "choices_precise_value": [
+        47.0,
+        227.0,
+        266.0,
+        313.0
+    ],
+    "problem_answer": 313.0,
+    "total_time": 9.261677,
+    "solution_predicate": "Equals(5.4628805588, MeasureOf(Arc(A, Q, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (47 / 180) = \u2220DQC, Arc(AQB), Q on AC, \u2220CQD, 3.14 = pi, Q on BD\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AQB)\nConclusions: \u2220AQB = Arc(AQB)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CQD\nConclusions: \u2220CQD = 2 * pi - \u2220DQC\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : Q on AC, Q on BD\nConclusions: \u2220AQB = \u2220CQD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQB = \u2220CQD, \u2220AQB = Arc(AQB)\nConclusions: \u2220CQD = Arc(AQB)\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (47 / 180) = \u2220DQC, 3.14 = pi, \u2220CQD = Arc(AQB), \u2220CQD = 2 * pi - \u2220DQC\nConclusions: 2 * 3.14 - 3.14 * (47 / 180) = Arc(AQB)\n\nStep 7:\nTheorem: Evaluate\nPremises : 2 * 3.14 - 3.14 * (47 / 180) = Arc(AQB)\nConclusions: 5.46 = Arc(AQB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, Q)",
+        "Line(B, D)",
+        "Line(Q, D)",
+        "Line(A, Q)",
+        "Line(A, C)",
+        "Line(Q, C)",
+        "Circle(Q, radius_Q)",
+        "Line(A, C)",
+        "Line(A, Q)",
+        "Line(B, D)",
+        "Line(B, Q)",
+        "Line(Q, C)",
+        "Line(Q, D)",
+        "PointLiesOnCircle(A, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(B, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(C, Circle(Q, radius_Q))",
+        "PointLiesOnCircle(D, Circle(Q, radius_Q))",
+        "PointLiesOnLine(Q, Line(A, C))",
+        "PointLiesOnLine(Q, Line(B, D))",
+        "Circle(Q, radius_Q)",
+        "Equals(MeasureOf(Angle(D, Q, C)), Mul(pi, Div(47.0, 180.0)))"
+    ],
+    "correct": true
+}

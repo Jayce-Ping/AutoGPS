@@ -1,0 +1,78 @@
+{
+    "problem_id": "2703",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 18)",
+        "Equals(LengthOf(Line(A, D)), 10)",
+        "Equals(LengthOf(Line(D, C)), 14)",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(Angle(B, D, C)))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DB",
+        "DA",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            14.437367303609342,
+            110.8067940552017
+        ],
+        "B": [
+            114.22505307855626,
+            109.7452229299363
+        ],
+        "C": [
+            245.85987261146497,
+            111.01910828025478
+        ],
+        "D": [
+            96.81528662420382,
+            7.409766454352443
+        ]
+    },
+    "problem_choices": [
+        "10.5",
+        "12",
+        "12.5",
+        "14"
+    ],
+    "choices_precise_value": [
+        10.5,
+        12.0,
+        12.5,
+        14.0
+    ],
+    "problem_answer": 10.5,
+    "total_time": 31.403884,
+    "solution_predicate": "Equals(10.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: x = BC, 10 = AD, CD, 14 = CD, AC, B on AC, 18 = AC, \u2220ADB = \u2220BDC, AD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, CD, AD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 18 = AC, AC = AB + BC\nConclusions: 18 = AB + BC\n\nStep 5:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u2220ADB = \u2220BDC, \u25b3ACD\nConclusions: BC / AB = CD / AD\n\nStep 6:\nTheorem: Substitution\nPremises : 14 = CD, 10 = AD, x = BC, BC / AB = CD / AD\nConclusions: 14 / 10 = x / AB\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 18 = AB + BC, x = BC, 14 / 10 = x / AB\nConclusions: 10.5 = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 10.5 = BC, x = BC\nConclusions: 10.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(A, C)), 18.0)",
+        "Equals(LengthOf(Line(A, D)), 10.0)",
+        "Equals(LengthOf(Line(D, C)), 14.0)",
+        "Equals(MeasureOf(Angle(A, D, B)), MeasureOf(Angle(B, D, C)))"
+    ],
+    "correct": true
+}

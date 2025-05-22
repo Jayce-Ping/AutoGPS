@@ -1,0 +1,89 @@
+{
+    "problem_id": "2779",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(Z, Line(W, X))",
+        "Parallel(Line(Z, T), Line(X, Y))",
+        "Equals(LengthOf(Line(Y, W)), 20)",
+        "Equals(LengthOf(Line(Z, T)), 10)",
+        "Equals(LengthOf(Line(W, T)), x)",
+        "Equals(LengthOf(Line(X, Y)), 16)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "W",
+        "Z",
+        "T"
+    ],
+    "line_instances": [
+        "XY",
+        "WT",
+        "WY",
+        "TY",
+        "WZ",
+        "WX",
+        "ZX",
+        "ZT"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            97.14285714285714,
+            367.1428571428571
+        ],
+        "Y": [
+            374.2857142857143,
+            366.66666666666663
+        ],
+        "W": [
+            199.52380952380952,
+            119.52380952380952
+        ],
+        "Z": [
+            140.47619047619045,
+            260.0
+        ],
+        "T": [
+            300.0,
+            260.0
+        ]
+    },
+    "problem_choices": [
+        "7.5",
+        "10",
+        "12.5",
+        "15"
+    ],
+    "choices_precise_value": [
+        7.5,
+        10.0,
+        12.5,
+        15.0
+    ],
+    "problem_answer": 12.5,
+    "total_time": 32.263852,
+    "solution_predicate": "Equals(12.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ZTW, \u2220YXW, \u2220XYW, \u2220TWX, \u2220YXW, 3.14 = pi, T on WY, x = TW, TZ || YX, 10 = TZ, \u2220TZW, Z on WX, \u2220YWX, 16 = XY, 20 = WY\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZTW\nConclusions: \u2220ZTW = 2 * pi - \u2220WTZ\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220YXW\nConclusions: \u2220YXW = 2 * pi - \u2220WXY\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220XYW\nConclusions: \u2220XYW = 2 * pi - \u2220WYX\n\nStep 5:\nTheorem: Corresponding Angle Theorem\nPremises : TZ || YX\nConclusions: \u2220WXY = \u2220WZT, \u2220WTZ = \u2220WYX\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220TZW\nConclusions: \u2220TZW = 2 * pi - \u2220WZT\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220YXW, Z on WX\nConclusions: \u2220YXW = \u2220YXZ\n\nStep 8:\nTheorem: Same Angle\nPremises : Z on WX, \u2220TWX\nConclusions: \u2220TWX = \u2220TWZ\n\nStep 9:\nTheorem: Same Angle\nPremises : T on WY, \u2220YWX\nConclusions: \u2220TWX = \u2220YWX\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220XYW = 2 * pi - \u2220WYX\nConclusions: \u2220XYW = 2 * 3.14 - \u2220WYX\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ZTW = 2 * pi - \u2220WTZ, \u2220WTZ = \u2220WYX\nConclusions: \u2220ZTW = 2 * 3.14 - \u2220WYX\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220TZW = 2 * pi - \u2220WZT\nConclusions: \u2220TZW = 2 * 3.14 - \u2220WZT\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220YXW = 2 * pi - \u2220WXY, \u2220YXW = \u2220YXZ, 3.14 = pi, \u2220WXY = \u2220WZT\nConclusions: \u2220YXZ = 2 * 3.14 - \u2220WZT\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TWX = \u2220TWZ, \u2220TWX = \u2220YWX\nConclusions: \u2220TWZ = \u2220YWX\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220XYW = 2 * 3.14 - \u2220WYX, \u2220ZTW = 2 * 3.14 - \u2220WYX\nConclusions: \u2220XYW = \u2220ZTW\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TZW = 2 * 3.14 - \u2220WZT, \u2220YXZ = 2 * 3.14 - \u2220WZT\nConclusions: \u2220TZW = \u2220YXZ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220YXW = \u2220YXZ, \u2220TZW = \u2220YXZ\nConclusions: \u2220TZW = \u2220YXW\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220XYW = \u2220ZTW, \u2220TZW = \u2220YXW, \u2220TWZ = \u2220YWX\nConclusions: \u25b3TWZ ~ \u25b3YWX\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3TWZ ~ \u25b3YWX\nConclusions: \u2220WTZ = \u2220WYX, sim_ratio_triangle_t_w_z_triangle_y_w_x = TW / WY, \u2220TZW = \u2220YXW, \u2220XYW = \u2220ZTW, \u2220WXY = \u2220WZT, sim_ratio_triangle_t_w_z_triangle_y_w_x = TZ / XY\n\nStep 20:\nTheorem: Substitution\nPremises : 10 = TZ, sim_ratio_triangle_t_w_z_triangle_y_w_x = TZ / XY, 16 = XY\nConclusions: 10 / 16 = sim_ratio_triangle_t_w_z_triangle_y_w_x\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_t_w_z_triangle_y_w_x = TW / WY, 10 / 16 = sim_ratio_triangle_t_w_z_triangle_y_w_x\nConclusions: 10 / 16 = TW / WY\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 10 / 16 = TW / WY, 20 = WY\nConclusions: 12.5 = TW\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 12.5 = TW, x = TW\nConclusions: 12.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Y)",
+        "Line(W, T)",
+        "Line(W, Y)",
+        "Line(T, Y)",
+        "Line(W, Z)",
+        "Line(W, X)",
+        "Line(Z, X)",
+        "Line(Z, T)",
+        "PointLiesOnLine(T, Line(W, Y))",
+        "PointLiesOnLine(Z, Line(W, X))",
+        "Parallel(Line(Z, T), Line(X, Y))",
+        "Equals(LengthOf(Line(Y, W)), 20.0)",
+        "Equals(LengthOf(Line(Z, T)), 10.0)",
+        "Equals(LengthOf(Line(W, T)), x)",
+        "Equals(LengthOf(Line(X, Y)), 16.0)"
+    ],
+    "correct": true
+}

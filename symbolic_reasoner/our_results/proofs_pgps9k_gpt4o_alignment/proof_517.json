@@ -1,0 +1,68 @@
+{
+    "problem_id": "517",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(X, W)), 2)",
+        "Equals(MeasureOf(Angle(W, X, Y)), 52)",
+        "Find(AreaOf(Sector(X, W, Y)))",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X))",
+        "PointLiesOnCircle(Y, Circle(X))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "W"
+    ],
+    "line_instances": [
+        "XW",
+        "XY"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "X": [
+            111.05754475703324,
+            118.70971867007673
+        ],
+        "Y": [
+            205.18253968253967,
+            125.14857142857142
+        ],
+        "W": [
+            172.7348901098901,
+            48.745714285714286
+        ]
+    },
+    "problem_choices": [
+        0.9,
+        1.8,
+        10.8,
+        12.6
+    ],
+    "choices_precise_value": [
+        0.9,
+        1.8,
+        10.8,
+        12.6
+    ],
+    "problem_answer": 1.8,
+    "total_time": 2.522581,
+    "solution_predicate": "Equals(1.8151424221, AreaOf(Sector(Y, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Sector(Y, X, W), pi * (52 / 180) = \u2220YXW, 2 = WX, W on \u2299(X, radius_X)\n\nStep 2:\nTheorem: Area formula of Sector(Y, X, W)\nPremises : Sector(Y, X, W)\nConclusions: Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : W on \u2299(X, radius_X)\nConclusions: radius_X = WX\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_X = WX, 2 = WX\nConclusions: 2 = radius_X\n\nStep 5:\nTheorem: Substitution\nPremises : Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2, 2 = radius_X, pi * (52 / 180) = \u2220YXW\nConclusions: (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\nConclusions: 1.82 = Area(Sector(Y, X, W))\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Circle(X, radius_X)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X, radius_X))",
+        "PointLiesOnCircle(Y, Circle(X, radius_X))",
+        "Equals(LengthOf(Line(X, W)), 2.0)",
+        "Equals(MeasureOf(Angle(Y, X, W)), Mul(pi, Div(52.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,83 @@
+{
+    "problem_id": "2682",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(LengthOf(Line(A, E)), 20)",
+        "Equals(MeasureOf(Angle(B, A, E)), 60)",
+        "Find(AreaOf(Parallelogram(A, C, D, E)))",
+        "Perpendicular(Line(C, B), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "DC",
+        "EA",
+        "ED",
+        "EB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            40.927835051546396,
+            189.94845360824743
+        ],
+        "B": [
+            134.7422680412371,
+            189.94845360824743
+        ],
+        "C": [
+            178.81443298969072,
+            190.20618556701032
+        ],
+        "D": [
+            272.11340206185565,
+            29.896907216494846
+        ],
+        "E": [
+            135.2577319587629,
+            30.15463917525773
+        ]
+    },
+    "problem_choices": [
+        "120",
+        "124.7",
+        "207.8",
+        "240"
+    ],
+    "choices_precise_value": [
+        120.0,
+        124.7,
+        207.8,
+        240.0
+    ],
+    "problem_answer": 207.8,
+    "total_time": 35.94072,
+    "solution_predicate": "Equals(207.8460969087, AreaOf(Parallelogram(A, C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 20 = AE, Parallelogram(A, C, D, E), 3.14 = pi, AB \u22a5 BE, sin(\u2220BAE), 12 = AC, pi * (60 / 180) = \u2220BAE, BC \u22a5 BE\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220BAE), AB \u22a5 BE\nConclusions: BE / AE = sin(\u2220BAE)\n\nStep 3:\nTheorem: Area formula of Parallelogram(A, C, D, E)\nPremises : Parallelogram(A, C, D, E), BC \u22a5 BE\nConclusions: Area(Parallelogram(A, C, D, E)) = AC * BE\n\nStep 4:\nTheorem: Substitution\nPremises : 20 = AE, pi * (60 / 180) = \u2220BAE, BE / AE = sin(\u2220BAE)\nConclusions: sin(pi * (60 / 180)) = BE / 20\n\nStep 5:\nTheorem: Substitution\nPremises : 12 = AC, Area(Parallelogram(A, C, D, E)) = AC * BE\nConclusions: Area(Parallelogram(A, C, D, E)) = 12 * BE\n\nStep 6:\nTheorem: Substitution\nPremises : sin(pi * (60 / 180)) = BE / 20, 3.14 = pi\nConclusions: sin(3.14 * (60 / 180)) = BE / 20\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : sin(3.14 * (60 / 180)) = BE / 20, Area(Parallelogram(A, C, D, E)) = 12 * BE\nConclusions: 207.85 = Area(Parallelogram(A, C, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Line(E, B)",
+        "Perpendicular(Line(C, B), Line(E, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(A, E)), 20.0)",
+        "Equals(MeasureOf(Angle(B, A, E)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

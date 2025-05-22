@@ -1,0 +1,115 @@
+{
+    "problem_id": "4455",
+    "solved": true,
+    "problem_text": "If WXYZ is a kite, find WX.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, Y)), 24)",
+        "Equals(LengthOf(Line(W, P)), 6)",
+        "Equals(LengthOf(Line(X, P)), 8)",
+        "Equals(LengthOf(Line(X, P)), LengthOf(Line(Z, P)))",
+        "Equals(LengthOf(Line(Z, P)), 8)",
+        "Line(P, Y)",
+        "Line(P, Z)",
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, P)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "PointLiesOnLine(P, Line(X, Z))",
+        "Kite(W,X,Y,Z)",
+        "Find(LengthOf(Line(W,X)))"
+    ],
+    "point_instances": [
+        "Z",
+        "W",
+        "X",
+        "P",
+        "Y"
+    ],
+    "line_instances": [
+        "WP",
+        "WY",
+        "PY",
+        "XP",
+        "XZ",
+        "PZ",
+        "ZY",
+        "WZ",
+        "WX",
+        "XY"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            139.03823024054984,
+            209.66666666666666
+        ],
+        "W": [
+            78.82025997310623,
+            130.3686956521739
+        ],
+        "X": [
+            138.75210871602624,
+            54.82727272727273
+        ],
+        "P": [
+            138.4828178694158,
+            130.36333333333332
+        ],
+        "Y": [
+            349.47512326311073,
+            130.3686956521739
+        ]
+    },
+    "problem_choices": [
+        10.0,
+        22.627,
+        24.739,
+        25.298
+    ],
+    "choices_precise_value": [
+        10.0,
+        22.627,
+        24.739,
+        25.298
+    ],
+    "problem_answer": 10.0,
+    "total_time": 135.15301,
+    "solution_predicate": "Equals(30.0, LengthOf(Line(W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: P on XZ, WX, Kite(W, X, Y, Z), PX = PZ, WY, XY, P on WY, 6 = PW, 24 = PY\n\nStep 2:\nTheorem: Kite side equality\nPremises : Kite(W, X, Y, Z)\nConclusions: WX = XY, WY = YZ\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : WY, WX, XY\nConclusions: \u25b3WXY\n\nStep 4:\nTheorem: Line Segment Split\nPremises : P on WY\nConclusions: WY = PW + PY\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : P on WY, P on XZ\nConclusions: \u2220WPX = \u2220YPZ\n\nStep 6:\nTheorem: Evaluate\nPremises : 24 = PY, 6 = PW\nConclusions: 30 = PW + PY\n\nStep 7:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3WXY, WX = XY\nConclusions: PW = PY\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : WY = PW + PY, WY = YZ\nConclusions: YZ = PW + PY\n\nStep 9:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : PW = PY, PX = PZ, \u2220WPX = \u2220YPZ\nConclusions: \u25b3PWX \u2245 \u25b3PYZ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : YZ = PW + PY, 30 = PW + PY\nConclusions: 30 = YZ\n\nStep 11:\nTheorem: Congruent Definition\nPremises : \u25b3PWX \u2245 \u25b3PYZ\nConclusions: PX = PZ, \u2220WPX = \u2220YPZ, WX = YZ\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 30 = YZ, WX = YZ, WX = XY\nConclusions: 30 = XY\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 30 = XY, WX = XY\nConclusions: 30 = WX\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(P, Y)",
+        "Line(X, P)",
+        "Line(X, Z)",
+        "Line(P, Z)",
+        "Line(Z, Y)",
+        "Line(W, Z)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Line(P, Y)",
+        "Line(P, Z)",
+        "Line(W, P)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, P)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(P, Line(W, Y))",
+        "PointLiesOnLine(P, Line(X, Z))",
+        "Kite(W, X, Y, Z)",
+        "Equals(LengthOf(Line(P, Y)), 24.0)",
+        "Equals(LengthOf(Line(W, P)), 6.0)",
+        "Equals(LengthOf(Line(X, P)), 8.0)",
+        "Equals(LengthOf(Line(X, P)), LengthOf(Line(Z, P)))",
+        "Equals(LengthOf(Line(Z, P)), 8.0)"
+    ],
+    "correct": false
+}

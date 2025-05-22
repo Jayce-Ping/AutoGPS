@@ -1,0 +1,67 @@
+{
+    "problem_id": "2420",
+    "solved": true,
+    "problem_text": "What is the length of RS?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 11)",
+        "Equals(LengthOf(Line(T, S)), 18)",
+        "Equals(MeasureOf(Angle(T, R, S)), 120)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Find(LengthOf(Line(R,S)))"
+    ],
+    "point_instances": [
+        "R",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "RT",
+        "TS",
+        "SR"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "R": [
+            186.29561403508774,
+            54.78794813119757
+        ],
+        "S": [
+            50.45333333333333,
+            157.24637681159422
+        ],
+        "T": [
+            422.04877192982457,
+            157.49466056445462
+        ]
+    },
+    "problem_choices": [
+        9.773,
+        18.0,
+        25.357,
+        35.097
+    ],
+    "choices_precise_value": [
+        9.773,
+        18.0,
+        25.357,
+        35.097
+    ],
+    "problem_answer": 9.773,
+    "total_time": 13.88291,
+    "solution_predicate": "Equals(9.7725243493, LengthOf(Line(R, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 11 = RT, 18 = ST, RS, 3.14 = pi, ST, pi * (120 / 180) = \u2220SRT, RT\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 2.09 = pi * (120 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : RS, ST, RT\nConclusions: \u25b3RST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (120 / 180) = \u2220SRT, 2.09 = pi * (120 / 180)\nConclusions: 2.09 = \u2220SRT\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3RST\nConclusions: (RS ** 2 + RT ** 2) - ST ** 2 = 2 * RS * RT * cos(\u2220SRT)\n\nStep 6:\nTheorem: Substitution\nPremises : 11 = RT, 2.09 = \u2220SRT, (RS ** 2 + RT ** 2) - ST ** 2 = 2 * RS * RT * cos(\u2220SRT), 18 = ST\nConclusions: (11 ** 2 + RS ** 2) - 18 ** 2 = 11 * 2 * cos(2.09) * RS\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : (11 ** 2 + RS ** 2) - 18 ** 2 = 11 * 2 * cos(2.09) * RS\nConclusions: 9.77 = RS\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, T)",
+        "Line(T, S)",
+        "Line(S, R)",
+        "Line(R, T)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Equals(LengthOf(Line(R, T)), 11.0)",
+        "Equals(LengthOf(Line(T, S)), 18.0)",
+        "Equals(MeasureOf(Angle(S, R, T)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

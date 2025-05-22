@@ -1,0 +1,65 @@
+{
+    "problem_id": "2593",
+    "solved": true,
+    "problem_text": "Find the side length in isosceles triangle D E F.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(D, E)), 10x)",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(E, F)), 3.5x+4)",
+        "Equals(LengthOf(Line(F, D)), 8.5x+3)",
+        "Find(SideOf(Triangle(D,E,F)))",
+        "Isosceles(Triangle(D,E,F))"
+    ],
+    "point_instances": [
+        "F",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "EF",
+        "DF",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            475.0993788819875,
+            485.71428571428567
+        ],
+        "D": [
+            301.80745341614903,
+            107.45341614906832
+        ],
+        "E": [
+            131.0,
+            485.71428571428567
+        ]
+    },
+    "problem_choices": [
+        "2",
+        "8",
+        "9",
+        "20"
+    ],
+    "choices_precise_value": [
+        2.0,
+        8.0,
+        9.0,
+        20.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 4.744619,
+    "solution_predicate": "Equals(20.0, LengthOf(Line(D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 10 * x = DE, DE = DF, 3 + 8.5 * x = DF\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : DE = DF, 10 * x = DE\nConclusions: 10 * x = DF\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 10 * x = DF, 3 + 8.5 * x = DF\nConclusions: 10 * x = 3 + 8.5 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 10 * x = 3 + 8.5 * x, 10 * x = DE\nConclusions: 20 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, F)",
+        "Line(D, F)",
+        "Line(D, E)",
+        "Isosceles(Triangle(D, E, F))",
+        "Equals(LengthOf(Line(D, E)), Mul(10.0, x))",
+        "Equals(LengthOf(Line(D, F)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(E, F)), Add(Mul(3.5, x), 4.0))",
+        "Equals(LengthOf(Line(F, D)), Add(Mul(8.5, x), 3.0))"
+    ],
+    "correct": true
+}

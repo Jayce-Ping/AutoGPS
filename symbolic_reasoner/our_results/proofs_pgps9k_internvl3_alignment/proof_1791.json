@@ -1,0 +1,94 @@
+{
+    "problem_id": "1791",
+    "solved": true,
+    "problem_text": "WX = YZ. What is the length of YX?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, X)), 3x-8)",
+        "Equals(LengthOf(Line(X, Y)), 4x+15)",
+        "Equals(LengthOf(Line(Z, Y)), 2x+3)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(W, Y))",
+        "PointLiesOnLine(X, Line(W, Z))",
+        "PointLiesOnLine(Y, Line(W, Z))",
+        "PointLiesOnLine(Y, Line(X, Z))",
+        "Equals(LengthOf(Line(W,X)),Line(Y,Z))",
+        "Find(LengthOf(Line(Y,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+    ],
+    "line_instances": [
+        "WX",
+        "WY",
+        "WZ",
+        "XY",
+        "XZ",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            27.133333333333333,
+            43.314176245210724
+        ],
+        "X": [
+            264.55,
+            44.55172413793103
+        ],
+        "Y": [
+            834.35,
+            44.55172413793103
+        ],
+        "Z": [
+            1074.8500000000001,
+            44.55172413793103
+        ]
+    },
+    "problem_choices": [
+        25.0,
+        50.0,
+        59.0,
+        84.0
+    ],
+    "choices_precise_value": [
+        25.0,
+        50.0,
+        59.0,
+        84.0
+    ],
+    "problem_answer": 59.0,
+    "total_time": 3.739566,
+    "solution_predicate": "Equals(59.0, LengthOf(Line(Y, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * x - 8 = WX, 3 + 2 * x = YZ, WX = YZ, 15 + 4 * x = XY\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 3 + 2 * x = YZ, 3 * x - 8 = WX, WX = YZ\nConclusions: 3 + 2 * x = 3 * x - 8\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * x = 3 * x - 8, 15 + 4 * x = XY\nConclusions: 59 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "PointLiesOnLine(X, Line(W, Y))",
+        "PointLiesOnLine(X, Line(W, Z))",
+        "PointLiesOnLine(Y, Line(W, Z))",
+        "PointLiesOnLine(Y, Line(X, Z))",
+        "Equals(LengthOf(Line(W, X)), Sub(Mul(3.0, x), 8.0))",
+        "Equals(LengthOf(Line(X, Y)), Add(Mul(4.0, x), 15.0))",
+        "Equals(LengthOf(Line(Z, Y)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(W, X)), LengthOf(Line(Y, Z)))"
+    ],
+    "correct": true
+}

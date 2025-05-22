@@ -1,0 +1,69 @@
+{
+    "problem_id": "5819",
+    "solved": true,
+    "problem_text": "If JK = 48, find the length of HJ.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(H, K)), 2x+3)",
+        "Equals(LengthOf(Line(J, H)), 4x-15)",
+        "Line(H, K)",
+        "Line(J, H)",
+        "Line(J, K)",
+        "PointLiesOnLine(H, Line(J, K))",
+        "Equals(LengthOf(Line(J,K)),48)",
+        "Find(LengthOf(Line(H,J)))"
+    ],
+    "point_instances": [
+        "J",
+        "H",
+        "K"
+    ],
+    "line_instances": [
+        "JH",
+        "JK",
+        "HK"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            30.697525597269625,
+            69.27857142857142
+        ],
+        "H": [
+            269.74841540711844,
+            69.05142857142857
+        ],
+        "K": [
+            497.5273037542662,
+            69.05142857142857
+        ]
+    },
+    "problem_choices": [
+        23.0,
+        25.0,
+        48.0,
+        75.0
+    ],
+    "choices_precise_value": [
+        23.0,
+        25.0,
+        48.0,
+        75.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 1.770345,
+    "solution_predicate": "Equals(25.0, LengthOf(Line(H, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 * x - 15 = HJ, 3 + 2 * x = HK, H on JK, 48 = JK\n\nStep 2:\nTheorem: Line Segment Split\nPremises : H on JK\nConclusions: JK = HJ + HK\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 48 = JK, JK = HJ + HK\nConclusions: 48 = HJ + HK\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 48 = HJ + HK, 4 * x - 15 = HJ, 3 + 2 * x = HK\nConclusions: 25 = HJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(J, K)",
+        "Line(H, K)",
+        "Line(H, K)",
+        "Line(J, H)",
+        "Line(J, K)",
+        "PointLiesOnLine(H, Line(J, K))",
+        "Equals(LengthOf(Line(H, K)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(J, H)), Sub(Mul(4.0, x), 15.0))",
+        "Equals(LengthOf(Line(J, K)), 48.0)"
+    ],
+    "correct": true
+}

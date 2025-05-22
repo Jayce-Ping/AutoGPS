@@ -1,0 +1,96 @@
+{
+    "problem_id": "2763",
+    "solved": true,
+    "problem_text": "A C is a diagonal of rhombus A B C D. If m \\angle C D E is 116, what is m \\angle A C D?",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(E, D, C)), 116)",
+        "Rhombus(A, B, C, D)",
+        "Find(MeasureOf(Angle(A, C, D)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "E",
+        "B",
+        "A",
+        "F"
+    ],
+    "line_instances": [
+        "AD",
+        "AE",
+        "AF",
+        "DE",
+        "DF",
+        "EF",
+        "BA",
+        "BC",
+        "CA",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            186.13569321533922,
+            44.40117994100295
+        ],
+        "D": [
+            248.96755162241888,
+            170.94985250737463
+        ],
+        "E": [
+            315.04424778761063,
+            171.83480825958702
+        ],
+        "B": [
+            30.3834808259587,
+            43.811209439528014
+        ],
+        "A": [
+            93.5103244837758,
+            171.24483775811208
+        ],
+        "F": [
+            342.18289085545723,
+            171.83480825958702
+        ]
+    },
+    "problem_choices": [
+        "58",
+        "90",
+        "116",
+        "180"
+    ],
+    "choices_precise_value": [
+        58.0,
+        90.0,
+        116.0,
+        180.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 40.025297,
+    "solution_predicate": "Equals(1.0122909662, MeasureOf(Angle(A, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, Rhombus(A, B, C, D), pi * (116 / 180) = \u2220EDC, 3.14 = pi, AC, E on DF, CD, \u2220FDC\n\nStep 2:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220CAB = \u2220DAC\n\nStep 3:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, AC, AD\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220FDC, E on DF\nConclusions: \u2220EDC = \u2220FDC\n\nStep 6:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BCD = \u2220DAB, \u2220ABC = \u2220CDA\n\nStep 7:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC, AD || BC\n\nStep 8:\nTheorem: Parallelogram is quadrilateral\nPremises : Parallelogram(A, B, C, D)\nConclusions: Quadrilateral(A, B, C, D)\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDC = \u2220FDC, pi * (116 / 180) = \u2220EDC\nConclusions: pi * (116 / 180) = \u2220FDC\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220ACD = \u2220CAB\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BC\nConclusions: \u2220BCD = \u2220FDC\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, C, D)\nPremises : Quadrilateral(A, B, C, D)\nConclusions: 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ACD + \u2220CDA + \u2220DAC, 3.14 = pi\nConclusions: 3.14 = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220DAC, \u2220ACD = \u2220CAB\nConclusions: \u2220ACD = \u2220DAC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (116 / 180) = \u2220FDC, \u2220BCD = \u2220FDC\nConclusions: pi * (116 / 180) = \u2220BCD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220DAB, \u2220BCD = \u2220FDC\nConclusions: \u2220DAB = \u2220FDC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * (116 / 180) = \u2220FDC, \u2220DAB = \u2220FDC\nConclusions: pi * (116 / 180) = \u2220DAB\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (116 / 180) = \u2220DAB, 2 * pi = \u2220ABC + \u2220BCD + \u2220CDA + \u2220DAB, \u2220ABC = \u2220CDA, 3.14 = pi, pi * (116 / 180) = \u2220BCD\nConclusions: 2 * 3.14 = 3.14 * (116 / 180) + 3.14 * (116 / 180) + \u2220CDA + \u2220CDA\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACD = \u2220DAC, 2 * 3.14 = 3.14 * (116 / 180) + 3.14 * (116 / 180) + \u2220CDA + \u2220CDA, 3.14 = \u2220ACD + \u2220CDA + \u2220DAC\nConclusions: 1.01 = \u2220ACD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Rhombus(A, B, C, D)",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(116.0, 180.0)))"
+    ],
+    "correct": true
+}

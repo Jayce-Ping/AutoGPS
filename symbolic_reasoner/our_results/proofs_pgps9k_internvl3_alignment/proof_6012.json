@@ -1,0 +1,130 @@
+{
+    "problem_id": "6012",
+    "solved": true,
+    "problem_text": "Polygon BGHF \\sim polygon ADEC. Determine the value of y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(B, F)), 9)",
+        "Equals(LengthOf(Line(C, A)), 6)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(C, E)), 3.5)",
+        "Equals(LengthOf(Line(D, E)), 6)",
+        "Equals(LengthOf(Line(G, B)), 12)",
+        "Equals(LengthOf(Line(G, H)), y)",
+        "Equals(LengthOf(Line(H, F)), z)",
+        "Equals(MeasureOf(Angle(A, D, E)), MeasureOf(Angle(B, G, H)))",
+        "Equals(MeasureOf(Angle(D, E, C)), MeasureOf(Angle(G, H, F)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Similar(Quadrilateral(B,G,H,F),Quadrilateral(A,D,E,C))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "BG",
+        "BF",
+        "AD",
+        "GH",
+        "DE",
+        "AC",
+        "FH",
+        "CE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            336.2453703703704,
+            25.989285714285714
+        ],
+        "B": [
+            118.0,
+            64.56285714285714
+        ],
+        "C": [
+            396.6111111111111,
+            87.54285714285714
+        ],
+        "D": [
+            275.3333333333333,
+            123.18530612244898
+        ],
+        "E": [
+            362.7407407407407,
+            123.65428571428572
+        ],
+        "F": [
+            204.3148148148148,
+            161.95428571428573
+        ],
+        "G": [
+            26.22222222222222,
+            211.6661224489796
+        ],
+        "H": [
+            157.33333333333331,
+            211.6661224489796
+        ]
+    },
+    "problem_choices": [
+        4.5,
+        5.25,
+        9.0,
+        18.0
+    ],
+    "choices_precise_value": [
+        4.5,
+        5.25,
+        9.0,
+        18.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 18.306052,
+    "solution_predicate": "Equals(9.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = AC, Quadrilateral(A, C, E, D) ~ Quadrilateral(B, F, H, G), y = GH, 9 = BF, 6 = DE\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, C, E, D) ~ Quadrilateral(B, F, H, G)\nConclusions: sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = AC / BF, sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = DE / GH\n\nStep 3:\nTheorem: Substitution\nPremises : 9 = BF, sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = AC / BF, 6 = AC\nConclusions: 6 / 9 = sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g\n\nStep 4:\nTheorem: Substitution\nPremises : 6 = DE, y = GH, sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = DE / GH\nConclusions: sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = 6 / y\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g = 6 / y, 6 / 9 = sim_ratio_quadrilateral_a_c_e_d_quadrilateral_b_f_h_g\nConclusions: 6 / 9 = 6 / y\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : y = GH, 6 / 9 = 6 / y\nConclusions: 9 = GH\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : y = GH, 9 = GH\nConclusions: 9 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, G)",
+        "Line(B, F)",
+        "Line(A, D)",
+        "Line(G, H)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(F, H)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, F)",
+        "Line(B, G)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Similar(Quadrilateral(B, G, H, F), Quadrilateral(A, D, E, C))",
+        "Equals(LengthOf(Line(A, D)), x)",
+        "Equals(LengthOf(Line(B, F)), 9.0)",
+        "Equals(LengthOf(Line(C, A)), 6.0)",
+        "Equals(LengthOf(Line(C, A)), LengthOf(Line(D, E)))",
+        "Equals(LengthOf(Line(C, E)), 3.5)",
+        "Equals(LengthOf(Line(D, E)), 6.0)",
+        "Equals(LengthOf(Line(G, B)), 12.0)",
+        "Equals(LengthOf(Line(G, H)), y)",
+        "Equals(LengthOf(Line(H, F)), z)",
+        "Equals(MeasureOf(Angle(E, D, A)), MeasureOf(Angle(H, G, B)))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(Angle(F, H, G)))"
+    ],
+    "correct": true
+}

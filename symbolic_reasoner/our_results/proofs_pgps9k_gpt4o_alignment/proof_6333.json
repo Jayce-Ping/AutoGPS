@@ -1,0 +1,83 @@
+{
+    "problem_id": "6333",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2 in the rhombus.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, C, D)), 70)",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, D, A)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(C, A, D)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(D, A, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(D, B, A)), MeasureOf(Angle(4)))",
+        "Find(MeasureOf(Angle(2)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Rhombus(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "BD",
+        "AD",
+        "CD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            75.06476683937824,
+            19.467857142857145
+        ],
+        "B": [
+            226.17875647668393,
+            19.467857142857145
+        ],
+        "C": [
+            22.970639032815196,
+            161.43809523809523
+        ],
+        "D": [
+            174.24870466321244,
+            161.65714285714287
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        40.0,
+        55.0,
+        70.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        40.0,
+        55.0,
+        70.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 22.630909,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(C, A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Rhombus(A, B, D, C), AD, pi * (70 / 180) = \u2220DCA, AC, 3.14 = pi, CD\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 3:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, D, C)\nConclusions: \u2220ADC = \u2220BDA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AC || BD\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 7:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || BD\nConclusions: \u2220BDA = \u2220CAD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 = pi\nConclusions: 3.14 = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CAD, \u2220ADC = \u2220BDA\nConclusions: \u2220ADC = \u2220CAD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ADC + \u2220CAD + \u2220DCA, pi = \u2220ADC + \u2220CAD + \u2220DCA, \u2220ADC = \u2220CAD, pi * (70 / 180) = \u2220DCA\nConclusions: 0.96 = \u2220CAD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Rhombus(A, B, D, C)",
+        "Equals(MeasureOf(Angle(D, C, A)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

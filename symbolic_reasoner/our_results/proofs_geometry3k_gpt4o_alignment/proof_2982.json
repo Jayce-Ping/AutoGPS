@@ -1,0 +1,122 @@
+{
+    "problem_id": "2982",
+    "solved": true,
+    "problem_text": "m \\angle 4 = 42. Find m \\angle 7.",
+    "logic_forms": [
+        "PointLiesOnLine(H, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, H))",
+        "PointLiesOnLine(D, Line(C, G))",
+        "PointLiesOnLine(H, Line(C, G))",
+        "PointLiesOnLine(H, Line(D, G))",
+        "Parallel(Line(A, F), Line(B, E))",
+        "Equals(MeasureOf(Angle(E, D, C)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(E, D, H)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(A, H, D)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(F, H, G)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, H, G)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, D, H)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(F, H, D)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(4)),42)",
+        "Find(MeasureOf(Angle(7)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AH",
+        "AF",
+        "HF",
+        "BD",
+        "BE",
+        "DE",
+        "CD",
+        "CH",
+        "CG",
+        "DH",
+        "DG",
+        "HG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            42.25941422594142,
+            133.51464435146443
+        ],
+        "B": [
+            41.84100418410041,
+            253.17991631799163
+        ],
+        "C": [
+            95.81589958158996,
+            347.32217573221754
+        ],
+        "D": [
+            200.0,
+            253.59832635983264
+        ],
+        "E": [
+            462.3430962343096,
+            254.4351464435146
+        ],
+        "F": [
+            462.3430962343096,
+            134.35146443514643
+        ],
+        "G": [
+            429.70711297071125,
+            47.32217573221757
+        ],
+        "H": [
+            333.0543933054393,
+            133.93305439330544
+        ]
+    },
+    "problem_choices": [
+        "42",
+        "48",
+        "132",
+        "138"
+    ],
+    "choices_precise_value": [
+        42.0,
+        48.0,
+        132.0,
+        138.0
+    ],
+    "problem_answer": 138.0,
+    "total_time": 36.914465,
+    "solution_predicate": "Equals(2.4085543678, MeasureOf(Angle(C, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220HDB, pi * (42 / 180) = \u2220AHD, H on AF, \u2220GDB, D on CG, \u2220EDH, H on CG, \u2220CDE, AF || BE, 3.14 = pi, H on DG, \u2220EDG, D on BE, \u2220BDC\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : H on CG, H on AF\nConclusions: \u2220CHF = \u2220GHA\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220EDH, \u2220CDE\nConclusions: pi = \u2220CDE + \u2220EDH\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : AF || BE\nConclusions: \u2220CDE = \u2220CHF, \u2220GDB = \u2220GHA\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : AF || BE\nConclusions: \u2220AHD = \u2220EDH\n\nStep 6:\nTheorem: Same Angle\nPremises : H on DG, \u2220GDB\nConclusions: \u2220GDB = \u2220HDB\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EDG, H on DG\nConclusions: \u2220EDG = \u2220EDH\n\nStep 8:\nTheorem: Vertical Angle Theorem\nPremises : D on BE, D on CG\nConclusions: \u2220BDC = \u2220EDG\n\nStep 9:\nTheorem: Circumference Split\nPremises : \u2220EDH, \u2220BDC, \u2220CDE, \u2220HDB\nConclusions: 2 * pi = \u2220BDC + \u2220CDE + \u2220EDH + \u2220HDB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = \u2220CHF, \u2220CHF = \u2220GHA\nConclusions: \u2220CDE = \u2220GHA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220AHD, \u2220AHD = \u2220EDH\nConclusions: pi * (42 / 180) = \u2220EDH\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GDB = \u2220GHA, \u2220GDB = \u2220HDB\nConclusions: \u2220GHA = \u2220HDB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220EDH, \u2220EDG = \u2220EDH\nConclusions: pi * (42 / 180) = \u2220EDG\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (42 / 180) = \u2220EDG, \u2220BDC = \u2220EDG\nConclusions: pi * (42 / 180) = \u2220BDC\n\nStep 15:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BDC + \u2220CDE + \u2220EDH + \u2220HDB, pi * (42 / 180) = \u2220BDC, pi * (42 / 180) = \u2220EDH, 3.14 = pi, \u2220GHA = \u2220HDB, \u2220CDE = \u2220GHA\nConclusions: 2 * 3.14 = pi * (42 / 180) + pi * (42 / 180) + \u2220GHA + \u2220GHA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = pi * (42 / 180) + pi * (42 / 180) + \u2220GHA + \u2220GHA, \u2220CDE = \u2220GHA, pi = \u2220CDE + \u2220EDH, pi * (42 / 180) = \u2220EDH\nConclusions: 2.41 = \u2220CDE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, H)",
+        "Line(A, F)",
+        "Line(H, F)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(C, D)",
+        "Line(C, H)",
+        "Line(C, G)",
+        "Line(D, H)",
+        "Line(D, G)",
+        "Line(H, G)",
+        "PointLiesOnLine(H, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "PointLiesOnLine(D, Line(C, H))",
+        "PointLiesOnLine(D, Line(C, G))",
+        "PointLiesOnLine(H, Line(C, G))",
+        "PointLiesOnLine(H, Line(D, G))",
+        "Parallel(Line(A, F), Line(B, E))",
+        "Equals(MeasureOf(Angle(A, H, D)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

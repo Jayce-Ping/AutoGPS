@@ -1,0 +1,98 @@
+{
+    "problem_id": "6512",
+    "solved": true,
+    "problem_text": "Find the perimeter of \\triangle DEF if \\triangle DEF \\sim \\triangle ABC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 7)",
+        "Equals(LengthOf(Line(C, A)), 3)",
+        "Equals(LengthOf(Line(C, B)), 6)",
+        "Equals(LengthOf(Line(F, E)), 9)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Similar(Triangle(D,E,F),Triangle(A,B,C))",
+        "Find(PerimeterOf(Triangle(D,E,F)))"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "B",
+        "F",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CB",
+        "BA",
+        "CA",
+        "FE",
+        "FD",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            50.224,
+            148.2
+        ],
+        "A": [
+            67.94,
+            74.27272727272728
+        ],
+        "B": [
+            197.9911111111111,
+            158.81313131313132
+        ],
+        "F": [
+            249.89142857142855,
+            145.95454545454547
+        ],
+        "D": [
+            276.00266666666664,
+            34.775757575757574
+        ],
+        "E": [
+            471.28,
+            161.7878787878788
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        16.0,
+        24.0,
+        30.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        24.0,
+        30.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 17.269364,
+    "solution_predicate": "Equals(24.0, PerimeterOf(Triangle(D, E, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABC, \u25b3ABC ~ \u25b3DEF, 7 = AB, 3 = AC, 6 = BC, 9 = EF\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 3:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DEF\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_e_f = Perimeter(\u25b3ABC) / Perimeter(\u25b3DEF), sim_ratio_triangle_a_b_c_triangle_d_e_f = BC / EF\n\nStep 4:\nTheorem: Substitution\nPremises : 6 = BC, 7 = AB, Perimeter(\u25b3ABC) = AB + AC + BC, 3 = AC\nConclusions: 3 + 6 + 7 = Perimeter(\u25b3ABC)\n\nStep 5:\nTheorem: Substitution\nPremises : 9 = EF, 6 = BC, sim_ratio_triangle_a_b_c_triangle_d_e_f = BC / EF\nConclusions: 6 / 9 = sim_ratio_triangle_a_b_c_triangle_d_e_f\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 6 / 9 = sim_ratio_triangle_a_b_c_triangle_d_e_f, sim_ratio_triangle_a_b_c_triangle_d_e_f = Perimeter(\u25b3ABC) / Perimeter(\u25b3DEF)\nConclusions: 6 / 9 = Perimeter(\u25b3ABC) / Perimeter(\u25b3DEF)\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 6 / 9 = Perimeter(\u25b3ABC) / Perimeter(\u25b3DEF), 3 + 6 + 7 = Perimeter(\u25b3ABC)\nConclusions: 24 = Perimeter(\u25b3DEF)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(F, E)",
+        "Line(F, D)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(F, E)",
+        "Similar(Triangle(D, E, F), Triangle(A, B, C))",
+        "Equals(LengthOf(Line(B, A)), 7.0)",
+        "Equals(LengthOf(Line(C, A)), 3.0)",
+        "Equals(LengthOf(Line(C, B)), 6.0)",
+        "Equals(LengthOf(Line(F, E)), 9.0)"
+    ],
+    "correct": true
+}

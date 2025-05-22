@@ -1,0 +1,67 @@
+{
+    "problem_id": "3770",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(LengthOf(Line(B, C)), 8)",
+        "Find(PerimeterOf(Triangle(A, B, C)))",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            269.40101522842644,
+            35.2
+        ],
+        "B": [
+            37.08460236886633,
+            213.7666666666667
+        ],
+        "C": [
+            269.40101522842644,
+            213.4
+        ]
+    },
+    "problem_choices": [
+        19.292,
+        22.0,
+        24.0,
+        28.0
+    ],
+    "choices_precise_value": [
+        19.292,
+        22.0,
+        24.0,
+        28.0
+    ],
+    "problem_answer": 24.0,
+    "total_time": 22.480615,
+    "solution_predicate": "Equals(24.0, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC \u22a5 BC, 6 = AC, 8 = BC, \u25b3ABC\n\nStep 2:\nTheorem: Evaluate\nPremises : 6 = AC, 8 = BC\nConclusions: 100 = AC ** 2 + BC ** 2\n\nStep 3:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABC, AC \u22a5 BC\nConclusions: AB ** 2 = AC ** 2 + BC ** 2\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 100 = AC ** 2 + BC ** 2, AB ** 2 = AC ** 2 + BC ** 2\nConclusions: 100 = AB ** 2\n\nStep 6:\nTheorem: Solve Univariate Equation\nPremises : 100 = AB ** 2\nConclusions: 10 = AB\n\nStep 7:\nTheorem: Evaluate\nPremises : 10 = AB, 6 = AC, 8 = BC\nConclusions: 24 = AB + AC + BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3ABC) = AB + AC + BC, 24 = AB + AC + BC\nConclusions: 24 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), 8.0)"
+    ],
+    "correct": true
+}

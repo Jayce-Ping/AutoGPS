@@ -1,0 +1,89 @@
+{
+    "problem_id": "2197",
+    "solved": true,
+    "problem_text": "Find the value of variable z.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, C, D)), 60)",
+        "Equals(MeasureOf(Arc(D, C)), z)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnCircle(D, Circle(B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AD",
+        "CD"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            21.43125,
+            118.34357142857142
+        ],
+        "B": [
+            118.75004745050867,
+            118.41619680270345
+        ],
+        "C": [
+            217.59333333333333,
+            119.13428571428571
+        ],
+        "D": [
+            168.275,
+            204.53142857142856
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 37.531293,
+    "solution_predicate": "Equals(60.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(DBC), pi * (60 / 180) = \u2220BCD, D on \u2299(B, radius_B), C on \u2299(B, radius_B), 3.14 = pi, BC, BD, pi * (z / 180) = Arc(DBC), CD\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DBC)\nConclusions: \u2220DBC = Arc(DBC)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(B, radius_B)\nConclusions: radius_B = BD\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_B)\nConclusions: radius_B = BC\n\nStep 5:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = Arc(DBC), pi * (z / 180) = Arc(DBC)\nConclusions: pi * (z / 180) = \u2220DBC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BC, radius_B = BD\nConclusions: BC = BD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220BCD\nConclusions: 1.05 = \u2220BCD\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (z / 180) = \u2220DBC, 3.14 = pi\nConclusions: 3.14 * (z / 180) = \u2220DBC\n\nStep 12:\nTheorem: Issoceles Triangle Property\nPremises : BC = BD, \u25b3BCD\nConclusions: \u2220BCD = \u2220CDB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220CDB, 1.05 = \u2220BCD\nConclusions: 1.05 = \u2220CDB\n\nStep 14:\nTheorem: Substitution\nPremises : 1.05 = \u2220BCD, pi = \u2220BCD + \u2220CDB + \u2220DBC, 1.05 = \u2220CDB, 3.14 = pi, 3.14 * (z / 180) = \u2220DBC\nConclusions: 3.14 = 1.05 + 1.05 + 3.14 * (z / 180)\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 1.05 + 1.05 + 3.14 * (z / 180)\nConclusions: 60 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Circle(B, radius_B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnCircle(D, Circle(B, radius_B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Arc(D, B, C)), Mul(pi, Div(z, 180.0)))"
+    ],
+    "correct": true
+}

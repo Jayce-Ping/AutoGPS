@@ -1,0 +1,89 @@
+{
+    "problem_id": "2410",
+    "solved": true,
+    "problem_text": "Find C D if A C = x - 3, B E = 20, A B = 16, and C D = x + 5.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(D, E), Line(C, B))",
+        "Equals(LengthOf(Line(A,C)),x-3)",
+        "Equals(LengthOf(Line(B,E)),20)",
+        "Equals(LengthOf(Line(A,B)),16)",
+        "Equals(LengthOf(Line(C,D)),x+5)",
+        "Find(LengthOf(Line(C,D)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "A",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AE",
+        "BE",
+        "DE",
+        "AC",
+        "AD",
+        "CD",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            181.07479224376732,
+            89.19667590027701
+        ],
+        "D": [
+            273.59556786703604,
+            46.81440443213297
+        ],
+        "A": [
+            95.202216066482,
+            128.25484764542938
+        ],
+        "B": [
+            180.52077562326872,
+            166.7590027700831
+        ],
+        "E": [
+            274.14958448753464,
+            209.69529085872577
+        ]
+    },
+    "problem_choices": [
+        "32",
+        "35",
+        "36",
+        "40"
+    ],
+    "choices_precise_value": [
+        32.0,
+        35.0,
+        36.0,
+        40.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 31.533383,
+    "solution_predicate": "Equals(40.0, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220DAE, \u2220EDA, \u2220AED, \u2220DEA, \u2220BCA, 5 + x = CD, x - 3 = AC, \u2220DEA, \u2220ADE, \u2220EDA, C on AD, 16 = AB, BC || ED, B on AE, \u2220CBA, 20 = BE, \u2220CAE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DEA\nConclusions: \u2220DEA = 2 * pi - \u2220AED\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDA\nConclusions: \u2220EDA = 2 * pi - \u2220ADE\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220EDA, C on AD\nConclusions: \u2220EDA = \u2220EDC\n\nStep 6:\nTheorem: Same Angle\nPremises : C on AD, \u2220ADE\nConclusions: \u2220ADE = \u2220CDE\n\nStep 7:\nTheorem: Same Angle\nPremises : C on AD, \u2220DAE\nConclusions: \u2220CAE = \u2220DAE\n\nStep 8:\nTheorem: Line Segment Split\nPremises : C on AD\nConclusions: AD = AC + CD\n\nStep 9:\nTheorem: Corresponding Angle Theorem\nPremises : BC || ED\nConclusions: \u2220ABC = \u2220AED, \u2220ACB = \u2220ADE\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220AED, B on AE\nConclusions: \u2220AED = \u2220BED\n\nStep 11:\nTheorem: Line Segment Split\nPremises : B on AE\nConclusions: AE = AB + BE\n\nStep 12:\nTheorem: Same Angle\nPremises : B on AE, \u2220DEA\nConclusions: \u2220DEA = \u2220DEB\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 14:\nTheorem: Same Angle\nPremises : \u2220CAE, B on AE\nConclusions: \u2220CAB = \u2220CAE\n\nStep 15:\nTheorem: Substitution\nPremises : \u2220ADE = \u2220CDE, \u2220EDA = 2 * pi - \u2220ADE, 3.14 = pi, \u2220EDA = \u2220EDC\nConclusions: \u2220EDC = 2 * 3.14 - \u2220CDE\n\nStep 16:\nTheorem: Substitution\nPremises : AD = AC + CD, 5 + x = CD, x - 3 = AC\nConclusions: (5 + x) + (x - 3) = AD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADE = \u2220CDE, \u2220ACB = \u2220ADE\nConclusions: \u2220ACB = \u2220CDE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220AED, \u2220AED = \u2220BED\nConclusions: \u2220ABC = \u2220BED\n\nStep 19:\nTheorem: Substitution\nPremises : 20 = BE, 16 = AB, AE = AB + BE\nConclusions: 16 + 20 = AE\n\nStep 20:\nTheorem: Substitution\nPremises : \u2220DEA = 2 * pi - \u2220AED, 3.14 = pi, \u2220AED = \u2220BED, \u2220DEA = \u2220DEB\nConclusions: \u2220DEB = 2 * 3.14 - \u2220BED\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAE = \u2220DAE, \u2220CAB = \u2220CAE\nConclusions: \u2220CAB = \u2220DAE\n\nStep 22:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ACB = \u2220CDE, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: \u2220BCA = 2 * 3.14 - \u2220CDE\n\nStep 23:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi, \u2220ABC = \u2220BED\nConclusions: \u2220CBA = 2 * 3.14 - \u2220BED\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 16 + 20 = AE\nConclusions: 36 = AE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = 2 * 3.14 - \u2220CDE, \u2220EDC = 2 * 3.14 - \u2220CDE\nConclusions: \u2220BCA = \u2220EDC\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * 3.14 - \u2220BED, \u2220DEB = 2 * 3.14 - \u2220BED\nConclusions: \u2220CBA = \u2220DEB\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220EDC, \u2220EDA = \u2220EDC\nConclusions: \u2220BCA = \u2220EDA\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DEB, \u2220DEA = \u2220DEB\nConclusions: \u2220CBA = \u2220DEA\n\nStep 29:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAB = \u2220DAE, \u2220CBA = \u2220DEA, \u2220BCA = \u2220EDA\nConclusions: \u25b3ABC ~ \u25b3AED\n\nStep 30:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3AED\nConclusions: \u2220CBA = \u2220DEA, sim_ratio_triangle_a_b_c_triangle_a_e_d = AB / AE, \u2220ABC = \u2220AED, \u2220CAB = \u2220DAE, \u2220ACB = \u2220ADE, sim_ratio_triangle_a_b_c_triangle_a_e_d = AC / AD\n\nStep 31:\nTheorem: Substitution\nPremises : 16 = AB, 36 = AE, sim_ratio_triangle_a_b_c_triangle_a_e_d = AB / AE\nConclusions: 16 / 36 = sim_ratio_triangle_a_b_c_triangle_a_e_d\n\nStep 32:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_b_c_triangle_a_e_d = AC / AD, (5 + x) + (x - 3) = AD, x - 3 = AC\nConclusions: sim_ratio_triangle_a_b_c_triangle_a_e_d = (x - 3) / ((5 + x) + (x - 3))\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : 16 / 36 = sim_ratio_triangle_a_b_c_triangle_a_e_d, sim_ratio_triangle_a_b_c_triangle_a_e_d = (x - 3) / ((5 + x) + (x - 3))\nConclusions: 16 / 36 = (x - 3) / ((5 + x) + (x - 3))\n\nStep 34:\nTheorem: Solve Linear Equation System\nPremises : 16 / 36 = (x - 3) / ((5 + x) + (x - 3)), 5 + x = CD\nConclusions: 40 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(C, B)",
+        "PointLiesOnLine(B, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Parallel(Line(D, E), Line(C, B))",
+        "Equals(LengthOf(Line(A, C)), Sub(x, 3.0))",
+        "Equals(LengthOf(Line(B, E)), 20.0)",
+        "Equals(LengthOf(Line(A, B)), 16.0)",
+        "Equals(LengthOf(Line(C, D)), Add(x, 5.0))"
+    ],
+    "correct": true
+}

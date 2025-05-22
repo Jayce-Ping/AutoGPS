@@ -1,0 +1,69 @@
+{
+    "problem_id": "2853",
+    "solved": true,
+    "problem_text": "a = 14, b = 48, and c = 50, find \\cos A.",
+    "logic_forms": [
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(B, C)), a)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(A, B)), c)",
+        "Equals(a, 14)",
+        "Equals(b, 48)",
+        "Equals(c, 50)",
+        "Find(CosOf(MeasureOf(Angle(A))))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            39.469026548672566,
+            33.637168141592916
+        ],
+        "A": [
+            199.64601769911502,
+            121.07079646017698
+        ],
+        "C": [
+            40.0,
+            121.42477876106194
+        ]
+    },
+    "problem_choices": [
+        "0.14",
+        "0.48",
+        "0.50",
+        "0.96"
+    ],
+    "choices_precise_value": [
+        0.14,
+        0.48,
+        0.5,
+        0.96
+    ],
+    "problem_answer": 0.96,
+    "total_time": 8.378752,
+    "solution_predicate": "Equals(0.96, CosOf(MeasureOf(Angle(B, A, C))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: sin(\u2220CBA), AB, 50 = c, \u2220BAC, AC \u22a5 BC, 48 = b, BC, \u2220CBA, c = AB, AC, b = AC\n\nStep 2:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220CBA), AC \u22a5 BC\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : c = AB, 50 = c\nConclusions: 50 = AB\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 48 = b, b = AC\nConclusions: 48 = AC\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : \u25b3ABC, \u2220BAC, AC \u22a5 BC\nConclusions: AC / AB = cos(\u2220BAC)\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : \u25b3ABC, \u2220CBA, AC \u22a5 BC\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 8:\nTheorem: Evaluate\nPremises : 50 = AB, 48 = AC\nConclusions: 0.96 = AC / AB\n\nStep 9:\nTheorem: Substitution\nPremises : AC / AB = sin(\u2220CBA), 50 = AB, 48 = AC\nConclusions: 48 / 50 = sin(\u2220CBA)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 48 / 50 = sin(\u2220CBA), AC / AB = sin(\u2220CBA)\nConclusions: 48 / 50 = AC / AB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 0.96 = AC / AB, 48 / 50 = AC / AB\nConclusions: 0.96 = 48 / 50\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 48 / 50 = sin(\u2220CBA), 0.96 = 48 / 50\nConclusions: 0.96 = sin(\u2220CBA)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 0.96 = sin(\u2220CBA), AC / AB = sin(\u2220CBA)\nConclusions: 0.96 = AC / AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 0.96 = AC / AB, AC / AB = cos(\u2220BAC)\nConclusions: 0.96 = cos(\u2220BAC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, C), Line(A, C))",
+        "Equals(LengthOf(Line(B, C)), a)",
+        "Equals(LengthOf(Line(C, A)), b)",
+        "Equals(LengthOf(Line(A, B)), c)",
+        "Equals(a, 14.0)",
+        "Equals(b, 48.0)",
+        "Equals(c, 50.0)"
+    ],
+    "correct": true
+}

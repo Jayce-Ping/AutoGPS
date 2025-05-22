@@ -1,0 +1,159 @@
+{
+    "problem_id": "5682",
+    "solved": true,
+    "problem_text": "Find m \\angle EDB if m \\widehat FE = 118, m \\widehat AB = 108, m \\angle EGB = 52, and m \\angle EFB = 30.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(F, B)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, B)",
+        "Line(G, E)",
+        "PointLiesOnCircle(A, Circle(H))",
+        "PointLiesOnCircle(B, Circle(H))",
+        "PointLiesOnCircle(C, Circle(H))",
+        "PointLiesOnCircle(E, Circle(H))",
+        "PointLiesOnCircle(F, Circle(H))",
+        "PointLiesOnLine(A, Line(D, B))",
+        "PointLiesOnLine(C, Line(D, E))",
+        "PointLiesOnLine(C, Line(D, G))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "PointLiesOnLine(G, Line(F, B))",
+        "Equals(MeasureOf(Arc(F,E)),118)",
+        "Equals(MeasureOf(Arc(A,B)),108)",
+        "Equals(MeasureOf(Angle(E,G,B)),52)",
+        "Equals(MeasureOf(Angle(E,F,B)),30)",
+        "Find(MeasureOf(Angle(E,D,B)))"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "C",
+        "F",
+        "E",
+        "G",
+        "B",
+        "H"
+    ],
+    "line_instances": [
+        "DC",
+        "DG",
+        "DE",
+        "CG",
+        "CE",
+        "GE",
+        "DA",
+        "DB",
+        "AB",
+        "FG",
+        "FB",
+        "GB",
+        "FE"
+    ],
+    "circle_instances": [
+        "H"
+    ],
+    "point_positions": {
+        "D": [
+            75.18291666666667,
+            102.90252976190476
+        ],
+        "A": [
+            224.42238095238096,
+            104.6544784580499
+        ],
+        "C": [
+            211.44454545454545,
+            140.30465367965368
+        ],
+        "F": [
+            226.34454545454545,
+            188.38582251082252
+        ],
+        "E": [
+            344.19,
+            176.29761904761904
+        ],
+        "G": [
+            270.435,
+            155.78841991341992
+        ],
+        "B": [
+            338.79761904761904,
+            105.72165532879818
+        ],
+        "H": [
+            280.8873720136519,
+            144.20477815699658
+        ]
+    },
+    "problem_choices": [
+        15.0,
+        52.0,
+        108.0,
+        118.0
+    ],
+    "choices_precise_value": [
+        15.0,
+        52.0,
+        108.0,
+        118.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 327.312498,
+    "solution_predicate": "Equals(0.2617993878, MeasureOf(Angle(E, D, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: EF, \u2220HBF, pi * (108 / 180) = Arc(BHA), \u2220EFB, G on BF, Arc(FHE), EG, AB, Arc(BHA), \u2220FBA, \u2220BFH, 3.14 = pi, \u2220ABF, A on \u2299(H, radius_H), \u2220HBG, AH, \u2220FGE, \u2220EGB, \u2220DBF, pi * (52 / 180) = \u2220EGB, \u2220HFE, \u2220BGD, \u2220EDB, BH, BG, \u2220ABH, \u2220CGF, \u2220DGF, BD, DG, \u2220DBG, \u2220DBH, F on \u2299(H, radius_H), E on \u2299(H, radius_H), G on CE, G on DE, FH, \u2220BGD, BF, B on \u2299(H, radius_H), EH, \u2220BGC, \u2220GEF, \u2220FEH, pi * (118 / 180) = Arc(FHE), A on BD, FG, \u2220GBD, \u2220HEG, pi * (30 / 180) = \u2220EFB, C on DG\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220EFB, G on BF\nConclusions: \u2220EFB = \u2220EFG\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220HBF, G on BF\nConclusions: \u2220HBF = \u2220HBG\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(FHE)\nConclusions: \u2220FHE = Arc(FHE)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BHA)\nConclusions: \u2220BHA = Arc(BHA)\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220BFH, G on BF\nConclusions: \u2220BFH = \u2220GFH\n\nStep 7:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABF\nConclusions: \u2220ABF = 2 * pi - \u2220FBA\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : A on \u2299(H, radius_H)\nConclusions: radius_H = AH\n\nStep 10:\nTheorem: Same Angle\nPremises : G on BF, \u2220DBF\nConclusions: \u2220DBF = \u2220DBG\n\nStep 11:\nTheorem: Circumference splited\nPremises : \u2220HFE, \u2220EFB, \u2220BFH\nConclusions: 2 * pi = \u2220BFH + \u2220EFB + \u2220HFE\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220BGD\nConclusions: \u2220BGD = 2 * pi - \u2220DGB\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : BH, AB, AH\nConclusions: \u25b3ABH\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220ABH, \u2220HBF, \u2220FBA\nConclusions: 2 * pi = \u2220ABH + \u2220FBA + \u2220HBF\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : DG, BD, BG\nConclusions: \u25b3BDG\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBG\nConclusions: \u2220DBG = 2 * pi - \u2220GBD\n\nStep 17:\nTheorem: Point On Circle Def\nPremises : F on \u2299(H, radius_H)\nConclusions: radius_H = FH\n\nStep 18:\nTheorem: Point On Circle Def\nPremises : E on \u2299(H, radius_H)\nConclusions: radius_H = EH\n\nStep 19:\nTheorem: Vertical Angle Theorem\nPremises : G on CE, G on BF\nConclusions: \u2220CGF = \u2220EGB\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220EDB, G on DE\nConclusions: \u2220EDB = \u2220GDB\n\nStep 21:\nTheorem: Vertical Angle Theorem\nPremises : G on DE, G on BF\nConclusions: \u2220BGD = \u2220FGE, \u2220DGB = \u2220EGF\n\nStep 22:\nTheorem: Definition of Triangle\nPremises : BH, BF, FH\nConclusions: \u25b3BFH\n\nStep 23:\nTheorem: Point On Circle Def\nPremises : B on \u2299(H, radius_H)\nConclusions: radius_H = BH\n\nStep 24:\nTheorem: Definition of Triangle\nPremises : EF, EH, FH\nConclusions: \u25b3EFH\n\nStep 25:\nTheorem: Straight Angle\nPremises : \u2220BGC, \u2220CGF\nConclusions: pi = \u2220BGC + \u2220CGF\n\nStep 26:\nTheorem: Circumference Split\nPremises : \u2220BGC, \u2220FGE, \u2220EGB, \u2220CGF\nConclusions: 2 * pi = \u2220BGC + \u2220CGF + \u2220EGB + \u2220FGE\n\nStep 27:\nTheorem: Same Angle\nPremises : A on BD, \u2220DBF\nConclusions: \u2220ABF = \u2220DBF\n\nStep 28:\nTheorem: Same Angle\nPremises : A on BD, \u2220DBH\nConclusions: \u2220ABH = \u2220DBH\n\nStep 29:\nTheorem: Definition of Triangle\nPremises : EF, FG, EG\nConclusions: \u25b3EFG\n\nStep 30:\nTheorem: Definition of Quadrilateral\nPremises : EH, FG, EG, FH\nConclusions: Quadrilateral(E, G, F, H)\n\nStep 31:\nTheorem: Circumference splited\nPremises : \u2220GBD, \u2220HBG, \u2220DBH\nConclusions: 2 * pi = \u2220DBH + \u2220GBD + \u2220HBG\n\nStep 32:\nTheorem: Circumference splited\nPremises : \u2220HEG, \u2220GEF, \u2220FEH\nConclusions: 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG\n\nStep 33:\nTheorem: Same Angle\nPremises : \u2220DGF, C on DG\nConclusions: \u2220CGF = \u2220DGF\n\nStep 34:\nTheorem: Same Angle\nPremises : \u2220BGD, C on DG\nConclusions: \u2220BGC = \u2220BGD\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : pi * (30 / 180) = \u2220EFB, \u2220EFB = \u2220EFG\nConclusions: pi * (30 / 180) = \u2220EFG\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : pi * (118 / 180) = Arc(FHE), \u2220FHE = Arc(FHE)\nConclusions: pi * (118 / 180) = \u2220FHE\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : pi * (108 / 180) = Arc(BHA), \u2220BHA = Arc(BHA)\nConclusions: pi * (108 / 180) = \u2220BHA\n\nStep 38:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, H)\nPremises : \u25b3ABH\nConclusions: pi = \u2220ABH + \u2220BHA + \u2220HAB\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Triangle(G, D, B)\nPremises : \u25b3BDG\nConclusions: pi = \u2220BGD + \u2220DBG + \u2220GDB\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : radius_H = FH, radius_H = EH\nConclusions: EH = FH\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : radius_H = BH, radius_H = FH\nConclusions: BH = FH\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : radius_H = BH, radius_H = AH\nConclusions: AH = BH\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBF = \u2220DBG, \u2220ABF = \u2220DBF\nConclusions: \u2220ABF = \u2220DBG\n\nStep 44:\nTheorem: Interior Angle Sum Theorem for Triangle(E, F, G)\nPremises : \u25b3EFG\nConclusions: pi = \u2220EFG + \u2220FGE + \u2220GEF\n\nStep 45:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, G, F, H)\nPremises : Quadrilateral(E, G, F, H)\nConclusions: 2 * pi = \u2220EGF + \u2220FHE + \u2220GFH + \u2220HEG\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220DBH + \u2220GBD + \u2220HBG, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220DBH + \u2220GBD + \u2220HBG\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220FEH + \u2220GEF + \u2220HEG, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220FEH + \u2220GEF + \u2220HEG\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : pi * (52 / 180) = \u2220EGB, \u2220CGF = \u2220DGF, \u2220CGF = \u2220EGB\nConclusions: pi * (52 / 180) = \u2220DGF\n\nStep 49:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ABH + \u2220BHA + \u2220HAB, pi * (108 / 180) = \u2220BHA, \u2220ABH = \u2220DBH\nConclusions: 3.14 = pi * (108 / 180) + \u2220DBH + \u2220HAB\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220BGD + \u2220DBG + \u2220GDB\nConclusions: 3.14 = \u2220BGD + \u2220DBG + \u2220GDB\n\nStep 51:\nTheorem: Issoceles Triangle Property\nPremises : EH = FH, \u25b3EFH\nConclusions: \u2220FEH = \u2220HFE\n\nStep 52:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BFH, BH = FH\nConclusions: \u2220BFH = \u2220HBF\n\nStep 53:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABH, AH = BH\nConclusions: \u2220ABH = \u2220HAB\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABF = \u2220DBG, \u2220ABF = 2 * pi - \u2220FBA\nConclusions: \u2220DBG = 2 * pi - \u2220FBA\n\nStep 55:\nTheorem: Substitution\nPremises : pi = \u2220EFG + \u2220FGE + \u2220GEF, 3.14 = pi, \u2220BGD = \u2220FGE, pi * (30 / 180) = \u2220EFG\nConclusions: 3.14 = 3.14 * (30 / 180) + \u2220BGD + \u2220GEF\n\nStep 56:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DGB = \u2220EGF, pi * (118 / 180) = \u2220FHE, 2 * pi = \u2220EGF + \u2220FHE + \u2220GFH + \u2220HEG\nConclusions: 2 * 3.14 = pi * (118 / 180) + \u2220DGB + \u2220GFH + \u2220HEG\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : pi * (52 / 180) = \u2220DGF, \u2220CGF = \u2220DGF\nConclusions: pi * (52 / 180) = \u2220CGF\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFH = \u2220GFH, \u2220BFH = \u2220HBF, \u2220HBF = \u2220HBG\nConclusions: \u2220GFH = \u2220HBG\n\nStep 59:\nTheorem: Substitution\nPremises : pi * (52 / 180) = \u2220EGB, 2 * pi = \u2220BGC + \u2220CGF + \u2220EGB + \u2220FGE, \u2220BGD = \u2220FGE, pi * (52 / 180) = \u2220CGF, 3.14 = pi, \u2220BGC = \u2220BGD\nConclusions: 2 * 3.14 = pi * (52 / 180) + pi * (52 / 180) + \u2220BGD + \u2220BGD\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFH = \u2220GFH, \u2220GFH = \u2220HBG\nConclusions: \u2220BFH = \u2220HBG\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HBF = \u2220HBG, \u2220GFH = \u2220HBG\nConclusions: \u2220GFH = \u2220HBF\n\nStep 62:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220BGC + \u2220CGF, 2 * 3.14 = pi * (52 / 180) + pi * (52 / 180) + \u2220BGD + \u2220BGD, pi * (52 / 180) = \u2220CGF, \u2220BGC = \u2220BGD\nConclusions: 2.23 = \u2220BGC\n\nStep 63:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BGC = \u2220BGD, 2.23 = \u2220BGC\nConclusions: 2.23 = \u2220BGD\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BGD = 2 * pi - \u2220DGB, 2.23 = \u2220BGD\nConclusions: 2.23 = 2 * pi - \u2220DGB\n\nStep 65:\nTheorem: Solve Linear Equation System\nPremises : 2.23 = 2 * pi - \u2220DGB, 2 * 3.14 = pi * (118 / 180) + \u2220DGB + \u2220GFH + \u2220HEG, \u2220BFH = \u2220HBG, 6.28 = \u2220DBH + \u2220GBD + \u2220HBG, 2 * pi = \u2220ABH + \u2220FBA + \u2220HBF, \u2220EDB = \u2220GDB, 3.14 = \u2220BGD + \u2220DBG + \u2220GDB, 3.14 = pi * (108 / 180) + \u2220DBH + \u2220HAB, \u2220FEH = \u2220HFE, 2 * pi = \u2220DBH + \u2220GBD + \u2220HBG, 2 * 3.14 = pi * (52 / 180) + pi * (52 / 180) + \u2220BGD + \u2220BGD, 3.14 = 3.14 * (30 / 180) + \u2220BGD + \u2220GEF, \u2220DBG = 2 * pi - \u2220FBA, \u2220GFH = \u2220HBF, \u2220ABH = \u2220HAB, 6.28 = \u2220FEH + \u2220GEF + \u2220HEG, 2 * pi = \u2220BFH + \u2220EFB + \u2220HFE, pi * (30 / 180) = \u2220EFB, \u2220DBG = 2 * pi - \u2220GBD\nConclusions: 0.26 = \u2220EDB\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(D, G)",
+        "Line(D, E)",
+        "Line(C, G)",
+        "Line(C, E)",
+        "Line(G, E)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(F, G)",
+        "Line(F, B)",
+        "Line(G, B)",
+        "Line(F, E)",
+        "Circle(H, radius_H)",
+        "Line(A, B)",
+        "Line(C, E)",
+        "Line(C, G)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(D, G)",
+        "Line(F, B)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, B)",
+        "Line(G, E)",
+        "PointLiesOnCircle(A, Circle(H, radius_H))",
+        "PointLiesOnCircle(B, Circle(H, radius_H))",
+        "PointLiesOnCircle(C, Circle(H, radius_H))",
+        "PointLiesOnCircle(E, Circle(H, radius_H))",
+        "PointLiesOnCircle(F, Circle(H, radius_H))",
+        "PointLiesOnLine(A, Line(D, B))",
+        "PointLiesOnLine(C, Line(D, E))",
+        "PointLiesOnLine(C, Line(D, G))",
+        "PointLiesOnLine(G, Line(C, E))",
+        "PointLiesOnLine(G, Line(D, E))",
+        "PointLiesOnLine(G, Line(F, B))",
+        "Equals(MeasureOf(Arc(F, H, E)), Mul(pi, Div(118.0, 180.0)))",
+        "Equals(MeasureOf(Arc(B, H, A)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, G, B)), Mul(pi, Div(52.0, 180.0)))",
+        "Equals(MeasureOf(Angle(E, F, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

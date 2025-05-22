@@ -1,0 +1,133 @@
+{
+    "problem_id": "4618",
+    "solved": true,
+    "problem_text": "PQ = RQ, m \\widehat PS = 45, and m \\widehat SR = 75. Find the measure of \\angle 4.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(B, P, S)), MeasureOf(Angle(7)))",
+        "Equals(MeasureOf(Angle(B, S, P)), MeasureOf(Angle(8)))",
+        "Equals(MeasureOf(Angle(P, Q, B)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(Q, P, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(Q, R, B)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(R, Q, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(R, S, B)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(S, R, B)), MeasureOf(Angle(5)))",
+        "Line(B, R)",
+        "Line(B, S)",
+        "Line(P, B)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, B)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnCircle(Q, Circle(A))",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnLine(B, Line(P, R))",
+        "PointLiesOnLine(B, Line(Q, S))",
+        "Equals(LengthOf(Line(P,Q)),Line(R,Q))",
+        "Equals(MeasureOf(Arc(P,S)),45)",
+        "Equals(MeasureOf(Arc(S,R)),75)",
+        "Find(MeasureOf(Angle(4)))"
+    ],
+    "point_instances": [
+        "Q",
+        "A",
+        "R",
+        "B",
+        "P",
+        "S"
+    ],
+    "line_instances": [
+        "SR",
+        "RQ",
+        "QP",
+        "PB",
+        "PR",
+        "BR",
+        "SB",
+        "SQ",
+        "BQ",
+        "PS"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "Q": [
+            141.11142857142858,
+            46.25789473684211
+        ],
+        "A": [
+            151.9432671499721,
+            158.70516840092816
+        ],
+        "R": [
+            256.5977142857143,
+            203.98
+        ],
+        "B": [
+            135.97485714285716,
+            216.67824561403512
+        ],
+        "P": [
+            61.265934065934076,
+            224.43927125506073
+        ],
+        "S": [
+            134.11912087912089,
+            270.3927125506073
+        ]
+    },
+    "problem_choices": [
+        22.5,
+        37.5,
+        52.5,
+        60.0
+    ],
+    "choices_precise_value": [
+        22.5,
+        37.5,
+        52.5,
+        60.0
+    ],
+    "problem_answer": 60.0,
+    "total_time": 318.70099,
+    "solution_predicate": "Equals(1.0471975512, MeasureOf(Angle(Q, R, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220RQP, \u2220QRP, RS, AQ, \u2220PAR, Q on \u2299(A, radius_A), B on PR, Arc(SAR), Arc(PAS), \u2220PAS, pi * (45 / 180) = Arc(PAS), Arc(RAS), \u2220AQR, PR, PQ = QR, \u2220RAQ, PQ, AP, \u2220PQR, 3.14 = pi, \u2220PAR, R on \u2299(A, radius_A), \u2220QAP, QR, AS, P on \u2299(A, radius_A), \u2220PQA, AR, pi * (75 / 180) = Arc(SAR), \u2220SAR, \u2220SAQ, PS\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220PAR\nConclusions: \u2220PAR = 2 * pi - \u2220RAP\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : Q on \u2299(A, radius_A)\nConclusions: radius_A = AQ\n\nStep 4:\nTheorem: Same Angle\nPremises : B on PR, \u2220QRP\nConclusions: \u2220QRB = \u2220QRP\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : Arc(SAR)\nConclusions: Arc(SAR) = 2 * pi - Arc(RAS)\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(SAR)\nConclusions: \u2220SAR = Arc(SAR)\n\nStep 7:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PAS)\nConclusions: \u2220PAS = Arc(PAS)\n\nStep 8:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(RAS)\nConclusions: \u2220RAS = Arc(RAS)\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : PQ, AP, AQ\nConclusions: \u25b3APQ\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220PQR\nConclusions: \u2220PQR = 2 * pi - \u2220RQP\n\nStep 11:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : R on \u2299(A, radius_A)\nConclusions: radius_A = AR\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220PAR, \u2220QAP, \u2220RAQ\nConclusions: 2 * pi = \u2220PAR + \u2220QAP + \u2220RAQ\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : QR, PQ, PR\nConclusions: \u25b3PQR\n\nStep 15:\nTheorem: Definition of Quadrilateral\nPremises : QR, RS, AQ, AS\nConclusions: Quadrilateral(A, Q, R, S)\n\nStep 16:\nTheorem: Point On Circle Def\nPremises : P on \u2299(A, radius_A)\nConclusions: radius_A = AP\n\nStep 17:\nTheorem: Circumference splited\nPremises : \u2220RQP, \u2220AQR, \u2220PQA\nConclusions: 2 * pi = \u2220AQR + \u2220PQA + \u2220RQP\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : AR, RS, AS\nConclusions: \u25b3ARS\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : QR, AR, AQ\nConclusions: \u25b3AQR\n\nStep 20:\nTheorem: Definition of Quadrilateral\nPremises : QR, AR, AP, PQ\nConclusions: Quadrilateral(A, P, Q, R)\n\nStep 21:\nTheorem: Circumference Split\nPremises : \u2220PAS, \u2220SAR, \u2220QAP, \u2220RAQ\nConclusions: 2 * pi = \u2220PAS + \u2220QAP + \u2220RAQ + \u2220SAR\n\nStep 22:\nTheorem: Circumference splited\nPremises : \u2220SAQ, \u2220PAS, \u2220QAP\nConclusions: 2 * pi = \u2220PAS + \u2220QAP + \u2220SAQ\n\nStep 23:\nTheorem: Definition of Quadrilateral\nPremises : QR, RS, PQ, PS\nConclusions: Quadrilateral(P, Q, R, S)\n\nStep 24:\nTheorem: Definition of Triangle\nPremises : AS, AP, PS\nConclusions: \u25b3APS\n\nStep 25:\nTheorem: Definition of Quadrilateral\nPremises : AR, AP, RS, PS\nConclusions: Quadrilateral(A, P, S, R)\n\nStep 26:\nTheorem: Definition of Pentagon\nPremises : PQ, AS, PS, QR, AR\nConclusions: Pentagon(A, R, Q, P, S)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * (75 / 180) = Arc(SAR), Arc(SAR) = 2 * pi - Arc(RAS)\nConclusions: pi * (75 / 180) = 2 * pi - Arc(RAS)\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SAR = Arc(SAR), pi * (75 / 180) = Arc(SAR)\nConclusions: pi * (75 / 180) = \u2220SAR\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = Arc(PAS), \u2220PAS = Arc(PAS)\nConclusions: pi * (45 / 180) = \u2220PAS\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AQ, radius_A = AR\nConclusions: AQ = AR\n\nStep 31:\nTheorem: Interior Angle Sum Theorem for Triangle(P, Q, R)\nPremises : \u25b3PQR\nConclusions: pi = \u2220PQR + \u2220QRP + \u2220RPQ\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : PQ = QR, \u25b3PQR\nConclusions: \u2220QRP = \u2220RPQ\n\nStep 33:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, Q, R, S)\nPremises : Quadrilateral(A, Q, R, S)\nConclusions: 2 * pi = \u2220AQR + \u2220QRS + \u2220RSA + \u2220SAQ\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AQ, radius_A = AP\nConclusions: AP = AQ\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220AQR + \u2220PQA + \u2220RQP, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220AQR + \u2220PQA + \u2220RQP\n\nStep 36:\nTheorem: Interior Angle Sum Theorem for Triangle(A, R, S)\nPremises : \u25b3ARS\nConclusions: pi = \u2220ARS + \u2220RSA + \u2220SAR\n\nStep 37:\nTheorem: Interior Angle Sum Theorem for Triangle(A, Q, R)\nPremises : \u25b3AQR\nConclusions: pi = \u2220AQR + \u2220QRA + \u2220RAQ\n\nStep 38:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, P, Q, R)\nPremises : Quadrilateral(A, P, Q, R)\nConclusions: 2 * pi = \u2220APQ + \u2220PQR + \u2220QRA + \u2220RAP\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, Q, R, S)\nPremises : Quadrilateral(P, Q, R, S)\nConclusions: 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ\n\nStep 40:\nTheorem: Interior Angle Sum Theorem for Triangle(S, P, A)\nPremises : \u25b3APS\nConclusions: pi = \u2220ASP + \u2220PAS + \u2220SPA\n\nStep 41:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(R, S, P, A)\nPremises : Quadrilateral(A, P, S, R)\nConclusions: 2 * pi = \u2220ARS + \u2220PAR + \u2220RSP + \u2220SPA\n\nStep 42:\nTheorem: Interior Angle Sum Theorem for Pentagon(S, P, Q, R, A)\nPremises : Pentagon(A, R, Q, P, S)\nConclusions: 3 * pi = \u2220ASP + \u2220PQR + \u2220QRA + \u2220RAS + \u2220SPQ\n\nStep 43:\nTheorem: Issoceles Triangle Property\nPremises : AQ = AR, \u25b3AQR\nConclusions: \u2220AQR = \u2220QRA\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220QRB = \u2220QRP, \u2220QRP = \u2220RPQ\nConclusions: \u2220QRB = \u2220RPQ\n\nStep 45:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AQR + \u2220QRS + \u2220RSA + \u2220SAQ, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AQR + \u2220QRS + \u2220RSA + \u2220SAQ\n\nStep 46:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3APQ, AP = AQ\nConclusions: \u2220APQ = \u2220PQA\n\nStep 47:\nTheorem: Substitution\nPremises : pi * (75 / 180) = \u2220SAR, 3.14 = pi, pi = \u2220ARS + \u2220RSA + \u2220SAR\nConclusions: 3.14 = 3.14 * (75 / 180) + \u2220ARS + \u2220RSA\n\nStep 48:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ARS + \u2220PAR + \u2220RSP + \u2220SPA\nConclusions: 2 * 3.14 = \u2220ARS + \u2220PAR + \u2220RSP + \u2220SPA\n\nStep 49:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220RAS = Arc(RAS), 3 * pi = \u2220ASP + \u2220PQR + \u2220QRA + \u2220RAS + \u2220SPQ\nConclusions: 3 * 3.14 = \u2220ASP + \u2220PQR + \u2220QRA + \u2220SPQ + Arc(RAS)\n\nStep 50:\nTheorem: Solve Linear Equation System\nPremises : pi * (75 / 180) = \u2220SAR, 3 * 3.14 = \u2220ASP + \u2220PQR + \u2220QRA + \u2220SPQ + Arc(RAS), 2 * pi = \u2220PAS + \u2220QAP + \u2220RAQ + \u2220SAR, 2 * pi = \u2220PQR + \u2220QRS + \u2220RSP + \u2220SPQ, 2 * 3.14 = \u2220ARS + \u2220PAR + \u2220RSP + \u2220SPA, 2 * pi = \u2220PAR + \u2220QAP + \u2220RAQ, pi = \u2220AQR + \u2220QRA + \u2220RAQ, 2 * pi = \u2220PAS + \u2220QAP + \u2220SAQ, pi * (75 / 180) = 2 * pi - Arc(RAS), 2 * 3.14 = \u2220AQR + \u2220QRS + \u2220RSA + \u2220SAQ, pi * (45 / 180) = \u2220PAS, 3.14 = 3.14 * (75 / 180) + \u2220ARS + \u2220RSA, pi = \u2220ASP + \u2220PAS + \u2220SPA\nConclusions: 2.09 = \u2220PAR\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PAR = 2 * pi - \u2220RAP, 2.09 = \u2220PAR\nConclusions: 2.09 = 2 * pi - \u2220RAP\n\nStep 52:\nTheorem: Solve Linear Equation System\nPremises : \u2220PQR = 2 * pi - \u2220RQP, \u2220QRB = \u2220RPQ, 2 * pi = \u2220APQ + \u2220PQR + \u2220QRA + \u2220RAP, 2.09 = 2 * pi - \u2220RAP, pi = \u2220PQR + \u2220QRP + \u2220RPQ, \u2220APQ = \u2220PQA, \u2220QRB = \u2220QRP, \u2220AQR = \u2220QRA, 6.28 = \u2220AQR + \u2220PQA + \u2220RQP\nConclusions: 1.05 = \u2220QRB\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, R)",
+        "Line(R, Q)",
+        "Line(Q, P)",
+        "Line(P, B)",
+        "Line(P, R)",
+        "Line(B, R)",
+        "Line(S, B)",
+        "Line(S, Q)",
+        "Line(B, Q)",
+        "Line(P, S)",
+        "Circle(A, radius_A)",
+        "Line(B, R)",
+        "Line(B, S)",
+        "Line(P, B)",
+        "Line(P, R)",
+        "Line(P, S)",
+        "Line(Q, B)",
+        "Line(Q, P)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(S, R)",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnCircle(Q, Circle(A, radius_A))",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnLine(B, Line(P, R))",
+        "PointLiesOnLine(B, Line(Q, S))",
+        "Equals(LengthOf(Line(P, Q)), LengthOf(Line(R, Q)))",
+        "Equals(MeasureOf(Arc(P, A, S)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(MeasureOf(Arc(S, A, R)), Mul(pi, Div(75.0, 180.0)))"
+    ],
+    "correct": true
+}

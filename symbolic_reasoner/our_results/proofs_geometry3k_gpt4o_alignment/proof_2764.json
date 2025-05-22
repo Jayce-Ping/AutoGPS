@@ -1,0 +1,118 @@
+{
+    "problem_id": "2764",
+    "solved": true,
+    "problem_text": "Find the value of the variable y in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "Parallel(Line(A, H), Line(B, G))",
+        "Equals(MeasureOf(Angle(B, E, F)), 105)",
+        "Equals(MeasureOf(Angle(E, D, A)), 3x-15)",
+        "Equals(MeasureOf(Angle(E, D, H)), y+25)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "BE",
+        "BG",
+        "EG",
+        "CD",
+        "CE",
+        "CF",
+        "DE",
+        "DF",
+        "EF",
+        "AD",
+        "AH",
+        "DH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            12.463126843657818,
+            81.71091445427729
+        ],
+        "B": [
+            12.463126843657818,
+            174.92625368731564
+        ],
+        "C": [
+            115.117994100295,
+            15.044247787610619
+        ],
+        "D": [
+            133.99705014749262,
+            82.59587020648968
+        ],
+        "E": [
+            158.77581120943952,
+            174.3362831858407
+        ],
+        "F": [
+            180.89970501474926,
+            256.047197640118
+        ],
+        "G": [
+            328.98230088495575,
+            174.63126843657815
+        ],
+        "H": [
+            329.2772861356932,
+            82.30088495575221
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "50",
+        "60",
+        "80"
+    ],
+    "choices_precise_value": [
+        30.0,
+        50.0,
+        60.0,
+        80.0
+    ],
+    "problem_answer": 50.0,
+    "total_time": 40.87771,
+    "solution_predicate": "Equals(50.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (105 / 180) = \u2220BEF, 3.14 = pi, D on CE, pi * ((25 + y) / 180) = \u2220EDH, AH || BG, \u2220BEF, \u2220CEB\n\nStep 2:\nTheorem: Alternate Interior Angle Theorem\nPremises : AH || BG\nConclusions: \u2220DEB = \u2220EDH\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220BEF, \u2220CEB\nConclusions: pi = \u2220BEF + \u2220CEB\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CEB, D on CE\nConclusions: \u2220CEB = \u2220DEB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((25 + y) / 180) = \u2220EDH, \u2220DEB = \u2220EDH\nConclusions: pi * ((25 + y) / 180) = \u2220DEB\n\nStep 6:\nTheorem: Substitution\nPremises : pi = \u2220BEF + \u2220CEB, 3.14 = pi, pi * (105 / 180) = \u2220BEF\nConclusions: 3.14 = 3.14 * (105 / 180) + \u2220CEB\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEB = \u2220DEB, pi * ((25 + y) / 180) = \u2220DEB\nConclusions: pi * ((25 + y) / 180) = \u2220CEB\n\nStep 8:\nTheorem: Substitution\nPremises : pi * ((25 + y) / 180) = \u2220CEB, 3.14 = pi\nConclusions: 3.14 * ((25 + y) / 180) = \u2220CEB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((25 + y) / 180) = \u2220CEB, 3.14 = 3.14 * (105 / 180) + \u2220CEB\nConclusions: 50 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, E)",
+        "Line(B, G)",
+        "Line(E, G)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(A, D)",
+        "Line(A, H)",
+        "Line(D, H)",
+        "PointLiesOnLine(E, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "PointLiesOnLine(D, Line(A, H))",
+        "Parallel(Line(A, H), Line(B, G))",
+        "Equals(MeasureOf(Angle(B, E, F)), Mul(pi, Div(105.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, D, E)), Mul(pi, Div(Sub(Mul(3.0, x), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, H)), Mul(pi, Div(Add(y, 25.0), 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,109 @@
+{
+    "problem_id": "7609",
+    "solved": true,
+    "problem_text": "Use rhombus WXYZ with m \\angle XYZ = 5 m \\angle WZY and YZ = 12. Find WX.",
+    "logic_forms": [
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, A)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(Z, X))",
+        "Rhombus(W,X,Y,Z)",
+        "Equals(MeasureOf(Angle(X,Y,Z)),Mul(MeasureOf(Angle(W,Z,Y)),5))",
+        "Equals(LengthOf(Line(Y,Z)),12)",
+        "Find(LengthOf(Line(W,X)))"
+    ],
+    "point_instances": [
+        "W",
+        "X",
+        "A",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "ZA",
+        "ZX",
+        "AX",
+        "WZ",
+        "WA",
+        "WY",
+        "AY",
+        "XY",
+        "ZY",
+        "WX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            78.42134831460673,
+            56.82142857142857
+        ],
+        "X": [
+            210.17977528089887,
+            57.08571428571429
+        ],
+        "A": [
+            124.02568218298555,
+            122.62857142857143
+        ],
+        "Z": [
+            39.078651685393254,
+            188.17142857142858
+        ],
+        "Y": [
+            169.59229534510433,
+            188.17142857142858
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        12.0,
+        24.0,
+        84.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        12.0,
+        24.0,
+        84.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 76.874256,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = YZ, Rhombus(W, X, Y, Z)\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : WX = YZ, 12 = YZ\nConclusions: 12 = WX\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, A)",
+        "Line(Z, X)",
+        "Line(A, X)",
+        "Line(W, Z)",
+        "Line(W, A)",
+        "Line(W, Y)",
+        "Line(A, Y)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Line(W, X)",
+        "Line(A, X)",
+        "Line(A, Y)",
+        "Line(W, A)",
+        "Line(W, X)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(Z, A)",
+        "Line(Z, X)",
+        "Line(Z, Y)",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(Z, X))",
+        "Rhombus(W, X, Y, Z)",
+        "Equals(MeasureOf(Angle(X, Y, Z)), Mul(MeasureOf(Angle(Y, Z, W)), 5.0))",
+        "Equals(LengthOf(Line(Y, Z)), 12.0)"
+    ],
+    "correct": true
+}

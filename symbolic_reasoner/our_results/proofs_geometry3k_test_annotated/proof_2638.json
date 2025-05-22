@@ -1,0 +1,85 @@
+{
+    "problem_id": "2638",
+    "solved": true,
+    "problem_text": "\\triangle K L N and \\triangle L M N are isosceles and m \\angle J K N = 130. Find the measure of \\angle J.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(N, L)))",
+        "Equals(LengthOf(Line(N, M)), LengthOf(Line(M, L)))",
+        "Equals(MeasureOf(Angle(J, L, K)), 25)",
+        "Equals(MeasureOf(Angle(N, L, M)), 20)",
+        "Equals(MeasureOf(Angle(K, L, N)), 18)",
+        "Equals(MeasureOf(Angle(J, K, N)), 130)",
+        "Find(MeasureOf(Angle(J)))"
+    ],
+    "point_instances": [
+        "J",
+        "L",
+        "K",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "JL",
+        "KL",
+        "NL",
+        "ML",
+        "NM",
+        "KJ",
+        "KN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            41.04436860068259,
+            139.5904436860068
+        ],
+        "L": [
+            89.84982935153582,
+            266.5529010238908
+        ],
+        "K": [
+            103.84300341296927,
+            48.12286689419795
+        ],
+        "N": [
+            172.78498293515355,
+            64.84641638225256
+        ],
+        "M": [
+            168.3481228668942,
+            181.56996587030716
+        ]
+    },
+    "problem_choices": [
+        "105",
+        "106",
+        "108",
+        "111"
+    ],
+    "choices_precise_value": [
+        105.0,
+        106.0,
+        108.0,
+        111.0
+    ],
+    "problem_answer": 106.0,
+    "total_time": 41.242264,
+    "solution_predicate": "Equals(1.8500490071, MeasureOf(Angle(L, J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220JKL, pi * (18 / 180) = \u2220NLK, \u2220NKJ, \u2220LKN, 3.14 = pi, LN, \u2220JLN, \u2220NKJ, \u2220KLJ, KL, JL, pi * (25 / 180) = \u2220KLJ, \u2220JLN, \u2220NLK, 4.01 = 2 * 3.14 - 3.14 * (130 / 180), KN, pi * (130 / 180) = \u2220JKN, JK, KL = LN\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220NKJ\nConclusions: \u2220NKJ = 2 * pi - \u2220JKN\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220JLN\nConclusions: \u2220JLN = 2 * pi - \u2220NLJ\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220NKJ, \u2220JKL, \u2220LKN\nConclusions: 2 * pi = \u2220JKL + \u2220LKN + \u2220NKJ\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220NLK, \u2220JLN, \u2220KLJ\nConclusions: 2 * pi = \u2220JLN + \u2220KLJ + \u2220NLK\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : KN, LN, KL\nConclusions: \u25b3KLN\n\nStep 7:\nTheorem: Definition of Quadrilateral\nPremises : KN, LN, JL, JK\nConclusions: Quadrilateral(J, K, N, L)\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : JK, JL, KL\nConclusions: \u25b3JKL\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220NKJ = 2 * pi - \u2220JKN, 3.14 = pi, pi * (130 / 180) = \u2220JKN\nConclusions: 2 * 3.14 - 3.14 * (130 / 180) = \u2220NKJ\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220JLN = 2 * pi - \u2220NLJ, 3.14 = pi\nConclusions: \u2220JLN = 2 * 3.14 - \u2220NLJ\n\nStep 11:\nTheorem: Substitution\nPremises : 2 * pi = \u2220JKL + \u2220LKN + \u2220NKJ, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220JKL + \u2220LKN + \u2220NKJ\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (18 / 180) = \u2220NLK, pi * (25 / 180) = \u2220KLJ, 3.14 = pi, 2 * pi = \u2220JLN + \u2220KLJ + \u2220NLK\nConclusions: 2 * 3.14 = pi * (18 / 180) + pi * (25 / 180) + \u2220JLN\n\nStep 13:\nTheorem: Issoceles Triangle Property\nPremises : KL = LN, \u25b3KLN\nConclusions: \u2220KNL = \u2220LKN\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(J, K, N, L)\nPremises : Quadrilateral(J, K, N, L)\nConclusions: 2 * pi = \u2220JKN + \u2220KNL + \u2220LJK + \u2220NLJ\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(J, K, L)\nPremises : \u25b3JKL\nConclusions: pi = \u2220JKL + \u2220KLJ + \u2220LJK\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 4.01 = 2 * 3.14 - 3.14 * (130 / 180), 2 * 3.14 - 3.14 * (130 / 180) = \u2220NKJ\nConclusions: 4.01 = \u2220NKJ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220JKL + \u2220LKN + \u2220NKJ, 2 * 3.14 = \u2220JKL + \u2220LKN + \u2220NKJ\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 18:\nTheorem: Substitution\nPremises : 2 * pi = \u2220JKN + \u2220KNL + \u2220LJK + \u2220NLJ, 3.14 = pi, pi * (130 / 180) = \u2220JKN\nConclusions: 2 * 3.14 = pi * (130 / 180) + \u2220KNL + \u2220LJK + \u2220NLJ\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (25 / 180) = \u2220KLJ, 3.14 = pi, pi = \u2220JKL + \u2220KLJ + \u2220LJK\nConclusions: 3.14 = 3.14 * (25 / 180) + \u2220JKL + \u2220LJK\n\nStep 20:\nTheorem: Substitution\nPremises : 4.01 = \u2220NKJ, 2 * 3.14 = \u2220JKL + \u2220LKN + \u2220NKJ\nConclusions: 2 * 3.14 = 4.01 + \u2220JKL + \u2220LKN\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = pi * (18 / 180) + pi * (25 / 180) + \u2220JLN, 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = pi * (18 / 180) + pi * (25 / 180) + \u2220JLN\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : \u2220JLN = 2 * pi - \u2220NLJ, \u2220JLN = 2 * 3.14 - \u2220NLJ, 2 * pi = pi * (18 / 180) + pi * (25 / 180) + \u2220JLN\nConclusions: 0.75 = \u2220NLJ\n\nStep 23:\nTheorem: Substitution\nPremises : 2 * 3.14 = pi * (130 / 180) + \u2220KNL + \u2220LJK + \u2220NLJ, 0.75 = \u2220NLJ, 3.14 = pi, \u2220KNL = \u2220LKN\nConclusions: 2 * 3.14 = 0.75 + 3.14 * (130 / 180) + \u2220LJK + \u2220LKN\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 0.75 + 3.14 * (130 / 180) + \u2220LJK + \u2220LKN, 2 * 3.14 = 4.01 + \u2220JKL + \u2220LKN, 3.14 = 3.14 * (25 / 180) + \u2220JKL + \u2220LJK\nConclusions: 1.85 = \u2220LJK\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(K, L)",
+        "Line(N, L)",
+        "Line(M, L)",
+        "Line(N, M)",
+        "Line(K, J)",
+        "Line(K, N)",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(N, L)))",
+        "Equals(LengthOf(Line(N, M)), LengthOf(Line(M, L)))",
+        "Equals(MeasureOf(Angle(K, L, J)), Mul(pi, Div(25.0, 180.0)))",
+        "Equals(MeasureOf(Angle(M, L, N)), Mul(pi, Div(20.0, 180.0)))",
+        "Equals(MeasureOf(Angle(N, L, K)), Mul(pi, Div(18.0, 180.0)))",
+        "Equals(MeasureOf(Angle(J, K, N)), Mul(pi, Div(130.0, 180.0)))"
+    ],
+    "correct": true
+}

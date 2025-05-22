@@ -1,0 +1,88 @@
+{
+    "problem_id": "2587",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(E, C, D)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(C, A, B)), 57)",
+        "Equals(MeasureOf(Angle(C, B, A)), 47)",
+        "Equals(MeasureOf(Angle(C, E, D)), 55)",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "BC",
+        "BD",
+        "CD",
+        "BA",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            52.58858858858859,
+            222.82282282282281
+        ],
+        "B": [
+            43.87987987987988,
+            62.46246246246246
+        ],
+        "C": [
+            150.7867867867868,
+            150.45045045045046
+        ],
+        "D": [
+            306.6426426426426,
+            279.57957957957956
+        ],
+        "E": [
+            300.33633633633633,
+            39.93993993993994
+        ]
+    },
+    "problem_choices": [
+        "49",
+        "55",
+        "57",
+        "76"
+    ],
+    "choices_precise_value": [
+        49.0,
+        55.0,
+        57.0,
+        76.0
+    ],
+    "problem_answer": 76.0,
+    "total_time": 20.872267,
+    "solution_predicate": "Equals(1.3264502315, MeasureOf(Angle(D, C, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAE, 3.14 = pi, \u2220ACB, AC, \u2220ECD, C on BD, \u2220DBA, AB, C on AE, pi * (47 / 180) = \u2220ABC, \u2220CBA, pi * (57 / 180) = \u2220CAB, \u2220BAC, BC\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220DCE\n\nStep 4:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 5:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220BCA = \u2220DCE, \u2220ACB = \u2220ECD\n\nStep 6:\nTheorem: Same Angle\nPremises : C on AE, \u2220BAE\nConclusions: \u2220BAC = \u2220BAE\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220ECD = 2 * pi - \u2220DCE, 3.14 = pi\nConclusions: \u2220ECD = 2 * 3.14 - \u2220DCE\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = 2 * pi - \u2220BCA, \u2220ACB = \u2220ECD\nConclusions: \u2220ECD = 2 * pi - \u2220BCA\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 3.14 = pi, \u2220CBA = \u2220DBA, pi * (47 / 180) = \u2220ABC\nConclusions: 2 * 3.14 - pi * (47 / 180) = \u2220DBA\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220BAC = 2 * pi - \u2220CAB, \u2220BAC = \u2220BAE, 3.14 = pi, pi * (57 / 180) = \u2220CAB\nConclusions: 2 * 3.14 - pi * (57 / 180) = \u2220BAE\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (47 / 180) = \u2220DBA, \u2220CBA = \u2220DBA\nConclusions: 2 * 3.14 - pi * (47 / 180) = \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220BAE, 2 * 3.14 - pi * (57 / 180) = \u2220BAE\nConclusions: 2 * 3.14 - pi * (57 / 180) = \u2220BAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, 3.14 = pi\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 18:\nTheorem: Substitution\nPremises : pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220BCA = \u2220DCE, 3.14 = pi, pi * (47 / 180) = \u2220ABC, pi * (57 / 180) = \u2220CAB\nConclusions: 3.14 = 3.14 * (57 / 180) + pi * (47 / 180) + \u2220DCE\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = 2 * pi - \u2220ABC, 2 * 3.14 - pi * (47 / 180) = \u2220CBA\nConclusions: 2 * 3.14 - pi * (47 / 180) = 2 * pi - \u2220ABC\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = 2 * pi - \u2220CAB, 2 * 3.14 - pi * (57 / 180) = \u2220BAC\nConclusions: 2 * 3.14 - pi * (57 / 180) = 2 * pi - \u2220CAB\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi * (47 / 180) = 2 * pi - \u2220ABC, 3.14 = 3.14 * (57 / 180) + pi * (47 / 180) + \u2220DCE, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, 2 * 3.14 - pi * (57 / 180) = 2 * pi - \u2220CAB, \u2220ECD = 2 * 3.14 - \u2220DCE, \u2220ECD = 2 * pi - \u2220BCA\nConclusions: 1.33 = \u2220DCE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(57.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(47.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, E, D)), Mul(pi, Div(55.0, 180.0)))"
+    ],
+    "correct": true
+}

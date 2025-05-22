@@ -1,0 +1,108 @@
+{
+    "problem_id": "2928",
+    "solved": true,
+    "problem_text": "Find C F if B F bisects \\angle A B C and A C \\parallel E D, B A = 6, B C = 7.5, A C = 9, and D E = 9.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "Parallel(Line(E, D), Line(A, C))",
+        "Equals(MeasureOf(Angle(F, B, A)), MeasureOf(Angle(C, B, F)))",
+        "BisectsAngle(Line(B,F),Angle(A,B,C))",
+        "Parallel(Line(A,C),Line(E,D))",
+        "Equals(LengthOf(Line(B,A)),6)",
+        "Equals(LengthOf(Line(B,C)),7.5)",
+        "Equals(LengthOf(Line(A,C)),9)",
+        "Equals(LengthOf(Line(D,E)),9)",
+        "Find(LengthOf(Line(C,F)))"
+    ],
+    "point_instances": [
+        "F",
+        "C",
+        "D",
+        "B",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "ED",
+        "EF",
+        "EB",
+        "FB",
+        "AF",
+        "AC",
+        "FC",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            123.18435754189944,
+            100.18435754189944
+        ],
+        "C": [
+            192.73743016759775,
+            159.9608938547486
+        ],
+        "D": [
+            303.63128491620114,
+            158.2849162011173
+        ],
+        "B": [
+            63.40782122905028,
+            161.35754189944134
+        ],
+        "A": [
+            63.40782122905028,
+            48.22905027932961
+        ],
+        "E": [
+            173.74301675977654,
+            47.670391061452506
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4.5",
+        "5",
+        "7.5"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.5,
+        5.0,
+        7.5
+    ],
+    "problem_answer": 5.0,
+    "total_time": 91.050965,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(C, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 9 = AC, \u2220CBF = \u2220FBA, 7.5 = BC, AB, 6 = AB, BC, F on AC, AC\n\nStep 2:\nTheorem: Line Segment Split\nPremises : F on AC\nConclusions: AC = AF + CF\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AC = AF + CF, 9 = AC\nConclusions: 9 = AF + CF\n\nStep 5:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u25b3ABC, \u2220CBF = \u2220FBA\nConclusions: BC / AB = CF / AF\n\nStep 6:\nTheorem: Substitution\nPremises : BC / AB = CF / AF, 6 = AB, 7.5 = BC\nConclusions: 7.5 / 6 = CF / AF\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 9 = AF + CF, 7.5 / 6 = CF / AF\nConclusions: 5 = CF\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(E, B)",
+        "Line(F, B)",
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(F, C)",
+        "Line(A, B)",
+        "PointLiesOnLine(C, Line(B, D))",
+        "PointLiesOnLine(F, Line(E, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "Parallel(Line(E, D), Line(A, C))",
+        "BisectsAngle(Line(B, F), Angle(C, B, A))",
+        "Parallel(Line(A, C), Line(E, D))",
+        "Equals(MeasureOf(Angle(F, B, A)), MeasureOf(Angle(C, B, F)))",
+        "Equals(LengthOf(Line(B, A)), 6.0)",
+        "Equals(LengthOf(Line(B, C)), 7.5)",
+        "Equals(LengthOf(Line(A, C)), 9.0)",
+        "Equals(LengthOf(Line(D, E)), 9.0)"
+    ],
+    "correct": true
+}

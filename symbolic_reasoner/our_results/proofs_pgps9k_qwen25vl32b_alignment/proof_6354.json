@@ -1,0 +1,107 @@
+{
+    "problem_id": "6354",
+    "solved": true,
+    "problem_text": "Solve for x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(D, E, F)), 5x)",
+        "Equals(MeasureOf(Angle(F, D, E)), 5x)",
+        "Equals(MeasureOf(Angle(F, D, E)), MeasureOf(Angle(D, E, F)))",
+        "Equals(MeasureOf(Angle(G, F, E)), 9x+7)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(F, A)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, A)",
+        "PointLiesOnLine(F, Line(D, A))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(G, Line(D, A))",
+        "PointLiesOnLine(G, Line(F, A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "A"
+    ],
+    "line_instances": [
+        "DF",
+        "DG",
+        "DA",
+        "FG",
+        "FA",
+        "GA",
+        "DE",
+        "FE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            26.225435669262144,
+            168.77474654377883
+        ],
+        "E": [
+            291.553852703278,
+            168.05354497354497
+        ],
+        "F": [
+            159.31034482758622,
+            94.08285714285715
+        ],
+        "G": [
+            231.81697612732094,
+            53.47714285714286
+        ],
+        "A": [
+            282.33333333333337,
+            23.825904761904763
+        ]
+    },
+    "problem_choices": [
+        7.0,
+        9.105,
+        12.357,
+        20.75
+    ],
+    "choices_precise_value": [
+        7.0,
+        9.105,
+        12.357,
+        20.75
+    ],
+    "problem_answer": 7.0,
+    "total_time": 17.071031,
+    "solution_predicate": "Equals(7.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: EF, pi * ((7 + 9 * x) / 180) = \u2220EFG, 3.14 = pi, \u2220EFG, pi * ((5 * x) / 180) = \u2220EDF, \u2220DFE, DF, DE, pi * ((5 * x) / 180) = \u2220FED\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((7 + 9 * x) / 180) = \u2220EFG, 3.14 = pi\nConclusions: 3.14 * ((7 + 9 * x) / 180) = \u2220EFG\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((5 * x) / 180) = \u2220EDF, 3.14 = pi\nConclusions: 3.14 * ((5 * x) / 180) = \u2220EDF\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220DFE, \u2220EFG\nConclusions: pi = \u2220DFE + \u2220EFG\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : EF, DF, DE\nConclusions: \u25b3DEF\n\nStep 6:\nTheorem: Substitution\nPremises : pi * ((5 * x) / 180) = \u2220FED, 3.14 = pi\nConclusions: 3.14 * ((5 * x) / 180) = \u2220FED\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(F, E, D)\nPremises : \u25b3DEF\nConclusions: pi = \u2220DFE + \u2220EDF + \u2220FED\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((7 + 9 * x) / 180) = \u2220EFG, 3.14 * ((5 * x) / 180) = \u2220FED, pi = \u2220DFE + \u2220EFG, pi = \u2220DFE + \u2220EDF + \u2220FED, 3.14 * ((5 * x) / 180) = \u2220EDF\nConclusions: 7 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(D, A)",
+        "Line(F, G)",
+        "Line(F, A)",
+        "Line(G, A)",
+        "Line(D, E)",
+        "Line(F, E)",
+        "Line(D, A)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(F, A)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(G, A)",
+        "PointLiesOnLine(F, Line(D, A))",
+        "PointLiesOnLine(F, Line(D, G))",
+        "PointLiesOnLine(G, Line(D, A))",
+        "PointLiesOnLine(G, Line(F, A))",
+        "Equals(MeasureOf(Angle(F, E, D)), Mul(pi, Div(Mul(5.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, F)), Mul(pi, Div(Mul(5.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, F)), MeasureOf(Angle(F, E, D)))",
+        "Equals(MeasureOf(Angle(E, F, G)), Mul(pi, Div(Add(Mul(9.0, x), 7.0), 180.0)))"
+    ],
+    "correct": true
+}

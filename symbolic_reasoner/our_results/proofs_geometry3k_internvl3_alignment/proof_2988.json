@@ -1,0 +1,63 @@
+{
+    "problem_id": "2988",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), 11)",
+        "Equals(MeasureOf(Angle(A, C, B)), 21)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            339.7014925373134,
+            146.44776119402985
+        ],
+        "C": [
+            50.14925373134328,
+            146.44776119402985
+        ],
+        "A": [
+            338.8059701492537,
+            36.29850746268656
+        ]
+    },
+    "problem_choices": [
+        "3.9",
+        "11.8",
+        "28.7",
+        "30.7"
+    ],
+    "choices_precise_value": [
+        3.9,
+        11.8,
+        28.7,
+        30.7
+    ],
+    "problem_answer": 30.7,
+    "total_time": 17.650189,
+    "solution_predicate": "Equals(30.6947092058, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, AC, BC, 11 = AB, pi * (21 / 180) = \u2220BCA, AB \u22a5 BC, 3.14 = pi, x = AC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2, 0.37 = pi * (21 / 180)\n\nStep 5:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220BCA) = AC / sin(\u2220ABC)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, 1.57 = pi / 2\nConclusions: 1.57 = \u2220ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (21 / 180) = \u2220BCA, 0.37 = pi * (21 / 180)\nConclusions: 0.37 = \u2220BCA\n\nStep 8:\nTheorem: Substitution\nPremises : AB / sin(\u2220BCA) = AC / sin(\u2220ABC), 0.37 = \u2220BCA, 1.57 = \u2220ABC, 11 = AB, x = AC\nConclusions: 11 / sin(0.37) = x / sin(1.57)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 11 / sin(0.37) = x / sin(1.57), x = AC\nConclusions: 30.69 = AC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 30.69 = AC, x = AC\nConclusions: 30.69 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(C, A)), x)",
+        "Equals(LengthOf(Line(A, B)), 11.0)",
+        "Equals(MeasureOf(Angle(B, C, A)), Mul(pi, Div(21.0, 180.0)))"
+    ],
+    "correct": true
+}

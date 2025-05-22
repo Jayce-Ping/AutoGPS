@@ -1,0 +1,97 @@
+{
+    "problem_id": "2640",
+    "solved": true,
+    "problem_text": "Find x. Assume that any segment that appears to be tangent is tangent.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(E, C, A)), 3x)",
+        "Equals(MeasureOf(Arc(D, B)), 30)",
+        "Equals(MeasureOf(Arc(E, A)), 4x+50)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "ED",
+        "EC",
+        "DC"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "A": [
+            36.45378151260505,
+            147.89915966386556
+        ],
+        "B": [
+            126.57983193277312,
+            123.109243697479
+        ],
+        "C": [
+            181.62184873949582,
+            109.03361344537815
+        ],
+        "D": [
+            126.57983193277312,
+            94.95798319327731
+        ],
+        "E": [
+            35.61344537815126,
+            70.58823529411765
+        ],
+        "F": [
+            73.97899159663865,
+            108.55042016806723
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "30",
+        "90",
+        "120"
+    ],
+    "choices_precise_value": [
+        10.0,
+        30.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 63.470694,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: D on CE, pi * ((50 + 4 * x) / 180) = Arc(EFA), \u2220AFD, pi * ((3 * x) / 180) = \u2220ECA, AC, \u2220DFE, E on \u2299(F, radius_0_0), pi * (30 / 180) = Arc(BFD), DF, \u2220CAF, CD, AF, EF, \u2220FDC, D on \u2299(F, radius_0_0), AB, B on \u2299(F, radius_0_0), BF, \u2220FBA, BC, CE, B on AC, \u2220DCA, \u2220CBF, 3.14 = pi, DE, Arc(AFE), Arc(EFA), A on \u2299(F, radius_0_0), \u2220EFA, \u2220AFE, \u2220EDF, Arc(BFD), \u2220FEC, \u2220ECA\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : E on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = EF\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : D on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = DF\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : B on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = BF\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AF, BF, AB\nConclusions: \u25b3ABF\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : BC, CD, BF, DF\nConclusions: Quadrilateral(B, C, D, F)\n\nStep 7:\nTheorem: Definition of Quadrilateral\nPremises : AF, EF, AC, CE\nConclusions: Quadrilateral(A, C, E, F)\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220CAF, B on AC\nConclusions: \u2220BAF = \u2220CAF\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220DCA, B on AC\nConclusions: \u2220DCA = \u2220DCB\n\nStep 10:\nTheorem: Straight Angle\nPremises : \u2220FBA, \u2220CBF\nConclusions: pi = \u2220CBF + \u2220FBA\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : DE, EF, DF\nConclusions: \u25b3DEF\n\nStep 12:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AFE)\nConclusions: \u2220AFE = Arc(AFE)\n\nStep 13:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(EFA)\nConclusions: \u2220EFA = Arc(EFA)\n\nStep 14:\nTheorem: Point On Circle Def\nPremises : A on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = AF\n\nStep 15:\nTheorem: Circumference splited\nPremises : \u2220AFD, \u2220EFA, \u2220DFE\nConclusions: 2 * pi = \u2220AFD + \u2220DFE + \u2220EFA\n\nStep 16:\nTheorem: Reverse Angle Definition\nPremises : \u2220AFE\nConclusions: \u2220AFE = 2 * pi - \u2220EFA\n\nStep 17:\nTheorem: Straight Angle\nPremises : \u2220FDC, \u2220EDF\nConclusions: pi = \u2220EDF + \u2220FDC\n\nStep 18:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BFD)\nConclusions: \u2220BFD = Arc(BFD)\n\nStep 19:\nTheorem: Same Angle\nPremises : D on CE, \u2220FEC\nConclusions: \u2220FEC = \u2220FED\n\nStep 20:\nTheorem: Same Angle\nPremises : D on CE, \u2220ECA\nConclusions: \u2220DCA = \u2220ECA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = EF, radius_0_0 = DF\nConclusions: DF = EF\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, D, C, B)\nPremises : Quadrilateral(B, C, D, F)\nConclusions: 2 * pi = \u2220BFD + \u2220CBF + \u2220DCB + \u2220FDC\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(F, E, C, A)\nPremises : Quadrilateral(A, C, E, F)\nConclusions: 2 * pi = \u2220AFE + \u2220CAF + \u2220ECA + \u2220FEC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CBF + \u2220FBA\nConclusions: 3.14 = \u2220CBF + \u2220FBA\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((50 + 4 * x) / 180) = Arc(EFA), \u2220EFA = Arc(EFA)\nConclusions: pi * ((50 + 4 * x) / 180) = \u2220EFA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BF, radius_0_0 = AF\nConclusions: AF = BF\n\nStep 27:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AFD + \u2220DFE + \u2220EFA\nConclusions: 2 * 3.14 = \u2220AFD + \u2220DFE + \u2220EFA\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AFE = 2 * pi - \u2220EFA, \u2220AFE = Arc(AFE)\nConclusions: Arc(AFE) = 2 * pi - \u2220EFA\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220EDF + \u2220FDC\nConclusions: 3.14 = \u2220EDF + \u2220FDC\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BFD = Arc(BFD), pi * (30 / 180) = Arc(BFD)\nConclusions: pi * (30 / 180) = \u2220BFD\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220ECA, \u2220DCA = \u2220ECA\nConclusions: pi * ((3 * x) / 180) = \u2220DCA\n\nStep 32:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3DEF, DF = EF\nConclusions: \u2220EDF = \u2220FED\n\nStep 33:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220AFE + \u2220CAF + \u2220ECA + \u2220FEC, \u2220FEC = \u2220FED, \u2220AFE = Arc(AFE)\nConclusions: 2 * 3.14 = \u2220CAF + \u2220ECA + \u2220FED + Arc(AFE)\n\nStep 34:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((50 + 4 * x) / 180) = \u2220EFA\nConclusions: 3.14 * ((50 + 4 * x) / 180) = \u2220EFA\n\nStep 35:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABF, AF = BF\nConclusions: \u2220BAF = \u2220FBA\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220AFD + \u2220DFE + \u2220EFA, 2 * pi = \u2220AFD + \u2220DFE + \u2220EFA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 37:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (30 / 180) = \u2220BFD, 2 * pi = \u2220BFD + \u2220CBF + \u2220DCB + \u2220FDC\nConclusions: 2 * 3.14 = pi * (30 / 180) + \u2220CBF + \u2220DCB + \u2220FDC\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, pi * ((3 * x) / 180) = \u2220DCA\nConclusions: pi * ((3 * x) / 180) = \u2220DCB\n\nStep 39:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((3 * x) / 180) = \u2220DCA\nConclusions: 3.14 * ((3 * x) / 180) = \u2220DCA\n\nStep 40:\nTheorem: Substitution\nPremises : 3.14 = pi, Arc(AFE) = 2 * pi - \u2220EFA, 3.14 * ((50 + 4 * x) / 180) = \u2220EFA\nConclusions: 2 * 3.14 - 3.14 * ((50 + 4 * x) / 180) = Arc(AFE)\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAF = \u2220CAF, \u2220BAF = \u2220FBA\nConclusions: \u2220CAF = \u2220FBA\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = \u2220CAF + \u2220ECA + \u2220FED + Arc(AFE), 2 * 3.14 = 2 * pi\nConclusions: 2 * pi = \u2220CAF + \u2220ECA + \u2220FED + Arc(AFE)\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220DCA, 3.14 * ((3 * x) / 180) = \u2220DCA\nConclusions: 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220ECA, 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\nConclusions: 3.14 * ((3 * x) / 180) = \u2220ECA\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * x) / 180) = \u2220DCB, 3.14 * ((3 * x) / 180) = pi * ((3 * x) / 180)\nConclusions: 3.14 * ((3 * x) / 180) = \u2220DCB\n\nStep 46:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220CAF + \u2220ECA + \u2220FED + Arc(AFE), 3.14 * ((3 * x) / 180) = \u2220ECA\nConclusions: 2 * 3.14 = 3.14 * ((3 * x) / 180) + \u2220CAF + \u2220FED + Arc(AFE)\n\nStep 47:\nTheorem: Substitution\nPremises : 3.14 = pi, 3.14 * ((3 * x) / 180) = \u2220DCB, 2 * 3.14 = pi * (30 / 180) + \u2220CBF + \u2220DCB + \u2220FDC\nConclusions: 2 * 3.14 = 3.14 * (30 / 180) + 3.14 * ((3 * x) / 180) + \u2220CBF + \u2220FDC\n\nStep 48:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220EDF + \u2220FDC, 2 * 3.14 = 3.14 * (30 / 180) + 3.14 * ((3 * x) / 180) + \u2220CBF + \u2220FDC, 2 * 3.14 = 3.14 * ((3 * x) / 180) + \u2220CAF + \u2220FED + Arc(AFE), \u2220CAF = \u2220FBA, \u2220EDF = \u2220FED, 2 * 3.14 - 3.14 * ((50 + 4 * x) / 180) = Arc(AFE), 3.14 = \u2220CBF + \u2220FBA\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnCircle(A, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(B, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(E, Circle(F, radius_0_0))",
+        "Equals(MeasureOf(Angle(E, C, A)), Mul(pi, Div(Mul(3.0, x), 180.0)))",
+        "Equals(MeasureOf(Arc(B, F, D)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Arc(E, F, A)), Mul(pi, Div(Add(Mul(4.0, x), 50.0), 180.0)))"
+    ],
+    "correct": true
+}

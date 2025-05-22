@@ -1,0 +1,105 @@
+{
+    "problem_id": "198",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 5)",
+        "Equals(LengthOf(Line(C, B)), 12)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(E, D)), 4)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Parallel(Line(E, A), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "EA",
+        "BD",
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "CE",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            47.80448717948718,
+            325.7809523809524
+        ],
+        "B": [
+            148.31971153846155,
+            325.47999999999996
+        ],
+        "C": [
+            425.4284855769231,
+            325.31071428571425
+        ],
+        "D": [
+            207.57211538461542,
+            113.10793650793651
+        ],
+        "E": [
+            128.7890625,
+            35.832142857142856
+        ]
+    },
+    "problem_choices": [
+        9.0,
+        9.6,
+        12.0,
+        14.4
+    ],
+    "choices_precise_value": [
+        9.0,
+        9.6,
+        12.0,
+        14.4
+    ],
+    "problem_answer": 9.6,
+    "total_time": 35.553792,
+    "solution_predicate": "Equals(9.6, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 4 = DE, \u2220EAC, \u2220BDC, AE || BD, \u2220AEC, \u2220DBC, x = CD, \u2220AEC, D on CE, \u2220DCA, B on AC, \u2220CEA, 12 = BC, \u2220ECA, 5 = AB, 3.14 = pi\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220EAC\nConclusions: \u2220EAC = 2 * pi - \u2220CAE\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220BDC\nConclusions: \u2220BDC = 2 * pi - \u2220CDB\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : AE || BD\nConclusions: \u2220CDB = \u2220CEA, \u2220CAE = \u2220CBD\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220AEC\nConclusions: \u2220AEC = 2 * pi - \u2220CEA\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBC\nConclusions: \u2220DBC = 2 * pi - \u2220CBD\n\nStep 7:\nTheorem: Line Segment Split\nPremises : D on CE\nConclusions: CE = CD + DE\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220AEC, D on CE\nConclusions: \u2220AEC = \u2220AED\n\nStep 9:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 10:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220CEA, D on CE\nConclusions: \u2220CEA = \u2220DEA\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220ECA, D on CE\nConclusions: \u2220DCA = \u2220ECA\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220CAE = \u2220CBD, \u2220EAC = 2 * pi - \u2220CAE\nConclusions: \u2220EAC = 2 * 3.14 - \u2220CBD\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220DBC = 2 * pi - \u2220CBD, 3.14 = pi\nConclusions: \u2220DBC = 2 * 3.14 - \u2220CBD\n\nStep 15:\nTheorem: Substitution\nPremises : CE = CD + DE, 4 = DE, x = CD\nConclusions: 4 + x = CE\n\nStep 16:\nTheorem: Substitution\nPremises : 12 = BC, 5 = AB, AC = AB + BC\nConclusions: 12 + 5 = AC\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220CEA = \u2220DEA, \u2220AEC = 2 * pi - \u2220CEA, \u2220AEC = \u2220AED, 3.14 = pi\nConclusions: \u2220AED = 2 * 3.14 - \u2220DEA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEA = \u2220DEA, \u2220CDB = \u2220CEA\nConclusions: \u2220CDB = \u2220DEA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, \u2220DCA = \u2220ECA\nConclusions: \u2220DCB = \u2220ECA\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EAC = 2 * 3.14 - \u2220CBD, \u2220DBC = 2 * 3.14 - \u2220CBD\nConclusions: \u2220DBC = \u2220EAC\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : 12 + 5 = AC\nConclusions: 17 = AC\n\nStep 22:\nTheorem: Substitution\nPremises : \u2220BDC = 2 * pi - \u2220CDB, \u2220CDB = \u2220DEA, 3.14 = pi\nConclusions: \u2220BDC = 2 * 3.14 - \u2220DEA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = 2 * 3.14 - \u2220DEA, \u2220BDC = 2 * 3.14 - \u2220DEA\nConclusions: \u2220AED = \u2220BDC\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220BDC, \u2220AEC = \u2220AED\nConclusions: \u2220AEC = \u2220BDC\n\nStep 25:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DBC = \u2220EAC, \u2220DCB = \u2220ECA, \u2220AEC = \u2220BDC\nConclusions: \u25b3ACE ~ \u25b3BCD\n\nStep 26:\nTheorem: Similar Definition\nPremises : \u25b3ACE ~ \u25b3BCD\nConclusions: \u2220DBC = \u2220EAC, \u2220CDB = \u2220CEA, sim_ratio_triangle_a_c_e_triangle_b_c_d = CE / CD, \u2220AEC = \u2220BDC, sim_ratio_triangle_a_c_e_triangle_b_c_d = AC / BC, \u2220CAE = \u2220CBD\n\nStep 27:\nTheorem: Substitution\nPremises : x = CD, 4 + x = CE, sim_ratio_triangle_a_c_e_triangle_b_c_d = CE / CD\nConclusions: sim_ratio_triangle_a_c_e_triangle_b_c_d = (4 + x) / x\n\nStep 28:\nTheorem: Substitution\nPremises : 12 = BC, sim_ratio_triangle_a_c_e_triangle_b_c_d = AC / BC, 17 = AC\nConclusions: 17 / 12 = sim_ratio_triangle_a_c_e_triangle_b_c_d\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 17 / 12 = sim_ratio_triangle_a_c_e_triangle_b_c_d, sim_ratio_triangle_a_c_e_triangle_b_c_d = CE / CD\nConclusions: 17 / 12 = CE / CD\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_c_e_triangle_b_c_d = (4 + x) / x, 17 / 12 = sim_ratio_triangle_a_c_e_triangle_b_c_d\nConclusions: 17 / 12 = (4 + x) / x\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 17 / 12 = CE / CD, 17 / 12 = (4 + x) / x, 4 + x = CE\nConclusions: 9.6 = CD\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : x = CD, 9.6 = CD\nConclusions: 9.6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(B, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(E, A)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "Parallel(Line(E, A), Line(D, B))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(A, B)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), 12.0)",
+        "Equals(LengthOf(Line(C, D)), x)",
+        "Equals(LengthOf(Line(E, D)), 4.0)"
+    ],
+    "correct": true
+}

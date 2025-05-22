@@ -1,0 +1,82 @@
+{
+    "problem_id": "2681",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(A, D))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), 4)",
+        "Equals(LengthOf(Line(B, D)), z)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(D, C)), 6)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "BA",
+        "BD",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            39.81283422459893,
+            227.54010695187165
+        ],
+        "B": [
+            39.278074866310156,
+            31.818181818181817
+        ],
+        "C": [
+            132.32620320855614,
+            159.89304812834223
+        ],
+        "D": [
+            310.40106951871655,
+            31.55080213903743
+        ]
+    },
+    "problem_choices": [
+        "2 \\sqrt { 3 }",
+        "4",
+        "2 \\sqrt { 6 }",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        4.0,
+        4.898979485566356,
+        6.0
+    ],
+    "problem_answer": 4.898979485566356,
+    "total_time": 41.13022,
+    "solution_predicate": "Equals(4.8989794856, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC \u22a5 BC, AC, \u2220DAB, 4 = AC, \u2220ABC, \u2220DCB, BC, AB \u22a5 BD, y = BC, AB, \u2220CBD, tan(\u2220CAB), tan(\u2220CBD), C on AD, \u2220DBA, \u2220BCA, BC \u22a5 CD, 3.14 = pi, 6 = CD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: (3 * pi) / 2 = \u2220DBA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Angle Tan Definition\nPremises : AC \u22a5 BC, tan(\u2220CAB)\nConclusions: BC / AC = tan(\u2220CAB)\n\nStep 6:\nTheorem: Same Angle\nPremises : C on AD, \u2220DAB\nConclusions: \u2220CAB = \u2220DAB\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220ABC, \u2220CBD, \u2220DBA\nConclusions: 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\n\nStep 8:\nTheorem: Straight Angle\nPremises : \u2220BCA, \u2220DCB\nConclusions: pi = \u2220BCA + \u2220DCB\n\nStep 9:\nTheorem: Angle Tan Definition\nPremises : BC \u22a5 CD, tan(\u2220CBD)\nConclusions: CD / BC = tan(\u2220CBD)\n\nStep 10:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CD\nConclusions: pi / 2 = \u2220DCB\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220CAB = \u2220DAB, y = BC, BC / AC = tan(\u2220CAB), 4 = AC\nConclusions: y / 4 = tan(\u2220DAB)\n\nStep 13:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA, (3 * pi) / 2 = \u2220DBA\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220ABC + \u2220CBD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220DCB, pi / 2 = \u2220BCA\nConclusions: \u2220BCA = \u2220DCB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : \u2220BCA = \u2220DCB, 3.14 = \u2220ABC + \u2220BCA + \u2220CAB, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi = \u2220BCA + \u2220DCB, 2 * 3.14 = (3 * 3.14) / 2 + \u2220ABC + \u2220CBD\nConclusions: \u2220CAB = \u2220CBD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220CBD, \u2220CAB = \u2220DAB\nConclusions: \u2220CBD = \u2220DAB\n\nStep 18:\nTheorem: Substitution\nPremises : y = BC, \u2220CBD = \u2220DAB, 6 = CD, CD / BC = tan(\u2220CBD)\nConclusions: 6 / y = tan(\u2220DAB)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : y / 4 = tan(\u2220DAB), 6 / y = tan(\u2220DAB)\nConclusions: 6 / y = y / 4\n\nStep 20:\nTheorem: Solve Univariate Equation\nPremises : 6 / y = y / 4\nConclusions: 4.9 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Perpendicular(Line(D, C), Line(B, C))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(A, C)), 4.0)",
+        "Equals(LengthOf(Line(B, D)), z)",
+        "Equals(LengthOf(Line(B, C)), y)",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(D, C)), 6.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,87 @@
+{
+    "problem_id": "2712",
+    "solved": true,
+    "problem_text": "If D B = 24, A E = 3, and E C = 18, find A D.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(D,B)),24)",
+        "Equals(LengthOf(Line(A,E)),3)",
+        "Equals(LengthOf(Line(E,C)),18)",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "D",
+        "C",
+        "E",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BC",
+        "AE",
+        "AC",
+        "EC",
+        "AD",
+        "AB",
+        "DB",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            138.7391304347826,
+            108.1159420289855
+        ],
+        "C": [
+            200.76811594202897,
+            217.97101449275362
+        ],
+        "E": [
+            173.52173913043478,
+            107.82608695652173
+        ],
+        "B": [
+            92.07246376811594,
+            219.1304347826087
+        ],
+        "A": [
+            160.47826086956522,
+            56.23188405797101
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "6",
+        "8"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        6.0,
+        8.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 33.17209,
+    "solution_predicate": "Equals(4.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BAC, 3 = AE, BC || DE, 18 = CE, \u2220DAC, D on AB, E on AC, 24 = BD\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BC || DE\nConclusions: \u2220ABC = \u2220ADE, \u2220ACB = \u2220AED\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BAC, D on AB\nConclusions: \u2220BAC = \u2220DAC\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 5:\nTheorem: Line Segment Split\nPremises : E on AC\nConclusions: AC = AE + CE\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220DAC, E on AC\nConclusions: \u2220DAC = \u2220DAE\n\nStep 7:\nTheorem: Substitution\nPremises : 24 = BD, AB = AD + BD\nConclusions: AB = 24 + AD\n\nStep 8:\nTheorem: Substitution\nPremises : 3 = AE, AC = AE + CE, 18 = CE\nConclusions: 18 + 3 = AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAE, \u2220BAC = \u2220DAC\nConclusions: \u2220BAC = \u2220DAE\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 18 + 3 = AC\nConclusions: 21 = AC\n\nStep 11:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220ADE, \u2220BAC = \u2220DAE, \u2220ACB = \u2220AED\nConclusions: \u25b3ABC ~ \u25b3ADE\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ADE\nConclusions: AB / AD = AC / AE, \u2220ACB = \u2220AED, \u2220BAC = \u2220DAE\n\nStep 13:\nTheorem: Substitution\nPremises : 3 = AE, AB / AD = AC / AE, 21 = AC\nConclusions: 21 / 3 = AB / AD\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 21 / 3 = AB / AD, AB = 24 + AD\nConclusions: 4 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Parallel(Line(D, E), Line(B, C))",
+        "Equals(LengthOf(Line(D, B)), 24.0)",
+        "Equals(LengthOf(Line(A, E)), 3.0)",
+        "Equals(LengthOf(Line(E, C)), 18.0)"
+    ],
+    "correct": true
+}

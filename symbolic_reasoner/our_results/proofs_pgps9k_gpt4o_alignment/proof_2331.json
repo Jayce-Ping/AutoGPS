@@ -1,0 +1,117 @@
+{
+    "problem_id": "2331",
+    "solved": true,
+    "problem_text": "Use parallelogram NQRM to find QR.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), w)",
+        "Equals(LengthOf(Line(M, N)), 2y+5)",
+        "Equals(LengthOf(Line(M, R)), 4x-2)",
+        "Equals(LengthOf(Line(N, Q)), 3x+2)",
+        "Equals(LengthOf(Line(Q, L)), 12)",
+        "Equals(LengthOf(Line(R, Q)), 3y)",
+        "Line(L, Q)",
+        "Line(L, R)",
+        "Line(M, L)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, L)",
+        "Line(N, M)",
+        "Line(N, Q)",
+        "Line(N, R)",
+        "Line(Q, R)",
+        "PointLiesOnLine(L, Line(M, Q))",
+        "PointLiesOnLine(L, Line(N, R))",
+        "Parallelogram(N,Q,R,M)",
+        "Find(LengthOf(Line(Q,R)))"
+    ],
+    "point_instances": [
+        "M",
+        "R",
+        "Q",
+        "N",
+        "L"
+    ],
+    "line_instances": [
+        "MR",
+        "RQ",
+        "MN",
+        "NQ",
+        "ML",
+        "MQ",
+        "LQ",
+        "RL",
+        "RN",
+        "LN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "M": [
+            45.30095191603613,
+            212.0161344537815
+        ],
+        "R": [
+            257.04369050524775,
+            212.0161344537815
+        ],
+        "Q": [
+            326.07556234985805,
+            47.63067669172932
+        ],
+        "N": [
+            114.84647302904565,
+            47.754285714285714
+        ],
+        "L": [
+            186.09372711740298,
+            129.9542857142857
+        ]
+    },
+    "problem_choices": [
+        13.0,
+        14.0,
+        15.0,
+        16.0
+    ],
+    "choices_precise_value": [
+        13.0,
+        14.0,
+        15.0,
+        16.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 70.249931,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(Q, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(M, N, Q, R), 3 * y = QR, 5 + 2 * y = MN\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(M, N, Q, R)\nConclusions: MN = QR\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 5 + 2 * y = MN, MN = QR\nConclusions: 5 + 2 * y = QR\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 3 * y = QR, 5 + 2 * y = QR\nConclusions: 3 * y = 5 + 2 * y\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3 * y = 5 + 2 * y, 5 + 2 * y = QR\nConclusions: 15 = QR\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, R)",
+        "Line(R, Q)",
+        "Line(M, N)",
+        "Line(N, Q)",
+        "Line(M, L)",
+        "Line(M, Q)",
+        "Line(L, Q)",
+        "Line(R, L)",
+        "Line(R, N)",
+        "Line(L, N)",
+        "Line(L, Q)",
+        "Line(L, R)",
+        "Line(M, L)",
+        "Line(M, Q)",
+        "Line(M, R)",
+        "Line(N, L)",
+        "Line(N, M)",
+        "Line(N, Q)",
+        "Line(N, R)",
+        "Line(Q, R)",
+        "PointLiesOnLine(L, Line(M, Q))",
+        "PointLiesOnLine(L, Line(N, R))",
+        "Parallelogram(N, Q, R, M)",
+        "Equals(LengthOf(Line(M, L)), w)",
+        "Equals(LengthOf(Line(M, N)), Add(Mul(2.0, y), 5.0))",
+        "Equals(LengthOf(Line(M, R)), Sub(Mul(4.0, x), 2.0))",
+        "Equals(LengthOf(Line(N, Q)), Add(Mul(3.0, x), 2.0))",
+        "Equals(LengthOf(Line(Q, L)), 12.0)",
+        "Equals(LengthOf(Line(R, Q)), Mul(3.0, y))"
+    ],
+    "correct": true
+}

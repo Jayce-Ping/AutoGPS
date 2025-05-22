@@ -1,0 +1,143 @@
+{
+    "problem_id": "1366",
+    "solved": true,
+    "problem_text": "AM bisects \\angle LAR, and AS bisects \\angle MAR. If m \\angle RAL = x+32 and m \\angle MAR = x-31, find m \\angle LAM.",
+    "logic_forms": [
+        "BisectsAngle(Line(A,M), Angle(L,A,R))",
+        "BisectsAngle(Line(A,S), Angle(M,A,R))",
+        "Equals(MeasureOf(Angle(M,A,R)), x - 31)",
+        "Equals(MeasureOf(Angle(R,A,L)), x + 32)",
+        "Find(MeasureOf(Angle(L,A,M)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(A, R)",
+        "Line(A, S)",
+        "Line(L, E)",
+        "Line(M, D)",
+        "Line(R, B)",
+        "Line(S, C)",
+        "PointLiesOnLine(L, Line(A, E))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(S, Line(A, C))"
+    ],
+    "point_instances": [
+        "B",
+        "R",
+        "C",
+        "S",
+        "A",
+        "D",
+        "M",
+        "L",
+        "E"
+    ],
+    "line_instances": [
+        "AS",
+        "AC",
+        "SC",
+        "AM",
+        "AD",
+        "MD",
+        "AR",
+        "AB",
+        "RB",
+        "AL",
+        "AE",
+        "LE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            187.275,
+            48.54857142857143
+        ],
+        "R": [
+            166.10000000000002,
+            64.73142857142858
+        ],
+        "C": [
+            261.0666666666667,
+            79.23809523809526
+        ],
+        "S": [
+            220.00000000000003,
+            92.78693877551021
+        ],
+        "A": [
+            68.47500000000001,
+            145.09714285714287
+        ],
+        "D": [
+            297.0,
+            145.44979591836736
+        ],
+        "M": [
+            265.1,
+            145.92000000000002
+        ],
+        "L": [
+            156.20000000000002,
+            218.33142857142857
+        ],
+        "E": [
+            185.42857142857144,
+            243.5657142857143
+        ]
+    },
+    "problem_choices": [
+        54.0,
+        63.0,
+        117.0,
+        126.0
+    ],
+    "choices_precise_value": [
+        54.0,
+        63.0,
+        117.0,
+        126.0
+    ],
+    "problem_answer": 63.0,
+    "total_time": 142.824407,
+    "solution_predicate": "Equals(1.0995574288, MeasureOf(Angle(L, A, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220MAB, BisectsAngle(AM, \u2220LAR), \u2220BAM, \u2220BAL, pi * ((32 + x) / 180) = \u2220LAR, 3.14 = pi, R on AB, \u2220LAM, \u2220LAM, \u2220BAM, pi * ((x - 31) / 180) = \u2220MAR, \u2220LAR\n\nStep 2:\nTheorem: Bisects Angle Definition\nPremises : BisectsAngle(AM, \u2220LAR)\nConclusions: \u2220LAM = \u2220MAR, \u2220MAL = \u2220RAM\n\nStep 3:\nTheorem: Same Angle\nPremises : R on AB, \u2220BAL\nConclusions: \u2220BAL = \u2220RAL\n\nStep 4:\nTheorem: Same Angle\nPremises : R on AB, \u2220BAM\nConclusions: \u2220BAM = \u2220RAM\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220LAM\nConclusions: \u2220LAM = 2 * pi - \u2220MAL\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220MAB, \u2220LAM, \u2220BAL\nConclusions: 2 * pi = \u2220BAL + \u2220LAM + \u2220MAB\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAM\nConclusions: \u2220BAM = 2 * pi - \u2220MAB\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220LAR\nConclusions: \u2220LAR = 2 * pi - \u2220RAL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LAM = \u2220MAR, pi * ((x - 31) / 180) = \u2220MAR\nConclusions: pi * ((x - 31) / 180) = \u2220LAM\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220BAL = \u2220RAL, 2 * pi = \u2220BAL + \u2220LAM + \u2220MAB, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220LAM + \u2220MAB + \u2220RAL\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAM = \u2220RAM, \u2220BAM = 2 * pi - \u2220MAB\nConclusions: \u2220RAM = 2 * pi - \u2220MAB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LAR = 2 * pi - \u2220RAL, pi * ((32 + x) / 180) = \u2220LAR\nConclusions: pi * ((32 + x) / 180) = 2 * pi - \u2220RAL\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LAM = 2 * pi - \u2220MAL, pi * ((x - 31) / 180) = \u2220LAM\nConclusions: pi * ((x - 31) / 180) = 2 * pi - \u2220MAL\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220RAM = 2 * pi - \u2220MAB, 3.14 = pi\nConclusions: \u2220RAM = 2 * 3.14 - \u2220MAB\n\nStep 15:\nTheorem: Substitution\nPremises : pi * ((32 + x) / 180) = 2 * pi - \u2220RAL, 3.14 = pi\nConclusions: 3.14 * ((32 + x) / 180) = 2 * 3.14 - \u2220RAL\n\nStep 16:\nTheorem: Substitution\nPremises : \u2220MAL = \u2220RAM, pi * ((x - 31) / 180) = 2 * pi - \u2220MAL, 3.14 = pi\nConclusions: 3.14 * ((x - 31) / 180) = 2 * 3.14 - \u2220RAM\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220LAM + \u2220MAB + \u2220RAL, \u2220RAM = 2 * 3.14 - \u2220MAB, 3.14 * ((32 + x) / 180) = 2 * 3.14 - \u2220RAL, 3.14 * ((x - 31) / 180) = 2 * 3.14 - \u2220RAM\nConclusions: 1.1 = \u2220LAM\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, S)",
+        "Line(A, C)",
+        "Line(S, C)",
+        "Line(A, M)",
+        "Line(A, D)",
+        "Line(M, D)",
+        "Line(A, R)",
+        "Line(A, B)",
+        "Line(R, B)",
+        "Line(A, L)",
+        "Line(A, E)",
+        "Line(L, E)",
+        "BisectsAngle(Line(A, M), Angle(L, A, R))",
+        "BisectsAngle(Line(A, S), Angle(M, A, R))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(A, R)",
+        "Line(A, S)",
+        "Line(L, E)",
+        "Line(M, D)",
+        "Line(R, B)",
+        "Line(S, C)",
+        "PointLiesOnLine(L, Line(A, E))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(R, Line(A, B))",
+        "PointLiesOnLine(S, Line(A, C))",
+        "Equals(MeasureOf(Angle(M, A, R)), Mul(pi, Div(Sub(x, 31.0), 180.0)))",
+        "Equals(MeasureOf(Angle(L, A, R)), Mul(pi, Div(Add(x, 32.0), 180.0)))"
+    ],
+    "correct": true
+}

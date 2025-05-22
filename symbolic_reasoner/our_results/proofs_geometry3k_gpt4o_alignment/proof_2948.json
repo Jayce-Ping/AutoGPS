@@ -1,0 +1,76 @@
+{
+    "problem_id": "2948",
+    "solved": true,
+    "problem_text": "In the figure, A D is perpendicular to B C and A B is perpendicular to A C. What is B C?",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(B, C))",
+        "Equals(LengthOf(Line(B, D)), 5)",
+        "Equals(LengthOf(Line(B, A)), 10)",
+        "Perpendicular(Line(A,D),Line(B,C))",
+        "Perpendicular(Line(A,B),Line(A,C))",
+        "Find(LengthOf(Line(B,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "B",
+        "C",
+        "A"
+    ],
+    "line_instances": [
+        "BD",
+        "BC",
+        "DC",
+        "AC",
+        "AD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            139.84674329501917,
+            194.4904214559387
+        ],
+        "B": [
+            68.19923371647509,
+            194.4904214559387
+        ],
+        "C": [
+            449.04214559386975,
+            194.8735632183908
+        ],
+        "A": [
+            139.84674329501917,
+            43.532567049808435
+        ]
+    },
+    "problem_choices": [
+        "5 \\sqrt 2",
+        "5 \\sqrt 3",
+        "20",
+        "25"
+    ],
+    "choices_precise_value": [
+        7.0710678118654755,
+        8.660254037844386,
+        20.0,
+        25.0
+    ],
+    "problem_answer": 20.0,
+    "total_time": 53.362161,
+    "solution_predicate": "Equals(20.0, LengthOf(Line(B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD \u22a5 BD, \u2220CBA, AB \u22a5 AC, D on BC, 5 = BD, 10 = AB\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: (3 * pi) / 2 = \u2220BDA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: (3 * pi) / 2 = \u2220CAB\n\nStep 4:\nTheorem: Same Angle\nPremises : D on BC, \u2220CBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CAB, (3 * pi) / 2 = \u2220BDA\nConclusions: \u2220BDA = \u2220CAB\n\nStep 6:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BDA = \u2220CAB, \u2220CBA = \u2220DBA\nConclusions: \u25b3ABC ~ \u25b3DBA\n\nStep 7:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DBA\nConclusions: \u2220CBA = \u2220DBA, sim_ratio_triangle_a_b_c_triangle_d_b_a = AB / BD, sim_ratio_triangle_a_b_c_triangle_d_b_a = BC / AB\n\nStep 8:\nTheorem: Substitution\nPremises : 5 = BD, 10 = AB, sim_ratio_triangle_a_b_c_triangle_d_b_a = AB / BD\nConclusions: 10 / 5 = sim_ratio_triangle_a_b_c_triangle_d_b_a\n\nStep 9:\nTheorem: Substitution\nPremises : 10 = AB, sim_ratio_triangle_a_b_c_triangle_d_b_a = BC / AB\nConclusions: sim_ratio_triangle_a_b_c_triangle_d_b_a = BC / 10\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 10 / 5 = sim_ratio_triangle_a_b_c_triangle_d_b_a, sim_ratio_triangle_a_b_c_triangle_d_b_a = BC / 10\nConclusions: 10 / 5 = BC / 10\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 10 / 5 = BC / 10\nConclusions: 20 = BC\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "PointLiesOnLine(D, Line(B, C))",
+        "Perpendicular(Line(A, D), Line(B, C))",
+        "Perpendicular(Line(A, B), Line(A, C))",
+        "Equals(LengthOf(Line(B, D)), 5.0)",
+        "Equals(LengthOf(Line(B, A)), 10.0)"
+    ],
+    "correct": true
+}

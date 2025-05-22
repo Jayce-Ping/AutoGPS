@@ -1,0 +1,89 @@
+{
+    "problem_id": "4088",
+    "solved": true,
+    "problem_text": "Solve for m \\angle RST.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, T, S)), 2x)",
+        "Equals(MeasureOf(Angle(S, R, A)), x)",
+        "Line(A, T)",
+        "Line(R, A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(A))",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnCircle(T, Circle(A))",
+        "PointLiesOnLine(A, Line(R, T))",
+        "Find(MeasureOf(Angle(R,S,T)))"
+    ],
+    "point_instances": [
+        "R",
+        "A",
+        "T",
+        "S"
+    ],
+    "line_instances": [
+        "RA",
+        "RT",
+        "AT",
+        "TS",
+        "RS"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "R": [
+            96.525,
+            227.10857142857142
+        ],
+        "A": [
+            252.95662100456622,
+            225.84703196347033
+        ],
+        "T": [
+            412.08750000000003,
+            227.10857142857142
+        ],
+        "S": [
+            319.27500000000003,
+            83.93142857142857
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        60.0,
+        90.0,
+        120.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 24.816521,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Angle(R, S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on RT, T on \u2299(A, radius_A), S on \u2299(A, radius_A), R on \u2299(A, radius_A)\n\nStep 2:\nTheorem: Diameter Definition\nPremises : T on \u2299(A, radius_A), A on RT, R on \u2299(A, radius_A)\nConclusions: IsDiameterOf(RT, \u2299(A, radius_A))\n\nStep 3:\nTheorem: Thales Theorem\nPremises : S on \u2299(A, radius_A), IsDiameterOf(RT, \u2299(A, radius_A))\nConclusions: RS \u22a5 ST\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : RS \u22a5 ST\nConclusions: pi / 2 = \u2220RST\n\nStep 5:\nTheorem: Evaluate\nPremises : pi / 2 = \u2220RST\nConclusions: 1.57 = \u2220RST\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, A)",
+        "Line(R, T)",
+        "Line(A, T)",
+        "Line(T, S)",
+        "Line(R, S)",
+        "Circle(A, radius_A)",
+        "Line(A, T)",
+        "Line(R, A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "PointLiesOnCircle(R, Circle(A, radius_A))",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnCircle(T, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(R, T))",
+        "Equals(MeasureOf(Angle(S, T, A)), Mul(pi, Div(Mul(2.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(A, R, S)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,145 @@
+{
+    "problem_id": "247",
+    "solved": true,
+    "problem_text": "What is the measure of \\angle 3?",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(C, D, G)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(D, E, A)), 51)",
+        "Equals(MeasureOf(Angle(D, E, H)), MeasureOf(Angle(6)))",
+        "Equals(MeasureOf(Angle(E, D, B)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(E, D, G)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(F, E, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(F, E, H)), MeasureOf(Angle(7)))",
+        "Line(A, E)",
+        "Line(A, H)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Parallel(Line(B, G), Line(A, H))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(A, H))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Find(MeasureOf(Angle(3)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "CD",
+        "CE",
+        "CF",
+        "DE",
+        "DF",
+        "EF",
+        "AE",
+        "AH",
+        "EH",
+        "BD",
+        "BG",
+        "DG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            233.9673913043478,
+            39.800000000000004
+        ],
+        "B": [
+            77.19367588932806,
+            41.350649350649356
+        ],
+        "C": [
+            14.152173913043478,
+            125.08571428571429
+        ],
+        "D": [
+            112.98913043478261,
+            169.43428571428572
+        ],
+        "E": [
+            288.75,
+            249.03428571428574
+        ],
+        "F": [
+            396.0326086956522,
+            296.79428571428576
+        ],
+        "G": [
+            169.3695652173913,
+            379.8057142857143
+        ],
+        "H": [
+            322.9891304347826,
+            379.3508571428572
+        ]
+    },
+    "problem_choices": [
+        51.0,
+        90.0,
+        129.0,
+        258.0
+    ],
+    "choices_precise_value": [
+        51.0,
+        90.0,
+        129.0,
+        258.0
+    ],
+    "problem_answer": 129.0,
+    "total_time": 33.096261,
+    "solution_predicate": "Equals(2.2514747351, MeasureOf(Angle(C, D, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CDG, \u2220BDC, E on DF, E on CF, pi * (51 / 180) = \u2220AED, D on CE, E on AH, D on BG, \u2220GDE, \u2220GDF, \u2220FDB, \u2220EDB, 3.14 = pi, AH || BG\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : E on CF, E on AH\nConclusions: \u2220CEH = \u2220FEA\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : D on CE, D on BG\nConclusions: \u2220BDC = \u2220GDE\n\nStep 4:\nTheorem: Same Angle\nPremises : E on DF, \u2220GDF\nConclusions: \u2220GDE = \u2220GDF\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220GDF, \u2220CDG\nConclusions: pi = \u2220CDG + \u2220GDF\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220FDB, E on DF\nConclusions: \u2220EDB = \u2220FDB\n\nStep 7:\nTheorem: Circumference Split\nPremises : \u2220EDB, \u2220GDE, \u2220BDC, \u2220CDG\nConclusions: 2 * pi = \u2220BDC + \u2220CDG + \u2220EDB + \u2220GDE\n\nStep 8:\nTheorem: Corresponding Angle Theorem\nPremises : AH || BG\nConclusions: \u2220CDG = \u2220CEH, \u2220FDB = \u2220FEA\n\nStep 9:\nTheorem: Alternate Interior Angle Theorem\nPremises : AH || BG\nConclusions: \u2220AED = \u2220GDE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDG = \u2220CEH, \u2220CEH = \u2220FEA\nConclusions: \u2220CDG = \u2220FEA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDB = \u2220FDB, \u2220FDB = \u2220FEA\nConclusions: \u2220EDB = \u2220FEA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220GDE, pi * (51 / 180) = \u2220AED\nConclusions: pi * (51 / 180) = \u2220GDE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDC = \u2220GDE, pi * (51 / 180) = \u2220GDE\nConclusions: pi * (51 / 180) = \u2220BDC\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (51 / 180) = \u2220GDE, \u2220GDE = \u2220GDF\nConclusions: pi * (51 / 180) = \u2220GDF\n\nStep 15:\nTheorem: Substitution\nPremises : pi * (51 / 180) = \u2220BDC, pi * (51 / 180) = \u2220GDE, \u2220EDB = \u2220FEA, \u2220CDG = \u2220FEA, 3.14 = pi, 2 * pi = \u2220BDC + \u2220CDG + \u2220EDB + \u2220GDE\nConclusions: 2 * 3.14 = 3.14 * (51 / 180) + pi * (51 / 180) + \u2220FEA + \u2220FEA\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220CDG + \u2220GDF, pi * (51 / 180) = \u2220GDF, 2 * 3.14 = 3.14 * (51 / 180) + pi * (51 / 180) + \u2220FEA + \u2220FEA, \u2220CDG = \u2220FEA\nConclusions: 2.25 = \u2220CDG\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(E, F)",
+        "Line(A, E)",
+        "Line(A, H)",
+        "Line(E, H)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(D, G)",
+        "Line(A, E)",
+        "Line(A, H)",
+        "Line(B, D)",
+        "Line(B, G)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(C, F)",
+        "Line(D, E)",
+        "Line(D, F)",
+        "Line(D, G)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Parallel(Line(B, G), Line(A, H))",
+        "PointLiesOnLine(D, Line(B, G))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(E, Line(A, H))",
+        "PointLiesOnLine(E, Line(C, F))",
+        "PointLiesOnLine(E, Line(D, F))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(51.0, 180.0)))"
+    ],
+    "correct": true
+}

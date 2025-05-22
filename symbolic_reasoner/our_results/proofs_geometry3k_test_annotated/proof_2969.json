@@ -1,0 +1,82 @@
+{
+    "problem_id": "2969",
+    "solved": true,
+    "problem_text": "The degree measure of minor arc \\widehat A C and major arc \\widehat A D C are x and y respectively. If m \\angle A B C = 70, find x.",
+    "logic_forms": [
+        "PointLiesOnCircle(C, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(E, radius_0_0))",
+        "Equals(MeasureOf(Arc(A, D, C)), y)",
+        "Equals(MeasureOf(Arc(C, A)), x)",
+        "Equals(MeasureOf(Angle(A, B, C)), 70)",
+        "Tangent(Line(A, B), Circle(E))",
+        "Tangent(Line(C, B), Circle(E))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "C",
+        "A",
+        "D",
+        "B",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "C": [
+            318.95910780669146,
+            192.92936802973978
+        ],
+        "A": [
+            320.817843866171,
+            43.858736059479554
+        ],
+        "D": [
+            401.11524163568777,
+            50.550185873605955
+        ],
+        "B": [
+            38.66171003717472,
+            118.57992565055761
+        ],
+        "E": [
+            354.77031802120143,
+            118.73144876325088
+        ]
+    },
+    "problem_choices": [
+        "90",
+        "100",
+        "110",
+        "120"
+    ],
+    "choices_precise_value": [
+        90.0,
+        100.0,
+        110.0,
+        120.0
+    ],
+    "problem_answer": 110.0,
+    "total_time": 12.476725,
+    "solution_predicate": "Equals(110.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Tangent(AB, \u2299(E, radius_0_0)), \u2220CED, 3.14 = pi, BC, \u2220AEC, AB, CE, A on \u2299(E, radius_0_0), pi * (70 / 180) = \u2220CBA, pi * (x / 180) = Arc(AEC), C on \u2299(E, radius_0_0), \u2220DEA, Tangent(BC, \u2299(E, radius_0_0)), AE, Arc(AEC)\n\nStep 2:\nTheorem: Tangent Definition\nPremises : Tangent(AB, \u2299(E, radius_0_0)), A on \u2299(E, radius_0_0)\nConclusions: AB \u22a5 AE\n\nStep 3:\nTheorem: Circumference splited\nPremises : \u2220DEA, \u2220AEC, \u2220CED\nConclusions: 2 * pi = \u2220AEC + \u2220CED + \u2220DEA\n\nStep 4:\nTheorem: Tangent Definition\nPremises : C on \u2299(E, radius_0_0), Tangent(BC, \u2299(E, radius_0_0))\nConclusions: BC \u22a5 CE\n\nStep 5:\nTheorem: Definition of Quadrilateral\nPremises : AB, BC, AE, CE\nConclusions: Quadrilateral(A, B, C, E)\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(AEC)\nConclusions: \u2220AEC = Arc(AEC)\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AE\nConclusions: pi / 2 = \u2220BAE\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220AEC + \u2220CED + \u2220DEA, 3.14 = pi\nConclusions: 2 * 3.14 = \u2220AEC + \u2220CED + \u2220DEA\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 CE\nConclusions: pi / 2 = \u2220ECB\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, C, B, A)\nPremises : Quadrilateral(A, B, C, E)\nConclusions: 2 * pi = \u2220AEC + \u2220BAE + \u2220CBA + \u2220ECB\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (x / 180) = Arc(AEC), \u2220AEC = Arc(AEC)\nConclusions: pi * (x / 180) = \u2220AEC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220AEC + \u2220CED + \u2220DEA, 2 * 3.14 = \u2220AEC + \u2220CED + \u2220DEA\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 13:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ECB, pi / 2 = \u2220BAE, pi * (70 / 180) = \u2220CBA, 2 * pi = \u2220AEC + \u2220BAE + \u2220CBA + \u2220ECB, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 / 2 + pi / 2 + 3.14 * (70 / 180) + \u2220AEC\n\nStep 14:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220AEC, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220AEC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = 3.14 / 2 + pi / 2 + 3.14 * (70 / 180) + \u2220AEC\nConclusions: 2 * pi = 3.14 / 2 + pi / 2 + 3.14 * (70 / 180) + \u2220AEC\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * pi = 3.14 / 2 + pi / 2 + 3.14 * (70 / 180) + \u2220AEC, 2 * 3.14 = 3.14 / 2 + pi / 2 + 3.14 * (70 / 180) + \u2220AEC, 3.14 * (x / 180) = \u2220AEC\nConclusions: 110 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, A)",
+        "Circle(E, radius_0_0)",
+        "PointLiesOnCircle(C, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(A, Circle(E, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(E, radius_0_0))",
+        "Tangent(Line(A, B), Circle(E, radius_0_0))",
+        "Tangent(Line(C, B), Circle(E, radius_0_0))",
+        "Equals(MeasureOf(Arc(C, E, A)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Arc(A, E, C)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(70.0, 180.0)))"
+    ],
+    "correct": true
+}

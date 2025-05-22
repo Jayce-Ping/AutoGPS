@@ -1,0 +1,78 @@
+{
+    "problem_id": "2608",
+    "solved": true,
+    "problem_text": "Triangle L M N is equilateral, and M P bisects L N. Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(L, N))",
+        "Equals(LengthOf(Line(M, N)), 4x-2)",
+        "Equals(LengthOf(Line(L, M)), 3x+1)",
+        "Equals(MeasureOf(Angle(L, P, M)), 5y)",
+        "Equilateral(Triangle(L, M, N))",
+        "IsMidpointOf(P, Line(L, N))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "P",
+        "L",
+        "N",
+        "M"
+    ],
+    "line_instances": [
+        "LP",
+        "LN",
+        "PN",
+        "ML",
+        "MN",
+        "MP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            144.0,
+            184.5
+        ],
+        "L": [
+            54.75,
+            184.25
+        ],
+        "N": [
+            232.25,
+            184.25
+        ],
+        "M": [
+            143.5,
+            43.75
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "16",
+        "17",
+        "18"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        17.0,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 38.530131,
+    "solution_predicate": "Equals(18.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Equilateral(\u25b3LMN), \u2220MPL, 3.14 = pi, \u25b3LMN, pi * ((5 * y) / 180) = \u2220MPL\n\nStep 2:\nTheorem: Equilateral Triangle Definition\nPremises : Equilateral(\u25b3LMN)\nConclusions: LM = MN\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220MPL\nConclusions: \u2220MPL = 2 * pi - \u2220LPM\n\nStep 4:\nTheorem: Issoceles Triangle Theorem\nPremises : LM = MN, \u25b3LMN\nConclusions: LP \u22a5 MP\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220MPL = 2 * pi - \u2220LPM\nConclusions: \u2220MPL = 2 * 3.14 - \u2220LPM\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : LP \u22a5 MP\nConclusions: (3 * pi) / 2 = \u2220LPM\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MPL = 2 * 3.14 - \u2220LPM, pi * ((5 * y) / 180) = \u2220MPL\nConclusions: pi * ((5 * y) / 180) = 2 * 3.14 - \u2220LPM\n\nStep 8:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220LPM, 3.14 = pi, pi * ((5 * y) / 180) = 2 * 3.14 - \u2220LPM\nConclusions: 2 * 3.14 - (3 * 3.14) / 2 = 3.14 * ((5 * y) / 180)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - (3 * 3.14) / 2 = 3.14 * ((5 * y) / 180)\nConclusions: 18 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(L, P)",
+        "Line(L, N)",
+        "Line(P, N)",
+        "Line(M, L)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "PointLiesOnLine(P, Line(L, N))",
+        "Equilateral(Triangle(L, M, N))",
+        "IsMidpointOf(P, Line(L, N))",
+        "Equals(LengthOf(Line(M, N)), Sub(Mul(4.0, x), 2.0))",
+        "Equals(LengthOf(Line(L, M)), Add(Mul(3.0, x), 1.0))",
+        "Equals(MeasureOf(Angle(M, P, L)), Mul(pi, Div(Mul(5.0, y), 180.0)))"
+    ],
+    "correct": true
+}

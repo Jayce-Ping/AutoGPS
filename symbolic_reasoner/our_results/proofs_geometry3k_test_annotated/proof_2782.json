@@ -1,0 +1,65 @@
+{
+    "problem_id": "2782",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), 14\\sqrt{3})",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(MeasureOf(Angle(C, A, B)), 30)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            10.573726541554961,
+            237.26541554959786
+        ],
+        "B": [
+            175.18498659517425,
+            105.63002680965147
+        ],
+        "C": [
+            102.26273458445041,
+            10.723860589812332
+        ]
+    },
+    "problem_choices": [
+        "14",
+        "14 \\sqrt { 3 }",
+        "28",
+        "42"
+    ],
+    "choices_precise_value": [
+        14.0,
+        24.24871130596428,
+        28.0,
+        42.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 13.743303,
+    "solution_predicate": "Equals(14.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, x = BC, pi * (30 / 180) = \u2220BAC, BC, \u2220CBA, 3.14 = pi, AB \u22a5 BC, \u2220ACB, \u2220ABC, 14 * SqrtOf(3) = AB, AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220ABC, pi / 2 = \u2220CBA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220CBA = 2 * pi - \u2220ABC, (3 * pi) / 2 = \u2220ABC, 3.14 = pi, pi / 2 = \u2220CBA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 7:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220ABC, 3.14 = pi, \u2220ABC = 2 * pi - \u2220CBA, pi / 2 = \u2220CBA\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 9:\nTheorem: Tan Function Definition\nPremises : \u2220ACB, \u25b3ABC, AB \u22a5 BC\nConclusions: AB / BC = tan(\u2220ACB)\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220CBA\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220CBA\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ABC, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220ABC\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CBA, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi, pi * (30 / 180) = \u2220BAC\nConclusions: 3.14 = pi / 2 + pi * (30 / 180) + \u2220ACB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220ABC, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = 2 * pi - \u2220CBA, 2 * 3.14 - (3 * pi) / 2 = \u2220CBA, 3.14 = pi / 2 + pi * (30 / 180) + \u2220ACB\nConclusions: 1.05 = \u2220ACB\n\nStep 15:\nTheorem: Evaluate\nPremises : 1.05 = \u2220ACB\nConclusions: 1.73 = tan(\u2220ACB)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : AB / BC = tan(\u2220ACB), 1.73 = tan(\u2220ACB)\nConclusions: 1.73 = AB / BC\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 14 * SqrtOf(3) = AB, 1.73 = AB / BC\nConclusions: 14 = BC\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 14 = BC, x = BC\nConclusions: 14 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), Mul(14.0, SqrtOf(3.0)))",
+        "Equals(LengthOf(Line(C, B)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

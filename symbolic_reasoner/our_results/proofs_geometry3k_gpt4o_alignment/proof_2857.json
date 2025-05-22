@@ -1,0 +1,89 @@
+{
+    "problem_id": "2857",
+    "solved": true,
+    "problem_text": "Find G H in the kite.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(G, A)), 12)",
+        "Equals(LengthOf(Line(H, F)), 15)",
+        "Find(LengthOf(Line(G, H)))",
+        "Kite(G, F, J, H)",
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(G, J))"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "F",
+        "J",
+        "A"
+    ],
+    "line_instances": [
+        "GF",
+        "GA",
+        "GJ",
+        "AJ",
+        "GH",
+        "FA",
+        "FH",
+        "AH",
+        "JH",
+        "FJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            208.0599078341014,
+            365.89861751152074
+        ],
+        "G": [
+            89.62672811059909,
+            145.6221198156682
+        ],
+        "F": [
+            208.0599078341014,
+            62.21198156682028
+        ],
+        "J": [
+            325.5714285714286,
+            146.08294930875576
+        ],
+        "A": [
+            208.0599078341014,
+            145.16129032258064
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "15",
+        "11 \\sqrt { 3 }",
+        "\\sqrt { 369 }"
+    ],
+    "choices_precise_value": [
+        12.0,
+        15.0,
+        19.05255888325765,
+        19.209372712298546
+    ],
+    "problem_answer": 19.209372712298546,
+    "total_time": 113.983877,
+    "solution_predicate": "Equals(24.0, LengthOf(Line(G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FJ, GJ, FG, 12 = AG, Kite(F, G, H, J), A on GJ\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : FJ, GJ, FG\nConclusions: \u25b3FGJ\n\nStep 3:\nTheorem: Kite side equality\nPremises : Kite(F, G, H, J)\nConclusions: GH = GJ, FG = FJ\n\nStep 4:\nTheorem: Line Segment Split\nPremises : A on GJ\nConclusions: GJ = AG + AJ\n\nStep 5:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3FGJ, FG = FJ\nConclusions: AG = AJ\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 12 = AG, AG = AJ\nConclusions: 12 = AJ\n\nStep 7:\nTheorem: Evaluate\nPremises : 12 = AG, 12 = AJ\nConclusions: 24 = AG + AJ\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : GJ = AG + AJ, 24 = AG + AJ\nConclusions: 24 = GJ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 24 = GJ, GH = GJ\nConclusions: 24 = GH\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(G, A)",
+        "Line(G, J)",
+        "Line(A, J)",
+        "Line(G, H)",
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(J, H)",
+        "Line(F, J)",
+        "Kite(G, F, J, H)",
+        "PointLiesOnLine(A, Line(F, H))",
+        "PointLiesOnLine(A, Line(G, J))",
+        "Equals(LengthOf(Line(G, A)), 12.0)",
+        "Equals(LengthOf(Line(H, F)), 15.0)"
+    ],
+    "correct": false
+}

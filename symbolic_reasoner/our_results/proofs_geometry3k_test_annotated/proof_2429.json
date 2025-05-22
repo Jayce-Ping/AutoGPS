@@ -1,0 +1,83 @@
+{
+    "problem_id": "2429",
+    "solved": true,
+    "problem_text": "Find the area of the parallelogram. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, E))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Equals(LengthOf(Line(E, D)), 7)",
+        "Equals(LengthOf(Line(B, C)), 14)",
+        "Equals(MeasureOf(Angle(D, E, C)), 60)",
+        "Find(AreaOf(Parallelogram(A, E, C, B)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AD",
+        "AE",
+        "DE",
+        "CE",
+        "CD",
+        "BA",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            97.98395721925132,
+            195.72192513368984
+        ],
+        "B": [
+            14.828877005347593,
+            40.90909090909091
+        ],
+        "C": [
+            193.4385026737968,
+            41.44385026737967
+        ],
+        "D": [
+            193.4385026737968,
+            195.72192513368984
+        ],
+        "E": [
+            277.1283422459893,
+            195.72192513368984
+        ]
+    },
+    "problem_choices": [
+        "56.6",
+        "138.6",
+        "169.7",
+        "196"
+    ],
+    "choices_precise_value": [
+        56.6,
+        138.6,
+        169.7,
+        196.0
+    ],
+    "problem_answer": 169.7,
+    "total_time": 34.108898,
+    "solution_predicate": "Equals(169.7409791416, AreaOf(Parallelogram(A, E, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Parallelogram(A, B, C, E), DE, CD, 7 = DE, CD \u22a5 DE, CE, 3.14 = pi, pi * (60 / 180) = \u2220CED, 14 = BC\n\nStep 2:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, E)\nConclusions: AE = BC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DE\nConclusions: pi / 2 = \u2220EDC\n\nStep 4:\nTheorem: Area formula of Parallelogram(A, B, C, E)\nPremises : CD \u22a5 DE, Parallelogram(A, B, C, E)\nConclusions: Area(Parallelogram(A, B, C, E)) = AE * CD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : CE, DE, CD\nConclusions: \u25b3CDE\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 14 = BC, AE = BC\nConclusions: 14 = AE\n\nStep 7:\nTheorem: Law of Sines\nPremises : \u25b3CDE\nConclusions: CE / sin(\u2220EDC) = DE / sin(\u2220DCE), CD / sin(\u2220CED) = CE / sin(\u2220EDC)\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, C)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CED + \u2220DCE + \u2220EDC\n\nStep 9:\nTheorem: Substitution\nPremises : 14 = AE, Area(Parallelogram(A, B, C, E)) = AE * CD\nConclusions: Area(Parallelogram(A, B, C, E)) = 14 * CD\n\nStep 10:\nTheorem: Substitution\nPremises : CE / sin(\u2220EDC) = DE / sin(\u2220DCE), 7 = DE, pi / 2 = \u2220EDC\nConclusions: 7 / sin(\u2220DCE) = CE / sin(pi / 2)\n\nStep 11:\nTheorem: Substitution\nPremises : CD / sin(\u2220CED) = CE / sin(\u2220EDC), pi * (60 / 180) = \u2220CED, pi / 2 = \u2220EDC\nConclusions: CE / sin(pi / 2) = CD / sin(pi * (60 / 180))\n\nStep 12:\nTheorem: Substitution\nPremises : pi / 2 = \u2220EDC, pi * (60 / 180) = \u2220CED, 3.14 = pi, pi = \u2220CED + \u2220DCE + \u2220EDC\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220DCE\n\nStep 13:\nTheorem: Substitution\nPremises : CE / sin(pi / 2) = CD / sin(pi * (60 / 180)), 3.14 = pi\nConclusions: CE / sin(3.14 / 2) = CD / sin(3.14 * (60 / 180))\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (60 / 180) + \u2220DCE\nConclusions: 0.52 = \u2220DCE\n\nStep 15:\nTheorem: Substitution\nPremises : 7 / sin(\u2220DCE) = CE / sin(pi / 2), 3.14 = pi, 0.52 = \u2220DCE\nConclusions: 7 / sin(0.52) = CE / sin(3.14 / 2)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : CE / sin(3.14 / 2) = CD / sin(3.14 * (60 / 180)), 7 / sin(0.52) = CE / sin(3.14 / 2)\nConclusions: 7 / sin(0.52) = CD / sin(3.14 * (60 / 180))\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 7 / sin(0.52) = CD / sin(3.14 * (60 / 180)), Area(Parallelogram(A, B, C, E)) = 14 * CD\nConclusions: 169.74 = Area(Parallelogram(A, B, C, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(C, E)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "Equals(LengthOf(Line(E, D)), 7.0)",
+        "Equals(LengthOf(Line(B, C)), 14.0)",
+        "Equals(MeasureOf(Angle(C, E, D)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,75 @@
+{
+    "problem_id": "2767",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, B, C)), 132)",
+        "Equals(MeasureOf(Angle(A, B, D)), 65)",
+        "Equals(MeasureOf(Angle(D, B, C)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "DB",
+        "BC"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            18.44680851063829,
+            127.6595744680851
+        ],
+        "B": [
+            130.41489361702128,
+            127.39361702127658
+        ],
+        "C": [
+            191.58510638297872,
+            220.2127659574468
+        ],
+        "D": [
+            108.87234042553192,
+            18.085106382978722
+        ]
+    },
+    "problem_choices": [
+        "65",
+        "132",
+        "163",
+        "180"
+    ],
+    "choices_precise_value": [
+        65.0,
+        132.0,
+        163.0,
+        180.0
+    ],
+    "problem_answer": 163.0,
+    "total_time": 4.43304,
+    "solution_predicate": "Equals(163.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC, \u2220CBD, pi * (65 / 180) = \u2220DBA, pi * (132 / 180) = \u2220ABC, \u2220CBD, \u2220DBC, 3.14 = pi, pi * (x / 180) = \u2220CBD, \u2220DBA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBD\nConclusions: \u2220CBD = 2 * pi - \u2220DBC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBC\nConclusions: \u2220DBC = 2 * pi - \u2220CBD\n\nStep 4:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220CBD, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220CBD\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220CBD, \u2220ABC, \u2220DBA\nConclusions: 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220DBC = 2 * pi - \u2220CBD, 3.14 = pi\nConclusions: \u2220DBC = 2 * 3.14 - \u2220CBD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = 2 * pi - \u2220DBC, 3.14 * (x / 180) = \u2220CBD\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220DBC\n\nStep 8:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ABC + \u2220CBD + \u2220DBA, pi * (132 / 180) = \u2220ABC, pi * (65 / 180) = \u2220DBA, 3.14 = pi\nConclusions: 2 * 3.14 = 3.14 * (65 / 180) + pi * (132 / 180) + \u2220CBD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = 2 * pi - \u2220DBC, \u2220DBC = 2 * 3.14 - \u2220CBD, 3.14 * (x / 180) = \u2220CBD, 2 * 3.14 = 3.14 * (65 / 180) + pi * (132 / 180) + \u2220CBD\nConclusions: 163 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, C)",
+        "Circle(B, radius_0_0)",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(D, Circle(B, radius_0_0))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(132.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, B, A)), Mul(pi, Div(65.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

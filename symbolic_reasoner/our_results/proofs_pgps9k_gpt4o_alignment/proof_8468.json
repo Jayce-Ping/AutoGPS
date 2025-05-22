@@ -1,0 +1,101 @@
+{
+    "problem_id": "8468",
+    "solved": true,
+    "problem_text": "Find the measure of XT.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(R, T)), 14)",
+        "Equals(LengthOf(Line(S, R)), LengthOf(Line(S, T)))",
+        "Line(A, S)",
+        "Line(A, X)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, X)",
+        "Line(X, T)",
+        "Perpendicular(Line(A, X), Line(R, T))",
+        "PointLiesOnLine(S, Line(A, X))",
+        "PointLiesOnLine(X, Line(R, T))",
+        "Find(LengthOf(Line(X,T)))"
+    ],
+    "point_instances": [
+        "A",
+        "S",
+        "T",
+        "X",
+        "R"
+    ],
+    "line_instances": [
+        "AS",
+        "AX",
+        "SX",
+        "TX",
+        "TR",
+        "XR",
+        "RS",
+        "ST"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            15.705083843492147,
+            201.81098901098903
+        ],
+        "S": [
+            62.65743944636677,
+            186.3896103896104
+        ],
+        "T": [
+            286.97638032194976,
+            194.38509316770185
+        ],
+        "X": [
+            264.4567474048443,
+            123.25714285714285
+        ],
+        "R": [
+            241.99669023619674,
+            52.05465838509317
+        ]
+    },
+    "problem_choices": [
+        3.5,
+        7.0,
+        14.0,
+        28.0
+    ],
+    "choices_precise_value": [
+        3.5,
+        7.0,
+        14.0,
+        28.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 54.247984,
+    "solution_predicate": "Equals(7.0, LengthOf(Line(X, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: RS, X on RT, RT, ST, 14 = RT, RS = ST\n\nStep 2:\nTheorem: Line Segment Split\nPremises : X on RT\nConclusions: RT = RX + TX\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : RT, RS, ST\nConclusions: \u25b3RST\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : RT = RX + TX, 14 = RT\nConclusions: 14 = RX + TX\n\nStep 5:\nTheorem: Issoceles Triangle Theorem\nPremises : \u25b3RST, RS = ST\nConclusions: RX = TX\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : RX = TX, 14 = RX + TX\nConclusions: 7 = RX\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : RX = TX, 7 = RX\nConclusions: 7 = TX\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, S)",
+        "Line(A, X)",
+        "Line(S, X)",
+        "Line(T, X)",
+        "Line(T, R)",
+        "Line(X, R)",
+        "Line(R, S)",
+        "Line(S, T)",
+        "Line(A, S)",
+        "Line(A, X)",
+        "Line(R, T)",
+        "Line(R, X)",
+        "Line(S, R)",
+        "Line(S, T)",
+        "Line(S, X)",
+        "Line(X, T)",
+        "Perpendicular(Line(A, X), Line(R, T))",
+        "PointLiesOnLine(S, Line(A, X))",
+        "PointLiesOnLine(X, Line(R, T))",
+        "Equals(LengthOf(Line(R, T)), 14.0)",
+        "Equals(LengthOf(Line(S, R)), LengthOf(Line(S, T)))"
+    ],
+    "correct": true
+}

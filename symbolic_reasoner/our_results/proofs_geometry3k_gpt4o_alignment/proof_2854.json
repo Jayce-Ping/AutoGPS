@@ -1,0 +1,65 @@
+{
+    "problem_id": "2854",
+    "solved": true,
+    "problem_text": "Find h in the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), h)",
+        "Equals(LengthOf(Line(B, C)), 4)",
+        "Equals(MeasureOf(Angle(B, C, A)), 60)",
+        "Find(h)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            17.016806722689076,
+            138.98319327731093
+        ],
+        "B": [
+            224.36974789915968,
+            139.61344537815125
+        ],
+        "C": [
+            225.0,
+            19.865546218487395
+        ]
+    },
+    "problem_choices": [
+        "4.62",
+        "5.66",
+        "6.93",
+        "8"
+    ],
+    "choices_precise_value": [
+        4.62,
+        5.66,
+        6.93,
+        8.0
+    ],
+    "problem_answer": 8.0,
+    "total_time": 18.293581,
+    "solution_predicate": "Equals(8.0, h)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (60 / 180) = \u2220ACB, 4 = BC, \u25b3ABC, h = AC, 3.14 = pi, AB \u22a5 BC, \u2220CAB\n\nStep 2:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 3:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AC / sin(\u2220CBA) = BC / sin(\u2220BAC)\n\nStep 4:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.57 = pi / 2\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220CBA\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 7:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BAC + \u2220CBA, pi / 2 = \u2220CBA, pi * (60 / 180) = \u2220ACB, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (60 / 180) + \u2220BAC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = pi / 2, pi / 2 = \u2220CBA\nConclusions: 1.57 = \u2220CBA\n\nStep 9:\nTheorem: Substitution\nPremises : \u2220CAB = 2 * pi - \u2220BAC, 3.14 = pi\nConclusions: \u2220CAB = 2 * 3.14 - \u2220BAC\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + pi * (60 / 180) + \u2220BAC, \u2220CAB = 2 * pi - \u2220BAC, \u2220CAB = 2 * 3.14 - \u2220BAC\nConclusions: 0.52 = \u2220BAC\n\nStep 11:\nTheorem: Substitution\nPremises : 0.52 = \u2220BAC, h = AC, AC / sin(\u2220CBA) = BC / sin(\u2220BAC), 1.57 = \u2220CBA, 4 = BC\nConclusions: 4 / sin(0.52) = h / sin(1.57)\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : h = AC, 4 / sin(0.52) = h / sin(1.57)\nConclusions: 8 = AC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : h = AC, 8 = AC\nConclusions: 8 = h\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, C)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Triangle(A, B, C)",
+        "Equals(LengthOf(Line(A, C)), h)",
+        "Equals(LengthOf(Line(B, C)), 4.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

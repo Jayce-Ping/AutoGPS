@@ -1,0 +1,71 @@
+{
+    "problem_id": "4192",
+    "solved": true,
+    "problem_text": "What is the value of k?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), k)",
+        "Equals(LengthOf(Line(C, A)), 9)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(MeasureOf(Angle(C, A, B)), 45)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Find(k)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            219.63333333333335,
+            31.27808988764045
+        ],
+        "B": [
+            220.00000000000003,
+            232.45666131621192
+        ],
+        "C": [
+            17.6,
+            232.9297752808989
+        ]
+    },
+    "problem_choices": [
+        6.364,
+        9.0,
+        9.363,
+        12.728
+    ],
+    "choices_precise_value": [
+        6.364,
+        9.0,
+        9.363,
+        12.728
+    ],
+    "problem_answer": 6.364,
+    "total_time": 17.254187,
+    "solution_predicate": "Equals(6.3639610307, k)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: h = BC, k = AB, pi * (45 / 180) = \u2220CAB, AC, 3.14 = pi, 9 = AC, BC, AB \u22a5 BC, \u2220BAC, cos(\u2220BCA), AB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.79 = pi * (45 / 180)\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BAC\nConclusions: \u2220BAC = 2 * pi - \u2220CAB\n\nStep 5:\nTheorem: Angle Cos Definition\nPremises : AB \u22a5 BC, cos(\u2220BCA)\nConclusions: BC / AC = cos(\u2220BCA)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, BC, AC\nConclusions: \u25b3ABC\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220CAB, 0.79 = pi * (45 / 180)\nConclusions: 0.79 = \u2220CAB\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (45 / 180) = \u2220CAB, \u2220BAC = 2 * pi - \u2220CAB\nConclusions: 2 * 3.14 - pi * (45 / 180) = \u2220BAC\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (45 / 180) = \u2220BAC, \u2220BAC = 2 * pi - \u2220CAB\nConclusions: 2 * 3.14 - pi * (45 / 180) = 2 * pi - \u2220CAB\n\nStep 11:\nTheorem: Substitution\nPremises : pi / 2 = \u2220ABC, pi * (45 / 180) = \u2220CAB, 3.14 = pi, pi = \u2220ABC + \u2220BCA + \u2220CAB\nConclusions: 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220BCA\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : pi * (45 / 180) = \u2220CAB, 3.14 = 3.14 / 2 + pi * (45 / 180) + \u2220BCA, 2 * 3.14 - pi * (45 / 180) = 2 * pi - \u2220CAB\nConclusions: 0.79 = \u2220BCA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220BCA, 0.79 = \u2220CAB\nConclusions: \u2220BCA = \u2220CAB\n\nStep 14:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BCA = \u2220CAB, \u25b3ABC\nConclusions: AB = BC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : h = BC, k = AB, AB = BC\nConclusions: h = k\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : h = BC, h = k\nConclusions: k = BC\n\nStep 17:\nTheorem: Substitution\nPremises : 0.79 = \u2220BCA, 9 = AC, k = BC, BC / AC = cos(\u2220BCA)\nConclusions: cos(0.79) = k / 9\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : cos(0.79) = k / 9, k = BC\nConclusions: 6.36 = BC\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 6.36 = BC, k = BC\nConclusions: 6.36 = k\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, B))",
+        "Equals(LengthOf(Line(A, B)), k)",
+        "Equals(LengthOf(Line(C, A)), 9.0)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

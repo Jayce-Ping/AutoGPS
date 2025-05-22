@@ -1,0 +1,84 @@
+{
+    "problem_id": "2655",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(A, C)), 13)",
+        "Equals(MeasureOf(Angle(C, A, B)), y)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "DC",
+        "CA",
+        "AB",
+        "CB",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            24.140703517587937,
+            204.77386934673368
+        ],
+        "B": [
+            191.97989949748745,
+            204.52261306532662
+        ],
+        "C": [
+            192.23115577889448,
+            36.18090452261306
+        ],
+        "D": [
+            23.386934673366838,
+            35.42713567839196
+        ]
+    },
+    "problem_choices": [
+        "30",
+        "45",
+        "60",
+        "90"
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 45.0,
+    "total_time": 25.930574,
+    "solution_predicate": "Equals(45.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, AB = AD, BC, AD \u22a5 CD, AD, pi * (y / 180) = \u2220BAC, 3.14 = pi, AD = CD, AB = BC, BC = CD, AC, CD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (y / 180) = \u2220BAC\nConclusions: 3.14 * (y / 180) = \u2220BAC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Definition of Rhombus\nPremises : AD = CD, AB = BC, BC, BC = CD, AB, AD, CD, AB = AD\nConclusions: Rhombus(A, B, C, D)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220BAC, pi * (y / 180) = \u2220BAC\nConclusions: 3.14 * (y / 180) = pi * (y / 180)\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 8:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 9:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, C, D)\nConclusions: \u2220BAC = \u2220CAD\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220ADC + \u2220CAD + \u2220DCA, 3.14 = pi, pi / 2 = \u2220ADC\nConclusions: 3.14 = 3.14 / 2 + \u2220CAD + \u2220DCA\n\nStep 11:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, C, D)\nConclusions: AB || DC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220BAC, \u2220BAC = \u2220CAD\nConclusions: pi * (y / 180) = \u2220CAD\n\nStep 13:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DC\nConclusions: \u2220BAC = \u2220DCA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220CAD, 3.14 * (y / 180) = pi * (y / 180)\nConclusions: 3.14 * (y / 180) = \u2220CAD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DCA, pi * (y / 180) = \u2220BAC\nConclusions: pi * (y / 180) = \u2220DCA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi * (y / 180) = \u2220DCA, 3.14 * (y / 180) = pi * (y / 180)\nConclusions: 3.14 * (y / 180) = \u2220DCA\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (y / 180) = \u2220CAD, 3.14 * (y / 180) = \u2220DCA, 3.14 = 3.14 / 2 + \u2220CAD + \u2220DCA\nConclusions: 45 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Perpendicular(Line(C, D), Line(A, D))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(D, C)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(C, B)))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(C, B)), LengthOf(Line(D, A)))",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(A, C)), 13.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

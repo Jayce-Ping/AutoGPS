@@ -1,0 +1,107 @@
+{
+    "problem_id": "6388",
+    "solved": true,
+    "problem_text": "Find m \\widehat SU.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(S, R, U)), 23)",
+        "Equals(MeasureOf(Arc(V, T)), 68)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(U, V)",
+        "PointLiesOnCircle(S, Circle(A))",
+        "PointLiesOnCircle(T, Circle(A))",
+        "PointLiesOnCircle(U, Circle(A))",
+        "PointLiesOnCircle(V, Circle(A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(U, Line(R, V))",
+        "Find(MeasureOf(Arc(S,U)))"
+    ],
+    "point_instances": [
+        "R",
+        "U",
+        "V",
+        "T",
+        "S",
+        "A"
+    ],
+    "line_instances": [
+        "RU",
+        "RV",
+        "UV",
+        "RS",
+        "RT",
+        "ST"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "R": [
+            102.60944206008583,
+            274.6857142857143
+        ],
+        "U": [
+            204.02575107296136,
+            275.1634285714286
+        ],
+        "V": [
+            390.94992846924174,
+            275.0838095238096
+        ],
+        "T": [
+            370.1695278969957,
+            97.63285714285715
+        ],
+        "S": [
+            178.28816676885344,
+            224.52571428571432
+        ],
+        "A": [
+            296.92746113989637,
+            195.71502590673575
+        ]
+    },
+    "problem_choices": [
+        22.0,
+        23.0,
+        34.0,
+        68.0
+    ],
+    "choices_precise_value": [
+        22.0,
+        23.0,
+        34.0,
+        68.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 73.623686,
+    "solution_predicate": "Equals(0.3839724354, MeasureOf(Arc(S, A, U)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(TAV), \u2220AVR, 3.14 = pi, U on \u2299(A, radius_A), Arc(VAT), RT, pi * (23 / 180) = \u2220URS, \u2220RTA, U on RV, S on \u2299(A, radius_A), AT, \u2220VRT, V on \u2299(A, radius_A), RS, RU, pi * (68 / 180) = Arc(VAT), T on \u2299(A, radius_A), \u2220URT, AU, AS, \u2220RSA, AV, \u2220AST, UV, ST, \u2220VUA, S on RT, RV, \u2220AUR, \u2220TAV, Arc(SAU)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(TAV)\nConclusions: \u2220TAV = Arc(TAV)\n\nStep 3:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 5.1 = 2 * 3.14 - pi * (68 / 180)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : U on \u2299(A, radius_A)\nConclusions: radius_A = AU\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(VAT)\nConclusions: \u2220VAT = Arc(VAT)\n\nStep 6:\nTheorem: Same Angle\nPremises : U on RV, \u2220AVR\nConclusions: \u2220AVR = \u2220AVU\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : S on \u2299(A, radius_A)\nConclusions: radius_A = AS\n\nStep 8:\nTheorem: Same Angle\nPremises : U on RV, \u2220VRT\nConclusions: \u2220URT = \u2220VRT\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : V on \u2299(A, radius_A)\nConclusions: radius_A = AV\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : T on \u2299(A, radius_A)\nConclusions: radius_A = AT\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : AS, RS, AU, RU\nConclusions: Quadrilateral(A, S, R, U)\n\nStep 12:\nTheorem: Straight Angle\nPremises : \u2220RSA, \u2220AST\nConclusions: pi = \u2220AST + \u2220RSA\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : AU, UV, AV\nConclusions: \u25b3AUV\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : AS, AT, ST\nConclusions: \u25b3AST\n\nStep 15:\nTheorem: Same Angle\nPremises : S on RT, \u2220URT\nConclusions: \u2220URS = \u2220URT\n\nStep 16:\nTheorem: Same Angle\nPremises : S on RT, \u2220RTA\nConclusions: \u2220RTA = \u2220STA\n\nStep 17:\nTheorem: Definition of Quadrilateral\nPremises : AT, RV, AV, RT\nConclusions: Quadrilateral(A, T, R, V)\n\nStep 18:\nTheorem: Straight Angle\nPremises : \u2220AUR, \u2220VUA\nConclusions: pi = \u2220AUR + \u2220VUA\n\nStep 19:\nTheorem: Reverse Angle Definition\nPremises : \u2220TAV\nConclusions: \u2220TAV = 2 * pi - \u2220VAT\n\nStep 20:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(SAU)\nConclusions: \u2220SAU = Arc(SAU)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220VAT = Arc(VAT), pi * (68 / 180) = Arc(VAT)\nConclusions: pi * (68 / 180) = \u2220VAT\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AU, radius_A = AV\nConclusions: AU = AV\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AS, radius_A = AT\nConclusions: AS = AT\n\nStep 24:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(U, R, S, A)\nPremises : Quadrilateral(A, S, R, U)\nConclusions: 2 * pi = \u2220AUR + \u2220RSA + \u2220SAU + \u2220URS\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AST + \u2220RSA, 3.14 = pi\nConclusions: 3.14 = \u2220AST + \u2220RSA\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220URS = \u2220URT, pi * (23 / 180) = \u2220URS\nConclusions: pi * (23 / 180) = \u2220URT\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(V, R, T, A)\nPremises : Quadrilateral(A, T, R, V)\nConclusions: 2 * pi = \u2220AVR + \u2220RTA + \u2220TAV + \u2220VRT\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220AUR + \u2220VUA, 3.14 = pi\nConclusions: 3.14 = \u2220AUR + \u2220VUA\n\nStep 29:\nTheorem: Substitution\nPremises : pi * (68 / 180) = \u2220VAT, \u2220TAV = 2 * pi - \u2220VAT, \u2220TAV = Arc(TAV), 3.14 = pi\nConclusions: 2 * 3.14 - pi * (68 / 180) = Arc(TAV)\n\nStep 30:\nTheorem: Issoceles Triangle Property\nPremises : AU = AV, \u25b3AUV\nConclusions: \u2220AVU = \u2220VUA\n\nStep 31:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3AST, AS = AT\nConclusions: \u2220AST = \u2220STA\n\nStep 32:\nTheorem: Substitution\nPremises : \u2220SAU = Arc(SAU), 2 * pi = \u2220AUR + \u2220RSA + \u2220SAU + \u2220URS, 3.14 = pi, pi * (23 / 180) = \u2220URS\nConclusions: 2 * 3.14 = pi * (23 / 180) + \u2220AUR + \u2220RSA + Arc(SAU)\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220URT = \u2220VRT, pi * (23 / 180) = \u2220URT\nConclusions: pi * (23 / 180) = \u2220VRT\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi * (68 / 180) = Arc(TAV), 5.1 = 2 * 3.14 - pi * (68 / 180)\nConclusions: 5.1 = Arc(TAV)\n\nStep 35:\nTheorem: Substitution\nPremises : \u2220RTA = \u2220STA, pi * (23 / 180) = \u2220VRT, 2 * pi = \u2220AVR + \u2220RTA + \u2220TAV + \u2220VRT, \u2220AVR = \u2220AVU, 3.14 = pi, \u2220TAV = Arc(TAV)\nConclusions: 2 * 3.14 = pi * (23 / 180) + \u2220AVU + \u2220STA + Arc(TAV)\n\nStep 36:\nTheorem: Substitution\nPremises : \u2220AVU = \u2220VUA, 2 * 3.14 = pi * (23 / 180) + \u2220AVU + \u2220STA + Arc(TAV), 5.1 = Arc(TAV), 3.14 = pi\nConclusions: 2 * 3.14 = 5.1 + 3.14 * (23 / 180) + \u2220STA + \u2220VUA\n\nStep 37:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 5.1 + 3.14 * (23 / 180) + \u2220STA + \u2220VUA, 2 * pi = \u2220AUR + \u2220RSA + \u2220SAU + \u2220URS, \u2220AST = \u2220STA, pi * (23 / 180) = \u2220URS, 2 * 3.14 = pi * (23 / 180) + \u2220AUR + \u2220RSA + Arc(SAU), 3.14 = \u2220AUR + \u2220VUA, 3.14 = \u2220AST + \u2220RSA, \u2220SAU = Arc(SAU)\nConclusions: 0.38 = \u2220SAU\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SAU = Arc(SAU), 0.38 = \u2220SAU\nConclusions: 0.38 = Arc(SAU)\n\n",
+    "logic_fomrs_refined": [
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(U, V)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(S, T)",
+        "Circle(A, radius_A)",
+        "Line(R, S)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(R, V)",
+        "Line(S, T)",
+        "Line(U, V)",
+        "PointLiesOnCircle(S, Circle(A, radius_A))",
+        "PointLiesOnCircle(T, Circle(A, radius_A))",
+        "PointLiesOnCircle(U, Circle(A, radius_A))",
+        "PointLiesOnCircle(V, Circle(A, radius_A))",
+        "PointLiesOnLine(S, Line(R, T))",
+        "PointLiesOnLine(U, Line(R, V))",
+        "Equals(MeasureOf(Angle(U, R, S)), Mul(pi, Div(23.0, 180.0)))",
+        "Equals(MeasureOf(Arc(V, A, T)), Mul(pi, Div(68.0, 180.0)))"
+    ],
+    "correct": true
+}

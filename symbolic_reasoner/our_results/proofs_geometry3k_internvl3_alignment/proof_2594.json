@@ -1,0 +1,78 @@
+{
+    "problem_id": "2594",
+    "solved": true,
+    "problem_text": "Find the area of the triangle.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 19)",
+        "Equals(LengthOf(Line(A, D)), 41)",
+        "Equals(LengthOf(Line(C, B)), 27)",
+        "Equals(LengthOf(Line(C, D)), 30)",
+        "Find(AreaOf(Triangle(A, B, D)))",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AD",
+        "CD",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            23.19417475728155,
+            79.12621359223301
+        ],
+        "B": [
+            111.7864077669903,
+            79.36893203883496
+        ],
+        "C": [
+            232.41747572815532,
+            79.36893203883496
+        ],
+        "D": [
+            232.66019417475727,
+            215.29126213592232
+        ]
+    },
+    "problem_choices": [
+        "256.5",
+        "285",
+        "389.5",
+        "405"
+    ],
+    "choices_precise_value": [
+        256.5,
+        285.0,
+        389.5,
+        405.0
+    ],
+    "problem_answer": 285.0,
+    "total_time": 15.491212,
+    "solution_predicate": "Equals(285.0, AreaOf(Triangle(A, B, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC \u22a5 CD, \u25b3ABD, 30 = CD, 19 = AB\n\nStep 2:\nTheorem: Area formula of Triangle(A, B, D)\nPremises : AC \u22a5 CD, \u25b3ABD\nConclusions: Area(\u25b3ABD) = (AB * CD) / 2\n\nStep 3:\nTheorem: Substitution\nPremises : 19 = AB, Area(\u25b3ABD) = (AB * CD) / 2, 30 = CD\nConclusions: (19 * 30) / 2 = Area(\u25b3ABD)\n\nStep 4:\nTheorem: Evaluate\nPremises : (19 * 30) / 2 = Area(\u25b3ABD)\nConclusions: 285 = Area(\u25b3ABD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, D)",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, B)), 19.0)",
+        "Equals(LengthOf(Line(A, D)), 41.0)",
+        "Equals(LengthOf(Line(C, B)), 27.0)",
+        "Equals(LengthOf(Line(C, D)), 30.0)"
+    ],
+    "correct": true
+}

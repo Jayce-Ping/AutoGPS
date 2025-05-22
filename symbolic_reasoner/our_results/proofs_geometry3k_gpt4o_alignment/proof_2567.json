@@ -1,0 +1,89 @@
+{
+    "problem_id": "2567",
+    "solved": true,
+    "problem_text": "Quadrilateral E F G H is a rectangle. If m \\angle H G E = 13, find m \\angle F G E.",
+    "logic_forms": [
+        "PointLiesOnLine(K, Line(H, F))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "Perpendicular(Line(G, H), Line(E, H))",
+        "Rectangle(E,F,G,H)",
+        "Equals(MeasureOf(Angle(H,G,E)),13)",
+        "Find(MeasureOf(Angle(F,G,E)))"
+    ],
+    "point_instances": [
+        "K",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "HK",
+        "HF",
+        "KF",
+        "EK",
+        "EG",
+        "KG",
+        "HG",
+        "EH",
+        "EF",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            303.7344398340249,
+            140.41493775933608
+        ],
+        "E": [
+            134.02489626556016,
+            61.161825726141075
+        ],
+        "F": [
+            473.4439834024896,
+            60.74688796680498
+        ],
+        "G": [
+            473.0290456431535,
+            220.9128630705394
+        ],
+        "H": [
+            133.60995850622405,
+            220.9128630705394
+        ]
+    },
+    "problem_choices": [
+        "13",
+        "46",
+        "57",
+        "77"
+    ],
+    "choices_precise_value": [
+        13.0,
+        46.0,
+        57.0,
+        77.0
+    ],
+    "problem_answer": 77.0,
+    "total_time": 67.784458,
+    "solution_predicate": "Equals(1.343903524, MeasureOf(Angle(F, G, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FG, GH, pi * (13 / 180) = \u2220EGH, EG, EH \u22a5 GH, EF, Rectangle(E, F, G, H), EH, 3.14 = pi, K on EG, \u2220HEG\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : EH \u22a5 GH\nConclusions: pi / 2 = \u2220GHE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : EF, FG, EG\nConclusions: \u25b3EFG\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(E, F, G, H)\nConclusions: Parallelogram(E, F, G, H)\n\nStep 5:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(E, F, G, H)\nConclusions: EH \u22a5 GH, FG \u22a5 GH\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : EH, GH, EG\nConclusions: \u25b3EGH\n\nStep 7:\nTheorem: Same Angle\nPremises : K on EG, \u2220HEG\nConclusions: \u2220HEG = \u2220HEK\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(E, F, G)\nPremises : \u25b3EFG\nConclusions: pi = \u2220EFG + \u2220FGE + \u2220GEF\n\nStep 9:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: \u2220EFG = \u2220GHE\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(E, F, G, H)\nConclusions: EH || FG, EF || HG\n\nStep 11:\nTheorem: Perpendicular to Right Angle\nPremises : FG \u22a5 GH\nConclusions: pi / 2 = \u2220FGH\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(E, G, H)\nPremises : \u25b3EGH\nConclusions: pi = \u2220EGH + \u2220GHE + \u2220HEG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EFG = \u2220GHE, pi / 2 = \u2220GHE\nConclusions: pi / 2 = \u2220EFG\n\nStep 14:\nTheorem: Alternate Interior Angle Theorem\nPremises : EH || FG\nConclusions: \u2220FGE = \u2220HEG\n\nStep 15:\nTheorem: Alternate Interior Angle Theorem\nPremises : EF || HG\nConclusions: \u2220EGH = \u2220GEF\n\nStep 16:\nTheorem: Consecutive Interior Angle Theorem\nPremises : EF || HG\nConclusions: pi = \u2220EFG + \u2220FGH\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220HEG = \u2220HEK, pi * (13 / 180) = \u2220EGH, pi / 2 = \u2220GHE, pi = \u2220EGH + \u2220GHE + \u2220HEG, 3.14 = pi\nConclusions: 3.14 = pi / 2 + pi * (13 / 180) + \u2220HEK\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EFG, pi / 2 = \u2220FGH\nConclusions: \u2220EFG = \u2220FGH\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HEG = \u2220HEK, \u2220FGE = \u2220HEG\nConclusions: \u2220FGE = \u2220HEK\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EGH = \u2220GEF, pi * (13 / 180) = \u2220EGH\nConclusions: pi * (13 / 180) = \u2220GEF\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220EFG + \u2220FGH\nConclusions: 3.14 = \u2220EFG + \u2220FGH\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220EFG + \u2220FGE + \u2220GEF, \u2220EFG = \u2220FGH, \u2220FGE = \u2220HEK, 3.14 = \u2220EFG + \u2220FGH, pi * (13 / 180) = \u2220GEF, 3.14 = pi / 2 + pi * (13 / 180) + \u2220HEK\nConclusions: 1.34 = \u2220FGE\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, K)",
+        "Line(H, F)",
+        "Line(K, F)",
+        "Line(E, K)",
+        "Line(E, G)",
+        "Line(K, G)",
+        "Line(H, G)",
+        "Line(E, H)",
+        "Line(E, F)",
+        "Line(F, G)",
+        "PointLiesOnLine(K, Line(H, F))",
+        "PointLiesOnLine(K, Line(E, G))",
+        "Perpendicular(Line(G, H), Line(E, H))",
+        "Rectangle(E, F, G, H)",
+        "Equals(MeasureOf(Angle(E, G, H)), Mul(pi, Div(13.0, 180.0)))"
+    ],
+    "correct": true
+}

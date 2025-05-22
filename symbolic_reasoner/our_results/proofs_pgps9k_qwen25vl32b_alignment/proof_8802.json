@@ -1,0 +1,132 @@
+{
+    "problem_id": "8802",
+    "solved": true,
+    "problem_text": "Find the perimeter of \\triangle STU.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(P, S)), LengthOf(Line(S, Q)))",
+        "Equals(LengthOf(Line(Q, P)), 24)",
+        "Equals(LengthOf(Line(Q, U)), 9)",
+        "Equals(LengthOf(Line(Q, U)), LengthOf(Line(R, U)))",
+        "Equals(LengthOf(Line(R, T)), LengthOf(Line(T, P)))",
+        "Equals(LengthOf(Line(R, U)), 9)",
+        "Equals(LengthOf(Line(S, U)), 10)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(S, Q)",
+        "Line(T, P)",
+        "Line(T, S)",
+        "Line(T, U)",
+        "Line(U, Q)",
+        "Line(U, S)",
+        "PointLiesOnLine(S, Line(P, Q))",
+        "PointLiesOnLine(T, Line(R, P))",
+        "PointLiesOnLine(U, Line(R, Q))",
+        "Find(PerimeterOf(Triangle(S,T,U)))"
+    ],
+    "point_instances": [
+        "P",
+        "S",
+        "Q",
+        "U",
+        "T",
+        "R"
+    ],
+    "line_instances": [
+        "PS",
+        "PQ",
+        "SQ",
+        "QU",
+        "QR",
+        "UR",
+        "RT",
+        "RP",
+        "TP",
+        "SU",
+        "UT",
+        "TS"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            52.423857868020306,
+            245.592
+        ],
+        "S": [
+            213.57868020304568,
+            246.24
+        ],
+        "Q": [
+            374.3020304568528,
+            245.16000000000003
+        ],
+        "U": [
+            304.6192893401015,
+            146.88
+        ],
+        "T": [
+            143.46446700507613,
+            146.88
+        ],
+        "R": [
+            235.1522842639594,
+            47.952
+        ]
+    },
+    "problem_choices": [
+        31.0,
+        62.0,
+        76.0,
+        77.0
+    ],
+    "choices_precise_value": [
+        31.0,
+        62.0,
+        76.0,
+        77.0
+    ],
+    "problem_answer": 31.0,
+    "total_time": 195.546817,
+    "solution_predicate": "Equals(31.0, PerimeterOf(Triangle(S, T, U)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220SUR, 3.14 = pi, T on PR, QS, \u2220UQP, \u2220PRQ, \u2220RUS, 24 = PQ, QU, PT = RT, \u2220SUQ, \u2220TRQ, 9 = QU, \u2220RQP, PS = QS, \u2220RUS, 10 = SU, SU, \u2220TUS, QR, QU = RU, PQ, S on PQ, 9 = RU, U on QR, PR, \u2220RUT\n\nStep 2:\nTheorem: Line Segment Split\nPremises : T on PR\nConclusions: PR = PT + RT\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220PRQ, T on PR\nConclusions: \u2220PRQ = \u2220TRQ\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220RUS, \u2220SUQ\nConclusions: pi = \u2220RUS + \u2220SUQ\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220RUS\nConclusions: \u2220RUS = 2 * pi - \u2220SUR\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : SU, QS, QU\nConclusions: \u25b3QSU\n\nStep 7:\nTheorem: Line Segment Split\nPremises : S on PQ\nConclusions: PQ = PS + QS\n\nStep 8:\nTheorem: Same Angle\nPremises : S on PQ, \u2220UQP\nConclusions: \u2220UQP = \u2220UQS\n\nStep 9:\nTheorem: Same Angle\nPremises : U on QR, \u2220RQP\nConclusions: \u2220RQP = \u2220UQP\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220TRQ, U on QR\nConclusions: \u2220TRQ = \u2220TRU\n\nStep 11:\nTheorem: Line Segment Split\nPremises : U on QR\nConclusions: QR = QU + RU\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : PQ, PR, QR\nConclusions: \u25b3PQR\n\nStep 13:\nTheorem: Circumference splited\nPremises : \u2220SUR, \u2220RUT, \u2220TUS\nConclusions: 2 * pi = \u2220RUT + \u2220SUR + \u2220TUS\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220RUS + \u2220SUQ\nConclusions: 3.14 = \u2220RUS + \u2220SUQ\n\nStep 15:\nTheorem: Perimeter Definition\nPremises : \u25b3QSU\nConclusions: Perimeter(\u25b3QSU) = QS + QU + SU\n\nStep 16:\nTheorem: Law of Cosines\nPremises : \u25b3QSU\nConclusions: (QS ** 2 + SU ** 2) - QU ** 2 = 2 * QS * SU * cos(\u2220QSU), (QU ** 2 + SU ** 2) - QS ** 2 = 2 * QU * SU * cos(\u2220SUQ), (QS ** 2 + QU ** 2) - SU ** 2 = 2 * QS * QU * cos(\u2220UQS)\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 24 = PQ, PQ = PS + QS\nConclusions: 24 = PS + QS\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220UQP = \u2220UQS, \u2220RQP = \u2220UQP\nConclusions: \u2220RQP = \u2220UQS\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220TRQ = \u2220TRU, \u2220PRQ = \u2220TRQ\nConclusions: \u2220PRQ = \u2220TRU\n\nStep 20:\nTheorem: Substitution\nPremises : QR = QU + RU, 9 = QU, 9 = RU\nConclusions: 9 + 9 = QR\n\nStep 21:\nTheorem: Law of Sines\nPremises : \u25b3PQR\nConclusions: PQ / sin(\u2220PRQ) = PR / sin(\u2220RQP)\n\nStep 22:\nTheorem: Law of Cosines\nPremises : \u25b3PQR\nConclusions: (PQ ** 2 + QR ** 2) - PR ** 2 = 2 * PQ * QR * cos(\u2220RQP)\n\nStep 23:\nTheorem: Substitution\nPremises : 10 = SU, (QS ** 2 + SU ** 2) - QU ** 2 = 2 * QS * SU * cos(\u2220QSU), 9 = QU\nConclusions: (10 ** 2 + QS ** 2) - 9 ** 2 = 10 * 2 * QS * cos(\u2220QSU)\n\nStep 24:\nTheorem: Substitution\nPremises : 10 = SU, (QU ** 2 + SU ** 2) - QS ** 2 = 2 * QU * SU * cos(\u2220SUQ), 9 = QU\nConclusions: (10 ** 2 + 9 ** 2) - QS ** 2 = 10 * 2 * 9 * cos(\u2220SUQ)\n\nStep 25:\nTheorem: Substitution\nPremises : 10 = SU, (QS ** 2 + QU ** 2) - SU ** 2 = 2 * QS * QU * cos(\u2220UQS), 9 = QU\nConclusions: (9 ** 2 + QS ** 2) - 10 ** 2 = 2 * 9 * QS * cos(\u2220UQS)\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : PS = QS, 24 = PS + QS\nConclusions: 12 = PS\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 9 + 9 = QR\nConclusions: 18 = QR\n\nStep 28:\nTheorem: Substitution\nPremises : \u2220RQP = \u2220UQS, PQ / sin(\u2220PRQ) = PR / sin(\u2220RQP), 24 = PQ, \u2220PRQ = \u2220TRU\nConclusions: 24 / sin(\u2220TRU) = PR / sin(\u2220UQS)\n\nStep 29:\nTheorem: Substitution\nPremises : \u2220RQP = \u2220UQS, 24 = PQ, (PQ ** 2 + QR ** 2) - PR ** 2 = 2 * PQ * QR * cos(\u2220RQP)\nConclusions: (24 ** 2 + QR ** 2) - PR ** 2 = 2 * 24 * QR * cos(\u2220UQS)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : PS = QS, 12 = PS\nConclusions: 12 = QS\n\nStep 31:\nTheorem: Substitution\nPremises : (24 ** 2 + QR ** 2) - PR ** 2 = 2 * 24 * QR * cos(\u2220UQS), 18 = QR\nConclusions: (18 ** 2 + 24 ** 2) - PR ** 2 = 18 * 2 * 24 * cos(\u2220UQS)\n\nStep 32:\nTheorem: Substitution\nPremises : 12 = QS, (9 ** 2 + QS ** 2) - 10 ** 2 = 2 * 9 * QS * cos(\u2220UQS)\nConclusions: (12 ** 2 + 9 ** 2) - 10 ** 2 = 12 * 2 * 9 * cos(\u2220UQS)\n\nStep 33:\nTheorem: Substitution\nPremises : 12 = QS, (10 ** 2 + 9 ** 2) - QS ** 2 = 10 * 2 * 9 * cos(\u2220SUQ)\nConclusions: (10 ** 2 + 9 ** 2) - 12 ** 2 = 10 * 2 * 9 * cos(\u2220SUQ)\n\nStep 34:\nTheorem: Substitution\nPremises : (10 ** 2 + QS ** 2) - 9 ** 2 = 10 * 2 * QS * cos(\u2220QSU), 12 = QS\nConclusions: (10 ** 2 + 12 ** 2) - 9 ** 2 = 10 * 12 * 2 * cos(\u2220QSU)\n\nStep 35:\nTheorem: Solve Univariate Equation\nPremises : (12 ** 2 + 9 ** 2) - 10 ** 2 = 12 * 2 * 9 * cos(\u2220UQS)\nConclusions: 0.95 = \u2220UQS\n\nStep 36:\nTheorem: Solve Univariate Equation\nPremises : (10 ** 2 + 9 ** 2) - 12 ** 2 = 10 * 2 * 9 * cos(\u2220SUQ)\nConclusions: 1.36 = \u2220SUQ\n\nStep 37:\nTheorem: Solve Univariate Equation\nPremises : (10 ** 2 + 12 ** 2) - 9 ** 2 = 10 * 12 * 2 * cos(\u2220QSU)\nConclusions: 0.82 = \u2220QSU\n\nStep 38:\nTheorem: Substitution\nPremises : (18 ** 2 + 24 ** 2) - PR ** 2 = 18 * 2 * 24 * cos(\u2220UQS), 0.95 = \u2220UQS\nConclusions: 18 * 2 * 24 * cos(0.95) = (18 ** 2 + 24 ** 2) - PR ** 2\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 1.36 = \u2220SUQ, 3.14 = \u2220RUS + \u2220SUQ\nConclusions: 1.78 = \u2220RUS\n\nStep 40:\nTheorem: Solve Univariate Equation\nPremises : 18 * 2 * 24 * cos(0.95) = (18 ** 2 + 24 ** 2) - PR ** 2\nConclusions: 20 = PR\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RUS = 2 * pi - \u2220SUR, 1.78 = \u2220RUS\nConclusions: 1.78 = 2 * pi - \u2220SUR\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : PR = PT + RT, 20 = PR\nConclusions: 20 = PT + RT\n\nStep 43:\nTheorem: Evaluate\nPremises : 0.95 = \u2220UQS, 20 = PR\nConclusions: 24.52 = PR / sin(\u2220UQS)\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : 20 = PT + RT, PT = RT\nConclusions: 10 = PT\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : 24 / sin(\u2220TRU) = PR / sin(\u2220UQS), 24.52 = PR / sin(\u2220UQS)\nConclusions: 24.52 = 24 / sin(\u2220TRU)\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 10 = SU, PT = RT, 10 = PT\nConclusions: RT = SU\n\nStep 47:\nTheorem: Solve Univariate Equation\nPremises : 24.52 = 24 / sin(\u2220TRU)\nConclusions: 1.36 = \u2220TRU\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRQ = \u2220TRU, 1.36 = \u2220TRU\nConclusions: 1.36 = \u2220PRQ\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PRQ = \u2220TRU, 1.36 = \u2220PRQ, 1.36 = \u2220SUQ\nConclusions: \u2220SUQ = \u2220TRU\n\nStep 50:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : RT = SU, QU = RU, \u2220SUQ = \u2220TRU\nConclusions: \u25b3QSU \u2245 \u25b3UTR\n\nStep 51:\nTheorem: Congruent Definition\nPremises : \u25b3QSU \u2245 \u25b3UTR\nConclusions: Perimeter(\u25b3QSU) = Perimeter(\u25b3RTU), QS = TU, QU = RU, \u2220RUT = \u2220UQS, \u2220SUQ = \u2220TRU\n\nStep 52:\nTheorem: Substitution\nPremises : 9 = QU, Perimeter(\u25b3QSU) = Perimeter(\u25b3RTU), Perimeter(\u25b3QSU) = QS + QU + SU, 10 = SU, 12 = QS\nConclusions: 10 + 12 + 9 = Perimeter(\u25b3RTU)\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : 0.95 = \u2220UQS, \u2220RUT = \u2220UQS\nConclusions: 0.95 = \u2220RUT\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : 10 + 12 + 9 = Perimeter(\u25b3RTU), Perimeter(\u25b3QSU) = Perimeter(\u25b3RTU)\nConclusions: 10 + 12 + 9 = Perimeter(\u25b3QSU)\n\nStep 55:\nTheorem: Solve Linear Equation System\nPremises : 0.95 = \u2220RUT, 1.78 = 2 * pi - \u2220SUR, 2 * pi = \u2220RUT + \u2220SUR + \u2220TUS\nConclusions: 0.82 = \u2220TUS\n\nStep 56:\nTheorem: Solve Linear Equation System\nPremises : 10 + 12 + 9 = Perimeter(\u25b3QSU)\nConclusions: 31 = Perimeter(\u25b3QSU)\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : 0.82 = \u2220TUS, 0.82 = \u2220QSU\nConclusions: \u2220QSU = \u2220TUS\n\nStep 58:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220QSU = \u2220TUS, QS = TU\nConclusions: \u25b3QSU \u2245 \u25b3TUS\n\nStep 59:\nTheorem: Congruent Definition\nPremises : \u25b3QSU \u2245 \u25b3TUS\nConclusions: QS = TU, Perimeter(\u25b3QSU) = Perimeter(\u25b3STU)\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : 31 = Perimeter(\u25b3QSU), Perimeter(\u25b3QSU) = Perimeter(\u25b3STU)\nConclusions: 31 = Perimeter(\u25b3STU)\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, S)",
+        "Line(P, Q)",
+        "Line(S, Q)",
+        "Line(Q, U)",
+        "Line(Q, R)",
+        "Line(U, R)",
+        "Line(R, T)",
+        "Line(R, P)",
+        "Line(T, P)",
+        "Line(S, U)",
+        "Line(U, T)",
+        "Line(T, S)",
+        "Line(P, Q)",
+        "Line(P, S)",
+        "Line(R, P)",
+        "Line(R, Q)",
+        "Line(R, T)",
+        "Line(R, U)",
+        "Line(S, Q)",
+        "Line(T, P)",
+        "Line(T, S)",
+        "Line(T, U)",
+        "Line(U, Q)",
+        "Line(U, S)",
+        "PointLiesOnLine(S, Line(P, Q))",
+        "PointLiesOnLine(T, Line(R, P))",
+        "PointLiesOnLine(U, Line(R, Q))",
+        "Equals(LengthOf(Line(P, S)), LengthOf(Line(S, Q)))",
+        "Equals(LengthOf(Line(Q, P)), 24.0)",
+        "Equals(LengthOf(Line(Q, U)), 9.0)",
+        "Equals(LengthOf(Line(Q, U)), LengthOf(Line(R, U)))",
+        "Equals(LengthOf(Line(R, T)), LengthOf(Line(T, P)))",
+        "Equals(LengthOf(Line(R, U)), 9.0)",
+        "Equals(LengthOf(Line(S, U)), 10.0)"
+    ],
+    "correct": true
+}

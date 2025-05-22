@@ -1,0 +1,67 @@
+{
+    "problem_id": "7562",
+    "solved": true,
+    "problem_text": "Find the length of ST.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, U)), 9.5)",
+        "Equals(MeasureOf(Angle(U, T, S)), 42)",
+        "Line(S, U)",
+        "Line(T, S)",
+        "Line(T, U)",
+        "Perpendicular(Line(T, S), Line(S, U))",
+        "Find(LengthOf(Line(S,T)))"
+    ],
+    "point_instances": [
+        "S",
+        "T",
+        "U"
+    ],
+    "line_instances": [
+        "TU",
+        "TS",
+        "SU"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "S": [
+            213.6059580230196,
+            49.285714285714285
+        ],
+        "T": [
+            43.20063191153238,
+            201.78571428571428
+        ],
+        "U": [
+            350.7054840893704,
+            201.42857142857142
+        ]
+    },
+    "problem_choices": [
+        6.357,
+        7.06,
+        8.554,
+        12.784
+    ],
+    "choices_precise_value": [
+        6.357,
+        7.06,
+        8.554,
+        12.784
+    ],
+    "problem_answer": 7.06,
+    "total_time": 14.635841,
+    "solution_predicate": "Equals(7.0598758423, LengthOf(Line(S, T)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: SU, sin(\u2220SUT), 9.5 = TU, 3.14 = pi, TU, ST, ST \u22a5 SU, pi * (42 / 180) = \u2220UTS\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : TU, ST, SU\nConclusions: \u25b3STU\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : ST \u22a5 SU\nConclusions: pi / 2 = \u2220TSU\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220SUT), ST \u22a5 SU\nConclusions: ST / TU = sin(\u2220SUT)\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(U, T, S)\nPremises : \u25b3STU\nConclusions: pi = \u2220SUT + \u2220TSU + \u2220UTS\n\nStep 6:\nTheorem: Substitution\nPremises : pi / 2 = \u2220TSU, pi = \u2220SUT + \u2220TSU + \u2220UTS, 3.14 = pi, pi * (42 / 180) = \u2220UTS\nConclusions: 3.14 = pi / 2 + 3.14 * (42 / 180) + \u2220SUT\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + 3.14 * (42 / 180) + \u2220SUT, 3.14 = pi\nConclusions: 0.84 = \u2220SUT\n\nStep 8:\nTheorem: Substitution\nPremises : 0.84 = \u2220SUT, ST / TU = sin(\u2220SUT), 9.5 = TU\nConclusions: sin(0.84) = ST / 9.5\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : sin(0.84) = ST / 9.5\nConclusions: 7.06 = ST\n\n",
+    "logic_fomrs_refined": [
+        "Line(T, U)",
+        "Line(T, S)",
+        "Line(S, U)",
+        "Line(S, U)",
+        "Line(T, S)",
+        "Line(T, U)",
+        "Perpendicular(Line(T, S), Line(S, U))",
+        "Equals(LengthOf(Line(T, U)), 9.5)",
+        "Equals(MeasureOf(Angle(U, T, S)), Mul(pi, Div(42.0, 180.0)))"
+    ],
+    "correct": true
+}

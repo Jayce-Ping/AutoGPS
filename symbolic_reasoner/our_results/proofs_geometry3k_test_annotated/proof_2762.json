@@ -1,0 +1,116 @@
+{
+    "problem_id": "2762",
+    "solved": true,
+    "problem_text": "\\triangle A B C \\sim \\triangle F D G. Find the value of x.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(C, B))",
+        "PointLiesOnLine(Q, Line(D, G))",
+        "Equals(LengthOf(Line(B, A)), 15)",
+        "Equals(LengthOf(Line(A, P)), x)",
+        "Equals(LengthOf(Line(F, D)), 12)",
+        "Equals(LengthOf(Line(F, Q)), 8)",
+        "Equals(MeasureOf(Angle(B, A, P)), MeasureOf(Angle(C, A, P)))",
+        "Equals(MeasureOf(Angle(Q, F, D)), MeasureOf(Angle(G, F, Q)))",
+        "Similar(Triangle(A, B, C), Triangle(F, D, G))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "G",
+        "A",
+        "D",
+        "Q",
+        "P",
+        "F"
+    ],
+    "line_instances": [
+        "AC",
+        "CP",
+        "CB",
+        "PB",
+        "AB",
+        "AP",
+        "GF",
+        "QF",
+        "DF",
+        "DQ",
+        "DG",
+        "QG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            497.0,
+            446.3949579831933
+        ],
+        "C": [
+            153.30252100840337,
+            435.47058823529414
+        ],
+        "G": [
+            762.546218487395,
+            377.48739495798327
+        ],
+        "A": [
+            108.76470588235294,
+            96.81512605042019
+        ],
+        "D": [
+            730.6134453781513,
+            146.3949579831933
+        ],
+        "Q": [
+            749.1008403361345,
+            290.09243697478996
+        ],
+        "P": [
+            286.91596638655466,
+            439.6722689075631
+        ],
+        "F": [
+            991.9579831932773,
+            384.2100840336135
+        ]
+    },
+    "problem_choices": [
+        "8",
+        "10",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        8.0,
+        10.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 55.199887,
+    "solution_predicate": "Equals(10.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = DF, \u2220BAC, \u25b3ABC ~ \u25b3FDG, \u2220DFQ, \u2220DFQ = \u2220QFG, \u2220ACB, P on BC, CP, \u2220CAP, \u2220DGF, 3.14 = pi, AP, FG, x = AP, FQ, \u2220FGD, \u2220GFD, AC, \u2220PAB, \u2220QFG, \u2220CAP = \u2220PAB, Q on DG, \u2220BCA, 15 = AB, GQ, 8 = FQ\n\nStep 2:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3FDG\nConclusions: \u2220BCA = \u2220FGD, AB / DF = AC / FG, sim_ratio_triangle_a_b_c_triangle_f_d_g = BC / DG, \u2220BAC = \u2220GFD, \u2220ACB = \u2220DGF, sim_ratio_triangle_a_b_c_triangle_f_d_g = AB / DF, AB / DF = BC / DG\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ACB, P on BC\nConclusions: \u2220ACB = \u2220ACP\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AP, AC, CP\nConclusions: \u25b3ACP\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220BAC, \u2220PAB, \u2220CAP\nConclusions: 2 * pi = \u2220BAC + \u2220CAP + \u2220PAB\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220DFQ, \u2220QFG, \u2220GFD\nConclusions: 2 * pi = \u2220DFQ + \u2220GFD + \u2220QFG\n\nStep 7:\nTheorem: Same Angle\nPremises : Q on DG, \u2220FGD\nConclusions: \u2220FGD = \u2220FGQ\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220DGF, Q on DG\nConclusions: \u2220DGF = \u2220QGF\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220BCA, P on BC\nConclusions: \u2220BCA = \u2220PCA\n\nStep 10:\nTheorem: Evaluate\nPremises : 12 = DF, 15 = AB\nConclusions: 1.25 = AB / DF\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : GQ, FG, FQ\nConclusions: \u25b3FGQ\n\nStep 12:\nTheorem: Substitution\nPremises : 12 = DF, AB / DF = AC / FG, 15 = AB\nConclusions: 15 / 12 = AC / FG\n\nStep 13:\nTheorem: Substitution\nPremises : 12 = DF, AB / DF = BC / DG, 15 = AB\nConclusions: 15 / 12 = BC / DG\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220DGF, \u2220ACB = \u2220ACP\nConclusions: \u2220ACP = \u2220DGF\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(P, C, A)\nPremises : \u25b3ACP\nConclusions: pi = \u2220APC + \u2220CAP + \u2220PCA\n\nStep 16:\nTheorem: Substitution\nPremises : 2 * pi = \u2220BAC + \u2220CAP + \u2220PAB, \u2220BAC = \u2220GFD, 3.14 = pi, \u2220CAP = \u2220PAB\nConclusions: 2 * 3.14 = \u2220GFD + \u2220PAB + \u2220PAB\n\nStep 17:\nTheorem: Substitution\nPremises : 2 * pi = \u2220DFQ + \u2220GFD + \u2220QFG, 3.14 = pi, \u2220DFQ = \u2220QFG\nConclusions: 2 * 3.14 = \u2220GFD + \u2220QFG + \u2220QFG\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCA = \u2220PCA, \u2220BCA = \u2220FGD\nConclusions: \u2220FGD = \u2220PCA\n\nStep 19:\nTheorem: Interior Angle Sum Theorem for Triangle(F, G, Q)\nPremises : \u25b3FGQ\nConclusions: pi = \u2220FGQ + \u2220GQF + \u2220QFG\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_f_d_g = BC / DG, 15 / 12 = BC / DG\nConclusions: 15 / 12 = sim_ratio_triangle_a_b_c_triangle_f_d_g\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACP = \u2220DGF, \u2220DGF = \u2220QGF\nConclusions: \u2220ACP = \u2220QGF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FGD = \u2220PCA, \u2220FGD = \u2220FGQ\nConclusions: \u2220FGQ = \u2220PCA\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220FGQ + \u2220GQF + \u2220QFG, 3.14 = pi\nConclusions: 3.14 = \u2220FGQ + \u2220GQF + \u2220QFG\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_c_triangle_f_d_g = AB / DF, 15 / 12 = sim_ratio_triangle_a_b_c_triangle_f_d_g\nConclusions: 15 / 12 = AB / DF\n\nStep 25:\nTheorem: Substitution\nPremises : \u2220CAP = \u2220PAB, \u2220FGQ = \u2220PCA, 3.14 = pi, pi = \u2220APC + \u2220CAP + \u2220PCA\nConclusions: 3.14 = \u2220APC + \u2220FGQ + \u2220PAB\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 1.25 = AB / DF, 15 / 12 = AB / DF\nConclusions: 1.25 = 15 / 12\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = \u2220GFD + \u2220QFG + \u2220QFG, 3.14 = \u2220APC + \u2220FGQ + \u2220PAB, 3.14 = \u2220FGQ + \u2220GQF + \u2220QFG, 2 * 3.14 = \u2220GFD + \u2220PAB + \u2220PAB\nConclusions: \u2220APC = \u2220GQF\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 1.25 = 15 / 12, 15 / 12 = AC / FG\nConclusions: 1.25 = AC / FG\n\nStep 29:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220APC = \u2220GQF, \u2220ACP = \u2220QGF\nConclusions: \u25b3ACP ~ \u25b3FGQ\n\nStep 30:\nTheorem: Similar Definition\nPremises : \u25b3ACP ~ \u25b3FGQ\nConclusions: sim_ratio_triangle_a_c_p_triangle_f_g_q = AC / FG, \u2220APC = \u2220GQF, \u2220FGQ = \u2220PCA, sim_ratio_triangle_a_c_p_triangle_f_g_q = AP / FQ\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_c_p_triangle_f_g_q = AC / FG, 1.25 = AC / FG\nConclusions: 1.25 = sim_ratio_triangle_a_c_p_triangle_f_g_q\n\nStep 32:\nTheorem: Substitution\nPremises : 1.25 = sim_ratio_triangle_a_c_p_triangle_f_g_q, x = AP, 8 = FQ, sim_ratio_triangle_a_c_p_triangle_f_g_q = AP / FQ\nConclusions: 1.25 = x / 8\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 1.25 = x / 8, x = AP\nConclusions: 10 = AP\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 10 = AP, x = AP\nConclusions: 10 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, P)",
+        "Line(C, B)",
+        "Line(P, B)",
+        "Line(A, B)",
+        "Line(A, P)",
+        "Line(G, F)",
+        "Line(Q, F)",
+        "Line(D, F)",
+        "Line(D, Q)",
+        "Line(D, G)",
+        "Line(Q, G)",
+        "PointLiesOnLine(P, Line(C, B))",
+        "PointLiesOnLine(Q, Line(D, G))",
+        "Similar(Triangle(A, B, C), Triangle(F, D, G))",
+        "Equals(LengthOf(Line(B, A)), 15.0)",
+        "Equals(LengthOf(Line(A, P)), x)",
+        "Equals(LengthOf(Line(F, D)), 12.0)",
+        "Equals(LengthOf(Line(F, Q)), 8.0)",
+        "Equals(MeasureOf(Angle(P, A, B)), MeasureOf(Angle(C, A, P)))",
+        "Equals(MeasureOf(Angle(D, F, Q)), MeasureOf(Angle(Q, F, G)))"
+    ],
+    "correct": true
+}

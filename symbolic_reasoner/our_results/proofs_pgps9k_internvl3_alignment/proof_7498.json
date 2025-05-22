@@ -1,0 +1,117 @@
+{
+    "problem_id": "7498",
+    "solved": true,
+    "problem_text": "QS is the angle bisector of \\angle PQR, find the measure of \\angle RQS.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(P, Q, R)), 64)",
+        "Equals(MeasureOf(Angle(P, Q, S)), MeasureOf(Angle(S, Q, R)))",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(P, Q)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, A)",
+        "Line(S, B)",
+        "PointLiesOnLine(P, Line(C, Q))",
+        "PointLiesOnLine(R, Line(Q, A))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "BisectsAngle(Line(Q,S),Angle(P,Q,R))",
+        "Find(MeasureOf(Angle(R,Q,S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "A",
+        "B",
+        "S",
+        "P",
+        "C"
+    ],
+    "line_instances": [
+        "QP",
+        "QC",
+        "PC",
+        "QS",
+        "QB",
+        "SB",
+        "QR",
+        "QA",
+        "RA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            33.77589285714286,
+            210.14771428571427
+        ],
+        "R": [
+            265.22584033613447,
+            211.17983193277314
+        ],
+        "A": [
+            323.2142857142857,
+            210.569022556391
+        ],
+        "B": [
+            324.83035714285717,
+            28.3
+        ],
+        "S": [
+            263.99002100840335,
+            66.30285714285715
+        ],
+        "P": [
+            104.78947368421052,
+            66.04751879699249
+        ],
+        "C": [
+            122.01339285714286,
+            29.10857142857143
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        64.0,
+        116.0,
+        128.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        64.0,
+        116.0,
+        128.0
+    ],
+    "problem_answer": 32.0,
+    "total_time": 32.528108,
+    "solution_predicate": "Equals(0.5585053606, MeasureOf(Angle(R, Q, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (64 / 180) = \u2220RQP, \u2220SQP, \u2220RQB, \u2220RQP, S on BQ, \u2220RQS, \u2220RQS = \u2220SQP, 3.14 = pi, R on AQ, \u2220PQA, \u2220AQS, \u2220AQB, \u2220PQR\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220RQP\nConclusions: \u2220RQP = 2 * pi - \u2220PQR\n\nStep 3:\nTheorem: Same Angle\nPremises : S on BQ, \u2220RQB\nConclusions: \u2220RQB = \u2220RQS\n\nStep 4:\nTheorem: Same Angle\nPremises : R on AQ, \u2220PQA\nConclusions: \u2220PQA = \u2220PQR\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220AQS, R on AQ\nConclusions: \u2220AQS = \u2220RQS\n\nStep 6:\nTheorem: Circumference splited\nPremises : \u2220AQS, \u2220SQP, \u2220PQA\nConclusions: 2 * pi = \u2220AQS + \u2220PQA + \u2220SQP\n\nStep 7:\nTheorem: Same Angle\nPremises : S on BQ, \u2220AQB\nConclusions: \u2220AQB = \u2220AQS\n\nStep 8:\nTheorem: Same Angle\nPremises : R on AQ, \u2220AQB\nConclusions: \u2220AQB = \u2220RQB\n\nStep 9:\nTheorem: Circumference splited\nPremises : \u2220RQS, \u2220PQR, \u2220SQP\nConclusions: 2 * pi = \u2220PQR + \u2220RQS + \u2220SQP\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RQP = 2 * pi - \u2220PQR, pi * (64 / 180) = \u2220RQP\nConclusions: pi * (64 / 180) = 2 * pi - \u2220PQR\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQB = \u2220RQB, \u2220AQB = \u2220AQS\nConclusions: \u2220AQS = \u2220RQB\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AQS = \u2220RQB, \u2220AQS = \u2220RQS, \u2220RQS = \u2220SQP\nConclusions: \u2220RQB = \u2220SQP\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220PQA = \u2220PQR, \u2220RQB = \u2220SQP, 3.14 = pi, 2 * pi = \u2220AQS + \u2220PQA + \u2220SQP, \u2220AQS = \u2220RQB\nConclusions: 2 * 3.14 = \u2220PQR + \u2220RQB + \u2220RQB\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : \u2220RQS = \u2220SQP, \u2220RQB = \u2220RQS, 2 * 3.14 = \u2220PQR + \u2220RQB + \u2220RQB, 2 * pi = \u2220PQR + \u2220RQS + \u2220SQP, pi * (64 / 180) = 2 * pi - \u2220PQR\nConclusions: 0.56 = \u2220RQS\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(Q, C)",
+        "Line(P, C)",
+        "Line(Q, S)",
+        "Line(Q, B)",
+        "Line(S, B)",
+        "Line(Q, R)",
+        "Line(Q, A)",
+        "Line(R, A)",
+        "Line(C, P)",
+        "Line(C, Q)",
+        "Line(P, Q)",
+        "Line(Q, A)",
+        "Line(Q, B)",
+        "Line(Q, R)",
+        "Line(Q, S)",
+        "Line(R, A)",
+        "Line(S, B)",
+        "PointLiesOnLine(P, Line(C, Q))",
+        "PointLiesOnLine(R, Line(Q, A))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "BisectsAngle(Line(Q, S), Angle(R, Q, P))",
+        "Equals(MeasureOf(Angle(R, Q, P)), Mul(pi, Div(64.0, 180.0)))",
+        "Equals(MeasureOf(Angle(S, Q, P)), MeasureOf(Angle(R, Q, S)))"
+    ],
+    "correct": true
+}

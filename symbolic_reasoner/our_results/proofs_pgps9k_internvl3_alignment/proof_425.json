@@ -1,0 +1,107 @@
+{
+    "problem_id": "425",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 2x)",
+        "Equals(LengthOf(Line(B, C)), 8)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(D, E)), 5)",
+        "Equals(LengthOf(Line(E, C)), 9)",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(D, E, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "CD",
+        "DE",
+        "EC",
+        "EA",
+        "CA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            22.285039370078742,
+            29.113904761904763
+        ],
+        "B": [
+            74.64862204724409,
+            179.15047619047618
+        ],
+        "C": [
+            267.72563976377955,
+            179.22857142857143
+        ],
+        "D": [
+            410.3326771653543,
+            179.39591836734692
+        ],
+        "E": [
+            450.9975772259237,
+            291.5235164835165
+        ]
+    },
+    "problem_choices": [
+        2.222,
+        2.812,
+        6.0,
+        7.2
+    ],
+    "choices_precise_value": [
+        2.222,
+        2.812,
+        6.0,
+        7.2
+    ],
+    "problem_answer": 6.0,
+    "total_time": 33.103369,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CED, BC, 2 * x = AC, CD, \u2220CAB, C on AE, \u2220DBA, C on BD, 3.14 = pi, \u2220CDE, 8 = BC, 9 = CE, AC, CE, \u2220EAB, \u2220CBA, \u2220BAC = \u2220DEC, DE, x = CD, AB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CED\nConclusions: \u2220CED = 2 * pi - \u2220DEC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 4:\nTheorem: Vertical Angle Theorem\nPremises : C on BD, C on AE\nConclusions: \u2220ACB = \u2220ECD\n\nStep 5:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDE\nConclusions: \u2220CDE = 2 * pi - \u2220EDC\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EAB, C on AE\nConclusions: \u2220CAB = \u2220EAB\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : CE, CD, DE\nConclusions: \u25b3CDE\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 11:\nTheorem: Substitution\nPremises : \u2220CED = 2 * pi - \u2220DEC, 3.14 = pi\nConclusions: \u2220CED = 2 * 3.14 - \u2220DEC\n\nStep 12:\nTheorem: Substitution\nPremises : \u2220CAB = 2 * pi - \u2220BAC, 3.14 = pi, \u2220CAB = \u2220EAB, \u2220BAC = \u2220DEC\nConclusions: \u2220EAB = 2 * 3.14 - \u2220DEC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220DBA, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: \u2220DBA = 2 * pi - \u2220ABC\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, E)\nPremises : \u25b3CDE\nConclusions: pi = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 15:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CED = 2 * 3.14 - \u2220DEC, \u2220EAB = 2 * 3.14 - \u2220DEC\nConclusions: \u2220CED = \u2220EAB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220CDE + \u2220DEC + \u2220ECD\nConclusions: 3.14 = \u2220CDE + \u2220DEC + \u2220ECD\n\nStep 18:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220DBA, \u2220BAC = \u2220DEC, \u2220ACB = \u2220ECD, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = \u2220DBA + \u2220DEC + \u2220ECD\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220EAB, \u2220CED = \u2220EAB\nConclusions: \u2220CAB = \u2220CED\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220DBA + \u2220DEC + \u2220ECD, 3.14 = \u2220CDE + \u2220DEC + \u2220ECD, \u2220CDE = 2 * pi - \u2220EDC, \u2220DBA = 2 * pi - \u2220ABC\nConclusions: \u2220ABC = \u2220EDC\n\nStep 21:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220EDC, \u2220ACB = \u2220ECD, \u2220CAB = \u2220CED\nConclusions: \u25b3ABC ~ \u25b3EDC\n\nStep 22:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3EDC\nConclusions: \u2220CAB = \u2220CED, AC / CE = BC / CD, \u2220ACB = \u2220ECD, \u2220BAC = \u2220DEC\n\nStep 23:\nTheorem: Substitution\nPremises : 8 = BC, x = CD, 2 * x = AC, AC / CE = BC / CD, 9 = CE\nConclusions: 8 / x = (2 * x) / 9\n\nStep 24:\nTheorem: Solve Univariate Equation\nPremises : 8 / x = (2 * x) / 9\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(D, E)",
+        "Line(E, C)",
+        "Line(E, A)",
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), Mul(2.0, x))",
+        "Equals(LengthOf(Line(B, C)), 8.0)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(D, E)), 5.0)",
+        "Equals(LengthOf(Line(E, C)), 9.0)",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(D, E, C)))"
+    ],
+    "correct": true
+}

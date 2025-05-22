@@ -1,0 +1,142 @@
+{
+    "problem_id": "2836",
+    "solved": true,
+    "problem_text": "Circles G, J, and K all intersect at L. If G H = 10, find the measure. Find J L.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(A, J))",
+        "PointLiesOnLine(G, Line(A, L))",
+        "PointLiesOnLine(G, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, L))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(G, L))",
+        "PointLiesOnLine(J, Line(G, K))",
+        "PointLiesOnLine(L, Line(A, K))",
+        "PointLiesOnLine(L, Line(G, K))",
+        "PointLiesOnLine(L, Line(J, K))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(K, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_2_0))",
+        "Equals(LengthOf(Line(G, H)),10)",
+        "Find(LengthOf(Line(J, K)))"
+    ],
+    "point_instances": [
+        "G",
+        "J",
+        "K",
+        "H",
+        "F",
+        "L",
+        "A"
+    ],
+    "line_instances": [
+        "AG",
+        "AJ",
+        "AL",
+        "AK",
+        "GJ",
+        "GL",
+        "GK",
+        "JL",
+        "JK",
+        "LK",
+        "HG",
+        "HF",
+        "GF"
+    ],
+    "circle_instances": [
+        "L",
+        "J",
+        "G"
+    ],
+    "point_positions": {
+        "G": [
+            132.85106382978722,
+            142.5531914893617
+        ],
+        "J": [
+            183.6109422492401,
+            164.43768996960486
+        ],
+        "K": [
+            233.45896656534956,
+            185.1063829787234
+        ],
+        "H": [
+            173.88449848024317,
+            41.03343465045592
+        ],
+        "F": [
+            88.77811550151975,
+            243.46504559270517
+        ],
+        "L": [
+            210.0547112462006,
+            175.07598784194528
+        ],
+        "A": [
+            31.33130699088146,
+            100.6079027355623
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "10",
+        "25"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        10.0,
+        25.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 24.865435,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on \u2299(J, radius_1_0), K on \u2299(G, radius_2_0), H on \u2299(G, radius_2_0), 10 = GH, G on \u2299(J, radius_1_0), J on GK\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : K on \u2299(J, radius_1_0)\nConclusions: radius_1_0 = JK\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : K on \u2299(G, radius_2_0)\nConclusions: radius_2_0 = GK\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : H on \u2299(G, radius_2_0)\nConclusions: radius_2_0 = GH\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : G on \u2299(J, radius_1_0)\nConclusions: radius_1_0 = GJ\n\nStep 6:\nTheorem: Line Segment Split\nPremises : J on GK\nConclusions: GK = GJ + JK\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_2_0 = GH, 10 = GH\nConclusions: 10 = radius_2_0\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = GJ, radius_1_0 = JK\nConclusions: GJ = JK\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 10 = radius_2_0, radius_2_0 = GK\nConclusions: 10 = GK\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 10 = GK, GK = GJ + JK\nConclusions: 10 = GJ + JK\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 10 = GJ + JK, GJ = JK\nConclusions: 5 = JK\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, G)",
+        "Line(A, J)",
+        "Line(A, L)",
+        "Line(A, K)",
+        "Line(G, J)",
+        "Line(G, L)",
+        "Line(G, K)",
+        "Line(J, L)",
+        "Line(J, K)",
+        "Line(L, K)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(G, F)",
+        "Circle(J, radius_1_0)",
+        "Circle(G, radius_2_0)",
+        "Circle(L, radius_0_0)",
+        "PointLiesOnLine(G, Line(A, J))",
+        "PointLiesOnLine(G, Line(A, L))",
+        "PointLiesOnLine(G, Line(A, K))",
+        "PointLiesOnLine(J, Line(A, L))",
+        "PointLiesOnLine(J, Line(A, K))",
+        "PointLiesOnLine(J, Line(G, L))",
+        "PointLiesOnLine(J, Line(G, K))",
+        "PointLiesOnLine(L, Line(A, K))",
+        "PointLiesOnLine(L, Line(G, K))",
+        "PointLiesOnLine(L, Line(J, K))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnCircle(K, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(L, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(G, Circle(J, radius_1_0))",
+        "PointLiesOnCircle(K, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_2_0))",
+        "PointLiesOnCircle(A, Circle(G, radius_2_0))",
+        "Equals(LengthOf(Line(G, H)), 10.0)"
+    ],
+    "correct": true
+}

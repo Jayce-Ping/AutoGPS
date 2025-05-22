@@ -1,0 +1,109 @@
+{
+    "problem_id": "4453",
+    "solved": true,
+    "problem_text": "Find the exact value of DE, given AD = 12 and BD = 4.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Equals(LengthOf(Line(A,D)),12)",
+        "Equals(LengthOf(Line(B,D)),4)",
+        "Find(LengthOf(Line(D,E)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "E",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "DB",
+        "BE",
+        "BC",
+        "EC",
+        "DE",
+        "DC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            71.24140350877192,
+            184.0851063829787
+        ],
+        "D": [
+            355.5976470588235,
+            184.15018773466832
+        ],
+        "B": [
+            421.3347368421052,
+            184.0851063829787
+        ],
+        "E": [
+            408.8376470588235,
+            158.2778473091364
+        ],
+        "C": [
+            355.57866666666666,
+            47.86382978723404
+        ]
+    },
+    "problem_choices": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "problem_answer": 6.928203230275509,
+    "total_time": 162.777324,
+    "solution_predicate": "Equals(3.4641016152, LengthOf(Line(D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CE \u22a5 DE, BE \u22a5 DE, \u2220BAC, \u2220BCA, BD \u22a5 CD, \u2220EBA, 12 = AD, \u2220DCB, \u2220ACB, D on AB, AC, \u2220ACB, BE, E on BC, BC, BD, \u2220CDA, DE, CD, \u2220CBA, AC \u22a5 BC, AD, 4 = BD, 3.14 = pi, AD \u22a5 CD, \u2220ACD, AC \u22a5 CE, \u2220BDC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 DE\nConclusions: pi / 2 = \u2220CED\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 DE\nConclusions: pi / 2 = \u2220DEB\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220CDB, pi / 2 = \u2220BDC\n\nStep 5:\nTheorem: Same Angle\nPremises : D on AB, \u2220EBA\nConclusions: \u2220EBA = \u2220EBD\n\nStep 6:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220BAC, D on AB\nConclusions: \u2220BAC = \u2220DAC\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACB\nConclusions: \u2220ACB = 2 * pi - \u2220BCA\n\nStep 9:\nTheorem: Same Angle\nPremises : E on BC, \u2220ACB\nConclusions: \u2220ACB = \u2220ACE\n\nStep 10:\nTheorem: Definition of Triangle\nPremises : BD, DE, BE\nConclusions: \u25b3BDE\n\nStep 11:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220CBA, E on BC\nConclusions: \u2220CBA = \u2220EBA\n\nStep 13:\nTheorem: Same Angle\nPremises : D on AB, \u2220CBA\nConclusions: \u2220CBA = \u2220CBD\n\nStep 14:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 16:\nTheorem: Evaluate\nPremises : 12 = AD, 4 = BD\nConclusions: 16 = AD + BD\n\nStep 17:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220CDA, (3 * pi) / 2 = \u2220ADC\n\nStep 18:\nTheorem: Circumference splited\nPremises : \u2220ACD, \u2220DCB, \u2220BCA\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB\n\nStep 19:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CE\nConclusions: pi / 2 = \u2220ACE\n\nStep 20:\nTheorem: Perpendicular to Parallel\nPremises : CE \u22a5 DE, AC \u22a5 CE\nConclusions: AC || DE\n\nStep 21:\nTheorem: Straight Angle\nPremises : \u2220BDC, \u2220CDA\nConclusions: pi = \u2220BDC + \u2220CDA\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Triangle(B, D, E)\nPremises : \u25b3BDE\nConclusions: pi = \u2220BDE + \u2220DEB + \u2220EBD\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBA, \u2220EBA = \u2220EBD\nConclusions: \u2220CBA = \u2220EBD\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = 2 * pi - \u2220BCA, pi / 2 = \u2220ACB\nConclusions: pi / 2 = 2 * pi - \u2220BCA\n\nStep 26:\nTheorem: Interior Angle Sum Theorem for Triangle(A, C, D)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 16 = AD + BD, AB = AD + BD\nConclusions: 16 = AB\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CDA, pi / 2 = \u2220CED\nConclusions: \u2220CDA = \u2220CED\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220CDA, pi / 2 = \u2220BDC\nConclusions: \u2220BDC = \u2220CDA\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ADC, (3 * pi) / 2 = \u2220BCA\nConclusions: \u2220ADC = \u2220BCA\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220CDB, (3 * pi) / 2 = \u2220ADC\nConclusions: \u2220ADC = \u2220CDB\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACB = \u2220ACE, pi / 2 = \u2220ACE, pi / 2 = \u2220CED\nConclusions: \u2220ACB = \u2220CED\n\nStep 33:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || DE\nConclusions: \u2220CDE = \u2220DCA, \u2220ACD = \u2220EDC\n\nStep 34:\nTheorem: Corresponding Angle Theorem\nPremises : AC || DE\nConclusions: \u2220BAC = \u2220BDE\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBD, \u2220CBA = \u2220CBD\nConclusions: \u2220CBD = \u2220EBD\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACD + \u2220CDA + \u2220DAC\nConclusions: 3.14 = \u2220ACD + \u2220CDA + \u2220DAC\n\nStep 37:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CDA = \u2220CED, \u2220CDE = \u2220DCA\nConclusions: \u25b3ACD ~ \u25b3CDE\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DAC, \u2220BAC = \u2220BDE\nConclusions: \u2220BDE = \u2220DAC\n\nStep 39:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3CDE\nConclusions: AD / CE = CD / DE, \u2220CDE = \u2220DCA, \u2220ACD = \u2220EDC\n\nStep 40:\nTheorem: Substitution\nPremises : pi = \u2220BDE + \u2220DEB + \u2220EBD, 3.14 = pi, pi / 2 = \u2220DEB, \u2220BDE = \u2220DAC\nConclusions: 3.14 = pi / 2 + \u2220DAC + \u2220EBD\n\nStep 41:\nTheorem: Substitution\nPremises : 12 = AD, AD / CE = CD / DE\nConclusions: 12 / CE = CD / DE\n\nStep 42:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220BDC + \u2220CDA, 3.14 = pi / 2 + \u2220DAC + \u2220EBD, \u2220CBA = \u2220EBD, 3.14 = \u2220ACD + \u2220CDA + \u2220DAC, \u2220BDC = \u2220CDA\nConclusions: \u2220ACD = \u2220CBA\n\nStep 43:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220BDC + \u2220CDA, 3.14 = pi / 2 + \u2220DAC + \u2220EBD, \u2220EBA = \u2220EBD, 3.14 = \u2220ACD + \u2220CDA + \u2220DAC, \u2220BDC = \u2220CDA\nConclusions: \u2220ACD = \u2220EBA\n\nStep 44:\nTheorem: Solve Linear Equation System\nPremises : pi / 2 = 2 * pi - \u2220BCA, 2 * pi = \u2220ACD + \u2220BCA + \u2220DCB, 3.14 = pi / 2 + \u2220DAC + \u2220EBD, \u2220CBD = \u2220EBD, pi = \u2220BDC + \u2220CBD + \u2220DCB, 3.14 = \u2220ACD + \u2220CDA + \u2220DAC, \u2220BDC = \u2220CDA\nConclusions: \u2220ACD = \u2220CBD\n\nStep 45:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BAC = \u2220DAC, \u2220ACD = \u2220CBA, \u2220ADC = \u2220BCA\nConclusions: \u25b3ABC ~ \u25b3ACD\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220EBA, \u2220EBA = \u2220EBD, \u2220ACD = \u2220EDC\nConclusions: \u2220EBD = \u2220EDC\n\nStep 47:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACD = \u2220CBD, \u2220ADC = \u2220CDB\nConclusions: \u25b3ACD ~ \u25b3CBD\n\nStep 48:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ACD\nConclusions: \u2220BAC = \u2220DAC, \u2220ACD = \u2220CBA, AB / AC = AC / AD\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBD, \u2220EBD = \u2220EDC\nConclusions: \u2220CBA = \u2220EDC\n\nStep 50:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3CBD\nConclusions: AD / CD = CD / BD, \u2220ACD = \u2220CBD, \u2220BDC = \u2220CDA\n\nStep 51:\nTheorem: Substitution\nPremises : 16 = AB, 12 = AD, AB / AC = AC / AD\nConclusions: 16 / AC = AC / 12\n\nStep 52:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACB = \u2220CED, \u2220CBA = \u2220EDC\nConclusions: \u25b3ABC ~ \u25b3CDE\n\nStep 53:\nTheorem: Substitution\nPremises : 12 = AD, AD / CD = CD / BD, 4 = BD\nConclusions: 12 / CD = CD / 4\n\nStep 54:\nTheorem: Solve Univariate Equation\nPremises : 16 / AC = AC / 12\nConclusions: 13.86 = AC\n\nStep 55:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3CDE\nConclusions: \u2220ACB = \u2220CED, AB / CD = AC / CE\n\nStep 56:\nTheorem: Solve Univariate Equation\nPremises : 12 / CD = CD / 4\nConclusions: 6.93 = CD\n\nStep 57:\nTheorem: Substitution\nPremises : 16 = AB, AB / CD = AC / CE\nConclusions: 16 / CD = AC / CE\n\nStep 58:\nTheorem: Substitution\nPremises : 12 / CE = CD / DE, 6.93 = CD\nConclusions: 12 / CE = 6.93 / DE\n\nStep 59:\nTheorem: Substitution\nPremises : 13.86 = AC, 16 / CD = AC / CE, 6.93 = CD\nConclusions: 16 / 6.93 = 13.86 / CE\n\nStep 60:\nTheorem: Solve Linear Equation System\nPremises : 16 / 6.93 = 13.86 / CE, 12 / CE = 6.93 / DE\nConclusions: 3.46 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(B, D)), 4.0)"
+    ],
+    "correct": false
+}

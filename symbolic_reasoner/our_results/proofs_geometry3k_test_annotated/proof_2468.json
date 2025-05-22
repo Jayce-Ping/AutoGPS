@@ -1,0 +1,76 @@
+{
+    "problem_id": "2468",
+    "solved": true,
+    "problem_text": "Find the measure of the altitude drawn to the hypotenuse.",
+    "logic_forms": [
+        "PointLiesOnLine(H, Line(G, F))",
+        "Perpendicular(Line(F, E), Line(G, E))",
+        "Perpendicular(Line(F, H), Line(E, H))",
+        "Equals(LengthOf(Line(G, F)), 16)",
+        "Equals(LengthOf(Line(F, H)), 12)",
+        "Find(LengthOf(Line(E, H)))"
+    ],
+    "point_instances": [
+        "H",
+        "F",
+        "E",
+        "G"
+    ],
+    "line_instances": [
+        "GH",
+        "GF",
+        "HF",
+        "EF",
+        "EH",
+        "EG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            99.17355371900827,
+            148.4214876033058
+        ],
+        "F": [
+            302.4793388429752,
+            148.6969696969697
+        ],
+        "E": [
+            98.89807162534436,
+            30.515151515151516
+        ],
+        "G": [
+            30.85399449035813,
+            148.9724517906336
+        ]
+    },
+    "problem_choices": [
+        "2 \\sqrt { 3 }",
+        "2 \\sqrt { 6 }",
+        "4 \\sqrt { 3 }",
+        "4 \\sqrt { 6 }"
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "problem_answer": 6.928203230275509,
+    "total_time": 38.97192,
+    "solution_predicate": "Equals(6.9282032303, LengthOf(Line(E, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: H on FG, GH, \u2220FEG, EF, EH \u22a5 GH, FH, EF \u22a5 EG, EG, EH, \u2220GEH, 16 = FG, 12 = FH, \u2220HEF, 3.14 = pi, \u2220FGE, \u2220GEH, \u2220EFH, EH \u22a5 FH\n\nStep 2:\nTheorem: Line Segment Split\nPremises : H on FG\nConclusions: FG = FH + GH\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : EH \u22a5 GH\nConclusions: (3 * pi) / 2 = \u2220GHE, pi / 2 = \u2220EHG\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : EF \u22a5 EG\nConclusions: (3 * pi) / 2 = \u2220FEG\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : FH, EH, EF\nConclusions: \u25b3EFH\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : EH, GH, EG\nConclusions: \u25b3EGH\n\nStep 7:\nTheorem: Circumference splited\nPremises : \u2220GEH, \u2220HEF, \u2220FEG\nConclusions: 2 * pi = \u2220FEG + \u2220GEH + \u2220HEF\n\nStep 8:\nTheorem: Same Angle\nPremises : H on FG, \u2220FGE\nConclusions: \u2220FGE = \u2220HGE\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : EH \u22a5 FH\nConclusions: (3 * pi) / 2 = \u2220EHF\n\nStep 10:\nTheorem: Substitution\nPremises : FG = FH + GH, 16 = FG, 12 = FH\nConclusions: 16 = 12 + GH\n\nStep 11:\nTheorem: Tan Function Definition\nPremises : EH \u22a5 FH, \u25b3EFH, \u2220EFH\nConclusions: EH / FH = tan(\u2220EFH)\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(H, G, E)\nPremises : \u25b3EGH\nConclusions: pi = \u2220EHG + \u2220GEH + \u2220HGE\n\nStep 13:\nTheorem: Tan Function Definition\nPremises : EH \u22a5 GH, \u25b3EGH, \u2220GEH\nConclusions: GH / EH = tan(\u2220GEH)\n\nStep 14:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220FEG, 2 * pi = \u2220FEG + \u2220GEH + \u2220HEF, 3.14 = pi\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220GEH + \u2220HEF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220EHF, (3 * pi) / 2 = \u2220GHE\nConclusions: \u2220EHF = \u2220GHE\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 16 = 12 + GH\nConclusions: 4 = GH\n\nStep 17:\nTheorem: Substitution\nPremises : pi = \u2220EHG + \u2220GEH + \u2220HGE, 3.14 = pi, pi / 2 = \u2220EHG\nConclusions: 3.14 = 3.14 / 2 + \u2220GEH + \u2220HGE\n\nStep 18:\nTheorem: Substitution\nPremises : GH / EH = tan(\u2220GEH), 4 = GH\nConclusions: 4 / EH = tan(\u2220GEH)\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : \u2220FGE = \u2220HGE, 3.14 = 3.14 / 2 + \u2220GEH + \u2220HGE, 2 * 3.14 = (3 * 3.14) / 2 + \u2220GEH + \u2220HEF\nConclusions: \u2220FGE = \u2220HEF\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FGE = \u2220HEF, \u2220FGE = \u2220HGE\nConclusions: \u2220HEF = \u2220HGE\n\nStep 21:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220HEF = \u2220HGE, \u2220EHF = \u2220GHE\nConclusions: \u25b3EFH ~ \u25b3GEH\n\nStep 22:\nTheorem: Similar Definition\nPremises : \u25b3EFH ~ \u25b3GEH\nConclusions: \u2220EHF = \u2220GHE, \u2220EFH = \u2220GEH\n\nStep 23:\nTheorem: Substitution\nPremises : EH / FH = tan(\u2220EFH), \u2220EFH = \u2220GEH, 12 = FH\nConclusions: EH / 12 = tan(\u2220GEH)\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : EH / 12 = tan(\u2220GEH), 4 / EH = tan(\u2220GEH)\nConclusions: 4 / EH = EH / 12\n\nStep 25:\nTheorem: Solve Univariate Equation\nPremises : 4 / EH = EH / 12\nConclusions: 6.93 = EH\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, H)",
+        "Line(G, F)",
+        "Line(H, F)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(E, G)",
+        "PointLiesOnLine(H, Line(G, F))",
+        "Perpendicular(Line(F, E), Line(G, E))",
+        "Perpendicular(Line(F, H), Line(E, H))",
+        "Equals(LengthOf(Line(G, F)), 16.0)",
+        "Equals(LengthOf(Line(F, H)), 12.0)"
+    ],
+    "correct": true
+}

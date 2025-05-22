@@ -1,0 +1,88 @@
+{
+    "problem_id": "2417",
+    "solved": true,
+    "problem_text": "In \\odot P, the radius is 2 inches, find the length of \\widehat R S. Round to the nearest hundredth.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(R, T))",
+        "PointLiesOnCircle(T, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(P, radius_0_0))",
+        "Equals(MeasureOf(Angle(S, P, R)), 130)",
+        "Equals(MeasureOf(Angle(Q, P, T)), 112)",
+        "Equals(RadiusOf(Circle(P)), 2)",
+        "Find(LengthOf(Arc(R,S)))"
+    ],
+    "point_instances": [
+        "P",
+        "Q",
+        "S",
+        "R",
+        "T"
+    ],
+    "line_instances": [
+        "QP",
+        "PS",
+        "RP",
+        "RT",
+        "PT"
+    ],
+    "circle_instances": [
+        "P"
+    ],
+    "point_positions": {
+        "P": [
+            252.22448979591837,
+            255.6122448979592
+        ],
+        "Q": [
+            101.71428571428572,
+            234.18367346938777
+        ],
+        "S": [
+            386.9183673469388,
+            323.46938775510205
+        ],
+        "R": [
+            216.51020408163265,
+            108.16326530612245
+        ],
+        "T": [
+            287.42857142857144,
+            404.0816326530612
+        ]
+    },
+    "problem_choices": [
+        "2.27",
+        "3.91",
+        "4.54",
+        "7.82"
+    ],
+    "choices_precise_value": [
+        2.27,
+        3.91,
+        4.54,
+        7.82
+    ],
+    "problem_answer": 4.54,
+    "total_time": 8.059643,
+    "solution_predicate": "Equals(4.5378560552, LengthOf(Arc(S, P, R)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (130 / 180) = \u2220SPR, 2 = radius_0_0, Arc(SPR)\n\nStep 2:\nTheorem: Arc Length Definition\nPremises : Arc(SPR)\nConclusions: Arc(SPR) = radius_0_0 * \u2220SPR\n\nStep 3:\nTheorem: Substitution\nPremises : Arc(SPR) = radius_0_0 * \u2220SPR, pi * (130 / 180) = \u2220SPR, 2 = radius_0_0\nConclusions: 2 * pi * (130 / 180) = Arc(SPR)\n\nStep 4:\nTheorem: Evaluate\nPremises : 2 * pi * (130 / 180) = Arc(SPR)\nConclusions: 4.54 = Arc(SPR)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, P)",
+        "Line(P, S)",
+        "Line(R, P)",
+        "Line(R, T)",
+        "Line(P, T)",
+        "Circle(P, radius_0_0)",
+        "PointLiesOnLine(P, Line(R, T))",
+        "PointLiesOnCircle(T, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(Q, Circle(P, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(P, radius_0_0))",
+        "Equals(MeasureOf(Angle(S, P, R)), Mul(pi, Div(130.0, 180.0)))",
+        "Equals(MeasureOf(Angle(Q, P, T)), Mul(pi, Div(112.0, 180.0)))",
+        "Equals(radius_0_0, 2.0)"
+    ],
+    "correct": true
+}

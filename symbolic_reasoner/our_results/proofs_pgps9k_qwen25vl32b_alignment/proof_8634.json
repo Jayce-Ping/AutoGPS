@@ -1,0 +1,107 @@
+{
+    "problem_id": "8634",
+    "solved": true,
+    "problem_text": "Find m \\angle 4.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(F, A, B)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(F, A, C)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(F, B, A)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(F, B, D)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(F, D, B)), 64)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(A, C), Line(C, D))",
+        "Perpendicular(Line(A, D), Line(B, F))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "PointLiesOnLine(F, Line(A, D))",
+        "Find(MeasureOf(Angle(4)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C",
+        "F"
+    ],
+    "line_instances": [
+        "AC",
+        "CD",
+        "DB",
+        "AB",
+        "AF",
+        "AD",
+        "FD",
+        "FB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            124.6933962264151,
+            121.65428571428572
+        ],
+        "B": [
+            489.9716981132076,
+            122.28244897959185
+        ],
+        "D": [
+            489.9716981132076,
+            409.56244897959186
+        ],
+        "C": [
+            125.57358490566037,
+            409.22742857142856
+        ],
+        "F": [
+            351.70872641509436,
+            299.3721428571429
+        ]
+    },
+    "problem_choices": [
+        26.0,
+        32.0,
+        64.0,
+        78.0
+    ],
+    "choices_precise_value": [
+        26.0,
+        32.0,
+        64.0,
+        78.0
+    ],
+    "problem_answer": 64.0,
+    "total_time": 31.952419,
+    "solution_predicate": "Equals(1.1170107213, MeasureOf(Angle(C, A, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD \u22a5 CD, \u2220BDA, \u2220CAD, pi * (64 / 180) = \u2220BDF, AC \u22a5 CD, F on AD\n\nStep 2:\nTheorem: Perpendicular to Parallel\nPremises : AC \u22a5 CD, BD \u22a5 CD\nConclusions: AC || BD\n\nStep 3:\nTheorem: Same Angle\nPremises : F on AD, \u2220BDA\nConclusions: \u2220BDA = \u2220BDF\n\nStep 4:\nTheorem: Same Angle\nPremises : F on AD, \u2220CAD\nConclusions: \u2220CAD = \u2220CAF\n\nStep 5:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || BD\nConclusions: \u2220BDA = \u2220CAD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (64 / 180) = \u2220BDF, \u2220BDA = \u2220BDF\nConclusions: pi * (64 / 180) = \u2220BDA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220CAD, \u2220CAD = \u2220CAF, pi * (64 / 180) = \u2220BDA\nConclusions: pi * (64 / 180) = \u2220CAF\n\nStep 8:\nTheorem: Evaluate\nPremises : pi * (64 / 180) = \u2220CAF\nConclusions: 1.12 = \u2220CAF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, F)",
+        "Line(A, D)",
+        "Line(F, D)",
+        "Line(F, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, D)",
+        "Line(B, F)",
+        "Line(C, D)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(A, C), Line(C, D))",
+        "Perpendicular(Line(A, D), Line(B, F))",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "PointLiesOnLine(F, Line(A, D))",
+        "Equals(MeasureOf(Angle(B, D, F)), Mul(pi, Div(64.0, 180.0)))"
+    ],
+    "correct": true
+}

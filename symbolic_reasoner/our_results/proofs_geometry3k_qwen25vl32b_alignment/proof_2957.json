@@ -1,0 +1,91 @@
+{
+    "problem_id": "2957",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(E, B))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(E, D)), 8)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(E, C)), 10)",
+        "Equals(LengthOf(Line(A, D)), 18)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "EC",
+        "EB",
+        "CB",
+        "ED",
+        "EA",
+        "DA",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            88.86026200873363,
+            382.53275109170306
+        ],
+        "B": [
+            294.53711790393015,
+            382.9694323144105
+        ],
+        "C": [
+            179.25327510917032,
+            194.75982532751092
+        ],
+        "D": [
+            89.29694323144105,
+            194.75982532751092
+        ],
+        "E": [
+            88.86026200873363,
+            45.41484716157205
+        ]
+    },
+    "problem_choices": [
+        "14.4",
+        "18",
+        "22.5",
+        "24"
+    ],
+    "choices_precise_value": [
+        14.4,
+        18.0,
+        22.5,
+        24.0
+    ],
+    "problem_answer": 22.5,
+    "total_time": 55.076485,
+    "solution_predicate": "Equals(22.5, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220AEB, \u2220DEB, 18 = AD, x = BC, AB \u22a5 AD, AD \u22a5 CD, \u2220DCE, \u2220ABE, D on AE, 10 = CE, \u2220EBA, 8 = DE, 3.14 = pi, \u2220ABC, C on BE\n\nStep 2:\nTheorem: Perpendicular to Parallel\nPremises : AD \u22a5 CD, AB \u22a5 AD\nConclusions: AB || DC\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCE\nConclusions: \u2220DCE = 2 * pi - \u2220ECD\n\nStep 4:\nTheorem: Line Segment Split\nPremises : D on AE\nConclusions: AE = AD + DE\n\nStep 5:\nTheorem: Same Angle\nPremises : D on AE, \u2220AEB\nConclusions: \u2220AEB = \u2220DEB\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABC\nConclusions: \u2220ABC = 2 * pi - \u2220CBA\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220ABE, C on BE\nConclusions: \u2220ABC = \u2220ABE\n\nStep 8:\nTheorem: Line Segment Split\nPremises : C on BE\nConclusions: BE = BC + CE\n\nStep 9:\nTheorem: Same Angle\nPremises : C on BE, \u2220EBA\nConclusions: \u2220CBA = \u2220EBA\n\nStep 10:\nTheorem: Same Angle\nPremises : C on BE, \u2220DEB\nConclusions: \u2220DEB = \u2220DEC\n\nStep 11:\nTheorem: Corresponding Angle Theorem\nPremises : AB || DC\nConclusions: \u2220EBA = \u2220ECD, \u2220EAB = \u2220EDC\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DCE = 2 * pi - \u2220ECD\nConclusions: \u2220DCE = 2 * 3.14 - \u2220ECD\n\nStep 13:\nTheorem: Substitution\nPremises : 8 = DE, 18 = AD, AE = AD + DE\nConclusions: 18 + 8 = AE\n\nStep 14:\nTheorem: Substitution\nPremises : 10 = CE, BE = BC + CE, x = BC\nConclusions: 10 + x = BE\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEB = \u2220DEB, \u2220DEB = \u2220DEC\nConclusions: \u2220AEB = \u2220DEC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBA = \u2220ECD, \u2220CBA = \u2220EBA\nConclusions: \u2220CBA = \u2220ECD\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 18 + 8 = AE\nConclusions: 26 = AE\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : BE = BC + CE, 10 + x = BE\nConclusions: 10 + x = BC + CE\n\nStep 19:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABC = \u2220ABE, \u2220CBA = \u2220ECD, \u2220ABC = 2 * pi - \u2220CBA\nConclusions: \u2220ABE = 2 * 3.14 - \u2220ECD\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABE = 2 * 3.14 - \u2220ECD, \u2220DCE = 2 * 3.14 - \u2220ECD\nConclusions: \u2220ABE = \u2220DCE\n\nStep 21:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABE = \u2220DCE, \u2220AEB = \u2220DEC, \u2220EAB = \u2220EDC\nConclusions: \u25b3ABE ~ \u25b3DCE\n\nStep 22:\nTheorem: Similar Definition\nPremises : \u25b3ABE ~ \u25b3DCE\nConclusions: \u2220EAB = \u2220EDC, \u2220ABE = \u2220DCE, \u2220EBA = \u2220ECD, sim_ratio_triangle_a_b_e_triangle_d_c_e = BE / CE, sim_ratio_triangle_a_b_e_triangle_d_c_e = AE / DE\n\nStep 23:\nTheorem: Substitution\nPremises : 10 = CE, 10 + x = BE, sim_ratio_triangle_a_b_e_triangle_d_c_e = BE / CE\nConclusions: sim_ratio_triangle_a_b_e_triangle_d_c_e = (10 + x) / 10\n\nStep 24:\nTheorem: Substitution\nPremises : 8 = DE, sim_ratio_triangle_a_b_e_triangle_d_c_e = AE / DE, 26 = AE\nConclusions: 26 / 8 = sim_ratio_triangle_a_b_e_triangle_d_c_e\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 26 / 8 = sim_ratio_triangle_a_b_e_triangle_d_c_e, sim_ratio_triangle_a_b_e_triangle_d_c_e = BE / CE\nConclusions: 26 / 8 = BE / CE\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_b_e_triangle_d_c_e = (10 + x) / 10, 26 / 8 = sim_ratio_triangle_a_b_e_triangle_d_c_e\nConclusions: 26 / 8 = (10 + x) / 10\n\nStep 27:\nTheorem: Solve Linear Equation System\nPremises : 10 + x = BC + CE, 26 / 8 = (10 + x) / 10, 26 / 8 = BE / CE, BE = BC + CE\nConclusions: 22.5 = BC\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : x = BC, 22.5 = BC\nConclusions: 22.5 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(E, C)",
+        "Line(E, B)",
+        "Line(C, B)",
+        "Line(E, D)",
+        "Line(E, A)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "PointLiesOnLine(C, Line(E, B))",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(E, D)), 8.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(E, C)), 10.0)",
+        "Equals(LengthOf(Line(A, D)), 18.0)"
+    ],
+    "correct": true
+}

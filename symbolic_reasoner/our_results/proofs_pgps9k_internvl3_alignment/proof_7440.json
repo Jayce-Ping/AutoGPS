@@ -1,0 +1,69 @@
+{
+    "problem_id": "7440",
+    "solved": true,
+    "problem_text": "What is x?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, F)), 27.4)",
+        "Equals(LengthOf(Line(G, E)), 9.6)",
+        "Equals(MeasureOf(Angle(F, G, E)), 43)",
+        "Equals(MeasureOf(Angle(G, F, E)), x)",
+        "Line(E, F)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "F",
+        "G",
+        "E"
+    ],
+    "line_instances": [
+        "GF",
+        "EF",
+        "GE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "F": [
+            313.9425882352941,
+            59.26868044515103
+        ],
+        "G": [
+            49.096,
+            64.48048048048048
+        ],
+        "E": [
+            105.41199999999999,
+            114.80657127715949
+        ]
+    },
+    "problem_choices": [
+        13.824,
+        20.179,
+        43.0,
+        79.911
+    ],
+    "choices_precise_value": [
+        13.824,
+        20.179,
+        43.0,
+        79.911
+    ],
+    "problem_answer": 13.824,
+    "total_time": 12.795118,
+    "solution_predicate": "Equals(13.8244783011, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (43 / 180) = \u2220EGF, 27.4 = EF, 9.6 = EG, FG, EF, pi * (x / 180) = \u2220GFE, 3.14 = pi, EG\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 40.18 = 27.4 / sin(pi * (43 / 180))\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (x / 180) = \u2220GFE\nConclusions: 3.14 * (x / 180) = \u2220GFE\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : EF, FG, EG\nConclusions: \u25b3EFG\n\nStep 5:\nTheorem: Law of Sines\nPremises : \u25b3EFG\nConclusions: EF / sin(\u2220EGF) = FG / sin(\u2220FEG), EG / sin(\u2220GFE) = FG / sin(\u2220FEG)\n\nStep 6:\nTheorem: Substitution\nPremises : 27.4 = EF, EF / sin(\u2220EGF) = FG / sin(\u2220FEG), pi * (43 / 180) = \u2220EGF\nConclusions: 27.4 / sin(pi * (43 / 180)) = FG / sin(\u2220FEG)\n\nStep 7:\nTheorem: Substitution\nPremises : 3.14 * (x / 180) = \u2220GFE, EG / sin(\u2220GFE) = FG / sin(\u2220FEG), 9.6 = EG\nConclusions: 9.6 / sin(3.14 * (x / 180)) = FG / sin(\u2220FEG)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 40.18 = 27.4 / sin(pi * (43 / 180)), 27.4 / sin(pi * (43 / 180)) = FG / sin(\u2220FEG)\nConclusions: 40.18 = FG / sin(\u2220FEG)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 40.18 = FG / sin(\u2220FEG), 9.6 / sin(3.14 * (x / 180)) = FG / sin(\u2220FEG)\nConclusions: 40.18 = 9.6 / sin(3.14 * (x / 180))\n\nStep 10:\nTheorem: Solve Univariate Equation\nPremises : 40.18 = 9.6 / sin(3.14 * (x / 180))\nConclusions: 13.82 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(E, F)",
+        "Line(G, E)",
+        "Line(E, F)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Equals(LengthOf(Line(E, F)), 27.4)",
+        "Equals(LengthOf(Line(G, E)), 9.6)",
+        "Equals(MeasureOf(Angle(E, G, F)), Mul(pi, Div(43.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, F, E)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

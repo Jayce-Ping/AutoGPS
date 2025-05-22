@@ -1,0 +1,96 @@
+{
+    "problem_id": "2552",
+    "solved": true,
+    "problem_text": "Which segments are parallel?",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, C))",
+        "Equals(MeasureOf(Angle(E, C, B)), 60)",
+        "Equals(MeasureOf(Angle(D, E, A)), 40)",
+        "Equals(MeasureOf(Angle(E, A, D)), 60)",
+        "Equals(MeasureOf(Angle(E, B, A)), 70)",
+        "Equals(MeasureOf(Angle(C, E, B)), 80)",
+        "Prove(Parallel(Line(_,_), Line(_,_)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "E",
+        "C"
+    ],
+    "line_instances": [
+        "DE",
+        "DC",
+        "EC",
+        "BC",
+        "BE",
+        "AE",
+        "AD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            55.17241379310345,
+            77.10344827586206
+        ],
+        "D": [
+            33.22884012539185,
+            214.09404388714734
+        ],
+        "B": [
+            254.54545454545456,
+            40.426332288401255
+        ],
+        "E": [
+            222.88401253918497,
+            213.7805642633229
+        ],
+        "C": [
+            354.54545454545456,
+            213.7805642633229
+        ]
+    },
+    "problem_choices": [
+        "A B and C D",
+        "A D and B C",
+        "A D and B E",
+        "A E and B C"
+    ],
+    "choices_precise_value": [
+        "A B and C D",
+        "A D and B C",
+        "A D and B E",
+        "A E and B C"
+    ],
+    "predicate_choices": [
+        "Parallel(Line(A, B), Line(C, D))",
+        "Parallel(Line(A, D), Line(B, C))",
+        "Parallel(Line(A, D), Line(B, E))",
+        "Parallel(Line(A, E), Line(B, C))"
+    ],
+    "problem_answer": "A D and B E",
+    "total_time": 34.773712,
+    "solution_predicate": [
+        "Parallel(Line(A, D), Line(B, E))"
+    ],
+    "proof": [
+        "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, \u2220CDA, \u2220CDA, \u2220ADC, pi * (80 / 180) = \u2220CEB, pi * (40 / 180) = \u2220AED, pi * (60 / 180) = \u2220DAE, E on CD, \u2220ADC, AE, 3.14 = pi, DE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDA\nConclusions: \u2220CDA = 2 * pi - \u2220ADC\n\nStep 3:\nTheorem: Same Angle\nPremises : E on CD, \u2220CDA\nConclusions: \u2220CDA = \u2220EDA\n\nStep 4:\nTheorem: Same Angle\nPremises : E on CD, \u2220ADC\nConclusions: \u2220ADC = \u2220ADE\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220ADC\nConclusions: \u2220ADC = 2 * pi - \u2220CDA\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.4 = pi * (80 / 180)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AD, AE, DE\nConclusions: \u25b3ADE\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220CDA = 2 * pi - \u2220ADC, 3.14 = pi, \u2220CDA = \u2220EDA, \u2220ADC = \u2220ADE\nConclusions: \u2220EDA = 2 * 3.14 - \u2220ADE\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADC = 2 * pi - \u2220CDA, \u2220ADC = \u2220ADE\nConclusions: \u2220ADE = 2 * pi - \u2220CDA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = \u2220CEB, 1.4 = pi * (80 / 180)\nConclusions: 1.4 = \u2220CEB\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, A)\nPremises : \u25b3ADE\nConclusions: pi = \u2220AED + \u2220DAE + \u2220EDA\n\nStep 12:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220AED, pi * (60 / 180) = \u2220DAE, 3.14 = pi, pi = \u2220AED + \u2220DAE + \u2220EDA\nConclusions: 3.14 = pi * (40 / 180) + pi * (60 / 180) + \u2220EDA\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : \u2220EDA = 2 * 3.14 - \u2220ADE, \u2220CDA = \u2220EDA, \u2220ADE = 2 * pi - \u2220CDA, 3.14 = pi * (40 / 180) + pi * (60 / 180) + \u2220EDA\nConclusions: 1.4 = \u2220CDA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 1.4 = \u2220CDA, 1.4 = \u2220CEB\nConclusions: \u2220CDA = \u2220CEB\n\nStep 15:\nTheorem: Parallel Lines Criteria by Corresponding Angles\nPremises : \u2220CDA = \u2220CEB\nConclusions: AD || BE\n\n"
+    ],
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "PointLiesOnLine(E, Line(D, C))",
+        "Equals(MeasureOf(Angle(B, C, E)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, E, D)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, E)), Mul(pi, Div(60.0, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, E)), Mul(pi, Div(70.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, E, B)), Mul(pi, Div(80.0, 180.0)))"
+    ]
+}

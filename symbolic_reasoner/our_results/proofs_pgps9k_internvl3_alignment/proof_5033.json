@@ -1,0 +1,107 @@
+{
+    "problem_id": "5033",
+    "solved": true,
+    "problem_text": "Find the value of y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(A, B)))",
+        "Equals(MeasureOf(Angle(C, D, A)), 110)",
+        "Equals(MeasureOf(Angle(D, A, B)), x)",
+        "Equals(MeasureOf(Angle(D, B, A)), y)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(B, Line(C, E))",
+        "PointLiesOnLine(B, Line(D, E))",
+        "PointLiesOnLine(D, Line(C, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CB",
+        "CD",
+        "CE",
+        "BD",
+        "BE",
+        "DE",
+        "DA",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            185.03150598613735,
+            20.35776397515528
+        ],
+        "B": [
+            258.43900966183577,
+            220.34285714285716
+        ],
+        "C": [
+            17.21014492753623,
+            220.60107142857143
+        ],
+        "D": [
+            112.3597983616887,
+            220.40273291925467
+        ],
+        "E": [
+            354.4760312151616,
+            220.55472527472529
+        ]
+    },
+    "problem_choices": [
+        40.0,
+        70.0,
+        90.0,
+        110.0
+    ],
+    "choices_precise_value": [
+        40.0,
+        70.0,
+        90.0,
+        110.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 25.424086,
+    "solution_predicate": "Equals(70.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, AB = AD, pi * (110 / 180) = \u2220ADC, B on DE, 3.14 = pi, \u2220BDA, BD, pi * (y / 180) = \u2220ABD, \u2220EDA, \u2220ADC, AB\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (y / 180) = \u2220ABD\nConclusions: 3.14 * (y / 180) = \u2220ABD\n\nStep 3:\nTheorem: Same Angle\nPremises : B on DE, \u2220EDA\nConclusions: \u2220BDA = \u2220EDA\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ADC, \u2220EDA\nConclusions: pi = \u2220ADC + \u2220EDA\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220BDA, \u2220ADC\nConclusions: pi = \u2220ADC + \u2220BDA\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : AB, AD, BD\nConclusions: \u25b3ABD\n\nStep 7:\nTheorem: Substitution\nPremises : pi * (110 / 180) = \u2220ADC, 3.14 = pi, pi = \u2220ADC + \u2220EDA\nConclusions: 3.14 = pi * (110 / 180) + \u2220EDA\n\nStep 8:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ABD, AB = AD\nConclusions: \u2220ABD = \u2220BDA\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : pi * (110 / 180) = \u2220ADC, \u2220BDA = \u2220EDA, pi = \u2220ADC + \u2220BDA, 3.14 = pi * (110 / 180) + \u2220EDA\nConclusions: 1.22 = \u2220BDA\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220ABD, 1.22 = \u2220BDA, \u2220ABD = \u2220BDA\nConclusions: 1.22 = 3.14 * (y / 180)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 1.22 = 3.14 * (y / 180)\nConclusions: 70 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "PointLiesOnLine(B, Line(C, E))",
+        "PointLiesOnLine(B, Line(D, E))",
+        "PointLiesOnLine(D, Line(C, B))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(A, B)))",
+        "Equals(MeasureOf(Angle(A, D, C)), Mul(pi, Div(110.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(A, B, D)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

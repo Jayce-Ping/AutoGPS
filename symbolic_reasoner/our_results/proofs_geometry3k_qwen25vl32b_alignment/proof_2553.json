@@ -1,0 +1,177 @@
+{
+    "problem_id": "2553",
+    "solved": true,
+    "problem_text": "In the figure, m \\angle 11 = 62 and m \\angle 14 = 38. Find the measure of \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(H, Line(B, G))",
+        "PointLiesOnLine(H, Line(B, E))",
+        "PointLiesOnLine(G, Line(B, E))",
+        "PointLiesOnLine(G, Line(H, E))",
+        "PointLiesOnLine(I, Line(A, F))",
+        "PointLiesOnLine(I, Line(K, G))",
+        "PointLiesOnLine(I, Line(K, D))",
+        "PointLiesOnLine(G, Line(K, D))",
+        "PointLiesOnLine(G, Line(I, D))",
+        "PointLiesOnLine(I, Line(J, H))",
+        "PointLiesOnLine(I, Line(J, C))",
+        "PointLiesOnLine(H, Line(J, C))",
+        "PointLiesOnLine(H, Line(I, C))",
+        "Parallel(Line(A, F), Line(B, E))",
+        "Equals(MeasureOf(Angle(B, H, C)), MeasureOf(angle 11))",
+        "Equals(MeasureOf(Angle(E, G, D)), MeasureOf(angle 14))",
+        "Equals(MeasureOf(Angle(E, G, I)), MeasureOf(angle 10))",
+        "Equals(MeasureOf(Angle(H, G, D)), MeasureOf(angle 13))",
+        "Equals(MeasureOf(Angle(G, H, C)), MeasureOf(angle 12))",
+        "Equals(MeasureOf(Angle(B, H, I)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(K, I, J)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(G, I, H)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(F, I, G)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(G, H, I)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(A, I, K)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(A, I, H)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(H, G, I)), MeasureOf(angle 9))",
+        "Equals(MeasureOf(Angle(F, I, J)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(11)),62)",
+        "Equals(MeasureOf(Angle(14)),38)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K"
+    ],
+    "line_instances": [
+        "BH",
+        "BG",
+        "BE",
+        "HG",
+        "HE",
+        "GE",
+        "AI",
+        "AF",
+        "IF",
+        "KI",
+        "KG",
+        "KD",
+        "IG",
+        "ID",
+        "GD",
+        "JI",
+        "JH",
+        "JC",
+        "IH",
+        "IC",
+        "HC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            14.772925764192138,
+            145.85152838427948
+        ],
+        "B": [
+            15.646288209606979,
+            271.6157205240175
+        ],
+        "C": [
+            132.24017467248908,
+            396.06986899563316
+        ],
+        "D": [
+            381.5851528384279,
+            394.7598253275109
+        ],
+        "E": [
+            444.46724890829694,
+            271.6157205240175
+        ],
+        "F": [
+            444.46724890829694,
+            145.41484716157206
+        ],
+        "G": [
+            299.92576419213975,
+            271.17903930131
+        ],
+        "H": [
+            173.2882096069869,
+            271.6157205240175
+        ],
+        "I": [
+            215.646288209607,
+            145.41484716157206
+        ],
+        "J": [
+            256.69432314410477,
+            22.707423580786024
+        ],
+        "K": [
+            132.24017467248908,
+            21.397379912663755
+        ]
+    },
+    "problem_choices": [
+        "38",
+        "42",
+        "62",
+        "80"
+    ],
+    "choices_precise_value": [
+        38.0,
+        42.0,
+        62.0,
+        80.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 159.500385,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(K, I, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: G on DI, I on AF, I on GK, pi * (38 / 180) = \u2220DGE, AF || BE, \u2220DIF\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : I on AF, I on GK\nConclusions: \u2220GIF = \u2220KIA\n\nStep 3:\nTheorem: Corresponding Angle Theorem\nPremises : AF || BE\nConclusions: \u2220DGE = \u2220DIF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220DIF, G on DI\nConclusions: \u2220DIF = \u2220GIF\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DGE = \u2220DIF, pi * (38 / 180) = \u2220DGE\nConclusions: pi * (38 / 180) = \u2220DIF\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220DIF, \u2220DIF = \u2220GIF, \u2220GIF = \u2220KIA\nConclusions: pi * (38 / 180) = \u2220KIA\n\nStep 7:\nTheorem: Evaluate\nPremises : pi * (38 / 180) = \u2220KIA\nConclusions: 0.66 = \u2220KIA\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, H)",
+        "Line(B, G)",
+        "Line(B, E)",
+        "Line(H, G)",
+        "Line(H, E)",
+        "Line(G, E)",
+        "Line(A, I)",
+        "Line(A, F)",
+        "Line(I, F)",
+        "Line(K, I)",
+        "Line(K, G)",
+        "Line(K, D)",
+        "Line(I, G)",
+        "Line(I, D)",
+        "Line(G, D)",
+        "Line(J, I)",
+        "Line(J, H)",
+        "Line(J, C)",
+        "Line(I, H)",
+        "Line(I, C)",
+        "Line(H, C)",
+        "PointLiesOnLine(H, Line(B, G))",
+        "PointLiesOnLine(H, Line(B, E))",
+        "PointLiesOnLine(G, Line(B, E))",
+        "PointLiesOnLine(G, Line(H, E))",
+        "PointLiesOnLine(I, Line(A, F))",
+        "PointLiesOnLine(I, Line(K, G))",
+        "PointLiesOnLine(I, Line(K, D))",
+        "PointLiesOnLine(G, Line(K, D))",
+        "PointLiesOnLine(G, Line(I, D))",
+        "PointLiesOnLine(I, Line(J, H))",
+        "PointLiesOnLine(I, Line(J, C))",
+        "PointLiesOnLine(H, Line(J, C))",
+        "PointLiesOnLine(H, Line(I, C))",
+        "Parallel(Line(A, F), Line(B, E))",
+        "Equals(MeasureOf(Angle(B, H, C)), Mul(pi, Div(62.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, G, E)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

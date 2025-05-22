@@ -1,0 +1,158 @@
+{
+    "problem_id": "832",
+    "solved": true,
+    "problem_text": "The square is circumscribed to the circle. Find the exact circumference of the circle.",
+    "logic_forms": [
+        "CircumscribedTo(Square(H, I, G, F), Circle(B))",
+        "Equals(LengthOf(Line(F, G)), 14)",
+        "Find(CircumferenceOf(Circle(B)))",
+        "Line(A, F)",
+        "Line(C, G)",
+        "Line(D, I)",
+        "Line(E, G)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(H, A)",
+        "Line(H, D)",
+        "Line(H, F)",
+        "Line(H, I)",
+        "Line(I, C)",
+        "Line(I, G)",
+        "Perpendicular(Line(H, F), Line(F, G))",
+        "Perpendicular(Line(H, F), Line(H, I))",
+        "Perpendicular(Line(H, I), Line(I, G))",
+        "Perpendicular(Line(I, G), Line(F, G))",
+        "PointLiesOnCircle(A, Circle(B))",
+        "PointLiesOnCircle(C, Circle(B))",
+        "PointLiesOnCircle(D, Circle(B))",
+        "PointLiesOnCircle(E, Circle(B))",
+        "PointLiesOnLine(A, Line(H, F))",
+        "PointLiesOnLine(C, Line(I, G))",
+        "PointLiesOnLine(D, Line(H, I))",
+        "PointLiesOnLine(E, Line(F, G))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+    ],
+    "line_instances": [
+        "FA",
+        "FH",
+        "AH",
+        "HD",
+        "HI",
+        "DI",
+        "IC",
+        "IG",
+        "CG",
+        "GE",
+        "GF",
+        "EF"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "A": [
+            86.09959183673469,
+            221.32285714285715
+        ],
+        "B": [
+            256.21739130434776,
+            222.1304347826087
+        ],
+        "C": [
+            427.1542857142857,
+            221.32285714285715
+        ],
+        "D": [
+            254.53714285714287,
+            52.03285714285715
+        ],
+        "E": [
+            257.46285714285716,
+            392.81142857142856
+        ],
+        "F": [
+            86.01599999999999,
+            393.39771428571424
+        ],
+        "G": [
+            427.1542857142857,
+            394.27714285714285
+        ],
+        "H": [
+            86.30857142857143,
+            51.300000000000004
+        ],
+        "I": [
+            427.1542857142857,
+            51.300000000000004
+        ]
+    },
+    "problem_choices": [
+        21.991148575128552,
+        43.982297150257104,
+        65.97344572538566,
+        87.96459430051421
+    ],
+    "choices_precise_value": [
+        21.991148575128552,
+        43.982297150257104,
+        65.97344572538566,
+        87.96459430051421
+    ],
+    "problem_answer": 87.96459430051421,
+    "total_time": 1349.318818,
+    "solution_predicate": "Equals(43.9822971504, CircumferenceOf(Circle(B, radius_B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AF, BE, AB, EF, Circumference(\u2299(B, radius_B)), CG \u22a5 EG, 3.14 = pi, CG, 14 = FG, E on \u2299(B, radius_B), EG, AF \u22a5 EF, CircumscribedTo(Square(F, G, I, H), \u2299(B, radius_B)), E on FG, AF \u22a5 FG, FG \u22a5 GI, FG \u22a5 FH, BC\n\nStep 2:\nTheorem: Circle Circumference Formula\nPremises : Circumference(\u2299(B, radius_B))\nConclusions: pi * 2 * radius_B = Circumference(\u2299(B, radius_B))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : E on \u2299(B, radius_B)\nConclusions: radius_B = BE\n\nStep 4:\nTheorem: Properties of Quadrilateral Circumscribed to Circle\nPremises : CircumscribedTo(Square(F, G, I, H), \u2299(B, radius_B))\nConclusions: AB \u22a5 FH, BC \u22a5 GI, BE \u22a5 FG, \u25b3BCG \u2245 \u25b3BEG, \u25b3ABF \u2245 \u25b3EBF\n\nStep 5:\nTheorem: Line Segment Split\nPremises : E on FG\nConclusions: FG = EF + EG\n\nStep 6:\nTheorem: Perpendicular Extension\nPremises : AB \u22a5 FH\nConclusions: AB \u22a5 AH\n\nStep 7:\nTheorem: Perpendicular to Parallel\nPremises : BC \u22a5 GI, FG \u22a5 GI\nConclusions: BC || FG\n\nStep 8:\nTheorem: Perpendicular Extension\nPremises : BC \u22a5 GI\nConclusions: BC \u22a5 CG\n\nStep 9:\nTheorem: Perpendicular to Parallel\nPremises : FG \u22a5 FH, BE \u22a5 FG\nConclusions: BE || HF\n\nStep 10:\nTheorem: Perpendicular Extension\nPremises : BE \u22a5 FG\nConclusions: BE \u22a5 EG\n\nStep 11:\nTheorem: Perpendicular to Parallel\nPremises : FG \u22a5 GI, BE \u22a5 FG\nConclusions: BE || IG\n\nStep 12:\nTheorem: Congruent Definition\nPremises : \u25b3BCG \u2245 \u25b3BEG\nConclusions: CG = EG, BC = BE\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3ABF \u2245 \u25b3EBF\nConclusions: AF = EF, AB = BE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 14 = FG, FG = EF + EG\nConclusions: 14 = EF + EG\n\nStep 15:\nTheorem: Perpendicular Extension\nPremises : AB \u22a5 AH\nConclusions: AB \u22a5 AF\n\nStep 16:\nTheorem: Perpendicular Extension\nPremises : BE \u22a5 EG\nConclusions: BE \u22a5 EF\n\nStep 17:\nTheorem: Definition of Square\nPremises : BE \u22a5 EG, CG, BE || IG, BC || FG, BC, CG = EG, BE, BC \u22a5 CG, BC = BE, CG \u22a5 EG, EG\nConclusions: Square(B, C, G, E)\n\nStep 18:\nTheorem: Perpendicular to Parallel\nPremises : AB \u22a5 AF, AF \u22a5 FG\nConclusions: AB || FG\n\nStep 19:\nTheorem: Square is Rhombus\nPremises : Square(B, C, G, E)\nConclusions: Rhombus(B, C, G, E)\n\nStep 20:\nTheorem: Definition of Square\nPremises : AF = EF, BE \u22a5 EF, AB, BE, AF, EF, AF \u22a5 EF, AB = BE, AB \u22a5 AF, BE || HF, AB || FG\nConclusions: Square(A, B, E, F)\n\nStep 21:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(B, C, G, E)\nConclusions: BE = EG\n\nStep 22:\nTheorem: Square is Rhombus\nPremises : Square(A, B, E, F)\nConclusions: Rhombus(A, B, E, F)\n\nStep 23:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, E, F)\nConclusions: BE = EF\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : BE = EG, 14 = EF + EG, BE = EF\nConclusions: 7 = BE\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BE, 7 = BE\nConclusions: 7 = radius_B\n\nStep 26:\nTheorem: Evaluate\nPremises : 7 = radius_B, 3.14 = pi\nConclusions: 43.98 = pi * 2 * radius_B\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * 2 * radius_B = Circumference(\u2299(B, radius_B)), 43.98 = pi * 2 * radius_B\nConclusions: 43.98 = Circumference(\u2299(B, radius_B))\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, A)",
+        "Line(F, H)",
+        "Line(A, H)",
+        "Line(H, D)",
+        "Line(H, I)",
+        "Line(D, I)",
+        "Line(I, C)",
+        "Line(I, G)",
+        "Line(C, G)",
+        "Line(G, E)",
+        "Line(G, F)",
+        "Line(E, F)",
+        "Circle(B, radius_B)",
+        "CircumscribedTo(Square(H, I, G, F), Circle(B, radius_B))",
+        "Line(A, F)",
+        "Line(C, G)",
+        "Line(D, I)",
+        "Line(E, G)",
+        "Line(F, E)",
+        "Line(F, G)",
+        "Line(H, A)",
+        "Line(H, D)",
+        "Line(H, F)",
+        "Line(H, I)",
+        "Line(I, C)",
+        "Line(I, G)",
+        "Perpendicular(Line(H, F), Line(F, G))",
+        "Perpendicular(Line(H, F), Line(H, I))",
+        "Perpendicular(Line(H, I), Line(I, G))",
+        "Perpendicular(Line(I, G), Line(F, G))",
+        "PointLiesOnCircle(A, Circle(B, radius_B))",
+        "PointLiesOnCircle(C, Circle(B, radius_B))",
+        "PointLiesOnCircle(D, Circle(B, radius_B))",
+        "PointLiesOnCircle(E, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(H, F))",
+        "PointLiesOnLine(C, Line(I, G))",
+        "PointLiesOnLine(D, Line(H, I))",
+        "PointLiesOnLine(E, Line(F, G))",
+        "Equals(LengthOf(Line(F, G)), 14.0)"
+    ],
+    "correct": false
+}

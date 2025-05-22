@@ -1,0 +1,79 @@
+{
+    "problem_id": "2449",
+    "solved": true,
+    "problem_text": "Find m \\angle W.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(V, U, Z)), 3x-11)",
+        "Equals(MeasureOf(Angle(Z, Y, W)), x)",
+        "Equals(MeasureOf(Angle(Y, Z, U)), 2x+7)",
+        "Equals(MeasureOf(Angle(Y, W, V)), x+8)",
+        "Equals(MeasureOf(Angle(V, U, Z)), x-8)",
+        "Find(MeasureOf(Angle(W)))"
+    ],
+    "point_instances": [
+        "W",
+        "V",
+        "Z",
+        "Y",
+        "U"
+    ],
+    "line_instances": [
+        "ZY",
+        "WY",
+        "VW",
+        "UV",
+        "UZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "W": [
+            420.7127071823204,
+            196.68508287292818
+        ],
+        "V": [
+            255.51933701657458,
+            92.81767955801105
+        ],
+        "Z": [
+            144.4696132596685,
+            399.4475138121547
+        ],
+        "Y": [
+            420.7127071823204,
+            499.4475138121547
+        ],
+        "U": [
+            93.08839779005524,
+            146.40883977900552
+        ]
+    },
+    "problem_choices": [
+        "38",
+        "38",
+        "76",
+        "152"
+    ],
+    "choices_precise_value": [
+        38.0,
+        38.0,
+        76.0,
+        152.0
+    ],
+    "problem_answer": 76.0,
+    "total_time": 8.157427,
+    "solution_predicate": "Equals(0.1658062789, MeasureOf(Angle(V, W, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((3 * x - 11) / 180) = \u2220ZUV, 3.14 = pi, pi * ((x - 8) / 180) = \u2220ZUV, pi * ((8 + x) / 180) = \u2220VWY\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((3 * x - 11) / 180) = \u2220ZUV, 3.14 = pi\nConclusions: 3.14 * ((3 * x - 11) / 180) = \u2220ZUV\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((x - 8) / 180) = \u2220ZUV, 3.14 = pi\nConclusions: 3.14 * ((x - 8) / 180) = \u2220ZUV\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((8 + x) / 180) = \u2220VWY, 3.14 = pi\nConclusions: 3.14 * ((8 + x) / 180) = \u2220VWY\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((x - 8) / 180) = \u2220ZUV, 3.14 * ((3 * x - 11) / 180) = \u2220ZUV\nConclusions: 3.14 * ((x - 8) / 180) = 3.14 * ((3 * x - 11) / 180)\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((8 + x) / 180) = \u2220VWY, 3.14 * ((x - 8) / 180) = 3.14 * ((3 * x - 11) / 180)\nConclusions: 0.17 = \u2220VWY\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(W, Y)",
+        "Line(V, W)",
+        "Line(U, V)",
+        "Line(U, Z)",
+        "Equals(MeasureOf(Angle(Z, U, V)), Mul(pi, Div(Sub(Mul(3.0, x), 11.0), 180.0)))",
+        "Equals(MeasureOf(Angle(W, Y, Z)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Angle(Y, Z, U)), Mul(pi, Div(Add(Mul(2.0, x), 7.0), 180.0)))",
+        "Equals(MeasureOf(Angle(V, W, Y)), Mul(pi, Div(Add(x, 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Z, U, V)), Mul(pi, Div(Sub(x, 8.0), 180.0)))"
+    ],
+    "correct": false
+}

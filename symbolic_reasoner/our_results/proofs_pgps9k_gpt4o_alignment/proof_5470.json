@@ -1,0 +1,90 @@
+{
+    "problem_id": "5470",
+    "solved": true,
+    "problem_text": "Find z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(B, D)), 18)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(MeasureOf(Angle(C, D, B)), 45)",
+        "Equals(MeasureOf(Angle(D, A, B)), 60)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, B), Line(B, D))",
+        "Perpendicular(Line(C, D), Line(B, C))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "BD",
+        "DA",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            38.75686813186813,
+            53.13214285714286
+        ],
+        "B": [
+            158.67517776341305,
+            53.35966386554622
+        ],
+        "C": [
+            263.3835164835165,
+            160.57714285714286
+        ],
+        "D": [
+            158.9783111625217,
+            267.25714285714287
+        ]
+    },
+    "problem_choices": [
+        10.392304845413264,
+        20.784609690826528,
+        25.455844122715714,
+        36.0
+    ],
+    "choices_precise_value": [
+        10.392304845413264,
+        20.784609690826528,
+        25.455844122715714,
+        36.0
+    ],
+    "problem_answer": 10.392304845413264,
+    "total_time": 31.371696,
+    "solution_predicate": "Equals(20.7846096908, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: z = AD, 3.14 = pi, AB \u22a5 BD, pi * (60 / 180) = \u2220DAB, BD, 18 = BD, \u2220DAB, AD, AB\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 1.05 = pi * (60 / 180), pi * (60 / 180) = \u2220DAB\nConclusions: 1.05 = \u2220DAB\n\nStep 5:\nTheorem: Sin Function Definition\nPremises : AB \u22a5 BD, \u2220DAB, \u25b3ABD\nConclusions: BD / AD = sin(\u2220DAB)\n\nStep 6:\nTheorem: Substitution\nPremises : BD / AD = sin(\u2220DAB), z = AD, 18 = BD, 1.05 = \u2220DAB\nConclusions: sin(1.05) = 18 / z\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : z = AD, sin(1.05) = 18 / z\nConclusions: 20.78 = AD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : z = AD, 20.78 = AD\nConclusions: 20.78 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, B), Line(B, D))",
+        "Perpendicular(Line(C, D), Line(B, C))",
+        "Equals(LengthOf(Line(A, B)), y)",
+        "Equals(LengthOf(Line(B, D)), 18.0)",
+        "Equals(LengthOf(Line(D, A)), z)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(MeasureOf(Angle(C, D, B)), Mul(pi, Div(45.0, 180.0)))",
+        "Equals(MeasureOf(Angle(D, A, B)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": false
+}

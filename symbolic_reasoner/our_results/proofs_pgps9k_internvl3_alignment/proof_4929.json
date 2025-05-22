@@ -1,0 +1,119 @@
+{
+    "problem_id": "4929",
+    "solved": true,
+    "problem_text": "Find m \\angle N.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, L, M)), 5x+9)",
+        "Equals(MeasureOf(Angle(A, M, L)), 6y-1)",
+        "Equals(MeasureOf(Angle(A, N, P)), 3y+8)",
+        "Equals(MeasureOf(Angle(A, P, N)), 6x)",
+        "Line(A, M)",
+        "Line(A, N)",
+        "Line(L, A)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(P, A)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnCircle(L, Circle(B))",
+        "PointLiesOnCircle(M, Circle(B))",
+        "PointLiesOnCircle(N, Circle(B))",
+        "PointLiesOnCircle(P, Circle(B))",
+        "PointLiesOnLine(A, Line(L, N))",
+        "PointLiesOnLine(A, Line(P, M))",
+        "Find(MeasureOf(Angle(N)))"
+    ],
+    "point_instances": [
+        "L",
+        "M",
+        "A",
+        "P",
+        "N",
+        "B"
+    ],
+    "line_instances": [
+        "PA",
+        "PM",
+        "AM",
+        "LA",
+        "LN",
+        "AN",
+        "PN",
+        "LM"
+    ],
+    "circle_instances": [
+        "B"
+    ],
+    "point_positions": {
+        "L": [
+            95.86625000000001,
+            89.98275862068965
+        ],
+        "M": [
+            202.31778846153847,
+            112.24093722369584
+        ],
+        "A": [
+            127.02840909090908,
+            141.47021943573668
+        ],
+        "P": [
+            61.464062500000004,
+            166.43869731800766
+        ],
+        "N": [
+            175.46,
+            220.54597701149424
+        ],
+        "B": [
+            136.94384430476322,
+            153.66581240512542
+        ]
+    },
+    "problem_choices": [
+        17.0,
+        54.0,
+        86.727,
+        108.0
+    ],
+    "choices_precise_value": [
+        17.0,
+        54.0,
+        86.727,
+        108.0
+    ],
+    "problem_answer": 17.0,
+    "total_time": 115.535992,
+    "solution_predicate": "Equals(0.2967059728, MeasureOf(Angle(L, N, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on LN, \u2220APN, LM, \u2220ANP, \u2220BPM, \u2220MPN, MP, \u2220MLN, \u2220BNL, \u2220LMA, pi * ((6 * y - 1) / 180) = \u2220LMA, AP, \u2220MLA, \u2220BML, L on \u2299(B, radius_B), \u2220PMB, N on \u2299(B, radius_B), BN, BL, \u2220BNA, \u2220NPB, AL, \u2220AMB, AN, \u2220NLB, \u2220PNB, \u2220LMB, \u2220ANP, LN, \u2220BLM, AM, BP, \u2220LMA, \u2220PNA, BM, M on \u2299(B, radius_B), \u2220PML, \u2220BPN, \u2220PNL, 3.14 = pi, P on \u2299(B, radius_B), NP, \u2220PNL, \u2220AML, pi * ((8 + 3 * y) / 180) = \u2220ANP, A on MP\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220APN\nConclusions: \u2220APN = 2 * pi - \u2220NPA\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ANP\nConclusions: \u2220ANP = 2 * pi - \u2220PNA\n\nStep 4:\nTheorem: Same Angle\nPremises : A on LN, \u2220MLN\nConclusions: \u2220MLA = \u2220MLN\n\nStep 5:\nTheorem: Same Angle\nPremises : A on LN, \u2220BNL\nConclusions: \u2220BNA = \u2220BNL\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220LMA\nConclusions: \u2220LMA = 2 * pi - \u2220AML\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220MLA\nConclusions: \u2220MLA = 2 * pi - \u2220ALM\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : L on \u2299(B, radius_B)\nConclusions: radius_B = BL\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : N on \u2299(B, radius_B)\nConclusions: radius_B = BN\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220BPM, \u2220MPN, \u2220NPB\nConclusions: 2 * pi = \u2220BPM + \u2220MPN + \u2220NPB\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220LMB\nConclusions: \u2220LMB = 2 * pi - \u2220BML\n\nStep 12:\nTheorem: Circumference splited\nPremises : \u2220PNB, \u2220BNA, \u2220ANP\nConclusions: 2 * pi = \u2220ANP + \u2220BNA + \u2220PNB\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : BL, BN, LN\nConclusions: \u25b3BLN\n\nStep 14:\nTheorem: Circumference splited\nPremises : \u2220MLN, \u2220NLB, \u2220BLM\nConclusions: 2 * pi = \u2220BLM + \u2220MLN + \u2220NLB\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : AL, AM, LM\nConclusions: \u25b3ALM\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220AMB, \u2220BML, \u2220LMA\nConclusions: 2 * pi = \u2220AMB + \u2220BML + \u2220LMA\n\nStep 17:\nTheorem: Reverse Angle Definition\nPremises : \u2220PNA\nConclusions: \u2220PNA = 2 * pi - \u2220ANP\n\nStep 18:\nTheorem: Definition of Triangle\nPremises : BP, BM, MP\nConclusions: \u25b3BMP\n\nStep 19:\nTheorem: Definition of Triangle\nPremises : BM, BL, LM\nConclusions: \u25b3BLM\n\nStep 20:\nTheorem: Point On Circle Def\nPremises : M on \u2299(B, radius_B)\nConclusions: radius_B = BM\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220BPN\nConclusions: \u2220BPN = 2 * pi - \u2220NPB\n\nStep 22:\nTheorem: Reverse Angle Definition\nPremises : \u2220PNL\nConclusions: \u2220PNL = 2 * pi - \u2220LNP\n\nStep 23:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 24:\nTheorem: Point On Circle Def\nPremises : P on \u2299(B, radius_B)\nConclusions: radius_B = BP\n\nStep 25:\nTheorem: Definition of Triangle\nPremises : BP, BN, NP\nConclusions: \u25b3BNP\n\nStep 26:\nTheorem: Definition of Triangle\nPremises : NP, AN, AP\nConclusions: \u25b3ANP\n\nStep 27:\nTheorem: Same Angle\nPremises : \u2220PNL, A on LN\nConclusions: \u2220PNA = \u2220PNL\n\nStep 28:\nTheorem: Reverse Angle Definition\nPremises : \u2220AML\nConclusions: \u2220AML = 2 * pi - \u2220LMA\n\nStep 29:\nTheorem: Same Angle\nPremises : A on MP, \u2220MPN\nConclusions: \u2220APN = \u2220MPN\n\nStep 30:\nTheorem: Vertical Angle Theorem\nPremises : A on MP, A on LN\nConclusions: \u2220MAL = \u2220PAN\n\nStep 31:\nTheorem: Same Angle\nPremises : A on MP, \u2220PMB\nConclusions: \u2220AMB = \u2220PMB\n\nStep 32:\nTheorem: Same Angle\nPremises : A on MP, \u2220BPM\nConclusions: \u2220BPA = \u2220BPM\n\nStep 33:\nTheorem: Same Angle\nPremises : A on MP, \u2220PML\nConclusions: \u2220AML = \u2220PML\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ANP = 2 * pi - \u2220PNA, pi * ((8 + 3 * y) / 180) = \u2220ANP\nConclusions: pi * ((8 + 3 * y) / 180) = 2 * pi - \u2220PNA\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((6 * y - 1) / 180) = \u2220LMA, \u2220LMA = 2 * pi - \u2220AML\nConclusions: pi * ((6 * y - 1) / 180) = 2 * pi - \u2220AML\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MLA = \u2220MLN, \u2220MLA = 2 * pi - \u2220ALM\nConclusions: \u2220MLN = 2 * pi - \u2220ALM\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BN, radius_B = BL\nConclusions: BL = BN\n\nStep 38:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BLM + \u2220MLN + \u2220NLB\nConclusions: 2 * 3.14 = \u2220BLM + \u2220MLN + \u2220NLB\n\nStep 39:\nTheorem: Interior Angle Sum Theorem for Triangle(A, L, M)\nPremises : \u25b3ALM\nConclusions: pi = \u2220ALM + \u2220LMA + \u2220MAL\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BL, radius_B = BM\nConclusions: BL = BM\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220ANP + \u2220BNA + \u2220PNB\nConclusions: 6.28 = \u2220ANP + \u2220BNA + \u2220PNB\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BP, radius_B = BM\nConclusions: BM = BP\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : radius_B = BN, radius_B = BP\nConclusions: BN = BP\n\nStep 44:\nTheorem: Interior Angle Sum Theorem for Triangle(A, N, P)\nPremises : \u25b3ANP\nConclusions: pi = \u2220ANP + \u2220NPA + \u2220PAN\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PNA = \u2220PNL, \u2220PNA = 2 * pi - \u2220ANP\nConclusions: \u2220PNL = 2 * pi - \u2220ANP\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220APN = \u2220MPN, \u2220APN = 2 * pi - \u2220NPA\nConclusions: \u2220MPN = 2 * pi - \u2220NPA\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AML = \u2220PML, \u2220AML = 2 * pi - \u2220LMA\nConclusions: \u2220PML = 2 * pi - \u2220LMA\n\nStep 48:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220PNA = \u2220PNL, pi * ((8 + 3 * y) / 180) = 2 * pi - \u2220PNA\nConclusions: 3.14 * ((8 + 3 * y) / 180) = 2 * 3.14 - \u2220PNL\n\nStep 49:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 * y - 1) / 180) = 2 * pi - \u2220AML, \u2220AML = \u2220PML\nConclusions: 3.14 * ((6 * y - 1) / 180) = 2 * 3.14 - \u2220PML\n\nStep 50:\nTheorem: Issoceles Triangle Property\nPremises : BL = BN, \u25b3BLN\nConclusions: \u2220BNL = \u2220NLB\n\nStep 51:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220MAL = \u2220PAN, pi = \u2220ALM + \u2220LMA + \u2220MAL\nConclusions: 3.14 = \u2220ALM + \u2220LMA + \u2220PAN\n\nStep 52:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BLM, BL = BM\nConclusions: \u2220BLM = \u2220LMB\n\nStep 53:\nTheorem: Issoceles Triangle Property\nPremises : BM = BP, \u25b3BMP\nConclusions: \u2220BPM = \u2220PMB\n\nStep 54:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BNP, BN = BP\nConclusions: \u2220BPN = \u2220PNB\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ANP + \u2220NPA + \u2220PAN\nConclusions: 3.14 = \u2220ANP + \u2220NPA + \u2220PAN\n\nStep 56:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220PNL = 2 * pi - \u2220ANP\nConclusions: \u2220PNL = 2 * 3.14 - \u2220ANP\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BNA = \u2220BNL, \u2220BNL = \u2220NLB\nConclusions: \u2220BNA = \u2220NLB\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BPM = \u2220PMB, \u2220BPA = \u2220BPM\nConclusions: \u2220BPA = \u2220PMB\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BPN = \u2220PNB, \u2220BPN = 2 * pi - \u2220NPB\nConclusions: \u2220PNB = 2 * pi - \u2220NPB\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMB = \u2220PMB, \u2220BPA = \u2220PMB, \u2220BPA = \u2220BPM\nConclusions: \u2220AMB = \u2220BPM\n\nStep 61:\nTheorem: Solve Linear Equation System\nPremises : \u2220PNL = 2 * pi - \u2220LNP, 2 * pi = \u2220AMB + \u2220BML + \u2220LMA, 6.28 = \u2220ANP + \u2220BNA + \u2220PNB, \u2220AMB = \u2220BPM, \u2220PML = 2 * pi - \u2220LMA, \u2220BLM = \u2220LMB, 3.14 = \u2220ALM + \u2220LMA + \u2220PAN, 3.14 * ((6 * y - 1) / 180) = 2 * 3.14 - \u2220PML, \u2220LMB = 2 * pi - \u2220BML, \u2220PNB = 2 * pi - \u2220NPB, \u2220MLN = 2 * pi - \u2220ALM, \u2220MPN = 2 * pi - \u2220NPA, 3.14 * ((8 + 3 * y) / 180) = 2 * 3.14 - \u2220PNL, \u2220BNA = \u2220NLB, 2 * pi = \u2220BPM + \u2220MPN + \u2220NPB, 2 * 3.14 = \u2220BLM + \u2220MLN + \u2220NLB, \u2220PNL = 2 * 3.14 - \u2220ANP, 3.14 = \u2220ANP + \u2220NPA + \u2220PAN\nConclusions: 0.3 = \u2220LNP\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, A)",
+        "Line(P, M)",
+        "Line(A, M)",
+        "Line(L, A)",
+        "Line(L, N)",
+        "Line(A, N)",
+        "Line(P, N)",
+        "Line(L, M)",
+        "Circle(B, radius_B)",
+        "Line(A, M)",
+        "Line(A, N)",
+        "Line(L, A)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(P, A)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnCircle(L, Circle(B, radius_B))",
+        "PointLiesOnCircle(M, Circle(B, radius_B))",
+        "PointLiesOnCircle(N, Circle(B, radius_B))",
+        "PointLiesOnCircle(P, Circle(B, radius_B))",
+        "PointLiesOnLine(A, Line(L, N))",
+        "PointLiesOnLine(A, Line(P, M))",
+        "Equals(MeasureOf(Angle(A, L, M)), Mul(pi, Div(Add(Mul(5.0, x), 9.0), 180.0)))",
+        "Equals(MeasureOf(Angle(L, M, A)), Mul(pi, Div(Sub(Mul(6.0, y), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(A, N, P)), Mul(pi, Div(Add(Mul(3.0, y), 8.0), 180.0)))",
+        "Equals(MeasureOf(Angle(N, P, A)), Mul(pi, Div(Mul(6.0, x), 180.0)))"
+    ],
+    "correct": true
+}

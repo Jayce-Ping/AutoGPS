@@ -1,0 +1,156 @@
+{
+    "problem_id": "6985",
+    "solved": true,
+    "problem_text": "Solve for the measure of \\widehat NQL.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(N, M, L)), x)",
+        "Equals(MeasureOf(Arc(L, N)), 86)",
+        "Line(A, D)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(C, B)",
+        "Line(C, M)",
+        "Line(C, N)",
+        "Line(L, D)",
+        "Line(L, M)",
+        "Line(M, B)",
+        "Line(M, D)",
+        "Line(N, B)",
+        "Line(N, M)",
+        "PointLiesOnCircle(L, Circle(E))",
+        "PointLiesOnCircle(N, Circle(E))",
+        "PointLiesOnCircle(Q, Circle(E))",
+        "PointLiesOnLine(L, Line(A, D))",
+        "PointLiesOnLine(L, Line(A, M))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(M, Line(C, B))",
+        "PointLiesOnLine(M, Line(L, D))",
+        "PointLiesOnLine(M, Line(N, B))",
+        "PointLiesOnLine(N, Line(C, B))",
+        "PointLiesOnLine(N, Line(C, M))",
+        "Find(MeasureOf(Arc(N,Q,L)))"
+    ],
+    "point_instances": [
+        "A",
+        "Q",
+        "L",
+        "B",
+        "M",
+        "N",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CM",
+        "CN",
+        "CB",
+        "MN",
+        "MB",
+        "NB",
+        "AL",
+        "AM",
+        "AD",
+        "LM",
+        "LD",
+        "MD"
+    ],
+    "circle_instances": [
+        "E"
+    ],
+    "point_positions": {
+        "A": [
+            308.65714285714284,
+            33.00898876404494
+        ],
+        "Q": [
+            74.65714285714286,
+            72.48595505617976
+        ],
+        "L": [
+            303.0857142857143,
+            166.56157303370787
+        ],
+        "B": [
+            368.8285714285714,
+            288.1595505617977
+        ],
+        "M": [
+            299.3714285714286,
+            290.1916354556804
+        ],
+        "N": [
+            174.09075630252102,
+            294.53569068076666
+        ],
+        "C": [
+            40.392857142857146,
+            299.14396067415726
+        ],
+        "D": [
+            296.8457142857143,
+            361.314606741573
+        ],
+        "E": [
+            169.6344614976258,
+            161.8331690338332
+        ]
+    },
+    "problem_choices": [
+        86.0,
+        102.0,
+        180.0,
+        274.0
+    ],
+    "choices_precise_value": [
+        86.0,
+        102.0,
+        180.0,
+        274.0
+    ],
+    "problem_answer": 274.0,
+    "total_time": 42.601244,
+    "solution_predicate": "Equals(4.7822021505, MeasureOf(Arc(L, E, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(NEL), 3.14 = pi, pi * (86 / 180) = Arc(NEL), \u2220LEN, \u2220NEL, EL, Arc(LEN), LM, EN, MN\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NEL)\nConclusions: \u2220NEL = Arc(NEL)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220LEN\nConclusions: \u2220LEN = 2 * pi - \u2220NEL\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220NEL\nConclusions: \u2220NEL = 2 * pi - \u2220LEN\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(LEN)\nConclusions: \u2220LEN = Arc(LEN)\n\nStep 6:\nTheorem: Definition of Quadrilateral\nPremises : EL, MN, EN, LM\nConclusions: Quadrilateral(E, L, M, N)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NEL = Arc(NEL), pi * (86 / 180) = Arc(NEL)\nConclusions: pi * (86 / 180) = \u2220NEL\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(E, L, M, N)\nPremises : Quadrilateral(E, L, M, N)\nConclusions: 2 * pi = \u2220ELM + \u2220LMN + \u2220MNE + \u2220NEL\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (86 / 180) = \u2220NEL, \u2220NEL = 2 * pi - \u2220LEN\nConclusions: pi * (86 / 180) = 2 * pi - \u2220LEN\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (86 / 180) = \u2220NEL, 2 * pi = \u2220ELM + \u2220LMN + \u2220MNE + \u2220NEL\nConclusions: 2 * 3.14 = pi * (86 / 180) + \u2220ELM + \u2220LMN + \u2220MNE\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = pi * (86 / 180) + \u2220ELM + \u2220LMN + \u2220MNE, pi * (86 / 180) = 2 * pi - \u2220LEN, 2 * pi = \u2220ELM + \u2220LMN + \u2220MNE + \u2220NEL, \u2220LEN = 2 * pi - \u2220NEL\nConclusions: 4.78 = \u2220LEN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LEN = Arc(LEN), 4.78 = \u2220LEN\nConclusions: 4.78 = Arc(LEN)\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, M)",
+        "Line(C, N)",
+        "Line(C, B)",
+        "Line(M, N)",
+        "Line(M, B)",
+        "Line(N, B)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(A, D)",
+        "Line(L, M)",
+        "Line(L, D)",
+        "Line(M, D)",
+        "Circle(E, radius_E)",
+        "Line(A, D)",
+        "Line(A, L)",
+        "Line(A, M)",
+        "Line(C, B)",
+        "Line(C, M)",
+        "Line(C, N)",
+        "Line(L, D)",
+        "Line(L, M)",
+        "Line(M, B)",
+        "Line(M, D)",
+        "Line(N, B)",
+        "Line(N, M)",
+        "PointLiesOnCircle(L, Circle(E, radius_E))",
+        "PointLiesOnCircle(N, Circle(E, radius_E))",
+        "PointLiesOnCircle(Q, Circle(E, radius_E))",
+        "PointLiesOnLine(L, Line(A, D))",
+        "PointLiesOnLine(L, Line(A, M))",
+        "PointLiesOnLine(M, Line(A, D))",
+        "PointLiesOnLine(M, Line(C, B))",
+        "PointLiesOnLine(M, Line(L, D))",
+        "PointLiesOnLine(M, Line(N, B))",
+        "PointLiesOnLine(N, Line(C, B))",
+        "PointLiesOnLine(N, Line(C, M))",
+        "Equals(MeasureOf(Angle(L, M, N)), Mul(pi, Div(x, 180.0)))",
+        "Equals(MeasureOf(Arc(N, E, L)), Mul(pi, Div(86.0, 180.0)))"
+    ],
+    "correct": true
+}

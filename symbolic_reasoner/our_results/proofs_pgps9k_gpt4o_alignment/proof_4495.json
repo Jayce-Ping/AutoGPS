@@ -1,0 +1,113 @@
+{
+    "problem_id": "4495",
+    "solved": true,
+    "problem_text": "If FK = 3x-1, KG = 4y+3, JK = 6y-2, and KH = 2x+3, find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F,K)),3x-1)",
+        "Equals(LengthOf(Line(J,K)),6y-2)",
+        "Equals(LengthOf(Line(K,G)),4y+3)",
+        "Equals(LengthOf(Line(K,H)),2x+3)",
+        "Find(x)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(F, K)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "Line(J, K)",
+        "Line(K, G)",
+        "Line(K, H)",
+        "Parallelogram(F, G, H, J)",
+        "PointLiesOnLine(K, Line(F, H))",
+        "PointLiesOnLine(K, Line(J, G))"
+    ],
+    "point_instances": [
+        "J",
+        "F",
+        "K",
+        "H",
+        "G"
+    ],
+    "line_instances": [
+        "JH",
+        "HG",
+        "JK",
+        "JG",
+        "KG",
+        "JF",
+        "FG",
+        "FK",
+        "FH",
+        "KH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            53.90877192982456,
+            173.8268864933418
+        ],
+        "F": [
+            142.60000000000002,
+            46.08433734939759
+        ],
+        "K": [
+            233.83333333333334,
+            110.26104417670682
+        ],
+        "H": [
+            325.06666666666666,
+            174.15028535193406
+        ],
+        "G": [
+            413.92333333333335,
+            45.93072289156626
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        5.0,
+        10.0,
+        12.0
+    ],
+    "choices_precise_value": [
+        4.0,
+        5.0,
+        10.0,
+        12.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 69.291832,
+    "solution_predicate": "Equals(4.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 * x - 1 = FK, 3 + 2 * x = HK, Parallelogram(F, G, H, J), K on GJ, K on FH\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : K on FH, Parallelogram(F, G, H, J), K on GJ\nConclusions: FK = HK\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 1 = FK, FK = HK\nConclusions: 3 * x - 1 = HK\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 3 * x - 1 = HK, 3 + 2 * x = HK\nConclusions: 3 + 2 * x = 3 * x - 1\n\nStep 5:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * x = 3 * x - 1\nConclusions: 4 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, H)",
+        "Line(H, G)",
+        "Line(J, K)",
+        "Line(J, G)",
+        "Line(K, G)",
+        "Line(J, F)",
+        "Line(F, G)",
+        "Line(F, K)",
+        "Line(F, H)",
+        "Line(K, H)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(F, J)",
+        "Line(F, K)",
+        "Line(G, H)",
+        "Line(J, G)",
+        "Line(J, H)",
+        "Line(J, K)",
+        "Line(K, G)",
+        "Line(K, H)",
+        "Parallelogram(F, G, H, J)",
+        "PointLiesOnLine(K, Line(F, H))",
+        "PointLiesOnLine(K, Line(J, G))",
+        "Equals(LengthOf(Line(F, K)), Sub(Mul(3.0, x), 1.0))",
+        "Equals(LengthOf(Line(J, K)), Sub(Mul(6.0, y), 2.0))",
+        "Equals(LengthOf(Line(K, G)), Add(Mul(4.0, y), 3.0))",
+        "Equals(LengthOf(Line(K, H)), Add(Mul(2.0, x), 3.0))"
+    ],
+    "correct": true
+}

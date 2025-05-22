@@ -1,0 +1,121 @@
+{
+    "problem_id": "2721",
+    "solved": true,
+    "problem_text": "If P R \\parallel K L, K N = 9, L N = 16, and P M = 2K P, find K M.",
+    "logic_forms": [
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(K, N), Line(Q, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P,R),Line(K,L))",
+        "Equals(LengthOf(Line(K,N)),9)",
+        "Equals(LengthOf(Line(L,N)),16)",
+        "Equals(LengthOf(Line(P,M)),Mul(Line(K,P),2))",
+        "Find(LengthOf(Line(K,M)))"
+    ],
+    "point_instances": [
+        "Q",
+        "P",
+        "K",
+        "N",
+        "L",
+        "R",
+        "M"
+    ],
+    "line_instances": [
+        "KP",
+        "KM",
+        "PM",
+        "LN",
+        "LK",
+        "NK",
+        "LR",
+        "LM",
+        "RM",
+        "NQ",
+        "NM",
+        "QM",
+        "RQ",
+        "RP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            279.91266375545854,
+            155.7292576419214
+        ],
+        "P": [
+            418.3406113537118,
+            156.16593886462883
+        ],
+        "K": [
+            493.88646288209605,
+            81.93013100436681
+        ],
+        "N": [
+            279.47598253275106,
+            81.93013100436681
+        ],
+        "L": [
+            68.12227074235808,
+            81.4934497816594
+        ],
+        "R": [
+            141.48471615720524,
+            156.16593886462883
+        ],
+        "M": [
+            279.91266375545854,
+            296.3406113537118
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "9",
+        "12",
+        "15"
+    ],
+    "choices_precise_value": [
+        5.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 15.0,
+    "total_time": 294.337503,
+    "solution_predicate": "Equals(15.0, LengthOf(Line(K, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LKM, 16 = LN, KM \u22a5 MR, \u2220LMK, KN \u22a5 MN, 9 = KN, R on LM, N on KL\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : KM \u22a5 MR\nConclusions: (3 * pi) / 2 = \u2220RMK\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : KN \u22a5 MN\nConclusions: (3 * pi) / 2 = \u2220KNM\n\nStep 4:\nTheorem: Evaluate\nPremises : 9 = KN, 16 = LN\nConclusions: 25 = KN + LN\n\nStep 5:\nTheorem: Same Angle\nPremises : R on LM, \u2220LMK\nConclusions: \u2220LMK = \u2220RMK\n\nStep 6:\nTheorem: Same Angle\nPremises : N on KL, \u2220LKM\nConclusions: \u2220LKM = \u2220NKM\n\nStep 7:\nTheorem: Line Segment Split\nPremises : N on KL\nConclusions: KL = KN + LN\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LMK = \u2220RMK, (3 * pi) / 2 = \u2220KNM, (3 * pi) / 2 = \u2220RMK\nConclusions: \u2220KNM = \u2220LMK\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : KL = KN + LN, 25 = KN + LN\nConclusions: 25 = KL\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220KNM = \u2220LMK, \u2220LKM = \u2220NKM\nConclusions: \u25b3KLM ~ \u25b3KMN\n\nStep 11:\nTheorem: Similar Definition\nPremises : \u25b3KLM ~ \u25b3KMN\nConclusions: KL / KM = KM / KN, \u2220LKM = \u2220NKM\n\nStep 12:\nTheorem: Substitution\nPremises : 25 = KL, 9 = KN, KL / KM = KM / KN\nConclusions: 25 / KM = KM / 9\n\nStep 13:\nTheorem: Solve Univariate Equation\nPremises : 25 / KM = KM / 9\nConclusions: 15 = KM\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Line(L, N)",
+        "Line(L, K)",
+        "Line(N, K)",
+        "Line(L, R)",
+        "Line(L, M)",
+        "Line(R, M)",
+        "Line(N, Q)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(R, Q)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(K, N), Line(Q, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9.0)",
+        "Equals(LengthOf(Line(L, N)), 16.0)",
+        "Equals(LengthOf(Line(P, M)), Mul(LengthOf(Line(K, P)), 2.0))"
+    ],
+    "correct": true
+}

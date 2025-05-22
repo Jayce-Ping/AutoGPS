@@ -1,0 +1,83 @@
+{
+    "problem_id": "2606",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(E, A))",
+        "Parallel(Line(D, C), Line(A, B))",
+        "Equals(MeasureOf(Angle(A, B, C)), 2y-56)",
+        "Equals(MeasureOf(Angle(A, B, C)), 115)",
+        "Equals(MeasureOf(Angle(E, D, C)), x+24)",
+        "Equals(MeasureOf(Angle(D, C, B)), x)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "ED",
+        "EA",
+        "DA",
+        "AB",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            267.5185185185185,
+            295.18518518518516
+        ],
+        "B": [
+            469.8333333333333,
+            295.18518518518516
+        ],
+        "C": [
+            552.2407407407406,
+            121.57407407407408
+        ],
+        "D": [
+            167.98148148148147,
+            120.64814814814812
+        ],
+        "E": [
+            122.14814814814814,
+            41.48148148148148
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "56",
+        "65",
+        "115"
+    ],
+    "choices_precise_value": [
+        24.0,
+        56.0,
+        65.0,
+        115.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 8.478933,
+    "solution_predicate": "Equals(65.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DCB, AB || DC, \u2220BCD, 3.14 = pi, pi * (x / 180) = \u2220DCB, pi * (115 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCB\nConclusions: \u2220DCB = 2 * pi - \u2220BCD\n\nStep 3:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DC\nConclusions: pi = \u2220CBA + \u2220DCB\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 5:\nTheorem: Substitution\nPremises : pi * (x / 180) = \u2220DCB, 3.14 = pi\nConclusions: 3.14 * (x / 180) = \u2220DCB\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220CBA + \u2220DCB, pi * (115 / 180) = \u2220CBA\nConclusions: 3.14 = pi * (115 / 180) + \u2220DCB\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220BCD = 2 * pi - \u2220DCB, 3.14 = pi\nConclusions: \u2220BCD = 2 * 3.14 - \u2220DCB\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (x / 180) = \u2220DCB, \u2220DCB = 2 * pi - \u2220BCD\nConclusions: 3.14 * (x / 180) = 2 * pi - \u2220BCD\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (x / 180) = \u2220DCB, 3.14 * (x / 180) = 2 * pi - \u2220BCD, \u2220BCD = 2 * 3.14 - \u2220DCB, 3.14 = pi * (115 / 180) + \u2220DCB\nConclusions: 65 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(E, A)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "PointLiesOnLine(D, Line(E, A))",
+        "Parallel(Line(D, C), Line(A, B))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(Sub(Mul(2.0, y), 56.0), 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(115.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, D, E)), Mul(pi, Div(Add(x, 24.0), 180.0)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(x, 180.0)))"
+    ],
+    "correct": true
+}

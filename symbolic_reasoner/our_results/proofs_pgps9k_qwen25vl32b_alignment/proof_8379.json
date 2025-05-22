@@ -1,0 +1,78 @@
+{
+    "problem_id": "8379",
+    "solved": true,
+    "problem_text": "Find the length of AD if AB = DC, AD = DC.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, A)), 9x-11)",
+        "Equals(LengthOf(Line(D, C)), 6x+1)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Equals(LengthOf(Line(A,B)),Line(D,C))",
+        "Equals(LengthOf(Line(A,D)),Line(D,C))",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "CB",
+        "BA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            123.2625,
+            162.3668032786885
+        ],
+        "A": [
+            195.7206666666667,
+            37.30273224043715
+        ],
+        "D": [
+            341.4205882352941,
+            37.30954676952748
+        ],
+        "C": [
+            413.6735294117647,
+            162.62873674059787
+        ]
+    },
+    "problem_choices": [
+        6.25,
+        25.0,
+        50.0,
+        64.375
+    ],
+    "choices_precise_value": [
+        6.25,
+        25.0,
+        50.0,
+        64.375
+    ],
+    "problem_answer": 25.0,
+    "total_time": 6.70044,
+    "solution_predicate": "Equals(25.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 1 + 6 * x = CD, AD = CD, 9 * x - 11 = AB, AB = CD\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 1 + 6 * x = CD, AD = CD\nConclusions: 1 + 6 * x = AD\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 9 * x - 11 = AB, 1 + 6 * x = CD, AB = CD\nConclusions: 1 + 6 * x = 9 * x - 11\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 1 + 6 * x = 9 * x - 11, 1 + 6 * x = AD\nConclusions: 25 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Equals(LengthOf(Line(B, A)), Sub(Mul(9.0, x), 11.0))",
+        "Equals(LengthOf(Line(D, C)), Add(Mul(6.0, x), 1.0))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(D, C)))",
+        "Equals(LengthOf(Line(A, D)), LengthOf(Line(D, C)))"
+    ],
+    "correct": true
+}

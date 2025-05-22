@@ -1,0 +1,121 @@
+{
+    "problem_id": "2874",
+    "solved": true,
+    "problem_text": "If P R \\parallel K L, K N = 9, L N = 16, P M = 2 K P, find M N.",
+    "logic_forms": [
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P,R),Line(K,L))",
+        "Equals(LengthOf(Line(K,N)),9)",
+        "Equals(LengthOf(Line(L,N)),16)",
+        "Equals(LengthOf(Line(P,M)),Mul(Line(K,P),2))",
+        "Find(LengthOf(Line(M,N)))"
+    ],
+    "point_instances": [
+        "Q",
+        "N",
+        "M",
+        "K",
+        "P",
+        "R",
+        "L"
+    ],
+    "line_instances": [
+        "NQ",
+        "NM",
+        "QM",
+        "LN",
+        "LK",
+        "NK",
+        "MP",
+        "MK",
+        "PK",
+        "LR",
+        "LM",
+        "RM",
+        "RQ",
+        "RP",
+        "QP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Q": [
+            288.2608695652174,
+            154.86956521739128
+        ],
+        "N": [
+            287.8260869565217,
+            70.52173913043477
+        ],
+        "M": [
+            287.8260869565217,
+            318.78260869565213
+        ],
+        "K": [
+            538.695652173913,
+            71.39130434782608
+        ],
+        "P": [
+            450.86956521739125,
+            155.7391304347826
+        ],
+        "R": [
+            127.39130434782608,
+            155.7391304347826
+        ],
+        "L": [
+            43.47826086956521,
+            70.08695652173913
+        ]
+    },
+    "problem_choices": [
+        "7",
+        "12",
+        "15",
+        "16"
+    ],
+    "choices_precise_value": [
+        7.0,
+        12.0,
+        15.0,
+        16.0
+    ],
+    "problem_answer": 12.0,
+    "total_time": 378.049642,
+    "solution_predicate": "Equals(12.0, LengthOf(Line(M, N)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220LKM, \u2220MLK, sin(\u2220MLK), KL, N on KL, LM, cos(\u2220NKM), \u2220LKM, KN \u22a5 MN, 9 = KN, KM, 16 = LN, KM \u22a5 LM, MN, KN\n\nStep 2:\nTheorem: Line Segment Split\nPremises : N on KL\nConclusions: KL = KN + LN\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220LKM, N on KL\nConclusions: \u2220LKM = \u2220NKM\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220NKM), KN \u22a5 MN\nConclusions: KN / KM = cos(\u2220NKM)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : LM, KL, KM\nConclusions: \u25b3KLM\n\nStep 6:\nTheorem: Evaluate\nPremises : 16 = LN, 9 = KN\nConclusions: 25 = KN + LN\n\nStep 7:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220MLK), KM \u22a5 LM\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : KN, MN, KM\nConclusions: \u25b3KMN\n\nStep 9:\nTheorem: Cos Function Definition\nPremises : \u2220LKM, \u25b3KLM, KM \u22a5 LM\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u2220MLK, \u25b3KLM, KM \u22a5 LM\nConclusions: KM / KL = sin(\u2220MLK)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : KL = KN + LN, 25 = KN + LN\nConclusions: 25 = KL\n\nStep 12:\nTheorem: Pythagorean Theorem\nPremises : \u25b3KMN, KN \u22a5 MN\nConclusions: MN = SqrtOf(KM ** 2 - KN ** 2)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = sin(\u2220MLK), KM / KL = sin(\u2220MLK)\nConclusions: KM / KL = KM / KL\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : KM / KL = cos(\u2220LKM), KM / KL = KM / KL\nConclusions: KM / KL = cos(\u2220LKM)\n\nStep 15:\nTheorem: Substitution\nPremises : KM / KL = cos(\u2220LKM), 25 = KL, \u2220LKM = \u2220NKM\nConclusions: KM / 25 = cos(\u2220NKM)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : KN / KM = cos(\u2220NKM), KM / 25 = cos(\u2220NKM)\nConclusions: KM / 25 = KN / KM\n\nStep 17:\nTheorem: Substitution\nPremises : KM / 25 = KN / KM, 9 = KN\nConclusions: 9 / KM = KM / 25\n\nStep 18:\nTheorem: Solve Univariate Equation\nPremises : 9 / KM = KM / 25\nConclusions: 15 = KM\n\nStep 19:\nTheorem: Evaluate\nPremises : 15 = KM, 9 = KN\nConclusions: 12 = SqrtOf(KM ** 2 - KN ** 2)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 12 = SqrtOf(KM ** 2 - KN ** 2), MN = SqrtOf(KM ** 2 - KN ** 2)\nConclusions: 12 = MN\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, Q)",
+        "Line(N, M)",
+        "Line(Q, M)",
+        "Line(L, N)",
+        "Line(L, K)",
+        "Line(N, K)",
+        "Line(M, P)",
+        "Line(M, K)",
+        "Line(P, K)",
+        "Line(L, R)",
+        "Line(L, M)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Line(R, P)",
+        "Line(Q, P)",
+        "PointLiesOnLine(Q, Line(N, M))",
+        "PointLiesOnLine(N, Line(L, K))",
+        "PointLiesOnLine(P, Line(M, K))",
+        "PointLiesOnLine(R, Line(L, M))",
+        "PointLiesOnLine(Q, Line(R, P))",
+        "Perpendicular(Line(Q, N), Line(K, N))",
+        "Perpendicular(Line(P, M), Line(R, M))",
+        "Parallel(Line(P, R), Line(K, L))",
+        "Equals(LengthOf(Line(K, N)), 9.0)",
+        "Equals(LengthOf(Line(L, N)), 16.0)",
+        "Equals(LengthOf(Line(P, M)), Mul(LengthOf(Line(K, P)), 2.0))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,65 @@
+{
+    "problem_id": "1572",
+    "solved": true,
+    "problem_text": "Find the perimeter of the regular polygon.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Find(PerimeterOf(Polygon(A, B, C)))",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Regular(Polygon(A, B, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AC",
+        "AB",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            20.42307692307692,
+            195.2446753246753
+        ],
+        "B": [
+            20.51923076923077,
+            16.33285714285714
+        ],
+        "C": [
+            199.26923076923075,
+            106.55999999999999
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        18.0,
+        31.177,
+        37.699
+    ],
+    "choices_precise_value": [
+        12.0,
+        18.0,
+        31.177,
+        37.699
+    ],
+    "problem_answer": 18.0,
+    "total_time": 5.462103,
+    "solution_predicate": "Equals(18.0, PerimeterOf(Triangle(A, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3ABC, Regular(\u25b3ABC), 6 = AC\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : \u25b3ABC\nConclusions: Perimeter(\u25b3ABC) = AB + AC + BC\n\nStep 3:\nTheorem: Regular Triangle Definition\nPremises : Regular(\u25b3ABC)\nConclusions: AC = BC, AB = BC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 6 = AC\nConclusions: 6 = BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : AB = BC, 6 = BC\nConclusions: 6 = AB\n\nStep 6:\nTheorem: Substitution\nPremises : 6 = AB, Perimeter(\u25b3ABC) = AB + AC + BC, 6 = BC, 6 = AC\nConclusions: 6 + 6 + 6 = Perimeter(\u25b3ABC)\n\nStep 7:\nTheorem: Evaluate\nPremises : 6 + 6 + 6 = Perimeter(\u25b3ABC)\nConclusions: 18 = Perimeter(\u25b3ABC)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Regular(Triangle(A, B, C))",
+        "Equals(LengthOf(Line(A, C)), 6.0)"
+    ],
+    "correct": true
+}

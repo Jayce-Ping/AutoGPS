@@ -1,0 +1,82 @@
+{
+    "problem_id": "2742",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 8.8)",
+        "Equals(LengthOf(Line(A, D)), 8.5)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "DA",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            152.23880597014926,
+            227.56716417910448
+        ],
+        "B": [
+            359.7014925373134,
+            51.44776119402985
+        ],
+        "C": [
+            144.77611940298507,
+            60.40298507462687
+        ],
+        "D": [
+            16.71641791044776,
+            66.07462686567163
+        ]
+    },
+    "problem_choices": [
+        "4.88",
+        "5.96",
+        "6.75",
+        "8.42"
+    ],
+    "choices_precise_value": [
+        4.88,
+        5.96,
+        6.75,
+        8.42
+    ],
+    "problem_answer": 6.75,
+    "total_time": 43.809121,
+    "solution_predicate": "Equals(6.7459276189, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 8.5 = AD, cos(\u2220ADB), 8.8 = BC, CD, x = CD, y = AC, AB \u22a5 AD, \u2220ADB, AC \u22a5 CD, AC, C on BD, \u2220ADC, AD, sin(\u2220CAD), \u2220CAD\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220ADB), AB \u22a5 AD\nConclusions: AD / BD = cos(\u2220ADB)\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ADB, C on BD\nConclusions: \u2220ADB = \u2220ADC\n\nStep 4:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : AD, CD, AC\nConclusions: \u25b3ACD\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 CD, sin(\u2220CAD)\nConclusions: CD / AD = sin(\u2220CAD)\n\nStep 7:\nTheorem: Substitution\nPremises : \u2220ADB = \u2220ADC, 8.5 = AD, AD / BD = cos(\u2220ADB)\nConclusions: 8.5 / BD = cos(\u2220ADC)\n\nStep 8:\nTheorem: Substitution\nPremises : x = CD, BD = BC + CD, 8.8 = BC\nConclusions: 8.8 + x = BD\n\nStep 9:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ACD, AC \u22a5 CD\nConclusions: AC = SqrtOf(AD ** 2 - CD ** 2)\n\nStep 10:\nTheorem: Sin Function Definition\nPremises : \u2220CAD, \u25b3ACD, AC \u22a5 CD\nConclusions: CD / AD = sin(\u2220CAD)\n\nStep 11:\nTheorem: Cos Function Definition\nPremises : \u25b3ACD, AC \u22a5 CD, \u2220ADC\nConclusions: CD / AD = cos(\u2220ADC)\n\nStep 12:\nTheorem: Substitution\nPremises : CD / AD = sin(\u2220CAD), x = CD, 8.5 = AD\nConclusions: x / 8.5 = sin(\u2220CAD)\n\nStep 13:\nTheorem: Substitution\nPremises : y = AC, x = CD, 8.5 = AD, AC = SqrtOf(AD ** 2 - CD ** 2)\nConclusions: y = SqrtOf(8.5 ** 2 - x ** 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : CD / AD = cos(\u2220ADC), 8.5 / BD = cos(\u2220ADC)\nConclusions: 8.5 / BD = CD / AD\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : CD / AD = sin(\u2220CAD), 8.5 / BD = CD / AD, x / 8.5 = sin(\u2220CAD)\nConclusions: x / 8.5 = 8.5 / BD\n\nStep 16:\nTheorem: Substitution\nPremises : x / 8.5 = 8.5 / BD, 8.8 + x = BD\nConclusions: x / 8.5 = 8.5 / (8.8 + x)\n\nStep 17:\nTheorem: Solve Univariate Equation\nPremises : x / 8.5 = 8.5 / (8.8 + x)\nConclusions: 5.17 = x\n\nStep 18:\nTheorem: Substitution\nPremises : y = SqrtOf(8.5 ** 2 - x ** 2), 5.17 = x\nConclusions: SqrtOf(8.5 ** 2 - 5.17 ** 2) = y\n\nStep 19:\nTheorem: Evaluate\nPremises : SqrtOf(8.5 ** 2 - 5.17 ** 2) = y\nConclusions: 6.75 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Perpendicular(Line(A, C), Line(B, C))",
+        "Perpendicular(Line(B, A), Line(D, A))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), z)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 8.8)",
+        "Equals(LengthOf(Line(A, D)), 8.5)"
+    ],
+    "correct": true
+}

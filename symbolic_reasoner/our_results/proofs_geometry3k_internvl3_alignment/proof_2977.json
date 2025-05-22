@@ -1,0 +1,78 @@
+{
+    "problem_id": "2977",
+    "solved": true,
+    "problem_text": "Find G D.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(G, J))",
+        "Equals(LengthOf(Line(D, H)), 2x+4)",
+        "Equals(LengthOf(Line(J, H)), 10)",
+        "Equals(LengthOf(Line(G, H)), 7)",
+        "Equals(LengthOf(Line(G, D)), 2x-2)",
+        "Equals(MeasureOf(Angle(J, H, G)), MeasureOf(Angle(G, D, H)))",
+        "Find(LengthOf(Line(G,D)))"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "D",
+        "J"
+    ],
+    "line_instances": [
+        "GD",
+        "GJ",
+        "DJ",
+        "HJ",
+        "HD",
+        "HG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "H": [
+            372.8255033557047,
+            94.5503355704698
+        ],
+        "G": [
+            101.68456375838926,
+            365.69127516778525
+        ],
+        "D": [
+            316.44966442953023,
+            365.02013422818794
+        ],
+        "J": [
+            796.9865771812081,
+            367.03355704697987
+        ]
+    },
+    "problem_choices": [
+        "10",
+        "12",
+        "14",
+        "20"
+    ],
+    "choices_precise_value": [
+        10.0,
+        12.0,
+        14.0,
+        20.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 28.65947,
+    "solution_predicate": "Equals(14.0, LengthOf(Line(G, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220GDH, HJ, 3.14 = pi, 10 = HJ, 4 + 2 * x = DH, \u2220HJG, GH, \u2220JGH, \u2220JHG, D on GJ, \u2220HGJ, GJ, 7 = GH, DH, \u2220GHJ = \u2220HDG, 2 * x - 2 = DG, DG\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220GDH\nConclusions: \u2220GDH = 2 * pi - \u2220HDG\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220JHG\nConclusions: \u2220JHG = 2 * pi - \u2220GHJ\n\nStep 4:\nTheorem: Same Angle\nPremises : D on GJ, \u2220HJG\nConclusions: \u2220HJD = \u2220HJG\n\nStep 5:\nTheorem: Same Angle\nPremises : D on GJ, \u2220JGH\nConclusions: \u2220DGH = \u2220JGH\n\nStep 6:\nTheorem: Same Angle\nPremises : D on GJ, \u2220HGJ\nConclusions: \u2220HGD = \u2220HGJ\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : GH, HJ, GJ\nConclusions: \u25b3GHJ\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : GH, DH, DG\nConclusions: \u25b3DGH\n\nStep 9:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220GDH = 2 * pi - \u2220HDG\nConclusions: \u2220GDH = 2 * 3.14 - \u2220HDG\n\nStep 10:\nTheorem: Substitution\nPremises : \u2220JHG = 2 * pi - \u2220GHJ, 3.14 = pi, \u2220GHJ = \u2220HDG\nConclusions: \u2220JHG = 2 * 3.14 - \u2220HDG\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(G, H, J)\nPremises : \u25b3GHJ\nConclusions: pi = \u2220GHJ + \u2220HJG + \u2220JGH\n\nStep 12:\nTheorem: Interior Angle Sum Theorem for Triangle(D, G, H)\nPremises : \u25b3DGH\nConclusions: pi = \u2220DGH + \u2220GHD + \u2220HDG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JHG = 2 * 3.14 - \u2220HDG, \u2220GDH = 2 * 3.14 - \u2220HDG\nConclusions: \u2220GDH = \u2220JHG\n\nStep 14:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220GHJ + \u2220HJG + \u2220JGH, \u2220GHJ = \u2220HDG\nConclusions: 3.14 = \u2220HDG + \u2220HJG + \u2220JGH\n\nStep 15:\nTheorem: Substitution\nPremises : pi = \u2220DGH + \u2220GHD + \u2220HDG, 3.14 = pi, \u2220DGH = \u2220JGH\nConclusions: 3.14 = \u2220GHD + \u2220HDG + \u2220JGH\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220GHD + \u2220HDG + \u2220JGH, 3.14 = \u2220HDG + \u2220HJG + \u2220JGH, \u2220HJD = \u2220HJG\nConclusions: \u2220GHD = \u2220HJD\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GHD = \u2220HJD, \u2220HJD = \u2220HJG\nConclusions: \u2220GHD = \u2220HJG\n\nStep 18:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220GHD = \u2220HJG, \u2220GDH = \u2220JHG, \u2220HGD = \u2220HGJ\nConclusions: \u25b3DGH ~ \u25b3HGJ\n\nStep 19:\nTheorem: Similar Definition\nPremises : \u25b3DGH ~ \u25b3HGJ\nConclusions: DG / GH = DH / HJ, \u2220HGD = \u2220HGJ, \u2220GDH = \u2220JHG, \u2220DGH = \u2220JGH, \u2220GHJ = \u2220HDG\n\nStep 20:\nTheorem: Substitution\nPremises : 7 = GH, 10 = HJ, 4 + 2 * x = DH, DG / GH = DH / HJ, 2 * x - 2 = DG\nConclusions: (4 + 2 * x) / 10 = (2 * x - 2) / 7\n\nStep 21:\nTheorem: Solve Linear Equation System\nPremises : (4 + 2 * x) / 10 = (2 * x - 2) / 7, 2 * x - 2 = DG\nConclusions: 14 = DG\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, D)",
+        "Line(G, J)",
+        "Line(D, J)",
+        "Line(H, J)",
+        "Line(H, D)",
+        "Line(H, G)",
+        "PointLiesOnLine(D, Line(G, J))",
+        "Equals(LengthOf(Line(D, H)), Add(Mul(2.0, x), 4.0))",
+        "Equals(LengthOf(Line(J, H)), 10.0)",
+        "Equals(LengthOf(Line(G, H)), 7.0)",
+        "Equals(LengthOf(Line(G, D)), Sub(Mul(2.0, x), 2.0))",
+        "Equals(MeasureOf(Angle(G, H, J)), MeasureOf(Angle(H, D, G)))"
+    ],
+    "correct": true
+}

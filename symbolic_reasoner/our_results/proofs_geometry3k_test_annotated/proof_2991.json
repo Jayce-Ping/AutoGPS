@@ -1,0 +1,107 @@
+{
+    "problem_id": "2991",
+    "solved": true,
+    "problem_text": "m \\angle B A C = 38, B C = 5, and D C = 5, find m \\angle D A C.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(G, B), Line(C, B))",
+        "Equals(MeasureOf(Angle(B, A, C)), 38)",
+        "Equals(LengthOf(Line(B, C)), 5)",
+        "Equals(LengthOf(Line(D, C)), 5)",
+        "Find(MeasureOf(Angle(D, A, C)))"
+    ],
+    "point_instances": [
+        "B",
+        "A",
+        "D",
+        "C",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AD",
+        "AE",
+        "DE",
+        "AC",
+        "AF",
+        "CF",
+        "AB",
+        "AG",
+        "BG",
+        "BC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            273.80281690140845,
+            126.69953051643193
+        ],
+        "A": [
+            116.52582159624413,
+            73.17840375586854
+        ],
+        "D": [
+            168.63849765258217,
+            230.924882629108
+        ],
+        "C": [
+            245.63380281690144,
+            204.6338028169014
+        ],
+        "E": [
+            225.9154929577465,
+            403.69483568075117
+        ],
+        "F": [
+            340.46948356807513,
+            299.46948356807513
+        ],
+        "G": [
+            449.85915492957747,
+            186.79342723004694
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "38",
+        "40"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        38.0,
+        40.0
+    ],
+    "problem_answer": 38.0,
+    "total_time": 58.860729,
+    "solution_predicate": "Equals(0.6632251158, MeasureOf(Angle(D, A, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220GAC, \u2220EAF, B on AG, pi * (38 / 180) = \u2220CAB, C on AF, 3.14 = pi, AB \u22a5 BC, AD \u22a5 CD, 5 = CD, 5 = BC, \u2220FAB, \u2220CAG, \u2220DAF, D on AE, \u2220FAB, \u2220BAF, \u2220CAG\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220GAC, B on AG\nConclusions: \u2220BAC = \u2220GAC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BC\nConclusions: pi / 2 = \u2220ABC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220CDA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 = CD, 5 = BC\nConclusions: BC = CD\n\nStep 6:\nTheorem: Same Angle\nPremises : C on AF, \u2220FAB\nConclusions: \u2220CAB = \u2220FAB\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAG\nConclusions: \u2220CAG = 2 * pi - \u2220GAC\n\nStep 8:\nTheorem: Same Angle\nPremises : C on AF, \u2220DAF\nConclusions: \u2220DAC = \u2220DAF\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220EAF, D on AE\nConclusions: \u2220DAF = \u2220EAF\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220FAB\nConclusions: \u2220FAB = 2 * pi - \u2220BAF\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220BAF, C on AF\nConclusions: \u2220BAC = \u2220BAF\n\nStep 12:\nTheorem: Same Angle\nPremises : \u2220CAG, B on AG\nConclusions: \u2220CAB = \u2220CAG\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ABC, pi / 2 = \u2220CDA\nConclusions: \u2220ABC = \u2220CDA\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220CAB, \u2220CAB = \u2220FAB\nConclusions: pi * (38 / 180) = \u2220FAB\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DAC = \u2220DAF, \u2220DAF = \u2220EAF\nConclusions: \u2220DAC = \u2220EAF\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220BAF, \u2220BAC = \u2220GAC\nConclusions: \u2220BAF = \u2220GAC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220CAB, \u2220CAB = \u2220CAG\nConclusions: pi * (38 / 180) = \u2220CAG\n\nStep 18:\nTheorem: Hypotenuse-Leg Congruent Theorem\nPremises : BC = CD, \u2220ABC = \u2220CDA\nConclusions: \u25b3ABC \u2245 \u25b3ADC\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (38 / 180) = \u2220FAB, \u2220BAF = \u2220GAC, \u2220FAB = 2 * pi - \u2220BAF, 3.14 = pi\nConclusions: pi * (38 / 180) = 2 * 3.14 - \u2220GAC\n\nStep 20:\nTheorem: Substitution\nPremises : pi * (38 / 180) = \u2220CAG, \u2220CAG = 2 * pi - \u2220GAC, 3.14 = pi\nConclusions: 3.14 * (38 / 180) = 2 * 3.14 - \u2220GAC\n\nStep 21:\nTheorem: Congruent Definition\nPremises : \u25b3ABC \u2245 \u25b3ADC\nConclusions: \u2220ABC = \u2220CDA, \u2220CAB = \u2220DAC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (38 / 180) = 2 * 3.14 - \u2220GAC, pi * (38 / 180) = 2 * 3.14 - \u2220GAC\nConclusions: 3.14 * (38 / 180) = pi * (38 / 180)\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220CAB, 3.14 * (38 / 180) = pi * (38 / 180)\nConclusions: 3.14 * (38 / 180) = \u2220CAB\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (38 / 180) = \u2220CAB\nConclusions: 0.66 = \u2220CAB\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 0.66 = \u2220CAB, \u2220DAC = \u2220EAF, \u2220CAB = \u2220DAC\nConclusions: 0.66 = \u2220EAF\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 0.66 = \u2220EAF, \u2220DAC = \u2220EAF\nConclusions: 0.66 = \u2220DAC\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, F)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(B, G)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "PointLiesOnLine(D, Line(A, E))",
+        "PointLiesOnLine(C, Line(A, F))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Perpendicular(Line(G, B), Line(C, B))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(38.0, 180.0)))",
+        "Equals(LengthOf(Line(B, C)), 5.0)",
+        "Equals(LengthOf(Line(D, C)), 5.0)"
+    ],
+    "correct": true
+}

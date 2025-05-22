@@ -1,0 +1,86 @@
+{
+    "problem_id": "547",
+    "solved": true,
+    "problem_text": "Find the value of x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(C, B)), 8x)",
+        "Equals(LengthOf(Line(D, C)), 56)",
+        "Equals(MeasureOf(Angle(A, C, D)), MeasureOf(Angle(C, A, D)))",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(A, C, D)))",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(C, A, D)))",
+        "Equals(MeasureOf(Angle(C, A, B)), MeasureOf(Angle(C, B, A)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "CB",
+        "BA",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            62.61682242990654,
+            261.68224299065423
+        ],
+        "B": [
+            402.49221183800626,
+            261.68224299065423
+        ],
+        "C": [
+            232.398753894081,
+            119.62616822429906
+        ],
+        "D": [
+            24.610591900311526,
+            43.925233644859816
+        ]
+    },
+    "problem_choices": [
+        3.5,
+        7.0,
+        14.0,
+        56.0
+    ],
+    "choices_precise_value": [
+        3.5,
+        7.0,
+        14.0,
+        56.0
+    ],
+    "problem_answer": 7.0,
+    "total_time": 25.395651,
+    "solution_predicate": "Equals(7.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AC, \u2220ADC = \u2220DCA, \u2220BAC = \u2220CBA, 8 * x = BC, BC, AB, CD, AD, \u2220CAD = \u2220DCA, 56 = CD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Issoceles Triangle Property\nPremises : \u2220BAC = \u2220CBA, \u25b3ABC\nConclusions: AC = BC\n\nStep 5:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3ACD, \u2220CAD = \u2220DCA\nConclusions: AD = CD\n\nStep 6:\nTheorem: Issoceles Triangle Property\nPremises : \u2220ADC = \u2220DCA, \u25b3ACD\nConclusions: AC = AD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : AD = CD, 56 = CD\nConclusions: 56 = AD\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : AC = AD, 56 = AD\nConclusions: 56 = AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AC = BC, 8 * x = BC, 56 = AC\nConclusions: 56 = 8 * x\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 56 = 8 * x\nConclusions: 7 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(C, B)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Equals(LengthOf(Line(C, B)), Mul(8.0, x))",
+        "Equals(LengthOf(Line(D, C)), 56.0)",
+        "Equals(MeasureOf(Angle(D, C, A)), MeasureOf(Angle(C, A, D)))",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(D, C, A)))",
+        "Equals(MeasureOf(Angle(A, D, C)), MeasureOf(Angle(C, A, D)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(C, B, A)))"
+    ],
+    "correct": true
+}

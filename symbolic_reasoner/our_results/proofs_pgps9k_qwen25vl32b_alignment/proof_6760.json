@@ -1,0 +1,113 @@
+{
+    "problem_id": "6760",
+    "solved": true,
+    "problem_text": "Solve for m \\angle AKG.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(H, K, G)), 23)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(H, A)",
+        "Line(H, K)",
+        "Line(K, A)",
+        "Line(K, I)",
+        "Line(K, J)",
+        "Perpendicular(Line(G, J), Line(K, I))",
+        "PointLiesOnCircle(A, Circle(K))",
+        "PointLiesOnCircle(G, Circle(K))",
+        "PointLiesOnCircle(H, Circle(K))",
+        "PointLiesOnCircle(I, Circle(K))",
+        "PointLiesOnCircle(J, Circle(K))",
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(K, Line(H, A))",
+        "Find(MeasureOf(Angle(A,K,G)))"
+    ],
+    "point_instances": [
+        "H",
+        "G",
+        "I",
+        "K",
+        "J",
+        "A"
+    ],
+    "line_instances": [
+        "HK",
+        "HA",
+        "KA",
+        "GK",
+        "GJ",
+        "KJ",
+        "KI"
+    ],
+    "circle_instances": [
+        "K"
+    ],
+    "point_positions": {
+        "H": [
+            120.98742857142857,
+            51.67528089887641
+        ],
+        "G": [
+            77.90857142857142,
+            70.22873194221509
+        ],
+        "I": [
+            242.43314285714285,
+            97.4056179775281
+        ],
+        "K": [
+            146.5513664131846,
+            165.31096314971867
+        ],
+        "J": [
+            214.73959183673466,
+            260.6629213483146
+        ],
+        "A": [
+            171.85714285714286,
+            280.0983146067416
+        ]
+    },
+    "problem_choices": [
+        23.0,
+        67.0,
+        113.0,
+        157.0
+    ],
+    "choices_precise_value": [
+        23.0,
+        67.0,
+        113.0,
+        157.0
+    ],
+    "problem_answer": 157.0,
+    "total_time": 23.476936,
+    "solution_predicate": "Equals(2.7401669256, MeasureOf(Angle(G, K, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on GJ, \u2220AKJ, K on AH, 3.14 = pi, pi * (23 / 180) = \u2220HKG, \u2220GKA\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : K on GJ, K on AH\nConclusions: \u2220AKJ = \u2220HKG\n\nStep 3:\nTheorem: Straight Angle\nPremises : \u2220GKA, \u2220AKJ\nConclusions: pi = \u2220AKJ + \u2220GKA\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi * (23 / 180) = \u2220HKG, \u2220AKJ = \u2220HKG\nConclusions: pi * (23 / 180) = \u2220AKJ\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220AKJ + \u2220GKA\nConclusions: 3.14 = \u2220AKJ + \u2220GKA\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220AKJ + \u2220GKA, pi * (23 / 180) = \u2220AKJ, pi = \u2220AKJ + \u2220GKA\nConclusions: 2.74 = \u2220GKA\n\n",
+    "logic_fomrs_refined": [
+        "Line(H, K)",
+        "Line(H, A)",
+        "Line(K, A)",
+        "Line(G, K)",
+        "Line(G, J)",
+        "Line(K, J)",
+        "Line(K, I)",
+        "Circle(K, radius_K)",
+        "Line(G, J)",
+        "Line(G, K)",
+        "Line(H, A)",
+        "Line(H, K)",
+        "Line(K, A)",
+        "Line(K, I)",
+        "Line(K, J)",
+        "Perpendicular(Line(G, J), Line(K, I))",
+        "PointLiesOnCircle(A, Circle(K, radius_K))",
+        "PointLiesOnCircle(G, Circle(K, radius_K))",
+        "PointLiesOnCircle(H, Circle(K, radius_K))",
+        "PointLiesOnCircle(I, Circle(K, radius_K))",
+        "PointLiesOnCircle(J, Circle(K, radius_K))",
+        "PointLiesOnLine(K, Line(G, J))",
+        "PointLiesOnLine(K, Line(H, A))",
+        "Equals(MeasureOf(Angle(H, K, G)), Mul(pi, Div(23.0, 180.0)))"
+    ],
+    "correct": true
+}

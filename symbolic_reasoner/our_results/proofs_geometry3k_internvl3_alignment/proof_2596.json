@@ -1,0 +1,67 @@
+{
+    "problem_id": "2596",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(J, L)), 5x-6)",
+        "Equals(LengthOf(Line(K, L)), 4x)",
+        "Equals(LengthOf(Line(J, K)), 3x+6)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JL",
+        "KJ",
+        "KL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "J": [
+            107.6,
+            290.8
+        ],
+        "K": [
+            255.2,
+            86.4
+        ],
+        "L": [
+            403.2,
+            290.0
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+    ],
+    "problem_answer": 6.0,
+    "total_time": 6.154082,
+    "solution_predicate": "Equals(6.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JK = JL, 6 + 3 * x = JK, 5 * x - 6 = JL\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x - 6 = JL, JK = JL, 6 + 3 * x = JK\nConclusions: 6 + 3 * x = 5 * x - 6\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 6 + 3 * x = 5 * x - 6\nConclusions: 6 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, L)",
+        "Line(K, J)",
+        "Line(K, L)",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(K, J)))",
+        "Equals(LengthOf(Line(K, L)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(K, J)), LengthOf(Line(J, L)))",
+        "Equals(LengthOf(Line(J, L)), Sub(Mul(5.0, x), 6.0))",
+        "Equals(LengthOf(Line(K, L)), Mul(4.0, x))",
+        "Equals(LengthOf(Line(J, K)), Add(Mul(3.0, x), 6.0))"
+    ],
+    "correct": true
+}

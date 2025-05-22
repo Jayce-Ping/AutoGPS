@@ -1,0 +1,92 @@
+{
+    "problem_id": "4619",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, D)), 3)",
+        "Equals(LengthOf(Line(B, D)), 8)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(D, C)), x)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(C, D))",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "B",
+        "D",
+        "A",
+        "C"
+    ],
+    "line_instances": [
+        "BD",
+        "BA",
+        "DA",
+        "DC",
+        "CA",
+        "BC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            39.96,
+            169.4009843659525
+        ],
+        "D": [
+            271.86420289855073,
+            169.52700083079478
+        ],
+        "A": [
+            360.0593333333333,
+            169.53171974522292
+        ],
+        "C": [
+            272.0733333333333,
+            32.74551244933411
+        ]
+    },
+    "problem_choices": [
+        5.385164807134504,
+        5.5677643628300215,
+        5.744562646538029,
+        5.916079783099616
+    ],
+    "choices_precise_value": [
+        5.385164807134504,
+        5.5677643628300215,
+        5.744562646538029,
+        5.916079783099616
+    ],
+    "problem_answer": 5.916079783099616,
+    "total_time": 49.885044,
+    "solution_predicate": "Equals(5.7445626465, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC, CD, \u2220CAB, \u2220CBA, BC, AD \u22a5 CD, AC \u22a5 BC, \u2220CAD, 3.14 = pi, \u2220CBA, y = AC, \u2220DCA, AD, 3 = AD, D on AB, sin(\u2220DBC), 8 = BD, AB, AC, sin(\u2220DCA), \u2220ABC, BD \u22a5 CD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: pi / 2 = \u2220ADC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220BCA\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBA\nConclusions: \u2220CBA = 2 * pi - \u2220ABC\n\nStep 5:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 6:\nTheorem: Same Angle\nPremises : D on AB, \u2220CAB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 7:\nTheorem: Same Angle\nPremises : D on AB, \u2220CBA\nConclusions: \u2220CBA = \u2220CBD\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : AD, AC, CD\nConclusions: \u25b3ACD\n\nStep 10:\nTheorem: Angle Sin Definition\nPremises : AD \u22a5 CD, sin(\u2220DCA)\nConclusions: AD / AC = sin(\u2220DCA)\n\nStep 11:\nTheorem: Same Angle\nPremises : D on AB, \u2220ABC\nConclusions: \u2220ABC = \u2220DBC\n\nStep 12:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220DBC), BD \u22a5 CD\nConclusions: CD / BC = sin(\u2220DBC)\n\nStep 13:\nTheorem: Substitution\nPremises : AB = AD + BD, 3 = AD, 8 = BD\nConclusions: 3 + 8 = AB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220CBD, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: \u2220CBD = 2 * pi - \u2220ABC\n\nStep 15:\nTheorem: Sin Function Definition\nPremises : AC \u22a5 BC, \u25b3ABC, \u2220ABC\nConclusions: AC / AB = sin(\u2220ABC)\n\nStep 16:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 18:\nTheorem: Cos Function Definition\nPremises : AD \u22a5 CD, \u25b3ACD, \u2220CAD\nConclusions: AD / AC = cos(\u2220CAD)\n\nStep 19:\nTheorem: Sin Function Definition\nPremises : AD \u22a5 CD, \u2220DCA, \u25b3ACD\nConclusions: AD / AC = sin(\u2220DCA)\n\nStep 20:\nTheorem: Substitution\nPremises : AD / AC = sin(\u2220DCA), y = AC, 3 = AD\nConclusions: 3 / y = sin(\u2220DCA)\n\nStep 21:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABC = \u2220DBC, \u2220CBA = \u2220CBD, \u2220CBA = 2 * pi - \u2220ABC\nConclusions: \u2220CBD = 2 * 3.14 - \u2220DBC\n\nStep 22:\nTheorem: Solve Linear Equation System\nPremises : 3 + 8 = AB\nConclusions: 11 = AB\n\nStep 23:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BCA, 3.14 = pi, \u2220CAB = \u2220CAD, pi = \u2220ABC + \u2220BCA + \u2220CAB, \u2220ABC = \u2220DBC\nConclusions: 3.14 = pi / 2 + \u2220CAD + \u2220DBC\n\nStep 24:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220ADC, pi = \u2220ADC + \u2220CAD + \u2220DCA\nConclusions: 3.14 = 3.14 / 2 + \u2220CAD + \u2220DCA\n\nStep 25:\nTheorem: Substitution\nPremises : y = AC, AD / AC = cos(\u2220CAD), 3 = AD\nConclusions: 3 / y = cos(\u2220CAD)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 3 / y = sin(\u2220DCA), AD / AC = sin(\u2220DCA)\nConclusions: 3 / y = AD / AC\n\nStep 27:\nTheorem: Substitution\nPremises : y = AC, \u2220ABC = \u2220DBC, 11 = AB, AC / AB = sin(\u2220ABC)\nConclusions: y / 11 = sin(\u2220DBC)\n\nStep 28:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + \u2220CAD + \u2220DCA, \u2220CBD = 2 * 3.14 - \u2220DBC, \u2220CBD = 2 * pi - \u2220ABC, \u2220ABC = \u2220DBC, 3.14 = pi / 2 + \u2220CAD + \u2220DBC\nConclusions: \u2220ABC = \u2220DCA\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : 3 / y = AD / AC, AD / AC = cos(\u2220CAD)\nConclusions: 3 / y = cos(\u2220CAD)\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABC = \u2220DCA, \u2220ABC = \u2220DBC\nConclusions: \u2220DBC = \u2220DCA\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : 3 / y = cos(\u2220CAD), 3 / y = cos(\u2220CAD)\nConclusions: 3 / y = 3 / y\n\nStep 32:\nTheorem: Substitution\nPremises : y = AC, 3 = AD, AD / AC = sin(\u2220DCA), \u2220DBC = \u2220DCA\nConclusions: 3 / y = sin(\u2220DBC)\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : CD / BC = sin(\u2220DBC), 3 / y = sin(\u2220DBC), 3 / y = 3 / y\nConclusions: 3 / y = CD / BC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : CD / BC = sin(\u2220DBC), 3 / y = CD / BC\nConclusions: 3 / y = sin(\u2220DBC)\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 3 / y = sin(\u2220DBC), y / 11 = sin(\u2220DBC)\nConclusions: 3 / y = y / 11\n\nStep 36:\nTheorem: Solve Univariate Equation\nPremises : 3 / y = y / 11\nConclusions: 5.74 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(D, C)",
+        "Line(C, A)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, A)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Perpendicular(Line(B, A), Line(C, D))",
+        "Perpendicular(Line(C, A), Line(B, C))",
+        "PointLiesOnLine(D, Line(B, A))",
+        "Equals(LengthOf(Line(A, D)), 3.0)",
+        "Equals(LengthOf(Line(B, D)), 8.0)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(D, C)), x)"
+    ],
+    "correct": true
+}

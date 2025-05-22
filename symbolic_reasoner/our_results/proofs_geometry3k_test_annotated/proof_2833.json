@@ -1,0 +1,125 @@
+{
+    "problem_id": "2833",
+    "solved": true,
+    "problem_text": "In \\triangle C D F, K is the centroid and D K = 16. Find C D.",
+    "logic_forms": [
+        "PointLiesOnLine(J, Line(D, F))",
+        "PointLiesOnLine(K, Line(G, F))",
+        "PointLiesOnLine(G, Line(C, D))",
+        "PointLiesOnLine(H, Line(C, F))",
+        "PointLiesOnLine(K, Line(H, D))",
+        "PointLiesOnLine(K, Line(C, J))",
+        "Equals(LengthOf(Line(F, K)), 12)",
+        "Equals(LengthOf(Line(D, G)), 9)",
+        "IsCentroidOf(K, Triangle(C, D, F))",
+        "Equals(LengthOf(Line(D, K)), 16)",
+        "Find(LengthOf(Line(C, D)))"
+    ],
+    "point_instances": [
+        "G",
+        "C",
+        "F",
+        "J",
+        "K",
+        "H",
+        "D"
+    ],
+    "line_instances": [
+        "DJ",
+        "DF",
+        "JF",
+        "GK",
+        "GF",
+        "KF",
+        "CG",
+        "CD",
+        "GD",
+        "CH",
+        "CF",
+        "HF",
+        "HK",
+        "HD",
+        "KD",
+        "CK",
+        "CJ",
+        "KJ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            122.57142857142856,
+            257.14285714285717
+        ],
+        "C": [
+            123.14285714285717,
+            85.71428571428571
+        ],
+        "F": [
+            368.8571428571429,
+            220.0
+        ],
+        "J": [
+            245.42857142857144,
+            332.0
+        ],
+        "K": [
+            204.85714285714283,
+            245.14285714285714
+        ],
+        "H": [
+            244.28571428571428,
+            152.0
+        ],
+        "D": [
+            122.57142857142856,
+            445.14285714285717
+        ]
+    },
+    "problem_choices": [
+        "9",
+        "12",
+        "18",
+        "18"
+    ],
+    "choices_precise_value": [
+        9.0,
+        12.0,
+        18.0,
+        18.0
+    ],
+    "problem_answer": 18.0,
+    "total_time": 247.003801,
+    "solution_predicate": "Equals(18.0, LengthOf(Line(C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: G on CD, 9 = DG, IsCentroidOf(K, \u25b3CDF)\n\nStep 2:\nTheorem: Line Segment Split\nPremises : G on CD\nConclusions: CD = CG + DG\n\nStep 3:\nTheorem: Triangle Centroid Properties\nPremises : IsCentroidOf(K, \u25b3CDF)\nConclusions: CG = DG\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : CG = DG, 9 = DG\nConclusions: 9 = CG\n\nStep 5:\nTheorem: Evaluate\nPremises : 9 = DG, 9 = CG\nConclusions: 18 = CG + DG\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 18 = CG + DG, CD = CG + DG\nConclusions: 18 = CD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, J)",
+        "Line(D, F)",
+        "Line(J, F)",
+        "Line(G, K)",
+        "Line(G, F)",
+        "Line(K, F)",
+        "Line(C, G)",
+        "Line(C, D)",
+        "Line(G, D)",
+        "Line(C, H)",
+        "Line(C, F)",
+        "Line(H, F)",
+        "Line(H, K)",
+        "Line(H, D)",
+        "Line(K, D)",
+        "Line(C, K)",
+        "Line(C, J)",
+        "Line(K, J)",
+        "PointLiesOnLine(J, Line(D, F))",
+        "PointLiesOnLine(K, Line(G, F))",
+        "PointLiesOnLine(G, Line(C, D))",
+        "PointLiesOnLine(H, Line(C, F))",
+        "PointLiesOnLine(K, Line(H, D))",
+        "PointLiesOnLine(K, Line(C, J))",
+        "IsCentroidOf(K, Triangle(C, D, F))",
+        "Equals(LengthOf(Line(F, K)), 12.0)",
+        "Equals(LengthOf(Line(D, G)), 9.0)",
+        "Equals(LengthOf(Line(D, K)), 16.0)"
+    ],
+    "correct": true
+}

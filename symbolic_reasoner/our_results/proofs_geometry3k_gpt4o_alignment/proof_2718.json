@@ -1,0 +1,76 @@
+{
+    "problem_id": "2718",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(E, F))",
+        "Perpendicular(Line(E, G), Line(D, G))",
+        "Equals(MeasureOf(Angle(E, D, G)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(F, D, G)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(G, F, D)), 65)",
+        "Equals(MeasureOf(Angle(G, E, D)), 25)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "D",
+        "E",
+        "G",
+        "F"
+    ],
+    "line_instances": [
+        "EG",
+        "EF",
+        "GF",
+        "DF",
+        "ED",
+        "DG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            437.4937238493724,
+            41.85774058577405
+        ],
+        "E": [
+            37.07531380753138,
+            227.21338912133888
+        ],
+        "G": [
+            437.4937238493724,
+            228.0502092050209
+        ],
+        "F": [
+            524.1046025104603,
+            226.79497907949792
+        ]
+    },
+    "problem_choices": [
+        "25",
+        "55",
+        "65",
+        "75"
+    ],
+    "choices_precise_value": [
+        25.0,
+        55.0,
+        65.0,
+        75.0
+    ],
+    "problem_answer": 65.0,
+    "total_time": 17.590683,
+    "solution_predicate": "Equals(1.1344640138, MeasureOf(Angle(E, D, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, DG \u22a5 EG, DG, pi * (25 / 180) = \u2220GED, EG, DE\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : DG \u22a5 EG\nConclusions: pi / 2 = \u2220DGE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : EG, DE, DG\nConclusions: \u25b3DEG\n\nStep 4:\nTheorem: Interior Angle Sum Theorem for Triangle(G, E, D)\nPremises : \u25b3DEG\nConclusions: pi = \u2220DGE + \u2220EDG + \u2220GED\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (25 / 180) = \u2220GED, pi = \u2220DGE + \u2220EDG + \u2220GED, pi / 2 = \u2220DGE\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (25 / 180) + \u2220EDG\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (25 / 180) + \u2220EDG\nConclusions: 1.13 = \u2220EDG\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, G)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(D, F)",
+        "Line(E, D)",
+        "Line(D, G)",
+        "PointLiesOnLine(G, Line(E, F))",
+        "Perpendicular(Line(E, G), Line(D, G))",
+        "Equals(MeasureOf(Angle(D, F, G)), Mul(pi, Div(65.0, 180.0)))",
+        "Equals(MeasureOf(Angle(G, E, D)), Mul(pi, Div(25.0, 180.0)))"
+    ],
+    "correct": true
+}

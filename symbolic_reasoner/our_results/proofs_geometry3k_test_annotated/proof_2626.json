@@ -1,0 +1,72 @@
+{
+    "problem_id": "2626",
+    "solved": true,
+    "problem_text": "What is the area of \\parallelogram A B C D?",
+    "logic_forms": [
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, B)), 6)",
+        "Equals(LengthOf(Line(A, D)), 10)",
+        "Find(AreaOf(Parallelogram(A, B, C, D)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "A",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "CD",
+        "BC",
+        "BA",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            119.41747572815534,
+            51.029126213592235
+        ],
+        "C": [
+            283.00970873786406,
+            51.75728155339806
+        ],
+        "A": [
+            36.407766990291265,
+            136.70873786407768
+        ],
+        "D": [
+            200.48543689320388,
+            135.98058252427185
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "30",
+        "48",
+        "60"
+    ],
+    "choices_precise_value": [
+        24.0,
+        30.0,
+        48.0,
+        60.0
+    ],
+    "problem_answer": 48.0,
+    "total_time": 32.452361,
+    "solution_predicate": "Equals(47.9999999999, AreaOf(Parallelogram(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, Parallelogram(A, B, C, D), 6 = BD, 10 = AD, BD \u22a5 CD, BD, AB \u22a5 BD, CD, 3.14 = pi, cos(\u2220DBC)\n\nStep 2:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: \u2220BCD = \u2220DAB\n\nStep 3:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC, AB = CD\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220CDB\n\nStep 5:\nTheorem: Area formula of Parallelogram(A, B, C, D)\nPremises : Parallelogram(A, B, C, D), AB \u22a5 BD\nConclusions: Area(Parallelogram(A, B, C, D)) = AB * BD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BC, CD, BD\nConclusions: \u25b3BCD\n\nStep 7:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 10 = 10 / sin(pi / 2)\n\nStep 8:\nTheorem: Angle Cos Definition\nPremises : BD \u22a5 CD, cos(\u2220DBC)\nConclusions: BD / BC = cos(\u2220DBC)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : AD = BC, 10 = AD\nConclusions: 10 = BC\n\nStep 10:\nTheorem: Substitution\nPremises : Area(Parallelogram(A, B, C, D)) = AB * BD, 6 = BD, AB = CD\nConclusions: Area(Parallelogram(A, B, C, D)) = 6 * CD\n\nStep 11:\nTheorem: Law of Sines\nPremises : \u25b3BCD\nConclusions: BC / sin(\u2220CDB) = BD / sin(\u2220BCD), BD / sin(\u2220BCD) = CD / sin(\u2220DBC)\n\nStep 12:\nTheorem: Substitution\nPremises : BD / BC = cos(\u2220DBC), 6 = BD, 10 = BC\nConclusions: 6 / 10 = cos(\u2220DBC)\n\nStep 13:\nTheorem: Substitution\nPremises : pi / 2 = \u2220CDB, 6 = BD, \u2220BCD = \u2220DAB, 10 = BC, BC / sin(\u2220CDB) = BD / sin(\u2220BCD)\nConclusions: 10 / sin(pi / 2) = 6 / sin(\u2220DAB)\n\nStep 14:\nTheorem: Substitution\nPremises : \u2220BCD = \u2220DAB, 6 = BD, BD / sin(\u2220BCD) = CD / sin(\u2220DBC)\nConclusions: 6 / sin(\u2220DAB) = CD / sin(\u2220DBC)\n\nStep 15:\nTheorem: Solve Univariate Equation\nPremises : 6 / 10 = cos(\u2220DBC)\nConclusions: 0.93 = \u2220DBC\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 10 / sin(pi / 2) = 6 / sin(\u2220DAB), 10 = 10 / sin(pi / 2)\nConclusions: 10 = 6 / sin(\u2220DAB)\n\nStep 17:\nTheorem: Substitution\nPremises : 6 / sin(\u2220DAB) = CD / sin(\u2220DBC), 0.93 = \u2220DBC\nConclusions: 6 / sin(\u2220DAB) = CD / sin(0.93)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 10 = 6 / sin(\u2220DAB), 6 / sin(\u2220DAB) = CD / sin(0.93)\nConclusions: 10 = CD / sin(0.93)\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : Area(Parallelogram(A, B, C, D)) = 6 * CD, 10 = CD / sin(0.93)\nConclusions: 48 = Area(Parallelogram(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Perpendicular(Line(C, D), Line(B, D))",
+        "Perpendicular(Line(A, B), Line(D, B))",
+        "Equals(LengthOf(Line(D, B)), 6.0)",
+        "Equals(LengthOf(Line(A, D)), 10.0)"
+    ],
+    "correct": true
+}

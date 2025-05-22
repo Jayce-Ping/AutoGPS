@@ -1,0 +1,104 @@
+{
+    "problem_id": "2902",
+    "solved": true,
+    "problem_text": "Find the measure of J K.",
+    "logic_forms": [
+        "PointLiesOnLine(N, Line(K, L))",
+        "PointLiesOnLine(J, Line(B, N))",
+        "PointLiesOnLine(J, Line(B, A))",
+        "PointLiesOnLine(N, Line(B, A))",
+        "PointLiesOnLine(N, Line(J, A))",
+        "Perpendicular(Line(L, N), Line(J, N))",
+        "Equals(LengthOf(Line(N, L)), LengthOf(Line(K, N)))",
+        "Equals(LengthOf(Line(K, J)), 6x+7)",
+        "Equals(LengthOf(Line(J, L)), 9x-5)",
+        "Find(LengthOf(Line(J,K)))"
+    ],
+    "point_instances": [
+        "K",
+        "J",
+        "N",
+        "L",
+        "A",
+        "B"
+    ],
+    "line_instances": [
+        "KN",
+        "KL",
+        "NL",
+        "BJ",
+        "BN",
+        "BA",
+        "JN",
+        "JA",
+        "NA",
+        "JK",
+        "JL"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "K": [
+            129.44444444444446,
+            273.95833333333337
+        ],
+        "J": [
+            64.51388888888889,
+            44.09722222222222
+        ],
+        "N": [
+            208.61111111111114,
+            205.20833333333334
+        ],
+        "L": [
+            286.0416666666667,
+            134.72222222222223
+        ],
+        "A": [
+            252.0138888888889,
+            253.47222222222223
+        ],
+        "B": [
+            32.56944444444444,
+            9.722222222222223
+        ]
+    },
+    "problem_choices": [
+        "15.5",
+        "31",
+        "62",
+        "124"
+    ],
+    "choices_precise_value": [
+        15.5,
+        31.0,
+        62.0,
+        124.0
+    ],
+    "problem_answer": 31.0,
+    "total_time": 73.42143,
+    "solution_predicate": "Equals(31.0, LengthOf(Line(J, K)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: JN \u22a5 LN, 9 * x - 5 = JL, N on AJ, N on KL, 7 + 6 * x = JK, KN = LN, AN \u22a5 LN\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : JN \u22a5 LN\nConclusions: pi / 2 = \u2220LNJ\n\nStep 3:\nTheorem: Vertical Angle Theorem\nPremises : N on AJ, N on KL\nConclusions: \u2220ANL = \u2220JNK\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AN \u22a5 LN\nConclusions: pi / 2 = \u2220ANL\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ANL, pi / 2 = \u2220LNJ, \u2220ANL = \u2220JNK\nConclusions: \u2220JNK = \u2220LNJ\n\nStep 6:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : KN = LN, \u2220JNK = \u2220LNJ\nConclusions: \u25b3JKN \u2245 \u25b3JLN\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3JKN \u2245 \u25b3JLN\nConclusions: KN = LN, JK = JL\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 9 * x - 5 = JL, 7 + 6 * x = JK, JK = JL\nConclusions: 7 + 6 * x = 9 * x - 5\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 7 + 6 * x = 9 * x - 5, 7 + 6 * x = JK\nConclusions: 31 = JK\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, N)",
+        "Line(K, L)",
+        "Line(N, L)",
+        "Line(B, J)",
+        "Line(B, N)",
+        "Line(B, A)",
+        "Line(J, N)",
+        "Line(J, A)",
+        "Line(N, A)",
+        "Line(J, K)",
+        "Line(J, L)",
+        "PointLiesOnLine(N, Line(K, L))",
+        "PointLiesOnLine(J, Line(B, N))",
+        "PointLiesOnLine(J, Line(B, A))",
+        "PointLiesOnLine(N, Line(B, A))",
+        "PointLiesOnLine(N, Line(J, A))",
+        "Perpendicular(Line(L, N), Line(J, N))",
+        "Equals(LengthOf(Line(N, L)), LengthOf(Line(K, N)))",
+        "Equals(LengthOf(Line(K, J)), Add(Mul(6.0, x), 7.0))",
+        "Equals(LengthOf(Line(J, L)), Sub(Mul(9.0, x), 5.0))"
+    ],
+    "correct": true
+}

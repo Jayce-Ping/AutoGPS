@@ -1,0 +1,99 @@
+{
+    "problem_id": "2933",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(F, C))",
+        "PointLiesOnLine(G, Line(E, B))",
+        "Perpendicular(Line(D, G), Line(E, G))",
+        "Equals(MeasureOf(Angle(A, G, F)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(F, G, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(D, G, C)), 37)",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+    ],
+    "line_instances": [
+        "AG",
+        "AD",
+        "GD",
+        "FG",
+        "FC",
+        "GC",
+        "EG",
+        "EB",
+        "GB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            42.377260981912144,
+            196.12403100775194
+        ],
+        "B": [
+            222.22222222222223,
+            228.68217054263565
+        ],
+        "C": [
+            314.4702842377261,
+            125.32299741602067
+        ],
+        "D": [
+            286.3049095607235,
+            49.09560723514212
+        ],
+        "E": [
+            95.60723514211887,
+            19.121447028423773
+        ],
+        "F": [
+            17.571059431524546,
+            125.32299741602067
+        ],
+        "G": [
+            159.94832041343668,
+            125.06459948320413
+        ]
+    },
+    "problem_choices": [
+        "37",
+        "45",
+        "53",
+        "63"
+    ],
+    "choices_precise_value": [
+        37.0,
+        45.0,
+        53.0,
+        63.0
+    ],
+    "problem_answer": 53.0,
+    "total_time": 29.620669,
+    "solution_predicate": "Equals(0.9250245036, MeasureOf(Angle(E, G, F)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: G on AD, 3.14 = pi, \u2220BGA, pi * (37 / 180) = \u2220CGD, \u2220DGE, \u2220BGC, \u2220CGD, DG \u22a5 EG, \u2220AGB, AG \u22a5 BG, G on CF, \u2220FGA, \u2220EGF, G on BE, \u2220AGB\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220BGA\nConclusions: \u2220BGA = 2 * pi - \u2220AGB\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : DG \u22a5 EG\nConclusions: pi / 2 = \u2220DGE\n\nStep 4:\nTheorem: Reverse Angle Definition\nPremises : \u2220AGB\nConclusions: \u2220AGB = 2 * pi - \u2220BGA\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AG \u22a5 BG\nConclusions: (3 * pi) / 2 = \u2220BGA, pi / 2 = \u2220AGB\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : G on CF, G on AD\nConclusions: \u2220CGD = \u2220FGA\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : G on CF, G on BE\nConclusions: \u2220BGC = \u2220EGF\n\nStep 8:\nTheorem: Circumference Split\nPremises : \u2220FGA, \u2220EGF, \u2220AGB, \u2220DGE, \u2220BGC, \u2220CGD\nConclusions: 2 * pi = \u2220AGB + \u2220BGC + \u2220CGD + \u2220DGE + \u2220EGF + \u2220FGA\n\nStep 9:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BGA, pi / 2 = \u2220AGB, 3.14 = pi, \u2220AGB = 2 * pi - \u2220BGA\nConclusions: pi / 2 = 2 * 3.14 - (3 * pi) / 2\n\nStep 10:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BGA, pi / 2 = \u2220AGB, 3.14 = pi, \u2220BGA = 2 * pi - \u2220AGB\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi * (37 / 180) = \u2220CGD, \u2220CGD = \u2220FGA\nConclusions: pi * (37 / 180) = \u2220FGA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = 2 * 3.14 - (3 * pi) / 2, pi / 2 = \u2220AGB\nConclusions: 2 * 3.14 - (3 * pi) / 2 = \u2220AGB\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BGA, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220BGA\n\nStep 14:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DGE, \u2220BGC = \u2220EGF, pi * (37 / 180) = \u2220FGA, pi / 2 = \u2220AGB, 3.14 = pi, pi * (37 / 180) = \u2220CGD, 2 * pi = \u2220AGB + \u2220BGC + \u2220CGD + \u2220DGE + \u2220EGF + \u2220FGA\nConclusions: 2 * 3.14 = pi / 2 + pi / 2 + pi * (37 / 180) + pi * (37 / 180) + \u2220EGF + \u2220EGF\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220BGA, \u2220BGA = 2 * pi - \u2220AGB\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220AGB\n\nStep 16:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 - pi / 2 = 2 * pi - \u2220AGB, 2 * 3.14 = pi / 2 + pi / 2 + pi * (37 / 180) + pi * (37 / 180) + \u2220EGF + \u2220EGF, 2 * 3.14 - (3 * pi) / 2 = \u2220AGB\nConclusions: 0.93 = \u2220EGF\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(F, G)",
+        "Line(F, C)",
+        "Line(G, C)",
+        "Line(E, G)",
+        "Line(E, B)",
+        "Line(G, B)",
+        "PointLiesOnLine(G, Line(A, D))",
+        "PointLiesOnLine(G, Line(F, C))",
+        "PointLiesOnLine(G, Line(E, B))",
+        "Perpendicular(Line(D, G), Line(E, G))",
+        "Equals(MeasureOf(Angle(C, G, D)), Mul(pi, Div(37.0, 180.0)))"
+    ],
+    "correct": true
+}

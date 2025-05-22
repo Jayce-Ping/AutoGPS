@@ -1,0 +1,74 @@
+{
+    "problem_id": "2600",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(LengthOf(Line(B, D)), 16)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 8)",
+        "Equals(MeasureOf(Angle(C, B, D)), y)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "BC",
+        "BD",
+        "DC",
+        "AB",
+        "AD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            13.84892086330935,
+            16.47482014388489
+        ],
+        "B": [
+            14.388489208633093,
+            106.58273381294963
+        ],
+        "C": [
+            195.1438848920863,
+            106.94244604316546
+        ],
+        "D": [
+            194.78417266187049,
+            17.374100719424455
+        ]
+    },
+    "problem_choices": [
+        "2 \\sqrt { 3 }",
+        "4 \\sqrt { 3 }",
+        "6 \\sqrt { 3 }",
+        "8 \\sqrt { 3 }"
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        6.928203230275509,
+        10.392304845413264,
+        13.856406460551018
+    ],
+    "problem_answer": 13.856406460551018,
+    "total_time": 20.864216,
+    "solution_predicate": "Equals(13.8564064606, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC \u22a5 CD, BC, 16 = BD, 8 = CD, x = BC, CD, BD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : CD, BD, BC\nConclusions: \u25b3BCD\n\nStep 3:\nTheorem: Pythagorean Theorem\nPremises : \u25b3BCD, BC \u22a5 CD\nConclusions: BC = SqrtOf(BD ** 2 - CD ** 2)\n\nStep 4:\nTheorem: Substitution\nPremises : BC = SqrtOf(BD ** 2 - CD ** 2), 16 = BD, 8 = CD, x = BC\nConclusions: SqrtOf(16 ** 2 - 8 ** 2) = x\n\nStep 5:\nTheorem: Evaluate\nPremises : SqrtOf(16 ** 2 - 8 ** 2) = x\nConclusions: 13.86 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Perpendicular(Line(B, C), Line(D, C))",
+        "Equals(LengthOf(Line(B, D)), 16.0)",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, D)), 8.0)",
+        "Equals(MeasureOf(Angle(C, B, D)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

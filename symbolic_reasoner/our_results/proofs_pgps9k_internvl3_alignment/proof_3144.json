@@ -1,0 +1,147 @@
+{
+    "problem_id": "3144",
+    "solved": true,
+    "problem_text": "Find ML. Assume that segments that appear to be tangent are tangent.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(E, L)), x)",
+        "Equals(LengthOf(Line(K, L)), 36)",
+        "Equals(LengthOf(Line(K, M)), 15)",
+        "Equals(MeasureOf(Angle(E, M, A)), 66)",
+        "Find(LengthOf(Line(M, L)))",
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(A, P)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(E, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "PointLiesOnCircle(E, Circle(M))",
+        "PointLiesOnCircle(K, Circle(M))",
+        "PointLiesOnCircle(P, Circle(M))",
+        "PointLiesOnLine(A, Line(E, K))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "PointLiesOnLine(A, Line(M, P))",
+        "PointLiesOnLine(P, Line(A, L))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Tangent(Line(E, L), Circle(M))",
+        "Tangent(Line(K, L), Circle(M))"
+    ],
+    "point_instances": [
+        "K",
+        "M",
+        "E",
+        "A",
+        "P",
+        "L"
+    ],
+    "line_instances": [
+        "MA",
+        "MP",
+        "ML",
+        "AP",
+        "AL",
+        "PL",
+        "KL",
+        "KM",
+        "ME",
+        "EA",
+        "EK",
+        "AK",
+        "EL"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "K": [
+            152.78900000000002,
+            202.33226744186047
+        ],
+        "M": [
+            115.04065040650407,
+            121.65040650406505
+        ],
+        "E": [
+            152.57,
+            41.18475452196382
+        ],
+        "A": [
+            152.6742857142857,
+            122.4424141749723
+        ],
+        "P": [
+            204.473,
+            122.72732558139533
+        ],
+        "L": [
+            357.4694736842105,
+            122.81181150550796
+        ]
+    },
+    "problem_choices": [
+        24.0,
+        32.726,
+        36.0,
+        39.0
+    ],
+    "choices_precise_value": [
+        24.0,
+        32.726,
+        36.0,
+        39.0
+    ],
+    "problem_answer": 39.0,
+    "total_time": 141.9427,
+    "solution_predicate": "Equals(39.0, LengthOf(Line(M, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: K on \u2299(M, radius_M), Tangent(KL, \u2299(M, radius_M)), KL, 15 = KM, KM, 36 = KL, LM\n\nStep 2:\nTheorem: Tangent Definition\nPremises : Tangent(KL, \u2299(M, radius_M)), K on \u2299(M, radius_M)\nConclusions: KL \u22a5 KM\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : KM, KL, LM\nConclusions: \u25b3KLM\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : \u25b3KLM, KL \u22a5 KM\nConclusions: LM = SqrtOf(KL ** 2 + KM ** 2)\n\nStep 5:\nTheorem: Substitution\nPremises : LM = SqrtOf(KL ** 2 + KM ** 2), 15 = KM, 36 = KL\nConclusions: SqrtOf(15 ** 2 + 36 ** 2) = LM\n\nStep 6:\nTheorem: Evaluate\nPremises : SqrtOf(15 ** 2 + 36 ** 2) = LM\nConclusions: 39 = LM\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, A)",
+        "Line(M, P)",
+        "Line(M, L)",
+        "Line(A, P)",
+        "Line(A, L)",
+        "Line(P, L)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(M, E)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(A, K)",
+        "Line(E, L)",
+        "Circle(M, radius_M)",
+        "Line(A, K)",
+        "Line(A, L)",
+        "Line(A, P)",
+        "Line(E, A)",
+        "Line(E, K)",
+        "Line(E, L)",
+        "Line(E, M)",
+        "Line(K, L)",
+        "Line(M, A)",
+        "Line(M, K)",
+        "Line(M, L)",
+        "Line(M, P)",
+        "Line(P, L)",
+        "PointLiesOnCircle(E, Circle(M, radius_M))",
+        "PointLiesOnCircle(K, Circle(M, radius_M))",
+        "PointLiesOnCircle(P, Circle(M, radius_M))",
+        "PointLiesOnLine(A, Line(E, K))",
+        "PointLiesOnLine(A, Line(M, L))",
+        "PointLiesOnLine(A, Line(M, P))",
+        "PointLiesOnLine(P, Line(A, L))",
+        "PointLiesOnLine(P, Line(M, L))",
+        "Tangent(Line(E, L), Circle(M, radius_M))",
+        "Tangent(Line(K, L), Circle(M, radius_M))",
+        "Equals(LengthOf(Line(E, L)), x)",
+        "Equals(LengthOf(Line(K, L)), 36.0)",
+        "Equals(LengthOf(Line(K, M)), 15.0)",
+        "Equals(MeasureOf(Angle(A, M, E)), Mul(pi, Div(66.0, 180.0)))"
+    ],
+    "correct": true
+}

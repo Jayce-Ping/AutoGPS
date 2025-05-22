@@ -1,0 +1,87 @@
+{
+    "problem_id": "2561",
+    "solved": true,
+    "problem_text": "Find the area of the figure. Round to the nearest tenth if necessary.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 4)",
+        "Equals(LengthOf(Line(A, E)), 5)",
+        "Equals(LengthOf(Line(C, B)), 4)",
+        "Equals(LengthOf(Line(E, D)), 6)",
+        "Find(AreaOf(Rectangle(A, B, E, D)))",
+        "Perpendicular(Line(A, C), Line(D, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Rectangle(A, B, E, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "CA",
+        "CB",
+        "BA",
+        "AE",
+        "DE",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            37.93696275071633,
+            232.0916905444126
+        ],
+        "B": [
+            132.77936962750715,
+            126.93409742120343
+        ],
+        "C": [
+            38.796561604584525,
+            21.77650429799427
+        ],
+        "D": [
+            214.44126074498567,
+            22.063037249283667
+        ],
+        "E": [
+            214.44126074498567,
+            232.6647564469914
+        ]
+    },
+    "problem_choices": [
+        "7.1",
+        "14.1",
+        "22.1",
+        "30.0"
+    ],
+    "choices_precise_value": [
+        7.1,
+        14.1,
+        22.1,
+        30.0
+    ],
+    "problem_answer": 22.1,
+    "total_time": 42.020848,
+    "solution_predicate": "Equals(30.0, AreaOf(Rectangle(A, B, D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = DE, Rectangle(A, B, D, E), Area(Rectangle(A, B, D, E)), 5 = AE, 4 = AB\n\nStep 2:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, E)\nConclusions: Parallelogram(A, B, D, E)\n\nStep 3:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, D, E))\nConclusions: Area(Rectangle(A, B, D, E)) = AB * BD\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, E)\nConclusions: AB = DE, AE = BD\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AB, AB = DE, 6 = DE\nConclusions: 4 = 6\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AE = BD, 5 = AE\nConclusions: 5 = BD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 4 = AB, 4 = 6\nConclusions: 6 = AB\n\nStep 8:\nTheorem: Evaluate\nPremises : 6 = AB, 5 = BD\nConclusions: 30 = AB * BD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 30 = AB * BD, Area(Rectangle(A, B, D, E)) = AB * BD\nConclusions: 30 = Area(Rectangle(A, B, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(D, E)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(D, C))",
+        "Perpendicular(Line(A, E), Line(D, E))",
+        "Perpendicular(Line(E, D), Line(C, D))",
+        "Rectangle(A, B, D, E)",
+        "Equals(LengthOf(Line(A, B)), 4.0)",
+        "Equals(LengthOf(Line(A, E)), 5.0)",
+        "Equals(LengthOf(Line(C, B)), 4.0)",
+        "Equals(LengthOf(Line(E, D)), 6.0)"
+    ],
+    "correct": false
+}

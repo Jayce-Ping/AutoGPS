@@ -1,0 +1,109 @@
+{
+    "problem_id": "4453",
+    "solved": true,
+    "problem_text": "Find the exact value of DE, given AD = 12 and BD = 4.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Equals(LengthOf(Line(A,D)),12)",
+        "Equals(LengthOf(Line(B,D)),4)",
+        "Find(LengthOf(Line(D,E)))"
+    ],
+    "point_instances": [
+        "A",
+        "D",
+        "B",
+        "E",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "DB",
+        "BE",
+        "BC",
+        "EC",
+        "DE",
+        "DC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            71.24140350877192,
+            184.0851063829787
+        ],
+        "D": [
+            355.5976470588235,
+            184.15018773466832
+        ],
+        "B": [
+            421.3347368421052,
+            184.0851063829787
+        ],
+        "E": [
+            408.8376470588235,
+            158.2778473091364
+        ],
+        "C": [
+            355.57866666666666,
+            47.86382978723404
+        ]
+    },
+    "problem_choices": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "choices_precise_value": [
+        3.4641016151377544,
+        4.898979485566356,
+        6.928203230275509,
+        9.797958971132712
+    ],
+    "problem_answer": 6.928203230275509,
+    "total_time": 152.485891,
+    "solution_predicate": "Equals(3.4641016152, LengthOf(Line(D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220ABC, \u2220ACB, D on AB, CE \u22a5 DE, \u2220EBA, \u2220CBA, BD \u22a5 CD, BE \u22a5 DE, tan(\u2220CBA), 4 = BD, AB, AC \u22a5 BC, E on BC, 12 = AD, \u2220BAC, AC \u22a5 CE, AC, \u2220CAB, \u2220CBA, BC, AD \u22a5 CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : D on AB\nConclusions: AB = AD + BD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220ABC, D on AB\nConclusions: \u2220ABC = \u2220DBC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220EBA, D on AB\nConclusions: \u2220EBA = \u2220EBD\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220BDC\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 DE\nConclusions: pi / 2 = \u2220DEB\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: (3 * pi) / 2 = \u2220BCA\n\nStep 8:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220CBA), AC \u22a5 BC\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220ACB, E on BC\nConclusions: \u2220ACB = \u2220ACE\n\nStep 10:\nTheorem: Evaluate\nPremises : 12 = AD, 4 = BD\nConclusions: 16 = AD + BD\n\nStep 11:\nTheorem: Same Angle\nPremises : D on AB, \u2220BAC\nConclusions: \u2220BAC = \u2220DAC\n\nStep 12:\nTheorem: Perpendicular to Parallel\nPremises : CE \u22a5 DE, AC \u22a5 CE\nConclusions: AC || DE\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CE\nConclusions: pi / 2 = \u2220ACE\n\nStep 14:\nTheorem: Same Angle\nPremises : D on AB, \u2220CAB\nConclusions: \u2220CAB = \u2220CAD\n\nStep 15:\nTheorem: Same Angle\nPremises : D on AB, \u2220CBA\nConclusions: \u2220CBA = \u2220CBD\n\nStep 16:\nTheorem: Same Angle\nPremises : E on BC, \u2220CBA\nConclusions: \u2220CBA = \u2220EBA\n\nStep 17:\nTheorem: Definition of Triangle\nPremises : BC, AC, AB\nConclusions: \u25b3ABC\n\nStep 18:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220ADC, pi / 2 = \u2220CDA\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : AB = AD + BD, 16 = AD + BD\nConclusions: 16 = AB\n\nStep 20:\nTheorem: Corresponding Angle Theorem\nPremises : AC || DE\nConclusions: \u2220BCA = \u2220BED, \u2220BAC = \u2220BDE\n\nStep 21:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || DE\nConclusions: \u2220ACD = \u2220EDC\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BDC, pi / 2 = \u2220ACE, \u2220ACB = \u2220ACE\nConclusions: \u2220ACB = \u2220BDC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220ACE, pi / 2 = \u2220DEB, \u2220ACB = \u2220ACE\nConclusions: \u2220ACB = \u2220DEB\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBA, \u2220EBA = \u2220EBD\nConclusions: \u2220CBA = \u2220EBD\n\nStep 25:\nTheorem: Tan Function Definition\nPremises : AC \u22a5 BC, \u25b3ABC, \u2220CBA\nConclusions: AC / BC = tan(\u2220CBA)\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ADC, (3 * pi) / 2 = \u2220BCA\nConclusions: \u2220ADC = \u2220BCA\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BDC, pi / 2 = \u2220CDA\nConclusions: \u2220BDC = \u2220CDA\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ADC, (3 * pi) / 2 = \u2220BCA, \u2220BCA = \u2220BED\nConclusions: \u2220ADC = \u2220BED\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAC = \u2220DAC, \u2220BAC = \u2220BDE\nConclusions: \u2220BDE = \u2220DAC\n\nStep 30:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220DBC, \u2220ACB = \u2220BDC\nConclusions: \u25b3ABC ~ \u25b3CBD\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBA = \u2220EBD, \u2220CBA = \u2220CBD\nConclusions: \u2220CBD = \u2220EBD\n\nStep 32:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CBA = \u2220EBD, \u2220ACB = \u2220DEB, \u2220BAC = \u2220BDE\nConclusions: \u25b3ABC ~ \u25b3DBE\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = tan(\u2220CBA), AC / BC = tan(\u2220CBA)\nConclusions: AC / BC = AC / BC\n\nStep 34:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ADC = \u2220BCA, \u2220BAC = \u2220DAC\nConclusions: \u25b3ABC ~ \u25b3ACD\n\nStep 35:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220BDE = \u2220DAC, \u2220ADC = \u2220BED\nConclusions: \u25b3ACD ~ \u25b3DBE\n\nStep 36:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3CBD\nConclusions: \u2220ACB = \u2220BDC, AB / BC = BC / BD, \u2220BCD = \u2220CAB, \u2220CBA = \u2220CBD\n\nStep 37:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DBE\nConclusions: AB / BD = AC / DE, \u2220BCA = \u2220BED, \u2220CBA = \u2220EBD, \u2220ACB = \u2220DEB\n\nStep 38:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3ACD\nConclusions: \u2220BAC = \u2220DAC, AB / AC = AC / AD, \u2220CAB = \u2220CAD\n\nStep 39:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3DBE\nConclusions: \u2220ACD = \u2220EBD, \u2220BDE = \u2220DAC\n\nStep 40:\nTheorem: Substitution\nPremises : AB / BC = BC / BD, 16 = AB, 4 = BD\nConclusions: 16 / BC = BC / 4\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BCD = \u2220CAB, \u2220CAB = \u2220CAD\nConclusions: \u2220BCD = \u2220CAD\n\nStep 42:\nTheorem: Substitution\nPremises : 16 = AB, AB / BD = AC / DE, 4 = BD\nConclusions: 16 / 4 = AC / DE\n\nStep 43:\nTheorem: Substitution\nPremises : 12 = AD, AB / AC = AC / AD, 16 = AB\nConclusions: 16 / AC = AC / 12\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = \u2220EBD, \u2220ACD = \u2220EDC\nConclusions: \u2220EBD = \u2220EDC\n\nStep 45:\nTheorem: Solve Univariate Equation\nPremises : 16 / BC = BC / 4\nConclusions: 8 = BC\n\nStep 46:\nTheorem: Solve Univariate Equation\nPremises : 16 / AC = AC / 12\nConclusions: 13.86 = AC\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBD = \u2220EDC, \u2220CBD = \u2220EBD\nConclusions: \u2220CBD = \u2220EDC\n\nStep 48:\nTheorem: Evaluate\nPremises : 13.86 = AC, 16 = AB\nConclusions: 1.15 = AB / AC\n\nStep 49:\nTheorem: Evaluate\nPremises : 8 = BC, 13.86 = AC, 16 = AB\nConclusions: 18.93 = (AB + AC + BC) / 2\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBD = \u2220EDC, \u2220ACD = \u2220EBD, \u2220CBD = \u2220EDC\nConclusions: \u2220ACD = \u2220CBD\n\nStep 51:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ACD = \u2220CBD, \u2220BDC = \u2220CDA, \u2220BCD = \u2220CAD\nConclusions: \u25b3ACD ~ \u25b3CBD\n\nStep 52:\nTheorem: Similar Definition\nPremises : \u25b3ACD ~ \u25b3CBD\nConclusions: \u2220BCD = \u2220CAD, \u2220ACD = \u2220CBD, sim_ratio_triangle_a_c_d_triangle_c_b_d = AC / BC\n\nStep 53:\nTheorem: Substitution\nPremises : 8 = BC, 13.86 = AC, sim_ratio_triangle_a_c_d_triangle_c_b_d = AC / BC\nConclusions: 13.86 / 8 = sim_ratio_triangle_a_c_d_triangle_c_b_d\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = AC / BC, sim_ratio_triangle_a_c_d_triangle_c_b_d = AC / BC\nConclusions: sim_ratio_triangle_a_c_d_triangle_c_b_d = AC / BC\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : 13.86 / 8 = sim_ratio_triangle_a_c_d_triangle_c_b_d, sim_ratio_triangle_a_c_d_triangle_c_b_d = AC / BC\nConclusions: 13.86 / 8 = AC / BC\n\nStep 56:\nTheorem: Solve Linear Equation System\nPremises : 16 / 4 = AC / DE, 18.93 = (AB + AC + BC) / 2, 1.15 = AB / AC, 13.86 / 8 = AC / BC\nConclusions: 3.46 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "Perpendicular(Line(C, B), Line(D, E))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "PointLiesOnLine(E, Line(C, B))",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(B, D)), 4.0)"
+    ],
+    "correct": false
+}

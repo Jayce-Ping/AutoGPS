@@ -1,0 +1,80 @@
+{
+    "problem_id": "3624",
+    "solved": true,
+    "problem_text": "WXYZ is a parallelogram. What is the measure of \\angle W?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(W, X)), 6b-7)",
+        "Equals(LengthOf(Line(Y, Z)), 10b-19)",
+        "Equals(MeasureOf(Angle(Y, X, W)), 5a-39)",
+        "Equals(MeasureOf(Angle(Z, W, X)), 3a+27)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Parallelogram(W,X,Y,Z)",
+        "Find(MeasureOf(Angle(W)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "W",
+        "Z"
+    ],
+    "line_instances": [
+        "WZ",
+        "XY",
+        "XW",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            109.03846153846155,
+            45.63428571428572
+        ],
+        "Y": [
+            340.61538461538464,
+            46.2269387755102
+        ],
+        "W": [
+            129.36263736263737,
+            174.24
+        ],
+        "Z": [
+            360.7912087912088,
+            174.24
+        ]
+    },
+    "problem_choices": [
+        81.0,
+        90.0,
+        99.0,
+        126.0
+    ],
+    "choices_precise_value": [
+        81.0,
+        90.0,
+        99.0,
+        126.0
+    ],
+    "problem_answer": 99.0,
+    "total_time": 7.129306,
+    "solution_predicate": "Equals(1.7278759595, MeasureOf(Angle(Z, W, X)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((27 + 3 * a) / 180) = \u2220ZWX, pi * ((5 * a - 39) / 180) = \u2220WXY, Parallelogram(W, X, Y, Z)\n\nStep 2:\nTheorem: Substitution\nPremises : pi * ((27 + 3 * a) / 180) = \u2220ZWX, 3.14 = pi\nConclusions: 3.14 * ((27 + 3 * a) / 180) = \u2220ZWX\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 * a - 39) / 180) = \u2220WXY\nConclusions: 3.14 * ((5 * a - 39) / 180) = \u2220WXY\n\nStep 4:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: \u2220WXY = \u2220YZW\n\nStep 5:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX || ZY\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 * a - 39) / 180) = \u2220WXY, pi * ((5 * a - 39) / 180) = \u2220WXY\nConclusions: 3.14 * ((5 * a - 39) / 180) = pi * ((5 * a - 39) / 180)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WXY = \u2220YZW, pi * ((5 * a - 39) / 180) = \u2220WXY\nConclusions: pi * ((5 * a - 39) / 180) = \u2220YZW\n\nStep 8:\nTheorem: Consecutive Interior Angle Theorem\nPremises : WX || ZY\nConclusions: pi = \u2220YZW + \u2220ZWX\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 * a - 39) / 180) = \u2220YZW, 3.14 * ((5 * a - 39) / 180) = pi * ((5 * a - 39) / 180)\nConclusions: 3.14 * ((5 * a - 39) / 180) = \u2220YZW\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220YZW + \u2220ZWX\nConclusions: 3.14 = \u2220YZW + \u2220ZWX\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220YZW + \u2220ZWX, 3.14 * ((5 * a - 39) / 180) = \u2220YZW, 3.14 * ((27 + 3 * a) / 180) = \u2220ZWX\nConclusions: 1.73 = \u2220ZWX\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(X, Y)",
+        "Line(X, W)",
+        "Line(Y, Z)",
+        "Line(W, Z)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Parallelogram(W, X, Y, Z)",
+        "Equals(LengthOf(Line(W, X)), Sub(Mul(6.0, b), 7.0))",
+        "Equals(LengthOf(Line(Y, Z)), Sub(Mul(10.0, b), 19.0))",
+        "Equals(MeasureOf(Angle(W, X, Y)), Mul(pi, Div(Sub(Mul(5.0, a), 39.0), 180.0)))",
+        "Equals(MeasureOf(Angle(Z, W, X)), Mul(pi, Div(Add(Mul(3.0, a), 27.0), 180.0)))"
+    ],
+    "correct": true
+}

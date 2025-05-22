@@ -1,0 +1,70 @@
+{
+    "problem_id": "2530",
+    "solved": true,
+    "problem_text": "Find m \\angle K.",
+    "logic_forms": [
+        "Parallel(Line(J, K), Line(M, L))",
+        "Equals(LengthOf(Line(J, M)), 6)",
+        "Equals(LengthOf(Line(L, K)), 6)",
+        "Equals(MeasureOf(Angle(L, M, J)), 80)",
+        "Find(MeasureOf(Angle(K)))"
+    ],
+    "point_instances": [
+        "L",
+        "K",
+        "M",
+        "J"
+    ],
+    "line_instances": [
+        "ML",
+        "KL",
+        "JK",
+        "JM"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            266.0,
+            183.25
+        ],
+        "K": [
+            242.75,
+            42.75
+        ],
+        "M": [
+            33.5,
+            184.25
+        ],
+        "J": [
+            58.75,
+            42.75
+        ]
+    },
+    "problem_choices": [
+        "6",
+        "60",
+        "100",
+        "180"
+    ],
+    "choices_precise_value": [
+        6.0,
+        60.0,
+        100.0,
+        180.0
+    ],
+    "problem_answer": 100.0,
+    "total_time": 4.598425,
+    "solution_predicate": "Equals(1.745329252, MeasureOf(Angle(J, K, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = JM, 6 = KL, LM, JM, JK, KL, pi * (80 / 180) = \u2220LMJ, JK || ML, 3.14 = pi\n\nStep 2:\nTheorem: Transtivity of Equivalence\nPremises : 6 = JM, 6 = KL\nConclusions: JM = KL\n\nStep 3:\nTheorem: Definition of Trapezoid\nPremises : JK, LM, KL, JK || ML, JM\nConclusions: Trapezoid(J, K, L, M)\n\nStep 4:\nTheorem: Consecutive Interior Angle Theorem\nPremises : JK || ML\nConclusions: pi = \u2220LMJ + \u2220MJK\n\nStep 5:\nTheorem: Issoceles Trapezoid Property\nPremises : JM = KL, Trapezoid(J, K, L, M)\nConclusions: \u2220JKL = \u2220MJK\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (80 / 180) = \u2220LMJ, pi = \u2220LMJ + \u2220MJK, 3.14 = pi\nConclusions: 3.14 = 3.14 * (80 / 180) + \u2220MJK\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 * (80 / 180) + \u2220MJK\nConclusions: 1.75 = \u2220MJK\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JKL = \u2220MJK, 1.75 = \u2220MJK\nConclusions: 1.75 = \u2220JKL\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, L)",
+        "Line(K, L)",
+        "Line(J, K)",
+        "Line(J, M)",
+        "Parallel(Line(J, K), Line(M, L))",
+        "Equals(LengthOf(Line(J, M)), 6.0)",
+        "Equals(LengthOf(Line(L, K)), 6.0)",
+        "Equals(MeasureOf(Angle(L, M, J)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

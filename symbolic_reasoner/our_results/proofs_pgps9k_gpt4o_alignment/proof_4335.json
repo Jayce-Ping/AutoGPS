@@ -1,0 +1,108 @@
+{
+    "problem_id": "4335",
+    "solved": true,
+    "problem_text": "Find m \\widehat QS if m \\widehat QTS = 238.",
+    "logic_forms": [
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(Q, B)",
+        "Line(Q, S)",
+        "Line(R, Q)",
+        "Line(S, B)",
+        "PointLiesOnCircle(Q, Circle(C))",
+        "PointLiesOnCircle(S, Circle(C))",
+        "PointLiesOnCircle(T, Circle(C))",
+        "PointLiesOnLine(R, Line(A, Q))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "Equals(MeasureOf(Arc(Q,T,S)),238)",
+        "Find(MeasureOf(Arc(Q,S)))"
+    ],
+    "point_instances": [
+        "Q",
+        "R",
+        "A",
+        "S",
+        "B",
+        "T",
+        "C"
+    ],
+    "line_instances": [
+        "QR",
+        "QA",
+        "RA",
+        "QS",
+        "QB",
+        "SB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "Q": [
+            88.92698412698412,
+            263.4692028985507
+        ],
+        "R": [
+            121.19285714285714,
+            107.50883152173913
+        ],
+        "A": [
+            136.67301587301586,
+            36.617753623188406
+        ],
+        "S": [
+            316.9142857142857,
+            195.5923913043478
+        ],
+        "B": [
+            405.5428571428571,
+            169.56444099378882
+        ],
+        "T": [
+            287.0357142857143,
+            401.5672554347826
+        ],
+        "C": [
+            219.10416666666669,
+            286.5
+        ]
+    },
+    "problem_choices": [
+        61.0,
+        122.0,
+        238.0,
+        506.774
+    ],
+    "choices_precise_value": [
+        61.0,
+        122.0,
+        238.0,
+        506.774
+    ],
+    "problem_answer": 122.0,
+    "total_time": 21.813256,
+    "solution_predicate": "Equals(2.1293016874, MeasureOf(Arc(S, C, Q)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Arc(QCS), \u2220SCQ, Arc(SCQ), 3.14 = pi, pi * (238 / 180) = Arc(QCS)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(QCS)\nConclusions: \u2220QCS = Arc(QCS)\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220SCQ\nConclusions: \u2220SCQ = 2 * pi - \u2220QCS\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(SCQ)\nConclusions: \u2220SCQ = Arc(SCQ)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (238 / 180) = Arc(QCS), \u2220QCS = Arc(QCS)\nConclusions: pi * (238 / 180) = \u2220QCS\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220SCQ = Arc(SCQ), \u2220SCQ = 2 * pi - \u2220QCS, pi * (238 / 180) = \u2220QCS, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (238 / 180) = Arc(SCQ)\n\nStep 7:\nTheorem: Evaluate\nPremises : 2 * 3.14 - pi * (238 / 180) = Arc(SCQ)\nConclusions: 2.13 = Arc(SCQ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(Q, R)",
+        "Line(Q, A)",
+        "Line(R, A)",
+        "Line(Q, S)",
+        "Line(Q, B)",
+        "Line(S, B)",
+        "Circle(C, radius_C)",
+        "Line(A, Q)",
+        "Line(A, R)",
+        "Line(Q, B)",
+        "Line(Q, S)",
+        "Line(R, Q)",
+        "Line(S, B)",
+        "PointLiesOnCircle(Q, Circle(C, radius_C))",
+        "PointLiesOnCircle(S, Circle(C, radius_C))",
+        "PointLiesOnCircle(T, Circle(C, radius_C))",
+        "PointLiesOnLine(R, Line(A, Q))",
+        "PointLiesOnLine(S, Line(Q, B))",
+        "Equals(MeasureOf(Arc(Q, C, S)), Mul(pi, Div(238.0, 180.0)))"
+    ],
+    "correct": true
+}

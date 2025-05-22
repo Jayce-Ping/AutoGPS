@@ -1,0 +1,89 @@
+{
+    "problem_id": "2550",
+    "solved": true,
+    "problem_text": "In rhombus A B C D, A B = 2 x + 3 and B C = 5 x. Find A D.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Rhombus(A,B,C,D)",
+        "Equals(LengthOf(Line(A,B)),2x+3)",
+        "Equals(LengthOf(Line(B,C)),5x)",
+        "Find(LengthOf(Line(A,D)))"
+    ],
+    "point_instances": [
+        "C",
+        "E",
+        "D",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "DE",
+        "DB",
+        "EB",
+        "AE",
+        "AC",
+        "EC",
+        "DC",
+        "BC",
+        "AD",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            158.47494553376907,
+            178.4313725490196
+        ],
+        "E": [
+            113.3769063180828,
+            112.63616557734206
+        ],
+        "D": [
+            16.86274509803922,
+            178.64923747276688
+        ],
+        "B": [
+            210.10893246187365,
+            46.84095860566449
+        ],
+        "A": [
+            68.49673202614379,
+            46.84095860566449
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "4",
+        "5"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        4.0,
+        5.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 88.498593,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(A, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 * x = BC, Rhombus(A, B, C, D), 3 + 2 * x = AB\n\nStep 2:\nTheorem: Rhombus is Parallelogram\nPremises : Rhombus(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 3:\nTheorem: Rhombus has Neighbor Sides Equal\nPremises : Rhombus(A, B, C, D)\nConclusions: AB = AD\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 * x = BC, AD = BC\nConclusions: 5 * x = AD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : AB = AD, 5 * x = AD, 3 + 2 * x = AB\nConclusions: 5 * x = 3 + 2 * x\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 5 * x = AD, 5 * x = 3 + 2 * x\nConclusions: 5 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, D)",
+        "Line(A, B)",
+        "PointLiesOnLine(E, Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "Rhombus(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), Add(Mul(2.0, x), 3.0))",
+        "Equals(LengthOf(Line(B, C)), Mul(5.0, x))"
+    ],
+    "correct": true
+}

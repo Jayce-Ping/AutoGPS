@@ -1,0 +1,77 @@
+{
+    "problem_id": "3182",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 8)",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(C, B, A)))",
+        "Equals(MeasureOf(Angle(B, C, A)), y)",
+        "Equals(MeasureOf(Angle(C, B, A)), y)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            44.5008865248227,
+            251.7409523809524
+        ],
+        "B": [
+            279.822188449848,
+            251.7665306122449
+        ],
+        "C": [
+            44.3218085106383,
+            15.308571428571428
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        45.0,
+        60.0,
+        90.0
+    ],
+    "problem_answer": 45.0,
+    "total_time": 6.074133,
+    "solution_predicate": "Equals(45.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB \u22a5 AC, AC, 3.14 = pi, AB, pi * (y / 180) = \u2220ACB, pi * (y / 180) = \u2220CBA, BC\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AC\nConclusions: pi / 2 = \u2220BAC\n\nStep 3:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (y / 180) = \u2220CBA\nConclusions: 3.14 * (y / 180) = \u2220CBA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = \u2220CBA, pi * (y / 180) = \u2220CBA\nConclusions: 3.14 * (y / 180) = pi * (y / 180)\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (y / 180) = pi * (y / 180), pi * (y / 180) = \u2220ACB\nConclusions: 3.14 * (y / 180) = \u2220ACB\n\nStep 8:\nTheorem: Substitution\nPremises : pi / 2 = \u2220BAC, 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = 3.14 / 2 + \u2220ACB + \u2220CBA\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * (y / 180) = \u2220CBA, 3.14 * (y / 180) = \u2220ACB, 3.14 = 3.14 / 2 + \u2220ACB + \u2220CBA\nConclusions: 45 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Perpendicular(Line(A, B), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), x)",
+        "Equals(LengthOf(Line(A, C)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(A, C)), x)",
+        "Equals(LengthOf(Line(B, C)), 8.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), MeasureOf(Angle(C, B, A)))",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(y, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(y, 180.0)))"
+    ],
+    "correct": true
+}

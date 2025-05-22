@@ -1,0 +1,128 @@
+{
+    "problem_id": "4700",
+    "solved": true,
+    "problem_text": "In \\odot O, m \\widehat AB = 40, m \\widehat BC = 100, and m \\widehat AD = m \\widehat DC. Find m \\angle 2.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, E)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(Angle(5)))",
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(Angle(4)))",
+        "Equals(MeasureOf(Angle(C, B, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(3)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(O))",
+        "PointLiesOnCircle(B, Circle(O))",
+        "PointLiesOnCircle(C, Circle(O))",
+        "PointLiesOnCircle(D, Circle(O))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Circle(O)",
+        "Equals(MeasureOf(Arc(A,B)),40)",
+        "Equals(MeasureOf(Arc(B,C)),100)",
+        "Equals(MeasureOf(Arc(A,D)),MeasureOf(Arc(D,C)))",
+        "Find(MeasureOf(Angle(2)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "E",
+        "O",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "DC",
+        "CB",
+        "BA",
+        "AE",
+        "AC",
+        "EC",
+        "DE",
+        "DB",
+        "EB"
+    ],
+    "circle_instances": [
+        "O"
+    ],
+    "point_positions": {
+        "A": [
+            130.98285714285714,
+            62.06349206349206
+        ],
+        "B": [
+            240.0754285714286,
+            87.78835978835978
+        ],
+        "E": [
+            178.78775510204082,
+            156.89342403628115
+        ],
+        "O": [
+            163.02135627982247,
+            166.63288256055833
+        ],
+        "D": [
+            95.73795918367347,
+            253.13681027966743
+        ],
+        "C": [
+            228.95085714285713,
+            254.7301587301587
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        50.0,
+        55.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        50.0,
+        55.0,
+        90.0
+    ],
+    "problem_answer": 55.0,
+    "total_time": 237.276011,
+    "solution_predicate": "Equals(0.9599310886, MeasureOf(Angle(E, B, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220BCO, \u2220OBD, \u2220CDB, Arc(AOD), \u2220EBA, Arc(BOA), \u2220CBA, CO, AO, A on \u2299(O, radius_O), \u2220ABO, B on \u2299(O, radius_O), Arc(AOD) = Arc(DOC), pi * (100 / 180) = Arc(COB), 3.14 = pi, \u2220ABD, \u2220BCD, \u2220DBC, \u2220OBE, pi * (40 / 180) = Arc(BOA), BO, \u2220DCB, C on \u2299(O, radius_O), \u2220CBO, DO, \u2220ABE, \u2220OBC, \u2220OCB, Arc(COB), \u2220ABD, E on BD, \u2220EDO, Arc(DOA), D on \u2299(O, radius_O), \u2220EBC, \u2220CBE, \u2220EBA, \u2220DBC, BC, AB, \u2220OCD, Arc(DOC), BD, \u2220BDO, \u2220ODC, \u2220DBA, \u2220CDO, CD, \u2220CBD, \u2220CDE\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : Arc(AOD)\nConclusions: Arc(AOD) = 2 * pi - Arc(DOA)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BOA)\nConclusions: \u2220BOA = Arc(BOA)\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(O, radius_O)\nConclusions: radius_O = AO\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : B on \u2299(O, radius_O)\nConclusions: radius_O = BO\n\nStep 6:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCD\nConclusions: \u2220BCD = 2 * pi - \u2220DCB\n\nStep 8:\nTheorem: Circumference splited\nPremises : \u2220ABO, \u2220EBA, \u2220OBE\nConclusions: 2 * pi = \u2220ABO + \u2220EBA + \u2220OBE\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : C on \u2299(O, radius_O)\nConclusions: radius_O = CO\n\nStep 10:\nTheorem: Circumference splited\nPremises : \u2220CBA, \u2220OBC, \u2220ABO\nConclusions: 2 * pi = \u2220ABO + \u2220CBA + \u2220OBC\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220OCB\nConclusions: \u2220OCB = 2 * pi - \u2220BCO\n\nStep 12:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(COB)\nConclusions: \u2220COB = Arc(COB)\n\nStep 13:\nTheorem: Reverse Angle Definition\nPremises : \u2220ABD\nConclusions: \u2220ABD = 2 * pi - \u2220DBA\n\nStep 14:\nTheorem: Same Angle\nPremises : E on BD, \u2220ABD\nConclusions: \u2220ABD = \u2220ABE\n\nStep 15:\nTheorem: Same Angle\nPremises : E on BD, \u2220CDB\nConclusions: \u2220CDB = \u2220CDE\n\nStep 16:\nTheorem: Same Angle\nPremises : E on BD, \u2220DBC\nConclusions: \u2220DBC = \u2220EBC\n\nStep 17:\nTheorem: Same Angle\nPremises : \u2220OBD, E on BD\nConclusions: \u2220OBD = \u2220OBE\n\nStep 18:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DOA)\nConclusions: \u2220DOA = Arc(DOA)\n\nStep 19:\nTheorem: Point On Circle Def\nPremises : D on \u2299(O, radius_O)\nConclusions: radius_O = DO\n\nStep 20:\nTheorem: Circumference splited\nPremises : \u2220CBA, \u2220ABE, \u2220EBC\nConclusions: 2 * pi = \u2220ABE + \u2220CBA + \u2220EBC\n\nStep 21:\nTheorem: Circumference splited\nPremises : \u2220CBO, \u2220EBC, \u2220OBE\nConclusions: 2 * pi = \u2220CBO + \u2220EBC + \u2220OBE\n\nStep 22:\nTheorem: Reverse Angle Definition\nPremises : \u2220CBE\nConclusions: \u2220CBE = 2 * pi - \u2220EBC\n\nStep 23:\nTheorem: Reverse Angle Definition\nPremises : \u2220EBA\nConclusions: \u2220EBA = 2 * pi - \u2220ABE\n\nStep 24:\nTheorem: Reverse Angle Definition\nPremises : \u2220DBC\nConclusions: \u2220DBC = 2 * pi - \u2220CBD\n\nStep 25:\nTheorem: Definition of Triangle\nPremises : BC, BO, CO\nConclusions: \u25b3BCO\n\nStep 26:\nTheorem: Definition of Triangle\nPremises : AO, AB, BO\nConclusions: \u25b3ABO\n\nStep 27:\nTheorem: Circumference splited\nPremises : \u2220BCO, \u2220OCD, \u2220DCB\nConclusions: 2 * pi = \u2220BCO + \u2220DCB + \u2220OCD\n\nStep 28:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DOC)\nConclusions: \u2220DOC = Arc(DOC)\n\nStep 29:\nTheorem: Definition of Triangle\nPremises : BO, BD, DO\nConclusions: \u25b3BDO\n\nStep 30:\nTheorem: Definition of Quadrilateral\nPremises : BD, AB, AO, DO\nConclusions: Quadrilateral(A, B, D, O)\n\nStep 31:\nTheorem: Same Angle\nPremises : E on BD, \u2220BDO\nConclusions: \u2220BDO = \u2220EDO\n\nStep 32:\nTheorem: Same Angle\nPremises : E on BD, \u2220DBA\nConclusions: \u2220DBA = \u2220EBA\n\nStep 33:\nTheorem: Reverse Angle Definition\nPremises : \u2220CDO\nConclusions: \u2220CDO = 2 * pi - \u2220ODC\n\nStep 34:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 35:\nTheorem: Definition of Quadrilateral\nPremises : BO, CD, BC, DO\nConclusions: Quadrilateral(B, C, D, O)\n\nStep 36:\nTheorem: Definition of Triangle\nPremises : CD, DO, CO\nConclusions: \u25b3CDO\n\nStep 37:\nTheorem: Same Angle\nPremises : E on BD, \u2220CBD\nConclusions: \u2220CBD = \u2220CBE\n\nStep 38:\nTheorem: Circumference splited\nPremises : \u2220EDO, \u2220CDE, \u2220ODC\nConclusions: 2 * pi = \u2220CDE + \u2220EDO + \u2220ODC\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : Arc(AOD) = Arc(DOC), Arc(AOD) = 2 * pi - Arc(DOA)\nConclusions: Arc(DOC) = 2 * pi - Arc(DOA)\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BOA = Arc(BOA), pi * (40 / 180) = Arc(BOA)\nConclusions: pi * (40 / 180) = \u2220BOA\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = BO, radius_O = AO\nConclusions: AO = BO\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = CO, radius_O = BO\nConclusions: BO = CO\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : 6.28 = 2 * pi, 2 * pi = \u2220ABO + \u2220CBA + \u2220OBC\nConclusions: 6.28 = \u2220ABO + \u2220CBA + \u2220OBC\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220COB = Arc(COB), pi * (100 / 180) = Arc(COB)\nConclusions: pi * (100 / 180) = \u2220COB\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ABD = 2 * pi - \u2220DBA, \u2220ABD = \u2220ABE\nConclusions: \u2220ABE = 2 * pi - \u2220DBA\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : radius_O = BO, radius_O = DO\nConclusions: BO = DO\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DBC = 2 * pi - \u2220CBD, \u2220DBC = \u2220EBC\nConclusions: \u2220EBC = 2 * pi - \u2220CBD\n\nStep 48:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, O)\nPremises : \u25b3BCO\nConclusions: pi = \u2220BCO + \u2220COB + \u2220OBC\n\nStep 49:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, O)\nPremises : \u25b3ABO\nConclusions: pi = \u2220ABO + \u2220BOA + \u2220OAB\n\nStep 50:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(A, B, D, O)\nPremises : Quadrilateral(A, B, D, O)\nConclusions: 2 * pi = \u2220ABD + \u2220BDO + \u2220DOA + \u2220OAB\n\nStep 51:\nTheorem: Interior Angle Sum Theorem for Triangle(B, C, D)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BCD + \u2220CDB + \u2220DBC\n\nStep 52:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(B, C, D, O)\nPremises : Quadrilateral(B, C, D, O)\nConclusions: 2 * pi = \u2220BCD + \u2220CDO + \u2220DOB + \u2220OBC\n\nStep 53:\nTheorem: Interior Angle Sum Theorem for Triangle(C, D, O)\nPremises : \u25b3CDO\nConclusions: pi = \u2220CDO + \u2220DOC + \u2220OCD\n\nStep 54:\nTheorem: Issoceles Triangle Property\nPremises : AO = BO, \u25b3ABO\nConclusions: \u2220ABO = \u2220OAB\n\nStep 55:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BCO, BO = CO\nConclusions: \u2220CBO = \u2220OCB, \u2220BCO = \u2220OBC\n\nStep 56:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220ABE = 2 * pi - \u2220DBA, \u2220DBA = \u2220EBA\nConclusions: \u2220ABE = 2 * 3.14 - \u2220EBA\n\nStep 57:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3BDO, BO = DO\nConclusions: \u2220BDO = \u2220OBD\n\nStep 58:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220BCO + \u2220COB + \u2220OBC, pi * (100 / 180) = \u2220COB\nConclusions: 3.14 = 3.14 * (100 / 180) + \u2220BCO + \u2220OBC\n\nStep 59:\nTheorem: Substitution\nPremises : pi * (40 / 180) = \u2220BOA, 3.14 = pi, pi = \u2220ABO + \u2220BOA + \u2220OAB\nConclusions: 3.14 = pi * (40 / 180) + \u2220ABO + \u2220OAB\n\nStep 60:\nTheorem: Substitution\nPremises : \u2220DOA = Arc(DOA), \u2220ABD = \u2220ABE, \u2220BDO = \u2220EDO, 3.14 = pi, 2 * pi = \u2220ABD + \u2220BDO + \u2220DOA + \u2220OAB\nConclusions: 2 * 3.14 = \u2220ABE + \u2220EDO + \u2220OAB + Arc(DOA)\n\nStep 61:\nTheorem: Substitution\nPremises : \u2220CDB = \u2220CDE, 3.14 = pi, \u2220DBC = \u2220EBC, pi = \u2220BCD + \u2220CDB + \u2220DBC\nConclusions: 3.14 = \u2220BCD + \u2220CDE + \u2220EBC\n\nStep 62:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BCD + \u2220CDO + \u2220DOB + \u2220OBC\nConclusions: 2 * 3.14 = \u2220BCD + \u2220CDO + \u2220DOB + \u2220OBC\n\nStep 63:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220DOC = Arc(DOC), pi = \u2220CDO + \u2220DOC + \u2220OCD\nConclusions: 3.14 = \u2220CDO + \u2220OCD + Arc(DOC)\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDO = \u2220EDO, \u2220OBD = \u2220OBE, \u2220BDO = \u2220OBD\nConclusions: \u2220EDO = \u2220OBE\n\nStep 65:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220BCD + \u2220CDO + \u2220DOB + \u2220OBC, 2 * 3.14 = \u2220BCD + \u2220CDO + \u2220DOB + \u2220OBC\nConclusions: 2 * 3.14 = 2 * pi\n\nStep 66:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 = 2 * pi, 2 * 3.14 = \u2220ABE + \u2220EDO + \u2220OAB + Arc(DOA)\nConclusions: 2 * pi = \u2220ABE + \u2220EDO + \u2220OAB + Arc(DOA)\n\nStep 67:\nTheorem: Solve linear equation system\nPremises : \u2220ABO = \u2220OAB, 2 * pi = \u2220BCO + \u2220DCB + \u2220OCD, \u2220EDO = \u2220OBE, 2 * pi = \u2220CDE + \u2220EDO + \u2220ODC, 3.14 = \u2220CDO + \u2220OCD + Arc(DOC), \u2220CDO = 2 * pi - \u2220ODC, 3.14 = \u2220BCD + \u2220CDE + \u2220EBC, 2 * pi = \u2220ABE + \u2220EDO + \u2220OAB + Arc(DOA), 2 * pi = \u2220CBO + \u2220EBC + \u2220OBE, \u2220CBE = 2 * pi - \u2220EBC, \u2220EBA = 2 * pi - \u2220ABE, Arc(DOC) = 2 * pi - Arc(DOA), \u2220BCD = 2 * pi - \u2220DCB, 2 * pi = \u2220ABO + \u2220EBA + \u2220OBE, \u2220CBO = \u2220OCB, \u2220OCB = 2 * pi - \u2220BCO\nConclusions: \u2220CBE = \u2220EBA\n\nStep 68:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CBD = \u2220CBE, \u2220CBE = \u2220EBA\nConclusions: \u2220CBD = \u2220EBA\n\nStep 69:\nTheorem: Substitution\nPremises : \u2220CBD = \u2220EBA, 3.14 = pi, \u2220EBC = 2 * pi - \u2220CBD\nConclusions: \u2220EBC = 2 * 3.14 - \u2220EBA\n\nStep 70:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBC = 2 * 3.14 - \u2220EBA, \u2220ABE = 2 * 3.14 - \u2220EBA\nConclusions: \u2220ABE = \u2220EBC\n\nStep 71:\nTheorem: Solve Linear Equation System\nPremises : \u2220ABO = \u2220OAB, 2 * pi = \u2220ABE + \u2220CBA + \u2220EBC, 3.14 = pi * (40 / 180) + \u2220ABO + \u2220OAB, 6.28 = \u2220ABO + \u2220CBA + \u2220OBC, \u2220BCO = \u2220OBC, 3.14 = 3.14 * (100 / 180) + \u2220BCO + \u2220OBC, 2 * pi = \u2220ABO + \u2220CBA + \u2220OBC, \u2220ABE = \u2220EBC\nConclusions: 0.96 = \u2220EBC\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Circle(O, radius_O)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, C)",
+        "Line(E, C)",
+        "Line(E, D)",
+        "PointLiesOnCircle(A, Circle(O, radius_O))",
+        "PointLiesOnCircle(B, Circle(O, radius_O))",
+        "PointLiesOnCircle(C, Circle(O, radius_O))",
+        "PointLiesOnCircle(D, Circle(O, radius_O))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(B, D))",
+        "Circle(O, radius_O)",
+        "Equals(MeasureOf(Arc(B, O, A)), Mul(pi, Div(40.0, 180.0)))",
+        "Equals(MeasureOf(Arc(C, O, B)), Mul(pi, Div(100.0, 180.0)))",
+        "Equals(MeasureOf(Arc(A, O, D)), MeasureOf(Arc(D, O, C)))"
+    ],
+    "correct": true
+}

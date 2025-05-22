@@ -1,0 +1,72 @@
+{
+    "problem_id": "7478",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector.",
+    "logic_forms": [
+        "Circle(X)",
+        "Equals(LengthOf(Line(X, Y)), 9.4)",
+        "Equals(MeasureOf(Angle(W, X, Y)), 228)",
+        "Equals(RadiusOf(Circle(X)), 9.4)",
+        "Find(AreaOf(Sector(X, W, Y)))",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X))",
+        "PointLiesOnCircle(Y, Circle(X))"
+    ],
+    "point_instances": [
+        "W",
+        "X",
+        "Y"
+    ],
+    "line_instances": [
+        "XY",
+        "XW"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "W": [
+            51.01851851851852,
+            85.61904761904763
+        ],
+        "X": [
+            136.5,
+            114.5
+        ],
+        "Y": [
+            215.2952952952953,
+            69.61904761904762
+        ]
+    },
+    "problem_choices": [
+        37.4,
+        101.8,
+        175.8,
+        277.6
+    ],
+    "choices_precise_value": [
+        37.4,
+        101.8,
+        175.8,
+        277.6
+    ],
+    "problem_answer": 175.8,
+    "total_time": 3.026416,
+    "solution_predicate": "Equals(101.7834131847, AreaOf(Sector(Y, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, \u2220WXY, 9.4 = radius_X, Sector(Y, X, W), pi * (228 / 180) = \u2220WXY\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220WXY\nConclusions: \u2220WXY = 2 * pi - \u2220YXW\n\nStep 3:\nTheorem: Area formula of Sector(Y, X, W)\nPremises : Sector(Y, X, W)\nConclusions: Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2\n\nStep 4:\nTheorem: Substitution\nPremises : pi * (228 / 180) = \u2220WXY, 3.14 = pi, \u2220WXY = 2 * pi - \u2220YXW\nConclusions: pi * (228 / 180) = 2 * 3.14 - \u2220YXW\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (228 / 180) = \u2220WXY, \u2220WXY = 2 * pi - \u2220YXW\nConclusions: pi * (228 / 180) = 2 * pi - \u2220YXW\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : pi * (228 / 180) = 2 * pi - \u2220YXW, pi * (228 / 180) = 2 * 3.14 - \u2220YXW\nConclusions: 2.3 = \u2220YXW\n\nStep 7:\nTheorem: Substitution\nPremises : 9.4 = radius_X, Area(Sector(Y, X, W)) = (radius_X ** 2 * \u2220YXW) / 2, 2.3 = \u2220YXW\nConclusions: (2.3 * 9.4 ** 2) / 2 = Area(Sector(Y, X, W))\n\nStep 8:\nTheorem: Evaluate\nPremises : (2.3 * 9.4 ** 2) / 2 = Area(Sector(Y, X, W))\nConclusions: 101.78 = Area(Sector(Y, X, W))\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Y)",
+        "Line(X, W)",
+        "Circle(X, radius_X)",
+        "Circle(X, radius_X)",
+        "Line(W, X)",
+        "Line(X, Y)",
+        "PointLiesOnCircle(W, Circle(X, radius_X))",
+        "PointLiesOnCircle(Y, Circle(X, radius_X))",
+        "Equals(LengthOf(Line(X, Y)), 9.4)",
+        "Equals(MeasureOf(Angle(W, X, Y)), Mul(pi, Div(228.0, 180.0)))",
+        "Equals(radius_X, 9.4)"
+    ],
+    "correct": false
+}

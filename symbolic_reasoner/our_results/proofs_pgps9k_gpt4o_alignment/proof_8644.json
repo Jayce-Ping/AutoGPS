@@ -1,0 +1,118 @@
+{
+    "problem_id": "8644",
+    "solved": true,
+    "problem_text": "For the pair of similar figures, the area of the blue figure is 32 cm^{2}, find the area of the green figure.",
+    "logic_forms": [
+        "Equals(AreaOf(Rectangle(A, B, C, D)), 32)",
+        "Equals(LengthOf(Line(A, B)), 8)",
+        "Equals(LengthOf(Line(E, H)), 5)",
+        "Find(AreaOf(Rectangle(E, F, G, H)))",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(H, E)",
+        "Line(H, G)",
+        "Rectangle(A, B, C, D)",
+        "Rectangle(E, F, G, H)",
+        "Similar(Rectangle(A, B, C, D), Rectangle(E, F, G, H))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "AD",
+        "AB",
+        "BC",
+        "DC",
+        "EF",
+        "EH",
+        "HG",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            77.32053603766752,
+            177.77662337662338
+        ],
+        "B": [
+            77.5972775564409,
+            17.902857142857144
+        ],
+        "C": [
+            167.8996015936255,
+            17.792685714285714
+        ],
+        "D": [
+            168.04998189061936,
+            177.77662337662338
+        ],
+        "E": [
+            265.22071713147415,
+            177.7065142857143
+        ],
+        "F": [
+            328.07968127490045,
+            177.89093167701864
+        ],
+        "G": [
+            328.27660785429714,
+            65.84054421768708
+        ],
+        "H": [
+            265.35856573705183,
+            65.41428571428571
+        ]
+    },
+    "problem_choices": [
+        12.5,
+        20.0,
+        51.2,
+        81.9
+    ],
+    "choices_precise_value": [
+        12.5,
+        20.0,
+        51.2,
+        81.9
+    ],
+    "problem_answer": 12.5,
+    "total_time": 53.937905,
+    "solution_predicate": "Equals(50.0, AreaOf(Rectangle(E, F, G, H)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = EH, Area(Rectangle(E, F, G, H)), 8 = AB, 32 = Area(Rectangle(A, B, C, D)), Area(Rectangle(A, B, C, D)), Rectangle(A, B, C, D), Rectangle(A, B, C, D) ~ Rectangle(E, F, G, H), Rectangle(E, F, G, H)\n\nStep 2:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(E, F, G, H))\nConclusions: Area(Rectangle(E, F, G, H)) = EF * FG\n\nStep 3:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, B, C, D))\nConclusions: Area(Rectangle(A, B, C, D)) = AB * BC\n\nStep 4:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, C, D)\nConclusions: Parallelogram(A, B, C, D)\n\nStep 5:\nTheorem: Perimeter Definition\nPremises : Rectangle(A, B, C, D)\nConclusions: Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD\n\nStep 6:\nTheorem: Similar Definition\nPremises : Rectangle(A, B, C, D) ~ Rectangle(E, F, G, H)\nConclusions: AB / EF = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H)), sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / FG, sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = AB / EF\n\nStep 7:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(E, F, G, H)\nConclusions: Parallelogram(E, F, G, H)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 32 = Area(Rectangle(A, B, C, D)), Area(Rectangle(A, B, C, D)) = AB * BC\nConclusions: 32 = AB * BC\n\nStep 9:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, C, D)\nConclusions: AD = BC, AB = CD\n\nStep 10:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(E, F, G, H)\nConclusions: EF = GH, EH = FG\n\nStep 11:\nTheorem: Substitution\nPremises : 8 = AB, 32 = AB * BC\nConclusions: 32 = 8 * BC\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AB, AB = CD\nConclusions: 8 = CD\n\nStep 13:\nTheorem: Substitution\nPremises : 8 = AB, EF = GH, AB / EF = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H))\nConclusions: 8 / GH = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H))\n\nStep 14:\nTheorem: Substitution\nPremises : 8 = AB, EF = GH, sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = AB / EF\nConclusions: sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = 8 / GH\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : EH = FG, 5 = EH\nConclusions: 5 = FG\n\nStep 16:\nTheorem: Substitution\nPremises : 8 = AB, 8 = CD, Perimeter(Rectangle(A, B, C, D)) = AB + AD + BC + CD, AD = BC\nConclusions: Perimeter(Rectangle(A, B, C, D)) = 8 + 8 + BC + BC\n\nStep 17:\nTheorem: Substitution\nPremises : EF = GH, 5 = FG, Area(Rectangle(E, F, G, H)) = EF * FG\nConclusions: Area(Rectangle(E, F, G, H)) = 5 * GH\n\nStep 18:\nTheorem: Substitution\nPremises : sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / FG, 5 = FG\nConclusions: sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / 5\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : Perimeter(Rectangle(A, B, C, D)) = 8 + 8 + BC + BC, 32 = 8 * BC\nConclusions: 24 = Perimeter(Rectangle(A, B, C, D))\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = BC / 5, 32 = 8 * BC\nConclusions: 0.8 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h\n\nStep 21:\nTheorem: Substitution\nPremises : 8 / GH = Perimeter(Rectangle(A, B, C, D)) / Perimeter(Rectangle(E, F, G, H)), 24 = Perimeter(Rectangle(A, B, C, D))\nConclusions: 24 / Perimeter(Rectangle(E, F, G, H)) = 8 / GH\n\nStep 22:\nTheorem: Substitution\nPremises : 0.8 = sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h, sim_ratio_rectangle_a_b_c_d_rectangle_e_f_g_h = 8 / GH\nConclusions: 0.8 = 8 / GH\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 24 / Perimeter(Rectangle(E, F, G, H)) = 8 / GH, 0.8 = 8 / GH\nConclusions: 0.8 = 24 / Perimeter(Rectangle(E, F, G, H))\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 24 / Perimeter(Rectangle(E, F, G, H)) = 8 / GH, 0.8 = 24 / Perimeter(Rectangle(E, F, G, H)), Area(Rectangle(E, F, G, H)) = 5 * GH\nConclusions: 50 = Area(Rectangle(E, F, G, H))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, B)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(E, F)",
+        "Line(E, H)",
+        "Line(H, G)",
+        "Line(F, G)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(E, F)",
+        "Line(G, F)",
+        "Line(H, E)",
+        "Line(H, G)",
+        "Rectangle(A, B, C, D)",
+        "Rectangle(E, F, G, H)",
+        "Similar(Rectangle(A, B, C, D), Rectangle(E, F, G, H))",
+        "Equals(AreaOf(Rectangle(A, B, C, D)), 32.0)",
+        "Equals(LengthOf(Line(A, B)), 8.0)",
+        "Equals(LengthOf(Line(E, H)), 5.0)"
+    ],
+    "correct": false
+}

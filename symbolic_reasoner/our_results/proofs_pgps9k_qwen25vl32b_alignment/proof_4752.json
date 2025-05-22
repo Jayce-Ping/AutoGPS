@@ -1,0 +1,88 @@
+{
+    "problem_id": "4752",
+    "solved": true,
+    "problem_text": "Find the length of BA.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 10)",
+        "Equals(MeasureOf(Angle(D, A, C)), 40)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Find(LengthOf(Line(B,A)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "BD",
+        "BA",
+        "DA",
+        "AC",
+        "CD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            300.2533783783784,
+            48.714285714285715
+        ],
+        "D": [
+            300.15592515592516,
+            260.1274725274725
+        ],
+        "B": [
+            479.47635135135135,
+            260.872380952381
+        ],
+        "A": [
+            43.75,
+            260.872380952381
+        ]
+    },
+    "problem_choices": [
+        6.428,
+        8.391,
+        11.918,
+        13.054
+    ],
+    "choices_precise_value": [
+        6.428,
+        8.391,
+        11.918,
+        13.054
+    ],
+    "problem_answer": 13.054,
+    "total_time": 56.052097,
+    "solution_predicate": "Equals(13.0540728933, LengthOf(Line(B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = \u2220DAC, \u2220CBA, BD, 10 = AC, BC, 3.14 = pi, AB, D on AB, BD \u22a5 CD, \u2220CBD, sin(\u2220CBA), \u2220BAC, CD, AC \u22a5 BC, AC\n\nStep 2:\nTheorem: Same Angle\nPremises : \u2220CBA, D on AB\nConclusions: \u2220CBA = \u2220CBD\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220BAC, D on AB\nConclusions: \u2220BAC = \u2220DAC\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 5:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB\n\nStep 6:\nTheorem: Angle Sin Definition\nPremises : AC \u22a5 BC, sin(\u2220CBA)\nConclusions: AC / AB = sin(\u2220CBA)\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : AC, AB, BC\nConclusions: \u25b3ABC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi * (40 / 180) = \u2220DAC, \u2220BAC = \u2220DAC\nConclusions: pi * (40 / 180) = \u2220BAC\n\nStep 9:\nTheorem: Sin Function Definition\nPremises : \u25b3BCD, BD \u22a5 CD, \u2220CBD\nConclusions: CD / BC = sin(\u2220CBD)\n\nStep 10:\nTheorem: Substitution\nPremises : 10 = AC, \u2220CBA = \u2220CBD, AC / AB = sin(\u2220CBA)\nConclusions: 10 / AB = sin(\u2220CBD)\n\nStep 11:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : CD / BC = sin(\u2220CBD), 10 / AB = sin(\u2220CBD)\nConclusions: 10 / AB = CD / BC\n\nStep 13:\nTheorem: Substitution\nPremises : \u2220CBA = \u2220CBD, pi * (40 / 180) = \u2220BAC, pi / 2 = \u2220ACB, pi = \u2220ACB + \u2220BAC + \u2220CBA, 3.14 = pi\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (40 / 180) + \u2220CBD\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : \u2220CBA = \u2220CBD, 3.14 = 3.14 / 2 + 3.14 * (40 / 180) + \u2220CBD\nConclusions: 0.87 = \u2220CBA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 0.87 = \u2220CBA, \u2220CBA = \u2220CBD\nConclusions: 0.87 = \u2220CBD\n\nStep 16:\nTheorem: Substitution\nPremises : CD / BC = sin(\u2220CBD), 0.87 = \u2220CBD\nConclusions: sin(0.87) = CD / BC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 10 / AB = CD / BC, sin(0.87) = CD / BC\nConclusions: sin(0.87) = 10 / AB\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : sin(0.87) = 10 / AB\nConclusions: 13.05 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, D)",
+        "Line(B, A)",
+        "Line(D, A)",
+        "Line(A, C)",
+        "Line(C, D)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Perpendicular(Line(A, B), Line(C, D))",
+        "Perpendicular(Line(C, B), Line(A, C))",
+        "PointLiesOnLine(D, Line(A, B))",
+        "Equals(LengthOf(Line(A, C)), 10.0)",
+        "Equals(MeasureOf(Angle(D, A, C)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}

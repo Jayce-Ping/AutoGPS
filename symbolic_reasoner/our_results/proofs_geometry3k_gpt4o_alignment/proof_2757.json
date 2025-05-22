@@ -1,0 +1,188 @@
+{
+    "problem_id": "2757",
+    "solved": true,
+    "problem_text": "In the figure, m \\angle 1 = 4 p + 15, m \\angle 3 = 3 p - 10 and m \\angle 4 = 6 r + 5. Find the value of p.",
+    "logic_forms": [
+        "PointLiesOnLine(A, Line(J, C))",
+        "PointLiesOnLine(A, Line(J, I))",
+        "PointLiesOnLine(C, Line(J, I))",
+        "PointLiesOnLine(C, Line(A, I))",
+        "PointLiesOnLine(A, Line(K, B))",
+        "PointLiesOnLine(A, Line(K, G))",
+        "PointLiesOnLine(B, Line(K, G))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "PointLiesOnLine(C, Line(L, D))",
+        "PointLiesOnLine(C, Line(L, F))",
+        "PointLiesOnLine(D, Line(L, F))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(B, Line(H, D))",
+        "PointLiesOnLine(B, Line(H, E))",
+        "PointLiesOnLine(D, Line(H, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Parallel(Line(K, G), Line(L, F))",
+        "Parallel(Line(J, I), Line(H, E))",
+        "Equals(MeasureOf(Angle(A, B, H)), MeasureOf(angle 3))",
+        "Equals(MeasureOf(Angle(J, A, B)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(A, C, L)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(C, D, B)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(1)),4p+15)",
+        "Equals(MeasureOf(Angle(3)),3p-10)",
+        "Equals(MeasureOf(Angle(4)),6r+5)",
+        "Find(p)"
+    ],
+    "point_instances": [
+        "D",
+        "A",
+        "C",
+        "B",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+    ],
+    "line_instances": [
+        "JA",
+        "JC",
+        "JI",
+        "AC",
+        "AI",
+        "CI",
+        "KA",
+        "KB",
+        "KG",
+        "AB",
+        "AG",
+        "BG",
+        "LC",
+        "LD",
+        "LF",
+        "CD",
+        "CF",
+        "DF",
+        "HB",
+        "HD",
+        "HE",
+        "BD",
+        "BE",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            190.92018779342726,
+            359.6244131455399
+        ],
+        "A": [
+            175.8967136150235,
+            137.5586854460094
+        ],
+        "C": [
+            100.7793427230047,
+            240.84507042253523
+        ],
+        "B": [
+            266.037558685446,
+            255.86854460093898
+        ],
+        "E": [
+            146.31924882629107,
+            423.00469483568077
+        ],
+        "F": [
+            239.74647887323948,
+            423.94366197183103
+        ],
+        "G": [
+            332.7042253521127,
+            341.31455399061036
+        ],
+        "H": [
+            339.7464788732395,
+            153.9906103286385
+        ],
+        "I": [
+            48.666666666666686,
+            313.61502347417843
+        ],
+        "J": [
+            253.36150234741785,
+            30.985915492957748
+        ],
+        "K": [
+            115.33333333333334,
+            61.03286384976526
+        ],
+        "L": [
+            43.03286384976528,
+            164.3192488262911
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "20",
+        "25",
+        "30"
+    ],
+    "choices_precise_value": [
+        15.0,
+        20.0,
+        25.0,
+        30.0
+    ],
+    "problem_answer": 25.0,
+    "total_time": 320.502123,
+    "solution_predicate": "Equals(25.0, p)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220JAK, B on DH, EH || IJ, \u2220BAJ, \u2220CAB, \u2220JCL, A on CJ, \u2220DCA, \u2220DCI, \u2220HDL, \u2220EBK, C on IJ, D on CF, \u2220IAG, D on FL, \u2220JAK, \u2220ACL, 3.14 = pi, pi * ((15 + 4 * p) / 180) = \u2220BAJ, \u2220ACL, C on AI, D on BE, pi * ((3 * p - 10) / 180) = \u2220HBA, C on DL, \u2220KAJ, \u2220EDL, B on AG, \u2220CAB, \u2220KAC, pi * ((5 + 6 * r) / 180) = \u2220BDC, FL || GK, \u2220LCI, \u2220LDE, \u2220ICD, \u2220FDH, A on BK, \u2220HBK, \u2220CAG, \u2220FCJ, \u2220BDL, \u2220ACD, \u2220EDL, \u2220KAI, \u2220KBE, \u2220ICD\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220JAK\nConclusions: \u2220JAK = 2 * pi - \u2220KAJ\n\nStep 3:\nTheorem: Alternate Interior Angle Theorem\nPremises : EH || IJ\nConclusions: \u2220HBA = \u2220IAB, \u2220ABE = \u2220BAJ, \u2220HDC = \u2220ICD, \u2220EDC = \u2220JCD, \u2220CDE = \u2220DCJ, \u2220EBA = \u2220JAB\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : EH || IJ\nConclusions: \u2220KAI = \u2220KBE, \u2220LCI = \u2220LDE, \u2220FCJ = \u2220FDH\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220JCL, A on CJ\nConclusions: \u2220ACL = \u2220JCL\n\nStep 6:\nTheorem: Reverse Angle Definition\nPremises : \u2220DCI\nConclusions: \u2220DCI = 2 * pi - \u2220ICD\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220HDL, B on DH\nConclusions: \u2220BDL = \u2220HDL\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACL\nConclusions: \u2220ACL = 2 * pi - \u2220LCA\n\nStep 9:\nTheorem: Same Angle\nPremises : C on AI, \u2220IAG\nConclusions: \u2220CAG = \u2220IAG\n\nStep 10:\nTheorem: Vertical Angle Theorem\nPremises : D on FL, D on BE\nConclusions: \u2220BDL = \u2220EDF\n\nStep 11:\nTheorem: Vertical Angle Theorem\nPremises : C on AI, C on DL\nConclusions: \u2220ACD = \u2220ICL\n\nStep 12:\nTheorem: Same Angle\nPremises : C on DL, \u2220HDL\nConclusions: \u2220HDC = \u2220HDL\n\nStep 13:\nTheorem: Vertical Angle Theorem\nPremises : C on DL, C on IJ\nConclusions: \u2220ICL = \u2220JCD\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220KAJ\nConclusions: \u2220KAJ = 2 * pi - \u2220JAK\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220EDL, C on DL\nConclusions: \u2220EDC = \u2220EDL\n\nStep 16:\nTheorem: Same Angle\nPremises : B on AG, \u2220IAG\nConclusions: \u2220IAB = \u2220IAG\n\nStep 17:\nTheorem: Reverse Angle Definition\nPremises : \u2220CAB\nConclusions: \u2220CAB = 2 * pi - \u2220BAC\n\nStep 18:\nTheorem: Circumference Split\nPremises : \u2220BAJ, \u2220JAK, \u2220CAB, \u2220KAC\nConclusions: 2 * pi = \u2220BAJ + \u2220CAB + \u2220JAK + \u2220KAC\n\nStep 19:\nTheorem: Alternate Interior Angle Theorem\nPremises : FL || GK\nConclusions: \u2220FDB = \u2220KBD, \u2220ACL = \u2220CAG\n\nStep 20:\nTheorem: Corresponding Angle Theorem\nPremises : FL || GK\nConclusions: \u2220IAG = \u2220ICF, \u2220HBK = \u2220HDL, \u2220EBK = \u2220EDL, \u2220JAK = \u2220JCL\n\nStep 21:\nTheorem: Same Angle\nPremises : C on DL, \u2220LDE\nConclusions: \u2220CDE = \u2220LDE\n\nStep 22:\nTheorem: Circumference Split\nPremises : \u2220LCI, \u2220ICD, \u2220DCA, \u2220ACL\nConclusions: 2 * pi = \u2220ACL + \u2220DCA + \u2220ICD + \u2220LCI\n\nStep 23:\nTheorem: Same Angle\nPremises : \u2220FDH, B on DH\nConclusions: \u2220FDB = \u2220FDH\n\nStep 24:\nTheorem: Same Angle\nPremises : \u2220EBK, A on BK\nConclusions: \u2220EBA = \u2220EBK\n\nStep 25:\nTheorem: Same Angle\nPremises : \u2220HBK, A on BK\nConclusions: \u2220HBA = \u2220HBK\n\nStep 26:\nTheorem: Same Angle\nPremises : B on AG, \u2220CAG\nConclusions: \u2220CAB = \u2220CAG\n\nStep 27:\nTheorem: Same Angle\nPremises : \u2220FCJ, D on CF\nConclusions: \u2220DCJ = \u2220FCJ\n\nStep 28:\nTheorem: Same Angle\nPremises : \u2220BDL, C on DL\nConclusions: \u2220BDC = \u2220BDL\n\nStep 29:\nTheorem: Reverse Angle Definition\nPremises : \u2220ACD\nConclusions: \u2220ACD = 2 * pi - \u2220DCA\n\nStep 30:\nTheorem: Reverse Angle Definition\nPremises : \u2220EDL\nConclusions: \u2220EDL = 2 * pi - \u2220LDE\n\nStep 31:\nTheorem: Same Angle\nPremises : C on AI, \u2220KAI\nConclusions: \u2220KAC = \u2220KAI\n\nStep 32:\nTheorem: Same Angle\nPremises : D on BE, \u2220KBE\nConclusions: \u2220KBD = \u2220KBE\n\nStep 33:\nTheorem: Same Angle\nPremises : \u2220KBE, A on BK\nConclusions: \u2220ABE = \u2220KBE\n\nStep 34:\nTheorem: Reverse Angle Definition\nPremises : \u2220ICD\nConclusions: \u2220ICD = 2 * pi - \u2220DCI\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HBA = \u2220IAB, pi * ((3 * p - 10) / 180) = \u2220HBA\nConclusions: pi * ((3 * p - 10) / 180) = \u2220IAB\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220BAJ, \u2220ABE = \u2220BAJ\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220ABE\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IAG = \u2220ICF, \u2220CAG = \u2220IAG\nConclusions: \u2220CAG = \u2220ICF\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CDE = \u2220LDE, \u2220CDE = \u2220DCJ\nConclusions: \u2220DCJ = \u2220LDE\n\nStep 39:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220ACL + \u2220DCA + \u2220ICD + \u2220LCI\nConclusions: 2 * 3.14 = \u2220ACL + \u2220DCA + \u2220ICD + \u2220LCI\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EBA = \u2220EBK, \u2220EBK = \u2220EDL, \u2220EBA = \u2220JAB\nConclusions: \u2220EDL = \u2220JAB\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HBA = \u2220HBK, pi * ((3 * p - 10) / 180) = \u2220HBA, \u2220HBK = \u2220HDL\nConclusions: pi * ((3 * p - 10) / 180) = \u2220HDL\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACD = 2 * pi - \u2220DCA, \u2220ACD = \u2220ICL\nConclusions: \u2220ICL = 2 * pi - \u2220DCA\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220ABE, \u2220ABE = \u2220KBE\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220KBE\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDL = \u2220JAB, \u2220EDC = \u2220EDL, \u2220EDC = \u2220JCD\nConclusions: \u2220JAB = \u2220JCD\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDL = \u2220HDL, pi * ((3 * p - 10) / 180) = \u2220HDL, \u2220BDL = \u2220EDF\nConclusions: pi * ((3 * p - 10) / 180) = \u2220EDF\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HDC = \u2220ICD, pi * ((3 * p - 10) / 180) = \u2220HDL, \u2220HDC = \u2220HDL\nConclusions: pi * ((3 * p - 10) / 180) = \u2220ICD\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KAI = \u2220KBE, pi * ((15 + 4 * p) / 180) = \u2220KBE\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220KAI\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KBD = \u2220KBE, pi * ((15 + 4 * p) / 180) = \u2220KBE\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220KBD\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDL = \u2220JAB, \u2220JAB = \u2220JCD\nConclusions: \u2220EDL = \u2220JCD\n\nStep 50:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * p - 10) / 180) = \u2220EDF, \u2220BDL = \u2220EDF\nConclusions: pi * ((3 * p - 10) / 180) = \u2220BDL\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KAC = \u2220KAI, pi * ((15 + 4 * p) / 180) = \u2220KAI\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220KAC\n\nStep 52:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220KBD, \u2220FDB = \u2220KBD\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220FDB\n\nStep 53:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDL = \u2220JCD, \u2220ICL = \u2220JCD\nConclusions: \u2220EDL = \u2220ICL\n\nStep 54:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = \u2220BDC, pi * ((3 * p - 10) / 180) = \u2220BDL, \u2220BDC = \u2220BDL\nConclusions: pi * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180)\n\nStep 55:\nTheorem: Transtivity of Equivalence\nPremises : \u2220FDB = \u2220FDH, pi * ((15 + 4 * p) / 180) = \u2220FDB\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220FDH\n\nStep 56:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDL = \u2220ICL, \u2220EDL = 2 * pi - \u2220LDE\nConclusions: \u2220ICL = 2 * pi - \u2220LDE\n\nStep 57:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180), pi * ((3 * p - 10) / 180) = \u2220IAB\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220IAB\n\nStep 58:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180), pi * ((3 * p - 10) / 180) = \u2220EDF\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220EDF\n\nStep 59:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((3 * p - 10) / 180) = \u2220ICD, pi * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180)\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220ICD\n\nStep 60:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220FDH, \u2220FCJ = \u2220FDH\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220FCJ\n\nStep 61:\nTheorem: Transtivity of Equivalence\nPremises : \u2220IAG = \u2220ICF, \u2220IAB = \u2220IAG, pi * ((5 + 6 * r) / 180) = \u2220IAB\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220ICF\n\nStep 62:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 6 * r) / 180) = \u2220EDF\nConclusions: 3.14 * ((5 + 6 * r) / 180) = \u2220EDF\n\nStep 63:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220FCJ, \u2220DCJ = \u2220FCJ\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220DCJ\n\nStep 64:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAG = \u2220ICF, pi * ((5 + 6 * r) / 180) = \u2220ICF\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220CAG\n\nStep 65:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = \u2220EDF, pi * ((5 + 6 * r) / 180) = \u2220EDF\nConclusions: 3.14 * ((5 + 6 * r) / 180) = pi * ((5 + 6 * r) / 180)\n\nStep 66:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCJ = \u2220LDE, pi * ((15 + 4 * p) / 180) = \u2220DCJ\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220LDE\n\nStep 67:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CAB = \u2220CAG, pi * ((5 + 6 * r) / 180) = \u2220CAG\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220CAB\n\nStep 68:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = \u2220CAG, \u2220ACL = \u2220CAG\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220ACL\n\nStep 69:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180), 3.14 * ((5 + 6 * r) / 180) = pi * ((5 + 6 * r) / 180)\nConclusions: 3.14 * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180)\n\nStep 70:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = pi * ((5 + 6 * r) / 180), pi * ((5 + 6 * r) / 180) = \u2220ICD\nConclusions: 3.14 * ((5 + 6 * r) / 180) = \u2220ICD\n\nStep 71:\nTheorem: Transtivity of Equivalence\nPremises : \u2220LCI = \u2220LDE, pi * ((15 + 4 * p) / 180) = \u2220LDE\nConclusions: pi * ((15 + 4 * p) / 180) = \u2220LCI\n\nStep 72:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((15 + 4 * p) / 180) = \u2220LDE\nConclusions: 3.14 * ((15 + 4 * p) / 180) = \u2220LDE\n\nStep 73:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 6 * r) / 180) = \u2220CAB, 3.14 * ((5 + 6 * r) / 180) = pi * ((5 + 6 * r) / 180)\nConclusions: 3.14 * ((5 + 6 * r) / 180) = \u2220CAB\n\nStep 74:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = pi * ((5 + 6 * r) / 180), pi * ((5 + 6 * r) / 180) = \u2220ACL\nConclusions: 3.14 * ((5 + 6 * r) / 180) = \u2220ACL\n\nStep 75:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACL = \u2220JCL, pi * ((5 + 6 * r) / 180) = \u2220ACL\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220JCL\n\nStep 76:\nTheorem: Substitution\nPremises : 3.14 = pi, 3.14 * ((5 + 6 * r) / 180) = pi * ((3 * p - 10) / 180)\nConclusions: 3.14 * ((5 + 6 * r) / 180) = 3.14 * ((3 * p - 10) / 180)\n\nStep 77:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ICD = 2 * pi - \u2220DCI, 3.14 * ((5 + 6 * r) / 180) = \u2220ICD\nConclusions: 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220DCI\n\nStep 78:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((15 + 4 * p) / 180) = \u2220LCI\nConclusions: 3.14 * ((15 + 4 * p) / 180) = \u2220LCI\n\nStep 79:\nTheorem: Substitution\nPremises : 3.14 * ((15 + 4 * p) / 180) = \u2220LDE, \u2220ICL = 2 * pi - \u2220LDE, 3.14 = pi\nConclusions: 2 * 3.14 - 3.14 * ((15 + 4 * p) / 180) = \u2220ICL\n\nStep 80:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((15 + 4 * p) / 180) = \u2220LDE, pi * ((15 + 4 * p) / 180) = \u2220LDE\nConclusions: 3.14 * ((15 + 4 * p) / 180) = pi * ((15 + 4 * p) / 180)\n\nStep 81:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = \u2220CAB, \u2220CAB = 2 * pi - \u2220BAC\nConclusions: 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220BAC\n\nStep 82:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACL = 2 * pi - \u2220LCA, 3.14 * ((5 + 6 * r) / 180) = \u2220ACL\nConclusions: 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220LCA\n\nStep 83:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JAK = \u2220JCL, pi * ((5 + 6 * r) / 180) = \u2220JCL\nConclusions: pi * ((5 + 6 * r) / 180) = \u2220JAK\n\nStep 84:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = 3.14 * ((3 * p - 10) / 180), 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220DCI\nConclusions: 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220DCI\n\nStep 85:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ICL = 2 * pi - \u2220DCA, 2 * 3.14 - 3.14 * ((15 + 4 * p) / 180) = \u2220ICL\nConclusions: 2 * 3.14 - 3.14 * ((15 + 4 * p) / 180) = 2 * pi - \u2220DCA\n\nStep 86:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220BAJ, 3.14 * ((15 + 4 * p) / 180) = pi * ((15 + 4 * p) / 180)\nConclusions: 3.14 * ((15 + 4 * p) / 180) = \u2220BAJ\n\nStep 87:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((15 + 4 * p) / 180) = \u2220KAC, 3.14 * ((15 + 4 * p) / 180) = pi * ((15 + 4 * p) / 180)\nConclusions: 3.14 * ((15 + 4 * p) / 180) = \u2220KAC\n\nStep 88:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = 3.14 * ((3 * p - 10) / 180), 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220BAC\nConclusions: 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220BAC\n\nStep 89:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220LCA, 3.14 * ((5 + 6 * r) / 180) = 3.14 * ((3 * p - 10) / 180)\nConclusions: 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220LCA\n\nStep 90:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 6 * r) / 180) = \u2220JAK\nConclusions: 3.14 * ((5 + 6 * r) / 180) = \u2220JAK\n\nStep 91:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JAK = 2 * pi - \u2220KAJ, 3.14 * ((5 + 6 * r) / 180) = \u2220JAK\nConclusions: 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220KAJ\n\nStep 92:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 6 * r) / 180) = 2 * pi - \u2220KAJ, 3.14 * ((5 + 6 * r) / 180) = 3.14 * ((3 * p - 10) / 180)\nConclusions: 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220KAJ\n\nStep 93:\nTheorem: Solve Linear Equation System\nPremises : \u2220ACL = 2 * pi - \u2220LCA, 2 * pi = \u2220BAJ + \u2220CAB + \u2220JAK + \u2220KAC, \u2220CAB = 2 * pi - \u2220BAC, \u2220DCI = 2 * pi - \u2220ICD, 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220BAC, 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220KAJ, \u2220KAJ = 2 * pi - \u2220JAK, 3.14 * ((15 + 4 * p) / 180) = \u2220BAJ, 3.14 * ((15 + 4 * p) / 180) = \u2220KAC, 2 * 3.14 - 3.14 * ((15 + 4 * p) / 180) = 2 * pi - \u2220DCA, 2 * 3.14 = \u2220ACL + \u2220DCA + \u2220ICD + \u2220LCI, 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220DCI, 3.14 * ((15 + 4 * p) / 180) = \u2220LCI, 3.14 * ((3 * p - 10) / 180) = 2 * pi - \u2220LCA\nConclusions: 25 = p\n\n",
+    "logic_fomrs_refined": [
+        "Line(J, A)",
+        "Line(J, C)",
+        "Line(J, I)",
+        "Line(A, C)",
+        "Line(A, I)",
+        "Line(C, I)",
+        "Line(K, A)",
+        "Line(K, B)",
+        "Line(K, G)",
+        "Line(A, B)",
+        "Line(A, G)",
+        "Line(B, G)",
+        "Line(L, C)",
+        "Line(L, D)",
+        "Line(L, F)",
+        "Line(C, D)",
+        "Line(C, F)",
+        "Line(D, F)",
+        "Line(H, B)",
+        "Line(H, D)",
+        "Line(H, E)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(D, E)",
+        "PointLiesOnLine(A, Line(J, C))",
+        "PointLiesOnLine(A, Line(J, I))",
+        "PointLiesOnLine(C, Line(J, I))",
+        "PointLiesOnLine(C, Line(A, I))",
+        "PointLiesOnLine(A, Line(K, B))",
+        "PointLiesOnLine(A, Line(K, G))",
+        "PointLiesOnLine(B, Line(K, G))",
+        "PointLiesOnLine(B, Line(A, G))",
+        "PointLiesOnLine(C, Line(L, D))",
+        "PointLiesOnLine(C, Line(L, F))",
+        "PointLiesOnLine(D, Line(L, F))",
+        "PointLiesOnLine(D, Line(C, F))",
+        "PointLiesOnLine(B, Line(H, D))",
+        "PointLiesOnLine(B, Line(H, E))",
+        "PointLiesOnLine(D, Line(H, E))",
+        "PointLiesOnLine(D, Line(B, E))",
+        "Parallel(Line(K, G), Line(L, F))",
+        "Parallel(Line(J, I), Line(H, E))",
+        "Equals(MeasureOf(Angle(B, A, J)), Mul(pi, Div(Add(Mul(4.0, p), 15.0), 180.0)))",
+        "Equals(MeasureOf(Angle(H, B, A)), Mul(pi, Div(Sub(Mul(3.0, p), 10.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, D, C)), Mul(pi, Div(Add(Mul(6.0, r), 5.0), 180.0)))"
+    ],
+    "correct": true
+}

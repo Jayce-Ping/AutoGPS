@@ -1,0 +1,84 @@
+{
+    "problem_id": "584",
+    "solved": true,
+    "problem_text": "Find the area of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 14)",
+        "Equals(LengthOf(Line(C, D)), 21)",
+        "Equals(LengthOf(Line(D, A)), 16)",
+        "Find(AreaOf(Trapezoid(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, B), Line(A, D))",
+        "Perpendicular(Line(D, C), Line(A, D))",
+        "Trapezoid(A, B, C, D)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "CD",
+        "BC",
+        "DA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            85.5625,
+            66.045
+        ],
+        "B": [
+            229.5681818181818,
+            66.36
+        ],
+        "C": [
+            302.05454545454546,
+            230.832
+        ],
+        "D": [
+            85.54848484848485,
+            230.944
+        ]
+    },
+    "problem_choices": [
+        259.0,
+        280.0,
+        294.0,
+        336.0
+    ],
+    "choices_precise_value": [
+        259.0,
+        280.0,
+        294.0,
+        336.0
+    ],
+    "problem_answer": 280.0,
+    "total_time": 6.073918,
+    "solution_predicate": "Equals(280.0, AreaOf(Trapezoid(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 14 = AB, 21 = CD, Trapezoid(A, B, C, D), AB \u22a5 AD, 16 = AD\n\nStep 2:\nTheorem: Area formula of Trapezoid(A, B, C, D)\nPremises : AB \u22a5 AD, Trapezoid(A, B, C, D)\nConclusions: Area(Trapezoid(A, B, C, D)) = AD * ((AB + CD) / 2)\n\nStep 3:\nTheorem: Substitution\nPremises : 14 = AB, Area(Trapezoid(A, B, C, D)) = AD * ((AB + CD) / 2), 21 = CD, 16 = AD\nConclusions: 16 * ((14 + 21) / 2) = Area(Trapezoid(A, B, C, D))\n\nStep 4:\nTheorem: Evaluate\nPremises : 16 * ((14 + 21) / 2) = Area(Trapezoid(A, B, C, D))\nConclusions: 280 = Area(Trapezoid(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Parallel(Line(A, B), Line(D, C))",
+        "Perpendicular(Line(A, B), Line(A, D))",
+        "Perpendicular(Line(D, C), Line(A, D))",
+        "Trapezoid(A, B, C, D)",
+        "Equals(LengthOf(Line(A, B)), 14.0)",
+        "Equals(LengthOf(Line(C, D)), 21.0)",
+        "Equals(LengthOf(Line(D, A)), 16.0)"
+    ],
+    "correct": true
+}

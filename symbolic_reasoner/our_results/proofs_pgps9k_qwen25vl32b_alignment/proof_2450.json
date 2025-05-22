@@ -1,0 +1,162 @@
+{
+    "problem_id": "2450",
+    "solved": true,
+    "problem_text": "In \\odot R, SU = YW = 20, and m \\widehat YX = 45. Find m \\widehat SU.",
+    "logic_forms": [
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(R, X)",
+        "Line(R, Z)",
+        "Line(S, U)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Perpendicular(Line(R, T), Line(S, U))",
+        "Perpendicular(Line(R, X), Line(Y, W))",
+        "PointLiesOnCircle(S, Circle(R))",
+        "PointLiesOnCircle(T, Circle(R))",
+        "PointLiesOnCircle(U, Circle(R))",
+        "PointLiesOnCircle(W, Circle(R))",
+        "PointLiesOnCircle(X, Circle(R))",
+        "PointLiesOnCircle(Y, Circle(R))",
+        "PointLiesOnLine(V, Line(R, T))",
+        "PointLiesOnLine(V, Line(S, U))",
+        "PointLiesOnLine(Z, Line(R, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Circle(R)",
+        "Equals(LengthOf(Line(S,U)),20)",
+        "Equals(LengthOf(Line(Y,W)),20)",
+        "Equals(MeasureOf(Arc(Y,X)),45)",
+        "Find(MeasureOf(Arc(S,U)))"
+    ],
+    "point_instances": [
+        "Y",
+        "Z",
+        "X",
+        "W",
+        "U",
+        "R",
+        "V",
+        "S",
+        "T"
+    ],
+    "line_instances": [
+        "XZ",
+        "XR",
+        "ZR",
+        "YZ",
+        "YW",
+        "ZW",
+        "RV",
+        "RT",
+        "VT",
+        "UV",
+        "US",
+        "VS"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "Y": [
+            57.12891780011828,
+            163.6357894736842
+        ],
+        "Z": [
+            124.77028714107365,
+            193.87333333333333
+        ],
+        "X": [
+            111.3214731585518,
+            224.46666666666667
+        ],
+        "W": [
+            192.1011235955056,
+            223.86
+        ],
+        "U": [
+            247.03566194430874,
+            155.11826086956523
+        ],
+        "R": [
+            150.12535612535612,
+            134.18803418803418
+        ],
+        "V": [
+            203.76867151354924,
+            95.71058823529413
+        ],
+        "S": [
+            160.08426966292134,
+            36.660000000000004
+        ],
+        "T": [
+            230.05280898876407,
+            76.206
+        ]
+    },
+    "problem_choices": [
+        20.0,
+        30.0,
+        45.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        20.0,
+        30.0,
+        45.0,
+        90.0
+    ],
+    "problem_answer": 90.0,
+    "total_time": 396.674848,
+    "solution_predicate": "Equals(1.5707963268, MeasureOf(Arc(U, R, S)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: Z on WY, V on SU, U on \u2299(R, radius_R), pi * (45 / 180) = Arc(YRX), \u2220SUR, RV \u22a5 SV, \u2220RWY, RZ, \u2220RZY, SU, \u2220YZX, \u2220RSU, Z on RX, 3.14 = pi, \u2220WYR, YZ, W on \u2299(R, radius_R), Y on \u2299(R, radius_R), RZ \u22a5 WZ, 20 = WY, \u2299(R, radius_R), XZ \u22a5 YZ, RU, WZ \u22a5 XZ, RS, RY, 20 = SU, S on \u2299(R, radius_R), Arc(YRX), \u2220YRX, Arc(URS)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : U on \u2299(R, radius_R)\nConclusions: radius_R = RU\n\nStep 3:\nTheorem: Same Angle\nPremises : V on SU, \u2220SUR\nConclusions: \u2220SUR = \u2220VUR\n\nStep 4:\nTheorem: Same Angle\nPremises : Z on WY, \u2220RWY\nConclusions: \u2220RWY = \u2220RWZ\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220YZX, \u2220RZY\nConclusions: pi = \u2220RZY + \u2220YZX\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220RSU, V on SU\nConclusions: \u2220RSU = \u2220RSV\n\nStep 7:\nTheorem: Vertical Angle Theorem\nPremises : Z on WY, Z on RX\nConclusions: \u2220RZY = \u2220XZW\n\nStep 8:\nTheorem: Same Angle\nPremises : Z on WY, \u2220WYR\nConclusions: \u2220WYR = \u2220ZYR\n\nStep 9:\nTheorem: Point On Circle Def\nPremises : W on \u2299(R, radius_R)\nConclusions: radius_R = RW\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : Y on \u2299(R, radius_R)\nConclusions: radius_R = RY\n\nStep 11:\nTheorem: Circle Vertical Theorem\nPremises : RZ \u22a5 WZ, Z on WY, \u2299(R, radius_R)\nConclusions: \u25b3RWZ \u2245 \u25b3RYZ\n\nStep 12:\nTheorem: Circle Vertical Theorem\nPremises : RV \u22a5 SV, V on SU, \u2299(R, radius_R)\nConclusions: \u25b3RSV \u2245 \u25b3RUV\n\nStep 13:\nTheorem: Perpendicular to Right Angle\nPremises : XZ \u22a5 YZ\nConclusions: pi / 2 = \u2220YZX\n\nStep 14:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 XZ\nConclusions: pi / 2 = \u2220XZW\n\nStep 15:\nTheorem: Definition of Triangle\nPremises : SU, RS, RU\nConclusions: \u25b3RSU\n\nStep 16:\nTheorem: Definition of Triangle\nPremises : RY, RZ, YZ\nConclusions: \u25b3RYZ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : 20 = WY, 20 = SU\nConclusions: SU = WY\n\nStep 18:\nTheorem: Point On Circle Def\nPremises : S on \u2299(R, radius_R)\nConclusions: radius_R = RS\n\nStep 19:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(YRX)\nConclusions: \u2220YRX = Arc(YRX)\n\nStep 20:\nTheorem: Same Angle\nPremises : \u2220YRX, Z on RX\nConclusions: \u2220YRX = \u2220YRZ\n\nStep 21:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(URS)\nConclusions: \u2220URS = Arc(URS)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_R = RU, radius_R = RY\nConclusions: RU = RY\n\nStep 23:\nTheorem: Congruent Definition\nPremises : \u25b3RWZ \u2245 \u25b3RYZ\nConclusions: \u2220RWZ = \u2220ZYR\n\nStep 24:\nTheorem: Congruent Definition\nPremises : \u25b3RSV \u2245 \u25b3RUV\nConclusions: \u2220RSV = \u2220VUR\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220XZW, \u2220RZY = \u2220XZW, pi / 2 = \u2220YZX\nConclusions: \u2220RZY = \u2220YZX\n\nStep 26:\nTheorem: Interior Angle Sum Theorem for Triangle(R, S, U)\nPremises : \u25b3RSU\nConclusions: pi = \u2220RSU + \u2220SUR + \u2220URS\n\nStep 27:\nTheorem: Interior Angle Sum Theorem for Triangle(Z, Y, R)\nPremises : \u25b3RYZ\nConclusions: pi = \u2220RZY + \u2220YRZ + \u2220ZYR\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : radius_R = RS, radius_R = RW\nConclusions: RS = RW\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = Arc(YRX), \u2220YRX = Arc(YRX)\nConclusions: pi * (45 / 180) = \u2220YRX\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RSV = \u2220VUR, \u2220RSU = \u2220RSV\nConclusions: \u2220RSU = \u2220VUR\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220RSU + \u2220SUR + \u2220URS, 3.14 = pi\nConclusions: 3.14 = \u2220RSU + \u2220SUR + \u2220URS\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220RZY + \u2220YRZ + \u2220ZYR, 3.14 = pi\nConclusions: 3.14 = \u2220RZY + \u2220YRZ + \u2220ZYR\n\nStep 33:\nTheorem: Side-Side-Side Congruent Theorem\nPremises : RU = RY, SU = WY, RS = RW\nConclusions: \u25b3RSU \u2245 \u25b3RWY\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : pi * (45 / 180) = \u2220YRX, \u2220YRX = \u2220YRZ\nConclusions: pi * (45 / 180) = \u2220YRZ\n\nStep 35:\nTheorem: Congruent Definition\nPremises : \u25b3RSU \u2245 \u25b3RWY\nConclusions: \u2220RSU = \u2220RWY, RU = RY, RS = RW\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : pi * (45 / 180) = \u2220YRZ, pi = \u2220RZY + \u2220YRZ + \u2220ZYR, \u2220WYR = \u2220ZYR, 3.14 = \u2220RZY + \u2220YRZ + \u2220ZYR, pi = \u2220RZY + \u2220YZX, \u2220RZY = \u2220YZX\nConclusions: 0.79 = \u2220WYR\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220WYR = \u2220ZYR, 0.79 = \u2220WYR\nConclusions: 0.79 = \u2220ZYR\n\nStep 38:\nTheorem: Transtivity of Equivalence\nPremises : \u2220RWZ = \u2220ZYR, 0.79 = \u2220ZYR\nConclusions: 0.79 = \u2220RWZ\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220RWZ, \u2220RWY = \u2220RWZ\nConclusions: 0.79 = \u2220RWY\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220RWY, \u2220RSU = \u2220RWY, \u2220RSU = \u2220VUR\nConclusions: 0.79 = \u2220VUR\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : 0.79 = \u2220VUR, \u2220RSU = \u2220VUR\nConclusions: 0.79 = \u2220RSU\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220SUR = \u2220VUR, 0.79 = \u2220VUR\nConclusions: 0.79 = \u2220SUR\n\nStep 43:\nTheorem: Solve Linear Equation System\nPremises : 0.79 = \u2220RSU, 0.79 = \u2220SUR, 3.14 = \u2220RSU + \u2220SUR + \u2220URS\nConclusions: 1.57 = \u2220URS\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : 1.57 = \u2220URS, \u2220URS = Arc(URS)\nConclusions: 1.57 = Arc(URS)\n\n",
+    "logic_fomrs_refined": [
+        "Line(X, Z)",
+        "Line(X, R)",
+        "Line(Z, R)",
+        "Line(Y, Z)",
+        "Line(Y, W)",
+        "Line(Z, W)",
+        "Line(R, V)",
+        "Line(R, T)",
+        "Line(V, T)",
+        "Line(U, V)",
+        "Line(U, S)",
+        "Line(V, S)",
+        "Circle(R, radius_R)",
+        "Line(R, T)",
+        "Line(R, V)",
+        "Line(R, X)",
+        "Line(R, Z)",
+        "Line(S, U)",
+        "Line(S, V)",
+        "Line(V, T)",
+        "Line(V, U)",
+        "Line(Y, W)",
+        "Line(Y, Z)",
+        "Line(Z, W)",
+        "Line(Z, X)",
+        "Perpendicular(Line(R, T), Line(S, U))",
+        "Perpendicular(Line(R, X), Line(Y, W))",
+        "PointLiesOnCircle(S, Circle(R, radius_R))",
+        "PointLiesOnCircle(T, Circle(R, radius_R))",
+        "PointLiesOnCircle(U, Circle(R, radius_R))",
+        "PointLiesOnCircle(W, Circle(R, radius_R))",
+        "PointLiesOnCircle(X, Circle(R, radius_R))",
+        "PointLiesOnCircle(Y, Circle(R, radius_R))",
+        "PointLiesOnLine(V, Line(R, T))",
+        "PointLiesOnLine(V, Line(S, U))",
+        "PointLiesOnLine(Z, Line(R, X))",
+        "PointLiesOnLine(Z, Line(Y, W))",
+        "Circle(R, radius_R)",
+        "Equals(LengthOf(Line(S, U)), 20.0)",
+        "Equals(LengthOf(Line(Y, W)), 20.0)",
+        "Equals(MeasureOf(Arc(Y, R, X)), Mul(pi, Div(45.0, 180.0)))"
+    ],
+    "correct": true
+}

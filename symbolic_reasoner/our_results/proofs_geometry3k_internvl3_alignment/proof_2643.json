@@ -1,0 +1,112 @@
+{
+    "problem_id": "2643",
+    "solved": true,
+    "problem_text": "Find x in the figure.",
+    "logic_forms": [
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(F, D), Line(G, C))",
+        "Parallel(Line(F, D), Line(H, B))",
+        "Parallel(Line(G, C), Line(H, B))",
+        "Equals(MeasureOf(Angle(E, D, F)), 7x+9)",
+        "Equals(MeasureOf(Angle(D, C, B)), 11x-1)",
+        "Equals(MeasureOf(Angle(A, B, H)), 2y+5)",
+        "Equals(MeasureOf(Angle(E, D, F)), z)",
+        "Equals(MeasureOf(Angle(D, C, B)), 7y-4)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "ED",
+        "EC",
+        "DC",
+        "CB",
+        "CA",
+        "BA",
+        "HB",
+        "GC",
+        "FD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            182.06586826347305,
+            260.7784431137725
+        ],
+        "B": [
+            180.5688622754491,
+            193.11377245508982
+        ],
+        "C": [
+            180.8682634730539,
+            153.2934131736527
+        ],
+        "D": [
+            204.22155688622755,
+            125.74850299401199
+        ],
+        "E": [
+            292.2455089820359,
+            23.05389221556886
+        ],
+        "F": [
+            16.796407185628745,
+            18.862275449101798
+        ],
+        "G": [
+            17.095808383233532,
+            59.5808383233533
+        ],
+        "H": [
+            16.197604790419163,
+            100.2994011976048
+        ]
+    },
+    "problem_choices": [
+        "11",
+        "12",
+        "13",
+        "14"
+    ],
+    "choices_precise_value": [
+        11.0,
+        12.0,
+        13.0,
+        14.0
+    ],
+    "problem_answer": 14.0,
+    "total_time": 24.505037,
+    "solution_predicate": "Equals(16.3716216216, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, pi * ((7 * y - 4) / 180) = \u2220BCD, pi * ((9 + 7 * x) / 180) = \u2220EDF, CG || DF, pi * ((5 + 2 * y) / 180) = \u2220HBA, pi * (z / 180) = \u2220EDF, D on CE, B on AC, pi * ((11 * x - 1) / 180) = \u2220BCD, \u2220HBA, \u2220ACD, \u2220GCA, \u2220GCA, BH || CG, \u2220ECG, \u2220GCB, \u2220ACE, \u2220ACG, \u2220BCE\n\nStep 2:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((7 * y - 4) / 180) = \u2220BCD\nConclusions: 3.14 * ((7 * y - 4) / 180) = \u2220BCD\n\nStep 3:\nTheorem: Substitution\nPremises : pi * ((9 + 7 * x) / 180) = \u2220EDF, 3.14 = pi\nConclusions: 3.14 * ((9 + 7 * x) / 180) = \u2220EDF\n\nStep 4:\nTheorem: Corresponding Angle Theorem\nPremises : CG || DF\nConclusions: \u2220ECG = \u2220EDF\n\nStep 5:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((5 + 2 * y) / 180) = \u2220HBA\nConclusions: 3.14 * ((5 + 2 * y) / 180) = \u2220HBA\n\nStep 6:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (z / 180) = \u2220EDF\nConclusions: 3.14 * (z / 180) = \u2220EDF\n\nStep 7:\nTheorem: Substitution\nPremises : pi * ((11 * x - 1) / 180) = \u2220BCD, 3.14 = pi\nConclusions: 3.14 * ((11 * x - 1) / 180) = \u2220BCD\n\nStep 8:\nTheorem: Reverse Angle Definition\nPremises : \u2220HBA\nConclusions: \u2220HBA = 2 * pi - \u2220ABH\n\nStep 9:\nTheorem: Same Angle\nPremises : B on AC, \u2220ACD\nConclusions: \u2220ACD = \u2220BCD\n\nStep 10:\nTheorem: Same Angle\nPremises : B on AC, \u2220GCA\nConclusions: \u2220GCA = \u2220GCB\n\nStep 11:\nTheorem: Reverse Angle Definition\nPremises : \u2220GCA\nConclusions: \u2220GCA = 2 * pi - \u2220ACG\n\nStep 12:\nTheorem: Corresponding Angle Theorem\nPremises : BH || CG\nConclusions: \u2220ABH = \u2220ACG\n\nStep 13:\nTheorem: Same Angle\nPremises : \u2220ACE, D on CE\nConclusions: \u2220ACD = \u2220ACE\n\nStep 14:\nTheorem: Same Angle\nPremises : B on AC, \u2220ACE\nConclusions: \u2220ACE = \u2220BCE\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220ACG, B on AC\nConclusions: \u2220ACG = \u2220BCG\n\nStep 16:\nTheorem: Circumference splited\nPremises : \u2220ECG, \u2220BCE, \u2220GCB\nConclusions: 2 * pi = \u2220BCE + \u2220ECG + \u2220GCB\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : pi * (z / 180) = \u2220EDF, \u2220ECG = \u2220EDF\nConclusions: pi * (z / 180) = \u2220ECG\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((5 + 2 * y) / 180) = \u2220HBA, 3.14 * ((5 + 2 * y) / 180) = \u2220HBA\nConclusions: 3.14 * ((5 + 2 * y) / 180) = pi * ((5 + 2 * y) / 180)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * (z / 180) = \u2220EDF, 3.14 * ((9 + 7 * x) / 180) = \u2220EDF\nConclusions: 3.14 * (z / 180) = 3.14 * ((9 + 7 * x) / 180)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((7 * y - 4) / 180) = \u2220BCD, 3.14 * ((11 * x - 1) / 180) = \u2220BCD\nConclusions: 3.14 * ((11 * x - 1) / 180) = 3.14 * ((7 * y - 4) / 180)\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 * x - 1) / 180) = \u2220BCD, 3.14 * ((11 * x - 1) / 180) = \u2220BCD\nConclusions: 3.14 * ((11 * x - 1) / 180) = pi * ((11 * x - 1) / 180)\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 * x - 1) / 180) = \u2220BCD, \u2220ACD = \u2220BCD\nConclusions: pi * ((11 * x - 1) / 180) = \u2220ACD\n\nStep 23:\nTheorem: Substitution\nPremises : \u2220ACG = \u2220BCG, \u2220GCA = 2 * pi - \u2220ACG, 3.14 = pi, \u2220GCA = \u2220GCB\nConclusions: \u2220GCB = 2 * 3.14 - \u2220BCG\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ACG = \u2220BCG, \u2220ABH = \u2220ACG\nConclusions: \u2220ABH = \u2220BCG\n\nStep 25:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220BCE + \u2220ECG + \u2220GCB\nConclusions: 2 * 3.14 = \u2220BCE + \u2220ECG + \u2220GCB\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * (z / 180) = \u2220ECG\nConclusions: 3.14 * (z / 180) = \u2220ECG\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 * x - 1) / 180) = \u2220ACD, \u2220ACE = \u2220BCE, \u2220ACD = \u2220ACE\nConclusions: pi * ((11 * x - 1) / 180) = \u2220BCE\n\nStep 28:\nTheorem: Substitution\nPremises : \u2220HBA = 2 * pi - \u2220ABH, \u2220ABH = \u2220BCG, 3.14 = pi\nConclusions: \u2220HBA = 2 * 3.14 - \u2220BCG\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((11 * x - 1) / 180) = \u2220BCE, 3.14 * ((11 * x - 1) / 180) = pi * ((11 * x - 1) / 180)\nConclusions: 3.14 * ((11 * x - 1) / 180) = \u2220BCE\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HBA = 2 * 3.14 - \u2220BCG, pi * ((5 + 2 * y) / 180) = \u2220HBA\nConclusions: pi * ((5 + 2 * y) / 180) = 2 * 3.14 - \u2220BCG\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GCB = 2 * 3.14 - \u2220BCG, pi * ((5 + 2 * y) / 180) = 2 * 3.14 - \u2220BCG\nConclusions: pi * ((5 + 2 * y) / 180) = \u2220GCB\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((5 + 2 * y) / 180) = pi * ((5 + 2 * y) / 180), pi * ((5 + 2 * y) / 180) = \u2220GCB\nConclusions: 3.14 * ((5 + 2 * y) / 180) = \u2220GCB\n\nStep 33:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((11 * x - 1) / 180) = 3.14 * ((7 * y - 4) / 180), 3.14 * (z / 180) = \u2220ECG, 2 * 3.14 = \u2220BCE + \u2220ECG + \u2220GCB, 3.14 * (z / 180) = 3.14 * ((9 + 7 * x) / 180), 3.14 * ((11 * x - 1) / 180) = \u2220BCE, 3.14 * ((5 + 2 * y) / 180) = \u2220GCB\nConclusions: 16.37 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(H, B)",
+        "Line(G, C)",
+        "Line(F, D)",
+        "PointLiesOnLine(D, Line(E, C))",
+        "PointLiesOnLine(B, Line(C, A))",
+        "Parallel(Line(F, D), Line(G, C))",
+        "Parallel(Line(F, D), Line(H, B))",
+        "Parallel(Line(G, C), Line(H, B))",
+        "Equals(MeasureOf(Angle(E, D, F)), Mul(pi, Div(Add(Mul(7.0, x), 9.0), 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Sub(Mul(11.0, x), 1.0), 180.0)))",
+        "Equals(MeasureOf(Angle(H, B, A)), Mul(pi, Div(Add(Mul(2.0, y), 5.0), 180.0)))",
+        "Equals(MeasureOf(Angle(E, D, F)), Mul(pi, Div(z, 180.0)))",
+        "Equals(MeasureOf(Angle(B, C, D)), Mul(pi, Div(Sub(Mul(7.0, y), 4.0), 180.0)))"
+    ],
+    "correct": false
+}

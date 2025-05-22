@@ -1,0 +1,68 @@
+{
+    "problem_id": "4639",
+    "solved": true,
+    "problem_text": "What is the value of x?",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(J, L)), 7x-18)",
+        "Equals(MeasureOf(Arc(K, J)), 4x-2)",
+        "Equals(MeasureOf(Arc(K, L)), 6x+6)",
+        "PointLiesOnCircle(J, Circle(A))",
+        "PointLiesOnCircle(K, Circle(A))",
+        "PointLiesOnCircle(L, Circle(A))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "J",
+        "K",
+        "L",
+        "A"
+    ],
+    "line_instances": [],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "J": [
+            197.7004716981132,
+            57.70285714285714
+        ],
+        "K": [
+            126.15172955974843,
+            151.98857142857145
+        ],
+        "L": [
+            281.977358490566,
+            193.24800000000002
+        ],
+        "A": [
+            212.57250890611334,
+            142.43145465711572
+        ]
+    },
+    "problem_choices": [
+        1.75,
+        2.571,
+        3.111,
+        22.0
+    ],
+    "choices_precise_value": [
+        1.75,
+        2.571,
+        3.111,
+        22.0
+    ],
+    "problem_answer": 22.0,
+    "total_time": 10.506915,
+    "solution_predicate": "Equals(22.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * ((6 + 6 * x) / 180) = Arc(KAL), pi * ((7 * x - 18) / 180) = Arc(LAJ), \u2220KAL, Arc(LAJ), pi * ((4 * x - 2) / 180) = Arc(JAK), Arc(JAK), \u2220LAJ, 3.14 = pi, \u2220JAK, Arc(KAL)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(LAJ)\nConclusions: \u2220LAJ = Arc(LAJ)\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(JAK)\nConclusions: \u2220JAK = Arc(JAK)\n\nStep 4:\nTheorem: Circumference splited\nPremises : \u2220JAK, \u2220LAJ, \u2220KAL\nConclusions: 2 * pi = \u2220JAK + \u2220KAL + \u2220LAJ\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KAL)\nConclusions: \u2220KAL = Arc(KAL)\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * ((7 * x - 18) / 180) = Arc(LAJ), \u2220LAJ = Arc(LAJ)\nConclusions: pi * ((7 * x - 18) / 180) = \u2220LAJ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JAK = Arc(JAK), pi * ((4 * x - 2) / 180) = Arc(JAK)\nConclusions: pi * ((4 * x - 2) / 180) = \u2220JAK\n\nStep 8:\nTheorem: Substitution\nPremises : 3.14 = pi, 2 * pi = \u2220JAK + \u2220KAL + \u2220LAJ\nConclusions: 2 * 3.14 = \u2220JAK + \u2220KAL + \u2220LAJ\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KAL = Arc(KAL), pi * ((6 + 6 * x) / 180) = Arc(KAL)\nConclusions: pi * ((6 + 6 * x) / 180) = \u2220KAL\n\nStep 10:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((7 * x - 18) / 180) = \u2220LAJ\nConclusions: 3.14 * ((7 * x - 18) / 180) = \u2220LAJ\n\nStep 11:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((4 * x - 2) / 180) = \u2220JAK\nConclusions: 3.14 * ((4 * x - 2) / 180) = \u2220JAK\n\nStep 12:\nTheorem: Substitution\nPremises : 3.14 = pi, pi * ((6 + 6 * x) / 180) = \u2220KAL\nConclusions: 3.14 * ((6 + 6 * x) / 180) = \u2220KAL\n\nStep 13:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((6 + 6 * x) / 180) = \u2220KAL, 2 * 3.14 = \u2220JAK + \u2220KAL + \u2220LAJ, 3.14 * ((4 * x - 2) / 180) = \u2220JAK, 3.14 * ((7 * x - 18) / 180) = \u2220LAJ\nConclusions: 22 = x\n\n",
+    "logic_fomrs_refined": [
+        "Circle(A, radius_A)",
+        "PointLiesOnCircle(J, Circle(A, radius_A))",
+        "PointLiesOnCircle(K, Circle(A, radius_A))",
+        "PointLiesOnCircle(L, Circle(A, radius_A))",
+        "Equals(MeasureOf(Arc(L, A, J)), Mul(pi, Div(Sub(Mul(7.0, x), 18.0), 180.0)))",
+        "Equals(MeasureOf(Arc(J, A, K)), Mul(pi, Div(Sub(Mul(4.0, x), 2.0), 180.0)))",
+        "Equals(MeasureOf(Arc(K, A, L)), Mul(pi, Div(Add(Mul(6.0, x), 6.0), 180.0)))"
+    ],
+    "correct": true
+}

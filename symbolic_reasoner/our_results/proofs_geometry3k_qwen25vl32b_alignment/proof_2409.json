@@ -1,0 +1,67 @@
+{
+    "problem_id": "2409",
+    "solved": true,
+    "problem_text": "Find y.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(A, B)), 21)",
+        "Equals(MeasureOf(Angle(B, C, A)), 30)",
+        "Equals(MeasureOf(Angle(A, B, C)), 60)",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "AB",
+        "CB",
+        "CA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            94.29411764705884,
+            238.82352941176472
+        ],
+        "B": [
+            222.23529411764707,
+            195.29411764705884
+        ],
+        "C": [
+            19.294117647058826,
+            20.88235294117647
+        ]
+    },
+    "problem_choices": [
+        "21",
+        "21 \\sqrt { 2 }",
+        "21 \\sqrt { 3 }",
+        "42"
+    ],
+    "choices_precise_value": [
+        21.0,
+        29.698484809834998,
+        36.373066958946424,
+        42.0
+    ],
+    "problem_answer": 36.373066958946424,
+    "total_time": 15.77479,
+    "solution_predicate": "Equals(36.3730669588, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3.14 = pi, BC, pi * (30 / 180) = \u2220ACB, AB, 21 = AB, y = AC, AC, pi * (60 / 180) = \u2220CBA\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.52 = pi * (30 / 180), 1.05 = pi * (60 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 0.52 = pi * (30 / 180), pi * (30 / 180) = \u2220ACB\nConclusions: 0.52 = \u2220ACB\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (60 / 180) = \u2220CBA, 1.05 = pi * (60 / 180)\nConclusions: 1.05 = \u2220CBA\n\nStep 6:\nTheorem: Law of Sines\nPremises : \u25b3ABC\nConclusions: AB / sin(\u2220ACB) = AC / sin(\u2220CBA)\n\nStep 7:\nTheorem: Substitution\nPremises : 0.52 = \u2220ACB, 21 = AB, AB / sin(\u2220ACB) = AC / sin(\u2220CBA), 1.05 = \u2220CBA, y = AC\nConclusions: 21 / sin(0.52) = y / sin(1.05)\n\nStep 8:\nTheorem: Solve Linear Equation System\nPremises : y = AC, 21 / sin(0.52) = y / sin(1.05)\nConclusions: 36.37 = AC\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 36.37 = AC, y = AC\nConclusions: 36.37 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(C, B)",
+        "Line(C, A)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(B, C)), x)",
+        "Equals(LengthOf(Line(C, A)), y)",
+        "Equals(LengthOf(Line(A, B)), 21.0)",
+        "Equals(MeasureOf(Angle(A, C, B)), Mul(pi, Div(30.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, B, A)), Mul(pi, Div(60.0, 180.0)))"
+    ],
+    "correct": true
+}

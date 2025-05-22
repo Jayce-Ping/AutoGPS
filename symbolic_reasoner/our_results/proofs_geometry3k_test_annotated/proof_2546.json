@@ -1,0 +1,64 @@
+{
+    "problem_id": "2546",
+    "solved": true,
+    "problem_text": "Find the area of the shaded sector. Round to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), 2)",
+        "Equals(MeasureOf(Angle(W, X, Y)), 52)",
+        "Find(AreaOf(Sector(X, W, Y)))"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "WX",
+        "XY"
+    ],
+    "circle_instances": [
+        "X"
+    ],
+    "point_positions": {
+        "Y": [
+            204.80306905370844,
+            124.55242966751918
+        ],
+        "X": [
+            111.19693094629156,
+            119.43734015345268
+        ],
+        "W": [
+            173.34526854219948,
+            48.849104859335036
+        ]
+    },
+    "problem_choices": [
+        "0.9",
+        "1.8",
+        "10.8",
+        "12.6"
+    ],
+    "choices_precise_value": [
+        0.9,
+        1.8,
+        10.8,
+        12.6
+    ],
+    "problem_answer": 1.8,
+    "total_time": 2.456217,
+    "solution_predicate": "Equals(1.8151424221, AreaOf(Sector(Y, X, W)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (52 / 180) = \u2220YXW, Sector(Y, X, W), W on \u2299(X, radius_0_0), 2 = WX\n\nStep 2:\nTheorem: Area formula of Sector(Y, X, W)\nPremises : Sector(Y, X, W)\nConclusions: Area(Sector(Y, X, W)) = (radius_0_0 ** 2 * \u2220YXW) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : W on \u2299(X, radius_0_0)\nConclusions: radius_0_0 = WX\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = WX, 2 = WX\nConclusions: 2 = radius_0_0\n\nStep 5:\nTheorem: Substitution\nPremises : 2 = radius_0_0, Area(Sector(Y, X, W)) = (radius_0_0 ** 2 * \u2220YXW) / 2, pi * (52 / 180) = \u2220YXW\nConclusions: (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\n\nStep 6:\nTheorem: Evaluate\nPremises : (pi * (52 / 180) * 2 ** 2) / 2 = Area(Sector(Y, X, W))\nConclusions: 1.82 = Area(Sector(Y, X, W))\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, X)",
+        "Line(X, Y)",
+        "Circle(X, radius_0_0)",
+        "PointLiesOnCircle(Y, Circle(X, radius_0_0))",
+        "PointLiesOnCircle(W, Circle(X, radius_0_0))",
+        "Equals(LengthOf(Line(X, W)), 2.0)",
+        "Equals(MeasureOf(Angle(Y, X, W)), Mul(pi, Div(52.0, 180.0)))"
+    ],
+    "correct": true
+}

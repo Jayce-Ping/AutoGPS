@@ -1,0 +1,117 @@
+{
+    "problem_id": "2673",
+    "solved": true,
+    "problem_text": "Find the perimeter of the figure.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, E)), 17)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(B, E)), 12)",
+        "Equals(LengthOf(Line(C, E)), 17)",
+        "Equals(LengthOf(Line(D, E)), 12)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(B, E)))",
+        "Find(PerimeterOf(Quadrilateral(A, B, C, D)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "AC",
+        "EC",
+        "DE",
+        "DB",
+        "EB",
+        "BC",
+        "AB",
+        "AD",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            15.307851239669422,
+            148.36675324675323
+        ],
+        "B": [
+            188.08754208754212,
+            233.19238095238094
+        ],
+        "C": [
+            331.1363636363637,
+            101.45590062111802
+        ],
+        "D": [
+            153.5909090909091,
+            12.241428571428573
+        ],
+        "E": [
+            171.20454545454547,
+            124.80734693877552
+        ]
+    },
+    "problem_choices": [
+        48.0,
+        58.0,
+        68.0,
+        83.235
+    ],
+    "choices_precise_value": [
+        48.0,
+        58.0,
+        68.0,
+        83.235
+    ],
+    "problem_answer": 83.235,
+    "total_time": 150.14078,
+    "solution_predicate": "Equals(83.2346081868, PerimeterOf(Quadrilateral(A, B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BE = DE, Quadrilateral(A, B, C, D), BE, AE \u22a5 BE, E on BD, BE \u22a5 CE, CE \u22a5 DE, 17 = AE, 12 = BE, E on AC, AE = CE, AB, AE\n\nStep 2:\nTheorem: Perimeter Definition\nPremises : Quadrilateral(A, B, C, D)\nConclusions: Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BE \u22a5 CE\nConclusions: pi / 2 = \u2220BEC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : CE \u22a5 DE\nConclusions: pi / 2 = \u2220CED\n\nStep 5:\nTheorem: Evaluate\nPremises : 12 = BE, 17 = AE\nConclusions: 20.81 = SqrtOf(AE ** 2 + BE ** 2)\n\nStep 6:\nTheorem: Vertical Angle Theorem\nPremises : E on AC, E on BD\nConclusions: \u2220BEC = \u2220DEA, \u2220AEB = \u2220CED\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BE, AB, AE\nConclusions: \u25b3ABE\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BEC, pi / 2 = \u2220CED\nConclusions: \u2220BEC = \u2220CED\n\nStep 9:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AE = CE, \u2220BEC = \u2220DEA, BE = DE\nConclusions: \u25b3ADE \u2245 \u25b3CBE\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220BEC, pi / 2 = \u2220CED, \u2220AEB = \u2220CED\nConclusions: \u2220AEB = \u2220BEC\n\nStep 11:\nTheorem: Pythagorean Theorem\nPremises : \u25b3ABE, AE \u22a5 BE\nConclusions: AB = SqrtOf(AE ** 2 + BE ** 2)\n\nStep 12:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220BEC = \u2220CED, BE = DE\nConclusions: \u25b3BCE \u2245 \u25b3DCE\n\nStep 13:\nTheorem: Congruent Definition\nPremises : \u25b3ADE \u2245 \u25b3CBE\nConclusions: AE = CE, AD = BC\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : AE = CE, \u2220AEB = \u2220BEC\nConclusions: \u25b3ABE \u2245 \u25b3CBE\n\nStep 15:\nTheorem: Congruent Definition\nPremises : \u25b3BCE \u2245 \u25b3DCE\nConclusions: BC = CD, BE = DE\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3ABE \u2245 \u25b3CBE\nConclusions: AE = CE, AB = BC\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : AB = BC, AB = SqrtOf(AE ** 2 + BE ** 2)\nConclusions: BC = SqrtOf(AE ** 2 + BE ** 2)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : BC = SqrtOf(AE ** 2 + BE ** 2), 20.81 = SqrtOf(AE ** 2 + BE ** 2)\nConclusions: 20.81 = BC\n\nStep 19:\nTheorem: Solve Linear Equation System\nPremises : 20.81 = BC, Perimeter(Quadrilateral(A, B, C, D)) = AB + AD + BC + CD, AD = BC, BC = CD, AB = BC\nConclusions: 83.23 = Perimeter(Quadrilateral(A, B, C, D))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(A, C)",
+        "Line(E, C)",
+        "Line(D, E)",
+        "Line(D, B)",
+        "Line(E, B)",
+        "Line(B, C)",
+        "Line(A, B)",
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Line(E, B)",
+        "Line(E, C)",
+        "Perpendicular(Line(A, C), Line(D, B))",
+        "PointLiesOnLine(E, Line(A, C))",
+        "PointLiesOnLine(E, Line(D, B))",
+        "Equals(LengthOf(Line(A, E)), 17.0)",
+        "Equals(LengthOf(Line(A, E)), LengthOf(Line(C, E)))",
+        "Equals(LengthOf(Line(B, E)), 12.0)",
+        "Equals(LengthOf(Line(C, E)), 17.0)",
+        "Equals(LengthOf(Line(D, E)), 12.0)",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(B, E)))"
+    ],
+    "correct": true
+}

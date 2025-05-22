@@ -1,0 +1,131 @@
+{
+    "problem_id": "5848",
+    "solved": true,
+    "problem_text": "If AB = 32 and FC = 11, find DE.",
+    "logic_forms": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, B), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnCircle(E, Circle(C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(A,B)),32)",
+        "Equals(LengthOf(Line(F,C)),11)",
+        "Find(LengthOf(Line(D,E)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "D",
+        "F",
+        "C",
+        "B"
+    ],
+    "line_instances": [
+        "AF",
+        "AC",
+        "AB",
+        "FC",
+        "FB",
+        "CB",
+        "EF",
+        "ED",
+        "FD",
+        "CD"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "E": [
+            34.462683982683984,
+            110.01259788900238
+        ],
+        "A": [
+            62.46089795918367,
+            51.69181380417336
+        ],
+        "D": [
+            130.7475457875458,
+            43.23220973782771
+        ],
+        "F": [
+            82.31483870967742,
+            76.88981515041682
+        ],
+        "C": [
+            103.68032786885246,
+            106.6311475409836
+        ],
+        "B": [
+            148.43428571428572,
+            161.30337078651687
+        ]
+    },
+    "problem_choices": [
+        5.5,
+        11.619,
+        16.0,
+        23.238
+    ],
+    "choices_precise_value": [
+        5.5,
+        11.619,
+        16.0,
+        23.238
+    ],
+    "problem_answer": 23.238,
+    "total_time": 123.42639,
+    "solution_predicate": "Equals(23.2379000772, LengthOf(Line(D, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2299(C, radius_C), DF, A on \u2299(C, radius_C), CF \u22a5 DF, F on DE, 11 = CF, CD, B on \u2299(C, radius_C), 32 = AB, C on AB, D on \u2299(C, radius_C), CF\n\nStep 2:\nTheorem: Circle Vertical Theorem\nPremises : CF \u22a5 DF, F on DE, \u2299(C, radius_C)\nConclusions: DF = EF\n\nStep 3:\nTheorem: Line Segment Split\nPremises : F on DE\nConclusions: DE = DF + EF\n\nStep 4:\nTheorem: Diameter Definition\nPremises : A on \u2299(C, radius_C), C on AB, B on \u2299(C, radius_C)\nConclusions: IsDiameterOf(AB, \u2299(C, radius_C))\n\nStep 5:\nTheorem: Point On Circle Def\nPremises : D on \u2299(C, radius_C)\nConclusions: radius_C = CD\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : CF, DF, CD\nConclusions: \u25b3CDF\n\nStep 7:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(AB, \u2299(C, radius_C))\nConclusions: B on \u2299(C, radius_C), A on \u2299(C, radius_C), 2 * radius_C = AB\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : CF \u22a5 DF, \u25b3CDF\nConclusions: DF = SqrtOf(CD ** 2 - CF ** 2)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_C = AB, 32 = AB\nConclusions: 32 = 2 * radius_C\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : DF = EF, DF = SqrtOf(CD ** 2 - CF ** 2)\nConclusions: EF = SqrtOf(CD ** 2 - CF ** 2)\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 32 = 2 * radius_C, radius_C = CD\nConclusions: 16 = CD\n\nStep 12:\nTheorem: Substitution\nPremises : 16 = CD, DF = EF, 11 = CF, DF = SqrtOf(CD ** 2 - CF ** 2)\nConclusions: SqrtOf(16 ** 2 - 11 ** 2) = EF\n\nStep 13:\nTheorem: Evaluate\nPremises : 16 = CD, 11 = CF\nConclusions: 11.62 = SqrtOf(CD ** 2 - CF ** 2)\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : EF = SqrtOf(CD ** 2 - CF ** 2), SqrtOf(16 ** 2 - 11 ** 2) = EF\nConclusions: SqrtOf(16 ** 2 - 11 ** 2) = SqrtOf(CD ** 2 - CF ** 2)\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 11.62 = SqrtOf(CD ** 2 - CF ** 2), SqrtOf(16 ** 2 - 11 ** 2) = SqrtOf(CD ** 2 - CF ** 2)\nConclusions: 11.62 = SqrtOf(16 ** 2 - 11 ** 2)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 11.62 = SqrtOf(16 ** 2 - 11 ** 2), SqrtOf(16 ** 2 - 11 ** 2) = EF\nConclusions: 11.62 = EF\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : DF = EF, 11.62 = EF\nConclusions: 11.62 = DF\n\nStep 18:\nTheorem: Evaluate\nPremises : 11.62 = DF, 11.62 = EF\nConclusions: 23.24 = DF + EF\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 23.24 = DF + EF, DE = DF + EF\nConclusions: 23.24 = DE\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, F)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(F, C)",
+        "Line(F, B)",
+        "Line(C, B)",
+        "Line(E, F)",
+        "Line(E, D)",
+        "Line(F, D)",
+        "Line(C, D)",
+        "Circle(C, radius_C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, F)",
+        "Line(C, B)",
+        "Line(D, C)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(F, B)",
+        "Line(F, C)",
+        "Line(F, D)",
+        "Perpendicular(Line(A, B), Line(E, D))",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnCircle(E, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, B))",
+        "PointLiesOnLine(C, Line(F, B))",
+        "PointLiesOnLine(F, Line(A, B))",
+        "PointLiesOnLine(F, Line(A, C))",
+        "PointLiesOnLine(F, Line(E, D))",
+        "Equals(LengthOf(Line(A, B)), 32.0)",
+        "Equals(LengthOf(Line(F, C)), 11.0)"
+    ],
+    "correct": true
+}

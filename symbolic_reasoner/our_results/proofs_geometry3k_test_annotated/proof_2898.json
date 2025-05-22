@@ -1,0 +1,127 @@
+{
+    "problem_id": "2898",
+    "solved": true,
+    "problem_text": "Find the area of the figure to the nearest tenth.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(D, Line(C, H))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_1_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_1_0))",
+        "Perpendicular(Line(D, E), Line(F, E))",
+        "Equals(LengthOf(Line(A, F)), 8)",
+        "Equals(LengthOf(Line(D, E)), 3)",
+        "Find(Add(AreaOf(Rectangle(A, F, H, C)), HalfOf(AreaOf(Circle(B))), HalfOf(AreaOf(Circle(G)))))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "line_instances": [
+        "CB",
+        "CA",
+        "BA",
+        "DE",
+        "HG",
+        "HF",
+        "GF",
+        "AE",
+        "AF",
+        "EF",
+        "CD",
+        "CH",
+        "DH"
+    ],
+    "circle_instances": [
+        "B",
+        "G"
+    ],
+    "point_positions": {
+        "A": [
+            60.18518518518518,
+            119.5679012345679
+        ],
+        "B": [
+            60.18518518518518,
+            69.5679012345679
+        ],
+        "C": [
+            60.18518518518518,
+            17.71604938271605
+        ],
+        "D": [
+            193.5185185185185,
+            17.407407407407405
+        ],
+        "E": [
+            193.40277777777777,
+            120.375
+        ],
+        "F": [
+            325.61728395061726,
+            119.5679012345679
+        ],
+        "G": [
+            325.9259259259259,
+            69.5679012345679
+        ],
+        "H": [
+            325.3086419753086,
+            18.024691358024683
+        ]
+    },
+    "problem_choices": [
+        "24",
+        "31.1",
+        "38.1",
+        "52.3"
+    ],
+    "choices_precise_value": [
+        24.0,
+        31.1,
+        38.1,
+        52.3
+    ],
+    "problem_answer": 31.1,
+    "total_time": 119.935551,
+    "solution_predicate": "Equals(31.0685834706, Add(AreaOf(Rectangle(A, F, H, C)), Div(AreaOf(Circle(B, radius_0_0)), 2.0), Div(AreaOf(Circle(G, radius_1_0)), 2.0)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: DE \u22a5 EF, Area(\u2299(B, radius_0_0)), FH, 3 = DE, H on \u2299(G, radius_1_0), DE, Rectangle(A, C, H, F), 3.14 = pi, G on FH, 8 = AF, B on AC, Area(\u2299(G, radius_1_0)), EF, F on \u2299(G, radius_1_0), DH, A on \u2299(B, radius_0_0), C on \u2299(B, radius_0_0), Area(Rectangle(A, C, H, F))\n\nStep 2:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(B, radius_0_0))\nConclusions: pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : H on \u2299(G, radius_1_0)\nConclusions: radius_1_0 = GH\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(A, C, H, F)\nConclusions: CH \u22a5 FH, AF \u22a5 FH\n\nStep 5:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, C, H, F)\nConclusions: Parallelogram(A, C, H, F)\n\nStep 6:\nTheorem: Line Segment Split\nPremises : G on FH\nConclusions: FH = FG + GH\n\nStep 7:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 8:\nTheorem: Circle Area Formula\nPremises : Area(\u2299(G, radius_1_0))\nConclusions: pi * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0))\n\nStep 9:\nTheorem: Diameter Definition\nPremises : G on FH, F on \u2299(G, radius_1_0), H on \u2299(G, radius_1_0)\nConclusions: IsDiameterOf(FH, \u2299(G, radius_1_0))\n\nStep 10:\nTheorem: Point On Circle Def\nPremises : F on \u2299(G, radius_1_0)\nConclusions: radius_1_0 = FG\n\nStep 11:\nTheorem: Point On Circle Def\nPremises : A on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = AB\n\nStep 12:\nTheorem: Point On Circle Def\nPremises : C on \u2299(B, radius_0_0)\nConclusions: radius_0_0 = BC\n\nStep 13:\nTheorem: Rectangle Area Formula\nPremises : Area(Rectangle(A, C, H, F))\nConclusions: Area(Rectangle(A, C, H, F)) = AC * CH\n\nStep 14:\nTheorem: Substitution\nPremises : pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), 3.14 = pi\nConclusions: 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\n\nStep 15:\nTheorem: Perpendicular Extension\nPremises : CH \u22a5 FH\nConclusions: DH \u22a5 FH\n\nStep 16:\nTheorem: Perpendicular Extension\nPremises : AF \u22a5 FH\nConclusions: AF \u22a5 FG\n\nStep 17:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, C, H, F)\nConclusions: AF = CH, AC = FH\n\nStep 18:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, C, H, F)\nConclusions: AF || CH\n\nStep 19:\nTheorem: Substitution\nPremises : pi * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0)), 3.14 = pi\nConclusions: 3.14 * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0))\n\nStep 20:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(FH, \u2299(G, radius_1_0))\nConclusions: radius_1_0 = GH, F on \u2299(G, radius_1_0), H on \u2299(G, radius_1_0), 2 * radius_1_0 = FH, radius_1_0 = FG\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : radius_1_0 = GH, radius_1_0 = FG\nConclusions: FG = GH\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = AB, radius_0_0 = BC\nConclusions: AB = BC\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), pi * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0))\nConclusions: 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\n\nStep 24:\nTheorem: Perpendicular Extension\nPremises : AF \u22a5 FG\nConclusions: EF \u22a5 FH\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AF, AF = CH\nConclusions: 8 = CH\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : pi * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0)), 3.14 * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0))\nConclusions: 3.14 * radius_1_0 ** 2 = pi * radius_1_0 ** 2\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_1_0 = FH, FH = FG + GH\nConclusions: 2 * radius_1_0 = FG + GH\n\nStep 28:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_1_0 = FH, AC = FH\nConclusions: 2 * radius_1_0 = AC\n\nStep 29:\nTheorem: Perpendicular to Parallel\nPremises : DE \u22a5 EF, EF \u22a5 FH\nConclusions: DE || HF\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : AC = AB + BC, 2 * radius_1_0 = AC\nConclusions: 2 * radius_1_0 = AB + BC\n\nStep 31:\nTheorem: Definition of Rectangle\nPremises : DE, FH, DH \u22a5 FH, AF || CH, DH, EF, DE \u22a5 EF, EF \u22a5 FH, DE || HF\nConclusions: Rectangle(D, E, F, H)\n\nStep 32:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(D, E, F, H)\nConclusions: Parallelogram(D, E, F, H)\n\nStep 33:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(D, E, F, H)\nConclusions: DE = FH\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 2 * radius_1_0 = FH, 3 = DE, DE = FH\nConclusions: 3 = 2 * radius_1_0\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 3 = 2 * radius_1_0, 2 * radius_1_0 = AC\nConclusions: 3 = AC\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 3 = 2 * radius_1_0, 2 * radius_1_0 = FG + GH\nConclusions: 3 = FG + GH\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : 3 = 2 * radius_1_0, 2 * radius_1_0 = AB + BC\nConclusions: 3 = AB + BC\n\nStep 38:\nTheorem: Substitution\nPremises : 8 = CH, 3 = AC, Area(Rectangle(A, C, H, F)) = AC * CH\nConclusions: 3 * 8 = Area(Rectangle(A, C, H, F))\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 3 = FG + GH, FG = GH\nConclusions: 1.5 = FG\n\nStep 40:\nTheorem: Solve Linear Equation System\nPremises : 3 = AB + BC, AB = BC\nConclusions: 1.5 = BC\n\nStep 41:\nTheorem: Solve Linear Equation System\nPremises : 3 * 8 = Area(Rectangle(A, C, H, F))\nConclusions: 24 = Area(Rectangle(A, C, H, F))\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : 1.5 = FG, radius_1_0 = FG\nConclusions: 1.5 = radius_1_0\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = BC, 1.5 = BC\nConclusions: 1.5 = radius_0_0\n\nStep 44:\nTheorem: Evaluate\nPremises : 1.5 = radius_1_0, 3.14 = pi\nConclusions: 7.07 = pi * radius_1_0 ** 2\n\nStep 45:\nTheorem: Evaluate\nPremises : 1.5 = radius_0_0, 3.14 = pi\nConclusions: 7.07 = pi * radius_0_0 ** 2\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_1_0 ** 2 = pi * radius_1_0 ** 2, 7.07 = pi * radius_1_0 ** 2\nConclusions: 7.07 = 3.14 * radius_1_0 ** 2\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 7.07 = pi * radius_0_0 ** 2, 3.14 * radius_0_0 ** 2 = pi * radius_0_0 ** 2\nConclusions: 7.07 = 3.14 * radius_0_0 ** 2\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 7.07 = 3.14 * radius_1_0 ** 2, 3.14 * radius_1_0 ** 2 = Area(\u2299(G, radius_1_0))\nConclusions: 7.07 = Area(\u2299(G, radius_1_0))\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * radius_0_0 ** 2 = Area(\u2299(B, radius_0_0)), 7.07 = 3.14 * radius_0_0 ** 2\nConclusions: 7.07 = Area(\u2299(B, radius_0_0))\n\nStep 50:\nTheorem: Evaluate\nPremises : 7.07 = Area(\u2299(G, radius_1_0)), 7.07 = Area(\u2299(B, radius_0_0)), 24 = Area(Rectangle(A, C, H, F))\nConclusions: 31.07 = Area(Rectangle(A, C, H, F)) + Area(\u2299(B, radius_0_0)) / 2 + Area(\u2299(G, radius_1_0)) / 2\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(C, A)",
+        "Line(B, A)",
+        "Line(D, E)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(G, F)",
+        "Line(A, E)",
+        "Line(A, F)",
+        "Line(E, F)",
+        "Line(C, D)",
+        "Line(C, H)",
+        "Line(D, H)",
+        "Circle(B, radius_0_0)",
+        "Circle(G, radius_1_0)",
+        "PointLiesOnLine(B, Line(C, A))",
+        "PointLiesOnLine(G, Line(H, F))",
+        "PointLiesOnLine(E, Line(A, F))",
+        "PointLiesOnLine(D, Line(C, H))",
+        "PointLiesOnCircle(A, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(C, Circle(B, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(G, radius_1_0))",
+        "PointLiesOnCircle(H, Circle(G, radius_1_0))",
+        "Perpendicular(Line(D, E), Line(F, E))",
+        "Equals(LengthOf(Line(A, F)), 8.0)",
+        "Equals(LengthOf(Line(D, E)), 3.0)"
+    ],
+    "correct": true
+}

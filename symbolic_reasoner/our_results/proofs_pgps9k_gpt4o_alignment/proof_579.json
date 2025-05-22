@@ -1,0 +1,113 @@
+{
+    "problem_id": "579",
+    "solved": true,
+    "problem_text": "Find x so that the quadrilateral is a parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 3y+5)",
+        "Equals(LengthOf(Line(B, C)), 4y-11)",
+        "Equals(LengthOf(Line(D, C)), 2x+4)",
+        "Equals(LengthOf(Line(E, C)), 2y+3)",
+        "Find(x)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Parallelogram(A, B, D, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AE",
+        "BC",
+        "BE",
+        "CE",
+        "AC",
+        "AD",
+        "CD",
+        "BA",
+        "BD",
+        "DE"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            58.13377777777779,
+            52.11019607843137
+        ],
+        "B": [
+            30.360000000000003,
+            254.0794117647059
+        ],
+        "C": [
+            253.84333333333333,
+            140.96764705882353
+        ],
+        "D": [
+            449.49666666666667,
+            230.44411764705882
+        ],
+        "E": [
+            477.3266666666667,
+            27.855882352941176
+        ]
+    },
+    "problem_choices": [
+        11.0,
+        25.0,
+        26.0,
+        33.0
+    ],
+    "choices_precise_value": [
+        11.0,
+        25.0,
+        26.0,
+        33.0
+    ],
+    "problem_answer": 11.0,
+    "total_time": 57.188146,
+    "solution_predicate": "Equals(11.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 3 + 2 * y = CE, 4 * y - 11 = BC, C on AD, C on BE, 4 + 2 * x = CD, 5 + 3 * y = AC, Parallelogram(A, B, D, E)\n\nStep 2:\nTheorem: Parallelogram Diagonals Bisect\nPremises : C on BE, Parallelogram(A, B, D, E), C on AD\nConclusions: BC = CE, AC = CD\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 4 * y - 11 = BC, BC = CE, 3 + 2 * y = CE\nConclusions: 3 + 2 * y = 4 * y - 11\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 4 + 2 * x = CD, AC = CD\nConclusions: 4 + 2 * x = AC\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 5 + 3 * y = AC, 4 + 2 * x = AC\nConclusions: 4 + 2 * x = 5 + 3 * y\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : 3 + 2 * y = 4 * y - 11, 4 + 2 * x = 5 + 3 * y\nConclusions: 11 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, E)",
+        "Line(C, E)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, A)",
+        "Line(B, D)",
+        "Line(D, E)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(B, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "Parallelogram(A, B, D, E)",
+        "PointLiesOnLine(C, Line(A, D))",
+        "PointLiesOnLine(C, Line(B, E))",
+        "Equals(LengthOf(Line(A, C)), Add(Mul(3.0, y), 5.0))",
+        "Equals(LengthOf(Line(B, C)), Sub(Mul(4.0, y), 11.0))",
+        "Equals(LengthOf(Line(D, C)), Add(Mul(2.0, x), 4.0))",
+        "Equals(LengthOf(Line(E, C)), Add(Mul(2.0, y), 3.0))"
+    ],
+    "correct": true
+}

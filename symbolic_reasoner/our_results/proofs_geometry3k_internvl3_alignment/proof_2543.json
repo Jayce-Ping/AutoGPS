@@ -1,0 +1,110 @@
+{
+    "problem_id": "2543",
+    "solved": true,
+    "problem_text": "Find the perimeter of \\triangle B C D, if \\triangle B C D \\sim \\triangle F D E, C D = 12, F D = 5, F E = 4, and D E = 8.",
+    "logic_forms": [
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Equals(LengthOf(Line(D, F)), 5)",
+        "Equals(LengthOf(Line(E, F)), 4)",
+        "Equals(LengthOf(Line(C, D)), 12)",
+        "Equals(LengthOf(Line(E, D)), 8)",
+        "Similar(Triangle(B,C,D),Triangle(F,D,E))",
+        "Equals(LengthOf(Line(C,D)),12)",
+        "Equals(LengthOf(Line(F,D)),5)",
+        "Equals(LengthOf(Line(F,E)),4)",
+        "Equals(LengthOf(Line(D,E)),8)",
+        "Find(PerimeterOf(Triangle(B,C,D)))"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "F",
+        "D",
+        "A",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "AF",
+        "AE",
+        "FE",
+        "CD",
+        "CE",
+        "DE",
+        "FD",
+        "BD"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            128.23529411764707,
+            113.11764705882354
+        ],
+        "C": [
+            61.1764705882353,
+            212.23529411764707
+        ],
+        "F": [
+            262.3529411764706,
+            47.82352941176471
+        ],
+        "D": [
+            220.29411764705884,
+            112.82352941176471
+        ],
+        "A": [
+            171.76470588235296,
+            47.82352941176471
+        ],
+        "E": [
+            325.5882352941177,
+            46.94117647058824
+        ]
+    },
+    "problem_choices": [
+        "21.3",
+        "25.5",
+        "29.8",
+        "34"
+    ],
+    "choices_precise_value": [
+        21.3,
+        25.5,
+        29.8,
+        34.0
+    ],
+    "problem_answer": 25.5,
+    "total_time": 81.931597,
+    "solution_predicate": "Equals(25.5, PerimeterOf(Triangle(B, C, D)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = DF, 4 = EF, \u2220DCA, \u2220DEA, D on CE, 8 = DE, \u2220AED, F on AE, \u2220ECA, \u2220AEC, B on AC, 12 = CD, \u25b3DEF, \u2220CEA, \u25b3BCD ~ \u25b3FDE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : D on CE\nConclusions: CE = CD + DE\n\nStep 3:\nTheorem: Evaluate\nPremises : 4 = EF, 8 = DE, 5 = DF\nConclusions: 17 = DE + DF + EF\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220DEA, F on AE\nConclusions: \u2220DEA = \u2220DEF\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220AED, F on AE\nConclusions: \u2220AED = \u2220FED\n\nStep 6:\nTheorem: Same Angle\nPremises : D on CE, \u2220ECA\nConclusions: \u2220DCA = \u2220ECA\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220AEC, D on CE\nConclusions: \u2220AEC = \u2220AED\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220AEC, F on AE\nConclusions: \u2220AEC = \u2220FEC\n\nStep 9:\nTheorem: Same Angle\nPremises : B on AC, \u2220DCA\nConclusions: \u2220DCA = \u2220DCB\n\nStep 10:\nTheorem: Perimeter Definition\nPremises : \u25b3DEF\nConclusions: Perimeter(\u25b3DEF) = DE + DF + EF\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220CEA, D on CE\nConclusions: \u2220CEA = \u2220DEA\n\nStep 12:\nTheorem: Similar Definition\nPremises : \u25b3BCD ~ \u25b3FDE\nConclusions: \u2220CDB = \u2220DEF, \u2220DCB = \u2220EDF\n\nStep 13:\nTheorem: Substitution\nPremises : CE = CD + DE, 8 = DE, 12 = CD\nConclusions: 12 + 8 = CE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220FEC, \u2220AEC = \u2220AED\nConclusions: \u2220AED = \u2220FEC\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(\u25b3DEF) = DE + DF + EF, 17 = DE + DF + EF\nConclusions: 17 = Perimeter(\u25b3DEF)\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEA = \u2220DEA, \u2220DEA = \u2220DEF\nConclusions: \u2220CEA = \u2220DEF\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, \u2220DCB = \u2220EDF\nConclusions: \u2220DCA = \u2220EDF\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 12 + 8 = CE\nConclusions: 20 = CE\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AED = \u2220FED, \u2220AED = \u2220FEC\nConclusions: \u2220FEC = \u2220FED\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : \u2220CEA = \u2220DEF, \u2220CDB = \u2220DEF\nConclusions: \u2220CDB = \u2220CEA\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220ECA, \u2220DCA = \u2220EDF\nConclusions: \u2220ECA = \u2220EDF\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AEC = \u2220FEC, \u2220FEC = \u2220FED\nConclusions: \u2220AEC = \u2220FED\n\nStep 23:\nTheorem: Parallel Lines Criteria by Corresponding Angles\nPremises : \u2220CDB = \u2220CEA\nConclusions: AE || BD\n\nStep 24:\nTheorem: Parallel Lines Criteria by Corresponding Angles\nPremises : \u2220ECA = \u2220EDF\nConclusions: AC || FD\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : \u2220DCA = \u2220DCB, \u2220ECA = \u2220EDF, \u2220DCA = \u2220EDF\nConclusions: \u2220DCB = \u2220ECA\n\nStep 26:\nTheorem: Corresponding Angle Theorem\nPremises : AE || BD\nConclusions: \u2220CAE = \u2220CBD\n\nStep 27:\nTheorem: Corresponding Angle Theorem\nPremises : AC || FD\nConclusions: \u2220EAC = \u2220EFD\n\nStep 28:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220DCB = \u2220ECA, \u2220CDB = \u2220CEA, \u2220CAE = \u2220CBD\nConclusions: \u25b3ACE ~ \u25b3BCD\n\nStep 29:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ECA = \u2220EDF, \u2220AEC = \u2220FED, \u2220EAC = \u2220EFD\nConclusions: \u25b3ACE ~ \u25b3FDE\n\nStep 30:\nTheorem: Similar Definition\nPremises : \u25b3ACE ~ \u25b3BCD\nConclusions: \u2220CAE = \u2220CBD, CE / CD = Perimeter(\u25b3ACE) / Perimeter(\u25b3BCD), \u2220DCB = \u2220ECA\n\nStep 31:\nTheorem: Similar Definition\nPremises : \u25b3ACE ~ \u25b3FDE\nConclusions: sim_ratio_triangle_a_c_e_triangle_f_d_e = CE / DE, \u2220AEC = \u2220FED, \u2220EAC = \u2220EFD, \u2220CEA = \u2220DEF, sim_ratio_triangle_a_c_e_triangle_f_d_e = Perimeter(\u25b3ACE) / Perimeter(\u25b3DEF)\n\nStep 32:\nTheorem: Substitution\nPremises : 12 = CD, CE / CD = Perimeter(\u25b3ACE) / Perimeter(\u25b3BCD), 20 = CE\nConclusions: 20 / 12 = Perimeter(\u25b3ACE) / Perimeter(\u25b3BCD)\n\nStep 33:\nTheorem: Substitution\nPremises : sim_ratio_triangle_a_c_e_triangle_f_d_e = CE / DE, 8 = DE, 20 = CE\nConclusions: 20 / 8 = sim_ratio_triangle_a_c_e_triangle_f_d_e\n\nStep 34:\nTheorem: Substitution\nPremises : 17 = Perimeter(\u25b3DEF), sim_ratio_triangle_a_c_e_triangle_f_d_e = Perimeter(\u25b3ACE) / Perimeter(\u25b3DEF)\nConclusions: sim_ratio_triangle_a_c_e_triangle_f_d_e = Perimeter(\u25b3ACE) / 17\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : sim_ratio_triangle_a_c_e_triangle_f_d_e = Perimeter(\u25b3ACE) / 17, 20 / 8 = sim_ratio_triangle_a_c_e_triangle_f_d_e\nConclusions: 20 / 8 = Perimeter(\u25b3ACE) / 17\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 20 / 12 = Perimeter(\u25b3ACE) / Perimeter(\u25b3BCD), 20 / 8 = Perimeter(\u25b3ACE) / 17\nConclusions: 25.5 = Perimeter(\u25b3BCD)\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(A, F)",
+        "Line(A, E)",
+        "Line(F, E)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(F, D)",
+        "Line(B, D)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "PointLiesOnLine(F, Line(A, E))",
+        "PointLiesOnLine(D, Line(C, E))",
+        "Similar(Triangle(B, C, D), Triangle(F, D, E))",
+        "Equals(LengthOf(Line(D, F)), 5.0)",
+        "Equals(LengthOf(Line(E, F)), 4.0)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(E, D)), 8.0)",
+        "Equals(LengthOf(Line(C, D)), 12.0)",
+        "Equals(LengthOf(Line(F, D)), 5.0)",
+        "Equals(LengthOf(Line(F, E)), 4.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)"
+    ],
+    "correct": true
+}

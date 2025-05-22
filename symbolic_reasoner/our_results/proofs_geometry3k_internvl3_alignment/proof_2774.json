@@ -1,0 +1,63 @@
+{
+    "problem_id": "2774",
+    "solved": true,
+    "problem_text": "Find x. Round to the nearest tenth.",
+    "logic_forms": [
+        "Perpendicular(Line(N, O), Line(P, O))",
+        "Equals(LengthOf(Line(N, P)), 20\\sqrt{2})",
+        "Equals(LengthOf(Line(N, O)), x)",
+        "Equals(MeasureOf(Angle(O, P, N)), 38)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "P",
+        "N",
+        "O"
+    ],
+    "line_instances": [
+        "NO",
+        "OP",
+        "NP"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "P": [
+            328.1756756756757,
+            272.2972972972973
+        ],
+        "N": [
+            45.74324324324324,
+            123.3108108108108
+        ],
+        "O": [
+            224.1216216216216,
+            43.24324324324324
+        ]
+    },
+    "problem_choices": [
+        "17.4",
+        "22.1",
+        "22.3",
+        "45.9"
+    ],
+    "choices_precise_value": [
+        17.4,
+        22.1,
+        22.3,
+        45.9
+    ],
+    "problem_answer": 17.4,
+    "total_time": 17.421045,
+    "solution_predicate": "Equals(17.4135361654, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220PNO, NO \u22a5 OP, 20 * SqrtOf(2) = NP, x = NO, NO, NP, cos(\u2220OPN), 3.14 = pi, OP, pi * (38 / 180) = \u2220OPN\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : NO \u22a5 OP\nConclusions: pi / 2 = \u2220NOP\n\nStep 3:\nTheorem: Solve Linear Equation System\nPremises : 20 * SqrtOf(2) = NP\nConclusions: 28.28 = NP\n\nStep 4:\nTheorem: Angle Cos Definition\nPremises : NO \u22a5 OP, cos(\u2220OPN)\nConclusions: OP / NP = cos(\u2220OPN)\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : NO, NP, OP\nConclusions: \u25b3NOP\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : pi * (38 / 180) = \u2220OPN, 3.14 = pi\nConclusions: 0.66 = \u2220OPN\n\nStep 7:\nTheorem: Interior Angle Sum Theorem for Triangle(N, O, P)\nPremises : \u25b3NOP\nConclusions: pi = \u2220NOP + \u2220OPN + \u2220PNO\n\nStep 8:\nTheorem: Tan Function Definition\nPremises : \u2220PNO, NO \u22a5 OP, \u25b3NOP\nConclusions: OP / NO = tan(\u2220PNO)\n\nStep 9:\nTheorem: Substitution\nPremises : 28.28 = NP, OP / NP = cos(\u2220OPN), 0.66 = \u2220OPN\nConclusions: cos(0.66) = OP / 28.28\n\nStep 10:\nTheorem: Substitution\nPremises : pi / 2 = \u2220NOP, pi * (38 / 180) = \u2220OPN, 3.14 = pi, pi = \u2220NOP + \u2220OPN + \u2220PNO\nConclusions: 3.14 = 3.14 / 2 + pi * (38 / 180) + \u2220PNO\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + pi * (38 / 180) + \u2220PNO, 3.14 = pi\nConclusions: 0.91 = \u2220PNO\n\nStep 12:\nTheorem: Evaluate\nPremises : 0.91 = \u2220PNO\nConclusions: 1.28 = tan(\u2220PNO)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 1.28 = tan(\u2220PNO), OP / NO = tan(\u2220PNO)\nConclusions: 1.28 = OP / NO\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : cos(0.66) = OP / 28.28, 1.28 = OP / NO\nConclusions: 17.41 = NO\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : x = NO, 17.41 = NO\nConclusions: 17.41 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, O)",
+        "Line(O, P)",
+        "Line(N, P)",
+        "Perpendicular(Line(N, O), Line(P, O))",
+        "Equals(LengthOf(Line(N, P)), Mul(20.0, SqrtOf(2.0)))",
+        "Equals(LengthOf(Line(N, O)), x)",
+        "Equals(MeasureOf(Angle(O, P, N)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

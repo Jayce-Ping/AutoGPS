@@ -1,0 +1,103 @@
+{
+    "problem_id": "5397",
+    "solved": true,
+    "problem_text": "What is the perimeter of the figure?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 14)",
+        "Equals(LengthOf(Line(D, E)), 8)",
+        "Equals(LengthOf(Line(E, A)), 8)",
+        "Equals(LengthOf(Line(E, A)), LengthOf(Line(D, E)))",
+        "Find(PerimeterOf(Trapezoid(A, E, D, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, E), Line(A, C))",
+        "Perpendicular(Line(E, D), Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DE",
+        "EA",
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            95.86252478519498,
+            59.86285714285714
+        ],
+        "B": [
+            263.81758096497026,
+            59.86285714285714
+        ],
+        "C": [
+            399.1011235955056,
+            59.51278195488722
+        ],
+        "D": [
+            263.35422826729746,
+            227.46135338345863
+        ],
+        "E": [
+            95.86252478519498,
+            227.81142857142856
+        ]
+    },
+    "problem_choices": [
+        30.0,
+        35.292,
+        40.0,
+        44.0
+    ],
+    "choices_precise_value": [
+        30.0,
+        35.292,
+        40.0,
+        44.0
+    ],
+    "problem_answer": 40.0,
+    "total_time": 53.733978,
+    "solution_predicate": "Equals(40.0, PerimeterOf(Trapezoid(A, E, D, C)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AE, B on AC, 14 = AC, AE = DE, AB, CD, AB \u22a5 BD, DE, 8 = AE, AE \u22a5 DE, BC \u22a5 BD, Trapezoid(A, C, D, E), 8 = DE, BC, 3.14 = pi, BD, AB \u22a5 AE, AC \u22a5 AE\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : BC \u22a5 BD\nConclusions: pi / 2 = \u2220DBC\n\nStep 4:\nTheorem: Perimeter Definition\nPremises : Trapezoid(A, C, D, E)\nConclusions: Perimeter(Trapezoid(A, C, D, E)) = AC + AE + CD + DE\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : BD, CD, BC\nConclusions: \u25b3BCD\n\nStep 6:\nTheorem: Perpendicular to Parallel\nPremises : AB \u22a5 BD, AB \u22a5 AE\nConclusions: AE || BD\n\nStep 7:\nTheorem: Perpendicular to Parallel\nPremises : AC \u22a5 AE, AE \u22a5 DE\nConclusions: AC || ED\n\nStep 8:\nTheorem: Law of Cosines\nPremises : \u25b3BCD\nConclusions: (BC ** 2 + BD ** 2) - CD ** 2 = 2 * BC * BD * cos(\u2220DBC)\n\nStep 9:\nTheorem: Definition of Square\nPremises : AE, AC || ED, AB \u22a5 BD, DE, AB \u22a5 AE, AE \u22a5 DE, AE || BD, AE = DE, AB, BD\nConclusions: Square(A, B, D, E)\n\nStep 10:\nTheorem: Square is Rectangle\nPremises : Square(A, B, D, E)\nConclusions: Rectangle(A, B, D, E)\n\nStep 11:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, E)\nConclusions: Parallelogram(A, B, D, E)\n\nStep 12:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(A, B, D, E)\nConclusions: AE = BD, AB = DE\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 8 = AE, AE = BD\nConclusions: 8 = BD\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : 8 = DE, AB = DE\nConclusions: 8 = AB\n\nStep 15:\nTheorem: Substitution\nPremises : (BC ** 2 + BD ** 2) - CD ** 2 = 2 * BC * BD * cos(\u2220DBC), 8 = BD, pi / 2 = \u2220DBC\nConclusions: (8 ** 2 + BC ** 2) - CD ** 2 = 2 * 8 * cos(pi / 2) * BC\n\nStep 16:\nTheorem: Substitution\nPremises : 14 = AC, AC = AB + BC, 8 = AB\nConclusions: 14 = 8 + BC\n\nStep 17:\nTheorem: Solve Linear Equation System\nPremises : 14 = 8 + BC\nConclusions: 6 = BC\n\nStep 18:\nTheorem: Substitution\nPremises : (8 ** 2 + BC ** 2) - CD ** 2 = 2 * 8 * cos(pi / 2) * BC, 3.14 = pi, 6 = BC\nConclusions: 2 * 6 * 8 * cos(3.14 / 2) = (6 ** 2 + 8 ** 2) - CD ** 2\n\nStep 19:\nTheorem: Solve Univariate Equation\nPremises : 2 * 6 * 8 * cos(3.14 / 2) = (6 ** 2 + 8 ** 2) - CD ** 2\nConclusions: 10 = CD\n\nStep 20:\nTheorem: Evaluate\nPremises : 8 = DE, 14 = AC, 10 = CD, 8 = AE\nConclusions: 40 = AC + AE + CD + DE\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : Perimeter(Trapezoid(A, C, D, E)) = AC + AE + CD + DE, 40 = AC + AE + CD + DE\nConclusions: 40 = Perimeter(Trapezoid(A, C, D, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, E)",
+        "Line(E, A)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(E, D)",
+        "Perpendicular(Line(A, C), Line(B, D))",
+        "Perpendicular(Line(A, E), Line(A, C))",
+        "Perpendicular(Line(E, D), Line(A, E))",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 14.0)",
+        "Equals(LengthOf(Line(D, E)), 8.0)",
+        "Equals(LengthOf(Line(E, A)), 8.0)",
+        "Equals(LengthOf(Line(E, A)), LengthOf(Line(D, E)))"
+    ],
+    "correct": true
+}

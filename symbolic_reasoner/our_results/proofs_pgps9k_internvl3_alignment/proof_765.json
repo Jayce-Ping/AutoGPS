@@ -1,0 +1,93 @@
+{
+    "problem_id": "765",
+    "solved": true,
+    "problem_text": "Find m \\widehat BCD.",
+    "logic_forms": [
+        "Equals(MeasureOf(Arc(B, D)), 154)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnCircle(B, Circle(F))",
+        "PointLiesOnCircle(C, Circle(F))",
+        "PointLiesOnCircle(D, Circle(F))",
+        "PointLiesOnLine(A, Line(E, B))",
+        "Find(MeasureOf(Arc(B,C,D)))"
+    ],
+    "point_instances": [
+        "E",
+        "A",
+        "B",
+        "D",
+        "C",
+        "F"
+    ],
+    "line_instances": [
+        "EA",
+        "EB",
+        "AB",
+        "BD"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "E": [
+            71.08189655172414,
+            360.0133333333334
+        ],
+        "A": [
+            133.50161637931035,
+            359.45500000000004
+        ],
+        "B": [
+            320.442118226601,
+            359.12
+        ],
+        "D": [
+            412.21551724137936,
+            103.75428571428573
+        ],
+        "C": [
+            227.52155172413794,
+            134.0
+        ],
+        "F": [
+            337.728323699422,
+            219.84971098265896
+        ]
+    },
+    "problem_choices": [
+        52.0,
+        206.0,
+        283.0,
+        308.0
+    ],
+    "choices_precise_value": [
+        52.0,
+        206.0,
+        283.0,
+        308.0
+    ],
+    "problem_answer": 206.0,
+    "total_time": 14.317284,
+    "solution_predicate": "Equals(3.5953782591, MeasureOf(Arc(D, F, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (154 / 180) = Arc(BFD), 3.14 = pi, \u2220DFB, Arc(DFB), Arc(BFD)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220DFB\nConclusions: \u2220DFB = 2 * pi - \u2220BFD\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(DFB)\nConclusions: \u2220DFB = Arc(DFB)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BFD)\nConclusions: \u2220BFD = Arc(BFD)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi * (154 / 180) = Arc(BFD), \u2220BFD = Arc(BFD)\nConclusions: pi * (154 / 180) = \u2220BFD\n\nStep 6:\nTheorem: Substitution\nPremises : \u2220DFB = Arc(DFB), 3.14 = pi, pi * (154 / 180) = \u2220BFD, \u2220DFB = 2 * pi - \u2220BFD\nConclusions: 2 * 3.14 - pi * (154 / 180) = Arc(DFB)\n\nStep 7:\nTheorem: Evaluate\nPremises : 2 * 3.14 - pi * (154 / 180) = Arc(DFB)\nConclusions: 3.6 = Arc(DFB)\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(E, B)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Circle(F, radius_F)",
+        "Line(A, B)",
+        "Line(D, B)",
+        "Line(E, A)",
+        "Line(E, B)",
+        "PointLiesOnCircle(B, Circle(F, radius_F))",
+        "PointLiesOnCircle(C, Circle(F, radius_F))",
+        "PointLiesOnCircle(D, Circle(F, radius_F))",
+        "PointLiesOnLine(A, Line(E, B))",
+        "Equals(MeasureOf(Arc(B, F, D)), Mul(pi, Div(154.0, 180.0)))"
+    ],
+    "correct": true
+}

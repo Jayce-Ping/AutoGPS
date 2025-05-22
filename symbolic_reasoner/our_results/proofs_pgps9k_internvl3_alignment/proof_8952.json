@@ -1,0 +1,105 @@
+{
+    "problem_id": "8952",
+    "solved": true,
+    "problem_text": "MN \\parallel BC. Solve for x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, M)), 4x-6)",
+        "Equals(LengthOf(Line(A, N)), 3x-2)",
+        "Equals(LengthOf(Line(B, M)), 24)",
+        "Equals(LengthOf(Line(C, N)), 20)",
+        "Line(A, C)",
+        "Line(A, N)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, M)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, C)",
+        "PointLiesOnLine(M, Line(B, A))",
+        "PointLiesOnLine(N, Line(A, C))",
+        "Parallel(Line(M,N),Line(B,C))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "B",
+        "C",
+        "N",
+        "M",
+        "A"
+    ],
+    "line_instances": [
+        "CB",
+        "BM",
+        "BA",
+        "MA",
+        "MN",
+        "AN",
+        "AC",
+        "NC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            139.17078916372202,
+            375.24666666666667
+        ],
+        "C": [
+            693.9024734982332,
+            466.312
+        ],
+        "N": [
+            661.959952885748,
+            282.84666666666664
+        ],
+        "M": [
+            367.1849234393404,
+            236.64666666666665
+        ],
+        "A": [
+            626.0117785630154,
+            80.59333333333333
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        9.0,
+        12.0,
+        15.0
+    ],
+    "problem_answer": 9.0,
+    "total_time": 30.218187,
+    "solution_predicate": "Equals(9.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 24 = BM, BC || MN, \u2220CAB, 3 * x - 2 = AN, \u2220NAB, 20 = CN, N on AC, 4 * x - 6 = AM, M on AB\n\nStep 2:\nTheorem: Corresponding Angle Theorem\nPremises : BC || MN\nConclusions: \u2220ABC = \u2220AMN, \u2220ACB = \u2220ANM\n\nStep 3:\nTheorem: Line Segment Split\nPremises : N on AC\nConclusions: AC = AN + CN\n\nStep 4:\nTheorem: Same Angle\nPremises : N on AC, \u2220CAB\nConclusions: \u2220CAB = \u2220NAB\n\nStep 5:\nTheorem: Line Segment Split\nPremises : M on AB\nConclusions: AB = AM + BM\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220NAB, M on AB\nConclusions: \u2220NAB = \u2220NAM\n\nStep 7:\nTheorem: Substitution\nPremises : 20 = CN, AC = AN + CN, 3 * x - 2 = AN\nConclusions: 20 + (3 * x - 2) = AC\n\nStep 8:\nTheorem: Substitution\nPremises : AB = AM + BM, 4 * x - 6 = AM, 24 = BM\nConclusions: 24 + (4 * x - 6) = AB\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NAB = \u2220NAM, \u2220CAB = \u2220NAB\nConclusions: \u2220CAB = \u2220NAM\n\nStep 10:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220ABC = \u2220AMN, \u2220CAB = \u2220NAM, \u2220ACB = \u2220ANM\nConclusions: \u25b3ABC ~ \u25b3AMN\n\nStep 11:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3AMN\nConclusions: \u2220ABC = \u2220AMN, \u2220CAB = \u2220NAM, AB / AM = AC / AN\n\nStep 12:\nTheorem: Substitution\nPremises : 3 * x - 2 = AN, 20 + (3 * x - 2) = AC, AB / AM = AC / AN, 24 + (4 * x - 6) = AB, 4 * x - 6 = AM\nConclusions: (20 + (3 * x - 2)) / (3 * x - 2) = (24 + (4 * x - 6)) / (4 * x - 6)\n\nStep 13:\nTheorem: Solve Univariate Equation\nPremises : (20 + (3 * x - 2)) / (3 * x - 2) = (24 + (4 * x - 6)) / (4 * x - 6)\nConclusions: 9 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, B)",
+        "Line(B, M)",
+        "Line(B, A)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(A, N)",
+        "Line(A, C)",
+        "Line(N, C)",
+        "Line(A, C)",
+        "Line(A, N)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, M)",
+        "Line(M, A)",
+        "Line(M, N)",
+        "Line(N, C)",
+        "PointLiesOnLine(M, Line(B, A))",
+        "PointLiesOnLine(N, Line(A, C))",
+        "Parallel(Line(M, N), Line(B, C))",
+        "Equals(LengthOf(Line(A, M)), Sub(Mul(4.0, x), 6.0))",
+        "Equals(LengthOf(Line(A, N)), Sub(Mul(3.0, x), 2.0))",
+        "Equals(LengthOf(Line(B, M)), 24.0)",
+        "Equals(LengthOf(Line(C, N)), 20.0)"
+    ],
+    "correct": true
+}

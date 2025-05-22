@@ -1,0 +1,112 @@
+{
+    "problem_id": "2695",
+    "solved": true,
+    "problem_text": "Find m \\widehat L P.",
+    "logic_forms": [
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(M, A))",
+        "PointLiesOnLine(P, Line(M, A))",
+        "PointLiesOnLine(P, Line(N, A))",
+        "PointLiesOnLine(L, Line(M, B))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(N, M, L)), 36)",
+        "Equals(MeasureOf(Arc(L, N)), 78)",
+        "Tangent(Line(M, B), Circle(C))",
+        "Find(MeasureOf(Arc(L, P)))"
+    ],
+    "point_instances": [
+        "N",
+        "L",
+        "M",
+        "P",
+        "A",
+        "B",
+        "C"
+    ],
+    "line_instances": [
+        "MN",
+        "MP",
+        "MA",
+        "NP",
+        "NA",
+        "PA",
+        "ML",
+        "MB",
+        "LB"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "N": [
+            223.33333333333331,
+            161.0
+        ],
+        "L": [
+            343.88888888888886,
+            89.33333333333333
+        ],
+        "M": [
+            125.55555555555556,
+            89.88888888888889
+        ],
+        "P": [
+            448.3333333333333,
+            323.77777777777777
+        ],
+        "A": [
+            537.2222222222222,
+            390.44444444444446
+        ],
+        "B": [
+            636.6666666666666,
+            89.33333333333333
+        ],
+        "C": [
+            345.38888888888886,
+            230.27777777777777
+        ]
+    },
+    "problem_choices": [
+        "114",
+        "144",
+        "150",
+        "156"
+    ],
+    "choices_precise_value": [
+        114.0,
+        144.0,
+        150.0,
+        156.0
+    ],
+    "problem_answer": 150.0,
+    "total_time": 58.439545,
+    "solution_predicate": "Equals(2.617993878, MeasureOf(Arc(P, C, L)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220CPM, \u2220NMB, CL, Arc(LCN), P on \u2299(C, radius_0_0), \u2220CNM, N on MP, \u2220PCL, P on AN, Arc(PCL), P on AM, MN, \u2220ANC, CP, MP, \u2220AMB, L on \u2299(C, radius_0_0), pi * (78 / 180) = Arc(LCN), N on AM, LM, CN, N on \u2299(C, radius_0_0), NP, pi * (36 / 180) = \u2220NML, L on BM, 3.14 = pi, \u2220PMB, Tangent(BM, \u2299(C, radius_0_0)), Arc(LCP)\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(LCN)\nConclusions: \u2220LCN = Arc(LCN)\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : P on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CP\n\nStep 4:\nTheorem: Same Angle\nPremises : N on MP, \u2220CPM\nConclusions: \u2220CPM = \u2220CPN\n\nStep 5:\nTheorem: Reverse Angle Definition\nPremises : \u2220PCL\nConclusions: \u2220PCL = 2 * pi - \u2220LCP\n\nStep 6:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PCL)\nConclusions: \u2220PCL = Arc(PCL)\n\nStep 7:\nTheorem: Straight Angle\nPremises : \u2220CNM, \u2220ANC\nConclusions: pi = \u2220ANC + \u2220CNM\n\nStep 8:\nTheorem: Same Angle\nPremises : P on AN, \u2220ANC\nConclusions: \u2220ANC = \u2220PNC\n\nStep 9:\nTheorem: Same Angle\nPremises : P on AM, \u2220AMB\nConclusions: \u2220AMB = \u2220PMB\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220AMB, N on AM\nConclusions: \u2220AMB = \u2220NMB\n\nStep 11:\nTheorem: Definition of Quadrilateral\nPremises : MP, CL, LM, CP\nConclusions: Quadrilateral(C, L, M, P)\n\nStep 12:\nTheorem: Definition of Quadrilateral\nPremises : CL, MN, LM, CN\nConclusions: Quadrilateral(C, L, M, N)\n\nStep 13:\nTheorem: Point On Circle Def\nPremises : N on \u2299(C, radius_0_0)\nConclusions: radius_0_0 = CN\n\nStep 14:\nTheorem: Definition of Triangle\nPremises : CN, NP, CP\nConclusions: \u25b3CNP\n\nStep 15:\nTheorem: Same Angle\nPremises : \u2220NMB, L on BM\nConclusions: \u2220NMB = \u2220NML\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220PMB, L on BM\nConclusions: \u2220PMB = \u2220PML\n\nStep 17:\nTheorem: Tangent Definition\nPremises : L on \u2299(C, radius_0_0), Tangent(BM, \u2299(C, radius_0_0)), L on BM\nConclusions: CL \u22a5 LM\n\nStep 18:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(LCP)\nConclusions: \u2220LCP = Arc(LCP)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : pi * (78 / 180) = Arc(LCN), \u2220LCN = Arc(LCN)\nConclusions: pi * (78 / 180) = \u2220LCN\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ANC + \u2220CNM\nConclusions: 3.14 = \u2220ANC + \u2220CNM\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220AMB = \u2220PMB, \u2220AMB = \u2220NMB\nConclusions: \u2220NMB = \u2220PMB\n\nStep 22:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(P, M, L, C)\nPremises : Quadrilateral(C, L, M, P)\nConclusions: 2 * pi = \u2220CPM + \u2220LCP + \u2220MLC + \u2220PML\n\nStep 23:\nTheorem: Interior Angle Sum Theorem for Quadrilateral(N, M, L, C)\nPremises : Quadrilateral(C, L, M, N)\nConclusions: 2 * pi = \u2220CNM + \u2220LCN + \u2220MLC + \u2220NML\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = CP, radius_0_0 = CN\nConclusions: CN = CP\n\nStep 25:\nTheorem: Perpendicular to Right Angle\nPremises : CL \u22a5 LM\nConclusions: pi / 2 = \u2220MLC\n\nStep 26:\nTheorem: Substitution\nPremises : 3.14 = pi, \u2220LCP = Arc(LCP), \u2220PCL = 2 * pi - \u2220LCP, \u2220PCL = Arc(PCL)\nConclusions: Arc(PCL) = 2 * 3.14 - Arc(LCP)\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PMB = \u2220PML, \u2220NMB = \u2220PMB\nConclusions: \u2220NMB = \u2220PML\n\nStep 28:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3CNP, CN = CP\nConclusions: \u2220CPN = \u2220PNC\n\nStep 29:\nTheorem: Substitution\nPremises : 2 * pi = \u2220CNM + \u2220LCN + \u2220MLC + \u2220NML, pi / 2 = \u2220MLC, 3.14 = pi, pi * (78 / 180) = \u2220LCN, pi * (36 / 180) = \u2220NML\nConclusions: 2 * 3.14 = pi / 2 + 3.14 * (78 / 180) + pi * (36 / 180) + \u2220CNM\n\nStep 30:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NMB = \u2220NML, \u2220NMB = \u2220PML, pi * (36 / 180) = \u2220NML\nConclusions: pi * (36 / 180) = \u2220PML\n\nStep 31:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 2 * 3.14 = pi / 2 + 3.14 * (78 / 180) + pi * (36 / 180) + \u2220CNM, 3.14 = \u2220ANC + \u2220CNM\nConclusions: 0.42 = \u2220ANC\n\nStep 32:\nTheorem: Substitution\nPremises : \u2220LCP = Arc(LCP), \u2220CPM = \u2220CPN, pi / 2 = \u2220MLC, 3.14 = pi, pi * (36 / 180) = \u2220PML, 2 * pi = \u2220CPM + \u2220LCP + \u2220MLC + \u2220PML\nConclusions: 2 * 3.14 = pi / 2 + 3.14 * (36 / 180) + \u2220CPN + Arc(LCP)\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ANC = \u2220PNC, 0.42 = \u2220ANC\nConclusions: 0.42 = \u2220PNC\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : 0.42 = \u2220PNC, \u2220CPN = \u2220PNC\nConclusions: 0.42 = \u2220CPN\n\nStep 35:\nTheorem: Substitution\nPremises : 2 * 3.14 = pi / 2 + 3.14 * (36 / 180) + \u2220CPN + Arc(LCP), 0.42 = \u2220CPN, 3.14 = pi\nConclusions: 2 * 3.14 = 0.42 + 3.14 / 2 + 3.14 * (36 / 180) + Arc(LCP)\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 2 * 3.14 = 0.42 + 3.14 / 2 + 3.14 * (36 / 180) + Arc(LCP), Arc(PCL) = 2 * 3.14 - Arc(LCP), \u2220PCL = Arc(PCL)\nConclusions: 2.62 = \u2220PCL\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PCL = Arc(PCL), 2.62 = \u2220PCL\nConclusions: 2.62 = Arc(PCL)\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(M, A)",
+        "Line(N, P)",
+        "Line(N, A)",
+        "Line(P, A)",
+        "Line(M, L)",
+        "Line(M, B)",
+        "Line(L, B)",
+        "Circle(C, radius_0_0)",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(M, A))",
+        "PointLiesOnLine(P, Line(M, A))",
+        "PointLiesOnLine(P, Line(N, A))",
+        "PointLiesOnLine(L, Line(M, B))",
+        "PointLiesOnCircle(N, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(L, Circle(C, radius_0_0))",
+        "PointLiesOnCircle(P, Circle(C, radius_0_0))",
+        "Tangent(Line(M, B), Circle(C, radius_0_0))",
+        "Equals(MeasureOf(Angle(N, M, L)), Mul(pi, Div(36.0, 180.0)))",
+        "Equals(MeasureOf(Arc(L, C, N)), Mul(pi, Div(78.0, 180.0)))"
+    ],
+    "correct": true
+}

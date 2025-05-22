@@ -1,0 +1,92 @@
+{
+    "problem_id": "812",
+    "solved": true,
+    "problem_text": "Find the value of variable y.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(B, D)), 14)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AD",
+        "DC",
+        "DB",
+        "CB",
+        "BA",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            173.20849420849422,
+            24.502857142857142
+        ],
+        "B": [
+            29.123552123552123,
+            191.42857142857142
+        ],
+        "C": [
+            173.20849420849422,
+            191.42857142857142
+        ],
+        "D": [
+            364.81081081081084,
+            191.42857142857142
+        ]
+    },
+    "problem_choices": [
+        4.571,
+        6.928,
+        10.583,
+        24.5
+    ],
+    "choices_precise_value": [
+        4.571,
+        6.928,
+        10.583,
+        24.5
+    ],
+    "problem_answer": 6.928,
+    "total_time": 50.53741,
+    "solution_predicate": "Equals(6.9282032303, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BD, 14 = BD, AC \u22a5 CD, CD, \u2220CAD, AC \u22a5 BC, AD, \u2220DAB, 3.14 = pi, 8 = CD, AC, y = AC, \u2220BAC, BC, AB \u22a5 AD, \u2220BCA, \u2220ADB, AB, C on BD, \u2220DBA\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 CD\nConclusions: (3 * pi) / 2 = \u2220ACD, pi / 2 = \u2220DCA\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : AC \u22a5 BC\nConclusions: pi / 2 = \u2220ACB, (3 * pi) / 2 = \u2220BCA\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : CD, AD, AC\nConclusions: \u25b3ACD\n\nStep 5:\nTheorem: Circumference splited\nPremises : \u2220CAD, \u2220BAC, \u2220DAB\nConclusions: 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\n\nStep 6:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 AD\nConclusions: (3 * pi) / 2 = \u2220DAB, pi / 2 = \u2220BAD\n\nStep 7:\nTheorem: Reverse Angle Definition\nPremises : \u2220BCA\nConclusions: \u2220BCA = 2 * pi - \u2220ACB\n\nStep 8:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 9:\nTheorem: Definition of Triangle\nPremises : BD, AD, AB\nConclusions: \u25b3ABD\n\nStep 10:\nTheorem: Same Angle\nPremises : \u2220ADB, C on BD\nConclusions: \u2220ADB = \u2220ADC\n\nStep 11:\nTheorem: Line Segment Split\nPremises : C on BD\nConclusions: BD = BC + CD\n\nStep 12:\nTheorem: Same Angle\nPremises : C on BD, \u2220DBA\nConclusions: \u2220CBA = \u2220DBA\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220ACD, (3 * pi) / 2 = \u2220BCA\nConclusions: \u2220ACD = \u2220BCA\n\nStep 14:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, A)\nPremises : \u25b3ACD\nConclusions: pi = \u2220ADC + \u2220CAD + \u2220DCA\n\nStep 15:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220DAB, 3.14 = pi, 2 * pi = \u2220BAC + \u2220CAD + \u2220DAB\nConclusions: 2 * 3.14 = (3 * 3.14) / 2 + \u2220BAC + \u2220CAD\n\nStep 16:\nTheorem: Substitution\nPremises : (3 * pi) / 2 = \u2220BCA, pi / 2 = \u2220ACB, 3.14 = pi, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: (3 * pi) / 2 = 2 * 3.14 - pi / 2\n\nStep 17:\nTheorem: Interior Angle Sum Theorem for Triangle(C, B, A)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 18:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 19:\nTheorem: Substitution\nPremises : BD = BC + CD, 8 = CD, 14 = BD\nConclusions: 14 = 8 + BC\n\nStep 20:\nTheorem: Substitution\nPremises : 3.14 = pi, pi = \u2220ADC + \u2220CAD + \u2220DCA, pi / 2 = \u2220DCA\nConclusions: 3.14 = pi / 2 + \u2220ADC + \u2220CAD\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220BCA, (3 * pi) / 2 = 2 * 3.14 - pi / 2\nConclusions: 2 * 3.14 - pi / 2 = \u2220BCA\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220ACB + \u2220BAC + \u2220CBA\nConclusions: 3.14 = \u2220ACB + \u2220BAC + \u2220CBA\n\nStep 23:\nTheorem: Substitution\nPremises : 3.14 = pi, pi / 2 = \u2220BAD, pi = \u2220ADB + \u2220BAD + \u2220DBA, \u2220ADB = \u2220ADC\nConclusions: 3.14 = 3.14 / 2 + \u2220ADC + \u2220DBA\n\nStep 24:\nTheorem: Solve Linear Equation System\nPremises : 14 = 8 + BC\nConclusions: 6 = BC\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : 2 * 3.14 - pi / 2 = \u2220BCA, \u2220BCA = 2 * pi - \u2220ACB\nConclusions: 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB\n\nStep 26:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220ACB + \u2220BAC + \u2220CBA, \u2220CBA = \u2220DBA, 3.14 = 3.14 / 2 + \u2220ADC + \u2220DBA, 3.14 = pi / 2 + \u2220ADC + \u2220CAD, 2 * 3.14 = (3 * 3.14) / 2 + \u2220BAC + \u2220CAD, 2 * 3.14 - pi / 2 = 2 * pi - \u2220ACB\nConclusions: \u2220CAD = \u2220CBA\n\nStep 27:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220CAD = \u2220CBA, \u2220ACD = \u2220BCA\nConclusions: \u25b3ABC ~ \u25b3DAC\n\nStep 28:\nTheorem: Similar Definition\nPremises : \u25b3ABC ~ \u25b3DAC\nConclusions: \u2220CAD = \u2220CBA, AC / CD = BC / AC\n\nStep 29:\nTheorem: Substitution\nPremises : 8 = CD, y = AC, AC / CD = BC / AC, 6 = BC\nConclusions: 6 / y = y / 8\n\nStep 30:\nTheorem: Solve Univariate Equation\nPremises : 6 / y = y / 8\nConclusions: 6.93 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(B, A)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, D), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(A, C))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(LengthOf(Line(A, C)), y)",
+        "Equals(LengthOf(Line(B, A)), x)",
+        "Equals(LengthOf(Line(B, D)), 14.0)",
+        "Equals(LengthOf(Line(D, C)), 8.0)"
+    ],
+    "correct": true
+}

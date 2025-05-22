@@ -1,0 +1,122 @@
+{
+    "problem_id": "8427",
+    "solved": true,
+    "problem_text": "Find the measure of \\angle 1 in special parallelogram.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(B, E)))",
+        "Equals(MeasureOf(Angle(A, B, C)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(B, A, C)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(E, C, B)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(E, D, C)), 32)",
+        "Find(MeasureOf(Angle(1)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Parallelogram(A, B, D, E)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AB",
+        "BE",
+        "ED",
+        "DA",
+        "AC",
+        "AE",
+        "CE",
+        "DC",
+        "DB",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            117.2148148148148,
+            29.402857142857144
+        ],
+        "B": [
+            328.23333333333335,
+            29.232108843537414
+        ],
+        "C": [
+            174.86666666666667,
+            123.34857142857143
+        ],
+        "D": [
+            21.369696969696967,
+            218.1418181818182
+        ],
+        "E": [
+            232.2,
+            218.01142857142858
+        ]
+    },
+    "problem_choices": [
+        32.0,
+        58.0,
+        74.0,
+        90.0
+    ],
+    "choices_precise_value": [
+        32.0,
+        58.0,
+        74.0,
+        90.0
+    ],
+    "problem_answer": 58.0,
+    "total_time": 118.258656,
+    "solution_predicate": "Equals(1.0122909662, MeasureOf(Angle(C, A, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB = BE, 3.14 = pi, BD, AD, AB, DE, AB = AD, C on AE, pi * (32 / 180) = \u2220EDC, AE, Parallelogram(A, B, E, D), BE = DE, AD = DE, \u2220EAB, BE, \u2220EDB, C on BD\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : DE, AE, AD\nConclusions: \u25b3ADE\n\nStep 3:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(A, B, E, D)\nConclusions: \u2220BED = \u2220DAB\n\nStep 4:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, E, D)\nConclusions: AD || BE, AB || DE\n\nStep 5:\nTheorem: Same Angle\nPremises : C on AE, \u2220EAB\nConclusions: \u2220CAB = \u2220EAB\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : BE, BD, DE\nConclusions: \u25b3BDE\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220EDB, C on BD\nConclusions: \u2220EDB = \u2220EDC\n\nStep 8:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, A)\nPremises : \u25b3ADE\nConclusions: pi = \u2220AED + \u2220DAE + \u2220EDA\n\nStep 9:\nTheorem: Alternate Interior Angle Theorem\nPremises : AD || BE\nConclusions: \u2220BDA = \u2220DBE\n\nStep 10:\nTheorem: Definition of Rhombus\nPremises : AD || BE, AB = BE, BE = DE, AB || DE, AD, AB, AB = AD, AD = DE, BE, DE\nConclusions: Rhombus(A, B, E, D)\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || DE\nConclusions: \u2220AED = \u2220EAB\n\nStep 12:\nTheorem: Consecutive Interior Angle Theorem\nPremises : AB || DE\nConclusions: pi = \u2220DAB + \u2220EDA\n\nStep 13:\nTheorem: Interior Angle Sum Theorem for Triangle(E, D, B)\nPremises : \u25b3BDE\nConclusions: pi = \u2220BED + \u2220DBE + \u2220EDB\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220EDB = \u2220EDC, pi * (32 / 180) = \u2220EDC\nConclusions: pi * (32 / 180) = \u2220EDB\n\nStep 15:\nTheorem: Rhombus Diagonals are angle bisectors\nPremises : Rhombus(A, B, E, D)\nConclusions: \u2220DAE = \u2220EAB, \u2220BDA = \u2220EDB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220DAB + \u2220EDA, 3.14 = pi\nConclusions: 3.14 = \u2220DAB + \u2220EDA\n\nStep 17:\nTheorem: Substitution\nPremises : \u2220AED = \u2220EAB, pi = \u2220AED + \u2220DAE + \u2220EDA, \u2220DAE = \u2220EAB, 3.14 = pi\nConclusions: 3.14 = \u2220EAB + \u2220EAB + \u2220EDA\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BDA = \u2220DBE, pi * (32 / 180) = \u2220EDB, \u2220BDA = \u2220EDB\nConclusions: pi * (32 / 180) = \u2220DBE\n\nStep 19:\nTheorem: Substitution\nPremises : pi * (32 / 180) = \u2220DBE, pi * (32 / 180) = \u2220EDB, \u2220BED = \u2220DAB, 3.14 = pi, pi = \u2220BED + \u2220DBE + \u2220EDB\nConclusions: 3.14 = 3.14 * (32 / 180) + pi * (32 / 180) + \u2220DAB\n\nStep 20:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220EAB + \u2220EAB + \u2220EDA, 3.14 = 3.14 * (32 / 180) + pi * (32 / 180) + \u2220DAB, 3.14 = pi, 3.14 = \u2220DAB + \u2220EDA\nConclusions: 1.01 = \u2220EAB\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : 1.01 = \u2220EAB, \u2220CAB = \u2220EAB\nConclusions: 1.01 = \u2220CAB\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(E, D)",
+        "Line(D, A)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, E)",
+        "Line(B, E)",
+        "Line(C, B)",
+        "Line(C, E)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "Line(D, E)",
+        "Parallelogram(A, B, E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(D, B))",
+        "Equals(LengthOf(Line(A, B)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(B, E)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, B)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(A, D)))",
+        "Equals(LengthOf(Line(D, E)), LengthOf(Line(B, E)))",
+        "Equals(MeasureOf(Angle(E, D, C)), Mul(pi, Div(32.0, 180.0)))"
+    ],
+    "correct": true
+}

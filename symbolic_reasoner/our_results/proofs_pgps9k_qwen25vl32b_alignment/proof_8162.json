@@ -1,0 +1,69 @@
+{
+    "problem_id": "8162",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F, H)), 32)",
+        "Equals(LengthOf(Line(G, F)), x)",
+        "Equals(MeasureOf(Angle(F, H, G)), 29)",
+        "Line(G, F)",
+        "Line(H, F)",
+        "Line(H, G)",
+        "Perpendicular(Line(G, F), Line(H, F))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "H"
+    ],
+    "line_instances": [
+        "GF",
+        "FH",
+        "GH"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            39.37142857142857,
+            260.38888888888886
+        ],
+        "F": [
+            165.19480519480518,
+            284.74873737373736
+        ],
+        "H": [
+            209.15314285714285,
+            56.55888888888889
+        ]
+    },
+    "problem_choices": [
+        17.7,
+        36.6,
+        57.7,
+        66.0
+    ],
+    "choices_precise_value": [
+        17.7,
+        36.6,
+        57.7,
+        66.0
+    ],
+    "problem_answer": 17.7,
+    "total_time": 15.36087,
+    "solution_predicate": "Equals(17.7378896472, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: FG, FH, \u2220GHF, x = FG, 32 = FH, 3.14 = pi, \u2220FHG, FG \u22a5 FH, pi * (29 / 180) = \u2220GHF, GH, tan(\u2220FGH)\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220GHF\nConclusions: \u2220GHF = 2 * pi - \u2220FHG\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220FHG\nConclusions: \u2220FHG = 2 * pi - \u2220GHF\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : FG \u22a5 FH\nConclusions: pi / 2 = \u2220HFG\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : GH, FH, FG\nConclusions: \u25b3FGH\n\nStep 6:\nTheorem: Angle Tan Definition\nPremises : tan(\u2220FGH), FG \u22a5 FH\nConclusions: FH / FG = tan(\u2220FGH)\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220GHF = 2 * pi - \u2220FHG, pi * (29 / 180) = \u2220GHF\nConclusions: pi * (29 / 180) = 2 * pi - \u2220FHG\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220FHG = 2 * pi - \u2220GHF, pi * (29 / 180) = \u2220GHF, 3.14 = pi\nConclusions: 2 * 3.14 - pi * (29 / 180) = \u2220FHG\n\nStep 9:\nTheorem: Interior Angle Sum Theorem for Triangle(F, G, H)\nPremises : \u25b3FGH\nConclusions: pi = \u2220FGH + \u2220GHF + \u2220HFG\n\nStep 10:\nTheorem: Substitution\nPremises : pi = \u2220FGH + \u2220GHF + \u2220HFG, pi / 2 = \u2220HFG, pi * (29 / 180) = \u2220GHF, 3.14 = pi\nConclusions: 3.14 = pi / 2 + 3.14 * (29 / 180) + \u2220FGH\n\nStep 11:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi / 2 + 3.14 * (29 / 180) + \u2220FGH, 2 * 3.14 - pi * (29 / 180) = \u2220FHG, pi * (29 / 180) = 2 * pi - \u2220FHG\nConclusions: 1.06 = \u2220FGH\n\nStep 12:\nTheorem: Evaluate\nPremises : 1.06 = \u2220FGH\nConclusions: 1.8 = tan(\u2220FGH)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : 1.8 = tan(\u2220FGH), FH / FG = tan(\u2220FGH)\nConclusions: 1.8 = FH / FG\n\nStep 14:\nTheorem: Solve Linear Equation System\nPremises : 1.8 = FH / FG, 32 = FH\nConclusions: 17.74 = FG\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : x = FG, 17.74 = FG\nConclusions: 17.74 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, F)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(G, F)",
+        "Line(H, F)",
+        "Line(H, G)",
+        "Perpendicular(Line(G, F), Line(H, F))",
+        "Equals(LengthOf(Line(F, H)), 32.0)",
+        "Equals(LengthOf(Line(G, F)), x)",
+        "Equals(MeasureOf(Angle(G, H, F)), Mul(pi, Div(29.0, 180.0)))"
+    ],
+    "correct": true
+}

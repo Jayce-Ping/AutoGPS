@@ -1,0 +1,89 @@
+{
+    "problem_id": "6248",
+    "solved": true,
+    "problem_text": "If AC = 12 and BC = 9, what is the radius?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 12)",
+        "Equals(LengthOf(Line(B, C)), 9)",
+        "Find(RadiusOf(Circle(A)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "PointLiesOnCircle(B, Circle(A))",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnLine(D, Line(A, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C"
+    ],
+    "line_instances": [
+        "AD",
+        "AC",
+        "DC",
+        "BC",
+        "BA"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "A": [
+            150.6350311692477,
+            122.12849563545652
+        ],
+        "B": [
+            54.85714285714286,
+            144.8615384615385
+        ],
+        "D": [
+            118.49142857142857,
+            215.09743589743593
+        ],
+        "C": [
+            89.96571428571428,
+            295.2102564102564
+        ]
+    },
+    "problem_choices": [
+        3.5,
+        7.937,
+        8.485,
+        12.5
+    ],
+    "choices_precise_value": [
+        3.5,
+        7.937,
+        8.485,
+        12.5
+    ],
+    "problem_answer": 7.937,
+    "total_time": 18.225436,
+    "solution_predicate": "Equals(7.9372539332, radius_A)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 12 = AC, AB \u22a5 BC, AB, AC, BC, 9 = BC, B on \u2299(A, radius_A)\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : B on \u2299(A, radius_A)\nConclusions: radius_A = AB\n\nStep 4:\nTheorem: Pythagorean Theorem\nPremises : AB \u22a5 BC, \u25b3ABC\nConclusions: AB = SqrtOf(AC ** 2 - BC ** 2)\n\nStep 5:\nTheorem: Substitution\nPremises : AB = SqrtOf(AC ** 2 - BC ** 2), 9 = BC, 12 = AC, radius_A = AB\nConclusions: SqrtOf(12 ** 2 - 9 ** 2) = radius_A\n\nStep 6:\nTheorem: Evaluate\nPremises : SqrtOf(12 ** 2 - 9 ** 2) = radius_A\nConclusions: 7.94 = radius_A\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, D)",
+        "Line(A, C)",
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(B, A)",
+        "Circle(A, radius_A)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Perpendicular(Line(B, C), Line(B, A))",
+        "PointLiesOnCircle(B, Circle(A, radius_A))",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnLine(D, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 12.0)",
+        "Equals(LengthOf(Line(B, C)), 9.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,87 @@
+{
+    "problem_id": "3706",
+    "solved": true,
+    "problem_text": "Find the area of the shaded region.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 6)",
+        "Equals(MeasureOf(Arc(B, D)), 80)",
+        "Find(AreaOf(Sector(C, A, B)))",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C))",
+        "PointLiesOnCircle(B, Circle(C))",
+        "PointLiesOnCircle(D, Circle(C))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Sector(C, A, B)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AC",
+        "AD",
+        "CD",
+        "BC"
+    ],
+    "circle_instances": [
+        "C"
+    ],
+    "point_positions": {
+        "A": [
+            219.47058823529412,
+            29.86285714285714
+        ],
+        "B": [
+            71.72941176470587,
+            102.52914285714286
+        ],
+        "C": [
+            176.01044051345008,
+            127.89268775862429
+        ],
+        "D": [
+            132.8173374613003,
+            226.89323308270676
+        ]
+    },
+    "problem_choices": [
+        21.991,
+        25.133,
+        31.416,
+        87.965
+    ],
+    "choices_precise_value": [
+        21.991,
+        25.133,
+        31.416,
+        87.965
+    ],
+    "problem_answer": 31.416,
+    "total_time": 7.081193,
+    "solution_predicate": "Equals(31.415926536, AreaOf(Sector(A, C, B)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 6 = AC, Arc(BCD), Sector(A, C, B), 3.14 = pi, A on \u2299(C, radius_C), \u2220BCD, pi * (80 / 180) = Arc(BCD), \u2220ACB\n\nStep 2:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(BCD)\nConclusions: \u2220BCD = Arc(BCD)\n\nStep 3:\nTheorem: Area formula of Sector(A, C, B)\nPremises : Sector(A, C, B)\nConclusions: Area(Sector(A, C, B)) = (radius_C ** 2 * \u2220ACB) / 2\n\nStep 4:\nTheorem: Point On Circle Def\nPremises : A on \u2299(C, radius_C)\nConclusions: radius_C = AC\n\nStep 5:\nTheorem: Straight Angle\nPremises : \u2220BCD, \u2220ACB\nConclusions: pi = \u2220ACB + \u2220BCD\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : pi * (80 / 180) = Arc(BCD), \u2220BCD = Arc(BCD)\nConclusions: pi * (80 / 180) = \u2220BCD\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : radius_C = AC, 6 = AC\nConclusions: 6 = radius_C\n\nStep 8:\nTheorem: Substitution\nPremises : pi = \u2220ACB + \u2220BCD, 3.14 = pi, pi * (80 / 180) = \u2220BCD\nConclusions: 3.14 = pi * (80 / 180) + \u2220ACB\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = pi * (80 / 180) + \u2220ACB\nConclusions: 1.75 = \u2220ACB\n\nStep 10:\nTheorem: Substitution\nPremises : 1.75 = \u2220ACB, Area(Sector(A, C, B)) = (radius_C ** 2 * \u2220ACB) / 2, 6 = radius_C\nConclusions: (1.75 * 6 ** 2) / 2 = Area(Sector(A, C, B))\n\nStep 11:\nTheorem: Evaluate\nPremises : (1.75 * 6 ** 2) / 2 = Area(Sector(A, C, B))\nConclusions: 31.42 = Area(Sector(A, C, B))\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(C, D)",
+        "Line(B, C)",
+        "Circle(C, radius_C)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "PointLiesOnCircle(A, Circle(C, radius_C))",
+        "PointLiesOnCircle(B, Circle(C, radius_C))",
+        "PointLiesOnCircle(D, Circle(C, radius_C))",
+        "PointLiesOnLine(C, Line(A, D))",
+        "Sector(A, C, B)",
+        "Equals(LengthOf(Line(A, C)), 6.0)",
+        "Equals(MeasureOf(Arc(B, C, D)), Mul(pi, Div(80.0, 180.0)))"
+    ],
+    "correct": true
+}

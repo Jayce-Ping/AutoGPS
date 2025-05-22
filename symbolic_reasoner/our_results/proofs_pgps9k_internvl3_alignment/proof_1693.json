@@ -1,0 +1,98 @@
+{
+    "problem_id": "1693",
+    "solved": true,
+    "problem_text": "PM is a diameter of \\odot R. Find m \\widehat NMP.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(Q, R, P)), 115)",
+        "Line(N, R)",
+        "Line(P, M)",
+        "Line(P, R)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Perpendicular(Line(P, M), Line(N, R))",
+        "PointLiesOnCircle(M, Circle(R))",
+        "PointLiesOnCircle(N, Circle(R))",
+        "PointLiesOnCircle(P, Circle(R))",
+        "PointLiesOnCircle(Q, Circle(R))",
+        "PointLiesOnLine(R, Line(P, M))",
+        "IsDiameterOf(Line(P,M),Circle(R))",
+        "Find(MeasureOf(Arc(N,M,P)))"
+    ],
+    "point_instances": [
+        "N",
+        "P",
+        "R",
+        "M",
+        "Q"
+    ],
+    "line_instances": [
+        "PR",
+        "PM",
+        "RM",
+        "RQ",
+        "RN"
+    ],
+    "circle_instances": [
+        "R"
+    ],
+    "point_positions": {
+        "N": [
+            104.76190476190476,
+            217.34857142857143
+        ],
+        "P": [
+            313.8666666666666,
+            86.64571428571429
+        ],
+        "R": [
+            274.5853658536586,
+            255.609756097561
+        ],
+        "M": [
+            235.0333333333333,
+            425.5185714285714
+        ],
+        "Q": [
+            411.50476190476184,
+            364.2057142857143
+        ]
+    },
+    "problem_choices": [
+        180.0,
+        205.0,
+        270.0,
+        295.0
+    ],
+    "choices_precise_value": [
+        180.0,
+        205.0,
+        270.0,
+        295.0
+    ],
+    "problem_answer": 270.0,
+    "total_time": 7.239877,
+    "solution_predicate": "Equals(4.7123889804, MeasureOf(Arc(N, R, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: NR \u22a5 PR, Arc(NRP)\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : NR \u22a5 PR\nConclusions: (3 * pi) / 2 = \u2220NRP\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(NRP)\nConclusions: \u2220NRP = Arc(NRP)\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NRP = Arc(NRP), (3 * pi) / 2 = \u2220NRP\nConclusions: (3 * pi) / 2 = Arc(NRP)\n\nStep 5:\nTheorem: Evaluate\nPremises : (3 * pi) / 2 = Arc(NRP)\nConclusions: 4.71 = Arc(NRP)\n\n",
+    "logic_fomrs_refined": [
+        "Line(P, R)",
+        "Line(P, M)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Line(R, N)",
+        "Circle(R, radius_R)",
+        "Line(N, R)",
+        "Line(P, M)",
+        "Line(P, R)",
+        "Line(R, M)",
+        "Line(R, Q)",
+        "Perpendicular(Line(P, M), Line(N, R))",
+        "PointLiesOnCircle(M, Circle(R, radius_R))",
+        "PointLiesOnCircle(N, Circle(R, radius_R))",
+        "PointLiesOnCircle(P, Circle(R, radius_R))",
+        "PointLiesOnCircle(Q, Circle(R, radius_R))",
+        "PointLiesOnLine(R, Line(P, M))",
+        "IsDiameterOf(Line(P, M), Circle(R, radius_R))",
+        "Equals(MeasureOf(Angle(Q, R, P)), Mul(pi, Div(115.0, 180.0)))"
+    ],
+    "correct": true
+}

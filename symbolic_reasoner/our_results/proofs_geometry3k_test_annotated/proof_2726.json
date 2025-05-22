@@ -1,0 +1,86 @@
+{
+    "problem_id": "2726",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(X, Z, Y)), MeasureOf(Angle(N, L, M)))",
+        "Equals(MeasureOf(Angle(N, M, L)), MeasureOf(Angle(X, Y, Z)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), 4x)",
+        "Equals(MeasureOf(Angle(N, M, L)), 51)",
+        "Equals(MeasureOf(Angle(M, L, N)), 65)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Y",
+        "N",
+        "X",
+        "L",
+        "M",
+        "Z"
+    ],
+    "line_instances": [
+        "MN",
+        "LN",
+        "LM",
+        "XZ",
+        "XY",
+        "YZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            518.0616740088105,
+            92.6079295154185
+        ],
+        "N": [
+            246.2555066079295,
+            319.0396475770925
+        ],
+        "X": [
+            341.85022026431716,
+            90.40528634361233
+        ],
+        "L": [
+            179.29515418502203,
+            184.23788546255506
+        ],
+        "M": [
+            69.60352422907489,
+            317.7180616740088
+        ],
+        "Z": [
+            408.8105726872247,
+            227.40969162995594
+        ]
+    },
+    "problem_choices": [
+        "12",
+        "16",
+        "51",
+        "65"
+    ],
+    "choices_precise_value": [
+        12.0,
+        16.0,
+        51.0,
+        65.0
+    ],
+    "problem_answer": 16.0,
+    "total_time": 7.130211,
+    "solution_predicate": "Equals(16.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220YXZ, YZ, \u2220ZXY, pi * ((4 * x) / 180) = \u2220ZXY, XY, \u2220MLN = \u2220YZX, pi * (51 / 180) = \u2220NML, 3.14 = pi, pi * (65 / 180) = \u2220MLN, XZ, \u2220NML = \u2220XYZ\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220YXZ\nConclusions: \u2220YXZ = 2 * pi - \u2220ZXY\n\nStep 3:\nTheorem: Reverse Angle Definition\nPremises : \u2220ZXY\nConclusions: \u2220ZXY = 2 * pi - \u2220YXZ\n\nStep 4:\nTheorem: Substitution\nPremises : pi * ((4 * x) / 180) = \u2220ZXY, 3.14 = pi\nConclusions: 3.14 * ((4 * x) / 180) = \u2220ZXY\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MLN = \u2220YZX, pi * (65 / 180) = \u2220MLN\nConclusions: pi * (65 / 180) = \u2220YZX\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : XZ, XY, YZ\nConclusions: \u25b3XYZ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : \u2220NML = \u2220XYZ, pi * (51 / 180) = \u2220NML\nConclusions: pi * (51 / 180) = \u2220XYZ\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220YXZ = 2 * pi - \u2220ZXY, 3.14 = pi\nConclusions: \u2220YXZ = 2 * 3.14 - \u2220ZXY\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 * ((4 * x) / 180) = \u2220ZXY, \u2220ZXY = 2 * pi - \u2220YXZ\nConclusions: 3.14 * ((4 * x) / 180) = 2 * pi - \u2220YXZ\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(X, Y, Z)\nPremises : \u25b3XYZ\nConclusions: pi = \u2220XYZ + \u2220YZX + \u2220ZXY\n\nStep 11:\nTheorem: Substitution\nPremises : pi * (65 / 180) = \u2220YZX, pi * (51 / 180) = \u2220XYZ, 3.14 = pi, pi = \u2220XYZ + \u2220YZX + \u2220ZXY\nConclusions: 3.14 = pi * (51 / 180) + pi * (65 / 180) + \u2220ZXY\n\nStep 12:\nTheorem: Solve Linear Equation System\nPremises : 3.14 * ((4 * x) / 180) = 2 * pi - \u2220YXZ, 3.14 * ((4 * x) / 180) = \u2220ZXY, 3.14 = pi * (51 / 180) + pi * (65 / 180) + \u2220ZXY, \u2220YXZ = 2 * 3.14 - \u2220ZXY\nConclusions: 16 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(M, N)",
+        "Line(L, N)",
+        "Line(L, M)",
+        "Line(X, Z)",
+        "Line(X, Y)",
+        "Line(Y, Z)",
+        "Equals(MeasureOf(Angle(Y, Z, X)), MeasureOf(Angle(M, L, N)))",
+        "Equals(MeasureOf(Angle(N, M, L)), MeasureOf(Angle(X, Y, Z)))",
+        "Equals(MeasureOf(Angle(Z, X, Y)), Mul(pi, Div(Mul(4.0, x), 180.0)))",
+        "Equals(MeasureOf(Angle(N, M, L)), Mul(pi, Div(51.0, 180.0)))",
+        "Equals(MeasureOf(Angle(M, L, N)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

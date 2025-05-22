@@ -1,0 +1,76 @@
+{
+    "problem_id": "2430",
+    "solved": true,
+    "problem_text": "Find X Z.",
+    "logic_forms": [
+        "PointLiesOnLine(W, Line(Z, Y))",
+        "Perpendicular(Line(Z, W), Line(X, W))",
+        "Equals(LengthOf(Line(Z, W)), LengthOf(Line(W, Y)))",
+        "Equals(LengthOf(Line(Y, X)), 18+2y)",
+        "Equals(LengthOf(Line(Z, X)), 5y-6)",
+        "Find(LengthOf(Line(X, Z)))"
+    ],
+    "point_instances": [
+        "Z",
+        "Y",
+        "X",
+        "W"
+    ],
+    "line_instances": [
+        "ZW",
+        "ZY",
+        "WY",
+        "ZX",
+        "WX",
+        "YX"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Z": [
+            157.4074074074074,
+            88.57407407407406
+        ],
+        "Y": [
+            92.12962962962962,
+            302.0
+        ],
+        "X": [
+            520.3703703703703,
+            311.72222222222223
+        ],
+        "W": [
+            124.99999999999999,
+            195.05555555555554
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "17",
+        "18",
+        "34"
+    ],
+    "choices_precise_value": [
+        5.0,
+        17.0,
+        18.0,
+        34.0
+    ],
+    "problem_answer": 34.0,
+    "total_time": 29.167991,
+    "solution_predicate": "Equals(34.0, LengthOf(Line(X, Z)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WX \u22a5 WZ, WY = WZ, WX \u22a5 WY, 18 + 2 * y = XY, 5 * y - 6 = XZ\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WZ\nConclusions: pi / 2 = \u2220XWZ\n\nStep 3:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WY\nConclusions: pi / 2 = \u2220YWX\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220XWZ, pi / 2 = \u2220YWX\nConclusions: \u2220XWZ = \u2220YWX\n\nStep 5:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : WY = WZ, \u2220XWZ = \u2220YWX\nConclusions: \u25b3WXY \u2245 \u25b3WXZ\n\nStep 6:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3WXZ\nConclusions: XY = XZ, WY = WZ\n\nStep 7:\nTheorem: Transtivity of Equivalence\nPremises : 18 + 2 * y = XY, 5 * y - 6 = XZ, XY = XZ\nConclusions: 18 + 2 * y = 5 * y - 6\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 5 * y - 6 = XZ, 18 + 2 * y = 5 * y - 6\nConclusions: 18 + 2 * y = XZ\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 18 + 2 * y = XZ, 18 + 2 * y = 5 * y - 6\nConclusions: 34 = XZ\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, W)",
+        "Line(Z, Y)",
+        "Line(W, Y)",
+        "Line(Z, X)",
+        "Line(W, X)",
+        "Line(Y, X)",
+        "PointLiesOnLine(W, Line(Z, Y))",
+        "Perpendicular(Line(Z, W), Line(X, W))",
+        "Equals(LengthOf(Line(Z, W)), LengthOf(Line(W, Y)))",
+        "Equals(LengthOf(Line(Y, X)), Add(18.0, Mul(2.0, y)))",
+        "Equals(LengthOf(Line(Z, X)), Sub(Mul(5.0, y), 6.0))"
+    ],
+    "correct": true
+}

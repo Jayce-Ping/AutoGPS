@@ -1,0 +1,111 @@
+{
+    "problem_id": "7135",
+    "solved": true,
+    "problem_text": "Find x.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(T, W)), 7)",
+        "Equals(LengthOf(Line(T, Y)), 6)",
+        "Equals(LengthOf(Line(X, W)), 12)",
+        "Equals(LengthOf(Line(Z, Y)), x)",
+        "Line(W, T)",
+        "Line(X, T)",
+        "Line(X, W)",
+        "Line(Y, T)",
+        "Line(Z, T)",
+        "Line(Z, Y)",
+        "PointLiesOnCircle(W, Circle(A))",
+        "PointLiesOnCircle(X, Circle(A))",
+        "PointLiesOnCircle(Y, Circle(A))",
+        "PointLiesOnCircle(Z, Circle(A))",
+        "PointLiesOnLine(W, Line(X, T))",
+        "PointLiesOnLine(Y, Line(Z, T))",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "Z",
+        "X",
+        "W",
+        "Y",
+        "T",
+        "A"
+    ],
+    "line_instances": [
+        "ZY",
+        "ZT",
+        "YT",
+        "XW",
+        "XT",
+        "WT"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "Z": [
+            101.88340807174887,
+            258.1338775510204
+        ],
+        "X": [
+            249.61434977578475,
+            96.84571428571428
+        ],
+        "W": [
+            379.19730941704034,
+            252.62714285714284
+        ],
+        "Y": [
+            352.77130044843045,
+            318.57142857142856
+        ],
+        "T": [
+            453.38116591928247,
+            342.2367346938775
+        ],
+        "A": [
+            239.44339622641508,
+            235.5
+        ]
+    },
+    "problem_choices": [
+        10.285714285714286,
+        14.0,
+        15.833333333333334,
+        16.166666666666668
+    ],
+    "choices_precise_value": [
+        10.285714285714286,
+        14.0,
+        15.833333333333334,
+        16.166666666666668
+    ],
+    "problem_answer": 15.833333333333334,
+    "total_time": 53.828521,
+    "solution_predicate": "Equals(16.1666666667, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: TX, 7 = TW, W on \u2299(A, radius_A), \u2299(A, radius_A), TZ, W on TX, TW, Z on \u2299(A, radius_A), 12 = WX, x = YZ, X on \u2299(A, radius_A), Y on \u2299(A, radius_A), 6 = TY, Y on TZ, TY\n\nStep 2:\nTheorem: Line Segment Split\nPremises : W on TX\nConclusions: TX = TW + WX\n\nStep 3:\nTheorem: Line Segment Split\nPremises : Y on TZ\nConclusions: TZ = TY + YZ\n\nStep 4:\nTheorem: Circle Secant Theorem\nPremises : Y on \u2299(A, radius_A), X on \u2299(A, radius_A), \u2299(A, radius_A), TW, TX, TY, W on \u2299(A, radius_A), TZ, Z on \u2299(A, radius_A)\nConclusions: TW * TX = TY * TZ\n\nStep 5:\nTheorem: Substitution\nPremises : 12 = WX, TX = TW + WX, 7 = TW\nConclusions: 12 + 7 = TX\n\nStep 6:\nTheorem: Substitution\nPremises : 6 = TY, TZ = TY + YZ, x = YZ\nConclusions: 6 + x = TZ\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 12 + 7 = TX\nConclusions: 19 = TX\n\nStep 8:\nTheorem: Substitution\nPremises : TW * TX = TY * TZ, 6 = TY, 7 = TW, 6 + x = TZ, 19 = TX\nConclusions: 19 * 7 = 6 * (6 + x)\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 19 * 7 = 6 * (6 + x), x = YZ\nConclusions: 16.17 = YZ\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 16.17 = YZ, x = YZ\nConclusions: 16.17 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(Z, Y)",
+        "Line(Z, T)",
+        "Line(Y, T)",
+        "Line(X, W)",
+        "Line(X, T)",
+        "Line(W, T)",
+        "Circle(A, radius_A)",
+        "Line(W, T)",
+        "Line(X, T)",
+        "Line(X, W)",
+        "Line(Y, T)",
+        "Line(Z, T)",
+        "Line(Z, Y)",
+        "PointLiesOnCircle(W, Circle(A, radius_A))",
+        "PointLiesOnCircle(X, Circle(A, radius_A))",
+        "PointLiesOnCircle(Y, Circle(A, radius_A))",
+        "PointLiesOnCircle(Z, Circle(A, radius_A))",
+        "PointLiesOnLine(W, Line(X, T))",
+        "PointLiesOnLine(Y, Line(Z, T))",
+        "Equals(LengthOf(Line(T, W)), 7.0)",
+        "Equals(LengthOf(Line(T, Y)), 6.0)",
+        "Equals(LengthOf(Line(X, W)), 12.0)",
+        "Equals(LengthOf(Line(Z, Y)), x)"
+    ],
+    "correct": true
+}

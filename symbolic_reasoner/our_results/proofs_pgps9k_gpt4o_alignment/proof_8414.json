@@ -1,0 +1,113 @@
+{
+    "problem_id": "8414",
+    "solved": true,
+    "problem_text": "Quadrilateral WXYZ is a rectangle. If XZ = 2c and ZY = 6, and XY = 8, find WY.",
+    "logic_forms": [
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, A)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(W, Z), Line(X, W))",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(X, Z))",
+        "Rectangle(W,X,Y,Z)",
+        "Equals(LengthOf(Line(X,Z)),2c)",
+        "Equals(LengthOf(Line(Z,Y)),6)",
+        "Equals(LengthOf(Line(X,Y)),8)",
+        "Find(LengthOf(Line(W,Y)))"
+    ],
+    "point_instances": [
+        "X",
+        "W",
+        "A",
+        "Z",
+        "Y"
+    ],
+    "line_instances": [
+        "WZ",
+        "ZY",
+        "YX",
+        "XW",
+        "WA",
+        "WY",
+        "AY",
+        "XA",
+        "XZ",
+        "AZ"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "X": [
+            78.76375,
+            78.32727272727273
+        ],
+        "W": [
+            78.60000000000001,
+            169.16363636363636
+        ],
+        "A": [
+            216.43071428571432,
+            123.8025974025974
+        ],
+        "Z": [
+            353.5488461538461,
+            169.1244755244755
+        ],
+        "Y": [
+            353.2633333333334,
+            78.38181818181818
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        8.0,
+        10.0,
+        20.0
+    ],
+    "choices_precise_value": [
+        6.0,
+        8.0,
+        10.0,
+        20.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 179.927621,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(W, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: WX \u22a5 WZ, 2 * c = XZ, WZ, XZ, 8 = XY, 6 = YZ, Rectangle(W, X, Y, Z), WX\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : WX \u22a5 WZ\nConclusions: pi / 2 = \u2220ZWX\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(W, X, Y, Z)\nConclusions: Parallelogram(W, X, Y, Z)\n\nStep 4:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(W, X, Y, Z)\nConclusions: WZ \u22a5 YZ, WX \u22a5 WZ\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : WZ, WX, XZ\nConclusions: \u25b3WXZ\n\nStep 6:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(W, X, Y, Z)\nConclusions: WX = YZ, WZ = XY\n\nStep 7:\nTheorem: Perpendicular to Right Angle\nPremises : WZ \u22a5 YZ\nConclusions: pi / 2 = \u2220YZW\n\nStep 8:\nTheorem: Pythagorean Theorem\nPremises : WX \u22a5 WZ, \u25b3WXZ\nConclusions: XZ = SqrtOf(WX ** 2 + WZ ** 2)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : WX = YZ, 6 = YZ\nConclusions: 6 = WX\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 8 = XY, WZ = XY\nConclusions: 8 = WZ\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220YZW, pi / 2 = \u2220ZWX\nConclusions: \u2220YZW = \u2220ZWX\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 2 * c = XZ, XZ = SqrtOf(WX ** 2 + WZ ** 2)\nConclusions: 2 * c = SqrtOf(WX ** 2 + WZ ** 2)\n\nStep 13:\nTheorem: Evaluate\nPremises : 8 = WZ, 6 = WX\nConclusions: 10 = SqrtOf(WX ** 2 + WZ ** 2)\n\nStep 14:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : WX = YZ, \u2220YZW = \u2220ZWX\nConclusions: \u25b3WXZ \u2245 \u25b3ZYW\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : 10 = SqrtOf(WX ** 2 + WZ ** 2), 2 * c = SqrtOf(WX ** 2 + WZ ** 2)\nConclusions: 10 = 2 * c\n\nStep 16:\nTheorem: Congruent Definition\nPremises : \u25b3WXZ \u2245 \u25b3ZYW\nConclusions: WX = YZ, WY = XZ\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : WY = XZ, 2 * c = XZ\nConclusions: 2 * c = WY\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : 10 = 2 * c, 2 * c = WY\nConclusions: 10 = WY\n\n",
+    "logic_fomrs_refined": [
+        "Line(W, Z)",
+        "Line(Z, Y)",
+        "Line(Y, X)",
+        "Line(X, W)",
+        "Line(W, A)",
+        "Line(W, Y)",
+        "Line(A, Y)",
+        "Line(X, A)",
+        "Line(X, Z)",
+        "Line(A, Z)",
+        "Line(A, Y)",
+        "Line(A, Z)",
+        "Line(W, A)",
+        "Line(W, Y)",
+        "Line(W, Z)",
+        "Line(X, A)",
+        "Line(X, W)",
+        "Line(X, Y)",
+        "Line(X, Z)",
+        "Line(Y, Z)",
+        "Perpendicular(Line(W, Z), Line(X, W))",
+        "PointLiesOnLine(A, Line(W, Y))",
+        "PointLiesOnLine(A, Line(X, Z))",
+        "Rectangle(W, X, Y, Z)",
+        "Equals(LengthOf(Line(X, Z)), Mul(2.0, c))",
+        "Equals(LengthOf(Line(Z, Y)), 6.0)",
+        "Equals(LengthOf(Line(X, Y)), 8.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,126 @@
+{
+    "problem_id": "3685",
+    "solved": true,
+    "problem_text": "Determine the value of z.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 8z-5)",
+        "Equals(LengthOf(Line(B, A)), 5z+16)",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(D, C)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Perpendicular(Line(E, F), Line(B, C))",
+        "PointLiesOnLine(A, Line(E, D))",
+        "PointLiesOnLine(A, Line(E, F))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(D, Line(E, F))",
+        "Find(z)"
+    ],
+    "point_instances": [
+        "B",
+        "E",
+        "A",
+        "D",
+        "F",
+        "C"
+    ],
+    "line_instances": [
+        "EA",
+        "ED",
+        "EF",
+        "AD",
+        "AF",
+        "DF",
+        "AC",
+        "AB",
+        "BD",
+        "BC",
+        "DC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "B": [
+            346.21147798742135,
+            56.980952380952374
+        ],
+        "E": [
+            20.92688679245283,
+            136.75428571428571
+        ],
+        "A": [
+            111.40026954177897,
+            136.43918367346936
+        ],
+        "D": [
+            346.4737196765498,
+            136.75428571428571
+        ],
+        "F": [
+            398.08288409703505,
+            136.75428571428571
+        ],
+        "C": [
+            346.4737196765498,
+            216.15999999999997
+        ]
+    },
+    "problem_choices": [
+        2.364,
+        6.077,
+        7.0,
+        11.875
+    ],
+    "choices_precise_value": [
+        2.364,
+        6.077,
+        7.0,
+        11.875
+    ],
+    "problem_answer": 7.0,
+    "total_time": 68.318816,
+    "solution_predicate": "Equals(7.0, z)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: CD \u22a5 DE, BD = CD, 16 + 5 * z = AB, 8 * z - 5 = AC, A on DE, \u2220EDC, AD \u22a5 BD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : CD \u22a5 DE\nConclusions: pi / 2 = \u2220EDC\n\nStep 3:\nTheorem: Same Angle\nPremises : \u2220EDC, A on DE\nConclusions: \u2220ADC = \u2220EDC\n\nStep 4:\nTheorem: Perpendicular to Right Angle\nPremises : AD \u22a5 BD\nConclusions: pi / 2 = \u2220BDA\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220EDC, \u2220ADC = \u2220EDC, pi / 2 = \u2220BDA\nConclusions: \u2220ADC = \u2220BDA\n\nStep 6:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : BD = CD, \u2220ADC = \u2220BDA\nConclusions: \u25b3ABD \u2245 \u25b3ACD\n\nStep 7:\nTheorem: Congruent Definition\nPremises : \u25b3ABD \u2245 \u25b3ACD\nConclusions: BD = CD, AB = AC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 16 + 5 * z = AB, 8 * z - 5 = AC, AB = AC\nConclusions: 16 + 5 * z = 8 * z - 5\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 16 + 5 * z = 8 * z - 5\nConclusions: 7 = z\n\n",
+    "logic_fomrs_refined": [
+        "Line(E, A)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(D, F)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(B, C)",
+        "Line(D, C)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, D)",
+        "Line(A, F)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(D, F)",
+        "Line(E, A)",
+        "Line(E, D)",
+        "Line(E, F)",
+        "Perpendicular(Line(E, F), Line(B, C))",
+        "PointLiesOnLine(A, Line(E, D))",
+        "PointLiesOnLine(A, Line(E, F))",
+        "PointLiesOnLine(D, Line(A, F))",
+        "PointLiesOnLine(D, Line(B, C))",
+        "PointLiesOnLine(D, Line(E, F))",
+        "Equals(LengthOf(Line(A, C)), Sub(Mul(8.0, z), 5.0))",
+        "Equals(LengthOf(Line(B, A)), Add(Mul(5.0, z), 16.0))",
+        "Equals(LengthOf(Line(D, B)), LengthOf(Line(D, C)))"
+    ],
+    "correct": true
+}

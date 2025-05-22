@@ -1,0 +1,99 @@
+{
+    "problem_id": "2560",
+    "solved": true,
+    "problem_text": "Find x. ",
+    "logic_forms": [
+        "PointLiesOnLine(V, Line(S, U))",
+        "PointLiesOnLine(V, Line(R, T))",
+        "PointLiesOnCircle(U, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(S, V)), x)",
+        "Equals(LengthOf(Line(R, V)), 4)",
+        "Equals(LengthOf(Line(U, V)), 8)",
+        "Equals(LengthOf(Line(T, V)), 4)",
+        "Find(x)"
+    ],
+    "point_instances": [
+        "V",
+        "U",
+        "T",
+        "S",
+        "R",
+        "A"
+    ],
+    "line_instances": [
+        "SV",
+        "SU",
+        "VU",
+        "RV",
+        "RT",
+        "VT"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "V": [
+            130.60321715817693,
+            76.94369973190348
+        ],
+        "U": [
+            52.58713136729223,
+            203.48525469168902
+        ],
+        "T": [
+            201.91689008042894,
+            101.60857908847186
+        ],
+        "S": [
+            150.44235924932977,
+            44.23592493297587
+        ],
+        "R": [
+            60.093833780160864,
+            50.67024128686327
+        ],
+        "A": [
+            112.3042895442359,
+            130.5
+        ]
+    },
+    "problem_choices": [
+        "1",
+        "2",
+        "4",
+        "8"
+    ],
+    "choices_precise_value": [
+        1.0,
+        2.0,
+        4.0,
+        8.0
+    ],
+    "problem_answer": 2.0,
+    "total_time": 59.547393,
+    "solution_predicate": "Equals(2.0, x)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: V on SU, 8 = UV, T on \u2299(A, radius_0_0), 4 = RV, S on \u2299(A, radius_0_0), R on \u2299(A, radius_0_0), 4 = TV, x = SV, U on \u2299(A, radius_0_0), V on RT\n\nStep 2:\nTheorem: Intersecting Chord Theorem\nPremises : R on \u2299(A, radius_0_0), V on SU, T on \u2299(A, radius_0_0), U on \u2299(A, radius_0_0), V on RT, S on \u2299(A, radius_0_0)\nConclusions: RV * TV = SV * UV\n\nStep 3:\nTheorem: Substitution\nPremises : 4 = TV, 4 = RV, 8 = UV, x = SV, RV * TV = SV * UV\nConclusions: 4 * 4 = 8 * x\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : x = SV, 4 * 4 = 8 * x\nConclusions: 2 = SV\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : 2 = SV, x = SV\nConclusions: 2 = x\n\n",
+    "logic_fomrs_refined": [
+        "Line(S, V)",
+        "Line(S, U)",
+        "Line(V, U)",
+        "Line(R, V)",
+        "Line(R, T)",
+        "Line(V, T)",
+        "Circle(A, radius_0_0)",
+        "PointLiesOnLine(V, Line(S, U))",
+        "PointLiesOnLine(V, Line(R, T))",
+        "PointLiesOnCircle(U, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(T, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(S, Circle(A, radius_0_0))",
+        "PointLiesOnCircle(R, Circle(A, radius_0_0))",
+        "Equals(LengthOf(Line(S, V)), x)",
+        "Equals(LengthOf(Line(R, V)), 4.0)",
+        "Equals(LengthOf(Line(U, V)), 8.0)",
+        "Equals(LengthOf(Line(T, V)), 4.0)"
+    ],
+    "correct": true
+}

@@ -1,0 +1,104 @@
+{
+    "problem_id": "31",
+    "solved": true,
+    "problem_text": "Find m \\angle 1.",
+    "logic_forms": [
+        "Equals(MeasureOf(Angle(A, B, C)), 75)",
+        "Equals(MeasureOf(Angle(B, C, A)), MeasureOf(Angle(1)))",
+        "Equals(MeasureOf(Angle(B, C, E)), MeasureOf(Angle(2)))",
+        "Equals(MeasureOf(Angle(C, A, B)), 35)",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(Angle(3)))",
+        "Equals(MeasureOf(Angle(C, E, D)), 28)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Find(MeasureOf(Angle(1)))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "AC",
+        "AE",
+        "CE",
+        "DE",
+        "DC",
+        "DB",
+        "CB",
+        "AB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            80.3,
+            282.17391304347825
+        ],
+        "B": [
+            249.28750000000002,
+            43.92934782608695
+        ],
+        "C": [
+            359.33333333333337,
+            175.16770186335404
+        ],
+        "D": [
+            469.3791666666667,
+            308.14673913043475
+        ],
+        "E": [
+            697.8125,
+            43.92934782608695
+        ]
+    },
+    "problem_choices": [
+        35.0,
+        70.0,
+        75.0,
+        82.0
+    ],
+    "choices_precise_value": [
+        35.0,
+        70.0,
+        75.0,
+        82.0
+    ],
+    "problem_answer": 70.0,
+    "total_time": 23.310115,
+    "solution_predicate": "Equals(1.2217304764, MeasureOf(Angle(B, C, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: C on AE, AC, C on BD, BC, \u2220DCE, AB, pi * (75 / 180) = \u2220ABC, pi * (35 / 180) = \u2220CAB, 3.14 = pi, \u2220BCA, \u2220ACD, \u2220ECB\n\nStep 2:\nTheorem: Vertical Angle Theorem\nPremises : C on AE, C on BD\nConclusions: \u2220ACD = \u2220ECB, \u2220BCA = \u2220DCE\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, AB, AC\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Straight Angle\nPremises : \u2220ECB, \u2220BCA\nConclusions: pi = \u2220BCA + \u2220ECB\n\nStep 5:\nTheorem: Circumference Split\nPremises : \u2220ECB, \u2220DCE, \u2220BCA, \u2220ACD\nConclusions: 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB\n\nStep 6:\nTheorem: Interior Angle Sum Theorem for Triangle(A, B, C)\nPremises : \u25b3ABC\nConclusions: pi = \u2220ABC + \u2220BCA + \u2220CAB\n\nStep 7:\nTheorem: Substitution\nPremises : 2 * pi = \u2220ACD + \u2220BCA + \u2220DCE + \u2220ECB, 3.14 = pi, \u2220BCA = \u2220DCE, \u2220ACD = \u2220ECB\nConclusions: 2 * 3.14 = \u2220DCE + \u2220DCE + \u2220ECB + \u2220ECB\n\nStep 8:\nTheorem: Substitution\nPremises : \u2220BCA = \u2220DCE, 3.14 = pi, pi * (75 / 180) = \u2220ABC, pi = \u2220ABC + \u2220BCA + \u2220CAB, pi * (35 / 180) = \u2220CAB\nConclusions: 3.14 = pi * (35 / 180) + pi * (75 / 180) + \u2220DCE\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi * (35 / 180) + pi * (75 / 180) + \u2220DCE, 2 * 3.14 = \u2220DCE + \u2220DCE + \u2220ECB + \u2220ECB, \u2220BCA = \u2220DCE, pi = \u2220BCA + \u2220ECB\nConclusions: 1.22 = \u2220BCA\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(C, E)",
+        "Line(D, E)",
+        "Line(D, C)",
+        "Line(D, B)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(A, E)",
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(C, E)",
+        "Line(E, D)",
+        "PointLiesOnLine(C, Line(A, E))",
+        "PointLiesOnLine(C, Line(B, D))",
+        "Equals(MeasureOf(Angle(A, B, C)), Mul(pi, Div(75.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, A, B)), Mul(pi, Div(35.0, 180.0)))",
+        "Equals(MeasureOf(Angle(C, E, D)), Mul(pi, Div(28.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,119 @@
+{
+    "problem_id": "2440",
+    "solved": true,
+    "problem_text": "Polygon A B C D \\sim polygon A E F G, m \\angle A G F = 108, G F = 14, A D = 12, D G = 4.5, E F = 8, and A B = 26. Find m \\angle A D C.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "Equals(LengthOf(Line(A, D)), 12)",
+        "Equals(LengthOf(Line(F, E)), 8)",
+        "Equals(LengthOf(Line(G, F)), 14)",
+        "Equals(LengthOf(Line(B, A)), 26)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(MeasureOf(Angle(A, G, F)), 108)",
+        "Similar(Quadrilateral(A,B,C,D),Quadrilateral(A,E,F,G))",
+        "Equals(MeasureOf(Angle(A,G,F)),108)",
+        "Equals(LengthOf(Line(G,F)),14)",
+        "Equals(LengthOf(Line(A,D)),12)",
+        "Equals(LengthOf(Line(D,G)),4.5)",
+        "Equals(LengthOf(Line(E,F)),8)",
+        "Equals(LengthOf(Line(A,B)),26)",
+        "Find(MeasureOf(Angle(A,D,C)))"
+    ],
+    "point_instances": [
+        "D",
+        "G",
+        "C",
+        "B",
+        "A",
+        "E",
+        "F"
+    ],
+    "line_instances": [
+        "DC",
+        "BC",
+        "AE",
+        "AB",
+        "EB",
+        "AG",
+        "AD",
+        "GD",
+        "GF",
+        "EF"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "D": [
+            118.8953488372093,
+            192.9418604651163
+        ],
+        "G": [
+            103.77906976744187,
+            148.17441860465115
+        ],
+        "C": [
+            331.10465116279073,
+            192.06976744186048
+        ],
+        "B": [
+            331.10465116279073,
+            60.965116279069775
+        ],
+        "A": [
+            82.84883720930233,
+            83.63953488372093
+        ],
+        "E": [
+            239.53488372093022,
+            69.1046511627907
+        ],
+        "F": [
+            239.24418604651163,
+            147.01162790697674
+        ]
+    },
+    "problem_choices": [
+        "14",
+        "72",
+        "108",
+        "120"
+    ],
+    "choices_precise_value": [
+        14.0,
+        72.0,
+        108.0,
+        120.0
+    ],
+    "problem_answer": 108.0,
+    "total_time": 17.619062,
+    "solution_predicate": "Equals(1.8849555922, MeasureOf(Angle(C, D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (108 / 180) = \u2220FGA, Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G)\n\nStep 2:\nTheorem: Similar Definition\nPremises : Quadrilateral(A, B, C, D) ~ Quadrilateral(A, E, F, G)\nConclusions: \u2220CDA = \u2220FGA\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : pi * (108 / 180) = \u2220FGA, \u2220CDA = \u2220FGA\nConclusions: pi * (108 / 180) = \u2220CDA\n\nStep 4:\nTheorem: Evaluate\nPremises : pi * (108 / 180) = \u2220CDA\nConclusions: 1.88 = \u2220CDA\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, C)",
+        "Line(B, C)",
+        "Line(A, E)",
+        "Line(A, B)",
+        "Line(E, B)",
+        "Line(A, G)",
+        "Line(A, D)",
+        "Line(G, D)",
+        "Line(G, F)",
+        "Line(E, F)",
+        "PointLiesOnLine(E, Line(A, B))",
+        "PointLiesOnLine(G, Line(A, D))",
+        "Similar(Quadrilateral(A, B, C, D), Quadrilateral(A, E, F, G))",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(F, E)), 8.0)",
+        "Equals(LengthOf(Line(G, F)), 14.0)",
+        "Equals(LengthOf(Line(B, A)), 26.0)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(MeasureOf(Angle(F, G, A)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(MeasureOf(Angle(F, G, A)), Mul(pi, Div(108.0, 180.0)))",
+        "Equals(LengthOf(Line(G, F)), 14.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(D, G)), 4.5)",
+        "Equals(LengthOf(Line(E, F)), 8.0)",
+        "Equals(LengthOf(Line(A, B)), 26.0)"
+    ],
+    "correct": true
+}

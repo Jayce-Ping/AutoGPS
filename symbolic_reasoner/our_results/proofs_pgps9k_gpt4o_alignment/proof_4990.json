@@ -1,0 +1,74 @@
+{
+    "problem_id": "4990",
+    "solved": true,
+    "problem_text": "Find the area of sector KLM.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, L)), 5)",
+        "Equals(MeasureOf(Arc(K, M)), 120)",
+        "Find(AreaOf(Sector(L, K, M)))",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "PointLiesOnCircle(K, Circle(L))",
+        "PointLiesOnCircle(M, Circle(L))",
+        "Triangle(K, L, M)"
+    ],
+    "point_instances": [
+        "L",
+        "K",
+        "M"
+    ],
+    "line_instances": [
+        "KM",
+        "LM",
+        "KL"
+    ],
+    "circle_instances": [
+        "L"
+    ],
+    "point_positions": {
+        "L": [
+            147.36075614886406,
+            115.60173114013598
+        ],
+        "K": [
+            60.14917127071823,
+            165.42857142857142
+        ],
+        "M": [
+            232.44383057090238,
+            165.91873015873017
+        ]
+    },
+    "problem_choices": [
+        10.472,
+        15.355,
+        26.18,
+        52.36
+    ],
+    "choices_precise_value": [
+        10.472,
+        15.355,
+        26.18,
+        52.36
+    ],
+    "problem_answer": 26.18,
+    "total_time": 7.1699,
+    "solution_predicate": "Equals(26.17993878, AreaOf(Sector(K, L, M)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 5 = LM, pi * (120 / 180) = Arc(KLM), Sector(K, L, M), M on \u2299(L, radius_L), Arc(KLM)\n\nStep 2:\nTheorem: Area formula of Sector(K, L, M)\nPremises : Sector(K, L, M)\nConclusions: Area(Sector(K, L, M)) = (radius_L ** 2 * \u2220KLM) / 2\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : M on \u2299(L, radius_L)\nConclusions: radius_L = LM\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(KLM)\nConclusions: \u2220KLM = Arc(KLM)\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_L = LM, 5 = LM\nConclusions: 5 = radius_L\n\nStep 6:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KLM = Arc(KLM), pi * (120 / 180) = Arc(KLM)\nConclusions: pi * (120 / 180) = \u2220KLM\n\nStep 7:\nTheorem: Substitution\nPremises : 5 = radius_L, Area(Sector(K, L, M)) = (radius_L ** 2 * \u2220KLM) / 2, pi * (120 / 180) = \u2220KLM\nConclusions: (pi * (120 / 180) * 5 ** 2) / 2 = Area(Sector(K, L, M))\n\nStep 8:\nTheorem: Evaluate\nPremises : (pi * (120 / 180) * 5 ** 2) / 2 = Area(Sector(K, L, M))\nConclusions: 26.18 = Area(Sector(K, L, M))\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(K, L)",
+        "Circle(L, radius_L)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "PointLiesOnCircle(K, Circle(L, radius_L))",
+        "PointLiesOnCircle(M, Circle(L, radius_L))",
+        "Triangle(K, L, M)",
+        "Equals(LengthOf(Line(M, L)), 5.0)",
+        "Equals(MeasureOf(Arc(K, L, M)), Mul(pi, Div(120.0, 180.0)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,115 @@
+{
+    "problem_id": "6733",
+    "solved": true,
+    "problem_text": "Circle A has diameters DF and PG. If DF = 10, find DA.",
+    "logic_forms": [
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(D, A)",
+        "Line(D, F)",
+        "Line(L, A)",
+        "Line(P, A)",
+        "Line(P, G)",
+        "PointLiesOnCircle(D, Circle(A))",
+        "PointLiesOnCircle(F, Circle(A))",
+        "PointLiesOnCircle(G, Circle(A))",
+        "PointLiesOnCircle(L, Circle(A))",
+        "PointLiesOnCircle(P, Circle(A))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "PointLiesOnLine(A, Line(P, G))",
+        "IsDiameterOf(Line(D,F),Circle(A))",
+        "IsDiameterOf(Line(P,G),Circle(A))",
+        "Equals(LengthOf(Line(D,F)),10)",
+        "Find(LengthOf(Line(D,A)))"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "P",
+        "D",
+        "L",
+        "A"
+    ],
+    "line_instances": [
+        "GA",
+        "GP",
+        "AP",
+        "DA",
+        "DF",
+        "AF",
+        "LA"
+    ],
+    "circle_instances": [
+        "A"
+    ],
+    "point_positions": {
+        "G": [
+            175.0391061452514,
+            301.184
+        ],
+        "F": [
+            290.9303824666953,
+            260.8
+        ],
+        "P": [
+            221.29944134078212,
+            64.48
+        ],
+        "D": [
+            107.59979685119349,
+            104.18909090909092
+        ],
+        "L": [
+            84.15341641598624,
+            219.20000000000002
+        ],
+        "A": [
+            198.3461538461538,
+            181.4230769230769
+        ]
+    },
+    "problem_choices": [
+        5.0,
+        10.0,
+        20.0,
+        25.0
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        20.0,
+        25.0
+    ],
+    "problem_answer": 5.0,
+    "total_time": 15.756739,
+    "solution_predicate": "Equals(5.0, LengthOf(Line(D, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: A on DF, 10 = DF, IsDiameterOf(DF, \u2299(A, radius_A))\n\nStep 2:\nTheorem: Line Segment Split\nPremises : A on DF\nConclusions: DF = AD + AF\n\nStep 3:\nTheorem: Diameter Properties\nPremises : IsDiameterOf(DF, \u2299(A, radius_A))\nConclusions: A on DF, radius_A = AF, radius_A = AD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 10 = DF, DF = AD + AF\nConclusions: 10 = AD + AF\n\nStep 5:\nTheorem: Transtivity of Equivalence\nPremises : radius_A = AD, radius_A = AF\nConclusions: AD = AF\n\nStep 6:\nTheorem: Solve Linear Equation System\nPremises : AD = AF, 10 = AD + AF\nConclusions: 5 = AD\n\n",
+    "logic_fomrs_refined": [
+        "Line(G, A)",
+        "Line(G, P)",
+        "Line(A, P)",
+        "Line(D, A)",
+        "Line(D, F)",
+        "Line(A, F)",
+        "Line(L, A)",
+        "Circle(A, radius_A)",
+        "Line(A, F)",
+        "Line(A, G)",
+        "Line(D, A)",
+        "Line(D, F)",
+        "Line(L, A)",
+        "Line(P, A)",
+        "Line(P, G)",
+        "PointLiesOnCircle(D, Circle(A, radius_A))",
+        "PointLiesOnCircle(F, Circle(A, radius_A))",
+        "PointLiesOnCircle(G, Circle(A, radius_A))",
+        "PointLiesOnCircle(L, Circle(A, radius_A))",
+        "PointLiesOnCircle(P, Circle(A, radius_A))",
+        "PointLiesOnLine(A, Line(D, F))",
+        "PointLiesOnLine(A, Line(P, G))",
+        "IsDiameterOf(Line(D, F), Circle(A, radius_A))",
+        "IsDiameterOf(Line(P, G), Circle(A, radius_A))",
+        "Equals(LengthOf(Line(D, F)), 10.0)"
+    ],
+    "correct": true
+}

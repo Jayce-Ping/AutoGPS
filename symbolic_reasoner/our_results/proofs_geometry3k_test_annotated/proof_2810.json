@@ -1,0 +1,97 @@
+{
+    "problem_id": "2810",
+    "solved": true,
+    "problem_text": "Quadrilateral A B D C is a rectangle. If m \\angle 1 = 38, find m \\angle 2.",
+    "logic_forms": [
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Equals(MeasureOf(Angle(C, E, D)), MeasureOf(angle 8))",
+        "Equals(MeasureOf(Angle(B, D, E)), MeasureOf(angle 4))",
+        "Equals(MeasureOf(Angle(B, E, D)), MeasureOf(angle 5))",
+        "Equals(MeasureOf(Angle(D, C, E)), MeasureOf(angle 7))",
+        "Equals(MeasureOf(Angle(C, A, E)), MeasureOf(angle 1))",
+        "Equals(MeasureOf(Angle(B, A, E)), MeasureOf(angle 2))",
+        "Equals(MeasureOf(Angle(D, B, E)), MeasureOf(angle 6))",
+        "Equals(MeasureOf(Angle(C, D, E)), MeasureOf(angle 3))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(angle 1), 38)",
+        "Find(MeasureOf(angle 2))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "D",
+        "C",
+        "E"
+    ],
+    "line_instances": [
+        "BD",
+        "CD",
+        "AC",
+        "AB",
+        "BE",
+        "BC",
+        "EC",
+        "AE",
+        "AD",
+        "ED"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            50.833333333333336,
+            71.5
+        ],
+        "B": [
+            50.833333333333336,
+            255.25
+        ],
+        "D": [
+            499.1666666666667,
+            254.83333333333337
+        ],
+        "C": [
+            499.1666666666667,
+            71.5
+        ],
+        "E": [
+            275.4166666666667,
+            163.58333333333334
+        ]
+    },
+    "problem_choices": [
+        "33",
+        "38",
+        "52",
+        "87"
+    ],
+    "choices_precise_value": [
+        33.0,
+        38.0,
+        52.0,
+        87.0
+    ],
+    "problem_answer": 52.0,
+    "total_time": 62.142995,
+    "solution_predicate": "Equals(0.907571211, MeasureOf(Angle(B, A, E)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220DAC, AB \u22a5 BD, AB, Rectangle(A, B, D, C), E on AD, pi * (38 / 180) = \u2220EAC, \u2220BAD, \u2220CDA, BD, AD, 3.14 = pi\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : AB \u22a5 BD\nConclusions: pi / 2 = \u2220DBA\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(A, B, D, C)\nConclusions: Parallelogram(A, B, D, C)\n\nStep 4:\nTheorem: Same Angle\nPremises : E on AD, \u2220DAC\nConclusions: \u2220DAC = \u2220EAC\n\nStep 5:\nTheorem: Same Angle\nPremises : E on AD, \u2220BAD\nConclusions: \u2220BAD = \u2220BAE\n\nStep 6:\nTheorem: Same Angle\nPremises : E on AD, \u2220CDA\nConclusions: \u2220CDA = \u2220CDE\n\nStep 7:\nTheorem: Definition of Triangle\nPremises : BD, AB, AD\nConclusions: \u25b3ABD\n\nStep 8:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(A, B, D, C)\nConclusions: AB || CD, AC || BD\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : pi * (38 / 180) = \u2220EAC, \u2220DAC = \u2220EAC\nConclusions: pi * (38 / 180) = \u2220DAC\n\nStep 10:\nTheorem: Interior Angle Sum Theorem for Triangle(D, B, A)\nPremises : \u25b3ABD\nConclusions: pi = \u2220ADB + \u2220BAD + \u2220DBA\n\nStep 11:\nTheorem: Alternate Interior Angle Theorem\nPremises : AB || CD\nConclusions: \u2220BAD = \u2220CDA\n\nStep 12:\nTheorem: Alternate Interior Angle Theorem\nPremises : AC || BD\nConclusions: \u2220ADB = \u2220DAC\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220CDA, \u2220CDA = \u2220CDE\nConclusions: \u2220BAD = \u2220CDE\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAD = \u2220BAE, \u2220BAD = \u2220CDA\nConclusions: \u2220BAE = \u2220CDA\n\nStep 15:\nTheorem: Transtivity of Equivalence\nPremises : \u2220ADB = \u2220DAC, pi * (38 / 180) = \u2220DAC\nConclusions: pi * (38 / 180) = \u2220ADB\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : \u2220BAE = \u2220CDA, \u2220CDA = \u2220CDE\nConclusions: \u2220BAE = \u2220CDE\n\nStep 17:\nTheorem: Substitution\nPremises : pi / 2 = \u2220DBA, \u2220BAD = \u2220CDE, 3.14 = pi, pi * (38 / 180) = \u2220ADB, pi = \u2220ADB + \u2220BAD + \u2220DBA\nConclusions: 3.14 = pi / 2 + 3.14 * (38 / 180) + \u2220CDE\n\nStep 18:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, 3.14 = pi / 2 + 3.14 * (38 / 180) + \u2220CDE, \u2220BAE = \u2220CDE\nConclusions: 0.91 = \u2220BAE\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, D)",
+        "Line(C, D)",
+        "Line(A, C)",
+        "Line(A, B)",
+        "Line(B, E)",
+        "Line(B, C)",
+        "Line(E, C)",
+        "Line(A, E)",
+        "Line(A, D)",
+        "Line(E, D)",
+        "PointLiesOnLine(E, Line(B, C))",
+        "PointLiesOnLine(E, Line(A, D))",
+        "Perpendicular(Line(D, B), Line(A, B))",
+        "Rectangle(A, B, D, C)",
+        "Equals(MeasureOf(Angle(E, A, C)), Mul(pi, Div(38.0, 180.0)))"
+    ],
+    "correct": true
+}

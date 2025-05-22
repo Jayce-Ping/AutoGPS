@@ -1,0 +1,78 @@
+{
+    "problem_id": "2901",
+    "solved": true,
+    "problem_text": "\\triangle W X Y \\cong \\triangle W X Z. Find y.",
+    "logic_forms": [
+        "PointLiesOnLine(X, Line(Y, Z))",
+        "Perpendicular(Line(Z, X), Line(W, X))",
+        "Equals(LengthOf(Line(Z, X)), 3y+7)",
+        "Equals(LengthOf(Line(Y, X)), 19)",
+        "Equals(MeasureOf(Angle(Y, X, W)), 20y+10)",
+        "Congruent(Triangle(W, X, Y), Triangle(W, X, Z))",
+        "Find(y)"
+    ],
+    "point_instances": [
+        "Y",
+        "X",
+        "Z",
+        "W"
+    ],
+    "line_instances": [
+        "YX",
+        "YZ",
+        "XZ",
+        "WX",
+        "WZ",
+        "YW"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "Y": [
+            68.27710843373494,
+            273.69879518072287
+        ],
+        "X": [
+            385.74698795180717,
+            273.09638554216866
+        ],
+        "Z": [
+            709.8433734939758,
+            273.69879518072287
+        ],
+        "W": [
+            385.14457831325296,
+            72.49397590361446
+        ]
+    },
+    "problem_choices": [
+        "3",
+        "4",
+        "5",
+        "7"
+    ],
+    "choices_precise_value": [
+        3.0,
+        4.0,
+        5.0,
+        7.0
+    ],
+    "problem_answer": 4.0,
+    "total_time": 22.906176,
+    "solution_predicate": "Equals(4.0, y)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u25b3WXY \u2245 \u25b3WXZ, 7 + 3 * y = XZ, 19 = XY\n\nStep 2:\nTheorem: Congruent Definition\nPremises : \u25b3WXY \u2245 \u25b3WXZ\nConclusions: XY = XZ\n\nStep 3:\nTheorem: Transtivity of Equivalence\nPremises : 7 + 3 * y = XZ, 19 = XY, XY = XZ\nConclusions: 19 = 7 + 3 * y\n\nStep 4:\nTheorem: Solve Linear Equation System\nPremises : 19 = 7 + 3 * y\nConclusions: 4 = y\n\n",
+    "logic_fomrs_refined": [
+        "Line(Y, X)",
+        "Line(Y, Z)",
+        "Line(X, Z)",
+        "Line(W, X)",
+        "Line(W, Z)",
+        "Line(Y, W)",
+        "PointLiesOnLine(X, Line(Y, Z))",
+        "Perpendicular(Line(Z, X), Line(W, X))",
+        "Congruent(Triangle(W, X, Y), Triangle(W, X, Z))",
+        "Equals(LengthOf(Line(Z, X)), Add(Mul(3.0, y), 7.0))",
+        "Equals(LengthOf(Line(Y, X)), 19.0)",
+        "Equals(MeasureOf(Angle(W, X, Y)), Mul(pi, Div(Add(Mul(20.0, y), 10.0), 180.0)))"
+    ],
+    "correct": true
+}

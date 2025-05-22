@@ -1,0 +1,61 @@
+{
+    "problem_id": "2924",
+    "solved": true,
+    "problem_text": "Find \\cos C.",
+    "logic_forms": [
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), 3)",
+        "Equals(LengthOf(Line(B, C)), 5)",
+        "Find(CosOf(Angle(C)))"
+    ],
+    "point_instances": [
+        "C",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BA",
+        "BC",
+        "AC"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            420.9386281588448,
+            121.68592057761734
+        ],
+        "B": [
+            68.95306859205776,
+            56.34296028880867
+        ],
+        "A": [
+            162.8158844765343,
+            248.40072202166067
+        ]
+    },
+    "problem_choices": [
+        "\\frac { 3 } { 5 }",
+        "\\frac { 3 } { 4 }",
+        "\\frac { 4 } { 5 }",
+        "\\frac { 5 } { 4 }"
+    ],
+    "choices_precise_value": [
+        0.6,
+        0.75,
+        0.8,
+        1.25
+    ],
+    "problem_answer": 0.8,
+    "total_time": 12.051518,
+    "solution_predicate": "Equals(0.8, CosOf(MeasureOf(Angle(B, C, A))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AB, sin(\u2220ABC), \u2220BCA, \u2220ABC, BC, 3 = AB, cos(\u2220ABC), AC, AB \u22a5 AC, 5 = BC\n\nStep 2:\nTheorem: Definition of Triangle\nPremises : AB, AC, BC\nConclusions: \u25b3ABC\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220ABC), AB \u22a5 AC\nConclusions: AB / BC = cos(\u2220ABC)\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220ABC), AB \u22a5 AC\nConclusions: AC / BC = sin(\u2220ABC)\n\nStep 5:\nTheorem: Cos Function Definition\nPremises : \u2220BCA, \u25b3ABC, AB \u22a5 AC\nConclusions: AC / BC = cos(\u2220BCA)\n\nStep 6:\nTheorem: Sin Function Definition\nPremises : \u25b3ABC, AB \u22a5 AC, \u2220ABC\nConclusions: AC / BC = sin(\u2220ABC)\n\nStep 7:\nTheorem: Substitution\nPremises : 3 = AB, AB / BC = cos(\u2220ABC), 5 = BC\nConclusions: 3 / 5 = cos(\u2220ABC)\n\nStep 8:\nTheorem: Substitution\nPremises : AC / BC = sin(\u2220ABC), 5 = BC\nConclusions: AC / 5 = sin(\u2220ABC)\n\nStep 9:\nTheorem: Solve Univariate Equation\nPremises : 3 / 5 = cos(\u2220ABC)\nConclusions: 0.93 = \u2220ABC\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = sin(\u2220ABC), AC / 5 = sin(\u2220ABC)\nConclusions: AC / 5 = AC / BC\n\nStep 11:\nTheorem: Substitution\nPremises : 0.93 = \u2220ABC, AC / BC = sin(\u2220ABC), 5 = BC\nConclusions: sin(0.93) = AC / 5\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : AC / BC = cos(\u2220BCA), AC / 5 = AC / BC\nConclusions: AC / 5 = cos(\u2220BCA)\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : sin(0.93) = AC / 5, AC / 5 = cos(\u2220BCA)\nConclusions: sin(0.93) = cos(\u2220BCA)\n\nStep 14:\nTheorem: Evaluate\nPremises : sin(0.93) = cos(\u2220BCA)\nConclusions: 0.8 = cos(\u2220BCA)\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(B, C)",
+        "Line(A, C)",
+        "Perpendicular(Line(B, A), Line(C, A))",
+        "Equals(LengthOf(Line(A, B)), 3.0)",
+        "Equals(LengthOf(Line(B, C)), 5.0)"
+    ],
+    "correct": true
+}

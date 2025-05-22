@@ -1,0 +1,113 @@
+{
+    "problem_id": "2963",
+    "solved": true,
+    "problem_text": "Quadrilateral KLMN is a rectangle. If PL = x^{2}-1 and PM = 4x+11, find KP.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(L, P)), x^{2}-1)",
+        "Equals(LengthOf(Line(M, P)), 4x+11)",
+        "Line(K, M)",
+        "Line(K, N)",
+        "Line(K, P)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(P, Line(L, N))",
+        "Rectangle(K,L,M,N)",
+        "Equals(LengthOf(Line(P,L)),x^{2}-1)",
+        "Equals(LengthOf(Line(P,M)),4x+11)",
+        "Find(LengthOf(Line(K,P)))"
+    ],
+    "point_instances": [
+        "L",
+        "M",
+        "P",
+        "K",
+        "N"
+    ],
+    "line_instances": [
+        "KN",
+        "LP",
+        "LN",
+        "PN",
+        "LM",
+        "KP",
+        "KM",
+        "PM",
+        "LK",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "L": [
+            63.06980056980057,
+            45.11904761904762
+        ],
+        "M": [
+            431.39743589743586,
+            45.480000000000004
+        ],
+        "P": [
+            247.5940170940171,
+            128.86
+        ],
+        "K": [
+            63.32722832722832,
+            214.4057142857143
+        ],
+        "N": [
+            431.39743589743586,
+            214.4057142857143
+        ]
+    },
+    "problem_choices": [
+        17.5,
+        35.0,
+        51.98,
+        70.0
+    ],
+    "choices_precise_value": [
+        17.5,
+        35.0,
+        51.98,
+        70.0
+    ],
+    "problem_answer": 35.0,
+    "total_time": 232.989208,
+    "solution_predicate": "Equals(35.0, LengthOf(Line(K, P)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MN, MP, Rectangle(K, L, M, N), \u2220MNL, NP, P on LN, x ** 2 - 1 = LP, 11 + 4 * x = MP, \u2220KMN, \u2220MKL, P on KM\n\nStep 2:\nTheorem: Rectangle has Neighbor Side Perpendicular\nPremises : Rectangle(K, L, M, N)\nConclusions: KL \u22a5 LM, KL \u22a5 KN\n\nStep 3:\nTheorem: Rectangle is Parallelogram\nPremises : Rectangle(K, L, M, N)\nConclusions: Parallelogram(K, L, M, N)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : MN, NP, MP\nConclusions: \u25b3MNP\n\nStep 5:\nTheorem: Same Angle\nPremises : \u2220MNL, P on LN\nConclusions: \u2220MNL = \u2220MNP\n\nStep 6:\nTheorem: Same Angle\nPremises : \u2220KMN, P on KM\nConclusions: \u2220KMN = \u2220PMN\n\nStep 7:\nTheorem: Same Angle\nPremises : \u2220MKL, P on KM\nConclusions: \u2220MKL = \u2220PKL\n\nStep 8:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 LM\nConclusions: pi / 2 = \u2220KLM\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : KL \u22a5 KN\nConclusions: pi / 2 = \u2220NKL\n\nStep 10:\nTheorem: Parallelogram Opposite Angles Equal\nPremises : Parallelogram(K, L, M, N)\nConclusions: \u2220LMN = \u2220NKL\n\nStep 11:\nTheorem: Parallelogram Opposite Lines Parallel\nPremises : Parallelogram(K, L, M, N)\nConclusions: KL || NM\n\nStep 12:\nTheorem: Parallelogram Diagonals Bisect\nPremises : Parallelogram(K, L, M, N), P on KM, P on LN\nConclusions: KP = MP, LP = NP\n\nStep 13:\nTheorem: Parallelogram Opposite Lines Equal\nPremises : Parallelogram(K, L, M, N)\nConclusions: KL = MN\n\nStep 14:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220KLM, \u2220LMN = \u2220NKL, pi / 2 = \u2220NKL\nConclusions: \u2220KLM = \u2220LMN\n\nStep 15:\nTheorem: Alternate Interior Angle Theorem\nPremises : KL || NM\nConclusions: \u2220KMN = \u2220MKL\n\nStep 16:\nTheorem: Transtivity of Equivalence\nPremises : 11 + 4 * x = MP, KP = MP\nConclusions: 11 + 4 * x = KP\n\nStep 17:\nTheorem: Transtivity of Equivalence\nPremises : LP = NP, x ** 2 - 1 = LP\nConclusions: x ** 2 - 1 = NP\n\nStep 18:\nTheorem: Side-Angle-Side Congruent Theorem\nPremises : \u2220KLM = \u2220LMN, KL = MN\nConclusions: \u25b3KLM \u2245 \u25b3NML\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : \u2220KMN = \u2220MKL, \u2220MKL = \u2220PKL\nConclusions: \u2220KMN = \u2220PKL\n\nStep 20:\nTheorem: Congruent Definition\nPremises : \u25b3KLM \u2245 \u25b3NML\nConclusions: \u2220MKL = \u2220MNL, KL = MN\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNL = \u2220MNP, \u2220MKL = \u2220MNL, \u2220MKL = \u2220PKL\nConclusions: \u2220MNP = \u2220PKL\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MNP = \u2220PKL, \u2220KMN = \u2220PMN, \u2220KMN = \u2220PKL\nConclusions: \u2220MNP = \u2220PMN\n\nStep 23:\nTheorem: Issoceles Triangle Property\nPremises : \u25b3MNP, \u2220MNP = \u2220PMN\nConclusions: MP = NP\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 11 + 4 * x = MP, x ** 2 - 1 = NP, MP = NP\nConclusions: 11 + 4 * x = x ** 2 - 1\n\nStep 25:\nTheorem: Solve Univariate Equation\nPremises : 11 + 4 * x = x ** 2 - 1\nConclusions: 6 = x\n\nStep 26:\nTheorem: Evaluate\nPremises : 6 = x\nConclusions: 35 = 11 + 4 * x\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : 11 + 4 * x = KP, 35 = 11 + 4 * x\nConclusions: 35 = KP\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, N)",
+        "Line(L, P)",
+        "Line(L, N)",
+        "Line(P, N)",
+        "Line(L, M)",
+        "Line(K, P)",
+        "Line(K, M)",
+        "Line(P, M)",
+        "Line(L, K)",
+        "Line(M, N)",
+        "Line(K, M)",
+        "Line(K, N)",
+        "Line(K, P)",
+        "Line(L, K)",
+        "Line(L, M)",
+        "Line(L, N)",
+        "Line(L, P)",
+        "Line(M, N)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "PointLiesOnLine(P, Line(K, M))",
+        "PointLiesOnLine(P, Line(L, N))",
+        "Rectangle(K, L, M, N)",
+        "Equals(LengthOf(Line(L, P)), Sub(Pow(x, 2.0), 1.0))",
+        "Equals(LengthOf(Line(M, P)), Add(Mul(4.0, x), 11.0))",
+        "Equals(LengthOf(Line(P, L)), Sub(Pow(x, 2.0), 1.0))",
+        "Equals(LengthOf(Line(P, M)), Add(Mul(4.0, x), 11.0))"
+    ],
+    "correct": true
+}

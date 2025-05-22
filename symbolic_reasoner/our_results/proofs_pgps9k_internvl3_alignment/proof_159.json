@@ -1,0 +1,90 @@
+{
+    "problem_id": "159",
+    "solved": true,
+    "problem_text": "Find a.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, C)), 27.5)",
+        "Equals(LengthOf(Line(A, D)), 20)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(LengthOf(Line(C, D)), 24)",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(Angle(B, D, A)))",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Find(a)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "AB",
+        "AC",
+        "BC",
+        "CD",
+        "AD",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            86.99639855942377,
+            383.57142857142856
+        ],
+        "B": [
+            338.31932773109247,
+            383.57142857142856
+        ],
+        "C": [
+            640.1155462184875,
+            383.1878571428571
+        ],
+        "D": [
+            299.87394957983196,
+            41.425714285714285
+        ]
+    },
+    "problem_choices": [
+        12.0,
+        12.5,
+        15.0,
+        17.5
+    ],
+    "choices_precise_value": [
+        12.0,
+        12.5,
+        15.0,
+        17.5
+    ],
+    "problem_answer": 15.0,
+    "total_time": 33.321687,
+    "solution_predicate": "Equals(15.0, a)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD, a = BC, 24 = CD, \u2220ADB = \u2220BDC, AC, 20 = AD, 27.5 = AC, B on AC, CD\n\nStep 2:\nTheorem: Line Segment Split\nPremises : B on AC\nConclusions: AC = AB + BC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, AD, CD\nConclusions: \u25b3ACD\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 27.5 = AC, AC = AB + BC\nConclusions: 27.5 = AB + BC\n\nStep 5:\nTheorem: Triangle Angle Bisector Theorem\nPremises : \u25b3ACD, \u2220ADB = \u2220BDC\nConclusions: BC / AB = CD / AD\n\nStep 6:\nTheorem: Substitution\nPremises : BC / AB = CD / AD, a = BC, 24 = CD, 20 = AD\nConclusions: 24 / 20 = a / AB\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 27.5 = AB + BC, a = BC, 24 / 20 = a / AB\nConclusions: 15 = BC\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : 15 = BC, a = BC\nConclusions: 15 = a\n\n",
+    "logic_fomrs_refined": [
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(C, D)",
+        "Line(A, D)",
+        "Line(D, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, C)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Line(D, C)",
+        "PointLiesOnLine(B, Line(A, C))",
+        "Equals(LengthOf(Line(A, C)), 27.5)",
+        "Equals(LengthOf(Line(A, D)), 20.0)",
+        "Equals(LengthOf(Line(C, B)), a)",
+        "Equals(LengthOf(Line(C, D)), 24.0)",
+        "Equals(MeasureOf(Angle(B, D, C)), MeasureOf(Angle(A, D, B)))"
+    ],
+    "correct": true
+}

@@ -1,0 +1,69 @@
+{
+    "problem_id": "7554",
+    "solved": true,
+    "problem_text": "Find \\sin N.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(M, N)), 39)",
+        "Equals(LengthOf(Line(N, P)), 15)",
+        "Equals(LengthOf(Line(P, M)), 36)",
+        "Line(N, M)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "Perpendicular(Line(P, N), Line(P, M))",
+        "Find(SinOf(Angle(N)))"
+    ],
+    "point_instances": [
+        "N",
+        "P",
+        "M"
+    ],
+    "line_instances": [
+        "NP",
+        "PM",
+        "MN"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "N": [
+            44.78479584931198,
+            157.14488479262675
+        ],
+        "P": [
+            45.0020979020979,
+            52.986476190476196
+        ],
+        "M": [
+            290.43094405594405,
+            53.14571428571429
+        ]
+    },
+    "problem_choices": [
+        0.38,
+        0.42,
+        0.92,
+        2.4
+    ],
+    "choices_precise_value": [
+        0.38,
+        0.42,
+        0.92,
+        2.4
+    ],
+    "problem_answer": 0.42,
+    "total_time": 10.040544,
+    "solution_predicate": "Equals(0.9230769231, SinOf(MeasureOf(Angle(M, N, P))))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: MP \u22a5 NP, MN, 39 = MN, 36 = MP, \u2220PMN, cos(\u2220PMN), \u2220MNP, NP, MP\n\nStep 2:\nTheorem: Evaluate\nPremises : 39 = MN, 36 = MP\nConclusions: 0.92 = MP / MN\n\nStep 3:\nTheorem: Angle Cos Definition\nPremises : MP \u22a5 NP, cos(\u2220PMN)\nConclusions: MP / MN = cos(\u2220PMN)\n\nStep 4:\nTheorem: Definition of Triangle\nPremises : MN, NP, MP\nConclusions: \u25b3MNP\n\nStep 5:\nTheorem: Substitution\nPremises : 39 = MN, MP / MN = cos(\u2220PMN), 36 = MP\nConclusions: 36 / 39 = cos(\u2220PMN)\n\nStep 6:\nTheorem: Cos Function Definition\nPremises : MP \u22a5 NP, \u25b3MNP, \u2220PMN\nConclusions: MP / MN = cos(\u2220PMN)\n\nStep 7:\nTheorem: Sin Function Definition\nPremises : MP \u22a5 NP, \u25b3MNP, \u2220MNP\nConclusions: MP / MN = sin(\u2220MNP)\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : MP / MN = cos(\u2220PMN), 36 / 39 = cos(\u2220PMN)\nConclusions: 36 / 39 = MP / MN\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = MP / MN, 36 / 39 = MP / MN\nConclusions: 0.92 = 36 / 39\n\nStep 10:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = 36 / 39, 36 / 39 = cos(\u2220PMN)\nConclusions: 0.92 = cos(\u2220PMN)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : MP / MN = cos(\u2220PMN), 0.92 = cos(\u2220PMN)\nConclusions: 0.92 = MP / MN\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 0.92 = MP / MN, MP / MN = sin(\u2220MNP)\nConclusions: 0.92 = sin(\u2220MNP)\n\n",
+    "logic_fomrs_refined": [
+        "Line(N, P)",
+        "Line(P, M)",
+        "Line(M, N)",
+        "Line(N, M)",
+        "Line(P, M)",
+        "Line(P, N)",
+        "Perpendicular(Line(P, N), Line(P, M))",
+        "Equals(LengthOf(Line(M, N)), 39.0)",
+        "Equals(LengthOf(Line(N, P)), 15.0)",
+        "Equals(LengthOf(Line(P, M)), 36.0)"
+    ],
+    "correct": false
+}

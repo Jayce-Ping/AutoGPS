@@ -1,0 +1,83 @@
+{
+    "problem_id": "2735",
+    "solved": true,
+    "problem_text": "Find the area of the trapezoid.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(A, B)), 6)",
+        "Equals(LengthOf(Line(A, D)), 12)",
+        "Equals(LengthOf(Line(E, C)), 16)",
+        "Find(AreaOf(Trapezoid(E, C, B, A)))",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "PointLiesOnLine(D, Line(E, C))"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "line_instances": [
+        "DA",
+        "ED",
+        "EC",
+        "DC",
+        "CB",
+        "AB",
+        "EA"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            76.82278481012658,
+            197.46835443037975
+        ],
+        "B": [
+            150.74683544303795,
+            197.9746835443038
+        ],
+        "C": [
+            212.51898734177212,
+            50.379746835443036
+        ],
+        "D": [
+            77.58227848101265,
+            50.63291139240506
+        ],
+        "E": [
+            15.810126582278471,
+            50.63291139240506
+        ]
+    },
+    "problem_choices": [
+        "72",
+        "132",
+        "144",
+        "192"
+    ],
+    "choices_precise_value": [
+        72.0,
+        132.0,
+        144.0,
+        192.0
+    ],
+    "problem_answer": 132.0,
+    "total_time": 13.989281,
+    "solution_predicate": "Equals(132.0, AreaOf(Trapezoid(E, C, B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: AD \u22a5 CD, Trapezoid(A, B, C, E), 16 = CE, 6 = AB, 12 = AD\n\nStep 2:\nTheorem: Area formula of Trapezoid(A, B, C, E)\nPremises : AD \u22a5 CD, Trapezoid(A, B, C, E)\nConclusions: Area(Trapezoid(A, B, C, E)) = AD * ((AB + CE) / 2)\n\nStep 3:\nTheorem: Substitution\nPremises : 6 = AB, Area(Trapezoid(A, B, C, E)) = AD * ((AB + CE) / 2), 12 = AD, 16 = CE\nConclusions: 12 * ((16 + 6) / 2) = Area(Trapezoid(A, B, C, E))\n\nStep 4:\nTheorem: Evaluate\nPremises : 12 * ((16 + 6) / 2) = Area(Trapezoid(A, B, C, E))\nConclusions: 132 = Area(Trapezoid(A, B, C, E))\n\n",
+    "logic_fomrs_refined": [
+        "Line(D, A)",
+        "Line(E, D)",
+        "Line(E, C)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(E, A)",
+        "Perpendicular(Line(A, D), Line(C, D))",
+        "PointLiesOnLine(D, Line(E, C))",
+        "Equals(LengthOf(Line(A, B)), 6.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)",
+        "Equals(LengthOf(Line(E, C)), 16.0)"
+    ],
+    "correct": true
+}

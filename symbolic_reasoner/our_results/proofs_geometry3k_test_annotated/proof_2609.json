@@ -1,0 +1,136 @@
+{
+    "problem_id": "2609",
+    "solved": true,
+    "problem_text": "In \\odot M, F L = 24, H J = 48, and m \\widehat H P = 65. Find m \\widehat H J.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Equals(LengthOf(Line(F, L)), 24)",
+        "Equals(LengthOf(Line(H, L)), 48)",
+        "Equals(MeasureOf(Arc(H, P)), 65)",
+        "Find(MeasureOf(Arc(H, J)))"
+    ],
+    "point_instances": [
+        "G",
+        "N",
+        "H",
+        "K",
+        "P",
+        "M",
+        "F",
+        "J",
+        "L"
+    ],
+    "line_instances": [
+        "FL",
+        "FG",
+        "LG",
+        "KL",
+        "KM",
+        "LM",
+        "MN",
+        "MP",
+        "NP",
+        "HN",
+        "HJ",
+        "NJ"
+    ],
+    "circle_instances": [
+        "M"
+    ],
+    "point_positions": {
+        "G": [
+            389.81188118811883,
+            140.58415841584159
+        ],
+        "N": [
+            239.81188118811883,
+            303.9504950495049
+        ],
+        "H": [
+            108.12871287128712,
+            256.4257425742574
+        ],
+        "K": [
+            238.32673267326732,
+            81.17821782178218
+        ],
+        "P": [
+            210.10891089108912,
+            383.65346534653463
+        ],
+        "M": [
+            265.05940594059405,
+            236.62376237623764
+        ],
+        "F": [
+            116.04950495049505,
+            186.62376237623764
+        ],
+        "J": [
+            369.5148514851485,
+            352.46534653465346
+        ],
+        "L": [
+            252.18811881188117,
+            163.85148514851485
+        ]
+    },
+    "problem_choices": [
+        "65",
+        "120",
+        "130",
+        "155"
+    ],
+    "choices_precise_value": [
+        65.0,
+        120.0,
+        130.0,
+        155.0
+    ],
+    "problem_answer": 130.0,
+    "total_time": 301.217021,
+    "solution_predicate": "Equals(2.2689280276, MeasureOf(Arc(H, M, J)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: \u2220MHJ, Arc(HMJ), HN, MN, \u2220JMH, Arc(HMP), Arc(PMH), \u2220JHM, \u2220MHJ, \u2299(M, radius_0_0), HM, \u2220JNM, 3.14 = pi, \u2220JMP, N on HJ, \u2220JMP, HJ, \u2220MNH, \u2220HMP, JM, \u2220JMH, \u2220HMN, \u2220MJH, \u2220JHM, N on MP, \u2220PMJ, HN \u22a5 MN, \u2220PMH, pi * (65 / 180) = Arc(HMP), \u2220HMP\n\nStep 2:\nTheorem: Reverse Angle Definition\nPremises : \u2220MHJ\nConclusions: \u2220MHJ = 2 * pi - \u2220JHM\n\nStep 3:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(HMJ)\nConclusions: \u2220HMJ = Arc(HMJ)\n\nStep 4:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(HMP)\nConclusions: \u2220HMP = Arc(HMP)\n\nStep 5:\nTheorem: Arc Measure equals Angle Measure\nPremises : Arc(PMH)\nConclusions: \u2220PMH = Arc(PMH)\n\nStep 6:\nTheorem: Definition of Triangle\nPremises : MN, HN, HM\nConclusions: \u25b3HMN\n\nStep 7:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 6.28 = 2 * pi\n\nStep 8:\nTheorem: Same Angle\nPremises : \u2220MHJ, N on HJ\nConclusions: \u2220MHJ = \u2220MHN\n\nStep 9:\nTheorem: Same Angle\nPremises : \u2220JHM, N on HJ\nConclusions: \u2220JHM = \u2220NHM\n\nStep 10:\nTheorem: Reverse Angle Definition\nPremises : \u2220JMP\nConclusions: \u2220JMP = 2 * pi - \u2220PMJ\n\nStep 11:\nTheorem: Straight Angle\nPremises : \u2220JNM, \u2220MNH\nConclusions: pi = \u2220JNM + \u2220MNH\n\nStep 12:\nTheorem: Reverse Angle Definition\nPremises : \u2220HMP\nConclusions: \u2220HMP = 2 * pi - \u2220PMH\n\nStep 13:\nTheorem: Definition of Triangle\nPremises : HJ, JM, HM\nConclusions: \u25b3HJM\n\nStep 14:\nTheorem: Reverse Angle Definition\nPremises : \u2220JMH\nConclusions: \u2220JMH = 2 * pi - \u2220HMJ\n\nStep 15:\nTheorem: Reverse Angle Definition\nPremises : \u2220HMN\nConclusions: \u2220HMN = 2 * pi - \u2220NMH\n\nStep 16:\nTheorem: Same Angle\nPremises : \u2220MJH, N on HJ\nConclusions: \u2220MJH = \u2220MJN\n\nStep 17:\nTheorem: Reverse Angle Definition\nPremises : \u2220JHM\nConclusions: \u2220JHM = 2 * pi - \u2220MHJ\n\nStep 18:\nTheorem: Same Angle\nPremises : N on MP, \u2220JMP\nConclusions: \u2220JMN = \u2220JMP\n\nStep 19:\nTheorem: Circle Vertical Theorem\nPremises : \u2299(M, radius_0_0), N on HJ, HN \u22a5 MN\nConclusions: \u25b3HMN \u2245 \u25b3JMN\n\nStep 20:\nTheorem: Perpendicular to Right Angle\nPremises : HN \u22a5 MN\nConclusions: pi / 2 = \u2220MNH\n\nStep 21:\nTheorem: Reverse Angle Definition\nPremises : \u2220PMH\nConclusions: \u2220PMH = 2 * pi - \u2220HMP\n\nStep 22:\nTheorem: Same Angle\nPremises : \u2220HMP, N on MP\nConclusions: \u2220HMN = \u2220HMP\n\nStep 23:\nTheorem: Circumference splited\nPremises : \u2220HMP, \u2220PMJ, \u2220JMH\nConclusions: 2 * pi = \u2220HMP + \u2220JMH + \u2220PMJ\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HMP = Arc(HMP), pi * (65 / 180) = Arc(HMP)\nConclusions: pi * (65 / 180) = \u2220HMP\n\nStep 25:\nTheorem: Interior Angle Sum Theorem for Triangle(H, M, N)\nPremises : \u25b3HMN\nConclusions: pi = \u2220HMN + \u2220MNH + \u2220NHM\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MHJ = 2 * pi - \u2220JHM, \u2220MHJ = \u2220MHN\nConclusions: \u2220MHN = 2 * pi - \u2220JHM\n\nStep 27:\nTheorem: Transtivity of Equivalence\nPremises : pi = \u2220JNM + \u2220MNH, 3.14 = pi\nConclusions: 3.14 = \u2220JNM + \u2220MNH\n\nStep 28:\nTheorem: Interior Angle Sum Theorem for Triangle(M, J, H)\nPremises : \u25b3HJM\nConclusions: pi = \u2220HMJ + \u2220JHM + \u2220MJH\n\nStep 29:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JHM = \u2220NHM, \u2220JHM = 2 * pi - \u2220MHJ\nConclusions: \u2220NHM = 2 * pi - \u2220MHJ\n\nStep 30:\nTheorem: Congruent Definition\nPremises : \u25b3HMN \u2245 \u25b3JMN\nConclusions: \u2220MJN = \u2220NHM, \u2220JMN = \u2220NMH, \u2220JNM = \u2220MNH\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : \u2220PMH = 2 * pi - \u2220HMP, \u2220PMH = Arc(PMH)\nConclusions: Arc(PMH) = 2 * pi - \u2220HMP\n\nStep 32:\nTheorem: Transtivity of Equivalence\nPremises : 2 * pi = \u2220HMP + \u2220JMH + \u2220PMJ, 6.28 = 2 * pi\nConclusions: 6.28 = \u2220HMP + \u2220JMH + \u2220PMJ\n\nStep 33:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HMP = 2 * pi - \u2220PMH, pi * (65 / 180) = \u2220HMP\nConclusions: pi * (65 / 180) = 2 * pi - \u2220PMH\n\nStep 34:\nTheorem: Transtivity of Equivalence\nPremises : pi * (65 / 180) = \u2220HMP, \u2220HMN = \u2220HMP\nConclusions: pi * (65 / 180) = \u2220HMN\n\nStep 35:\nTheorem: Transtivity of Equivalence\nPremises : 3.14 = pi, pi = \u2220HMN + \u2220MNH + \u2220NHM\nConclusions: 3.14 = \u2220HMN + \u2220MNH + \u2220NHM\n\nStep 36:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = pi, pi * (65 / 180) = 2 * pi - \u2220PMH\nConclusions: 5.15 = \u2220PMH\n\nStep 37:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HMN = 2 * pi - \u2220NMH, pi * (65 / 180) = \u2220HMN\nConclusions: pi * (65 / 180) = 2 * pi - \u2220NMH\n\nStep 38:\nTheorem: Solve Linear Equation System\nPremises : pi = \u2220HMN + \u2220MNH + \u2220NHM, 3.14 = \u2220JNM + \u2220MNH, 3.14 = pi, \u2220JNM = \u2220MNH, pi * (65 / 180) = \u2220HMN, \u2220NHM = 2 * pi - \u2220MHJ\nConclusions: 5.85 = \u2220MHJ\n\nStep 39:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = \u2220HMN + \u2220MNH + \u2220NHM, \u2220JHM = \u2220NHM, pi = \u2220HMN + \u2220MNH + \u2220NHM, pi / 2 = \u2220MNH, pi * (65 / 180) = \u2220HMN\nConclusions: 0.44 = \u2220JHM\n\nStep 40:\nTheorem: Transtivity of Equivalence\nPremises : 5.15 = \u2220PMH, \u2220PMH = Arc(PMH)\nConclusions: 5.15 = Arc(PMH)\n\nStep 41:\nTheorem: Solve Linear Equation System\nPremises : pi * (65 / 180) = 2 * pi - \u2220NMH, 3.14 = pi\nConclusions: 5.15 = \u2220NMH\n\nStep 42:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MHJ = \u2220MHN, 5.85 = \u2220MHJ\nConclusions: 5.85 = \u2220MHN\n\nStep 43:\nTheorem: Transtivity of Equivalence\nPremises : \u2220JHM = \u2220NHM, 0.44 = \u2220JHM\nConclusions: 0.44 = \u2220NHM\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : Arc(PMH) = 2 * pi - \u2220HMP, 5.15 = Arc(PMH)\nConclusions: 5.15 = 2 * pi - \u2220HMP\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : 5.15 = \u2220NMH, \u2220JMN = \u2220NMH, \u2220JMN = \u2220JMP\nConclusions: 5.15 = \u2220JMP\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MHN = 2 * pi - \u2220JHM, 5.85 = \u2220MHN\nConclusions: 5.85 = 2 * pi - \u2220JHM\n\nStep 47:\nTheorem: Transtivity of Equivalence\nPremises : 0.44 = \u2220NHM, \u2220MJN = \u2220NHM\nConclusions: 0.44 = \u2220MJN\n\nStep 48:\nTheorem: Transtivity of Equivalence\nPremises : 5.15 = \u2220JMP, \u2220JMP = 2 * pi - \u2220PMJ\nConclusions: 5.15 = 2 * pi - \u2220PMJ\n\nStep 49:\nTheorem: Transtivity of Equivalence\nPremises : \u2220MJH = \u2220MJN, 0.44 = \u2220MJN\nConclusions: 0.44 = \u2220MJH\n\nStep 50:\nTheorem: Solve Linear Equation System\nPremises : 5.85 = 2 * pi - \u2220JHM, pi = \u2220HMJ + \u2220JHM + \u2220MJH, 6.28 = \u2220HMP + \u2220JMH + \u2220PMJ, 5.15 = 2 * pi - \u2220HMP, 0.44 = \u2220MJH, 5.15 = 2 * pi - \u2220PMJ, \u2220JMH = 2 * pi - \u2220HMJ\nConclusions: 2.27 = \u2220HMJ\n\nStep 51:\nTheorem: Transtivity of Equivalence\nPremises : 2.27 = \u2220HMJ, \u2220HMJ = Arc(HMJ)\nConclusions: 2.27 = Arc(HMJ)\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, L)",
+        "Line(F, G)",
+        "Line(L, G)",
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(M, N)",
+        "Line(M, P)",
+        "Line(N, P)",
+        "Line(H, N)",
+        "Line(H, J)",
+        "Line(N, J)",
+        "Circle(M, radius_0_0)",
+        "PointLiesOnLine(L, Line(F, G))",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(N, Line(M, P))",
+        "PointLiesOnLine(N, Line(H, J))",
+        "PointLiesOnCircle(P, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(H, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(F, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(G, Circle(M, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(M, radius_0_0))",
+        "Perpendicular(Line(P, N), Line(J, N))",
+        "Perpendicular(Line(G, L), Line(K, L))",
+        "Equals(LengthOf(Line(F, L)), 24.0)",
+        "Equals(LengthOf(Line(H, L)), 48.0)",
+        "Equals(MeasureOf(Arc(H, M, P)), Mul(pi, Div(65.0, 180.0)))"
+    ],
+    "correct": true
+}

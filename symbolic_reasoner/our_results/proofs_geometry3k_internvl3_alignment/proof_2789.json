@@ -1,0 +1,113 @@
+{
+    "problem_id": "2789",
+    "solved": true,
+    "problem_text": "In \\odot T, Z V = 1, and T W = 13. Find X Y.",
+    "logic_forms": [
+        "PointLiesOnLine(Z, Line(V, T))",
+        "PointLiesOnLine(Z, Line(V, W))",
+        "PointLiesOnLine(T, Line(V, W))",
+        "PointLiesOnLine(T, Line(Z, W))",
+        "PointLiesOnLine(Z, Line(X, Y))",
+        "PointLiesOnCircle(W, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(T, radius_0_0))",
+        "Perpendicular(Line(T, Z), Line(X, Z))",
+        "Circle(T)",
+        "Equals(LengthOf(Line(Z,V)),1)",
+        "Equals(LengthOf(Line(T,W)),13)",
+        "Find(LengthOf(Line(X,Y)))"
+    ],
+    "point_instances": [
+        "X",
+        "Y",
+        "V",
+        "Z",
+        "T",
+        "W"
+    ],
+    "line_instances": [
+        "VZ",
+        "VT",
+        "VW",
+        "ZT",
+        "ZW",
+        "TW",
+        "XZ",
+        "XY",
+        "ZY",
+        "XT"
+    ],
+    "circle_instances": [
+        "T"
+    ],
+    "point_positions": {
+        "X": [
+            57.04532577903683,
+            84.70254957507082
+        ],
+        "Y": [
+            194.43909348441923,
+            84.70254957507082
+        ],
+        "V": [
+            125.0339943342776,
+            51.8413597733711
+        ],
+        "Z": [
+            125.0339943342776,
+            84.70254957507082
+        ],
+        "T": [
+            125.31728045325778,
+            139.66005665722378
+        ],
+        "W": [
+            124.75070821529744,
+            228.0453257790368
+        ]
+    },
+    "problem_choices": [
+        "5",
+        "10",
+        "12",
+        "13"
+    ],
+    "choices_precise_value": [
+        5.0,
+        10.0,
+        12.0,
+        13.0
+    ],
+    "problem_answer": 10.0,
+    "total_time": 126.045268,
+    "solution_predicate": "Equals(10.0, LengthOf(Line(X, Y)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: 13 = TW, 1 = VZ, V on \u2299(T, radius_0_0), W on \u2299(T, radius_0_0), XZ, Z on XY, TZ, \u2299(T, radius_0_0), TX, TZ \u22a5 XZ, Z on TV, X on \u2299(T, radius_0_0)\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : V on \u2299(T, radius_0_0)\nConclusions: radius_0_0 = TV\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : W on \u2299(T, radius_0_0)\nConclusions: radius_0_0 = TW\n\nStep 4:\nTheorem: Line Segment Split\nPremises : Z on XY\nConclusions: XY = XZ + YZ\n\nStep 5:\nTheorem: Definition of Triangle\nPremises : TX, TZ, XZ\nConclusions: \u25b3TXZ\n\nStep 6:\nTheorem: Circle Vertical Theorem\nPremises : Z on XY, TZ \u22a5 XZ, \u2299(T, radius_0_0)\nConclusions: XZ = YZ\n\nStep 7:\nTheorem: Line Segment Split\nPremises : Z on TV\nConclusions: TV = TZ + VZ\n\nStep 8:\nTheorem: Point On Circle Def\nPremises : X on \u2299(T, radius_0_0)\nConclusions: radius_0_0 = TX\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = TW, 13 = TW\nConclusions: 13 = radius_0_0\n\nStep 10:\nTheorem: Pythagorean Theorem\nPremises : TZ \u22a5 XZ, \u25b3TXZ\nConclusions: XZ = SqrtOf(TX ** 2 - TZ ** 2)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_0_0, radius_0_0 = TX\nConclusions: 13 = TX\n\nStep 12:\nTheorem: Transtivity of Equivalence\nPremises : 13 = radius_0_0, radius_0_0 = TV\nConclusions: 13 = TV\n\nStep 13:\nTheorem: Transtivity of Equivalence\nPremises : XZ = YZ, XZ = SqrtOf(TX ** 2 - TZ ** 2)\nConclusions: YZ = SqrtOf(TX ** 2 - TZ ** 2)\n\nStep 14:\nTheorem: Substitution\nPremises : TV = TZ + VZ, 1 = VZ, 13 = TV\nConclusions: 13 = 1 + TZ\n\nStep 15:\nTheorem: Solve Linear Equation System\nPremises : 13 = 1 + TZ\nConclusions: 12 = TZ\n\nStep 16:\nTheorem: Substitution\nPremises : 13 = TX, XZ = YZ, XZ = SqrtOf(TX ** 2 - TZ ** 2), 12 = TZ\nConclusions: SqrtOf(13 ** 2 - 12 ** 2) = YZ\n\nStep 17:\nTheorem: Evaluate\nPremises : 13 = TX, 12 = TZ\nConclusions: 5 = SqrtOf(TX ** 2 - TZ ** 2)\n\nStep 18:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(13 ** 2 - 12 ** 2) = YZ, YZ = SqrtOf(TX ** 2 - TZ ** 2)\nConclusions: SqrtOf(13 ** 2 - 12 ** 2) = SqrtOf(TX ** 2 - TZ ** 2)\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : 5 = SqrtOf(TX ** 2 - TZ ** 2), SqrtOf(13 ** 2 - 12 ** 2) = SqrtOf(TX ** 2 - TZ ** 2)\nConclusions: 5 = SqrtOf(13 ** 2 - 12 ** 2)\n\nStep 20:\nTheorem: Transtivity of Equivalence\nPremises : SqrtOf(13 ** 2 - 12 ** 2) = YZ, 5 = SqrtOf(13 ** 2 - 12 ** 2)\nConclusions: 5 = YZ\n\nStep 21:\nTheorem: Transtivity of Equivalence\nPremises : XZ = YZ, 5 = YZ\nConclusions: 5 = XZ\n\nStep 22:\nTheorem: Evaluate\nPremises : 5 = YZ, 5 = XZ\nConclusions: 10 = XZ + YZ\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : 10 = XZ + YZ, XY = XZ + YZ\nConclusions: 10 = XY\n\n",
+    "logic_fomrs_refined": [
+        "Line(V, Z)",
+        "Line(V, T)",
+        "Line(V, W)",
+        "Line(Z, T)",
+        "Line(Z, W)",
+        "Line(T, W)",
+        "Line(X, Z)",
+        "Line(X, Y)",
+        "Line(Z, Y)",
+        "Line(X, T)",
+        "Circle(T, radius_0_0)",
+        "PointLiesOnLine(Z, Line(V, T))",
+        "PointLiesOnLine(Z, Line(V, W))",
+        "PointLiesOnLine(T, Line(V, W))",
+        "PointLiesOnLine(T, Line(Z, W))",
+        "PointLiesOnLine(Z, Line(X, Y))",
+        "PointLiesOnCircle(W, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(X, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(Y, Circle(T, radius_0_0))",
+        "PointLiesOnCircle(V, Circle(T, radius_0_0))",
+        "Perpendicular(Line(T, Z), Line(X, Z))",
+        "Circle(T, radius_0_0)",
+        "Equals(LengthOf(Line(Z, V)), 1.0)",
+        "Equals(LengthOf(Line(T, W)), 13.0)"
+    ],
+    "correct": true
+}

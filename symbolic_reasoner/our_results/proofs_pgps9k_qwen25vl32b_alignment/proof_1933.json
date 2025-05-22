@@ -1,0 +1,88 @@
+{
+    "problem_id": "1933",
+    "solved": true,
+    "problem_text": "What is f?",
+    "logic_forms": [
+        "Equals(LengthOf(Line(B, D)), f)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(LengthOf(Line(D, C)), 8)",
+        "Equals(MeasureOf(Angle(D, B, C)), MeasureOf(Angle(A, C, B)))",
+        "Equals(MeasureOf(Angle(D, C, B)), 30)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Find(f)"
+    ],
+    "point_instances": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "line_instances": [
+        "CA",
+        "AB",
+        "BD",
+        "DC",
+        "CB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "A": [
+            24.833898305084748,
+            37.27542857142858
+        ],
+        "B": [
+            362.8243155149935,
+            37.30197802197802
+        ],
+        "C": [
+            24.80736636245111,
+            233.63516483516486
+        ],
+        "D": [
+            363.1957627118644,
+            233.6617142857143
+        ]
+    },
+    "problem_choices": [
+        4.0,
+        4.619,
+        6.928,
+        9.238
+    ],
+    "choices_precise_value": [
+        4.0,
+        4.619,
+        6.928,
+        9.238
+    ],
+    "problem_answer": 4.619,
+    "total_time": 45.429422,
+    "solution_predicate": "Equals(4.6188021534, f)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: BC, BD, f = BD, 3.14 = pi, pi * (30 / 180) = \u2220DCB, BD \u22a5 CD, \u2220CBD, 8 = CD, CD\n\nStep 2:\nTheorem: Perpendicular to Right Angle\nPremises : BD \u22a5 CD\nConclusions: pi / 2 = \u2220BDC\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : BC, BD, CD\nConclusions: \u25b3BCD\n\nStep 4:\nTheorem: Tan Function Definition\nPremises : \u25b3BCD, \u2220CBD, BD \u22a5 CD\nConclusions: CD / BD = tan(\u2220CBD)\n\nStep 5:\nTheorem: Interior Angle Sum Theorem for Triangle(D, C, B)\nPremises : \u25b3BCD\nConclusions: pi = \u2220BDC + \u2220CBD + \u2220DCB\n\nStep 6:\nTheorem: Substitution\nPremises : pi * (30 / 180) = \u2220DCB, pi = \u2220BDC + \u2220CBD + \u2220DCB, 3.14 = pi, pi / 2 = \u2220BDC\nConclusions: 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220CBD\n\nStep 7:\nTheorem: Solve Linear Equation System\nPremises : 3.14 = 3.14 / 2 + 3.14 * (30 / 180) + \u2220CBD\nConclusions: 1.05 = \u2220CBD\n\nStep 8:\nTheorem: Evaluate\nPremises : 1.05 = \u2220CBD\nConclusions: 1.73 = tan(\u2220CBD)\n\nStep 9:\nTheorem: Transtivity of Equivalence\nPremises : 1.73 = tan(\u2220CBD), CD / BD = tan(\u2220CBD)\nConclusions: 1.73 = CD / BD\n\nStep 10:\nTheorem: Solve Linear Equation System\nPremises : 8 = CD, 1.73 = CD / BD\nConclusions: 4.62 = BD\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : f = BD, 4.62 = BD\nConclusions: 4.62 = f\n\n",
+    "logic_fomrs_refined": [
+        "Line(C, A)",
+        "Line(A, B)",
+        "Line(B, D)",
+        "Line(D, C)",
+        "Line(C, B)",
+        "Line(A, B)",
+        "Line(A, C)",
+        "Line(B, D)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Perpendicular(Line(A, C), Line(A, B))",
+        "Perpendicular(Line(B, D), Line(C, D))",
+        "Equals(LengthOf(Line(B, D)), f)",
+        "Equals(LengthOf(Line(C, B)), h)",
+        "Equals(LengthOf(Line(D, C)), 8.0)",
+        "Equals(MeasureOf(Angle(C, B, D)), MeasureOf(Angle(B, C, A)))",
+        "Equals(MeasureOf(Angle(D, C, B)), Mul(pi, Div(30.0, 180.0)))"
+    ],
+    "correct": true
+}

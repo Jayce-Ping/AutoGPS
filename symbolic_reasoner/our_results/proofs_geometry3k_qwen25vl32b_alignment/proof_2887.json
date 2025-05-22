@@ -1,0 +1,118 @@
+{
+    "problem_id": "2887",
+    "solved": true,
+    "problem_text": "In \\odot F, F H \\cong F L and F K = 17. Find J G.",
+    "logic_forms": [
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(H, Line(J, G))",
+        "PointLiesOnLine(F, Line(H, L))",
+        "PointLiesOnCircle(G, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(F, radius_0_0))",
+        "Perpendicular(Line(K, L), Line(F, L))",
+        "Perpendicular(Line(J, H), Line(F, H))",
+        "Equals(LengthOf(Line(H, F)), 8)",
+        "Circle(F)",
+        "Equals(LengthOf(Line(F,H)),Line(F,L))",
+        "Equals(LengthOf(Line(F,K)),17)",
+        "Find(LengthOf(Line(J,G)))"
+    ],
+    "point_instances": [
+        "L",
+        "H",
+        "F",
+        "J",
+        "G",
+        "K",
+        "M"
+    ],
+    "line_instances": [
+        "KL",
+        "KM",
+        "LM",
+        "KF",
+        "JH",
+        "JG",
+        "HG",
+        "HF",
+        "HL",
+        "FL"
+    ],
+    "circle_instances": [
+        "F"
+    ],
+    "point_positions": {
+        "L": [
+            179.7191011235955,
+            109.21348314606742
+        ],
+        "H": [
+            55.2247191011236,
+            109.6629213483146
+        ],
+        "F": [
+            118.37078651685394,
+            109.438202247191
+        ],
+        "J": [
+            55.2247191011236,
+            47.41573033707865
+        ],
+        "G": [
+            54.7752808988764,
+            170.78651685393257
+        ],
+        "K": [
+            180.1685393258427,
+            47.19101123595505
+        ],
+        "M": [
+            180.39325842696627,
+            172.13483146067415
+        ]
+    },
+    "problem_choices": [
+        "15",
+        "16",
+        "17",
+        "30"
+    ],
+    "choices_precise_value": [
+        15.0,
+        16.0,
+        17.0,
+        30.0
+    ],
+    "problem_answer": 30.0,
+    "total_time": 245.449525,
+    "solution_predicate": "Equals(29.9999999968, LengthOf(Line(J, G)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: J on \u2299(F, radius_0_0), cos(\u2220HFG), \u2299(F, radius_0_0), K on \u2299(F, radius_0_0), LM, FH \u22a5 HJ, \u2220GHL, 17 = FK, sin(\u2220HFG), sin(\u2220HJF), FH = FL, FH \u22a5 GH, FM, M on \u2299(F, radius_0_0), 8 = FH, GH \u22a5 HL, \u2220JHL, F on HL, sin(\u2220LMF), FL, H on GJ, FL \u22a5 LM, G on \u2299(F, radius_0_0), HJ \u22a5 HL\n\nStep 2:\nTheorem: Point On Circle Def\nPremises : J on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FJ\n\nStep 3:\nTheorem: Point On Circle Def\nPremises : K on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FK\n\nStep 4:\nTheorem: Angle Sin Definition\nPremises : FH \u22a5 HJ, sin(\u2220HJF)\nConclusions: FH / FJ = sin(\u2220HJF)\n\nStep 5:\nTheorem: Angle Sin Definition\nPremises : FH \u22a5 GH, sin(\u2220HFG)\nConclusions: GH / FG = sin(\u2220HFG)\n\nStep 6:\nTheorem: Angle Cos Definition\nPremises : FH \u22a5 GH, cos(\u2220HFG)\nConclusions: FH / FG = cos(\u2220HFG)\n\nStep 7:\nTheorem: Point On Circle Def\nPremises : M on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FM\n\nStep 8:\nTheorem: Transtivity of Equivalence\nPremises : FH = FL, 8 = FH\nConclusions: 8 = FL\n\nStep 9:\nTheorem: Perpendicular to Right Angle\nPremises : GH \u22a5 HL\nConclusions: pi / 2 = \u2220GHL\n\nStep 10:\nTheorem: Same Angle\nPremises : F on HL, \u2220GHL\nConclusions: \u2220GHF = \u2220GHL\n\nStep 11:\nTheorem: Same Angle\nPremises : \u2220JHL, F on HL\nConclusions: \u2220JHF = \u2220JHL\n\nStep 12:\nTheorem: Definition of Triangle\nPremises : LM, FM, FL\nConclusions: \u25b3FLM\n\nStep 13:\nTheorem: Circle Vertical Theorem\nPremises : H on GJ, \u2299(F, radius_0_0), FH \u22a5 GH\nConclusions: \u25b3FGH \u2245 \u25b3FJH, GH = HJ\n\nStep 14:\nTheorem: Line Segment Split\nPremises : H on GJ\nConclusions: GJ = GH + HJ\n\nStep 15:\nTheorem: Perpendicular to Right Angle\nPremises : FL \u22a5 LM\nConclusions: pi / 2 = \u2220FLM, (3 * pi) / 2 = \u2220MLF\n\nStep 16:\nTheorem: Angle Sin Definition\nPremises : sin(\u2220LMF), FL \u22a5 LM\nConclusions: FL / FM = sin(\u2220LMF)\n\nStep 17:\nTheorem: Point On Circle Def\nPremises : G on \u2299(F, radius_0_0)\nConclusions: radius_0_0 = FG\n\nStep 18:\nTheorem: Perpendicular to Right Angle\nPremises : HJ \u22a5 HL\nConclusions: (3 * pi) / 2 = \u2220JHL\n\nStep 19:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FK, 17 = FK\nConclusions: 17 = radius_0_0\n\nStep 20:\nTheorem: Pythagorean Theorem\nPremises : \u25b3FLM, FL \u22a5 LM\nConclusions: LM = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 21:\nTheorem: Congruent Definition\nPremises : \u25b3FGH \u2245 \u25b3FJH\nConclusions: \u2220GFH = \u2220HFJ, GH = HJ\n\nStep 22:\nTheorem: Transtivity of Equivalence\nPremises : pi / 2 = \u2220FLM, \u2220GHF = \u2220GHL, pi / 2 = \u2220GHL\nConclusions: \u2220FLM = \u2220GHF\n\nStep 23:\nTheorem: Transtivity of Equivalence\nPremises : (3 * pi) / 2 = \u2220MLF, (3 * pi) / 2 = \u2220JHL, \u2220JHF = \u2220JHL\nConclusions: \u2220JHF = \u2220MLF\n\nStep 24:\nTheorem: Transtivity of Equivalence\nPremises : 17 = radius_0_0, radius_0_0 = FJ\nConclusions: 17 = FJ\n\nStep 25:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FM, 17 = radius_0_0\nConclusions: 17 = FM\n\nStep 26:\nTheorem: Transtivity of Equivalence\nPremises : 17 = radius_0_0, radius_0_0 = FG\nConclusions: 17 = FG\n\nStep 27:\nTheorem: Substitution\nPremises : 8 = FH, FH / FJ = sin(\u2220HJF), 17 = FJ\nConclusions: 8 / 17 = sin(\u2220HJF)\n\nStep 28:\nTheorem: Substitution\nPremises : 8 = FL, FL / FM = sin(\u2220LMF), 17 = FM\nConclusions: 8 / 17 = sin(\u2220LMF)\n\nStep 29:\nTheorem: Evaluate\nPremises : 8 = FL, 17 = FM\nConclusions: 15 = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 30:\nTheorem: Substitution\nPremises : GH / FG = sin(\u2220HFG), 17 = FG\nConclusions: GH / 17 = sin(\u2220HFG)\n\nStep 31:\nTheorem: Transtivity of Equivalence\nPremises : radius_0_0 = FM, 17 = radius_0_0, 17 = FG\nConclusions: FG = FM\n\nStep 32:\nTheorem: Substitution\nPremises : 8 = FH, 17 = FG, FH / FG = cos(\u2220HFG)\nConclusions: 8 / 17 = cos(\u2220HFG)\n\nStep 33:\nTheorem: Solve Univariate Equation\nPremises : 8 / 17 = sin(\u2220HJF)\nConclusions: 0.49 = \u2220HJF\n\nStep 34:\nTheorem: Solve Univariate Equation\nPremises : 8 / 17 = sin(\u2220LMF)\nConclusions: 0.49 = \u2220LMF\n\nStep 35:\nTheorem: Solve Univariate Equation\nPremises : 8 / 17 = cos(\u2220HFG)\nConclusions: 1.08 = \u2220HFG\n\nStep 36:\nTheorem: Transtivity of Equivalence\nPremises : 0.49 = \u2220LMF, 0.49 = \u2220HJF\nConclusions: \u2220HJF = \u2220LMF\n\nStep 37:\nTheorem: Evaluate\nPremises : 1.08 = \u2220HFG\nConclusions: 0.88 = sin(\u2220HFG)\n\nStep 38:\nTheorem: Angle-Angle Similarity Theorem\nPremises : \u2220HJF = \u2220LMF, \u2220JHF = \u2220MLF\nConclusions: \u25b3FHJ ~ \u25b3FLM\n\nStep 39:\nTheorem: Transtivity of Equivalence\nPremises : 0.88 = sin(\u2220HFG), GH / 17 = sin(\u2220HFG)\nConclusions: 0.88 = GH / 17\n\nStep 40:\nTheorem: Similar Definition\nPremises : \u25b3FHJ ~ \u25b3FLM\nConclusions: \u2220HFJ = \u2220LFM, \u2220JHF = \u2220MLF\n\nStep 41:\nTheorem: Transtivity of Equivalence\nPremises : \u2220HFJ = \u2220LFM, \u2220GFH = \u2220HFJ\nConclusions: \u2220GFH = \u2220LFM\n\nStep 42:\nTheorem: Angle-Angle-Side Congruent Theorem\nPremises : \u2220FLM = \u2220GHF, FG = FM, \u2220GFH = \u2220LFM\nConclusions: \u25b3FGH \u2245 \u25b3FML\n\nStep 43:\nTheorem: Congruent Definition\nPremises : \u25b3FGH \u2245 \u25b3FML\nConclusions: GH = LM, \u2220GFH = \u2220LFM, \u2220FLM = \u2220GHF, FH = FL\n\nStep 44:\nTheorem: Transtivity of Equivalence\nPremises : GH = LM, GH = HJ\nConclusions: HJ = LM\n\nStep 45:\nTheorem: Transtivity of Equivalence\nPremises : HJ = LM, LM = SqrtOf(FM ** 2 - FL ** 2)\nConclusions: HJ = SqrtOf(FM ** 2 - FL ** 2)\n\nStep 46:\nTheorem: Transtivity of Equivalence\nPremises : HJ = SqrtOf(FM ** 2 - FL ** 2), 15 = SqrtOf(FM ** 2 - FL ** 2)\nConclusions: 15 = HJ\n\nStep 47:\nTheorem: Solve Linear Equation System\nPremises : GJ = GH + HJ, 0.88 = GH / 17, 15 = HJ\nConclusions: 30 = GJ\n\n",
+    "logic_fomrs_refined": [
+        "Line(K, L)",
+        "Line(K, M)",
+        "Line(L, M)",
+        "Line(K, F)",
+        "Line(J, H)",
+        "Line(J, G)",
+        "Line(H, G)",
+        "Line(H, F)",
+        "Line(H, L)",
+        "Line(F, L)",
+        "Circle(F, radius_0_0)",
+        "PointLiesOnLine(L, Line(K, M))",
+        "PointLiesOnLine(H, Line(J, G))",
+        "PointLiesOnLine(F, Line(H, L))",
+        "PointLiesOnCircle(G, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(M, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(J, Circle(F, radius_0_0))",
+        "PointLiesOnCircle(K, Circle(F, radius_0_0))",
+        "Perpendicular(Line(K, L), Line(F, L))",
+        "Perpendicular(Line(J, H), Line(F, H))",
+        "Circle(F, radius_0_0)",
+        "Equals(LengthOf(Line(H, F)), 8.0)",
+        "Equals(LengthOf(Line(F, H)), LengthOf(Line(F, L)))",
+        "Equals(LengthOf(Line(F, K)), 17.0)"
+    ],
+    "correct": true
+}

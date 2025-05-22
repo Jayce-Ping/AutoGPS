@@ -1,0 +1,88 @@
+{
+    "problem_id": "8562",
+    "solved": true,
+    "problem_text": "If CD = 3 and AD = 12, what is BA?",
+    "logic_forms": [
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Perpendicular(Line(B, A), Line(C, B))",
+        "Perpendicular(Line(C, A), Line(D, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(LengthOf(Line(C,D)),3)",
+        "Equals(LengthOf(Line(A,D)),12)",
+        "Find(LengthOf(Line(B,A)))"
+    ],
+    "point_instances": [
+        "C",
+        "D",
+        "B",
+        "A"
+    ],
+    "line_instances": [
+        "BA",
+        "CD",
+        "CA",
+        "DA",
+        "CB",
+        "DB"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "C": [
+            60.75000000000001,
+            56.74050632911393
+        ],
+        "D": [
+            97.2,
+            66.4873417721519
+        ],
+        "B": [
+            60.345,
+            218.8976793248945
+        ],
+        "A": [
+            675.135,
+            218.8976793248945
+        ]
+    },
+    "problem_choices": [
+        6.0,
+        6.708,
+        12.369,
+        13.416
+    ],
+    "choices_precise_value": [
+        6.0,
+        6.708,
+        12.369,
+        13.416
+    ],
+    "problem_answer": 13.416,
+    "total_time": 47.01942,
+    "solution_predicate": "Equals(13.416407865, LengthOf(Line(B, A)))",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: cos(\u2220DAB), \u2220CAB, 3 = CD, AB, BC, 12 = AD, \u2220CAB, AB \u22a5 BC, AD \u22a5 BD, AC, D on AC\n\nStep 2:\nTheorem: Angle Cos Definition\nPremises : cos(\u2220DAB), AD \u22a5 BD\nConclusions: AD / AB = cos(\u2220DAB)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : AC, BC, AB\nConclusions: \u25b3ABC\n\nStep 4:\nTheorem: Same Angle\nPremises : \u2220CAB, D on AC\nConclusions: \u2220CAB = \u2220DAB\n\nStep 5:\nTheorem: Line Segment Split\nPremises : D on AC\nConclusions: AC = AD + CD\n\nStep 6:\nTheorem: Substitution\nPremises : AD / AB = cos(\u2220DAB), 12 = AD\nConclusions: 12 / AB = cos(\u2220DAB)\n\nStep 7:\nTheorem: Cos Function Definition\nPremises : \u2220CAB, \u25b3ABC, AB \u22a5 BC\nConclusions: AB / AC = cos(\u2220CAB)\n\nStep 8:\nTheorem: Substitution\nPremises : 12 = AD, 3 = CD, AC = AD + CD\nConclusions: 12 + 3 = AC\n\nStep 9:\nTheorem: Solve Linear Equation System\nPremises : 12 + 3 = AC\nConclusions: 15 = AC\n\nStep 10:\nTheorem: Substitution\nPremises : 15 = AC, \u2220CAB = \u2220DAB, AB / AC = cos(\u2220CAB)\nConclusions: AB / 15 = cos(\u2220DAB)\n\nStep 11:\nTheorem: Transtivity of Equivalence\nPremises : AB / 15 = cos(\u2220DAB), 12 / AB = cos(\u2220DAB)\nConclusions: 12 / AB = AB / 15\n\nStep 12:\nTheorem: Solve Univariate Equation\nPremises : 12 / AB = AB / 15\nConclusions: 13.42 = AB\n\n",
+    "logic_fomrs_refined": [
+        "Line(B, A)",
+        "Line(C, D)",
+        "Line(C, A)",
+        "Line(D, A)",
+        "Line(C, B)",
+        "Line(D, B)",
+        "Line(B, A)",
+        "Line(C, A)",
+        "Line(C, B)",
+        "Line(C, D)",
+        "Line(D, A)",
+        "Line(D, B)",
+        "Perpendicular(Line(B, A), Line(C, B))",
+        "Perpendicular(Line(C, A), Line(D, B))",
+        "PointLiesOnLine(D, Line(C, A))",
+        "Equals(LengthOf(Line(C, D)), 3.0)",
+        "Equals(LengthOf(Line(A, D)), 12.0)"
+    ],
+    "correct": true
+}

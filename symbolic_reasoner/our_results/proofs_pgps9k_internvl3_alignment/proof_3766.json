@@ -1,0 +1,69 @@
+{
+    "problem_id": "3766",
+    "solved": true,
+    "problem_text": "Solve for g.",
+    "logic_forms": [
+        "Equals(LengthOf(Line(F, G)), 8)",
+        "Equals(LengthOf(Line(G, H)), 10)",
+        "Equals(LengthOf(Line(H, F)), g)",
+        "Equals(MeasureOf(Angle(H, F, G)), 40)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Find(g)"
+    ],
+    "point_instances": [
+        "G",
+        "F",
+        "H"
+    ],
+    "line_instances": [
+        "FH",
+        "GH",
+        "FG"
+    ],
+    "circle_instances": [],
+    "point_positions": {
+        "G": [
+            152.07857142857142,
+            48.41142857142857
+        ],
+        "F": [
+            52.707142857142856,
+            138.84666666666666
+        ],
+        "H": [
+            293.0785714285714,
+            139.18285714285716
+        ]
+    },
+    "problem_choices": [
+        2.898,
+        5.472,
+        6.437,
+        14.705
+    ],
+    "choices_precise_value": [
+        2.898,
+        5.472,
+        6.437,
+        14.705
+    ],
+    "problem_answer": 14.705,
+    "total_time": 10.508347,
+    "solution_predicate": "Equals(14.7048782485, g)",
+    "proof": "Step 1:\nTheorem: Known facts\nPremises : start\nConclusions: pi * (40 / 180) = \u2220HFG, 10 = GH, FH, g = FH, FG, 3.14 = pi, GH, 8 = FG\n\nStep 2:\nTheorem: Evaluate\nPremises : 3.14 = pi\nConclusions: 0.7 = pi * (40 / 180)\n\nStep 3:\nTheorem: Definition of Triangle\nPremises : FG, FH, GH\nConclusions: \u25b3FGH\n\nStep 4:\nTheorem: Transtivity of Equivalence\nPremises : 0.7 = pi * (40 / 180), pi * (40 / 180) = \u2220HFG\nConclusions: 0.7 = \u2220HFG\n\nStep 5:\nTheorem: Law of Cosines\nPremises : \u25b3FGH\nConclusions: (FG ** 2 + FH ** 2) - GH ** 2 = 2 * FG * FH * cos(\u2220HFG)\n\nStep 6:\nTheorem: Substitution\nPremises : 10 = GH, g = FH, 8 = FG, 0.7 = \u2220HFG, (FG ** 2 + FH ** 2) - GH ** 2 = 2 * FG * FH * cos(\u2220HFG)\nConclusions: (8 ** 2 + g ** 2) - 10 ** 2 = 2 * 8 * cos(0.7) * g\n\nStep 7:\nTheorem: Solve Univariate Equation\nPremises : (8 ** 2 + g ** 2) - 10 ** 2 = 2 * 8 * cos(0.7) * g\nConclusions: 14.7 = g\n\n",
+    "logic_fomrs_refined": [
+        "Line(F, H)",
+        "Line(G, H)",
+        "Line(F, G)",
+        "Line(F, G)",
+        "Line(F, H)",
+        "Line(G, H)",
+        "Equals(LengthOf(Line(F, G)), 8.0)",
+        "Equals(LengthOf(Line(G, H)), 10.0)",
+        "Equals(LengthOf(Line(H, F)), g)",
+        "Equals(MeasureOf(Angle(H, F, G)), Mul(pi, Div(40.0, 180.0)))"
+    ],
+    "correct": true
+}
