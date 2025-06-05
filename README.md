@@ -28,6 +28,11 @@ pip install -r requirements.txt
 
 ## Data Preparation
 
+We provide two ways to prepare the datasets:
+
+
+### 1. Unzip the Dataset (Recommended)
+
 Run the following command to unzip the datasets:
 
 ```bash
@@ -35,14 +40,15 @@ bash scripts/unzip_data.sh
 ```
 
 
-*If you want to prepare the data from scratch, pleass download [**Geometry3K**](https://github.com/lupantech/InterGPS/tree/main) and [**PGPS9K**](https://nlpr.ia.ac.cn/databases/CASIA-PGPS9K/index.html) datasets and place them to corresponding folders, then run the following command*:
+### 2. Download the Datasets
+
+If you want to prepare the data from scratch, please download [**Geometry3K**](https://github.com/lupantech/InterGPS/tree/main) and [**PGPS9K**](https://nlpr.ia.ac.cn/databases/CASIA-PGPS9K/index.html) datasets and place them to corresponding folders, then run the following command:
 
 ```bash
 bash scripts/data_preprocess.sh
 ```
 
 *It generates `images` folder including all problem images well-named for each dataset and gathers all problem information into `{dataset_name}_test.json` file, as previous `unzip_data` command provides.*
-
 
 
 ## Multimodal Formalization
@@ -104,3 +110,5 @@ bash scripts/eval_results.sh -d symbolic_reasoner/our_results
     <img src="./figs/demo_diagram.png" alt="Demo Diagram" style="width: 50%; height: auto; object-fit: contain;">
     <img src="./figs/demo_proof.png" alt="Demo Proof" style="width: 40%; height: auto; object-fit: contain;">
 </div>
+
+A folder `demo` is provided to interactively solve any given geometry problem with diagram-text pair. Please visit `demo/main.ipynb`
