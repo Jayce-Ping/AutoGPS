@@ -255,19 +255,23 @@ def Split_In_A_B_Is_C(text):
 def extract_expressions(s, sep='='):
     boxes = []
     
+    # 定义替换方框为占位符的函数
     def replace_box(match):
         boxes.append(match.group(0))
         return f'<#{len(boxes)-1}>'
     
-    # Replace content with placeholder
+    # 将方框内容替换为占位符
     processed_s = re.sub(r'\[.*?\]', replace_box, s)
     
+    # 分割处理后的字符串
     parts = processed_s.split(sep)
     
-    # Remove spaces and restore content
+    # 恢复占位符为方框内容并去除空格
     for i in range(len(parts)):
         part = parts[i]
+        # 替换占位符
         part = re.sub(r'<#(\d+)>', lambda m: boxes[int(m.group(1))], part)
+        # 去除前后空格
         parts[i] = part.strip()
     
     return parts
@@ -304,7 +308,8 @@ def replace_equality_chains(s, sep = '='):
     def restore_box(match):
         index = int(match.group(1))
         return boxes[index]
-        processed_s = re.sub(r'<#(\d+)>', restore_box, processed_s)
+
+    processed_s = re.sub(r'<#(\d+)>', restore_box, processed_s)
     
     return processed_s
 
