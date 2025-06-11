@@ -10,6 +10,7 @@
 ├── datasets/           
 |   ├── geometry3k          # Geometry3K dataset
 |   ├── PGPS9K              # PGPS9K datasets
+├── demo                    # A lightweight demo for interactive problem-solving
 ├── multimodal_formalizer   # Multimodal Problem Formalizer
 ├── symbolic_reasoner       # Symbolic Decuctive Reasoner
 ├── scripts                 # Bash scripts
